@@ -13,7 +13,6 @@
  */
 
 
-import titleArt from '../assets/ui/title-art.png';
 import panelMain from '../assets/ui/svg/panel-main.svg';
 import panelSmall from '../assets/ui/svg/panel-small.svg';
 import hudTop from '../assets/ui/svg/hud-top.svg';
@@ -57,7 +56,7 @@ function slot(slotId: string, label: string, fallback: string, assetUrl: string 
 }
 
 export const UI_ART: Record<string, UiArtSlot> = {
-  title_art: slot('title_art', 'Title art', 'gradient + game-title text', titleArt),
+  title_art: slot('title_art', 'Title art', 'gradient + game-title text'),
   main_menu_panel: slot('main_menu_panel', 'Main menu panel', 'game-panel', panelMain),
   pause_menu_panel: slot('pause_menu_panel', 'Pause menu panel', 'game-panel', panelMain),
   hud_panel: slot('hud_panel', 'HUD panel', 'game-panel', hudTop),
