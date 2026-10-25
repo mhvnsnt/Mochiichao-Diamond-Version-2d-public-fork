@@ -1,0 +1,164 @@
+{
+  "batch": "001-010",
+  "direction": "Pokemon-style 2D/2.5D, NOT voxel",
+  "note": "Roster numbering, not draft-manifest numbering. Sproutle is 038, not 004. Entries 001-010 only; no geometry invented for undescribed entries.",
+  "entries": [
+    {
+      "id": "001",
+      "name": "Mochii",
+      "elements_roster": [
+        "Aqua"
+      ],
+      "base_stats_raw": "\"hp\": 45, \"atk\": 49, \"def\": 49, \"spa\": 65, \"spd\": 65, \"spe\": 45",
+      "api_search_tags": [
+        "blue water slime",
+        "cute bouncy ball",
+        "bloop"
+      ],
+      "description_source": "GameData starter description (see src/world/GameData.ts)",
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "002",
+      "name": "Tiidebiite",
+      "elements_roster": [
+        "Aqua",
+        "Mythic"
+      ],
+      "base_stats_raw": "\"hp\": 59, \"atk: 63, \"def\": 80, \"spa\": 65, \"spd\": 80, \"spe\": 58",
+      "api_search_tags": [
+        "water warrior",
+        "blue martial artist",
+        "swirling water fists"
+      ],
+      "description_source": null,
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "003",
+      "name": "AquariiOS",
+      "elements_roster": [
+        "Aqua",
+        "Mythic"
+      ],
+      "base_stats_raw": "\"hp\": 79, \"atk\": 83, \"def\": 100, \"spa\": 85, \"spd\": 105, \"spe\": 78",
+      "api_search_tags": [
+        "fluid intelligence",
+        "floating aqua brain",
+        "mythical water guardian"
+      ],
+      "description_source": null,
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "004",
+      "name": "Razorgater",
+      "elements_roster": [
+        "Chrome"
+      ],
+      "base_stats_raw": "\"hp\": 50, \"atk\": 65, \"def\": 64, \"spa\": 44, \"spd\": 48, \"spe\": 43",
+      "api_search_tags": [
+        "small metallic crocodile",
+        "chrome jaws",
+        "silver lizard"
+      ],
+      "description_source": "GameData starter description (see src/world/GameData.ts)",
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "005",
+      "name": "Chromejaww",
+      "elements_roster": [
+        "Chrome",
+        "Strike"
+      ],
+      "base_stats_raw": "\"hp\": 65, \"atk\": 80, \"def\": 80, \"spa\": 59, \"spd\": 63, \"spe\": 58",
+      "api_search_tags": [
+        "bipedal chrome crocodile",
+        "sharp steel teeth",
+        "fierce metal reptile"
+      ],
+      "description_source": null,
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "006",
+      "name": "Reaperdile",
+      "elements_roster": [
+        "Chrome",
+        "Strike"
+      ],
+      "base_stats_raw": "\"hp\": 85, \"atk\": 105, \"def\": 100, \"spa\": 79, \"spd\": 83, \"spe\": 78",
+      "api_search_tags": [
+        "huge walking tank crocodile",
+        "steel armor blades",
+        "metal monster destruction"
+      ],
+      "description_source": null,
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "007",
+      "name": "Tyrage",
+      "elements_roster": [
+        "Core"
+      ],
+      "base_stats_raw": "\"hp\": 45, \"atk\": 60, \"def\": 40, \"spa\": 30, \"spd\": 40, \"spe\": 50",
+      "api_search_tags": [
+        "tiny earth dinosaur",
+        "rocky ground dino",
+        "mud lizard"
+      ],
+      "description_source": "GameData starter description (see src/world/GameData.ts)",
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "008",
+      "name": "Duneclaw",
+      "elements_roster": [
+        "Core",
+        "Umbral"
+      ],
+      "base_stats_raw": "\"hp\": 60, \"atk\": 75, \"def\": 55, \"spa\": 45, \"spd\": 55, \"spe\": 65",
+      "api_search_tags": [
+        "desert dinosaur",
+        "bone mask dinosaur",
+        "dark earth beast"
+      ],
+      "description_source": null,
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "009",
+      "name": "Oblivirex",
+      "elements_roster": [
+        "Core",
+        "Umbral"
+      ],
+      "base_stats_raw": "\"hp\": 80, \"atk\": 100, \"def\": 80, \"spa\": 65, \"spd\": 80, \"spe\": 85",
+      "api_search_tags": [
+        "fossilized dark code tyrannosaurus rex",
+        "black bone trex",
+        "shadow earth monster"
+      ],
+      "description_source": null,
+      "status": "SPEC \u2014 skeleton only, geometry NOT yet described in a pasted manifest for this entry unless noted"
+    },
+    {
+      "id": "010",
+      "name": "Kittember",
+      "elements_roster": [
+        "Beast",
+        "Flame"
+      ],
+      "base_stats_raw": "\"hp\": 40, \"atk\": 50, \"def\": 40, \"spa\": 60, \"spd\": 40, \"spe\": 60",
+      "api_search_tags": [
+        "fiery red kitten",
+        "flame paws",
+        "cute fire cat"
+      ],
+      "description_source": "Pasted manifest batch 01: tiny fluffy kitten, charcoal grey #333333, glowing orange tail sphere #ff8800, warm-yellow spark VFX when petted",
+      "status": "SPEC \u2014 described in pasted manifest, not yet a sprite/model"
+    }
+  ]
+}
