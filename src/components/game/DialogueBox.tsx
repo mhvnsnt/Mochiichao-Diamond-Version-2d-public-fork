@@ -151,7 +151,7 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         )}
         <div className="flex-1 min-w-0">
           {speakerName && (
-            <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase">{speakerName}</div>
+            <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase" style={{ fontFamily: 'var(--small-font, "Trebuchet MS", sans-serif)' }}>{speakerName}</div>
           )}
           {/* Dialogue text uses the DIALOGUE FONT placement
               (--dialogue-font, default 01 Digitall); the speaker
