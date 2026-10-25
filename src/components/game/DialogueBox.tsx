@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import HumanPortrait from './HumanPortrait';
 import StdWindow from './StdWindow';
+import { useGameStore } from '../../store/gameStore';
+import { TEXT_SPEED_MS } from '../../lib/gameSettings';
 import type { HumanSlot } from '../../lib/humanSheets';
 
 /**
@@ -69,14 +71,18 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
   const pagesKey = pages.join('\n');
   useEffect(() => { setPageIdx(0); setShown(0); }, [pagesKey]);
   const [shown, setShown] = useState(0);
+  // Settings wiring: TEXT SPEED row controls this interval.
+  // MID 18ms is the pre-existing interval, kept exactly.
+  const textSpeed = useGameStore(s => s.settings.textSpeed);
+  const typeInterval = TEXT_SPEED_MS[textSpeed] ?? 18;
   const page = pages[Math.min(pageIdx, pages.length - 1)];
   const typingDone = shown >= page.length;
   const isLast = pageIdx >= pages.length - 1;
   const stateRef = useRef({ pageIdx, shown, typingDone, isLast });
   stateRef.current = { pageIdx, shown, typingDone, isLast };
 
-  // Typewriter: reveal ~1 char per 18ms, capped so a page never takes
-  // more than ~1.6s to print.
+  // Typewriter: reveal ~1 char per typeInterval, where typeInterval
+  // is the Settings TEXT SPEED row (SLOW 45 / MID 18 / FAST 6 ms).
   useEffect(() => {
     setShown(0);
     if (page.length === 0) return;
@@ -85,9 +91,9 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         if (s >= page.length) { clearInterval(iv); return s; }
         return s + 1;
       });
-    }, 18);
+    }, typeInterval);
     return () => clearInterval(iv);
-  }, [page, pageIdx]);
+  }, [page, pageIdx, typeInterval]);
 
   const advance = React.useCallback(() => {
     const st = stateRef.current;
@@ -145,9 +151,12 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         )}
         <div className="flex-1 min-w-0">
           {speakerName && (
-            <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase">{speakerName}</div>
+            <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase" style={{ fontFamily: 'var(--small-font, "Trebuchet MS", sans-serif)' }}>{speakerName}</div>
           )}
-          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap">
+          {/* Dialogue text uses the DIALOGUE FONT placement
+              (--dialogue-font, default 01 Digitall); the speaker
+              name above uses the MAIN FONT via the body stack. */}
+          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)' }}>
             {page.slice(0, shown)}
           </div>
           {!isLast && typingDone && (

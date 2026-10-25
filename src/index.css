@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+/* Settings Font row — local Mars-requested fonts, shipped in this PR.
+ * Yagiza: yagiza.woff (5,100 bytes) + yagiza.ttf (19,544 bytes).
+ * 01 Digitall: 01-digitall.ttf (48,832 bytes).
+ * Licence gate removed by Mars (2026-10-25); no payment made, no paid
+ * licence bought. Behance Y2K Typeface has no @font-face here yet —
+ * its file has not arrived, so its row falls back (see fonts.ts). */
+@font-face {
+  font-family: 'Yagiza';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/yagiza.woff') format('woff'),
+       url('./assets/fonts/yagiza.ttf') format('truetype');
+}
+@font-face {
+  font-family: '01 Digitall';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/01-digitall.ttf') format('truetype');
+}
+
 @theme {
   --animate-fade-in: fade-in 0.3s ease-out;
 
@@ -29,7 +49,10 @@ html, body, #root {
 }
 
 body {
-  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  /* --game-font is set by src/lib/fonts.ts applyFont() from the
+   * Settings Font row. Default is the pre-existing stack (locked
+   * main-menu look) until Mars locks a new font. */
+  font-family: var(--game-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif);
   -webkit-tap-highlight-color: transparent;
 }
 

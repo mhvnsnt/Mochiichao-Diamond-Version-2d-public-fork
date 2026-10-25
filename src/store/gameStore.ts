@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { MochiiInstance } from '../lib/types';
 import { createMochii } from '../lib/engine';
+import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
+import { applyFontRoles } from '../lib/fonts';
 
 interface GameState {
   playerName: string;
@@ -18,6 +20,13 @@ interface GameState {
   completedEvents: string[];
   defeatedTrainers: string[];
   
+  // Settings (title/press/settings wiring, 2026-10-25): persisted both
+  // in localStorage (loadStoredSettings) and, because SaveMenu /
+  // GameShell serialize the whole state, inside every save. Changing
+  // settings never erases a save.
+  settings: GameSettings;
+  setSettings: (patch: Partial<GameSettings>) => void;
+
   // Overworld state
   currentMap: string;
   playerPos: { x: number, y: number };
@@ -68,6 +77,13 @@ export const useGameStore = create<GameState>((set, get) => ({
   defeatedTrainers: [],
   currentMap: 'sector0',
   playerPos: { x: 21, y: 14 },
+  settings: loadStoredSettings(),
+  setSettings: (patch) => set(s => {
+    const next = { ...s.settings, ...patch };
+    persistSettings(next);
+    applyFontRoles(next);
+    return { settings: next };
+  }),
   cheated: false,
   shiny: false,
   noclip: false,
@@ -76,7 +92,12 @@ export const useGameStore = create<GameState>((set, get) => ({
 
   setPlayerInfo: (name, gender, slot) => set({ playerName: name, playerGender: gender, saveSlot: slot }),
   setRivalName: (name) => set({ rivalName: name }),
-  loadState: (state) => set({ ...state, introCompleted: true, rivalName: (state as any).rivalName || 'Hex' }),
+  loadState: (state) => {
+    const nextSettings = { ...DEFAULT_SETTINGS, ...((state as any).settings || {}) };
+    persistSettings(nextSettings);
+    applyFontRoles(nextSettings);
+    set({ ...state, settings: nextSettings, introCompleted: true, rivalName: (state as any).rivalName || 'Hex' });
+  },
   completeIntro: () => set({ introCompleted: true }),
   
   initializeStarter: (speciesId) => {
