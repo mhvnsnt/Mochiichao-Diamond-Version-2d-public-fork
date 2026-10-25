@@ -22,6 +22,24 @@ function NamePad({ title, slot, value, setValue, confirmLabel, onConfirm, note }
   note?: string;
 }) {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split("");
+  // v5: physical keyboard input. Before v5 NamePad had no keydown
+  // listener at all, so typing on a physical keyboard did nothing
+  // and only on-screen letter clicks filled the field (v4 playtest
+  // bug). Letters/digits append (same 10-char cap as the buttons),
+  // Backspace deletes, Enter confirms exactly like the confirm
+  // button (same fallback argument — no new default name logic).
+  React.useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key === "Backspace") { e.preventDefault(); setValue(value.slice(0, -1)); }
+      else if (e.key === "Enter") { e.preventDefault(); onConfirm(value.trim() || "Hex"); }
+      else if (e.key.length === 1 && letters.includes(e.key) && value.length < 10) {
+        e.preventDefault(); setValue(value + e.key);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [value, setValue, onConfirm]);
   return (
     <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
       <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
@@ -422,7 +440,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
         <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
         <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
-        <div className="relative z-10 w-full max-w-2xl">
+        {/* v5: wrapper is absolute inset-0, NOT a centred max-w-2xl
+            box. Before v5 DialogueBox (absolute, bottom, full width)
+            anchored to that centred narrow wrapper, so the Prof
+            intro box was centred and narrower than full width while
+            Mom's dialogue (direct child of .game-screen) was full
+            width at the bottom. Now both anchor to .game-screen:
+            bottom, full width within safe margins, same as every
+            other story dialogue. */}
+        <div className="absolute inset-0 z-10">
           <DialogueBox
             lines={lines}
             speakerName="Prof. Aeon"

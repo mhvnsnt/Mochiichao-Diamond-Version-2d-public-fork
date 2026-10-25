@@ -210,7 +210,7 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
 
       <div className="shrink-0 mt-4">
         <h3 className="text-white font-bold mb-1 text-sm">Gen 2 starters — art preview</h3>
-        <p className="text-xs text-slate-400 mb-2">Drawn from Mars's own models. Their stats and types are not set yet, so they are not choosable in the lab yet.</p>
+        <p className="text-xs text-slate-400 mb-2">Drawn from Mars's own models. Gen 2 starters, coming later — not choosable in the lab yet.</p>
         <div className="grid grid-cols-2 gap-3">
           {GEN2_PREVIEW.map(c => (
             <div key={c.speciesId} className="game-panel p-3 flex items-center gap-3">

@@ -72,6 +72,19 @@ export function resolveBattleMove(moveKey: string): { power: number; type: strin
 export function battleStats(mon: any): any {
   return { ...mon, atk: mon.atk ?? mon.stats?.atk ?? 50, def: mon.def ?? mon.stats?.def ?? 50 };
 }
+/**
+ * v5 battle-name fix: MochiiInstance carries `nickname`, NOT `name`
+ * (createMochii sets nickname = species name). Battle code that read
+ * bs.player.name therefore logged "undefined used Tackle!" /
+ * "undefined took 4 damage!" in the v4 playtest, even though the
+ * battle billboards already fell back to nickname. Resolve the
+ * display name the same way everywhere: name, then nickname, then
+ * the species name from SPECIES_DB. No stats, types or moves change.
+ */
+export function battleMonName(mon: any): string {
+  if (!mon) return "Mochiichao";
+  return mon.name || mon.nickname || SPECIES_DB[mon.speciesId || mon.id]?.name || "Mochiichao";
+}
 
 export function useDayNight(tickMs = 1000) {
   const [gameHour, setGameHour] = useState(10);
@@ -240,7 +253,9 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     setBattleState({
       type: "wild",
       wild: wildMon,
-      player: { ...playerMon, currentHp: playerMon.currentHp ?? playerMon.hp },
+      // v5: give the battle player a real `name` (nickname -> species
+      // name); without it the log read "undefined used Tackle!".
+      player: { ...playerMon, name: battleMonName(playerMon), currentHp: playerMon.currentHp ?? playerMon.hp },
       playerTeamIdx: aliveIdx,
       log: [`A wild ${wildMon.name} appeared!`],
       phase: "menu",
@@ -274,7 +289,9 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       trainerName,
       trainerTeam: battleTeam.map((m: any) => ({ ...m, currentHp: m.currentHp ?? m.hp, speciesId: m.speciesId || m.id })),
       trainerTeamIdx: 0,
-      player: { ...playerMon, currentHp: playerMon.currentHp ?? playerMon.hp },
+      // v5: same name fix as the wild battle — MochiiInstance has
+      // `nickname`, not `name`, so the log must not read .name raw.
+      player: { ...playerMon, name: battleMonName(playerMon), currentHp: playerMon.currentHp ?? playerMon.hp },
       playerTeamIdx: aliveIdx,
       log: [`${trainerName} wants to battle!`, `${trainerName} sent out ${battleTeam[0].name}!`],
       phase: "menu",
@@ -298,6 +315,32 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
 
     const tile = mapData.tiles[ny]?.[nx];
     const noclip = useGameStore.getState().noclip;
+    // v5: exits and doors are checked BEFORE the solid-tile return.
+    // Before v5 the solid check ran first, so any exit or door whose
+    // tile was wall/building (sector0's route_1 exit row was all
+    // wall) could never fire — the player simply stopped at the
+    // wall, exactly the v4 playtest symptom. Exits/doors are map
+    // data, not a way through ordinary walls: only the exact exit
+    // and door tiles bypass the solid check.
+    const exitFirst = (mapData as any).exits?.find((e: any) => e.x === nx && e.y === ny);
+    if (exitFirst && !noclip) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setMapState(exitFirst.to, exitFirst.enterAt);
+        setIsTransitioning(false);
+      }, 400);
+      return;
+    }
+    const doorFirst = (mapData as any).doors?.find((d: any) => d.x === nx && d.y === ny);
+    if (doorFirst && !noclip) {
+      setMapState(currentMap, { x: nx, y: ny }); // Step on door
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setMapState(doorFirst.to, doorFirst.enterAt);
+        setIsTransitioning(false);
+      }, 400);
+      return;
+    }
     if (!noclip) {
       if (tile === 1 || tile === 4) return; // solid
       if (tile === 2) return; // water block
@@ -306,7 +349,8 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       if (npcHere) return; // can't walk through them
     }
 
-    // Check exits
+    // Check exits (noclip path; the normal path already handled
+    // exits/doors above, before the solid check)
     const exit = (mapData as any).exits?.find((e: any) => e.x === nx && e.y === ny);
     if (exit) {
       setIsTransitioning(true);
@@ -317,7 +361,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       return;
     }
 
-    // Check doors in move (auto-enter)
+    // Check doors in move (auto-enter, noclip path)
     const door = (mapData as any).doors?.find((d: any) => d.x === nx && d.y === ny);
     if (door) {
       setMapState(currentMap, { x: nx, y: ny }); // Step on door
@@ -554,6 +598,25 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     }
   };
 
+  // v5: the goal statement, shared by the win and loss paths. In v4
+  // it was victory-only (win branch below), so a player who lost
+  // the first Hex battle — the v4 playtest's final battle, which
+  // closed with no banner and no goal — never heard the goal at
+  // all. Win OR lose the flow continues and the route gate is
+  // unaffected, so the goal is stated once either way. Mochiichao
+  // words only; no Pokemon dialogue, names or towns are copied in.
+  const hexGoalDialog = () => ({
+    lines: [
+      "Prof. Aeon: Well done! That was your first battle, and your partner did you proud.",
+      "Here is your MochiDex — it records every Mochiichao you meet and catch.",
+      "Now, your goal: visit the dojos across the Mainframe Region, beat Champion Mythar, and stop the Hackers and the Syndicate.",
+      "Route 1.0 is open. Your first town is Silicon Town — head north when you are ready.",
+    ],
+    isEvent: true,
+    eventId: 'v4_hex_goal',
+    npc: { id: "prof_aeon", name: "Prof. Aeon" },
+  });
+
   const doEnemyTurn = (bs: any) => {
     const enemy = bs.type === "wild" ? bs.wild : bs.trainerTeam[bs.trainerTeamIdx];
     const moves = enemy.moves || ["Tackle"];
@@ -569,27 +632,36 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
 
     const dmg = calcDamage(moveData, battleStats(enemy), battleStats(bs.player));
     const newHp = Math.max(0, bs.player.currentHp - dmg);
-    const newLog = [...bs.log, `${enemy.name} used ${chosenMoveDisplay}!`];
-    if (dmg > 0) newLog.push(`${bs.player.name} took ${dmg} damage!`);
+    const newLog = [...bs.log, `${battleMonName(enemy)} used ${chosenMoveDisplay}!`];
+    if (dmg > 0) newLog.push(`${battleMonName(bs.player)} took ${dmg} damage!`);
 
     const updatedPlayer = { ...bs.player, currentHp: newHp };
 
     if (newHp <= 0) {
-      newLog.push(`${bs.player.name} fainted!`);
+      newLog.push(`${battleMonName(bs.player)} fainted!`);
       const nextAlive = playerTeam.findIndex((m, i) => i > bs.playerTeamIdx && (m.currentHp ?? m.maxHp) > 0);
       if (nextAlive === -1) {
         newLog.push("You have no more Mochiichao! You blacked out...");
         setBattleState({ ...bs, player: updatedPlayer, log: newLog, phase: "over" });
         setTimeout(() => {
-          setScreen("overworld");
           setBattleState(null);
           setMapState(currentMap, mapData.playerStart);
           setPlayerTeam(t => t.map(m => ({ ...m, currentHp: Math.floor(m.maxHp * 0.3) })));
           notify("You blacked out and were sent back...", "#ff5252");
+          // v5: goal after a loss too (see hexGoalDialog above).
+          // The banner (phase "over" render) already showed DEFEAT;
+          // this dialogue states the goal once, then finishDialog
+          // returns to the overworld. It never re-gifts cubes.
+          if (bs.npcId === 'hex_battle_event' && !completedEvents.includes('v4_hex_goal')) {
+            setDialog(hexGoalDialog());
+            setScreen("dialog");
+          } else {
+            setScreen("overworld");
+          }
         }, 2500);
       } else {
-        newLog.push(`Go, ${playerTeam[nextAlive].name}!`);
-        setBattleState({ ...bs, player: { ...playerTeam[nextAlive], currentHp: playerTeam[nextAlive].currentHp ?? playerTeam[nextAlive].maxHp }, playerTeamIdx: nextAlive, log: newLog, phase: "menu" });
+        newLog.push(`Go, ${battleMonName(playerTeam[nextAlive])}!`);
+        setBattleState({ ...bs, player: { ...playerTeam[nextAlive], name: battleMonName(playerTeam[nextAlive]), currentHp: playerTeam[nextAlive].currentHp ?? playerTeam[nextAlive].maxHp }, playerTeamIdx: nextAlive, log: newLog, phase: "menu" });
       }
     } else {
       setBattleState({ ...bs, player: updatedPlayer, log: newLog, phase: "menu" });
@@ -648,7 +720,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
 
       const enemyMon = bs.type === "wild" ? bs.wild : bs.trainerTeam[bs.trainerTeamIdx];
       const dmg = calcDamage(moveData, battleStats(bs.player), battleStats(enemyMon));
-      const newLog = [...bs.log, `${bs.player.name} used ${resolved.display}!`];
+      const newLog = [...bs.log, `${battleMonName(bs.player)} used ${resolved.display}!`];
 
       const newHp = Math.max(0, enemyMon.currentHp - dmg);
       if (dmg > 0) newLog.push(`Dealt ${dmg} damage!`);
@@ -686,17 +758,8 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
               // and never reaches this branch, so the goal dialogue
               // is victory-only and the route gate is unaffected.
               if (bs.npcId === 'hex_battle_event' && !completedEvents.includes('v4_hex_goal')) {
-                setDialog({
-                  lines: [
-                    "Prof. Aeon: Well done! That was your first battle, and your partner did you proud.",
-                    "Here is your MochiDex — it records every Mochiichao you meet and catch.",
-                    "Now, your goal: visit the dojos across the Mainframe Region, beat Champion Mythar, and stop the Hackers and the Syndicate.",
-                    "Route 1.0 is open. Your first town is Silicon Town — head north when you are ready.",
-                  ],
-                  isEvent: true,
-                  eventId: 'v4_hex_goal',
-                  npc: { id: "prof_aeon", name: "Prof. Aeon" },
-                });
+                // v5: same goal dialogue as the loss path (hexGoalDialog).
+                setDialog(hexGoalDialog());
                 setScreen("dialog");
               } else {
                 setScreen("overworld");
@@ -974,6 +1037,23 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           <span className="text-yellow-400 text-sm font-bold">{credits} CR</span>
         </div>
 
+        {/* v5 win/lose banner: the v4 playtest's first battle closed
+            with no game-over screen and no explicit win/lose text.
+            While phase is "over" (the 2000-2500ms before the screen
+            changes) show the outcome plainly. Flow continues either
+            way — a loss blacks out and returns to the map, a win
+            goes to the goal dialogue or the overworld. */}
+        {bs.phase === "over" && (
+          <div className="relative z-30 flex flex-col items-center py-3 pointer-events-none">
+            <div className={`text-3xl font-black tracking-[0.25em] ${player.currentHp <= 0 ? "text-red-400" : "text-yellow-300"}`}>
+              {player.currentHp <= 0 ? "DEFEAT!" : "VICTORY!"}
+            </div>
+            <div className="text-slate-300 text-xs tracking-widest mt-1">
+              {player.currentHp <= 0 ? "You blacked out and were sent back — your journey continues." : "Flow continues — your journey goes on."}
+            </div>
+          </div>
+        )}
+
         {/* 2.5D Battle Arena */}
         <div className="flex-1 relative overflow-hidden flex" style={{ perspective: "1000px" }}>
            <div className="absolute inset-0 bg-slate-900" />
@@ -1135,7 +1215,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
             : !defeatedTrainers.includes('hex_battle_event') && currentMap === 'aeon_lab'
               ? `Goal: Battle ${rivalName} at the lab exit, then head to Route 1.0`
               : currentMap === 'sector0'
-                ? "Goal: Route 1.0 → Silicon Town"
+                ? "Goal: Go to Route 1.0 — walk north through the gate, then to Silicon Town"
                 : undefined
         }
         onMenu={() => setPauseOpen(true)}
@@ -1211,9 +1291,39 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         </div>
       </div>
 
-      {/* MOBILE CONTROLS — action buttons bottom-right, fully on-screen */}
+      {/* v5 interact prompt: when the facing tile holds an NPC, a
+          door, or a signpost, show a tappable prompt (mobile has no
+          reliable A key, and the playtest found on-screen A on a
+          wall/sign did nothing because nothing said what was
+          interactable). The prompt is a button, not just text, so
+          tapping it interacts. Hidden during dialogue, when A
+          already advances the box. */}
+      {screen === "overworld" && (() => {
+        const dx = playerDir === "right" ? 1 : playerDir === "left" ? -1 : 0;
+        const dy = playerDir === "down" ? 1 : playerDir === "up" ? -1 : 0;
+        const fx = playerPos.x + dx, fy = playerPos.y + dy;
+        const npc = mapData.npcs?.find((n: any) => n.x === fx && n.y === fy);
+        const door = mapData.doors?.find((d: any) => d.x === fx && d.y === fy);
+        const sign = mapData.signs?.find((s: any) => s.x === fx && s.y === fy);
+        const label = npc ? `Talk to ${npc.name}` : door ? `Enter ${door.label || "door"}` : sign ? "Read sign" : null;
+        if (!label) return null;
+        return (
+          <button
+            onClick={() => interact()}
+            className="absolute left-1/2 -translate-x-1/2 z-40 px-5 py-3 font-bold tracking-widest game-button min-h-[48px]"
+            style={{ top: 'max(5.5rem, calc(env(safe-area-inset-top) + 5.5rem))' }}
+          >
+            A — {label}
+          </button>
+        );
+      })()}
+
+      {/* MOBILE CONTROLS — action buttons bottom-right, fully on-screen.
+          v5: z-70, above the dialogue box (z-50). Before v5 A/B sat
+          at z-40 under the dialogue box and were partially obscured
+          whenever dialogue was open. Size unchanged — not shrunk. */}
       <div
-        className="absolute right-3 z-40 flex gap-3 items-end select-none"
+        className="absolute right-3 z-[70] flex gap-3 items-end select-none"
         style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))', right: 'max(0.75rem, env(safe-area-inset-right))', touchAction: 'none' }}
       >
         <button
