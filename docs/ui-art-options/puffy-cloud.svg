@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" height="280">
+  <!-- Cartoon puffy cloud, transparent background, CC0-style original path -->
+  <path d="M 40 220
+           C 10 200, 15 150, 55 140
+           C 60 95, 110 70, 150 95
+           C 170 50, 240 40, 270 85
+           C 300 45, 370 55, 385 100
+           C 430 80, 480 105, 470 150
+           C 510 155, 540 185, 520 215
+           C 500 240, 460 245, 430 235
+           L 80 235
+           C 55 235, 45 230, 40 220 Z"
+        fill="#ffffff" stroke="#d0d8e0" stroke-width="6" stroke-linejoin="round"/>
+</svg>
