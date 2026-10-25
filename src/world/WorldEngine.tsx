@@ -54,6 +54,37 @@ export function hexTeamMember(playerSpeciesId: string): any | null {
   };
 }
 /**
+ * v5.2 trainer-stat fix: map trainer teams were hand-written on the
+ * old GameData scale (flat atk/def ~35-65, HP ~30-50), while a player
+ * party built by createMochii uses Pokemon-style level-scaled stats
+ * (Lv.5 Mochii: atk 10, def 10, HP 20). Put through the same
+ * calcDamage, a hand-written Tyrage (atk 40 vs player def 10) dealt
+ * 15 while the player dealt 1 — that is a scale mismatch, not a
+ * damage-formula bug (the formula is unchanged). Where a map team's
+ * species id AND name both match SPECIES_DB, rebuild that member
+ * with createMochii at the map level, so trainer, wild and player
+ * creatures all use the same stat system and the same existing
+ * species base stats — no new stats invented. Members whose id/name
+ * do NOT match SPECIES_DB (e.g. Bug Catcher Rick's team lists id
+ * "004" named "Squirmite", while SPECIES_DB "004" is Razorgater)
+ * are left on their map stats unchanged and flagged in the PR body
+ * as pre-existing map-data mismatches, not silently renamed.
+ */
+export function trainerBattleMon(m: any): any {
+  const id = m.speciesId || m.id;
+  const sp: any = (SPECIES_DB as any)[id];
+  if (!sp || sp.name !== m.name) return m;
+  const c = createMochii(id, m.level || 5);
+  if (!c) return m;
+  return {
+    id: m.id, speciesId: id, name: sp.name,
+    hp: c.hp, maxHp: c.maxHp, currentHp: c.hp,
+    atk: c.stats.atk, def: c.stats.def, spd: c.stats.spe,
+    moves: c.moves.map((mid: string) => (MOVES_DB as any)[mid]?.name || mid),
+    type: m.type, level: c.level,
+  };
+}
+/**
  * Battle move bridge (v4): WorldEngine's GAME_DATA.moves is keyed by
  * display name ("Tackle"), while a party built by createMochii carries
  * moveIds ("TACKLE"). Without this bridge every player move lookup
@@ -114,6 +145,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const completeEvent = useGameStore(s => s.completeEvent);
   const defeatTrainer = useGameStore(s => s.defeatTrainer);
   const healParty = useGameStore(s => s.healParty);
+  const useItem = useGameStore(s => s.useItem);
 
   const playerPos = useGameStore(s => s.playerPos);
   const playerGender = useGameStore(s => s.playerGender);
@@ -244,20 +276,40 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     const playerMon = playerTeam[aliveIdx];
     const sp = SPECIES_DB[wildMonId] || Object.values(SPECIES_DB)[0];
     const lvl = Math.max(1, playerMon.level + Math.floor(Math.random() * 3) - 1);
-    const hp = Math.floor(sp.baseStats.hp * (1 + (lvl-1)*0.08));
-    const spAtk = Math.floor(sp.baseStats.atk * (1 + (lvl-1)*0.08));
-    const spDef = Math.floor(sp.baseStats.def * (1 + (lvl-1)*0.08));
-
-    const wildMon = {
+    // v5.2 wild-stat fix: the old code scaled RAW base stats
+    // (Lv.4 Mochii: atk 60, def 60, HP 55) while a player party uses
+    // createMochii level-scaled stats (Lv.5 Mochii: atk 10, def 10,
+    // HP 20) — so a wild Lv.4 dealt 19 in one hit while the player
+    // dealt 1-2. Wild creatures now use createMochii at the same
+    // level, i.e. the same stat system and existing species base
+    // stats as the player (no new stats invented). Species NOT in
+    // SPECIES_DB keep the old scaling unchanged (flagged in the PR
+    // body); note the pre-existing fallback above already maps a
+    // missing species id to the first SPECIES_DB entry's name.
+    const wildBuilt = createMochii(wildMonId, lvl);
+    const wildMon = wildBuilt ? {
         id: `wild_${Date.now()}`,
         speciesId: wildMonId,
         name: sp.name,
         level: lvl,
-        hp: hp,
-        maxHp: hp,
-        currentHp: hp,
-        atk: spAtk,
-        def: spDef,
+        hp: wildBuilt.hp,
+        maxHp: wildBuilt.maxHp,
+        currentHp: wildBuilt.hp,
+        atk: wildBuilt.stats.atk,
+        def: wildBuilt.stats.def,
+        spd: wildBuilt.stats.spe,
+        moves: wildBuilt.moves.map((mid: string) => (MOVES_DB as any)[mid]?.name || mid),
+        type: sp.types[0],
+    } : {
+        id: `wild_${Date.now()}`,
+        speciesId: wildMonId,
+        name: sp.name,
+        level: lvl,
+        hp: Math.floor(sp.baseStats.hp * (1 + (lvl-1)*0.08)),
+        maxHp: Math.floor(sp.baseStats.hp * (1 + (lvl-1)*0.08)),
+        currentHp: Math.floor(sp.baseStats.hp * (1 + (lvl-1)*0.08)),
+        atk: Math.floor(sp.baseStats.atk * (1 + (lvl-1)*0.08)),
+        def: Math.floor(sp.baseStats.def * (1 + (lvl-1)*0.08)),
         spd: sp.baseStats.spd,
         moves: (sp as any).moves?.slice(0, 4) || [],
         type: sp.types[0],
@@ -299,7 +351,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     const isHexBattle = npc.id === 'hex_battle_event' || npc.id === 'rival_hex' || npc.name === 'Hex';
     const battleTeam = (isHexBattle && playerMon?.speciesId)
       ? [hexTeamMember(playerMon.speciesId)].filter(Boolean)
-      : npc.battle.team;
+      : npc.battle.team.map((m: any) => trainerBattleMon(m));
     const trainerName = isHexBattle ? rivalName : npc.name;
     pendingBattleEndRef.current = null;
     setBattleState({
@@ -648,7 +700,10 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
 
   const doEnemyTurn = (bs: any) => {
     const enemy = bs.type === "wild" ? bs.wild : bs.trainerTeam[bs.trainerTeamIdx];
-    const moves = enemy.moves || ["Tackle"];
+    // v5.2: an empty moves array is truthy, so the old fallback
+    // never fired and chosenMove came out undefined (power-40 move
+    // with no display name). Empty now falls back to Tackle too.
+    const moves = enemy.moves && enemy.moves.length > 0 ? enemy.moves : ["Tackle"];
     const chosenMove = moves[Math.floor(Math.random() * moves.length)];
     // v4 bridge: enemy moves may be moveIds (wild/species teams) or
     // display names (map teams); resolve both, same formula.
@@ -733,6 +788,14 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
 
     if (action.type === "catch") {
       if (!bs.canCatch) return;
+      // v5.2: a thrown Luigi Cube is consumed whether it breaks or
+      // succeeds — before v5.2 the catch code never touched the
+      // inventory, so the Bag still showed x15 after a throw. If
+      // the player has no cubes left, no throw happens at all.
+      if (!useItem('luigi_cube')) {
+        setBattleState({ ...bs, log: [...bs.log, "You have no Luigi Cubes left!"] });
+        return;
+      }
       const hpRatio = bs.wild.currentHp / bs.wild.maxHp;
       const catchRate = 0.7 - hpRatio * 0.5;
       const success = Math.random() < catchRate;
@@ -1389,8 +1452,16 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       {/* MOBILE CONTROLS — action buttons bottom-right, fully on-screen.
           v5: z-70, above the dialogue box (z-50). Before v5 A/B sat
           at z-40 under the dialogue box and were partially obscured
-          whenever dialogue was open. Size unchanged — not shrunk. */}
-      <div
+          whenever dialogue was open. Size unchanged — not shrunk.
+          v5.2: hidden entirely during a YES/NO choice dialogue.
+          Root cause of the v5.1 playtest blocker: YES/NO buttons sit
+          at the bottom-right of the dialogue box (z-50), directly
+          under the A/B cluster (z-70), so tapping YES/NO hit A/B
+          instead — and the on-screen A only advances non-choice
+          dialogue, so it did nothing for a choice either. With A/B
+          hidden for choice dialogues, YES/NO are tappable, and the
+          DialogueBox Y/N keyboard shortcut (below) covers keys. */}
+      {!(screen === "dialog" && dialog?.isChoice) && (<div
         className="absolute right-3 z-[70] flex gap-3 items-end select-none"
         style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))', right: 'max(0.75rem, env(safe-area-inset-right))', touchAction: 'none' }}
       >
@@ -1415,7 +1486,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         >
           A
         </button>
-      </div>
+      </div>)}
 
       {notification && (
         <div className="absolute top-20 left-1/2 -translate-x-1/2 bg-black border-2 px-6 py-3 font-bold tracking-widest z-50 text-center shadow-2xl rounded" style={{ borderColor: notification.color, color: notification.color }}>
