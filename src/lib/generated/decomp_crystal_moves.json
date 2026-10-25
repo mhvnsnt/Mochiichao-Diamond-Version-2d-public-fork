@@ -1,0 +1,2518 @@
+{
+  "source": "pokecrystal/data/moves/moves.asm",
+  "sourceRepo": "pret/pokecrystal",
+  "count": 251,
+  "categoryDerivation": "Gen 2 has no category field in this table. power 0 = Status; FIRE/WATER/GRASS/ELECTRIC/PSYCHIC/ICE/DRAGON/DARK = Special; otherwise Physical. Recorded as derivedCategory only. Move names recorded as-is (Gen 2 spellings differ from Gen 3, e.g. DOUBLESLAP, POISONPOWDER).",
+  "moves": [
+    {
+      "sourceConstant": "MOVE_POUND",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 40,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 35,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_KARATE_CHOP",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 50,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_DOUBLESLAP",
+      "effect": "EFFECT_MULTI_HIT",
+      "power": 15,
+      "type": "NORMAL",
+      "accuracy": 85,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_COMET_PUNCH",
+      "effect": "EFFECT_MULTI_HIT",
+      "power": 18,
+      "type": "NORMAL",
+      "accuracy": 85,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_MEGA_PUNCH",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 80,
+      "type": "NORMAL",
+      "accuracy": 85,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_PAY_DAY",
+      "effect": "EFFECT_PAY_DAY",
+      "power": 40,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_FIRE_PUNCH",
+      "effect": "EFFECT_BURN_HIT",
+      "power": 75,
+      "type": "FIRE",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_ICE_PUNCH",
+      "effect": "EFFECT_FREEZE_HIT",
+      "power": 75,
+      "type": "ICE",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_THUNDERPUNCH",
+      "effect": "EFFECT_PARALYZE_HIT",
+      "power": 75,
+      "type": "ELECTRIC",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SCRATCH",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 40,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 35,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_VICEGRIP",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 55,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_GUILLOTINE",
+      "effect": "EFFECT_OHKO",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 30,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_RAZOR_WIND",
+      "effect": "EFFECT_RAZOR_WIND",
+      "power": 80,
+      "type": "NORMAL",
+      "accuracy": 75,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SWORDS_DANCE",
+      "effect": "EFFECT_ATTACK_UP_2",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_CUT",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 50,
+      "type": "NORMAL",
+      "accuracy": 95,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_GUST",
+      "effect": "EFFECT_GUST",
+      "power": 40,
+      "type": "FLYING",
+      "accuracy": 100,
+      "pp": 35,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_WING_ATTACK",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 60,
+      "type": "FLYING",
+      "accuracy": 100,
+      "pp": 35,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_WHIRLWIND",
+      "effect": "EFFECT_FORCE_SWITCH",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_FLY",
+      "effect": "EFFECT_FLY",
+      "power": 70,
+      "type": "FLYING",
+      "accuracy": 95,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_BIND",
+      "effect": "EFFECT_TRAP_TARGET",
+      "power": 15,
+      "type": "NORMAL",
+      "accuracy": 75,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SLAM",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 80,
+      "type": "NORMAL",
+      "accuracy": 75,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_VINE_WHIP",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 35,
+      "type": "GRASS",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_STOMP",
+      "effect": "EFFECT_STOMP",
+      "power": 65,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_DOUBLE_KICK",
+      "effect": "EFFECT_DOUBLE_HIT",
+      "power": 30,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_MEGA_KICK",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 120,
+      "type": "NORMAL",
+      "accuracy": 75,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_JUMP_KICK",
+      "effect": "EFFECT_JUMP_KICK",
+      "power": 70,
+      "type": "FIGHTING",
+      "accuracy": 95,
+      "pp": 25,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_ROLLING_KICK",
+      "effect": "EFFECT_FLINCH_HIT",
+      "power": 60,
+      "type": "FIGHTING",
+      "accuracy": 85,
+      "pp": 15,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SAND_ATTACK",
+      "effect": "EFFECT_ACCURACY_DOWN",
+      "power": 0,
+      "type": "GROUND",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_HEADBUTT",
+      "effect": "EFFECT_FLINCH_HIT",
+      "power": 70,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_HORN_ATTACK",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 65,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_FURY_ATTACK",
+      "effect": "EFFECT_MULTI_HIT",
+      "power": 15,
+      "type": "NORMAL",
+      "accuracy": 85,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_HORN_DRILL",
+      "effect": "EFFECT_OHKO",
+      "power": 1,
+      "type": "NORMAL",
+      "accuracy": 30,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_TACKLE",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 35,
+      "type": "NORMAL",
+      "accuracy": 95,
+      "pp": 35,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_BODY_SLAM",
+      "effect": "EFFECT_PARALYZE_HIT",
+      "power": 85,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_WRAP",
+      "effect": "EFFECT_TRAP_TARGET",
+      "power": 15,
+      "type": "NORMAL",
+      "accuracy": 85,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_TAKE_DOWN",
+      "effect": "EFFECT_RECOIL_HIT",
+      "power": 90,
+      "type": "NORMAL",
+      "accuracy": 85,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_THRASH",
+      "effect": "EFFECT_RAMPAGE",
+      "power": 90,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_DOUBLE_EDGE",
+      "effect": "EFFECT_RECOIL_HIT",
+      "power": 120,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_TAIL_WHIP",
+      "effect": "EFFECT_DEFENSE_DOWN",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_POISON_STING",
+      "effect": "EFFECT_POISON_HIT",
+      "power": 15,
+      "type": "POISON",
+      "accuracy": 100,
+      "pp": 35,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_TWINEEDLE",
+      "effect": "EFFECT_POISON_MULTI_HIT",
+      "power": 25,
+      "type": "BUG",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 20,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_PIN_MISSILE",
+      "effect": "EFFECT_MULTI_HIT",
+      "power": 14,
+      "type": "BUG",
+      "accuracy": 85,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_LEER",
+      "effect": "EFFECT_DEFENSE_DOWN",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_BITE",
+      "effect": "EFFECT_FLINCH_HIT",
+      "power": 60,
+      "type": "DARK",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_GROWL",
+      "effect": "EFFECT_ATTACK_DOWN",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ROAR",
+      "effect": "EFFECT_FORCE_SWITCH",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SING",
+      "effect": "EFFECT_SLEEP",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 55,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SUPERSONIC",
+      "effect": "EFFECT_CONFUSE",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 55,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SONICBOOM",
+      "effect": "EFFECT_STATIC_DAMAGE",
+      "power": 20,
+      "type": "NORMAL",
+      "accuracy": 90,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_DISABLE",
+      "effect": "EFFECT_DISABLE",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 55,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ACID",
+      "effect": "EFFECT_DEFENSE_DOWN_HIT",
+      "power": 40,
+      "type": "POISON",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_EMBER",
+      "effect": "EFFECT_BURN_HIT",
+      "power": 40,
+      "type": "FIRE",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_FLAMETHROWER",
+      "effect": "EFFECT_BURN_HIT",
+      "power": 95,
+      "type": "FIRE",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_MIST",
+      "effect": "EFFECT_MIST",
+      "power": 0,
+      "type": "ICE",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_WATER_GUN",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 40,
+      "type": "WATER",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_HYDRO_PUMP",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 120,
+      "type": "WATER",
+      "accuracy": 80,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SURF",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 95,
+      "type": "WATER",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_ICE_BEAM",
+      "effect": "EFFECT_FREEZE_HIT",
+      "power": 95,
+      "type": "ICE",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_BLIZZARD",
+      "effect": "EFFECT_FREEZE_HIT",
+      "power": 120,
+      "type": "ICE",
+      "accuracy": 70,
+      "pp": 5,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_PSYBEAM",
+      "effect": "EFFECT_CONFUSE_HIT",
+      "power": 65,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_BUBBLEBEAM",
+      "effect": "EFFECT_SPEED_DOWN_HIT",
+      "power": 65,
+      "type": "WATER",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_AURORA_BEAM",
+      "effect": "EFFECT_ATTACK_DOWN_HIT",
+      "power": 65,
+      "type": "ICE",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_HYPER_BEAM",
+      "effect": "EFFECT_HYPER_BEAM",
+      "power": 150,
+      "type": "NORMAL",
+      "accuracy": 90,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_PECK",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 35,
+      "type": "FLYING",
+      "accuracy": 100,
+      "pp": 35,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_DRILL_PECK",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 80,
+      "type": "FLYING",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SUBMISSION",
+      "effect": "EFFECT_RECOIL_HIT",
+      "power": 80,
+      "type": "FIGHTING",
+      "accuracy": 80,
+      "pp": 25,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_LOW_KICK",
+      "effect": "EFFECT_FLINCH_HIT",
+      "power": 50,
+      "type": "FIGHTING",
+      "accuracy": 90,
+      "pp": 20,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_COUNTER",
+      "effect": "EFFECT_COUNTER",
+      "power": 1,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SEISMIC_TOSS",
+      "effect": "EFFECT_LEVEL_DAMAGE",
+      "power": 1,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_STRENGTH",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 80,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_ABSORB",
+      "effect": "EFFECT_LEECH_HIT",
+      "power": 20,
+      "type": "GRASS",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_MEGA_DRAIN",
+      "effect": "EFFECT_LEECH_HIT",
+      "power": 40,
+      "type": "GRASS",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_LEECH_SEED",
+      "effect": "EFFECT_LEECH_SEED",
+      "power": 0,
+      "type": "GRASS",
+      "accuracy": 90,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_GROWTH",
+      "effect": "EFFECT_SP_ATK_UP",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_RAZOR_LEAF",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 55,
+      "type": "GRASS",
+      "accuracy": 95,
+      "pp": 25,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SOLARBEAM",
+      "effect": "EFFECT_SOLARBEAM",
+      "power": 120,
+      "type": "GRASS",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_POISONPOWDER",
+      "effect": "EFFECT_POISON",
+      "power": 0,
+      "type": "POISON",
+      "accuracy": 75,
+      "pp": 35,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_STUN_SPORE",
+      "effect": "EFFECT_PARALYZE",
+      "power": 0,
+      "type": "GRASS",
+      "accuracy": 75,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SLEEP_POWDER",
+      "effect": "EFFECT_SLEEP",
+      "power": 0,
+      "type": "GRASS",
+      "accuracy": 75,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_PETAL_DANCE",
+      "effect": "EFFECT_RAMPAGE",
+      "power": 70,
+      "type": "GRASS",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_STRING_SHOT",
+      "effect": "EFFECT_SPEED_DOWN",
+      "power": 0,
+      "type": "BUG",
+      "accuracy": 95,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_DRAGON_RAGE",
+      "effect": "EFFECT_STATIC_DAMAGE",
+      "power": 40,
+      "type": "DRAGON",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_FIRE_SPIN",
+      "effect": "EFFECT_TRAP_TARGET",
+      "power": 15,
+      "type": "FIRE",
+      "accuracy": 70,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_THUNDERSHOCK",
+      "effect": "EFFECT_PARALYZE_HIT",
+      "power": 40,
+      "type": "ELECTRIC",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_THUNDERBOLT",
+      "effect": "EFFECT_PARALYZE_HIT",
+      "power": 95,
+      "type": "ELECTRIC",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_THUNDER_WAVE",
+      "effect": "EFFECT_PARALYZE",
+      "power": 0,
+      "type": "ELECTRIC",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_THUNDER",
+      "effect": "EFFECT_THUNDER",
+      "power": 120,
+      "type": "ELECTRIC",
+      "accuracy": 70,
+      "pp": 10,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_ROCK_THROW",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 50,
+      "type": "ROCK",
+      "accuracy": 90,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_EARTHQUAKE",
+      "effect": "EFFECT_EARTHQUAKE",
+      "power": 100,
+      "type": "GROUND",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_FISSURE",
+      "effect": "EFFECT_OHKO",
+      "power": 1,
+      "type": "GROUND",
+      "accuracy": 30,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_DIG",
+      "effect": "EFFECT_FLY",
+      "power": 60,
+      "type": "GROUND",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_TOXIC",
+      "effect": "EFFECT_TOXIC",
+      "power": 0,
+      "type": "POISON",
+      "accuracy": 85,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_CONFUSION",
+      "effect": "EFFECT_CONFUSE_HIT",
+      "power": 50,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_PSYCHIC_M",
+      "effect": "EFFECT_SP_DEF_DOWN_HIT",
+      "power": 90,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_HYPNOSIS",
+      "effect": "EFFECT_SLEEP",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 60,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_MEDITATE",
+      "effect": "EFFECT_ATTACK_UP",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_AGILITY",
+      "effect": "EFFECT_SPEED_UP_2",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_QUICK_ATTACK",
+      "effect": "EFFECT_PRIORITY_HIT",
+      "power": 40,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_RAGE",
+      "effect": "EFFECT_RAGE",
+      "power": 20,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_TELEPORT",
+      "effect": "EFFECT_TELEPORT",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_NIGHT_SHADE",
+      "effect": "EFFECT_LEVEL_DAMAGE",
+      "power": 1,
+      "type": "GHOST",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_MIMIC",
+      "effect": "EFFECT_MIMIC",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SCREECH",
+      "effect": "EFFECT_DEFENSE_DOWN_2",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 85,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_DOUBLE_TEAM",
+      "effect": "EFFECT_EVASION_UP",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_RECOVER",
+      "effect": "EFFECT_HEAL",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_HARDEN",
+      "effect": "EFFECT_DEFENSE_UP",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_MINIMIZE",
+      "effect": "EFFECT_EVASION_UP",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SMOKESCREEN",
+      "effect": "EFFECT_ACCURACY_DOWN",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_CONFUSE_RAY",
+      "effect": "EFFECT_CONFUSE",
+      "power": 0,
+      "type": "GHOST",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_WITHDRAW",
+      "effect": "EFFECT_DEFENSE_UP",
+      "power": 0,
+      "type": "WATER",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_DEFENSE_CURL",
+      "effect": "EFFECT_DEFENSE_CURL",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_BARRIER",
+      "effect": "EFFECT_DEFENSE_UP_2",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_LIGHT_SCREEN",
+      "effect": "EFFECT_LIGHT_SCREEN",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_HAZE",
+      "effect": "EFFECT_RESET_STATS",
+      "power": 0,
+      "type": "ICE",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_REFLECT",
+      "effect": "EFFECT_REFLECT",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_FOCUS_ENERGY",
+      "effect": "EFFECT_FOCUS_ENERGY",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_BIDE",
+      "effect": "EFFECT_BIDE",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_METRONOME",
+      "effect": "EFFECT_METRONOME",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_MIRROR_MOVE",
+      "effect": "EFFECT_MIRROR_MOVE",
+      "power": 0,
+      "type": "FLYING",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SELFDESTRUCT",
+      "effect": "EFFECT_SELFDESTRUCT",
+      "power": 200,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_EGG_BOMB",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 100,
+      "type": "NORMAL",
+      "accuracy": 75,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_LICK",
+      "effect": "EFFECT_PARALYZE_HIT",
+      "power": 20,
+      "type": "GHOST",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SMOG",
+      "effect": "EFFECT_POISON_HIT",
+      "power": 20,
+      "type": "POISON",
+      "accuracy": 70,
+      "pp": 20,
+      "secondaryEffectChance": 40,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SLUDGE",
+      "effect": "EFFECT_POISON_HIT",
+      "power": 65,
+      "type": "POISON",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_BONE_CLUB",
+      "effect": "EFFECT_FLINCH_HIT",
+      "power": 65,
+      "type": "GROUND",
+      "accuracy": 85,
+      "pp": 20,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_FIRE_BLAST",
+      "effect": "EFFECT_BURN_HIT",
+      "power": 120,
+      "type": "FIRE",
+      "accuracy": 85,
+      "pp": 5,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_WATERFALL",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 80,
+      "type": "WATER",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_CLAMP",
+      "effect": "EFFECT_TRAP_TARGET",
+      "power": 35,
+      "type": "WATER",
+      "accuracy": 75,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SWIFT",
+      "effect": "EFFECT_ALWAYS_HIT",
+      "power": 60,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SKULL_BASH",
+      "effect": "EFFECT_SKULL_BASH",
+      "power": 100,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SPIKE_CANNON",
+      "effect": "EFFECT_MULTI_HIT",
+      "power": 20,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_CONSTRICT",
+      "effect": "EFFECT_SPEED_DOWN_HIT",
+      "power": 10,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 35,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_AMNESIA",
+      "effect": "EFFECT_SP_DEF_UP_2",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_KINESIS",
+      "effect": "EFFECT_ACCURACY_DOWN",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 80,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SOFTBOILED",
+      "effect": "EFFECT_HEAL",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_HI_JUMP_KICK",
+      "effect": "EFFECT_JUMP_KICK",
+      "power": 85,
+      "type": "FIGHTING",
+      "accuracy": 90,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_GLARE",
+      "effect": "EFFECT_PARALYZE",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 75,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_DREAM_EATER",
+      "effect": "EFFECT_DREAM_EATER",
+      "power": 100,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_POISON_GAS",
+      "effect": "EFFECT_POISON",
+      "power": 0,
+      "type": "POISON",
+      "accuracy": 55,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_BARRAGE",
+      "effect": "EFFECT_MULTI_HIT",
+      "power": 15,
+      "type": "NORMAL",
+      "accuracy": 85,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_LEECH_LIFE",
+      "effect": "EFFECT_LEECH_HIT",
+      "power": 20,
+      "type": "BUG",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_LOVELY_KISS",
+      "effect": "EFFECT_SLEEP",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 75,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SKY_ATTACK",
+      "effect": "EFFECT_SKY_ATTACK",
+      "power": 140,
+      "type": "FLYING",
+      "accuracy": 90,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_TRANSFORM",
+      "effect": "EFFECT_TRANSFORM",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_BUBBLE",
+      "effect": "EFFECT_SPEED_DOWN_HIT",
+      "power": 20,
+      "type": "WATER",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_DIZZY_PUNCH",
+      "effect": "EFFECT_CONFUSE_HIT",
+      "power": 70,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 20,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SPORE",
+      "effect": "EFFECT_SLEEP",
+      "power": 0,
+      "type": "GRASS",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_FLASH",
+      "effect": "EFFECT_ACCURACY_DOWN",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 70,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_PSYWAVE",
+      "effect": "EFFECT_PSYWAVE",
+      "power": 1,
+      "type": "PSYCHIC",
+      "accuracy": 80,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SPLASH",
+      "effect": "EFFECT_SPLASH",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ACID_ARMOR",
+      "effect": "EFFECT_DEFENSE_UP_2",
+      "power": 0,
+      "type": "POISON",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_CRABHAMMER",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 90,
+      "type": "WATER",
+      "accuracy": 85,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_EXPLOSION",
+      "effect": "EFFECT_SELFDESTRUCT",
+      "power": 250,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_FURY_SWIPES",
+      "effect": "EFFECT_MULTI_HIT",
+      "power": 18,
+      "type": "NORMAL",
+      "accuracy": 80,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_BONEMERANG",
+      "effect": "EFFECT_DOUBLE_HIT",
+      "power": 50,
+      "type": "GROUND",
+      "accuracy": 90,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_REST",
+      "effect": "EFFECT_HEAL",
+      "power": 0,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ROCK_SLIDE",
+      "effect": "EFFECT_FLINCH_HIT",
+      "power": 75,
+      "type": "ROCK",
+      "accuracy": 90,
+      "pp": 10,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_HYPER_FANG",
+      "effect": "EFFECT_FLINCH_HIT",
+      "power": 80,
+      "type": "NORMAL",
+      "accuracy": 90,
+      "pp": 15,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SHARPEN",
+      "effect": "EFFECT_ATTACK_UP",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_CONVERSION",
+      "effect": "EFFECT_CONVERSION",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_TRI_ATTACK",
+      "effect": "EFFECT_TRI_ATTACK",
+      "power": 80,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 20,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SUPER_FANG",
+      "effect": "EFFECT_SUPER_FANG",
+      "power": 1,
+      "type": "NORMAL",
+      "accuracy": 90,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SLASH",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 70,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SUBSTITUTE",
+      "effect": "EFFECT_SUBSTITUTE",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_STRUGGLE",
+      "effect": "EFFECT_RECOIL_HIT",
+      "power": 50,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 1,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SKETCH",
+      "effect": "EFFECT_SKETCH",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 1,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_TRIPLE_KICK",
+      "effect": "EFFECT_TRIPLE_KICK",
+      "power": 10,
+      "type": "FIGHTING",
+      "accuracy": 90,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_THIEF",
+      "effect": "EFFECT_THIEF",
+      "power": 40,
+      "type": "DARK",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 100,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SPIDER_WEB",
+      "effect": "EFFECT_MEAN_LOOK",
+      "power": 0,
+      "type": "BUG",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_MIND_READER",
+      "effect": "EFFECT_LOCK_ON",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_NIGHTMARE",
+      "effect": "EFFECT_NIGHTMARE",
+      "power": 0,
+      "type": "GHOST",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_FLAME_WHEEL",
+      "effect": "EFFECT_FLAME_WHEEL",
+      "power": 60,
+      "type": "FIRE",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SNORE",
+      "effect": "EFFECT_SNORE",
+      "power": 40,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_CURSE",
+      "effect": "EFFECT_CURSE",
+      "power": 0,
+      "type": "CURSE",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_FLAIL",
+      "effect": "EFFECT_REVERSAL",
+      "power": 1,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_CONVERSION2",
+      "effect": "EFFECT_CONVERSION2",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_AEROBLAST",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 100,
+      "type": "FLYING",
+      "accuracy": 95,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_COTTON_SPORE",
+      "effect": "EFFECT_SPEED_DOWN_2",
+      "power": 0,
+      "type": "GRASS",
+      "accuracy": 85,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_REVERSAL",
+      "effect": "EFFECT_REVERSAL",
+      "power": 1,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SPITE",
+      "effect": "EFFECT_SPITE",
+      "power": 0,
+      "type": "GHOST",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_POWDER_SNOW",
+      "effect": "EFFECT_FREEZE_HIT",
+      "power": 40,
+      "type": "ICE",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_PROTECT",
+      "effect": "EFFECT_PROTECT",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_MACH_PUNCH",
+      "effect": "EFFECT_PRIORITY_HIT",
+      "power": 40,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SCARY_FACE",
+      "effect": "EFFECT_SPEED_DOWN_2",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 90,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_FAINT_ATTACK",
+      "effect": "EFFECT_ALWAYS_HIT",
+      "power": 60,
+      "type": "DARK",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SWEET_KISS",
+      "effect": "EFFECT_CONFUSE",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 75,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_BELLY_DRUM",
+      "effect": "EFFECT_BELLY_DRUM",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SLUDGE_BOMB",
+      "effect": "EFFECT_POISON_HIT",
+      "power": 90,
+      "type": "POISON",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_MUD_SLAP",
+      "effect": "EFFECT_ACCURACY_DOWN_HIT",
+      "power": 20,
+      "type": "GROUND",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 100,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_OCTAZOOKA",
+      "effect": "EFFECT_ACCURACY_DOWN_HIT",
+      "power": 65,
+      "type": "WATER",
+      "accuracy": 85,
+      "pp": 10,
+      "secondaryEffectChance": 50,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SPIKES",
+      "effect": "EFFECT_SPIKES",
+      "power": 0,
+      "type": "GROUND",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ZAP_CANNON",
+      "effect": "EFFECT_PARALYZE_HIT",
+      "power": 100,
+      "type": "ELECTRIC",
+      "accuracy": 50,
+      "pp": 5,
+      "secondaryEffectChance": 100,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_FORESIGHT",
+      "effect": "EFFECT_FORESIGHT",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_DESTINY_BOND",
+      "effect": "EFFECT_DESTINY_BOND",
+      "power": 0,
+      "type": "GHOST",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_PERISH_SONG",
+      "effect": "EFFECT_PERISH_SONG",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ICY_WIND",
+      "effect": "EFFECT_SPEED_DOWN_HIT",
+      "power": 55,
+      "type": "ICE",
+      "accuracy": 95,
+      "pp": 15,
+      "secondaryEffectChance": 100,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_DETECT",
+      "effect": "EFFECT_PROTECT",
+      "power": 0,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_BONE_RUSH",
+      "effect": "EFFECT_MULTI_HIT",
+      "power": 25,
+      "type": "GROUND",
+      "accuracy": 80,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_LOCK_ON",
+      "effect": "EFFECT_LOCK_ON",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_OUTRAGE",
+      "effect": "EFFECT_RAMPAGE",
+      "power": 90,
+      "type": "DRAGON",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_SANDSTORM",
+      "effect": "EFFECT_SANDSTORM",
+      "power": 0,
+      "type": "ROCK",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_GIGA_DRAIN",
+      "effect": "EFFECT_LEECH_HIT",
+      "power": 60,
+      "type": "GRASS",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_ENDURE",
+      "effect": "EFFECT_ENDURE",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_CHARM",
+      "effect": "EFFECT_ATTACK_DOWN_2",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ROLLOUT",
+      "effect": "EFFECT_ROLLOUT",
+      "power": 30,
+      "type": "ROCK",
+      "accuracy": 90,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_FALSE_SWIPE",
+      "effect": "EFFECT_FALSE_SWIPE",
+      "power": 40,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SWAGGER",
+      "effect": "EFFECT_SWAGGER",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 90,
+      "pp": 15,
+      "secondaryEffectChance": 100,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_MILK_DRINK",
+      "effect": "EFFECT_HEAL",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SPARK",
+      "effect": "EFFECT_PARALYZE_HIT",
+      "power": 65,
+      "type": "ELECTRIC",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_FURY_CUTTER",
+      "effect": "EFFECT_FURY_CUTTER",
+      "power": 10,
+      "type": "BUG",
+      "accuracy": 95,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_STEEL_WING",
+      "effect": "EFFECT_DEFENSE_UP_HIT",
+      "power": 70,
+      "type": "STEEL",
+      "accuracy": 90,
+      "pp": 25,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_MEAN_LOOK",
+      "effect": "EFFECT_MEAN_LOOK",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ATTRACT",
+      "effect": "EFFECT_ATTRACT",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SLEEP_TALK",
+      "effect": "EFFECT_SLEEP_TALK",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_HEAL_BELL",
+      "effect": "EFFECT_HEAL_BELL",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_RETURN",
+      "effect": "EFFECT_RETURN",
+      "power": 1,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_PRESENT",
+      "effect": "EFFECT_PRESENT",
+      "power": 1,
+      "type": "NORMAL",
+      "accuracy": 90,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_FRUSTRATION",
+      "effect": "EFFECT_FRUSTRATION",
+      "power": 1,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SAFEGUARD",
+      "effect": "EFFECT_SAFEGUARD",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 25,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_PAIN_SPLIT",
+      "effect": "EFFECT_PAIN_SPLIT",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SACRED_FIRE",
+      "effect": "EFFECT_SACRED_FIRE",
+      "power": 100,
+      "type": "FIRE",
+      "accuracy": 95,
+      "pp": 5,
+      "secondaryEffectChance": 50,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_MAGNITUDE",
+      "effect": "EFFECT_MAGNITUDE",
+      "power": 1,
+      "type": "GROUND",
+      "accuracy": 100,
+      "pp": 30,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_DYNAMICPUNCH",
+      "effect": "EFFECT_CONFUSE_HIT",
+      "power": 100,
+      "type": "FIGHTING",
+      "accuracy": 50,
+      "pp": 5,
+      "secondaryEffectChance": 100,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_MEGAHORN",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 120,
+      "type": "BUG",
+      "accuracy": 85,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_DRAGONBREATH",
+      "effect": "EFFECT_PARALYZE_HIT",
+      "power": 60,
+      "type": "DRAGON",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_BATON_PASS",
+      "effect": "EFFECT_BATON_PASS",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_ENCORE",
+      "effect": "EFFECT_ENCORE",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_PURSUIT",
+      "effect": "EFFECT_PURSUIT",
+      "power": 40,
+      "type": "DARK",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_RAPID_SPIN",
+      "effect": "EFFECT_RAPID_SPIN",
+      "power": 20,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 40,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SWEET_SCENT",
+      "effect": "EFFECT_EVASION_DOWN",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_IRON_TAIL",
+      "effect": "EFFECT_DEFENSE_DOWN_HIT",
+      "power": 100,
+      "type": "STEEL",
+      "accuracy": 75,
+      "pp": 15,
+      "secondaryEffectChance": 30,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_METAL_CLAW",
+      "effect": "EFFECT_ATTACK_UP_HIT",
+      "power": 50,
+      "type": "STEEL",
+      "accuracy": 95,
+      "pp": 35,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_VITAL_THROW",
+      "effect": "EFFECT_ALWAYS_HIT",
+      "power": 70,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_MORNING_SUN",
+      "effect": "EFFECT_MORNING_SUN",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SYNTHESIS",
+      "effect": "EFFECT_SYNTHESIS",
+      "power": 0,
+      "type": "GRASS",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_MOONLIGHT",
+      "effect": "EFFECT_MOONLIGHT",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_HIDDEN_POWER",
+      "effect": "EFFECT_HIDDEN_POWER",
+      "power": 1,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_CROSS_CHOP",
+      "effect": "EFFECT_NORMAL_HIT",
+      "power": 100,
+      "type": "FIGHTING",
+      "accuracy": 80,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_TWISTER",
+      "effect": "EFFECT_TWISTER",
+      "power": 40,
+      "type": "DRAGON",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 20,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_RAIN_DANCE",
+      "effect": "EFFECT_RAIN_DANCE",
+      "power": 0,
+      "type": "WATER",
+      "accuracy": 90,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_SUNNY_DAY",
+      "effect": "EFFECT_SUNNY_DAY",
+      "power": 0,
+      "type": "FIRE",
+      "accuracy": 90,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_CRUNCH",
+      "effect": "EFFECT_SP_DEF_DOWN_HIT",
+      "power": 80,
+      "type": "DARK",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 20,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_MIRROR_COAT",
+      "effect": "EFFECT_MIRROR_COAT",
+      "power": 1,
+      "type": "PSYCHIC",
+      "accuracy": 100,
+      "pp": 20,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_PSYCH_UP",
+      "effect": "EFFECT_PSYCH_UP",
+      "power": 0,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Status"
+    },
+    {
+      "sourceConstant": "MOVE_EXTREMESPEED",
+      "effect": "EFFECT_PRIORITY_HIT",
+      "power": 80,
+      "type": "NORMAL",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_ANCIENTPOWER",
+      "effect": "EFFECT_ALL_UP_HIT",
+      "power": 60,
+      "type": "ROCK",
+      "accuracy": 100,
+      "pp": 5,
+      "secondaryEffectChance": 10,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_SHADOW_BALL",
+      "effect": "EFFECT_SP_DEF_DOWN_HIT",
+      "power": 80,
+      "type": "GHOST",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 20,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_FUTURE_SIGHT",
+      "effect": "EFFECT_FUTURE_SIGHT",
+      "power": 80,
+      "type": "PSYCHIC",
+      "accuracy": 90,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_ROCK_SMASH",
+      "effect": "EFFECT_DEFENSE_DOWN_HIT",
+      "power": 20,
+      "type": "FIGHTING",
+      "accuracy": 100,
+      "pp": 15,
+      "secondaryEffectChance": 50,
+      "derivedCategory": "Physical"
+    },
+    {
+      "sourceConstant": "MOVE_WHIRLPOOL",
+      "effect": "EFFECT_TRAP_TARGET",
+      "power": 15,
+      "type": "WATER",
+      "accuracy": 70,
+      "pp": 15,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    },
+    {
+      "sourceConstant": "MOVE_BEAT_UP",
+      "effect": "EFFECT_BEAT_UP",
+      "power": 10,
+      "type": "DARK",
+      "accuracy": 100,
+      "pp": 10,
+      "secondaryEffectChance": 0,
+      "derivedCategory": "Special"
+    }
+  ]
+}
