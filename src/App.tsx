@@ -7,6 +7,7 @@ import BattleView from './components/views/BattleView';
 import RosterView from './components/views/RosterView';
 import ShopView from './components/views/ShopView';
 import PcView from './components/views/PcView';
+import BagView from './components/views/BagView';
 import GardenView from './components/views/GardenView';
 import RingCaptureView from './components/views/RingCaptureView';
 import ArenaBattleView from './components/views/ArenaBattleView';
@@ -15,7 +16,7 @@ import CheatConsoleView from './components/views/CheatConsoleView';
 import IntroSequence from './components/IntroSequence';
 import MochiiMindUI from './components/MochiiMindUI';
 
-export type ViewState = 'STARTER_SELECT' | 'WORLD' | 'BATTLE' | 'ROSTER' | 'SHOP' | 'PC' | 'GARDEN' | 'RING' | 'ARENA' | 'CREATURE' | 'CHEATS';
+export type ViewState = 'STARTER_SELECT' | 'WORLD' | 'BATTLE' | 'ROSTER' | 'SHOP' | 'BAG' | 'PC' | 'GARDEN' | 'RING' | 'ARENA' | 'CREATURE' | 'CHEATS';
 
 export default function App() {
   const introCompleted = useGameStore(s => s.introCompleted);
@@ -39,6 +40,7 @@ export default function App() {
       {view === 'BATTLE' && <BattleView enemyId={battleEnemyId} onLeave={() => setView('WORLD')} />}
       {view === 'ROSTER' && <RosterView onBack={() => setView('WORLD')} />}
       {view === 'SHOP' && <ShopView onBack={() => setView('WORLD')} />}
+      {view === 'BAG' && <BagView onBack={() => setView('WORLD')} />}
       {view === 'PC' && <PcView onBack={() => setView('WORLD')} />}
       {view === 'GARDEN' && <GardenView onBack={() => setView('WORLD')} />}
       {view === 'RING' && <RingCaptureView onBack={() => setView('WORLD')} />}

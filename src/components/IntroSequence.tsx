@@ -16,6 +16,10 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   const [showPrompt, setShowPrompt] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
+  // v3 main menu: window selection, overwrite confirm, settings note.
+  const [mainSelected, setMainSelected] = useState(0);
+  const [showOverwriteConfirm, setShowOverwriteConfirm] = useState(false);
+  const [showSettingsNote, setShowSettingsNote] = useState(false);
 
   // Name Entry state
   const [tempName, setTempName] = useState("");
@@ -35,6 +39,36 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       setSlots(getSlotSummaries());
     }
   }, [phase]);
+
+  // v3 main menu controls: up/down + confirm, B/back to title. Tap /
+  // click on a window works as well (see the MAIN_MENU render).
+  useEffect(() => {
+    if (phase !== "MAIN_MENU") return;
+    const hasSaves = slots.some(s => s !== null);
+    const itemCount = hasSaves ? 3 : 2;
+    const handler = (e: KeyboardEvent) => {
+      if (showOverwriteConfirm || showSettingsNote) {
+        if (e.key === 'Escape' || e.key.toLowerCase() === 'b') {
+          setShowOverwriteConfirm(false);
+          setShowSettingsNote(false);
+        }
+        return;
+      }
+      if (e.key === 'ArrowUp') { e.preventDefault(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); setMainSelected(s => (s + 1) % itemCount); }
+      else if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const keys = hasSaves ? ['CONTINUE', 'NEW GAME', 'SETTINGS'] : ['NEW GAME', 'SETTINGS'];
+        const key = keys[Math.min(mainSelected, keys.length - 1)];
+        if (key === 'CONTINUE') setPhase("SAVE_SLOTS");
+        else if (key === 'NEW GAME') { if (hasSaves) setShowOverwriteConfirm(true); else setPhase("SAVE_SLOTS"); }
+        else if (key === 'SETTINGS') setShowSettingsNote(true);
+      }
+      else if (e.key === 'Escape' || e.key.toLowerCase() === 'b') setPhase("TITLE");
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [phase, mainSelected, slots, showOverwriteConfirm, showSettingsNote]);
 
   const handleAnyKey = () => {
     if (phase === "CINEMATIC") setPhase("TITLE");
@@ -99,31 +133,147 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   if (phase === "MAIN_MENU") {
     const hasSaves = slots.some(s => s !== null);
+    // CONTINUE stats, v3: ONLY stats the save actually holds. The
+    // latest save across slots 1-3 is read from saveSystem; its data
+    // is the full serialized game state. Player name, caught count
+    // (dex 'caught'), team size (party + PC), dojos cleared (badges,
+    // the same mapping getSlotSummaries already uses), CR balance
+    // (wallet), and map are all in that data. Play time is NOT in
+    // saveSystem or the store, so it is OMITTED — no fake time is
+    // invented. No total-roster denominator is shown either: the
+    // save holds a dex map, not a total, and species.ts (12 entries)
+    // is not the 47-creature canon roster, so a "/47" or "/12" would
+    // be a made-up denominator.
+    const latestSave = [1, 2, 3]
+      .flatMap(slotId => getSaves(slotId))
+      .sort((a, b) => b.timestamp - a.timestamp)[0];
+    const latestData: any = latestSave?.data || null;
+    const caughtCount = latestData?.dex
+      ? Object.values(latestData.dex).filter((v: unknown) => v === 'caught').length
+      : 0;
+    const teamCount = latestData ? (latestData.party?.length || 0) + (latestData.pc?.length || 0) : 0;
+    const dojosCleared = latestData?.badges?.length || 0;
+    const crBalance = latestData?.wallet ?? null;
+
+    // Main menu windows, v3 (main_menu.c, structure only): SEPARATE
+    // framed windows, one per item, over the title background — not
+    // one list panel, not blank navy, not a Pillow image. CONTINUE is
+    // tall (stats inside), NEW GAME short below it, SETTINGS below
+    // that. Selected window = gold/teal highlighted frame, unselected
+    // = standard framed panel. No Mystery Gift equivalent, no version
+    // footer, no fake patch number.
+    const mainItems = [
+      ...(hasSaves ? [{ key: 'CONTINUE', tall: true }] : []),
+      { key: 'NEW GAME', tall: false },
+      { key: 'SETTINGS', tall: false },
+    ];
+    const safeMain = Math.min(mainSelected, mainItems.length - 1);
+
+    const activateMain = (key: string) => {
+      if (key === 'CONTINUE' && hasSaves) setPhase("SAVE_SLOTS");
+      else if (key === 'NEW GAME') {
+        // Overwrite confirm BEFORE starting over, when a save exists.
+        // No save is erased here: the existing flow goes to SAVE_SLOTS,
+        // and a save is only replaced when the player later saves over
+        // a slot in-game (SaveMenu). No second save system was built.
+        if (hasSaves) setShowOverwriteConfirm(true);
+        else setPhase("SAVE_SLOTS");
+      } else if (key === 'SETTINGS') {
+        // Honest limit: there is no settings screen in this build
+        // (the old button was disabled "COMING SOON"). The window is
+        // present per the spec order, but it changes no setting and
+        // invents no settings system.
+        setShowSettingsNote(true);
+      }
+    };
 
     return (
-      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center">
-        <UiPanel slot={UI_ART.main_menu_panel} className="p-8 flex flex-col gap-6">
-          <div className="text-teal-300 font-bold tracking-widest text-center text-lg mb-4">✦ MOCHIICHAO DIAMOND ✦</div>
-          
-          <button 
-             onClick={() => hasSaves && setPhase("SAVE_SLOTS")} 
-             disabled={!hasSaves}
-             className={`text-left text-xl font-bold tracking-widest flex items-center group transition-colors ${hasSaves ? 'text-white hover:text-yellow-400' : 'text-gray-600 cursor-not-allowed'}`}
-          >
-            <span className="w-8 opacity-0 group-hover:opacity-100 transition-opacity">►</span> CONTINUE
-          </button>
-          
-          <button 
-             onClick={() => setPhase("SAVE_SLOTS")}
-             className="text-left text-xl font-bold tracking-widest flex items-center group transition-colors text-white hover:text-yellow-400"
-          >
-            <span className="w-8 opacity-0 group-hover:opacity-100 transition-opacity">►</span> NEW GAME
-          </button>
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
+        {/* Title background, as on the TITLE phase: gradient + game
+            world behind, never blank navy, never a bare panel. */}
+        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
 
-          <button className="text-left text-xl font-bold tracking-widest flex items-center group transition-colors text-gray-500 cursor-not-allowed" disabled>
-            <span className="w-8 opacity-0">►</span> SETTINGS <span className="text-xs text-gray-600 ml-2">COMING SOON</span>
+        <div className="relative z-10 w-full max-w-md flex flex-col gap-4" role="menu" aria-label="Main menu">
+          <div className="text-center">
+            <div className="text-white text-2xl font-black tracking-widest drop-shadow-md">MOCHIICHAO</div>
+            <div className="text-teal-300 text-sm font-bold tracking-[0.4em] mt-1">✦ DIAMOND VERSION ✦</div>
+          </div>
+
+          {mainItems.map((item, i) => {
+            const isSelected = i === safeMain;
+            const frame = isSelected ? 'ring-2 ring-yellow-300 border-teal-300' : '';
+            if (item.key === 'CONTINUE') {
+              return (
+                <UiPanel key={item.key} slot={UI_ART.main_menu_panel} className={`p-5 min-h-[48px] ${frame}`}>
+                  <button
+                    onClick={() => activateMain('CONTINUE')}
+                    onMouseEnter={() => setMainSelected(i)}
+                    onFocus={() => setMainSelected(i)}
+                    className="w-full text-left"
+                  >
+                    <div className="text-xl font-bold tracking-widest text-white">{isSelected ? '► ' : ''}CONTINUE</div>
+                    {latestData && (
+                      <div className="text-sm text-slate-300 mt-2 leading-relaxed">
+                        <div>Player: <span className="text-yellow-300 font-bold">{latestData.playerName || 'Netrunner'}</span></div>
+                        <div>Caught: {caughtCount} · Team: {teamCount}</div>
+                        <div>Dojos cleared: {dojosCleared} · CR: {crBalance ?? '—'}</div>
+                        <div>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
+                        <div className="text-xs text-slate-400 mt-1">Play time is not tracked by this save, so none is shown.</div>
+                      </div>
+                    )}
+                  </button>
+                </UiPanel>
+              );
+            }
+            return (
+              <UiPanel key={item.key} slot={UI_ART.main_menu_panel} className={`p-4 min-h-[48px] ${frame}`}>
+                <button
+                  onClick={() => activateMain(item.key)}
+                  onMouseEnter={() => setMainSelected(i)}
+                  onFocus={() => setMainSelected(i)}
+                  className="w-full text-left text-xl font-bold tracking-widest text-white"
+                >
+                  {isSelected ? '► ' : ''}{item.key}
+                  {item.key === 'SETTINGS' && <span className="text-xs text-slate-400 ml-2 tracking-normal">No settings screen in this build yet</span>}
+                </button>
+              </UiPanel>
+            );
+          })}
+
+          <button
+            onClick={() => setPhase("TITLE")}
+            className="game-button px-4 py-3 text-sm font-bold min-h-[48px] self-start"
+          >
+            ◄ BACK TO TITLE (B)
           </button>
-        </UiPanel>
+          <div className="game-panel px-3 py-2 text-sm text-slate-200">
+            {safeMain === 0 && hasSaves ? 'Continue your saved adventure.' : safeMain === 0 ? 'Start a new adventure.' : mainItems[safeMain]?.key === 'NEW GAME' ? 'Start a new adventure. Existing saves are kept until you save over a slot.' : 'Settings are not in this build yet — nothing will change.'}
+          </div>
+        </div>
+
+        {showOverwriteConfirm && (
+          <div className="absolute inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+            <div className="game-panel p-6 w-full max-w-sm">
+              <div className="text-white font-bold text-lg mb-2">Start a new game?</div>
+              <p className="text-sm text-slate-400 mb-4">You already have a save. Starting over will not erase it here — it is only replaced if you later save over a slot. Continue to save slots?</p>
+              <div className="flex gap-2">
+                <button onClick={() => { setShowOverwriteConfirm(false); setPhase("SAVE_SLOTS"); }} className="game-button px-4 py-2 font-bold min-h-[48px] flex-1">Yes, continue</button>
+                <button onClick={() => setShowOverwriteConfirm(false)} className="game-button px-4 py-2 font-bold min-h-[48px] flex-1">No, go back</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {showSettingsNote && (
+          <div className="absolute inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+            <div className="game-panel p-6 w-full max-w-sm">
+              <div className="text-white font-bold text-lg mb-2">Settings</div>
+              <p className="text-sm text-slate-400 mb-4">There is no settings screen in this build yet, so no setting was changed.</p>
+              <button onClick={() => setShowSettingsNote(false)} className="game-button px-4 py-2 font-bold min-h-[48px] w-full">Back to main menu</button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

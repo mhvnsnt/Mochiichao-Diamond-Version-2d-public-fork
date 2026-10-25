@@ -3,6 +3,7 @@ import { useGameStore } from '../../store/gameStore';
 import PixiWorldCanvas from '../game/PixiWorldCanvas';
 import { FULL_WORLD } from '../../world/FullWorldMaps';
 import { MOVES_DB } from '../../lib/moves';
+import { GuardianAssignment, guardianLabel } from '../../lib/monster-tamer-systems';
 
 /**
  * Creature Mode — play as the creature, real-time, top-down (pass 1).
@@ -23,6 +24,13 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [log, setLog] = useState('Creature Mode — move with WASD / arrows, moves 1–4, Space to dodge, Tab to switch.');
   const [cooldown, setCooldown] = useState(false);
+  // Guardian Training + Data Tape Transform (monster-tamer spec
+  // step 5 / step 1): Guardian = a creature assigned to defend a
+  // Garden (local state, same Creature Mode path, no bullet-heaven
+  // code, movement stays Mochiichao's). Data Tape Transform = play
+  // as a recorded creature — the party list below IS the tape list,
+  // picking one switches the same Creature Mode path to that creature.
+  const [guardian, setGuardian] = useState<GuardianAssignment | null>(null);
 
   const active = party[activeIdx];
   const mapData = FULL_WORLD['sector0'];
@@ -116,6 +124,33 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
         <div className="flex gap-2 mt-2">
           <button onClick={() => { setDodging(true); setTimeout(() => setDodging(false), 500); }} className="game-button px-3 py-1.5 text-sm flex-1">Dodge (Space)</button>
           <button onClick={() => { if (party.length > 1) setActiveIdx(i => (i + 1) % party.length); }} className="game-button px-3 py-1.5 text-sm flex-1">Tag-Switch (Tab)</button>
+        </div>
+        <div className="mt-3">
+          <div className="text-white font-bold text-sm mb-1">Data Tape Transform — play as a recorded creature</div>
+          <div className="flex flex-wrap gap-2">
+            {party.map((p, i) => (
+              <button key={p.id} onClick={() => { setActiveIdx(i); setLog(`Data Tape Transform: playing as ${p.nickname} (recorded creature).`); }} className={`game-button px-3 py-1.5 text-sm ${i === activeIdx ? 'ring-2 ring-yellow-300' : ''}`}>
+                Tape: {p.nickname}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="mt-3">
+          <div className="text-white font-bold text-sm mb-1">Guardian Training</div>
+          {guardian ? (
+            <div className="text-sm text-slate-200">{guardianLabel(guardian)} — defending the Garden in Creature Mode training.</div>
+          ) : (
+            <div className="text-xs text-slate-400">No Guardian assigned yet. Assign the creature you are playing as to defend a Garden.</div>
+          )}
+          <button
+            onClick={() => {
+              if (guardian) { setGuardian(null); setLog('Guardian released from Garden duty.'); }
+              else if (active) { setGuardian({ creatureId: active.id, nickname: active.nickname, garden: 'Mainframe Gardens' }); setLog(`${active.nickname} assigned as Guardian of the Mainframe Gardens!`); }
+            }}
+            className="game-button px-3 py-1.5 text-sm mt-2"
+          >
+            {guardian ? 'Release Guardian' : 'Assign as Garden Guardian'}
+          </button>
         </div>
         <div className="text-[11px] text-slate-400 mt-2">PLACEHOLDER structure: tile-step movement and a training dummy. Smooth real-time movement, wild-creature combat, and full damage rules are the next pass.</div>
       </div>

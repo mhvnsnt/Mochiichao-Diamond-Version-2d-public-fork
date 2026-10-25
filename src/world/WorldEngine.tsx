@@ -5,6 +5,8 @@ import { useGameStore } from "../store/gameStore";
 import PixiWorldCanvas from "../components/game/PixiWorldCanvas";
 import CreaturePortrait from "../components/game/CreaturePortrait";
 import { PauseMenu, WorldHud } from "../components/game/GameShell";
+import { UiPanel } from "../components/game/UiArt";
+import { UI_ART } from "../lib/uiArt";
 import { getDayPhase, DAY_TINT, DAY_AMBIENT, WEATHER_CONFIG } from "./WorldConstants";
 import SaveMenu from "../components/SaveMenu";
 import { saveGame, getSaves } from "../lib/saveSystem";
@@ -1006,10 +1008,17 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         />
       )}
 
+      {/* Dialogue box: bottom, full width (within safe margins), framed
+          with the PR #14 SVG dialogue-box panel, over the world canvas —
+          never floating on blank navy, never a title header. */}
       {screen === "dialog" && dialog && (
-        <div
-          className="absolute left-3 right-3 z-50 game-panel p-4 cursor-pointer"
-          style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+        <UiPanel
+          slot={UI_ART.battle_panel}
+          style={{
+            position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
+            padding: '16px', cursor: 'pointer',
+            bottom: 'max(1rem, env(safe-area-inset-bottom))',
+          }}
           onClick={advanceDialog}
         >
           {dialog.npc && (
@@ -1027,7 +1036,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
               <button onClick={(e) => { e.stopPropagation(); handleChoice(false); }} className="game-button px-6 py-2 font-bold">NO</button>
             </div>
           )}
-        </div>
+        </UiPanel>
       )}
 
       {/* MOBILE CONTROLS — D-pad bottom-left, fully on-screen */}

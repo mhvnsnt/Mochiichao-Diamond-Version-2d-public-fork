@@ -17,6 +17,17 @@ import { SPECIES_DB } from './species';
 import { TYPES } from './constants';
 import dorowaniSheet from '../assets/sprites/dorowani/dorowani_sheet.png';
 import gabuSheet from '../assets/sprites/gabu/gabu_sheet.png';
+// Battle-only three-quarter cuts. These are CROPS cut straight from the
+// Sprite Art lane's 2d-sheets (no new likeness, no AI mock creature):
+// - Dorowani player: angles+lighting sheet, 4x2 grid, cell (2,0) —
+//   three-quarter, shell on back/left, head profile right, red frill, red eye.
+// - Gabu opponent: angles sheet, 4x2 grid, cell (3,0) —
+//   three-quarter, facing left toward the player.
+// The old front/back cuts (dorowani-front-2d-cut.png, dorowani-back-2d-cut.png)
+// and the old cutout-battle.png composite are superseded FOR THIS BATTLE
+// WIRING only; the 192x64 sheets below stay the fallback for world/other views.
+import dorowaniBattlePlayer from '../assets/sprites/dorowani/dorowani-player-threequarter-right-cut.png';
+import gabuBattleOpponent from '../assets/sprites/gabu/gabu-threequarter-left-cut.png';
 
 export type SheetView = 'front' | 'back' | 'side';
 
@@ -26,11 +37,13 @@ export interface SheetDef {
   sheetUrl: string;
   cellSize: number;
   frames: Record<SheetView, number>; // x offset of the 64x64 cell
+  /** Battle-only override images, per side. Absent side = sheet-cell fallback. */
+  battle?: { player?: string; opponent?: string };
 }
 
 export const SHEET_DEFS: Record<string, SheetDef> = {
-  '147': { speciesId: '147', name: 'Dorowani', sheetUrl: dorowaniSheet, cellSize: 64, frames: { front: 0, back: 64, side: 128 } },
-  '148': { speciesId: '148', name: 'Gabu', sheetUrl: gabuSheet, cellSize: 64, frames: { front: 0, back: 64, side: 128 } },
+  '147': { speciesId: '147', name: 'Dorowani', sheetUrl: dorowaniSheet, cellSize: 64, frames: { front: 0, back: 64, side: 128 }, battle: { player: dorowaniBattlePlayer } },
+  '148': { speciesId: '148', name: 'Gabu', sheetUrl: gabuSheet, cellSize: 64, frames: { front: 0, back: 64, side: 128 }, battle: { opponent: gabuBattleOpponent } },
 };
 
 export function getSheetDef(speciesId: string | undefined | null): SheetDef | null {
@@ -71,4 +84,18 @@ export function creatureDisplayName(speciesId: string | undefined | null, fallba
 /** Battle view mapping (Arena spec): opponent shows front, player shows back. */
 export function battleView(isPlayer: boolean): SheetView {
   return isPlayer ? 'back' : 'front';
+}
+
+/**
+ * Battle-only override image for a species on a side, or null to fall back
+ * to the 192x64 sheet cell from battleView(). Current overrides:
+ * - Dorowani (147) as PLAYER: three-quarter-right cut, facing the opponent.
+ * - Gabu (148) as OPPONENT: three-quarter-left cut, facing the player.
+ * No side ever reuses a front cut for both sides. No stats, moves, types,
+ * or HP are set here — this is sprite selection only.
+ */
+export function battleSpriteUrl(speciesId: string | undefined | null, isPlayer: boolean): string | null {
+  const def = getSheetDef(speciesId);
+  if (!def?.battle) return null;
+  return isPlayer ? (def.battle.player ?? null) : (def.battle.opponent ?? null);
 }

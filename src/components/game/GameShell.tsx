@@ -2,8 +2,9 @@ import React from 'react';
 import { useGameStore } from '../../store/gameStore';
 import { saveGame } from '../../lib/saveSystem';
 import CreaturePortrait from './CreaturePortrait';
-import { UiPanel, UiButton } from './UiArt';
+import { UiPanel } from './UiArt';
 import { UI_ART } from '../../lib/uiArt';
+import { MenuList, MenuHelpLine } from './MenuList';
 
 /** In-game pause menu (X / Esc / Menu button). Real game buttons, no brackets. */
 export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle, onNavigate }: {
@@ -17,34 +18,47 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
   const gameState = useGameStore(s => s);
   const saveSlot = useGameStore(s => s.saveSlot);
   const [saved, setSaved] = React.useState(false);
+  const [selected, setSelected] = React.useState(0);
+
+  // Framed window OVER the world (overlay dims the world, the window is
+  // centred, the world stays visible around it — not a blank
+  // full-screen panel). Vertical list, one item per row, ~15px row
+  // spacing, distinct cursor/selected row, bottom help line for the
+  // selected item. Same items and actions as before, no items added
+  // or removed; help lines only describe the existing items.
+  const items = [
+    { label: 'Team', help: 'View and manage your team.', action: onRoster },
+    { label: 'Shop', help: 'Buy and sell items at the shop.', action: onShop },
+    ...(onNavigate ? [{ label: 'Bag', help: 'View your items, grouped by pocket.', action: () => onNavigate('BAG') }] : []),
+    ...(onNavigate ? [
+      { label: 'PC Storage', help: 'Move Mochiichao between your team and PC storage.', action: () => onNavigate('PC') },
+      { label: 'Mainframe Gardens', help: 'Raise Mochiichao in the Mainframe Gardens.', action: () => onNavigate('GARDEN') },
+      { label: 'Ring Capture', help: 'Try the Ring Capture loop.', action: () => onNavigate('RING') },
+      { label: 'Arena Mode', help: 'Battle in Arena Mode doubles.', action: () => onNavigate('ARENA') },
+      { label: 'Creature Mode', help: 'Play as a Mochiichao in real time.', action: () => onNavigate('CREATURE') },
+      { label: 'Cheat Console', help: 'Enter native cheat codes and save states.', action: () => onNavigate('CHEATS') },
+    ] : []),
+    {
+      label: saved ? 'Saved!' : 'Save Game',
+      help: 'Save your current progress.',
+      action: () => {
+        saveGame(saveSlot, 'manual', `PAUSE SAVE - ${gameState.currentMap}`, gameState);
+        setSaved(true);
+        setTimeout(() => setSaved(false), 2000);
+      },
+    },
+    { label: 'Load / Save Files', help: 'Open your save files.', action: onSaveLoad },
+    { label: 'Quit to Title', help: 'Return to the title screen.', action: onQuitToTitle },
+    { label: 'Back to Game', help: 'Close the pause menu and keep playing.', action: onClose },
+  ];
+  const safeSelected = Math.min(selected, items.length - 1);
 
   return (
     <div className="absolute inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-      <UiPanel slot={UI_ART.pause_menu_panel} className="w-full max-w-sm p-6 flex flex-col gap-3">
+      <UiPanel slot={UI_ART.pause_menu_panel} className="w-full max-w-sm p-6 flex flex-col gap-3 max-h-[92dvh] overflow-y-auto">
         <h2 className="game-title text-2xl text-center mb-2">Paused</h2>
-        <button onClick={onRoster} className="game-button px-4 py-3 font-bold">Team</button>
-        <button onClick={onShop} className="game-button px-4 py-3 font-bold">Shop</button>
-        {onNavigate && (<>
-          <button onClick={() => onNavigate('PC')} className="game-button px-4 py-3 font-bold">PC Storage</button>
-          <button onClick={() => onNavigate('GARDEN')} className="game-button px-4 py-3 font-bold">Mainframe Gardens</button>
-          <button onClick={() => onNavigate('RING')} className="game-button px-4 py-3 font-bold">Ring Capture</button>
-          <button onClick={() => onNavigate('ARENA')} className="game-button px-4 py-3 font-bold">Arena Mode</button>
-          <button onClick={() => onNavigate('CREATURE')} className="game-button px-4 py-3 font-bold">Creature Mode</button>
-          <button onClick={() => onNavigate('CHEATS')} className="game-button px-4 py-3 font-bold">Cheat Console</button>
-        </>)}
-        <button
-          onClick={() => {
-            saveGame(saveSlot, 'manual', `PAUSE SAVE - ${gameState.currentMap}`, gameState);
-            setSaved(true);
-            setTimeout(() => setSaved(false), 2000);
-          }}
-          className="game-button px-4 py-3 font-bold"
-        >
-          {saved ? 'Saved!' : 'Save Game'}
-        </button>
-        <button onClick={onSaveLoad} className="game-button px-4 py-3 font-bold">Load / Save Files</button>
-        <button onClick={onQuitToTitle} className="game-button px-4 py-3 font-bold text-red-200">Quit to Title</button>
-        <UiButton slot={UI_ART.game_button} onClick={onClose} className="px-4 py-3">Back to Game</UiButton>
+        <MenuList items={items} selected={safeSelected} onSelect={setSelected} />
+        <MenuHelpLine text={items[safeSelected]?.help || ''} />
       </UiPanel>
     </div>
   );

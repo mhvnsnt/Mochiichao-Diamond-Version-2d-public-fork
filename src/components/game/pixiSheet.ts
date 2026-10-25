@@ -5,6 +5,25 @@ import { Texture } from 'pixi.js';
 // the game never needs a GLB, a network sprite, or a Pokemon sprite.
 const cache = new Map<string, Promise<Texture>>();
 
+// Battle-only full-image loader (three-quarter cuts, not 64x64 sheet cells).
+// Keeps the source image's aspect ratio via its own width/height; the caller
+// sizes the sprite from tex.width / tex.height after load.
+const fullCache = new Map<string, Promise<Texture>>();
+
+export function fullImageTexture(imageUrl: string): Promise<Texture> {
+  let p = fullCache.get(imageUrl);
+  if (!p) {
+    p = new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(Texture.from(img));
+      img.onerror = reject;
+      img.src = imageUrl;
+    });
+    fullCache.set(imageUrl, p);
+  }
+  return p;
+}
+
 export function sheetCellTexture(sheetUrl: string, x: number): Promise<Texture> {
   const key = `${sheetUrl}@${x}`;
   let p = cache.get(key);

@@ -6,8 +6,11 @@ import { SPECIES_DB } from '../../lib/species';
 import { MOVES_DB } from '../../lib/moves';
 import { calcTypeMultiplier, TYPES } from '../../lib/constants';
 import { creatureDisplayName } from '../../lib/spriteSheets';
+import { fuseStats, fusionName } from '../../lib/monster-tamer-systems';
 import CreaturePortrait from '../game/CreaturePortrait';
 import HumanPortrait from '../game/HumanPortrait';
+import { UiPanel } from '../game/UiArt';
+import { UI_ART } from '../../lib/uiArt';
 import { playerSlot } from '../../lib/humanSheets';
 import PixiBattleCanvas, { BattleAttack } from '../game/PixiBattleCanvas';
 
@@ -37,8 +40,20 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   const [enemy, setEnemy] = useState<MochiiInstance | null>(null);
   const [bState, setBState] = useState<BattleState>('START');
   const [log, setLog] = useState<string[]>([]);
-  const [banner, setBanner] = useState<string | null>(null);
   const [attack, setAttack] = useState<BattleAttack | null>(null);
+  // Selected move (hover/focus, not a turn action): its PP + TYPE stay
+  // visible in a dedicated line, as in the decomp move-menu windows.
+  const [selectedMove, setSelectedMove] = useState(0);
+  // Data Fusion (monster-tamer spec step 1): temporary, one battle only.
+  // This state lives in this component, so leaving the battle ends the
+  // fusion; Data Revert (the Split button) ends it mid-battle. The two
+  // creatures themselves are never merged in the store — only the
+  // attacker used for this battle's damage math is the fused form.
+  const [fusedPartnerIdx, setFusedPartnerIdx] = useState<number | null>(null);
+  const fusionPartner = fusedPartnerIdx !== null ? party[fusedPartnerIdx] : undefined;
+  const fusedAttacker = playerActive && fusionPartner
+    ? { ...playerActive, nickname: fusionName(playerActive.nickname, fusionPartner.nickname), stats: fuseStats(playerActive.stats, fusionPartner.stats) }
+    : null;
   const playerGender = useGameStore(s => s.playerGender);
   const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string } | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
@@ -78,7 +93,6 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     if (inventory['luigi_cube'] > 0) {
       useItemState('luigi_cube');
       pushLog('You threw a Luigi Cube!');
-      setBanner('Luigi Cube!');
       setBState('ANIMATING');
       setTimeout(() => {
         const catchRate = SPECIES_DB[enemy.speciesId].catchRate;
@@ -91,7 +105,6 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
           setTimeout(onLeave, 2000);
         } else {
           pushLog('Oh no! The Mochiichao broke free!');
-          setBanner(null);
           setBState('ENEMY_TURN');
         }
       }, 1500);
@@ -140,7 +153,6 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
 
   const onAttackDone = () => {
     const p = (window as any).__battleLastAttack as { attacker: 'player' | 'enemy'; text: string } | undefined;
-    setBanner(null);
     const enemyHp = (window as any).__battleEnemyHp as number | undefined;
     const playerHp = (window as any).__battlePlayerHp as number | undefined;
     if (p?.attacker === 'player' && enemy) {
@@ -183,9 +195,10 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     if (!enemy || bState !== 'PLAYER_TURN' || !playerActive) return;
     const move = MOVES_DB[moveId];
     setBState('ANIMATING');
-    const result = executeDamage(playerActive, enemy, moveId);
+    // Fused attacker: same species/types as the active creature (for
+    // STAB in executeDamage), fused stats + fused name only.
+    const result = executeDamage(fusedAttacker || playerActive, enemy, moveId);
     pushLog(result.text);
-    setBanner(move ? move.name : 'Attack');
     (window as any).__battleLastAttack = { attacker: 'player', text: result.text };
     pendingRef.current = { damage: result.damage, text: result.text, attacker: 'player', moveId };
     setAttack({ nonce: Date.now(), attacker: 'player', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff' });
@@ -198,8 +211,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
         const move = MOVES_DB[randomMove];
         const result = executeDamage(enemy, playerActive, randomMove);
         pushLog(result.text);
-        setBanner(move ? move.name : 'Attack');
-        (window as any).__battleLastAttack = { attacker: 'enemy', text: result.text };
+            (window as any).__battleLastAttack = { attacker: 'enemy', text: result.text };
         pendingRef.current = { damage: result.damage, text: result.text, attacker: 'enemy', moveId: randomMove };
         setAttack({ nonce: Date.now(), attacker: 'enemy', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff' });
       }, 1000);
@@ -225,9 +237,12 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
           onImpact={onAttackImpact}
           onDone={onAttackDone}
         />
-        {/* HP bars + names: React layer above canvas, never moves with shake.
-            Placement (Pokemon-style battle layout, Arena spec §3): enemy
-            name/HP top-left, player name/HP/numbers bottom-right. */}
+        {/* HP healthboxes: one box each (name + Lv + bar inside the box,
+            bar offset inside the box below the name row), green >50% /
+            yellow >20% / red <=20% — thresholds already matched the
+            decomp rule, kept unchanged. React layer above canvas, never
+            moves with shake. Placement: enemy top-left, player
+            bottom-right. */}
         <div className="absolute top-3 left-3 pointer-events-none z-10 w-[46%] max-w-[280px]">
           <div className="game-panel px-3 py-2">
             <div className="flex justify-between items-baseline">
@@ -251,11 +266,6 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
             </div>
           </div>
         </div>
-        {banner && (
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
-            <div className="game-banner px-6 py-2 text-xl font-black tracking-widest text-white">{banner}</div>
-          </div>
-        )}
         {/* Small portraits in the corners, for creatures whose sheet is the proof */}
         <div className="absolute bottom-2 left-2 opacity-90 pointer-events-none hidden sm:block">
           <HumanPortrait slot={playerSlot(playerGender)} view="back" size={56} />
@@ -265,37 +275,96 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
         </div>
       </div>
 
-      {/* Battle menu: log + game buttons */}
-      <div className="game-panel-bottom flex shrink-0 z-20" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-        <div ref={logRef} className="flex-1 p-3 overflow-y-auto flex flex-col gap-1 text-sm text-slate-200 min-h-[72px]">
-          {log.map((l, i) => (
-            <div key={i} className={i === log.length - 1 ? 'text-white font-bold' : 'opacity-70'}>{l}</div>
-          ))}
-          {bState === 'START' && <div className="animate-pulse">A wild {creatureDisplayName(enemy.speciesId)} appeared!</div>}
-        </div>
-        <div className="p-3 grid grid-cols-2 gap-2 w-full sm:w-[46%]">
-          {playerActive.moves.slice(0, 4).map((mId, i) => {
-            const mv = MOVES_DB[mId];
-            const color = mv ? TYPES[mv.type]?.color : '#888888';
-            return (
-              <button
-                key={i}
-                disabled={bState !== 'PLAYER_TURN'}
-                onClick={() => handlePlayerMove(mId)}
-                className="game-button text-left px-3 py-2 disabled:opacity-50"
-                style={{ borderColor: color }}
-              >
-                <span className="font-bold text-white block truncate">{mv ? mv.name : '-'}</span>
-                {mv && <span className="text-[11px]" style={{ color }}>{TYPES[mv.type]?.name || mv.type} · PP {playerActive.pp[i]}/{mv.pp}</span>}
+      {/* Battle menu: current message in a bottom full-width framed box
+          (PR #14 SVG dialogue-box panel), log kept below it, then the
+          2x2 move grid + Luigi Cube + Flee. No title in battle; the
+          Pixi arena canvas stays above/behind this panel, never a
+          blank background. */}
+      <div className="game-panel-bottom flex flex-col shrink-0 z-20" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <UiPanel
+          slot={UI_ART.battle_panel}
+          style={{ margin: '8px 12px 0', padding: '12px 16px', minHeight: '56px' }}
+        >
+          <div className="text-white font-bold text-base leading-relaxed">
+            {log.length > 0 ? log[log.length - 1] : `A wild ${creatureDisplayName(enemy.speciesId)} appeared!`}
+          </div>
+        </UiPanel>
+        <div className="flex">
+          <div ref={logRef} className="flex-1 p-3 overflow-y-auto flex flex-col gap-1 text-sm text-slate-200 min-h-[56px] max-h-[88px]">
+            {log.map((l, i) => (
+              <div key={i} className={i === log.length - 1 ? 'text-white font-bold' : 'opacity-70'}>{l}</div>
+            ))}
+            {bState === 'START' && <div className="animate-pulse">A wild {creatureDisplayName(enemy.speciesId)} appeared!</div>}
+          </div>
+          <div className="p-3 w-full sm:w-[46%] shrink-0">
+            {(() => {
+              const selId = playerActive.moves[selectedMove];
+              const sel = selId ? MOVES_DB[selId] : undefined;
+              return sel ? (
+                <div className="text-xs text-slate-200 mb-2">
+                  Selected: <span className="font-bold text-white">{sel.name}</span>
+                  {' · '}{TYPES[sel.type]?.name || sel.type}
+                  {' · '}PP {playerActive.pp[selectedMove]}/{sel.pp}
+                </div>
+              ) : null;
+            })()}
+            <div className="grid grid-cols-2 gap-2">
+              {playerActive.moves.slice(0, 4).map((mId, i) => {
+                const mv = MOVES_DB[mId];
+                const color = mv ? TYPES[mv.type]?.color : '#888888';
+                return (
+                  <button
+                    key={i}
+                    disabled={bState !== 'PLAYER_TURN'}
+                    onClick={() => handlePlayerMove(mId)}
+                    onMouseEnter={() => setSelectedMove(i)}
+                    onFocus={() => setSelectedMove(i)}
+                    className={`game-button text-left px-3 py-2 disabled:opacity-50 ${i === selectedMove ? 'ring-2 ring-yellow-300' : ''}`}
+                    style={{ borderColor: color }}
+                  >
+                    <span className="font-bold text-white block truncate">{mv ? mv.name : '-'}</span>
+                    {mv && <span className="text-[11px]" style={{ color }}>{TYPES[mv.type]?.name || mv.type} · PP {playerActive.pp[i]}/{mv.pp}</span>}
+                  </button>
+                );
+              })}
+              <button disabled={bState !== 'PLAYER_TURN'} onClick={handleCatch} className="game-button text-indigo-200">
+                Luigi Cube ({inventory['luigi_cube'] || 0})
               </button>
-            );
-          })}
-          <button disabled={bState !== 'PLAYER_TURN'} onClick={handleCatch} className="game-button text-indigo-200">
-            Luigi Cube ({inventory['luigi_cube'] || 0})
-          </button>
-          <button disabled={bState !== 'PLAYER_TURN'} onClick={handleRun} className="game-button text-red-200">
-            Flee
-          </button>
+              <button disabled={bState !== 'PLAYER_TURN'} onClick={handleRun} className="game-button text-red-200">
+                Flee
+              </button>
+            </div>
+            {/* Data Fusion (monster-tamer spec step 1): one battle only.
+                Partner = first other alive party member. Fusion form is
+                a placeholder — both creatures' existing sheets shown
+                together below — until the Sprite Art lane makes a
+                fusion sheet. No new likeness is generated here. */}
+            {fusedAttacker && fusionPartner ? (
+              <div className="mt-2 game-panel p-2 flex items-center gap-2">
+                <CreaturePortrait speciesId={playerActive.speciesId} view="front" size={40} />
+                <span className="text-white font-bold text-sm">+</span>
+                <CreaturePortrait speciesId={fusionPartner.speciesId} view="front" size={40} />
+                <div className="flex-1 min-w-0">
+                  <div className="text-white font-bold text-xs truncate">{fusedAttacker.nickname}</div>
+                  <div className="text-[11px] text-slate-300">Fusion form (placeholder sheets) · ATK {fusedAttacker.stats.atk} · lasts this battle</div>
+                </div>
+                <button onClick={() => { pushLog(`Data Revert split ${playerActive.nickname} and ${fusionPartner.nickname} back!`); setFusedPartnerIdx(null); }} className="game-button px-2 py-1 text-xs shrink-0">Split (Data Revert)</button>
+              </div>
+            ) : (
+              (() => {
+                const partnerIdx = party.findIndex((p, i) => i !== activeIdx && p.hp > 0);
+                return partnerIdx !== -1 ? (
+                  <button
+                    disabled={bState !== 'PLAYER_TURN'}
+                    onClick={() => { setFusedPartnerIdx(partnerIdx); pushLog(`${playerActive.nickname} fused with ${party[partnerIdx].nickname}! Data Fusion — one battle only.`); }}
+                    className="game-button mt-2 w-full px-3 py-2 text-sm text-purple-200"
+                  >
+                    Fuse with {party[partnerIdx].nickname} (Data Fusion)
+                  </button>
+                ) : null;
+              })()
+            )}
+          </div>
         </div>
       </div>
     </div>

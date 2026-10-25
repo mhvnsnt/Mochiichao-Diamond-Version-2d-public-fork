@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Application, Container, Graphics, Sprite } from 'pixi.js';
-import { getSheetDef, fallbackColorFor } from '../../lib/spriteSheets';
-import { sheetCellTexture } from './pixiSheet';
+import { getSheetDef, fallbackColorFor, battleSpriteUrl } from '../../lib/spriteSheets';
+import { sheetCellTexture, fullImageTexture } from './pixiSheet';
 
 /**
  * PixiJS battle arena, simplified Arena spec (mod layer on the existing
@@ -85,17 +85,46 @@ export default function PixiBattleCanvas({
       cont.removeChildren();
       cont.position.set(cx, cy);
       if (def) {
-        const view = isPlayer ? 'back' : 'front';
-        const key = `${side}-${def.speciesId}-${view}`;
-        let sp = spritesRef.current.get(key);
-        if (!sp) {
-          sp = new Sprite();
-          spritesRef.current.set(key, sp);
-          sheetCellTexture(def.sheetUrl, def.frames[view]).then(tex => { sp!.texture = tex; }).catch(() => {});
+        // Battle-only three-quarter overrides first (147 player, 148 opponent),
+        // facing each other. Any other species/side falls back to the
+        // 192x64 sheet cell (player back, opponent front) — never a front
+        // cut for both sides, and no mock creatures anywhere.
+        const battleUrl = battleSpriteUrl(speciesId, isPlayer);
+        if (battleUrl) {
+          const key = `${side}-${def.speciesId}-battle`;
+          let sp = spritesRef.current.get(key);
+          if (!sp) {
+            sp = new Sprite();
+            spritesRef.current.set(key, sp);
+            fullImageTexture(battleUrl).then(tex => {
+              sp!.texture = tex;
+              // Preserve the cut's own aspect ratio (Dorowani 455x585
+              // portrait, Gabu 532x497); width stays `size`, height scales.
+              sp!.width = size;
+              sp!.height = tex.width > 0 ? size * (tex.height / tex.width) : size;
+            }).catch(() => {});
+          }
+          sp.anchor.set(0.5, 1);
+          // If the cut already loaded (redraw/resize), keep its aspect now;
+          // otherwise the load callback above corrects it once it arrives.
+          const tw = sp.texture?.width ?? 0;
+          const th = sp.texture?.height ?? 0;
+          sp.width = size;
+          sp.height = tw > 1 ? size * (th / tw) : size;
+          cont.addChild(sp);
+        } else {
+          const view = isPlayer ? 'back' : 'front';
+          const key = `${side}-${def.speciesId}-${view}`;
+          let sp = spritesRef.current.get(key);
+          if (!sp) {
+            sp = new Sprite();
+            spritesRef.current.set(key, sp);
+            sheetCellTexture(def.sheetUrl, def.frames[view]).then(tex => { sp!.texture = tex; }).catch(() => {});
+          }
+          sp.anchor.set(0.5, 1);
+          sp.width = size; sp.height = size;
+          cont.addChild(sp);
         }
-        sp.anchor.set(0.5, 1);
-        sp.width = size; sp.height = size;
-        cont.addChild(sp);
       } else {
         const fg = new Graphics();
         fallbackSprite(fg, 0, 0, size, hex(fallbackColorFor(speciesId)));
