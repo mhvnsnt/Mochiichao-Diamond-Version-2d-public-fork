@@ -5,6 +5,8 @@ import { createMochii } from '../lib/engine';
 interface GameState {
   playerName: string;
   playerGender: 'boy' | 'girl';
+  /** Rival name, v4: default "Hex" (canon). Set in the rival-name phase. */
+  rivalName: string;
   saveSlot: number;
   introCompleted: boolean;
   party: MochiiInstance[];
@@ -30,6 +32,7 @@ interface GameState {
 
   // Actions
   setPlayerInfo: (name: string, gender: 'boy' | 'girl', slot: number) => void;
+  setRivalName: (name: string) => void;
   loadState: (state: Partial<GameState>) => void;
   initializeStarter: (speciesId: string) => void;
   completeIntro: () => void;
@@ -49,6 +52,7 @@ interface GameState {
 export const useGameStore = create<GameState>((set, get) => ({
   playerName: "Netrunner",
   playerGender: "boy",
+  rivalName: "Hex",
   saveSlot: 1,
   introCompleted: false,
   party: [],
@@ -71,7 +75,8 @@ export const useGameStore = create<GameState>((set, get) => ({
   setCheatFlags: (flags) => set(flags),
 
   setPlayerInfo: (name, gender, slot) => set({ playerName: name, playerGender: gender, saveSlot: slot }),
-  loadState: (state) => set({ ...state, introCompleted: true }),
+  setRivalName: (name) => set({ rivalName: name }),
+  loadState: (state) => set({ ...state, introCompleted: true, rivalName: (state as any).rivalName || 'Hex' }),
   completeIntro: () => set({ introCompleted: true }),
   
   initializeStarter: (speciesId) => {

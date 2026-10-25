@@ -65,7 +65,7 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
 }
 
 /** World HUD: location, party mini-bar, money, menu button — an overlay, not a box above the world. */
-export function WorldHud({ mapName, timeLabel, onMenu, onRoster }: { mapName: string; timeLabel?: string; onMenu: () => void; onRoster: () => void }) {
+export function WorldHud({ mapName, timeLabel, goalLabel, onMenu, onRoster }: { mapName: string; timeLabel?: string; goalLabel?: string; onMenu: () => void; onRoster: () => void }) {
   const wallet = useGameStore(s => s.wallet);
   const party = useGameStore(s => s.party);
   return (
@@ -77,6 +77,7 @@ export function WorldHud({ mapName, timeLabel, onMenu, onRoster }: { mapName: st
         <div className="font-bold text-white text-sm leading-tight">{mapName}</div>
         {timeLabel && <div className="text-[11px] text-slate-300">{timeLabel}</div>}
         <div className="text-[11px] text-slate-300">{party.length === 0 ? 'No partner yet' : `${party.length} in team`}</div>
+        {goalLabel && <div className="text-[11px] text-yellow-300 font-bold">{goalLabel}</div>}
       </div>
       <div className="flex gap-2 pointer-events-auto items-start">
         <div className="game-panel px-3 py-2 hidden sm:flex items-center gap-2">

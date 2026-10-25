@@ -44,10 +44,30 @@ body {
 }
 
 .game-panel {
-  background: rgba(10, 18, 34, 0.92);
-  border: 2px solid rgba(120, 180, 255, 0.35);
+  background: rgba(22, 35, 58, 0.92);
+  border: 2px solid rgba(34, 211, 238, 0.6);
   border-radius: 14px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+}
+
+/*
+ * v4 StdWindow — the ONE frame everywhere. Same palette, radius and
+ * shadow as .game-panel (they are intentionally identical: one frame,
+ * not a different frame per screen). Selected windows get the gold
+ * accent (#fbbf24) instead of the teal border. Text is #f1f5f9,
+ * danger is #ef4444, font is the game font above — never mono.
+ */
+.std-window {
+  background: rgba(22, 35, 58, 0.92);
+  border: 2px solid rgba(34, 211, 238, 0.6);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  color: #f1f5f9;
+}
+
+.std-window-selected {
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.6), 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
 .game-panel-bottom {
