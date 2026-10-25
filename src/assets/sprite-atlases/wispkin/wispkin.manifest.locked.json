@@ -1,0 +1,148 @@
+{
+ "creature": "wispkin",
+ "roster_id": "042",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-wispkin-sheet-0-dcd0a9f6-dfc2-40e0-9227-17de628c3671.webp",
+  "width": 1920,
+  "height": 1280
+ },
+ "atlas_file": "wispkin_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 128
+ },
+ "frame_count": 10,
+ "draft": false,
+ "draft_note": "",
+ "notes": "V1 = DEFAULT set. V2/V3 trait-animation sheets deliberately NOT used here; they belong in a separate folder.",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_back",
+   "file": "wispkin_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "overworld_front",
+   "file": "wispkin_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "battle_front",
+   "file": "wispkin_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "overworld_back",
+   "file": "wispkin_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_front_2",
+   "file": "wispkin_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_front_3",
+   "file": "wispkin_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_front_4",
+   "file": "wispkin_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_front_5",
+   "file": "wispkin_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "overworld_front_6",
+   "file": "wispkin_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "icon",
+   "file": "wispkin_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 192,
+   "atlas_y": 64
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "wispkin.manifest.json",
+ "game_ready_cell_count": 10,
+ "game_ready_atlas_file": "wispkin_atlas_64_locked.png",
+ "icon_file": "icons/wispkin_icon64.png",
+ "icon_source": "atlas icon cell 9",
+ "white_spot_cleanup_px_cleared": 24,
+ "white_spot_cleanup_bg": [
+  246,
+  239,
+  230
+ ]
+}
