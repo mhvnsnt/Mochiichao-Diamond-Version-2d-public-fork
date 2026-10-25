@@ -106,6 +106,19 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      // v5.2: a choice dialogue must be keyboard-selectable too.
+      // Before v5.2 Enter/Space called advance(), which returns
+      // early for choice dialogues ("must click YES / NO"), so
+      // keyboard users could not answer YES/NO at all — part of
+      // the v5.1 playtest blocker (the other part was the A/B
+      // cluster covering the YES/NO buttons; see WorldEngine).
+      // Y/N now answer directly; Enter/Space are left alone for
+      // choice dialogues so a focused YES/NO button can activate.
+      if (choice && onChoice) {
+        if (e.key === 'y' || e.key === 'Y') { onChoice(true); return; }
+        if (e.key === 'n' || e.key === 'N') { onChoice(false); return; }
+        return;
+      }
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         advance();
@@ -113,7 +126,7 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [advance]);
+  }, [advance, choice, onChoice]);
 
   return (
     <StdWindow
