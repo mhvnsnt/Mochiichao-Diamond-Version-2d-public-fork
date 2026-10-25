@@ -1,0 +1,75 @@
+{
+  "character": "Player A",
+  "proportions": "chibi",
+  "cell_size": 64,
+  "atlas": "player-a-atlas-64x64.png",
+  "atlas_size": [
+    256,
+    256
+  ],
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_down_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_down_step"
+    },
+    {
+      "index": 6,
+      "name": "walk_up_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_up_step"
+    },
+    {
+      "index": 8,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 9,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_back"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "source_sheets": [
+    "world 4-view v1",
+    "walk frames v1",
+    "battle back v1",
+    "portrait v1 (eye-colour drift noted, brown is canon)"
+  ],
+  "wiring": "Replace Player A placeholder silhouette in src/lib/humanSheets.ts with this atlas + manifest, same format as creature sheets in spriteSheets.ts. No other human slots changed in this batch."
+}
