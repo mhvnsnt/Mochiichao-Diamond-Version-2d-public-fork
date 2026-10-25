@@ -161,3 +161,29 @@ Still not canon draft: starter evolutions 002/003/005/006/008/009
   veins, and orbiting boulder fists. V1 is PENDING REVISION; v2 sheets
   (grounded Golem/Graveler-like stance, legs and arms) become the canon
   draft once parent-verified. Do NOT push v1 as final.
+
+## V2 lifts — all three revision holds cleared for v2 only (2026-10-25)
+- Dreadtoise #040 v2 COMPLETE and parent-verified (2026-10-25 ~13:32 CDT):
+  animal lower body (scaled clawed legs, tan belly, tail, natural shell
+  rim), fortress-plateau shell kept, Blastoise-like cannons = 2 in every
+  front view. V1 superseded, kept on disk. V2 set (main + angles +
+  lighting) added to PR #16; v1 was never pushed.
+- Cragarm #036 v2 COMPLETE and parent-verified (2026-10-25 ~13:33 CDT):
+  grounded Graveler/Golem-like bipedal stance, two thick stone legs
+  planted on the ground and two thick stone arms in every main pose,
+  tumbling kept only as an attack pose, dark igneous boulder-cluster
+  body, cyan crystalline veins, orbiting boulder fists kept. V1
+  superseded, kept on disk. V2 set added to PR #16; v1 was never pushed.
+- Wispkin #042 v2 COMPLETE and parent-verified (2026-10-25 ~13:35 CDT):
+  stuck-mask trait reads clearly — hands pressed ON the cracked
+  bone-white mask, mask stuck to face, straining to pull it off, one
+  fighting pose with hands pulled wide and long stretched dark strands.
+  The discarded first fresh attempt (hands always detached/tethered)
+  is NOT part of the set. V1 superseded, kept on disk. V2 set added to
+  PR #16; v1 was never pushed.
+- PR #16 final file list: 91 original batch-2 files + 9 v2 sheets
+  (Dreadtoise/Cragarm/Wispkin v2) = 100 files, additions only,
+  0 deletions. No v1 file of any revised creature is in the PR.
+  Remaining open items (unchanged): starter evolutions
+  002/003/005/006/008/009 (naming set), 047–146 gap (no designs),
+  Megalochrome ripple as a separate effect, Blender bake v2.
