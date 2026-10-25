@@ -1,10 +1,67 @@
 import React, { useState, useEffect } from "react";
 import { useGameStore } from "../store/gameStore";
 import { getSlotSummaries, getSaves, loadGame } from "../lib/saveSystem";
-import { UiPanel } from "./game/UiArt";
-import { UI_ART } from "../lib/uiArt";
 import HumanPortrait from "./game/HumanPortrait";
-import { playerSlot } from "../lib/humanSheets";
+import StdWindow from "./game/StdWindow";
+import DialogueBox from "./game/DialogueBox";
+import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
+
+/**
+ * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
+ * RIVAL_NAME (v4: one name-entry component, not two different ones).
+ * Defaults are the pre-existing ones (Netrunner / Lucy), not new
+ * names invented in v4.
+ */
+function NamePad({ title, slot, value, setValue, confirmLabel, onConfirm, note }: {
+  title: string;
+  slot: any;
+  value: string;
+  setValue: (v: string) => void;
+  confirmLabel: string;
+  onConfirm: (finalName: string) => void;
+  note?: string;
+}) {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split("");
+  return (
+    <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
+      <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+      <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
+      <div className="relative z-10 flex flex-col items-center w-full max-w-2xl">
+        {note && (
+          <StdWindow className="p-5 mb-4 w-full">
+            <div className="text-white leading-relaxed">{note}</div>
+          </StdWindow>
+        )}
+        <div className="text-white text-xl font-bold tracking-widest mb-8">{title}</div>
+        <div className="flex gap-8 mb-8 items-end">
+          <HumanPortrait slot={slot} view="front" size={72} />
+          <StdWindow className="p-4 min-w-[300px]">
+            <div className="text-white text-3xl font-bold tracking-widest h-10 w-full text-center border-b-2 border-dashed border-teal-500/50">
+              {value}
+            </div>
+          </StdWindow>
+        </div>
+        <StdWindow className="p-4 w-full">
+          <div className="grid grid-cols-13 gap-2">
+            {letters.map(l => (
+              <button key={l} onClick={() => value.length < 10 && setValue(value + l)} className="game-button h-10 font-bold text-lg">
+                {l}
+              </button>
+            ))}
+          </div>
+          <div className="flex justify-between mt-4 gap-2">
+            <button onClick={() => setValue(value.slice(0, -1))} className="game-button px-6 py-2 font-bold min-h-[48px] tracking-widest">
+              ⌫ DEL
+            </button>
+            <button onClick={() => onConfirm(value.trim() || "Hex")} className="game-button px-6 py-2 font-bold min-h-[48px] tracking-widest">
+              {confirmLabel}
+            </button>
+          </div>
+        </StdWindow>
+      </div>
+    </div>
+  );
+}
 
 interface IntroSequenceProps {
   onComplete: () => void;
@@ -12,7 +69,7 @@ interface IntroSequenceProps {
 }
 
 export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenceProps) {
-  const [phase, setPhase] = useState<"CINEMATIC" | "TITLE" | "MAIN_MENU" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "PROF_INTRO_2">("CINEMATIC");
+  const [phase, setPhase] = useState<"CINEMATIC" | "TITLE" | "MAIN_MENU" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("CINEMATIC");
   const [showPrompt, setShowPrompt] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
@@ -23,10 +80,17 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   // Name Entry state
   const [tempName, setTempName] = useState("");
+  // v4 rival name: Hex is canon and is the default. The name is
+  // editable (spec allows this); the entered name is stored and used
+  // in later Hex dialogue via the store — it does NOT rename Hex to
+  // something else by default, and the default is always Hex.
+  const [tempRivalName, setTempRivalName] = useState("Hex");
   const [gender, setGender] = useState<"boy" | "girl">("boy");
 
   const loadState = useGameStore(s => s.loadState);
   const setPlayerInfo = useGameStore(s => s.setPlayerInfo);
+  const setRivalName = useGameStore(s => s.setRivalName);
+  const setMapState = useGameStore(s => s.setMapState);
 
   useEffect(() => {
     // Pulse animation for prompts
@@ -202,10 +266,17 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
           {mainItems.map((item, i) => {
             const isSelected = i === safeMain;
-            const frame = isSelected ? 'ring-2 ring-yellow-300 border-teal-300' : '';
+            // v4 fix (live playtest showed ONE list panel, not separate
+            // windows): the v3 code used UiPanel, whose SVG background
+            // only renders when its art asset loads — if it does not,
+            // the items collapse visually into one panel. v4 uses
+            // StdWindow, whose CSS frame renders regardless of any
+            // image load, so each item is visibly its own framed
+            // window: CONTINUE tall (stats inside), NEW GAME short,
+            // SETTINGS short, selected = gold frame + cursor.
             if (item.key === 'CONTINUE') {
               return (
-                <UiPanel key={item.key} slot={UI_ART.main_menu_panel} className={`p-5 min-h-[48px] ${frame}`}>
+                <StdWindow key={item.key} selected={isSelected} className="p-5 min-h-[48px]">
                   <button
                     onClick={() => activateMain('CONTINUE')}
                     onMouseEnter={() => setMainSelected(i)}
@@ -223,11 +294,11 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                       </div>
                     )}
                   </button>
-                </UiPanel>
+                </StdWindow>
               );
             }
             return (
-              <UiPanel key={item.key} slot={UI_ART.main_menu_panel} className={`p-4 min-h-[48px] ${frame}`}>
+              <StdWindow key={item.key} selected={isSelected} className="p-4 min-h-[48px]">
                 <button
                   onClick={() => activateMain(item.key)}
                   onMouseEnter={() => setMainSelected(i)}
@@ -237,7 +308,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   {isSelected ? '► ' : ''}{item.key}
                   {item.key === 'SETTINGS' && <span className="text-xs text-slate-400 ml-2 tracking-normal">No settings screen in this build yet</span>}
                 </button>
-              </UiPanel>
+              </StdWindow>
             );
           })}
 
@@ -280,14 +351,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   if (phase === "SAVE_SLOTS") {
     return (
-      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center">
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center p-4">
         <h2 className="text-teal-300 text-xl font-bold tracking-widest mb-8">SELECT A SAVE FILE</h2>
         <div className="flex flex-col gap-4 w-full max-w-lg">
           {[1,2,3].map(slot => {
             const save = slots[slot-1];
             return (
-              <button 
+              <StdWindow
                 key={slot}
+                className="p-4 text-left flex justify-between items-center cursor-pointer"
                 onClick={() => {
                   if (save) {
                     // Load latest save from this slot
@@ -301,7 +373,6 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                     setPhase("PROF_INTRO_1");
                   }
                 }}
-                className="bg-black border-2 border-teal-500/50 hover:border-yellow-400 p-4 rounded text-left transition-colors flex justify-between items-center group"
               >
                 <div>
                   <div className="text-teal-400 font-bold mb-1">SLOT {slot}</div>
@@ -314,13 +385,13 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                     <div className="text-gray-500 font-bold">--- EMPTY ---</div>
                   )}
                 </div>
-                {!save && <span className="text-yellow-400 opacity-0 group-hover:opacity-100 font-bold">NEW GAME ►</span>}
-                {save && <span className="text-yellow-400 opacity-0 group-hover:opacity-100 font-bold">LOAD ►</span>}
-              </button>
+                {!save && <span className="text-yellow-400 font-bold">NEW GAME ►</span>}
+                {save && <span className="text-yellow-400 font-bold">LOAD ►</span>}
+              </StdWindow>
             )
           })}
         </div>
-        <button onClick={() => setPhase("MAIN_MENU")} className="mt-8 text-white hover:text-yellow-400 flex items-center font-bold">
+        <button onClick={() => setPhase("MAIN_MENU")} className="game-button mt-8 px-4 py-3 font-bold min-h-[48px]">
            ◄ BACK
         </button>
       </div>
@@ -328,82 +399,112 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   }
 
   if (phase === "PROF_INTRO_1" || phase === "PROF_INTRO_2") {
-    const text1 = "Welcome to the world of Mochiichao! My name is AEON. People call me the Mochiichao Professor! This world is inhabited by creatures we call Mochiichao. For some people, Mochiichao are pets. Other use them for battling. As for myself... I study Mochiichao as a profession.";
-    const text2 = `So your name is ${tempName}? Are you ready? Your very own Mochiichao legend is about to unfold! A world of dreams and adventures awaits! Let's go!`;
-    const text = phase === "PROF_INTRO_1" ? text1 : text2;
+    // v4: Prof dialogue goes through the same DialogueBox as every
+    // NPC / Prof / Mom line in the game (typewriter, portrait, ▼,
+    // keyboard + click advance) — NOT the old white/grey box, which
+    // also had no keyboard handler, matching the playtest finding
+    // that dialogue advanced by clicking, not reliably by Space.
+    // Text is the pre-existing Mochiichao-canon Prof text, kept
+    // verbatim; DialogueBox pages it to 2 lines per page.
+    const text1 = [
+      "Welcome to the world of Mochiichao! My name is AEON. People call me the Mochiichao Professor!",
+      "This world is inhabited by creatures we call Mochiichao. For some people, Mochiichao are pets. Others use them for battling.",
+      "As for myself... I study Mochiichao as a profession. Let me tell you about the Mainframe Region, where your journey begins.",
+    ];
+    const text2 = [
+      `So your name is ${tempName}? And your rival is ${tempRivalName}?`,
+      "Are you ready? Your very own Mochiichao legend is about to unfold! A world of dreams and adventures awaits!",
+      "Your journey begins in Sector 0. Go home first — your Mom is waiting — then come to my lab and choose your partner.",
+    ];
+    const lines = phase === "PROF_INTRO_1" ? text1 : text2;
 
     return (
-      <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer" onClick={() => phase === "PROF_INTRO_1" ? setPhase("GENDER_SELECT") : onComplete()}>
-        <div className="mb-8 flex flex-col items-center"><div className="w-16 h-16 rounded-full bg-[#e8b890] border-4 border-slate-700" /><div className="w-20 h-24 rounded-t-full bg-slate-200 border-2 border-slate-400 -mt-1" /></div>
-        <div className="w-full max-w-2xl bg-white border-[6px] border-gray-400 rounded p-6 shadow-xl relative mt-16 min-h-[160px]">
-          <div className="text-gray-800 text-xl font-bold tracking-wide leading-relaxed">
-             {text}
-          </div>
-          <div className={`absolute bottom-4 right-6 text-red-500 text-2xl font-black ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>▼</div>
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
+        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
+        <div className="relative z-10 w-full max-w-2xl">
+          <DialogueBox
+            lines={lines}
+            speakerName="Prof. Aeon"
+            speakerSlot={HUMAN_SLOTS.prof_aeon}
+            onComplete={() => {
+              if (phase === "PROF_INTRO_1") setPhase("GENDER_SELECT");
+              else {
+                // v4 spawn = HOME: the new-game world entry is Boot
+                // Harbor (sector0 playerStart, 15,18), NOT the store
+                // default (21,14). Loaded saves are untouched — this
+                // only runs at the end of a new-game intro.
+                setMapState('sector0', { x: 15, y: 18 });
+                onComplete();
+              }
+            }}
+          />
         </div>
-        <div className="mt-4 text-gray-500 text-sm tracking-widest">[ CLICK or SPACE to continue ]</div>
       </div>
     );
   }
 
   if (phase === "GENDER_SELECT") {
     return (
-      <div className="game-screen bg-black flex flex-col items-center justify-center">
-        <h2 className="text-white text-2xl font-bold tracking-widest mb-16">ARE YOU A BOY OR A GIRL?</h2>
-        <div className="flex gap-16">
-           <button onClick={() => { setGender("boy"); setPhase("NAME_ENTRY"); }} className="group flex flex-col items-center transition-transform hover:scale-110">
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
+        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
+        <StdWindow className="relative z-10 p-8 flex flex-col items-center">
+          <h2 className="text-white text-2xl font-bold tracking-widest mb-12">ARE YOU A BOY OR A GIRL?</h2>
+          <div className="flex gap-16">
+            <button onClick={() => { setGender("boy"); setPhase("NAME_ENTRY"); }} className="group flex flex-col items-center transition-transform hover:scale-110">
               <HumanPortrait slot={playerSlot('boy')} view="front" size={72} />
-              <div className="text-gray-400 group-hover:text-teal-400 font-bold tracking-widest">BOY</div>
-           </button>
-           <button onClick={() => { setGender("girl"); setPhase("NAME_ENTRY"); }} className="group flex flex-col items-center transition-transform hover:scale-110">
+              <div className="text-gray-400 group-hover:text-teal-400 font-bold tracking-widest mt-2">BOY</div>
+            </button>
+            <button onClick={() => { setGender("girl"); setPhase("NAME_ENTRY"); }} className="group flex flex-col items-center transition-transform hover:scale-110">
               <HumanPortrait slot={playerSlot('girl')} view="front" size={72} />
-              <div className="text-gray-400 group-hover:text-pink-400 font-bold tracking-widest">GIRL</div>
-           </button>
-        </div>
+              <div className="text-gray-400 group-hover:text-pink-400 font-bold tracking-widest mt-2">GIRL</div>
+            </button>
+          </div>
+          <div className="text-slate-400 text-sm mt-8">Choose GIRL to play as Player A (teal/chrome jacket).</div>
+        </StdWindow>
       </div>
     );
   }
 
   if (phase === "NAME_ENTRY") {
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split("");
-    
     return (
-      <div className="game-screen bg-black flex flex-col items-center justify-center p-4">
-        <div className="text-white text-xl font-bold tracking-widest mb-8">WHAT IS YOUR NAME?</div>
-        
-        <div className="flex gap-8 mb-12 items-end">
-           <HumanPortrait slot={playerSlot(gender)} view="front" size={72} />
-           <div className="flex bg-gray-900 border-2 border-gray-500 rounded p-4 min-w-[300px]">
-              <div className="text-white text-3xl font-bold tracking-widest h-10 w-full text-center border-b-2 border-dashed border-gray-400">
-                {tempName}
-              </div>
-           </div>
-        </div>
+      <NamePad
+        title="WHAT IS YOUR NAME?"
+        slot={playerSlot(gender)}
+        value={tempName}
+        setValue={setTempName}
+        confirmLabel="OK ►"
+        onConfirm={(finalName) => {
+          const name = finalName || (gender === "boy" ? "Netrunner" : "Lucy");
+          setTempName(name);
+          setPlayerInfo(name, gender, selectedSlot);
+          setPhase("RIVAL_NAME");
+        }}
+      />
+    );
+  }
 
-        <div className="grid grid-cols-13 gap-2 bg-gray-800 p-6 rounded border-4 border-gray-600">
-           {letters.map(l => (
-             <button key={l} onClick={() =>tempName.length<10 && setTempName(t=>t+l)} className="w-10 h-10 bg-gray-200 hover:bg-white text-black font-bold text-xl rounded shadow">
-                {l}
-             </button>
-           ))}
-           <div className="col-span-13 flex justify-between mt-4">
-              <button onClick={() => setTempName(t=>t.slice(0,-1))} className="px-6 py-2 bg-red-200 hover:bg-red-300 text-red-900 font-bold rounded shadow tracking-widest">
-                 ⌫ DEL
-              </button>
-              <button 
-                 onClick={() => {
-                   const finalName = tempName.trim() || (gender==="boy"?"Netrunner":"Lucy");
-                   setTempName(finalName);
-                   setPlayerInfo(finalName, gender, selectedSlot);
-                   setPhase("PROF_INTRO_2");
-                 }} 
-                 className="px-6 py-2 bg-green-200 hover:bg-green-300 text-green-900 font-bold rounded shadow tracking-widest"
-              >
-                 OK ►
-              </button>
-           </div>
-        </div>
-      </div>
+  if (phase === "RIVAL_NAME") {
+    // v4 rival-name phase (new_game.c structure only: rival name
+    // state). Hex is already canon — he is presented as the default
+    // and confirmed as-is; the name is editable, and the entered
+    // name is what later Hex dialogue uses (via the store).
+    return (
+      <NamePad
+        title="WHAT IS YOUR RIVAL'S NAME?"
+        note="This is Hex — your rival. He will challenge you at the lab and on the road. Confirm his name as-is, or change it below."
+        slot={HUMAN_SLOTS.hex}
+        value={tempRivalName}
+        setValue={setTempRivalName}
+        confirmLabel="CONFIRM ►"
+        onConfirm={(finalName) => {
+          const name = finalName || "Hex";
+          setTempRivalName(name);
+          setRivalName(name);
+          setPhase("PROF_INTRO_2");
+        }}
+      />
     );
   }
 
