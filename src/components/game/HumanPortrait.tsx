@@ -6,6 +6,10 @@ import type { HumanSlot, HumanView } from '../../lib/humanSheets';
  * exists; otherwise a marked human silhouette placeholder (head + body
  * + legs, slot colour, labelled "Art in progress"). Never an emoji,
  * never a creature sheet, never a blue silhouette blob.
+ * Row-0 cells only: backgroundSize uses slot.sheetCols (default 3 for
+ * strips, 4 for the Player A atlas). Left is mirrored ONLY when the
+ * slot's left and right frames are the same cell (old strips); slots
+ * with distinct left/right cells (Player A) are NOT mirrored.
  */
 export default function HumanPortrait({ slot, view = 'front', size = 96, showName = false, mirror = false }: {
   slot: HumanSlot;
@@ -22,10 +26,10 @@ export default function HumanPortrait({ slot, view = 'front', size = 96, showNam
             width: size, height: size,
             backgroundImage: `url(${slot.sheetUrl})`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: `${size * 3}px ${size}px`,
+            backgroundSize: `${size * (slot.sheetCols ?? 3)}px ${size}px`,
             backgroundPosition: `-${(slot.frames[view] / 64) * size}px 0px`,
             imageRendering: 'pixelated',
-            transform: mirror || view === 'left' ? 'scaleX(-1)' : undefined,
+            transform: (mirror || (view === 'left' && slot.frames.left === slot.frames.right)) ? 'scaleX(-1)' : undefined,
           }}
           aria-label={slot.label}
         />
