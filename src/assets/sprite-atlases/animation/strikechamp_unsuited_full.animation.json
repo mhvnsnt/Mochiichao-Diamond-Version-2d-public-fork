@@ -1,0 +1,40 @@
+{
+ "creature": "strikechamp_unsuited_full",
+ "source_locked_manifest": "strikechamp_unsuited_full.manifest.locked.json",
+ "idle": {
+  "cell": 0,
+  "file": "strikechamp_unsuited_full_cell_00.png",
+  "method": "standing_reuse_proposed",
+  "status": "pending_mars_confirm",
+  "note": "No distinct idle frame exists in the sheet; battle_front standing pose proposed as idle reuse, not a new frame."
+ },
+ "attack": {
+  "cells": [
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27
+  ],
+  "files": [
+   "strikechamp_unsuited_full_cell_21.png",
+   "strikechamp_unsuited_full_cell_22.png",
+   "strikechamp_unsuited_full_cell_23.png",
+   "strikechamp_unsuited_full_cell_24.png",
+   "strikechamp_unsuited_full_cell_25.png",
+   "strikechamp_unsuited_full_cell_26.png",
+   "strikechamp_unsuited_full_cell_27.png"
+  ],
+  "status": "extracted",
+  "note": "Extracted from existing attack-role cells."
+ },
+ "hurt": {
+  "cells": [],
+  "status": "gap",
+  "note": "No hurt pose exists in any sheet; needs new generation (original art only) or a code treatment (flash/recoil)."
+ },
+ "evolution_timing": "n/a",
+ "action_strip_note": ""
+}
