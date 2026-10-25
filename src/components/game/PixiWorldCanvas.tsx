@@ -228,7 +228,11 @@ export default function PixiWorldCanvas({
         const cy = (playerPos.y + 0.5) * tile;
         const humanPlayer = playerKind === 'human' ? playerSlot(playerGender) : null;
         if (humanPlayer && humanPlayer.sheetUrl) {
-          const view = playerDir === 'up' ? 'back' : playerDir === 'left' || playerDir === 'right' ? 'right' : 'front';
+          // Distinct left cell when the slot has one (Player A atlas:
+          // left 128, right 192); otherwise fall back to mirrored right
+          // (old strips where left === right).
+          const distinctLeft = humanPlayer.frames.left !== humanPlayer.frames.right;
+          const view = playerDir === 'up' ? 'back' : playerDir === 'left' && distinctLeft ? 'left' : playerDir === 'left' || playerDir === 'right' ? 'right' : 'front';
           const key = `player-human-${humanPlayer.slotId}-${view}`;
           let sp = sheetSpritesRef.current.get(key);
           if (!sp) {
@@ -239,7 +243,7 @@ export default function PixiWorldCanvas({
           sp.anchor.set(0.5, 1);
           sp.position.set(cx, cy + tile * 0.5 + bob);
           sp.width = tile * 1.3; sp.height = tile * 1.3;
-          sp.scale.x = Math.abs(sp.scale.x) * (playerDir === 'left' ? -1 : 1);
+          sp.scale.x = Math.abs(sp.scale.x) * (playerDir === 'left' && !distinctLeft ? -1 : 1);
           parent.addChild(sp);
           return;
         }
