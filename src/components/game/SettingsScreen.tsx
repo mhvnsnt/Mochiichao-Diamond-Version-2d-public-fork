@@ -6,7 +6,7 @@ import {
   SOUNDS, BUTTON_MODES, frameAccent, frameName, persistSettings,
   MenuPreset, LOCKED_PRESET, loadPresets, savePresets, presetToJson,
 } from '../../lib/gameSettings';
-import { FONT_OPTIONS, fontById, applyFonts } from '../../lib/fonts';
+import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
 
 /**
  * Settings — real full screen, NOT a note, NOT a popup.
@@ -74,12 +74,16 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
 
   const accent = frameAccent(draft.frame);
   const mainFontOpt = fontById(draft.mainFont);
+  const menuFontOpt = fontById(draft.menuFont);
   const dialogueFontOpt = fontById(draft.dialogueFont);
+  const smallFontOpt = fontById(draft.smallFont);
+  const boldFontOpt = fontById(draft.boldFont);
+  const battleFontOpt = fontById(draft.battleFont);
 
   const saveAll = (next: GameSettings, nextPreset?: MenuPreset) => {
     setSettings(next);
     persistSettings(next);
-    applyFonts(next.mainFont, next.dialogueFont);
+    applyFontRoles(next);
     if (nextPreset) {
       const list = presets.map(p => (p.name === nextPreset.name ? nextPreset : p));
       const finalList = list.some(p => p.name === nextPreset.name) ? list : [...list, nextPreset];
@@ -128,10 +132,10 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     { label: 'SOUND', value: draft.sound, onLeft: () => set({ sound: cycle(SOUNDS, draft.sound, -1) }), onRight: () => set({ sound: cycle(SOUNDS, draft.sound, 1) }), note: 'NEED: stored flag only — no audio engine in this build yet to route mono/stereo.' },
     { label: 'BUTTON MODE', value: draft.buttonMode, onLeft: () => set({ buttonMode: cycle(BUTTON_MODES, draft.buttonMode, -1) }), onRight: () => set({ buttonMode: cycle(BUTTON_MODES, draft.buttonMode, 1) }), note: 'Honoured in Settings: LEFT/RIGHT cycle, L confirms when L=EQUALS=A. Wider remapping is NEED.' },
     { label: 'FRAME', value: frameName(draft.frame), onLeft: () => set({ frame: draft.frame <= 1 ? 20 : draft.frame - 1 }), onRight: () => set({ frame: draft.frame >= 20 ? 1 : draft.frame + 1 }), note: 'Original Mochiichao Y2K frames in Pokemon frame slots (1-10 FireRed base, 11-20 HeartGold/Platinum extra). Reloads live on return.' },
-    { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, note: 'Two independent placements (Mars font roles): MAIN FONT = titles/menus/headings/UI labels, DIALOGUE FONT = dialogue/NPC/battle/body text. Each cycles every font in fonts-settings-list.md independently. Applies live on return.' },
+    { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, note: 'Six independent placements (Mars font correction): MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font in fonts-settings-list.md independently, including Default — Trebuchet MS / system sans. Applies live on return. DIAMOND VERSION subtitle font is PINNED and never changes.' },
     { label: 'MENU CREATOR', value: 'OPEN ►', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR'), note: 'Full screen: Logo / Background / Animation / Panels. Presets only, never overwrites v32.' },
     { label: 'CANCEL', value: 'SAVE + EXIT', onLeft: saveAndBack, onRight: saveAndBack, onSelect: saveAndBack, note: 'Saves all rows to the save + localStorage and returns to the main menu.' },
-  ], [draft, mainFontOpt, dialogueFontOpt, preset]); // eslint-disable-line react-hooks/exhaustive-deps
+  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const menuCreatorRows: Row[] = useMemo(() => {
     const pages: Record<number, Row[]> = {
@@ -142,7 +146,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
         { label: 'LAYOUT EDITOR', value: 'OPEN ►', onLeft: () => setScreen('LAYOUT_EDITOR'), onRight: () => setScreen('LAYOUT_EDITOR'), onSelect: () => setScreen('LAYOUT_EDITOR') },
         { label: 'CURSOR CREATOR', value: 'OPEN ►', onLeft: () => setScreen('CURSOR_CREATOR'), onRight: () => setScreen('CURSOR_CREATOR'), onSelect: () => setScreen('CURSOR_CREATOR') },
         { label: 'PANEL FRAME EDITOR', value: 'OPEN ►', onLeft: () => setScreen('PANEL_FRAME_EDITOR'), onRight: () => setScreen('PANEL_FRAME_EDITOR'), onSelect: () => setScreen('PANEL_FRAME_EDITOR') },
-        { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, note: 'Best submenu path: Settings > Menu Creator > Font Settings. MAIN + DIALOGUE fonts, each cycles every font independently.' },
+        { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, note: 'Best submenu path: Settings > Menu Creator > Font Settings. Six rows: MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font independently.' },
         { label: 'NEXT PAGE', value: 'BACKGROUND ►', onLeft: () => setMenuPage(2), onRight: () => setMenuPage(2), onSelect: () => setMenuPage(2) },
       ],
       2: [
@@ -207,22 +211,34 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     { label: 'BACK TO MENU CREATOR', value: '◄ BACK', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR') },
   ];
 
-  // Font Settings — Mars font-role update (replaces the single Font
-  // row): MAIN FONT and DIALOGUE FONT cycle FONT_OPTIONS
-  // independently, apply live on return, CANCEL saves + exits.
-  // RESET FONTS restores MAIN=Yagiza / DIALOGUE=01 Digitall.
-  // ORIGINAL DEFAULTS applies the open-fonts preset (Bungee main /
-  // Fredoka dialogue) as a preset, never a Pokemon font file.
+  // Font Settings — Mars font CORRECTION (2026-10-25 18:30 CDT,
+  // overrides the 2-row version): six rows, each cycles the full
+  // FONT_OPTIONS list independently (including the named entry
+  // "Default — Trebuchet MS / system sans" on every row), applies
+  // live on return, CANCEL saves + exits.
+  // RESET FONTS restores, in row order:
+  // MAIN=Yagiza / MENU=Yagiza / DIALOGUE=01 Digitall /
+  // SMALL=01 Digitall / BOLD=Yagiza / BATTLE=01 Digitall.
+  // ORIGINAL DEFAULTS applies the open-fonts preset (Bungee /
+  // Titan One / Fredoka style). DIAMOND VERSION subtitle font is
+  // PINNED — no row here touches it (see fonts.ts
+  // PINNED_SUBTITLE_FONT, applied in IntroSequence).
   // Future custom logo font is NOT built here, not claimed.
   const cycleFont = (cur: string, dir: 1 | -1): string => {
     const i = FONT_OPTIONS.findIndex(f => f.id === cur);
     return FONT_OPTIONS[(i + dir + FONT_OPTIONS.length) % FONT_OPTIONS.length].id;
   };
+  const resetFonts = () => { set({ mainFont: 'yagiza', menuFont: 'yagiza', dialogueFont: '01-digitall', smallFont: '01-digitall', boldFont: 'yagiza', battleFont: '01-digitall' }); setSavedMsg('Fonts reset: MAIN=Yagiza, MENU=Yagiza, DIALOGUE=01 Digitall, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall.'); };
+  const originalDefaults = () => { set({ mainFont: 'bungee', menuFont: 'titan-one', dialogueFont: 'fredoka', smallFont: 'fredoka', boldFont: 'bungee', battleFont: 'fredoka' }); setSavedMsg('Original Defaults preset applied: MAIN=Bungee, MENU=Titan One, DIALOGUE=Fredoka, SMALL=Fredoka, BOLD=Bungee, BATTLE=Fredoka (open fonts only).'); };
   const fontRows: Row[] = [
-    { label: 'MAIN FONT', value: mainFontOpt.label, onLeft: () => set({ mainFont: cycleFont(draft.mainFont, -1) }), onRight: () => set({ mainFont: cycleFont(draft.mainFont, 1) }), note: 'MAIN FONT = titles, menus, headings, UI labels. Default / RESET FONTS value: Yagiza. ' + mainFontOpt.note },
-    { label: 'DIALOGUE FONT', value: dialogueFontOpt.label, onLeft: () => set({ dialogueFont: cycleFont(draft.dialogueFont, -1) }), onRight: () => set({ dialogueFont: cycleFont(draft.dialogueFont, 1) }), note: 'DIALOGUE FONT = dialogue boxes, NPC talk, battle text, body text. Default / RESET FONTS value: 01 Digitall. ' + dialogueFontOpt.note },
-    { label: 'RESET FONTS', value: 'Yagiza / 01 Digitall', onLeft: () => { set({ mainFont: 'yagiza', dialogueFont: '01-digitall' }); setSavedMsg('Fonts reset: MAIN=Yagiza, DIALOGUE=01 Digitall.'); }, onRight: () => { set({ mainFont: 'yagiza', dialogueFont: '01-digitall' }); setSavedMsg('Fonts reset: MAIN=Yagiza, DIALOGUE=01 Digitall.'); }, onSelect: () => { set({ mainFont: 'yagiza', dialogueFont: '01-digitall' }); setSavedMsg('Fonts reset: MAIN=Yagiza, DIALOGUE=01 Digitall.'); }, note: 'Restores Mars font roles: MAIN=Yagiza, DIALOGUE=01 Digitall. Save with CANCEL / SAVE + BACK to persist.' },
-    { label: 'ORIGINAL DEFAULTS', value: 'Bungee / Fredoka', onLeft: () => { set({ mainFont: 'bungee', dialogueFont: 'fredoka' }); setSavedMsg('Original Defaults preset applied: MAIN=Bungee, DIALOGUE=Fredoka (open fonts only).'); }, onRight: () => { set({ mainFont: 'bungee', dialogueFont: 'fredoka' }); setSavedMsg('Original Defaults preset applied: MAIN=Bungee, DIALOGUE=Fredoka (open fonts only).'); }, onSelect: () => { set({ mainFont: 'bungee', dialogueFont: 'fredoka' }); setSavedMsg('Original Defaults preset applied: MAIN=Bungee, DIALOGUE=Fredoka (open fonts only).'); }, note: 'Separate preset using non-proprietary open fonts (Bungee / Titan One / Fredoka style). Never a Pokemon font file. Save with CANCEL / SAVE + BACK to persist.' },
+    { label: 'MAIN FONT', value: mainFontOpt.label, onLeft: () => set({ mainFont: cycleFont(draft.mainFont, -1) }), onRight: () => set({ mainFont: cycleFont(draft.mainFont, 1) }), note: 'MAIN FONT (true starting default Yagiza) = titles, menus, headings, UI labels — via --game-font (body). ' + mainFontOpt.note },
+    { label: 'MENU FONT', value: menuFontOpt.label, onLeft: () => set({ menuFont: cycleFont(draft.menuFont, -1) }), onRight: () => set({ menuFont: cycleFont(draft.menuFont, 1) }), note: 'MENU FONT (separate row, starting default also Yagiza) = menu selection row text ONLY — main-menu CONTINUE / NEW GAME / SETTINGS rows and Settings rows follow this. Main menu layout/logo/cloud/panels/colours are otherwise UNCHANGED (locked v32). ' + menuFontOpt.note },
+    { label: 'DIALOGUE FONT', value: dialogueFontOpt.label, onLeft: () => set({ dialogueFont: cycleFont(draft.dialogueFont, -1) }), onRight: () => set({ dialogueFont: cycleFont(draft.dialogueFont, 1) }), note: 'DIALOGUE FONT (01 Digitall) = dialogue boxes, NPC talk, body text — via --dialogue-font in DialogueBox. ' + dialogueFontOpt.note },
+    { label: 'SMALL FONT', value: smallFontOpt.label, onLeft: () => set({ smallFont: cycleFont(draft.smallFont, -1) }), onRight: () => set({ smallFont: cycleFont(draft.smallFont, 1) }), note: 'SMALL FONT (starting 01 Digitall, Pokemon FONT_SMALL slot) = small labels and notes — speaker names, Settings notes/help. ' + smallFontOpt.note },
+    { label: 'BOLD FONT', value: boldFontOpt.label, onLeft: () => set({ boldFont: cycleFont(draft.boldFont, -1) }), onRight: () => set({ boldFont: cycleFont(draft.boldFont, 1) }), note: 'BOLD FONT (starting Yagiza, FONT_BOLD slot) = bold headings and action buttons — Settings header, title logo, SAVE + BACK. ' + boldFontOpt.note },
+    { label: 'BATTLE FONT', value: battleFontOpt.label, onLeft: () => set({ battleFont: cycleFont(draft.battleFont, -1) }), onRight: () => set({ battleFont: cycleFont(draft.battleFont, 1) }), note: 'BATTLE FONT (starting 01 Digitall) = battle log and HUD — BattleView message/log, healthboxes, move buttons. ' + battleFontOpt.note },
+    { label: 'RESET FONTS', value: 'Yagiza / Yagiza / Digitall', onLeft: resetFonts, onRight: resetFonts, onSelect: resetFonts, note: 'Restores, in row order: MAIN=Yagiza, MENU=Yagiza, DIALOGUE=01 Digitall, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall. Save with CANCEL / SAVE + BACK to persist.' },
+    { label: 'ORIGINAL DEFAULTS', value: 'Bungee / Titan One / Fredoka', onLeft: originalDefaults, onRight: originalDefaults, onSelect: originalDefaults, note: 'Separate preset using non-proprietary open fonts (Bungee / Titan One / Fredoka style). Never a Pokemon font file. Save with CANCEL / SAVE + BACK to persist.' },
     { label: 'BACK', value: '◄ BACK', onLeft: () => setScreen(fontReturn), onRight: () => setScreen(fontReturn), onSelect: () => setScreen(fontReturn), note: 'Returns to ' + (fontReturn === 'MENU_CREATOR' ? 'Menu Creator' : 'Settings') + '. Use SAVE + BACK below to persist font changes.' },
   ];
 
@@ -281,7 +297,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
       <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
       <div className="relative z-10 w-full max-w-lg flex flex-col gap-3 max-h-full overflow-y-auto">
         <StdWindow style={panelStyle} className="p-4 text-center">
-          <div className="text-white text-xl font-black tracking-widest">{title}</div>
+          <div className="text-white text-xl font-black tracking-widest" style={{ fontFamily: 'var(--bold-font, "Trebuchet MS", sans-serif)' }}>{title}</div>
           <div className="text-blue-200 text-xs mt-1">Pokemon layout, Y2K skin — full screen, not a popup</div>
         </StdWindow>
 
@@ -294,7 +310,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
               onFocus={() => setCursor(i)}
               className={`w-full text-left px-3 py-2 min-h-[48px] flex justify-between items-baseline gap-2 rounded ${i === safeCursor ? 'bg-white/10 ring-2 ring-yellow-300' : ''}`}
             >
-              <span className="font-bold tracking-widest text-white text-sm">
+              <span className="font-bold tracking-widest text-white text-sm" style={{ fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)' }}>
                 <span style={{ color: draft.cursorColor }}>{i === safeCursor ? `${cursorGlyph} ` : ''}</span>{row.label}
               </span>
               <span className="text-yellow-300 font-bold text-sm text-right">{row.value}</span>
@@ -304,7 +320,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
 
         {rows[safeCursor]?.note && (
           <StdWindow style={panelStyle} className="px-3 py-2 text-sm text-slate-200">
-            {rows[safeCursor].note}
+            <span style={{ fontFamily: 'var(--small-font, "Trebuchet MS", sans-serif)' }}>{rows[safeCursor].note}</span>
           </StdWindow>
         )}
 
@@ -325,7 +341,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
         <StdWindow style={panelStyle} className="px-3 py-2 text-sm text-slate-200 text-center">
           A: SELECT &nbsp; LEFT/RIGHT: CHANGE &nbsp; B: BACK
         </StdWindow>
-        <button onClick={saveAndBack} className="game-button px-4 py-3 font-bold min-h-[48px]">SAVE + BACK TO MAIN MENU</button>
+        <button onClick={saveAndBack} className="game-button px-4 py-3 font-bold min-h-[48px]" style={{ fontFamily: 'var(--bold-font, "Trebuchet MS", sans-serif)' }}>SAVE + BACK TO MAIN MENU</button>
       </div>
     </div>
   );
