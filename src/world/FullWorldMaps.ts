@@ -62,7 +62,14 @@ export const SECTOR_0: any = {
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
   ],
   npcs: [
-    { id:"mom", x:5, y:7, sprite:"👩", name:"Your Mom", facing:"down", dialog:["Sweetie! You're finally heading out on your journey?","Go to the Lab just up ahead and see Prof. Aeon.","Those Hacker Grunts are messing with Mochiichao in the wild — be careful."] },
+    // v5.2 home heal (implementation choice, NOT Mars canon): no
+    // home interior or heal point existed in Sector 0 — the
+    // playtest found no Mom/home heal anywhere — so talking to
+    // Mom now fully heals the party (finishDialog's existing
+    // npc.isHeal path, already used by the MochiiPlex nurse).
+    // The first-time Mom intro dialogue is a separate event
+    // (v4_mom_intro, no isHeal flag) and is unaffected.
+    { id:"mom", x:5, y:7, sprite:"👩", name:"Your Mom", facing:"down", isHeal: true, dialog:["Sweetie! You're finally heading out on your journey?","Go to the Lab just up ahead and see Prof. Aeon.","Those Hacker Grunts are messing with Mochiichao in the wild — be careful.","Come back and talk to me any time — I'll patch your partner right up."] },
     { id:"rival_hex", x:15, y:10, sprite:"😤", name:"Hex", facing:"down", dialog:["You again? I already picked my starter. Razorgater, obviously.","Don't think I'll go easy on you just because we grew up here.","Next time we meet, we BATTLE. Count on it."], battle: { team:[{ id:"004", name:"Razorgater", hp:50, maxHp:50, atk:65, def:64, spd:48, moves:["Metal Claw","Tackle"], type:"Water", level:5 }], reward:100, badge:null } },
     { id:"fat_guy", x:9, y:13, sprite:"🧑‍🦲", name:"Technology Enthusiast", facing:"down", dialog:["Technology is incredible!", "You can now store up to 6 Mochiichao in your party!", "Any more you catch are instantly sent to your PC!"] },
   ],
