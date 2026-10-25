@@ -34,7 +34,7 @@ export default function SaveMenu({ onClose }: SaveMenuProps) {
 
   return (
     <div className="absolute inset-0 bg-black/80 backdrop-blur z-[60] flex items-center justify-center">
-      <div className="bg-slate-900 border-4 border-teal-500 rounded p-6 w-full max-w-2xl shadow-[0_0_50px_rgba(0,255,255,0.2)]">
+      <div className="std-window p-6 w-full max-w-2xl">
          <div className="flex justify-between items-center mb-6 border-b-2 border-teal-900 pb-2">
             <h2 className="text-teal-300 text-2xl font-bold tracking-widest textShadow">SYSTEM / SAVE</h2>
             <button onClick={onClose} className="text-gray-400 hover:text-white font-bold tracking-widest">▼ CLOSE</button>
