@@ -5,18 +5,22 @@ import { ITEM_ICONS } from '../../lib/uiArt';
 import { MenuHelpLine } from '../game/MenuList';
 
 /**
+ * Bag, v5.2 heal wiring: Mend Patch now actually heals (see Use
+ * handler below) — before v5.2 Use only decremented the count and
+ * said so, even though the item already said "Restores 50 HP."
  * Bag, v2 structure (bag_view.c / item_menu.c, structure/rules only):
  * a pocketed list grouped by pocket/type, cursor, icon + description
  * for the selected item, use/give/toss/quit context where the existing
  * inventory system supports them. Items, names, and descriptions are
  * the existing ShopView items only — nothing invented.
  *
- * Honest limits, stated in the UI itself: gameStore.useItem only
- * decrements a count; no item effect (heal, revive, capture) is wired
- * through the bag in this build, so Use only changes the count and
- * says so. Give is not offered as a working action: there is no
- * trade or held-item system to give to. Toss discards one, with a
- * confirm window, using the same decrement.
+ * Honest limits, stated in the UI itself: Mend Patch heals 50 HP
+ * (v5.2); other items' Use only decrements a count, no other item
+ * effect (revive, capture) is wired through the bag in this build,
+ * so Use for those only changes the count and says so. Give is
+ * not offered as a working action: there is no trade or held-item
+ * system to give to. Toss discards one, with a confirm window,
+ * using the same decrement.
  */
 const ITEM_DETAILS: Record<string, { name: string; desc: string; pocket: string }> = {
   luigi_cube: { name: 'Luigi Cube', desc: 'A sketchy syndicate-brand capture device.', pocket: 'Capture' },
@@ -34,6 +38,8 @@ function ItemIcon({ id }: { id: string }) {
 export default function BagView({ onBack }: { onBack: () => void }) {
   const inventory = useGameStore(s => s.inventory);
   const useItem = useGameStore(s => s.useItem);
+  const party = useGameStore(s => s.party);
+  const updatePartyMember = useGameStore(s => s.updatePartyMember);
   const [selected, setSelected] = useState(0);
   const [confirmToss, setConfirmToss] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -92,7 +98,36 @@ export default function BagView({ onBack }: { onBack: () => void }) {
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
                 <button
-                  onClick={() => { if (useItem(current.id)) setMessage(`Used ${current.name}. Count only — no item effect is wired through the bag in this build yet.`); }}
+                  onClick={() => {
+                    // v5.2: Mend Patch actually restores 50 HP (its
+                    // existing description) to the first party member
+                    // that is damaged but not fainted, clamped to
+                    // maxHp, with hp and currentHp kept in sync
+                    // (v5.1 HP-sync rule). Fainted members are NOT
+                    // revived by a Mend Patch, and nothing is
+                    // consumed when nobody needs healing or only
+                    // fainted members remain. Other items keep the
+                    // old count-only behaviour and say so.
+                    if (current.id === 'mend_patch') {
+                      // currentHp is a battle-copy field (v5.1 HP
+                      // sync), not on the MochiiInstance type, so
+                      // read it via any — hp is the store truth.
+                      const cur = (m: any) => m.hp ?? m.currentHp ?? 0;
+                      const idx = party.findIndex(m => cur(m) > 0 && cur(m) < m.maxHp);
+                      if (idx === -1) {
+                        setMessage(party.length === 0 ? 'You have no Mochiichao yet.' : party.every(m => cur(m) <= 0) ? 'Mend Patch cannot revive a fainted Mochiichao.' : 'No Mochiichao needs healing right now.');
+                        return;
+                      }
+                      if (useItem(current.id)) {
+                        const m = party[idx];
+                        const healed = Math.min(m.maxHp, cur(m) + 50);
+                        updatePartyMember(idx, { ...m, hp: healed, currentHp: healed } as any);
+                        setMessage(`Used Mend Patch. ${m.nickname || 'Your Mochiichao'} restored to ${healed}/${m.maxHp} HP.`);
+                      }
+                      return;
+                    }
+                    if (useItem(current.id)) setMessage(`Used ${current.name}. Count only — no item effect is wired through the bag in this build yet.`);
+                  }}
                   className="game-button px-3 py-2 text-sm min-h-[48px]"
                 >
                   Use
@@ -101,7 +136,7 @@ export default function BagView({ onBack }: { onBack: () => void }) {
                 <button onClick={() => setConfirmToss(true)} className="game-button px-3 py-2 text-sm min-h-[48px]">Toss</button>
                 <button onClick={onBack} className="game-button px-3 py-2 text-sm min-h-[48px]">Quit</button>
               </div>
-              <p className="text-xs text-slate-400 mt-2">Use changes the count only in this build. Give is not available: there is no trade or held-item system yet.</p>
+              <p className="text-xs text-slate-400 mt-2">Mend Patch restores 50 HP to the first damaged party member. Other items' Use changes the count only in this build. Give is not available: there is no trade or held-item system yet.</p>
             </div>
           )}
           <MenuHelpLine text={current ? `${current.name} — ${current.desc}` : 'Select an item.'} />
