@@ -6,6 +6,9 @@ import StdWindow from "./game/StdWindow";
 import DialogueBox from "./game/DialogueBox";
 import SettingsScreen from "./game/SettingsScreen";
 import { frameAccent } from "../lib/gameSettings";
+import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
+import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
+import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 
@@ -103,6 +106,18 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   const [slots, setSlots] = useState<any[]>([]);
   // v3 main menu: window selection, overwrite confirm.
   const [mainSelected, setMainSelected] = useState(0);
+  // Title rotation (Mars 18:26/18:28/18:31 CDT): first pick excludes
+  // the last stored creature (previous startup), so a startup never
+  // repeats the previous startup's creature. Every return to TITLE
+  // re-picks, excluding the current creature and the stored one.
+  const [titleCreature, setTitleCreature] = useState<TitleCreature>(() => {
+    const last = readLastTitleCreature();
+    return pickRotation(last ? [last] : []);
+  });
+  // Yogiferno title variant: same walk, or the snow variant (same
+  // walk on a snow background, fire trail on snow). Re-rolled on
+  // every rotation pick that lands on Yogiferno.
+  const [titleVariant, setTitleVariant] = useState<'walk' | 'snow'>('walk');
   const [showOverwriteConfirm, setShowOverwriteConfirm] = useState(false);
   const settings = useGameStore(s => s.settings);
   const frameColor = frameAccent(settings.frame);
@@ -131,6 +146,18 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   useEffect(() => {
     if (phase === "MAIN_MENU") {
       setSlots(getSlotSummaries());
+    }
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase === "TITLE") {
+      setTitleCreature(prev => {
+        const last = readLastTitleCreature();
+        const next = pickRotation([prev.name, ...(last ? [last] : [])]);
+        writeLastTitleCreature(next.name);
+        if (next.name === 'Yogiferno') setTitleVariant(Math.random() < 0.5 ? 'snow' : 'walk');
+        return next;
+      });
     }
   }, [phase]);
 
@@ -272,12 +299,31 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             studio logo 556 in the copyright slot below it. */}
         <div className="z-10 flex flex-col items-center w-full max-w-2xl" style={{ animation: 'title-slide-up 0.6s ease-out' }}>
           <div className="text-center">
-            <div className="text-white text-4xl sm:text-5xl font-black tracking-widest drop-shadow-md">MOCHIICHAO</div>
-            <div className="text-teal-300 text-xl font-bold tracking-[0.4em] drop-shadow-lg mt-3" style={{ animation: 'title-slide-up 0.6s ease-out 0.4s both' }}>
+            <div className="text-white text-4xl sm:text-5xl font-black tracking-widest drop-shadow-md" style={{ fontFamily: 'var(--bold-font, "Trebuchet MS", sans-serif)' }}>MOCHIICHAO</div>
+            {/* DIAMOND VERSION subtitle font is PINNED (Mars font
+                correction): this stack never changes, no font row
+                touches it, in TITLE or MAIN_MENU. */}
+            <div className="text-teal-300 text-xl font-bold tracking-[0.4em] drop-shadow-lg mt-3" style={{ animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: PINNED_SUBTITLE_FONT }}>
               ✦ DIAMOND VERSION ✦
             </div>
           </div>
-          <div className="mt-16 text-yellow-400 text-sm font-bold tracking-widest" style={{ animation: 'press-blink 0.75s steps(1) infinite' }}>
+          {/* Title rotation: featured creature + its theme. Art is
+              GAP — silhouette art for this creature is not shipped
+              in this code PR; the name/theme wiring is real. */}
+          <div className="mt-6 text-center" style={{ color: titleCreature.primary }}>
+            <div className="text-sm font-bold tracking-widest">FEATURED: {titleCreature.name}{titleCreature.dex ? ` ${titleCreature.dex}` : ''}</div>
+            <div className="text-[11px] mt-1" style={{ color: titleCreature.accent }}>{titleCreature.vibe}</div>
+            <div className="text-[10px] text-gray-500 mt-1">Title creature art: GAP — silhouette art needed</div>
+          </div>
+          {titleCreature.name === 'Yogiferno' && (
+            <div className="mt-4 w-full max-w-md">
+              <div className="text-center text-[11px] mb-1" style={{ color: titleCreature.accent }}>
+                Yogiferno — {titleVariant === 'snow' ? 'snow walk variant (fire trail on snow)' : 'walk variant'}
+              </div>
+              <YogifernoTitleWalk variant={titleVariant} />
+            </div>
+          )}
+          <div className="mt-10 text-sm font-bold tracking-widest" style={{ animation: 'press-blink 0.75s steps(1) infinite', color: titleCreature.primary }}>
             PRESS ANY KEY
           </div>
           <div className="mt-8 w-full max-w-[420px]">
@@ -367,8 +413,12 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
         <div className="relative z-10 w-full max-w-md flex flex-col gap-4" role="menu" aria-label="Main menu">
           <div className="text-center">
-            <div className="text-white text-2xl font-black tracking-widest drop-shadow-md">MOCHIICHAO</div>
-            <div className="text-teal-300 text-sm font-bold tracking-[0.4em] mt-1">✦ DIAMOND VERSION ✦</div>
+            {/* Main menu otherwise UNCHANGED (locked v32): logo and
+                subtitle are pinned to the previous default stack,
+                NOT to any font row — only the selection row text
+                below follows MENU FONT. */}
+            <div className="text-white text-2xl font-black tracking-widest drop-shadow-md" style={{ fontFamily: PINNED_SUBTITLE_FONT }}>MOCHIICHAO</div>
+            <div className="text-teal-300 text-sm font-bold tracking-[0.4em] mt-1" style={{ fontFamily: PINNED_SUBTITLE_FONT }}>✦ DIAMOND VERSION ✦</div>
           </div>
 
           {mainItems.map((item, i) => {
@@ -390,7 +440,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                     onFocus={() => setMainSelected(i)}
                     className="w-full text-left"
                   >
-                    <div className="text-xl font-bold tracking-widest text-white"><span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE</div>
+                    <div className="text-xl font-bold tracking-widest text-white" style={{ fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)' }}><span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE</div>
                     {latestData && (
                       <div className="text-sm text-slate-300 mt-2 leading-relaxed">
                         <div>Player: <span className="text-yellow-300 font-bold">{latestData.playerName || 'Netrunner'}</span></div>
@@ -411,6 +461,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   onMouseEnter={() => setMainSelected(i)}
                   onFocus={() => setMainSelected(i)}
                   className="w-full text-left text-xl font-bold tracking-widest text-white"
+                  style={{ fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)' }}
                 >
                   <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
                 </button>
