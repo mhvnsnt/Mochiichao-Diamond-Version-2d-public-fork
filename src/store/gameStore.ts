@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { MochiiInstance } from '../lib/types';
 import { createMochii } from '../lib/engine';
 import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
-import { applyFonts } from '../lib/fonts';
+import { applyFontRoles } from '../lib/fonts';
 
 interface GameState {
   playerName: string;
@@ -81,7 +81,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   setSettings: (patch) => set(s => {
     const next = { ...s.settings, ...patch };
     persistSettings(next);
-    applyFonts(next.mainFont, next.dialogueFont);
+    applyFontRoles(next);
     return { settings: next };
   }),
   cheated: false,
@@ -95,7 +95,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   loadState: (state) => {
     const nextSettings = { ...DEFAULT_SETTINGS, ...((state as any).settings || {}) };
     persistSettings(nextSettings);
-    applyFonts(nextSettings.mainFont, nextSettings.dialogueFont);
+    applyFontRoles(nextSettings);
     set({ ...state, settings: nextSettings, introCompleted: true, rivalName: (state as any).rivalName || 'Hex' });
   },
   completeIntro: () => set({ introCompleted: true }),
