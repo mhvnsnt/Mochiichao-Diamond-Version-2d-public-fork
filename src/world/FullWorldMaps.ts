@@ -23,11 +23,20 @@ export const SECTOR_0: any = {
   width: 32, height: 28,
   playerStart: { x:15, y:18 },
   tiles: [
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-    [1,1,1,1,1,1,1,1,4,4,4,4,4,4,1,1,1,1,4,4,4,4,4,4,1,1,1,1,1,1,1,1],
-    [1,1,1,1,1,1,1,1,4,4,4,4,4,4,1,1,1,1,4,4,4,4,4,4,1,1,1,1,1,1,1,1],
-    [1,1,1,1,1,1,1,1,4,4,5,4,4,4,1,1,1,1,4,5,4,4,4,4,1,1,1,1,1,1,1,1],
-    [1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1],
+    // v5: Route 1.0 gate corridor at x=15. Before v5 the north edge
+    // (y=0) and the gap between the two north buildings (x=14-17,
+    // y=1-4) were all wall/building tiles, so the sector0 -> route_1
+    // exit at (13-17, 0) was unreachable no matter how the player
+    // walked — that, not a missing exit, is why Route 1.0 was never
+    // reached in the v4 playtest. The x=15 column is now PATH from
+    // the y=5 path row up to the y=0 exit row. The block_route_1
+    // events at y=1 still gate it: with no starter the player is
+    // stepped back with the "go see Prof. Aeon first" message.
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,4,4,4,4,4,4,1,3,1,1,4,4,4,4,4,4,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,4,4,4,4,4,4,1,3,1,1,4,4,4,4,4,4,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,4,4,5,4,4,4,1,3,1,1,4,5,4,4,4,4,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,3,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1],
     [1,1,1,1,0,0,0,0,0,0,3,3,3,0,0,3,3,3,0,0,3,3,0,0,0,0,0,1,1,1,1,1],
     [1,1,1,1,0,1,1,0,0,0,3,0,3,0,0,3,0,3,0,0,3,3,0,0,0,1,1,1,1,1,1,1],
     [1,1,1,1,4,4,5,4,0,0,3,0,3,0,0,3,0,3,0,0,0,0,0,0,4,4,5,4,1,1,1,1],
@@ -57,7 +66,15 @@ export const SECTOR_0: any = {
     { id:"rival_hex", x:15, y:10, sprite:"😤", name:"Hex", facing:"down", dialog:["You again? I already picked my starter. Razorgater, obviously.","Don't think I'll go easy on you just because we grew up here.","Next time we meet, we BATTLE. Count on it."], battle: { team:[{ id:"004", name:"Razorgater", hp:50, maxHp:50, atk:65, def:64, spd:48, moves:["Metal Claw","Tackle"], type:"Water", level:5 }], reward:100, badge:null } },
     { id:"fat_guy", x:9, y:13, sprite:"🧑‍🦲", name:"Technology Enthusiast", facing:"down", dialog:["Technology is incredible!", "You can now store up to 6 Mochiichao in your party!", "Any more you catch are instantly sent to your PC!"] },
   ],
-  signs: [],
+  signs: [
+    // v5: Sector 0 had sign TILES (tile 10) but an empty signs array,
+    // so facing them did nothing in the playtest. These are real
+    // interactable sign objects now (interact() checks signs).
+    { x:2, y:11, text:"BOOT HARBOR\nProf. Aeon's Lab is north — walk into the door." },
+    { x:11, y:11, text:"TALL GRASS\nWild Mochiichao live here — bring a partner first!" },
+    { x:19, y:11, text:"BOOT HARBOR\nThe lab is north of here. Route 1.0 is north past the lab." },
+    { x:15, y:5, text:"ROUTE 1.0 GATE\nNorth to Route 1.0 and Silicon Town.\nNo partner yet? Go to Prof. Aeon's Lab first." },
+  ],
   exits: [
     ...buildEdgeExits(13, 17, 0, "route_1", 38, "up"),
     { x:15, y:27, to:"boot_bay", enterAt:{x:15, y:0}, dir:"down", hmNeeded:"Surf" },
@@ -103,8 +120,8 @@ export const AEON_LAB: any = {
     { id:"starter_tyrage", x:6, y:6, sprite:"🪨", name:"Tyrage Ball", facing:"down", dialog:["Tyrage! (An earthy dinosaur)","Are you sure you want to choose Tyrage?", ""], isChoice: true, eventId: "pick_starter_007" },
     { id:"starter_kittember", x:8, y:6, sprite:"😼", name:"Kittember Ball", facing:"down", dialog:["Kittember! (A fast and fiery feline)","Are you sure you want to choose Kittember?", ""], isChoice: true, eventId: "pick_starter_010" },
     { id:"starter_sproutle", x:10, y:6, sprite:"🐢", name:"Sproutle Ball", facing:"down", dialog:["Sproutle! (A grassy plant turtle)","Are you sure you want to choose Sproutle?", ""], isChoice: true, eventId: "pick_starter_038" },
-    { id:"dorowani_display", x:3, y:10, sprite:"", creatureId:"147", name:"Dorowani", facing:"down", dialog:["Dorowani! A Gen 2 starter.","Its sheet is ready, but its stats are not set yet — so it is not choosable here yet."] },
-    { id:"gabu_display", x:9, y:10, sprite:"", creatureId:"148", name:"Gabu", facing:"down", dialog:["Gabu! A Gen 2 starter.","Its sheet is ready, but its stats are not set yet — so it is not choosable here yet."] }
+    { id:"dorowani_display", x:3, y:10, sprite:"", creatureId:"147", name:"Dorowani", facing:"down", dialog:["Dorowani! A Gen 2 starter.","Gen 2 starters arrive later in the game — not choosable in this lab."] },
+    { id:"gabu_display", x:9, y:10, sprite:"", creatureId:"148", name:"Gabu", facing:"down", dialog:["Gabu! A Gen 2 starter.","Gen 2 starters arrive later in the game — not choosable in this lab."] }
   ],
   signs: [],
   exits: [],
