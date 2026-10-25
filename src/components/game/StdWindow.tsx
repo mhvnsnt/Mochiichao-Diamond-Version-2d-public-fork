@@ -16,12 +16,16 @@ import React from 'react';
  * unification in index.css, so StdWindow and game-panel look the same
  * — that is the point: one frame, not a different frame per screen.
  */
-export default function StdWindow({ children, className = '', selected = false, style, onClick }: {
+export default function StdWindow({ children, className = '', selected = false, style, onClick, accent }: {
   children: React.ReactNode;
   className?: string;
   selected?: boolean;
   style?: React.CSSProperties;
   onClick?: () => void;
+  /** Settings FRAME accent colour (frameAccent()). When set, the
+   *  window border uses it instead of the default teal — this is
+   *  how FRAME reloads live on real windows. */
+  accent?: string;
   // React's JSX key is stripped at runtime, but tsc checks it against
   // this props type when StdWindow is used in a list, so declare it.
   key?: React.Key;
@@ -29,7 +33,7 @@ export default function StdWindow({ children, className = '', selected = false, 
   return (
     <div
       className={`std-window ${selected ? 'std-window-selected' : ''} ${className}`}
-      style={style}
+      style={accent ? { ...style, borderColor: accent } : style}
       onClick={onClick}
     >
       {children}
