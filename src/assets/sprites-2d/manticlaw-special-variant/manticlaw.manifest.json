@@ -1,0 +1,62 @@
+{
+  "creature": "manticlaw",
+  "roster_id": null,
+  "roster_note": "Unnumbered \u2014 do NOT assign 047/048 without Mars's say-so.",
+  "source": "Mars's own Tripo model, baked from GLB (not loaded raw in game)",
+  "game_rule": "looks 3D, runs 2D \u2014 game eats only these 2D sheets",
+  "cell_size": 64,
+  "sheet": {
+    "file": "manticlaw_sheet.png",
+    "width": 192,
+    "height": 64
+  },
+  "frames": [
+    {
+      "view": "front",
+      "source_angle": "angle90",
+      "source_file": "manticlaw_angle90.png",
+      "file": "manticlaw_front_64.png",
+      "x": 0,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "trimmed_width": 64,
+      "trimmed_height": 64
+    },
+    {
+      "view": "back",
+      "source_angle": "angle270",
+      "source_file": "manticlaw_angle270.png",
+      "file": "manticlaw_back_64.png",
+      "x": 64,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "trimmed_width": 64,
+      "trimmed_height": 64
+    },
+    {
+      "view": "side",
+      "source_angle": "angle0",
+      "source_file": "manticlaw_angle0.png",
+      "file": "manticlaw_side_64.png",
+      "x": 128,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "trimmed_width": 52,
+      "trimmed_height": 64
+    }
+  ],
+  "views_done": [
+    "front",
+    "back",
+    "side"
+  ],
+  "views_missing": [
+    "walk frames (all directions) \u2014 source models are static poses, no walk animation baked",
+    "battle poses distinct from front/back \u2014 first pass reuses front (opponent) / back (player) battle views",
+    "side facing the other direction \u2014 mirror the side frame in game code until a second side is baked"
+  ],
+  "notes": "Renders are 256px EEVEE transparent PNGs trimmed and downscaled to fit 64x64. Back/side lighting is darker on some angles (single key sun); front/back/side used here are readable."
+}
