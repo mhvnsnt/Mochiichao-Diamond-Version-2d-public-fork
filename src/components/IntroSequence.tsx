@@ -4,7 +4,10 @@ import { getSlotSummaries, getSaves, loadGame } from "../lib/saveSystem";
 import HumanPortrait from "./game/HumanPortrait";
 import StdWindow from "./game/StdWindow";
 import DialogueBox from "./game/DialogueBox";
+import SettingsScreen from "./game/SettingsScreen";
+import { frameAccent } from "../lib/gameSettings";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
+import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -87,14 +90,23 @@ interface IntroSequenceProps {
 }
 
 export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenceProps) {
-  const [phase, setPhase] = useState<"CINEMATIC" | "TITLE" | "MAIN_MENU" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("CINEMATIC");
+  // Title/press/settings wiring, 2026-10-25: BOOT -> INTRO (GAP
+  // scenes) -> TITLE (phi phases) -> MAIN_MENU, upgraded in place.
+  // CINEMATIC is replaced by BOOT + INTRO; no duplicate title,
+  // main-menu, or save system is created. Main menu itself is
+  // UNCHANGED except SETTINGS now opens the real Settings screen.
+  const [phase, setPhase] = useState<"BOOT" | "INTRO" | "TITLE" | "MAIN_MENU" | "SETTINGS" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("BOOT");
   const [showPrompt, setShowPrompt] = useState(false);
+  const [introScene, setIntroScene] = useState(0);
+  const [titleFading, setTitleFading] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
-  // v3 main menu: window selection, overwrite confirm, settings note.
+  // v3 main menu: window selection, overwrite confirm.
   const [mainSelected, setMainSelected] = useState(0);
   const [showOverwriteConfirm, setShowOverwriteConfirm] = useState(false);
-  const [showSettingsNote, setShowSettingsNote] = useState(false);
+  const settings = useGameStore(s => s.settings);
+  const frameColor = frameAccent(settings.frame);
+  const cursorGlyph = settings.cursorShape === 'DIAMOND' ? '◆' : settings.cursorShape === 'STAR' ? '✦' : settings.cursorShape === 'RING' ? '◎' : '►';
 
   // Name Entry state
   const [tempName, setTempName] = useState("");
@@ -129,10 +141,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     const hasSaves = slots.some(s => s !== null);
     const itemCount = hasSaves ? 3 : 2;
     const handler = (e: KeyboardEvent) => {
-      if (showOverwriteConfirm || showSettingsNote) {
+      if (showOverwriteConfirm) {
         if (e.key === 'Escape' || e.key.toLowerCase() === 'b') {
           setShowOverwriteConfirm(false);
-          setShowSettingsNote(false);
         }
         return;
       }
@@ -144,22 +155,40 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         const key = keys[Math.min(mainSelected, keys.length - 1)];
         if (key === 'CONTINUE') setPhase("SAVE_SLOTS");
         else if (key === 'NEW GAME') { if (hasSaves) setShowOverwriteConfirm(true); else setPhase("SAVE_SLOTS"); }
-        else if (key === 'SETTINGS') setShowSettingsNote(true);
+        else if (key === 'SETTINGS') setPhase("SETTINGS");
       }
       else if (e.key === 'Escape' || e.key.toLowerCase() === 'b') setPhase("TITLE");
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [phase, mainSelected, slots, showOverwriteConfirm, showSettingsNote]);
+  }, [phase, mainSelected, slots, showOverwriteConfirm]);
 
-  const handleAnyKey = () => {
-    if (phase === "CINEMATIC") setPhase("TITLE");
-    else if (phase === "TITLE") setPhase("MAIN_MENU");
+  // Boot / intro / title advance: any key or click skips to the next
+  // phase (Pokemon any-key skip). Boot hold time is an implementation
+  // choice (2.5s, labelled in the BOOT render) — Mars has not locked
+  // a hold time yet. Title fade is a white fade, then MAIN_MENU.
+  const advanceIntro = () => {
+    if (phase === "BOOT") setPhase("INTRO");
+    else if (phase === "INTRO") {
+      if (introScene < 3) setIntroScene(s => s + 1);
+      else setPhase("TITLE");
+    } else if (phase === "TITLE" && !titleFading) {
+      setTitleFading(true);
+      setTimeout(() => { setTitleFading(false); setPhase("MAIN_MENU"); }, 350);
+    }
   };
 
   useEffect(() => {
-    if (phase === "CINEMATIC" || phase === "TITLE") {
-      const handler = () => handleAnyKey();
+    if (phase === "BOOT") {
+      const t = setTimeout(() => setPhase("INTRO"), 2500);
+      return () => clearTimeout(t);
+    }
+    return undefined;
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase === "BOOT" || phase === "INTRO" || phase === "TITLE") {
+      const handler = () => advanceIntro();
       window.addEventListener("keydown", handler);
       window.addEventListener("mousedown", handler);
       return () => {
@@ -167,20 +196,55 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         window.removeEventListener("mousedown", handler);
       };
     }
-  }, [phase]);
+  }, [phase, introScene, titleFading]);
 
-  if (phase === "CINEMATIC") {
+  if (phase === "BOOT") {
     return (
-      <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none">
-        <div className="text-white text-md tracking-[0.3em] mb-12 animate-pulse text-center">
-          MOCHII STUDIOS<br/><br/>
-          MOCHIICHAO<br/>DIAMOND VERSION
+      <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
+        {/* Boot: black screen, M Heavensent Studios logo alone, phi
+            boot size (742 on a 1200 canvas, responsive max-width).
+            Boot sound is GAP — original sound needed, no file
+            invented, no Pokemon chime copied. Hold 2.5s is an
+            implementation choice, not a locked Mars value; any key
+            skips immediately. */}
+        <img
+          src={heavensentLogo}
+          alt="M Heavensent Studios"
+          className="w-full max-w-[556px] aspect-square object-contain"
+          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+        />
+        <div className="text-white text-lg tracking-[0.3em] text-center mt-2">M HEAVENSENT STUDIOS</div>
+        <div className="text-gray-500 text-xs tracking-[0.2em] mt-8 text-center">
+          Boot sound: GAP — original sound needed · Press any key to skip
         </div>
-        <div className="text-teal-400 text-6xl shadow-[0_0_20px_rgba(0,255,255,0.8)] filter drop-shadow animate-bounce">
-          ✦
-        </div>
-        <div className={`mt-24 text-gray-500 text-xs tracking-[0.2em] transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
-          ▼ PRESS ANY KEY ▼
+      </div>
+    );
+  }
+
+  if (phase === "INTRO") {
+    const scenes = [
+      { title: 'M HEAVENSENT STUDIOS', body: 'Studio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.', gap: 'GAP: studio scene art — original art needed.' },
+      { title: 'WORLD CLOSE-UP', body: 'Scene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).', gap: 'GAP: intro scene art — original art needed.' },
+      { title: 'WORLD PAN + CREATURE CLOSE-UPS', body: 'Scene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.', gap: 'GAP: intro scene art — original art needed.' },
+      { title: 'CREATURE FIGHT BEAT', body: 'Scene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.', gap: 'GAP: intro scene art — original art needed.' },
+    ];
+    const scene = scenes[introScene];
+    return (
+      <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
+        <div className="w-full max-w-md text-center">
+          <div className="text-teal-300 text-xs tracking-[0.3em] mb-4">INTRO MOVIE — SCENE {introScene + 1} / 4 · ANY KEY SKIPS</div>
+          <StdWindow accent={frameColor} className="p-6">
+            <div className="text-white text-xl font-black tracking-widest">{scene.title}</div>
+            <p className="text-slate-300 text-sm mt-4 leading-relaxed">{scene.body}</p>
+            <p className="text-yellow-300 text-xs mt-4">{scene.gap}</p>
+          </StdWindow>
+          <button
+            onClick={(e) => { e.stopPropagation(); advanceIntro(); }}
+            className="game-button px-6 py-3 font-bold min-h-[48px] mt-6"
+          >
+            {introScene < 3 ? 'NEXT SCENE ►' : 'TO TITLE ►'}
+          </button>
+          <div className="text-gray-500 text-xs mt-4">Intro music: GAP — original music needed. Any key skips and stops the intro.</div>
         </div>
       </div>
     );
@@ -188,29 +252,56 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   if (phase === "TITLE") {
     return (
-      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden cursor-pointer">
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden cursor-pointer p-4">
         <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
         <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
-        
-        <div className="z-10 mb-8 flex flex-col items-center">
-          <div className="w-16 h-16 rounded-full bg-[#e8b890] border-4 border-slate-700" />
-          <div className="w-20 h-24 rounded-t-full bg-teal-700 border-2 border-teal-300 -mt-1" />
+        {/* Shine sweep: white band moving left to right, twice
+            (Ruby x+=4, brighten to 31 then darken to 0, twice).
+            CSS animation stands in for the frame-count shine. */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div
+            className="absolute top-0 bottom-0 w-24 bg-white/20 blur-md"
+            style={{ animation: 'title-shine 2.4s ease-in-out 2' }}
+          />
+        </div>
+        <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink { 0%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }`}</style>
+
+        {/* Phi title layout, responsive version of the 1200x1500 spec:
+            logo 900 (75% width) centre top third, DIAMOND VERSION
+            556 (900/phi) below it, PRESS ANY KEY at the 61.8% line,
+            studio logo 556 in the copyright slot below it. */}
+        <div className="z-10 flex flex-col items-center w-full max-w-2xl" style={{ animation: 'title-slide-up 0.6s ease-out' }}>
+          <div className="text-center">
+            <div className="text-white text-4xl sm:text-5xl font-black tracking-widest drop-shadow-md">MOCHIICHAO</div>
+            <div className="text-teal-300 text-xl font-bold tracking-[0.4em] drop-shadow-lg mt-3" style={{ animation: 'title-slide-up 0.6s ease-out 0.4s both' }}>
+              ✦ DIAMOND VERSION ✦
+            </div>
+          </div>
+          <div className="mt-16 text-yellow-400 text-sm font-bold tracking-widest" style={{ animation: 'press-blink 0.75s steps(1) infinite' }}>
+            PRESS ANY KEY
+          </div>
+          <div className="mt-8 w-full max-w-[420px]">
+            <img
+              src={heavensentLogo}
+              alt="M Heavensent Studios"
+              className="w-full aspect-square object-contain"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+            <div className="text-center text-gray-400 text-[10px] tracking-widest mt-1">M HEAVENSENT STUDIOS · TITLE COPYRIGHT SLOT</div>
+            <div className="text-center text-gray-500 text-[10px] mt-2">Title background scene art: GAP — original art needed · Title music: GAP</div>
+          </div>
         </div>
 
-        <div className="text-center z-10">
-          <div className="text-white text-3xl font-black tracking-widest shadow-black drop-shadow-md">MOCHIICHAO</div>
-          <div className="text-teal-300 text-xl font-bold tracking-[0.4em] drop-shadow-lg mt-2">✦ DIAMOND VERSION ✦</div>
-        </div>
-
-        <div className={`absolute bottom-20 text-yellow-400 text-sm font-bold tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
-          PRESS ANY KEY
-        </div>
-
-        <div className="absolute bottom-4 text-gray-600 text-[10px] tracking-widest">
-          © 2026 MOCHII STUDIOS. ALL RIGHTS RESERVED.
+        {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
+        <div className={`absolute bottom-4 text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
+          ▼ PRESS ANY KEY ▼
         </div>
       </div>
     );
+  }
+
+  if (phase === "SETTINGS") {
+    return <SettingsScreen onBack={() => setPhase("MAIN_MENU")} />;
   }
 
   if (phase === "MAIN_MENU") {
@@ -261,11 +352,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         if (hasSaves) setShowOverwriteConfirm(true);
         else setPhase("SAVE_SLOTS");
       } else if (key === 'SETTINGS') {
-        // Honest limit: there is no settings screen in this build
-        // (the old button was disabled "COMING SOON"). The window is
-        // present per the spec order, but it changes no setting and
-        // invents no settings system.
-        setShowSettingsNote(true);
+        // Title/press/settings wiring: SETTINGS now opens the real
+        // full-screen Settings screen (SettingsScreen), not a note.
+        setPhase("SETTINGS");
       }
     };
 
@@ -294,14 +383,14 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             // SETTINGS short, selected = gold frame + cursor.
             if (item.key === 'CONTINUE') {
               return (
-                <StdWindow key={item.key} selected={isSelected} className="p-5 min-h-[48px]">
+                <StdWindow key={item.key} selected={isSelected} accent={frameColor} className="p-5 min-h-[48px]">
                   <button
                     onClick={() => activateMain('CONTINUE')}
                     onMouseEnter={() => setMainSelected(i)}
                     onFocus={() => setMainSelected(i)}
                     className="w-full text-left"
                   >
-                    <div className="text-xl font-bold tracking-widest text-white">{isSelected ? '► ' : ''}CONTINUE</div>
+                    <div className="text-xl font-bold tracking-widest text-white"><span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE</div>
                     {latestData && (
                       <div className="text-sm text-slate-300 mt-2 leading-relaxed">
                         <div>Player: <span className="text-yellow-300 font-bold">{latestData.playerName || 'Netrunner'}</span></div>
@@ -316,15 +405,14 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               );
             }
             return (
-              <StdWindow key={item.key} selected={isSelected} className="p-4 min-h-[48px]">
+              <StdWindow key={item.key} selected={isSelected} accent={frameColor} className="p-4 min-h-[48px]">
                 <button
                   onClick={() => activateMain(item.key)}
                   onMouseEnter={() => setMainSelected(i)}
                   onFocus={() => setMainSelected(i)}
                   className="w-full text-left text-xl font-bold tracking-widest text-white"
                 >
-                  {isSelected ? '► ' : ''}{item.key}
-                  {item.key === 'SETTINGS' && <span className="text-xs text-slate-400 ml-2 tracking-normal">No settings screen in this build yet</span>}
+                  <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
                 </button>
               </StdWindow>
             );
@@ -337,7 +425,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             ◄ BACK TO TITLE (B)
           </button>
           <div className="game-panel px-3 py-2 text-sm text-slate-200">
-            {safeMain === 0 && hasSaves ? 'Continue your saved adventure.' : safeMain === 0 ? 'Start a new adventure.' : mainItems[safeMain]?.key === 'NEW GAME' ? 'Start a new adventure. Existing saves are kept until you save over a slot.' : 'Settings are not in this build yet — nothing will change.'}
+            {safeMain === 0 && hasSaves ? 'Continue your saved adventure.' : safeMain === 0 ? 'Start a new adventure.' : mainItems[safeMain]?.key === 'NEW GAME' ? 'Start a new adventure. Existing saves are kept until you save over a slot.' : 'Settings — text speed, battle scene/style, sound, button mode, frame, font.'}
           </div>
         </div>
 
@@ -354,15 +442,6 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           </div>
         )}
 
-        {showSettingsNote && (
-          <div className="absolute inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
-            <div className="game-panel p-6 w-full max-w-sm">
-              <div className="text-white font-bold text-lg mb-2">Settings</div>
-              <p className="text-sm text-slate-400 mb-4">There is no settings screen in this build yet, so no setting was changed.</p>
-              <button onClick={() => setShowSettingsNote(false)} className="game-button px-4 py-2 font-bold min-h-[48px] w-full">Back to main menu</button>
-            </div>
-          </div>
-        )}
       </div>
     );
   }
