@@ -1,0 +1,24 @@
+{
+ "creature": "kickmaster",
+ "source_locked_manifest": "kickmaster.manifest.locked.json",
+ "idle": {
+  "cell": 0,
+  "file": "kickmaster_cell_00.png",
+  "method": "standing_reuse_proposed",
+  "status": "pending_mars_confirm",
+  "note": "No distinct idle frame exists in the sheet; battle_front standing pose proposed as idle reuse, not a new frame."
+ },
+ "attack": {
+  "cells": [],
+  "files": [],
+  "status": "gap",
+  "note": "No attack-role cell in the locked set; needs new generation (original art only) or a code treatment."
+ },
+ "hurt": {
+  "cells": [],
+  "status": "gap",
+  "note": "No hurt pose exists in any sheet; needs new generation (original art only) or a code treatment (flash/recoil)."
+ },
+ "evolution_timing": "n/a",
+ "action_strip_note": ""
+}
