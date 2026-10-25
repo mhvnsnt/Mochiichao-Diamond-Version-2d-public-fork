@@ -14,7 +14,7 @@ import { UI_ART } from '../../lib/uiArt';
 import { playerSlot } from '../../lib/humanSheets';
 import PixiBattleCanvas, { BattleAttack } from '../game/PixiBattleCanvas';
 
-type BattleState = 'START' | 'PLAYER_TURN' | 'ANIMATING' | 'ENEMY_TURN' | 'CAUGHT' | 'VICTORY' | 'DEFEAT' | 'FLED';
+type BattleState = 'START' | 'PLAYER_TURN' | 'ANIMATING' | 'ENEMY_TURN' | 'CAUGHT' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'SWITCH_CHOICE';
 
 /**
  * Battle, mod layer: the turn-based logic from the previous BattleView is
@@ -55,6 +55,10 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     ? { ...playerActive, nickname: fusionName(playerActive.nickname, fusionPartner.nickname), stats: fuseStats(playerActive.stats, fusionPartner.stats) }
     : null;
   const playerGender = useGameStore(s => s.playerGender);
+  // Settings wiring: BATTLE SCENE (ON/OFF) and BATTLE STYLE (SHIFT/SET).
+  const battleScene = useGameStore(s => s.settings.battleScene);
+  const battleStyle = useGameStore(s => s.settings.battleStyle);
+  const [switchOptions, setSwitchOptions] = useState<Array<{ idx: number; m: MochiiInstance }> | null>(null);
   const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string } | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
 
@@ -75,7 +79,8 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
       setEnemy(newEnemy);
       updateDex(enemyId, 'seen');
       pushLog(`A wild ${newEnemy.nickname} appeared!`);
-      setTimeout(() => setBState('PLAYER_TURN'), 1000);
+      // BATTLE SCENE OFF skips the intro delay; ON keeps 1000ms.
+      setTimeout(() => setBState('PLAYER_TURN'), battleScene === 'OFF' ? 0 : 1000);
     } else {
       onLeave();
     }
@@ -107,7 +112,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
           pushLog('Oh no! The Mochiichao broke free!');
           setBState('ENEMY_TURN');
         }
-      }, 1500);
+      }, battleScene === 'OFF' ? 0 : 1500);
     } else {
       pushLog('You have no Luigi Cubes!');
     }
@@ -175,6 +180,17 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
       const newPlayerHp = playerHp ?? playerActive.hp;
       if (newPlayerHp <= 0) {
         pushLog(`${playerActive.nickname} fainted!`);
+        // BATTLE STYLE: SHIFT offers a switch choice; SET sends the
+        // next alive creature automatically (pre-existing behaviour).
+        const aliveOpts = party
+          .map((p, idx) => ({ idx, m: idx === activeIdx ? { ...p, hp: newPlayerHp } : p }))
+          .filter(o => o.m.hp > 0);
+        if (battleStyle === 'SHIFT' && aliveOpts.length > 0) {
+          pushLog('Choose your next Mochiichao!');
+          setSwitchOptions(aliveOpts);
+          setBState('SWITCH_CHOICE');
+          return;
+        }
         const nextIdx = party.findIndex(p => p.hp > 0);
         if (nextIdx !== -1) {
           pushLog(`Go! ${party[nextIdx].nickname}!`);
@@ -194,11 +210,33 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   const handlePlayerMove = (moveId: string) => {
     if (!enemy || bState !== 'PLAYER_TURN' || !playerActive) return;
     const move = MOVES_DB[moveId];
+    const result = executeDamage(fusedAttacker || playerActive, enemy, moveId);
+    pushLog(result.text);
+    // BATTLE SCENE OFF: apply damage directly, no Pixi animation.
+    // This mirrors onAttackDone's player branch with computed HP
+    // (not stale closure state), so no animation frame is needed.
+    if (battleScene === 'OFF') {
+      const newEnemyHp = Math.max(0, enemy.hp - result.damage);
+      setEnemy({ ...enemy, hp: newEnemyHp });
+      if (newEnemyHp <= 0) {
+        pushLog(`Enemy ${enemy.nickname} fainted!`);
+        const expGained = Math.floor((SPECIES_DB[enemy.speciesId].baseExpYield * enemy.level) / 5);
+        pushLog(`${playerActive.nickname} gained ${expGained} EXP!`);
+        const { leveledUp, newLevel } = gainExp(playerActive, expGained);
+        if (leveledUp) pushLog(`${playerActive.nickname} grew to Level ${newLevel}!`);
+        updatePartyMember(activeIdx, playerActive);
+        gainWallet(50);
+        pushLog('You found 50 Credits.');
+        setBState('VICTORY');
+        setTimeout(onLeave, 3000);
+      } else {
+        setBState('ENEMY_TURN');
+      }
+      return;
+    }
     setBState('ANIMATING');
     // Fused attacker: same species/types as the active creature (for
     // STAB in executeDamage), fused stats + fused name only.
-    const result = executeDamage(fusedAttacker || playerActive, enemy, moveId);
-    pushLog(result.text);
     (window as any).__battleLastAttack = { attacker: 'player', text: result.text };
     pendingRef.current = { damage: result.damage, text: result.text, attacker: 'player', moveId };
     setAttack({ nonce: Date.now(), attacker: 'player', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff' });
@@ -211,10 +249,38 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
         const move = MOVES_DB[randomMove];
         const result = executeDamage(enemy, playerActive, randomMove);
         pushLog(result.text);
+        // BATTLE SCENE OFF: apply enemy damage directly, mirroring
+        // onAttackDone's enemy branch with computed HP.
+        if (battleScene === 'OFF') {
+          const newPlayerHp = Math.max(0, playerActive.hp - result.damage);
+          updatePartyMember(activeIdx, { ...playerActive, hp: newPlayerHp });
+          if (newPlayerHp <= 0) {
+            pushLog(`${playerActive.nickname} fainted!`);
+            const aliveOpts = party
+              .map((p, idx) => ({ idx, m: idx === activeIdx ? { ...p, hp: newPlayerHp } : p }))
+              .filter(o => o.m.hp > 0);
+            if (battleStyle === 'SHIFT' && aliveOpts.length > 0) {
+              pushLog('Choose your next Mochiichao!');
+              setSwitchOptions(aliveOpts);
+              setBState('SWITCH_CHOICE');
+            } else if (aliveOpts.length > 0) {
+              pushLog(`Go! ${aliveOpts[0].m.nickname}!`);
+              setActiveIdx(aliveOpts[0].idx);
+              setBState('PLAYER_TURN');
+            } else {
+              pushLog('You have no more Mochiichao. You blacked out!');
+              setBState('DEFEAT');
+              setTimeout(onLeave, 3000);
+            }
+          } else {
+            setBState('PLAYER_TURN');
+          }
+          return;
+        }
             (window as any).__battleLastAttack = { attacker: 'enemy', text: result.text };
         pendingRef.current = { damage: result.damage, text: result.text, attacker: 'enemy', moveId: randomMove };
         setAttack({ nonce: Date.now(), attacker: 'enemy', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff' });
-      }, 1000);
+      }, battleScene === 'OFF' ? 0 : 1000);
       return () => clearTimeout(t);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -280,7 +346,9 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
           2x2 move grid + Luigi Cube + Flee. No title in battle; the
           Pixi arena canvas stays above/behind this panel, never a
           blank background. */}
-      <div className="game-panel-bottom flex flex-col shrink-0 z-20" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+      {/* Battle text (message + log) uses the DIALOGUE FONT placement;
+          healthboxes and headings above use the MAIN FONT stack. */}
+      <div className="game-panel-bottom flex flex-col shrink-0 z-20" style={{ paddingBottom: 'env(safe-area-inset-bottom)', fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)' }}>
         <UiPanel
           slot={UI_ART.battle_panel}
           style={{ margin: '8px 12px 0', padding: '12px 16px', minHeight: '56px' }}
@@ -289,6 +357,18 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
             {log.length > 0 ? log[log.length - 1] : `A wild ${creatureDisplayName(enemy.speciesId)} appeared!`}
           </div>
         </UiPanel>
+        {switchOptions && (
+          <div className="mx-3 mt-2 game-panel p-3">
+            <div className="text-white font-bold text-sm mb-2">Choose your next Mochiichao! (BATTLE STYLE: SHIFT)</div>
+            <div className="flex flex-wrap gap-2">
+              {switchOptions.map(o => (
+                <button key={o.idx} onClick={() => { pushLog(`Go! ${o.m.nickname}!`); setActiveIdx(o.idx); setSwitchOptions(null); setBState('PLAYER_TURN'); }} className="game-button px-3 py-2 text-sm font-bold min-h-[48px]">
+                  {o.m.nickname} (Lv.{o.m.level}, {Math.ceil(o.m.hp)}/{o.m.maxHp} HP)
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="flex">
           <div ref={logRef} className="flex-1 p-3 overflow-y-auto flex flex-col gap-1 text-sm text-slate-200 min-h-[56px] max-h-[88px]">
             {log.map((l, i) => (
