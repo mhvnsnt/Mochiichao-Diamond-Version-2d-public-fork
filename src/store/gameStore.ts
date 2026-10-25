@@ -20,6 +20,14 @@ interface GameState {
   currentMap: string;
   playerPos: { x: number, y: number };
 
+  // Cheat / debug state (pass 1, cheat-console-spec: native allowlist only).
+  // cheated is set by ANY cheat code and is saved with the game.
+  cheated: boolean;
+  shiny: boolean;
+  noclip: boolean;
+  fastForward: boolean;
+  setCheatFlags: (flags: Partial<{ cheated: boolean; shiny: boolean; noclip: boolean; fastForward: boolean }>) => void;
+
   // Actions
   setPlayerInfo: (name: string, gender: 'boy' | 'girl', slot: number) => void;
   loadState: (state: Partial<GameState>) => void;
@@ -56,6 +64,11 @@ export const useGameStore = create<GameState>((set, get) => ({
   defeatedTrainers: [],
   currentMap: 'sector0',
   playerPos: { x: 21, y: 14 },
+  cheated: false,
+  shiny: false,
+  noclip: false,
+  fastForward: false,
+  setCheatFlags: (flags) => set(flags),
 
   setPlayerInfo: (name, gender, slot) => set({ playerName: name, playerGender: gender, saveSlot: slot }),
   loadState: (state) => set({ ...state, introCompleted: true }),

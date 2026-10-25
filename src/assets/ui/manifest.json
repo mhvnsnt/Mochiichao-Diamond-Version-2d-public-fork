@@ -1,0 +1,132 @@
+{
+  "style": "Mochiichao digital world: deep navy #0b1220, panel #16233a, teal #22d3ee, gold #fbbf24, rounded bold Pokemon/Digimon-style UI. Transparent background on every file (no background rect).",
+  "method": "Kenney UI Pack (CC0) 9-slice panel/button/bar structure as structural reference; art is original Mochiichao work, not Kenney raw sprites (style lock). SVG open standard, Python stdlib build.",
+  "wiring": {
+    "title": [
+      "panel-title.svg"
+    ],
+    "main_menu": [
+      "panel-main.svg",
+      "button-primary.svg",
+      "button-gold.svg"
+    ],
+    "pause_menu": [
+      "panel-main.svg",
+      "button-primary.svg"
+    ],
+    "hud": [
+      "hud-top.svg",
+      "hud-party-slot.svg",
+      "icon-coin-cr.svg"
+    ],
+    "battle": [
+      "bar-frame.svg",
+      "bar-track.svg",
+      "bar-hp-green.svg",
+      "bar-hp-yellow.svg",
+      "bar-hp-red.svg",
+      "dialogue-box.svg",
+      "button-primary.svg",
+      "button-gold.svg",
+      "button-danger.svg"
+    ],
+    "roster": [
+      "panel-main.svg",
+      "panel-small.svg",
+      "icon-element-water.svg",
+      "icon-element-chrome.svg",
+      "icon-element-earth.svg",
+      "icon-element-bug.svg",
+      "icon-element-umbral.svg",
+      "icon-element-aero.svg",
+      "icon-element-core.svg",
+      "icon-element-strike.svg",
+      "icon-element-deep.svg",
+      "icon-element-flame.svg",
+      "icon-element-mythic.svg",
+      "icon-element-normal.svg"
+    ],
+    "shop": [
+      "panel-main.svg",
+      "icon-luigi-cube.svg",
+      "icon-mend-patch.svg",
+      "icon-coin-cr.svg"
+    ],
+    "pc_storage": [
+      "panel-main.svg",
+      "panel-small.svg"
+    ],
+    "garden": [
+      "panel-main.svg",
+      "icon-garden.svg"
+    ],
+    "arena": [
+      "panel-main.svg",
+      "icon-arena.svg"
+    ],
+    "creature_mode": [
+      "hud-top.svg",
+      "bar-hp-green.svg"
+    ],
+    "ring_capture": [
+      "panel-small.svg",
+      "dialogue-box.svg"
+    ],
+    "cheat_console": [
+      "panel-main.svg",
+      "icon-cheat.svg"
+    ],
+    "controls": [
+      "dpad.svg",
+      "button-a.svg",
+      "button-b.svg",
+      "button-start.svg"
+    ]
+  },
+  "files": {
+    "panel-main.svg": 219,
+    "panel-small.svg": 219,
+    "panel-title.svg": 219,
+    "dialogue-box.svg": 300,
+    "hud-top.svg": 216,
+    "hud-party-slot.svg": 213,
+    "button-primary.svg": 272,
+    "button-gold.svg": 272,
+    "button-danger.svg": 272,
+    "button-small.svg": 272,
+    "bar-frame.svg": 192,
+    "bar-hp-green.svg": 158,
+    "bar-hp-yellow.svg": 158,
+    "bar-hp-red.svg": 158,
+    "bar-xp-blue.svg": 158,
+    "bar-track.svg": 158,
+    "dpad.svg": 292,
+    "button-a.svg": 301,
+    "button-b.svg": 301,
+    "button-start.svg": 272,
+    "icon-element-water.svg": 301,
+    "icon-element-chrome.svg": 301,
+    "icon-element-earth.svg": 301,
+    "icon-element-bug.svg": 301,
+    "icon-element-umbral.svg": 301,
+    "icon-element-aero.svg": 301,
+    "icon-element-core.svg": 301,
+    "icon-element-strike.svg": 301,
+    "icon-element-deep.svg": 301,
+    "icon-element-flame.svg": 301,
+    "icon-element-mythic.svg": 301,
+    "icon-element-normal.svg": 301,
+    "icon-luigi-cube.svg": 303,
+    "icon-mend-patch.svg": 301,
+    "icon-coin-cr.svg": 301,
+    "icon-roster.svg": 303,
+    "icon-bag.svg": 303,
+    "icon-save.svg": 303,
+    "icon-settings.svg": 303,
+    "icon-map.svg": 303,
+    "icon-garden.svg": 303,
+    "icon-arena.svg": 303,
+    "icon-cheat.svg": 301
+  },
+  "note": "PNG exports: SVG is the cut-out master (transparent, scalable). Raster PNGs at 1x/2x/4x are produced on import by the game build (PixiJS/CSS can rasterise SVG, or main chat runs an SVG\u2192PNG export) \u2014 do not hand-draw PNGs that drift from the SVG master. If a PNG is needed for a specific screen, export it from the SVG in this folder, never from the AI mock images."
+}

@@ -1,0 +1,7 @@
+/* Mochiichao UI — wired to assets/svg/*.svg (transparent cut-outs) */
+:root{--ui-bg:#0b1220;--ui-panel:#16233a;--ui-teal:#22d3ee;--ui-gold:#fbbf24;--ui-text:#f1f5f9}
+.mochi-panel{background:url('svg/panel-main.svg') no-repeat center/100% 100%;color:var(--ui-text)}
+.mochi-button{background:url('svg/button-primary.svg') no-repeat center/100% 100%;min-height:48px}
+.mochi-button-gold{background:url('svg/button-gold.svg') no-repeat center/100% 100%;min-height:48px}
+.mochi-hud{background:url('svg/hud-top.svg') no-repeat center/100% 100%}
+.mochi-dialogue{background:url('svg/dialogue-box.svg') no-repeat center/100% 100%}

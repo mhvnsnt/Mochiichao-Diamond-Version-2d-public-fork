@@ -2,7 +2,9 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { TYPE_COLORS, calcDamage, makeBattleMon, GAME_DATA as IMPORTED_GAME_DATA } from "./GameData";
 import { FULL_WORLD } from "./FullWorldMaps";
 import { useGameStore } from "../store/gameStore";
-import { renderTile } from "./WorldRenderer";
+import PixiWorldCanvas from "../components/game/PixiWorldCanvas";
+import CreaturePortrait from "../components/game/CreaturePortrait";
+import { PauseMenu, WorldHud } from "../components/game/GameShell";
 import { getDayPhase, DAY_TINT, DAY_AMBIENT, WEATHER_CONFIG } from "./WorldConstants";
 import SaveMenu from "../components/SaveMenu";
 import { saveGame, getSaves } from "../lib/saveSystem";
@@ -40,25 +42,11 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const healParty = useGameStore(s => s.healParty);
 
   const playerPos = useGameStore(s => s.playerPos);
+  const playerGender = useGameStore(s => s.playerGender);
   const setMapState = useGameStore(s => s.setMapState);
 
   const [screen, setScreen] = useState("overworld"); 
 
-  const [viewportScale, setViewportScale] = useState(1);
-  useEffect(() => {
-    const handleResize = () => {
-      const availW = window.innerWidth - 32;
-      const availH = window.innerHeight - 220; // safe area for UI below
-      // Using fixed sizes from the render logic
-      const targetW = 19 * TILE_SIZE; // VIEW_W
-      const targetH = 15 * TILE_SIZE; // VIEW_H
-      let s = Math.min(1.5, Math.min(availW / targetW, availH / targetH));
-      setViewportScale(s);
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
   const [playerDir, setPlayerDir] = useState("down");
   const [playerName, setPlayerName] = useState("Netrunner");
   
@@ -66,6 +54,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const [dialog, setDialog] = useState<any>(null);
   const [dialogIdx, setDialogIdx] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [pauseOpen, setPauseOpen] = useState(false);
   const [menuTab, setMenuTab] = useState("team");
   const [notification, setNotification] = useState<any>(null);
   const [introStep, setIntroStep] = useState(0);
@@ -98,9 +87,9 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   };
   const GAME_DATA: any = {
     starters: [
-      { id: "001", type: "Water", desc: "A soft, wave-patterned creature. It bounces instead of walking.", color: "#4fc3f7", sprite: "🌊", name: "Mochii", hp: 45, atk: 49, def: 49, spd: 45 },
-      { id: "004", type: "Chrome", desc: "Its razor-edged chrome plating deflects most data attacks.", color: "#b0bec5", sprite: "⚙️", name: "Razorgater", hp: 50, atk: 65, def: 64, spd: 43 },
-      { id: "007", type: "Earth", desc: "A ground-shaking brute whose footsteps leave glowing cracks.", color: "#a5d6a7", sprite: "🌿", name: "Tyrage", hp: 55, atk: 69, def: 45, spd: 34 }
+      { id: "001", type: "Water", desc: "A soft, wave-patterned creature. It bounces instead of walking.", color: "#4fc3f7", name: "Mochii", hp: 45, atk: 49, def: 49, spd: 45 },
+      { id: "004", type: "Chrome", desc: "Its razor-edged chrome plating deflects most data attacks.", color: "#b0bec5", name: "Razorgater", hp: 50, atk: 65, def: 64, spd: 43 },
+      { id: "007", type: "Earth", desc: "A ground-shaking brute whose footsteps leave glowing cracks.", color: "#a5d6a7", name: "Tyrage", hp: 55, atk: 69, def: 45, spd: 34 }
     ],
     mochiichao: [],
     moves: IMPORTED_GAME_DATA.moves
@@ -157,7 +146,6 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         spd: sp.baseStats.spd,
         moves: (sp as any).moves?.slice(0, 4) || [],
         type: sp.types[0],
-        sprite: sp.types[0] === 'WATER' ? '💧' : '🌱'
     };
 
     setBattleState({
@@ -211,12 +199,14 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     if (nx < 0 || nx >= mapData.width || ny < 0 || ny >= mapData.height) return;
 
     const tile = mapData.tiles[ny]?.[nx];
-    if (tile === 1 || tile === 4) return; // solid
-    if (tile === 2) return; // water block
-
-    // Basic NPC collision (solid)
-    const npcHere = mapData.npcs?.find(n => n.x === nx && n.y === ny);
-    if (npcHere) return; // can't walk through them
+    const noclip = useGameStore.getState().noclip;
+    if (!noclip) {
+      if (tile === 1 || tile === 4) return; // solid
+      if (tile === 2) return; // water block
+      // Basic NPC collision (solid)
+      const npcHere = mapData.npcs?.find(n => n.x === nx && n.y === ny);
+      if (npcHere) return; // can't walk through them
+    }
 
     // Check exits
     const exit = (mapData as any).exits?.find((e: any) => e.x === nx && e.y === ny);
@@ -293,7 +283,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     if (!heldDir || screen !== "overworld" || isTransitioning) return;
     const interval = setInterval(() => {
       move(heldDir.dx, heldDir.dy);
-    }, 140);
+    }, useGameStore.getState().fastForward ? 70 : 140);
     return () => clearInterval(interval);
   }, [heldDir, move, screen, isTransitioning]);
 
@@ -308,9 +298,9 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           e.preventDefault(); 
           interact();
         }
-        if (e.key === "Escape") {
+        if (e.key === "Escape" || e.key === "x") {
           e.preventDefault();
-          setScreen("save_menu");
+          setPauseOpen(true);
         }
         if (e.key === "F5") {
           e.preventDefault();
@@ -618,11 +608,11 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   // --------------------------------------------------------
   if (screen === "title") {
     return (
-      <div className="w-screen h-screen bg-black flex flex-col items-center justify-center font-mono overflow-hidden relative select-none">
+      <div className="w-screen h-screen bg-black flex flex-col items-center justify-center overflow-hidden relative select-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_60%,_rgba(0,0,0,0.8)_100%)] z-10 pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,150,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,150,0.05)_1px,transparent_1px)] bg-[size:40px_40px] animate-[gridscroll_8s_linear_infinite]" />
         
-        <div className="text-7xl animate-bounce mb-4 z-20">✨</div>
+        <div className="w-16 h-16 rotate-45 bg-teal-400/70 mb-4 z-20" />
         <h1 className="text-teal-400 text-5xl md:text-7xl font-black tracking-[0.2em] animate-[pulse_2s_ease-in-out_infinite] mb-2 z-20 drop-shadow-[0_0_20px_rgba(0,255,255,0.8)] text-center">
           MOCHIICHAO
         </h1>
@@ -649,11 +639,11 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     const line = lines[introStep];
 
     return (
-      <div className="w-screen h-screen bg-slate-950 flex flex-col items-center justify-center font-mono text-white p-4">
+      <div className="w-screen h-screen bg-slate-950 flex flex-col items-center justify-center text-white p-4">
         <div className="max-w-2xl text-center">
           {!line.isStarter && !line.isName && (
             <div className="animate-fade-in">
-              <div className="text-6xl mb-6 animate-bounce">🌐</div>
+              <div className="w-20 h-20 rounded-full bg-teal-500/40 border-4 border-teal-300 mb-6 animate-bounce" />
               <h2 className="text-teal-400 text-2xl tracking-[0.2em] mb-4">{line.text}</h2>
               <p className="text-slate-400 text-sm mb-10 tracking-widest">{line.sub}</p>
               <button 
@@ -666,7 +656,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           )}
           {line.isName && (
             <div className="animate-fade-in">
-              <div className="text-5xl mb-4">📛</div>
+              
               <h2 className="text-teal-400 text-xl tracking-[0.2em] mb-6">{line.text}</h2>
               <input 
                 value={nameInput} 
@@ -695,7 +685,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
                     className="bg-slate-900 rounded-xl p-6 w-40 text-center hover:-translate-y-2 transition-transform duration-200 border-2 group"
                     style={{ borderColor: s.color }}
                   >
-                    <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">{s.sprite}</div>
+                    <div className="mb-4 flex justify-center group-hover:scale-110 transition-transform"><CreaturePortrait speciesId={s.id} view="front" size={72} /></div>
                     <div style={{ color: s.color }} className="font-black text-lg tracking-wider mb-1">{s.name}</div>
                     <div className="text-slate-400 text-xs mb-2">{s.type} Type</div>
                     <div className="text-slate-500 text-[10px] leading-relaxed">{s.desc.substring(0, 60)}...</div>
@@ -714,7 +704,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   // --------------------------------------------------------
   if (screen === "menu") {
     return (
-      <div className="w-screen h-screen bg-slate-950 flex font-mono text-white">
+      <div className="w-screen h-screen bg-slate-950 flex text-white">
         {/* Sidebar */}
         <div className="w-40 bg-black border-r-2 border-teal-500 flex flex-col py-6 items-stretch">
           <div className="text-teal-500 text-[10px] tracking-[0.3em] px-4 pb-4 border-b border-slate-800 mb-2">MOCHIIMIND</div>
@@ -743,8 +733,8 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
               <div className="text-slate-500 text-xs mt-1">{mapData?.name}</div>
             </div>
             <div className="text-right">
-              <div className="text-yellow-400 text-lg">💰 {credits} CR</div>
-              <div className="text-slate-500 text-xs">🏅 {badges.length}/8 Badges</div>
+              <div className="text-yellow-400 text-lg">{credits} CR</div>
+              <div className="text-slate-500 text-xs">{badges.length}/8 Badges</div>
             </div>
           </div>
 
@@ -757,7 +747,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
                 const tc = TYPE_COLORS[m.type] || "#888";
                 return (
                   <div key={i} className="bg-slate-900 border rounded-xl p-4 mb-3 flex items-center gap-6" style={{ borderColor: `${tc}44` }}>
-                    <div className="text-5xl" style={{ filter: `drop-shadow(0 0 10px ${tc})` }}>{m.sprite}</div>
+                    <div style={{ filter: `drop-shadow(0 0 10px ${tc})` }}><CreaturePortrait speciesId={m.speciesId || m.id} view="front" size={56} /></div>
                     <div className="flex-1">
                       <div className="flex justify-between items-baseline mb-1">
                         <span className="text-white font-bold text-lg">{m.name}</span>
@@ -788,7 +778,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
                   if (!status) return null; // hide unknown for now to keep UI clean, or show silhouettes
                   return (
                     <div key={m.id} className="bg-slate-900 border rounded-lg p-3 text-center" style={{ borderColor: `${tc}44` }}>
-                      <div className="text-4xl mb-2" style={{ filter: `drop-shadow(0 0 8px ${tc})` }}>{m.sprite}</div>
+                      <div className="mb-2 flex justify-center"><CreaturePortrait speciesId={m.speciesId || m.id} view="front" size={48} /></div>
                       <div className="text-white text-sm font-bold tracking-wide">{m.name}</div>
                       <div className="text-[10px] uppercase mt-1" style={{ color: tc }}>{m.type}</div>
                     </div>
@@ -805,7 +795,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
                {badges.map((b, i) => (
                  <div key={i} className="bg-slate-900 border border-teal-500/30 rounded-lg p-4 mb-3 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="text-3xl filter drop-shadow-[0_0_8px_rgba(0,255,255,0.5)]">🏅</div>
+                      
                       <div>
                         <div className="text-teal-400 font-bold">{b}</div>
                         <div className="text-slate-500 text-xs">AUTHORIZED</div>
@@ -819,7 +809,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           
           {menuTab === "save" && (
             <div className="animate-fade-in text-center py-12">
-               <div className="text-6xl mb-6 animate-bounce">💾</div>
+               
                <button 
                  onClick={() => { notify("Simulation states persisted to mainframe."); setScreen("overworld"); }}
                  className="bg-teal-400 text-black px-8 py-3 tracking-[0.2em] font-black hover:bg-teal-300 transition-all rounded"
@@ -846,7 +836,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     const typeColor = TYPE_COLORS[enemy.type] || "#888";
 
     return (
-      <div className="w-screen h-screen bg-slate-950 flex flex-col font-mono text-white relative">
+      <div className="w-screen h-screen bg-slate-950 flex flex-col text-white relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(0,0,0,0.8)_100%)] pointer-events-none z-10" />
         
         {/* Header HUD */}
@@ -854,7 +844,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           <span className="text-teal-400 text-xs tracking-[0.3em] font-bold">
             {bs.type === "wild" ? "WILD ENCOUNTER" : `SYS_BATTLE // ${bs.trainerName}`}
           </span>
-          <span className="text-yellow-400 text-sm font-bold">💰 {credits}</span>
+          <span className="text-yellow-400 text-sm font-bold">{credits} CR</span>
         </div>
 
         {/* 2.5D Battle Arena */}
@@ -890,11 +880,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
                   animation: battleAnim === "enemy" ? "attack_enemy 0.4s ease-out" : "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" 
                 }}
               >
-                {SPECIES_DB[enemy.speciesId || enemy.id]?.pokeApiId ? (
-                  <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${SPECIES_DB[enemy.speciesId || enemy.id].pokeApiId}.gif`}
-                       onError={e => e.currentTarget.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${SPECIES_DB[enemy.speciesId || enemy.id].pokeApiId}.png`}
-                       className="pixelated max-w-full max-h-full object-contain" />
-                ) : (enemy.sprite || '👾')}
+                <CreaturePortrait speciesId={enemy.speciesId || enemy.id} view="front" size={144} />
               </div>
            </div>
 
@@ -919,11 +905,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
                   animation: battleAnim === "player" ? "attack_player 0.4s ease-out" : "none" 
                 }}
               >
-                {SPECIES_DB[player.speciesId || player.id]?.pokeApiId ? (
-                  <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/${SPECIES_DB[player.speciesId || player.id].pokeApiId}.gif`}
-                       onError={e => e.currentTarget.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${SPECIES_DB[player.speciesId || player.id].pokeApiId}.png`}
-                       className="pixelated max-w-full max-h-full object-contain" />
-                ) : (player.sprite || '👾')}
+                <CreaturePortrait speciesId={player.speciesId || player.id} view="back" size={144} />
               </div>
            </div>
         </div>
@@ -986,220 +968,147 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     );
   }
 
+
   // --------------------------------------------------------
-  // RENDER: OVERWORLD 2.5D
+  // RENDER: OVERWORLD — PixiJS canvas, full viewport (pass 1)
+  // The canvas fills the whole screen; HUD is an overlay; D-pad and
+  // action buttons sit inside safe-area padding, never clipped.
   // --------------------------------------------------------
-  
-  const VIEW_W = 19;
-  const VIEW_H = 15;
-  const camX = Math.max(0, Math.min(playerPos.x - Math.floor(VIEW_W/2), ((mapData as any).width || 30) - VIEW_W));
-  const camY = Math.max(0, Math.min(playerPos.y - Math.floor(VIEW_H/2), ((mapData as any).height || 30) - VIEW_H));
-
-  const renderedTiles = [];
-  for(let vy = 0; vy < VIEW_H; vy++) {
-    const my = vy + camY;
-    for(let vx = 0; vx < VIEW_W; vx++) {
-      const mx = vx + camX;
-      let tile = (mapData as any).tiles[my]?.[mx];
-      if (tile === undefined) tile = 1; // default to wall out of bounds
-      
-      const npc = (mapData as any).npcs?.find((n:any) => n.x === mx && n.y === my);
-      const isPlayer = playerPos.x === mx && playerPos.y === my;
-
-      renderedTiles.push(
-        renderTile({
-          tile, vx, vy, viewH: VIEW_H, TILE_SIZE, isPlayer, npc, 
-          isNight: phase === "night", playerDir, 
-          isDefeated: npc ? defeatedTrainers.includes(npc.id) : false, 
-          hasStarter, animWalk 
-        })
-      );
-    }
-  }
-
   return (
-    <div className="w-screen h-screen bg-[#050810] font-mono overflow-hidden relative selection:bg-teal-500/30 flex flex-col items-center">
-      <style>{`
-        @keyframes waterflow { from{background-position:0 0} to{background-position:50px 50px} }
-        @keyframes walkbob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
-        @keyframes attack_player { 0% { transform: translate(0, 0) scale(1.1); filter: brightness(1.5); } 50% { transform: translate(25px, -25px) scale(1.1); filter: brightness(1.5); } 100% { transform: translate(0, 0) scale(1); filter: none; } }
-        @keyframes attack_enemy { 0% { transform: translate(0, 0) scale(1.1); filter: brightness(1.5); } 50% { transform: translate(-25px, 25px) scale(1.1); filter: brightness(1.5); } 100% { transform: translate(0, 0) scale(1); filter: none; } }
-      `}</style>
+    <div className="game-screen">
+      <PixiWorldCanvas
+        mapData={mapData}
+        playerPos={playerPos}
+        playerDir={playerDir}
+        playerSpeciesId={party[0]?.speciesId || null}
+        playerKind="human"
+        playerGender={playerGender}
+        defeatedIds={defeatedTrainers}
+        phase={phase}
+        animWalk={animWalk}
+      />
 
-      {/* VIEWPORT CROP AND SCENE FRAME */}
-      <div style={{ width: VIEW_W * TILE_SIZE * viewportScale, height: VIEW_H * TILE_SIZE * viewportScale }} className="relative flex-shrink-0 my-auto">
-        <div 
-           className="relative overflow-hidden rounded-lg border-2 border-teal-900 shadow-[0_0_50px_rgba(0,0,0,0.8)] origin-top-left"
-           style={{ 
-             width: VIEW_W * TILE_SIZE, 
-             height: VIEW_H * TILE_SIZE, 
-             background: "#0a0a0a",
-             transform: `scale(${viewportScale})`,
-           }}
-        >
-          {renderedTiles}
-          
-          {/* DAY/NIGHT OVERLAY */}
-        {tint !== "rgba(255,255,200,0.0)" && (
-          <div style={{ position:"absolute", inset:0, background: tint, pointerEvents:"none", zIndex:20, transition:"background 3s ease" }} />
-        )}
+      <WorldHud
+        mapName={mapData?.name || currentMap}
+        timeLabel={`${String(gameHour).padStart(2, "0")}:00 ${phase}`}
+        onMenu={() => setPauseOpen(true)}
+        onRoster={() => { if (setView) setView("ROSTER"); }}
+      />
 
-        {/* WEATHER */}
-        {weatherCfg.fog !== "none" && (
-          <div style={{ position:"absolute", inset:0, background: weatherCfg.fog, pointerEvents:"none", zIndex:21 }} />
-        )}
-
-        {/* RETRO FILTER */}
-        <div style={{ position:"absolute", inset:0, backgroundImage:"repeating-linear-gradient(0deg,transparent,transparent 1px,rgba(0,0,0,0.06) 1px,rgba(0,0,0,0.06) 2px)", pointerEvents:"none", zIndex:22 }} />
-        <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,0.65) 100%)", pointerEvents:"none", zIndex:23 }} />
-
-        {/* HUD OVERLAYS */}
-        <div style={{ position:"absolute", top:6, left:6, background:"rgba(0,0,0,0.7)", color:"#fff", fontSize:12, padding:"4px 10px", borderRadius:4, border:"1px solid rgba(255,255,255,0.15)", zIndex:30 }}>
-          {(mapData as any).name}
-        </div>
-        <div style={{ position:"absolute", top:6, right:6, background:"rgba(0,0,0,0.7)", color: phase==="night" ? "#6080ff" : phase==="dawn" ? "#ffaa44" : phase==="dusk" ? "#ff6633" : "#ffffcc", fontSize:12, padding:"4px 10px", borderRadius:4, border:"1px solid rgba(255,255,255,0.15)", zIndex:30 }}>
-          {String(gameHour).padStart(2,"0")}:00 {phase.toUpperCase()}
-        </div>
-
-        {/* Bottom Bar Info */}
-        <div className="absolute bottom-4 left-6 z-40 bg-black/80 px-4 py-2 border border-teal-500/50 rounded flex gap-4 pointer-events-auto shadow-xl">
-           <span className="text-yellow-400 text-xs tracking-widest font-bold">CR {credits}</span>
-           <button onClick={() => { if(setView) setView("ROSTER"); }} className="text-xs font-bold text-teal-400 tracking-widest hover:text-white transition-colors">MENU</button>
-        </div>
-      </div>
-     </div>
+      {pauseOpen && (
+        <PauseMenu
+          onClose={() => setPauseOpen(false)}
+          onRoster={() => { setPauseOpen(false); if (setView) setView("ROSTER"); }}
+          onShop={() => { setPauseOpen(false); if (setView) setView("SHOP"); }}
+          onSaveLoad={() => { setPauseOpen(false); setScreen("save_menu"); }}
+          onNavigate={(v: string) => { setPauseOpen(false); if (setView) setView(v as any); }}
+          onQuitToTitle={() => { setPauseOpen(false); window.location.reload(); }}
+        />
+      )}
 
       {screen === "dialog" && dialog && (
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-3xl bg-black/90 backdrop-blur-sm border-2 border-teal-400 p-6 z-50 shadow-[0_0_30px_rgba(0,255,255,0.1)] rounded-lg cursor-pointer" onClick={advanceDialog}>
+        <div
+          className="absolute left-3 right-3 z-50 game-panel p-4 cursor-pointer"
+          style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+          onClick={advanceDialog}
+        >
           {dialog.npc && (
-            <div className="text-teal-400 text-xs font-bold tracking-[0.2em] mb-2 uppercase">{dialog.npc.name}</div>
+            <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase">{dialog.npc.name}</div>
           )}
-          <div className="text-white text-lg leading-relaxed min-h-[4rem]">
+          <div className="text-white text-base leading-relaxed min-h-[3rem]">
             {dialog.lines[dialogIdx]}
           </div>
           {dialogIdx < dialog.lines.length - 1 && (
-             <div className="text-teal-500 text-xs text-right mt-4 tracking-widest animate-pulse">▼ CONTINUE</div>
+            <div className="text-teal-300 text-xs text-right mt-3 animate-pulse">CONTINUE</div>
           )}
           {dialogIdx === dialog.lines.length - 1 && dialog.isChoice && (
-             <div className="flex gap-4 mt-6 justify-end">
-                <button onClick={(e) => { e.stopPropagation(); handleChoice(true); }} className="bg-teal-900/80 hover:bg-teal-600 text-white font-bold px-6 py-2 rounded">YES</button>
-                <button onClick={(e) => { e.stopPropagation(); handleChoice(false); }} className="bg-slate-800 hover:bg-slate-600 text-white font-bold px-6 py-2 rounded">NO</button>
-             </div>
+            <div className="flex gap-3 mt-4 justify-end">
+              <button onClick={(e) => { e.stopPropagation(); handleChoice(true); }} className="game-button px-6 py-2 font-bold">YES</button>
+              <button onClick={(e) => { e.stopPropagation(); handleChoice(false); }} className="game-button px-6 py-2 font-bold">NO</button>
+            </div>
           )}
         </div>
       )}
 
-      {/* TOP HUD */}
-      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black to-transparent p-4 flex justify-between z-50 text-white shadow-none pointer-events-none">
-        <div className="flex gap-4 items-center">
-          <div className="bg-black/80 px-4 py-2 border border-teal-500/50 rounded flex gap-2 items-center">
-            <span className="text-teal-400 text-xs tracking-widest font-bold">📍 {mapData?.name}</span>
+      {/* MOBILE CONTROLS — D-pad bottom-left, fully on-screen */}
+      <div
+        className="absolute left-3 z-40 flex flex-col gap-1 select-none"
+        style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))', left: 'max(0.75rem, env(safe-area-inset-left))', touchAction: 'none' }}
+      >
+        <div className="flex justify-center">
+          <button
+            onPointerDown={(e) => { e.preventDefault(); move(0, -1); setHeldDir({dx: 0, dy: -1}); }}
+            onPointerUp={() => setHeldDir(null)} onPointerLeave={() => setHeldDir(null)} onPointerCancel={() => setHeldDir(null)}
+            style={{ touchAction: 'none' }}
+            className="w-14 h-14 bg-black/70 border-2 border-teal-400/60 rounded-t-lg active:bg-teal-500/50 text-teal-300 flex items-center justify-center text-xl"
+          >▲</button>
+        </div>
+        <div className="flex gap-1">
+          <button
+            onPointerDown={(e) => { e.preventDefault(); move(-1, 0); setHeldDir({dx: -1, dy: 0}); }}
+            onPointerUp={() => setHeldDir(null)} onPointerLeave={() => setHeldDir(null)} onPointerCancel={() => setHeldDir(null)}
+            style={{ touchAction: 'none' }}
+            className="w-14 h-14 bg-black/70 border-2 border-teal-400/60 rounded-l-lg active:bg-teal-500/50 text-teal-300 flex items-center justify-center text-xl"
+          >◄</button>
+          <div className="w-14 h-14 bg-black/70 flex items-center justify-center border border-teal-400/20">
+            <div className="w-4 h-4 rounded-full bg-teal-400/30" />
           </div>
+          <button
+            onPointerDown={(e) => { e.preventDefault(); move(1, 0); setHeldDir({dx: 1, dy: 0}); }}
+            onPointerUp={() => setHeldDir(null)} onPointerLeave={() => setHeldDir(null)} onPointerCancel={() => setHeldDir(null)}
+            style={{ touchAction: 'none' }}
+            className="w-14 h-14 bg-black/70 border-2 border-teal-400/60 rounded-r-lg active:bg-teal-500/50 text-teal-300 flex items-center justify-center text-xl"
+          >►</button>
         </div>
-        <div className="flex gap-4 items-center bg-black/80 px-4 py-2 border border-teal-500/50 rounded pointer-events-auto shadow-xl">
-           <span className="text-yellow-400 text-xs tracking-widest font-bold">CR {credits}</span>
-           <button onClick={() => { if (setView) setView("ROSTER"); }} className="ml-4 text-xs font-bold text-teal-400 tracking-widest hover:text-white transition-colors">MENU</button>
+        <div className="flex justify-center">
+          <button
+            onPointerDown={(e) => { e.preventDefault(); move(0, 1); setHeldDir({dx: 0, dy: 1}); }}
+            onPointerUp={() => setHeldDir(null)} onPointerLeave={() => setHeldDir(null)} onPointerCancel={() => setHeldDir(null)}
+            style={{ touchAction: 'none' }}
+            className="w-14 h-14 bg-black/70 border-2 border-teal-400/60 rounded-b-lg active:bg-teal-500/50 text-teal-300 flex items-center justify-center text-xl"
+          >▼</button>
         </div>
       </div>
 
-      {/* MOBILE CONTROLS - LEFT DPAD */}
-      <div className="absolute bottom-8 left-6 z-40 flex flex-col gap-1 lg:hidden drop-shadow-[0_0_15px_rgba(0,255,255,0.2)] select-none" style={{ touchAction: 'none' }}>
-         <div className="flex justify-center">
-            <button 
-              onPointerDown={(e) => { e.preventDefault(); move(0, -1); setHeldDir({dx: 0, dy: -1}); }} 
-              onPointerUp={() => setHeldDir(null)}
-              onPointerLeave={() => setHeldDir(null)}
-              onPointerCancel={() => setHeldDir(null)}
-              style={{ touchAction: 'none' }}
-              className="w-14 h-14 bg-black/70 border-t-2 border-l-2 border-r-2 border-teal-400/60 rounded-t-lg active:bg-teal-500/50 text-teal-300 flex items-center justify-center backdrop-blur text-xl"
-            >▲</button>
-         </div>
-         <div className="flex gap-1">
-            <button 
-              onPointerDown={(e) => { e.preventDefault(); move(-1, 0); setHeldDir({dx: -1, dy: 0}); }} 
-              onPointerUp={() => setHeldDir(null)}
-              onPointerLeave={() => setHeldDir(null)}
-              onPointerCancel={() => setHeldDir(null)}
-              style={{ touchAction: 'none' }}
-              className="w-14 h-14 bg-black/70 border-t-2 border-b-2 border-l-2 border-teal-400/60 rounded-l-lg active:bg-teal-500/50 text-teal-300 flex items-center justify-center backdrop-blur text-xl"
-            >◄</button>
-            <div className="w-14 h-14 bg-black/70 flex items-center justify-center backdrop-blur border border-teal-400/20">
-               <div className="w-4 h-4 rounded-full bg-teal-400/30"></div>
-            </div>
-            <button 
-              onPointerDown={(e) => { e.preventDefault(); move(1, 0); setHeldDir({dx: 1, dy: 0}); }} 
-              onPointerUp={() => setHeldDir(null)}
-              onPointerLeave={() => setHeldDir(null)}
-              onPointerCancel={() => setHeldDir(null)}
-              style={{ touchAction: 'none' }}
-              className="w-14 h-14 bg-black/70 border-t-2 border-b-2 border-r-2 border-teal-400/60 rounded-r-lg active:bg-teal-500/50 text-teal-300 flex items-center justify-center backdrop-blur text-xl"
-            >►</button>
-         </div>
-         <div className="flex justify-center">
-            <button 
-              onPointerDown={(e) => { e.preventDefault(); move(0, 1); setHeldDir({dx: 0, dy: 1}); }} 
-              onPointerUp={() => setHeldDir(null)}
-              onPointerLeave={() => setHeldDir(null)}
-              onPointerCancel={() => setHeldDir(null)}
-              style={{ touchAction: 'none' }}
-              className="w-14 h-14 bg-black/70 border-b-2 border-l-2 border-r-2 border-teal-400/60 rounded-b-lg active:bg-teal-500/50 text-teal-300 flex items-center justify-center backdrop-blur text-xl"
-            >▼</button>
-         </div>
+      {/* MOBILE CONTROLS — action buttons bottom-right, fully on-screen */}
+      <div
+        className="absolute right-3 z-40 flex gap-3 items-end select-none"
+        style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))', right: 'max(0.75rem, env(safe-area-inset-right))', touchAction: 'none' }}
+      >
+        <button
+          onClick={() => {
+            if (screen === 'dialog') advanceDialog();
+            else if (screen === 'menu' || screen === 'save_menu') setScreen("overworld");
+            else setPauseOpen(true);
+          }}
+          style={{ touchAction: 'none' }}
+          className="w-16 h-16 rounded-full bg-red-900/60 border-b-4 border-red-500/70 text-red-100 flex items-center justify-center font-black text-2xl active:border-b-0 active:translate-y-1 transition-all"
+        >
+          B
+        </button>
+        <button
+          onClick={() => {
+            if (screen === 'overworld') interact();
+            else advanceDialog();
+          }}
+          style={{ touchAction: 'none' }}
+          className="w-16 h-16 rounded-full bg-teal-900/60 border-b-4 border-teal-400/70 text-teal-100 flex items-center justify-center font-black text-2xl active:border-b-0 active:translate-y-1 transition-all"
+        >
+          A
+        </button>
       </div>
 
-      {/* MOBILE CONTROLS - RIGHT ACTION BUTTONS */}
-      <div className="absolute bottom-8 right-6 z-40 lg:hidden flex gap-4 items-end select-none" style={{ touchAction: 'none' }}>
-         {/* START/MENU BUTTON */}
-         <div className="absolute -top-16 -left-8">
-            <button 
-              onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); }}
-              onClick={() => { if(screen==='overworld' && setView) setView("ROSTER"); }}
-              style={{ touchAction: 'none' }}
-              className="px-4 py-2 rounded-full bg-slate-800/80 border border-teal-400/40 text-teal-400 shadow shadow-teal-500/20 active:bg-slate-700 text-xs font-bold tracking-widest backdrop-blur"
-            >START</button>
-         </div>
-
-         {/* B BUTTON */}
-         <button 
-           onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); }}
-           onClick={() => {
-              if (screen === 'dialog') advanceDialog(); 
-              else if (screen === 'menu' || screen === 'save_menu') setScreen("overworld");
-           }} 
-           style={{ touchAction: 'none' }}
-           className="w-16 h-16 rounded-full bg-red-900/40 border-b-4 border-red-500/60 text-red-100 flex flex-col items-center justify-center font-black text-2xl shadow-[0_0_15px_rgba(255,0,0,0.3)] active:border-b-0 active:translate-y-1 transition-all backdrop-blur"
-         >
-           B
-         </button>
-
-         {/* A BUTTON */}
-         <button 
-           onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); }}
-           onClick={() => { 
-             if (screen === 'overworld') interact(); 
-             else advanceDialog(); 
-           }} 
-           style={{ touchAction: 'none' }}
-           className="w-16 h-16 rounded-full bg-teal-900/40 border-b-4 border-teal-400/60 text-teal-100 flex flex-col items-center justify-center font-black text-2xl shadow-[0_0_15px_rgba(0,255,255,0.3)] active:border-b-0 active:translate-y-1 transition-all backdrop-blur mb-6"
-         >
-           A
-         </button>
-      </div>
-
-      {/* NOTIFICATION */}
       {notification && (
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 bg-black border-2 px-6 py-3 font-bold tracking-widest z-50 text-center animate-bounce shadow-2xl backdrop-blur-md rounded" style={{ borderColor: notification.color, color: notification.color }}>
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 bg-black border-2 px-6 py-3 font-bold tracking-widest z-50 text-center shadow-2xl rounded" style={{ borderColor: notification.color, color: notification.color }}>
           {notification.msg}
         </div>
       )}
 
-      {/* SAVE MENU */}
       {screen === "save_menu" && (
         <SaveMenu onClose={() => setScreen("overworld")} />
       )}
 
-      {/* TRANSITION OVERLAY */}
-      <div className={`absolute inset-0 bg-black z-50 transition-opacity duration-300 pointer-events-none ${isTransitioning ? 'opacity-100' : 'opacity-0'}`} />
+      <div className={`absolute inset-0 bg-black z-[60] transition-opacity duration-300 pointer-events-none ${isTransitioning ? 'opacity-100' : 'opacity-0'}`} />
     </div>
   );
 }

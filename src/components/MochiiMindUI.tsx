@@ -29,7 +29,7 @@ export default function MochiiMindUI({ isOpen, onClose }: { isOpen: boolean, onC
   };
 
   return (
-    <div className="fixed inset-y-0 right-0 w-80 bg-slate-950 border-l border-teal-900 shadow-2xl flex flex-col z-50 transform transition-transform font-mono text-sm">
+    <div className="fixed inset-y-0 right-0 w-80 bg-slate-950 border-l border-teal-900 shadow-2xl flex flex-col z-50 transform transition-transform text-sm">
       <div className="bg-slate-900 border-b border-teal-900 p-4 flex justify-between items-center">
         <h2 className="text-teal-400 font-bold uppercase tracking-wider">MochiiMind Uplink</h2>
         <button onClick={onClose} className="text-teal-500 hover:text-white transition-colors">
