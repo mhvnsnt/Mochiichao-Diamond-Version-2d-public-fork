@@ -192,3 +192,11 @@ Still not canon draft: starter evolutions 002/003/005/006/008/009
 Mars, replying to the 6 starter-evolution main sheets (2026-10-25 ~16:33 CDT): "Yeah those are really good save all of those to the repo as the official art for those characters for now until I say otherwise." So Tiidebiite #002, AquariiOS #003, Chromejaww #005, Reaperdile #006, Duneclaw #008, Oblivirex #009 are OFFICIAL ART FOR NOW under their roster names, until Mars says otherwise. The naming-set question is NOT closed by this — these are official under current roster names for now; if Mars later picks another naming set, names change then. Each creature has a full 3-sheet set in src/assets/sprites-2d/<creature>/ (main.webp / angles-top-diagonal.webp / angles-lighting.webp), parent-verified by eye before presentation.
 
 - Dorowani #147 + Gabu #148 2D sheets (2026-10-25, official starter sheets, pushed via Dorowani/Gabu sheets PR): Dorowani v1 main + angles top-diagonal + angles lighting; Gabu v1 main + angles top-diagonal + angles lighting. Both are the original canon draft likenesses for these Gen 2 starters, as verified 2026-10-25.
+
+## Wispkin correction (2026-10-25, Phase 2d)
+
+PR #16 shipped V2 as main; corrected: V1 is the DEFAULT likeness
+(`src/assets/sprites-2d/wispkin/`), V2 is the skinny-armed variant
+(`src/assets/sprites-2d/wispkin-variant-skinny-armed/`), V3 is the
+stuck-mask trait-animation depiction
+(`src/assets/sprites-2d/wispkin-trait-animation/`). V2/V3 are not replacements.
