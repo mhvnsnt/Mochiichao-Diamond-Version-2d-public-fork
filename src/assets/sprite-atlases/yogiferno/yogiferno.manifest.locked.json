@@ -1,0 +1,265 @@
+{
+ "creature": "yogiferno",
+ "roster_id": "046",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-yogiferno-sheet-0-f3712739-6eb9-4d8c-a381-243247749d2c.webp",
+  "width": 1920,
+  "height": 1280
+ },
+ "atlas_file": "yogiferno_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 192
+ },
+ "frame_count": 18,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_front",
+   "file": "yogiferno_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "battle_back",
+   "file": "yogiferno_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "walk_back_1",
+   "file": "yogiferno_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "walk_back_0",
+   "file": "yogiferno_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "walk_back_3",
+   "file": "yogiferno_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "walk_back_2",
+   "file": "yogiferno_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "walk_back_6",
+   "file": "yogiferno_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "walk_back_4",
+   "file": "yogiferno_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "walk_back_5",
+   "file": "yogiferno_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "walk_back_7",
+   "file": "yogiferno_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "walk_back_9",
+   "file": "yogiferno_cell_10.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 64
+  },
+  {
+   "cell": 11,
+   "role": "walk_back_8",
+   "file": "yogiferno_cell_11.png",
+   "game_ready": true,
+   "source_cell": 11,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 64
+  },
+  {
+   "cell": 12,
+   "role": "walk_back_11",
+   "file": "yogiferno_cell_12.png",
+   "game_ready": true,
+   "source_cell": 12,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 128
+  },
+  {
+   "cell": 13,
+   "role": "walk_back_12",
+   "file": "yogiferno_cell_13.png",
+   "game_ready": true,
+   "source_cell": 13,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 128
+  },
+  {
+   "cell": 14,
+   "role": "walk_back_13_platform_variant",
+   "file": "yogiferno_cell_14.png",
+   "game_ready": false,
+   "source_cell": 14,
+   "lock_note": "FLAGGED: fire platform at base; kept but non-default walk cell",
+   "eye_status": "extractor_assigned_spot_checked"
+  },
+  {
+   "cell": 15,
+   "role": "walk_back_14",
+   "file": "yogiferno_cell_15.png",
+   "game_ready": true,
+   "source_cell": 15,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 128
+  },
+  {
+   "cell": 16,
+   "role": "walk_back_15",
+   "file": "yogiferno_cell_16.png",
+   "game_ready": true,
+   "source_cell": 16,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 128
+  },
+  {
+   "cell": 17,
+   "role": "icon",
+   "file": "yogiferno_cell_17.png",
+   "game_ready": true,
+   "source_cell": 17,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 256,
+   "atlas_y": 128
+  }
+ ],
+ "qa_notes": [
+  {
+   "tool": "prune_cells.py",
+   "dropped_or_merged": [
+    {
+     "cells": [
+      0
+     ],
+     "action": "dropped",
+     "role": "overworld_back"
+    },
+    {
+     "cells": [
+      18
+     ],
+     "action": "dropped",
+     "role": "walk_back_16"
+    },
+    {
+     "cells": [
+      17
+     ],
+     "action": "role_set",
+     "role": "icon",
+     "confirmed": true,
+     "note": "post-prune numbering"
+    }
+   ],
+   "note": "Cell 0 was a mini-sheet cluster panel of many tiny figures, not a single pose. Cell 18 was a lone flame arc. Cell 19 (circle head bust) is the true icon, eye-verified."
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "yogiferno.manifest.json",
+ "game_ready_cell_count": 17,
+ "game_ready_atlas_file": "yogiferno_atlas_64_locked.png",
+ "icon_file": "icons/yogiferno_icon64.png",
+ "icon_source": "atlas icon cell 17",
+ "white_spot_cleanup_px_cleared": 1256,
+ "white_spot_cleanup_bg": [
+  246,
+  246,
+  246
+ ]
+}
