@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useGameStore } from '../../store/gameStore';
 import CreaturePortrait from '../game/CreaturePortrait';
+import { MenuHelpLine } from '../game/MenuList';
 import { SPECIES_DB } from '../../lib/species';
 import {
   alignmentFromCare, applyGardenItem, gardenBattleBonus, gardenForm,
   colorwayFor, typeVariant, branchEvolution, dataRevert, mochiLinkValidate,
   GardenStats, GardenCreature, BURST_BONUS, BURST_TURNS,
 } from '../../lib/mochiichao-systems';
+import { MEMORY_QUESTS } from '../../lib/monster-tamer-systems';
 
 /**
  * Mochi Garden — Mainframe Gardens as a reachable screen (pass 1).
@@ -29,6 +31,26 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
   const [garden, setGarden] = useState<Record<string, GardenCreature>>({});
   const [note, setNote] = useState<string | null>(null);
   const [place, setPlace] = useState<string | null>(null);
+  // Bonding / Memory Quests (monster-tamer spec step 4): quest givers
+  // are existing Mochiichao NPCs. Completing one raises bond +10 and
+  // one Garden stat +5 on the selected creature's Garden record.
+  // Befriending does NOT replace capture — capture stays Luigi Cubes
+  // + Ring Capture, and Garden records here are still the local
+  // placeholder records noted above, not yet persisted to the save.
+  const [completedQuests, setCompletedQuests] = useState<Record<string, boolean>>({});
+  const completeQuest = (questId: string) => {
+    if (!current || completedQuests[questId]) return;
+    const quest = MEMORY_QUESTS.find(q => q.id === questId);
+    if (!quest) return;
+    const next = {
+      ...rec,
+      garden: applyGardenItem(rec.garden, { [quest.gardenStat]: quest.gardenReward }),
+      bond: Math.min(100, rec.bond + quest.bondReward),
+    };
+    setGarden(g => ({ ...g, [current.id]: next }));
+    setCompletedQuests(q => ({ ...q, [questId]: true }));
+    setNote(`${quest.title} complete! Bond +${quest.bondReward}, ${quest.gardenStat} +${quest.gardenReward}.`);
+  };
 
   const current = party[Math.min(selected, Math.max(0, party.length - 1))];
   const rec: GardenCreature = current ? (garden[current.id] || {
@@ -63,10 +85,10 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
         <div className="flex flex-col md:flex-row gap-4 flex-1 min-h-0 overflow-y-auto md:overflow-hidden">
           <div className="md:w-[38%] flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto shrink-0">
             {party.map((m, i) => (
-              <button key={m.id} onClick={() => setSelected(i)} className={`game-panel p-3 flex items-center gap-3 text-left shrink-0 ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}>
+              <button key={m.id} onClick={() => setSelected(i)} onMouseEnter={() => setSelected(i)} onFocus={() => setSelected(i)} className={`game-panel p-3 flex items-center gap-3 text-left shrink-0 ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}>
                 <CreaturePortrait speciesId={m.speciesId} view="front" size={48} />
                 <div>
-                  <div className="font-bold text-white">{m.nickname}</div>
+                  <div className="font-bold text-white">{i === selected ? '► ' : ''}{m.nickname}</div>
                   <div className="text-xs text-slate-400">Lv. {m.level}</div>
                 </div>
               </button>
@@ -135,6 +157,25 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
               </div>
               {note && <div className="mt-3 text-sm text-slate-200 bg-black/40 rounded-lg p-3">{note}</div>}
             </div>
+            <h3 className="text-white font-bold mt-4 mb-2">Bonding / Memory Quests</h3>
+            <p className="text-xs text-slate-400 mb-2">Garden Bonding Season quests from Prof. Aeon, Mochiko, and Hex in the Mainframe Region. Befriending raises Garden Stats — it does not replace capture.</p>
+            <div className="flex flex-col gap-2">
+              {MEMORY_QUESTS.map(q => (
+                <div key={q.id} className="game-panel p-3 flex justify-between items-center gap-3">
+                  <div>
+                    <div className="font-bold text-white text-sm">{q.title} <span className="text-slate-400 font-normal">— {q.giver}</span></div>
+                    <div className="text-xs text-slate-400 mt-1">{q.text} Reward: Bond +{q.bondReward}, {q.gardenStat} +{q.gardenReward}.</div>
+                  </div>
+                  <button
+                    disabled={!current || !!completedQuests[q.id]}
+                    onClick={() => completeQuest(q.id)}
+                    className="game-button px-3 py-1.5 text-sm shrink-0 disabled:opacity-40"
+                  >
+                    {completedQuests[q.id] ? 'Done' : 'Complete Quest'}
+                  </button>
+                </div>
+              ))}
+            </div>
             <h3 className="text-white font-bold mt-4 mb-2">Garden places</h3>
             <div className="flex flex-wrap gap-2">
               {places.map(p => (
@@ -142,6 +183,11 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
               ))}
             </div>
             {place && <div className="game-panel p-4 mt-3 text-sm text-slate-200">{place}</div>}
+            {current && (
+              <div className="mt-3">
+                <MenuHelpLine text={`${current.nickname} — Lv. ${current.level} · Garden Form: ${gardenForm(rec.garden)} · Battle bonus: +${(gardenBattleBonus(rec.garden) * 100).toFixed(1)}%`} />
+              </div>
+            )}
           </div>
         </div>
       )}
