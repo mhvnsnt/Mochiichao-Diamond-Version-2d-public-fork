@@ -126,6 +126,19 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const [playerName, setPlayerName] = useState("Netrunner");
   
   const [battleState, setBattleState] = useState<any>(null);
+  // v5.1: pending end-of-battle cleanup, run ONLY when the player
+  // advances past the win/lose banner. Before v5.1 the "over" phase
+  // auto-advanced on a 2000-2500ms timer, so a playtest that did not
+  // screenshot inside that window never saw any banner — in all
+  // three v5 playtest battles. The banner now blocks until the
+  // player presses Continue (or Enter/Space), so it cannot be
+  // missed by timing alone. No damage/catch/battle-flow change.
+  const pendingBattleEndRef = React.useRef<(() => void) | null>(null);
+  const finishBattleEnd = () => {
+    const fn = pendingBattleEndRef.current;
+    pendingBattleEndRef.current = null;
+    if (fn) fn();
+  };
   const [dialog, setDialog] = useState<any>(null);
   // v4: DialogueBox owns typing/page state internally. WorldEngine
   // only keeps this ref so the on-screen A button can advance the
@@ -250,12 +263,17 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         type: sp.types[0],
     };
 
+    pendingBattleEndRef.current = null;
     setBattleState({
       type: "wild",
       wild: wildMon,
       // v5: give the battle player a real `name` (nickname -> species
       // name); without it the log read "undefined used Tackle!".
-      player: { ...playerMon, name: battleMonName(playerMon), currentHp: playerMon.currentHp ?? playerMon.hp },
+      // v5.1 HP sync: battle copy carries BOTH hp and currentHp at
+      // the same value — the store's source of truth is hp, the
+      // battle's is currentHp, and letting them drift was the v5
+      // playtest discrepancy (Team 20/20, next battle 6/20).
+      player: { ...playerMon, name: battleMonName(playerMon), currentHp: playerMon.currentHp ?? playerMon.hp, hp: playerMon.currentHp ?? playerMon.hp },
       playerTeamIdx: aliveIdx,
       log: [`A wild ${wildMon.name} appeared!`],
       phase: "menu",
@@ -283,6 +301,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       ? [hexTeamMember(playerMon.speciesId)].filter(Boolean)
       : npc.battle.team;
     const trainerName = isHexBattle ? rivalName : npc.name;
+    pendingBattleEndRef.current = null;
     setBattleState({
       type: "trainer",
       npcId: npc.id,
@@ -291,7 +310,8 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       trainerTeamIdx: 0,
       // v5: same name fix as the wild battle — MochiiInstance has
       // `nickname`, not `name`, so the log must not read .name raw.
-      player: { ...playerMon, name: battleMonName(playerMon), currentHp: playerMon.currentHp ?? playerMon.hp },
+      // v5.1 HP sync: see wild battle above (hp and currentHp agree).
+      player: { ...playerMon, name: battleMonName(playerMon), currentHp: playerMon.currentHp ?? playerMon.hp, hp: playerMon.currentHp ?? playerMon.hp },
       playerTeamIdx: aliveIdx,
       log: [`${trainerName} wants to battle!`, `${trainerName} sent out ${battleTeam[0].name}!`],
       phase: "menu",
@@ -465,6 +485,15 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
             notify("Loaded Autosave", "#88ccff");
           }
         }
+      } else if (screen === "battle" && battleState?.phase === "over") {
+        // v5.1: the banner blocks until advanced. Enter/Space (and
+        // the on-screen Continue button) advance it; without this
+        // branch battle keys did nothing at all, so a keyboard-only
+        // player could never leave the banner.
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          finishBattleEnd();
+        }
       } else if (screen === "dialog") {
         // v4: Enter/Space advance is handled inside DialogueBox
         // (typing-complete-first, then next page). Handling it here
@@ -479,7 +508,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [screen, move, dialog, playerPos, playerDir]);
+  }, [screen, move, dialog, playerPos, playerDir, battleState]);
 
   const interact = () => {
     let dx = 0, dy = 0;
@@ -635,22 +664,33 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     const newLog = [...bs.log, `${battleMonName(enemy)} used ${chosenMoveDisplay}!`];
     if (dmg > 0) newLog.push(`${battleMonName(bs.player)} took ${dmg} damage!`);
 
-    const updatedPlayer = { ...bs.player, currentHp: newHp };
+    // v5.1 HP sync: battle copy keeps hp and currentHp together.
+    const updatedPlayer = { ...bs.player, currentHp: newHp, hp: newHp };
 
     if (newHp <= 0) {
       newLog.push(`${battleMonName(bs.player)} fainted!`);
-      const nextAlive = playerTeam.findIndex((m, i) => i > bs.playerTeamIdx && (m.currentHp ?? m.maxHp) > 0);
+      // v5.1 HP: a mon with hp 0 and no currentHp is fainted, not
+      // alive — the old check (currentHp ?? maxHp) would have
+      // treated it as alive at full HP.
+      const nextAlive = playerTeam.findIndex((m, i) => i > bs.playerTeamIdx && ((m.currentHp ?? m.hp) ?? m.maxHp) > 0);
       if (nextAlive === -1) {
         newLog.push("You have no more Mochiichao! You blacked out...");
         setBattleState({ ...bs, player: updatedPlayer, log: newLog, phase: "over" });
-        setTimeout(() => {
+        // v5.1: banner blocks until Continue — no 2500ms timer.
+        // The cleanup below is identical to the old timer body,
+        // except the blackout heal now writes BOTH hp and
+        // currentHp (old code wrote currentHp only, so Team
+        // showed full HP while the next battle entered damaged).
+        pendingBattleEndRef.current = () => {
           setBattleState(null);
           setMapState(currentMap, mapData.playerStart);
-          setPlayerTeam(t => t.map(m => ({ ...m, currentHp: Math.floor(m.maxHp * 0.3) })));
+          setPlayerTeam(t => t.map(m => {
+            const healed = Math.floor(m.maxHp * 0.3);
+            return { ...m, currentHp: healed, hp: healed };
+          }));
           notify("You blacked out and were sent back...", "#ff5252");
           // v5: goal after a loss too (see hexGoalDialog above).
-          // The banner (phase "over" render) already showed DEFEAT;
-          // this dialogue states the goal once, then finishDialog
+          // This dialogue states the goal once, then finishDialog
           // returns to the overworld. It never re-gifts cubes.
           if (bs.npcId === 'hex_battle_event' && !completedEvents.includes('v4_hex_goal')) {
             setDialog(hexGoalDialog());
@@ -658,15 +698,18 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           } else {
             setScreen("overworld");
           }
-        }, 2500);
+        };
       } else {
         newLog.push(`Go, ${battleMonName(playerTeam[nextAlive])}!`);
-        setBattleState({ ...bs, player: { ...playerTeam[nextAlive], name: battleMonName(playerTeam[nextAlive]), currentHp: playerTeam[nextAlive].currentHp ?? playerTeam[nextAlive].maxHp }, playerTeamIdx: nextAlive, log: newLog, phase: "menu" });
+        const switchHp = (playerTeam[nextAlive].currentHp ?? playerTeam[nextAlive].hp) ?? playerTeam[nextAlive].maxHp;
+        setBattleState({ ...bs, player: { ...playerTeam[nextAlive], name: battleMonName(playerTeam[nextAlive]), currentHp: switchHp, hp: switchHp }, playerTeamIdx: nextAlive, log: newLog, phase: "menu" });
       }
     } else {
       setBattleState({ ...bs, player: updatedPlayer, log: newLog, phase: "menu" });
       const updatedTeam = [...playerTeam];
-      updatedTeam[bs.playerTeamIdx] = { ...updatedTeam[bs.playerTeamIdx], currentHp: newHp };
+      // v5.1 HP sync: write BOTH fields, or Team (hp) and the
+      // next battle (currentHp) disagree — the v5 discrepancy.
+      updatedTeam[bs.playerTeamIdx] = { ...updatedTeam[bs.playerTeamIdx], currentHp: newHp, hp: newHp };
       setPlayerTeam(updatedTeam);
     }
   };
@@ -694,15 +737,21 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       const catchRate = 0.7 - hpRatio * 0.5;
       const success = Math.random() < catchRate;
       if (success) {
-        const caught = { ...bs.wild, currentHp: bs.wild.currentHp };
+        // v5.1 HP sync: caught mon carries both fields at the same HP.
+        const caught = { ...bs.wild, currentHp: bs.wild.currentHp, hp: bs.wild.currentHp };
         setPlayerTeam(t => t.length < 6 ? [...t, caught] : t);
         setDex(d => ({ ...d, [caught.id]: "caught" }));
         notify(`${caught.name} was caught!`, "#4fc3f7");
         setScreen("overworld");
         setBattleState(null);
       } else {
-        setBattleState({ ...bs, log: [...bs.log, "The Merkaba shook... and broke!"], phase: "enemy_turn" });
-        setTimeout(() => doEnemyTurn({ ...bs, log: [...bs.log, "The Merkaba shook... and broke!"] }), 1200);
+        // v5.1 naming: "Merkaba" appeared ONLY here (button + log)
+        // and nowhere else as a canon item — Shop, Bag, Team and
+        // the gift dialogue all say Luigi Cube. Renamed to the
+        // in-game item name for consistency; if Mars wants Merkaba
+        // as a separate item, that is a new decision, not a rename.
+        setBattleState({ ...bs, log: [...bs.log, "The Luigi Cube shook... and broke!"], phase: "enemy_turn" });
+        setTimeout(() => doEnemyTurn({ ...bs, log: [...bs.log, "The Luigi Cube shook... and broke!"] }), 1200);
       }
       return;
     }
@@ -735,7 +784,8 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           updatedTeam[bs.playerTeamIdx] = { ...updatedTeam[bs.playerTeamIdx], xp: (updatedTeam[bs.playerTeamIdx].xp || 0) + xp };
           setPlayerTeam(updatedTeam);
           setBattleState({ ...bs, wild: { ...bs.wild, currentHp: 0 }, log: newLog, phase: "over" });
-          setTimeout(() => { setScreen("overworld"); setBattleState(null); }, 2000);
+          // v5.1: banner blocks until Continue — no 2000ms timer.
+          pendingBattleEndRef.current = () => { setScreen("overworld"); setBattleState(null); };
         } else {
           const newTeam = [...bs.trainerTeam];
           newTeam[bs.trainerTeamIdx] = { ...enemyMon, currentHp: 0 };
@@ -746,7 +796,9 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
             setCredits(c => c + bs.reward);
             setDefeatedTrainers(dt => [...dt, bs.npcId]);
             setBattleState({ ...bs, trainerTeam: newTeam, log: newLog, phase: "over" });
-            setTimeout(() => {
+            // v5.1: banner blocks until Continue — no 2500ms timer.
+            // The cleanup below is identical to the old timer body.
+            pendingBattleEndRef.current = () => {
               setBattleState(null);
               // v4 step 7: after the Hex first battle (win), Aeon
               // states the goal in dialogue, in order — dojos,
@@ -755,8 +807,9 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
               // given at the starter beat (see handleChoice); this
               // dialogue names the goal, it does not re-gift.
               // Win OR lose the flow continues: a loss blacks out
-              // and never reaches this branch, so the goal dialogue
-              // is victory-only and the route gate is unaffected.
+              // and reaches the goal via its own branch (v5), so
+              // this win branch and the loss branch share the same
+              // goal dialogue; the route gate is unaffected either way.
               if (bs.npcId === 'hex_battle_event' && !completedEvents.includes('v4_hex_goal')) {
                 // v5: same goal dialogue as the loss path (hexGoalDialog).
                 setDialog(hexGoalDialog());
@@ -764,7 +817,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
               } else {
                 setScreen("overworld");
               }
-            }, 2500);
+            };
           } else {
             newLog.push(`${bs.trainerName} sends out ${newTeam[nextAlive].name}!`);
             setBattleState({ ...bs, trainerTeam: newTeam, trainerTeamIdx: nextAlive, log: newLog, phase: "enemy_turn" });
@@ -932,7 +985,11 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
             <div className="animate-fade-in max-w-2xl">
               <div className="text-slate-500 text-xs tracking-[0.2em] mb-4">ACTIVE TEAM ({playerTeam.length}/6)</div>
               {playerTeam.map((m, i) => {
-                const hp = m.currentHp ?? m.maxHp;
+                // v5.1 HP: store source of truth is hp; currentHp
+                // is the battle copy. After the v5.1 sync both
+                // agree, but display hp first so Team can never
+                // show a stale battle copy.
+                const hp = m.hp ?? m.currentHp ?? m.maxHp;
                 const hpPct = (hp / m.maxHp) * 100;
                 const tc = TYPE_COLORS[m.type] || "#888";
                 return (
@@ -1037,20 +1094,31 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           <span className="text-yellow-400 text-sm font-bold">{credits} CR</span>
         </div>
 
-        {/* v5 win/lose banner: the v4 playtest's first battle closed
-            with no game-over screen and no explicit win/lose text.
-            While phase is "over" (the 2000-2500ms before the screen
-            changes) show the outcome plainly. Flow continues either
-            way — a loss blacks out and returns to the map, a win
-            goes to the goal dialogue or the overworld. */}
+        {/* v5.1 win/lose banner: full-screen blocking overlay, NOT
+            the v5 small row + 2000-2500ms timer. The v5 row was
+            never seen in any of the three v5 playtest battles —
+            whether it was missed between screenshots or hidden
+            behind the arena, a timed row is too easy to miss.
+            This overlay covers the battle, shows the outcome in
+            large text, and BLOCKS until the player presses
+            Continue (button, Enter, or Space — see the battle
+            key handler). Flow continues either way — a loss
+            blacks out and returns to the map, a win goes to the
+            goal dialogue or the overworld. */}
         {bs.phase === "over" && (
-          <div className="relative z-30 flex flex-col items-center py-3 pointer-events-none">
-            <div className={`text-3xl font-black tracking-[0.25em] ${player.currentHp <= 0 ? "text-red-400" : "text-yellow-300"}`}>
+          <div className="absolute inset-0 z-50 bg-black/80 flex flex-col items-center justify-center gap-4">
+            <div className={`text-5xl font-black tracking-[0.25em] ${player.currentHp <= 0 ? "text-red-400" : "text-yellow-300"}`}>
               {player.currentHp <= 0 ? "DEFEAT!" : "VICTORY!"}
             </div>
-            <div className="text-slate-300 text-xs tracking-widest mt-1">
+            <div className="text-slate-200 text-sm tracking-widest text-center px-6">
               {player.currentHp <= 0 ? "You blacked out and were sent back — your journey continues." : "Flow continues — your journey goes on."}
             </div>
+            <button
+              onClick={finishBattleEnd}
+              className="game-button px-8 py-3 font-bold min-h-[48px] tracking-widest"
+            >
+              Continue ►
+            </button>
           </div>
         )}
 
@@ -1159,7 +1227,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
                        onClick={() => doBattleAction({ type: 'catch' })}
                        className="flex-1 bg-teal-950/40 hover:bg-teal-900 border border-teal-700 text-teal-400 font-bold text-sm rounded tracking-widest"
                      >
-                       MERKABA
+                       LUIGI CUBE
                      </button>
                    )}
                    <button 
