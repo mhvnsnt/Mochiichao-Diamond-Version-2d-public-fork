@@ -1,0 +1,10 @@
+# Sprite pipeline requirements (runtime, not vendored packages)
+Pillow>=10.2.0
+numpy>=1.26.4
+# extract_atlas.py only (sheet -> cells stage):
+scipy>=1.11.0
+# remove_background.py only (optional pre-clean stage, local ONNX, no paid API):
+# rembg>=2.0.0
+# onnxruntime>=1.17.0
+# NOTE: rembg downloads its model on first use into ~/.u2net (silueta is
+# the small ~43 MB option). The model is not vendored in this repo.
