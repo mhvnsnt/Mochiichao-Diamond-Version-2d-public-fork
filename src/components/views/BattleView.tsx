@@ -310,7 +310,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
             moves with shake. Placement: enemy top-left, player
             bottom-right. */}
         <div className="absolute top-3 left-3 pointer-events-none z-10 w-[46%] max-w-[280px]">
-          <div className="game-panel px-3 py-2">
+          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)' }}>
             <div className="flex justify-between items-baseline">
               <span className="font-bold text-white uppercase text-sm truncate">{enemy.nickname}</span>
               <span className="text-xs text-slate-300">Lv.{enemy.level}</span>
@@ -321,7 +321,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
           </div>
         </div>
         <div className="absolute bottom-3 right-3 pointer-events-none z-10 w-[46%] max-w-[280px]">
-          <div className="game-panel px-3 py-2">
+          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)' }}>
             <div className="flex justify-between items-baseline">
               <span className="font-bold text-white uppercase text-sm truncate">{playerActive.nickname}</span>
               <span className="text-xs text-slate-300">Lv.{playerActive.level}</span>
@@ -348,7 +348,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
           blank background. */}
       {/* Battle text (message + log) uses the DIALOGUE FONT placement;
           healthboxes and headings above use the MAIN FONT stack. */}
-      <div className="game-panel-bottom flex flex-col shrink-0 z-20" style={{ paddingBottom: 'env(safe-area-inset-bottom)', fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)' }}>
+      <div className="game-panel-bottom flex flex-col shrink-0 z-20" style={{ paddingBottom: 'env(safe-area-inset-bottom)', fontFamily: 'var(--battle-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)' }}>
         <UiPanel
           slot={UI_ART.battle_panel}
           style={{ margin: '8px 12px 0', padding: '12px 16px', minHeight: '56px' }}
