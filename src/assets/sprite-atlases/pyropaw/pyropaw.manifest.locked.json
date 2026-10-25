@@ -1,0 +1,241 @@
+{
+ "creature": "pyropaw",
+ "roster_id": "011",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-pyropaw-sheet-v1-0-e802d9bd-d435-4f48-a50d-c5f36de6e7fc.webp",
+  "width": 1920,
+  "height": 1280
+ },
+ "atlas_file": "pyropaw_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 192
+ },
+ "frame_count": 15,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_back",
+   "file": "pyropaw_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "battle_front",
+   "file": "pyropaw_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "overworld_front",
+   "file": "pyropaw_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "overworld_back",
+   "file": "pyropaw_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_front_2",
+   "file": "pyropaw_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_front_3",
+   "file": "pyropaw_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_front_4",
+   "file": "pyropaw_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_front_5",
+   "file": "pyropaw_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "overworld_front_6",
+   "file": "pyropaw_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "overworld_front_7",
+   "file": "pyropaw_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "overworld_front_8",
+   "file": "pyropaw_cell_10.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 64
+  },
+  {
+   "cell": 11,
+   "role": "overworld_front_9",
+   "file": "pyropaw_cell_11.png",
+   "game_ready": true,
+   "source_cell": 11,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 64
+  },
+  {
+   "cell": 12,
+   "role": "overworld_front_10",
+   "file": "pyropaw_cell_12.png",
+   "game_ready": true,
+   "source_cell": 12,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 128
+  },
+  {
+   "cell": 13,
+   "role": "overworld_front_11",
+   "file": "pyropaw_cell_13.png",
+   "game_ready": true,
+   "source_cell": 13,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 128
+  },
+  {
+   "cell": 14,
+   "role": "icon",
+   "file": "pyropaw_cell_14.png",
+   "game_ready": true,
+   "source_cell": 14,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 128,
+   "atlas_y": 128
+  }
+ ],
+ "qa_notes": [
+  {
+   "tool": "prune_cells.py",
+   "dropped_or_merged": [
+    {
+     "cells": [
+      14
+     ],
+     "action": "dropped",
+     "role": "icon"
+    },
+    {
+     "cells": [
+      15
+     ],
+     "action": "dropped",
+     "role": "overworld_front_12"
+    },
+    {
+     "cells": [
+      16
+     ],
+     "action": "dropped",
+     "role": "overworld_front_13"
+    },
+    {
+     "cells": [
+      14
+     ],
+     "action": "role_set",
+     "role": "icon",
+     "confirmed": true,
+     "note": "post-prune numbering"
+    }
+   ],
+   "note": "Cells 14-16 were split fragments of overlapping bottom-right side walkers (source x913-1351 y963-1219); cell 17 (head, bottom-right) is the true icon, eye-verified."
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "pyropaw.manifest.json",
+ "game_ready_cell_count": 15,
+ "game_ready_atlas_file": "pyropaw_atlas_64_locked.png",
+ "icon_file": "icons/pyropaw_icon64.png",
+ "icon_source": "atlas icon cell 14",
+ "white_spot_cleanup_px_cleared": 0,
+ "white_spot_cleanup_bg": [
+  255,
+  241,
+  225
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "creature": "pebblefist",
+ "roster_id": "035",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-pebblefist-sheet-0-bc0dd2e3-2ee8-4175-85b1-8d93f2934464.webp",
+  "width": 1792,
+  "height": 1344
+ },
+ "atlas_file": "pebblefist_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 192
+ },
+ "frame_count": 13,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "overworld_front",
+   "file": "pebblefist_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "battle_front",
+   "file": "pebblefist_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "overworld_back",
+   "file": "pebblefist_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "battle_back",
+   "file": "pebblefist_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_back_2",
+   "file": "pebblefist_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_back_3",
+   "file": "pebblefist_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_back_4",
+   "file": "pebblefist_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_back_5",
+   "file": "pebblefist_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "walk_side_0",
+   "file": "pebblefist_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "walk_side_1",
+   "file": "pebblefist_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "walk_side_2",
+   "file": "pebblefist_cell_10.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 64
+  },
+  {
+   "cell": 11,
+   "role": "walk_front_0",
+   "file": "pebblefist_cell_11.png",
+   "game_ready": true,
+   "source_cell": 11,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 64
+  },
+  {
+   "cell": 12,
+   "role": "icon",
+   "file": "pebblefist_cell_12.png",
+   "game_ready": true,
+   "source_cell": 12,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 128
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "pebblefist.manifest.json",
+ "game_ready_cell_count": 13,
+ "game_ready_atlas_file": "pebblefist_atlas_64_locked.png",
+ "icon_file": "icons/pebblefist_icon64.png",
+ "icon_source": "atlas icon cell 12",
+ "white_spot_cleanup_px_cleared": 0,
+ "white_spot_cleanup_bg": [
+  244,
+  242,
+  238
+ ]
+}
