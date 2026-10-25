@@ -76,27 +76,45 @@ export function fontById(id: string): FontOption {
   return FONT_OPTIONS.find(f => f.id === id) || FONT_OPTIONS[FONT_OPTIONS.length - 1];
 }
 
-/** Apply the two independent font placements live (Mars font-role
- *  update, 2026-10-25): MAIN FONT sets --game-font on :root, which
- *  src/index.css uses for body / titles / menus / UI labels;
- *  DIALOGUE FONT sets --dialogue-font, which DialogueBox and battle
- *  text use for dialogue / NPC talk / battle text / body text.
- *  Pending fonts fall back to the default stack because their
- *  @font-face is not in the build yet — the choice is still saved,
- *  and applies when the file lands. */
-export function applyFonts(mainId: string, dialogueId: string): { main: FontOption; dialogue: FontOption } {
-  const main = fontById(mainId);
-  const dialogue = fontById(dialogueId);
+export interface FontRoles {
+  mainFont: string;
+  menuFont: string;
+  dialogueFont: string;
+  smallFont: string;
+  boldFont: string;
+  battleFont: string;
+}
+/** Pinned DIAMOND VERSION subtitle font (Mars font correction,
+ *  2026-10-25 18:30 CDT): the subtitle font on the main menu is
+ *  NEVER changed by any font row. IntroSequence pins the subtitle
+ *  to this exact stack in both TITLE and MAIN_MENU phases. */
+export const PINNED_SUBTITLE_FONT = '"Trebuchet MS", "Segoe UI", system-ui, sans-serif';
+/** Apply the six independent font placements live (Mars font
+ *  correction, 2026-10-25 18:30 CDT, overrides the 2-row version):
+ *  MAIN -> --game-font (body / titles / menus / headings / UI
+ *  labels); MENU -> --menu-font (menu selection row text);
+ *  DIALOGUE -> --dialogue-font (dialogue boxes / NPC talk / body
+ *  text); SMALL -> --small-font (small labels / notes);
+ *  BOLD -> --bold-font (bold headings / action buttons);
+ *  BATTLE -> --battle-font (battle log / HUD). Pending fonts
+ *  fall back to the default stack because their @font-face is
+ *  not in the build yet — the choice is still saved, and applies
+ *  when the file lands. */
+export function applyFontRoles(roles: FontRoles): void {
+  const vars: [string, string][] = [
+    ['--game-font', roles.mainFont],
+    ['--menu-font', roles.menuFont],
+    ['--dialogue-font', roles.dialogueFont],
+    ['--small-font', roles.smallFont],
+    ['--bold-font', roles.boldFont],
+    ['--battle-font', roles.battleFont],
+  ];
   try {
-    document.documentElement.style.setProperty('--game-font', `'${main.family}', "Trebuchet MS", "Segoe UI", system-ui, sans-serif`);
-    document.documentElement.style.setProperty('--dialogue-font', `'${dialogue.family}', "Trebuchet MS", "Segoe UI", system-ui, sans-serif`);
+    for (const [v, id] of vars) {
+      const opt = fontById(id);
+      document.documentElement.style.setProperty(v, `'${opt.family}', "Trebuchet MS", "Segoe UI", system-ui, sans-serif`);
+    }
   } catch {
     // Non-DOM environment (tests): choices are still saved by the caller.
   }
-  return { main, dialogue };
-}
-
-/** Backwards-compatible single-font helper (main font only). */
-export function applyFont(id: string): FontOption {
-  return applyFonts(id, '01-digitall').main;
 }
