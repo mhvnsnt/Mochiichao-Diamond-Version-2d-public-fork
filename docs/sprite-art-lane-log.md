@@ -277,3 +277,6 @@ committed file.
 
 ## 2026-10-25 ~16:33 CDT — Starter evolutions APPROVED as official art (for now), pushed to repo
 - Mars, replying to the 6 starter-evolution mains: "Yeah those are really good save all of those to the repo as the official art for those characters for now until I say otherwise." Tiidebiite #002, AquariiOS #003, Chromejaww #005, Reaperdile #006, Duneclaw #008, Oblivirex #009 pushed as official art for now under roster names (branch feature/sprite-art-starter-evolutions, 18 sheets, clean names, 0 deletions). Naming set still open — names may change if Mars picks another set. Next direction from Mars: work on the rest of the character sheets/art still needed, doing whatever Pokemon developers/producers would do next — research it, assess where the project is at, and do that next work.
+
+## 2026-10-25 — Dorowani #147 + Gabu #148 2D sheets pushed
+- Full 3-sheet sets for both Gen 2 starters pushed to src/assets/sprites-2d/dorowani/ and gabu/ (main / angles-top-diagonal / angles-lighting, clean PR #16-pattern names).
