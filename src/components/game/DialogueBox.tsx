@@ -59,6 +59,15 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
 }) {
   const pages = useMemo(() => chunkDialogueLines(lines), [lines]);
   const [pageIdx, setPageIdx] = useState(0);
+  // v5.1: reset paging when the dialogue CONTENT changes. Before
+  // v5.1 pageIdx persisted across dialogues while the box stayed
+  // mounted (screen stays "dialog" when handleChoice replaces the
+  // choice dialogue with the gift dialogue), so the gift dialogue
+  // started at page 1 and its first line ("You chose your
+  // partner!") was never shown in the v5 playtest. Resetting on
+  // content (not array identity) avoids resetting on every render.
+  const pagesKey = pages.join('\n');
+  useEffect(() => { setPageIdx(0); setShown(0); }, [pagesKey]);
   const [shown, setShown] = useState(0);
   const page = pages[Math.min(pageIdx, pages.length - 1)];
   const typingDone = shown >= page.length;

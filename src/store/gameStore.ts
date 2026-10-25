@@ -91,8 +91,11 @@ export const useGameStore = create<GameState>((set, get) => ({
   },
 
   healParty: () => {
+    // v5.1 HP sync: heal writes BOTH hp and currentHp. Before
+    // v5.1 it wrote hp only, so a healed party would still enter
+    // its next battle at the old damaged currentHp.
     set(state => ({
-      party: state.party.map(m => ({ ...m, hp: m.maxHp, status: null }))
+      party: state.party.map(m => ({ ...m, hp: m.maxHp, currentHp: m.maxHp, status: null }))
     }));
   },
 
