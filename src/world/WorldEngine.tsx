@@ -5,14 +5,73 @@ import { useGameStore } from "../store/gameStore";
 import PixiWorldCanvas from "../components/game/PixiWorldCanvas";
 import CreaturePortrait from "../components/game/CreaturePortrait";
 import { PauseMenu, WorldHud } from "../components/game/GameShell";
-import { UiPanel } from "../components/game/UiArt";
-import { UI_ART } from "../lib/uiArt";
 import { getDayPhase, DAY_TINT, DAY_AMBIENT, WEATHER_CONFIG } from "./WorldConstants";
 import SaveMenu from "../components/SaveMenu";
 import { saveGame, getSaves } from "../lib/saveSystem";
 import { SPECIES_DB } from '../lib/species';
+import { MOVES_DB } from '../lib/moves';
+import { createMochii } from '../lib/engine';
+import DialogueBox from "../components/game/DialogueBox";
+import { slotForNpc } from "../lib/humanSheets";
 
 const TILE_SIZE = 40; // match PDF size because it renders better in viewports
+
+// ── v4 game-flow helpers (implementation choices, NOT Mars canon) ──
+// Starter table order, as the lab balls appear left to right.
+export const STARTER_TABLE = ['001', '004', '007', '010', '038'];
+const TYPE_DISPLAY: Record<string, string> = {
+  WATER: 'Water', STEEL: 'Chrome', GROUND: 'Earth', FIRE: 'Flame', GRASS: 'Grass',
+};
+/**
+ * Hex starter choice (v4 IMPLEMENTATION CHOICE, not Mars canon):
+ * Hex picks the NEXT starter in table order after the player's pick
+ * (Mochii -> Razorgater -> Tyrage -> Kittember -> Sproutle -> Mochii),
+ * never mirroring the player. This replaces the broken rival code that
+ * read playerTeam[0].type (a field MochiiInstance does not have, so it
+ * always defaulted to Razorgater) and then looked that id up in
+ * GameData starters (ids 1/2/3, not 001/004/007, so it never matched).
+ * The team member is built from SPECIES_DB via createMochii at level 5
+ * and converted to the WorldEngine trainer-battle flat format
+ * (atk/def/spd, display move names, hp/maxHp) — no stats, types or
+ * moves are invented; they are the species' own data at level 5.
+ */
+export function nextStarterForHex(playerSpeciesId: string): string {
+  const i = STARTER_TABLE.indexOf(playerSpeciesId);
+  return STARTER_TABLE[(i + 1) % STARTER_TABLE.length];
+}
+export function hexTeamMember(playerSpeciesId: string): any | null {
+  const hexId = nextStarterForHex(playerSpeciesId);
+  const sp: any = SPECIES_DB[hexId];
+  const m = createMochii(hexId, 5);
+  if (!sp || !m) return null;
+  return {
+    id: m.id, speciesId: hexId, name: sp.name,
+    hp: m.hp, maxHp: m.maxHp,
+    atk: m.stats.atk, def: m.stats.def, spd: m.stats.spe,
+    moves: m.moves.map((id: string) => MOVES_DB[id]?.name || id),
+    type: TYPE_DISPLAY[sp.types[0]] || sp.types[0],
+    level: 5,
+  };
+}
+/**
+ * Battle move bridge (v4): WorldEngine's GAME_DATA.moves is keyed by
+ * display name ("Tackle"), while a party built by createMochii carries
+ * moveIds ("TACKLE"). Without this bridge every player move lookup
+ * missed and the move did nothing. Resolution is display-name first,
+ * then MOVES_DB by moveId (power = bp, type mapped to GameData
+ * display names). The damage formula (calcDamage) is unchanged.
+ */
+export function resolveBattleMove(moveKey: string): { power: number; type: string; display: string } | null {
+  const gd: any = (IMPORTED_GAME_DATA as any).moves?.[moveKey];
+  if (gd) return { power: gd.power, type: gd.type, display: moveKey };
+  const db: any = (MOVES_DB as any)[moveKey];
+  if (db) return { power: db.bp, type: TYPE_DISPLAY[db.type] || db.type, display: db.name };
+  return null;
+}
+/** Flat atk/def for calcDamage: MochiiInstance carries stats.*, not flat atk/def. */
+export function battleStats(mon: any): any {
+  return { ...mon, atk: mon.atk ?? mon.stats?.atk ?? 50, def: mon.def ?? mon.stats?.def ?? 50 };
+}
 
 export function useDayNight(tickMs = 1000) {
   const [gameHour, setGameHour] = useState(10);
@@ -45,6 +104,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
 
   const playerPos = useGameStore(s => s.playerPos);
   const playerGender = useGameStore(s => s.playerGender);
+  const rivalName = useGameStore(s => s.rivalName) || 'Hex';
   const setMapState = useGameStore(s => s.setMapState);
 
   const [screen, setScreen] = useState("overworld"); 
@@ -54,7 +114,10 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   
   const [battleState, setBattleState] = useState<any>(null);
   const [dialog, setDialog] = useState<any>(null);
-  const [dialogIdx, setDialogIdx] = useState(0);
+  // v4: DialogueBox owns typing/page state internally. WorldEngine
+  // only keeps this ref so the on-screen A button can advance the
+  // box (keyboard Enter/Space is handled inside DialogueBox).
+  const dialogAdvanceRef = React.useRef<(() => void) | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [pauseOpen, setPauseOpen] = useState(false);
   const [menuTab, setMenuTab] = useState("team");
@@ -116,6 +179,30 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     saveGame(saveSlot, 'auto', `AUTOSAVE - Map Change`, useGameStore.getState());
   }, [saveSlot, currentMap]);
 
+  // v4 Mom-first dialogue: on the first world entry in Sector 0 with
+  // no partner yet, Mom speaks first (one DialogueBox, portrait),
+  // pointing the player at the lab. It fires once (completedEvents
+  // 'v4_mom_intro'), never for a loaded save that already has a
+  // partner, and never again after the lab starter is chosen.
+  const momIntroFired = React.useRef(false);
+  useEffect(() => {
+    if (momIntroFired.current) return;
+    if (screen !== "overworld" || currentMap !== 'sector0' || hasStarter) return;
+    if (completedEvents.includes('v4_mom_intro')) return;
+    momIntroFired.current = true;
+    setDialog({
+      lines: [
+        "Welcome home! Prof. Aeon is waiting at the lab, just north of here.",
+        "Go see him before you head out — the tall grass is no place without a partner.",
+        "Your journey starts in Sector 0. I will be right here when you need me.",
+      ],
+      isEvent: true,
+      eventId: 'v4_mom_intro',
+      npc: { id: "mom", name: "Mom" },
+    });
+    setScreen("dialog");
+  }, [screen, currentMap, hasStarter, completedEvents]);
+
   const notify = (msg: string, color = "#ffd700") => {
     setNotification({ msg, color });
     setTimeout(() => setNotification(null), 2500);
@@ -170,17 +257,26 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       return;
     }
     if (!npc.battle || npc.battle.team.length === 0) return;
-    
+
     const playerMon = playerTeam[aliveIdx];
+    // v4: Hex battles use the rival name from the store and the
+    // table-order-next starter (hexTeamMember), not the fixed
+    // Razorgater team in the map data, which contradicted the
+    // player's own pick when the player chose Razorgater.
+    const isHexBattle = npc.id === 'hex_battle_event' || npc.id === 'rival_hex' || npc.name === 'Hex';
+    const battleTeam = (isHexBattle && playerMon?.speciesId)
+      ? [hexTeamMember(playerMon.speciesId)].filter(Boolean)
+      : npc.battle.team;
+    const trainerName = isHexBattle ? rivalName : npc.name;
     setBattleState({
       type: "trainer",
       npcId: npc.id,
-      trainerName: npc.name,
-      trainerTeam: npc.battle.team.map((m: any) => ({ ...m, currentHp: m.hp, speciesId: m.speciesId || m.id })),
+      trainerName,
+      trainerTeam: battleTeam.map((m: any) => ({ ...m, currentHp: m.currentHp ?? m.hp, speciesId: m.speciesId || m.id })),
       trainerTeamIdx: 0,
       player: { ...playerMon, currentHp: playerMon.currentHp ?? playerMon.hp },
       playerTeamIdx: aliveIdx,
-      log: [`${npc.name} wants to battle!`, `${npc.name} sent out ${npc.battle.team[0].name}!`],
+      log: [`${trainerName} wants to battle!`, `${trainerName} sent out ${battleTeam[0].name}!`],
       phase: "menu",
       canCatch: false,
       reward: npc.battle.reward || 100,
@@ -188,7 +284,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       badge: npc.battle.badge
     });
     setScreen("battle");
-  }, [playerTeam]);
+  }, [playerTeam, rivalName]);
 
   const move = useCallback((dx: number, dy: number) => {
     if (screen !== "overworld" || isTransitioning) return;
@@ -248,14 +344,22 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         if (conditionMet) {
           eventTriggered = true;
           const isBlocking = ev.id.startsWith("block_");
-          setDialog({ 
-            lines: ev.dialog, 
-            isEvent: !isBlocking, 
+          // v4: Hex first battle — dynamic team + rival name (see
+          // hexTeamMember). The map's fixed Razorgater team is only
+          // a fallback when the player has no speciesId yet.
+          const isHexEvent = ev.id === "hex_battle_event";
+          const hexMember = isHexEvent && playerTeam[0]?.speciesId ? hexTeamMember(playerTeam[0].speciesId) : null;
+          const evBattle = isHexEvent && hexMember
+            ? { ...ev.battle, team: [hexMember] }
+            : ev.battle;
+          const evLines = (ev.dialog || []).map((l: string) => l.replace(/^Hex:/, `${rivalName}:`));
+          setDialog({
+            lines: evLines,
+            isEvent: !isBlocking,
             eventId: ev.id,
-            afterBattle: !!ev.battle,
-            npc: ev.battle ? { ...ev.npc, battle: ev.battle, id: ev.id, name: ev.npc?.name || "Trainer" } : undefined 
+            afterBattle: !!evBattle,
+            npc: evBattle ? { ...ev.npc, battle: evBattle, id: ev.id, name: isHexEvent ? rivalName : (ev.npc?.name || "Trainer") } : undefined
           });
-          setDialogIdx(0);
           setScreen("dialog");
         }
       }
@@ -318,10 +422,9 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           }
         }
       } else if (screen === "dialog") {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          advanceDialog();
-        }
+        // v4: Enter/Space advance is handled inside DialogueBox
+        // (typing-complete-first, then next page). Handling it here
+        // as well would advance twice per press.
       } else if (screen === "save_menu") {
         if (e.key === "Escape") {
           setScreen("overworld");
@@ -332,7 +435,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [screen, move, dialog, dialogIdx, playerPos, playerDir]);
+  }, [screen, move, dialog, playerPos, playerDir]);
 
   const interact = () => {
     let dx = 0, dy = 0;
@@ -348,36 +451,27 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     if (npcHere) {
       if (npcHere.eventId && npcHere.eventId.startsWith("pick_starter_") && hasStarter) {
         setDialog({ lines: ["You already have a partner!"], npc: npcHere });
-        setDialogIdx(0);
         setScreen("dialog");
         return;
       }
       
-      // Dynamic setup for rival hex
-      if (npcHere.id === "rival_hex" && hasStarter) {
+      // v4 dynamic setup for rival hex: table-order-next starter
+      // (hexTeamMember), never mirroring the player, and the rival
+      // name from the store. The old code read playerTeam[0].type
+      // (a field MochiiInstance does not have) and looked the id up
+      // in GameData starters (ids 1/2/3), so it always fell back to
+      // a fixed Razorgater and its dialogue claimed "Razorgater,
+      // obviously" even when the player had Razorgater.
+      if (npcHere.id === "rival_hex" && hasStarter && playerTeam[0]?.speciesId) {
          npcHere = JSON.parse(JSON.stringify(npcHere)); // shallow clone to mutate safely
-         const pType = playerTeam[0].type;
-         let rivalStarterId = "004"; // Default Chrome (if player is Water)
-         let rivalStarterName = "Razorgater";
-         
-         // Water (001) < Earth (007) < Chrome (004) < Water (001)
-         if (pType === "Water") { rivalStarterId = "007"; rivalStarterName = "Tyrage"; }
-         else if (pType === "Earth") { rivalStarterId = "004"; rivalStarterName = "Razorgater"; }
-         else if (pType === "Chrome") { rivalStarterId = "001"; rivalStarterName = "Mochii"; }
-
+         const hexMember = hexTeamMember(playerTeam[0].speciesId);
+         npcHere.name = rivalName;
          npcHere.dialog = [
-           `You again? I already picked my starter. ${rivalStarterName}, obviously.`,
+           `You again? I already picked my starter. ${hexMember?.name || "Razorgater"}, obviously.`,
            "Don't think I'll go easy on you just because we grew up here.",
            "Next time we meet, we BATTLE. Count on it."
          ];
-
-         const sp = IMPORTED_GAME_DATA.starters.find((s: any) => s.id == rivalStarterId);
-         if (sp) {
-           npcHere.battle.team = [{ 
-             id: rivalStarterId, name: sp.name, hp: sp.hp, maxHp: sp.hp, atk: sp.atk, def: sp.def, spd: sp.spd, 
-             moves: sp.moves || ["Tackle", "Growl"], type: sp.type, level: 5 
-           }];
-         }
+         if (hexMember) npcHere.battle.team = [hexMember];
       }
 
       let lines = npcHere.dialog || ["...", ""];
@@ -389,7 +483,6 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         }
         setDialog({ lines, npc: npcHere, eventId: npcHere.eventId, isChoice: npcHere.isChoice });
       }
-      setDialogIdx(0);
       setScreen("dialog");
       return;
     }
@@ -409,37 +502,31 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     const sign = mapData.signs?.find(s => s.x === nx && s.y === ny);
     if (sign) {
       setDialog({ lines: [sign.text] });
-      setDialogIdx(0);
       setScreen("dialog");
     }
   };
 
-  const advanceDialog = () => {
+  // v4: DialogueBox owns typing + paging. This is only called when
+  // the box reports the last page completed (or a choice is made via
+  // handleChoice). Choice dialogues never reach here — DialogueBox
+  // shows YES/NO instead of advancing.
+  const finishDialog = () => {
     if (!dialog) return;
-    if (dialogIdx < dialog.lines.length - 1) {
-      setDialogIdx(i => i + 1);
+    if (dialog.isEvent && dialog.eventId) {
+      setCompletedEvents(ce => [...ce, dialog.eventId]);
+    }
+    if (dialog.afterBattle && dialog.npc) {
+      triggerTrainerBattle(dialog.npc);
+    } else if (dialog.npc?.isShop) {
+      if (setView) setView("SHOP");
+      setDialog(null);
+    } else if (dialog.npc?.isHeal) {
+      healParty();
+      setScreen("overworld");
+      setDialog(null);
     } else {
-      if (dialog.isChoice) return; // Must click a choice button
-
-      if (dialog.isEvent && dialog.eventId) {
-        setCompletedEvents(ce => [...ce, dialog.eventId]);
-      }
-      if (dialog.afterBattle && dialog.npc) {
-        triggerTrainerBattle(dialog.npc);
-      } else if (dialog.npc?.isShop) {
-        if (setView) setView("SHOP");
-        setDialog(null);
-        setDialogIdx(0);
-      } else if (dialog.npc?.isHeal) {
-        healParty();
-        setScreen("overworld");
-        setDialog(null);
-        setDialogIdx(0);
-      } else {
-        setScreen("overworld");
-        setDialog(null);
-        setDialogIdx(0);
-      }
+      setScreen("overworld");
+      setDialog(null);
     }
   };
 
@@ -451,13 +538,16 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       if (dialog.eventId === "pick_starter_010") initializeStarter("010");
       if (dialog.eventId === "pick_starter_038") initializeStarter("038");
       
-      setDialog({ lines: ["You chose your partner! A white flash envelopes you...", "Prof Aeon: A fine choice!", "I've also gifted you 5 Luigi Cubes. You can use them to catch wild Mochiichao in the tall grass!", "Good luck on your journey!"], isEvent: false });
-      setDialogIdx(0);
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setScreen("overworld");
-        setIsTransitioning(false);
-      }, 500);
+      // v4: the gift dialogue is a real dialogue (screen dialog,
+      // Aeon portrait via the npc slot), shown at this beat and
+      // closed by finishDialog — the old code set the dialog but
+      // never switched to the dialog screen, then timed out to
+      // overworld after 500ms, so the gift lines were never seen.
+      // Inventory note: the wallet starts with 10 Luigi Cubes and
+      // initializeStarter adds 5, so the player now holds 15 — the
+      // "gifted you 5" wording is the +5 gift, not a total of 5.
+      setDialog({ lines: ["You chose your partner! A white flash envelopes you...", "Prof. Aeon: A fine choice!", "I've also gifted you 5 Luigi Cubes. You can use them to catch wild Mochiichao in the tall grass!", "Good luck on your journey!"], isEvent: false, npc: { id: "prof_aeon", name: "Prof. Aeon" } });
+      setScreen("dialog");
     } else {
       setScreen("overworld");
       setDialog(null);
@@ -468,14 +558,18 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     const enemy = bs.type === "wild" ? bs.wild : bs.trainerTeam[bs.trainerTeamIdx];
     const moves = enemy.moves || ["Tackle"];
     const chosenMove = moves[Math.floor(Math.random() * moves.length)];
-    const moveData = GAME_DATA.moves[chosenMove as keyof typeof GAME_DATA.moves] || { power: 40, type: "Normal" };
+    // v4 bridge: enemy moves may be moveIds (wild/species teams) or
+    // display names (map teams); resolve both, same formula.
+    const resolvedEnemyMove = resolveBattleMove(chosenMove) || { power: 40, type: "Normal", display: chosenMove };
+    const moveData = { power: resolvedEnemyMove.power, type: resolvedEnemyMove.type };
+    const chosenMoveDisplay = resolvedEnemyMove.display;
     
     setBattleAnim("enemy");
     setTimeout(() => setBattleAnim(null), 500);
 
-    const dmg = calcDamage(moveData, enemy, bs.player);
+    const dmg = calcDamage(moveData, battleStats(enemy), battleStats(bs.player));
     const newHp = Math.max(0, bs.player.currentHp - dmg);
-    const newLog = [...bs.log, `${enemy.name} used ${chosenMove}!`];
+    const newLog = [...bs.log, `${enemy.name} used ${chosenMoveDisplay}!`];
     if (dmg > 0) newLog.push(`${bs.player.name} took ${dmg} damage!`);
 
     const updatedPlayer = { ...bs.player, currentHp: newHp };
@@ -542,15 +636,19 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     }
 
     if (action.type === "move") {
-      const moveData = GAME_DATA.moves[action.move as keyof typeof GAME_DATA.moves];
-      if (!moveData) return;
-      
+      // v4 bridge (see resolveBattleMove): without this, a starter
+      // party's moveIds never matched GAME_DATA.moves and the move
+      // silently did nothing. Display name is the MOVES_DB name.
+      const resolved = resolveBattleMove(action.move);
+      if (!resolved) return;
+      const moveData = { power: resolved.power, type: resolved.type };
+
       setBattleAnim("player");
       setTimeout(() => setBattleAnim(null), 500);
 
       const enemyMon = bs.type === "wild" ? bs.wild : bs.trainerTeam[bs.trainerTeamIdx];
-      const dmg = calcDamage(moveData, bs.player, enemyMon);
-      const newLog = [...bs.log, `${bs.player.name} used ${action.move}!`];
+      const dmg = calcDamage(moveData, battleStats(bs.player), battleStats(enemyMon));
+      const newLog = [...bs.log, `${bs.player.name} used ${resolved.display}!`];
 
       const newHp = Math.max(0, enemyMon.currentHp - dmg);
       if (dmg > 0) newLog.push(`Dealt ${dmg} damage!`);
@@ -576,7 +674,34 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
             setCredits(c => c + bs.reward);
             setDefeatedTrainers(dt => [...dt, bs.npcId]);
             setBattleState({ ...bs, trainerTeam: newTeam, log: newLog, phase: "over" });
-            setTimeout(() => { setScreen("overworld"); setBattleState(null); }, 2500);
+            setTimeout(() => {
+              setBattleState(null);
+              // v4 step 7: after the Hex first battle (win), Aeon
+              // states the goal in dialogue, in order — dojos,
+              // Champion Mythar, Hackers/Syndicate — not in a menu
+              // header. The MochiDex + 5 Luigi Cubes were already
+              // given at the starter beat (see handleChoice); this
+              // dialogue names the goal, it does not re-gift.
+              // Win OR lose the flow continues: a loss blacks out
+              // and never reaches this branch, so the goal dialogue
+              // is victory-only and the route gate is unaffected.
+              if (bs.npcId === 'hex_battle_event' && !completedEvents.includes('v4_hex_goal')) {
+                setDialog({
+                  lines: [
+                    "Prof. Aeon: Well done! That was your first battle, and your partner did you proud.",
+                    "Here is your MochiDex — it records every Mochiichao you meet and catch.",
+                    "Now, your goal: visit the dojos across the Mainframe Region, beat Champion Mythar, and stop the Hackers and the Syndicate.",
+                    "Route 1.0 is open. Your first town is Silicon Town — head north when you are ready.",
+                  ],
+                  isEvent: true,
+                  eventId: 'v4_hex_goal',
+                  npc: { id: "prof_aeon", name: "Prof. Aeon" },
+                });
+                setScreen("dialog");
+              } else {
+                setScreen("overworld");
+              }
+            }, 2500);
           } else {
             newLog.push(`${bs.trainerName} sends out ${newTeam[nextAlive].name}!`);
             setBattleState({ ...bs, trainerTeam: newTeam, trainerTeamIdx: nextAlive, log: newLog, phase: "enemy_turn" });
@@ -929,15 +1054,21 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
                <div className="flex flex-col h-full gap-2">
                  <div className="grid grid-cols-2 gap-2 flex-1">
                    {(player.moves || []).map((mName: string) => {
+                     // v4 bridge: party moves are moveIds — display the
+                     // resolved name/type/power, not the raw id.
                      const mDef = GAME_DATA.moves[mName as keyof typeof GAME_DATA.moves];
+                     const mResolved = resolveBattleMove(mName);
+                     const mDisplay = mResolved?.display || mName;
+                     const mType = mResolved?.type || mDef?.type;
+                     const mPower = mResolved?.power ?? mDef?.power;
                      return (
-                       <button 
+                       <button
                          key={mName}
                          onClick={() => doBattleAction({ type: 'move', move: mName })}
                          className="bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded text-left p-2 transition-colors flex flex-col justify-center"
                        >
-                          <span className="font-bold text-white text-sm truncate">{mName}</span>
-                          <span className="text-[10px] mt-1" style={{ color: TYPE_COLORS[mDef?.type] || "#888" }}>{mDef?.type} | PWR {mDef?.power || '-'}</span>
+                          <span className="font-bold text-white text-sm truncate">{mDisplay}</span>
+                          <span className="text-[10px] mt-1" style={{ color: TYPE_COLORS[mType] || "#888" }}>{mType} | PWR {mPower || '-'}</span>
                        </button>
                      )
                    })}
@@ -990,9 +1121,23 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         animWalk={animWalk}
       />
 
+      {/* v4 goal line: the missing "where do I start". The route
+          gate itself already exists (block_route_1 events, noStarter
+          condition, and tall-grass encounters already require a
+          starter) — v4 makes it discoverable instead of inventing a
+          second gate. */}
       <WorldHud
         mapName={mapData?.name || currentMap}
         timeLabel={`${String(gameHour).padStart(2, "0")}:00 ${phase}`}
+        goalLabel={
+          !hasStarter
+            ? "Goal: Visit Prof. Aeon's Lab (walk into the north building)"
+            : !defeatedTrainers.includes('hex_battle_event') && currentMap === 'aeon_lab'
+              ? `Goal: Battle ${rivalName} at the lab exit, then head to Route 1.0`
+              : currentMap === 'sector0'
+                ? "Goal: Route 1.0 → Silicon Town"
+                : undefined
+        }
         onMenu={() => setPauseOpen(true)}
         onRoster={() => { if (setView) setView("ROSTER"); }}
       />
@@ -1008,35 +1153,22 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         />
       )}
 
-      {/* Dialogue box: bottom, full width (within safe margins), framed
-          with the PR #14 SVG dialogue-box panel, over the world canvas —
-          never floating on blank navy, never a title header. */}
+      {/* Dialogue box, v4: the shared DialogueBox (typewriter,
+          portrait left, ▼, 2 lines max per page, keyboard + click +
+          A advance) over the world canvas. Battle log is untouched
+          and stays ONLY as battle history — it is not the story
+          carrier. Speaker portrait: slotForNpc, silhouette
+          placeholder when no sheet exists — never emoji. */}
       {screen === "dialog" && dialog && (
-        <UiPanel
-          slot={UI_ART.battle_panel}
-          style={{
-            position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
-            padding: '16px', cursor: 'pointer',
-            bottom: 'max(1rem, env(safe-area-inset-bottom))',
-          }}
-          onClick={advanceDialog}
-        >
-          {dialog.npc && (
-            <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase">{dialog.npc.name}</div>
-          )}
-          <div className="text-white text-base leading-relaxed min-h-[3rem]">
-            {dialog.lines[dialogIdx]}
-          </div>
-          {dialogIdx < dialog.lines.length - 1 && (
-            <div className="text-teal-300 text-xs text-right mt-3 animate-pulse">CONTINUE</div>
-          )}
-          {dialogIdx === dialog.lines.length - 1 && dialog.isChoice && (
-            <div className="flex gap-3 mt-4 justify-end">
-              <button onClick={(e) => { e.stopPropagation(); handleChoice(true); }} className="game-button px-6 py-2 font-bold">YES</button>
-              <button onClick={(e) => { e.stopPropagation(); handleChoice(false); }} className="game-button px-6 py-2 font-bold">NO</button>
-            </div>
-          )}
-        </UiPanel>
+        <DialogueBox
+          lines={dialog.lines || []}
+          speakerName={dialog.npc?.name}
+          speakerSlot={dialog.npc ? slotForNpc(dialog.npc) : null}
+          choice={!!dialog.isChoice}
+          onComplete={finishDialog}
+          onChoice={handleChoice}
+          registerAdvance={(fn) => { dialogAdvanceRef.current = fn; }}
+        />
       )}
 
       {/* MOBILE CONTROLS — D-pad bottom-left, fully on-screen */}
@@ -1086,7 +1218,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       >
         <button
           onClick={() => {
-            if (screen === 'dialog') advanceDialog();
+            if (screen === 'dialog') { /* B does not advance dialogue in v4 */ }
             else if (screen === 'menu' || screen === 'save_menu') setScreen("overworld");
             else setPauseOpen(true);
           }}
@@ -1098,7 +1230,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         <button
           onClick={() => {
             if (screen === 'overworld') interact();
-            else advanceDialog();
+            else if (screen === 'dialog') dialogAdvanceRef.current?.();
           }}
           style={{ touchAction: 'none' }}
           className="w-16 h-16 rounded-full bg-teal-900/60 border-b-4 border-teal-400/70 text-teal-100 flex items-center justify-center font-black text-2xl active:border-b-0 active:translate-y-1 transition-all"
