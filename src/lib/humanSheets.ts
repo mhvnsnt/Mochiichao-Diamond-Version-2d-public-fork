@@ -42,6 +42,8 @@ export interface HumanSlot {
   frames: Record<HumanView, number>;
   /** Number of 64x64 columns in the sheet image. Default 3 (strips); 4 for the Player A atlas. */
   sheetCols?: number;
+  /** Number of 64x64 rows in the sheet image. Default 1 (strips); 4 for the Player A atlas. */
+  sheetRows?: number;
   color: string;
 }
 
@@ -59,7 +61,7 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // back 64, left 128, right 192 (distinct right cell, NOT mirrored left).
   // Walk (cells 4-11), battle_back (12) and portrait (13) are in the atlas
   // + manifest but NOT yet wired by game code — follow-up pass, not claimed.
-  player_girl: { slotId: 'player_girl', label: 'Player (girl)', role: 'player', sheetUrl: playerAAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, sheetCols: 4, color: '#f48fb1' },
+  player_girl: { slotId: 'player_girl', label: 'Player (girl)', role: 'player', sheetUrl: playerAAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, sheetCols: 4, sheetRows: 4, color: '#f48fb1' },
   hex: slot('hex', 'Hex (rival)', 'rival', '#b388ff'),
   prof_aeon: slot('prof_aeon', 'Prof. Aeon', 'professor', '#e0e0e0'),
   mochiko: slot('mochiko', 'Assistant Mochiko', 'assistant', '#80cbc4'),
