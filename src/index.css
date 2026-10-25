@@ -10,107 +10,75 @@
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(2px);
     }
   }
 }
 
-/* 3D World Classes */
-.world-scene {
-  perspective: 1200px;
-  transform-style: preserve-3d;
-}
-.world-pivot {
-  transform: rotateX(55deg) rotateZ(0deg);
-  transform-style: preserve-3d;
-  transition: transform 0.1s linear;
-}
-.world-map {
-  transform-style: preserve-3d;
-  transition: transform 0.2s linear;
-}
-.tile-3d {
-  position: absolute;
-  transform-style: preserve-3d;
+/*
+ * Pass 1 game shell — full viewport, portrait-mobile first.
+ * The game is NOT a centered box: every top-level screen fills the dynamic
+ * viewport (100dvh), controls sit inside safe-area padding, and nothing
+ * is clipped by the bottom edge on a phone.
+ */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overscroll-behavior: none;
+  background: #050810;
 }
 
-/* Building 3D */
-.building-3d {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-}
-.b-face {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.b-top {
-  width: 100%; height: 100%;
-  transform: translateZ(64px);
-  background: #5c4a3d;
-  border: 2px solid #3d2f25;
-}
-.b-front {
-  width: 100%; height: 64px;
-  transform-origin: bottom;
-  transform: translateY(100%) rotateX(-90deg);
-  background: #7a6352;
-  bottom: 0;
-}
-.b-door {
-  width: 30px; height: 40px;
-  background: #2a1f18;
-  position: absolute;
-  bottom: 0;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-.b-left {
-  width: 64px; height: 100%;
-  transform-origin: right;
-  transform: translateX(-100%) rotateY(90deg);
-  background: #4a3b30;
-  right: 100%;
-}
-.b-right {
-  width: 64px; height: 100%;
-  transform-origin: left;
-  transform: translateX(100%) rotateY(-90deg);
-  background: #4a3b30;
-  left: 100%;
+body {
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Tree 3D */
-.tree-3d {
-  position: absolute;
-  width: 100%; height: 100%;
-  transform-style: preserve-3d;
-}
-.tree-trunk {
-  position: absolute;
-  width: 16px; height: 48px;
-  background: #5d4037;
-  bottom: 16px; left: 24px;
-  transform-origin: bottom;
-  transform: rotateX(-90deg) translateZ(16px);
-  border-radius: 4px;
-}
-.tree-leaves {
-  position: absolute;
-  width: 56px; height: 56px;
-  background: #2e7d32;
-  bottom: 16px; left: 4px;
-  transform-origin: bottom;
-  transform: rotateX(-90deg) translateZ(40px);
-  border-radius: 50%;
-  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3);
+.game-screen {
+  width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  position: relative;
+  background: #050810;
+  color: #fff;
 }
 
-/* Billboard Sprites */
-.billboard {
-  transform-origin: bottom center;
-  transform: rotateX(-55deg) translateZ(5px);
+.game-panel {
+  background: rgba(10, 18, 34, 0.92);
+  border: 2px solid rgba(120, 180, 255, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
+.game-panel-bottom {
+  background: #0a1222;
+  border-top: 3px solid rgba(120, 180, 255, 0.4);
+}
+
+.game-button {
+  background: linear-gradient(180deg, #1d3a5f, #12233d);
+  border: 2px solid rgba(140, 200, 255, 0.55);
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.05s ease, filter 0.1s ease;
+}
+.game-button:hover { filter: brightness(1.2); }
+.game-button:active { transform: translateY(2px); box-shadow: none; }
+.game-button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.game-title {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.6), 0 0 18px rgba(80, 180, 255, 0.5);
+}
+
+.game-banner {
+  background: rgba(10, 18, 34, 0.9);
+  border: 2px solid rgba(255, 220, 120, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
