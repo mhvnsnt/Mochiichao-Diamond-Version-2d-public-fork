@@ -1,0 +1,1659 @@
+{
+  "source": "pokecrystal/data/pokemon/egg_moves.asm",
+  "sourceRepo": "pret/pokecrystal",
+  "speciesWithEggMoves": 105,
+  "totalEggMoves": 480,
+  "unresolvedMoves": [],
+  "learnsets": {
+    "SPECIES_BULBASAUR": [
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_SKULL_BASH"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_PETAL_DANCE"
+      }
+    ],
+    "SPECIES_CHARMANDER": [
+      {
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "move": "MOVE_BITE"
+      },
+      {
+        "move": "MOVE_OUTRAGE"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      }
+    ],
+    "SPECIES_SQUIRTLE": [
+      {
+        "move": "MOVE_MIRROR_COAT"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_MIST"
+      },
+      {
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      }
+    ],
+    "SPECIES_PIDGEY": [
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      }
+    ],
+    "SPECIES_RATTATA": [
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_FLAME_WHEEL"
+      },
+      {
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "move": "MOVE_BITE"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      }
+    ],
+    "SPECIES_SPEAROW": [
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_FALSE_SWIPE"
+      },
+      {
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "move": "MOVE_TRI_ATTACK"
+      }
+    ],
+    "SPECIES_EKANS": [
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_SLAM"
+      },
+      {
+        "move": "MOVE_SPITE"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      },
+      {
+        "move": "MOVE_CRUNCH"
+      }
+    ],
+    "SPECIES_SANDSHREW": [
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "move": "MOVE_METAL_CLAW"
+      }
+    ],
+    "SPECIES_NIDORAN_F": [
+      {
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "move": "MOVE_CHARM"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      }
+    ],
+    "SPECIES_NIDORAN_M": [
+      {
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      }
+    ],
+    "SPECIES_VULPIX": [
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_SPITE"
+      },
+      {
+        "move": "MOVE_DISABLE"
+      }
+    ],
+    "SPECIES_ZUBAT": [
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_GUST"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      }
+    ],
+    "SPECIES_ODDISH": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_SYNTHESIS"
+      }
+    ],
+    "SPECIES_PARAS": [
+      {
+        "move": "MOVE_FALSE_SWIPE"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      }
+    ],
+    "SPECIES_VENONAT": [
+      {
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_GIGA_DRAIN"
+      }
+    ],
+    "SPECIES_DIGLETT": [
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      }
+    ],
+    "SPECIES_MEOWTH": [
+      {
+        "move": "MOVE_SPITE"
+      },
+      {
+        "move": "MOVE_CHARM"
+      },
+      {
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      }
+    ],
+    "SPECIES_PSYDUCK": [
+      {
+        "move": "MOVE_ICE_BEAM"
+      },
+      {
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "move": "MOVE_CROSS_CHOP"
+      }
+    ],
+    "SPECIES_MANKEY": [
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_MEDITATE"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      }
+    ],
+    "SPECIES_GROWLITHE": [
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "move": "MOVE_THRASH"
+      },
+      {
+        "move": "MOVE_FIRE_SPIN"
+      }
+    ],
+    "SPECIES_POLIWAG": [
+      {
+        "move": "MOVE_MIST"
+      },
+      {
+        "move": "MOVE_SPLASH"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_MIND_READER"
+      }
+    ],
+    "SPECIES_ABRA": [
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "move": "MOVE_BARRIER"
+      }
+    ],
+    "SPECIES_MACHOP": [
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_MEDITATE"
+      },
+      {
+        "move": "MOVE_ROLLING_KICK"
+      },
+      {
+        "move": "MOVE_ENCORE"
+      }
+    ],
+    "SPECIES_BELLSPROUT": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "move": "MOVE_LEECH_LIFE"
+      }
+    ],
+    "SPECIES_TENTACOOL": [
+      {
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "move": "MOVE_MIRROR_COAT"
+      },
+      {
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "SPECIES_GEODUDE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      }
+    ],
+    "SPECIES_PONYTA": [
+      {
+        "move": "MOVE_FLAME_WHEEL"
+      },
+      {
+        "move": "MOVE_THRASH"
+      },
+      {
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "move": "MOVE_CHARM"
+      },
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      }
+    ],
+    "SPECIES_SLOWPOKE": [
+      {
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "move": "MOVE_STOMP"
+      }
+    ],
+    "SPECIES_FARFETCH_D": [
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_MIRROR_MOVE"
+      },
+      {
+        "move": "MOVE_GUST"
+      },
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      }
+    ],
+    "SPECIES_DODUO": [
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      }
+    ],
+    "SPECIES_SEEL": [
+      {
+        "move": "MOVE_LICK"
+      },
+      {
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "move": "MOVE_PECK"
+      },
+      {
+        "move": "MOVE_SLAM"
+      },
+      {
+        "move": "MOVE_ENCORE"
+      }
+    ],
+    "SPECIES_GRIMER": [
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "move": "MOVE_LICK"
+      }
+    ],
+    "SPECIES_SHELLDER": [
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_BARRIER"
+      },
+      {
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      }
+    ],
+    "SPECIES_GASTLY": [
+      {
+        "move": "MOVE_PSYWAVE"
+      },
+      {
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_ONIX": [
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      }
+    ],
+    "SPECIES_DROWZEE": [
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_BARRIER"
+      }
+    ],
+    "SPECIES_KRABBY": [
+      {
+        "move": "MOVE_DIG"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_SLAM"
+      }
+    ],
+    "SPECIES_EXEGGCUTE": [
+      {
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "move": "MOVE_MOONLIGHT"
+      },
+      {
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      }
+    ],
+    "SPECIES_CUBONE": [
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_SKULL_BASH"
+      },
+      {
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      }
+    ],
+    "SPECIES_LICKITUNG": [
+      {
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "move": "MOVE_MAGNITUDE"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_KOFFING": [
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_PSYWAVE"
+      },
+      {
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "move": "MOVE_DESTINY_BOND"
+      },
+      {
+        "move": "MOVE_PAIN_SPLIT"
+      }
+    ],
+    "SPECIES_RHYHORN": [
+      {
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "move": "MOVE_THRASH"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_MAGNITUDE"
+      }
+    ],
+    "SPECIES_CHANSEY": [
+      {
+        "move": "MOVE_PRESENT"
+      },
+      {
+        "move": "MOVE_METRONOME"
+      },
+      {
+        "move": "MOVE_HEAL_BELL"
+      }
+    ],
+    "SPECIES_TANGELA": [
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      }
+    ],
+    "SPECIES_KANGASKHAN": [
+      {
+        "move": "MOVE_STOMP"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "move": "MOVE_DISABLE"
+      }
+    ],
+    "SPECIES_HORSEA": [
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "move": "MOVE_OCTAZOOKA"
+      },
+      {
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "move": "MOVE_SPLASH"
+      },
+      {
+        "move": "MOVE_DRAGON_RAGE"
+      }
+    ],
+    "SPECIES_GOLDEEN": [
+      {
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_MR__MIME": [
+      {
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "move": "MOVE_MIMIC"
+      }
+    ],
+    "SPECIES_SCYTHER": [
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      }
+    ],
+    "SPECIES_PINSIR": [
+      {
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      }
+    ],
+    "SPECIES_LAPRAS": [
+      {
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      }
+    ],
+    "SPECIES_EEVEE": [
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_CHARM"
+      }
+    ],
+    "SPECIES_OMANYTE": [
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "move": "MOVE_SLAM"
+      },
+      {
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_KABUTO": [
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "move": "MOVE_DIG"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      }
+    ],
+    "SPECIES_AERODACTYL": [
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      }
+    ],
+    "SPECIES_SNORLAX": [
+      {
+        "move": "MOVE_LICK"
+      }
+    ],
+    "SPECIES_DRATINI": [
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_MIST"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_SUPERSONIC"
+      }
+    ],
+    "SPECIES_CHIKORITA": [
+      {
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      }
+    ],
+    "SPECIES_CYNDAQUIL": [
+      {
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "move": "MOVE_THRASH"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_SUBMISSION"
+      }
+    ],
+    "SPECIES_TOTODILE": [
+      {
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "move": "MOVE_THRASH"
+      },
+      {
+        "move": "MOVE_HYDRO_PUMP"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      }
+    ],
+    "SPECIES_SENTRET": [
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_SLASH"
+      },
+      {
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      }
+    ],
+    "SPECIES_HOOTHOOT": [
+      {
+        "move": "MOVE_MIRROR_MOVE"
+      },
+      {
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_SKY_ATTACK"
+      }
+    ],
+    "SPECIES_LEDYBA": [
+      {
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "move": "MOVE_BIDE"
+      },
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      }
+    ],
+    "SPECIES_SPINARAK": [
+      {
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "move": "MOVE_SONICBOOM"
+      },
+      {
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      }
+    ],
+    "SPECIES_CHINCHOU": [
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      }
+    ],
+    "SPECIES_PICHU": [
+      {
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "move": "MOVE_BIDE"
+      },
+      {
+        "move": "MOVE_PRESENT"
+      },
+      {
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "move": "MOVE_DOUBLESLAP"
+      }
+    ],
+    "SPECIES_CLEFFA": [
+      {
+        "move": "MOVE_PRESENT"
+      },
+      {
+        "move": "MOVE_METRONOME"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "move": "MOVE_SPLASH"
+      },
+      {
+        "move": "MOVE_MIMIC"
+      }
+    ],
+    "SPECIES_IGGLYBUFF": [
+      {
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "move": "MOVE_PRESENT"
+      },
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      }
+    ],
+    "SPECIES_TOGEPI": [
+      {
+        "move": "MOVE_PRESENT"
+      },
+      {
+        "move": "MOVE_MIRROR_MOVE"
+      },
+      {
+        "move": "MOVE_PECK"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_FUTURE_SIGHT"
+      }
+    ],
+    "SPECIES_NATU": [
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_DRILL_PECK"
+      },
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_STEEL_WING"
+      }
+    ],
+    "SPECIES_MAREEP": [
+      {
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_REFLECT"
+      }
+    ],
+    "SPECIES_MARILL": [
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_PRESENT"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      }
+    ],
+    "SPECIES_SUDOWOODO": [
+      {
+        "move": "MOVE_SELFDESTRUCT"
+      }
+    ],
+    "SPECIES_HOPPIP": [
+      {
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "move": "MOVE_GROWL"
+      },
+      {
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "move": "MOVE_PAY_DAY"
+      }
+    ],
+    "SPECIES_AIPOM": [
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "move": "MOVE_SPITE"
+      },
+      {
+        "move": "MOVE_SLAM"
+      },
+      {
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      }
+    ],
+    "SPECIES_YANMA": [
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "move": "MOVE_LEECH_LIFE"
+      }
+    ],
+    "SPECIES_WOOPER": [
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "SPECIES_MURKROW": [
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_DRILL_PECK"
+      },
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "move": "MOVE_MIRROR_MOVE"
+      },
+      {
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "move": "MOVE_SKY_ATTACK"
+      }
+    ],
+    "SPECIES_MISDREAVUS": [
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_DESTINY_BOND"
+      }
+    ],
+    "SPECIES_GIRAFARIG": [
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      }
+    ],
+    "SPECIES_PINECO": [
+      {
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "move": "MOVE_PIN_MISSILE"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_SWIFT"
+      }
+    ],
+    "SPECIES_DUNSPARCE": [
+      {
+        "move": "MOVE_BIDE"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "move": "MOVE_BITE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_GLIGAR": [
+      {
+        "move": "MOVE_METAL_CLAW"
+      },
+      {
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      }
+    ],
+    "SPECIES_SNUBBULL": [
+      {
+        "move": "MOVE_METRONOME"
+      },
+      {
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "move": "MOVE_PRESENT"
+      },
+      {
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "move": "MOVE_HEAL_BELL"
+      },
+      {
+        "move": "MOVE_LICK"
+      },
+      {
+        "move": "MOVE_LEER"
+      }
+    ],
+    "SPECIES_QWILFISH": [
+      {
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_SUPERSONIC"
+      }
+    ],
+    "SPECIES_SHUCKLE": [
+      {
+        "move": "MOVE_SWEET_SCENT"
+      }
+    ],
+    "SPECIES_HERACROSS": [
+      {
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "move": "MOVE_BIDE"
+      },
+      {
+        "move": "MOVE_FLAIL"
+      }
+    ],
+    "SPECIES_SNEASEL": [
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_SPITE"
+      },
+      {
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "move": "MOVE_BITE"
+      }
+    ],
+    "SPECIES_TEDDIURSA": [
+      {
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_SEISMIC_TOSS"
+      },
+      {
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_METAL_CLAW"
+      }
+    ],
+    "SPECIES_SLUGMA": [
+      {
+        "move": "MOVE_ACID_ARMOR"
+      }
+    ],
+    "SPECIES_SWINUB": [
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_BITE"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      }
+    ],
+    "SPECIES_CORSOLA": [
+      {
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_MIST"
+      },
+      {
+        "move": "MOVE_AMNESIA"
+      }
+    ],
+    "SPECIES_REMORAID": [
+      {
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "move": "MOVE_OCTAZOOKA"
+      },
+      {
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      }
+    ],
+    "SPECIES_DELIBIRD": [
+      {
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "move": "MOVE_SPLASH"
+      },
+      {
+        "move": "MOVE_RAPID_SPIN"
+      }
+    ],
+    "SPECIES_MANTINE": [
+      {
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "move": "MOVE_HYDRO_PUMP"
+      },
+      {
+        "move": "MOVE_HAZE"
+      },
+      {
+        "move": "MOVE_SLAM"
+      }
+    ],
+    "SPECIES_SKARMORY": [
+      {
+        "move": "MOVE_DRILL_PECK"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_SKY_ATTACK"
+      }
+    ],
+    "SPECIES_HOUNDOUR": [
+      {
+        "move": "MOVE_FIRE_SPIN"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "move": "MOVE_SPITE"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "move": "MOVE_BEAT_UP"
+      }
+    ],
+    "SPECIES_PHANPY": [
+      {
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "move": "MOVE_WATER_GUN"
+      }
+    ],
+    "SPECIES_STANTLER": [
+      {
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "move": "MOVE_SPITE"
+      },
+      {
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "move": "MOVE_BITE"
+      }
+    ],
+    "SPECIES_TYROGUE": [
+      {
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "move": "MOVE_HI_JUMP_KICK"
+      },
+      {
+        "move": "MOVE_MACH_PUNCH"
+      },
+      {
+        "move": "MOVE_MIND_READER"
+      }
+    ],
+    "SPECIES_SMOOCHUM": [
+      {
+        "move": "MOVE_MEDITATE"
+      }
+    ],
+    "SPECIES_ELEKID": [
+      {
+        "move": "MOVE_KARATE_CHOP"
+      },
+      {
+        "move": "MOVE_BARRIER"
+      },
+      {
+        "move": "MOVE_ROLLING_KICK"
+      },
+      {
+        "move": "MOVE_MEDITATE"
+      },
+      {
+        "move": "MOVE_CROSS_CHOP"
+      }
+    ],
+    "SPECIES_MAGBY": [
+      {
+        "move": "MOVE_KARATE_CHOP"
+      },
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_BARRIER"
+      },
+      {
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "move": "MOVE_CROSS_CHOP"
+      }
+    ],
+    "SPECIES_MILTANK": [
+      {
+        "move": "MOVE_PRESENT"
+      },
+      {
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "move": "MOVE_SEISMIC_TOSS"
+      }
+    ],
+    "SPECIES_LARVITAR": [
+      {
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "move": "MOVE_STOMP"
+      },
+      {
+        "move": "MOVE_OUTRAGE"
+      },
+      {
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "move": "MOVE_ANCIENTPOWER"
+      }
+    ]
+  }
+}

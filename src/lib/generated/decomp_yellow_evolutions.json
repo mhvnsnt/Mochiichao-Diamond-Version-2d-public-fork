@@ -1,0 +1,510 @@
+{
+  "source": "pokeyellow/data/pokemon/evos_moves.asm",
+  "sourceRepo": "pret/pokeyellow",
+  "speciesWithEvolutions": 70,
+  "totalEvolutions": 72,
+  "unresolvedTargets": [],
+  "note": "EVOLVE_ITEM/TRADE extra min-level field preserved in param where present. Sections without a base-stats file (e.g. MissingNo) are listed as unmatched, not extracted.",
+  "evolutions": {
+    "SPECIES_NIDORAN_M": [
+      {
+        "method": "LEVEL",
+        "param": "16",
+        "target": "SPECIES_NIDORINO"
+      }
+    ],
+    "SPECIES_CLEFAIRY": [
+      {
+        "method": "ITEM",
+        "param": "MOON_STONE",
+        "target": "SPECIES_CLEFABLE"
+      }
+    ],
+    "SPECIES_SPEAROW": [
+      {
+        "method": "LEVEL",
+        "param": "20",
+        "target": "SPECIES_FEAROW"
+      }
+    ],
+    "SPECIES_VOLTORB": [
+      {
+        "method": "LEVEL",
+        "param": "30",
+        "target": "SPECIES_ELECTRODE"
+      }
+    ],
+    "SPECIES_IVYSAUR": [
+      {
+        "method": "LEVEL",
+        "param": "32",
+        "target": "SPECIES_VENUSAUR"
+      }
+    ],
+    "SPECIES_EXEGGCUTE": [
+      {
+        "method": "ITEM",
+        "param": "LEAF_STONE",
+        "target": "SPECIES_EXEGGUTOR"
+      }
+    ],
+    "SPECIES_GRIMER": [
+      {
+        "method": "LEVEL",
+        "param": "38",
+        "target": "SPECIES_MUK"
+      }
+    ],
+    "SPECIES_NIDORAN_F": [
+      {
+        "method": "LEVEL",
+        "param": "16",
+        "target": "SPECIES_NIDORINA"
+      }
+    ],
+    "SPECIES_CUBONE": [
+      {
+        "method": "LEVEL",
+        "param": "28",
+        "target": "SPECIES_MAROWAK"
+      }
+    ],
+    "SPECIES_RHYHORN": [
+      {
+        "method": "LEVEL",
+        "param": "42",
+        "target": "SPECIES_RHYDON"
+      }
+    ],
+    "SPECIES_SHELLDER": [
+      {
+        "method": "ITEM",
+        "param": "WATER_STONE",
+        "target": "SPECIES_CLOYSTER"
+      }
+    ],
+    "SPECIES_TENTACOOL": [
+      {
+        "method": "LEVEL",
+        "param": "30",
+        "target": "SPECIES_TENTACRUEL"
+      }
+    ],
+    "SPECIES_GASTLY": [
+      {
+        "method": "LEVEL",
+        "param": "25",
+        "target": "SPECIES_HAUNTER"
+      }
+    ],
+    "SPECIES_STARYU": [
+      {
+        "method": "ITEM",
+        "param": "WATER_STONE",
+        "target": "SPECIES_STARMIE"
+      }
+    ],
+    "SPECIES_GROWLITHE": [
+      {
+        "method": "ITEM",
+        "param": "FIRE_STONE",
+        "target": "SPECIES_ARCANINE"
+      }
+    ],
+    "SPECIES_PIDGEY": [
+      {
+        "method": "LEVEL",
+        "param": "18",
+        "target": "SPECIES_PIDGEOTTO"
+      }
+    ],
+    "SPECIES_SLOWPOKE": [
+      {
+        "method": "LEVEL",
+        "param": "37",
+        "target": "SPECIES_SLOWBRO"
+      }
+    ],
+    "SPECIES_KADABRA": [
+      {
+        "method": "TRADE",
+        "param": "1",
+        "target": "SPECIES_ALAKAZAM"
+      }
+    ],
+    "SPECIES_GRAVELER": [
+      {
+        "method": "TRADE",
+        "param": "1",
+        "target": "SPECIES_GOLEM"
+      }
+    ],
+    "SPECIES_MACHOKE": [
+      {
+        "method": "TRADE",
+        "param": "1",
+        "target": "SPECIES_MACHAMP"
+      }
+    ],
+    "SPECIES_PSYDUCK": [
+      {
+        "method": "LEVEL",
+        "param": "33",
+        "target": "SPECIES_GOLDUCK"
+      }
+    ],
+    "SPECIES_DROWZEE": [
+      {
+        "method": "LEVEL",
+        "param": "26",
+        "target": "SPECIES_HYPNO"
+      }
+    ],
+    "SPECIES_KOFFING": [
+      {
+        "method": "LEVEL",
+        "param": "35",
+        "target": "SPECIES_WEEZING"
+      }
+    ],
+    "SPECIES_MANKEY": [
+      {
+        "method": "LEVEL",
+        "param": "28",
+        "target": "SPECIES_PRIMEAPE"
+      }
+    ],
+    "SPECIES_SEEL": [
+      {
+        "method": "LEVEL",
+        "param": "34",
+        "target": "SPECIES_DEWGONG"
+      }
+    ],
+    "SPECIES_DIGLETT": [
+      {
+        "method": "LEVEL",
+        "param": "26",
+        "target": "SPECIES_DUGTRIO"
+      }
+    ],
+    "SPECIES_VENONAT": [
+      {
+        "method": "LEVEL",
+        "param": "31",
+        "target": "SPECIES_VENOMOTH"
+      }
+    ],
+    "SPECIES_DODUO": [
+      {
+        "method": "LEVEL",
+        "param": "31",
+        "target": "SPECIES_DODRIO"
+      }
+    ],
+    "SPECIES_POLIWAG": [
+      {
+        "method": "LEVEL",
+        "param": "25",
+        "target": "SPECIES_POLIWHIRL"
+      }
+    ],
+    "SPECIES_MEOWTH": [
+      {
+        "method": "LEVEL",
+        "param": "28",
+        "target": "SPECIES_PERSIAN"
+      }
+    ],
+    "SPECIES_KRABBY": [
+      {
+        "method": "LEVEL",
+        "param": "28",
+        "target": "SPECIES_KINGLER"
+      }
+    ],
+    "SPECIES_VULPIX": [
+      {
+        "method": "ITEM",
+        "param": "FIRE_STONE",
+        "target": "SPECIES_NINETALES"
+      }
+    ],
+    "SPECIES_PIKACHU": [
+      {
+        "method": "ITEM",
+        "param": "THUNDER_STONE",
+        "target": "SPECIES_RAICHU"
+      }
+    ],
+    "SPECIES_DRATINI": [
+      {
+        "method": "LEVEL",
+        "param": "30",
+        "target": "SPECIES_DRAGONAIR"
+      }
+    ],
+    "SPECIES_DRAGONAIR": [
+      {
+        "method": "LEVEL",
+        "param": "55",
+        "target": "SPECIES_DRAGONITE"
+      }
+    ],
+    "SPECIES_KABUTO": [
+      {
+        "method": "LEVEL",
+        "param": "40",
+        "target": "SPECIES_KABUTOPS"
+      }
+    ],
+    "SPECIES_HORSEA": [
+      {
+        "method": "LEVEL",
+        "param": "32",
+        "target": "SPECIES_SEADRA"
+      }
+    ],
+    "SPECIES_SANDSHREW": [
+      {
+        "method": "LEVEL",
+        "param": "22",
+        "target": "SPECIES_SANDSLASH"
+      }
+    ],
+    "SPECIES_OMANYTE": [
+      {
+        "method": "LEVEL",
+        "param": "40",
+        "target": "SPECIES_OMASTAR"
+      }
+    ],
+    "SPECIES_JIGGLYPUFF": [
+      {
+        "method": "ITEM",
+        "param": "MOON_STONE",
+        "target": "SPECIES_WIGGLYTUFF"
+      }
+    ],
+    "SPECIES_EEVEE": [
+      {
+        "method": "ITEM",
+        "param": "FIRE_STONE",
+        "target": "SPECIES_FLAREON"
+      },
+      {
+        "method": "ITEM",
+        "param": "THUNDER_STONE",
+        "target": "SPECIES_JOLTEON"
+      },
+      {
+        "method": "ITEM",
+        "param": "WATER_STONE",
+        "target": "SPECIES_VAPOREON"
+      }
+    ],
+    "SPECIES_MACHOP": [
+      {
+        "method": "LEVEL",
+        "param": "28",
+        "target": "SPECIES_MACHOKE"
+      }
+    ],
+    "SPECIES_ZUBAT": [
+      {
+        "method": "LEVEL",
+        "param": "22",
+        "target": "SPECIES_GOLBAT"
+      }
+    ],
+    "SPECIES_EKANS": [
+      {
+        "method": "LEVEL",
+        "param": "22",
+        "target": "SPECIES_ARBOK"
+      }
+    ],
+    "SPECIES_PARAS": [
+      {
+        "method": "LEVEL",
+        "param": "24",
+        "target": "SPECIES_PARASECT"
+      }
+    ],
+    "SPECIES_POLIWHIRL": [
+      {
+        "method": "ITEM",
+        "param": "WATER_STONE",
+        "target": "SPECIES_POLIWRATH"
+      }
+    ],
+    "SPECIES_WEEDLE": [
+      {
+        "method": "LEVEL",
+        "param": "7",
+        "target": "SPECIES_KAKUNA"
+      }
+    ],
+    "SPECIES_KAKUNA": [
+      {
+        "method": "LEVEL",
+        "param": "10",
+        "target": "SPECIES_BEEDRILL"
+      }
+    ],
+    "SPECIES_CATERPIE": [
+      {
+        "method": "LEVEL",
+        "param": "7",
+        "target": "SPECIES_METAPOD"
+      }
+    ],
+    "SPECIES_METAPOD": [
+      {
+        "method": "LEVEL",
+        "param": "10",
+        "target": "SPECIES_BUTTERFREE"
+      }
+    ],
+    "SPECIES_MAGIKARP": [
+      {
+        "method": "LEVEL",
+        "param": "20",
+        "target": "SPECIES_GYARADOS"
+      }
+    ],
+    "SPECIES_HAUNTER": [
+      {
+        "method": "TRADE",
+        "param": "1",
+        "target": "SPECIES_GENGAR"
+      }
+    ],
+    "SPECIES_ABRA": [
+      {
+        "method": "LEVEL",
+        "param": "16",
+        "target": "SPECIES_KADABRA"
+      }
+    ],
+    "SPECIES_PIDGEOTTO": [
+      {
+        "method": "LEVEL",
+        "param": "36",
+        "target": "SPECIES_PIDGEOT"
+      }
+    ],
+    "SPECIES_BULBASAUR": [
+      {
+        "method": "LEVEL",
+        "param": "16",
+        "target": "SPECIES_IVYSAUR"
+      }
+    ],
+    "SPECIES_GOLDEEN": [
+      {
+        "method": "LEVEL",
+        "param": "33",
+        "target": "SPECIES_SEAKING"
+      }
+    ],
+    "SPECIES_PONYTA": [
+      {
+        "method": "LEVEL",
+        "param": "40",
+        "target": "SPECIES_RAPIDASH"
+      }
+    ],
+    "SPECIES_RATTATA": [
+      {
+        "method": "LEVEL",
+        "param": "20",
+        "target": "SPECIES_RATICATE"
+      }
+    ],
+    "SPECIES_NIDORINO": [
+      {
+        "method": "ITEM",
+        "param": "MOON_STONE",
+        "target": "SPECIES_NIDOKING"
+      }
+    ],
+    "SPECIES_NIDORINA": [
+      {
+        "method": "ITEM",
+        "param": "MOON_STONE",
+        "target": "SPECIES_NIDOQUEEN"
+      }
+    ],
+    "SPECIES_GEODUDE": [
+      {
+        "method": "LEVEL",
+        "param": "25",
+        "target": "SPECIES_GRAVELER"
+      }
+    ],
+    "SPECIES_MAGNEMITE": [
+      {
+        "method": "LEVEL",
+        "param": "30",
+        "target": "SPECIES_MAGNETON"
+      }
+    ],
+    "SPECIES_CHARMANDER": [
+      {
+        "method": "LEVEL",
+        "param": "16",
+        "target": "SPECIES_CHARMELEON"
+      }
+    ],
+    "SPECIES_SQUIRTLE": [
+      {
+        "method": "LEVEL",
+        "param": "16",
+        "target": "SPECIES_WARTORTLE"
+      }
+    ],
+    "SPECIES_CHARMELEON": [
+      {
+        "method": "LEVEL",
+        "param": "36",
+        "target": "SPECIES_CHARIZARD"
+      }
+    ],
+    "SPECIES_WARTORTLE": [
+      {
+        "method": "LEVEL",
+        "param": "36",
+        "target": "SPECIES_BLASTOISE"
+      }
+    ],
+    "SPECIES_ODDISH": [
+      {
+        "method": "LEVEL",
+        "param": "21",
+        "target": "SPECIES_GLOOM"
+      }
+    ],
+    "SPECIES_GLOOM": [
+      {
+        "method": "ITEM",
+        "param": "LEAF_STONE",
+        "target": "SPECIES_VILEPLUME"
+      }
+    ],
+    "SPECIES_BELLSPROUT": [
+      {
+        "method": "LEVEL",
+        "param": "21",
+        "target": "SPECIES_WEEPINBELL"
+      }
+    ],
+    "SPECIES_WEEPINBELL": [
+      {
+        "method": "ITEM",
+        "param": "LEAF_STONE",
+        "target": "SPECIES_VICTREEBEL"
+      }
+    ]
+  }
+}

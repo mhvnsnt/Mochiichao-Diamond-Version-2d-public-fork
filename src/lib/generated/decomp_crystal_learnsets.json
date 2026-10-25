@@ -1,0 +1,9372 @@
+{
+  "source": "pokecrystal/data/pokemon/evos_attacks.asm",
+  "sourceRepo": "pret/pokecrystal",
+  "speciesWithLearnsets": 251,
+  "totalLevelUpMoves": 2215,
+  "unresolvedMoves": [],
+  "note": "Gen 2 move names as-is.",
+  "learnsets": {
+    "SPECIES_BULBASAUR": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_IVYSAUR": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 56,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_VENUSAUR": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 65,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_CHARMANDER": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_FIRE_SPIN"
+      }
+    ],
+    "SPECIES_CHARMELEON": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_FIRE_SPIN"
+      }
+    ],
+    "SPECIES_CHARIZARD": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "level": 64,
+        "move": "MOVE_FIRE_SPIN"
+      }
+    ],
+    "SPECIES_SQUIRTLE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SKULL_BASH"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_WARTORTLE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_SKULL_BASH"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_BLASTOISE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_SKULL_BASH"
+      },
+      {
+        "level": 68,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_CATERPIE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STRING_SHOT"
+      }
+    ],
+    "SPECIES_METAPOD": [
+      {
+        "level": 1,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_HARDEN"
+      }
+    ],
+    "SPECIES_BUTTERFREE": [
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 14,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "SPECIES_WEEDLE": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STRING_SHOT"
+      }
+    ],
+    "SPECIES_KAKUNA": [
+      {
+        "level": 1,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_HARDEN"
+      }
+    ],
+    "SPECIES_BEEDRILL": [
+      {
+        "level": 1,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_TWINEEDLE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_PIN_MISSILE"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_AGILITY"
+      }
+    ],
+    "SPECIES_PIDGEY": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_MIRROR_MOVE"
+      }
+    ],
+    "SPECIES_PIDGEOTTO": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_MIRROR_MOVE"
+      }
+    ],
+    "SPECIES_PIDGEOT": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_MIRROR_MOVE"
+      }
+    ],
+    "SPECIES_RATTATA": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_HYPER_FANG"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_SUPER_FANG"
+      }
+    ],
+    "SPECIES_RATICATE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_HYPER_FANG"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SUPER_FANG"
+      }
+    ],
+    "SPECIES_SPEAROW": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_MIRROR_MOVE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_DRILL_PECK"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_AGILITY"
+      }
+    ],
+    "SPECIES_FEAROW": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_MIRROR_MOVE"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_DRILL_PECK"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_AGILITY"
+      }
+    ],
+    "SPECIES_EKANS": [
+      {
+        "level": 1,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_GLARE"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_ACID"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_ARBOK": [
+      {
+        "level": 1,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_GLARE"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_ACID"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_PIKACHU": [
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_DOUBLE_TEAM"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_THUNDER"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_LIGHT_SCREEN"
+      }
+    ],
+    "SPECIES_RAICHU": [
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERBOLT"
+      }
+    ],
+    "SPECIES_SANDSHREW": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_SANDSTORM"
+      }
+    ],
+    "SPECIES_SANDSLASH": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_SANDSTORM"
+      }
+    ],
+    "SPECIES_NIDORAN_F": [
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_FURY_SWIPES"
+      }
+    ],
+    "SPECIES_NIDORINA": [
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_FURY_SWIPES"
+      }
+    ],
+    "SPECIES_NIDOQUEEN": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_NIDORAN_M": [
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_HORN_DRILL"
+      }
+    ],
+    "SPECIES_NIDORINO": [
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_HORN_DRILL"
+      }
+    ],
+    "SPECIES_NIDOKING": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_THRASH"
+      }
+    ],
+    "SPECIES_CLEFAIRY": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_MINIMIZE"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_METRONOME"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_MOONLIGHT"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_LIGHT_SCREEN"
+      }
+    ],
+    "SPECIES_CLEFABLE": [
+      {
+        "level": 1,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_METRONOME"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_MOONLIGHT"
+      }
+    ],
+    "SPECIES_VULPIX": [
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_FIRE_SPIN"
+      }
+    ],
+    "SPECIES_NINETALES": [
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_FIRE_SPIN"
+      }
+    ],
+    "SPECIES_JIGGLYPUFF": [
+      {
+        "level": 1,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 14,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_WIGGLYTUFF": [
+      {
+        "level": 1,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DOUBLESLAP"
+      }
+    ],
+    "SPECIES_ZUBAT": [
+      {
+        "level": 1,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_GOLBAT": [
+      {
+        "level": 1,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_ODDISH": [
+      {
+        "level": 1,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 14,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_ACID"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_MOONLIGHT"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_PETAL_DANCE"
+      }
+    ],
+    "SPECIES_GLOOM": [
+      {
+        "level": 1,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 14,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_ACID"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_MOONLIGHT"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_PETAL_DANCE"
+      }
+    ],
+    "SPECIES_VILEPLUME": [
+      {
+        "level": 1,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PETAL_DANCE"
+      }
+    ],
+    "SPECIES_PARAS": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SPORE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_GIGA_DRAIN"
+      }
+    ],
+    "SPECIES_PARASECT": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_SPORE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_GIGA_DRAIN"
+      }
+    ],
+    "SPECIES_VENONAT": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_VENOMOTH": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_DIGLETT": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_MAGNITUDE"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_DIG"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_FISSURE"
+      }
+    ],
+    "SPECIES_DUGTRIO": [
+      {
+        "level": 1,
+        "move": "MOVE_TRI_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_MAGNITUDE"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_MAGNITUDE"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_DIG"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_FISSURE"
+      }
+    ],
+    "SPECIES_MEOWTH": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_PAY_DAY"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_SLASH"
+      }
+    ],
+    "SPECIES_PERSIAN": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_PAY_DAY"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_SLASH"
+      }
+    ],
+    "SPECIES_PSYDUCK": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_PSYCH_UP"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_GOLDUCK": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_PSYCH_UP"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 58,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_MANKEY": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_LOW_KICK"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_KARATE_CHOP"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SEISMIC_TOSS"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_CROSS_CHOP"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_THRASH"
+      }
+    ],
+    "SPECIES_PRIMEAPE": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LOW_KICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_LOW_KICK"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_KARATE_CHOP"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SEISMIC_TOSS"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_CROSS_CHOP"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 63,
+        "move": "MOVE_THRASH"
+      }
+    ],
+    "SPECIES_GROWLITHE": [
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_FLAME_WHEEL"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_FLAMETHROWER"
+      }
+    ],
+    "SPECIES_ARCANINE": [
+      {
+        "level": 1,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FLAME_WHEEL"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_EXTREMESPEED"
+      }
+    ],
+    "SPECIES_POLIWAG": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_POLIWHIRL": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_POLIWRATH": [
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUBMISSION"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_SUBMISSION"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_MIND_READER"
+      }
+    ],
+    "SPECIES_ABRA": [
+      {
+        "level": 1,
+        "move": "MOVE_TELEPORT"
+      }
+    ],
+    "SPECIES_KADABRA": [
+      {
+        "level": 1,
+        "move": "MOVE_TELEPORT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_KINESIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_REFLECT"
+      }
+    ],
+    "SPECIES_ALAKAZAM": [
+      {
+        "level": 1,
+        "move": "MOVE_TELEPORT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_KINESIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_REFLECT"
+      }
+    ],
+    "SPECIES_MACHOP": [
+      {
+        "level": 1,
+        "move": "MOVE_LOW_KICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_KARATE_CHOP"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SEISMIC_TOSS"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_VITAL_THROW"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_CROSS_CHOP"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_SUBMISSION"
+      }
+    ],
+    "SPECIES_MACHOKE": [
+      {
+        "level": 1,
+        "move": "MOVE_LOW_KICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_KARATE_CHOP"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SEISMIC_TOSS"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_VITAL_THROW"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_CROSS_CHOP"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_SUBMISSION"
+      }
+    ],
+    "SPECIES_MACHAMP": [
+      {
+        "level": 1,
+        "move": "MOVE_LOW_KICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_KARATE_CHOP"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SEISMIC_TOSS"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_VITAL_THROW"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_CROSS_CHOP"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_SUBMISSION"
+      }
+    ],
+    "SPECIES_BELLSPROUT": [
+      {
+        "level": 1,
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_ACID"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_SLAM"
+      }
+    ],
+    "SPECIES_WEEPINBELL": [
+      {
+        "level": 1,
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_ACID"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_SLAM"
+      }
+    ],
+    "SPECIES_VICTREEBEL": [
+      {
+        "level": 1,
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RAZOR_LEAF"
+      }
+    ],
+    "SPECIES_TENTACOOL": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_ACID"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_BARRIER"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_TENTACRUEL": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_ACID"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_BARRIER"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_GEODUDE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_MAGNITUDE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_EXPLOSION"
+      }
+    ],
+    "SPECIES_GRAVELER": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_MAGNITUDE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_EXPLOSION"
+      }
+    ],
+    "SPECIES_GOLEM": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_MAGNITUDE"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_MAGNITUDE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_EXPLOSION"
+      }
+    ],
+    "SPECIES_PONYTA": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_FIRE_SPIN"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_FIRE_BLAST"
+      }
+    ],
+    "SPECIES_RAPIDASH": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_FIRE_SPIN"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_FIRE_BLAST"
+      }
+    ],
+    "SPECIES_SLOWPOKE": [
+      {
+        "level": 1,
+        "move": "MOVE_CURSE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_SLOWBRO": [
+      {
+        "level": 1,
+        "move": "MOVE_CURSE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_MAGNEMITE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_SONICBOOM"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_LOCK_ON"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_ZAP_CANNON"
+      }
+    ],
+    "SPECIES_MAGNETON": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SONICBOOM"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_SONICBOOM"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_LOCK_ON"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_TRI_ATTACK"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_ZAP_CANNON"
+      }
+    ],
+    "SPECIES_FARFETCH_D": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_FALSE_SWIPE"
+      }
+    ],
+    "SPECIES_DODUO": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_TRI_ATTACK"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_DRILL_PECK"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_AGILITY"
+      }
+    ],
+    "SPECIES_DODRIO": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_TRI_ATTACK"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_DRILL_PECK"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_AGILITY"
+      }
+    ],
+    "SPECIES_SEEL": [
+      {
+        "level": 1,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_ICE_BEAM"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "SPECIES_DEWGONG": [
+      {
+        "level": 1,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_ICE_BEAM"
+      },
+      {
+        "level": 60,
+        "move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "SPECIES_GRIMER": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_GAS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_SLUDGE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_MINIMIZE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_ACID_ARMOR"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_SLUDGE_BOMB"
+      }
+    ],
+    "SPECIES_MUK": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_GAS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_SLUDGE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_MINIMIZE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_ACID_ARMOR"
+      },
+      {
+        "level": 60,
+        "move": "MOVE_SLUDGE_BOMB"
+      }
+    ],
+    "SPECIES_SHELLDER": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_CLAMP"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_ICE_BEAM"
+      }
+    ],
+    "SPECIES_CLOYSTER": [
+      {
+        "level": 1,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SPIKES"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_SPIKE_CANNON"
+      }
+    ],
+    "SPECIES_GASTLY": [
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SPITE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_CURSE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_DREAM_EATER"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_DESTINY_BOND"
+      }
+    ],
+    "SPECIES_HAUNTER": [
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SPITE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SPITE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_CURSE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_DREAM_EATER"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_DESTINY_BOND"
+      }
+    ],
+    "SPECIES_GENGAR": [
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SPITE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SPITE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_CURSE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_DREAM_EATER"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_DESTINY_BOND"
+      }
+    ],
+    "SPECIES_ONIX": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_BIND"
+      },
+      {
+        "level": 14,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SANDSTORM"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SLAM"
+      }
+    ],
+    "SPECIES_DROWZEE": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_POISON_GAS"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_MEDITATE"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_PSYCH_UP"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_FUTURE_SIGHT"
+      }
+    ],
+    "SPECIES_HYPNO": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_POISON_GAS"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_MEDITATE"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_PSYCH_UP"
+      },
+      {
+        "level": 60,
+        "move": "MOVE_FUTURE_SIGHT"
+      }
+    ],
+    "SPECIES_KRABBY": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_VICEGRIP"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_GUILLOTINE"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_CRABHAMMER"
+      }
+    ],
+    "SPECIES_KINGLER": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_VICEGRIP"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_VICEGRIP"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_GUILLOTINE"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_CRABHAMMER"
+      }
+    ],
+    "SPECIES_VOLTORB": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_SONICBOOM"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_EXPLOSION"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_MIRROR_COAT"
+      }
+    ],
+    "SPECIES_ELECTRODE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SONICBOOM"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_SONICBOOM"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_EXPLOSION"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_MIRROR_COAT"
+      }
+    ],
+    "SPECIES_EXEGGCUTE": [
+      {
+        "level": 1,
+        "move": "MOVE_BARRAGE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_EXEGGUTOR": [
+      {
+        "level": 1,
+        "move": "MOVE_BARRAGE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_EGG_BOMB"
+      }
+    ],
+    "SPECIES_CUBONE": [
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_BONE_CLUB"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_BONEMERANG"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_FALSE_SWIPE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_THRASH"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_BONE_RUSH"
+      }
+    ],
+    "SPECIES_MAROWAK": [
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_BONE_CLUB"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_BONE_CLUB"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_BONEMERANG"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_FALSE_SWIPE"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_THRASH"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_BONE_RUSH"
+      }
+    ],
+    "SPECIES_HITMONLEE": [
+      {
+        "level": 1,
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_MEDITATE"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_ROLLING_KICK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_JUMP_KICK"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_HI_JUMP_KICK"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_MIND_READER"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_REVERSAL"
+      }
+    ],
+    "SPECIES_HITMONCHAN": [
+      {
+        "level": 1,
+        "move": "MOVE_COMET_PUNCH"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_THUNDERPUNCH"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_ICE_PUNCH"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_FIRE_PUNCH"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_MACH_PUNCH"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_DETECT"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_COUNTER"
+      }
+    ],
+    "SPECIES_LICKITUNG": [
+      {
+        "level": 1,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SCREECH"
+      }
+    ],
+    "SPECIES_KOFFING": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_GAS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_SLUDGE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_HAZE"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_EXPLOSION"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_DESTINY_BOND"
+      }
+    ],
+    "SPECIES_WEEZING": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_GAS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_SLUDGE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_HAZE"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_EXPLOSION"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_DESTINY_BOND"
+      }
+    ],
+    "SPECIES_RHYHORN": [
+      {
+        "level": 1,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_EARTHQUAKE"
+      }
+    ],
+    "SPECIES_RHYDON": [
+      {
+        "level": 1,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 65,
+        "move": "MOVE_EARTHQUAKE"
+      }
+    ],
+    "SPECIES_CHANSEY": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SOFTBOILED"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_MINIMIZE"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_EGG_BOMB"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_TANGELA": [
+      {
+        "level": 1,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_VINE_WHIP"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_BIND"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_GROWTH"
+      }
+    ],
+    "SPECIES_KANGASKHAN": [
+      {
+        "level": 1,
+        "move": "MOVE_COMET_PUNCH"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_DIZZY_PUNCH"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_REVERSAL"
+      }
+    ],
+    "SPECIES_HORSEA": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_SEADRA": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_GOLDEEN": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_WATERFALL"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_AGILITY"
+      }
+    ],
+    "SPECIES_SEAKING": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_WATERFALL"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_AGILITY"
+      }
+    ],
+    "SPECIES_STARYU": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_MINIMIZE"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_STARMIE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_CONFUSE_RAY"
+      }
+    ],
+    "SPECIES_MR__MIME": [
+      {
+        "level": 1,
+        "move": "MOVE_BARRIER"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SUBSTITUTE"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_MEDITATE"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "SPECIES_SCYTHER": [
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_FALSE_SWIPE"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_DOUBLE_TEAM"
+      }
+    ],
+    "SPECIES_JYNX": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LOVELY_KISS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POWDER_SNOW"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_LOVELY_KISS"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POWDER_SNOW"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_ICE_PUNCH"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_BLIZZARD"
+      }
+    ],
+    "SPECIES_ELECTABUZZ": [
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERPUNCH"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_THUNDERPUNCH"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "level": 58,
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_MAGMAR": [
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FIRE_PUNCH"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_FIRE_PUNCH"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SUNNY_DAY"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_FIRE_BLAST"
+      }
+    ],
+    "SPECIES_PINSIR": [
+      {
+        "level": 1,
+        "move": "MOVE_VICEGRIP"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_BIND"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SEISMIC_TOSS"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_GUILLOTINE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SUBMISSION"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SWORDS_DANCE"
+      }
+    ],
+    "SPECIES_TAUROS": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_THRASH"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MAGIKARP": [
+      {
+        "level": 1,
+        "move": "MOVE_SPLASH"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_FLAIL"
+      }
+    ],
+    "SPECIES_GYARADOS": [
+      {
+        "level": 1,
+        "move": "MOVE_THRASH"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_HYDRO_PUMP"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_LAPRAS": [
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_MIST"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_ICE_BEAM"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_DITTO": [
+      {
+        "level": 1,
+        "move": "MOVE_TRANSFORM"
+      }
+    ],
+    "SPECIES_EEVEE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_VAPOREON": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_HAZE"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_ACID_ARMOR"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_JOLTEON": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_DOUBLE_KICK"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_PIN_MISSILE"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_FLAREON": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_FIRE_SPIN"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_FLAMETHROWER"
+      }
+    ],
+    "SPECIES_PORYGON": [
+      {
+        "level": 1,
+        "move": "MOVE_CONVERSION2"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONVERSION"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_SHARPEN"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_LOCK_ON"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_TRI_ATTACK"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_ZAP_CANNON"
+      }
+    ],
+    "SPECIES_OMANYTE": [
+      {
+        "level": 1,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_OMASTAR": [
+      {
+        "level": 1,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SPIKE_CANNON"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "level": 65,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_KABUTO": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_ANCIENTPOWER"
+      }
+    ],
+    "SPECIES_KABUTOPS": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "level": 65,
+        "move": "MOVE_ANCIENTPOWER"
+      }
+    ],
+    "SPECIES_AERODACTYL": [
+      {
+        "level": 1,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_SNORLAX": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_BELLY_DRUM"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SNORE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_ARTICUNO": [
+      {
+        "level": 1,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POWDER_SNOW"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_MIST"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_MIND_READER"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_ICE_BEAM"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 73,
+        "move": "MOVE_BLIZZARD"
+      }
+    ],
+    "SPECIES_ZAPDOS": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_DETECT"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_DRILL_PECK"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 73,
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_MOLTRES": [
+      {
+        "level": 1,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_FIRE_SPIN"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 73,
+        "move": "MOVE_SKY_ATTACK"
+      }
+    ],
+    "SPECIES_DRATINI": [
+      {
+        "level": 1,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_OUTRAGE"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_DRAGONAIR": [
+      {
+        "level": 1,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 56,
+        "move": "MOVE_OUTRAGE"
+      },
+      {
+        "level": 65,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_DRAGONITE": [
+      {
+        "level": 1,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_DRAGON_RAGE"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_OUTRAGE"
+      },
+      {
+        "level": 75,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_MEWTWO": [
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_BARRIER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_PSYCH_UP"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_MIST"
+      },
+      {
+        "level": 66,
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "level": 77,
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "level": 88,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 99,
+        "move": "MOVE_SAFEGUARD"
+      }
+    ],
+    "SPECIES_MEW": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_TRANSFORM"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_METRONOME"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_ANCIENTPOWER"
+      }
+    ],
+    "SPECIES_CHIKORITA": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_BAYLEEF": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_MEGANIUM": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_CYNDAQUIL": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_FLAME_WHEEL"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_FLAMETHROWER"
+      }
+    ],
+    "SPECIES_QUILAVA": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_FLAME_WHEEL"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_FLAMETHROWER"
+      }
+    ],
+    "SPECIES_TYPHLOSION": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_FLAME_WHEEL"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 60,
+        "move": "MOVE_FLAMETHROWER"
+      }
+    ],
+    "SPECIES_TOTODILE": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_CROCONAW": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_FERALIGATR": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 58,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_SENTRET": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_AMNESIA"
+      }
+    ],
+    "SPECIES_FURRET": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_AMNESIA"
+      }
+    ],
+    "SPECIES_HOOTHOOT": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_DREAM_EATER"
+      }
+    ],
+    "SPECIES_NOCTOWL": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_DREAM_EATER"
+      }
+    ],
+    "SPECIES_LEDYBA": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_COMET_PUNCH"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_LEDIAN": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_COMET_PUNCH"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 60,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_SPINARAK": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STRING_SHOT"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_SPIDER_WEB"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_ARIADOS": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STRING_SHOT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SPIDER_WEB"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 63,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_CROBAT": [
+      {
+        "level": 1,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEECH_LIFE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_CHINCHOU": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SPARK"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_LANTURN": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SPARK"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_PICHU": [
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CHARM"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SWEET_KISS"
+      }
+    ],
+    "SPECIES_CLEFFA": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CHARM"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SWEET_KISS"
+      }
+    ],
+    "SPECIES_IGGLYBUFF": [
+      {
+        "level": 1,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CHARM"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 14,
+        "move": "MOVE_SWEET_KISS"
+      }
+    ],
+    "SPECIES_TOGEPI": [
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CHARM"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_METRONOME"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_SWEET_KISS"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_TOGETIC": [
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CHARM"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_METRONOME"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_SWEET_KISS"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_NATU": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_TELEPORT"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_XATU": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_TELEPORT"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 65,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_MAREEP": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_COTTON_SPORE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_FLAAFFY": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_COTTON_SPORE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_AMPHAROS": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_COTTON_SPORE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_THUNDERPUNCH"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_BELLOSSOM": [
+      {
+        "level": 1,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PETAL_DANCE"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_MARILL": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 3,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_RAIN_DANCE"
+      }
+    ],
+    "SPECIES_AZUMARILL": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 3,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_RAIN_DANCE"
+      }
+    ],
+    "SPECIES_SUDOWOODO": [
+      {
+        "level": 1,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_MIMIC"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_LOW_KICK"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_SLAM"
+      }
+    ],
+    "SPECIES_POLITOED": [
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_SWAGGER"
+      }
+    ],
+    "SPECIES_HOPPIP": [
+      {
+        "level": 1,
+        "move": "MOVE_SPLASH"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_COTTON_SPORE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_MEGA_DRAIN"
+      }
+    ],
+    "SPECIES_SKIPLOOM": [
+      {
+        "level": 1,
+        "move": "MOVE_SPLASH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_COTTON_SPORE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_MEGA_DRAIN"
+      }
+    ],
+    "SPECIES_JUMPLUFF": [
+      {
+        "level": 1,
+        "move": "MOVE_SPLASH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POISONPOWDER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_STUN_SPORE"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_SLEEP_POWDER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_COTTON_SPORE"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_MEGA_DRAIN"
+      }
+    ],
+    "SPECIES_AIPOM": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_AGILITY"
+      }
+    ],
+    "SPECIES_SUNKERN": [
+      {
+        "level": 1,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SUNNY_DAY"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SYNTHESIS"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_GIGA_DRAIN"
+      }
+    ],
+    "SPECIES_SUNFLORA": [
+      {
+        "level": 1,
+        "move": "MOVE_ABSORB"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWTH"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_RAZOR_LEAF"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SUNNY_DAY"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_PETAL_DANCE"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_SOLARBEAM"
+      }
+    ],
+    "SPECIES_YANMA": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FORESIGHT"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_DOUBLE_TEAM"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SONICBOOM"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_DETECT"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SCREECH"
+      }
+    ],
+    "SPECIES_WOOPER": [
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_MIST"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_QUAGSIRE": [
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 59,
+        "move": "MOVE_MIST"
+      },
+      {
+        "level": 59,
+        "move": "MOVE_HAZE"
+      }
+    ],
+    "SPECIES_ESPEON": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_PSYCH_UP"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_MORNING_SUN"
+      }
+    ],
+    "SPECIES_UMBREON": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_MOONLIGHT"
+      }
+    ],
+    "SPECIES_MURKROW": [
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 16,
+        "move": "MOVE_HAZE"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_NIGHT_SHADE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_MEAN_LOOK"
+      }
+    ],
+    "SPECIES_SLOWKING": [
+      {
+        "level": 1,
+        "move": "MOVE_CURSE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_DISABLE"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_HEADBUTT"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SWAGGER"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_MISDREAVUS": [
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PSYWAVE"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SPITE"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_PAIN_SPLIT"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_PERISH_SONG"
+      }
+    ],
+    "SPECIES_UNOWN": [
+      {
+        "level": 1,
+        "move": "MOVE_HIDDEN_POWER"
+      }
+    ],
+    "SPECIES_WOBBUFFET": [
+      {
+        "level": 1,
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_MIRROR_COAT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_DESTINY_BOND"
+      }
+    ],
+    "SPECIES_GIRAFARIG": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_CRUNCH"
+      }
+    ],
+    "SPECIES_PINECO": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_BIDE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_EXPLOSION"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SPIKES"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_FORRETRESS": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PROTECT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SELFDESTRUCT"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_BIDE"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_EXPLOSION"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_SPIKES"
+      },
+      {
+        "level": 59,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_DUNSPARCE": [
+      {
+        "level": 1,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 5,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_GLARE"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_SPITE"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_GLIGAR": [
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_GUILLOTINE"
+      }
+    ],
+    "SPECIES_STEELIX": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_BIND"
+      },
+      {
+        "level": 14,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SANDSTORM"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_SLAM"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_CRUNCH"
+      }
+    ],
+    "SPECIES_SNUBBULL": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_CHARM"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_GRANBULL": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_CHARM"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_RAGE"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_QWILFISH": [
+      {
+        "level": 1,
+        "move": "MOVE_SPIKES"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POISON_STING"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_MINIMIZE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_PIN_MISSILE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_SCIZOR": [
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_FALSE_SWIPE"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_METAL_CLAW"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_DOUBLE_TEAM"
+      }
+    ],
+    "SPECIES_SHUCKLE": [
+      {
+        "level": 1,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WITHDRAW"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_WRAP"
+      },
+      {
+        "level": 14,
+        "move": "MOVE_ENCORE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_BIDE"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_REST"
+      }
+    ],
+    "SPECIES_HERACROSS": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 6,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_REVERSAL"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_MEGAHORN"
+      }
+    ],
+    "SPECIES_SNEASEL": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_BEAT_UP"
+      },
+      {
+        "level": 65,
+        "move": "MOVE_METAL_CLAW"
+      }
+    ],
+    "SPECIES_TEDDIURSA": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_SNORE"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_THRASH"
+      }
+    ],
+    "SPECIES_URSARING": [
+      {
+        "level": 1,
+        "move": "MOVE_SCRATCH"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_FURY_SWIPES"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_REST"
+      },
+      {
+        "level": 39,
+        "move": "MOVE_SLASH"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_SNORE"
+      },
+      {
+        "level": 59,
+        "move": "MOVE_THRASH"
+      }
+    ],
+    "SPECIES_SLUGMA": [
+      {
+        "level": 1,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_MAGCARGO": [
+      {
+        "level": 1,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_ROCK_THROW"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_AMNESIA"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 48,
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "level": 60,
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_SWINUB": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_POWDER_SNOW"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_MIST"
+      },
+      {
+        "level": 46,
+        "move": "MOVE_BLIZZARD"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_AMNESIA"
+      }
+    ],
+    "SPECIES_PILOSWINE": [
+      {
+        "level": 1,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_POWDER_SNOW"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_POWDER_SNOW"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 42,
+        "move": "MOVE_MIST"
+      },
+      {
+        "level": 56,
+        "move": "MOVE_BLIZZARD"
+      },
+      {
+        "level": 70,
+        "move": "MOVE_AMNESIA"
+      }
+    ],
+    "SPECIES_CORSOLA": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_HARDEN"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SPIKE_CANNON"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_MIRROR_COAT"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_ANCIENTPOWER"
+      }
+    ],
+    "SPECIES_REMORAID": [
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_LOCK_ON"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_ICE_BEAM"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_OCTILLERY": [
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_CONSTRICT"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_OCTAZOOKA"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 54,
+        "move": "MOVE_ICE_BEAM"
+      },
+      {
+        "level": 70,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_DELIBIRD": [
+      {
+        "level": 1,
+        "move": "MOVE_PRESENT"
+      }
+    ],
+    "SPECIES_MANTINE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_SUPERSONIC"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_WING_ATTACK"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_CONFUSE_RAY"
+      }
+    ],
+    "SPECIES_SKARMORY": [
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_PECK"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_STEEL_WING"
+      }
+    ],
+    "SPECIES_HOUNDOUR": [
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 27,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 35,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_CRUNCH"
+      }
+    ],
+    "SPECIES_HOUNDOOM": [
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_FAINT_ATTACK"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 52,
+        "move": "MOVE_CRUNCH"
+      }
+    ],
+    "SPECIES_KINGDRA": [
+      {
+        "level": 1,
+        "move": "MOVE_BUBBLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_WATER_GUN"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_TWISTER"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_PHANPY": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_ENDURE"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_DONPHAN": [
+      {
+        "level": 1,
+        "move": "MOVE_HORN_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_FLAIL"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_FURY_ATTACK"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_EARTHQUAKE"
+      }
+    ],
+    "SPECIES_PORYGON2": [
+      {
+        "level": 1,
+        "move": "MOVE_CONVERSION2"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONVERSION"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 12,
+        "move": "MOVE_PSYBEAM"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 24,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 32,
+        "move": "MOVE_LOCK_ON"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_TRI_ATTACK"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_ZAP_CANNON"
+      }
+    ],
+    "SPECIES_STANTLER": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_HYPNOSIS"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SAND_ATTACK"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_CONFUSE_RAY"
+      }
+    ],
+    "SPECIES_SMEARGLE": [
+      {
+        "level": 1,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 71,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 81,
+        "move": "MOVE_SKETCH"
+      },
+      {
+        "level": 91,
+        "move": "MOVE_SKETCH"
+      }
+    ],
+    "SPECIES_TYROGUE": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      }
+    ],
+    "SPECIES_HITMONTOP": [
+      {
+        "level": 1,
+        "move": "MOVE_ROLLING_KICK"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_FOCUS_ENERGY"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_PURSUIT"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_RAPID_SPIN"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_COUNTER"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_AGILITY"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_DETECT"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_TRIPLE_KICK"
+      }
+    ],
+    "SPECIES_SMOOCHUM": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LICK"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_SWEET_KISS"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_POWDER_SNOW"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_PSYCHIC_M"
+      },
+      {
+        "level": 45,
+        "move": "MOVE_PERISH_SONG"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_BLIZZARD"
+      }
+    ],
+    "SPECIES_ELEKID": [
+      {
+        "level": 1,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 9,
+        "move": "MOVE_THUNDERPUNCH"
+      },
+      {
+        "level": 17,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_MAGBY": [
+      {
+        "level": 1,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_SMOG"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_FIRE_PUNCH"
+      },
+      {
+        "level": 25,
+        "move": "MOVE_SMOKESCREEN"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_SUNNY_DAY"
+      },
+      {
+        "level": 37,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "level": 49,
+        "move": "MOVE_FIRE_BLAST"
+      }
+    ],
+    "SPECIES_MILTANK": [
+      {
+        "level": 1,
+        "move": "MOVE_TACKLE"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 19,
+        "move": "MOVE_MILK_DRINK"
+      },
+      {
+        "level": 26,
+        "move": "MOVE_BIDE"
+      },
+      {
+        "level": 34,
+        "move": "MOVE_ROLLOUT"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "level": 53,
+        "move": "MOVE_HEAL_BELL"
+      }
+    ],
+    "SPECIES_BLISSEY": [
+      {
+        "level": 1,
+        "move": "MOVE_POUND"
+      },
+      {
+        "level": 4,
+        "move": "MOVE_GROWL"
+      },
+      {
+        "level": 7,
+        "move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_SOFTBOILED"
+      },
+      {
+        "level": 13,
+        "move": "MOVE_DOUBLESLAP"
+      },
+      {
+        "level": 18,
+        "move": "MOVE_MINIMIZE"
+      },
+      {
+        "level": 23,
+        "move": "MOVE_SING"
+      },
+      {
+        "level": 28,
+        "move": "MOVE_EGG_BOMB"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_DEFENSE_CURL"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_LIGHT_SCREEN"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_RAIKOU": [
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_THUNDERSHOCK"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_SPARK"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_REFLECT"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "level": 71,
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_ENTEI": [
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_EMBER"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_ROAR"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_FIRE_SPIN"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_STOMP"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_SWAGGER"
+      },
+      {
+        "level": 71,
+        "move": "MOVE_FIRE_BLAST"
+      }
+    ],
+    "SPECIES_SUICUNE": [
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "level": 21,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 31,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 41,
+        "move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "level": 51,
+        "move": "MOVE_MIST"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_MIRROR_COAT"
+      },
+      {
+        "level": 71,
+        "move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "SPECIES_LARVITAR": [
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SANDSTORM"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_THRASH"
+      },
+      {
+        "level": 36,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 43,
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 57,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_PUPITAR": [
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SANDSTORM"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SANDSTORM"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_THRASH"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "level": 56,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 65,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_TYRANITAR": [
+      {
+        "level": 1,
+        "move": "MOVE_BITE"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_LEER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SANDSTORM"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 8,
+        "move": "MOVE_SANDSTORM"
+      },
+      {
+        "level": 15,
+        "move": "MOVE_SCREECH"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "level": 29,
+        "move": "MOVE_THRASH"
+      },
+      {
+        "level": 38,
+        "move": "MOVE_SCARY_FACE"
+      },
+      {
+        "level": 47,
+        "move": "MOVE_CRUNCH"
+      },
+      {
+        "level": 61,
+        "move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "level": 75,
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_LUGIA": [
+      {
+        "level": 1,
+        "move": "MOVE_AEROBLAST"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_HYDRO_PUMP"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "level": 66,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 77,
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "level": 88,
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "level": 99,
+        "move": "MOVE_FUTURE_SIGHT"
+      }
+    ],
+    "SPECIES_HO_OH": [
+      {
+        "level": 1,
+        "move": "MOVE_SACRED_FIRE"
+      },
+      {
+        "level": 11,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 22,
+        "move": "MOVE_GUST"
+      },
+      {
+        "level": 33,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 44,
+        "move": "MOVE_FIRE_BLAST"
+      },
+      {
+        "level": 55,
+        "move": "MOVE_SUNNY_DAY"
+      },
+      {
+        "level": 66,
+        "move": "MOVE_SWIFT"
+      },
+      {
+        "level": 77,
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "level": 88,
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "level": 99,
+        "move": "MOVE_FUTURE_SIGHT"
+      }
+    ],
+    "SPECIES_CELEBI": [
+      {
+        "level": 1,
+        "move": "MOVE_LEECH_SEED"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_CONFUSION"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_RECOVER"
+      },
+      {
+        "level": 1,
+        "move": "MOVE_HEAL_BELL"
+      },
+      {
+        "level": 10,
+        "move": "MOVE_SAFEGUARD"
+      },
+      {
+        "level": 20,
+        "move": "MOVE_ANCIENTPOWER"
+      },
+      {
+        "level": 30,
+        "move": "MOVE_FUTURE_SIGHT"
+      },
+      {
+        "level": 40,
+        "move": "MOVE_BATON_PASS"
+      },
+      {
+        "level": 50,
+        "move": "MOVE_PERISH_SONG"
+      }
+    ]
+  }
+}

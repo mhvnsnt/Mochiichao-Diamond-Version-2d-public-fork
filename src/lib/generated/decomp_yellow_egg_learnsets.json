@@ -1,0 +1,8 @@
+{
+  "source": "pokeyellow (no breeding in Gen 1)",
+  "sourceRepo": "pret/pokeyellow",
+  "note": "No egg moves in Gen 1. Recorded as none, not a failed extraction.",
+  "speciesWithEggMoves": 0,
+  "totalEggMoves": 0,
+  "learnsets": {}
+}

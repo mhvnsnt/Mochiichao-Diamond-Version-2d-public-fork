@@ -1,0 +1,2385 @@
+{
+  "source": "pokediamond/files/poketool/personal/evo.json",
+  "sourceRepo": "pret/pokediamond",
+  "sourceCommit": "b623abef",
+  "speciesWithEvolutions": 229,
+  "totalEvolutions": 246,
+  "unresolvedTargets": [],
+  "evolutions": [
+    {
+      "species": "SPECIES_BULBASAUR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_IVYSAUR",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_IVYSAUR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_VENUSAUR",
+          "param": 32
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CHARMANDER",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CHARMELEON",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CHARMELEON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CHARIZARD",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SQUIRTLE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_WARTORTLE",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WARTORTLE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BLASTOISE",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CATERPIE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_METAPOD",
+          "param": 7
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_METAPOD",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BUTTERFREE",
+          "param": 10
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WEEDLE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_KAKUNA",
+          "param": 7
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_KAKUNA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BEEDRILL",
+          "param": 10
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PIDGEY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PIDGEOTTO",
+          "param": 18
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PIDGEOTTO",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PIDGEOT",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_RATTATA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_RATICATE",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SPEAROW",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_FEAROW",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_EKANS",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_ARBOK",
+          "param": 22
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PIKACHU",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_RAICHU",
+          "param": "ITEM_THUNDERSTONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SANDSHREW",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SANDSLASH",
+          "param": 22
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NIDORAN_F",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_NIDORINA",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NIDORINA",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_NIDOQUEEN",
+          "param": "ITEM_MOON_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NIDORAN_M",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_NIDORINO",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NIDORINO",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_NIDOKING",
+          "param": "ITEM_MOON_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CLEFAIRY",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_CLEFABLE",
+          "param": "ITEM_MOON_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_VULPIX",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_NINETALES",
+          "param": "ITEM_FIRE_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_JIGGLYPUFF",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_WIGGLYTUFF",
+          "param": "ITEM_MOON_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ZUBAT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GOLBAT",
+          "param": 22
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GOLBAT",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_CROBAT",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ODDISH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GLOOM",
+          "param": 21
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GLOOM",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_VILEPLUME",
+          "param": "ITEM_LEAF_STONE"
+        },
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_BELLOSSOM",
+          "param": "ITEM_SUN_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PARAS",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PARASECT",
+          "param": 24
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_VENONAT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_VENOMOTH",
+          "param": 31
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_DIGLETT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DUGTRIO",
+          "param": 26
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MEOWTH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PERSIAN",
+          "param": 28
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PSYDUCK",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GOLDUCK",
+          "param": 33
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MANKEY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PRIMEAPE",
+          "param": 28
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GROWLITHE",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_ARCANINE",
+          "param": "ITEM_FIRE_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_POLIWAG",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_POLIWHIRL",
+          "param": 25
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_POLIWHIRL",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_POLIWRATH",
+          "param": "ITEM_WATER_STONE"
+        },
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_POLITOED",
+          "param": "ITEM_KINGS_ROCK"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ABRA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_KADABRA",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_KADABRA",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE",
+          "target": "SPECIES_ALAKAZAM",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MACHOP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MACHOKE",
+          "param": 28
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MACHOKE",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE",
+          "target": "SPECIES_MACHAMP",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BELLSPROUT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_WEEPINBELL",
+          "param": 21
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WEEPINBELL",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_VICTREEBEL",
+          "param": "ITEM_LEAF_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TENTACOOL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_TENTACRUEL",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GEODUDE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GRAVELER",
+          "param": 25
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GRAVELER",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE",
+          "target": "SPECIES_GOLEM",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PONYTA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_RAPIDASH",
+          "param": 40
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SLOWPOKE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SLOWBRO",
+          "param": 37
+        },
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_SLOWKING",
+          "param": "ITEM_KINGS_ROCK"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MAGNEMITE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MAGNETON",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MAGNETON",
+      "evolutions": [
+        {
+          "method": "EVO_CORONET",
+          "target": "SPECIES_MAGNEZONE",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_DODUO",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DODRIO",
+          "param": 31
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SEEL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DEWGONG",
+          "param": 34
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GRIMER",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MUK",
+          "param": 38
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SHELLDER",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_CLOYSTER",
+          "param": "ITEM_WATER_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GASTLY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_HAUNTER",
+          "param": 25
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_HAUNTER",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE",
+          "target": "SPECIES_GENGAR",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ONIX",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_STEELIX",
+          "param": "ITEM_METAL_COAT"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_DROWZEE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_HYPNO",
+          "param": 26
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_KRABBY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_KINGLER",
+          "param": 28
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_VOLTORB",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_ELECTRODE",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_EXEGGCUTE",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_EXEGGUTOR",
+          "param": "ITEM_LEAF_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CUBONE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MAROWAK",
+          "param": 28
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LICKITUNG",
+      "evolutions": [
+        {
+          "method": "EVO_HAS_MOVE",
+          "target": "SPECIES_LICKILICKY",
+          "param": "MOVE_ROLLOUT"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_KOFFING",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_WEEZING",
+          "param": 35
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_RHYHORN",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_RHYDON",
+          "param": 42
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_RHYDON",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_RHYPERIOR",
+          "param": "ITEM_PROTECTOR"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CHANSEY",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_BLISSEY",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TANGELA",
+      "evolutions": [
+        {
+          "method": "EVO_HAS_MOVE",
+          "target": "SPECIES_TANGROWTH",
+          "param": "MOVE_ANCIENT_POWER"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_HORSEA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SEADRA",
+          "param": 32
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SEADRA",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_KINGDRA",
+          "param": "ITEM_DRAGON_SCALE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GOLDEEN",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SEAKING",
+          "param": 33
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_STARYU",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_STARMIE",
+          "param": "ITEM_WATER_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SCYTHER",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_SCIZOR",
+          "param": "ITEM_METAL_COAT"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ELECTABUZZ",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_ELECTIVIRE",
+          "param": "ITEM_ELECTIRIZER"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MAGMAR",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_MAGMORTAR",
+          "param": "ITEM_MAGMARIZER"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MAGIKARP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GYARADOS",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_EEVEE",
+      "evolutions": [
+        {
+          "method": "EVO_ETERNA",
+          "target": "SPECIES_LEAFEON",
+          "param": null
+        },
+        {
+          "method": "EVO_ROUTE217",
+          "target": "SPECIES_GLACEON",
+          "param": null
+        },
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_JOLTEON",
+          "param": "ITEM_THUNDERSTONE"
+        },
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_VAPOREON",
+          "param": "ITEM_WATER_STONE"
+        },
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_FLAREON",
+          "param": "ITEM_FIRE_STONE"
+        },
+        {
+          "method": "EVO_FRIENDSHIP_DAY",
+          "target": "SPECIES_ESPEON",
+          "param": null
+        },
+        {
+          "method": "EVO_FRIENDSHIP_NIGHT",
+          "target": "SPECIES_UMBREON",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PORYGON",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_PORYGON2",
+          "param": "ITEM_UPGRADE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_OMANYTE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_OMASTAR",
+          "param": 40
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_KABUTO",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_KABUTOPS",
+          "param": 40
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_DRATINI",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DRAGONAIR",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_DRAGONAIR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DRAGONITE",
+          "param": 55
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CHIKORITA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BAYLEEF",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BAYLEEF",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MEGANIUM",
+          "param": 32
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CYNDAQUIL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_QUILAVA",
+          "param": 14
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_QUILAVA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_TYPHLOSION",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TOTODILE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CROCONAW",
+          "param": 18
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CROCONAW",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_FERALIGATR",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SENTRET",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_FURRET",
+          "param": 15
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_HOOTHOOT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_NOCTOWL",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LEDYBA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LEDIAN",
+          "param": 18
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SPINARAK",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_ARIADOS",
+          "param": 22
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CHINCHOU",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LANTURN",
+          "param": 27
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PICHU",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_PIKACHU",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CLEFFA",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_CLEFAIRY",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_IGGLYBUFF",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_JIGGLYPUFF",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TOGEPI",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_TOGETIC",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TOGETIC",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_TOGEKISS",
+          "param": "ITEM_SHINY_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NATU",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_XATU",
+          "param": 25
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MAREEP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_FLAAFFY",
+          "param": 15
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_FLAAFFY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_AMPHAROS",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MARILL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_AZUMARILL",
+          "param": 18
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_HOPPIP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SKIPLOOM",
+          "param": 18
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SKIPLOOM",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_JUMPLUFF",
+          "param": 27
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_AIPOM",
+      "evolutions": [
+        {
+          "method": "EVO_HAS_MOVE",
+          "target": "SPECIES_AMBIPOM",
+          "param": "MOVE_DOUBLE_HIT"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SUNKERN",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_SUNFLORA",
+          "param": "ITEM_SUN_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_YANMA",
+      "evolutions": [
+        {
+          "method": "EVO_HAS_MOVE",
+          "target": "SPECIES_YANMEGA",
+          "param": "MOVE_ANCIENT_POWER"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WOOPER",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_QUAGSIRE",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MURKROW",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_HONCHKROW",
+          "param": "ITEM_DUSK_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MISDREAVUS",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_MISMAGIUS",
+          "param": "ITEM_DUSK_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PINECO",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_FORRETRESS",
+          "param": 31
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GLIGAR",
+      "evolutions": [
+        {
+          "method": "EVO_ITEM_NIGHT",
+          "target": "SPECIES_GLISCOR",
+          "param": "ITEM_RAZOR_FANG"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SNUBBULL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GRANBULL",
+          "param": 23
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SNEASEL",
+      "evolutions": [
+        {
+          "method": "EVO_ITEM_NIGHT",
+          "target": "SPECIES_WEAVILE",
+          "param": "ITEM_RAZOR_CLAW"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TEDDIURSA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_URSARING",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SLUGMA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MAGCARGO",
+          "param": 38
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SWINUB",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PILOSWINE",
+          "param": 33
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PILOSWINE",
+      "evolutions": [
+        {
+          "method": "EVO_HAS_MOVE",
+          "target": "SPECIES_MAMOSWINE",
+          "param": "MOVE_ANCIENT_POWER"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_REMORAID",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_OCTILLERY",
+          "param": 25
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_HOUNDOUR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_HOUNDOOM",
+          "param": 24
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PHANPY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DONPHAN",
+          "param": 25
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PORYGON2",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_PORYGON_Z",
+          "param": "ITEM_DUBIOUS_DISC"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TYROGUE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL_ATK_LT_DEF",
+          "target": "SPECIES_HITMONCHAN",
+          "param": 20
+        },
+        {
+          "method": "EVO_LEVEL_ATK_GT_DEF",
+          "target": "SPECIES_HITMONLEE",
+          "param": 20
+        },
+        {
+          "method": "EVO_LEVEL_ATK_EQ_DEF",
+          "target": "SPECIES_HITMONTOP",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SMOOCHUM",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_JYNX",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ELEKID",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_ELECTABUZZ",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MAGBY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MAGMAR",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LARVITAR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PUPITAR",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PUPITAR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_TYRANITAR",
+          "param": 55
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TREECKO",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GROVYLE",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GROVYLE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SCEPTILE",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TORCHIC",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_COMBUSKEN",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_COMBUSKEN",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BLAZIKEN",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MUDKIP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MARSHTOMP",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MARSHTOMP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SWAMPERT",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_POOCHYENA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MIGHTYENA",
+          "param": 18
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ZIGZAGOON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LINOONE",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WURMPLE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL_PID_LO",
+          "target": "SPECIES_SILCOON",
+          "param": 7
+        },
+        {
+          "method": "EVO_LEVEL_PID_HI",
+          "target": "SPECIES_CASCOON",
+          "param": 7
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SILCOON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BEAUTIFLY",
+          "param": 10
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CASCOON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DUSTOX",
+          "param": 10
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LOTAD",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LOMBRE",
+          "param": 14
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LOMBRE",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_LUDICOLO",
+          "param": "ITEM_WATER_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SEEDOT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_NUZLEAF",
+          "param": 14
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NUZLEAF",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_SHIFTRY",
+          "param": "ITEM_LEAF_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TAILLOW",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SWELLOW",
+          "param": 22
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WINGULL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PELIPPER",
+          "param": 25
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_RALTS",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_KIRLIA",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_KIRLIA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GARDEVOIR",
+          "param": 30
+        },
+        {
+          "method": "EVO_STONE_MALE",
+          "target": "SPECIES_GALLADE",
+          "param": "ITEM_DAWN_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SURSKIT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MASQUERAIN",
+          "param": 22
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SHROOMISH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BRELOOM",
+          "param": 23
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SLAKOTH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_VIGOROTH",
+          "param": 18
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_VIGOROTH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SLAKING",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NINCADA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL_NINJASK",
+          "target": "SPECIES_NINJASK",
+          "param": 20
+        },
+        {
+          "method": "EVO_LEVEL_SHEDINJA",
+          "target": "SPECIES_SHEDINJA",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WHISMUR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LOUDRED",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LOUDRED",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_EXPLOUD",
+          "param": 40
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MAKUHITA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_HARIYAMA",
+          "param": 24
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_AZURILL",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_MARILL",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NOSEPASS",
+      "evolutions": [
+        {
+          "method": "EVO_CORONET",
+          "target": "SPECIES_PROBOPASS",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SKITTY",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_DELCATTY",
+          "param": "ITEM_MOON_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ARON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LAIRON",
+          "param": 32
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LAIRON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_AGGRON",
+          "param": 42
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MEDITITE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MEDICHAM",
+          "param": 37
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ELECTRIKE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MANECTRIC",
+          "param": 26
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ROSELIA",
+      "evolutions": [
+        {
+          "method": "EVO_STONE",
+          "target": "SPECIES_ROSERADE",
+          "param": "ITEM_SHINY_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GULPIN",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SWALOT",
+          "param": 26
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CARVANHA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SHARPEDO",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WAILMER",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_WAILORD",
+          "param": 40
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_NUMEL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CAMERUPT",
+          "param": 33
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SPOINK",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GRUMPIG",
+          "param": 32
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TRAPINCH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_VIBRAVA",
+          "param": 35
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_VIBRAVA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_FLYGON",
+          "param": 45
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CACNEA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CACTURNE",
+          "param": 32
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SWABLU",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_ALTARIA",
+          "param": 35
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BARBOACH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_WHISCASH",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CORPHISH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CRAWDAUNT",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BALTOY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CLAYDOL",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LILEEP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CRADILY",
+          "param": 40
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_ANORITH",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_ARMALDO",
+          "param": 40
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_FEEBAS",
+      "evolutions": [
+        {
+          "method": "EVO_BEAUTY",
+          "target": "SPECIES_MILOTIC",
+          "param": 170
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SHUPPET",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BANETTE",
+          "param": 37
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_DUSKULL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DUSCLOPS",
+          "param": 37
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_DUSCLOPS",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_DUSKNOIR",
+          "param": "ITEM_REAPER_CLOTH"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_WYNAUT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_WOBBUFFET",
+          "param": 15
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SNORUNT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GLALIE",
+          "param": 42
+        },
+        {
+          "method": "EVO_STONE_FEMALE",
+          "target": "SPECIES_FROSLASS",
+          "param": "ITEM_DAWN_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SPHEAL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SEALEO",
+          "param": 32
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SEALEO",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_WALREIN",
+          "param": 44
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CLAMPERL",
+      "evolutions": [
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_HUNTAIL",
+          "param": "ITEM_DEEPSEATOOTH"
+        },
+        {
+          "method": "EVO_TRADE_ITEM",
+          "target": "SPECIES_GOREBYSS",
+          "param": "ITEM_DEEPSEASCALE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BAGON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SHELGON",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SHELGON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SALAMENCE",
+          "param": 50
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BELDUM",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_METANG",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_METANG",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_METAGROSS",
+          "param": 45
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_TURTWIG",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GROTLE",
+          "param": 18
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GROTLE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_TORTERRA",
+          "param": 32
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CHIMCHAR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_MONFERNO",
+          "param": 14
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MONFERNO",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_INFERNAPE",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PIPLUP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PRINPLUP",
+          "param": 16
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_PRINPLUP",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_EMPOLEON",
+          "param": 36
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_STARLY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_STARAVIA",
+          "param": 14
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_STARAVIA",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_STARAPTOR",
+          "param": 34
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BIDOOF",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BIBAREL",
+          "param": 15
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_KRICKETOT",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_KRICKETUNE",
+          "param": 10
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SHINX",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LUXIO",
+          "param": 15
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_LUXIO",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LUXRAY",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BUDEW",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP_DAY",
+          "target": "SPECIES_ROSELIA",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CRANIDOS",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_RAMPARDOS",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SHIELDON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BASTIODON",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BURMY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL_FEMALE",
+          "target": "SPECIES_WORMADAM",
+          "param": 20
+        },
+        {
+          "method": "EVO_LEVEL_MALE",
+          "target": "SPECIES_MOTHIM",
+          "param": 20
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_COMBEE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL_FEMALE",
+          "target": "SPECIES_VESPIQUEN",
+          "param": 21
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BUIZEL",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_FLOATZEL",
+          "param": 26
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CHERUBI",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_CHERRIM",
+          "param": 25
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SHELLOS",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GASTRODON",
+          "param": 30
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_DRIFLOON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DRIFBLIM",
+          "param": 28
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BUNEARY",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_LOPUNNY",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GLAMEOW",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_PURUGLY",
+          "param": 38
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CHINGLING",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP_NIGHT",
+          "target": "SPECIES_CHIMECHO",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_STUNKY",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_SKUNTANK",
+          "param": 34
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BRONZOR",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_BRONZONG",
+          "param": 33
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_BONSLY",
+      "evolutions": [
+        {
+          "method": "EVO_HAS_MOVE",
+          "target": "SPECIES_SUDOWOODO",
+          "param": "MOVE_MIMIC"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MIME_JR",
+      "evolutions": [
+        {
+          "method": "EVO_HAS_MOVE",
+          "target": "SPECIES_MR_MIME",
+          "param": "MOVE_MIMIC"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_HAPPINY",
+      "evolutions": [
+        {
+          "method": "EVO_ITEM_DAY",
+          "target": "SPECIES_CHANSEY",
+          "param": "ITEM_OVAL_STONE"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GIBLE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GABITE",
+          "param": 24
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_GABITE",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_GARCHOMP",
+          "param": 48
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MUNCHLAX",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP",
+          "target": "SPECIES_SNORLAX",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_RIOLU",
+      "evolutions": [
+        {
+          "method": "EVO_FRIENDSHIP_DAY",
+          "target": "SPECIES_LUCARIO",
+          "param": null
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_HIPPOPOTAS",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_HIPPOWDON",
+          "param": 34
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SKORUPI",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_DRAPION",
+          "param": 40
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_CROAGUNK",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_TOXICROAK",
+          "param": 37
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_FINNEON",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_LUMINEON",
+          "param": 31
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_MANTYKE",
+      "evolutions": [
+        {
+          "method": "EVO_OTHER_PARTY_MON",
+          "target": "SPECIES_MANTINE",
+          "param": "SPECIES_REMORAID"
+        }
+      ]
+    },
+    {
+      "species": "SPECIES_SNOVER",
+      "evolutions": [
+        {
+          "method": "EVO_LEVEL",
+          "target": "SPECIES_ABOMASNOW",
+          "param": 40
+        }
+      ]
+    }
+  ]
+}

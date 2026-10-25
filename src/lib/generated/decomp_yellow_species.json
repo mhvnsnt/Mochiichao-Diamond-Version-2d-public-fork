@@ -1,0 +1,3943 @@
+{
+  "source": "pokeyellow/data/pokemon/base_stats/*.asm",
+  "sourceRepo": "pret/pokeyellow",
+  "count": 151,
+  "notes": "Gen 1: single baseSpecial stat, not SpAttack/SpDefense split. No abilities/egg groups in Gen 1 base stats.",
+  "species": [
+    {
+      "sourceConstant": "SPECIES_ABRA",
+      "baseHP": 25,
+      "baseAttack": 20,
+      "baseDefense": 15,
+      "baseSpeed": 90,
+      "baseSpecial": 105,
+      "types": [
+        "PSYCHIC",
+        "PSYCHIC"
+      ],
+      "catchRate": 200,
+      "expYield": 73,
+      "level1Learnset": [
+        "TELEPORT"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_AERODACTYL",
+      "baseHP": 80,
+      "baseAttack": 105,
+      "baseDefense": 65,
+      "baseSpeed": 130,
+      "baseSpecial": 60,
+      "types": [
+        "ROCK",
+        "FLYING"
+      ],
+      "catchRate": 45,
+      "expYield": 202,
+      "level1Learnset": [
+        "WING_ATTACK",
+        "AGILITY"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ALAKAZAM",
+      "baseHP": 55,
+      "baseAttack": 50,
+      "baseDefense": 45,
+      "baseSpeed": 120,
+      "baseSpecial": 135,
+      "types": [
+        "PSYCHIC",
+        "PSYCHIC"
+      ],
+      "catchRate": 50,
+      "expYield": 186,
+      "level1Learnset": [
+        "TELEPORT",
+        "KINESIS"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ARBOK",
+      "baseHP": 60,
+      "baseAttack": 85,
+      "baseDefense": 69,
+      "baseSpeed": 80,
+      "baseSpecial": 65,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 90,
+      "expYield": 147,
+      "level1Learnset": [
+        "WRAP",
+        "LEER",
+        "POISON_STING"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ARCANINE",
+      "baseHP": 90,
+      "baseAttack": 110,
+      "baseDefense": 80,
+      "baseSpeed": 95,
+      "baseSpecial": 80,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 75,
+      "expYield": 213,
+      "level1Learnset": [
+        "ROAR",
+        "EMBER",
+        "LEER",
+        "TAKE_DOWN"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ARTICUNO",
+      "baseHP": 90,
+      "baseAttack": 85,
+      "baseDefense": 100,
+      "baseSpeed": 85,
+      "baseSpecial": 125,
+      "types": [
+        "ICE",
+        "FLYING"
+      ],
+      "catchRate": 3,
+      "expYield": 215,
+      "level1Learnset": [
+        "PECK",
+        "ICE_BEAM"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_BEEDRILL",
+      "baseHP": 65,
+      "baseAttack": 80,
+      "baseDefense": 40,
+      "baseSpeed": 75,
+      "baseSpecial": 45,
+      "types": [
+        "BUG",
+        "POISON"
+      ],
+      "catchRate": 45,
+      "expYield": 159,
+      "level1Learnset": [
+        "FURY_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_BELLSPROUT",
+      "baseHP": 50,
+      "baseAttack": 75,
+      "baseDefense": 35,
+      "baseSpeed": 40,
+      "baseSpecial": 70,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 255,
+      "expYield": 84,
+      "level1Learnset": [
+        "VINE_WHIP",
+        "GROWTH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_BLASTOISE",
+      "baseHP": 79,
+      "baseAttack": 83,
+      "baseDefense": 100,
+      "baseSpeed": 78,
+      "baseSpecial": 85,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 45,
+      "expYield": 210,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP",
+        "BUBBLE",
+        "WATER_GUN"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_BULBASAUR",
+      "baseHP": 45,
+      "baseAttack": 49,
+      "baseDefense": 49,
+      "baseSpeed": 45,
+      "baseSpecial": 65,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 45,
+      "expYield": 64,
+      "level1Learnset": [
+        "TACKLE",
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_BUTTERFREE",
+      "baseHP": 60,
+      "baseAttack": 45,
+      "baseDefense": 50,
+      "baseSpeed": 70,
+      "baseSpecial": 80,
+      "types": [
+        "BUG",
+        "FLYING"
+      ],
+      "catchRate": 45,
+      "expYield": 160,
+      "level1Learnset": [
+        "CONFUSION"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_CATERPIE",
+      "baseHP": 45,
+      "baseAttack": 30,
+      "baseDefense": 35,
+      "baseSpeed": 45,
+      "baseSpecial": 20,
+      "types": [
+        "BUG",
+        "BUG"
+      ],
+      "catchRate": 255,
+      "expYield": 53,
+      "level1Learnset": [
+        "TACKLE",
+        "STRING_SHOT"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST"
+    },
+    {
+      "sourceConstant": "SPECIES_CHANSEY",
+      "baseHP": 250,
+      "baseAttack": 5,
+      "baseDefense": 5,
+      "baseSpeed": 50,
+      "baseSpecial": 105,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 30,
+      "expYield": 255,
+      "level1Learnset": [
+        "POUND",
+        "TAIL_WHIP"
+      ],
+      "growthRate": "GROWTH_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_CHARIZARD",
+      "baseHP": 78,
+      "baseAttack": 84,
+      "baseDefense": 78,
+      "baseSpeed": 100,
+      "baseSpecial": 85,
+      "types": [
+        "FIRE",
+        "FLYING"
+      ],
+      "catchRate": 45,
+      "expYield": 209,
+      "level1Learnset": [
+        "SCRATCH",
+        "GROWL",
+        "EMBER",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "SWORDS_DANCE",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_CHARMANDER",
+      "baseHP": 39,
+      "baseAttack": 52,
+      "baseDefense": 43,
+      "baseSpeed": 65,
+      "baseSpecial": 50,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 45,
+      "expYield": 65,
+      "level1Learnset": [
+        "SCRATCH",
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "SWORDS_DANCE",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_CHARMELEON",
+      "baseHP": 58,
+      "baseAttack": 64,
+      "baseDefense": 58,
+      "baseSpeed": 80,
+      "baseSpecial": 65,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 45,
+      "expYield": 142,
+      "level1Learnset": [
+        "SCRATCH",
+        "GROWL",
+        "EMBER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "SWORDS_DANCE",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_CLEFABLE",
+      "baseHP": 95,
+      "baseAttack": 70,
+      "baseDefense": 73,
+      "baseSpeed": 60,
+      "baseSpecial": 85,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 25,
+      "expYield": 129,
+      "level1Learnset": [
+        "SING",
+        "DOUBLESLAP",
+        "MINIMIZE",
+        "METRONOME"
+      ],
+      "growthRate": "GROWTH_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_CLEFAIRY",
+      "baseHP": 70,
+      "baseAttack": 45,
+      "baseDefense": 48,
+      "baseSpeed": 35,
+      "baseSpecial": 60,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 150,
+      "expYield": 68,
+      "level1Learnset": [
+        "POUND",
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_CLOYSTER",
+      "baseHP": 50,
+      "baseAttack": 95,
+      "baseDefense": 180,
+      "baseSpeed": 70,
+      "baseSpecial": 85,
+      "types": [
+        "WATER",
+        "ICE"
+      ],
+      "catchRate": 60,
+      "expYield": 203,
+      "level1Learnset": [
+        "WITHDRAW",
+        "SUPERSONIC",
+        "CLAMP",
+        "AURORA_BEAM"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM",
+        "WATER_GUN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_CUBONE",
+      "baseHP": 50,
+      "baseAttack": 50,
+      "baseDefense": 95,
+      "baseSpeed": 35,
+      "baseSpecial": 40,
+      "types": [
+        "GROUND",
+        "GROUND"
+      ],
+      "catchRate": 190,
+      "expYield": 87,
+      "level1Learnset": [
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DEWGONG",
+      "baseHP": 90,
+      "baseAttack": 70,
+      "baseDefense": 80,
+      "baseSpeed": 70,
+      "baseSpecial": 95,
+      "types": [
+        "WATER",
+        "ICE"
+      ],
+      "catchRate": 75,
+      "expYield": 176,
+      "level1Learnset": [
+        "HEADBUTT",
+        "GROWL",
+        "AURORA_BEAM"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DIGLETT",
+      "baseHP": 10,
+      "baseAttack": 55,
+      "baseDefense": 25,
+      "baseSpeed": 95,
+      "baseSpecial": 45,
+      "types": [
+        "GROUND",
+        "GROUND"
+      ],
+      "catchRate": 255,
+      "expYield": 81,
+      "level1Learnset": [
+        "SCRATCH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DITTO",
+      "baseHP": 48,
+      "baseAttack": 48,
+      "baseDefense": 48,
+      "baseSpeed": 48,
+      "baseSpecial": 48,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 35,
+      "expYield": 61,
+      "level1Learnset": [
+        "TRANSFORM"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST"
+    },
+    {
+      "sourceConstant": "SPECIES_DODRIO",
+      "baseHP": 60,
+      "baseAttack": 110,
+      "baseDefense": 70,
+      "baseSpeed": 100,
+      "baseSpecial": 60,
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "catchRate": 45,
+      "expYield": 158,
+      "level1Learnset": [
+        "PECK",
+        "GROWL",
+        "FURY_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "WHIRLWIND",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DODUO",
+      "baseHP": 35,
+      "baseAttack": 85,
+      "baseDefense": 45,
+      "baseSpeed": 75,
+      "baseSpecial": 35,
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "catchRate": 190,
+      "expYield": 96,
+      "level1Learnset": [
+        "PECK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "WHIRLWIND",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DRAGONAIR",
+      "baseHP": 61,
+      "baseAttack": 84,
+      "baseDefense": 65,
+      "baseSpeed": 70,
+      "baseSpecial": 70,
+      "types": [
+        "DRAGON",
+        "DRAGON"
+      ],
+      "catchRate": 27,
+      "expYield": 144,
+      "level1Learnset": [
+        "WRAP",
+        "LEER",
+        "THUNDER_WAVE"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DRAGONITE",
+      "baseHP": 91,
+      "baseAttack": 134,
+      "baseDefense": 95,
+      "baseSpeed": 80,
+      "baseSpecial": 100,
+      "types": [
+        "DRAGON",
+        "FLYING"
+      ],
+      "catchRate": 9,
+      "expYield": 218,
+      "level1Learnset": [
+        "WRAP",
+        "LEER",
+        "THUNDER_WAVE",
+        "AGILITY"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DRATINI",
+      "baseHP": 41,
+      "baseAttack": 64,
+      "baseDefense": 45,
+      "baseSpeed": 50,
+      "baseSpecial": 50,
+      "types": [
+        "DRAGON",
+        "DRAGON"
+      ],
+      "catchRate": 45,
+      "expYield": 67,
+      "level1Learnset": [
+        "WRAP",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DROWZEE",
+      "baseHP": 60,
+      "baseAttack": 48,
+      "baseDefense": 45,
+      "baseSpeed": 42,
+      "baseSpecial": 90,
+      "types": [
+        "PSYCHIC",
+        "PSYCHIC"
+      ],
+      "catchRate": 190,
+      "expYield": 102,
+      "level1Learnset": [
+        "POUND",
+        "HYPNOSIS"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_DUGTRIO",
+      "baseHP": 35,
+      "baseAttack": 80,
+      "baseDefense": 50,
+      "baseSpeed": 120,
+      "baseSpecial": 70,
+      "types": [
+        "GROUND",
+        "GROUND"
+      ],
+      "catchRate": 50,
+      "expYield": 153,
+      "level1Learnset": [
+        "SCRATCH",
+        "GROWL",
+        "DIG"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_EEVEE",
+      "baseHP": 55,
+      "baseAttack": 55,
+      "baseDefense": 50,
+      "baseSpeed": 55,
+      "baseSpecial": 65,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 45,
+      "expYield": 92,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_EKANS",
+      "baseHP": 35,
+      "baseAttack": 60,
+      "baseDefense": 44,
+      "baseSpeed": 55,
+      "baseSpecial": 40,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 255,
+      "expYield": 62,
+      "level1Learnset": [
+        "WRAP",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ELECTABUZZ",
+      "baseHP": 65,
+      "baseAttack": 83,
+      "baseDefense": 57,
+      "baseSpeed": 105,
+      "baseSpecial": 85,
+      "types": [
+        "ELECTRIC",
+        "ELECTRIC"
+      ],
+      "catchRate": 45,
+      "expYield": 156,
+      "level1Learnset": [
+        "QUICK_ATTACK",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ELECTRODE",
+      "baseHP": 60,
+      "baseAttack": 50,
+      "baseDefense": 70,
+      "baseSpeed": 140,
+      "baseSpecial": 80,
+      "types": [
+        "ELECTRIC",
+        "ELECTRIC"
+      ],
+      "catchRate": 60,
+      "expYield": 150,
+      "level1Learnset": [
+        "TACKLE",
+        "SCREECH",
+        "SONICBOOM"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "HYPER_BEAM",
+        "RAGE",
+        "THUNDERBOLT"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_EXEGGCUTE",
+      "baseHP": 60,
+      "baseAttack": 40,
+      "baseDefense": 80,
+      "baseSpeed": 40,
+      "baseSpecial": 60,
+      "types": [
+        "GRASS",
+        "PSYCHIC"
+      ],
+      "catchRate": 90,
+      "expYield": 98,
+      "level1Learnset": [
+        "BARRAGE",
+        "HYPNOSIS"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE",
+        "PSYCHIC_M"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_EXEGGUTOR",
+      "baseHP": 95,
+      "baseAttack": 95,
+      "baseDefense": 85,
+      "baseSpeed": 55,
+      "baseSpecial": 125,
+      "types": [
+        "GRASS",
+        "PSYCHIC"
+      ],
+      "catchRate": 45,
+      "expYield": 212,
+      "level1Learnset": [
+        "BARRAGE",
+        "HYPNOSIS"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_FARFETCH_D",
+      "baseHP": 52,
+      "baseAttack": 65,
+      "baseDefense": 55,
+      "baseSpeed": 60,
+      "baseSpecial": 58,
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "catchRate": 45,
+      "expYield": 94,
+      "level1Learnset": [
+        "PECK",
+        "SAND_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "SWORDS_DANCE",
+        "WHIRLWIND",
+        "TOXIC",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_FEAROW",
+      "baseHP": 65,
+      "baseAttack": 90,
+      "baseDefense": 65,
+      "baseSpeed": 100,
+      "baseSpecial": 61,
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "catchRate": 90,
+      "expYield": 162,
+      "level1Learnset": [
+        "PECK",
+        "GROWL",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_FLAREON",
+      "baseHP": 65,
+      "baseAttack": 130,
+      "baseDefense": 60,
+      "baseSpeed": 65,
+      "baseSpecial": 110,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 45,
+      "expYield": 198,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP",
+        "QUICK_ATTACK",
+        "EMBER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GASTLY",
+      "baseHP": 30,
+      "baseAttack": 35,
+      "baseDefense": 30,
+      "baseSpeed": 80,
+      "baseSpecial": 100,
+      "types": [
+        "GHOST",
+        "POISON"
+      ],
+      "catchRate": 190,
+      "expYield": 95,
+      "level1Learnset": [
+        "LICK",
+        "CONFUSE_RAY",
+        "NIGHT_SHADE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "RAGE",
+        "MEGA_DRAIN",
+        "THUNDERBOLT",
+        "THUNDER"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GENGAR",
+      "baseHP": 60,
+      "baseAttack": 65,
+      "baseDefense": 60,
+      "baseSpeed": 110,
+      "baseSpecial": 130,
+      "types": [
+        "GHOST",
+        "POISON"
+      ],
+      "catchRate": 45,
+      "expYield": 190,
+      "level1Learnset": [
+        "LICK",
+        "CONFUSE_RAY",
+        "NIGHT_SHADE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GEODUDE",
+      "baseHP": 40,
+      "baseAttack": 80,
+      "baseDefense": 100,
+      "baseSpeed": 20,
+      "baseSpecial": 30,
+      "types": [
+        "ROCK",
+        "GROUND"
+      ],
+      "catchRate": 255,
+      "expYield": 86,
+      "level1Learnset": [
+        "TACKLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GLOOM",
+      "baseHP": 60,
+      "baseAttack": 65,
+      "baseDefense": 70,
+      "baseSpeed": 40,
+      "baseSpecial": 85,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 120,
+      "expYield": 132,
+      "level1Learnset": [
+        "ABSORB",
+        "POISONPOWDER",
+        "STUN_SPORE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GOLBAT",
+      "baseHP": 75,
+      "baseAttack": 80,
+      "baseDefense": 70,
+      "baseSpeed": 90,
+      "baseSpecial": 75,
+      "types": [
+        "POISON",
+        "FLYING"
+      ],
+      "catchRate": 90,
+      "expYield": 171,
+      "level1Learnset": [
+        "LEECH_LIFE",
+        "SCREECH",
+        "BITE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GOLDEEN",
+      "baseHP": 45,
+      "baseAttack": 67,
+      "baseDefense": 60,
+      "baseSpeed": 63,
+      "baseSpecial": 50,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 225,
+      "expYield": 111,
+      "level1Learnset": [
+        "PECK",
+        "TAIL_WHIP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GOLDUCK",
+      "baseHP": 80,
+      "baseAttack": 82,
+      "baseDefense": 78,
+      "baseSpeed": 85,
+      "baseSpecial": 80,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 75,
+      "expYield": 174,
+      "level1Learnset": [
+        "SCRATCH",
+        "TAIL_WHIP",
+        "DISABLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GOLEM",
+      "baseHP": 80,
+      "baseAttack": 110,
+      "baseDefense": 130,
+      "baseSpeed": 45,
+      "baseSpecial": 55,
+      "types": [
+        "ROCK",
+        "GROUND"
+      ],
+      "catchRate": 45,
+      "expYield": 177,
+      "level1Learnset": [
+        "TACKLE",
+        "DEFENSE_CURL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GRAVELER",
+      "baseHP": 55,
+      "baseAttack": 95,
+      "baseDefense": 115,
+      "baseSpeed": 35,
+      "baseSpecial": 45,
+      "types": [
+        "ROCK",
+        "GROUND"
+      ],
+      "catchRate": 120,
+      "expYield": 134,
+      "level1Learnset": [
+        "TACKLE",
+        "DEFENSE_CURL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GRIMER",
+      "baseHP": 80,
+      "baseAttack": 80,
+      "baseDefense": 50,
+      "baseSpeed": 25,
+      "baseSpecial": 40,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 190,
+      "expYield": 90,
+      "level1Learnset": [
+        "POUND",
+        "DISABLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "RAGE",
+        "MEGA_DRAIN",
+        "THUNDERBOLT"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GROWLITHE",
+      "baseHP": 55,
+      "baseAttack": 70,
+      "baseDefense": 45,
+      "baseSpeed": 60,
+      "baseSpecial": 50,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 190,
+      "expYield": 91,
+      "level1Learnset": [
+        "BITE",
+        "ROAR"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_GYARADOS",
+      "baseHP": 95,
+      "baseAttack": 125,
+      "baseDefense": 79,
+      "baseSpeed": 81,
+      "baseSpecial": 100,
+      "types": [
+        "WATER",
+        "FLYING"
+      ],
+      "catchRate": 45,
+      "expYield": 214,
+      "level1Learnset": [
+        "TACKLE"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_HAUNTER",
+      "baseHP": 45,
+      "baseAttack": 50,
+      "baseDefense": 45,
+      "baseSpeed": 95,
+      "baseSpecial": 115,
+      "types": [
+        "GHOST",
+        "POISON"
+      ],
+      "catchRate": 90,
+      "expYield": 126,
+      "level1Learnset": [
+        "LICK",
+        "CONFUSE_RAY",
+        "NIGHT_SHADE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "RAGE",
+        "MEGA_DRAIN",
+        "THUNDERBOLT",
+        "THUNDER"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_HITMONCHAN",
+      "baseHP": 50,
+      "baseAttack": 105,
+      "baseDefense": 79,
+      "baseSpeed": 76,
+      "baseSpecial": 35,
+      "types": [
+        "FIGHTING",
+        "FIGHTING"
+      ],
+      "catchRate": 45,
+      "expYield": 140,
+      "level1Learnset": [
+        "COMET_PUNCH",
+        "AGILITY"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_HITMONLEE",
+      "baseHP": 50,
+      "baseAttack": 120,
+      "baseDefense": 53,
+      "baseSpeed": 87,
+      "baseSpecial": 35,
+      "types": [
+        "FIGHTING",
+        "FIGHTING"
+      ],
+      "catchRate": 45,
+      "expYield": 139,
+      "level1Learnset": [
+        "DOUBLE_KICK",
+        "MEDITATE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_HORSEA",
+      "baseHP": 30,
+      "baseAttack": 40,
+      "baseDefense": 70,
+      "baseSpeed": 60,
+      "baseSpecial": 70,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 225,
+      "expYield": 83,
+      "level1Learnset": [
+        "BUBBLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM",
+        "WATER_GUN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_HYPNO",
+      "baseHP": 85,
+      "baseAttack": 73,
+      "baseDefense": 70,
+      "baseSpeed": 67,
+      "baseSpecial": 115,
+      "types": [
+        "PSYCHIC",
+        "PSYCHIC"
+      ],
+      "catchRate": 75,
+      "expYield": 165,
+      "level1Learnset": [
+        "POUND",
+        "HYPNOSIS",
+        "DISABLE",
+        "CONFUSION"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_IVYSAUR",
+      "baseHP": 60,
+      "baseAttack": 62,
+      "baseDefense": 63,
+      "baseSpeed": 60,
+      "baseSpecial": 80,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 45,
+      "expYield": 141,
+      "level1Learnset": [
+        "TACKLE",
+        "GROWL",
+        "LEECH_SEED"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_JIGGLYPUFF",
+      "baseHP": 115,
+      "baseAttack": 45,
+      "baseDefense": 20,
+      "baseSpeed": 20,
+      "baseSpecial": 25,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 170,
+      "expYield": 76,
+      "level1Learnset": [
+        "SING"
+      ],
+      "growthRate": "GROWTH_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_JOLTEON",
+      "baseHP": 65,
+      "baseAttack": 65,
+      "baseDefense": 60,
+      "baseSpeed": 130,
+      "baseSpecial": 110,
+      "types": [
+        "ELECTRIC",
+        "ELECTRIC"
+      ],
+      "catchRate": 45,
+      "expYield": 197,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP",
+        "QUICK_ATTACK",
+        "THUNDERSHOCK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_JYNX",
+      "baseHP": 65,
+      "baseAttack": 50,
+      "baseDefense": 35,
+      "baseSpeed": 95,
+      "baseSpecial": 95,
+      "types": [
+        "ICE",
+        "PSYCHIC"
+      ],
+      "catchRate": 45,
+      "expYield": 137,
+      "level1Learnset": [
+        "POUND",
+        "LOVELY_KISS"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_KABUTO",
+      "baseHP": 30,
+      "baseAttack": 80,
+      "baseDefense": 90,
+      "baseSpeed": 55,
+      "baseSpecial": 45,
+      "types": [
+        "ROCK",
+        "WATER"
+      ],
+      "catchRate": 45,
+      "expYield": 119,
+      "level1Learnset": [
+        "SCRATCH",
+        "HARDEN"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_KABUTOPS",
+      "baseHP": 60,
+      "baseAttack": 115,
+      "baseDefense": 105,
+      "baseSpeed": 80,
+      "baseSpecial": 70,
+      "types": [
+        "ROCK",
+        "WATER"
+      ],
+      "catchRate": 45,
+      "expYield": 201,
+      "level1Learnset": [
+        "SCRATCH",
+        "HARDEN",
+        "ABSORB"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "SWORDS_DANCE",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_KADABRA",
+      "baseHP": 40,
+      "baseAttack": 35,
+      "baseDefense": 30,
+      "baseSpeed": 105,
+      "baseSpecial": 120,
+      "types": [
+        "PSYCHIC",
+        "PSYCHIC"
+      ],
+      "catchRate": 100,
+      "expYield": 145,
+      "level1Learnset": [
+        "TELEPORT",
+        "KINESIS"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_KAKUNA",
+      "baseHP": 45,
+      "baseAttack": 25,
+      "baseDefense": 50,
+      "baseSpeed": 35,
+      "baseSpecial": 25,
+      "types": [
+        "BUG",
+        "POISON"
+      ],
+      "catchRate": 120,
+      "expYield": 71,
+      "level1Learnset": [
+        "HARDEN"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST"
+    },
+    {
+      "sourceConstant": "SPECIES_KANGASKHAN",
+      "baseHP": 105,
+      "baseAttack": 95,
+      "baseDefense": 80,
+      "baseSpeed": 90,
+      "baseSpecial": 40,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 45,
+      "expYield": 175,
+      "level1Learnset": [
+        "COMET_PUNCH",
+        "RAGE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_KINGLER",
+      "baseHP": 55,
+      "baseAttack": 130,
+      "baseDefense": 115,
+      "baseSpeed": 75,
+      "baseSpecial": 50,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 60,
+      "expYield": 206,
+      "level1Learnset": [
+        "BUBBLE",
+        "LEER",
+        "VICEGRIP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_KOFFING",
+      "baseHP": 40,
+      "baseAttack": 65,
+      "baseDefense": 95,
+      "baseSpeed": 35,
+      "baseSpecial": 60,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 190,
+      "expYield": 114,
+      "level1Learnset": [
+        "TACKLE",
+        "SMOG"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "RAGE",
+        "THUNDERBOLT",
+        "THUNDER",
+        "MIMIC"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_KRABBY",
+      "baseHP": 30,
+      "baseAttack": 105,
+      "baseDefense": 90,
+      "baseSpeed": 50,
+      "baseSpecial": 25,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 225,
+      "expYield": 115,
+      "level1Learnset": [
+        "BUBBLE",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_LAPRAS",
+      "baseHP": 130,
+      "baseAttack": 85,
+      "baseDefense": 80,
+      "baseSpeed": 60,
+      "baseSpecial": 95,
+      "types": [
+        "WATER",
+        "ICE"
+      ],
+      "catchRate": 45,
+      "expYield": 219,
+      "level1Learnset": [
+        "WATER_GUN",
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_LICKITUNG",
+      "baseHP": 90,
+      "baseAttack": 55,
+      "baseDefense": 75,
+      "baseSpeed": 30,
+      "baseSpecial": 60,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 45,
+      "expYield": 127,
+      "level1Learnset": [
+        "WRAP",
+        "SUPERSONIC"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "SWORDS_DANCE",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MACHAMP",
+      "baseHP": 90,
+      "baseAttack": 130,
+      "baseDefense": 80,
+      "baseSpeed": 55,
+      "baseSpecial": 65,
+      "types": [
+        "FIGHTING",
+        "FIGHTING"
+      ],
+      "catchRate": 45,
+      "expYield": 193,
+      "level1Learnset": [
+        "KARATE_CHOP",
+        "LOW_KICK",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MACHOKE",
+      "baseHP": 80,
+      "baseAttack": 100,
+      "baseDefense": 70,
+      "baseSpeed": 45,
+      "baseSpecial": 50,
+      "types": [
+        "FIGHTING",
+        "FIGHTING"
+      ],
+      "catchRate": 90,
+      "expYield": 146,
+      "level1Learnset": [
+        "KARATE_CHOP",
+        "LOW_KICK",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MACHOP",
+      "baseHP": 70,
+      "baseAttack": 80,
+      "baseDefense": 50,
+      "baseSpeed": 35,
+      "baseSpecial": 35,
+      "types": [
+        "FIGHTING",
+        "FIGHTING"
+      ],
+      "catchRate": 180,
+      "expYield": 88,
+      "level1Learnset": [
+        "KARATE_CHOP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MAGIKARP",
+      "baseHP": 20,
+      "baseAttack": 10,
+      "baseDefense": 55,
+      "baseSpeed": 80,
+      "baseSpecial": 20,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 255,
+      "expYield": 20,
+      "level1Learnset": [
+        "SPLASH"
+      ],
+      "growthRate": "GROWTH_SLOW"
+    },
+    {
+      "sourceConstant": "SPECIES_MAGMAR",
+      "baseHP": 65,
+      "baseAttack": 95,
+      "baseDefense": 57,
+      "baseSpeed": 93,
+      "baseSpecial": 85,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 45,
+      "expYield": 167,
+      "level1Learnset": [
+        "EMBER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MAGNEMITE",
+      "baseHP": 25,
+      "baseAttack": 35,
+      "baseDefense": 70,
+      "baseSpeed": 45,
+      "baseSpecial": 95,
+      "types": [
+        "ELECTRIC",
+        "ELECTRIC"
+      ],
+      "catchRate": 190,
+      "expYield": 89,
+      "level1Learnset": [
+        "TACKLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE",
+        "THUNDERBOLT"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MAGNETON",
+      "baseHP": 50,
+      "baseAttack": 60,
+      "baseDefense": 95,
+      "baseSpeed": 70,
+      "baseSpecial": 120,
+      "types": [
+        "ELECTRIC",
+        "ELECTRIC"
+      ],
+      "catchRate": 60,
+      "expYield": 161,
+      "level1Learnset": [
+        "TACKLE",
+        "SONICBOOM",
+        "THUNDERSHOCK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MANKEY",
+      "baseHP": 40,
+      "baseAttack": 80,
+      "baseDefense": 35,
+      "baseSpeed": 70,
+      "baseSpecial": 35,
+      "types": [
+        "FIGHTING",
+        "FIGHTING"
+      ],
+      "catchRate": 190,
+      "expYield": 74,
+      "level1Learnset": [
+        "SCRATCH",
+        "LEER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MAROWAK",
+      "baseHP": 60,
+      "baseAttack": 80,
+      "baseDefense": 110,
+      "baseSpeed": 45,
+      "baseSpecial": 50,
+      "types": [
+        "GROUND",
+        "GROUND"
+      ],
+      "catchRate": 75,
+      "expYield": 124,
+      "level1Learnset": [
+        "BONE_CLUB",
+        "TAIL_WHIP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MEOWTH",
+      "baseHP": 40,
+      "baseAttack": 45,
+      "baseDefense": 35,
+      "baseSpeed": 90,
+      "baseSpecial": 40,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 255,
+      "expYield": 69,
+      "level1Learnset": [
+        "SCRATCH",
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_METAPOD",
+      "baseHP": 50,
+      "baseAttack": 20,
+      "baseDefense": 55,
+      "baseSpeed": 30,
+      "baseSpecial": 25,
+      "types": [
+        "BUG",
+        "BUG"
+      ],
+      "catchRate": 120,
+      "expYield": 72,
+      "level1Learnset": [
+        "HARDEN"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST"
+    },
+    {
+      "sourceConstant": "SPECIES_MEW",
+      "baseHP": 100,
+      "baseAttack": 100,
+      "baseDefense": 100,
+      "baseSpeed": 100,
+      "baseSpecial": 100,
+      "types": [
+        "PSYCHIC",
+        "PSYCHIC"
+      ],
+      "catchRate": 45,
+      "expYield": 64,
+      "level1Learnset": [
+        "POUND"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "RAZOR_WIND",
+        "SWORDS_DANCE",
+        "WHIRLWIND",
+        "MEGA_KICK"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MEWTWO",
+      "baseHP": 106,
+      "baseAttack": 110,
+      "baseDefense": 90,
+      "baseSpeed": 130,
+      "baseSpecial": 154,
+      "types": [
+        "PSYCHIC",
+        "PSYCHIC"
+      ],
+      "catchRate": 3,
+      "expYield": 220,
+      "level1Learnset": [
+        "CONFUSION",
+        "DISABLE",
+        "SWIFT",
+        "PSYCHIC_M"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MOLTRES",
+      "baseHP": 90,
+      "baseAttack": 100,
+      "baseDefense": 90,
+      "baseSpeed": 90,
+      "baseSpecial": 125,
+      "types": [
+        "FIRE",
+        "FLYING"
+      ],
+      "catchRate": 3,
+      "expYield": 217,
+      "level1Learnset": [
+        "PECK",
+        "FIRE_SPIN"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MR_MIME",
+      "baseHP": 40,
+      "baseAttack": 45,
+      "baseDefense": 65,
+      "baseSpeed": 90,
+      "baseSpecial": 100,
+      "types": [
+        "PSYCHIC",
+        "PSYCHIC"
+      ],
+      "catchRate": 45,
+      "expYield": 136,
+      "level1Learnset": [
+        "CONFUSION",
+        "BARRIER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_MUK",
+      "baseHP": 105,
+      "baseAttack": 105,
+      "baseDefense": 75,
+      "baseSpeed": 50,
+      "baseSpecial": 65,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 75,
+      "expYield": 157,
+      "level1Learnset": [
+        "POUND",
+        "DISABLE",
+        "POISON_GAS"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "HYPER_BEAM",
+        "RAGE",
+        "MEGA_DRAIN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_NIDOKING",
+      "baseHP": 81,
+      "baseAttack": 92,
+      "baseDefense": 77,
+      "baseSpeed": 85,
+      "baseSpecial": 75,
+      "types": [
+        "POISON",
+        "GROUND"
+      ],
+      "catchRate": 45,
+      "expYield": 195,
+      "level1Learnset": [
+        "TACKLE",
+        "HORN_ATTACK",
+        "POISON_STING",
+        "THRASH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_NIDOQUEEN",
+      "baseHP": 90,
+      "baseAttack": 82,
+      "baseDefense": 87,
+      "baseSpeed": 76,
+      "baseSpecial": 75,
+      "types": [
+        "POISON",
+        "GROUND"
+      ],
+      "catchRate": 45,
+      "expYield": 194,
+      "level1Learnset": [
+        "TACKLE",
+        "SCRATCH",
+        "TAIL_WHIP",
+        "BODY_SLAM"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_NIDORAN_F",
+      "baseHP": 55,
+      "baseAttack": 47,
+      "baseDefense": 52,
+      "baseSpeed": 41,
+      "baseSpecial": 40,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 235,
+      "expYield": 59,
+      "level1Learnset": [
+        "GROWL",
+        "TACKLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BLIZZARD"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_NIDORAN_M",
+      "baseHP": 46,
+      "baseAttack": 57,
+      "baseDefense": 40,
+      "baseSpeed": 50,
+      "baseSpecial": 40,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 235,
+      "expYield": 60,
+      "level1Learnset": [
+        "LEER",
+        "TACKLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_NIDORINA",
+      "baseHP": 70,
+      "baseAttack": 62,
+      "baseDefense": 67,
+      "baseSpeed": 56,
+      "baseSpecial": 55,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 120,
+      "expYield": 117,
+      "level1Learnset": [
+        "GROWL",
+        "TACKLE",
+        "SCRATCH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_NIDORINO",
+      "baseHP": 61,
+      "baseAttack": 72,
+      "baseDefense": 57,
+      "baseSpeed": 65,
+      "baseSpecial": 55,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 120,
+      "expYield": 118,
+      "level1Learnset": [
+        "LEER",
+        "TACKLE",
+        "HORN_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_NINETALES",
+      "baseHP": 73,
+      "baseAttack": 76,
+      "baseDefense": 75,
+      "baseSpeed": 100,
+      "baseSpecial": 100,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 75,
+      "expYield": 178,
+      "level1Learnset": [
+        "EMBER",
+        "TAIL_WHIP",
+        "QUICK_ATTACK",
+        "ROAR"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ODDISH",
+      "baseHP": 45,
+      "baseAttack": 50,
+      "baseDefense": 55,
+      "baseSpeed": 30,
+      "baseSpecial": 75,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 255,
+      "expYield": 78,
+      "level1Learnset": [
+        "ABSORB"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_OMANYTE",
+      "baseHP": 35,
+      "baseAttack": 40,
+      "baseDefense": 100,
+      "baseSpeed": 35,
+      "baseSpecial": 90,
+      "types": [
+        "ROCK",
+        "WATER"
+      ],
+      "catchRate": 45,
+      "expYield": 120,
+      "level1Learnset": [
+        "WATER_GUN",
+        "WITHDRAW"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_OMASTAR",
+      "baseHP": 70,
+      "baseAttack": 60,
+      "baseDefense": 125,
+      "baseSpeed": 55,
+      "baseSpecial": 115,
+      "types": [
+        "ROCK",
+        "WATER"
+      ],
+      "catchRate": 45,
+      "expYield": 199,
+      "level1Learnset": [
+        "WATER_GUN",
+        "WITHDRAW",
+        "HORN_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ONIX",
+      "baseHP": 35,
+      "baseAttack": 45,
+      "baseDefense": 160,
+      "baseSpeed": 70,
+      "baseSpecial": 30,
+      "types": [
+        "ROCK",
+        "GROUND"
+      ],
+      "catchRate": 45,
+      "expYield": 108,
+      "level1Learnset": [
+        "TACKLE",
+        "SCREECH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PARAS",
+      "baseHP": 35,
+      "baseAttack": 70,
+      "baseDefense": 55,
+      "baseSpeed": 25,
+      "baseSpecial": 55,
+      "types": [
+        "BUG",
+        "GRASS"
+      ],
+      "catchRate": 190,
+      "expYield": 70,
+      "level1Learnset": [
+        "SCRATCH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PARASECT",
+      "baseHP": 60,
+      "baseAttack": 95,
+      "baseDefense": 80,
+      "baseSpeed": 30,
+      "baseSpecial": 80,
+      "types": [
+        "BUG",
+        "GRASS"
+      ],
+      "catchRate": 75,
+      "expYield": 128,
+      "level1Learnset": [
+        "SCRATCH",
+        "STUN_SPORE",
+        "LEECH_LIFE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PERSIAN",
+      "baseHP": 65,
+      "baseAttack": 70,
+      "baseDefense": 60,
+      "baseSpeed": 115,
+      "baseSpecial": 65,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 90,
+      "expYield": 148,
+      "level1Learnset": [
+        "SCRATCH",
+        "GROWL",
+        "BITE",
+        "SCREECH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PIDGEOT",
+      "baseHP": 83,
+      "baseAttack": 80,
+      "baseDefense": 75,
+      "baseSpeed": 91,
+      "baseSpecial": 70,
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "catchRate": 45,
+      "expYield": 172,
+      "level1Learnset": [
+        "GUST",
+        "SAND_ATTACK",
+        "QUICK_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PIDGEOTTO",
+      "baseHP": 63,
+      "baseAttack": 60,
+      "baseDefense": 55,
+      "baseSpeed": 71,
+      "baseSpecial": 50,
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "catchRate": 120,
+      "expYield": 113,
+      "level1Learnset": [
+        "GUST",
+        "SAND_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PIDGEY",
+      "baseHP": 40,
+      "baseAttack": 45,
+      "baseDefense": 40,
+      "baseSpeed": 56,
+      "baseSpecial": 35,
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "catchRate": 255,
+      "expYield": 55,
+      "level1Learnset": [
+        "GUST"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PIKACHU",
+      "baseHP": 35,
+      "baseAttack": 55,
+      "baseDefense": 30,
+      "baseSpeed": 90,
+      "baseSpecial": 50,
+      "types": [
+        "ELECTRIC",
+        "ELECTRIC"
+      ],
+      "catchRate": 190,
+      "expYield": 82,
+      "level1Learnset": [
+        "THUNDERSHOCK",
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PINSIR",
+      "baseHP": 65,
+      "baseAttack": 125,
+      "baseDefense": 100,
+      "baseSpeed": 85,
+      "baseSpecial": 55,
+      "types": [
+        "BUG",
+        "BUG"
+      ],
+      "catchRate": 45,
+      "expYield": 200,
+      "level1Learnset": [
+        "VICEGRIP"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_POLIWAG",
+      "baseHP": 40,
+      "baseAttack": 50,
+      "baseDefense": 40,
+      "baseSpeed": 90,
+      "baseSpecial": 40,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 255,
+      "expYield": 77,
+      "level1Learnset": [
+        "BUBBLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_POLIWHIRL",
+      "baseHP": 65,
+      "baseAttack": 65,
+      "baseDefense": 65,
+      "baseSpeed": 90,
+      "baseSpecial": 50,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 120,
+      "expYield": 131,
+      "level1Learnset": [
+        "BUBBLE",
+        "HYPNOSIS",
+        "WATER_GUN"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_POLIWRATH",
+      "baseHP": 90,
+      "baseAttack": 85,
+      "baseDefense": 95,
+      "baseSpeed": 70,
+      "baseSpecial": 70,
+      "types": [
+        "WATER",
+        "FIGHTING"
+      ],
+      "catchRate": 45,
+      "expYield": 185,
+      "level1Learnset": [
+        "HYPNOSIS",
+        "WATER_GUN",
+        "DOUBLESLAP",
+        "BODY_SLAM"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PONYTA",
+      "baseHP": 50,
+      "baseAttack": 85,
+      "baseDefense": 55,
+      "baseSpeed": 90,
+      "baseSpecial": 65,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 190,
+      "expYield": 152,
+      "level1Learnset": [
+        "EMBER"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PORYGON",
+      "baseHP": 65,
+      "baseAttack": 60,
+      "baseDefense": 70,
+      "baseSpeed": 40,
+      "baseSpecial": 75,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 45,
+      "expYield": 130,
+      "level1Learnset": [
+        "TACKLE",
+        "SHARPEN",
+        "CONVERSION"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "ICE_BEAM",
+        "BLIZZARD"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PRIMEAPE",
+      "baseHP": 65,
+      "baseAttack": 105,
+      "baseDefense": 60,
+      "baseSpeed": 95,
+      "baseSpecial": 60,
+      "types": [
+        "FIGHTING",
+        "FIGHTING"
+      ],
+      "catchRate": 75,
+      "expYield": 149,
+      "level1Learnset": [
+        "SCRATCH",
+        "LEER",
+        "LOW_KICK",
+        "KARATE_CHOP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_PSYDUCK",
+      "baseHP": 50,
+      "baseAttack": 52,
+      "baseDefense": 48,
+      "baseSpeed": 55,
+      "baseSpecial": 50,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 190,
+      "expYield": 80,
+      "level1Learnset": [
+        "SCRATCH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_RAICHU",
+      "baseHP": 60,
+      "baseAttack": 90,
+      "baseDefense": 55,
+      "baseSpeed": 100,
+      "baseSpecial": 90,
+      "types": [
+        "ELECTRIC",
+        "ELECTRIC"
+      ],
+      "catchRate": 75,
+      "expYield": 122,
+      "level1Learnset": [
+        "THUNDERSHOCK",
+        "GROWL",
+        "THUNDER_WAVE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_RAPIDASH",
+      "baseHP": 65,
+      "baseAttack": 100,
+      "baseDefense": 70,
+      "baseSpeed": 105,
+      "baseSpecial": 80,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 60,
+      "expYield": 192,
+      "level1Learnset": [
+        "EMBER",
+        "TAIL_WHIP",
+        "STOMP",
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_RATICATE",
+      "baseHP": 55,
+      "baseAttack": 81,
+      "baseDefense": 60,
+      "baseSpeed": 97,
+      "baseSpecial": 50,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 90,
+      "expYield": 116,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP",
+        "QUICK_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_RATTATA",
+      "baseHP": 30,
+      "baseAttack": 56,
+      "baseDefense": 35,
+      "baseSpeed": 72,
+      "baseSpecial": 25,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 255,
+      "expYield": 57,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_RHYDON",
+      "baseHP": 105,
+      "baseAttack": 130,
+      "baseDefense": 120,
+      "baseSpeed": 40,
+      "baseSpecial": 45,
+      "types": [
+        "GROUND",
+        "ROCK"
+      ],
+      "catchRate": 60,
+      "expYield": 204,
+      "level1Learnset": [
+        "HORN_ATTACK",
+        "STOMP",
+        "TAIL_WHIP",
+        "FURY_ATTACK"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_RHYHORN",
+      "baseHP": 80,
+      "baseAttack": 85,
+      "baseDefense": 95,
+      "baseSpeed": 25,
+      "baseSpecial": 30,
+      "types": [
+        "GROUND",
+        "ROCK"
+      ],
+      "catchRate": 120,
+      "expYield": 135,
+      "level1Learnset": [
+        "HORN_ATTACK"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SANDSHREW",
+      "baseHP": 50,
+      "baseAttack": 75,
+      "baseDefense": 85,
+      "baseSpeed": 40,
+      "baseSpecial": 30,
+      "types": [
+        "GROUND",
+        "GROUND"
+      ],
+      "catchRate": 255,
+      "expYield": 93,
+      "level1Learnset": [
+        "SCRATCH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SANDSLASH",
+      "baseHP": 75,
+      "baseAttack": 100,
+      "baseDefense": 110,
+      "baseSpeed": 65,
+      "baseSpecial": 55,
+      "types": [
+        "GROUND",
+        "GROUND"
+      ],
+      "catchRate": 90,
+      "expYield": 163,
+      "level1Learnset": [
+        "SCRATCH",
+        "SAND_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SCYTHER",
+      "baseHP": 70,
+      "baseAttack": 110,
+      "baseDefense": 80,
+      "baseSpeed": 105,
+      "baseSpecial": 55,
+      "types": [
+        "BUG",
+        "FLYING"
+      ],
+      "catchRate": 45,
+      "expYield": 187,
+      "level1Learnset": [
+        "QUICK_ATTACK"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "HYPER_BEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SEADRA",
+      "baseHP": 55,
+      "baseAttack": 65,
+      "baseDefense": 95,
+      "baseSpeed": 85,
+      "baseSpecial": 95,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 75,
+      "expYield": 155,
+      "level1Learnset": [
+        "BUBBLE",
+        "SMOKESCREEN"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM",
+        "WATER_GUN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SEAKING",
+      "baseHP": 80,
+      "baseAttack": 92,
+      "baseDefense": 65,
+      "baseSpeed": 68,
+      "baseSpecial": 80,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 60,
+      "expYield": 170,
+      "level1Learnset": [
+        "PECK",
+        "TAIL_WHIP",
+        "SUPERSONIC"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SEEL",
+      "baseHP": 65,
+      "baseAttack": 45,
+      "baseDefense": 55,
+      "baseSpeed": 45,
+      "baseSpecial": 70,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 190,
+      "expYield": 100,
+      "level1Learnset": [
+        "HEADBUTT"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SHELLDER",
+      "baseHP": 30,
+      "baseAttack": 65,
+      "baseDefense": 100,
+      "baseSpeed": 40,
+      "baseSpecial": 45,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 190,
+      "expYield": 97,
+      "level1Learnset": [
+        "TACKLE",
+        "WITHDRAW"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM",
+        "WATER_GUN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SLOWBRO",
+      "baseHP": 95,
+      "baseAttack": 75,
+      "baseDefense": 110,
+      "baseSpeed": 30,
+      "baseSpecial": 80,
+      "types": [
+        "WATER",
+        "PSYCHIC"
+      ],
+      "catchRate": 75,
+      "expYield": 164,
+      "level1Learnset": [
+        "CONFUSION",
+        "DISABLE",
+        "HEADBUTT"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SLOWPOKE",
+      "baseHP": 90,
+      "baseAttack": 65,
+      "baseDefense": 65,
+      "baseSpeed": 15,
+      "baseSpecial": 40,
+      "types": [
+        "WATER",
+        "PSYCHIC"
+      ],
+      "catchRate": 190,
+      "expYield": 99,
+      "level1Learnset": [
+        "CONFUSION"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SNORLAX",
+      "baseHP": 160,
+      "baseAttack": 110,
+      "baseDefense": 65,
+      "baseSpeed": 30,
+      "baseSpecial": 65,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 25,
+      "expYield": 154,
+      "level1Learnset": [
+        "HEADBUTT",
+        "AMNESIA",
+        "REST"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SPEAROW",
+      "baseHP": 40,
+      "baseAttack": 60,
+      "baseDefense": 30,
+      "baseSpeed": 70,
+      "baseSpecial": 31,
+      "types": [
+        "NORMAL",
+        "FLYING"
+      ],
+      "catchRate": 255,
+      "expYield": 58,
+      "level1Learnset": [
+        "PECK",
+        "GROWL"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_SQUIRTLE",
+      "baseHP": 44,
+      "baseAttack": 48,
+      "baseDefense": 65,
+      "baseSpeed": 43,
+      "baseSpecial": 50,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 45,
+      "expYield": 66,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_STARMIE",
+      "baseHP": 60,
+      "baseAttack": 75,
+      "baseDefense": 85,
+      "baseSpeed": 115,
+      "baseSpecial": 100,
+      "types": [
+        "WATER",
+        "PSYCHIC"
+      ],
+      "catchRate": 60,
+      "expYield": 207,
+      "level1Learnset": [
+        "TACKLE",
+        "WATER_GUN",
+        "HARDEN"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM",
+        "WATER_GUN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_STARYU",
+      "baseHP": 30,
+      "baseAttack": 45,
+      "baseDefense": 55,
+      "baseSpeed": 85,
+      "baseSpecial": 70,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 225,
+      "expYield": 106,
+      "level1Learnset": [
+        "TACKLE"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM",
+        "WATER_GUN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_TANGELA",
+      "baseHP": 65,
+      "baseAttack": 55,
+      "baseDefense": 115,
+      "baseSpeed": 60,
+      "baseSpecial": 100,
+      "types": [
+        "GRASS",
+        "GRASS"
+      ],
+      "catchRate": 45,
+      "expYield": 166,
+      "level1Learnset": [
+        "CONSTRICT"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_TAUROS",
+      "baseHP": 75,
+      "baseAttack": 100,
+      "baseDefense": 95,
+      "baseSpeed": 110,
+      "baseSpecial": 70,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 45,
+      "expYield": 211,
+      "level1Learnset": [
+        "TACKLE"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "TOXIC",
+        "HORN_DRILL",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_TENTACOOL",
+      "baseHP": 40,
+      "baseAttack": 40,
+      "baseDefense": 35,
+      "baseSpeed": 70,
+      "baseSpecial": 100,
+      "types": [
+        "WATER",
+        "POISON"
+      ],
+      "catchRate": 190,
+      "expYield": 105,
+      "level1Learnset": [
+        "ACID"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_TENTACRUEL",
+      "baseHP": 80,
+      "baseAttack": 70,
+      "baseDefense": 65,
+      "baseSpeed": 100,
+      "baseSpecial": 120,
+      "types": [
+        "WATER",
+        "POISON"
+      ],
+      "catchRate": 60,
+      "expYield": 205,
+      "level1Learnset": [
+        "ACID",
+        "SUPERSONIC",
+        "WRAP"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_VAPOREON",
+      "baseHP": 130,
+      "baseAttack": 65,
+      "baseDefense": 60,
+      "baseSpeed": 65,
+      "baseSpecial": 110,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 45,
+      "expYield": 196,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP",
+        "QUICK_ATTACK",
+        "WATER_GUN"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "BUBBLEBEAM"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_VENOMOTH",
+      "baseHP": 70,
+      "baseAttack": 65,
+      "baseDefense": 60,
+      "baseSpeed": 90,
+      "baseSpecial": 90,
+      "types": [
+        "BUG",
+        "POISON"
+      ],
+      "catchRate": 75,
+      "expYield": 138,
+      "level1Learnset": [
+        "TACKLE",
+        "DISABLE",
+        "SUPERSONIC",
+        "CONFUSION"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_VENONAT",
+      "baseHP": 60,
+      "baseAttack": 55,
+      "baseDefense": 50,
+      "baseSpeed": 45,
+      "baseSpecial": 40,
+      "types": [
+        "BUG",
+        "POISON"
+      ],
+      "catchRate": 190,
+      "expYield": 75,
+      "level1Learnset": [
+        "TACKLE",
+        "DISABLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE",
+        "MEGA_DRAIN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_VENUSAUR",
+      "baseHP": 80,
+      "baseAttack": 82,
+      "baseDefense": 83,
+      "baseSpeed": 80,
+      "baseSpecial": 100,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 45,
+      "expYield": 208,
+      "level1Learnset": [
+        "TACKLE",
+        "GROWL",
+        "LEECH_SEED",
+        "VINE_WHIP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_VICTREEBEL",
+      "baseHP": 80,
+      "baseAttack": 105,
+      "baseDefense": 65,
+      "baseSpeed": 70,
+      "baseSpecial": 100,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 45,
+      "expYield": 191,
+      "level1Learnset": [
+        "SLEEP_POWDER",
+        "STUN_SPORE",
+        "ACID",
+        "RAZOR_LEAF"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_VILEPLUME",
+      "baseHP": 75,
+      "baseAttack": 80,
+      "baseDefense": 85,
+      "baseSpeed": 50,
+      "baseSpecial": 100,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 45,
+      "expYield": 184,
+      "level1Learnset": [
+        "STUN_SPORE",
+        "SLEEP_POWDER",
+        "ACID",
+        "PETAL_DANCE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_VOLTORB",
+      "baseHP": 40,
+      "baseAttack": 30,
+      "baseDefense": 50,
+      "baseSpeed": 100,
+      "baseSpecial": 55,
+      "types": [
+        "ELECTRIC",
+        "ELECTRIC"
+      ],
+      "catchRate": 190,
+      "expYield": 103,
+      "level1Learnset": [
+        "TACKLE",
+        "SCREECH"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "TAKE_DOWN",
+        "RAGE",
+        "THUNDERBOLT",
+        "THUNDER"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_VULPIX",
+      "baseHP": 38,
+      "baseAttack": 41,
+      "baseDefense": 40,
+      "baseSpeed": 65,
+      "baseSpecial": 65,
+      "types": [
+        "FIRE",
+        "FIRE"
+      ],
+      "catchRate": 190,
+      "expYield": 63,
+      "level1Learnset": [
+        "EMBER",
+        "TAIL_WHIP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_WARTORTLE",
+      "baseHP": 59,
+      "baseAttack": 63,
+      "baseDefense": 80,
+      "baseSpeed": 58,
+      "baseSpecial": 65,
+      "types": [
+        "WATER",
+        "WATER"
+      ],
+      "catchRate": 45,
+      "expYield": 143,
+      "level1Learnset": [
+        "TACKLE",
+        "TAIL_WHIP",
+        "BUBBLE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_WEEDLE",
+      "baseHP": 40,
+      "baseAttack": 35,
+      "baseDefense": 30,
+      "baseSpeed": 50,
+      "baseSpecial": 20,
+      "types": [
+        "BUG",
+        "POISON"
+      ],
+      "catchRate": 255,
+      "expYield": 52,
+      "level1Learnset": [
+        "POISON_STING",
+        "STRING_SHOT"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST"
+    },
+    {
+      "sourceConstant": "SPECIES_WEEPINBELL",
+      "baseHP": 65,
+      "baseAttack": 90,
+      "baseDefense": 50,
+      "baseSpeed": 55,
+      "baseSpecial": 85,
+      "types": [
+        "GRASS",
+        "POISON"
+      ],
+      "catchRate": 120,
+      "expYield": 151,
+      "level1Learnset": [
+        "VINE_WHIP",
+        "GROWTH",
+        "WRAP"
+      ],
+      "growthRate": "GROWTH_MEDIUM_SLOW",
+      "tmhmMoves": [
+        "SWORDS_DANCE",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE",
+        "RAGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_WEEZING",
+      "baseHP": 65,
+      "baseAttack": 90,
+      "baseDefense": 120,
+      "baseSpeed": 60,
+      "baseSpecial": 85,
+      "types": [
+        "POISON",
+        "POISON"
+      ],
+      "catchRate": 60,
+      "expYield": 173,
+      "level1Learnset": [
+        "TACKLE",
+        "SMOG",
+        "SLUDGE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "TOXIC",
+        "HYPER_BEAM",
+        "RAGE",
+        "THUNDERBOLT",
+        "THUNDER"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_WIGGLYTUFF",
+      "baseHP": 140,
+      "baseAttack": 70,
+      "baseDefense": 45,
+      "baseSpeed": 45,
+      "baseSpecial": 50,
+      "types": [
+        "NORMAL",
+        "NORMAL"
+      ],
+      "catchRate": 50,
+      "expYield": 109,
+      "level1Learnset": [
+        "SING",
+        "DISABLE",
+        "DEFENSE_CURL",
+        "DOUBLESLAP"
+      ],
+      "growthRate": "GROWTH_FAST",
+      "tmhmMoves": [
+        "MEGA_PUNCH",
+        "MEGA_KICK",
+        "TOXIC",
+        "BODY_SLAM",
+        "TAKE_DOWN"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ZAPDOS",
+      "baseHP": 90,
+      "baseAttack": 90,
+      "baseDefense": 85,
+      "baseSpeed": 100,
+      "baseSpecial": 125,
+      "types": [
+        "ELECTRIC",
+        "FLYING"
+      ],
+      "catchRate": 3,
+      "expYield": 216,
+      "level1Learnset": [
+        "THUNDERSHOCK",
+        "DRILL_PECK"
+      ],
+      "growthRate": "GROWTH_SLOW",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    },
+    {
+      "sourceConstant": "SPECIES_ZUBAT",
+      "baseHP": 40,
+      "baseAttack": 45,
+      "baseDefense": 35,
+      "baseSpeed": 55,
+      "baseSpecial": 40,
+      "types": [
+        "POISON",
+        "FLYING"
+      ],
+      "catchRate": 255,
+      "expYield": 54,
+      "level1Learnset": [
+        "LEECH_LIFE"
+      ],
+      "growthRate": "GROWTH_MEDIUM_FAST",
+      "tmhmMoves": [
+        "RAZOR_WIND",
+        "WHIRLWIND",
+        "TOXIC",
+        "TAKE_DOWN",
+        "DOUBLE_EDGE"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "source": "pokeruby (no per-species tutor table found)",
+  "sourceRepo": "pret/pokeruby",
+  "note": "No per-species tutor learnset table exists in pokeruby as searched (tutor mentions are UI/menu only). Recorded as none, not as a failed extraction.",
+  "speciesWithTutor": 0,
+  "totalTutorEntries": 0,
+  "unresolvedMoves": [],
+  "learnsets": {}
+}

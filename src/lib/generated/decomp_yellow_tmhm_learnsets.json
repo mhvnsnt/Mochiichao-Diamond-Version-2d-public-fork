@@ -1,0 +1,2473 @@
+{
+  "source": "pokeyellow/data/pokemon/base_stats/*.asm tmhm lines",
+  "sourceRepo": "pret/pokeyellow",
+  "speciesWithTMHM": 145,
+  "totalTMHMEntries": 725,
+  "learnsets": {
+    "SPECIES_ABRA": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_AERODACTYL": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_ALAKAZAM": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_ARBOK": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_ARCANINE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_ARTICUNO": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_BEEDRILL": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_BELLSPROUT": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_BLASTOISE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_BULBASAUR": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_BUTTERFREE": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_CHANSEY": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_CHARIZARD": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_CHARMANDER": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_CHARMELEON": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_CLEFABLE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_CLEFAIRY": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_CLOYSTER": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_WATER_GUN"
+      }
+    ],
+    "SPECIES_CUBONE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_DEWGONG": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_DIGLETT": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_DODRIO": [
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_DODUO": [
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_DRAGONAIR": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_DRAGONITE": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_DRATINI": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_DROWZEE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_DUGTRIO": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_EEVEE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_EKANS": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_ELECTABUZZ": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_ELECTRODE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_THUNDERBOLT"
+      }
+    ],
+    "SPECIES_EXEGGCUTE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_PSYCHIC_M"
+      }
+    ],
+    "SPECIES_EXEGGUTOR": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_FARFETCH_D": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_FEAROW": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_FLAREON": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_GASTLY": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_GENGAR": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_GEODUDE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_GLOOM": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_GOLBAT": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_GOLDEEN": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_GOLDUCK": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_GOLEM": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_GRAVELER": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_GRIMER": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "move": "MOVE_THUNDERBOLT"
+      }
+    ],
+    "SPECIES_GROWLITHE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_GYARADOS": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_HAUNTER": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_HITMONCHAN": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_HITMONLEE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_HORSEA": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_WATER_GUN"
+      }
+    ],
+    "SPECIES_HYPNO": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_IVYSAUR": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_JIGGLYPUFF": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_JOLTEON": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_JYNX": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_KABUTO": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_KABUTOPS": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_KADABRA": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_KANGASKHAN": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_KINGLER": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_KOFFING": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "move": "MOVE_THUNDER"
+      },
+      {
+        "move": "MOVE_MIMIC"
+      }
+    ],
+    "SPECIES_KRABBY": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_LAPRAS": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_LICKITUNG": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_MACHAMP": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MACHOKE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MACHOP": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MAGMAR": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MAGNEMITE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_THUNDERBOLT"
+      }
+    ],
+    "SPECIES_MAGNETON": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_MANKEY": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MAROWAK": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MEOWTH": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_MEW": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      }
+    ],
+    "SPECIES_MEWTWO": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MOLTRES": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_MR_MIME": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_MUK": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_MEGA_DRAIN"
+      }
+    ],
+    "SPECIES_NIDOKING": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_NIDOQUEEN": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_NIDORAN_F": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BLIZZARD"
+      }
+    ],
+    "SPECIES_NIDORAN_M": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_NIDORINA": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_NIDORINO": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_NINETALES": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_ODDISH": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_OMANYTE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_OMASTAR": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_ONIX": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_PARAS": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_PARASECT": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_PERSIAN": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_PIDGEOT": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_PIDGEOTTO": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_PIDGEY": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_PIKACHU": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_PINSIR": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_POLIWAG": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_POLIWHIRL": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_POLIWRATH": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_PONYTA": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_PORYGON": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_ICE_BEAM"
+      },
+      {
+        "move": "MOVE_BLIZZARD"
+      }
+    ],
+    "SPECIES_PRIMEAPE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_PSYDUCK": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_RAICHU": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_RAPIDASH": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_RATICATE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_RATTATA": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_RHYDON": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      }
+    ],
+    "SPECIES_RHYHORN": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_SANDSHREW": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_SANDSLASH": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_SCYTHER": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      }
+    ],
+    "SPECIES_SEADRA": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_WATER_GUN"
+      }
+    ],
+    "SPECIES_SEAKING": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_SEEL": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_SHELLDER": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_WATER_GUN"
+      }
+    ],
+    "SPECIES_SLOWBRO": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_SLOWPOKE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_SNORLAX": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_SPEAROW": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_SQUIRTLE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_STARMIE": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_WATER_GUN"
+      }
+    ],
+    "SPECIES_STARYU": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      },
+      {
+        "move": "MOVE_WATER_GUN"
+      }
+    ],
+    "SPECIES_TANGELA": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_TAUROS": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HORN_DRILL"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_TENTACOOL": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_TENTACRUEL": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_VAPOREON": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_BUBBLEBEAM"
+      }
+    ],
+    "SPECIES_VENOMOTH": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_VENONAT": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_MEGA_DRAIN"
+      }
+    ],
+    "SPECIES_VENUSAUR": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_VICTREEBEL": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_VILEPLUME": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_VOLTORB": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_VULPIX": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_WARTORTLE": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_WEEPINBELL": [
+      {
+        "move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "move": "MOVE_RAGE"
+      }
+    ],
+    "SPECIES_WEEZING": [
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_HYPER_BEAM"
+      },
+      {
+        "move": "MOVE_RAGE"
+      },
+      {
+        "move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "move": "MOVE_THUNDER"
+      }
+    ],
+    "SPECIES_WIGGLYTUFF": [
+      {
+        "move": "MOVE_MEGA_PUNCH"
+      },
+      {
+        "move": "MOVE_MEGA_KICK"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_BODY_SLAM"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      }
+    ],
+    "SPECIES_ZAPDOS": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "SPECIES_ZUBAT": [
+      {
+        "move": "MOVE_RAZOR_WIND"
+      },
+      {
+        "move": "MOVE_WHIRLWIND"
+      },
+      {
+        "move": "MOVE_TOXIC"
+      },
+      {
+        "move": "MOVE_TAKE_DOWN"
+      },
+      {
+        "move": "MOVE_DOUBLE_EDGE"
+      }
+    ]
+  }
+}
