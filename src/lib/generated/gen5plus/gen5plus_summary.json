@@ -1,0 +1,17 @@
+{
+  "source": "PokeAPI/pokeapi data/v2/csv (BSD-3-Clause code; data/trademarks separate)",
+  "scope": "pokemon_species generation_id >= 5 (Gen 5-9)",
+  "species_in_scope": 532,
+  "species_extracted": 532,
+  "species_with_default_pokemon": 532,
+  "unresolved_species": [],
+  "moves_in_moves_csv_total": 937,
+  "moves_introduced_gen5plus": 452,
+  "moves_referenced_by_gen5plus_level_learnsets": 714,
+  "moves_output_union": 871,
+  "learnset_species_with_level_moves": 532,
+  "learnset_level_entries_deduplicated": 8541,
+  "unresolved_learnset_move_ids": [],
+  "evolutions_gen5plus": 380,
+  "unresolved_evolutions": []
+}
