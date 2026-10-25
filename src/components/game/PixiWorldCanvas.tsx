@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Application, Container, Graphics, Sprite } from 'pixi.js';
+import { Application, Container, Graphics, Sprite, Text } from 'pixi.js';
 import { getSheetDef } from '../../lib/spriteSheets';
 import { fallbackColorFor } from '../../lib/spriteSheets';
 import { playerSlot, slotForNpc } from '../../lib/humanSheets';
@@ -137,6 +137,32 @@ export default function PixiWorldCanvas({
     });
     const g = new Graphics();
     world.addChild(g);
+
+    // v5.1 door labels: the v5 playtest never saw which building
+    // was the lab before entering it — the interact prompt only
+    // shows while facing an adjacent door tile, and walking up
+    // steps straight onto the door, so it is easy to miss. A
+    // persistent label drawn in the world itself (same camera
+    // transform as the tiles, so it sits above its door tile)
+    // identifies the building before entry. Walk-into entry is
+    // unchanged. Labels are recreated each draw like the tile
+    // graphics (draw() clears non-sprite children each frame).
+    (mapData.doors || []).forEach((door: any) => {
+      if (!door.label) return;
+      const label = new Text({
+        text: door.label,
+        style: {
+          fontFamily: 'Arial, sans-serif',
+          fontSize: Math.max(12, tile * 0.32),
+          fontWeight: 'bold',
+          fill: 0xffffff,
+          stroke: { color: 0x000000, width: 4 },
+        },
+      });
+      label.anchor.set(0.5, 1);
+      label.position.set((door.x + 0.5) * tile, door.y * tile - 2);
+      world.addChild(label);
+    });
 
     for (let y = 0; y < mapH; y++) {
       for (let x = 0; x < mapW; x++) {
