@@ -42,13 +42,24 @@ export interface GameSettings {
   buttonMode: ButtonMode;
   /** 1-20. */
   frame: number;
-  /** Font ids from src/lib/fonts.ts, independent placements (Mars
-   *  font-role update, 2026-10-25): MAIN FONT = titles, menus,
-   *  headings, UI labels; DIALOGUE FONT = dialogue boxes, NPC talk,
-   *  battle text, body text. Defaults: MAIN = Yagiza, DIALOGUE =
-   *  01 Digitall. Never a Pokemon font file. */
+  /** Font ids from src/lib/fonts.ts, six independent placements
+   *  (Mars font correction, 2026-10-25 18:22/18:30 CDT, overrides
+   *  the 2-row version): MAIN = titles/menus/headings/UI labels
+   *  (true starting default Yagiza); MENU = menu selection row text
+   *  (separate row, also Yagiza); DIALOGUE = dialogue boxes/NPC
+   *  talk/body text (01 Digitall); SMALL = small text, Pokemon
+   *  FONT_SMALL slot (01 Digitall); BOLD = bold headings/action
+   *  buttons, FONT_BOLD slot (Yagiza); BATTLE = battle log/HUD
+   *  (01 Digitall). Every row cycles the full font list
+   *  independently. DIAMOND VERSION subtitle font is PINNED (see
+   *  PINNED_SUBTITLE_FONT in fonts.ts) — no font row touches it.
+   *  Never a Pokemon font file. */
   mainFont: string;
+  menuFont: string;
   dialogueFont: string;
+  smallFont: string;
+  boldFont: string;
+  battleFont: string;
   /** Cursor shape id, see CURSOR_SHAPES in SettingsScreen. */
   cursorShape: string;
   cursorColor: string;
@@ -63,7 +74,11 @@ export const DEFAULT_SETTINGS: GameSettings = {
   buttonMode: 'NORMAL',
   frame: 1,
   mainFont: 'yagiza',
+  menuFont: 'yagiza',
   dialogueFont: '01-digitall',
+  smallFont: '01-digitall',
+  boldFont: 'yagiza',
+  battleFont: '01-digitall',
   cursorShape: 'ARROW',
   cursorColor: '#fbbf24',
   cursorGlow: true,
@@ -193,7 +208,7 @@ export const LOCKED_PRESET: MenuPreset = {
  *  default, and it never uses a Pokemon font file. */
 export const ORIGINAL_DEFAULTS_PRESET: MenuPreset = {
   name: 'Original Defaults (open fonts)',
-  settings: { ...DEFAULT_SETTINGS, mainFont: 'bungee', dialogueFont: 'fredoka' },
+  settings: { ...DEFAULT_SETTINGS, mainFont: 'bungee', menuFont: 'titan-one', dialogueFont: 'fredoka', smallFont: 'fredoka', boldFont: 'bungee', battleFont: 'fredoka' },
   logoImage: 'OFFICIAL',
   logoSize: 900,
   panelRadius: 14,
