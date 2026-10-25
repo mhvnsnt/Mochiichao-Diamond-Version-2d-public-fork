@@ -1,0 +1,3141 @@
+{
+  "source": "pokefirered-leafgreen/src/data/pokemon/tutor_learnsets.h",
+  "sourceRepo": "pret/pokefirered",
+  "speciesWithTutor": 372,
+  "totalTutorEntries": 2388,
+  "unresolvedMoves": [],
+  "learnsets": {
+    "SPECIES_BULBASAUR": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_IVYSAUR": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VENUSAUR": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CHARMANDER": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CHARMELEON": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CHARIZARD": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SQUIRTLE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WARTORTLE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BLASTOISE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BUTTERFREE": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BEEDRILL": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PIDGEY": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PIDGEOTTO": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PIDGEOT": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RATTATA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RATICATE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SPEAROW": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FEAROW": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_EKANS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ARBOK": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PIKACHU": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RAICHU": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SANDSHREW": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SANDSLASH": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NIDORAN_F": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NIDORINA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NIDOQUEEN": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NIDORAN_M": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NIDORINO": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NIDOKING": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CLEFAIRY": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SOFT_BOILED",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CLEFABLE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SOFT_BOILED",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VULPIX": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NINETALES": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_JIGGLYPUFF": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WIGGLYTUFF": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ZUBAT": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GOLBAT": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ODDISH": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GLOOM": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VILEPLUME": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PARAS": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PARASECT": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VENONAT": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VENOMOTH": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DIGLETT": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DUGTRIO": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MEOWTH": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PERSIAN": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PSYDUCK": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GOLDUCK": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MANKEY": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PRIMEAPE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GROWLITHE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ARCANINE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_POLIWAG": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_POLIWHIRL": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_POLIWRATH": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ABRA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KADABRA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ALAKAZAM": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MACHOP": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MACHOKE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MACHAMP": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BELLSPROUT": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WEEPINBELL": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VICTREEBEL": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TENTACOOL": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TENTACRUEL": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GEODUDE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GRAVELER": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GOLEM": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PONYTA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RAPIDASH": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SLOWPOKE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SLOWBRO": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAGNEMITE": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAGNETON": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FARFETCHD": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DODUO": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DODRIO": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SEEL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DEWGONG": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GRIMER": [
+      "MOVE_BODY_SLAM",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MUK": [
+      "MOVE_BODY_SLAM",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SHELLDER": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CLOYSTER": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GASTLY": [
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HAUNTER": [
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GENGAR": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ONIX": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DROWZEE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HYPNO": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KRABBY": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KINGLER": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VOLTORB": [
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ELECTRODE": [
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_EXEGGCUTE": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_EXEGGUTOR": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CUBONE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAROWAK": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HITMONLEE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HITMONCHAN": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LICKITUNG": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KOFFING": [
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WEEZING": [
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RHYHORN": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RHYDON": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CHANSEY": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SOFT_BOILED",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TANGELA": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KANGASKHAN": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HORSEA": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SEADRA": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GOLDEEN": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SEAKING": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_STARYU": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_STARMIE": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MR_MIME": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SCYTHER": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_JYNX": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ELECTABUZZ": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAGMAR": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PINSIR": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TAUROS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GYARADOS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LAPRAS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_EEVEE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VAPOREON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_JOLTEON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FLAREON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PORYGON": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_OMANYTE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_OMASTAR": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KABUTO": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KABUTOPS": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_AERODACTYL": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SNORLAX": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ARTICUNO": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ZAPDOS": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MOLTRES": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DRATINI": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DRAGONAIR": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DRAGONITE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MEWTWO": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MEW": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SOFT_BOILED",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CHIKORITA": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BAYLEEF": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MEGANIUM": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CYNDAQUIL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_QUILAVA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TYPHLOSION": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TOTODILE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CROCONAW": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FERALIGATR": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SENTRET": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FURRET": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HOOTHOOT": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NOCTOWL": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LEDYBA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LEDIAN": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SPINARAK": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ARIADOS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CROBAT": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CHINCHOU": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LANTURN": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PICHU": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CLEFFA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SOFT_BOILED",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_IGGLYBUFF": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TOGEPI": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SOFT_BOILED",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TOGETIC": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SOFT_BOILED",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NATU": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_XATU": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAREEP": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FLAAFFY": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_AMPHAROS": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BELLOSSOM": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MARILL": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_AZUMARILL": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SUDOWOODO": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_POLITOED": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HOPPIP": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SKIPLOOM": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_JUMPLUFF": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_AIPOM": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SUNKERN": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SUNFLORA": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_YANMA": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WOOPER": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_QUAGSIRE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ESPEON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_UMBREON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MURKROW": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SLOWKING": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MISDREAVUS": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GIRAFARIG": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PINECO": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FORRETRESS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DUNSPARCE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GLIGAR": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_STEELIX": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SNUBBULL": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GRANBULL": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_QWILFISH": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SCIZOR": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SHUCKLE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HERACROSS": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SNEASEL": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TEDDIURSA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_URSARING": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SLUGMA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAGCARGO": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SWINUB": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PILOSWINE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CORSOLA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_REMORAID": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_OCTILLERY": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DELIBIRD": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MANTINE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SKARMORY": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HOUNDOUR": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HOUNDOOM": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KINGDRA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PHANPY": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DONPHAN": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PORYGON2": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_STANTLER": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TYROGUE": [
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HITMONTOP": [
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SMOOCHUM": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ELEKID": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAGBY": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MILTANK": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BLISSEY": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SOFT_BOILED",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RAIKOU": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ENTEI": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SUICUNE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LARVITAR": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PUPITAR": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TYRANITAR": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LUGIA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HO_OH": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CELEBI": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TREECKO": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GROVYLE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SCEPTILE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TORCHIC": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_COMBUSKEN": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BLAZIKEN": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MUDKIP": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MARSHTOMP": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SWAMPERT": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_POOCHYENA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MIGHTYENA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ZIGZAGOON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LINOONE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BEAUTIFLY": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DUSTOX": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LOTAD": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LOMBRE": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LUDICOLO": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SEEDOT": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NUZLEAF": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SHIFTRY": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NINCADA": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NINJASK": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SHEDINJA": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TAILLOW": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SWELLOW": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SHROOMISH": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BRELOOM": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SPINDA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WINGULL": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PELIPPER": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SURSKIT": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MASQUERAIN": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WAILMER": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WAILORD": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SKITTY": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DELCATTY": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KECLEON": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BALTOY": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CLAYDOL": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NOSEPASS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TORKOAL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SABLEYE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BARBOACH": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WHISCASH": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LUVDISC": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CORPHISH": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CRAWDAUNT": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FEEBAS": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MILOTIC": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CARVANHA": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SHARPEDO": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TRAPINCH": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VIBRAVA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_FLYGON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAKUHITA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HARIYAMA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ELECTRIKE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MANECTRIC": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_NUMEL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CAMERUPT": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SPHEAL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SEALEO": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WALREIN": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CACNEA": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CACTURNE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SNORUNT": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GLALIE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LUNATONE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SOLROCK": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_AZURILL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SPOINK": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GRUMPIG": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_PLUSLE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MINUN": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MAWILE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MEDITITE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_MEDICHAM": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SWABLU": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ALTARIA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DUSKULL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DUSCLOPS": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ROSELIA": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SLAKOTH": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VIGOROTH": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SLAKING": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GULPIN": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SWALOT": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_EXPLOSION",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_TROPIUS": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_WHISMUR": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LOUDRED": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_EXPLOUD": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CLAMPERL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_HUNTAIL": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GOREBYSS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ABSOL": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SHUPPET": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BANETTE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SEVIPER": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ZANGOOSE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RELICANTH": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ARON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LAIRON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_AGGRON": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CASTFORM": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_VOLBEAT": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ILLUMISE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LILEEP": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CRADILY": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ANORITH": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_ARMALDO": [
+      "MOVE_SWORDS_DANCE",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RALTS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KIRLIA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GARDEVOIR": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_BAGON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SHELGON": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_SALAMENCE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_METANG": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_METAGROSS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_REGIROCK": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_REGICE": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_REGISTEEL": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_EXPLOSION",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_KYOGRE": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_GROUDON": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_RAYQUAZA": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LATIAS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_LATIOS": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_JIRACHI": [
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_METRONOME",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_DEOXYS": [
+      "MOVE_MEGA_PUNCH",
+      "MOVE_MEGA_KICK",
+      "MOVE_BODY_SLAM",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_COUNTER",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SUBSTITUTE"
+    ],
+    "SPECIES_CHIMECHO": [
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_MIMIC",
+      "MOVE_DREAM_EATER",
+      "MOVE_SUBSTITUTE"
+    ]
+  }
+}
