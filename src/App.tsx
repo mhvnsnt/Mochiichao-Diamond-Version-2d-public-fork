@@ -48,11 +48,13 @@ export default function App() {
       {view === 'CREATURE' && <CreatureModeView onBack={() => setView('WORLD')} />}
       {view === 'CHEATS' && <CheatConsoleView onBack={() => setView('WORLD')} />}
 
-      {/* MochiiMind toggle — a game button, not an emoji floating over the frame. */}
+      {/* MochiiMind toggle — v4: moved below the HUD (top 4.5rem) so it
+          no longer overlaps the WorldEngine A/B cluster at bottom-right,
+          which was partially clipped in the live playtest. */}
       <button
         onClick={() => setIsMindOpen(!isMindOpen)}
-        className="game-button fixed bottom-4 right-4 z-[100] px-3 py-2 text-sm font-bold"
-        style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+        className="game-button fixed right-4 z-[100] px-3 py-2 text-sm font-bold"
+        style={{ top: '4.5rem' }}
         title="Open MochiiMind"
       >
         MochiiMind
