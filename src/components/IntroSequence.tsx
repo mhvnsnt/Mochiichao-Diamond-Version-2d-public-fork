@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useGameStore } from "../store/gameStore";
 import { getSlotSummaries, getSaves, loadGame } from "../lib/saveSystem";
+import { UiPanel } from "./game/UiArt";
+import { UI_ART } from "../lib/uiArt";
+import HumanPortrait from "./game/HumanPortrait";
+import { playerSlot } from "../lib/humanSheets";
 
 interface IntroSequenceProps {
   onComplete: () => void;
@@ -51,7 +55,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   if (phase === "CINEMATIC") {
     return (
-      <div className="w-screen h-screen bg-black flex flex-col items-center justify-center font-mono cursor-pointer selection:bg-none">
+      <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none">
         <div className="text-white text-md tracking-[0.3em] mb-12 animate-pulse text-center">
           MOCHII STUDIOS<br/><br/>
           MOCHIICHAO<br/>DIAMOND VERSION
@@ -68,12 +72,13 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   if (phase === "TITLE") {
     return (
-      <div className="w-screen h-screen bg-[#050810] flex flex-col items-center justify-center font-mono relative overflow-hidden cursor-pointer">
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden cursor-pointer">
         <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
         <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
         
-        <div className="text-6xl text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] z-10 mb-8 filter">
-          🧑‍🚀
+        <div className="z-10 mb-8 flex flex-col items-center">
+          <div className="w-16 h-16 rounded-full bg-[#e8b890] border-4 border-slate-700" />
+          <div className="w-20 h-24 rounded-t-full bg-teal-700 border-2 border-teal-300 -mt-1" />
         </div>
 
         <div className="text-center z-10">
@@ -96,8 +101,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     const hasSaves = slots.some(s => s !== null);
 
     return (
-      <div className="w-screen h-screen bg-[#050810] flex flex-col items-center justify-center font-mono">
-        <div className="bg-black/80 border-2 border-teal-500 rounded p-8 flex flex-col gap-6 shadow-[0_0_30px_rgba(0,255,255,0.2)]">
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center">
+        <UiPanel slot={UI_ART.main_menu_panel} className="p-8 flex flex-col gap-6">
           <div className="text-teal-300 font-bold tracking-widest text-center text-lg mb-4">✦ MOCHIICHAO DIAMOND ✦</div>
           
           <button 
@@ -115,17 +120,17 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             <span className="w-8 opacity-0 group-hover:opacity-100 transition-opacity">►</span> NEW GAME
           </button>
 
-          <button className="text-left text-xl font-bold tracking-widest flex items-center group transition-colors text-gray-500 cursor-not-allowed">
-            <span className="w-8 opacity-0">►</span> OPTIONS
+          <button className="text-left text-xl font-bold tracking-widest flex items-center group transition-colors text-gray-500 cursor-not-allowed" disabled>
+            <span className="w-8 opacity-0">►</span> SETTINGS <span className="text-xs text-gray-600 ml-2">COMING SOON</span>
           </button>
-        </div>
+        </UiPanel>
       </div>
     );
   }
 
   if (phase === "SAVE_SLOTS") {
     return (
-      <div className="w-screen h-screen bg-[#050810] flex flex-col items-center justify-center font-mono">
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center">
         <h2 className="text-teal-300 text-xl font-bold tracking-widest mb-8">SELECT A SAVE FILE</h2>
         <div className="flex flex-col gap-4 w-full max-w-lg">
           {[1,2,3].map(slot => {
@@ -178,8 +183,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     const text = phase === "PROF_INTRO_1" ? text1 : text2;
 
     return (
-      <div className="w-screen h-screen bg-black flex flex-col items-center justify-center font-mono cursor-pointer" onClick={() => phase === "PROF_INTRO_1" ? setPhase("GENDER_SELECT") : onComplete()}>
-        <div className="text-8xl mb-8">🔬</div>
+      <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer" onClick={() => phase === "PROF_INTRO_1" ? setPhase("GENDER_SELECT") : onComplete()}>
+        <div className="mb-8 flex flex-col items-center"><div className="w-16 h-16 rounded-full bg-[#e8b890] border-4 border-slate-700" /><div className="w-20 h-24 rounded-t-full bg-slate-200 border-2 border-slate-400 -mt-1" /></div>
         <div className="w-full max-w-2xl bg-white border-[6px] border-gray-400 rounded p-6 shadow-xl relative mt-16 min-h-[160px]">
           <div className="text-gray-800 text-xl font-bold tracking-wide leading-relaxed">
              {text}
@@ -193,15 +198,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   if (phase === "GENDER_SELECT") {
     return (
-      <div className="w-screen h-screen bg-black flex flex-col items-center justify-center font-mono">
+      <div className="game-screen bg-black flex flex-col items-center justify-center">
         <h2 className="text-white text-2xl font-bold tracking-widest mb-16">ARE YOU A BOY OR A GIRL?</h2>
         <div className="flex gap-16">
            <button onClick={() => { setGender("boy"); setPhase("NAME_ENTRY"); }} className="group flex flex-col items-center transition-transform hover:scale-110">
-              <div className="text-6xl mb-4 grayscale group-hover:grayscale-0">🧑</div>
+              <HumanPortrait slot={playerSlot('boy')} view="front" size={72} />
               <div className="text-gray-400 group-hover:text-teal-400 font-bold tracking-widest">BOY</div>
            </button>
            <button onClick={() => { setGender("girl"); setPhase("NAME_ENTRY"); }} className="group flex flex-col items-center transition-transform hover:scale-110">
-              <div className="text-6xl mb-4 grayscale group-hover:grayscale-0">👧</div>
+              <HumanPortrait slot={playerSlot('girl')} view="front" size={72} />
               <div className="text-gray-400 group-hover:text-pink-400 font-bold tracking-widest">GIRL</div>
            </button>
         </div>
@@ -213,11 +218,11 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split("");
     
     return (
-      <div className="w-screen h-screen bg-black flex flex-col items-center justify-center font-mono p-4">
+      <div className="game-screen bg-black flex flex-col items-center justify-center p-4">
         <div className="text-white text-xl font-bold tracking-widest mb-8">WHAT IS YOUR NAME?</div>
         
         <div className="flex gap-8 mb-12 items-end">
-           <div className="text-6xl">{gender==="boy" ? "🧑" : "👧"}</div>
+           <HumanPortrait slot={playerSlot(gender)} view="front" size={72} />
            <div className="flex bg-gray-900 border-2 border-gray-500 rounded p-4 min-w-[300px]">
               <div className="text-white text-3xl font-bold tracking-widest h-10 w-full text-center border-b-2 border-dashed border-gray-400">
                 {tempName}
