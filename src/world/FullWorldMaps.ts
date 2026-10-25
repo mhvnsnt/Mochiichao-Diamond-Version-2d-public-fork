@@ -92,7 +92,12 @@ export const AEON_LAB: any = {
   npcs: [
     { id:"prof_aeon", x:6, y:4, sprite:"🔬", name:"Prof. Aeon", facing:"down", dialog:["Welcome! I'm glad you could make it.","These five Mochiichao are ready for a partner.","Go ahead, pick one!"] },
     { id:"asst_mochiko", x:9, y:4, sprite:"👩‍🔬", name:"Assistant Mochiko", facing:"down", dialog:["I'm Professor Aeon's assistant, Mochiko!","He's been waiting for you to choose your first partner."] },
-    { id:"hex_lab_battle", x:4, y:8, sprite:"😤", name:"Hex", facing:"right", dialog:["Let's see what that thing can do!","I'm not holding back!"], battle:{ team:[{id:"004",name:"Razorgater",hp:45,maxHp:45,atk:60,def:40,spd:55,moves:["Metal Claw","Tackle"],type:"Steel", level:5}], reward:100, badge:null } },
+    // v4: in-lab Hex is dialogue-only. The FIRST battle is the
+    // lab-exit event (hex_battle_event, dynamic team, rival name),
+    // not this NPC — keeping both would give three Hex battles
+    // (lab NPC + exit event + Boot Harbor rival) and the lab NPC's
+    // fixed Razorgater contradicted the player's pick.
+    { id:"hex_lab_battle", x:4, y:8, sprite:"😤", name:"Hex", facing:"right", dialog:["I already have my starter. I will be waiting at the door when you leave — do not keep me waiting."] },
     { id:"starter_mochii", x:2, y:6, sprite:"🔵", name:"Mochii Ball", facing:"down", dialog:["Mochii! (A bouncy water-type)","Are you sure you want to choose Mochii?", ""], isChoice: true, eventId: "pick_starter_001" },
     { id:"starter_razorgater", x:4, y:6, sprite:"🐊", name:"Razorgater Ball", facing:"down", dialog:["Razorgater! (A strong, metallic crocodile)","Are you sure you want to choose Razorgater?", ""], isChoice: true, eventId: "pick_starter_004" },
     { id:"starter_tyrage", x:6, y:6, sprite:"🪨", name:"Tyrage Ball", facing:"down", dialog:["Tyrage! (An earthy dinosaur)","Are you sure you want to choose Tyrage?", ""], isChoice: true, eventId: "pick_starter_007" },
