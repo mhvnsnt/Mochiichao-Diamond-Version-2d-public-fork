@@ -187,3 +187,6 @@ Still not canon draft: starter evolutions 002/003/005/006/008/009
   Remaining open items (unchanged): starter evolutions
   002/003/005/006/008/009 (naming set), 047–146 gap (no designs),
   Megalochrome ripple as a separate effect, Blender bake v2.
+
+## Starter evolutions — OFFICIAL ART FOR NOW (2026-10-25, Mars)
+Mars, replying to the 6 starter-evolution main sheets (2026-10-25 ~16:33 CDT): "Yeah those are really good save all of those to the repo as the official art for those characters for now until I say otherwise." So Tiidebiite #002, AquariiOS #003, Chromejaww #005, Reaperdile #006, Duneclaw #008, Oblivirex #009 are OFFICIAL ART FOR NOW under their roster names, until Mars says otherwise. The naming-set question is NOT closed by this — these are official under current roster names for now; if Mars later picks another naming set, names change then. Each creature has a full 3-sheet set in src/assets/sprites-2d/<creature>/ (main.webp / angles-top-diagonal.webp / angles-lighting.webp), parent-verified by eye before presentation.
