@@ -3,6 +3,8 @@ import HumanPortrait from './HumanPortrait';
 import StdWindow from './StdWindow';
 import { useGameStore } from '../../store/gameStore';
 import { TEXT_SPEED_MS } from '../../lib/gameSettings';
+import { messageWindowStyle } from '../../lib/hudCustom';
+import type { MessageWindowStyle } from '../../lib/hudCustom';
 import type { HumanSlot } from '../../lib/humanSheets';
 
 /**
@@ -75,6 +77,9 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
   // MID 18ms is the pre-existing interval, kept exactly.
   const textSpeed = useGameStore(s => s.settings.textSpeed);
   const typeInterval = TEXT_SPEED_MS[textSpeed] ?? 18;
+  // Batch A: message window style + border opacity / shadow rows.
+  const hudSettings = useGameStore(s => s.settings);
+  const msgStyle = messageWindowStyle(hudSettings.hudMessageStyle as MessageWindowStyle, hudSettings.panelOpacity || 100);
   const page = pages[Math.min(pageIdx, pages.length - 1)];
   const typingDone = shown >= page.length;
   const isLast = pageIdx >= pages.length - 1;
@@ -140,6 +145,10 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
         padding: '16px', cursor: 'pointer',
         bottom: 'max(1rem, env(safe-area-inset-bottom))',
+        ...msgStyle,
+        boxShadow: hudSettings.panelShadow
+          ? '0 10px 30px rgba(0,0,0,0.65)'
+          : msgStyle.boxShadow,
       }}
       onClick={advance}
     >
