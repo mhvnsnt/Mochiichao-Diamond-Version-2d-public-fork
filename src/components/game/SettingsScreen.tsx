@@ -8,7 +8,13 @@ import {
 } from '../../lib/gameSettings';
 import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
-import StartScreenCreator from './StartScreenCreator';
+import {
+  HEALTHBAR_STYLES, BATTLE_HUD_LAYOUTS, MOVE_BUTTON_LAYOUTS, PP_TYPE_DISPLAYS,
+  MESSAGE_WINDOW_STYLES, DAMAGE_NUMBER_STYLES, CURSOR_BLINK_SPEEDS, MENU_KEYS,
+  menuFrameAccent, cursorBlinkDuration, cursorGlyphSize,
+  type HealthbarStyle, type BattleHudLayout, type MoveButtonLayout, type PpTypeDisplay,
+  type MessageWindowStyle, type DamageNumberStyle, type CursorBlinkSpeed, type MenuKey,
+} from '../../lib/hudCustom';
 
 /**
  * Settings — real full screen, NOT a note, NOT a popup.
@@ -34,7 +40,7 @@ import StartScreenCreator from './StartScreenCreator';
  * Default restores DEFAULT_SETTINGS + LOCKED_PRESET.
  */
 
-type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR';
+type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR';
 
 interface Row {
   label: string;
@@ -73,8 +79,14 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   const [presetName, setPresetName] = useState('My Preset 1');
   const [savedMsg, setSavedMsg] = useState('');
   const [fontReturn, setFontReturn] = useState<Screen>('SETTINGS');
+  // Batch A: which menu the per-menu panel colour / frame rows target.
+  // Selector only — the colour / frame values themselves live in
+  // the settings (draft) and are saved with the preset's snapshot.
+  const [perMenuTarget, setPerMenuTarget] = useState<MenuKey>('SETTINGS');
 
-  const accent = frameAccent(draft.frame);
+  // SETTINGS menu frame: per-menu override wins over the global
+  // FRAME row when set (0 = follow global), per hudCustom.
+  const accent = menuFrameAccent('SETTINGS', draft);
   const mainFontOpt = fontById(draft.mainFont);
   const menuFontOpt = fontById(draft.menuFont);
   const dialogueFontOpt = fontById(draft.dialogueFont);
@@ -150,7 +162,6 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
         { label: 'PANEL FRAME EDITOR', value: 'OPEN ►', onLeft: () => setScreen('PANEL_FRAME_EDITOR'), onRight: () => setScreen('PANEL_FRAME_EDITOR'), onSelect: () => setScreen('PANEL_FRAME_EDITOR') },
         { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, note: 'Best submenu path: Settings > Menu Creator > Font Settings. Six rows: MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font independently.' },
         { label: 'CREATE INTRO VIDEO', value: 'OPEN ►', onLeft: () => setScreen('INTRO_VIDEO_CREATOR'), onRight: () => setScreen('INTRO_VIDEO_CREATOR'), onSelect: () => setScreen('INTRO_VIDEO_CREATOR'), note: 'Full dedicated screen: scene list, timeline ruler, keyframes, presets. Presets only; locked default never overwritten. Playback from a saved preset + video export are later batches (GAP).' },
-        { label: 'CREATE START SCREEN', value: 'OPEN ►', onLeft: () => setScreen('START_SCREEN_CREATOR'), onRight: () => setScreen('START_SCREEN_CREATOR'), onSelect: () => setScreen('START_SCREEN_CREATOR'), note: 'Full dedicated screen: one scene, locked layout slots, creature / background / particles, SAVE AS PRESET + LOAD PRESET + EXPORT JSON. Playback from a saved preset and Phase 2 export are later batches (GAP).' },
         { label: 'NEXT PAGE', value: 'BACKGROUND ►', onLeft: () => setMenuPage(2), onRight: () => setMenuPage(2), onSelect: () => setMenuPage(2) },
       ],
       2: [
@@ -178,12 +189,18 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     return pages[menuPage] || pages[1];
   }, [menuPage, preset, draft]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Batch A — UI Creator is now the HUD screen: each row is an
+  // independent swappable setting, saved with SAVE + BACK and
+  // applied live on return to BattleView / DialogueBox.
   const uiCreatorRows: Row[] = [
-    { label: 'MENU UI — FRAME', value: frameName(draft.frame), onLeft: () => set({ frame: draft.frame <= 1 ? 20 : draft.frame - 1 }), onRight: () => set({ frame: draft.frame >= 20 ? 1 : draft.frame + 1 }), note: 'Applies to real windows on return, Pokemon FRAME pattern.' },
-    { label: 'MENU UI — PANEL COLOR', value: preset.panelColor, onLeft: () => cyclePresetField('panelColor', PANEL_COLORS, -1), onRight: () => cyclePresetField('panelColor', PANEL_COLORS, 1), note: 'Preset row. Per-menu colours: Roster pink, Shop yellow, Bag green, Battle red/orange, PC blue, Garden purple.' },
-    { label: 'BATTLE UI — HEALTHBOX', value: 'Enemy top-left / Player bottom-right', onLeft: () => undefined, onRight: () => undefined, note: 'Already in game (BattleView healthboxes, HP green >50% / yellow >20% / red <=20%). Y2K skin via game-panel.' },
-    { label: 'BATTLE UI — ACTION MENU', value: '2x2 + PP/TYPE', onLeft: () => undefined, onRight: () => undefined, note: 'Already in game (BattleView 2x2 grid, PP/TYPE line, Luigi Cube, Flee).' },
-    { label: 'SYSTEM UI — DIALOGUE', value: 'Bottom full-width', onLeft: () => undefined, onRight: () => undefined, note: 'Already in game (DialogueBox, 2 lines per page, text speed row applies).' },
+    { label: 'MENU UI — FRAME', value: frameName(draft.frame), onLeft: () => set({ frame: draft.frame <= 1 ? 20 : draft.frame - 1 }), onRight: () => set({ frame: draft.frame >= 20 ? 1 : draft.frame + 1 }), note: 'Applies to real windows on return, Pokemon FRAME pattern. A per-menu frame override (Panel Frame Editor) wins for that menu.' },
+    { label: 'MENU UI — PANEL COLOR', value: preset.panelColor, onLeft: () => cyclePresetField('panelColor', PANEL_COLORS, -1), onRight: () => cyclePresetField('panelColor', PANEL_COLORS, 1), note: 'Preset row. Per-menu colours live in the Panel Frame Editor (Roster pink, Shop yellow, Bag green, Battle red, PC blue, Garden purple by default).' },
+    { label: 'HUD — HEALTHBAR STYLE', value: draft.hudHealthbar, onLeft: () => set({ hudHealthbar: cycle(HEALTHBAR_STYLES, draft.hudHealthbar as HealthbarStyle, -1) }), onRight: () => set({ hudHealthbar: cycle(HEALTHBAR_STYLES, draft.hudHealthbar as HealthbarStyle, 1) }), note: 'BattleView HP bars. CLASSIC = pre-existing bar; SEGMENTED = ticked bar; SLIM = thin bar; NUMERIC = also shows enemy HP numbers.' },
+    { label: 'HUD — BATTLE HUD LAYOUT', value: draft.hudBattleLayout, onLeft: () => set({ hudBattleLayout: cycle(BATTLE_HUD_LAYOUTS, draft.hudBattleLayout as BattleHudLayout, -1) }), onRight: () => set({ hudBattleLayout: cycle(BATTLE_HUD_LAYOUTS, draft.hudBattleLayout as BattleHudLayout, 1) }), note: 'BattleView healthbox positions. CLASSIC = enemy top-left / player bottom-right (pre-existing); SWAPPED = mirrored; STACKED_TOP = both across the top.' },
+    { label: 'HUD — MOVE BUTTON LAYOUT', value: draft.hudMoveLayout, onLeft: () => set({ hudMoveLayout: cycle(MOVE_BUTTON_LAYOUTS, draft.hudMoveLayout as MoveButtonLayout, -1) }), onRight: () => set({ hudMoveLayout: cycle(MOVE_BUTTON_LAYOUTS, draft.hudMoveLayout as MoveButtonLayout, 1) }), note: 'BattleView move buttons. GRID_2X2 = pre-existing 2x2 grid; LIST = one column; ROW_4 = one row (4 across on wide screens).' },
+    { label: 'HUD — PP/TYPE DISPLAY', value: draft.hudPpType, onLeft: () => set({ hudPpType: cycle(PP_TYPE_DISPLAYS, draft.hudPpType as PpTypeDisplay, -1) }), onRight: () => set({ hudPpType: cycle(PP_TYPE_DISPLAYS, draft.hudPpType as PpTypeDisplay, 1) }), note: 'BattleView selected-move line + per-button sub-line. FULL = type + PP (pre-existing); PP_ONLY / TYPE_ONLY / HIDDEN.' },
+    { label: 'HUD — MESSAGE WINDOW STYLE', value: draft.hudMessageStyle, onLeft: () => set({ hudMessageStyle: cycle(MESSAGE_WINDOW_STYLES, draft.hudMessageStyle as MessageWindowStyle, -1) }), onRight: () => set({ hudMessageStyle: cycle(MESSAGE_WINDOW_STYLES, draft.hudMessageStyle as MessageWindowStyle, 1) }), note: 'DialogueBox + battle message panel. CLASSIC = pre-existing frame; ROUNDED / MINIMAL / GLOSS restyle the box only — position and 2-lines-per-page rules unchanged.' },
+    { label: 'HUD — DAMAGE NUMBER STYLE', value: draft.hudDamageStyle, onLeft: () => set({ hudDamageStyle: cycle(DAMAGE_NUMBER_STYLES, draft.hudDamageStyle as DamageNumberStyle, -1) }), onRight: () => set({ hudDamageStyle: cycle(DAMAGE_NUMBER_STYLES, draft.hudDamageStyle as DamageNumberStyle, 1) }), note: 'BattleView floating damage number on impact (new in this batch — damage was HP-bar-only before). PLAIN / BOLD_POP / OUTLINE.' },
     { label: 'BACK TO MENU CREATOR', value: '◄ BACK', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR') },
   ];
 
@@ -198,8 +215,13 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   const cursorRows: Row[] = [
     { label: 'CURSOR SHAPE', value: `${CURSOR_SHAPES.find(c => c.id === draft.cursorShape)?.glyph || '►'} ${CURSOR_SHAPES.find(c => c.id === draft.cursorShape)?.label || 'Arrow'}`, onLeft: () => set({ cursorShape: cycle(CURSOR_SHAPES.map(c => c.id), draft.cursorShape, -1) }), onRight: () => set({ cursorShape: cycle(CURSOR_SHAPES.map(c => c.id), draft.cursorShape, 1) }), note: 'Pokemon base is the selector arrow (menu.c / list_menu.c, cursorPal + cursorShadowPal). Diamond/Star/Ring are Mochiichao extensions. Icon shapes: game-icons.net, CC BY 3.0, attribution — game-icons SVG files themselves are NOT shipped in this PR (NEED), current shapes are glyphs.' },
     { label: 'CURSOR COLOR', value: draft.cursorColor, onLeft: () => set({ cursorColor: cycle(CURSOR_COLORS, draft.cursorColor, -1) }), onRight: () => set({ cursorColor: cycle(CURSOR_COLORS, draft.cursorColor, 1) }), note: 'Applies to the selected-row marker in this screen and the main menu.' },
-    { label: 'CURSOR GLOW', value: draft.cursorGlow ? 'ON' : 'OFF', onLeft: () => set({ cursorGlow: !draft.cursorGlow }), onRight: () => set({ cursorGlow: !draft.cursorGlow }) },
-    { label: 'CURSOR SIZE', value: preset.cursorSize, onLeft: () => cyclePresetField('cursorSize', ['S', 'M', 'L'], -1), onRight: () => cyclePresetField('cursorSize', ['S', 'M', 'L'], 1) },
+    { label: 'CURSOR SHADOW', value: draft.cursorShadow ? 'ON' : 'OFF', onLeft: () => set({ cursorShadow: !draft.cursorShadow }), onRight: () => set({ cursorShadow: !draft.cursorShadow }), note: 'Batch A: text shadow under the cursor glyph (Pokemon cursorShadowPal slot, Mochiichao CSS).' },
+    { label: 'CURSOR GLOW', value: draft.cursorGlow ? 'ON' : 'OFF', onLeft: () => set({ cursorGlow: !draft.cursorGlow }), onRight: () => set({ cursorGlow: !draft.cursorGlow }), note: 'Glow halo on the cursor glyph (pre-existing setting; now also drives the glyph drop-shadow, not just a stored flag).' },
+    { label: 'CURSOR SIZE', value: preset.cursorSize, onLeft: () => cyclePresetField('cursorSize', ['S', 'M', 'L'], -1), onRight: () => cyclePresetField('cursorSize', ['S', 'M', 'L'], 1), note: 'Batch A: now sizes the cursor glyph on this screen (S 12px / M 16px / L 20px). Main-menu glyph sizing is a later main-menu batch — layout untouched here.' },
+    { label: 'CURSOR BLINK', value: draft.cursorBlink ? 'ON' : 'OFF', onLeft: () => set({ cursorBlink: !draft.cursorBlink }), onRight: () => set({ cursorBlink: !draft.cursorBlink }), note: 'Batch A: selected-row cursor glyph pulses (animate-pulse) instead of sitting static.' },
+    { label: 'CURSOR BLINK SPEED', value: draft.cursorBlinkSpeed, onLeft: () => set({ cursorBlinkSpeed: cycle(CURSOR_BLINK_SPEEDS, draft.cursorBlinkSpeed as CursorBlinkSpeed, -1) }), onRight: () => set({ cursorBlinkSpeed: cycle(CURSOR_BLINK_SPEEDS, draft.cursorBlinkSpeed as CursorBlinkSpeed, 1) }), note: 'Batch A: blink pulse duration. SLOW 1.2s / MID 0.7s / FAST 0.35s. Only applies while CURSOR BLINK is ON.' },
+    { label: 'HIGHLIGHT ROW COLOUR', value: draft.cursorHighlight, onLeft: () => set({ cursorHighlight: cycle(CURSOR_COLORS, draft.cursorHighlight, -1) }), onRight: () => set({ cursorHighlight: cycle(CURSOR_COLORS, draft.cursorHighlight, 1) }), note: 'Batch A: outline colour of the selected row on this screen (was fixed yellow ring before).' },
+    { label: 'SOUND ON MOVE', value: draft.cursorSound ? 'ON' : 'OFF', onLeft: () => set({ cursorSound: !draft.cursorSound }), onRight: () => set({ cursorSound: !draft.cursorSound }), note: 'Batch A, flag only: stored + preset-saved, but NEED — no audio engine in this build yet to play a move sound through (same precedent as the SOUND flag). Not faked with a browser beep.' },
     { label: 'BACK TO MENU CREATOR', value: '◄ BACK', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR') },
   ];
 
@@ -209,9 +231,14 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     { label: 'ROUNDED RADIUS', value: String(preset.panelRadius), onLeft: () => setP({ panelRadius: Math.max(0, preset.panelRadius - 2) }), onRight: () => setP({ panelRadius: Math.min(24, preset.panelRadius + 2) }), note: 'Applies to this screen\'s windows live.' },
     { label: 'BORDER WIDTH', value: String(preset.panelBorderWidth), onLeft: () => setP({ panelBorderWidth: Math.max(1, preset.panelBorderWidth - 1) }), onRight: () => setP({ panelBorderWidth: Math.min(4, preset.panelBorderWidth + 1) }) },
     { label: 'WHITE BORDER', value: preset.whiteBorder ? 'ON' : 'OFF', onLeft: () => setP({ whiteBorder: !preset.whiteBorder }), onRight: () => setP({ whiteBorder: !preset.whiteBorder }) },
-    { label: 'GLOSS', value: preset.gloss ? 'ON' : 'OFF', onLeft: () => setP({ gloss: !preset.gloss }), onRight: () => setP({ gloss: !preset.gloss }) },
+    { label: 'GLOSS', value: preset.gloss ? 'ON' : 'OFF', onLeft: () => setP({ gloss: !preset.gloss }), onRight: () => setP({ gloss: !preset.gloss }), note: 'Batch A: gloss now renders as a top highlight on this screen\'s windows, not just a stored flag.' },
     { label: 'GLOW', value: preset.glow ? 'ON' : 'OFF', onLeft: () => setP({ glow: !preset.glow }), onRight: () => setP({ glow: !preset.glow }) },
-    { label: 'GRADIENT', value: preset.gradient ? 'ON' : 'OFF', onLeft: () => setP({ gradient: !preset.gradient }), onRight: () => setP({ gradient: !preset.gradient }) },
+    { label: 'GRADIENT', value: preset.gradient ? 'ON' : 'OFF', onLeft: () => setP({ gradient: !preset.gradient }), onRight: () => setP({ gradient: !preset.gradient }), note: 'Batch A: gradient now renders as a vertical panel gradient on this screen\'s windows.' },
+    { label: 'SHADOW', value: draft.panelShadow ? 'ON' : 'OFF', onLeft: () => set({ panelShadow: !draft.panelShadow }), onRight: () => set({ panelShadow: !draft.panelShadow }), note: 'Batch A: independent drop shadow on this screen\'s windows, separate from GLOW (glow = accent halo, shadow = dark drop). Battle healthboxes + dialogue box also pick it up.' },
+    { label: 'OPACITY', value: `${draft.panelOpacity}%`, onLeft: () => set({ panelOpacity: Math.max(70, draft.panelOpacity - 5) }), onRight: () => set({ panelOpacity: Math.min(100, draft.panelOpacity + 5) }), note: 'Batch A: panel opacity 70–100% in 5% steps, applied to this screen\'s windows, the dialogue box, and the battle message panel.' },
+    { label: 'PER-MENU TARGET', value: perMenuTarget, onLeft: () => setPerMenuTarget(cycle(MENU_KEYS, perMenuTarget, -1)), onRight: () => setPerMenuTarget(cycle(MENU_KEYS, perMenuTarget, 1)), note: 'Batch A: which menu the next two rows edit. Selector only — not saved itself.' },
+    { label: 'PER-MENU PANEL COLOUR', value: draft.perMenuPanelColor?.[perMenuTarget] || 'blue', onLeft: () => set({ perMenuPanelColor: { ...draft.perMenuPanelColor, [perMenuTarget]: cycle(PANEL_COLORS, draft.perMenuPanelColor?.[perMenuTarget] || 'blue', -1) } }), onRight: () => set({ perMenuPanelColor: { ...draft.perMenuPanelColor, [perMenuTarget]: cycle(PANEL_COLORS, draft.perMenuPanelColor?.[perMenuTarget] || 'blue', 1) } }), note: 'Batch A: accent colour for the target menu. Applied today to SETTINGS (this screen) and BATTLE (healthbox/message borders); other menus store the value for their per-menu skin batch — not silently applied to menus this batch does not touch.' },
+    { label: 'PER-MENU FRAME', value: (draft.perMenuFrame?.[perMenuTarget] || 0) === 0 ? 'FOLLOW GLOBAL' : frameName(draft.perMenuFrame[perMenuTarget]), onLeft: () => set({ perMenuFrame: { ...draft.perMenuFrame, [perMenuTarget]: ((draft.perMenuFrame?.[perMenuTarget] || 0) - 1 + 21) % 21 } }), onRight: () => set({ perMenuFrame: { ...draft.perMenuFrame, [perMenuTarget]: ((draft.perMenuFrame?.[perMenuTarget] || 0) + 1) % 21 } }), note: 'Batch A: frame override for the target menu, 0 = FOLLOW GLOBAL (global FRAME row), else Frame 1–20. Applied today to SETTINGS; BATTLE healthboxes use the BATTLE accent colour, frame accent via the global row.' },
     { label: 'BACK TO MENU CREATOR', value: '◄ BACK', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR') },
   ];
 
@@ -267,7 +294,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   useEffect(() => { setCursor(0); }, [screen, menuPage]);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR') return; // creator screens own their keys (any-key-skips + B: BACK)
+      if (screen === 'INTRO_VIDEO_CREATOR') return; // creator screen owns its keys (any-key-skips + B: BACK)
       if (e.key === 'ArrowUp') { e.preventDefault(); setCursor(c => (c - 1 + rows.length) % rows.length); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); setCursor(c => (c + 1) % rows.length); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); rows[safeCursor]?.onLeft(); }
@@ -288,22 +315,29 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rows, safeCursor, screen, draft, preset]);
 
+  // Batch A: panel style now actually renders gloss / gradient /
+  // shadow / opacity instead of storing them only. Glow = accent
+  // halo, shadow = independent dark drop (both can stack).
   const panelStyle: React.CSSProperties = {
     borderRadius: preset.panelRadius,
     borderWidth: preset.panelBorderWidth,
     borderColor: preset.whiteBorder ? '#ffffff' : accent,
-    boxShadow: preset.glow ? `0 0 0 2px ${accent}55, 0 6px 24px rgba(0,0,0,0.45)` : undefined,
+    opacity: Math.min(100, Math.max(70, draft.panelOpacity || 100)) / 100,
+    background: preset.gradient
+      ? 'linear-gradient(180deg, rgba(255,255,255,0.14), rgba(22,35,58,0.92) 45%)'
+      : preset.gloss
+        ? 'linear-gradient(180deg, rgba(255,255,255,0.10), rgba(22,35,58,0.92) 30%)'
+        : undefined,
+    boxShadow: [
+      preset.glow ? `0 0 0 2px ${accent}55` : '',
+      preset.gloss ? 'inset 0 1px 0 rgba(255,255,255,0.35)' : '',
+      draft.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : '0 6px 24px rgba(0,0,0,0.45)',
+    ].filter(Boolean).join(', '),
   };
   const cursorGlyph = CURSOR_SHAPES.find(c => c.id === draft.cursorShape)?.glyph || '►';
 
   if (screen === 'INTRO_VIDEO_CREATOR') {
     return <IntroVideoCreatorScreen onBack={() => setScreen('MENU_CREATOR')} />;
-  }
-
-  // CREATE START SCREEN is its own full dedicated screen (batch E).
-  // B: BACK inside it returns to MENU_CREATOR via onBack.
-  if (screen === 'START_SCREEN_CREATOR') {
-    return <StartScreenCreator onBack={() => setScreen('MENU_CREATOR')} />;
   }
 
   return (
@@ -323,10 +357,23 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
               onClick={() => { setCursor(i); if (row.onSelect) row.onSelect(); }}
               onMouseEnter={() => setCursor(i)}
               onFocus={() => setCursor(i)}
-              className={`w-full text-left px-3 py-2 min-h-[48px] flex justify-between items-baseline gap-2 rounded ${i === safeCursor ? 'bg-white/10 ring-2 ring-yellow-300' : ''}`}
+              className={`w-full text-left px-3 py-2 min-h-[48px] flex justify-between items-baseline gap-2 rounded ${i === safeCursor ? 'bg-white/10' : ''}`}
+              style={i === safeCursor ? { boxShadow: `inset 0 0 0 2px ${draft.cursorHighlight}` } : undefined}
             >
               <span className="font-bold tracking-widest text-white text-sm" style={{ fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)' }}>
-                <span style={{ color: draft.cursorColor }}>{i === safeCursor ? `${cursorGlyph} ` : ''}</span>{row.label}
+                <span
+                  className={i === safeCursor && draft.cursorBlink ? 'animate-pulse' : undefined}
+                  style={{
+                    color: draft.cursorColor,
+                    fontSize: cursorGlyphSize(preset.cursorSize),
+                    textShadow: draft.cursorShadow
+                      ? '2px 2px 0 rgba(0,0,0,0.8)'
+                      : draft.cursorGlow
+                        ? `0 0 8px ${draft.cursorColor}`
+                        : undefined,
+                    animationDuration: i === safeCursor && draft.cursorBlink ? cursorBlinkDuration(draft.cursorBlinkSpeed as CursorBlinkSpeed) : undefined,
+                  }}
+                >{i === safeCursor ? `${cursorGlyph} ` : ''}</span>{row.label}
               </span>
               <span className="text-yellow-300 font-bold text-sm text-right">{row.value}</span>
             </button>
