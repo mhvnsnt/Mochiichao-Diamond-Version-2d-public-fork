@@ -20,15 +20,18 @@ import { MEMORY_QUESTS } from '../../lib/monster-tamer-systems';
  * Full Garden gameplay (raising/care over time, races, breeding) is
  * PLACEHOLDER at first: the stats shown here start at a neutral
  * placeholder garden record per creature and are adjusted by the
- * Data-Fruit buttons below; they are not yet persisted to the save.
- * That persistence is the next Garden pass, not a silent omission.
+ * Data-Fruit buttons below; they are persisted to the save via the shared store (pass 3).
  */
 const ZERO: GardenStats = { dive: 0, glide: 0, sprint: 0, might: 0, endurance: 0 };
 
 export default function GardenView({ onBack }: { onBack: () => void }) {
   const party = useGameStore(s => s.party);
   const [selected, setSelected] = useState(0);
-  const [garden, setGarden] = useState<Record<string, GardenCreature>>({});
+  // Pass 3: Garden records are shared store state, not local state —
+  // Creature Mode reads the same record for the +9%-capped battle bonus,
+  // and SaveMenu saves it with the game. GardenView behaviour is unchanged.
+  const garden = useGameStore(s => s.gardenRecords);
+  const setGardenRecord = useGameStore(s => s.setGardenRecord);
   const [note, setNote] = useState<string | null>(null);
   const [place, setPlace] = useState<string | null>(null);
   // Bonding / Memory Quests (monster-tamer spec step 4): quest givers
@@ -36,7 +39,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
   // one Garden stat +5 on the selected creature's Garden record.
   // Befriending does NOT replace capture — capture stays Luigi Cubes
   // + Ring Capture, and Garden records here are still the local
-  // placeholder records noted above, not yet persisted to the save.
+  // Garden records here are shared store records, saved with the game (pass 3).
   const [completedQuests, setCompletedQuests] = useState<Record<string, boolean>>({});
   const completeQuest = (questId: string) => {
     if (!current || completedQuests[questId]) return;
@@ -47,7 +50,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
       garden: applyGardenItem(rec.garden, { [quest.gardenStat]: quest.gardenReward }),
       bond: Math.min(100, rec.bond + quest.bondReward),
     };
-    setGarden(g => ({ ...g, [current.id]: next }));
+    setGardenRecord(current.id, next);
     setCompletedQuests(q => ({ ...q, [questId]: true }));
     setNote(`${quest.title} complete! Bond +${quest.bondReward}, ${quest.gardenStat} +${quest.gardenReward}.`);
   };
@@ -61,8 +64,8 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
   const feed = (item: Partial<GardenStats>, label: string) => {
     if (!current) return;
     const next = { ...rec, garden: applyGardenItem(rec.garden, item), trainingSessions: rec.trainingSessions + 1 };
-    setGarden(g => ({ ...g, [current.id]: next }));
-    setNote(`${label} fed. Garden stats updated (placeholder record, not yet saved).`);
+    setGardenRecord(current.id, next);
+    setNote(`${label} fed. Garden stats updated (saved with the game via the shared store).`);
   };
 
   const places: { name: string; text: string }[] = [
@@ -138,8 +141,8 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                 <button
                   onClick={() => {
                     const reverted = dataRevert(rec);
-                    setGarden(g => ({ ...g, [current.id]: reverted }));
-                    setNote('Data Revert applied: Garden stats halved, colorway/parts kept (placeholder record).');
+                    setGardenRecord(current.id, reverted);
+                    setNote('Data Revert applied: Garden stats halved, colorway/parts kept.');
                   }}
                   className="game-button px-3 py-1.5 text-sm"
                 >
