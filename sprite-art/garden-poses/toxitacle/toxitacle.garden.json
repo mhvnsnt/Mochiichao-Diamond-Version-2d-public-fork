@@ -1,0 +1,11 @@
+{
+  "creature": "toxitacle",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "toxitacle_cell_05.png"
+}
