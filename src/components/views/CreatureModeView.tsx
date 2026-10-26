@@ -11,6 +11,7 @@ import { creatureCooldownMs } from '../../lib/creatureCooldowns';
 import { findNextStep } from '../../lib/creaturePathfinding';
 import { gardenBattleBonus } from '../../lib/mochiichao-systems';
 import { gardenFormPresentation, saChaoPresentation, MAINFRAME_GARDENS } from '../../lib/creatureGardenForm';
+import { daycareRetrieveCost, daycareCompatibility, daycareEggReady, DAYCARE_EXP_PER_STEP } from '../../lib/creatureDaycare';
 import type { MochiiInstance } from '../../lib/types';
 
 /**
@@ -184,6 +185,11 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   const gardenRecords = useGameStore(s => s.gardenRecords);
   const guardian = useGameStore(s => s.guardian);
   const setGuardian = useGameStore(s => s.setGuardian);
+  const daycareSteps = useGameStore(s => s.daycareSteps);
+  const setDaycareSteps = useGameStore(s => s.setDaycareSteps);
+  const wallet = useGameStore(s => s.wallet);
+  const gainWallet = useGameStore(s => s.gainWallet);
+  const lastDaycareTileRef = useRef<string | null>(null);
   // Pass 3: float tile position — the player glides between tiles, and
   // PixiWorldCanvas draws at (x + 0.5) * tile, so floats render smoothly.
   const [pos, setPos] = useState({ x: 15, y: 18 });
@@ -249,6 +255,15 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
     if (nx !== p.x || ny !== p.y) {
       setPos({ x: nx, y: ny });
       setWalkStep(s => s + 1);
+      // Pass 7 — Daycare steps are TILE changes, not 50ms ticks:
+      // FireRed counts a step when the player moves to a new tile.
+      // Only while a Guardian is assigned (deposited).
+      const tileKey = `${Math.floor(nx)},${Math.floor(ny)}`;
+      if (tileKey !== lastDaycareTileRef.current) {
+        lastDaycareTileRef.current = tileKey;
+        const st = useGameStore.getState();
+        if (st.guardian) st.setDaycareSteps(st.daycareSteps + 1);
+      }
     }
   };
 
@@ -659,10 +674,39 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
           </div>
           <div className="game-panel p-3 mb-3">
             <div className="font-bold text-white text-sm mb-2">Daycare slots (FireRed daycare structure)</div>
-            <div className="text-sm text-slate-200">Daycare steps this session: {walkStep} real moves in Creature Mode. FireRed daycare counts steps while a creature is deposited — here the count is shown, no EXP or level is applied from it yet.</div>
+            <div className="text-sm text-slate-200">Daycare steps (persisted, tile changes while a Guardian is assigned): {daycareSteps} • EXP on retrieve: {daycareSteps * DAYCARE_EXP_PER_STEP} (FireRed: 1 EXP per step).</div>
             <div className="text-sm text-slate-200">Slot 1: {guardian ? `${guardian.nickname} — Guardian, ${guardian.garden}` : 'Empty — assign a Guardian from Creature Mode'}</div>
             <div className="text-sm text-slate-200">Slot 2: Empty — this lane's store has only one guardian field, so no second deposited creature is invented here.</div>
-            <div className="text-[11px] text-slate-400 mt-1">No level gain, egg, or compatibility number is shown here — those fields do not exist in the store yet, so they are not guessed.</div>
+            <div className="text-sm text-slate-200">Compatibility: {daycareCompatibility({ hasSecondCreature: false, genderKnown: false, eggGroupsKnown: false }) === null ? 'not computed — gender and egg groups are not in the store yet, so no 0/20/50/70 number is guessed (FireRed table is in creatureDaycare.ts)' : 'computed'}</div>
+            <div className="text-sm text-slate-200">Egg: {daycareEggReady(daycareSteps, false) ? 'ready' : 'none — needs a second deposited creature and a 256-step check hit (FireRed: steps & 0xFF == 0xFF)'}</div>
+            {guardian && daycareSteps > 0 && (() => {
+              const idx = party.findIndex(p => p.id === guardian.creatureId);
+              if (idx < 0) return <div className="text-sm text-slate-200">Retrieve: Guardian is not in your party, so no EXP is applied — nothing is faked.</div>;
+              const preview = { ...party[idx], stats: { ...party[idx].stats } };
+              const before = preview.level;
+              gainExp(preview, daycareSteps * DAYCARE_EXP_PER_STEP);
+              const cost = daycareRetrieveCost(preview.level - before);
+              return (
+                <div className="mt-2">
+                  <div className="text-sm text-slate-200">Retrieve preview: Lv {before} → Lv {preview.level} ({preview.level - before} levels) • Cost {cost} CR • Wallet {wallet} CR</div>
+                  <button className="game-button mt-1" onClick={() => {
+                    const st = useGameStore.getState();
+                    const i = st.party.findIndex(p => p.id === guardian!.creatureId);
+                    if (i < 0) { setLog('Retrieve failed: Guardian not in party.'); return; }
+                    const updated = { ...st.party[i], stats: { ...st.party[i].stats } };
+                    const lv0 = updated.level;
+                    gainExp(updated, st.daycareSteps * DAYCARE_EXP_PER_STEP);
+                    const fee = daycareRetrieveCost(updated.level - lv0);
+                    if (st.wallet < fee) { setLog(`Retrieve needs ${fee} CR, wallet has ${st.wallet} CR.`); return; }
+                    st.updatePartyMember(i, updated);
+                    st.gainWallet(-fee);
+                    st.setDaycareSteps(0);
+                    setLog(`${guardian!.nickname} retrieved: Lv ${lv0} → Lv ${updated.level}, ${fee} CR paid, daycare steps reset.`);
+                  }}>Retrieve Guardian (apply EXP, pay cost)</button>
+                </div>
+              );
+            })()}
+            <div className="text-[11px] text-slate-400 mt-1">Level gain is wired (FireRed 1 EXP/step, cost 100 + 100/level in CR, via engine gainExp). Egg production and a compatibility number are NOT wired as numbers yet — they need a second deposited creature plus gender/egg-group inputs the store does not have, and a breeding species choice owned by the Chao Garden lane, so none of those are guessed here.</div>
           </div>
           <div className="game-panel p-3">
             <div className="font-bold text-white text-sm mb-2">Mainframe Gardens (environments)</div>
