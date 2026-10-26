@@ -97,6 +97,18 @@ export function resolveBattleMove(moveKey: string): { power: number; type: strin
   if (gd) return { power: gd.power, type: gd.type, display: moveKey };
   const db: any = (MOVES_DB as any)[moveKey];
   if (db) return { power: db.bp, type: TYPE_DISPLAY[db.type] || db.type, display: db.name };
+  // v5.3: caught wild creatures carry DISPLAY move names (see
+  // triggerWildBattle, which maps moveIds through MOVES_DB names),
+  // so a caught Sproutle's buttons are "Quick Attack" / "Vine
+  // Lash", not "QUICK_ATTACK" / "VINE_LASH". Neither lookup above
+  // matches a display name that is not in GAME_DATA.moves, so
+  // those clicks resolved to null and doBattleAction returned
+  // silently — the v5.2 playtest's PWR- moves that did nothing.
+  // Third lookup: MOVES_DB by display name (existing move data
+  // only, no power invented). Tackle already resolves via
+  // GAME_DATA.moves, so this changes nothing for Tackle.
+  const dbByName: any = Object.values(MOVES_DB as any).find((m: any) => m?.name && String(m.name).toLowerCase() === String(moveKey).toLowerCase());
+  if (dbByName) return { power: dbByName.bp, type: TYPE_DISPLAY[dbByName.type] || dbByName.type, display: dbByName.name };
   return null;
 }
 /** Flat atk/def for calcDamage: MochiiInstance carries stats.*, not flat atk/def. */
@@ -286,32 +298,35 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     // SPECIES_DB keep the old scaling unchanged (flagged in the PR
     // body); note the pre-existing fallback above already maps a
     // missing species id to the first SPECIES_DB entry's name.
-    const wildBuilt = createMochii(wildMonId, lvl);
-    const wildMon = wildBuilt ? {
+    // v5.3: NO wild enemy may use raw base stats anymore. The v5.2
+    // fallback (raw base * 1.08) was the only remaining old-scale
+    // wild path in the tree — it fired for any species NOT in
+    // SPECIES_DB (e.g. Zephling "016") and for any id mismatch —
+    // and it reproduces the v5.2 playtest's 1-vs-18 pattern exactly
+    // (old-scale atk ~60 vs level-scaled def ~10). Species in
+    // SPECIES_DB (including Mochii "001") already used createMochii
+    // in v5.2 and that path is unchanged; the specific v5.2 wild
+    // Mochii fight could NOT be reproduced from the current tree
+    // (its path already uses createMochii), so this change removes
+    // the last old-scale wild route and the parent playtest must
+    // re-verify wild Mochii damage in the 3-6 range — it is not
+    // claimed fixed by code inspection alone. A species missing
+    // from SPECIES_DB now falls back to the first entry's
+    // level-scaled stats (the same fallback already used for its
+    // name/type above), never to raw base stats.
+    const wildBuilt = createMochii(wildMonId, lvl) || createMochii(Object.keys(SPECIES_DB)[0], lvl);
+    const wildMon = {
         id: `wild_${Date.now()}`,
         speciesId: wildMonId,
         name: sp.name,
         level: lvl,
-        hp: wildBuilt.hp,
-        maxHp: wildBuilt.maxHp,
-        currentHp: wildBuilt.hp,
-        atk: wildBuilt.stats.atk,
-        def: wildBuilt.stats.def,
-        spd: wildBuilt.stats.spe,
-        moves: wildBuilt.moves.map((mid: string) => (MOVES_DB as any)[mid]?.name || mid),
-        type: sp.types[0],
-    } : {
-        id: `wild_${Date.now()}`,
-        speciesId: wildMonId,
-        name: sp.name,
-        level: lvl,
-        hp: Math.floor(sp.baseStats.hp * (1 + (lvl-1)*0.08)),
-        maxHp: Math.floor(sp.baseStats.hp * (1 + (lvl-1)*0.08)),
-        currentHp: Math.floor(sp.baseStats.hp * (1 + (lvl-1)*0.08)),
-        atk: Math.floor(sp.baseStats.atk * (1 + (lvl-1)*0.08)),
-        def: Math.floor(sp.baseStats.def * (1 + (lvl-1)*0.08)),
-        spd: sp.baseStats.spd,
-        moves: (sp as any).moves?.slice(0, 4) || [],
+        hp: wildBuilt!.hp,
+        maxHp: wildBuilt!.maxHp,
+        currentHp: wildBuilt!.hp,
+        atk: wildBuilt!.stats.atk,
+        def: wildBuilt!.stats.def,
+        spd: wildBuilt!.stats.spe,
+        moves: wildBuilt!.moves.map((mid: string) => (MOVES_DB as any)[mid]?.name || mid),
         type: sp.types[0],
     };
 
@@ -800,8 +815,19 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       const catchRate = 0.7 - hpRatio * 0.5;
       const success = Math.random() < catchRate;
       if (success) {
-        // v5.1 HP sync: caught mon carries both fields at the same HP.
-        const caught = { ...bs.wild, currentHp: bs.wild.currentHp, hp: bs.wild.currentHp };
+        // v5.3: a caught mon must be a real MochiiInstance, not the
+        // flat wild-battle shape. The flat shape has no stats.* and
+        // no pp, so RosterView (current.stats.atk, current.pp[j])
+        // threw on a caught Sproutle and the Team panel went black
+        // in the v5.2 playtest. Rebuild via createMochii at the wild
+        // level (same species data, no stats invented) and keep
+        // the wild's remaining HP, so a damaged catch stays damaged.
+        // Caught moves therefore become moveIds again, which also
+        // fixes the PWR- display-name resolution for caught mons.
+        const built = createMochii(bs.wild.speciesId, bs.wild.level || 5);
+        const caught = built
+          ? { ...built, hp: bs.wild.currentHp, currentHp: bs.wild.currentHp }
+          : { ...bs.wild, currentHp: bs.wild.currentHp, hp: bs.wild.currentHp };
         setPlayerTeam(t => t.length < 6 ? [...t, caught] : t);
         setDex(d => ({ ...d, [caught.id]: "caught" }));
         notify(`${caught.name} was caught!`, "#4fc3f7");
@@ -823,8 +849,15 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       // v4 bridge (see resolveBattleMove): without this, a starter
       // party's moveIds never matched GAME_DATA.moves and the move
       // silently did nothing. Display name is the MOVES_DB name.
+      // v5.3: a click must NEVER be silent again. If a move still
+      // cannot be resolved, log it visibly and stay in the menu
+      // so the player can pick another move — the v5.2 playtest
+      // failure mode (click, nothing, no log) must not recur.
       const resolved = resolveBattleMove(action.move);
-      if (!resolved) return;
+      if (!resolved) {
+        setBattleState({ ...bs, log: [...bs.log, `${battleMonName(bs.player)} used ${action.move}!`, `But it could not be resolved — no damage dealt.`] });
+        return;
+      }
       const moveData = { power: resolved.power, type: resolved.type };
 
       setBattleAnim("player");
