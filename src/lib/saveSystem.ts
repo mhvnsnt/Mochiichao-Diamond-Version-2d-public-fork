@@ -60,8 +60,60 @@ export const setAutosaveHold = (slot: number | null) => {
   } catch { /* private mode: in-memory hold still applies this session */ }
 };
 
+// Playtest 2026-10-26 (attempt 9, PR #132 re-test): a second slots
+// view showed a fresh timestamp on unchanged content, and the
+// manual-save case has NO hold (a manual save clears it), so the
+// PR #132/PR #133 hold cannot explain or close it. A full write-path
+// trace found no slots-view writer at all — the only mochii_saves_*
+// writers are WorldEngine (60s interval, map change, F5), GameShell
+// Pause Save, and SaveMenu Create New Save. The stamp therefore
+// comes from a WorldEngine autosave firing after a load/re-entry
+// (or a world visit between slots views) while the game state was
+// unchanged since the last save: the autosave re-serializes the
+// loaded state and stamps a fresh timestamp onto identical content.
+// An autosave whose content is identical to the slot's latest entry
+// is therefore refused outright (same as a held autosave): it can
+// only ever move the summary timestamp, never the content. Manual
+// saves are never deduped — an explicit save always writes.
+// Comparison uses sorted keys, so a load round-trip (which may
+// reorder object keys) does not defeat it; functions/undefined are
+// skipped exactly as JSON.stringify skips them at save time.
+const stableStringify = (value: any): string | null => {
+  try {
+    if (value === null || typeof value !== 'object') {
+      const prim = JSON.stringify(value);
+      return prim === undefined ? null : prim;
+    }
+    if (Array.isArray(value)) {
+      const parts = value.map(v => {
+        if (typeof v === 'function' || typeof v === 'symbol' || v === undefined) return 'null';
+        const s = stableStringify(v);
+        return s === null ? 'null' : s;
+      });
+      return `[${parts.join(',')}]`;
+    }
+    const keys = Object.keys(value).sort().filter(k => {
+      const v = value[k];
+      return typeof v !== 'function' && typeof v !== 'symbol' && v !== undefined;
+    });
+    const parts = keys.map(k => `${JSON.stringify(k)}:${stableStringify(value[k]) ?? 'null'}`);
+    return `{${parts.join(',')}}`;
+  } catch { return null; }
+};
+
 export const saveGame = (slotId: number, type: 'manual' | 'auto', label: string, gameState: any): SaveEntry | null => {
   if (type === 'auto' && getAutosaveHold() === slotId) return null;
+  if (type === 'auto') {
+    const existing = getSaves(slotId);
+    const latest = existing.length > 0
+      ? existing.reduce((a, b) => (b.timestamp > a.timestamp ? b : a))
+      : null;
+    if (latest && latest.data !== undefined && latest.data !== null) {
+      const next = stableStringify(gameState);
+      const prev = stableStringify(latest.data);
+      if (next !== null && prev !== null && next === prev) return null;
+    }
+  }
   const saves = getSaves(slotId);
   const newSave: SaveEntry = {
     id: crypto.randomUUID(),
