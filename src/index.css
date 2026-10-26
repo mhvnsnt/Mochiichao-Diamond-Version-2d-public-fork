@@ -142,23 +142,6 @@ html, body, #root {
   background: #050810;
 }
 
-:root {
-  /* Batch B defaults — applyMenuCustom() in src/lib/menuCustom.ts
-   * overwrites these on startup and on Settings SAVE + BACK.
-   * Defaults match the pre-existing look (16px dialogue, 1.625
-   * leading, white text, 14px dialogue radius, 48px touch) so
-   * nothing changes visually until a player saves a choice. */
-  --menu-text-size: 16px;
-  --menu-line-height: 1.625;
-  --menu-text-color: #ffffff;
-  --menu-text-shadow: none;
-  --menu-dialogue-radius: 14px;
-  --menu-anim-speed: 1;
-  --menu-reduced-motion: running;
-  --menu-touch-size: 48px;
-  --menu-sprite-proportion: chibi;
-}
-
 body {
   /* --game-font is set by src/lib/fonts.ts applyFont() from the
    * Settings Font row. Default is the pre-existing stack (locked
@@ -287,4 +270,58 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.75);
   border-radius: 16px;
   box-shadow: 0 0 16px rgba(34, 211, 238, 0.35);
+}
+
+/*
+ * Bag menu Y2K skin ONLY (per-menu skins 2/8, following the Pause
+ * pattern in the .pause-y2k-panel block above).
+ * Per-menu colour: Bag = green gradient, green glow, star/heart accents.
+ * Scoped to .bag-y2k-panel, which only BagView renders, so no other
+ * menu, the main menu, title, Settings, fonts, rotation, or saves change.
+ * The .game-panel / .game-button / .game-title rules above are NOT edited;
+ * these later rules win only inside this screen. MenuList/MenuHelpLine
+ * are untouched — the shared help line just inherits this scope.
+ * Pocket order, inputs, and behaviour are unchanged.
+ */
+.bag-y2k-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(135deg, #14532d 0%, #16a34a 48%, #84cc16 100%);
+  border: 3px solid #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.55), 0 0 32px rgba(74, 222, 128, 0.45), 0 12px 32px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* Y2K heading: italic, white -> gold -> green gradient, green glow.
+ * Font family unchanged (game font) — fonts are out of scope this batch. */
+.bag-y2k-panel .game-title {
+  font-style: italic;
+  background: linear-gradient(180deg, #ffffff 15%, #fde68a 55%, #4ade80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.45)) drop-shadow(0 0 14px rgba(74, 222, 128, 0.55));
+}
+
+/* Y2K rows and panels: glossy green, white border, rounded 18px+.
+ * The gold selected ring (ring-yellow-300) comes from BagView itself
+ * and is left untouched. */
+.bag-y2k-panel .game-button {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 55%),
+    linear-gradient(180deg, #16a34a, #14532d);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.45), 0 0 14px rgba(74, 222, 128, 0.35);
+}
+
+/* Y2K inner panels + help line: dark glass, white border, green glow. */
+.bag-y2k-panel .game-panel {
+  background: rgba(6, 30, 18, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba(74, 222, 128, 0.35);
 }
