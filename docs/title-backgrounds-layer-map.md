@@ -190,5 +190,6 @@ Pages rebuild — merged code alone is not a playable show.
 - Per-card animation styles defined: 10/10 = 100% (each card its own rest side + action; Mythar stays centre)
 - Animated versions built: 0/10 = 0% (next step, different filenames, never overwrite drafts)
 - Per-card animation styles LOCKED: 10/10 = 100% (Mars 2026-10-26 ~07:07 CDT)
+- TitleScene v2 wiring (staged PR, NOT merged): 1/1 = 100% of the wiring step - centre entrance (frames 0-59 fade) -> ease-out to locked rest offset (frames 60-119) -> action loop at rest, old walk replaced for styled figures only, unset figures keep old walk; 4 v2 wind streaks behind the figure, speed 7 px/frame at 1600 reference scaled by W/1600, alpha 0.3, heights cycling. Bursts, card effects, drift, camera, foreground, shadow otherwise unchanged.
 - Pokemon leaf research saved: 1/1 = 100% (docs/title-pokemon-leaf-research.md, LeafGreen leaf structure, Mochiichao leaf swap, no Pokemon tile pixels shipped)
 - Complex animation v2 spec saved: 1/1 = 100% (docs/title-animation-v2-complex.md, 9 moving layers vs Pokemon title's 2)
