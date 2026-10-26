@@ -22,7 +22,7 @@ export const MOVES_DB: Record<string, Move> = {
   WILD_CHARGE:    { name:"Wild Charge",     type:"ELECTRIC", cat:"Physical", bp:90,  acc:100, pp:15, pri:0, effect:"RECOIL_25",   effectChance:100, anim:"THUNDER_BOLT",   desc:"Charges with electric energy. Deals recoil." },
   // ── STEEL ─────────────────────────────────────────────────
   METAL_STRIKE:   { name:"Metal Strike",    type:"STEEL",    cat:"Physical", bp:50,  acc:100, pp:35, pri:0, effect:"NONE",        effectChance:0,   anim:"METAL_STRIKE",   desc:"A basic steel attack." },
-  IRON_BARRAGE:   { name:"Iron Barrage",    type:"STEEL",    cat:"Physical", bp:35,  acc:100, pp:15, pri:0, effect:"NONE",        effectChance:0,   anim:"IRON_BARRAGE",   desc:"Fires 2–5 iron shards." }, // changed to bp 35 standard
+  IRON_BARRAGE:   { name:"Iron Barrage",    type:"STEEL",    cat:"Physical", bp:35,  acc:100, pp:15, pri:0, effect:"MULTI_HIT",   effectChance:0,   anim:"IRON_BARRAGE",   desc:"Fires 2–5 iron shards." }, // changed to bp 35 standard
   FLASH_CANNON_MOVE:{ name:"Flash Cannon",  type:"STEEL",    cat:"Special",  bp:80,  acc:100, pp:10, pri:0, effect:"SPDEF_DOWN1", effectChance:10,  anim:"FLASH_CANNON_MOVE",desc:"Fires a flash of steel light. May lower Sp.Def." },
   // ── GROUND ────────────────────────────────────────────────
   EARTH_TREMOR:   { name:"Earth Tremor",    type:"GROUND",   cat:"Physical", bp:100, acc:100, pp:10, pri:0, effect:"NONE",        effectChance:0,   anim:"EARTH_TREMOR",   desc:"Shakes the ground to hit all adjacent foes." },
