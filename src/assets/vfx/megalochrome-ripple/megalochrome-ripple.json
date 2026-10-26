@@ -1,0 +1,44 @@
+{
+  "name": "megalochrome-ripple",
+  "kind": "separate_animated_vfx_layer",
+  "creature": "Megalochrome",
+  "effect": "anti-gravity water ripple",
+  "not_geometry": true,
+  "not_a_bake_change": true,
+  "frames": 12,
+  "fps": 12,
+  "loop": true,
+  "loop_ms": 1000,
+  "frame_ms": 83,
+  "size_px": [
+    256,
+    256
+  ],
+  "files": [
+    "megalochrome_ripple_f00.png",
+    "megalochrome_ripple_f01.png",
+    "megalochrome_ripple_f02.png",
+    "megalochrome_ripple_f03.png",
+    "megalochrome_ripple_f04.png",
+    "megalochrome_ripple_f05.png",
+    "megalochrome_ripple_f06.png",
+    "megalochrome_ripple_f07.png",
+    "megalochrome_ripple_f08.png",
+    "megalochrome_ripple_f09.png",
+    "megalochrome_ripple_f10.png",
+    "megalochrome_ripple_f11.png"
+  ],
+  "anchor": "centre of the frame on the water surface line; place the layer so the impact point sits at the creature's feet / water contact point",
+  "impact_point_px": [
+    128,
+    150
+  ],
+  "blend": "normal alpha compositing by default; additive (screen) is an approved alternate for bright water scenes",
+  "timing": {
+    "strike": "frame 0: centre glow at full brightness, first ring at radius 12",
+    "expand": "frames 0-11: 3 rings staggered 1/3 phase apart, each expanding 12 -> 120 px and fading to 0",
+    "droplets": "frames 0-11: 9 droplets rise upward from the surface and fade; they never fall back down (anti-gravity read)",
+    "loop_point": "frame 11 -> frame 0 is seamless: ring phases wrap at 1/3 offsets, droplet phases wrap per-droplet"
+  },
+  "usage": "overlay as an independent sprite layer above the ground / below the creature, or above the creature's lower body for a splash-through read; never baked into a model or sheet"
+}
