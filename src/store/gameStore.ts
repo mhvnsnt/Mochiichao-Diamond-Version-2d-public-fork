@@ -113,7 +113,25 @@ export const useGameStore = create<GameState>((set, get) => ({
   setPlayerInfo: (name, gender, slot) => set({ playerName: name, playerGender: gender, saveSlot: slot }),
   setRivalName: (name) => set({ rivalName: name }),
   loadState: (state) => {
-    const nextSettings = { ...DEFAULT_SETTINGS, ...((state as any).settings || {}) };
+    // Playtest 2026-10-26 (live Pages, step 4): a font row changed in
+    // Settings and saved to localStorage was lost after loading an
+    // older save, because the old save's settings overwrote the newer
+    // localStorage settings and were then persisted back. Settings
+    // the player chose most recently win: the store's current settings
+    // already came from localStorage at boot, or from a later Settings
+    // save in this session, so they are newer than any save written
+    // before that change. Only when the current settings are still
+    // exactly the defaults (no stored choice, no in-session change)
+    // does the save's own settings win, so a save carried to a fresh
+    // install still brings its settings with it. The merged result is
+    // persisted, so the next save written over this slot converges.
+    const savedSettings = ((state as any).settings || {}) as Partial<GameSettings>;
+    const currentSettings = get().settings;
+    const currentIsDefault = (Object.keys(DEFAULT_SETTINGS) as (keyof GameSettings)[])
+      .every(k => (currentSettings as any)[k] === (DEFAULT_SETTINGS as any)[k]);
+    const nextSettings: GameSettings = currentIsDefault
+      ? { ...DEFAULT_SETTINGS, ...savedSettings }
+      : { ...DEFAULT_SETTINGS, ...savedSettings, ...currentSettings };
     persistSettings(nextSettings);
     applyFontRoles(nextSettings);
     applySoundMode(nextSettings.sound);
