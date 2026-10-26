@@ -1,0 +1,62 @@
+{
+ "idle": {
+  "frame": 44,
+  "t": 1.875,
+  "n_groups": 33,
+  "max_gap_m": 0.1107,
+  "p99_gap_m": 0.1105,
+  "mean_gap_m": 0.0155,
+  "n_gt_1cm": 12,
+  "n_gt_5cm": 2
+ },
+ "ready": {
+  "frame": 14,
+  "t": 0.625,
+  "n_groups": 33,
+  "max_gap_m": 0.5931,
+  "p99_gap_m": 0.4835,
+  "mean_gap_m": 0.0497,
+  "n_gt_1cm": 17,
+  "n_gt_5cm": 9
+ },
+ "walk": {
+  "frame": 22,
+  "t": 0.9583,
+  "n_groups": 33,
+  "max_gap_m": 0.373,
+  "p99_gap_m": 0.3599,
+  "mean_gap_m": 0.1301,
+  "n_gt_1cm": 30,
+  "n_gt_5cm": 24
+ },
+ "attack": {
+  "frame": 14,
+  "t": 0.625,
+  "n_groups": 33,
+  "max_gap_m": 0.7927,
+  "p99_gap_m": 0.6486,
+  "mean_gap_m": 0.0858,
+  "n_gt_1cm": 18,
+  "n_gt_5cm": 16
+ },
+ "hit": {
+  "frame": 3,
+  "t": 0.1667,
+  "n_groups": 33,
+  "max_gap_m": 0.5679,
+  "p99_gap_m": 0.467,
+  "mean_gap_m": 0.0669,
+  "n_gt_1cm": 17,
+  "n_gt_5cm": 12
+ },
+ "faint": {
+  "frame": 44,
+  "t": 1.875,
+  "n_groups": 33,
+  "max_gap_m": 0.8703,
+  "p99_gap_m": 0.7296,
+  "mean_gap_m": 0.1934,
+  "n_gt_1cm": 32,
+  "n_gt_5cm": 28
+ }
+}
