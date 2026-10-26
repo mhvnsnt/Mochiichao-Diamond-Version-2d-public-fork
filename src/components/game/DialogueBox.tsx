@@ -5,6 +5,7 @@ import { useGameStore } from '../../store/gameStore';
 import { TEXT_SPEED_MS } from '../../lib/gameSettings';
 import { messageWindowStyle } from '../../lib/hudCustom';
 import type { MessageWindowStyle } from '../../lib/hudCustom';
+import { isConfirmKey } from '../../lib/buttonMode';
 import type { HumanSlot } from '../../lib/humanSheets';
 
 /**
@@ -76,6 +77,10 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
   // Settings wiring: TEXT SPEED row controls this interval.
   // MID 18ms is the pre-existing interval, kept exactly.
   const textSpeed = useGameStore(s => s.settings.textSpeed);
+  // BUTTON MODE: 'l' copies A (Enter / Space) when L_EQUALS_A —
+  // buttonMode.ts. LR shoulders have no list to flip in a message
+  // box, so they do nothing here (NEED, labelled in buttonMode.ts).
+  const buttonMode = useGameStore(s => s.settings.buttonMode);
   const typeInterval = TEXT_SPEED_MS[textSpeed] ?? 18;
   // Batch A: message window style + border opacity / shadow rows.
   const hudSettings = useGameStore(s => s.settings);
@@ -130,14 +135,14 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         if (e.key === 'n' || e.key === 'N') { onChoice(false); return; }
         return;
       }
-      if (e.key === 'Enter' || e.key === ' ') {
+      if (isConfirmKey(e, buttonMode)) {
         e.preventDefault();
         advance();
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [advance, choice, onChoice]);
+  }, [advance, choice, onChoice, buttonMode]);
 
   return (
     <StdWindow
