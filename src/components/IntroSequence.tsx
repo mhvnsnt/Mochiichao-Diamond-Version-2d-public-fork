@@ -17,7 +17,7 @@ import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 import mochiichaoLogo from "../assets/ui/mochiichao-main-logo.png";
-import mochiichaoMenuLogo from "../assets/ui/mochiichao-main-logo-v32-matched.png";
+import mochiichaoMenuLogo from "../assets/ui/mochiichao-main-logo-v32-orbitfix-20261026.png";
 import MainMenuBackground from "./game/MainMenuBackground";
 import mainCloudV32 from "../assets/ui/mochiichao-main-cloud-v32.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
@@ -464,7 +464,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     // below renders the v32 spec (logo/cloud/panels at spec
     // coordinates) through LockedStage. CONTINUE is tall (stats
     // inside), NEW GAME short below it, SETTINGS below that.
-    // Selected panel = gold frame + cursor. No Mystery Gift
+    // Selected panel = cursor glyph only (no gold frame, no drop
+    // shadow -- see the proof note below). No Mystery Gift
     // equivalent, no version footer, no fake patch number.
     const mainItems = [
       ...(hasSaves ? [{ key: 'CONTINUE', tall: true }] : []),
@@ -564,9 +565,17 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               freezes to static (MainMenuBackground freezes too). */}
           <style>{`@keyframes menu-bob-cloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.cloud.bobAmp}px); } } @keyframes menu-bob-mochii { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.mochii.bobAmp}px); } } .menu-bob-cloud { animation: menu-bob-cloud ${LOCKED_V32_MENU.cloud.bobPeriod}s ease-in-out infinite; } .menu-bob-mochii { animation: menu-bob-mochii ${LOCKED_V32_MENU.mochii.bobPeriod}s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .menu-bob-cloud, .menu-bob-mochii { animation: none; } }`}</style>
           {/* Logo slot from locked data: y180, width 900 (150-1050).
-              Round-2 menu asset (v32-matched, 900x548, centre 454):
+              Menu asset (orbitfix, 2026-10-26, 900x548, centre 454):
               upload letters with thick black outline + thick black
               orbit ring, built from the v32 picture's own geometry.
+              Section-O orbit fix (2026-10-26): ring re-fitted from
+              clean strips (left/right/top, star boxes excluded) to
+              centre (619,472), a=425, b=186, stroke 30 -- the round-2
+              ring (618,500,440,200) scored 0.48 on those pixels
+              (top 0.25) vs 0.98 for the corrected ring. Version-lock
+              settlement: the corrected ring ships as a NEW dated file
+              (mochiichao-main-logo-v32-orbitfix-20261026.png); the
+              round-2 v32-matched asset stays in the repo untouched.
               The TITLE slot above keeps the original keyed upload
               (thin white orbit reads on the dark title background);
               the pale keyed upload is NOT used here -- it vanished
@@ -577,6 +586,31 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             className="absolute object-contain"
             style={{ left: LOCKED_V32_MENU.logo.x, top: LOCKED_V32_MENU.logo.y, width: LOCKED_V32_MENU.logo.w }}
           />
+          {/* Fixed orbit side sparkles (section O, 2026-10-26): black
+              4-point stars present at the SAME positions in all three
+              targets (v32 picture, matched GIF frame 0, proof) -- left
+              (118-162, 512-556), right (1034-1086, 508-560) -- but
+              absent from the menu: both sit outside the 900-wide logo
+              asset box, and no element drew them. Shape is the game's
+              own star path (fill 0.327 vs target stars ~0.30). Static
+              like the logo (no bob); above the symbol layer, so
+              rising symbols pass behind them. */}
+          <svg
+            aria-hidden="true"
+            className="absolute"
+            style={{ left: 118, top: 512, width: 45, height: 45, pointerEvents: 'none' }}
+            viewBox="-22.5 -22.5 45 45"
+          >
+            <path d="M 0 -22.5 Q 5.4 -5.4 22.5 0 Q 5.4 5.4 0 22.5 Q -5.4 5.4 -22.5 0 Q -5.4 -5.4 0 -22.5 Z" fill="#000000" />
+          </svg>
+          <svg
+            aria-hidden="true"
+            className="absolute"
+            style={{ left: 1034, top: 508, width: 53, height: 53, pointerEvents: 'none' }}
+            viewBox="-26.5 -26.5 53 53"
+          >
+            <path d="M 0 -26.5 Q 6.36 -6.36 26.5 0 Q 6.36 6.36 0 26.5 Q -6.36 6.36 -26.5 0 Q -6.36 -6.36 0 -26.5 Z" fill="#000000" />
+          </svg>
           {/* Cloud from locked data: centre (600,738), 700x180.
               v32-traced asset (mochiichao-main-cloud-v32.svg, 700x180, same
               aspect as the box, so no letterbox/stretch): the old
