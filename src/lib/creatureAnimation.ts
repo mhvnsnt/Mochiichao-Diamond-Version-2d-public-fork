@@ -21,6 +21,11 @@
  *   the locked battle_front cell. Registry-wired (loaders below); the
  *   Pixi timeline keeps its transform treatments for these creatures,
  *   so these frames are the follow-up polish layer, not live-rendered yet.
+ *   FINISH-FIRST Item 4 (2026-10-26): PixiBattleCanvas now renders these
+ *   frames as the fallback when no pilot/articulation set resolves for the
+ *   attacker — see resolvePixiAttack() below. Precedence is unchanged for
+ *   pilot/articulation creatures; this only fills the 25 folders that had
+ *   no rendered set.
  * - articulation (24 entries, 96 sets): redrawn attack sets (physical/
  *   special/signature/heavy). Per set, the V3-queue final is used ONLY
  *   where its cell files actually exist on main (44 sets, 242 cells,
@@ -542,6 +547,108 @@ export function getMoveScript(moveId: string | undefined | null): MoveScript | n
 }
 export const GAME_MOVE_SCRIPT_MAP_COUNT = Object.keys(GAME_MOVE_SCRIPT_MAP).length;
 export const MOVE_SCRIPT_COUNT = Object.keys(SCRIPTS).length;
+
+/**
+ * FINISH-FIRST Item 4 (2026-10-26) — Pixi attack rendering resolution.
+ *
+ * What PixiBattleCanvas renders for an attacker, in precedence order:
+ *  1. attackSetFor() — pilot set by game move id (Mochii), pilot set by
+ *     family (Dreadtoise), articulation set by category (24 folders).
+ *  2. ATTACK_TRANSFORM fallback (this item) — the 25 folders with no
+ *     pilot/articulation set now render their 4 transform frames
+ *     (windup/strike/impact/recover; strikechamp_unsuited_full renders
+ *     its 7 attack cells on an even split). Before this item the
+ *     transform layer was registry-only (0/51 Pixi-rendered) and the
+ *     rendered total was 26/51 folders; after it, 51/51 folders render.
+ *
+ * Per-move sequencing: the resolved move script (getMoveScript(), Phase 1
+ * map included) drives `motion`, not just the game category:
+ *  - template special_projectile -> 'projectile' (Pixi Special branch).
+ *  - template physical_contact   -> 'lunge' (Pixi Physical branch).
+ *  - template physical           -> 'stay': the script has NO sub_Lunge
+ *    step (impact only, e.g. EARTHQUAKE, BULLDOZE, AQUA_JET), so Pixi
+ *    must not lunge. Implemented in PixiBattleCanvas by neutralising
+ *    the travel target to the attacker base for stay-motion moves; the
+ *    existing travel/recover branches then become no-ops and no existing
+ *    branch line is changed.
+ *  - template multi_hit          -> 'stay' + beats = the count of
+ *    sub_MultiHitBeat steps (TWINEEDLE = 3; default 3 per the moveScripts
+ *    assumption when no beat steps are present). Beat cycling is drawn
+ *    only on the transform fallback (its roles are known); pilot/
+ *    articulation sets play their native sequence.
+ *  - template two_turn           -> 'projectile' (the unleash variant).
+ *    The charge turn itself is resolver-owned turn structure, not a
+ *    Pixi turn, so it is NOT faked as a second Pixi attack here.
+ *  - any other template, or no script at all -> game-category fallback
+ *    (Special -> projectile, Physical -> lunge), so a script-unmatched
+ *    move still renders its attack frames.
+ *
+ * IRON_BARRAGE stays script-unmatched (Mars-gated: description says
+ * 2-5 shards, effect field says NONE single-hit) and is NOT forced to
+ * any script here; it renders via the category fallback (Physical lunge
+ * + transform/articulation frames for its user) like any unmatched move.
+ *
+ * Direction (PARAMETER ONLY — DEFERRED, Mars correction 16:38 CDT):
+ * direction is side-based, not move-based — Pixi computes player = +1
+ * (LEFT) and enemy = -1 (RIGHT) and passes it as a parameter to the
+ * treatments timeline (particle fan + recoil) while lunge/projectile
+ * travel is positional between the two bases. This resolver does NOT
+ * finish direction work and does NOT claim it finished: VFX origin
+ * anchoring (blasts must shoot FROM THE MOUTH) and effect-art travel
+ * direction (opponent effects travel LEFT, player effects RIGHT) are
+ * owned by the SEPARATE VFX origin + direction pass, including the
+ * known old Dorowani jet (waist height, disconnected from the mouth,
+ * going right). Transform frames themselves are direction-neutral
+ * (front-facing lean transforms, no travel drawn in the frame —
+ * verified on mochii attack_b_strike), so no sprite mirror is applied
+ * in this resolver; the mirror/VFX pass owns facing and origin, and
+ * this item does not duplicate it.
+ *
+ * This resolver renders whatever the registry tables already point at.
+ * It does not re-point, replace, or delete any locked asset: in
+ * particular Razorgater's registry articulation set (v2rework eyes-only)
+ * is rendered as-is even though docs/locked-versions.json lists
+ * Razorgater take-6 as CURRENT — reconciling the registry to take-6 is
+ * the art lane's job, not this wiring item.
+ */
+export type PixiAttackMotion = 'lunge' | 'projectile' | 'stay' | 'status';
+export interface PixiAttackRender {
+  script: MoveScript | null;
+  scriptId: string | null;
+  set: AttackSetChoice | null;
+  transform: AttackFrame[] | null;
+  motion: PixiAttackMotion;
+  beats: number;
+}
+export function attackTransformFor(folder: string): AttackFrame[] | null {
+  const frames = ATTACK_TRANSFORM[folder];
+  return frames ? [...frames] : null;
+}
+export function resolvePixiAttack(folder: string, moveId: string | undefined | null, category: string): PixiAttackRender | null {
+  if (!folder) return null;
+  const script = getMoveScript(moveId);
+  if (category === 'Status') {
+    return { script, scriptId: script ? script.move : null, set: null, transform: null, motion: 'status', beats: 0 };
+  }
+  const set = attackSetFor(folder, moveId, category);
+  const transform = set ? null : attackTransformFor(folder);
+  let motion: PixiAttackMotion;
+  let beats = 0;
+  if (script) {
+    if (script.template === 'special_projectile') motion = 'projectile';
+    else if (script.template === 'physical_contact') motion = 'lunge';
+    else if (script.template === 'physical') motion = 'stay';
+    else if (script.template === 'multi_hit') {
+      motion = 'stay';
+      beats = script.steps.filter((s) => s.sub === 'sub_MultiHitBeat').length || 3;
+    }
+    else if (script.template === 'two_turn') motion = 'projectile';
+    else motion = category === 'Special' ? 'projectile' : 'lunge';
+  } else {
+    motion = category === 'Special' ? 'projectile' : 'lunge';
+  }
+  return { script, scriptId: script ? script.move : null, set, transform, motion, beats };
+}
 
 /** Shiny wiring is intentionally absent: the shiny-v2 set is staged show-first and NOT approved. */
 export const SHINY_WIRED = false;

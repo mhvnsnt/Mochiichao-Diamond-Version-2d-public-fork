@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Application, Container, Graphics, Sprite, Texture } from 'pixi.js';
 import { getSheetDef, fallbackColorFor, battleSpriteUrl, battleCell } from '../../lib/spriteSheets';
 import { folderForSpecies, loadHurtFrame, loadSilhouette, attackSetFor, loadArticCell, loadPilotCell } from '../../lib/creatureAnimation';
+import { resolvePixiAttack, loadAttackFrame } from '../../lib/creatureAnimation';
 import type { AttackSetChoice } from '../../lib/creatureAnimation';
 import { sheetCellTextureXY, fullImageTexture } from './pixiSheet';
 import { buildHitTimeline, sampleHitPose } from '../../lib/battleTreatments';
@@ -234,6 +235,21 @@ export default function PixiBattleCanvas({
     // DELETED: old flash()/shake() helpers (random shake, fixed fade).
     // Flash/shake/particles below are sampled from the timeline.
     const direction = attack.attacker === 'player' ? 1 : -1;
+    // FINISH-FIRST Item 4 direction — PARAMETER ONLY, DEFERRED (Mars
+    // correction 16:38 CDT): direction (+1 player LEFT, -1 enemy RIGHT)
+    // is passed as a parameter to the treatments timeline (particle fan
+    // + recoil, battleTreatments) and lunge/projectile travel is
+    // positional between the two bases. This wiring does NOT finish
+    // direction work and does NOT claim it finished: VFX origin anchoring
+    // (blasts shoot FROM THE MOUTH) and effect-art travel direction
+    // (opponent LEFT, player RIGHT) are owned by the SEPARATE VFX origin
+    // + direction pass — including the known old Dorowani jet (waist
+    // height, disconnected from the mouth, going right) and the current
+    // projectile origin (attacker base centre, y-40, NOT mouth-anchored).
+    // Transform frames are direction-neutral (front-facing lean
+    // transforms, no travel drawn in the frame — verified on mochii
+    // attack_b_strike), so no sprite mirror is applied here; that pass
+    // owns facing and origin, and this item does not duplicate it.
     const timeline = buildHitTimeline({
       damageFraction: attack.damageFraction ?? 0,
       isCrit: !!attack.isCrit, direction, seed: attack.nonce,
@@ -252,6 +268,11 @@ export default function PixiBattleCanvas({
     const attackerSize = Math.min(vw, vh) * (attack.attacker === 'player' ? 0.42 : 0.36);
     const targetSize = Math.min(vw, vh) * (attack.attacker === 'player' ? 0.36 : 0.42);
     const setChoice: AttackSetChoice | null = attackerFolder ? attackSetFor(attackerFolder, attack.moveId, attack.category) : null;
+    // FINISH-FIRST Item 4: per-move resolution (script template -> motion,
+    // transform fallback when no pilot/articulation set resolves). Status
+    // attacks keep the existing Status branch below; resolvePixiAttack
+    // returns motion 'status' and no frames for them.
+    const pixiAttack = attackerFolder ? resolvePixiAttack(attackerFolder, attack.moveId, attack.category) : null;
     const art: {
       frames: { tex: Texture; startMs: number; endMs: number }[] | null;
       hurtTex: Texture | null;
@@ -292,6 +313,70 @@ export default function PixiBattleCanvas({
           });
         }).catch(() => { art.frames = null; });
     }
+    // FINISH-FIRST Item 4: transform fallback. Only when no pilot/
+    // articulation set resolved (setChoice null) AND the resolver found
+    // transform frames for this folder. Frames are scheduled by ROLE onto
+    // the 1490 ms Pixi timeline (windup 0-250, strike/travel 250-700,
+    // impact + recoil 700-1090, recover 1090-1490) — NOT by their raw
+    // registry durations (250/120/90/400 = 860 ms), which describe the
+    // transform clip, not the Pixi timeline. Multi-hit scripts cycle
+    // strike/impact beats inside 700-1090 (beat = strike half + impact
+    // half). Cells with durationMs 0 throughout (strikechamp_unsuited_full,
+    // 7 cells) split the timeline evenly, like articulation sets. A failed
+    // load leaves art.frames null and the timeline plays transform-only,
+    // exactly like the existing set path, so art can never break an attack.
+    if (!setChoice && pixiAttack?.transform && attackerFolder) {
+      const tFrames = pixiAttack.transform;
+      const tLoaders = tFrames.map((f) => loadAttackFrame(attackerFolder, f.file));
+      Promise.all(tLoaders.map((pr) => (pr ? pr.then((url) => fullImageTexture(url)) : Promise.reject(new Error('no frame')))))
+        .then((texs) => {
+          if (!artCurrent()) return;
+          const hasDurations = tFrames.some((f) => (f.durationMs ?? 0) > 0);
+          if (!hasDurations) {
+            let at = 0;
+            const each = 1490 / texs.length;
+            art.frames = texs.map((tex) => {
+              const startMs = at; at += each;
+              return { tex, startMs, endMs: at };
+            });
+            return;
+          }
+          const texFor = (role: string): Texture | null => {
+            const i = tFrames.findIndex((f) => f.role === role);
+            return i >= 0 ? texs[i] : null;
+          };
+          const windupTex = texFor('windup');
+          const strikeTex = texFor('strike_lunge');
+          const impactTex = texFor('impact_hold');
+          const recoverTex = texFor('recover');
+          if (!windupTex || !strikeTex || !impactTex || !recoverTex) {
+            let at = 0;
+            const each = 1490 / texs.length;
+            art.frames = texs.map((tex) => {
+              const startMs = at; at += each;
+              return { tex, startMs, endMs: at };
+            });
+            return;
+          }
+          const sched: { tex: Texture; startMs: number; endMs: number }[] = [
+            { tex: windupTex, startMs: 0, endMs: 250 },
+            { tex: strikeTex, startMs: 250, endMs: 700 },
+          ];
+          const beats = pixiAttack.beats > 1 ? pixiAttack.beats : 0;
+          if (beats > 0) {
+            const beatMs = 390 / beats;
+            for (let b = 0; b < beats; b++) {
+              const bs = 700 + b * beatMs;
+              sched.push({ tex: strikeTex, startMs: bs, endMs: bs + beatMs / 2 });
+              sched.push({ tex: impactTex, startMs: bs + beatMs / 2, endMs: bs + beatMs });
+            }
+          } else {
+            sched.push({ tex: impactTex, startMs: 700, endMs: 1090 });
+          }
+          sched.push({ tex: recoverTex, startMs: 1090, endMs: 1490 });
+          art.frames = sched;
+        }).catch(() => { art.frames = null; });
+    }
     if (targetFolder) {
       const hp = loadHurtFrame(targetFolder);
       if (hp) hp.then((url) => fullImageTexture(url)).then((tex) => { if (artCurrent()) art.hurtTex = tex; }).catch(() => {});
@@ -299,6 +384,14 @@ export default function PixiBattleCanvas({
     const CONTACT = 700; // windup 250 + travel 450
     const gap = attack.attacker === 'player' ? 70 : -70;
     const lungeEnd = { x: baseT.x + gap, y: baseT.y };
+    // FINISH-FIRST Item 4 (stay-motion): scripts with template 'physical'
+    // or 'multi_hit' carry NO sub_Lunge step, so the attacker must not
+    // lunge. Neutralising the travel target to the attacker base makes the
+    // existing travel branch (lunge to lungeEnd) and the existing recover
+    // branch (lungeEnd back to base) both no-ops, with no branch line
+    // changed; onImpact/onDone timing is untouched. Projectile moves are
+    // unaffected (their branch never uses lungeEnd).
+    if (pixiAttack?.motion === 'stay') { lungeEnd.x = baseA.x; lungeEnd.y = baseA.y; }
     let flashG: Graphics | null = null;
     let particleGs: Graphics[] = [];
     const spawnContactFx = () => {
