@@ -13,17 +13,17 @@
  "atlas_file": "gearkid_atlas_64_locked.png",
  "atlas_size": {
   "width": 384,
-  "height": 192
+  "height": 256
  },
- "frame_count": 16,
+ "frame_count": 17,
  "draft": false,
  "draft_note": "",
- "notes": "",
+ "notes": "Gearkid battle_back CORRECTED 2026-10-26 (Mars-approved true back): battle_back = new angles-sheet cell (row 2 col 5); former cell 03 relabelled battle_front_variant (it is a FRONT). Full relabel table in sprite-art/phase-a-gearkid-back/GEARKID-BACK-RELABEL.md. Mechapion battle_back role still owed separately.",
  "role_unconfirmed": [],
  "frames": [
   {
    "cell": 0,
-   "role": "overworld_back",
+   "role": "overworld_front_variant",
    "file": "gearkid_cell_00.png",
    "game_ready": true,
    "source_cell": 0,
@@ -56,18 +56,18 @@
   },
   {
    "cell": 3,
-   "role": "battle_back",
+   "role": "battle_front_variant",
    "file": "gearkid_cell_03.png",
    "game_ready": true,
    "source_cell": 3,
-   "lock_note": "PROVISIONAL: eyes visible at 64px, key visible; closest back candidate. QA sheet-level says a true back exists \u2014 re-verify at sheet resolution before shipping battle",
+   "lock_note": "CORRECTED 2026-10-25/26 sheet verdict: FRONT, not a back; battle_back is the new angles-sheet cell (row 2 col 5).",
    "eye_status": "eye_confirmed",
    "atlas_x": 192,
    "atlas_y": 0
   },
   {
    "cell": 4,
-   "role": "overworld_back_2",
+   "role": "overworld_side",
    "file": "gearkid_cell_04.png",
    "game_ready": true,
    "source_cell": 4,
@@ -78,7 +78,7 @@
   },
   {
    "cell": 5,
-   "role": "overworld_side",
+   "role": "overworld_front_variant",
    "file": "gearkid_cell_05.png",
    "game_ready": true,
    "source_cell": 5,
@@ -111,7 +111,7 @@
   },
   {
    "cell": 8,
-   "role": "overworld_side_2",
+   "role": "overworld_front_variant",
    "file": "gearkid_cell_08.png",
    "game_ready": true,
    "source_cell": 8,
@@ -122,7 +122,7 @@
   },
   {
    "cell": 9,
-   "role": "overworld_side_3",
+   "role": "overworld_front_variant",
    "file": "gearkid_cell_09.png",
    "game_ready": true,
    "source_cell": 9,
@@ -133,7 +133,7 @@
   },
   {
    "cell": 10,
-   "role": "overworld_front_4",
+   "role": "overworld_side_2",
    "file": "gearkid_cell_10.png",
    "game_ready": true,
    "source_cell": 10,
@@ -144,7 +144,7 @@
   },
   {
    "cell": 11,
-   "role": "overworld_front_5",
+   "role": "overworld_side_3",
    "file": "gearkid_cell_11.png",
    "game_ready": true,
    "source_cell": 11,
@@ -224,6 +224,17 @@
    "game_ready": true,
    "source_cell": 2,
    "lock_note": "Derived head crop from battle_front cell 2 (no icon cell in atlas)"
+  },
+  {
+   "cell": 16,
+   "role": "battle_back",
+   "file": "gearkid_battle_back_true_v1.png",
+   "game_ready": true,
+   "source_cell": "angles-sheet row 2 col 5",
+   "lock_note": "TRUE BACK (Mars-approved 2026-10-26): gear head from behind, gold gear ring, grey centre, NO face, NO eyes.",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 192
   }
  ],
  "qa_notes": [
