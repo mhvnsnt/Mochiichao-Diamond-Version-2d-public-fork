@@ -19,7 +19,7 @@ import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 import mochiichaoLogo from "../assets/ui/mochiichao-main-logo.png";
 import mochiichaoMenuLogo from "../assets/ui/mochiichao-main-logo-v32-matched.png";
 import MainMenuBackground from "./game/MainMenuBackground";
-import mainCloudV32 from "../assets/ui/mochiichao-main-cloud-v32.svg";
+import puffyCloud from "../assets/ui/puffy-cloud.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
 import { playUiMove, playUiConfirm, playUiBack } from "../lib/audioRouting";
@@ -578,14 +578,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             style={{ left: LOCKED_V32_MENU.logo.x, top: LOCKED_V32_MENU.logo.y, width: LOCKED_V32_MENU.logo.w }}
           />
           {/* Cloud from locked data: centre (600,738), 700x180.
-              v32-traced asset (mochiichao-main-cloud-v32.svg, 700x180, same
-              aspect as the box, so no letterbox/stretch): the old
-              puffy-cloud.svg (viewBox 600x280) letterboxed to ~386px wide
-              inside this box under its default preserveAspectRatio=meet,
-              which is the live #170 cloud defect. The old file stays in
-              the repo, unused by the menu. */}
+              ORIGINAL cloud file restored (puffy-cloud.svg, viewBox
+              600x280, exactly as used before): the #184 traced
+              lookalike was a different-shaped file and is deleted
+              by Mars's order 2026-10-26, so only the original
+              cloud file remains. The original renders
+              with objectFit fill into the locked 700x180 box, so no
+              letterbox and no path change to the file itself. */}
           <img
-            src={mainCloudV32}
+            src={puffyCloud}
             alt=""
             className="absolute menu-bob-cloud"
             style={{ left: LOCKED_V32_MENU.cloud.x, top: LOCKED_V32_MENU.cloud.y, width: LOCKED_V32_MENU.cloud.w, height: LOCKED_V32_MENU.cloud.h, pointerEvents: 'none', objectFit: 'fill' }}
