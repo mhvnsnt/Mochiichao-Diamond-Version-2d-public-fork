@@ -148,6 +148,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   const loadState = useGameStore(s => s.loadState);
   const setPlayerInfo = useGameStore(s => s.setPlayerInfo);
+  const setAutosaveHeldForSlot = useGameStore(s => s.setAutosaveHeldForSlot);
   const setRivalName = useGameStore(s => s.setRivalName);
   const setMapState = useGameStore(s => s.setMapState);
 
@@ -557,10 +558,10 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               <div className="text-white font-bold text-lg mb-2">Start over in SLOT {pendingOverwriteSlot}?</div>
               <p className="text-sm text-slate-400 mb-4">
                 {pendingSave ? `${pendingSave.player} — ${pendingSave.map}. ` : ''}
-                This starts the Prof intro and starter pick for a new game in this slot. The old save is NOT erased here — it is only replaced if you later save over this slot in-game.
+                This starts the Prof intro and starter pick for a new game in this slot. The old save is NOT erased here — autosaves for this slot are held until you save manually, and it is only replaced if you later save over this slot in-game.
               </p>
               <div className="flex flex-col gap-2">
-                <button onClick={() => { const s = pendingOverwriteSlot; setPendingOverwriteSlot(null); setSelectedSlot(s); setPhase("PROF_INTRO_1"); }} className="game-button px-4 py-2 font-bold min-h-[48px]">Start new game here</button>
+                <button onClick={() => { const s = pendingOverwriteSlot; setPendingOverwriteSlot(null); setAutosaveHeldForSlot(s); setSelectedSlot(s); setPhase("PROF_INTRO_1"); }} className="game-button px-4 py-2 font-bold min-h-[48px]">Start new game here</button>
                 <button onClick={() => { const file = getSaves(pendingOverwriteSlot).sort((a,b)=>b.timestamp-a.timestamp)[0]; setPendingOverwriteSlot(null); if (file) { loadState(file.data); onEnterWorld(); } }} className="game-button px-4 py-2 font-bold min-h-[48px]">Load this save instead</button>
                 <button onClick={() => setPendingOverwriteSlot(null)} className="game-button px-4 py-2 font-bold min-h-[48px]">Cancel</button>
               </div>
