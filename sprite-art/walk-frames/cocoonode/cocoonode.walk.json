@@ -1,0 +1,53 @@
+{
+ "creature": "cocoonode",
+ "roster_id": "017",
+ "status": "done",
+ "method": "movement treatment derived from existing locked game-ready cells by transform only (no new generation, no redraw): bob/shift/tilt/scale/mirror as noted per creature",
+ "frames": [
+  {
+   "file": "cocoonode_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "cocoonode_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "cocoonode_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "cocoonode_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "cocoonode_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "cocoonode_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "cocoonode_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "cocoonode_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "movement_note": "Crystal pulse: phases are a 6% scale pulse (1.00 vs 1.06), no leg walk. Faceless crystal by design: front vs back vs sides cannot be distinguished by eye, so left/right reuse the front cell (same as the locked set's own indistinguishability, documented not hidden).",
+ "source_cells": {
+  "down": "game-ready/cocoonode/cells/cocoonode_cell_02.png (overworld_front)",
+  "up": "game-ready/cocoonode/cells/cocoonode_cell_03.png (overworld_back)",
+  "left/right": "game-ready/cocoonode/cells/cocoonode_cell_02.png (faceless: sides indistinguishable from front by design)"
+ },
+ "eye_check": "Enlarged montage PASS as treatment. Crystal pulse (scale 1.00 vs 1.06); faceless by design, sides reuse front cell (documented). Front (star centre) vs back (plain diamond centre) ARE distinguishable."
+}

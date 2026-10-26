@@ -1,0 +1,49 @@
+{
+ "creature": "manticlaw",
+ "roster_id": "012",
+ "status": "done",
+ "method": "one generated 8-panel sheet, quarter-split, border-connected white-bg flood removal (scipy label), interior whites kept, flat bottom shadow-ellipse strip where present, fit to 64x64 RGBA",
+ "frames": [
+  {
+   "file": "manticlaw_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "manticlaw_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "manticlaw_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "manticlaw_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "manticlaw_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "manticlaw_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "manticlaw_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "manticlaw_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "movement_note": "Normal hulking tiger likeness (rock armor, flame mane); NOT short-spine variant, NOT discarded blue turtle. Down pair subtle (leg shift only).",
+ "raw_sheet": "media-generation-manticlaw-walk-v1-0-bf3034d5-be18-4bbb-8ca8-9857d24fdee5.webp",
+ "eye_check": "Enlarged + 64px montage PASS. Normal hulking tiger (rock armor, flame mane) \u2014 NOT short-spine, NOT blue turtle. Down pair subtle (leg shift only). Sides distinct, back spiky/faceless. Cut from pre-generated sheet on disk (recovery, not regeneration)."
+}
