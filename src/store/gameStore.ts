@@ -38,6 +38,8 @@ interface GameState {
   // (which serializes the whole state) saves and loads them with the game.
   gardenRecords: Record<string, GardenCreature>;
   setGardenRecord: (creatureId: string, record: GardenCreature) => void;
+  gardenMinutes: number;
+  setGardenMinutes: (minutes: number) => void;
   guardian: GuardianAssignment | null;
   setGuardian: (guardian: GuardianAssignment | null) => void;
 
@@ -101,6 +103,8 @@ export const useGameStore = create<GameState>((set, get) => ({
   defeatedTrainers: [],
   gardenRecords: {},
   setGardenRecord: (creatureId, record) => set(s => ({ gardenRecords: { ...s.gardenRecords, [creatureId]: record } })),
+  gardenMinutes: 0,
+  setGardenMinutes: (minutes) => set({ gardenMinutes: minutes }),
   guardian: null,
   setGuardian: (guardian) => set({ guardian }),
   currentMap: 'sector0',
