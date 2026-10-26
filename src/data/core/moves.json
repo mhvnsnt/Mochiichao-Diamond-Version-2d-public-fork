@@ -1,0 +1,694 @@
+{
+  "$schema": "./schemas/moves.schema.json",
+  "version": "1.0.0",
+  "source": "Converted from src/lib/moves.ts on main (36 moves, ids/names/values verbatim; effect strings converted to data objects per the Quickest plan \u00a71b shape). Move names that coincide with generic battle-game terms are carried verbatim from moves.ts; renaming any of them is a Mars decision, not made here, because learnset and animation keys reference these ids.",
+  "moves": [
+    {
+      "id": "AQUA_SHOT",
+      "name": "Aqua Shot",
+      "type": "WATER",
+      "category": "Special",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "AQUA_SHOT",
+      "desc": "A small ball of water hurled at the foe."
+    },
+    {
+      "id": "AQUA_CANNON",
+      "name": "Aqua Cannon",
+      "type": "WATER",
+      "category": "Special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "AQUA_CANNON",
+      "desc": "A powerful pressurized water blast."
+    },
+    {
+      "id": "HYDRO_SURGE",
+      "name": "Hydro Surge",
+      "type": "WATER",
+      "category": "Special",
+      "power": 120,
+      "accuracy": 80,
+      "pp": 5,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "HYDRO_SURGE",
+      "desc": "An immense rush of water. Powerful but inaccurate."
+    },
+    {
+      "id": "AQUA_JET",
+      "name": "Aqua Jet",
+      "type": "WATER",
+      "category": "Physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 1,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "AQUA_SHOT",
+      "desc": "Moves first with a coating of water."
+    },
+    {
+      "id": "EMBER_TOSS",
+      "name": "Ember Toss",
+      "type": "FIRE",
+      "category": "Special",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "burn",
+          "chance": 0.1
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "EMBER_TOSS",
+      "desc": "A weak fire attack. May cause burn."
+    },
+    {
+      "id": "FIRE_STREAM",
+      "name": "Fire Stream",
+      "type": "FIRE",
+      "category": "Special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "burn",
+          "chance": 0.1
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "FIRE_STREAM",
+      "desc": "A sustained jet of fire. May burn."
+    },
+    {
+      "id": "INFERNO_WAVE",
+      "name": "Inferno Wave",
+      "type": "FIRE",
+      "category": "Special",
+      "power": 110,
+      "accuracy": 85,
+      "pp": 10,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "burn",
+          "chance": 0.3
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "INFERNO_WAVE",
+      "desc": "Engulfs the target in a roaring inferno."
+    },
+    {
+      "id": "FIRE_PUNCH_MOVE",
+      "name": "Fire Punch",
+      "type": "FIRE",
+      "category": "Physical",
+      "power": 75,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "burn",
+          "chance": 0.1
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "FIRE_PUNCH_MOVE",
+      "desc": "A fiery punch. May burn."
+    },
+    {
+      "id": "PETAL_BARRAGE",
+      "name": "Petal Barrage",
+      "type": "GRASS",
+      "category": "Special",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "PETAL_BARRAGE",
+      "desc": "Pelts the foe with a shower of petals."
+    },
+    {
+      "id": "SOLAR_BLAST",
+      "name": "Solar Blast",
+      "type": "GRASS",
+      "category": "Special",
+      "power": 120,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "chargeTurn": true
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "SOLAR_BLAST",
+      "desc": "Charges solar energy then fires a beam."
+    },
+    {
+      "id": "RAZOR_LEAF",
+      "name": "Razor Leaf",
+      "type": "GRASS",
+      "category": "Physical",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 25,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "critStage": 1
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "PETAL_BARRAGE",
+      "desc": "Launches sharp leaves. High critical-hit rate."
+    },
+    {
+      "id": "VINE_LASH",
+      "name": "Vine Lash",
+      "type": "GRASS",
+      "category": "Physical",
+      "power": 45,
+      "accuracy": 100,
+      "pp": 25,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "VINE_LASH",
+      "desc": "Lashes the foe with long vines."
+    },
+    {
+      "id": "SPARK_SHOT",
+      "name": "Spark Shot",
+      "type": "ELECTRIC",
+      "category": "Special",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "paralysis",
+          "chance": 0.1
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "SPARK_SHOT",
+      "desc": "A small electric jolt. May paralyze."
+    },
+    {
+      "id": "THUNDER_BOLT",
+      "name": "Thunderbolt",
+      "type": "ELECTRIC",
+      "category": "Special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "paralysis",
+          "chance": 0.1
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "THUNDER_BOLT",
+      "desc": "A strong electric bolt. May paralyze."
+    },
+    {
+      "id": "WILD_CHARGE",
+      "name": "Wild Charge",
+      "type": "ELECTRIC",
+      "category": "Physical",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "recoil": 0.25
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "THUNDER_BOLT",
+      "desc": "Charges with electric energy. Deals recoil."
+    },
+    {
+      "id": "METAL_STRIKE",
+      "name": "Metal Strike",
+      "type": "STEEL",
+      "category": "Physical",
+      "power": 50,
+      "accuracy": 100,
+      "pp": 35,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "METAL_STRIKE",
+      "desc": "A basic steel attack."
+    },
+    {
+      "id": "IRON_BARRAGE",
+      "name": "Iron Barrage",
+      "type": "STEEL",
+      "category": "Physical",
+      "power": 35,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "IRON_BARRAGE",
+      "desc": "Fires 2\u20135 iron shards."
+    },
+    {
+      "id": "FLASH_CANNON_MOVE",
+      "name": "Flash Cannon",
+      "type": "STEEL",
+      "category": "Special",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "stat": "spd",
+          "stages": -1,
+          "chance": 0.1
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "FLASH_CANNON_MOVE",
+      "desc": "Fires a flash of steel light. May lower Sp.Def."
+    },
+    {
+      "id": "EARTH_TREMOR",
+      "name": "Earth Tremor",
+      "type": "GROUND",
+      "category": "Physical",
+      "power": 100,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "allAdjacent",
+      "flags": [],
+      "anim": "EARTH_TREMOR",
+      "desc": "Shakes the ground to hit all adjacent foes."
+    },
+    {
+      "id": "MUD_BLAST",
+      "name": "Mud Blast",
+      "type": "GROUND",
+      "category": "Physical",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "stat": "acc",
+          "stages": -1,
+          "chance": 0.3
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "MUD_BLAST",
+      "desc": "Hurls mud at foe. May lower accuracy."
+    },
+    {
+      "id": "EARTH_POWER",
+      "name": "Earth Power",
+      "type": "GROUND",
+      "category": "Special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "stat": "spd",
+          "stages": -1,
+          "chance": 0.1
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "EARTH_TREMOR",
+      "desc": "Energy bursts from the earth. May lower Sp.Def."
+    },
+    {
+      "id": "BULLDOZE",
+      "name": "Bulldoze",
+      "type": "GROUND",
+      "category": "Physical",
+      "power": 60,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "stat": "spe",
+          "stages": -1,
+          "chance": 1.0
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "EARTH_TREMOR",
+      "desc": "Stomps on the ground to lower foe's Speed."
+    },
+    {
+      "id": "SHADOW_PULSE",
+      "name": "Shadow Pulse",
+      "type": "GHOST",
+      "category": "Special",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "flinch",
+          "chance": 0.2
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "SHADOW_PULSE",
+      "desc": "Shadow ball that may cause flinch."
+    },
+    {
+      "id": "DARK_PULSE_MOVE",
+      "name": "Dark Pulse",
+      "type": "DARK",
+      "category": "Special",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "flinch",
+          "chance": 0.2
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "DARK_PULSE_MOVE",
+      "desc": "Pulse of dark energy. May flinch."
+    },
+    {
+      "id": "NIGHT_SLASH_MOVE",
+      "name": "Night Slash",
+      "type": "DARK",
+      "category": "Physical",
+      "power": 70,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "critStage": 1
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "NIGHT_SLASH_MOVE",
+      "desc": "Slashes in darkness. High critical-hit ratio."
+    },
+    {
+      "id": "CRUNCH",
+      "name": "Crunch",
+      "type": "DARK",
+      "category": "Physical",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "stat": "def",
+          "stages": -1,
+          "chance": 0.2
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "SHADOW_CLAW_MOVE",
+      "desc": "Crunches with fangs."
+    },
+    {
+      "id": "GUST_WAVE",
+      "name": "Gust Wave",
+      "type": "FLYING",
+      "category": "Special",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "GUST_WAVE",
+      "desc": "Whips up gusts of wind with wings."
+    },
+    {
+      "id": "WING_ASSAULT",
+      "name": "Wing Assault",
+      "type": "FLYING",
+      "category": "Physical",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "WING_ASSAULT",
+      "desc": "Strikes foe hard with wings."
+    },
+    {
+      "id": "TACKLE",
+      "name": "Tackle",
+      "type": "NORMAL",
+      "category": "Physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "BODY_SLAM_MOVE",
+      "desc": "A physical charge."
+    },
+    {
+      "id": "QUICK_ATTACK",
+      "name": "Quick Attack",
+      "type": "NORMAL",
+      "category": "Physical",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "priority": 1,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "MACH_STRIKE",
+      "desc": "Extremely speedy blow. Always goes first."
+    },
+    {
+      "id": "BODY_SLAM_MOVE",
+      "name": "Body Slam",
+      "type": "NORMAL",
+      "category": "Physical",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "paralysis",
+          "chance": 0.3
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "BODY_SLAM_MOVE",
+      "desc": "Slams foe with full body. May paralyze."
+    },
+    {
+      "id": "MIND_BLAST",
+      "name": "Mind Blast",
+      "type": "PSYCHIC",
+      "category": "Special",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 10,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "stat": "spd",
+          "stages": -1,
+          "chance": 0.1
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "MIND_BLAST",
+      "desc": "Mental blast. May lower Sp.Def."
+    },
+    {
+      "id": "DRAGON_CLAW",
+      "name": "Dragon Claw",
+      "type": "DRAGON",
+      "category": "Physical",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "SHADOW_CLAW_MOVE",
+      "desc": "Rakes foe with sharp claws."
+    },
+    {
+      "id": "POWER_STRIKE",
+      "name": "Power Strike",
+      "type": "FIGHTING",
+      "category": "Physical",
+      "power": 85,
+      "accuracy": 100,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "POWER_STRIKE",
+      "desc": "A mighty strike packed with fighting spirit."
+    },
+    {
+      "id": "SWARM_STRIKE",
+      "name": "Swarm Strike",
+      "type": "BUG",
+      "category": "Physical",
+      "power": 25,
+      "accuracy": 95,
+      "pp": 10,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "hits": "2-5"
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "SWARM_STRIKE",
+      "desc": "Swarm attacks 2\u20135 times in a row."
+    },
+    {
+      "id": "POISON_JAB",
+      "name": "Poison Jab",
+      "type": "POISON",
+      "category": "Physical",
+      "power": 80,
+      "accuracy": 100,
+      "pp": 20,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "status": "poison",
+          "chance": 0.2
+        }
+      },
+      "target": "single",
+      "flags": [],
+      "anim": "VENOM_STRIKE",
+      "desc": "Stabs with poison appendage. May poison."
+    }
+  ]
+}
