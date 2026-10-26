@@ -12,6 +12,8 @@ import { findNextStep } from '../../lib/creaturePathfinding';
 import { gardenBattleBonus } from '../../lib/mochiichao-systems';
 import { gardenFormPresentation, saChaoPresentation, MAINFRAME_GARDENS } from '../../lib/creatureGardenForm';
 import { daycareRetrieveCost, daycareCompatibility, daycareEggReady, DAYCARE_EXP_PER_STEP } from '../../lib/creatureDaycare';
+import { creatureWalkFrameUrl } from '../../lib/creatureWalkFrames';
+import { creaturePaletteSheetUrl } from '../../lib/creaturePaletteSheets';
 import type { MochiiInstance } from '../../lib/types';
 
 /**
@@ -187,6 +189,10 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   const setGuardian = useGameStore(s => s.setGuardian);
   const daycareSteps = useGameStore(s => s.daycareSteps);
   const setDaycareSteps = useGameStore(s => s.setDaycareSteps);
+  const daycarePartner = useGameStore(s => s.daycarePartner);
+  const setDaycarePartner = useGameStore(s => s.setDaycarePartner);
+  const daycareEgg = useGameStore(s => s.daycareEgg);
+  const setDaycareEgg = useGameStore(s => s.setDaycareEgg);
   const wallet = useGameStore(s => s.wallet);
   const gainWallet = useGameStore(s => s.gainWallet);
   const lastDaycareTileRef = useRef<string | null>(null);
@@ -563,6 +569,7 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
         phase="day"
         animWalk={walkStep}
         playerAuraColor={gardenFormPres?.auraColor ?? null}
+        playerWalkFrameUrl={active ? creatureWalkFrameUrl(active.speciesId, dir, walkStep) : null}
         wilds={wilds.filter(w => w.hp > 0).map(w => ({ id: w.id, speciesId: w.speciesId, x: w.x, y: w.y, telegraph: w.telegraph }))}
       />
       <div className="absolute top-0 left-0 right-0 z-40 flex justify-between p-3" style={{ paddingTop: 'max(0.75rem, env(safe-area-inset-top))' }}>
@@ -656,6 +663,12 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
               <div className="text-sm text-slate-200">Garden stats — Dive {gardenFormPres.garden.dive} • Glide {gardenFormPres.garden.glide} • Sprint {gardenFormPres.garden.sprint} • Might {gardenFormPres.garden.might} • Endurance {gardenFormPres.garden.endurance}</div>
               <div className="text-sm text-slate-200">Bond {gardenFormPres.bond} • Care mistakes {gardenFormPres.careMistakes} • Accessories (parts): {gardenFormPres.parts.length > 0 ? gardenFormPres.parts.join(', ') : 'none'}</div>
               <div className="text-[11px] text-slate-400 mt-2">Palette sprite sheets are sprite-lane production. Until those sheets land, palette here is swatches + the in-world aura ring — an overlay, not a new sheet, and not a species change.</div>
+              {active && creaturePaletteSheetUrl(active.speciesId, gardenFormPres.alignment) && (
+                <div className="mt-2">
+                  <div className="text-sm text-slate-200">Garden Form palette sheet ({gardenFormPres.alignment}, palette swap of the walk frame — not a hand-drawn atlas):</div>
+                  <img src={creaturePaletteSheetUrl(active.speciesId, gardenFormPres.alignment)!} alt={`${gardenFormPres.alignment} palette`} style={{ width: 64, height: 64, imageRendering: 'pixelated' }} />
+                </div>
+              )}
             </div>
           ) : (
             <div className="game-panel p-3 mb-3 text-sm text-slate-200">No Garden record yet for {active.nickname}. Feed and train in the Garden to earn a Garden Form — bonus is 0 until then, not faked.</div>
@@ -676,9 +689,45 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
             <div className="font-bold text-white text-sm mb-2">Daycare slots (FireRed daycare structure)</div>
             <div className="text-sm text-slate-200">Daycare steps (persisted, tile changes while a Guardian is assigned): {daycareSteps} • EXP on retrieve: {daycareSteps * DAYCARE_EXP_PER_STEP} (FireRed: 1 EXP per step).</div>
             <div className="text-sm text-slate-200">Slot 1: {guardian ? `${guardian.nickname} — Guardian, ${guardian.garden}` : 'Empty — assign a Guardian from Creature Mode'}</div>
-            <div className="text-sm text-slate-200">Slot 2: Empty — this lane's store has only one guardian field, so no second deposited creature is invented here.</div>
-            <div className="text-sm text-slate-200">Compatibility: {daycareCompatibility({ hasSecondCreature: false, genderKnown: false, eggGroupsKnown: false }) === null ? 'not computed — gender and egg groups are not in the store yet, so no 0/20/50/70 number is guessed (FireRed table is in creatureDaycare.ts)' : 'computed'}</div>
-            <div className="text-sm text-slate-200">Egg: {daycareEggReady(daycareSteps, false) ? 'ready' : 'none — needs a second deposited creature and a 256-step check hit (FireRed: steps & 0xFF == 0xFF)'}</div>
+            <div className="text-sm text-slate-200">Slot 2 (Partner): {daycarePartner ? `${daycarePartner.nickname} — Partner, ${daycarePartner.garden}` : 'Empty — assign a Partner from Creature Mode'}</div>
+            <button className="game-button mt-1 mr-2" onClick={() => {
+              if (!active) return;
+              if (guardian && active.id === guardian.creatureId) { setLog('That creature is already the Guardian — pick a different party creature as Partner.'); return; }
+              setDaycarePartner({ creatureId: active.id, nickname: active.nickname, garden: 'Mainframe Gardens' });
+              setLog(`${active.nickname} assigned as Daycare Partner.`);
+            }}>Assign active creature as Partner</button>
+            {daycarePartner && <button className="game-button mt-1" onClick={() => { setDaycarePartner(null); setLog('Daycare Partner released.'); }}>Release Partner</button>}
+            <div className="text-sm text-slate-200">Compatibility: {(() => {
+              if (!guardian || !daycarePartner) return '— no pair yet (needs Guardian + Partner)';
+              const g = party.find(p => p.id === guardian.creatureId);
+              const q = party.find(p => p.id === daycarePartner.creatureId);
+              if (!g || !q) return '— pair not in party, no number faked';
+              const c = daycareCompatibility({ hasSecondCreature: true, sameSpecies: g.speciesId === q.speciesId });
+              return `${c!.score} (FireRed table: same species, same trainer = 50; different species, same trainer = 20; gender is not a Mochiichao gate, one shared breeding group)`;
+            })()}</div>
+            <div className="text-sm text-slate-200">Egg: {daycareEgg ? `${daycareEgg.speciesId} egg (parents ${daycareEgg.parentA} + ${daycareEgg.parentB}) — hatch after ${Math.max(0, 256 - (daycareSteps - daycareEgg.createdAtSteps))} more steps` : (daycareEggReady(daycareSteps, !!daycarePartner) ? 'check hit — press Check for Egg' : 'none — needs Guardian + Partner and a 256-step check hit (FireRed: steps & 0xFF == 0xFF)')}</div>
+            {guardian && daycarePartner && !daycareEgg && (
+              <button className="game-button mt-1" onClick={() => {
+                if (!daycareEggReady(daycareSteps, true)) { setLog('No egg check hit yet — walk until daycare steps hit a 256 multiple.'); return; }
+                const g = party.find(p => p.id === guardian!.creatureId);
+                const q = party.find(p => p.id === daycarePartner!.creatureId);
+                if (!g || !q) { setLog('Egg check failed: pair not in party.'); return; }
+                const c = daycareCompatibility({ hasSecondCreature: true, sameSpecies: g.speciesId === q.speciesId })!;
+                if (c.score > Math.random() * 100) {
+                  setDaycareEgg({ speciesId: g.speciesId, parentA: g.nickname, parentB: q.nickname, createdAtSteps: daycareSteps });
+                  setLog(`Egg created! ${g.speciesId} egg (base form of ${g.nickname}). Hatch after 256 more steps.`);
+                } else setLog(`No egg this check (compatibility ${c.score}). Walk to the next 256-step check.`);
+              }}>Check for Egg</button>
+            )}
+            {daycareEgg && daycareSteps - daycareEgg.createdAtSteps >= 256 && (
+              <button className="game-button mt-1" onClick={() => {
+                const baby = createMochii(daycareEgg!.speciesId, 5);
+                if (!baby) { setLog('Hatch failed: species not found.'); return; }
+                addMochii(baby);
+                setDaycareEgg(null);
+                setLog(`${baby.nickname} hatched at Lv 5 and joined your party/PC!`);
+              }}>Hatch Egg</button>
+            )}
             {guardian && daycareSteps > 0 && (() => {
               const idx = party.findIndex(p => p.id === guardian.creatureId);
               if (idx < 0) return <div className="text-sm text-slate-200">Retrieve: Guardian is not in your party, so no EXP is applied — nothing is faked.</div>;
@@ -706,7 +755,7 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
                 </div>
               );
             })()}
-            <div className="text-[11px] text-slate-400 mt-1">Level gain is wired (FireRed 1 EXP/step, cost 100 + 100/level in CR, via engine gainExp). Egg production and a compatibility number are NOT wired as numbers yet — they need a second deposited creature plus gender/egg-group inputs the store does not have, and a breeding species choice owned by the Chao Garden lane, so none of those are guessed here.</div>
+            <div className="text-[11px] text-slate-400 mt-1">Pass 8: level gain wired (FireRed 1 EXP/step, cost 100 + 100/level in CR, via engine gainExp); compatibility wired as 50 same-species / 20 different-species (same trainer, one shared breeding group, gender not a Mochiichao gate — see creatureDaycare.ts); egg roll at 256-step checks, egg species = Guardian's base form, hatches at Lv 5 after 256 more steps.</div>
           </div>
           <div className="game-panel p-3">
             <div className="font-bold text-white text-sm mb-2">Mainframe Gardens (environments)</div>
