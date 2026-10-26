@@ -145,6 +145,12 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
         padding: '16px', cursor: 'pointer',
         bottom: 'max(1rem, env(safe-area-inset-bottom))',
+        // Batch B: dialogue box style row (corner radius) via CSS
+        // var, applied by Settings > Menu Creator > Menu
+        // Customisation on SAVE + BACK (applyMenuCustom). Fallback
+        // 14px is the pre-existing .std-window radius, unchanged
+        // until a player saves a different style.
+        borderRadius: 'var(--menu-dialogue-radius, 14px)',
       }}
       onClick={advance}
     >
@@ -161,7 +167,7 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
           {/* Dialogue text uses the DIALOGUE FONT placement
               (--dialogue-font, default 01 Digitall); the speaker
               name above uses the MAIN FONT via the body stack. */}
-          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)' }}>
+          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)', fontSize: 'var(--menu-text-size, 16px)', lineHeight: 'var(--menu-line-height, 1.625)', color: 'var(--menu-text-color, #ffffff)', textShadow: 'var(--menu-text-shadow, none)' }}>
             {page.slice(0, shown)}
           </div>
           {!isLast && typingDone && (
