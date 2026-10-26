@@ -63,7 +63,10 @@ import {
   type StartScreenPreset,
 } from './startScreenPreset';
 
-/** Audio slot for the start screen: name only, empty. GAP, not wired. */
+/** Audio slot for the start screen: name only, empty. The slot itself
+    is GAP, not wired — but the TITLE phase track IS wired separately
+    (official title loop via music.ts), so player labels must not
+    claim title music is GAP. */
 export const START_SCREEN_AUDIO_SLOT = {
   name: 'Start screen music',
   status: 'GAP' as const,
