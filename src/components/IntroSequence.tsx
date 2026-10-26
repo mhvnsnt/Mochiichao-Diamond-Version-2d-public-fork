@@ -10,15 +10,16 @@ import { isConfirmKey, shoulderKey } from "../lib/buttonMode";
 import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
-import IntroVideoPlayer from "./game/IntroVideoPlayer";
 import TitleCreatureFigure from "./game/TitleCreatureFigure";
-import StartScreenPlayer from "./game/StartScreenPlayer";
+import LockedStage from "./game/LockedStage";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
-import mochiichaoLogo from "../assets/ui/mochiichao-main-logo-official-band.png";
+import mochiichaoLogo from "../assets/ui/mochiichao-main-logo.png";
+import menuV32Background from "../assets/ui/main-menu-v32-background.png";
+import puffyCloud from "../assets/ui/puffy-cloud.svg";
+import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
-import { getTitlePlayer, getIntroPlayer } from "../lib/titlePlayerPreference";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -108,7 +109,6 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // UNCHANGED except SETTINGS now opens the real Settings screen.
   const [phase, setPhase] = useState<"BOOT" | "INTRO" | "TITLE" | "MAIN_MENU" | "SETTINGS" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("BOOT");
   const [showPrompt, setShowPrompt] = useState(false);
-  const [introScene, setIntroScene] = useState(0);
   const [titleFading, setTitleFading] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
@@ -126,6 +126,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // walk on a snow background, fire trail on snow). Re-rolled on
   // every rotation pick that lands on Yogiferno.
   const [titleVariant, setTitleVariant] = useState<'walk' | 'snow'>('walk');
+  // Intro scene index, restored locked path (pre-#101): 4 text scenes,
+  // any key or NEXT SCENE steps 1 -> 4, then TO TITLE.
+  const [introScene, setIntroScene] = useState(0);
   const [showOverwriteConfirm, setShowOverwriteConfirm] = useState(false);
   // Playtest 2026-10-26 (live Pages, step 5): SAVE_SLOTS is shared by
   // CONTINUE and NEW GAME, and it used to load an occupied slot in
@@ -186,9 +189,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // world starts silent. BOOT and TITLE-press sounds are NOT here:
   // they are already wired on main in src/lib/bootAudio.ts (BOOT =
   // UI Art Option B, press = M3), and duplicating them would play
-  // both twice. TITLE render is the classic DOM title by default
-  // (boot→menu restoration 2026-10-26); the Pixi player is a Menu
-  // Creator preset only — this effect only adds the music layer.
+  // both twice. TITLE render itself is the locked phi stage below
+  // (restoration 2026-10-26: StartScreenPlayer is a creator preset
+  // only, never the default); this effect only adds the music layer.
   // playMusic() fades the old track out over 1000 ms (Pokemon
   // 60-frame fade) and is a no-op if the same track is already
   // playing, so B back to TITLE restarts title music without
@@ -247,10 +250,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   const advanceIntro = () => {
     if (phase === "BOOT") setPhase("INTRO");
     else if (phase === "INTRO") {
-      // Restoration: the classic intro steps its 4 scenes; the Pixi
-      // player (a Menu Creator preset only) skips the whole intro
-      // to TITLE, converging with the player's own onDone.
-      if (getIntroPlayer() === 'classic' && introScene < 3) setIntroScene(s => s + 1);
+      // Restored locked path: step scenes 1 -> 4, then TITLE.
+      if (introScene < 3) setIntroScene(s => s + 1);
       else setPhase("TITLE");
     }
     else if (phase === "TITLE" && !titleFading) {
@@ -285,7 +286,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         window.removeEventListener("mousedown", handler);
       };
     }
-  }, [phase, introScene, titleFading]);
+  }, [phase, titleFading]);
 
   if (phase === "BOOT") {
     return (
@@ -311,18 +312,11 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   }
 
   if (phase === "INTRO") {
-    // Restoration (2026-10-26): the classic 4 scenes are the default
-    // intro again. The Pixi player is a Menu Creator preset only —
-    // it plays only when selected in CREATE INTRO VIDEO, never by
-    // default.
-    if (getIntroPlayer() === 'pixi') {
-      // Intro playback from a saved preset (Pixi): the creator's most
-      // recently saved preset plays, else the locked default. Any key
-      // or click skips the whole intro to TITLE (the player also calls
-      // onDone on skip / at the total duration — both converge here,
-      // idempotently).
-      return <IntroVideoPlayer onDone={() => setPhase("TITLE")} />;
-    }
+    // Restored locked intro path (pre-#101 structure): 4 text scenes,
+    // any key or tap steps to the next scene, then TITLE. The player
+    // (IntroVideoPlayer) is a creator preset only, never the default.
+    // Music footer corrected: PR #104 wires the official intro track
+    // (one-shot) by phase, so no "Music: GAP" label appears here.
     const scenes = [
       { title: 'M HEAVENSENT STUDIOS', body: 'Studio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.', gap: 'GAP: studio scene art — original art needed.' },
       { title: 'WORLD CLOSE-UP', body: 'Scene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).', gap: 'GAP: intro scene art — original art needed.' },
@@ -340,132 +334,94 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             <p className="text-yellow-300 text-xs mt-4">{scene.gap}</p>
           </StdWindow>
           <button
+            onMouseDown={(e) => { e.stopPropagation(); }}
             onClick={(e) => { e.stopPropagation(); advanceIntro(); }}
             className="game-button px-6 py-3 font-bold min-h-[48px] mt-6"
           >
             {introScene < 3 ? 'NEXT SCENE ►' : 'TO TITLE ►'}
           </button>
-          <div className="text-gray-500 text-xs mt-4">Intro music: official intro track. Any key skips to the title.</div>
+          <div className="text-gray-500 text-xs mt-4">Intro music wired — official intro track. Any key or tap steps to the next scene.</div>
         </div>
       </div>
     );
   }
 
   if (phase === "TITLE") {
-    // Pixi start-screen preset (Menu Creator only, never the
-    // default): plays the most recently saved user preset, else
-    // the locked default (see startScreenPlayback.ts). It plays
-    // only when selected in CREATE START SCREEN.
-    if (getTitlePlayer() === 'pixi') {
-      return (
-        <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden cursor-pointer p-4">
-          {/* Locked phi slots, pinned subtitle font, 30/15 press
-              blink all live inside StartScreenPlayer. Any-key/click
-              advance (advanceIntro, incl. the press-start chirp),
-              the 350ms white fade to MAIN_MENU, and the BOOT/INTRO
-              phases are untouched here. No audio is wired here (no
-              second audio path — the music effect above plays the
-              title track). */}
-          <StartScreenPlayer />
-
-          {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
-          <div className={`absolute bottom-4 text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
-            ▼ PRESS ANY KEY ▼
-          </div>
-        </div>
-      );
-    }
-    // Classic DOM title (restored, pre-#101 structure). Phone-fit
-    // sizing only: the root scrolls vertically on short screens
-    // instead of clipping, and the subtitle letter-spacing clamps
-    // so it cannot overflow a ~390px viewport. No content, art,
-    // text, or canon changed. Engine shadow is NOT added here:
-    // the restored path keeps its pre-#101 figure rendering, and
-    // a shadow is a separate show-first decision for Mars.
+    // Restored locked title (phi spec, 1200x1500 stage): logo PNG in
+    // its phi slot, DIAMOND VERSION banner, PRESS ANY KEY at the
+    // bottom phi line, Heavensent logo in the copyright slot. The
+    // logo is NEVER font text — the image below is Mars's uploaded
+    // logo (black-space-only crop, transparent key; original file
+    // untouched in ui-art). StartScreenPlayer is a creator preset
+    // only, never the default. CONFLICT, reported not guessed: the
+    // pre-#101 DOM title also showed a featured-creature figure
+    // (rotation + YogifernoTitleWalk/TitleCreatureFigure, full
+    // TitleScene canvases), but the locked phi spec has no figure
+    // slot — press (927) to studio top (944) is a 17px gap — so no
+    // figure is rendered on the default title. Figures live in
+    // TitleScene/presets (Title Creatures lane's pieces, not built
+    // here). The rotation bookkeeping effect above is kept so
+    // preset screens still read the stored creature.
     return (
-      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-x-hidden overflow-y-auto cursor-pointer p-4">
-        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
-        {/* Shine sweep: white band moving left to right, twice
-            (Ruby x+=4, brighten to 31 then darken to 0, twice).
-            CSS animation stands in for the frame-count shine. */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div
-            className="absolute top-0 bottom-0 w-24 bg-white/20 blur-md"
-            style={{ animation: 'title-shine 2.4s ease-in-out 2' }}
-          />
-        </div>
-        <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink { 0%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }`}</style>
-
-        {/* Phi title layout, responsive version of the 1200x1500 spec:
-            logo 900 (75% width) centre top third, DIAMOND VERSION
-            556 (900/phi) below it, PRESS ANY KEY at the 61.8% line,
-            studio logo 556 in the copyright slot below it. */}
-        <div className="z-10 flex flex-col items-center w-full max-w-2xl" style={{ animation: 'title-slide-up 0.6s ease-out' }}>
-          <div className="text-center">
-            {/* Logo is Mars's uploaded PNG (mochiichao-main-logo-
-                official), cropped to its art band only — no art
-                pixel changed, original file untouched. It sits in
-                the locked phi slot: 900/1200 = 75% width, centre
-                top third. Font text is NEVER a substitute for this
-                image (Mars 2026-10-26 logo rule). */}
-            <img
-              src={mochiichaoLogo}
-              alt="MOCHIICHAO"
-              className="w-3/4 mx-auto object-contain drop-shadow-md"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+      <div className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer">
+        <LockedStage
+          background={(
+            <>
+              <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+              <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
+            </>
+          )}
+        >
+          {/* Shine sweep: white band moving left to right, twice
+              (Ruby x+=4, brighten to 31 then darken to 0, twice).
+              CSS animation stands in for the frame-count shine. */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+              className="absolute top-0 bottom-0 bg-white/20"
+              style={{ width: 96, animation: 'title-shine 2.4s ease-in-out 2' }}
             />
-            {/* DIAMOND VERSION subtitle font is PINNED (Mars font
-                correction): this stack never changes, no font row
-                touches it, in TITLE or MAIN_MENU. Letter-spacing
-                clamps on narrow screens so the subtitle cannot
-                overflow a ~390px viewport; at desktop widths it
-                is exactly 0.4em as before. */}
-            <div className="text-teal-300 text-xl font-bold tracking-[0.4em] drop-shadow-lg mt-3" style={{ animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: PINNED_SUBTITLE_FONT, letterSpacing: 'clamp(3px, 1.5vw, 8px)' }}>
-              ✦ DIAMOND VERSION ✦
-            </div>
           </div>
-          {/* Title rotation: featured creature + its theme. Art is
-              GAP — silhouette art for this creature is not shipped
-              in this code PR; the name/theme wiring is real. */}
-          <div className="mt-6 text-center" style={{ color: titleCreature.primary }}>
-            <div className="text-sm font-bold tracking-widest">FEATURED: {titleCreature.name}{titleCreature.dex ? ` ${titleCreature.dex}` : ''}</div>
-            <div className="text-[11px] mt-1" style={{ color: titleCreature.accent }}>{titleCreature.vibe}</div>
-            <div className="text-[10px] text-gray-500 mt-1">Title creature art: clean cutout wired (10/10)</div>
+          <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink { 0%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }`}</style>
+
+          {/* Logo slot: 900 wide, centre (600, 450). Crop aspect
+              764x450 -> 530 tall, so top = 450 - 265 = 185. */}
+          <img
+            src={mochiichaoLogo}
+            alt="MOCHIICHAO"
+            className="absolute object-contain"
+            style={{ left: 150, top: 185, width: 900, animation: 'title-slide-up 0.6s ease-out' }}
+          />
+          {/* DIAMOND VERSION banner: width 900/phi = 556, height 74,
+              centre (600, 735). Subtitle font is PINNED (Mars font
+              correction): this stack never changes, no font row
+              touches it, in TITLE or MAIN_MENU. */}
+          <div
+            className="absolute flex items-center justify-center text-teal-300 font-bold drop-shadow-lg"
+            style={{ left: 322, top: 698, width: 556, height: 74, fontSize: 44, letterSpacing: 4, animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: PINNED_SUBTITLE_FONT }}
+          >
+            ✦ DIAMOND VERSION ✦
           </div>
-          {titleCreature.name === 'Yogiferno' && (
-            <div className="mt-4 w-full max-w-md">
-              <div className="text-center text-[11px] mb-1" style={{ color: titleCreature.accent }}>
-                Yogiferno — {titleVariant === 'snow' ? 'snow walk variant (fire trail on snow)' : 'walk variant'}
-              </div>
-              <YogifernoTitleWalk variant={titleVariant} />
-            </div>
-          )}
-          {titleCreature.name !== 'Yogiferno' && (
-            <div className="mt-4 w-full max-w-md">
-              <div className="text-center text-[11px] mb-1" style={{ color: titleCreature.accent }}>
-                {titleCreature.name} — clean cutout title figure
-              </div>
-              <TitleCreatureFigure name={titleCreature.name} />
-            </div>
-          )}
-          <div className="mt-10 text-sm font-bold tracking-widest" style={{ animation: 'press-blink 0.75s steps(1) infinite', color: titleCreature.primary }}>
+          {/* PRESS ANY KEY: bottom phi line y=927, blink 30 on /
+              15 off (HeartGold 45-frame cycle, CSS steps). */}
+          <div
+            className="absolute text-center text-white font-bold"
+            style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink 0.75s steps(1) infinite' }}
+          >
             PRESS ANY KEY
           </div>
-          <div className="mt-8 w-full max-w-[420px]">
-            <img
-              src={heavensentLogo}
-              alt="M Heavensent Studios"
-              className="w-full aspect-square object-contain"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
-            <div className="text-center text-gray-400 text-[10px] tracking-widest mt-1">M HEAVENSENT STUDIOS · TITLE COPYRIGHT SLOT</div>
-            <div className="text-center text-gray-500 text-[10px] mt-2 break-words">Title background scene art: GAP — original art needed · Title music: official title track (loop, wired)</div>
-          </div>
-        </div>
+          {/* Heavensent copyright slot: width 556, centre
+              (600, 1222), top 944, bottom 1500. */}
+          <img
+            src={heavensentLogo}
+            alt="M Heavensent Studios"
+            className="absolute object-contain"
+            style={{ left: 322, top: 944, width: 556, height: 556 }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        </LockedStage>
 
         {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
-        <div className={`absolute bottom-4 text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`absolute bottom-4 left-0 right-0 text-center text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
           ▼ PRESS ANY KEY ▼
         </div>
       </div>
@@ -500,13 +456,12 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     const dojosCleared = latestData?.badges?.length || 0;
     const crBalance = latestData?.wallet ?? null;
 
-    // Main menu windows, v3 (main_menu.c, structure only): SEPARATE
-    // framed windows, one per item, over the title background — not
-    // one list panel, not blank navy, not a Pillow image. CONTINUE is
-    // tall (stats inside), NEW GAME short below it, SETTINGS below
-    // that. Selected window = gold/teal highlighted frame, unselected
-    // = standard framed panel. No Mystery Gift equivalent, no version
-    // footer, no fake patch number.
+    // Main menu, locked v32 (restoration 2026-10-26): the stage
+    // below renders the v32 spec (logo/cloud/panels at spec
+    // coordinates) through LockedStage. CONTINUE is tall (stats
+    // inside), NEW GAME short below it, SETTINGS below that.
+    // Selected panel = gold frame + cursor. No Mystery Gift
+    // equivalent, no version footer, no fake patch number.
     const mainItems = [
       ...(hasSaves ? [{ key: 'CONTINUE', tall: true }] : []),
       { key: 'NEW GAME', tall: false },
@@ -531,81 +486,106 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       }
     };
 
+    // Locked v32 main menu (restoration 2026-10-26): the 1200x1500
+    // stage from ui-art/main-menu-default-locked-v32.md, rendered
+    // through LockedStage so it fits any phone width without ever
+    // truncating the logo. Placements are the spec, not a new
+    // layout: logo y180 w900, cloud centre (600,738) 700x180,
+    // Mochii cue x170 y~790 w110, CONTINUE pink y788 h110 /
+    // NEW GAME yellow y918 h70 / SETTINGS blue y1008 h70 /
+    // BACK TO TITLE green y1098 h70. Panel labels follow MENU
+    // FONT (the only menu text a font row touches); the logo is
+    // the image, never font text. Selection, activation,
+    // saveSlotsMode, and the overwrite dialog below are unchanged.
+    const v32PanelStyle = (top: number, height: number, bg: string, selected: boolean): React.CSSProperties => ({
+      position: 'absolute', left: 300, top, width: 600, height,
+      background: bg, border: selected ? '4px solid #fbbf24' : '3px solid #000',
+      borderRadius: 28, display: 'flex', flexDirection: 'column',
+      alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
+      fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)',
+      boxShadow: selected ? '0 0 0 4px rgba(251, 191, 36, 0.55), 0 6px 24px rgba(0,0,0,0.35)' : '0 6px 24px rgba(0,0,0,0.25)',
+    });
     return (
-      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
-        {/* Title background, as on the TITLE phase: gradient + game
-            world behind, never blank navy, never a bare panel. */}
-        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
-
-        <div className="relative z-10 w-full max-w-md flex flex-col gap-4" role="menu" aria-label="Main menu">
-          <div className="text-center">
-            {/* Main menu otherwise UNCHANGED (locked v32): logo and
-                subtitle are pinned to the previous default stack,
-                NOT to any font row — only the selection row text
-                below follows MENU FONT. */}
-            <div className="text-white text-2xl font-black tracking-widest drop-shadow-md" style={{ fontFamily: PINNED_SUBTITLE_FONT }}>MOCHIICHAO</div>
-            <div className="text-teal-300 text-sm font-bold tracking-[0.4em] mt-1" style={{ fontFamily: PINNED_SUBTITLE_FONT }}>✦ DIAMOND VERSION ✦</div>
-          </div>
-
+      <div className="game-screen bg-[#050810] relative overflow-hidden" role="menu" aria-label="Main menu">
+        <LockedStage
+          background={(
+            <img src={menuV32Background} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          )}
+        >
+          {/* Logo slot: y180, width 900 (150-1050). Crop aspect
+              764x450 -> 530 tall, centre ~445 (spec ~454, spec
+              height is approximate "~548"). */}
+          <img
+            src={mochiichaoLogo}
+            alt="MOCHIICHAO"
+            className="absolute object-contain"
+            style={{ left: 150, top: 180, width: 900 }}
+          />
+          {/* Cloud (real SVG): centre (600,738), 700x180. */}
+          <img
+            src={puffyCloud}
+            alt=""
+            className="absolute object-contain"
+            style={{ left: 250, top: 648, width: 700, height: 180 }}
+          />
+          {/* Mochii mascot cue: x170, y~790, width 110. */}
+          <img
+            src={mochiiCutout}
+            alt="Mochii"
+            className="absolute object-contain"
+            style={{ left: 170, top: 790, width: 110, height: 110 }}
+          />
           {mainItems.map((item, i) => {
             const isSelected = i === safeMain;
-            // v4 fix (live playtest showed ONE list panel, not separate
-            // windows): the v3 code used UiPanel, whose SVG background
-            // only renders when its art asset loads — if it does not,
-            // the items collapse visually into one panel. v4 uses
-            // StdWindow, whose CSS frame renders regardless of any
-            // image load, so each item is visibly its own framed
-            // window: CONTINUE tall (stats inside), NEW GAME short,
-            // SETTINGS short, selected = gold frame + cursor.
             if (item.key === 'CONTINUE') {
               return (
-                <StdWindow key={item.key} selected={isSelected} accent={frameColor} className="p-5 min-h-[48px]">
-                  <button
-                    onClick={() => activateMain('CONTINUE')}
-                    onMouseEnter={() => setMainSelected(i)}
-                    onFocus={() => setMainSelected(i)}
-                    className="w-full text-left"
-                  >
-                    <div className="text-xl font-bold tracking-widest text-white" style={{ fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)' }}><span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE</div>
-                    {latestData && (
-                      <div className="text-sm text-slate-300 mt-2 leading-relaxed">
-                        <div>Player: <span className="text-yellow-300 font-bold">{latestData.playerName || 'Netrunner'}</span></div>
-                        <div>Caught: {caughtCount} · Team: {teamCount}</div>
-                        <div>Dojos cleared: {dojosCleared} · CR: {crBalance ?? '—'}</div>
-                        <div>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
-                        <div className="text-xs text-slate-400 mt-1">Play time is not tracked by this save, so none is shown.</div>
-                      </div>
-                    )}
-                  </button>
-                </StdWindow>
-              );
-            }
-            return (
-              <StdWindow key={item.key} selected={isSelected} accent={frameColor} className="p-4 min-h-[48px]">
                 <button
-                  onClick={() => activateMain(item.key)}
+                  key={item.key}
+                  onClick={() => activateMain('CONTINUE')}
                   onMouseEnter={() => setMainSelected(i)}
                   onFocus={() => setMainSelected(i)}
-                  className="w-full text-left text-xl font-bold tracking-widest text-white"
-                  style={{ fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)' }}
+                  style={v32PanelStyle(788, 110, 'linear-gradient(180deg, #f9a8d4, #f472b6)', isSelected)}
                 >
-                  <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
+                  <div className="font-bold tracking-widest text-black" style={{ fontSize: 34 }}>
+                    <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE
+                  </div>
+                  {latestData ? (
+                    <>
+                      <div className="text-black" style={{ fontSize: 19 }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
+                      <div className="text-black" style={{ fontSize: 17 }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
+                    </>
+                  ) : (
+                    <div className="text-black" style={{ fontSize: 19 }}>Player • Roster • Dojos • CR • Last: Core Fragment</div>
+                  )}
                 </button>
-              </StdWindow>
+              );
+            }
+            const panelTop = item.key === 'NEW GAME' ? 918 : 1008;
+            const panelBg = item.key === 'NEW GAME' ? 'linear-gradient(180deg, #fde68a, #facc15)' : 'linear-gradient(180deg, #93c5fd, #60a5fa)';
+            return (
+              <button
+                key={item.key}
+                onClick={() => activateMain(item.key)}
+                onMouseEnter={() => setMainSelected(i)}
+                onFocus={() => setMainSelected(i)}
+                style={v32PanelStyle(panelTop, 70, panelBg, isSelected)}
+              >
+                <div className="font-bold tracking-widest text-black" style={{ fontSize: 32 }}>
+                  <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
+                </div>
+              </button>
             );
           })}
-
           <button
             onClick={() => setPhase("TITLE")}
-            className="game-button px-4 py-3 text-sm font-bold min-h-[48px] self-start"
+            style={v32PanelStyle(1098, 70, 'linear-gradient(180deg, #86efac, #4ade80)', false)}
           >
-            ◄ BACK TO TITLE (B)
+            <div className="font-bold tracking-widest text-black" style={{ fontSize: 32 }}>◄ BACK TO TITLE (B)</div>
           </button>
-          <div className="game-panel px-3 py-2 text-sm text-slate-200">
+          <div className="absolute text-center text-slate-700" style={{ left: 0, top: 1210, width: 1200, fontSize: 20 }}>
             {safeMain === 0 && hasSaves ? 'Continue your saved adventure.' : safeMain === 0 ? 'Start a new adventure.' : mainItems[safeMain]?.key === 'NEW GAME' ? 'Start a new adventure. Existing saves are kept until you save over a slot.' : 'Settings — text speed, battle scene/style, sound, button mode, frame, font.'}
           </div>
-        </div>
+        </LockedStage>
 
         {showOverwriteConfirm && (
           <div className="absolute inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
