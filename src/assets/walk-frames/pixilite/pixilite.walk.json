@@ -1,0 +1,52 @@
+{
+ "creature": "pixilite",
+ "roster_id": "041",
+ "status": "done",
+ "frames": [
+  {
+   "file": "pixilite_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "pixilite_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "pixilite_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "pixilite_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "pixilite_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "pixilite_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "pixilite_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "pixilite_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "method": "original art, one generated 8-panel sheet (4 cols x 2 rows: down/up/left/right x phase 1/2), border-connected white-bg flood removal (scipy label), interior whites kept, content fit to 64x64 RGBA",
+ "raw_sheet": "media-generation-pixilite-walk-v1-0-aaf5ef42-5211-4073-82c9-a65b60de2f97.webp",
+ "source_reference": "game-ready/pixilite/cells/pixilite_cell_00.png (battle_front)",
+ "source_locked_manifest": "game-ready/pixilite/pixilite.manifest.locked.json",
+ "eye_check": "Enlarged raw sheet PASS + 64px montage PASS. Pink lotus-bud head, green round body, green leaf arms, tiny green feet all match locked cell.",
+ "movement_note": "Pixilite is faceless by design (locked manifest judgement), so down/up are indistinguishable \u2014 canon-consistent, not an error. Side frames read via single leaf arm + splayed feet. Phase pairs differ in foot placement. Faint light-pink ghost petal outlines above the lotus head in the raw sheet survive at small size; flagged, not cleaned.",
+ "style_note": "Sheet is smooth cartoon; locked cell is pixelated. Shape/colour/markings match; drift flagged, not silently changed."
+}
