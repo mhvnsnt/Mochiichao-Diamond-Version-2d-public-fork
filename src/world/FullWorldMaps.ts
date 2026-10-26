@@ -138,8 +138,8 @@ export const AEON_LAB: any = {
     { id:"starter_tyrage", x:6, y:6, sprite:"🪨", name:"Tyrage Ball", facing:"down", dialog:["Tyrage! (An earthy dinosaur)","Are you sure you want to choose Tyrage?", ""], isChoice: true, eventId: "pick_starter_007" },
     { id:"starter_kittember", x:8, y:6, sprite:"😼", name:"Kittember Ball", facing:"down", dialog:["Kittember! (A fast and fiery feline)","Are you sure you want to choose Kittember?", ""], isChoice: true, eventId: "pick_starter_010" },
     { id:"starter_sproutle", x:10, y:6, sprite:"🐢", name:"Sproutle Ball", facing:"down", dialog:["Sproutle! (A grassy plant turtle)","Are you sure you want to choose Sproutle?", ""], isChoice: true, eventId: "pick_starter_038" },
-    { id:"dorowani_display", x:3, y:10, sprite:"", creatureId:"147", name:"Dorowani", facing:"down", dialog:["Dorowani! A Gen 2 starter.","Gen 2 starters arrive later in the game — not choosable in this lab."] },
-    { id:"gabu_display", x:9, y:10, sprite:"", creatureId:"148", name:"Gabu", facing:"down", dialog:["Gabu! A Gen 2 starter.","Gen 2 starters arrive later in the game — not choosable in this lab."] }
+    { id:"dorowani_display", x:3, y:10, sprite:"", creatureId:"147", name:"Dorowani", facing:"down", dialog:["Dorowani! A Gen 2 starter.","Dorowani arrives later in the journey."] },
+    { id:"gabu_display", x:9, y:10, sprite:"", creatureId:"148", name:"Gabu", facing:"down", dialog:["Gabu! A Gen 2 starter.","Gabu arrives later in the journey."] }
   ],
   signs: [],
   exits: [],
@@ -264,7 +264,7 @@ export const BINARY_FIELDS: any = {
   npcs: [
     { id:"dojo1_guard", x:14, y:9, sprite:"🥋", name:"Dojo Acolyte", facing:"down", movement:"wander", wanderRadius:1, dialog:["The Binary Dojo awaits within!", "Master Lin is the strongest trainer in Silicon Town."] },
     { id:"town_lass", x:10, y:20, sprite:"👧", name:"Town Girl", facing:"down", movement:"wander", wanderRadius:1, dialog:["This is Silicon Town! It's a bustling hub of commerce.", "You should check out the MochiiPlex to the East!"] },
-    { id:"town_oldman", x:23, y:12, sprite:"👴", name:"Old Man", facing:"left", movement:"wander", wanderRadius:1, dialog:["They say before the Mainframe Region was coded...", "There was a glowing ethereal creator named Mythar...", "He's the origin of all Mochiichao. A true mythical deity!"] }
+    { id:"town_oldman", x:23, y:12, sprite:"👴", name:"Old Man", facing:"left", movement:"wander", wanderRadius:1, dialog:["They say before the Mainframe Region was made...", "There was a glowing ethereal creator named Mythar...", "He's the origin of all Mochiichao. A true mythical deity!"] }
   ],
   signs: [
     { x:12, y:8, text:"BINARY DOJO\nMaster Lin - The Unbreakable Core" },
@@ -461,7 +461,7 @@ export const NEON_CITY: any = {
     });
   })(),
   npcs: [
-    { id:"neon_astrologer", x:14, y:30, sprite:"🔮", name:"Data Astrologer", facing:"down", movement:"wander", wanderRadius:1, dialog:["The cosmic code is aligning in the Mainframe.", "I have sensed signatures from the 331 to 359 spectrum...", "Legendary beings built from raw data, myth, and stars!"] },
+    { id:"neon_astrologer", x:14, y:30, sprite:"🔮", name:"Data Astrologer", facing:"down", movement:"wander", wanderRadius:1, dialog:["The stars are aligning in the Mainframe.", "I have sensed legendary beings, built from raw data, myth, and stars!"] },
     { id:"neon_shaman", x:24, y:20, sprite:"📿", name:"Cyber Shaman", facing:"left", movement:"wander", wanderRadius:1, dialog:["Mythar, the first legend... he slumbers deep in the digital cosmos.", "But numerology and myths say more celestial Mochiichao will awaken soon."] }
   ],
   exits: [
