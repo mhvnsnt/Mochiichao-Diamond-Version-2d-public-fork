@@ -8,9 +8,14 @@ import { SPECIES_DB } from '../../lib/species';
  * Real Action Replay / GameShark codes cannot run in a web game, so
  * these are Mochiichao-native codes. Every successful code sets
  * save.cheated = true (shown here and saved with the game).
- * Codes: MOCHII-ALL (Dex flags only), MAX-LVL (clamped to 50),
+ * Codes: MOCHII-ALL (Dex flags only), MAX-LVL (to 100, decomp
+ * maximum — audit-plan CHANGE: 50 was an unlabelled clamp, not
+ * canon; WARNING: level 100 breaks the early-game level curve,
+ * use it only as a cheat, never as a balance target),
  * SHINY-ON / SHINY-OFF, NOCLIP (toggle), WARP-SECTOR0,
- * MONEY-1000 (+1000 CR, wallet clamped at 999,999).
+ * MONEY-1000 (+1000 CR, wallet clamped at 999,999 — the +1000
+ * amount is a labelled placeholder cheat amount, NOT canon;
+ * wallet cap 999,999 DOES match the decomp money cap).
  * Save states: 4 local slots, save menu only in spirit — stored in
  * localStorage, never in battle (this screen is not reachable in
  * battle). Fast-forward here is world-only by construction: it only
@@ -41,14 +46,14 @@ export default function CheatConsoleView({ onBack }: { onBack: () => void }) {
     } else if (c === 'MAX-LVL') {
       const party = gameState.party.map(m => {
         const copy = { ...m };
-        const needed = Math.max(0, getExpNeeded(50, 'Medium Slow') - copy.experience);
+        const needed = Math.max(0, getExpNeeded(100, 'Medium Slow') - copy.experience);
         gainExp(copy, needed);
-        copy.level = Math.min(50, copy.level);
+        copy.level = Math.min(100, copy.level);
         return copy;
       });
       useGameStore.setState({ party });
       flagCheated();
-      setMessage('MAX-LVL: party raised to level 50 (clamped, not 100). save.cheated = true.');
+      setMessage('MAX-LVL: party raised to level 100 (decomp maximum; breaks the early-game curve — cheat only). save.cheated = true.');
     } else if (c === 'SHINY-ON') {
       setFlags({ shiny: true });
       flagCheated();
@@ -69,7 +74,7 @@ export default function CheatConsoleView({ onBack }: { onBack: () => void }) {
     } else if (c === 'MONEY-1000') {
       useGameStore.setState(s => ({ wallet: Math.min(999999, s.wallet + 1000) }));
       flagCheated();
-      setMessage('MONEY-1000: +1000 CR (wallet clamped at 999,999). save.cheated = true.');
+      setMessage('MONEY-1000: +1000 CR (placeholder cheat amount, not canon; wallet clamped at 999,999). save.cheated = true.');
     } else {
       setMessage(`Unknown code "${c}". Allowlist only: MOCHII-ALL, MAX-LVL, SHINY-ON, SHINY-OFF, NOCLIP, WARP-SECTOR0, MONEY-1000.`);
     }

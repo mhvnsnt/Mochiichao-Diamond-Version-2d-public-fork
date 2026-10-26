@@ -11,10 +11,19 @@
  * Spec: goals/mochiichao-fresh-start-repo/files/
  * monster-tamer-pulls-canon-v1.md
  *
- * Implementation choices made HERE (not Mars canon, flag if disputed):
- * - FUSION_BONUS = 0.10 (stats = average of the two, +10%).
- * - DATA_CARD_COST = 300 CR (Shop price, see ShopView).
- * - Memory Quest reward = bond +10 and one Garden stat +5.
+ * Audit-plan coding PR (Mars approved the plan): the three values
+ * below were NO SOURCE — no Pokemon-decomp, open-source, or
+ * research source gives them — so they are NOT kept as canon:
+ * - FUSION_BONUS = 0: the +10% bonus is REMOVED from the playable
+ *   path. fuseStats now returns a plain average only, with no
+ *   bonus. Mars must give a fusion bonus if he wants one; do not
+ *   restore 0.10 and call it canon.
+ * - DATA_CARD_COST = 300 CR: PLACEHOLDER price, labelled as such
+ *   in the Shop (see ShopView). Mars must set the CR economy;
+ *   do not call 300 canon and do not invent an exchange rate.
+ * - Memory Quest rewards = bond +0 / Garden stat +0: the +10/+5
+ *   rewards are REMOVED (no stat effect) until Mars gives
+ *   numbers. Quests still complete as flags (see GardenView).
  * Fusion/variant forms use existing sheets + silhouette placeholders
  * until the Sprite Art lane makes a sheet — no new likenesses.
  */
@@ -41,9 +50,12 @@ export type BattleStats = {
   atk: number; def: number; spa: number; spd: number; spe: number;
 };
 
-export const FUSION_BONUS = 0.10;
+/** Audit-plan: fusion bonus placeholder, NOT Mars canon. 0 = no
+ *  bonus effect. Mars must give a bonus number to restore one. */
+export const FUSION_BONUS = 0;
 
-/** Data Fusion: average the two creatures' battle stats, +10%. */
+/** Data Fusion: average the two creatures' battle stats, NO bonus
+ *  (FUSION_BONUS = 0, audit-plan removal of the invented +10%). */
 export function fuseStats(a: BattleStats, b: BattleStats): BattleStats {
   const avg = (x: number, y: number) =>
     Math.floor(((x + y) / 2) * (1 + FUSION_BONUS));
@@ -78,7 +90,8 @@ export function isTrueElement(v: string): v is TrueElement {
   return (TRUE_ELEMENTS as readonly string[]).includes(v);
 }
 
-/** Data Cards: Shop price in CR (implementation choice, see header). */
+/** Data Cards: Shop price in CR — PLACEHOLDER, NOT Mars canon
+ *  (audit-plan NO SOURCE; Mars must set the CR economy). */
 export const DATA_CARD_COST = 300;
 export const DATA_CARD_ID = "data_card";
 
@@ -98,19 +111,19 @@ export const MEMORY_QUESTS: MemoryQuest[] = [
     id: "aeon-first-memory", giver: "Prof. Aeon",
     title: "Aeon's First Memory",
     text: "Prof. Aeon asks you to recover a lost Mainframe memory. Befriending — not capture — raises Garden Stats.",
-    bondReward: 10, gardenStat: "endurance", gardenReward: 5,
+    bondReward: 0, gardenStat: "endurance", gardenReward: 0,
   },
   {
     id: "mochiko-lost-lesson", giver: "Mochiko",
     title: "Mochiko's Lost Lesson",
     text: "Mochiko's academy lesson data is scattered in the Mainframe Region. Recover it through Garden Bonding.",
-    bondReward: 10, gardenStat: "glide", gardenReward: 5,
+    bondReward: 0, gardenStat: "glide", gardenReward: 0,
   },
   {
     id: "hex-rival-memory", giver: "Hex",
     title: "Hex's Rival Memory",
     text: "Hex challenges you to remember a rivalry spar. Bonding here is a quest reward, never a capture replacement.",
-    bondReward: 10, gardenStat: "might", gardenReward: 5,
+    bondReward: 0, gardenStat: "might", gardenReward: 0,
   },
 ];
 

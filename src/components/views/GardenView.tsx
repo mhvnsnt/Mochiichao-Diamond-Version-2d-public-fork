@@ -52,7 +52,12 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
     };
     setGardenRecord(current.id, next);
     setCompletedQuests(q => ({ ...q, [questId]: true }));
-    setNote(`${quest.title} complete! Bond +${quest.bondReward}, ${quest.gardenStat} +${quest.gardenReward}.`);
+    // Audit-plan: quest rewards are placeholders (bond +0 / stat
+    // +0) until Mars gives numbers — completing a quest is a flag
+    // only, with no invented stat effect. Say so in-game.
+    setNote(quest.bondReward === 0 && quest.gardenReward === 0
+      ? `${quest.title} complete! (Quest rewards are placeholders — no stat effect until Mars sets them.)`
+      : `${quest.title} complete! Bond +${quest.bondReward}, ${quest.gardenStat} +${quest.gardenReward}.`);
   };
 
   const current = party[Math.min(selected, Math.max(0, party.length - 1))];

@@ -23,24 +23,48 @@ const TYPE_DISPLAY: Record<string, string> = {
   WATER: 'Water', STEEL: 'Chrome', GROUND: 'Earth', FIRE: 'Flame', GRASS: 'Grass',
 };
 /**
- * Hex starter choice (v4 IMPLEMENTATION CHOICE, not Mars canon):
- * Hex picks the NEXT starter in table order after the player's pick
- * (Mochii -> Razorgater -> Tyrage -> Kittember -> Sproutle -> Mochii),
- * never mirroring the player. This replaces the broken rival code that
- * read playerTeam[0].type (a field MochiiInstance does not have, so it
- * always defaulted to Razorgater) and then looked that id up in
- * GameData starters (ids 1/2/3, not 001/004/007, so it never matched).
- * The team member is built from SPECIES_DB via createMochii at level 5
- * and converted to the WorldEngine trainer-battle flat format
- * (atk/def/spd, display move names, hp/maxHp) — no stats, types or
- * moves are invented; they are the species' own data at level 5.
+ * Hex starter choice (audit-plan CHANGE, Pokemon-derived rule):
+ * Hex picks the starter whose primary type is super-effective
+ * against the player's starter — the rival counter-pick rule from
+ * the decomp (FireRed/HeartGold rival takes the starter strong
+ * against the player's), NOT table order. Starter primary types
+ * come from species.ts itself (no new mapping invented):
+ *   001 Mochii WATER, 004 Razorgater WATER/STEEL,
+ *   007 Tyrage GROUND, 010 Kittember FIRE, 038 Sproutle GRASS.
+ * Counter table (primary-type counter, classic trio + Water>Ground):
+ *   WATER (001, 004) -> GRASS 038 (Grass beats Water)
+ *   GROUND (007) -> WATER 001 (Water beats Ground)
+ *   FIRE (010) -> WATER 001 (Water beats Fire)
+ *   GRASS (038) -> FIRE 010 (Fire beats Grass)
+ * TIE-BREAK, TEMPORARY PLACEHOLDER, NOT Mars canon: where two
+ * starters share the counter type (both Water starters counter
+ * Ground and Fire), the FIRST Water starter in table order (001)
+ * is used. Mars must give the tie-break; do not call this canon.
+ * nextStarterForHex is kept below ONLY as that labelled
+ * placeholder helper — it is NOT the counter-pick rule, and it
+ * must not be used for Hex's team (it would pick a non-counter
+ * for Tyrage -> Kittember and Sproutle -> Mochii, i.e. a starter
+ * the player's type beats). Level 5 stays (rival starter at
+ * level 5 in the first lab battle). The team member is built
+ * from SPECIES_DB via createMochii at level 5 and converted to
+ * the WorldEngine trainer-battle flat format (atk/def/spd,
+ * display move names, hp/maxHp) — no stats, types or moves are
+ * invented; they are the species' own data at level 5.
  */
+export const HEX_COUNTER_PICK: Record<string, string> = {
+  '001': '038', '004': '038', '007': '001', '010': '001', '038': '010',
+};
 export function nextStarterForHex(playerSpeciesId: string): string {
+  // TEMPORARY PLACEHOLDER ONLY (see counter-pick comment above):
+  // table-order successor, kept for reference, NOT used for Hex.
   const i = STARTER_TABLE.indexOf(playerSpeciesId);
   return STARTER_TABLE[(i + 1) % STARTER_TABLE.length];
 }
+export function counterPickForHex(playerSpeciesId: string): string {
+  return HEX_COUNTER_PICK[playerSpeciesId] || nextStarterForHex(playerSpeciesId);
+}
 export function hexTeamMember(playerSpeciesId: string): any | null {
-  const hexId = nextStarterForHex(playerSpeciesId);
+  const hexId = counterPickForHex(playerSpeciesId);
   const sp: any = SPECIES_DB[hexId];
   const m = createMochii(hexId, 5);
   if (!sp || !m) return null;
@@ -178,6 +202,11 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   // player presses Continue (or Enter/Space), so it cannot be
   // missed by timing alone. No damage/catch/battle-flow change.
   const pendingBattleEndRef = React.useRef<(() => void) | null>(null);
+  // Audit-plan blackout rule: last heal point visited (a healer
+  // NPC's map), recorded when finishDialog heals. No such tracking
+  // existed before this PR, so blackout used to return to the
+  // current map's start and heal 30% — both removed below.
+  const lastHealRef = React.useRef<{ map: string; pos: { x: number; y: number } } | null>(null);
   const finishBattleEnd = () => {
     const fn = pendingBattleEndRef.current;
     pendingBattleEndRef.current = null;
@@ -360,7 +389,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
 
     const playerMon = playerTeam[aliveIdx];
     // v4: Hex battles use the rival name from the store and the
-    // table-order-next starter (hexTeamMember), not the fixed
+    // counter-pick starter (hexTeamMember), not the fixed
     // Razorgater team in the map data, which contradicted the
     // player's own pick when the player chose Razorgater.
     const isHexBattle = npc.id === 'hex_battle_event' || npc.id === 'rival_hex' || npc.name === 'Hex';
@@ -595,7 +624,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         return;
       }
       
-      // v4 dynamic setup for rival hex: table-order-next starter
+      // dynamic setup for rival hex: counter-pick starter
       // (hexTeamMember), never mirroring the player, and the rival
       // name from the store. The old code read playerTeam[0].type
       // (a field MochiiInstance does not have) and looked the id up
@@ -662,6 +691,9 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       setDialog(null);
     } else if (dialog.npc?.isHeal) {
       healParty();
+      // Record this healer's map as the blackout return point
+      // (its playerStart is the map entrance, next to the healer).
+      lastHealRef.current = { map: currentMap, pos: mapData.playerStart };
       setScreen("overworld");
       setDialog(null);
     } else {
@@ -753,11 +785,22 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         // showed full HP while the next battle entered damaged).
         pendingBattleEndRef.current = () => {
           setBattleState(null);
-          setMapState(currentMap, mapData.playerStart);
-          setPlayerTeam(t => t.map(m => {
-            const healed = Math.floor(m.maxHp * 0.3);
-            return { ...m, currentHp: healed, hp: healed };
-          }));
+          // Audit-plan blackout rule (decomp-derived, NOT the old
+          // 30% heal): lose HALF the wallet, rounded down, floor
+          // 0 — no cap value was verified in the decomp data
+          // audited, so no cap is invented here. Return to the
+          // last heal point visited (home Sector 0 if none yet:
+          // Mom heals there). Do NOT heal the party on blackout:
+          // fainted/damaged members stay that way until a healer
+          // NPC or an item heals them. SOLO-PLAYABILITY WARNING,
+          // stated plainly: a player who blacks out with an all-
+          // fainted party must walk to a healer before battling
+          // again; that is the decomp rule, not a softlock fix.
+          // (Mars gave no blackout-heal concession percentage, so
+          // the 30% heal is removed, not kept as a concession.)
+          useGameStore.setState(s => ({ wallet: Math.max(0, Math.floor(s.wallet / 2)) }));
+          const ret = lastHealRef.current || { map: 'sector0', pos: { x: 15, y: 18 } };
+          setMapState(ret.map, ret.pos);
           notify("You blacked out and were sent back...", "#ff5252");
           // v5: goal after a loss too (see hexGoalDialog above).
           // This dialogue states the goal once, then finishDialog
@@ -1200,7 +1243,12 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
             Continue (button, Enter, or Space — see the battle
             key handler). Flow continues either way — a loss
             blacks out and returns to the map, a win goes to the
-            goal dialogue or the overworld. */}
+            goal dialogue or the overworld. Audit-plan note: the
+            WIN sub-line below ("Flow continues — your journey
+            goes on.") is PLACEHOLDER wording, NOT Mars canon —
+            no clear win line was found in story-fill-region1.md,
+            so it is kept and labelled here, not replaced with
+            invented dialogue. */}
         {bs.phase === "over" && (
           <div className="absolute inset-0 z-50 bg-black/80 flex flex-col items-center justify-center gap-4">
             <div className={`text-5xl font-black tracking-[0.25em] ${player.currentHp <= 0 ? "text-red-400" : "text-yellow-300"}`}>
