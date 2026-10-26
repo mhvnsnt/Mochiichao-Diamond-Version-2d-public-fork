@@ -496,15 +496,45 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     // font text. Selection, activation, saveSlotsMode, and the
     // overwrite dialog below are unchanged.
     const panelByKey = (key: string) => LOCKED_V32_MENU.panels.find(p => p.key === key)!;
-    const v32PanelStyle = (panel: typeof LOCKED_V32_MENU.panels[number], selected: boolean): React.CSSProperties => ({
+    // Perfect-menu panel style (2026-10-26 rebuild, trace
+    // perfect-menu-trace-2026-10-26.md, checked against Mars's
+    // verification proof menu-perfect-verification-proof-20261026.gif):
+    // FLAT picture fills (no gradients), 3px black border always
+    // (the proof has no gold selection frame and no drop shadow —
+    // selection is the cursor glyph), picture label font (upright
+    // bold sans, NOT the slanted Yagiza that var(--menu-font) gives
+    // by default). The MENU FONT Settings row is untouched; only
+    // the LOCKED default panels use the picture label style.
+    const v32PanelStyle = (panel: typeof LOCKED_V32_MENU.panels[number], _selected: boolean): React.CSSProperties => ({
       position: 'absolute', left: panel.x, top: panel.y, width: panel.w, height: panel.h,
-      background: `linear-gradient(180deg, ${panel.gradientTop}, ${panel.gradientBottom})`,
-      border: selected ? `${LOCKED_V32_MENU.panelStyle.selectedBorderWidth}px solid ${LOCKED_V32_MENU.panelStyle.selectedBorderColor}` : `${LOCKED_V32_MENU.panelStyle.borderWidth}px solid #000`,
+      background: panel.fill,
+      border: `${LOCKED_V32_MENU.panelStyle.borderWidth}px solid #000`,
       borderRadius: LOCKED_V32_MENU.panelStyle.borderRadius, display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
-      fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)',
-      boxShadow: selected ? '0 0 0 4px rgba(251, 191, 36, 0.55), 0 6px 24px rgba(0,0,0,0.35)' : '0 6px 24px rgba(0,0,0,0.25)',
+      fontFamily: LOCKED_V32_MENU.panelLabel.fontFamily,
+      fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight,
+      fontStyle: LOCKED_V32_MENU.panelLabel.fontStyle,
     });
+    // Proof pixels: CONTINUE + SETTINGS labels carry a white outline
+    // halo; NEW GAME / BACK TO TITLE are plain black. The CONTINUE
+    // sublabel in the proof also carries the thin white halo (see
+    // the enlarged proof crop) — "plain sublabel" in Mars's 11:17
+    // note is read as plain clean font, not no-halo, because the
+    // proof file itself shows the halo. Halo method: 8-way
+    // text-shadow, NOT WebkitTextStroke — stroke paints OVER the
+    // fill and washed SETTINGS out at phone scale (shot1, 2026-10-26:
+    // SETTINGS nearly unreadable while plain NEW GAME stayed solid
+    // black). Shadow is painted BEHIND the fill, so the black core
+    // stays solid at every scale and the white fringe still reads
+    // as the proof's halo. labelStrokePx/sublabelStrokePx from the
+    // locked data are the halo radii.
+    const halo = (r: number): string =>
+      [`${r}px 0 0 #fff`, `-${r}px 0 0 #fff`, `0 ${r}px 0 #fff`, `0 -${r}px 0 #fff`,
+       `${r}px ${r}px 0 #fff`, `-${r}px -${r}px 0 #fff`, `${r}px -${r}px 0 #fff`, `-${r}px ${r}px 0 #fff`].join(', ');
+    const labelStroke = (key: string): React.CSSProperties =>
+      (LOCKED_V32_MENU.panelLabel.strokeLabels as readonly string[]).includes(key)
+        ? { textShadow: halo(LOCKED_V32_MENU.panelLabel.labelStrokePx) }
+        : {};
     return (
       <div className="game-screen bg-[#050810] relative overflow-hidden" role="menu" aria-label="Main menu">
         <LockedStage
@@ -542,8 +572,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           <img
             src={puffyCloud}
             alt=""
-            className="absolute object-contain menu-bob-cloud"
-            style={{ left: LOCKED_V32_MENU.cloud.x, top: LOCKED_V32_MENU.cloud.y, width: LOCKED_V32_MENU.cloud.w, height: LOCKED_V32_MENU.cloud.h, pointerEvents: 'none' }}
+            className="absolute menu-bob-cloud"
+            style={{ left: LOCKED_V32_MENU.cloud.x, top: LOCKED_V32_MENU.cloud.y, width: LOCKED_V32_MENU.cloud.w, height: LOCKED_V32_MENU.cloud.h, pointerEvents: 'none', objectFit: 'fill' }}
           />
           {/* Mochii mascot cue from locked data: x170, y~790, width 110. */}
           <img
@@ -563,16 +593,16 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   onFocus={() => setMainSelected(i)}
                   style={v32PanelStyle(panelByKey('CONTINUE'), isSelected)}
                 >
-                  <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize }}>
+                  <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, ...labelStroke('CONTINUE') }}>
                     <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE
                   </div>
                   {latestData ? (
                     <>
-                      <div className="text-black" style={{ fontSize: 19 }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
-                      <div className="text-black" style={{ fontSize: 17 }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
+                      <div className="text-black" style={{ fontSize: 19, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
+                      <div className="text-black" style={{ fontSize: 17, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
                     </>
                   ) : (
-                    <div className="text-black" style={{ fontSize: 19 }}>Player • Roster • Dojos • CR • Last: Core Fragment</div>
+                    <div className="text-black" style={{ fontSize: 19, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player • Roster • Dojos • CR • Last: Core Fragment</div>
                   )}
                 </button>
               );
@@ -586,7 +616,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                 onFocus={() => setMainSelected(i)}
                 style={v32PanelStyle(panel, isSelected)}
               >
-                <div className="font-bold tracking-widest text-black" style={{ fontSize: panel.labelSize }}>
+                <div className="font-bold tracking-widest text-black" style={{ fontSize: panel.labelSize, ...labelStroke(item.key) }}>
                   <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
                 </div>
               </button>
@@ -598,9 +628,6 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           >
             <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize }}>◄ BACK TO TITLE (B)</div>
           </button>
-          <div className="absolute text-center text-slate-700" style={{ left: 0, top: 1210, width: 1200, fontSize: 20 }}>
-            {safeMain === 0 && hasSaves ? 'Continue your saved adventure.' : safeMain === 0 ? 'Start a new adventure.' : mainItems[safeMain]?.key === 'NEW GAME' ? 'Start a new adventure. Existing saves are kept until you save over a slot.' : 'Settings — text speed, battle scene/style, sound, button mode, frame, font.'}
-          </div>
         </LockedStage>
 
         {showOverwriteConfirm && (
