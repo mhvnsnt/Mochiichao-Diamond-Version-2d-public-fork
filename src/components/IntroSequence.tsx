@@ -579,10 +579,10 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           />
           {/* Cloud from locked data: centre (600,738), 700x180.
               ORIGINAL cloud file restored (puffy-cloud.svg, viewBox
-              600x280, exactly as used before): the #184 traced asset
-              (mochiichao-main-cloud-v32.svg) was a different-shaped
-              lookalike and is no longer used by the menu; it stays in
-              the repo, superseded, not deleted. The original renders
+              600x280, exactly as used before): the #184 traced
+              lookalike was a different-shaped file and is deleted
+              by Mars's order 2026-10-26, so only the original
+              cloud file remains. The original renders
               with objectFit fill into the locked 700x180 box, so no
               letterbox and no path change to the file itself. */}
           <img
