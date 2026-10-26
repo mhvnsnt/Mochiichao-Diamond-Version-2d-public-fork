@@ -107,7 +107,7 @@ Stem EQ + levels (ffmpeg, frequency slotting so instruments do not fight):
 
 ## Tracks in this batch — 2/2 v3 files, both DRAFT
 
-### 1. Title v3 — `public/audio/mochiichao-title-v3.wav` — DRAFT
+### 1. Title v3 — `public/audio/mochiichao-title-v3.wav` — OFFICIAL
 - Same base as v2, unchanged: D major, 140 BPM, 24 bars, 41.143 s loop, same
   melody, same chords, same v2 layers at the same velocities.
 - New layers on top (new notes only): distortion guitar 256 (GM 30, power
@@ -122,7 +122,7 @@ Stem EQ + levels (ffmpeg, frequency slotting so instruments do not fight):
   per-section RMS: A ~0.11, B ~0.18, climax ~0.19, resolve ~0.17,
   first sample 0, last sample 0.
 
-### 2. Intro v3 — `public/audio/mochiichao-intro-v3.wav` — DRAFT
+### 2. Intro v3 — `public/audio/mochiichao-intro-v3.wav` — OFFICIAL
 - Same base as v2, unchanged: D major, 120 BPM, 12 bars, 24.000 s, same lead
   (10 long notes), same chords, ends on A → title D.
 - New layers on top, deliberately fewer than title: distortion guitar 32
