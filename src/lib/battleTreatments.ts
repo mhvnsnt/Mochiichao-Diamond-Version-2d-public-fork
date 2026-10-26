@@ -85,7 +85,7 @@ export function buildHitTimeline(options: { damageFraction?: number; isCrit?: bo
     shake: Object.freeze({ startMs: tImpact, durationMs: TIMING.SHAKE_MS, amplitudePx: sev.shakePx }),
     particles: buildParticleBurst({ count: sev.particles, seed, startMs: tImpact, direction: dir }),
     camera: Object.freeze({ focus: 'attacker' as const, subject: 'attacker' as const, pushStartMs: 0, pushEndMs: TIMING.CAMERA_PUSH_MS, zoom: sev.cameraPush, releaseEndMs: tEnd }),
-  });
+  }) as HitTimeline;
 }
 
 export interface HitPose {
@@ -163,7 +163,7 @@ export function buildParticleBurst(options: { count?: number; seed?: number; sta
       sizePx: 2 + deterministicUnit(seed, i * 3 + 2) * 4, lifeMs: TIMING.PARTICLE_MS, startMs,
     }));
   }
-  return Object.freeze(out);
+  return Object.freeze(out) as Particle[];
 }
 
 export interface RigPose {
