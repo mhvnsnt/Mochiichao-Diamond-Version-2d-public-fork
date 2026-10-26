@@ -59,6 +59,12 @@ edges, top corners, and bottom foreground frame. The bottom scrim
   fern silhouettes at bottom corners, fireflies.
 - rain: slate sky, diagonal rain streaks, puddle sheen at bottom.
 - night: navy-purple starfield, moon top-right corner, dark hills.
+- mythar: pearlescent diamond-pearl haze (pink / blue / gold /
+  lavender), sine waves top + bottom bands, white + gold diamond
+  sparkles at edges/corners, centre kept as smooth haze.
+- lantern: night navy, warm lanterns hanging/standing at left +
+  right edges and bottom corners, warm glow pools illuminating
+  the area, centre kept clear for the figure + its ember glow.
 
 ## Wiring (TitleScene, PR batches)
 
@@ -88,7 +94,7 @@ Layer order, back to front, updated (TitleScene now):
 | 2 | FireRed box-art creature | Figure sprite, walking + sine sway (existing) |
 | 2.5 | FireRed scene grass (nearest, in front) | Foreground frame in front of the figure's feet: grass/forest tufts, water line, snow drifts, forest top corners, bottom scrim |
 | 3 | FireRed flame/leaf spawner | Weather particles (existing) |
-| 4 | Ruby shine / HG flash (overlay) | Per-card signature effect: snow twinkle, grass pollen, water ripple rings, sand dust motes, stone scan-line (Razorgater only; others get motes), forest fireflies, rain lightning flash (every 420 frames) + splashes, night star twinkle |
+| 4 | Ruby shine / HG flash (overlay) | Per-card signature effect: snow twinkle, grass pollen, water ripple rings, sand dust motes, stone scan-line (Razorgater only; others get motes), forest fireflies, rain lightning flash (every 420 frames) + splashes, night star twinkle, mythar diamond sparkle twinkle, lantern warm-amber glow pulse |
 | 5 | FireRed scene 3 fight beat | Per-creature action burst: 360-frame cycle — idle, hop (frames 240-269), burst at 270, recoil (270-281), settle. Burst kind per creature manifest VFX (see table below) |
 | 6 | FireRed logo / press tiles | Logo + PRESS line: game UI layers, unchanged, over everything |
 
@@ -98,26 +104,42 @@ vertical / ~21px horizontal):
 
 - snow 10/3 @0.25, grass 8/2 @0.35, water 4/6 @0.50, sand 10/2 @0.30,
   stone 0/0 (rock steady, intentional), forest -5/2 @0.22,
-  rain 2/6 @0.40, night -3/1 @0.12. Values are assistant proposals
+  rain 2/6 @0.40, night -3/1 @0.12, mythar -2/2 @0.15,
+  lantern -3/1 @0.12. Values are assistant proposals
   from the HG speed ratios, in one data file for Mars to tune.
 
 Creature-to-card assignment (sources labelled; PROPOSED = no canon
 source yet, shown to Mars first for correction). Count, plain:
-8 biome cards, 10 title-pool creatures — night holds 3, every
-other card holds 1, total 10, no card empty.
+10 cards, 10 title-pool creatures — one creature per card, total
+10, no card empty. The old "8 cards, night holds 3" model is
+superseded by batch 6 and must not be quoted.
 
 Corrections (Mars, 2026-10-25 ~23:44 CDT): Wispkin goes on the
 purple/night card (was forest); Dorowani goes on water; Gabu does
 NOT go on water; Mochii goes on rain.
+
+Corrections (Mars, 2026-10-26 ~00:14 CDT): Mythar gets his OWN
+card — pearlescent iridescent diamond-pearl background with
+sparkles and sine waves, real sparkly and diamond-like (his
+2026-10-25 description, recovered from memory: "pearl / diamond
+iridescent — sine-wave rings, diamond sparkles"). Kittember gets
+his OWN card too — a night card with lanterns surrounding it,
+illuminating the area, while Kittember's ember also illuminates
+the area. Night keeps Wispkin only.
+
+Confirmation (Mars, 2026-10-26 ~00:15 CDT): "Gabu is good for
+forest." Forest is canon for Gabu, no longer a proposed fill.
 
 - snow: Yogiferno (canon-habitat: snow/ice in titleRotation; snow walk variant already shipped)
 - grass: Sproutle (canon-vfx: Flora/Chrome, fresh sprout)
 - water: Dorowani (Mars-confirmed; title-vibe: blue water starter)
 - sand: Tyrage (canon-vfx: sheds sand, roar dust storm)
 - stone: Razorgater (canon-vfx: scanning lasers, blue-electricity sparks)
-- forest: Gabu (PROPOSED FILL — the card Wispkin vacated, filled so no card is empty; Mars to confirm this is the different card he meant, or name another)
+- forest: Gabu (Mars-confirmed 2026-10-26: "Gabu is good for forest")
 - rain: Mochii (Mars-confirmed; canon-vfx: glides, ripple, bubbles)
-- night: Wispkin (Mars-confirmed purple/night; canon-vfx: bobs, dark smoke), Mythar (canon-vfx: never touches ground, three golden rings orbit), Kittember (PROPOSED: ember tail orb, warm glow reads at night)
+- night: Wispkin (Mars-confirmed purple/night; canon-vfx: bobs, dark smoke)
+- mythar: Mythar (Mars-confirmed own card; pearlescent diamond-pearl, sparkles, sine waves; canon-vfx: never touches ground, three golden rings orbit)
+- lantern: Kittember (Mars-confirmed own card; lantern night, lanterns illuminating + ember illuminating; ember tail orb)
 
 Per-creature action + burst (from each creature's own manifest VFX
 where one exists; no audio — cries/chimes are visual only here):
@@ -152,13 +174,13 @@ Pages rebuild — merged code alone is not a playable show.
 
 ## Counts
 
-- Painted backgrounds: 8/8 = 100% (v2 files, v1 kept untouched in this folder)
+- Painted backgrounds: 10/10 = 100% (v2 files, v1 kept untouched in this folder)
 - Layer map: 1/1 = 100%
 - TitleScene wiring: batch 1 (snow, grass, water, sand) + batch 2
-  (stone, forest, rain, night) — see PRs, each additions only, 0 deletions
-- Dedicated per-biome background motion: 8/8 = 100% (drift values in titleCardEffects.ts)
-- Per-card signature effects: 8/8 = 100% (one per biome)
-- Per-creature card assignment: 10/10 creatures assigned across 8/8 cards = 100% filled (night holds 3, all others hold 1); 8/10 Mars-confirmed or canon/vibe, 2/10 PROPOSED (Gabu forest fill, Kittember night); rain card now Mochii (Mars-confirmed), forest now Gabu (fill, to confirm)
+  (stone, forest, rain, night) + batch 6 (mythar, lantern) — see PRs, each additions only, 0 deletions
+- Dedicated per-biome background motion: 10/10 = 100% (drift values in titleCardEffects.ts)
+- Per-card signature effects: 10/10 = 100% (one per card)
+- Per-creature card assignment: 10/10 creatures assigned across 10/10 cards = 100% filled, one per card, 0/10 PROPOSED (Gabu forest Mars-confirmed, Mythar own pearl card Mars-confirmed, Kittember own lantern card Mars-confirmed); night now Wispkin only
 - Per-creature action bursts: 10/10 = 100% (one action + burst per title-pool creature)
 - Water DisplacementFilter ripple: 1/1 = 100% (water card only, generated map, no asset shipped)
 - Pokemon art in any shipped file: 0 files

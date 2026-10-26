@@ -62,13 +62,16 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  * is untouched. No title cutout in the 10-pool now carries
  * a baked ground shadow.
  * Biome assignment (title-backgrounds batch, 2026-10-25; corrected
- * by Mars ~23:44 CDT): each creature now shows on its own card
- * from titleCardEffects (primaryCardForCreature), with its
- * per-card effect and its own action burst. Wispkin is on night
- * (purple), Dorowani on water, Mochii on rain; Gabu is NOT on
- * water and fills forest only as a proposed fill until Mars names
- * his card; Kittember (night) is still PROPOSED, not canon.
- * 8 cards, 10 creatures, night holds 3, no card empty.
+ * by Mars ~23:44 CDT, plus batch 6 (2026-10-26): each creature
+ * now shows on its own card from titleCardEffects
+ * (primaryCardForCreature), with its per-card effect and its own
+ * action burst. Wispkin is on night (purple), Dorowani on water,
+ * Mochii on rain; Gabu is on forest (Mars-confirmed 2026-10-26:
+ * "Gabu is good for forest"); Mythar has his OWN pearlescent
+ * diamond-pearl card (sparkles + sine waves, per Mars's own
+ * description); Kittember has his OWN lantern-night card
+ * (lanterns illuminating + Kittember's ember illuminating).
+ * 10 cards, 10 creatures, one per card, no card empty.
  */
 const FIGURES: Record<string, { url: string; size: string }> = {
   Mochii: { url: mochiiWalkCutout, size: '380x380' },

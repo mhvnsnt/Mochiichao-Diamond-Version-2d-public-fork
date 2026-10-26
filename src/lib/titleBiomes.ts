@@ -6,7 +6,8 @@
 // or music, and NO Pokemon texture file is shipped. A biome is
 // a palette + a weather kind + ground kind, nothing else.
 // Painted backgrounds (batch 1: snow, grass, water, sand; batch 2:
-// stone, forest, rain, night — all 8 now set): when backgroundImage is set,
+// stone, forest, rain, night; batch 6: mythar pearl, lantern night
+// — all 10 now set): when backgroundImage is set,
 // TitleScene draws that original 1600x900 painting as layer 0 and
 // the Pixi sky/ground rectangles below are skipped; when it is
 // null, TitleScene falls back to those rectangles, so no biome
@@ -20,9 +21,11 @@ import stoneBg from '../assets/title/title-bg-stone-v2.png';
 import forestBg from '../assets/title/title-bg-forest-v2.png';
 import rainBg from '../assets/title/title-bg-rain-v2.png';
 import nightBg from '../assets/title/title-bg-night-v2.png';
+import mytharBg from '../assets/title/title-bg-mythar-v2.png';
+import lanternBg from '../assets/title/title-bg-lantern-v2.png';
 export type TitleBiomeId =
   | 'snow' | 'grass' | 'water' | 'sand' | 'stone'
-  | 'forest' | 'rain' | 'night';
+  | 'forest' | 'rain' | 'night' | 'mythar' | 'lantern';
 
 export interface TitleBiome {
   id: TitleBiomeId;
@@ -48,6 +51,8 @@ export const TITLE_BIOMES: Record<TitleBiomeId, TitleBiome> = {
   forest: { id: 'forest', label: 'Forest — dark green, drifting leaves',     sky: 0x14532d, sky2: 0x166534, ground: 0x22c55e, groundLine: 0x052e16, weather: 'leaves', weatherCount: 22, tufts: true,  shimmer: false, backgroundImage: forestBg },
   rain:   { id: 'rain',   label: 'Rain — grey sky, falling rain',            sky: 0x334155, sky2: 0x64748b, ground: 0x475569, groundLine: 0x0f172a, weather: 'rain',  weatherCount: 50, tufts: false, shimmer: true, backgroundImage: rainBg },
   night:  { id: 'night',  label: 'Night — dark ground, no weather',          sky: 0x0f172a, sky2: 0x1e293b, ground: 0x0f172a, groundLine: 0x134e4a, weather: 'none',   weatherCount: 0,  tufts: false, shimmer: false, backgroundImage: nightBg },
+  mythar: { id: 'mythar', label: 'Mythar — pearlescent diamond pearl, sine waves, sparkles', sky: 0xf0eee4, sky2: 0xe8e4f2, ground: 0xdedad8, groundLine: 0xd4af37, weather: 'none', weatherCount: 0, tufts: false, shimmer: false, backgroundImage: mytharBg },
+  lantern:{ id: 'lantern',label: 'Lantern night — dark night, lanterns illuminating, ember glow', sky: 0x0f172a, sky2: 0x1e293b, ground: 0x0f172a, groundLine: 0xf59e0b, weather: 'none', weatherCount: 0, tufts: false, shimmer: false, backgroundImage: lanternBg },
 };
 
 export const TITLE_BIOME_LIST: TitleBiome[] = Object.values(TITLE_BIOMES);
