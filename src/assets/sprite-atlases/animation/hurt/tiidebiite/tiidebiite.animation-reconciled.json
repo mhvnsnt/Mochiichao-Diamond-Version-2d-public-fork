@@ -1,0 +1,43 @@
+{
+ "creature": "tiidebiite",
+ "source_locked_manifest": "tiidebiite.manifest.locked.json",
+ "idle": {
+  "cell": 0,
+  "file": "tiidebiite_cell_00.png",
+  "method": "standing_reuse_proposed",
+  "status": "pending_mars_confirm",
+  "note": "No distinct idle frame exists in the sheet; battle_front standing pose proposed as idle reuse, not a new frame."
+ },
+ "attack": {
+  "cells": [],
+  "files": [],
+  "status": "gap",
+  "note": "No attack-role cell in the locked set; needs new generation (original art only) or a code treatment."
+ },
+ "hurt": {
+  "cells": [
+   0
+  ],
+  "status": "done",
+  "note": "Hurt frame generated in the finish-to-100% batch (2026-10-25/26); eye-checked enlarged and at 64px; 500ms hold per battleTreatments timeline.",
+  "files": [
+   "tiidebiite_hurt_cell_00.png"
+  ],
+  "hurt_manifest": "animation/hurt/tiidebiite/tiidebiite.hurt.json",
+  "hurt_cell_file": "animation/hurt/tiidebiite/tiidebiite_hurt_cell_00.png",
+  "hurt_source": "generated_v1",
+  "hurt_source_raw_file": "media-generation-tiidebiite-hurt-v1-0-99973833-12d2-417e-8fb0-3498cda85164.png",
+  "hurt_frame_hold_ms": 500,
+  "hit_timeline_total_ms": 1040,
+  "previous_status": "gap"
+ },
+ "evolution_timing": "reuses_mochii_timing",
+ "action_strip_note": "",
+ "reconciliation": {
+  "date": "2026-10-26",
+  "scope": "hurt gap field ONLY. All other fields copied verbatim from the original; hurt art itself was NOT edited.",
+  "original_file": "animation/tiidebiite.animation.json (untouched)",
+  "reconciled_file": "animation/tiidebiite.animation-reconciled.json",
+  "note": "Attack remains gap where it was gap; only hurt changed."
+ }
+}
