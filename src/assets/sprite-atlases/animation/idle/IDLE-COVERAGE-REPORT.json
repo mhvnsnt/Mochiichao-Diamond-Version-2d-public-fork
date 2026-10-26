@@ -1,0 +1,461 @@
+[
+ {
+  "creature": "aerobeak",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 1628,
+  "diff_b": 2004,
+  "diff_c": 1936,
+  "mapped_c": false
+ },
+ {
+  "creature": "aquariios",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 524,
+  "diff_b": 671,
+  "diff_c": 605,
+  "mapped_c": false
+ },
+ {
+  "creature": "ashemit",
+  "idle_class": "seated",
+  "cycle_ms": 2400,
+  "alpha_a": 1992,
+  "diff_b": 2397,
+  "diff_c": 902,
+  "mapped_c": false
+ },
+ {
+  "creature": "astroleviathan",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 1645,
+  "diff_b": 2218,
+  "diff_c": 2058,
+  "mapped_c": false
+ },
+ {
+  "creature": "chromejaww",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2386,
+  "diff_b": 2819,
+  "diff_c": 1163,
+  "mapped_c": false
+ },
+ {
+  "creature": "cocoonode",
+  "idle_class": "static_crystal",
+  "cycle_ms": 2200,
+  "alpha_a": 2023,
+  "diff_b": 1314,
+  "diff_c": 1634,
+  "mapped_c": false
+ },
+ {
+  "creature": "cragarm",
+  "idle_class": "heavy_slow",
+  "cycle_ms": 2800,
+  "alpha_a": 2042,
+  "diff_b": 2489,
+  "diff_c": 1377,
+  "mapped_c": false
+ },
+ {
+  "creature": "dorowani",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1291,
+  "diff_b": 1857,
+  "diff_c": 964,
+  "mapped_c": false
+ },
+ {
+  "creature": "dreadtoise",
+  "idle_class": "heavy_slow",
+  "cycle_ms": 2800,
+  "alpha_a": 1913,
+  "diff_b": 2217,
+  "diff_c": 1104,
+  "mapped_c": false
+ },
+ {
+  "creature": "duneclaw",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2344,
+  "diff_b": 2671,
+  "diff_c": 1011,
+  "mapped_c": false
+ },
+ {
+  "creature": "duskfiend",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2016,
+  "diff_b": 2395,
+  "diff_c": 738,
+  "mapped_c": false
+ },
+ {
+  "creature": "finblade",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 896,
+  "diff_b": 1259,
+  "diff_c": 1210,
+  "mapped_c": false
+ },
+ {
+  "creature": "floatcalf",
+  "idle_class": "float_hover",
+  "cycle_ms": 1800,
+  "alpha_a": 2108,
+  "diff_b": 2242,
+  "diff_c": 1983,
+  "mapped_c": false
+ },
+ {
+  "creature": "gabu",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1263,
+  "diff_b": 1575,
+  "diff_c": 938,
+  "mapped_c": false
+ },
+ {
+  "creature": "gearkid",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1636,
+  "diff_b": 2135,
+  "diff_c": 1258,
+  "mapped_c": false
+ },
+ {
+  "creature": "gorokappa",
+  "idle_class": "heavy_slow",
+  "cycle_ms": 2800,
+  "alpha_a": 1446,
+  "diff_b": 1809,
+  "diff_c": 764,
+  "mapped_c": false
+ },
+ {
+  "creature": "inklet",
+  "idle_class": "small_bouncy",
+  "cycle_ms": 1600,
+  "alpha_a": 2542,
+  "diff_b": 2721,
+  "diff_c": 2198,
+  "mapped_c": false
+ },
+ {
+  "creature": "kickmaster",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1268,
+  "diff_b": 1512,
+  "diff_c": 743,
+  "mapped_c": false
+ },
+ {
+  "creature": "kittember",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2190,
+  "diff_b": 2387,
+  "diff_c": 1081,
+  "mapped_c": false
+ },
+ {
+  "creature": "krakenox",
+  "idle_class": "heavy_slow",
+  "cycle_ms": 2800,
+  "alpha_a": 596,
+  "diff_b": 635,
+  "diff_c": 181,
+  "mapped_c": false
+ },
+ {
+  "creature": "manticlaw",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2621,
+  "diff_b": 2985,
+  "diff_c": 2903,
+  "mapped_c": true
+ },
+ {
+  "creature": "mechapion",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2031,
+  "diff_b": 2507,
+  "diff_c": 1163,
+  "mapped_c": false
+ },
+ {
+  "creature": "megalochrome",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 1611,
+  "diff_b": 2070,
+  "diff_c": 1992,
+  "mapped_c": false
+ },
+ {
+  "creature": "mochii",
+  "idle_class": "small_bouncy",
+  "cycle_ms": 1600,
+  "alpha_a": 2441,
+  "diff_b": 2632,
+  "diff_c": 2080,
+  "mapped_c": false
+ },
+ {
+  "creature": "mothrix",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 1262,
+  "diff_b": 1757,
+  "diff_c": 1672,
+  "mapped_c": false
+ },
+ {
+  "creature": "mythar",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1873,
+  "diff_b": 2255,
+  "diff_c": 1322,
+  "mapped_c": false
+ },
+ {
+  "creature": "oblivirex",
+  "idle_class": "heavy_slow",
+  "cycle_ms": 2800,
+  "alpha_a": 1843,
+  "diff_b": 2140,
+  "diff_c": 895,
+  "mapped_c": false
+ },
+ {
+  "creature": "pebblefist",
+  "idle_class": "heavy_slow",
+  "cycle_ms": 2800,
+  "alpha_a": 2030,
+  "diff_b": 2270,
+  "diff_c": 1179,
+  "mapped_c": false
+ },
+ {
+  "creature": "pixilite",
+  "idle_class": "small_bouncy",
+  "cycle_ms": 1600,
+  "alpha_a": 2017,
+  "diff_b": 2435,
+  "diff_c": 1896,
+  "mapped_c": false
+ },
+ {
+  "creature": "punchkid",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1928,
+  "diff_b": 2288,
+  "diff_c": 1347,
+  "mapped_c": false
+ },
+ {
+  "creature": "pupbble",
+  "idle_class": "small_bouncy",
+  "cycle_ms": 1600,
+  "alpha_a": 2029,
+  "diff_b": 2480,
+  "diff_c": 1974,
+  "mapped_c": false
+ },
+ {
+  "creature": "pyromonk",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1845,
+  "diff_b": 2399,
+  "diff_c": 1479,
+  "mapped_c": false
+ },
+ {
+  "creature": "pyropaw",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1182,
+  "diff_b": 1480,
+  "diff_c": 789,
+  "mapped_c": false
+ },
+ {
+  "creature": "quakehound",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2038,
+  "diff_b": 2289,
+  "diff_c": 804,
+  "mapped_c": false
+ },
+ {
+  "creature": "razorgater",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2281,
+  "diff_b": 2614,
+  "diff_c": 1177,
+  "mapped_c": false
+ },
+ {
+  "creature": "reaperdile",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2023,
+  "diff_b": 2474,
+  "diff_c": 1201,
+  "mapped_c": false
+ },
+ {
+  "creature": "shellguard",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1927,
+  "diff_b": 2247,
+  "diff_c": 1053,
+  "mapped_c": false
+ },
+ {
+  "creature": "sproutle",
+  "idle_class": "small_bouncy",
+  "cycle_ms": 1600,
+  "alpha_a": 2001,
+  "diff_b": 2342,
+  "diff_c": 1813,
+  "mapped_c": false
+ },
+ {
+  "creature": "squirmite",
+  "idle_class": "small_bouncy",
+  "cycle_ms": 1600,
+  "alpha_a": 1289,
+  "diff_b": 1599,
+  "diff_c": 1181,
+  "mapped_c": false
+ },
+ {
+  "creature": "stormtalon",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 2066,
+  "diff_b": 2597,
+  "diff_c": 2429,
+  "mapped_c": false
+ },
+ {
+  "creature": "strikechamp",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2156,
+  "diff_b": 2554,
+  "diff_c": 1254,
+  "mapped_c": false
+ },
+ {
+  "creature": "strikechamp_unsuited",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1977,
+  "diff_b": 2372,
+  "diff_c": 1329,
+  "mapped_c": false
+ },
+ {
+  "creature": "strikechamp_unsuited_full",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 1372,
+  "diff_b": 1756,
+  "diff_c": 1075,
+  "mapped_c": false
+ },
+ {
+  "creature": "terradog",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2767,
+  "diff_b": 3023,
+  "diff_c": 1405,
+  "mapped_c": false
+ },
+ {
+  "creature": "terrapod",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2423,
+  "diff_b": 2788,
+  "diff_c": 1187,
+  "mapped_c": false
+ },
+ {
+  "creature": "tiidebiite",
+  "idle_class": "small_bouncy",
+  "cycle_ms": 1600,
+  "alpha_a": 1490,
+  "diff_b": 2052,
+  "diff_c": 1897,
+  "mapped_c": false
+ },
+ {
+  "creature": "toxitacle",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 1739,
+  "diff_b": 2265,
+  "diff_c": 2199,
+  "mapped_c": false
+ },
+ {
+  "creature": "tyrage",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2033,
+  "diff_b": 2359,
+  "diff_c": 932,
+  "mapped_c": false
+ },
+ {
+  "creature": "wispkin",
+  "idle_class": "float_hover",
+  "cycle_ms": 1800,
+  "alpha_a": 917,
+  "diff_b": 1173,
+  "diff_c": 1138,
+  "mapped_c": false
+ },
+ {
+  "creature": "yogiferno",
+  "idle_class": "grounded_standard",
+  "cycle_ms": 2400,
+  "alpha_a": 2016,
+  "diff_b": 2315,
+  "diff_c": 1021,
+  "mapped_c": false
+ },
+ {
+  "creature": "zephling",
+  "idle_class": "hover_swim",
+  "cycle_ms": 1800,
+  "alpha_a": 2215,
+  "diff_b": 2776,
+  "diff_c": 2608,
+  "mapped_c": false
+ }
+]

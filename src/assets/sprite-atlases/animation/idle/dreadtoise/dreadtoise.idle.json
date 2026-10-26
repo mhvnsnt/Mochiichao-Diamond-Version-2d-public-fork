@@ -1,0 +1,58 @@
+{
+ "creature": "dreadtoise",
+ "animation": "idle",
+ "loop": true,
+ "cycle_ms": 2800,
+ "idle_class": "heavy_slow",
+ "idle_class_description": "slow heavy breath; minimal bob (large/rock/armoured creatures)",
+ "source_locked_manifest": "dreadtoise.manifest.locked.json",
+ "battle_front": {
+  "cell": 0,
+  "file": "dreadtoise_cell_00.png"
+ },
+ "method": "transform_loop_from_locked_battle_front",
+ "method_note": "Loop visibly moves (bob/breath); it is NOT the old static standing reuse. Overworld_front cells were eye-checked and rejected as a second pose (near-identical to battle_front). Manticlaw only: C frame is a second distinct locked battle_front cell.",
+ "frames": [
+  {
+   "file": "idle_a.png",
+   "source": "locked battle_front dreadtoise_cell_00.png (cell 0)",
+   "transform": "none (base pose)",
+   "duration_ms": 800
+  },
+  {
+   "file": "idle_b.png",
+   "source": "rendered bob from battle_front",
+   "transform": "('shift', 0, -1)",
+   "duration_ms": 600
+  },
+  {
+   "file": "idle_a.png",
+   "source": "locked battle_front dreadtoise_cell_00.png (cell 0)",
+   "transform": "none (return to base)",
+   "duration_ms": 800
+  },
+  {
+   "file": "idle_c.png",
+   "source": "rendered breath transform ('scale_y', 1.01) from battle_front",
+   "transform": "('scale_y', 1.01)",
+   "duration_ms": 600
+  }
+ ],
+ "reads_as": "idle (bob/breath/hover/pulse), not attack, not walk",
+ "look_note": "",
+ "timing_status": "reconciled 2026-10-25: final timing recorded, see timing_reconciliation",
+ "rig_note": "",
+ "generated_ai_frames": 0,
+ "mapped_locked_frames": 1,
+ "timing_reconciliation": {
+  "baseline_ms": 2400,
+  "baseline_note": "Calm baseline 2400ms = midpoint of research calm full-breath cycle 2.0-3.0s (BATTLE-ANIMATION-RESEARCH.md s5.2); s5.3 forbids shipping one idle for 51 creatures \u2014 variation by body/temperament is required, not a deviation to hide.",
+  "previous_cycle_ms": 2800,
+  "final_cycle_ms": 2800,
+  "change": "KEPT 2800",
+  "rationale": "Deliberately slower than the 2400ms baseline: large/heavy bodies take a slow deep whole-torso breath (s5.3). 2800ms is exactly the low end of the large/heavy range 2.8-3.5s.",
+  "research_refs": "s5.3 large/heavy 2.8-3.5s",
+  "pngs_unchanged": true,
+  "engine_note": "Idle never stops during the opponent's turn; second creature's loop is offset 30-50% of a cycle in the engine (s5.2) \u2014 engine behaviour, not a manifest timing change."
+ }
+}

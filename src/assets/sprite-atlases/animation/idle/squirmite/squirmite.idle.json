@@ -1,0 +1,58 @@
+{
+ "creature": "squirmite",
+ "animation": "idle",
+ "loop": true,
+ "cycle_ms": 1600,
+ "idle_class": "small_bouncy",
+ "idle_class_description": "bouncy bob + squash breath (small/light creatures)",
+ "source_locked_manifest": "squirmite.manifest.locked.json",
+ "battle_front": {
+  "cell": 1,
+  "file": "squirmite_cell_01.png"
+ },
+ "method": "transform_loop_from_locked_battle_front",
+ "method_note": "Loop visibly moves (bob/breath); it is NOT the old static standing reuse. Overworld_front cells were eye-checked and rejected as a second pose (near-identical to battle_front). Manticlaw only: C frame is a second distinct locked battle_front cell.",
+ "frames": [
+  {
+   "file": "idle_a.png",
+   "source": "locked battle_front squirmite_cell_01.png (cell 1)",
+   "transform": "none (base pose)",
+   "duration_ms": 400
+  },
+  {
+   "file": "idle_b.png",
+   "source": "rendered bob from battle_front",
+   "transform": "('shift', 0, -3)",
+   "duration_ms": 400
+  },
+  {
+   "file": "idle_a.png",
+   "source": "locked battle_front squirmite_cell_01.png (cell 1)",
+   "transform": "none (return to base)",
+   "duration_ms": 400
+  },
+  {
+   "file": "idle_c.png",
+   "source": "rendered breath transform ('squash', 1.03, 0.97) from battle_front",
+   "transform": "('squash', 1.03, 0.97)",
+   "duration_ms": 400
+  }
+ ],
+ "reads_as": "idle (bob/breath/hover/pulse), not attack, not walk",
+ "look_note": "",
+ "timing_status": "reconciled 2026-10-25: final timing recorded, see timing_reconciliation",
+ "rig_note": "",
+ "generated_ai_frames": 0,
+ "mapped_locked_frames": 1,
+ "timing_reconciliation": {
+  "baseline_ms": 2400,
+  "baseline_note": "Calm baseline 2400ms = midpoint of research calm full-breath cycle 2.0-3.0s (BATTLE-ANIMATION-RESEARCH.md s5.2); s5.3 forbids shipping one idle for 51 creatures \u2014 variation by body/temperament is required, not a deviation to hide.",
+  "previous_cycle_ms": 1200,
+  "final_cycle_ms": 1600,
+  "change": "RETIMED 1200->1600",
+  "rationale": "Deliberately faster than the 2400ms baseline, but NOT as fast as the old 1200ms: 1200ms breached the research floor (cycles faster than ~1.5s look nervous/broken at battle scale, s5.2) and fell below the small/light/fast range 1.6-2.0s (s5.3). 1600ms is the low end of that range \u2014 still 800ms faster than baseline, so the bouncy read is preserved, without the nervous read.",
+  "research_refs": "s5.2 nervous floor ~1.5s; s5.3 small/light/fast 1.6-2.0s",
+  "pngs_unchanged": true,
+  "engine_note": "Idle never stops during the opponent's turn; second creature's loop is offset 30-50% of a cycle in the engine (s5.2) \u2014 engine behaviour, not a manifest timing change."
+ }
+}

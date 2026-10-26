@@ -1,0 +1,58 @@
+{
+ "creature": "pyropaw",
+ "animation": "idle",
+ "loop": true,
+ "cycle_ms": 2400,
+ "idle_class": "grounded_standard",
+ "idle_class_description": "gentle bob + breath; feet stay grounded",
+ "source_locked_manifest": "pyropaw.manifest.locked.json",
+ "battle_front": {
+  "cell": 1,
+  "file": "pyropaw_cell_01.png"
+ },
+ "method": "transform_loop_from_locked_battle_front",
+ "method_note": "Loop visibly moves (bob/breath); it is NOT the old static standing reuse. Overworld_front cells were eye-checked and rejected as a second pose (near-identical to battle_front). Manticlaw only: C frame is a second distinct locked battle_front cell.",
+ "frames": [
+  {
+   "file": "idle_a.png",
+   "source": "locked battle_front pyropaw_cell_01.png (cell 1)",
+   "transform": "none (base pose)",
+   "duration_ms": 700
+  },
+  {
+   "file": "idle_b.png",
+   "source": "rendered bob from battle_front",
+   "transform": "('shift', 0, -2)",
+   "duration_ms": 500
+  },
+  {
+   "file": "idle_a.png",
+   "source": "locked battle_front pyropaw_cell_01.png (cell 1)",
+   "transform": "none (return to base)",
+   "duration_ms": 700
+  },
+  {
+   "file": "idle_c.png",
+   "source": "rendered breath transform ('scale_y', 1.02) from battle_front",
+   "transform": "('scale_y', 1.02)",
+   "duration_ms": 500
+  }
+ ],
+ "reads_as": "idle (bob/breath/hover/pulse), not attack, not walk",
+ "look_note": "",
+ "timing_status": "reconciled 2026-10-25: final timing recorded, see timing_reconciliation",
+ "rig_note": "",
+ "generated_ai_frames": 0,
+ "mapped_locked_frames": 1,
+ "timing_reconciliation": {
+  "baseline_ms": 2400,
+  "baseline_note": "Calm baseline 2400ms = midpoint of research calm full-breath cycle 2.0-3.0s (BATTLE-ANIMATION-RESEARCH.md s5.2); s5.3 forbids shipping one idle for 51 creatures \u2014 variation by body/temperament is required, not a deviation to hide.",
+  "previous_cycle_ms": 1800,
+  "final_cycle_ms": 2400,
+  "change": "RETIMED 1800->2400",
+  "rationale": "Adopts the 2400ms calm baseline exactly. Old 1800ms was below the research per-body ranges for this class (medium biped 2.0-2.5s, quadruped 2.2-2.8s, BATTLE-ANIMATION-RESEARCH.md s5.3) and had no body/temperament justification for running faster than calm.",
+  "research_refs": "s5.2 calm breath 2.0-3.0s (baseline 2400ms = midpoint); s5.3 medium biped 2.0-2.5s, quadruped 2.2-2.8s",
+  "pngs_unchanged": true,
+  "engine_note": "Idle never stops during the opponent's turn; second creature's loop is offset 30-50% of a cycle in the engine (s5.2) \u2014 engine behaviour, not a manifest timing change."
+ }
+}
