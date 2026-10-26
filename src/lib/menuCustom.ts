@@ -277,7 +277,13 @@ export const DEFAULT_MENU_CUSTOM: MenuCustomSettings = {
   textSize: 'M',
   lineSpacing: 1.5,
   textColor: '#f1f5f9',
-  textShadow: false,
+  // Mars readability order 2026-10-26: dialogue shadow layer ON
+  // by default (was false). applyMenuCustom maps true to
+  // '0 2px 0 rgba(0,0,0,0.6)' — the game's own ON value, a
+  // Pokemon-style shadow offset under the fg text. The Settings
+  // TEXT SHADOW row still lets any player turn it OFF; saved
+  // settings keep their stored value.
+  textShadow: true,
   dialogueBoxStyle: 'ROUNDED',
   cameraShake: true,
   reducedMotion: false,

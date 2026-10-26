@@ -449,13 +449,17 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   ];
 
   // Font Settings — Mars font CORRECTION (2026-10-25 18:30 CDT,
-  // overrides the 2-row version): six rows, each cycles the full
-  // FONT_OPTIONS list independently (including the named entry
-  // "Default — Trebuchet MS / system sans" on every row), applies
-  // live on return, CANCEL saves + exits.
+  // overrides the 2-row version) + Mars readability order
+  // (2026-10-26): six rows, each cycles the full FONT_OPTIONS
+  // list independently — both groups on every row: Pokemon Base
+  // group (Pokemon Base + Pokemon slots) AND Mars's chosen fonts
+  // (Yagiza / 01 Digitall / Y2K Google fonts). Applies live on
+  // return, CANCEL saves + exits.
   // RESET FONTS restores, in row order:
-  // MAIN=Yagiza / MENU=Yagiza / DIALOGUE=01 Digitall /
+  // MAIN=Yagiza / MENU=Pokemon Base / DIALOGUE=Pokemon Base /
   // SMALL=01 Digitall / BOLD=Yagiza / BATTLE=01 Digitall.
+  // POKEMON BASE DEFAULT sets MENU + DIALOGUE to Pokemon Base
+  // in one tap (other rows untouched).
   // ORIGINAL DEFAULTS applies the open-fonts preset (Bungee /
   // Titan One / Fredoka style). DIAMOND VERSION subtitle font is
   // PINNED — no row here touches it (see fonts.ts
@@ -465,16 +469,18 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     const i = FONT_OPTIONS.findIndex(f => f.id === cur);
     return FONT_OPTIONS[(i + dir + FONT_OPTIONS.length) % FONT_OPTIONS.length].id;
   };
-  const resetFonts = () => { set({ mainFont: 'yagiza', menuFont: 'yagiza', dialogueFont: '01-digitall', smallFont: '01-digitall', boldFont: 'yagiza', battleFont: '01-digitall' }); setSavedMsg('Fonts reset: MAIN=Yagiza, MENU=Yagiza, DIALOGUE=01 Digitall, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall.'); };
+  const resetFonts = () => { set({ mainFont: 'yagiza', menuFont: 'pokemon-base', dialogueFont: 'pokemon-base', smallFont: '01-digitall', boldFont: 'yagiza', battleFont: '01-digitall' }); setSavedMsg('Fonts reset: MAIN=Yagiza, MENU=Pokemon Base, DIALOGUE=Pokemon Base, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall.'); };
+  const pokemonBaseDefault = () => { set({ menuFont: 'pokemon-base', dialogueFont: 'pokemon-base' }); setSavedMsg('Pokemon Base applied: MENU=Pokemon Base, DIALOGUE=Pokemon Base. Other rows untouched. Save with CANCEL / SAVE + BACK to persist.'); };
   const originalDefaults = () => { set({ mainFont: 'bungee', menuFont: 'titan-one', dialogueFont: 'fredoka', smallFont: 'fredoka', boldFont: 'bungee', battleFont: 'fredoka' }); setSavedMsg('Original Defaults preset applied: MAIN=Bungee, MENU=Titan One, DIALOGUE=Fredoka, SMALL=Fredoka, BOLD=Bungee, BATTLE=Fredoka (open fonts only).'); };
   const fontRows: Row[] = [
     { label: 'MAIN FONT', value: mainFontOpt.label, onLeft: () => set({ mainFont: cycleFont(draft.mainFont, -1) }), onRight: () => set({ mainFont: cycleFont(draft.mainFont, 1) }), note: 'MAIN FONT (true starting default Yagiza) = titles, menus, headings, UI labels — via --game-font (body). ' + mainFontOpt.note },
-    { label: 'MENU FONT', value: menuFontOpt.label, onLeft: () => set({ menuFont: cycleFont(draft.menuFont, -1) }), onRight: () => set({ menuFont: cycleFont(draft.menuFont, 1) }), note: 'MENU FONT (separate row, starting default also Yagiza) = menu selection row text ONLY — main-menu CONTINUE / NEW GAME / SETTINGS rows and Settings rows follow this. Main menu layout/logo/cloud/panels/colours are otherwise UNCHANGED (locked v32). ' + menuFontOpt.note },
-    { label: 'DIALOGUE FONT', value: dialogueFontOpt.label, onLeft: () => set({ dialogueFont: cycleFont(draft.dialogueFont, -1) }), onRight: () => set({ dialogueFont: cycleFont(draft.dialogueFont, 1) }), note: 'DIALOGUE FONT (01 Digitall) = dialogue boxes, NPC talk, body text — via --dialogue-font in DialogueBox. ' + dialogueFontOpt.note },
+    { label: 'MENU FONT', value: menuFontOpt.label, onLeft: () => set({ menuFont: cycleFont(draft.menuFont, -1) }), onRight: () => set({ menuFont: cycleFont(draft.menuFont, 1) }), note: 'MENU FONT (readable default Pokemon Base, Mars 2026-10-26) = menu selection row text ONLY — main-menu CONTINUE / NEW GAME / SETTINGS rows and Settings rows follow this. Main menu layout/logo/cloud/panels/colours are otherwise UNCHANGED (locked v32). ' + menuFontOpt.note },
+    { label: 'DIALOGUE FONT', value: dialogueFontOpt.label, onLeft: () => set({ dialogueFont: cycleFont(draft.dialogueFont, -1) }), onRight: () => set({ dialogueFont: cycleFont(draft.dialogueFont, 1) }), note: 'DIALOGUE FONT (readable default Pokemon Base, Mars 2026-10-26) = dialogue boxes, NPC talk, body text — via --dialogue-font in DialogueBox. ' + dialogueFontOpt.note },
     { label: 'SMALL FONT', value: smallFontOpt.label, onLeft: () => set({ smallFont: cycleFont(draft.smallFont, -1) }), onRight: () => set({ smallFont: cycleFont(draft.smallFont, 1) }), note: 'SMALL FONT (starting 01 Digitall, Pokemon FONT_SMALL slot) = small labels and notes — speaker names, Settings notes/help. ' + smallFontOpt.note },
     { label: 'BOLD FONT', value: boldFontOpt.label, onLeft: () => set({ boldFont: cycleFont(draft.boldFont, -1) }), onRight: () => set({ boldFont: cycleFont(draft.boldFont, 1) }), note: 'BOLD FONT (starting Yagiza, FONT_BOLD slot) = bold headings and action buttons — Settings header, title logo, SAVE + BACK. ' + boldFontOpt.note },
     { label: 'BATTLE FONT', value: battleFontOpt.label, onLeft: () => set({ battleFont: cycleFont(draft.battleFont, -1) }), onRight: () => set({ battleFont: cycleFont(draft.battleFont, 1) }), note: 'BATTLE FONT (starting 01 Digitall) = battle log and HUD — BattleView message/log, healthboxes, move buttons. ' + battleFontOpt.note },
-    { label: 'RESET FONTS', value: 'Yagiza / Yagiza / Digitall', onLeft: resetFonts, onRight: resetFonts, onSelect: resetFonts, note: 'Restores, in row order: MAIN=Yagiza, MENU=Yagiza, DIALOGUE=01 Digitall, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall. Save with CANCEL / SAVE + BACK to persist.' },
+    { label: 'POKEMON BASE DEFAULT', value: 'APPLY ►', onLeft: pokemonBaseDefault, onRight: pokemonBaseDefault, onSelect: pokemonBaseDefault, note: 'One tap: MENU=Pokemon Base, DIALOGUE=Pokemon Base (readable defaults). Other rows untouched. Save with CANCEL / SAVE + BACK to persist. This is also what RESET FONTS restores for those two rows.' },
+    { label: 'RESET FONTS', value: 'Yagiza / Pokemon Base', onLeft: resetFonts, onRight: resetFonts, onSelect: resetFonts, note: 'Restores, in row order: MAIN=Yagiza, MENU=Pokemon Base, DIALOGUE=Pokemon Base, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall. Save with CANCEL / SAVE + BACK to persist.' },
     { label: 'ORIGINAL DEFAULTS', value: 'Bungee / Titan One / Fredoka', onLeft: originalDefaults, onRight: originalDefaults, onSelect: originalDefaults, note: 'Separate preset using non-proprietary open fonts (Bungee / Titan One / Fredoka style). Never a Pokemon font file. Save with CANCEL / SAVE + BACK to persist.' },
     { label: 'BACK', value: '◄ BACK', onLeft: () => setScreen(fontReturn), onRight: () => setScreen(fontReturn), onSelect: () => setScreen(fontReturn), note: 'Returns to ' + (fontReturn === 'MENU_CREATOR' ? 'Menu Creator' : 'Settings') + '. Use SAVE + BACK below to persist font changes.' },
   ];
