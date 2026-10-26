@@ -19,10 +19,10 @@
  * choosing GIRL shows Player A art in world + battle. Her atlas is a
  * 256x256 4-column grid (not a 192x64 strip): row 0 = world
  * front/back/left/right, rows 1-2 = walk idle/step frames, row 3 =
- * battle_back + portrait. Only row 0 is wired by game code in this
- * batch (see HUMAN_SLOTS comment below); walk, battle_back and
+ * battle_back + portrait. Walk cells are wired by PixiWorldCanvas
+ * for the moving player (see walk on HumanSlot); battle_back and
  * portrait cells are present in the atlas + manifest but not yet
- * animated/wired — that is a follow-up pass, not claimed here.
+ * wired by game code — that is a follow-up pass, not claimed here.
  * Portrait eye drift, noted not fixed: portrait v1 eyes drifted to
  * teal/blue; model/walk eyes are brown and brown is canon. The atlas
  * was NOT hand-edited to fix eyes; correction is a full-stack edit
@@ -30,15 +30,16 @@
  */
 import playerAAtlas from '../assets/human-characters/in-game-sheets/player-a-atlas-64x64.png';
 // PR #100 atlas batch (Human Characters lane, merged on main): every atlas
-// below is a 256x256 4x4 grid of 64x64 cells with the SAME layout as the
-// Player A atlas — row 0 = world front/back/left/right, rows 1-2 = walk
-// idle/step, row 3 = battle (cell 12) + portrait (cell 13) — verified
-// against each atlas's manifest (cells 0-3 world, 4-7 walk idle, 8-11
-// walk step, 12 battle, 13 portrait). Game code today consumes row-0
-// world cells only (PixiWorldCanvas world sprites + HumanPortrait
-// dialogue front), exactly as for Player A: walk, battle and portrait
-// cells are present in the atlases + manifests but NOT yet animated or
-// wired by game code — that is a follow-up pass, not claimed here.
+// below is a 256x256 4x4 grid of 64x64 cells with the SAME row-0 layout
+// as the Player A atlas — row 0 = world front/back/left/right, row 3 =
+// battle (cell 12) + portrait (cell 13) — verified against each atlas's
+// manifest (cells 0-3 world, 12 battle, 13 portrait). Walk rows differ
+// by batch (see ROWS_WALK vs PAIRS_WALK): PR #100 atlases are idle row
+// then step row (idle 4-7, step 8-11), Player A is direction pairs
+// (down 4/5, up 6/7, left 8/9, right 10/11). Walk cells are consumed by
+// PixiWorldCanvas for the moving player; battle and portrait cells are
+// present in the atlases + manifests but NOT yet wired by game code —
+// that is a follow-up pass, not claimed here.
 import shopkeeperAtlas from '../assets/human-characters/in-game-sheets/shopkeeper-atlas-64x64.png';
 import krixAtlas from '../assets/human-characters/in-game-sheets/krix-atlas-64x64.png';
 import syndicateAtlas from '../assets/human-characters/in-game-sheets/syndicate-grunt-atlas-64x64.png';
@@ -53,6 +54,42 @@ import momWhiteAtlas from '../assets/human-characters/in-game-sheets/mom-white-a
 
 export type HumanView = 'front' | 'back' | 'left' | 'right';
 
+/** Walk-cycle cells of a 4x4 human atlas, as cell indices (0-15) in
+ *  the grid, per facing. The two atlas batches on main arrange walk
+ *  cells differently — see ROWS_WALK / PAIRS_WALK below — so the
+ *  mapping lives on the slot, taken from that atlas's own manifest,
+ *  never assumed from another atlas. Pixel-verified 2026-10-26 for
+ *  the PR #100 batch (walk idle cells are pixel-identical to the
+ *  row-0 world cells; step cells differ, except Garden Keeper front,
+ *  whose step cell is pixel-identical to its idle cell) and for
+ *  Player A (all 8 walk cells distinct from each other and from row 0).
+ *  Slots without walk data (old strips, null sheets, Mom variants as
+ *  data) render exactly as before: row-0 standing frame + bob. */
+export interface HumanWalkFrames {
+  idle: Record<HumanView, number>;
+  step: Record<HumanView, number>;
+}
+
+/** PR #100 atlas batch layout (shopkeeper, dojo-student,
+ *  garden-keeper, tech-tinkerer, krix, syndicate, liberation, all
+ *  Mom variants): rows 1-2 are idle row then step row — idle
+ *  front/back/left/right = cells 4/5/6/7, step = cells 8/9/10/11.
+ *  From each atlas's own manifest (cells list). */
+export const ROWS_WALK: HumanWalkFrames = {
+  idle: { front: 4, back: 5, left: 6, right: 7 },
+  step: { front: 8, back: 9, left: 10, right: 11 },
+};
+
+/** Player A atlas layout (player-a-atlas-manifest.json): direction
+ *  pairs — down(front) idle/step = cells 4/5, up(back) = 6/7,
+ *  left = 8/9, right = 10/11. NOT the PR #100 rows layout: using the
+ *  rows mapping on Player A would show the wrong frames (front step
+ *  would be left_idle). */
+export const PAIRS_WALK: HumanWalkFrames = {
+  idle: { front: 4, back: 6, left: 8, right: 10 },
+  step: { front: 5, back: 7, left: 9, right: 11 },
+};
+
 export interface HumanSlot {
   slotId: string;
   label: string;
@@ -61,6 +98,11 @@ export interface HumanSlot {
   sheetUrl: string | null;
   /** x offset of each 64x64 cell when a sheet exists. Left mirrors right only when left === right (old strips). */
   frames: Record<HumanView, number>;
+  /** Walk-cycle cells for this slot's atlas, when it has them.
+   *  Consumed by PixiWorldCanvas for the moving player only: NPCs
+   *  stand still in current maps, so their walk cells do not animate
+   *  yet. Absent = render row-0 standing frame exactly as before. */
+  walk?: HumanWalkFrames;
   /** Number of 64x64 columns in the sheet image. Default 3 (strips); 4 for the Player A atlas. */
   sheetCols?: number;
   /** Number of 64x64 rows in the sheet image. Default 1 (strips); 4 for the Player A atlas. */
@@ -80,10 +122,11 @@ function slot(slotId: string, label: string, role: string, color: string): Human
 
 /** Atlas slot: same row-0 world frames as Player A (front 0, back 64,
  *  left 128, right 192 — distinct right cell, NOT mirrored left), 4x4
- *  grid. Walk (cells 4-11), battle (12) and portrait (13) are in the
- *  atlas but not yet consumed by game code — see the import comment. */
+ *  grid, PR #100 rows walk layout (idle 4-7, step 8-11). Battle (12)
+ *  and portrait (13) are in the atlas but not yet consumed by game
+ *  code — that is still a follow-up pass, not claimed here. */
 function atlasSlot(slotId: string, label: string, role: string, sheetUrl: string, color: string): HumanSlot {
-  return { slotId, label, role, sheetUrl, frames: { front: 0, back: 64, left: 128, right: 192 }, sheetCols: 4, sheetRows: 4, color };
+  return { slotId, label, role, sheetUrl, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: ROWS_WALK, sheetCols: 4, sheetRows: 4, color };
 }
 
 /**
@@ -109,11 +152,13 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   player_boy: slot('player_boy', 'Player (boy)', 'player', '#4fc3f7'),
   // Player A (young Black woman, teal/chrome jacket, chibi atlas, Mars-approved
   // 2026-10-25) wired to player_girl — the game has boy/girl slots only, no
-  // A/B/C/D picker yet. Only row-0 world cells are wired here: front 0,
-  // back 64, left 128, right 192 (distinct right cell, NOT mirrored left).
-  // Walk (cells 4-11), battle_back (12) and portrait (13) are in the atlas
-  // + manifest but NOT yet wired by game code — follow-up pass, not claimed.
-  player_girl: { slotId: 'player_girl', label: 'Player (girl)', role: 'player', sheetUrl: playerAAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, sheetCols: 4, sheetRows: 4, color: '#f48fb1' },
+  // A/B/C/D picker yet. Row-0 world cells: front 0, back 64, left 128,
+  // right 192 (distinct right cell, NOT mirrored left). Walk cells use
+  // Player A's own pairs layout (PAIRS_WALK), NOT the PR #100 rows
+  // layout — see PAIRS_WALK. Battle_back (12) and portrait (13) are in
+  // the atlas + manifest but NOT yet wired by game code — follow-up
+  // pass, not claimed.
+  player_girl: { slotId: 'player_girl', label: 'Player (girl)', role: 'player', sheetUrl: playerAAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: PAIRS_WALK, sheetCols: 4, sheetRows: 4, color: '#f48fb1' },
   hex: slot('hex', 'Hex (rival)', 'rival', '#b388ff'),
   prof_aeon: slot('prof_aeon', 'Prof. Aeon', 'professor', '#e0e0e0'),
   mochiko: slot('mochiko', 'Assistant Mochiko', 'assistant', '#80cbc4'),
@@ -130,11 +175,14 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // bundled, but NOT routed yet — no Garden NPC routes through
   // slotForNpc today and GardenView does not use it. Garden staff
   // routing is still owed. FLAG, preserved honestly: her manifest's
-  // front step reuses the front idle cell (steps "0:0,0:3,1:1,1:3" —
-  // front step = cell 0), because her walk sheet has no distinct
-  // front step; no front-step frame is invented here. This only
-  // matters when walk animation wiring lands; row-0 world cells
-  // consumed today are unaffected.
+  // front step reuses the front idle cell (steps "0:0,0:3,1:1,1:3"),
+  // pixel-verified 2026-10-26: her front step cell (8) is
+  // pixel-identical to her front idle cell (4) and to her world
+  // front cell (0), so front walk animation shows no change; no
+  // front-step frame is invented here. Her back step is
+  // near-identical to back idle (mean abs diff 1.7); left/right
+  // steps are distinct. This only matters when a Garden NPC is
+  // routed here; row-0 world cells consumed today are unaffected.
   garden_keeper: atlasSlot('garden_keeper', 'Garden Keeper', 'garden-staff', gardenKeeperAtlas, '#a5d6a7'),
   // Tech Tinkerer (PR #100 atlas): slot defined and bundled, but NOT
   // routed yet — no tech NPC routes through slotForNpc today (the

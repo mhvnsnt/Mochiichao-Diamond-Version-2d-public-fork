@@ -35,7 +35,7 @@ function hashColor(id: string): number {
   return palette[h % palette.length];
 }
 
-import { sheetCellTexture as sheetTexture } from './pixiSheet';
+import { sheetCellTexture as sheetTexture, sheetCellTextureXY } from './pixiSheet';
 
 function drawFallbackCreature(g: Graphics, cx: number, cy: number, size: number, colorHex: number, bob: number) {
   const r = size / 2;
@@ -300,12 +300,31 @@ export default function PixiWorldCanvas({
           // (old strips where left === right).
           const distinctLeft = humanPlayer.frames.left !== humanPlayer.frames.right;
           const view = playerDir === 'up' ? 'back' : playerDir === 'left' && distinctLeft ? 'left' : playerDir === 'left' || playerDir === 'right' ? 'right' : 'front';
-          const key = `player-human-${humanPlayer.slotId}-${view}`;
+          // Human walk animation (walk wiring): when the slot carries
+          // walk frames (humanSheets.ts, per-atlas manifest layout),
+          // the moving player alternates idle/step with animWalk
+          // parity — the same parity the bob below already uses.
+          // Standing still keeps the last frame, exactly like the
+          // existing bob freeze; there is no step tween in this
+          // tile-step mover to return to idle on. Slots without walk
+          // data (old strips, null sheets) render exactly as before.
+          // NPCs are untouched here: they stand still in current maps,
+          // so their walk cells have no movement to animate yet.
+          const walkCell = humanPlayer.walk
+            ? (animWalk % 2 === 1 ? humanPlayer.walk.step[view] : humanPlayer.walk.idle[view])
+            : null;
+          const key = walkCell !== null
+            ? `player-human-${humanPlayer.slotId}-${view}-walk${walkCell}`
+            : `player-human-${humanPlayer.slotId}-${view}`;
           let sp = sheetSpritesRef.current.get(key);
           if (!sp) {
             sp = new Sprite();
             sheetSpritesRef.current.set(key, sp);
-            sheetTexture(humanPlayer.sheetUrl, humanPlayer.frames[view]).then(tex => { sp!.texture = tex; }).catch(() => {});
+            if (walkCell !== null) {
+              sheetCellTextureXY(humanPlayer.sheetUrl, (walkCell % 4) * 64, Math.floor(walkCell / 4) * 64).then(tex => { sp!.texture = tex; }).catch(() => {});
+            } else {
+              sheetTexture(humanPlayer.sheetUrl, humanPlayer.frames[view]).then(tex => { sp!.texture = tex; }).catch(() => {});
+            }
           }
           sp.anchor.set(0.5, 1);
           sp.position.set(cx, cy + tile * 0.5 + bob);
