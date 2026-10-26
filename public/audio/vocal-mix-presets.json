@@ -45,6 +45,26 @@
       "rms": 0.235,
       "peak": 0.707,
       "build_script": "build_vocal_mix_v14.sh"
+    },
+    "v15": {
+      "lead": "vocal-autotune-v5.wav (pitch x2.73, formant x1.4, D major, glide 55ms)",
+      "lead_pitch_hz": 394,
+      "lead_max_per_sec_hz": 580,
+      "dropouts_pct": 2.4,
+      "eq1_vocal": "HP120, -4@250, +6@3k, +6@5k, +5@8k, +4@12k air shelf, deesser 0.6@7kHz",
+      "eq2_bus": "-2@100 shelf, -3@400, +2@10k shelf",
+      "ott_style": "parallel heavily-compressed copy (0.05/10:1, makeup 3dB) mixed at 0.15 depth \u2014 Xfer OTT lead-vocal depth 7-20%, 15% typical, de-esser after (kept)",
+      "octave_up_layer": "rubberband pitch 2.0 on warped-norm phrases, vol 0.25",
+      "overdub": "low autotune-v2 (290Hz) + Pancake auto-pan 0.4Hz + heavenly chorus, vol 0.35",
+      "delay": "dotted-eighth 321.4ms + 642ms tap wet 0.25",
+      "vocal_bus": 4.0,
+      "title_bus": 1.0,
+      "limiter": "0.89",
+      "tail_cut": "vocal bus fade-out at 39.81s (last phrase end), 0.5s \u2014 delay ring 39.8-40.3s RMS 0.190 -> 0.145, title loop untouched",
+      "fade_in_s": 4,
+      "rms": 0.235,
+      "peak": 0.707,
+      "build_script": "build_vocal_mix_v15.sh"
     }
   },
   "delay_math_140bpm": {
@@ -110,5 +130,18 @@
       }
     ],
     "conclusion": "vocal lives F4-G4 (349-392Hz), AVANNA top G4; v14 lead 368Hz sits inside it; outro section is vocal-forward (vocalband 0.229 vs 0.05 elsewhere)"
+  },
+  "genre_research": {
+    "genre": "hyperpop, specifically digicore \u2014 loosely-defined exaggerated pop drawing on electronic, hip hop, dance; NTS digicore guide lists Deko PHANTASY STAR ONLINE ft Yameii alongside Jane Remover, 100 gecs, Glaive, ericdoa, midwxst, SEBii",
+    "yameii": "virtual musician/digital rapper conceived by Osean + Deko, Vocaloid-based (AVANNA), anime/metaverse presentation",
+    "rulebook_break": "AVANNA recommended top is G4 (392Hz) but neptune outro hits 394Hz median and D5 per-second notes \u2014 v15 lead median 394Hz deliberately sits at/above that ceiling, matching the reference, not the spec sheet",
+    "free_plugins_researched": {
+      "OTT (Xfer, free)": "multiband upward/downward compression; lead vocal depth 7-20%, 15% typical, de-esser after \u2014 our open-source equivalent wired in v15",
+      "Valhalla Supermassive (free)": "huge evolving delay/reverb, 18 modes \u2014 dreamy space; our equivalent is the 321ms tempo delay + chorus + echo taps",
+      "Graillon 3 Free / MAutoPitch (free)": "pitch correction + formant shift \u2014 our equivalent is the pyworld autotune/formant scripts",
+      "TDR Nova (free)": "dynamic EQ \u2014 our equivalent is the dual-EQ chain (EQ1 vocal, EQ2 bus)",
+      "Vital / Surge XT (free, open)": "synths for future game tracks, not used on this vocal mix",
+      "note": "VST binaries themselves are NOT redistributed in the public repo (licences); their FUNCTIONS are built open-source in ffmpeg/python and documented in tools/music-production/free-plugins-and-genre-research.md"
+    }
   }
 }
