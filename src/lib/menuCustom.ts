@@ -23,6 +23,14 @@
  *   ui-art/menu-background-animation-spec.md); FLOW and RISE_FADE
  *   are Mochiichao menu-animation names for the existing
  *   rise+fade / flowing symbol-layer motion, not Pokemon assets.
+ *   Preview-strip motion (batch-B follow-up): driven by Motion
+ *   (MIT, already a dependency — no new package) via
+ *   useAnimationFrame; SINE is the FireRed method
+ *   sprite offset = Sin(angle, amplitude) (battle_anim_*.c:
+ *   sprite->y2 = Sin(data, amplitude)), with amplitude = sway
+ *   and angle advanced by animationSpeed. Title/main-menu
+ *   symbol-layer motion is still NEED — only the preview strip
+ *   is animated here.
  *
  * GAME TIME: this web game has no separate simulated in-game
  * clock yet, so "GAME time" here is the device clock read at
@@ -226,8 +234,9 @@ export interface MenuCustomSettings {
   /** Sine sway amplitude, 0 - 8 (px in the preview strip). */
   sway: number;
   backgroundBiome: BackgroundBiome;
-  /** GAP for menus: painted title backgrounds exist for 4/8 biomes
-   *  but are not wired as menu backgrounds yet — row is labelled NEED. */
+  /** GAP for menus: painted title backgrounds exist for 8/8 biomes
+   *  (Title Backgrounds lane, complete) but are not wired as menu
+   *  backgrounds yet — row is labelled NEED. */
   backgroundPainted: false;
   symbolLayer: boolean;
   /** Background fade, 0 - 100 (opacity % of the background layer). */
