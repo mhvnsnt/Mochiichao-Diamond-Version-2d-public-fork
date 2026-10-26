@@ -1,0 +1,1009 @@
+{
+ "tag": "artic-pipev3w6-20261026",
+ "creature": "razorgater",
+ "method": "V6 auto-sensed triangle jaw",
+ "sensor": "detect_mouth_v5 (OpenCV, take-5 module, reused)",
+ "shape": "triangle",
+ "scale_vs_detected_jaw": 1.2,
+ "take5_keeper_fallback": true,
+ "sets": {
+  "atk_physical_razor_rush": {
+   "files": [
+    "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-00.png",
+    "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-01.png",
+    "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-02.png",
+    "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-03.png",
+    "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-04.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       41.5
+      ],
+      "lip_line": 33,
+      "tongue": [
+       44,
+       24,
+       37,
+       11,
+       5
+      ],
+      "jaw_bbox": [
+       18,
+       33,
+       46,
+       49
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       41.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 1,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       35.0,
+       35.1
+      ],
+      "lip_line": 24,
+      "tongue": [
+       45,
+       29,
+       29,
+       9,
+       7
+      ],
+      "jaw_bbox": [
+       21,
+       24,
+       49,
+       40
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       35.0,
+       32.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 2,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       39.5,
+       39.2
+      ],
+      "lip_line": 30,
+      "tongue": [
+       61,
+       31,
+       30,
+       21,
+       10
+      ],
+      "jaw_bbox": [
+       25,
+       30,
+       53,
+       46
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       39.0,
+       38.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 3,
+     "action": "v6triangle-jaw",
+     "gate": {
+      "changed": 492,
+      "bbox": [
+       23,
+       30,
+       38,
+       25
+      ],
+      "fill_ratio": 0.518,
+      "inside_mask_dil2": true,
+      "off_silhouette": false
+     },
+     "detection": {
+      "seed": [
+       41.5,
+       40.0
+      ],
+      "lip_line": 34,
+      "tongue": [
+       39,
+       33,
+       38,
+       12,
+       4
+      ],
+      "jaw_bbox": [
+       27,
+       34,
+       55,
+       50
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       41.0,
+       42.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": {
+      "shape": "triangle",
+      "centre": [
+       41.0,
+       42.0
+      ],
+      "radii": [
+       17.4,
+       10.2
+      ],
+      "top_width": 34.8,
+      "top_y": 31.8,
+      "apex": [
+       41.0,
+       52.2
+      ],
+      "apex_vs_jaw_bottom": 2.2,
+      "top_width_vs_jaw_width": 1.2,
+      "detected_jaw": [
+       27,
+       34,
+       55,
+       50
+      ],
+      "detected_gap": 17,
+      "confidence": "high",
+      "gate_ok": true,
+      "vertices": [
+       [
+        23.6,
+        31.8
+       ],
+       [
+        58.4,
+        31.8
+       ],
+       [
+        41.0,
+        52.2
+       ]
+      ]
+     }
+    },
+    {
+     "frame": 4,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       36.6
+      ],
+      "lip_line": 26,
+      "tongue": [
+       45,
+       25,
+       31,
+       10,
+       6
+      ],
+      "jaw_bbox": [
+       18,
+       26,
+       46,
+       42
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       34.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    }
+   ]
+  },
+  "atk_special_blade_wave": {
+   "files": [
+    "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-00.png",
+    "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-01.png",
+    "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-02.png",
+    "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-03.png",
+    "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-04.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       35.5
+      ],
+      "lip_line": 25,
+      "tongue": [
+       43,
+       26,
+       30,
+       9,
+       6
+      ],
+      "jaw_bbox": [
+       18,
+       25,
+       46,
+       41
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       33.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 1,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       30.3,
+       33.9
+      ],
+      "lip_line": 22,
+      "tongue": [
+       43,
+       25,
+       28,
+       8,
+       7
+      ],
+      "jaw_bbox": [
+       16,
+       22,
+       44,
+       38
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       30.0,
+       30.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 2,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       26.0,
+       37.7
+      ],
+      "lip_line": 28,
+      "tongue": [
+       39,
+       19,
+       33,
+       10,
+       5
+      ],
+      "jaw_bbox": [
+       12,
+       28,
+       40,
+       44
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       26.0,
+       36.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 3,
+     "action": "v6triangle-jaw",
+     "gate": {
+      "changed": 510,
+      "bbox": [
+       7,
+       22,
+       38,
+       24
+      ],
+      "fill_ratio": 0.559,
+      "inside_mask_dil2": true,
+      "off_silhouette": false
+     },
+     "detection": {
+      "seed": [
+       26.0,
+       34.0
+      ],
+      "lip_line": 26,
+      "tongue": [
+       42,
+       20,
+       31,
+       9,
+       6
+      ],
+      "jaw_bbox": [
+       12,
+       26,
+       40,
+       42
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       26.0,
+       34.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": {
+      "shape": "triangle",
+      "centre": [
+       26.0,
+       34.0
+      ],
+      "radii": [
+       17.4,
+       10.2
+      ],
+      "top_width": 34.8,
+      "top_y": 23.8,
+      "apex": [
+       26.0,
+       44.2
+      ],
+      "apex_vs_jaw_bottom": 2.2,
+      "top_width_vs_jaw_width": 1.2,
+      "detected_jaw": [
+       12,
+       26,
+       40,
+       42
+      ],
+      "detected_gap": 17,
+      "confidence": "high",
+      "gate_ok": true,
+      "vertices": [
+       [
+        8.6,
+        23.8
+       ],
+       [
+        43.4,
+        23.8
+       ],
+       [
+        26.0,
+        44.2
+       ]
+      ]
+     }
+    },
+    {
+     "frame": 4,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       36.6
+      ],
+      "lip_line": 26,
+      "tongue": [
+       45,
+       25,
+       31,
+       10,
+       6
+      ],
+      "jaw_bbox": [
+       18,
+       26,
+       46,
+       42
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       34.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    }
+   ]
+  },
+  "atk_signature_cross_slash": {
+   "files": [
+    "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-00.png",
+    "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-01.png",
+    "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-02.png",
+    "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-03.png",
+    "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-04.png",
+    "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-05.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       36.6
+      ],
+      "lip_line": 26,
+      "tongue": [
+       45,
+       25,
+       31,
+       10,
+       6
+      ],
+      "jaw_bbox": [
+       18,
+       26,
+       46,
+       42
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       34.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 1,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       32.9
+      ],
+      "lip_line": 21,
+      "tongue": [
+       80,
+       26,
+       21,
+       21,
+       13
+      ],
+      "jaw_bbox": [
+       18,
+       21,
+       46,
+       37
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       29.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 2,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       27.0,
+       38.3
+      ],
+      "lip_line": 29,
+      "tongue": [
+       44,
+       20,
+       33,
+       10,
+       6
+      ],
+      "jaw_bbox": [
+       13,
+       29,
+       41,
+       45
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       27.0,
+       37.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 3,
+     "action": "v6triangle-jaw",
+     "gate": {
+      "changed": 507,
+      "bbox": [
+       9,
+       25,
+       37,
+       24
+      ],
+      "fill_ratio": 0.571,
+      "inside_mask_dil2": true,
+      "off_silhouette": false
+     },
+     "detection": {
+      "seed": [
+       27.0,
+       36.4
+      ],
+      "lip_line": 29,
+      "tongue": [
+       44,
+       19,
+       34,
+       11,
+       5
+      ],
+      "jaw_bbox": [
+       13,
+       29,
+       41,
+       45
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       27.0,
+       37.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": {
+      "shape": "triangle",
+      "centre": [
+       27.0,
+       37.0
+      ],
+      "radii": [
+       17.4,
+       10.2
+      ],
+      "top_width": 34.8,
+      "top_y": 26.8,
+      "apex": [
+       27.0,
+       47.2
+      ],
+      "apex_vs_jaw_bottom": 2.2,
+      "top_width_vs_jaw_width": 1.2,
+      "detected_jaw": [
+       13,
+       29,
+       41,
+       45
+      ],
+      "detected_gap": 17,
+      "confidence": "high",
+      "gate_ok": true,
+      "vertices": [
+       [
+        9.6,
+        26.8
+       ],
+       [
+        44.4,
+        26.8
+       ],
+       [
+        27.0,
+        47.2
+       ]
+      ]
+     }
+    },
+    {
+     "frame": 4,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       29.5,
+       37.7
+      ],
+      "lip_line": 28,
+      "tongue": [
+       40,
+       22,
+       33,
+       11,
+       5
+      ],
+      "jaw_bbox": [
+       15,
+       28,
+       43,
+       44
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       29.0,
+       36.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 5,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       36.6
+      ],
+      "lip_line": 26,
+      "tongue": [
+       45,
+       25,
+       31,
+       10,
+       6
+      ],
+      "jaw_bbox": [
+       18,
+       26,
+       46,
+       42
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       34.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    }
+   ]
+  },
+  "atk_heavy_jaw_crash_finisher": {
+   "files": [
+    "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-00.png",
+    "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-01.png",
+    "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-02.png",
+    "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-03.png",
+    "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-04.png",
+    "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-05.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       42.8
+      ],
+      "lip_line": 35,
+      "tongue": [
+       38,
+       24,
+       39,
+       12,
+       4
+      ],
+      "jaw_bbox": [
+       18,
+       35,
+       46,
+       51
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       43.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 1,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       30.8
+      ],
+      "lip_line": 41,
+      "tongue": null,
+      "jaw_bbox": [
+       18,
+       41,
+       46,
+       56
+      ],
+      "jaw_w": 29,
+      "jaw_h": 16,
+      "gap": 16,
+      "centre": [
+       32.0,
+       48.5
+      ],
+      "confidence": "low"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 2,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       34.5,
+       37.7
+      ],
+      "lip_line": 28,
+      "tongue": [
+       43,
+       27,
+       33,
+       11,
+       5
+      ],
+      "jaw_bbox": [
+       20,
+       28,
+       48,
+       44
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       34.0,
+       36.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 3,
+     "action": "v6triangle-jaw",
+     "gate": {
+      "changed": 474,
+      "bbox": [
+       18,
+       31,
+       37,
+       24
+      ],
+      "fill_ratio": 0.534,
+      "inside_mask_dil2": true,
+      "off_silhouette": false
+     },
+     "detection": {
+      "seed": [
+       36.0,
+       40.7
+      ],
+      "lip_line": 35,
+      "tongue": [
+       39,
+       27,
+       39,
+       13,
+       4
+      ],
+      "jaw_bbox": [
+       22,
+       35,
+       50,
+       51
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       36.0,
+       43.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": {
+      "shape": "triangle",
+      "centre": [
+       36.0,
+       43.0
+      ],
+      "radii": [
+       17.4,
+       10.2
+      ],
+      "top_width": 34.8,
+      "top_y": 32.8,
+      "apex": [
+       36.0,
+       53.2
+      ],
+      "apex_vs_jaw_bottom": 2.2,
+      "top_width_vs_jaw_width": 1.2,
+      "detected_jaw": [
+       22,
+       35,
+       50,
+       51
+      ],
+      "detected_gap": 17,
+      "confidence": "high",
+      "gate_ok": true,
+      "vertices": [
+       [
+        18.6,
+        32.8
+       ],
+       [
+        53.4,
+        32.8
+       ],
+       [
+        36.0,
+        53.2
+       ]
+      ]
+     }
+    },
+    {
+     "frame": 4,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       34.0,
+       39.8
+      ],
+      "lip_line": 31,
+      "tongue": [
+       40,
+       27,
+       35,
+       10,
+       5
+      ],
+      "jaw_bbox": [
+       20,
+       31,
+       48,
+       47
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       34.0,
+       39.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    },
+    {
+     "frame": 5,
+     "action": "copy-v2eyes",
+     "gate": {},
+     "detection": {
+      "seed": [
+       32.0,
+       37.0
+      ],
+      "lip_line": 27,
+      "tongue": [
+       43,
+       25,
+       32,
+       10,
+       6
+      ],
+      "jaw_bbox": [
+       18,
+       27,
+       46,
+       43
+      ],
+      "jaw_w": 29,
+      "jaw_h": 17,
+      "gap": 17,
+      "centre": [
+       32.0,
+       35.0
+      ],
+      "confidence": "high"
+     },
+     "final_mouth": null
+    }
+   ]
+  }
+ },
+ "gif": "razorgater-attacks-artic-pipev3w6-20261026.gif",
+ "side_by_side_gif": "razorgater-attacks-take5-vs-take6-artic-pipev3w6-20261026.gif"
+}
