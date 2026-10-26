@@ -1,0 +1,104 @@
+{
+  "atlas": "mom-latina-atlas-64x64.png",
+  "cell_size": 64,
+  "layout": "b",
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "top_runs": [
+    [
+      152,
+      419
+    ],
+    [
+      711,
+      978
+    ],
+    [
+      1265,
+      1527
+    ],
+    [
+      1822,
+      2078
+    ]
+  ],
+  "bottom_runs": [
+    [
+      141,
+      456
+    ],
+    [
+      698,
+      1009
+    ],
+    [
+      1230,
+      1544
+    ],
+    [
+      1783,
+      2097
+    ]
+  ],
+  "world": "top0,top2,bottom0,bottom2",
+  "steps": "top1,top3,bottom1,bottom3",
+  "walk": "media-generation-mom-latina-walk-frames-v1-0-cb7fff35-d5ea-4fb8-8ebf-0e09319832df.webp",
+  "battle": "media-generation-mom-latina-battle-front-fullsi-0-1361905b-201c-4545-a03c-15524ed8cd27.webp",
+  "portrait": "media-generation-mom-latina-portrait-v1-0-b872ddd4-91b0-4182-b29a-b3774e606323.webp"
+}
