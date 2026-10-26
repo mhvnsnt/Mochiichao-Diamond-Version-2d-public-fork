@@ -15,6 +15,7 @@ import { createMochii } from '../lib/engine';
 import DialogueBox from "../components/game/DialogueBox";
 import { isConfirmKey } from "../lib/buttonMode";
 import { slotForNpc } from "../lib/humanSheets";
+import { playMusic } from "../lib/music";
 
 const TILE_SIZE = 40; // match PDF size because it renders better in viewports
 
@@ -196,6 +197,17 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const buttonMode = useGameStore(s => s.settings.buttonMode);
 
   const [screen, setScreen] = useState("overworld"); 
+
+  // Wiring Batch 2 (2026-10-26): world / battle music follows the live
+  // screen. battle -> battle track, overworld -> world track. Other
+  // screens (dialogue, menus, save) leave the current track alone, so
+  // music keeps playing under pause/menus. With no world/battle file
+  // on main yet, both entries are null-src silence (see music.ts) —
+  // the calls land now so the tracks start the day files land.
+  useEffect(() => {
+    if (screen === "battle") playMusic("battle");
+    else if (screen === "overworld") playMusic("world");
+  }, [screen]);
 
   const [playerDir, setPlayerDir] = useState("down");
   const [playerName, setPlayerName] = useState("Netrunner");

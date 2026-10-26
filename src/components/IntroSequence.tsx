@@ -22,6 +22,7 @@ import MainMenuBackground from "./game/MainMenuBackground";
 import puffyCloud from "../assets/ui/puffy-cloud.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
+import { playUiMove, playUiConfirm, playUiBack } from "../lib/audioRouting";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -222,19 +223,20 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         }
         return;
       }
-      if (e.key === 'ArrowUp') { e.preventDefault(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
-      else if (e.key === 'ArrowDown') { e.preventDefault(); setMainSelected(s => (s + 1) % itemCount); }
-      else if (shoulderKey(e, settings.buttonMode) === 'L') { e.preventDefault(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
-      else if (shoulderKey(e, settings.buttonMode) === 'R') { e.preventDefault(); setMainSelected(s => (s + 1) % itemCount); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); playUiMove(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); playUiMove(); setMainSelected(s => (s + 1) % itemCount); }
+      else if (shoulderKey(e, settings.buttonMode) === 'L') { e.preventDefault(); playUiMove(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
+      else if (shoulderKey(e, settings.buttonMode) === 'R') { e.preventDefault(); playUiMove(); setMainSelected(s => (s + 1) % itemCount); }
       else if (isConfirmKey(e, settings.buttonMode)) {
         e.preventDefault();
+        playUiConfirm();
         const keys = hasSaves ? ['CONTINUE', 'NEW GAME', 'SETTINGS'] : ['NEW GAME', 'SETTINGS'];
         const key = keys[Math.min(mainSelected, keys.length - 1)];
         if (key === 'CONTINUE') { setSaveSlotsMode('CONTINUE'); setPhase("SAVE_SLOTS"); }
         else if (key === 'NEW GAME') { setSaveSlotsMode('NEW_GAME'); if (hasSaves) setShowOverwriteConfirm(true); else setPhase("SAVE_SLOTS"); }
         else if (key === 'SETTINGS') setPhase("SETTINGS");
       }
-      else if (e.key === 'Escape' || e.key.toLowerCase() === 'b') setPhase("TITLE");
+      else if (e.key === 'Escape' || e.key.toLowerCase() === 'b') { playUiBack(); setPhase("TITLE"); }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
@@ -472,6 +474,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     const safeMain = Math.min(mainSelected, mainItems.length - 1);
 
     const activateMain = (key: string) => {
+      playUiConfirm();
       if (key === 'CONTINUE' && hasSaves) { setSaveSlotsMode('CONTINUE'); setPhase("SAVE_SLOTS"); }
       else if (key === 'NEW GAME') {
         // Overwrite confirm BEFORE starting over, when a save exists.
@@ -629,7 +632,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             );
           })}
           <button
-            onClick={() => setPhase("TITLE")}
+            onClick={() => { playUiBack(); setPhase("TITLE"); }}
             style={v32PanelStyle(panelByKey('BACK TO TITLE'), false)}
           >
             <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize }}>◄ BACK TO TITLE (B)</div>
