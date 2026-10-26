@@ -1,0 +1,214 @@
+{
+ "creature": "manticlaw",
+ "roster_id": "012",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-manticlaw-sheet-v1-0-ede23226-4edd-47d4-92db-dd875622ba77.webp",
+  "width": 1920,
+  "height": 1280
+ },
+ "atlas_file": "manticlaw_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 192
+ },
+ "frame_count": 16,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_front",
+   "file": "manticlaw_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "CORRECTED: eye-check shows front (face, fangs); was battle_back",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "overworld_front",
+   "file": "manticlaw_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "battle_front",
+   "file": "manticlaw_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "battle_back",
+   "file": "manticlaw_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "PROMOTED: true back (no face) \u2014 serves as both overworld_back and battle_back",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_front_2",
+   "file": "manticlaw_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_front_3",
+   "file": "manticlaw_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_front_4",
+   "file": "manticlaw_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_front_5",
+   "file": "manticlaw_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "overworld_front_6",
+   "file": "manticlaw_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "overworld_back_2",
+   "file": "manticlaw_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "overworld_back_3",
+   "file": "manticlaw_cell_10.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 64
+  },
+  {
+   "cell": 11,
+   "role": "overworld_front_7",
+   "file": "manticlaw_cell_11.png",
+   "game_ready": true,
+   "source_cell": 11,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 64
+  },
+  {
+   "cell": 12,
+   "role": "overworld_front_8",
+   "file": "manticlaw_cell_12.png",
+   "game_ready": true,
+   "source_cell": 12,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 128
+  },
+  {
+   "cell": 13,
+   "role": "walk_front_0",
+   "file": "manticlaw_cell_13.png",
+   "game_ready": true,
+   "source_cell": 13,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 128
+  },
+  {
+   "cell": 14,
+   "role": "walk_front_1",
+   "file": "manticlaw_cell_14.png",
+   "game_ready": true,
+   "source_cell": 14,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 128
+  },
+  {
+   "cell": 15,
+   "role": "icon",
+   "file": "manticlaw_cell_15.png",
+   "game_ready": true,
+   "source_cell": 15,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 192,
+   "atlas_y": 128
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "manticlaw.manifest.json",
+ "game_ready_cell_count": 16,
+ "game_ready_atlas_file": "manticlaw_atlas_64_locked.png",
+ "icon_file": "icons/manticlaw_icon64.png",
+ "icon_source": "atlas icon cell 15",
+ "white_spot_cleanup_px_cleared": 0,
+ "white_spot_cleanup_bg": [
+  254,
+  249,
+  235
+ ]
+}

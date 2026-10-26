@@ -1,0 +1,258 @@
+{
+ "creature": "mothrix",
+ "roster_id": "018",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-mothrix-sheet-v1-0-6705b5ec-46f2-4f9b-a2b4-0ef6bd972bad.webp",
+  "width": 1920,
+  "height": 1280
+ },
+ "atlas_file": "mothrix_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 192
+ },
+ "frame_count": 18,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_front",
+   "file": "mothrix_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "overworld_back",
+   "file": "mothrix_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "overworld_front",
+   "file": "mothrix_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "battle_back",
+   "file": "mothrix_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_back_2",
+   "file": "mothrix_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_side",
+   "file": "mothrix_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_side_2",
+   "file": "mothrix_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_back_3",
+   "file": "mothrix_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "overworld_back_4",
+   "file": "mothrix_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "overworld_side_3",
+   "file": "mothrix_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "overworld_back_5",
+   "file": "mothrix_cell_10.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 64
+  },
+  {
+   "cell": 11,
+   "role": "overworld_back_6",
+   "file": "mothrix_cell_11.png",
+   "game_ready": true,
+   "source_cell": 11,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 64
+  },
+  {
+   "cell": 12,
+   "role": "overworld_back_7",
+   "file": "mothrix_cell_12.png",
+   "game_ready": true,
+   "source_cell": 12,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 128
+  },
+  {
+   "cell": 13,
+   "role": "walk_side_1",
+   "file": "mothrix_cell_13.png",
+   "game_ready": true,
+   "source_cell": 13,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 128
+  },
+  {
+   "cell": 14,
+   "role": "walk_side_2",
+   "file": "mothrix_cell_14.png",
+   "game_ready": true,
+   "source_cell": 14,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 128
+  },
+  {
+   "cell": 15,
+   "role": "walk_side_0",
+   "file": "mothrix_cell_15.png",
+   "game_ready": true,
+   "source_cell": 15,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 128
+  },
+  {
+   "cell": 16,
+   "role": "walk_side_3",
+   "file": "mothrix_cell_16.png",
+   "game_ready": true,
+   "source_cell": 16,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 128
+  },
+  {
+   "cell": 17,
+   "role": "icon",
+   "file": "mothrix_cell_17.png",
+   "game_ready": true,
+   "source_cell": 17,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 320,
+   "atlas_y": 128
+  }
+ ],
+ "qa_notes": [
+  {
+   "tool": "prune_cells.py",
+   "dropped_or_merged": [
+    {
+     "cells": [
+      12,
+      13
+     ],
+     "action": "merged",
+     "new_source": {
+      "file": "media-generation-mothrix-sheet-v1-0-6705b5ec-46f2-4f9b-a2b4-0ef6bd972bad.webp",
+      "x": 1488,
+      "y": 773,
+      "w": 362,
+      "h": 241
+     }
+    }
+   ],
+   "note": "Cells 12+13 were left/right halves of one moth pose (source x1488-1850 y773-1014), split by the row splitter; merged back."
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "mothrix.manifest.json",
+ "game_ready_cell_count": 18,
+ "game_ready_atlas_file": "mothrix_atlas_64_locked.png",
+ "icon_file": "icons/mothrix_icon64.png",
+ "icon_source": "atlas icon cell 17",
+ "white_spot_cleanup_px_cleared": 0,
+ "white_spot_cleanup_bg": [
+  240,
+  232,
+  224
+ ]
+}

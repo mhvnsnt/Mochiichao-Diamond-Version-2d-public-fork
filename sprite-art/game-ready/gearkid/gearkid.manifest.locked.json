@@ -1,0 +1,257 @@
+{
+ "creature": "gearkid",
+ "roster_id": "032",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-gearkid-sheet-0-1ebb2656-e340-4378-a2b2-070f01dce950.webp",
+  "width": 1760,
+  "height": 1408
+ },
+ "atlas_file": "gearkid_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 192
+ },
+ "frame_count": 16,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "overworld_back",
+   "file": "gearkid_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "overworld_front",
+   "file": "gearkid_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "battle_front",
+   "file": "gearkid_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "battle_back",
+   "file": "gearkid_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "PROVISIONAL: eyes visible at 64px, key visible; closest back candidate. QA sheet-level says a true back exists \u2014 re-verify at sheet resolution before shipping battle",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_back_2",
+   "file": "gearkid_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_side",
+   "file": "gearkid_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_front_2",
+   "file": "gearkid_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_front_3",
+   "file": "gearkid_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "overworld_side_2",
+   "file": "gearkid_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "overworld_side_3",
+   "file": "gearkid_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "overworld_front_4",
+   "file": "gearkid_cell_10.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 64
+  },
+  {
+   "cell": 11,
+   "role": "overworld_front_5",
+   "file": "gearkid_cell_11.png",
+   "game_ready": true,
+   "source_cell": 11,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 64
+  },
+  {
+   "cell": 12,
+   "role": "walk_front_0",
+   "file": "gearkid_cell_12.png",
+   "game_ready": true,
+   "source_cell": 12,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 128
+  },
+  {
+   "cell": 13,
+   "role": "walk_front_1",
+   "file": "gearkid_cell_13.png",
+   "game_ready": true,
+   "source_cell": 13,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 128
+  },
+  {
+   "cell": 14,
+   "role": "walk_front_2",
+   "file": "gearkid_cell_14.png",
+   "game_ready": true,
+   "source_cell": 14,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 128
+  },
+  {
+   "cell": 15,
+   "role": "walk_front_3",
+   "file": "gearkid_cell_15.png",
+   "game_ready": true,
+   "source_cell": 15,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 128
+  },
+  {
+   "cell": "5mir",
+   "role": "walk_side_mirror",
+   "file": "gearkid_cell_05mir.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "Mirrored from cell 5 (QA mirror-only side); facing direction not invented",
+   "atlas_x": 256,
+   "atlas_y": 128
+  },
+  {
+   "cell": "8mir",
+   "role": "walk_side_mirror",
+   "file": "gearkid_cell_08mir.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "Mirrored from cell 8 (QA mirror-only side); facing direction not invented",
+   "atlas_x": 320,
+   "atlas_y": 128
+  },
+  {
+   "cell": "icon_derived",
+   "role": "icon",
+   "file": "icons/gearkid_icon64.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "Derived head crop from battle_front cell 2 (no icon cell in atlas)"
+  }
+ ],
+ "qa_notes": [
+  {
+   "tool": "prune_cells.py",
+   "dropped_or_merged": [
+    {
+     "cells": [
+      4
+     ],
+     "action": "dropped",
+     "role": "icon"
+    }
+   ],
+   "note": "Cell 4 was a grey cube/gear object panel, not a Gearkid pose. True small icon not extracted: icon missing."
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "gearkid.manifest.json",
+ "game_ready_cell_count": 18,
+ "game_ready_atlas_file": "gearkid_atlas_64_locked.png",
+ "icon_file": "icons/gearkid_icon64.png",
+ "icon_source": "head crop from cell 2",
+ "white_spot_cleanup_px_cleared": 367,
+ "white_spot_cleanup_bg": [
+  247,
+  248,
+  243
+ ]
+}
