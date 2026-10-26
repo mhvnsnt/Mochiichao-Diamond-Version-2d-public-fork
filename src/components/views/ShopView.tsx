@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGameStore } from '../../store/gameStore';
 import { DATA_CARD_COST, DATA_CARD_ID } from '../../lib/monster-tamer-systems';
 import { ITEM_ICONS } from '../../lib/uiArt';
@@ -12,12 +12,20 @@ import { MenuHelpLine } from '../game/MenuList';
  * selected item, confirm window BEFORE money is taken, then back to
  * the item list (NOT back to the world). CR is the money, same flow.
  * Items and prices are the existing ShopView items only — nothing new.
+ * Audit-plan: ALL shop prices here are PLACEHOLDER prices, NOT
+ * Mars canon, until Mars sets the CR economy (starting wallet is
+ * 1000 CR in gameStore, verified in this PR; trainer rewards must
+ * be checked against that same economy in the same PR — reward
+ * numbers were NOT changed here, they have no source either).
+ * Tiers are kept (capture low, 50-HP heal mid, 50% revive high);
+ * no CR exchange rate is invented. The placeholder status is
+ * stated in the buy screen itself, not only in this comment.
  */
 const SHOP_ITEMS = [
   { id: 'luigi_cube', name: 'Luigi Cube', cost: 250, desc: 'A sketchy syndicate-brand capture device.' },
   { id: 'mend_patch', name: 'Mend Patch', cost: 150, desc: 'Restores 50 HP.' },
   { id: 'revive_core', name: 'Revive Core', cost: 500, desc: 'Reboots a fainted Mochiichao to 50% capacity.' },
-  { id: DATA_CARD_ID, name: 'Data Card', cost: DATA_CARD_COST, desc: 'Stores a captured creature\u2019s data. Swap it at the PC.' },
+  { id: DATA_CARD_ID, name: 'Data Card', cost: DATA_CARD_COST, desc: 'Stores a captured creature\u2019s data. Swap it at the PC. (Placeholder price — not Mars canon.)' },
 ];
 
 function ItemIcon({ id }: { id: string }) {
@@ -52,6 +60,21 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
     .filter(item => item.count > 0);
   const buySelected = SHOP_ITEMS[Math.min(selected, SHOP_ITEMS.length - 1)];
   const sellSelected = sellable[Math.min(selected, Math.max(0, sellable.length - 1))];
+
+  // Audit-plan Y/N scope: YES/NO key handling must cover ALL
+  // yes/no prompts, not only DialogueBox choices and Bag Toss.
+  // Shop buy/sell confirm: Y confirms, N cancels. Wording and
+  // behaviour are otherwise unchanged.
+  useEffect(() => {
+    if (!confirm) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'y' || e.key === 'Y') doConfirm();
+      else if (e.key === 'n' || e.key === 'N') setConfirm(null);
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [confirm]);
 
   const doConfirm = () => {
     if (!confirm) return;
@@ -93,6 +116,7 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
           <div className="flex gap-2 mb-3 shrink-0">
             <button onClick={() => setMode('menu')} className="game-button px-3 py-2 text-sm min-h-[48px]">◄ Back to Buy / Sell / Quit</button>
           </div>
+          <p className="text-xs text-slate-400 mb-3 shrink-0">Shop prices are placeholders until Mars sets the CR economy — not canon. Tiers only: capture low, 50-HP heal mid, 50% revive high.</p>
           {canUp && <div className="text-center text-slate-300 text-sm shrink-0" aria-hidden="true">▲</div>}
           <div ref={listRef} onScroll={updateArrows} className="flex-1 overflow-y-auto flex flex-col gap-2 pr-1">
             {SHOP_ITEMS.map((item, i) => (
