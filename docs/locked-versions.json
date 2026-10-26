@@ -9,6 +9,13 @@
         {"version": "take-4", "tag": "artic-pipev3w4-20261026", "mouth_shape": "ellipse"},
         {"version": "take-1/2/3", "status": "earlier failed checkpoints"}
       ]
-    }
+    },
+  {
+   "asset": "main-menu-logo",
+   "current": {"version": "orbitfix-20261026", "file": "src/assets/ui/mochiichao-main-logo-v32-orbitfix-20261026.png", "orbit": "centre (619,472), a=425, b=186, stroke 30", "status": "CURRENT for main-menu use per version-lock settlement (Section O orbit re-fit 2026-10-26, audit O1); Mars's render judgement pending, not yet locked by Mars"},
+   "superseded_do_not_use": [
+     {"version": "round-2 v32-matched", "file": "src/assets/ui/mochiichao-main-logo-v32-matched.png", "orbit": "centre (618,500), a=440, b=200", "status": "SUPERSEDED for main-menu use — orbit ring scored 0.48 vs 0.98 for the corrected ring (audit O1); file stays in the repo untouched, DO NOT USE for the menu"}
+   ]
+  }
   ]
 }
