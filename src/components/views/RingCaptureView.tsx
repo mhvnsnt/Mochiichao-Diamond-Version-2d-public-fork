@@ -90,7 +90,7 @@ export default function RingCaptureView({ onBack }: { onBack: () => void }) {
           {holding ? 'DRAWING RING…' : 'HOLD TO DRAW RING'}
         </button>
         <div className="mt-4 text-sm text-slate-200 min-h-[3rem]">{message}</div>
-        <div className="text-xs text-slate-400 mt-2">PLACEHOLDER gameplay: hold-to-fill loop. Full Ranger circling on the world map is the next pass. This is NOT a Luigi Cube — no cube is used.</div>
+        <div className="text-xs text-slate-400 mt-2">Hold to fill the ring.</div>
       </div>
     </div>
   );
