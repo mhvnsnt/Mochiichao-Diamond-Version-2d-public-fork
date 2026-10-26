@@ -13,6 +13,7 @@ import TitleCreatureFigure from "./game/TitleCreatureFigure";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
+import { playMusic, stopMusic } from "../lib/music";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -163,6 +164,28 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     }
   }, [phase]);
 
+  // Music wiring (official tracks, 2026-10-25): INTRO plays the
+  // official intro once (no loop), TITLE loops the official title,
+  // MAIN_MENU / SETTINGS / SAVE_SLOTS loop the main-menu track, and
+  // later phases (prof intro, name entry, etc.) stop music so the
+  // world starts silent. BOOT and TITLE-press sounds are NOT here:
+  // they are already wired on main in src/lib/bootAudio.ts (BOOT =
+  // UI Art Option B, press = M3), and duplicating them would play
+  // both twice. playMusic() fades the old track out over 1000 ms
+  // (Pokemon 60-frame fade) and is a no-op if the same track is
+  // already playing, so B back to TITLE restarts title music
+  // without restarting the loop on every render.
+  useEffect(() => {
+    if (phase === "INTRO") playMusic("intro");
+    else if (phase === "TITLE") playMusic("title");
+    else if (phase === "MAIN_MENU" || phase === "SETTINGS" || phase === "SAVE_SLOTS") playMusic("mainMenu");
+    else stopMusic();
+  }, [phase]);
+
+  useEffect(() => {
+    return () => stopMusic(0);
+  }, []);
+
   // v3 main menu controls: up/down + confirm, B/back to title. Tap /
   // click on a window works as well (see the MAIN_MENU render).
   useEffect(() => {
@@ -286,7 +309,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           >
             {introScene < 3 ? 'NEXT SCENE ►' : 'TO TITLE ►'}
           </button>
-          <div className="text-gray-500 text-xs mt-4">Intro music: GAP — original music needed. Any key skips and stops the intro.</div>
+          <div className="text-gray-500 text-xs mt-4">Intro music: official intro track. Any key skips to the title.</div>
         </div>
       </div>
     );
@@ -357,7 +380,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
             <div className="text-center text-gray-400 text-[10px] tracking-widest mt-1">M HEAVENSENT STUDIOS · TITLE COPYRIGHT SLOT</div>
-            <div className="text-center text-gray-500 text-[10px] mt-2">Title background scene art: GAP — original art needed · Title music: GAP (press-start chirp wired: M3 Mochii Chirp on PRESS ANY KEY)</div>
+            <div className="text-center text-gray-500 text-[10px] mt-2">Title background scene art: GAP — original art needed · Title music: official title track (loops) (press-start chirp wired: M3 Mochii Chirp on PRESS ANY KEY)</div>
           </div>
         </div>
 
