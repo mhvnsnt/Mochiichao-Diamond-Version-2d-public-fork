@@ -50,6 +50,13 @@
  *   ARE the Layer-1 templates those scripts describe (sub_Lunge,
  *   sub_Projectile, sub_Impact, ...); per-move step sequencing beyond
  *   category is owed, not invented here.
+ * - Phase 1 map (2026-10-26): src/lib/generated/gameMoveScriptMap.json
+ *   routes 25/36 more game moves to existing scripts (same type +
+ *   category + timing family, per-entry evidence in that file); with
+ *   the 10 exact-id matches above, 35/36 = 97% matched. IRON_BARRAGE
+ *   is the 1 unmatched: its game desc says 2-5 hits but its effect
+ *   field is NONE, so no script satisfies both — left unmatched, never
+ *   forced, and no game data was changed to force it.
  * - SHINIES: deliberately NOT wired. The shiny-v2 set is staged
  *   show-first and NOT approved by Mars, so no shiny table, loader, or
  *   reference exists in this module. Do not add one without his approval.
@@ -59,6 +66,7 @@
  */
 
 import moveScriptsData from './generated/moveScripts.json';
+import gameMoveScriptMapData from './generated/gameMoveScriptMap.json';
 
 export type CreatureFolder = string;
 
@@ -514,11 +522,27 @@ export function attackSetFor(folder: string, moveId: string | undefined | null, 
 export interface MoveScriptStep { op: string; sub?: string; args?: Record<string, unknown>; }
 export interface MoveScript { move: string; category: string; type: string; power: number; template: string; family: string; fallback: boolean; steps: MoveScriptStep[]; }
 const SCRIPTS = (moveScriptsData as unknown as { scripts: Record<string, MoveScript> }).scripts;
+/**
+ * Phase 1 game-move -> script routing (2026-10-26). Exact-id matches
+ * win first; otherwise the curated map in gameMoveScriptMap.json routes
+ * a game move id to an existing union script (same type + category +
+ * timing family, per-entry evidence in that file). The map's keys are
+ * disjoint from the exact-id script keys, so the exact check below can
+ * never be shadowed. No game move data, category, effect, or learnset
+ * is changed here, and no script is invented: an unmapped game move
+ * still returns null.
+ */
+const GAME_MOVE_SCRIPT_MAP = (gameMoveScriptMapData as unknown as { mapping: Record<string, string> }).mapping;
 export function getMoveScript(moveId: string | undefined | null): MoveScript | null {
   if (!moveId) return null;
+  if (SCRIPTS[moveId]) return SCRIPTS[moveId];
+  const routed = GAME_MOVE_SCRIPT_MAP[moveId];
+  if (routed && SCRIPTS[routed]) return SCRIPTS[routed];
   return SCRIPTS[moveId] ?? null;
 }
+export const GAME_MOVE_SCRIPT_MAP_COUNT = Object.keys(GAME_MOVE_SCRIPT_MAP).length;
 export const MOVE_SCRIPT_COUNT = Object.keys(SCRIPTS).length;
 
 /** Shiny wiring is intentionally absent: the shiny-v2 set is staged show-first and NOT approved. */
 export const SHINY_WIRED = false;
+
