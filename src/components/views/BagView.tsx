@@ -42,6 +42,7 @@ export default function BagView({ onBack }: { onBack: () => void }) {
   const updatePartyMember = useGameStore(s => s.updatePartyMember);
   const [selected, setSelected] = useState(0);
   const [confirmToss, setConfirmToss] = useState(false);
+  const [mendSelect, setMendSelect] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
   const entries = Object.entries(inventory)
@@ -73,6 +74,23 @@ export default function BagView({ onBack }: { onBack: () => void }) {
     return () => window.removeEventListener('keydown', handler);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [confirmToss, current]);
+
+  // Audit-plan Mend Patch selection (Pokemon bag flow shape):
+  // the player CHOOSES which damaged, non-fainted member to heal.
+  // 50 HP, clamped to maxHp, hp + currentHp in sync, fainted NOT
+  // revived, nothing consumed when nobody needs healing or only
+  // fainted members remain. Healing exactly one damaged member
+  // needs no picker — the choice is unambiguous.
+  const mendCur = (m: any) => m.hp ?? m.currentHp ?? 0;
+  const mendDamaged = () => party.map((m, i) => ({ m, i })).filter(({ m }) => mendCur(m) > 0 && mendCur(m) < m.maxHp);
+  const healMember = (idx: number) => {
+    if (!useItem('mend_patch')) return;
+    const m = party[idx];
+    const healed = Math.min(m.maxHp, mendCur(m) + 50);
+    updatePartyMember(idx, { ...m, hp: healed, currentHp: healed } as any);
+    setMessage(`Used Mend Patch. ${m.nickname || 'Your Mochiichao'} restored to ${healed}/${m.maxHp} HP.`);
+    setMendSelect(false);
+  };
 
   // Bag Y2K skin ONLY (per-menu skins 2/8): .bag-y2k (index.css) gives
   // this screen the Y2K skin — glossy green gradient, white border,
@@ -141,34 +159,24 @@ export default function BagView({ onBack }: { onBack: () => void }) {
                     // fainted members remain. Other items keep the
                     // old count-only behaviour and say so.
                     if (current.id === 'mend_patch') {
-                      // currentHp is a battle-copy field (v5.1 HP
-                      // sync), not on the MochiiInstance type, so
-                      // read it via any — hp is the store truth.
-                      // v5.3 verified: this target selection already
-                      // skips fainted members (cur > 0 required), so
-                      // no target-logic change was needed. The v5.2
-                      // playtest's "fainted healed first" is
-                      // explained, not a code bug: a full-party loss
-                      // blacks out and heals the party to 30% of
-                      // maxHp (6/20), so the member was damaged,
-                      // not fainted, when the Bag was used. A party
-                      // with only fainted members is unreachable in
-                      // the overworld (full loss triggers blackout),
-                      // so the only-fainted refusal message below
+                      // Audit-plan selection: choose the target.
+                      // Fainted members are skipped (cur > 0
+                      // required). A party with only fainted
+                      // members is unreachable in the overworld
+                      // (full loss triggers blackout), so the
+                      // only-fainted refusal message below
                       // remains untested in live play — stated
-                      // plainly, not claimed as verified.
-                      const cur = (m: any) => m.hp ?? m.currentHp ?? 0;
-                      const idx = party.findIndex(m => cur(m) > 0 && cur(m) < m.maxHp);
-                      if (idx === -1) {
-                        setMessage(party.length === 0 ? 'You have no Mochiichao yet.' : party.every(m => cur(m) <= 0) ? 'Mend Patch cannot revive a fainted Mochiichao.' : 'No Mochiichao needs healing right now.');
+                      // plainly, not claimed as verified. (Old
+                      // blackout 30% heal note removed: audit-plan
+                      // blackout no longer heals at all — see
+                      // WorldEngine blackout rule.)
+                      const damaged = mendDamaged();
+                      if (damaged.length === 0) {
+                        setMessage(party.length === 0 ? 'You have no Mochiichao yet.' : party.every(m => mendCur(m) <= 0) ? 'Mend Patch cannot revive a fainted Mochiichao.' : 'No Mochiichao needs healing right now.');
                         return;
                       }
-                      if (useItem(current.id)) {
-                        const m = party[idx];
-                        const healed = Math.min(m.maxHp, cur(m) + 50);
-                        updatePartyMember(idx, { ...m, hp: healed, currentHp: healed } as any);
-                        setMessage(`Used Mend Patch. ${m.nickname || 'Your Mochiichao'} restored to ${healed}/${m.maxHp} HP.`);
-                      }
+                      if (damaged.length === 1) { healMember(damaged[0].i); return; }
+                      setMendSelect(true);
                       return;
                     }
                     if (useItem(current.id)) setMessage(`Used ${current.name}. Count only — no item effect is wired through the bag in this build yet.`);
@@ -181,10 +189,30 @@ export default function BagView({ onBack }: { onBack: () => void }) {
                 <button onClick={() => setConfirmToss(true)} className="game-button px-3 py-2 text-sm min-h-[48px]">Toss</button>
                 <button onClick={onBack} className="game-button px-3 py-2 text-sm min-h-[48px]">Quit</button>
               </div>
-              <p className="text-xs text-slate-400 mt-2">Mend Patch restores 50 HP to the first damaged party member. Other items' Use changes the count only in this build. Give is not available: there is no trade or held-item system yet.</p>
+              <p className="text-xs text-slate-400 mt-2">Mend Patch restores 50 HP to a party member you choose. Other items' Use changes the count only in this build. Give is not available: there is no trade or held-item system yet.</p>
             </div>
           )}
           <MenuHelpLine text={current ? `${current.name} — ${current.desc}` : 'Select an item.'} />
+        </div>
+      )}
+      {mendSelect && (
+        <div className="absolute inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+          <div className="game-panel p-6 w-full max-w-sm">
+            <div className="text-white font-bold text-lg mb-2">Heal who with a Mend Patch?</div>
+            <p className="text-sm text-slate-400 mb-4">Restores 50 HP. Fainted members cannot be revived by a Mend Patch.</p>
+            <div className="flex flex-col gap-2">
+              {party.map((m: any, i: number) => {
+                const cur = mendCur(m);
+                const usable = cur > 0 && cur < m.maxHp;
+                return (
+                  <button key={i} disabled={!usable} onClick={() => healMember(i)} className="game-button px-4 py-2 font-bold min-h-[48px] text-left disabled:opacity-40">
+                    {m.nickname || 'Your Mochiichao'} — {cur}/{m.maxHp} HP{usable ? '' : cur <= 0 ? ' (fainted)' : ' (full HP)'}
+                  </button>
+                );
+              })}
+              <button onClick={() => setMendSelect(false)} className="game-button px-4 py-2 font-bold min-h-[48px]">Cancel</button>
+            </div>
+          </div>
         </div>
       )}
       {confirmToss && current && (
