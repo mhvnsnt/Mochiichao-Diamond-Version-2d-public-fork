@@ -1,0 +1,5 @@
+bridges kept: 10320 of 20640 cut edges (every 2th)
+verts=1599257 edges=3329763 cut=10320 (0.310%)
+pieces=208329
+new verts=1599266 (orig 1599257, dup 9) tris=1909230
+wrote gabu-iter6-keep2.glb 267014456 bytes
