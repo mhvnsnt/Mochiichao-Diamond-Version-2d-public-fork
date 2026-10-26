@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./encounters.schema.json",
+  "title": "encounters",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "encounters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "mapId": {
+            "type": "string"
+          },
+          "method": {
+            "enum": [
+              "grass",
+              "surf",
+              "fish",
+              "cave"
+            ]
+          },
+          "slots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "speciesId": {
+                  "type": "string"
+                },
+                "minLevel": {
+                  "type": "integer"
+                },
+                "maxLevel": {
+                  "type": "integer"
+                },
+                "weight": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "speciesId",
+                "minLevel",
+                "maxLevel",
+                "weight"
+              ]
+            }
+          },
+          "timeOfDay": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "weather": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "mapId",
+          "method",
+          "slots"
+        ]
+      }
+    }
+  },
+  "required": [
+    "encounters"
+  ],
+  "additionalProperties": true
+}
