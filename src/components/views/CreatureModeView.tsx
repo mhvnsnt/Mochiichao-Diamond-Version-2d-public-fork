@@ -35,6 +35,32 @@ import type { MochiiInstance } from '../../lib/types';
  *   numbers stated in the code, not presented as decomp data. NEED
  *   (canonical cooldown table, top-down walk sprites) is still owed.
  *
+ * Pass 4 changes over pass 3 (fan / mod pulls, no new art, no ROMs,
+ * no patches, no franchise files copied — mechanics only, from files
+ * already in the repo + the pull-list design notes):
+ * - Hitstop 90ms, HP drains AFTER hitstop: from
+ *   sprite-art/arena-combat/ARENA-COMBAT-SPEC.md (treatment beats
+ *   250/90/300/400 ms, hitstop 90 ms default) and
+ *   FAN-MECHANICS-SUMMARY.md (hitstop capped 90 ms). On a hit, the
+ *   world freezes for 90 ms (player + wild movement tick skips),
+ *   then HP drops. Misses / status moves (damage 0) get no hitstop.
+ * - Tag-team pack engagement: from pull-list #19 Pokemon Battle
+ *   Advanced (real-time, tag-team wild fights). Attacking a pack
+ *   wild engages its packmates within 4 tiles for 5 s — they path
+ *   to the player even outside their normal range, instead of
+ *   standing by while their packmate is fought alone.
+ * - Territorial strafe: from fanMechanics AI (timed strafe /
+ *   lateral movement). A territorial wild at distance 2-3 sometimes
+ *   steps sideways instead of always charging straight in.
+ * - NOT wired from those fan files, with reasons: dash-pool
+ *   200 ms invulnerability (Creature Mode dodge is already 250 ms
+ *   i-frames from pass 2 — changing it would break the timed-dodge
+ *   feel Mars already has); speed-compression 1.6-2.3 u/s (units are
+ *   arena units, not world tiles — mapping it straight over would
+ *   slow world movement from 4 tiles/s to under 2, a feel regression,
+ *   not an improvement); softened type steps (Creature Mode uses
+ *   the canonical Trainer Mode type multiplier, not a second table).
+ *
  * Pass 3 changes over pass 2 (this lane, 100% target):
  * - Smooth pixel movement: player position is now a float tile position,
  *   moved at 4 tiles/s walking / 6 tiles/s sprinting on a 50ms tick,
@@ -107,6 +133,8 @@ const DODGE_MS = 250;
 const HOP_MS = 400;
 const SWITCH_COOLDOWN_MS = 2000;
 const TELEGRAPH_MS = 600;
+const HITSTOP_MS = 90;
+const PACK_ENGAGE_MS = 5000;
 
 function makeWild(speciesId: string, level: number, temperament: Temperament, x: number, y: number): Wild | null {
   const m = createMochii(speciesId, level);
@@ -174,6 +202,8 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   const posRef = useRef(pos);
   const wildsRef = useRef(wilds);
   const nextTileRef = useRef<Record<string, { x: number; y: number }>>({});
+  const hitstopUntilRef = useRef(0);
+  const engagedRef = useRef<Record<string, number>>({});
   const staminaRef = useRef(100);
   staminaRef.current = stamina;
   const keysRef = useRef<Set<string>>(new Set());
@@ -266,16 +296,36 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
     const { damage, text } = creatureDamage(active, chosen.speciesId, chosen.stats, moveId, freshBonus);
     setCooldowns(prev => ({ ...prev, [moveIndex]: Date.now() + creatureCooldownMs(moveId) }));
     setTargetId(chosen.id);
-    const nextHp = Math.max(0, chosen.hp - damage);
-    if (nextHp === 0) {
-      const copy = { ...active };
-      gainExp(copy, SPECIES_DB[chosen.speciesId]?.baseExpYield || 50);
-      updatePartyMember(activeIdx, copy);
-      setLog(`${text} ${chosen.nickname} was defeated! ${copy.nickname} gained EXP${copy.level > active.level ? ` and reached level ${copy.level}!` : '.'}`);
-    } else {
-      setLog(`${text} ${chosen.nickname} HP: ${nextHp}/${chosen.maxHp}.`);
+    // Tag-team: packmates within 4 tiles of the attacked wild engage
+    // the player for 5 s (Battle Advanced tag-team, pull-list #19).
+    if (chosen.temperament === 'pack') {
+      const nowMs = Date.now();
+      wildsRef.current.forEach(w => {
+        if (w.id !== chosen.id && w.temperament === 'pack' && w.hp > 0 &&
+            Math.abs(Math.floor(w.x) - Math.floor(chosen.x)) + Math.abs(Math.floor(w.y) - Math.floor(chosen.y)) <= 4) {
+          engagedRef.current[w.id] = nowMs + PACK_ENGAGE_MS;
+        }
+      });
     }
-    setWilds(prev => prev.map(w => w.id === chosen.id ? { ...w, hp: nextHp } : w));
+    if (damage > 0) {
+      // Hitstop 90 ms (arena spec), HP drains AFTER it, not instantly.
+      hitstopUntilRef.current = Date.now() + HITSTOP_MS;
+      setLog(`${text} Impact!`);
+      window.setTimeout(() => {
+        const nextHp = Math.max(0, chosen.hp - damage);
+        if (nextHp === 0) {
+          const copy = { ...active };
+          gainExp(copy, SPECIES_DB[chosen.speciesId]?.baseExpYield || 50);
+          updatePartyMember(activeIdx, copy);
+          setLog(`${text} ${chosen.nickname} was defeated! ${copy.nickname} gained EXP${copy.level > active.level ? ` and reached level ${copy.level}!` : '.'}`);
+        } else {
+          setLog(`${text} ${chosen.nickname} HP: ${nextHp}/${chosen.maxHp}.`);
+        }
+        setWilds(prev => prev.map(w => w.id === chosen.id ? { ...w, hp: nextHp } : w));
+      }, HITSTOP_MS);
+    } else {
+      setLog(`${text} No damage.`);
+    }
   };
 
   const catchTarget = () => {
@@ -319,6 +369,8 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
     const id = window.setInterval(() => {
       tickRef.current += 1;
       setNow(Date.now());
+      // Hitstop: the world freezes for 90 ms after a hit lands.
+      if (Date.now() < hitstopUntilRef.current) return;
       const keys = keysRef.current;
       // Sprint only while stamina remains; at 0, Shift still walks.
       const sprinting = keys.has('shift') && staminaRef.current > 0;
@@ -381,7 +433,19 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
             if (isWalkable(cand.x, cand.y)) target = cand;
           }
         } else if (w.temperament === 'territorial') {
-          if (dist <= 6 && dist > 1) target = p;
+          if (dist <= 6 && dist > 1) {
+            // Strafe: at distance 2-3, sometimes step sideways instead
+            // of charging straight in (fanMechanics lateral movement).
+            if ((dist === 2 || dist === 3) && Math.random() < 0.3) {
+              const side = Math.random() < 0.5 ? 1 : -1;
+              const cand = Math.abs(p.x - wx) >= Math.abs(p.y - wy)
+                ? { x: wx, y: wy + side } : { x: wx + side, y: wy };
+              if (isWalkable(cand.x, cand.y)) target = cand;
+              else target = p;
+            } else {
+              target = p;
+            }
+          }
         } else if (w.temperament === 'curious') {
           if (dist > 3 && dist <= 7) target = p;
         } else if (w.temperament === 'pack') {
@@ -398,6 +462,11 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
             else if (Math.abs(cx - wx) + Math.abs(cy - wy) > 2) target = { x: cx, y: cy };
             else if (dist <= 6 && dist > 1) target = p;
           }
+        }
+        // Tag-team engagement overrides the normal range check: an
+        // engaged packmate paths to the player even from further out.
+        if (engagedRef.current[w.id] && engagedRef.current[w.id] > Date.now() && dist > 1) {
+          target = p;
         }
         if (target) {
           const step = findNextStep(mapData.tiles, BLOCKED, { x: wx, y: wy }, target);
@@ -537,7 +606,7 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
           </button>
         </div>
         <div className="text-[11px] text-slate-400 mt-2">
-          Pass 3: smooth pixel movement, walk animation on existing sheets/fallback, checked-in cooldown table (provisional — shown to Mars for approval), easystar A* wild pathfinding, GardenStats +9% sharing, and Guardian persistence via the shared save. Full walk-art sheets for the starters remain sprite-lane production (the sprite bake is still running in that lane); this mode uses the sheets that exist today and does not invent new art.
+          Pass 4: hitstop 90ms with HP draining after it (arena spec), tag-team pack engagement, territorial strafe — from fan/mod files already in the repo, mechanics only, no ROMs, patches, or franchise files copied. Cooldown table still provisional (shown to Mars, not canon); walk-art sheets still sprite-lane production.
         </div>
       </div>
     </div>
