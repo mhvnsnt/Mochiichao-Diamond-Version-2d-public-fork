@@ -1,0 +1,113 @@
+{
+  "atlas": "tech-tinkerer-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "top_runs": [
+    [
+      83,
+      395
+    ],
+    [
+      566,
+      881
+    ],
+    [
+      1067,
+      1357
+    ],
+    [
+      1498,
+      1816
+    ]
+  ],
+  "bottom_runs": [
+    [
+      54,
+      410
+    ],
+    [
+      566,
+      883
+    ],
+    [
+      1050,
+      1355
+    ],
+    [
+      1487,
+      1829
+    ]
+  ],
+  "world_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "step_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "walk": "media-generation-tech-tinkerer-walk-frames-v1-0-e771a52c-6261-4813-b136-63a8911e842a.webp",
+  "battle": "media-generation-tech-tinkerer-battle-front-ful-0-0579a6d6-15da-4954-989b-a96de89faa0c.webp",
+  "portrait": "media-generation-tech-tinkerer-portrait-v1-0-cc5ab4ed-c07d-468f-87c1-bcacf2d3bacc.webp"
+}

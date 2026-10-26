@@ -1,0 +1,104 @@
+{
+  "atlas": "syndicate-grunt-atlas-64x64.png",
+  "cell_size": 64,
+  "layout": "b",
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "top_runs": [
+    [
+      143,
+      398
+    ],
+    [
+      719,
+      965
+    ],
+    [
+      1282,
+      1535
+    ],
+    [
+      1842,
+      2093
+    ]
+  ],
+  "bottom_runs": [
+    [
+      149,
+      519
+    ],
+    [
+      683,
+      1085
+    ],
+    [
+      1162,
+      1532
+    ],
+    [
+      1722,
+      2122
+    ]
+  ],
+  "world": "top0,top2,bottom0,bottom2",
+  "steps": "top1,top3,bottom1,bottom3",
+  "walk": "media-generation-syndicate-grunt-walk-frames-v1-0-63f7dc8d-95db-4ffc-a263-9d88cb6434f9.webp",
+  "battle": "media-generation-syndicate-grunt-battle-front-v-0-1a697287-6962-4e8f-9c4c-6a4b314f56c0.webp",
+  "portrait": "media-generation-syndicate-grunt-portrait-v1-0-a061ea2a-22fb-47ed-b61c-fb45e29f6d20.webp"
+}

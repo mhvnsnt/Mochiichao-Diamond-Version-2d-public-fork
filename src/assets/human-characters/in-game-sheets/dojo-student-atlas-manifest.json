@@ -1,0 +1,104 @@
+{
+  "atlas": "dojo-student-atlas-64x64.png",
+  "cell_size": 64,
+  "layout": "b",
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "top_runs": [
+    [
+      154,
+      418
+    ],
+    [
+      715,
+      980
+    ],
+    [
+      1270,
+      1532
+    ],
+    [
+      1826,
+      2089
+    ]
+  ],
+  "bottom_runs": [
+    [
+      189,
+      425
+    ],
+    [
+      740,
+      978
+    ],
+    [
+      1265,
+      1501
+    ],
+    [
+      1823,
+      2067
+    ]
+  ],
+  "world": "top0,top2,bottom0,bottom2",
+  "steps": "top1,top3,bottom1,bottom3",
+  "walk": "media-generation-dojo-student-walk-frames-v1-0-a30727c8-0752-4c9a-9c1c-cea992ec4aad.webp",
+  "battle": "media-generation-dojo-student-battle-front-full-0-66ffc5ec-1d47-4700-847b-478735b7b043.webp",
+  "portrait": "media-generation-dojo-student-portrait-v1-0-6025a95e-02c9-45c7-9435-fad90389dbe5.webp"
+}
