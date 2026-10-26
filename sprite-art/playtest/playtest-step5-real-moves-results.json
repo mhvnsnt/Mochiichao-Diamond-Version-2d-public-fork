@@ -1,0 +1,116 @@
+[
+  {
+    "player": "Mochii",
+    "foe": "Razorgater",
+    "move": "Water Gun",
+    "constant": "MOVE_WATER_GUN",
+    "type": "WATER",
+    "cat": "Special",
+    "power": 40,
+    "acc": 100,
+    "foeMaxHp": 125,
+    "rawDmg": 25,
+    "turns": 5,
+    "totalDealt": 125,
+    "severities": [
+      "medium"
+    ],
+    "vfxElement": "Water",
+    "ko": true
+  },
+  {
+    "player": "Razorgater",
+    "foe": "Mochii",
+    "move": "Bite",
+    "constant": "MOVE_BITE",
+    "type": "DARK",
+    "cat": "Special",
+    "power": 60,
+    "acc": 100,
+    "foeMaxHp": 120,
+    "rawDmg": 19,
+    "turns": 7,
+    "totalDealt": 133,
+    "severities": [
+      "medium"
+    ],
+    "vfxElement": "Umbral",
+    "ko": true
+  },
+  {
+    "player": "Tyrage",
+    "foe": "Kittember",
+    "move": "Tackle",
+    "constant": "MOVE_TACKLE",
+    "type": "NORMAL",
+    "cat": "Physical",
+    "power": 35,
+    "acc": 95,
+    "foeMaxHp": 115,
+    "rawDmg": 25,
+    "turns": 5,
+    "totalDealt": 130,
+    "severities": [
+      "medium"
+    ],
+    "vfxElement": "Normal",
+    "ko": true
+  },
+  {
+    "player": "Kittember",
+    "foe": "Tyrage",
+    "move": "Ember",
+    "constant": "MOVE_EMBER",
+    "type": "FIRE",
+    "cat": "Special",
+    "power": 40,
+    "acc": 100,
+    "foeMaxHp": 120,
+    "rawDmg": 28,
+    "turns": 5,
+    "totalDealt": 140,
+    "severities": [
+      "medium"
+    ],
+    "vfxElement": "Flame",
+    "ko": true
+  },
+  {
+    "player": "Zephling",
+    "foe": "Squirmite",
+    "move": "Gust",
+    "constant": "MOVE_GUST",
+    "type": "FLYING",
+    "cat": "Physical",
+    "power": 40,
+    "acc": 100,
+    "foeMaxHp": 105,
+    "rawDmg": 34,
+    "turns": 3,
+    "totalDealt": 108,
+    "severities": [
+      "medium"
+    ],
+    "vfxElement": "Aero",
+    "ko": true
+  },
+  {
+    "player": "Sproutle",
+    "foe": "Pyropaw",
+    "move": "Vine Whip",
+    "constant": "MOVE_VINE_WHIP",
+    "type": "GRASS",
+    "cat": "Special",
+    "power": 35,
+    "acc": 100,
+    "foeMaxHp": 135,
+    "rawDmg": 15,
+    "turns": 9,
+    "totalDealt": 135,
+    "severities": [
+      "light"
+    ],
+    "vfxElement": "Earth",
+    "ko": true
+  }
+]
