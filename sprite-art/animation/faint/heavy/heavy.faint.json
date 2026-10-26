@@ -1,0 +1,25 @@
+{
+  "archetype": "heavy",
+  "representative_creature": "cragarm",
+  "source_battle_front": "cragarm_cell_00.png",
+  "method": "transform (not redrawn): squash to 62% height, drop to cell bottom, tilt, then alpha fade. Redrawn collapse poses remain polish, not a playable blocker, per attack-transform precedent.",
+  "timing_ms": {
+    "collapse": 1000,
+    "fade": 400,
+    "total": 1400,
+    "spec": "collapse 800-1200ms + fade 300-500ms per ARENA-COMBAT-SPEC 2.1"
+  },
+  "frames": [
+    {
+      "file": "faint_a_collapse.png",
+      "role": "faint_collapse",
+      "duration_ms": 1000
+    },
+    {
+      "file": "faint_b_fade.png",
+      "role": "faint_fade",
+      "duration_ms": 400
+    }
+  ],
+  "status": "done"
+}
