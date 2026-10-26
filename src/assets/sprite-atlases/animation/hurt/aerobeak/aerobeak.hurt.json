@@ -1,0 +1,31 @@
+{
+ "creature": "aerobeak",
+ "hurt_version": "hurt-v1-2026-10-25",
+ "mapped_from_locked_atlas": false,
+ "mapped_note": "No locked-atlas cell carries a hurt/recoil/lean-back role in any of the 50 locked manifests (verified by role scan 2026-10-25); mapped count for this set is 0. A standing/walk cell was NOT re-labelled as hurt.",
+ "status": "done",
+ "source": "generated_v1",
+ "source_raw_file": "media-generation-aerobeak-hurt-raw-0-cc06d263-7c52-4b80-a678-80ff6791cc51.webp",
+ "frames": [
+  {
+   "frame": 0,
+   "file": "aerobeak_hurt_cell_00.png",
+   "role": "hurt",
+   "duration_ms": 500,
+   "display": "shown during recoil + first half of recover, then crossfade to standing"
+  }
+ ],
+ "timing": {
+  "windup_ms": 250,
+  "impact_hold_ms": 90,
+  "recoil_ms": 300,
+  "recover_ms": 400,
+  "total_ms": 1040,
+  "hurt_frame_hold_ms": 500,
+  "hurt_frame_note": "Hurt frame shown across recoil (300 ms) + first half of recover (200 ms), then crossfade to standing. Matches battleTreatments.js HURT_FRAME.HOLD_MS and TIMING."
+ },
+ "treatments_fallback": "Until hurt art exists, the hit is carried by battleTreatments.js: impact flash (white/red on crit) + recoil translation + screen shake + particle burst + camera push-in + 90 ms held impact frame. Fallback is NOT a substitute for art; it is what plays alongside art once art exists.",
+ "pose_spec": "Flying recoil: body leaning sharply back, wings swept back and drooping, head thrown back, eyes squeezed shut, sharp beak open grimacing.",
+ "eye_check": "PASS at presentation size and at 64px. Dark plumage, sharp beak and teal-blue accents match locked battle_front (aerobeak_cell_00.png).",
+ "note": "Original art only, battle_front cell as reference. Cut to 64px (border-connected white-bg removal, scipy label method; interior whites kept). Local staging only \u2014 no push, no work-clone git changes, no src/assets/ changes."
+}
