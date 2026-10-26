@@ -1,0 +1,43 @@
+{
+ "creature": "dorowani",
+ "source_locked_manifest": "dorowani.manifest.locked.json",
+ "idle": {
+  "cell": 0,
+  "file": "dorowani_cell_00.png",
+  "method": "standing_reuse_proposed",
+  "status": "pending_mars_confirm",
+  "note": "No distinct idle frame exists in the sheet; battle_front standing pose proposed as idle reuse, not a new frame."
+ },
+ "attack": {
+  "cells": [],
+  "files": [],
+  "status": "gap",
+  "note": "No attack-role cell in the locked set; needs new generation (original art only) or a code treatment."
+ },
+ "hurt": {
+  "cells": [
+   0
+  ],
+  "status": "done",
+  "note": "Hurt frame generated in the finish-to-100% batch (2026-10-25/26); eye-checked enlarged and at 64px; 500ms hold per battleTreatments timeline.",
+  "files": [
+   "dorowani_hurt_cell_00.png"
+  ],
+  "hurt_manifest": "animation/hurt/dorowani/dorowani.hurt.json",
+  "hurt_cell_file": "animation/hurt/dorowani/dorowani_hurt_cell_00.png",
+  "hurt_source": "generated_v1",
+  "hurt_source_raw_file": "media-generation-dorowani-hurt-v1-0-2ecf7d88-3542-4a13-9eec-e17ad88b3ef5.png",
+  "hurt_frame_hold_ms": 500,
+  "hit_timeline_total_ms": 1040,
+  "previous_status": "gap"
+ },
+ "evolution_timing": "n/a",
+ "action_strip_note": "",
+ "reconciliation": {
+  "date": "2026-10-26",
+  "scope": "hurt gap field ONLY. All other fields copied verbatim from the original; hurt art itself was NOT edited.",
+  "original_file": "animation/dorowani.animation.json (untouched)",
+  "reconciled_file": "animation/dorowani.animation-reconciled.json",
+  "note": "Attack remains gap where it was gap; only hurt changed."
+ }
+}
