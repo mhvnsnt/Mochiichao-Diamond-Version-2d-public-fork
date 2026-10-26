@@ -1,0 +1,1154 @@
+{
+ "format": "Step 3 overworld placement (PROPOSED data + preserved existing encounters; NOT yet wired into src/world/Maps.ts \u2014 work clone was read-only for this step)",
+ "sources": {
+  "maps_ts": "fresh-start/src/world/Maps.ts keys sector0, route1, binarywoods, route4, cragpeak (read-only)",
+  "full_world": "fresh-start/src/world/FullWorldMaps.ts keys SECTOR_0, AEON_LAB, ROUTE_1, MOCHIIPLEX_1, BINARY_FIELDS, DOJO_1, BINARY_WOODS, CAVE_OF_ECHOES, NEON_CITY, SCRAP_JUNKYARD, CORAL_APPROACH, CASTAGNOLI_ISLAND, MAUVEVILLE_ARENA, BOOT_BAY, LUIGI_MANSION, DOJO_2 (read-only)",
+  "walk_manifests": "sprite-art/overworld/<creature>.walk.json (4 directions each)",
+  "existing_encounters_verbatim": {
+   "route1": [
+    {
+     "mochiId": 4,
+     "rate": 30,
+     "level": [
+      3,
+      5
+     ]
+    },
+    {
+     "mochiId": 5,
+     "rate": 25,
+     "level": [
+      3,
+      6
+     ]
+    },
+    {
+     "mochiId": 6,
+     "rate": 20,
+     "level": [
+      4,
+      6
+     ]
+    },
+    {
+     "mochiId": 7,
+     "rate": 25,
+     "level": [
+      3,
+      5
+     ]
+    }
+   ],
+   "binarywoods_route4_cragpeak_note": "binarywoods/route4/cragpeak encounter rows in Maps.ts repeat mochiIds 4,5,6,7,8,10 at levels 5-12; see Maps.ts verbatim \u2014 this file does NOT overwrite them, it adds proposed placements for the other 45 roster entries."
+  }
+ },
+ "maps": {
+  "sector0": {
+   "name": "Sector 0 \u2014 Boot Harbor"
+  },
+  "route1": {
+   "name": "Route 1.0 \u2014 Greenfield Path"
+  },
+  "binarywoods": {
+   "name": "Binary Woods"
+  },
+  "route4": {
+   "name": "Route 4.0 \u2014 Quartz Caverns"
+  },
+  "cragpeak": {
+   "name": "Crag-Peak City"
+  }
+ },
+ "placements": [
+  {
+   "creature": "mochii",
+   "roster_id": "001",
+   "movement_class": "small_bouncy",
+   "cycle_ms": 400,
+   "walk_manifest": "sprite-art/overworld/mochii.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "starter; also existing NPC/event creature",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "tiidebiite",
+   "roster_id": "002",
+   "movement_class": "small_bouncy",
+   "cycle_ms": 400,
+   "walk_manifest": "sprite-art/overworld/tiidebiite.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "evolution line with mochii",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "aquariios",
+   "roster_id": "003",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/aquariios.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "water creature, shore/water tiles",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "razorgater",
+   "roster_id": "004",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/razorgater.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild_existing",
+   "note": "EXISTING in Maps.ts route1/binarywoods encounters (mochiId 4)",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "chromejaww",
+   "roster_id": "005",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/chromejaww.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild_existing",
+   "note": "EXISTING in Maps.ts route1/binarywoods (mochiId 5); species.ts name Chromedile",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "reaperdile",
+   "roster_id": "006",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/reaperdile.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild_existing",
+   "note": "EXISTING in Maps.ts route1/binarywoods (mochiId 6)",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "tyrage",
+   "roster_id": "007",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/tyrage.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild_existing",
+   "note": "EXISTING in Maps.ts route1/binarywoods/cragpeak (mochiId 7)",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "duneclaw",
+   "roster_id": "008",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/duneclaw.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild_existing",
+   "note": "EXISTING in Maps.ts binarywoods/route4 (mochiId 8)",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "oblivirex",
+   "roster_id": "009",
+   "movement_class": "heavy_slow",
+   "cycle_ms": 800,
+   "walk_manifest": "sprite-art/overworld/oblivirex.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild",
+   "note": "heavy fossil-type; cave placement by movement heavy_slow",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "kittember",
+   "roster_id": "010",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/kittember.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild_existing",
+   "note": "EXISTING in Maps.ts binarywoods/cragpeak (mochiId 10)",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "sproutle",
+   "roster_id": "038",
+   "movement_class": "small_bouncy",
+   "cycle_ms": 400,
+   "walk_manifest": "sprite-art/overworld/sproutle.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "wild",
+   "note": "forest starter-line creature",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "squirmite",
+   "roster_id": "016",
+   "movement_class": "crawl",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/squirmite.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "wild",
+   "note": "crawl movement; forest floor",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "pupbble",
+   "roster_id": "013",
+   "movement_class": "small_bouncy",
+   "cycle_ms": 400,
+   "walk_manifest": "sprite-art/overworld/pupbble.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild",
+   "note": "small bouncy; path/grass",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "terradog",
+   "roster_id": "014",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/terradog.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild",
+   "note": "grounded; path/grass",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "quakehound",
+   "roster_id": "015",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/quakehound.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild",
+   "note": "grounded; path/grass",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "pyropaw",
+   "roster_id": "011",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/pyropaw.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route1",
+   "primary_map_name": "Route 1.0 \u2014 Greenfield Path",
+   "habitat": "grass_path",
+   "placement_kind": "wild",
+   "note": "grounded; path/grass",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "pixilite",
+   "roster_id": "041",
+   "movement_class": "small_bouncy",
+   "cycle_ms": 400,
+   "walk_manifest": "sprite-art/overworld/pixilite.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "wild",
+   "note": "small bouncy flower; forest clearing",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "mothrix",
+   "roster_id": "018",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/mothrix.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "wild",
+   "note": "hover_swim; forest air",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "zephling",
+   "roster_id": "019",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/zephling.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "wild",
+   "note": "hover_swim; forest air",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "wispkin",
+   "roster_id": "042",
+   "movement_class": "float_hover",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/wispkin.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "wild",
+   "note": "float_hover; forest air, no legs",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "inklet",
+   "roster_id": "026",
+   "movement_class": "small_bouncy",
+   "cycle_ms": 400,
+   "walk_manifest": "sprite-art/overworld/inklet.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "wild",
+   "note": "small bouncy; forest floor",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "cocoonode",
+   "roster_id": "017",
+   "movement_class": "static_crystal",
+   "cycle_ms": 900,
+   "walk_manifest": "sprite-art/overworld/cocoonode.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "wild",
+   "note": "static_crystal; forest crystal grove, pulse only, never walks",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "ashemit",
+   "roster_id": "044",
+   "movement_class": "seated",
+   "cycle_ms": 800,
+   "walk_manifest": "sprite-art/overworld/ashemit.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "binarywoods",
+   "primary_map_name": "Binary Woods",
+   "habitat": "forest",
+   "placement_kind": "npc_display",
+   "note": "seated; shrine/guide NPC placement, seated shift only",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "aerobeak",
+   "roster_id": "020",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/aerobeak.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "hover_swim; coastal sky",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "finblade",
+   "roster_id": "022",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/finblade.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "hover_swim; shore water",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "megalochrome",
+   "roster_id": "023",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/megalochrome.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "hover_swim; shore water",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "floatcalf",
+   "roster_id": "024",
+   "movement_class": "float_hover",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/floatcalf.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "float_hover; harbor air",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "stormtalon",
+   "roster_id": "021",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/stormtalon.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "hover_swim; mountain peak air",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "astroleviathan",
+   "roster_id": "025",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/astroleviathan.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "hover_swim; high sky",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "toxitacle",
+   "roster_id": "027",
+   "movement_class": "hover_swim",
+   "cycle_ms": 600,
+   "walk_manifest": "sprite-art/overworld/toxitacle.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "hover_swim; tidal pools",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "krakenox",
+   "roster_id": "028",
+   "movement_class": "heavy_slow",
+   "cycle_ms": 800,
+   "walk_manifest": "sprite-art/overworld/krakenox.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "sector0",
+   "primary_map_name": "Sector 0 \u2014 Boot Harbor",
+   "habitat": "harbor_shore",
+   "placement_kind": "wild",
+   "note": "heavy_slow; deep water off harbor",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "cragarm",
+   "roster_id": "036",
+   "movement_class": "heavy_slow",
+   "cycle_ms": 800,
+   "walk_manifest": "sprite-art/overworld/cragarm.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild",
+   "note": "heavy_slow; quartz caverns",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "pebblefist",
+   "roster_id": "035",
+   "movement_class": "heavy_slow",
+   "cycle_ms": 800,
+   "walk_manifest": "sprite-art/overworld/pebblefist.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild",
+   "note": "heavy_slow; quartz caverns",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "terrapod",
+   "roster_id": "037",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/terrapod.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild",
+   "note": "grounded; cavern floor",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "shellguard",
+   "roster_id": "039",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/shellguard.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild",
+   "note": "grounded; cavern floor",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "gearkid",
+   "roster_id": "032",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/gearkid.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild",
+   "note": "grounded; cavern machinery",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "mechapion",
+   "roster_id": "033",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/mechapion.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild",
+   "note": "grounded; cavern machinery",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "manticlaw",
+   "roster_id": "012",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/manticlaw.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "route4",
+   "primary_map_name": "Route 4.0 \u2014 Quartz Caverns",
+   "habitat": "cave_sand",
+   "placement_kind": "wild",
+   "note": "grounded; cavern floor",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "dreadtoise",
+   "roster_id": "040",
+   "movement_class": "heavy_slow",
+   "cycle_ms": 800,
+   "walk_manifest": "sprite-art/overworld/dreadtoise.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "heavy_slow; peak city surrounds",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "gorokappa",
+   "roster_id": "034",
+   "movement_class": "heavy_slow",
+   "cycle_ms": 800,
+   "walk_manifest": "sprite-art/overworld/gorokappa.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "heavy_slow; peak city surrounds",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "strikechamp",
+   "roster_id": "030",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/strikechamp.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "npc_display",
+   "note": "suited; dojo/city trainer-linked placement",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "strikechamp_unsuited",
+   "roster_id": "030",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/strikechamp_unsuited.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "npc_display",
+   "note": "lower-only variant file; dojo placement, walk-up from locked back cells",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "strikechamp_unsuited_full",
+   "roster_id": "030",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/strikechamp_unsuited_full.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "npc_display",
+   "note": "full unsuited variant; dojo placement",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "punchkid",
+   "roster_id": "029",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/punchkid.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "grounded; city/dojo district",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "kickmaster",
+   "roster_id": "031",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/kickmaster.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "grounded; city/dojo district",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "pyromonk",
+   "roster_id": "045",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/pyromonk.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "grounded; dojo district",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "yogiferno",
+   "roster_id": "046",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/yogiferno.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "grounded; dojo district",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "duskfiend",
+   "roster_id": "043",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/duskfiend.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "grounded; city at dusk/night tiles",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "mythar",
+   "roster_id": "331",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/mythar.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "wild",
+   "note": "grounded; rare peak encounter",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "dorowani",
+   "roster_id": "147",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/dorowani.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "npc_display",
+   "note": "display creature (FullWorldMaps DOJO_1 context); grounded",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  },
+  {
+   "creature": "gabu",
+   "roster_id": "148",
+   "movement_class": "grounded_standard",
+   "cycle_ms": 480,
+   "walk_manifest": "sprite-art/overworld/gabu.walk.json",
+   "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+   ],
+   "primary_map_key": "cragpeak",
+   "primary_map_name": "Crag-Peak City",
+   "habitat": "city_peak",
+   "placement_kind": "npc_display",
+   "note": "display creature (FullWorldMaps DOJO_1 context); grounded",
+   "follower_eligible": true,
+   "fight_as_eligible": true,
+   "shadow": "engine layer only \u2014 walk cells ship without baked shadow (see shadow handoff in OVERWORLD-PLACEMENT-SPEC.md)"
+  }
+ ],
+ "ring_capture_zone": {
+  "zone": "NEW separate retro-arcade-THEMED zone (theme/setting only; NOT Harbor City Safari/preserve; NOT literally named 'Arcade Zone')",
+  "name_status": "NOT LOCKED \u2014 Mars picks from candidates: The Ringcade, Neon Loop Hall, Pixel Ring Hall (from ring-capture-zone-spec.md, PR #37)",
+  "proposed_map_key": "ring_zone (PROPOSED key only; wiring step assigns the final key when the zone map is created)",
+  "proposed_exit_hook": "NEON_CITY (FullWorldMaps) \u2014 neon theme adjacency; exit/enter coordinates assigned at zone-map creation, not invented here",
+  "gate": "zoneVisited + zonePlayed -> ring capture unlocked -> shop ring items usable whenever; default capture remains Luigi Cubes",
+  "placement_kind": "event_play_zone",
+  "placed_creatures": [
+   "mochii",
+   "kittember",
+   "sproutle",
+   "pixilite",
+   "pupbble",
+   "squirmite",
+   "pyropaw",
+   "terradog"
+  ],
+  "placed_creatures_note": "PROPOSED starter-friendly ring-play roster (8 common creatures, all walk-complete wired). Wild encounter rates/levels for the ring zone are NOT set here \u2014 parent/game wiring sets them; this file only places the creatures and the zone."
+ }
+}

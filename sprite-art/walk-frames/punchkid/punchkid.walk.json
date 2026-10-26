@@ -1,0 +1,52 @@
+{
+ "creature": "punchkid",
+ "roster_id": "029",
+ "status": "done",
+ "frames": [
+  {
+   "file": "punchkid_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "punchkid_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "punchkid_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "punchkid_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "punchkid_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "punchkid_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "punchkid_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "punchkid_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "method": "original art, one generated 8-panel sheet (4 cols x 2 rows: down/up/left/right x phase 1/2), border-connected white-bg flood removal (scipy label), interior whites kept, content fit to 64x64 RGBA",
+ "raw_sheet": "media-generation-punchkid-walk-v1-0-26d9c77b-461e-46ba-aa44-a6e4bfbafd98.webp",
+ "source_reference": "game-ready/punchkid/cells/punchkid_cell_02.png (battle_front)",
+ "source_locked_manifest": "game-ready/punchkid/punchkid.manifest.locked.json",
+ "eye_check": "Enlarged raw sheet PASS + 64px montage PASS. Tan humanoid, red headband, blue eyes, big white fists match locked cell; back frames show headband knot, no face.",
+ "movement_note": "Side phase pairs clearly alternate stride. Down/up phase pairs are near-identical (minor fist/foot shifts only) \u2014 generator repeated front/back poses across rows; a v2 could re-pose down/up phase 2 for a stronger cycle. Sheet adds a small star on the headband, not in the locked cell \u2014 minor drift flagged.",
+ "style_note": "Sheet is smooth cartoon; locked cell is pixelated. Shape/colour/markings match; drift flagged, not silently changed."
+}

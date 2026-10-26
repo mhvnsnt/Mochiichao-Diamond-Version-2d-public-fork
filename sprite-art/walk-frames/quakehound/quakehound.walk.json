@@ -1,0 +1,52 @@
+{
+ "creature": "quakehound",
+ "roster_id": "015",
+ "status": "done",
+ "frames": [
+  {
+   "file": "quakehound_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "quakehound_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "quakehound_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "quakehound_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "quakehound_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "quakehound_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "quakehound_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "quakehound_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "method": "original art, one generated 8-panel sheet (4 cols x 2 rows: down/up/left/right x phase 1/2), border-connected white-bg flood removal (scipy label), interior whites kept, content fit to 64x64 RGBA; quakehound: component-bbox re-cut, see movement_note",
+ "raw_sheet": "media-generation-quakehound-walk-v1-0-742c3852-00de-46f3-a617-f2cd3204441a.webp",
+ "source_reference": "game-ready/quakehound/cells/quakehound_cell_03.png (battle_front)",
+ "source_locked_manifest": "game-ready/quakehound/quakehound.manifest.locked.json",
+ "eye_check": "Enlarged raw sheet PASS + 64px montage PASS (after component re-cut) + enlarged left_1 PASS. Bulky dark quadruped, orange lava cracks, spiked back, tan-gold paws match locked cell; back frames faceless with tail/spikes.",
+ "movement_note": "Sheet side panels cross the fixed quarter gridlines by 1-6px (nose tips), so the fixed quarter-split clipped the left noses flat. Fixed by component-bbox re-cut (scipy label on border-removed background, 8 large components sorted by row then x) \u2014 labels verified against bboxes, and one mis-sorted run (y-sort swapped directions) was caught and corrected before delivery. Faint grey ground shadow survives under down_0 (Kittember/Razorgater-class caveat, batch-1 precedent: accepted, flagged). Down phase 1 is a wide sprawl, phase 2 narrower \u2014 distinct.",
+ "style_note": "Sheet is smooth cartoon; locked cell is pixelated. Shape/colour/markings match; drift flagged, not silently changed."
+}
