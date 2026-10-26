@@ -1,0 +1,104 @@
+{
+  "atlas": "mom-white-atlas-64x64.png",
+  "cell_size": 64,
+  "layout": "b",
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "top_runs": [
+    [
+      124,
+      426
+    ],
+    [
+      701,
+      992
+    ],
+    [
+      1256,
+      1551
+    ],
+    [
+      1805,
+      2126
+    ]
+  ],
+  "bottom_runs": [
+    [
+      105,
+      479
+    ],
+    [
+      660,
+      1034
+    ],
+    [
+      1208,
+      1557
+    ],
+    [
+      1756,
+      2120
+    ]
+  ],
+  "world": "top0,top2,bottom0,bottom2",
+  "steps": "top1,top3,bottom1,bottom3",
+  "walk": "media-generation-mom-white-walk-frames-v2-cel-0-4da75e94-9b86-4afe-8111-76b6f88ec244.webp",
+  "battle": "media-generation-mom-white-battle-front-fullsiz-0-a713559e-7b16-42c2-99e1-b441d8076d8a.webp",
+  "portrait": "media-generation-mom-white-portrait-v1-0-9f0aa8e0-eb76-48d5-b25b-c9d16d99a4b2.webp"
+}
