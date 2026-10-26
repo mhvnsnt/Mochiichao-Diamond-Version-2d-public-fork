@@ -125,3 +125,55 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
 }
+
+/*
+ * Batch 3 — Pause menu Y2K skin ONLY (wiring tracker: per-menu skins 1/8).
+ * Per-menu colour: Pause = cyan -> blue -> violet gradient, pink star accents.
+ * Scoped to .pause-y2k-panel, which only PauseMenu renders, so no other
+ * menu, the main menu, title, Settings, fonts, rotation, or saves change.
+ * The .game-panel / .game-button / .game-title rules above are NOT edited;
+ * these later, equal-or-higher-specificity rules win only inside this panel.
+ * If the UI Art lane later delivers a dedicated Pause panel asset, re-attach
+ * it in lib/uiArt.ts (pause_menu_panel) and delete this block.
+ */
+.pause-y2k-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(135deg, #0e7490 0%, #2563eb 48%, #7c3aed 100%);
+  border: 3px solid #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.55), 0 0 32px rgba(34, 211, 238, 0.45), 0 12px 32px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* Y2K heading: italic, white -> gold -> pink gradient, pink glow.
+ * Font family unchanged (game font) — fonts are out of scope this batch. */
+.pause-y2k-panel .game-title {
+  font-style: italic;
+  background: linear-gradient(180deg, #ffffff 15%, #fde68a 55%, #f472b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.45)) drop-shadow(0 0 14px rgba(244, 114, 182, 0.55));
+}
+
+/* Y2K rows: glossy blue, white border, rounded 18px+. The gold selected
+ * ring (ring-yellow-300) comes from MenuList and is left untouched. */
+.pause-y2k-panel .game-button {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 55%),
+    linear-gradient(180deg, #1d4ed8, #1e3a8a);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.45), 0 0 14px rgba(34, 211, 238, 0.35);
+}
+
+/* Y2K help line: dark glass, white border, cyan glow. */
+.pause-y2k-panel .game-panel {
+  background: rgba(8, 20, 45, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.35);
+}
