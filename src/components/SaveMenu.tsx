@@ -17,6 +17,21 @@ export default function SaveMenu({ onClose }: SaveMenuProps) {
     setSaves(getSaves(slotId));
   }, [slotId]);
 
+  // Audit-plan Y/N scope: YES/NO key handling must cover ALL
+  // yes/no prompts, not only DialogueBox choices and Bag Toss.
+  // Save overwrite confirm: Y loads the save, N cancels back to
+  // the list. Wording and behaviour are otherwise unchanged.
+  useEffect(() => {
+    if (viewing !== "CONFIRM_LOAD") return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'y' || e.key === 'Y') handleLoad();
+      else if (e.key === 'n' || e.key === 'N') setViewing("LIST");
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [viewing, selectedSave]);
+
   const handleSave = () => {
     // Generate a Skyrim-like label based on location
     const mapName = gameState.currentMap;
