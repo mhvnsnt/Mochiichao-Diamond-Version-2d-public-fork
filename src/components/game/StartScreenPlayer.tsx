@@ -193,7 +193,19 @@ export default function StartScreenPlayer() {
         scene.addChild(press);
 
         // Creature slot: Yogiferno v1 cutout only; others GAP box.
+        // Engine-drawn ground shadow, Pokemon-first: FireRed draws
+        // the shadow as a SEPARATE 32x8 sprite (gEnemyMonShadow_Gfx,
+        // PALTAG_SHADOW, SetBattlerShadowSpriteCallback), never baked
+        // into the creature art. Same parameters as the TitleScene
+        // shadow (PR #102): one ellipse under the figure's feet,
+        // drawn BEFORE the figure so feet overlap it, width = 65% of
+        // the displayed figure width, height = width/4 (FireRed 32x8
+        // ratio), black at 0.32 alpha, at the ground line (1180) + 12.
+        // This player has no Black 2 motion-blur ghost layer, so
+        // there is no ghost to duplicate the shadow. Preset-only:
+        // the locked default title renders no figure by design.
         let figure: Sprite | null = null;
+        let shadow: Graphics | null = null;
         if (artAvailable && preset.creature === 'Yogiferno') {
           try {
             const tex = await Assets.load(yogifernoWalkCutout);
@@ -204,8 +216,15 @@ export default function StartScreenPlayer() {
             figure.anchor.set(0.5, 1);
             figure.position.set(CW / 2, 1180);
             scene.addChild(figure);
+            shadow = new Graphics();
+            const dispW = tex.width * s;
+            const shW = dispW * 0.65;
+            shadow.ellipse(0, 0, shW / 2, shW * 0.25 / 2).fill({ color: 0x000000, alpha: 0.32 });
+            shadow.x = figure.x; shadow.y = 1180 + 12;
+            scene.addChildAt(shadow, scene.children.indexOf(figure));
           } catch {
             figure = null;
+            shadow = null;
           }
         }
         if (!figure) {
@@ -316,6 +335,18 @@ export default function StartScreenPlayer() {
           if (figure) {
             figure.y = 1180 + Math.sin(t * 2) * 6;
             figure.x = CW / 2 + Math.sin(t * 2) * 3;
+            // Ground shadow follows the figure's walk x but stays
+            // on the ground: it never bobs with the figure's sine
+            // sway. When the figure lifts, the shadow shrinks and
+            // fades slightly — never below 75% size.
+            if (shadow) {
+              shadow.x = figure.x;
+              shadow.y = 1180 + 12;
+              const elev = 1180 - figure.y;
+              const shScale = Math.max(0.75, Math.min(1, 1 - elev / 200));
+              shadow.scale.set(shScale);
+              shadow.alpha = 0.32 * shScale;
+            }
           }
           for (const p of particles) {
             if (!spec) break;
