@@ -19,7 +19,7 @@ import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 import mochiichaoLogo from "../assets/ui/mochiichao-main-logo.png";
 import mochiichaoMenuLogo from "../assets/ui/mochiichao-main-logo-v32-matched.png";
 import MainMenuBackground from "./game/MainMenuBackground";
-import puffyCloud from "../assets/ui/puffy-cloud.svg";
+import mainCloudV32 from "../assets/ui/mochiichao-main-cloud-v32.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
 import { playUiMove, playUiConfirm, playUiBack } from "../lib/audioRouting";
@@ -577,9 +577,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             className="absolute object-contain"
             style={{ left: LOCKED_V32_MENU.logo.x, top: LOCKED_V32_MENU.logo.y, width: LOCKED_V32_MENU.logo.w }}
           />
-          {/* Cloud (real SVG) from locked data: centre (600,738), 700x180. */}
+          {/* Cloud from locked data: centre (600,738), 700x180.
+              v32-traced asset (mochiichao-main-cloud-v32.svg, 700x180, same
+              aspect as the box, so no letterbox/stretch): the old
+              puffy-cloud.svg (viewBox 600x280) letterboxed to ~386px wide
+              inside this box under its default preserveAspectRatio=meet,
+              which is the live #170 cloud defect. The old file stays in
+              the repo, unused by the menu. */}
           <img
-            src={puffyCloud}
+            src={mainCloudV32}
             alt=""
             className="absolute menu-bob-cloud"
             style={{ left: LOCKED_V32_MENU.cloud.x, top: LOCKED_V32_MENU.cloud.y, width: LOCKED_V32_MENU.cloud.w, height: LOCKED_V32_MENU.cloud.h, pointerEvents: 'none', objectFit: 'fill' }}
@@ -602,7 +608,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   onFocus={() => setMainSelected(i)}
                   style={v32PanelStyle(panelByKey('CONTINUE'), isSelected)}
                 >
-                  <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, ...labelStroke('CONTINUE') }}>
+                  <div className="tracking-widest text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, ...labelStroke('CONTINUE') }}>
                     <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE
                   </div>
                   {latestData ? (
@@ -625,7 +631,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                 onFocus={() => setMainSelected(i)}
                 style={v32PanelStyle(panel, isSelected)}
               >
-                <div className="font-bold tracking-widest text-black" style={{ fontSize: panel.labelSize, ...labelStroke(item.key) }}>
+                <div className="tracking-widest text-black" style={{ fontSize: panel.labelSize, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, ...labelStroke(item.key) }}>
                   <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
                 </div>
               </button>
@@ -635,7 +641,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             onClick={() => { playUiBack(); setPhase("TITLE"); }}
             style={v32PanelStyle(panelByKey('BACK TO TITLE'), false)}
           >
-            <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize }}>◄ BACK TO TITLE (B)</div>
+            <div className="tracking-widest text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight }}>◄ BACK TO TITLE (B)</div>
           </button>
         </LockedStage>
 
