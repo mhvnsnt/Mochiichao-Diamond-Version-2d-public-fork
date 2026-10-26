@@ -1,0 +1,52 @@
+{
+ "creature": "pyropaw",
+ "roster_id": "011",
+ "status": "done",
+ "frames": [
+  {
+   "file": "pyropaw_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "pyropaw_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "pyropaw_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "pyropaw_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "pyropaw_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "pyropaw_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "pyropaw_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "pyropaw_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "method": "original art, one generated 8-panel sheet (4 cols x 2 rows: down/up/left/right x phase 1/2), border-connected white-bg flood removal (scipy label), interior whites kept, content fit to 64x64 RGBA",
+ "raw_sheet": "media-generation-pyropaw-walk-v1-0-60f8e6dc-6865-4923-b79a-ffa4a77626a7.webp",
+ "source_reference": "game-ready/pyropaw/cells/pyropaw_cell_01.png (battle_front)",
+ "source_locked_manifest": "game-ready/pyropaw/pyropaw.manifest.locked.json",
+ "eye_check": "Enlarged raw sheet PASS + 64px montage PASS. Black cat, tall spotted ears, flame crest, orange eyes/whiskers/leg stripes match locked cell; back frames show plain ear backs, no face.",
+ "movement_note": "Side phase pairs clearly alternate quadruped trot. Front/back phase pairs are near-identical (minor leg shifts only) \u2014 same generator repeat as Punchkid; v2 could re-pose front/back phase 2. Front panels read bipedal-standing as in the locked front cell; side panels are quadruped trot.",
+ "style_note": "Sheet is smooth cartoon; locked cell is pixelated. Shape/colour/markings match; drift flagged, not silently changed."
+}
