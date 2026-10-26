@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Application, Container, Graphics, Sprite, Text } from 'pixi.js';
-import { getSheetDef } from '../../lib/spriteSheets';
+import { getSheetDef, worldCell } from '../../lib/spriteSheets';
 import { fallbackColorFor } from '../../lib/spriteSheets';
 import { playerSlot, slotForNpc } from '../../lib/humanSheets';
 import type { HumanView } from '../../lib/humanSheets';
@@ -314,13 +314,14 @@ export default function PixiWorldCanvas({
               sp.scale.x = Math.abs(sp.scale.x) * (view === 'left' && !distinctLeft ? -1 : 1);
               parent.addChild(sp);
             }
-          } else if (def) {
+          } else if (def && worldCell(def, 'front')) {
+            const wc = worldCell(def, 'front')!;
             const key = `npc-${npc.id}`;
             let sp = sheetSpritesRef.current.get(key);
             if (!sp) {
               sp = new Sprite();
               sheetSpritesRef.current.set(key, sp);
-              sheetTexture(def.sheetUrl, def.frames.front).then(tex => { sp!.texture = tex; }).catch(() => {});
+              sheetCellTextureXY(def.sheetUrl, wc.x, wc.y).then(tex => { sp!.texture = tex; }).catch(() => {});
             }
             sp.anchor.set(0.5, 1);
             sp.position.set(cx, cy + tile * 0.5);
@@ -346,13 +347,14 @@ export default function PixiWorldCanvas({
           const cx = (wild.x + 0.5) * tile;
           const cy = (wild.y + 0.5) * tile;
           const def = getSheetDef(wild.speciesId);
-          if (def) {
+          if (def && worldCell(def, 'front')) {
+            const wc = worldCell(def, 'front')!;
             const key = `wild-${wild.id}`;
             let sp = sheetSpritesRef.current.get(key);
             if (!sp) {
               sp = new Sprite();
               sheetSpritesRef.current.set(key, sp);
-              sheetTexture(def.sheetUrl, def.frames.front).then(tex => { sp!.texture = tex; }).catch(() => {});
+              sheetCellTextureXY(def.sheetUrl, wc.x, wc.y).then(tex => { sp!.texture = tex; }).catch(() => {});
             }
             sp.anchor.set(0.5, 1);
             sp.position.set(cx, cy + tile * 0.5);
@@ -426,13 +428,14 @@ export default function PixiWorldCanvas({
         }
         const def = getSheetDef(playerSpeciesId);
         const view = playerDir === 'up' ? 'back' : playerDir === 'left' || playerDir === 'right' ? 'side' : 'front';
-        if (def) {
+        if (def && worldCell(def, view)) {
+          const wc = worldCell(def, view)!;
           const key = `player-${def.speciesId}-${view}`;
           let sp = sheetSpritesRef.current.get(key);
           if (!sp) {
             sp = new Sprite();
             sheetSpritesRef.current.set(key, sp);
-            sheetTexture(def.sheetUrl, def.frames[view]).then(tex => { sp!.texture = tex; }).catch(() => {});
+            sheetCellTextureXY(def.sheetUrl, wc.x, wc.y).then(tex => { sp!.texture = tex; }).catch(() => {});
           }
           sp.anchor.set(0.5, 1);
           sp.position.set(cx, cy + tile * 0.5 + bob);
