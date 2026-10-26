@@ -59,9 +59,11 @@ function drawTrainerFigure(g: Graphics, cx: number, cy: number, size: number, ou
   g.circle(cx + s * 0.08, cy - s * 0.32, s * 0.03).fill(0x111111);
 }
 
+export type WildMarker = { id: string; speciesId: string; x: number; y: number; telegraph?: boolean };
+
 export default function PixiWorldCanvas({
   mapData, playerPos, playerDir, playerSpeciesId, defeatedIds, phase, animWalk,
-  playerKind = 'human', playerGender = 'boy',
+  playerKind = 'human', playerGender = 'boy', wilds = [],
 }: {
   mapData: any;
   playerPos: { x: number; y: number };
@@ -74,6 +76,9 @@ export default function PixiWorldCanvas({
       'creature' = Creature Mode only, where you play as the creature. */
   playerKind?: 'human' | 'creature';
   playerGender?: 'boy' | 'girl';
+  /** Creature Mode only: wild creatures drawn in-world with the same
+      camera/tile math as the player. Empty everywhere else. */
+  wilds?: WildMarker[];
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<Application | null>(null);
@@ -242,6 +247,42 @@ export default function PixiWorldCanvas({
             const slotColor = human ? parseInt(human.color.replace('#', ''), 16) : hashColor(npc.id);
             drawTrainerFigure(fg, cx, cy, tile * 0.9, slotColor);
             parent.addChild(fg);
+          }
+        },
+      });
+    });
+
+    // Creature Mode wilds: same sheet/fallback drawing as the player
+    // creature, plus a red ring when an attack is telegraphed.
+    (wilds || []).forEach((wild) => {
+      drawables.push({
+        y: wild.y,
+        build: (parent) => {
+          const cx = (wild.x + 0.5) * tile;
+          const cy = (wild.y + 0.5) * tile;
+          const def = getSheetDef(wild.speciesId);
+          if (def) {
+            const key = `wild-${wild.id}`;
+            let sp = sheetSpritesRef.current.get(key);
+            if (!sp) {
+              sp = new Sprite();
+              sheetSpritesRef.current.set(key, sp);
+              sheetTexture(def.sheetUrl, def.frames.front).then(tex => { sp!.texture = tex; }).catch(() => {});
+            }
+            sp.anchor.set(0.5, 1);
+            sp.position.set(cx, cy + tile * 0.5);
+            sp.width = tile * 1.1; sp.height = tile * 1.1;
+            parent.addChild(sp);
+          } else {
+            const fg = new Graphics();
+            const colorHex = parseInt(fallbackColorFor(wild.speciesId).replace('#', ''), 16);
+            drawFallbackCreature(fg, cx, cy, tile * 0.9, colorHex, 0);
+            parent.addChild(fg);
+          }
+          if (wild.telegraph) {
+            const ring = new Graphics();
+            ring.circle(cx, cy, tile * 0.65).stroke({ color: 0xff2222, width: 3 });
+            parent.addChild(ring);
           }
         },
       });
