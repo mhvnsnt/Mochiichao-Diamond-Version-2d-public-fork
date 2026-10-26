@@ -2,12 +2,20 @@
  * Mochiichao music — official tracks, wired 2026-10-25.
  *
  * Track map (see docs/title-music-status.md, the authority):
- * - boot: UI Art Option B "rising arpeggio" — BOOT phase, one-shot.
  * - intro: mochiichao-intro-v3.wav — OFFICIAL INTRO, INTRO phase, one-shot.
  * - title: mochiichao-title-v3.wav — OFFICIAL TITLE, TITLE phase, loops.
  * - mainMenu: mochiichao-main-menu-v1.wav — MAIN MENU v1 (DRAFT, wired for
  *   testing), MAIN_MENU / SETTINGS / SAVE_SLOTS phases, loops.
- * - pressStart: mochiichao-boot-M3-mochii-chirp.wav — TITLE press, one-shot.
+ *
+ * NOT in this module, deliberately: boot and press-start sounds are
+ * already wired on main in src/lib/bootAudio.ts (settled roles: BOOT =
+ * UI Art Option B, TITLE press = M3 Mochii Chirp, with a StrictMode
+ * double-play guard). Duplicating them here would play both sounds
+ * twice. This module plays music only.
+ *
+ * Paths use import.meta.env.BASE_URL (Vite), like bootAudio.ts, so the
+ * files resolve whether the build is served from '/' or from a
+ * sub-path (GitHub Pages): Vite copies public/audio/* to dist/audio/*.
  *
  * Method (Pokemon title-screen structure, not Pokemon audio):
  * - Title music starts after the title screen loads and loops until a key
@@ -29,21 +37,20 @@
  */
 
 export type MusicTrack = "intro" | "title" | "mainMenu";
-export type SfxTrack = "boot" | "pressStart";
+
+function audioUrl(file: string): string {
+  const base = import.meta.env.BASE_URL ?? "/";
+  const withSlash = base.endsWith("/") ? base : `${base}/`;
+  return `${withSlash}audio/${file}`;
+}
 
 const TRACKS: Record<MusicTrack, { src: string; loop: boolean }> = {
-  intro: { src: "/audio/mochiichao-intro-v3.wav", loop: false },
-  title: { src: "/audio/mochiichao-title-v3.wav", loop: true },
-  mainMenu: { src: "/audio/mochiichao-main-menu-v1.wav", loop: true },
-};
-
-const SFX: Record<SfxTrack, string> = {
-  boot: "/audio/mochiichao-boot-ui-art-option-b-rising-arpeggio.wav",
-  pressStart: "/audio/mochiichao-boot-M3-mochii-chirp.wav",
+  intro: { src: audioUrl("mochiichao-intro-v3.wav"), loop: false },
+  title: { src: audioUrl("mochiichao-title-v3.wav"), loop: true },
+  mainMenu: { src: audioUrl("mochiichao-main-menu-v1.wav"), loop: true },
 };
 
 const MUSIC_VOLUME = 0.8;
-const SFX_VOLUME = 1.0;
 const FADE_IN_MS = 500;
 
 let musicEl: HTMLAudioElement | null = null;
@@ -159,20 +166,6 @@ export function stopMusic(fadeMs = 1000): void {
     el.onended = null;
     if (musicEl === el) currentTrack = null;
   });
-}
-
-/** Play a one-shot sound effect (boot, press-start). Overlaps music. */
-export function playSfx(track: SfxTrack): void {
-  if (typeof window === "undefined" || typeof Audio === "undefined") return;
-  const el = new Audio(SFX[track]);
-  el.volume = SFX_VOLUME;
-  const p = el.play();
-  if (p && typeof (p as Promise<void>).catch === "function") {
-    (p as Promise<void>).catch(() => {
-      // SFX before a gesture is dropped, not retried: a boot/press sound
-      // replayed later would be wrong. Music retries; SFX does not.
-    });
-  }
 }
 
 /** Which music track, if any, is currently playing. For tests/debugging. */
