@@ -1,0 +1,35 @@
+/* Per-menu Y2K skins — preview mapping ONLY.
+   NOT imported by any component. Wiring a skin selector is owed work
+   (see README.md in this directory); until then this file changes
+   nothing in the game. Values mirror the *.y2k-skins.json files.
+   Logo rule: the logo is always the PNG, never font text. */
+
+:root[data-menu-skin="main-menu-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="main-menu-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #1e293b, #16233a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="main-menu-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #ec4899); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #f472b6; }
+:root[data-menu-skin="settings-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
+:root[data-menu-skin="settings-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="settings-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+:root[data-menu-skin="bag-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
+:root[data-menu-skin="bag-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="bag-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+:root[data-menu-skin="shop-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fefce8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="shop-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="shop-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+:root[data-menu-skin="pause-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
+:root[data-menu-skin="pause-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="pause-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+:root[data-menu-skin="battle-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
+:root[data-menu-skin="battle-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="battle-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+:root[data-menu-skin="save-slots-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
+:root[data-menu-skin="save-slots-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="save-slots-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+:root[data-menu-skin="dialogue-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
+:root[data-menu-skin="dialogue-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="dialogue-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* All skin bob/sway frozen to static values, per every skin's reducedMotion field. */
+  :root[data-menu-skin] { --skin-motion: none; }
+}
