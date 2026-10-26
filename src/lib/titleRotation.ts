@@ -11,10 +11,10 @@
 // OUT of title rotation, replaced by YOGIFERNO (white yeti/
 // gorilla, blue tribal markings, fire halo + fire staff, sheet in
 // 2d-sheets/yogiferno/). Pool stays 10.
-// Creature ART for the title silhouette is GAP (not shipped in
-// this code PR); rotation logic + theme wiring are real, the
-// title screen shows the featured creature's name/theme panel
-// with a GAP label for the silhouette art itself.
+// Creature ART is now shipped: src/assets/title/<name>-walk-
+// cutout.png for all 10 pool creatures (Yogiferno PR #33 + the
+// other 9 in this batch), wired via TitleCreatureFigure in
+// IntroSequence. Rotation logic + theme wiring are unchanged.
 // YOGIFERNO HABITAT CANON (Mars 18:33-18:34 CDT, for later, NOT
 // title code): desert (Fire/Ground), forest, rain, Safari-type,
 // mountain, snow/ice regions — deeper/later regions. Snow
