@@ -36,11 +36,13 @@ until Mars changes it in his own words.
 
 ## Wiring (2026-10-25, wiring batch)
 
-- Title v3, intro v3, boot B, press-start M3: WIRED via `src/lib/music.ts`
+- Title v3, intro v3, main-menu v1: WIRED via `src/lib/music.ts`
   + `src/components/IntroSequence.tsx` phase effect + `src/App.tsx`
-  world-entry stop. BOOT → boot SFX, INTRO → intro one-shot,
-  TITLE → title loop, MAIN_MENU/SETTINGS/SAVE_SLOTS → main-menu loop,
-  later phases → music stops, world entry → music stops.
+  world-entry stop. INTRO → intro one-shot, TITLE → title loop,
+  MAIN_MENU/SETTINGS/SAVE_SLOTS → main-menu loop, later phases →
+  music stops, world entry → music stops. Boot B + press-start M3
+  were already wired on main in `src/lib/bootAudio.ts` before this
+  batch (settled roles, not duplicated here).
 - Main menu v1 (`public/audio/mochiichao-main-menu-v1.wav`): DRAFT, wired
   for testing. NOT official until Mars says so. See
   `docs/main-menu-spec.md` for its loop audit and style research.
