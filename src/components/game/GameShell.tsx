@@ -26,6 +26,10 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
   // spacing, distinct cursor/selected row, bottom help line for the
   // selected item. Same items and actions as before, no items added
   // or removed; help lines only describe the existing items.
+  // Batch 3 skin ONLY: .pause-y2k-panel (index.css) gives this panel the
+  // Y2K skin — glossy gradient, white border, glow, star/heart accents.
+  // Order, inputs, and behaviour are unchanged; the sparkles below are
+  // decorative (aria-hidden, non-interactive).
   const items = [
     { label: 'Team', help: 'View and manage your team.', action: onRoster },
     { label: 'Shop', help: 'Buy and sell items at the shop.', action: onShop },
@@ -55,7 +59,11 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
 
   return (
     <div className="absolute inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-      <UiPanel slot={UI_ART.pause_menu_panel} className="w-full max-w-sm p-6 flex flex-col gap-3 max-h-[92dvh] overflow-y-auto">
+      <UiPanel slot={UI_ART.pause_menu_panel} className="pause-y2k-panel relative w-full max-w-sm p-6 flex flex-col gap-3 max-h-[92dvh] overflow-y-auto">
+        <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 left-3 text-pink-300 text-lg">✦</span>
+        <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 right-3 text-yellow-300 text-lg">♥</span>
+        <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 left-3 text-cyan-200 text-base">★</span>
+        <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 right-3 text-pink-300 text-base">✦</span>
         <h2 className="game-title text-2xl text-center mb-2">Paused</h2>
         <MenuList items={items} selected={safeSelected} onSelect={setSelected} />
         <MenuHelpLine text={items[safeSelected]?.help || ''} />
