@@ -189,7 +189,7 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   const [walkStep, setWalkStep] = useState(0);
   const [dir, setDir] = useState('down');
   const [activeIdx, setActiveIdx] = useState(0);
-  const [log, setLog] = useState('Creature Mode pass 2 — hold WASD to move, Shift to sprint, 1–4 moves, Space dodge (250ms), Q hop, Tab switch. Wild creatures are on the map.');
+  const [log, setLog] = useState('Hold WASD to move, Shift to sprint, 1–4 moves, Space dodge (250ms), Q hop, Tab switch. Wild creatures are on the map.');
   const [stamina, setStamina] = useState(100);
   const [dodging, setDodging] = useState(false);
   const [hopping, setHopping] = useState(false);
@@ -606,7 +606,7 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
           </button>
         </div>
         <div className="text-[11px] text-slate-400 mt-2">
-          Pass 4: hitstop 90ms with HP draining after it (arena spec), tag-team pack engagement, territorial strafe — from fan/mod files already in the repo, mechanics only, no ROMs, patches, or franchise files copied. Cooldown table still provisional (shown to Mars, not canon); walk-art sheets still sprite-lane production.
+          Hitstop 90ms with HP draining after it, tag-team pack engagement, territorial strafe.
         </div>
       </div>
     </div>
