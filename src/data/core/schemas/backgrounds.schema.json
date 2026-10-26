@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./backgrounds.schema.json",
+  "title": "backgrounds (SCHEMA ONLY \u2014 background contents are owned by the backgrounds worker, not this core)",
+  "description": "Plan summary shape: one tileset SYSTEM, not hand-painted backdrops \u2014 primary+secondary tilesets, metatile behaviour, 3-5 render layers, palette/tint variants for morning/day/evening/night + seasons, and a weather particle/tint overlay, so towns/routes/caves/forests/beaches/mountains/cities/interiors are recombinations.",
+  "type": "object",
+  "properties": {
+    "backgrounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tilesetPrimary": {
+            "type": "string"
+          },
+          "tilesetSecondary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "layers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "paletteVariants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weatherOverlay": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    }
+  },
+  "required": [
+    "backgrounds"
+  ]
+}
