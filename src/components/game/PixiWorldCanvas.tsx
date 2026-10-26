@@ -91,7 +91,7 @@ export interface NpcWalkState {
 
 export default function PixiWorldCanvas({
   mapData, playerPos, playerDir, playerSpeciesId, defeatedIds, phase, animWalk,
-  playerKind = 'human', playerGender = 'boy', wilds = [], npcStates,
+  playerKind = 'human', playerGender = 'boy', wilds = [], npcStates, playerAuraColor = null,
 }: {
   mapData: any;
   playerPos: { x: number; y: number };
@@ -111,6 +111,12 @@ export default function PixiWorldCanvas({
       future WorldEngine NPC step. Absent today — WorldEngine passes
       nothing — so NPCs render exactly as before. */
   npcStates?: Record<string, NpcWalkState>;
+  /** Creature Mode only, pass 5: Garden Form aura colour (hex string,
+      e.g. '#ffd700') for the player creature. Null = no aura (Base
+      form, or any non-Creature Mode caller). Drawn as a ring under
+      the player sprite only; Trainer Mode passes nothing, so it
+      renders exactly as before. */
+  playerAuraColor?: string | null;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<Application | null>(null);
@@ -380,6 +386,15 @@ export default function PixiWorldCanvas({
       build: (parent) => {
         const cx = (playerPos.x + 0.5) * tile;
         const cy = (playerPos.y + 0.5) * tile;
+        // Pass 5 Garden aura: ring under the player creature only,
+        // before the sprite, so it never covers the creature.
+        if (playerKind === 'creature' && playerAuraColor) {
+          const auraHex = parseInt(playerAuraColor.replace('#', ''), 16);
+          const aura = new Graphics();
+          aura.circle(cx, cy, tile * 0.65).fill({ color: auraHex, alpha: 0.18 });
+          aura.circle(cx, cy, tile * 0.65).stroke({ color: auraHex, width: 3 });
+          parent.addChild(aura);
+        }
         const humanPlayer = playerKind === 'human' ? playerSlot(playerGender) : null;
         if (humanPlayer && humanPlayer.sheetUrl) {
           // Distinct left cell when the slot has one (Player A atlas:
