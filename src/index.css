@@ -344,3 +344,60 @@ body {
   border-radius: 18px;
   box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.35), 0 0 20px rgba(74, 222, 128, 0.35), 0 8px 24px rgba(0, 0, 0, 0.45);
 }
+
+/*
+ * Shop menu Y2K skin ONLY (per-menu skins 3/8).
+ * Per-menu colour: Shop = yellow.
+ * Scoped to .shop-y2k, which only ShopView renders, so no other menu,
+ * the main menu, title, Settings, fonts, rotation, or saves change.
+ * The .game-panel / .game-button / .game-title rules above are NOT edited;
+ * these later, equal-or-higher-specificity rules win only inside Shop.
+ * ShopView's own bg-[#0b1526] utility is overridden here by this later
+ * stylesheet rule, same as the Bag pattern leaves its panel classes
+ * in place. Buy/Sell/Quit order, stock, prices, wording, item order,
+ * inputs, and behaviour are unchanged.
+ * If the UI Art lane later delivers a dedicated Shop panel asset,
+ * re-attach it in lib/uiArt.ts (shop_menu_panel) and delete this block.
+ */
+.shop-y2k {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(135deg, #713f12 0%, #ca8a04 48%, #facc15 100%);
+}
+
+/* Y2K heading: italic, white -> gold -> yellow gradient, yellow glow.
+ * Font family unchanged (game font) — fonts are out of scope this batch. */
+.shop-y2k .game-title {
+  font-style: italic;
+  background: linear-gradient(180deg, #ffffff 15%, #fef08a 55%, #facc15 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.45)) drop-shadow(0 0 14px rgba(250, 204, 21, 0.55));
+}
+
+/* Y2K buttons (Buy, Sell, Quit, Back, Yes/No): glossy yellow,
+ * white border, rounded 18px+. */
+.shop-y2k .game-button {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 55%),
+    linear-gradient(180deg, #eab308, #854d0e);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.45), 0 0 14px rgba(250, 204, 21, 0.35);
+}
+
+/* Y2K panels (wallet, item rows, detail panel, message, help line,
+ * confirm): glossy rounded dark-glass panels, white border, yellow
+ * glow, so white text stays readable. The gold selected ring
+ * (ring-yellow-300) comes from ShopView and is left untouched. */
+.shop-y2k .game-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 55%),
+    rgba(30, 22, 4, 0.78);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.35), 0 0 20px rgba(250, 204, 21, 0.35), 0 8px 24px rgba(0, 0, 0, 0.45);
+}
