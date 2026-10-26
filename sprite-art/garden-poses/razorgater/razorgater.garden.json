@@ -1,0 +1,11 @@
+{
+  "creature": "razorgater",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "razorgater_cell_04.png"
+}

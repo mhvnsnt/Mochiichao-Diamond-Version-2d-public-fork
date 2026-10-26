@@ -1,0 +1,11 @@
+{
+  "creature": "pixilite",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "pixilite_cell_00.png"
+}

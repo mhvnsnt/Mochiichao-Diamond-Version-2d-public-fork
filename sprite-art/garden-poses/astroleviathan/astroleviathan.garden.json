@@ -1,0 +1,11 @@
+{
+  "creature": "astroleviathan",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "astroleviathan_cell_01.png"
+}

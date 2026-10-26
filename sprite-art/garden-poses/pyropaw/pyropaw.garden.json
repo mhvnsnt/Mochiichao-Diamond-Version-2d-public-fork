@@ -1,0 +1,11 @@
+{
+  "creature": "pyropaw",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "pyropaw_cell_01.png"
+}

@@ -1,0 +1,11 @@
+{
+  "creature": "chromejaww",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "chromejaww_cell_01.png"
+}

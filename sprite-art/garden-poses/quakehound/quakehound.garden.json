@@ -1,0 +1,11 @@
+{
+  "creature": "quakehound",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "quakehound_cell_03.png"
+}
