@@ -36,6 +36,7 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
     ...(onNavigate ? [{ label: 'Bag', help: 'View your items, grouped by pocket.', action: () => onNavigate('BAG') }] : []),
     ...(onNavigate ? [
       { label: 'PC Storage', help: 'Move Mochiichao between your team and PC storage.', action: () => onNavigate('PC') },
+      { label: 'Dex', help: 'Browse the Mochiichao Dex — discovered creatures and undiscovered slots.', action: () => onNavigate('DEX') },
       { label: 'Mainframe Gardens', help: 'Raise Mochiichao in the Mainframe Gardens.', action: () => onNavigate('GARDEN') },
       { label: 'Ring Capture', help: 'Try the Ring Capture loop.', action: () => onNavigate('RING') },
       { label: 'Arena Mode', help: 'Battle in Arena Mode doubles.', action: () => onNavigate('ARENA') },
