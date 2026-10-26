@@ -1,0 +1,54 @@
+{
+ "creature": "ashemit",
+ "roster_id": "044",
+ "status": "done",
+ "method": "movement treatment derived from existing locked game-ready cells by transform only (no new generation, no redraw): seated shift (2px weight shift + 1px settle)",
+ "frames": [
+  {
+   "file": "ashemit_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "ashemit_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "ashemit_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "ashemit_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "ashemit_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "ashemit_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "ashemit_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "ashemit_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "movement_note": "Seated shift: stays seated in meditation in every frame. LOCK CORRECTION (eye-checked, supersedes manifest labels): cell_02 labelled overworld_back is actually a RIGHT-facing side profile; cell_04 labelled overworld_side is actually the true BACK view. Mapping used: down=cell_03 front, up=cell_04 back, right=cell_02 side, left=mirror of cell_02.",
+ "source_cells": {
+  "down": "ashemit_cell_03.png (overworld_front)",
+  "up": "ashemit_cell_04.png (manifest: overworld_side; eye: true back)",
+  "right": "ashemit_cell_02.png (manifest: overworld_back; eye: right-facing side)",
+  "left": "mirror of ashemit_cell_02.png"
+ },
+ "eye_check": "Enlarged + 64px montage PASS (fixed2, pixel-verified: up_0 == cell_04, left_0 == mirror(cell_02)). Seated shift in all 4 directions; lock correction applied (see movement_note)."
+}
