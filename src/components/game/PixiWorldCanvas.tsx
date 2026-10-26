@@ -3,6 +3,7 @@ import { Application, Container, Graphics, Sprite, Text } from 'pixi.js';
 import { getSheetDef } from '../../lib/spriteSheets';
 import { fallbackColorFor } from '../../lib/spriteSheets';
 import { playerSlot, slotForNpc } from '../../lib/humanSheets';
+import type { HumanView } from '../../lib/humanSheets';
 
 /**
  * PixiJS world renderer (Phase 2, world canvas only).
@@ -61,9 +62,36 @@ function drawTrainerFigure(g: Graphics, cx: number, cy: number, size: number, ou
 
 export type WildMarker = { id: string; speciesId: string; x: number; y: number; telegraph?: boolean };
 
+/** Live per-NPC movement state, produced by a future WorldEngine NPC
+ *  step — NOT by this canvas, which owns only the world picture.
+ *  FireRed shape (pokefirered-leafgreen, src/event_object_movement.c +
+ *  include/global.fieldmap.h): each map object event carries a
+ *  movement_type plus x_radius/y_radius around its spawn tile, and the
+ *  engine runs a per-frame step machine (face -> move one tile ->
+ *  random delay -> pick a direction -> collision check -> walk).
+ *  Mochiichao today has NONE of that per-NPC data: FullWorldMaps.ts
+ *  NPC entries carry only id/x/y/sprite/name/facing/dialog/flags, and
+ *  WorldEngine passes no NPC state at all — so no caller passes
+ *  npcStates yet, and every NPC below renders exactly as before.
+ *  What is still owed before any NPC visibly moves: (1) movement
+ *  fields on map NPC entries (type + radii, FireRed template shape),
+ *  (2) a WorldEngine step that advances positions/directions and
+ *  passes npcStates here, (3) tile/NPC/player collision checks for
+ *  the step. Inventing wander routes in this pass would guess all
+ *  three, so this seam only consumes the state when a producer
+ *  exists. `step` uses the same parity convention as the player's
+ *  animWalk (odd = step frame, even = idle frame). */
+export interface NpcWalkState {
+  x: number;
+  y: number;
+  dir: HumanView;
+  moving: boolean;
+  step: number;
+}
+
 export default function PixiWorldCanvas({
   mapData, playerPos, playerDir, playerSpeciesId, defeatedIds, phase, animWalk,
-  playerKind = 'human', playerGender = 'boy', wilds = [],
+  playerKind = 'human', playerGender = 'boy', wilds = [], npcStates,
 }: {
   mapData: any;
   playerPos: { x: number; y: number };
@@ -79,6 +107,10 @@ export default function PixiWorldCanvas({
   /** Creature Mode only: wild creatures drawn in-world with the same
       camera/tile math as the player. Empty everywhere else. */
   wilds?: WildMarker[];
+  /** NPC movement seam (see NpcWalkState): live per-NPC state from a
+      future WorldEngine NPC step. Absent today — WorldEngine passes
+      nothing — so NPCs render exactly as before. */
+  npcStates?: Record<string, NpcWalkState>;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<Application | null>(null);
@@ -210,25 +242,66 @@ export default function PixiWorldCanvas({
 
     (mapData.npcs || []).forEach((npc: any) => {
       if (defeatedIds.includes(npc.id)) return;
+      // NPC movement seam: a live state, when a future WorldEngine
+      // NPC step passes one, also drives the depth-sort row. No
+      // state exists today, so the sort row and the sprite below
+      // are exactly the standing-still rendering as before.
+      const npcState = npcStates?.[npc.id];
       drawables.push({
-        y: npc.y,
+        y: npcState?.y ?? npc.y,
         build: (parent) => {
-          const cx = (npc.x + 0.5) * tile;
-          const cy = (npc.y + 0.5) * tile;
+          const cx = ((npcState?.x ?? npc.x) + 0.5) * tile;
+          const cy = ((npcState?.y ?? npc.y) + 0.5) * tile;
           const def = npc.creatureId ? getSheetDef(npc.creatureId) : null;
           const human = !def ? slotForNpc(npc) : null;
           if (human && human.sheetUrl) {
-            const key = `npc-human-${npc.id}`;
-            let sp = sheetSpritesRef.current.get(key);
-            if (!sp) {
-              sp = new Sprite();
-              sheetSpritesRef.current.set(key, sp);
-              sheetTexture(human.sheetUrl, human.frames.front).then(tex => { sp!.texture = tex; }).catch(() => {});
+            if (!npcState) {
+              // No movement state: the standing rendering, unchanged.
+              const key = `npc-human-${npc.id}`;
+              let sp = sheetSpritesRef.current.get(key);
+              if (!sp) {
+                sp = new Sprite();
+                sheetSpritesRef.current.set(key, sp);
+                sheetTexture(human.sheetUrl, human.frames.front).then(tex => { sp!.texture = tex; }).catch(() => {});
+              }
+              sp.anchor.set(0.5, 1);
+              sp.position.set(cx, cy + tile * 0.5);
+              sp.width = tile * 1.25; sp.height = tile * 1.25;
+              parent.addChild(sp);
+            } else {
+              // Live movement state: face the state's direction and,
+              // while moving, alternate idle/step from the slot's own
+              // walk layout (ROWS_WALK for PR #100 slots, PAIRS_WALK
+              // for Player A — taken from the slot, never assumed),
+              // with the same odd = step parity as the player's
+              // animWalk. Standing state renders the row-0 view.
+              // Distinct left cell when the slot has one; otherwise
+              // mirror right, exactly like the player branch.
+              const view: HumanView = npcState.dir === 'back' || npcState.dir === 'left' || npcState.dir === 'right' ? npcState.dir : 'front';
+              const distinctLeft = human.frames.left !== human.frames.right;
+              const showView = view === 'left' && !distinctLeft ? 'right' : view;
+              const walkCell = npcState.moving && human.walk
+                ? (npcState.step % 2 === 1 ? human.walk.step[showView] : human.walk.idle[showView])
+                : null;
+              const key = walkCell !== null
+                ? `npc-human-${npc.id}-${showView}-walk${walkCell}`
+                : `npc-human-${npc.id}-${showView}`;
+              let sp = sheetSpritesRef.current.get(key);
+              if (!sp) {
+                sp = new Sprite();
+                sheetSpritesRef.current.set(key, sp);
+                if (walkCell !== null) {
+                  sheetCellTextureXY(human.sheetUrl, (walkCell % 4) * 64, Math.floor(walkCell / 4) * 64).then(tex => { sp!.texture = tex; }).catch(() => {});
+                } else {
+                  sheetTexture(human.sheetUrl, human.frames[showView]).then(tex => { sp!.texture = tex; }).catch(() => {});
+                }
+              }
+              sp.anchor.set(0.5, 1);
+              sp.position.set(cx, cy + tile * 0.5);
+              sp.width = tile * 1.25; sp.height = tile * 1.25;
+              sp.scale.x = Math.abs(sp.scale.x) * (view === 'left' && !distinctLeft ? -1 : 1);
+              parent.addChild(sp);
             }
-            sp.anchor.set(0.5, 1);
-            sp.position.set(cx, cy + tile * 0.5);
-            sp.width = tile * 1.25; sp.height = tile * 1.25;
-            parent.addChild(sp);
           } else if (def) {
             const key = `npc-${npc.id}`;
             let sp = sheetSpritesRef.current.get(key);
