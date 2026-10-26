@@ -11,6 +11,7 @@ import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type Title
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
 import TitleCreatureFigure from "./game/TitleCreatureFigure";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
+import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 
 /**
@@ -195,12 +196,18 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // phase (Pokemon any-key skip). Boot hold time is an implementation
   // choice (2.5s, labelled in the BOOT render) — Mars has not locked
   // a hold time yet. Title fade is a white fade, then MAIN_MENU.
+  // Audio (settled roles, see src/lib/bootAudio.ts): BOOT plays the
+  // UI Art Option B rising arpeggio once on entering BOOT; TITLE
+  // advance (PRESS ANY KEY) plays the M3 Mochii Chirp. The chirp is
+  // the press-start sound only, never the boot sound.
+  const bootPlayedRef = React.useRef(false);
   const advanceIntro = () => {
     if (phase === "BOOT") setPhase("INTRO");
     else if (phase === "INTRO") {
       if (introScene < 3) setIntroScene(s => s + 1);
       else setPhase("TITLE");
     } else if (phase === "TITLE" && !titleFading) {
+      playPressStartSound();
       setTitleFading(true);
       setTimeout(() => { setTitleFading(false); setPhase("MAIN_MENU"); }, 350);
     }
@@ -208,6 +215,13 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   useEffect(() => {
     if (phase === "BOOT") {
+      // Ref guard: StrictMode double-invokes effects in dev, which
+      // would otherwise start the boot sound twice. In a production
+      // build the effect runs once; BOOT mounts once per page load.
+      if (!bootPlayedRef.current) {
+        bootPlayedRef.current = true;
+        playBootSound();
+      }
       const t = setTimeout(() => setPhase("INTRO"), 2500);
       return () => clearTimeout(t);
     }
@@ -231,8 +245,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
         {/* Boot: black screen, M Heavensent Studios logo alone, phi
             boot size (742 on a 1200 canvas, responsive max-width).
-            Boot sound is GAP — original sound needed, no file
-            invented, no Pokemon chime copied. Hold 2.5s is an
+            Boot sound is WIRED: UI Art Option B rising arpeggio
+            (bootAudio.ts), no Pokemon chime copied. Hold 2.5s is an
             implementation choice, not a locked Mars value; any key
             skips immediately. */}
         <img
@@ -243,7 +257,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         />
         <div className="text-white text-lg tracking-[0.3em] text-center mt-2">M HEAVENSENT STUDIOS</div>
         <div className="text-gray-500 text-xs tracking-[0.2em] mt-8 text-center">
-          Boot sound: GAP — original sound needed · Press any key to skip
+          Boot sound: UI Art Option B rising arpeggio · Press any key to skip
         </div>
       </div>
     );
@@ -343,7 +357,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
             <div className="text-center text-gray-400 text-[10px] tracking-widest mt-1">M HEAVENSENT STUDIOS · TITLE COPYRIGHT SLOT</div>
-            <div className="text-center text-gray-500 text-[10px] mt-2">Title background scene art: GAP — original art needed · Title music: GAP</div>
+            <div className="text-center text-gray-500 text-[10px] mt-2">Title background scene art: GAP — original art needed · Title music: GAP (press-start chirp wired: M3 Mochii Chirp on PRESS ANY KEY)</div>
           </div>
         </div>
 
