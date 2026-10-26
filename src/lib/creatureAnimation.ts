@@ -46,7 +46,12 @@
  * - move scripts (563 union scripts, 12 shared subroutines, PR #168
  *   source): game-path copy at src/lib/generated/moveScripts.json.
  *   getMoveScript() is the accessor; 10/36 game moves.ts moves match a
- *   script by id exactly. Pixi's existing lunge/projectile/status phases
+ *   script by id exactly, plus 25/36 routed by the Phase 1 curated map
+ *   (src/lib/generated/gameMoveScriptMap.json, 2026-10-26: same script
+ *   type + category + timing family, effect-name provenance noted per
+ *   entry; 35/36 = 97% matched, IRON_BARRAGE unmatched — its game desc
+ *   says 2-5 hits but its effect field is NONE, so no script satisfies
+ *   both). Pixi's existing lunge/projectile/status phases
  *   ARE the Layer-1 templates those scripts describe (sub_Lunge,
  *   sub_Projectile, sub_Impact, ...); per-move step sequencing beyond
  *   category is owed, not invented here.
@@ -59,6 +64,7 @@
  */
 
 import moveScriptsData from './generated/moveScripts.json';
+import gameMoveScriptMapData from './generated/gameMoveScriptMap.json';
 
 export type CreatureFolder = string;
 
@@ -514,11 +520,22 @@ export function attackSetFor(folder: string, moveId: string | undefined | null, 
 export interface MoveScriptStep { op: string; sub?: string; args?: Record<string, unknown>; }
 export interface MoveScript { move: string; category: string; type: string; power: number; template: string; family: string; fallback: boolean; steps: MoveScriptStep[]; }
 const SCRIPTS = (moveScriptsData as unknown as { scripts: Record<string, MoveScript> }).scripts;
+/**
+ * Phase 1 game-move -> script routing (2026-10-26). Exact-id matches
+ * win first; otherwise the curated map in gameMoveScriptMap.json routes
+ * a game move id to an existing union script (same type + category +
+ * timing family, per-entry evidence in that file). No game move data,
+ * category, effect, or learnset is changed here, and no script is
+ * invented: an unmapped game move still returns null.
+ */
+const GAME_MOVE_SCRIPT_MAP = (gameMoveScriptMapData as unknown as { mapping: Record<string, string> }).mapping;
 export function getMoveScript(moveId: string | undefined | null): MoveScript | null {
   if (!moveId) return null;
-  return SCRIPTS[moveId] ?? null;
+  return SCRIPTS[moveId] ?? SCRIPTS[GAME_MOVE_SCRIPT_MAP[moveId]] ?? null;
 }
+export const GAME_MOVE_SCRIPT_MAP_COUNT = Object.keys(GAME_MOVE_SCRIPT_MAP).length;
 export const MOVE_SCRIPT_COUNT = Object.keys(SCRIPTS).length;
 
 /** Shiny wiring is intentionally absent: the shiny-v2 set is staged show-first and NOT approved. */
 export const SHINY_WIRED = false;
+
