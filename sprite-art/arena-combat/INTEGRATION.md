@@ -23,7 +23,7 @@ in flight, so wiring is a separate, explicit step — do not force it here.
 - `follower/` (already on main) — follower walking + fight-as-creature specs
   and `followerWalk.js` (driven mode: driving moves, only choosing hurts).
 - `captureLoop.js` (already on main) — normal capture default (Luigi Cubes);
-  ring capture GATED behind (arcade ring zone visited + played) AND
+  ring capture GATED behind (The Ringcade visited + played) AND
   (ring-capture items owned). See `ring-capture-zone-spec.md`.
 - `fanMechanics.js` (already on main, ESM export added here) — dash/energy,
   aim shapes, AI movement, dodge, hit feedback, ground marks, sudden death.
@@ -51,9 +51,9 @@ in flight, so wiring is a separate, explicit step — do not force it here.
 
 ## Held for Mars (show-first rule — nothing here decides them)
 
-- Ring capture zone exact name: NOT chosen. Candidates are staged in
-  `ring-capture-zone-spec.md` §2 for Mars to pick (none locked, none used
-  in code). Code and docs refer to it only as the arcade ring zone (name TBD).
+- Ring capture zone exact name: The Ringcade (LOCKED 2026-10-25 ~21:18 CDT,
+  Mars decision; see `ring-capture-zone-spec.md` §2). Code and docs refer
+  to it as The Ringcade from here on.
 - Scope (Mars 2026-10-25 ~19:44): moves and animations are real, not
   genericized. The ONLY exclusions are Pokemon creature names, sounds, art,
   and dialogue. REPLACEMENTS.md's old move genericization is superseded by
