@@ -142,6 +142,23 @@ html, body, #root {
   background: #050810;
 }
 
+:root {
+  /* Batch B defaults — applyMenuCustom() in src/lib/menuCustom.ts
+   * overwrites these on startup and on Settings SAVE + BACK.
+   * Defaults match the pre-existing look (16px dialogue, 1.625
+   * leading, white text, 14px dialogue radius, 48px touch) so
+   * nothing changes visually until a player saves a choice. */
+  --menu-text-size: 16px;
+  --menu-line-height: 1.625;
+  --menu-text-color: #ffffff;
+  --menu-text-shadow: none;
+  --menu-dialogue-radius: 14px;
+  --menu-anim-speed: 1;
+  --menu-reduced-motion: running;
+  --menu-touch-size: 48px;
+  --menu-sprite-proportion: chibi;
+}
+
 body {
   /* --game-font is set by src/lib/fonts.ts applyFont() from the
    * Settings Font row. Default is the pre-existing stack (locked
