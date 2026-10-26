@@ -1,0 +1,82 @@
+/* Per-menu Y2K skin application (skins wiring PR, 2026-10-26).
+   Values arrive ONLY as CSS variables set inline by menuSkinVars()
+   in menuSkins.ts (single source of truth: the #151 preset files).
+   Nothing here hardcodes a skin colour, so no per-variant rule can
+   drift from the presets.
+   Scope: every rule is under [data-menu-skin], which components set
+   ONLY while a non-default skin is selected. Default menus carry no
+   such attribute and are completely unaffected by this file.
+   Text overrides exist because skinned panels are light (pastel /
+   bubblegum) or dark (chrome) while children hardcode text-white /
+   text-slate-* classes: without them, white text on a white panel
+   would be invisible. Buttons (.game-button) are deliberately NOT
+   recoloured — they are controls, and their type/accent colours
+   (battle move types, save LOAD/CANCEL) stay as designed. Layout,
+   HP thresholds, type colours and actions are untouched. */
+
+/* Screen background of a skinned full-screen menu (PC / Party /
+   Battle roots are .game-screen; the battle preset background is
+   #0b1526 in all flavours, so battle's screen visibly stays dark). */
+[data-menu-skin].game-screen {
+  background: var(--skin-bg);
+}
+
+/* Panel frames inside a skinned container. */
+[data-menu-skin] .game-panel,
+[data-menu-skin].std-window,
+[data-menu-skin] .std-window {
+  background: var(--skin-panel-fill);
+  border: var(--skin-border-width) solid var(--skin-panel-border);
+  border-radius: var(--skin-radius);
+  box-shadow: var(--skin-panel-glow);
+}
+
+/* Save rows are not .game-panel (they are bg-black/50 teal rows), so
+   they carry their own marker class and get the same panel treatment. */
+[data-menu-skin] .save-skin-row {
+  background: var(--skin-panel-fill);
+  border: var(--skin-border-width) solid var(--skin-panel-border);
+  border-radius: var(--skin-radius);
+  box-shadow: var(--skin-panel-glow);
+}
+
+/* Battle command area: the bottom strip is .game-panel-bottom, not a
+   panel, so it gets the skin fill + frame colour as its background.
+   (The battle message panel itself keeps its dialogue-box.svg art
+   when that art is set — another lane's piece, not restyled here —
+   so the strip + healthboxes carry the battle skin visibly.) */
+[data-menu-skin] .game-panel-bottom {
+  background: var(--skin-panel-fill);
+  border-top: var(--skin-border-width) solid var(--skin-panel-border);
+}
+
+/* Selected row/frame inside a skinned container: components add the
+   .skin-selected class INSTEAD of the yellow ring class while a skin
+   is active, so a row never wears two frames at once. */
+[data-menu-skin] .skin-selected {
+  box-shadow: var(--skin-selected-glow);
+}
+
+/* Headings inside a skinned container. */
+[data-menu-skin] .game-title {
+  color: var(--skin-text);
+  text-shadow: none;
+}
+
+/* Label text inside a skinned container. */
+[data-menu-skin] .text-white,
+[data-menu-skin] .text-slate-100,
+[data-menu-skin] .text-teal-100,
+[data-menu-skin] .text-teal-300,
+[data-menu-skin] .text-yellow-400 {
+  color: var(--skin-text);
+}
+
+/* Sublabel / secondary text inside a skinned container. */
+[data-menu-skin] .text-slate-200,
+[data-menu-skin] .text-slate-300,
+[data-menu-skin] .text-slate-400,
+[data-menu-skin] .text-gray-400,
+[data-menu-skin] .text-gray-500 {
+  color: var(--skin-subtext);
+}

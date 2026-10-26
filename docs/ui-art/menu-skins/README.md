@@ -97,6 +97,8 @@ selector can offer the same three looks everywhere:
 | Battle HUD | `battle.y2k-skins.json` | `BattleView.tsx` (bg #0b1526, HP green/orange/red) |
 | Save Slots | `save-slots.y2k-skins.json` | `SaveMenu.tsx` (teal scheme) + `IntroSequence.tsx` SAVE_SLOTS phase |
 | Dialogue | `dialogue.y2k-skins.json` | `DialogueBox.tsx` (`--menu-dialogue-radius`, `--menu-text-color` vars) |
+| PC Storage | `pc.y2k-skins.json` | `PcView.tsx` (screen bg #0b1526) — GAP-FILL in the skins wiring PR: #151 shipped no PC file, so this file reuses the bag values verbatim under the #151 schema |
+| Party (Team) | `party.y2k-skins.json` | `RosterView.tsx` (screen bg #0b1526) — GAP-FILL in the skins wiring PR: #151 shipped no Party file, so this file reuses the bag values verbatim under the #151 schema |
 
 `skins.json` is the index: every menu, every variant id, and the
 file each variant lives in, so a selector worker can load the set

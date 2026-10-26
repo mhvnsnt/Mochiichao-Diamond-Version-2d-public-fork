@@ -5,6 +5,7 @@ import { MOVES_DB } from '../../lib/moves';
 import CreaturePortrait from '../game/CreaturePortrait';
 import { MenuHelpLine } from '../game/MenuList';
 import { TRUE_ELEMENTS, MAINFRAME_SECTORS, MainframeVariant, variantLabel, isTrueElement } from '../../lib/monster-tamer-systems';
+import { useMenuSkin, menuSkinVars } from '../../lib/menuSkins';
 
 /**
  * Roster, Pokemon-style placement: list on one side, detail panel on the
@@ -55,10 +56,14 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
   const [variants, setVariants] = useState<Record<string, MainframeVariant>>({});
   const [variantSector, setVariantSector] = useState<string>(MAINFRAME_SECTORS[0]);
   const [variantElement, setVariantElement] = useState<string>(TRUE_ELEMENTS[0]);
+  // Y2K skin wiring (skins PR #151 presets via menuSkins.ts): null =
+  // default look, untouched. Selected list row wears .skin-selected
+  // instead of the yellow ring while a skin is active.
+  const skin = useMenuSkin('party');
   const currentVariant = current ? variants[current.id] : undefined;
 
   return (
-    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]" data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
       <div className="flex justify-between items-center mb-4 shrink-0">
         <h2 className="game-title text-2xl">Your Team</h2>
         <button onClick={onBack} className="game-button px-4 py-2">Close</button>
@@ -84,7 +89,7 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
                 <button
                   key={mochii.id}
                   onClick={() => selectSlot(i)}
-                  className={`game-panel p-3 flex items-center gap-3 text-left shrink-0 min-h-[48px] ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}
+                  className={`game-panel p-3 flex items-center gap-3 text-left shrink-0 min-h-[48px] ${i === selected ? (skin ? 'skin-selected' : 'ring-2 ring-yellow-300') : 'opacity-80'}`}
                 >
                   <CreaturePortrait speciesId={mochii.speciesId} view="front" size={56} />
                   <div className="min-w-0 flex-1">
