@@ -276,6 +276,10 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   // dialogs promised to keep. No save, no "Game Autosaved" notice.
   const autosaveHeldForSlot = useGameStore(s => s.autosaveHeldForSlot);
   const setAutosaveHeldForSlot = useGameStore(s => s.setAutosaveHeldForSlot);
+  // Tracks the last (slot, map) the map-change autosave has seen,
+  // so it fires only on a real map change — never on mount, slot
+  // change, or hold clear (see the map-change effect below).
+  const prevMapRef = React.useRef<{ slot: number; map: string } | null>(null);
   useEffect(() => {
     // Autosave roughly every 60s
     const iv = setInterval(() => {
@@ -287,7 +291,26 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   }, [saveSlot, currentMap, autosaveHeldForSlot]);
 
   useEffect(() => {
-    // Autosave on map change (held for a START OVER slot — see above)
+    // Autosave on a REAL map change only (held for a START OVER
+    // slot — see above, plus the central gate in saveSystem).
+    // Playtest 2026-10-26 (attempt 7): this effect used to fire on
+    // mount and on every dependency change, so entering the world
+    // after a LOAD immediately autosaved the loaded state back
+    // with a fresh timestamp — the slot summary's content looked
+    // held while its timestamp advanced, and a load-then-enter
+    // autosave after a manual save would overwrite the manual
+    // save's summary with the old loaded content, matching the
+    // revert the playtest saw. Mount,
+    // slot changes, and hold clears therefore write nothing here;
+    // only an actual currentMap change does. The 60s interval
+    // above still autosaves during play.
+    const prev = prevMapRef.current;
+    if (!prev || prev.slot !== saveSlot) {
+      prevMapRef.current = { slot: saveSlot, map: currentMap };
+      return;
+    }
+    if (prev.map === currentMap) return;
+    prevMapRef.current = { slot: saveSlot, map: currentMap };
     if (autosaveHeldForSlot === saveSlot) return;
     saveGame(saveSlot, 'auto', `AUTOSAVE - Map Change`, useGameStore.getState());
   }, [saveSlot, currentMap, autosaveHeldForSlot]);
