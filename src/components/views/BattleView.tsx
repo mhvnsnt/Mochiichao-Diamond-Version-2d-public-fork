@@ -294,7 +294,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
       const dmg = ev.damage ?? 0;
       pendingRef.current = { damage: dmg, text: ev.text, attacker, moveId: ev.moveId, damageFraction: dmg / targetMax, isCrit: !!ev.isCrit };
       setBState('ANIMATING');
-      setAttack({ nonce: Date.now(), attacker, category: mv?.cat || 'Physical', color: mv ? TYPES[mv.type]?.color || '#ffffff' : '#ffffff', damageFraction: dmg / targetMax, isCrit: !!ev.isCrit });
+      setAttack({ nonce: Date.now(), attacker, category: mv?.cat || 'Physical', color: mv ? TYPES[mv.type]?.color || '#ffffff' : '#ffffff', damageFraction: dmg / targetMax, isCrit: !!ev.isCrit, moveId: ev.moveId });
       return;
     }
     queueTimerRef.current = window.setTimeout(advanceTurnQueue, 650);

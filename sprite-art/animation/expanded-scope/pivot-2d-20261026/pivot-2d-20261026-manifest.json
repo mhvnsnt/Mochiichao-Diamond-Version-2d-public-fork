@@ -1,0 +1,207 @@
+{
+ "phase": "PIVOT PHASE 2 \u2014 2D",
+ "date": "2026-10-26",
+ "tag": "pivot-2d-20261026",
+ "rule": "Staged only, show-first, NO PR, no game-repo edits, no file Mars has seen overwritten.",
+ "creatures": {
+  "dorowani": {
+   "roster_id": "147",
+   "carries": {
+    "attacks": {
+     "file": "dorowani-attacks-pivot-2d-20261026-CARRY.gif",
+     "source": "sprite-art/animation/expanded-scope/articulation-v2-rework-v3/batch-c/dorowani-attacks-artic-pipev3q-20261026.gif",
+     "sha256": "60a67d16edae94cfb2dbf882ebb688914229aa05ab46e5a1f6cc8c9fc2360222",
+     "frames": 22,
+     "size": [
+      256,
+      256
+     ],
+     "status": "CARRY byte-identical, not rebuilt"
+    },
+    "hurts": {
+     "file": "dorowani-hurts-pivot-2d-20261026-CARRY.gif",
+     "source": "sprite-art/animation/expanded-scope/articulation-batch-cd/batch-c/dorowani/dorowani-artic-batchc-20261026-hurts.gif",
+     "sha256": "e5b45ef6bb51a0be3e039d7d3dca567f60a8f1736c3271af4c5010a3f11ee776",
+     "frames": 14,
+     "size": [
+      256,
+      256
+     ],
+     "status": "CARRY byte-identical, not rebuilt"
+    }
+   },
+   "new": {
+    "idle_gif": {
+     "file": "dorowani-idle-pivot-2d-20261026.gif",
+     "frames": 4,
+     "cycle_ms": 2400,
+     "durations_ms": [
+      700,
+      500,
+      700,
+      500
+     ],
+     "source": "animation/idle/dorowani/idle_a|b|c.png"
+    },
+    "hurt_reel_gif": {
+     "file": "dorowani-hurt-pivot-2d-20261026.gif",
+     "frames": 3,
+     "durations_ms": [
+      400,
+      500,
+      800
+     ],
+     "note": "Show reel only (front -> hurt_v1 500ms -> front); engine hurt timing stays hurt json 1040ms."
+    },
+    "contact_sheet": "dorowani-contact-sheet-pivot-2d-20261026.png",
+    "comparison_strip": "dorowani-bake-vs-2d-pivot-2d-20261026.png"
+   },
+   "locked_2d_set": {
+    "cells": 13,
+    "frames_in_manifest": 12,
+    "note": "12 frames + split 1a/1b from merged-pair cell 1; battle_front cell_00, battle_back cell_01a, icon cell_11, all game_ready=true, eye_confirmed front/icon",
+    "atlas": "dorowani_atlas_64_locked.png 384x192",
+    "source_sheet": "dorowani_sheet_v1.webp 1920x1280"
+   },
+   "idle": {
+    "made": 1,
+    "owed": 1,
+    "pct": 100,
+    "detail": "transform loop from locked battle_front, 2400ms cycle (700/500/700/500), idle_a/b/c PNGs + NEW pivot GIF in this dir"
+   },
+   "hurt": {
+    "made": 1,
+    "owed": 1,
+    "pct": 100,
+    "detail": "hurt_v1 1 frame (generated v1, eye-checked enlarged + 64px) + NEW pivot show-reel GIF; engine timing 1040ms per hurt json"
+   },
+   "attacks_transform_4frame": {
+    "made": 1,
+    "owed": 1,
+    "detail": "windup/strike/impact/recover from locked battle_front (animation/attack/dorowani/)"
+   },
+   "attacks_articulated_sets": {
+    "made": 4,
+    "owed": 4,
+    "pct": 100,
+    "detail": "Batch C: physical glide_ram 5, special spray_jet 5, signature wave_barrage 6, heavy deluge_finisher 6 = 22 cells; hurts 4 sets = 14 cells (flinch 3, knockback 4, wobble 3, stagger 4)"
+   },
+   "attacks_v3_mouths": {
+    "made": 0,
+    "owed": 4,
+    "pct": 0,
+    "detail": "pipev3q 0/4, reason: no distinct mouth line on front cell (re-verified at full-res sheet this phase); eyes-only set ships instead; see DOROWANI-MOUTH-REMEASURE-2026-10-26.md"
+   },
+   "attacks_v2_eyes": {
+    "made": 4,
+    "owed": 4,
+    "pct": 100,
+    "detail": "V2-rework eyes-only, mouths held for V3; 22-frame GIF carried byte-identical"
+   }
+  },
+  "gabu": {
+   "roster_id": "148",
+   "carries": {
+    "attacks": {
+     "file": "gabu-attacks-pivot-2d-20261026-CARRY.gif",
+     "source": "sprite-art/animation/expanded-scope/articulation-v2-rework-v3/batch-c/gabu-attacks-artic-pipev3q-20261026.gif",
+     "sha256": "28e97187482d5471bf180b73212f1a23f210340c633b47f4b5ae445c383b675f",
+     "frames": 22,
+     "size": [
+      256,
+      256
+     ],
+     "status": "CARRY byte-identical, not rebuilt"
+    },
+    "hurts": {
+     "file": "gabu-hurts-pivot-2d-20261026-CARRY.gif",
+     "source": "sprite-art/animation/expanded-scope/articulation-batch-cd/batch-c/gabu/gabu-artic-batchc-20261026-hurts.gif",
+     "sha256": "f9f5e59a0117cbdb986ab21156fb7bb8f71954b740bafba04c5d5c499988bb57",
+     "frames": 14,
+     "size": [
+      256,
+      256
+     ],
+     "status": "CARRY byte-identical, not rebuilt"
+    }
+   },
+   "new": {
+    "idle_gif": {
+     "file": "gabu-idle-pivot-2d-20261026.gif",
+     "frames": 4,
+     "cycle_ms": 2400,
+     "durations_ms": [
+      700,
+      500,
+      700,
+      500
+     ],
+     "source": "animation/idle/gabu/idle_a|b|c.png"
+    },
+    "hurt_reel_gif": {
+     "file": "gabu-hurt-pivot-2d-20261026.gif",
+     "frames": 3,
+     "durations_ms": [
+      400,
+      500,
+      800
+     ],
+     "note": "Show reel only (front -> hurt_v1 500ms -> front); engine hurt timing stays hurt json 1040ms."
+    },
+    "contact_sheet": "gabu-contact-sheet-pivot-2d-20261026.png",
+    "comparison_strip": "gabu-bake-vs-2d-pivot-2d-20261026.png"
+   },
+   "locked_2d_set": {
+    "cells": 20,
+    "frames_in_manifest": 20,
+    "note": "battle_front cell_02, battle_back cell_03, icon cell_07, all game_ready=true, eye_confirmed front/back/icon",
+    "atlas": "gabu_atlas_64_locked.png 384x256",
+    "source_sheet": "gabu_sheet_v1.webp 1920x1280"
+   },
+   "idle": {
+    "made": 1,
+    "owed": 1,
+    "pct": 100,
+    "detail": "transform loop from locked battle_front, 2400ms cycle (700/500/700/500), idle_a/b/c PNGs + NEW pivot GIF in this dir"
+   },
+   "hurt": {
+    "made": 1,
+    "owed": 1,
+    "pct": 100,
+    "detail": "hurt_v1 1 frame (generated v1, eye-checked enlarged + 64px) + NEW pivot show-reel GIF; engine timing 1040ms per hurt json"
+   },
+   "attacks_transform_4frame": {
+    "made": 1,
+    "owed": 1,
+    "detail": "windup/strike/impact/recover from locked battle_front (animation/attack/gabu/)"
+   },
+   "attacks_articulated_sets": {
+    "made": 4,
+    "owed": 4,
+    "pct": 100,
+    "detail": "Batch C: physical forest_lunge 5, special leaf_shot 5, signature canopy_burst 6, heavy timber_finisher 6 = 22 cells; hurts 4 sets = 14 cells (flinch 3, knockback 4, wobble 3, stagger 4)"
+   },
+   "attacks_v3_mouths": {
+    "made": 4,
+    "owed": 4,
+    "pct": 100,
+    "detail": "pipev3q 4/4 APPROVED STANDS \u2014 NOT rebuilt: open-bite/grin/open-bite/grimace, gates pass (fill 0.772-0.838, 0 off-silhouette), source mouth (32,29), teeth none; 22-frame GIF carried byte-identical"
+   },
+   "attacks_v2_eyes": {
+    "made": 4,
+    "owed": 4,
+    "pct": 100,
+    "detail": "V2-rework eyes-only inputs to pipev3q"
+   }
+  }
+ },
+ "replacement_mapping": "REPLACEMENT-MAPPING-2026-10-26.md (game-path 8/8 art files mapped; pipeline-only 3D 6/6 listed, never wired)",
+ "dorowani_mouth_note": "DOROWANI-MOUTH-REMEASURE-2026-10-26.md (0/4 V3 mouths, flag stands, Mars decisions owed)",
+ "guardrails": [
+  "No PR (Phase 3 wires after Phase 1 merges)",
+  "No fresh-start repo edits by this phase (read-only greps/hashes only; work clone was already dirty from other lanes \u2014 package.json, App.tsx, FullWorldMaps.ts etc. pre-date this phase, this phase added nothing there)",
+  "No file Mars has seen overwritten \u2014 all outputs under new pivot-2d-20261026/ dir; GIF carries byte-identical (sha256 in manifest)",
+  "No new likeness invented; eye/colour variants are canon, not errors; no Dorowani mouth guessed (V3 rule 7)",
+  "No rig file deleted; Tripo GLBs stay local-only"
+ ]
+}
