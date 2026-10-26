@@ -39,15 +39,25 @@
 // and the mapping is shown to him first for correction. A
 // proposed mapping is data in this file only; changing it is a
 // one-line edit, not a code change.
-// Card count, plain: there are 8 biome cards and 10 title-pool
-// creatures, so the mapping cannot be 1-to-1 — night holds 3 and
-// every other card holds 1, which is 10 total and no card empty.
+// 'mars-confirmed' = Mars stated this placement himself in chat
+// (quoted in the sourceNote), not an assistant inference.
+// Card count, plain: there are 10 cards and 10 title-pool
+// creatures, one creature per card — the two cards Mars said
+// were missing are now built (batch 6), so the old "8 cards,
+// night holds 3" model is superseded and must not be quoted.
 // Corrections (Mars, 2026-10-25 ~23:44 CDT): Wispkin goes on the
 // purple/night card (was forest in batch 3); Dorowani goes on
-// water; Gabu does NOT go on water; Mochii goes on rain. Gabu's
-// new card is the one open question: forest is the card Wispkin
-// vacated, so Gabu fills forest here until Mars names a different
-// card — that fill is labelled 'proposed', not canon.
+// water; Gabu does NOT go on water; Mochii goes on rain.
+// Corrections (Mars, 2026-10-26 ~00:14 CDT): Mythar gets his OWN
+// card — pearlescent iridescent diamond-pearl background with
+// sparkles and sine waves, real sparkly and diamond-like (his
+// description from 2026-10-25, recovered from memory: "pearl /
+// diamond iridescent — sine-wave rings, diamond sparkles").
+// Kittember gets his OWN card too — a night card with lanterns
+// surrounding it, illuminating the area, while Kittember's ember
+// also illuminates the area. Night keeps Wispkin only.
+// Confirmation (Mars, 2026-10-26 ~00:15 CDT): "Gabu is good for
+// forest." Forest is canon for Gabu, no longer a proposed fill.
 import type { TitleBiomeId } from './titleBiomes';
 
 export interface TitleBiomeMotion {
@@ -66,6 +76,8 @@ export const TITLE_BIOME_MOTION: Record<TitleBiomeId, TitleBiomeMotion> = {
   forest: { ampX: -5, ampY: 2, speed: 0.22, note: 'Slow reverse drift: canopy sway against the leaf weather.' },
   rain:   { ampX: 2,  ampY: 6, speed: 0.40, note: 'Downward-first drift with the rain; lightning flash is the card effect, not the drift.' },
   night:  { ampX: -3, ampY: 1, speed: 0.12, note: 'Slowest drift of all: night sky barely moves, stars twinkle instead.' },
+  mythar: { ampX: -2, ampY: 2, speed: 0.15, note: 'Slow prism drift: the pearl shifts, the diamond sparkles are the card effect, not the drift.' },
+  lantern:{ ampX: -3, ampY: 1, speed: 0.12, note: 'Night-slow drift; lantern glow pulse is the card effect, not the drift.' },
 };
 
 export type TitleCardEffectKind =
@@ -92,9 +104,11 @@ export const TITLE_CARD_EFFECTS: Record<TitleBiomeId, TitleCardEffect> = {
   forest: { kind: 'fireflies', color: 0xa3e635, count: 10, note: 'Fireflies pulsing and drifting up under the canopy.' },
   rain:   { kind: 'lightning', color: 0xffffff, count: 1,  note: 'Frame-counted white flash every 420 frames + ground splashes; no random flicker.' },
   night:  { kind: 'twinkle',   color: 0xfde68a, count: 16, note: 'Stars twinkling, warm gold, alpha sine; the moon glow is the painting itself.' },
+  mythar: { kind: 'twinkle',   color: 0xffffff, count: 18, note: 'Diamond sparkles pulsing, white + gold, alpha sine; sine waves + pearl haze are the painting itself.' },
+  lantern:{ kind: 'twinkle',   color: 0xfbbf24, count: 14, note: 'Lantern glow pulsing, warm amber, alpha sine; the lantern shapes + Kittember ember are the painting + figure.' },
 };
 
-export type CardSource = 'canon-vfx' | 'canon-habitat' | 'title-vibe' | 'proposed';
+export type CardSource = 'canon-vfx' | 'canon-habitat' | 'title-vibe' | 'proposed' | 'mars-confirmed';
 
 export interface TitleCardCreature {
   name: string;
@@ -119,15 +133,19 @@ export const TITLE_CARD_CREATURES: Record<TitleBiomeId, TitleCardCreature[]> = {
     { name: 'Razorgater', source: 'canon-vfx', sourceNote: 'Chrome; manifest VFX: scanning lasers, attack sparks blue electricity.' },
   ],
   forest: [
-    { name: 'Gabu', source: 'proposed', sourceNote: 'PROPOSED FILL — Mars 2026-10-25: Gabu does NOT go on water. Forest is the card Wispkin vacated, so Gabu fills it here until Mars names a different card — confirm or move, do not treat as canon.' },
+    { name: 'Gabu', source: 'mars-confirmed', sourceNote: 'Mars 2026-10-26 ~00:15 CDT: "Gabu is good for forest." Forest is canon for Gabu, no longer a proposed fill.' },
   ],
   rain: [
     { name: 'Mochii', source: 'canon-vfx', sourceNote: 'Mars 2026-10-25: rain card can be Mochii. Aqua; manifest VFX: glides, ripple trail, bubbles pop; title-vibe "Boot Harbor dawn".' },
   ],
   night: [
     { name: 'Wispkin', source: 'canon-vfx', sourceNote: 'Mars 2026-10-25: Wispkin goes on the purple/night card (was forest in batch 3). Umbral; manifest VFX: bobs rhythmically, dark smoke sheds; evolves into Duskfiend, guardian of the dark forest.' },
-    { name: 'Mythar', source: 'canon-vfx', sourceNote: 'Mythic celestial guardian; manifest VFX: never touches ground, three golden rings orbit, roar is a harmonic chime (visual rings only here, no audio).' },
-    { name: 'Kittember', source: 'proposed', sourceNote: 'PROPOSED — fire feline, ember tail orb; warm glow reads at night, but no fire biome exists and no night canon is stated. Mars to confirm or move.' },
+  ],
+  mythar: [
+    { name: 'Mythar', source: 'mars-confirmed', sourceNote: 'Mars 2026-10-26 ~00:14 CDT: Mythar gets his OWN card — pearlescent iridescent diamond-pearl background with sparkles and sine waves, real sparkly and diamond-like (his 2026-10-25 description, recovered from memory). Manifest VFX: never touches ground, three golden rings orbit, roar is a harmonic chime (visual rings only here, no audio).' },
+  ],
+  lantern: [
+    { name: 'Kittember', source: 'mars-confirmed', sourceNote: 'Mars 2026-10-26 ~00:14 CDT: Kittember gets his OWN card — a night card with lanterns surrounding it, illuminating the area, while Kittember (ember) also illuminates the area. Fire feline, ember tail orb.' },
   ],
 };
 
@@ -163,7 +181,7 @@ export const CREATURE_ACTIONS: Record<string, CreatureAction> = {
   Kittember:   { action: 'bounce', burst: 'fire',    color: 0xf97316, note: 'Title-vibe ember tail orb; fire burst is the card reading, no canon VFX in manifests.' },
   Sproutle:    { action: 'shield', burst: 'shield',  color: 0x4ade80, note: 'Manifest: ducks in helmet-shell, hexagonal energy shield.' },
   Dorowani:    { action: 'glide',  burst: 'bubbles', color: 0x60a5fa, note: 'Title-vibe blue water starter; bubbles follow the Mochii water line, no canon VFX yet.' },
-  Gabu:        { action: 'hop',    burst: 'bubbles', color: 0x2dd4bf, note: 'Forest fill card (to confirm); teal hop + bubbles, Mars to confirm the card.' },
+  Gabu:        { action: 'hop',    burst: 'bubbles', color: 0x2dd4bf, note: 'Mars-confirmed forest card; teal hop + bubbles.' },
   Wispkin:     { action: 'bob',    burst: 'smoke',   color: 0xa855f7, note: 'Manifest: bobs rhythmically, dark smoke sheds from tail.' },
   Yogiferno:   { action: 'roar',   burst: 'fire',    color: 0xf97316, note: 'Manifest: fire halo, attack dims the environment; the burst + fire trail carry it visually, no audio.' },
   Mythar:      { action: 'orbit',  burst: 'sparkle', color: 0xf0eee4, note: 'Manifest: never touches ground, three golden rings orbit; sparkle burst stands in for the ring flash.' },
