@@ -1,0 +1,287 @@
+{
+  "atlas": "title-poses-v2-atlas.png",
+  "width": 2048,
+  "height": 3059,
+  "cells": [
+    {
+      "file": "dorowani-pose-stand.png",
+      "x": 0,
+      "y": 0,
+      "w": 263,
+      "h": 398
+    },
+    {
+      "file": "dorowani-pose-swim-apart.png",
+      "x": 263,
+      "y": 0,
+      "w": 263,
+      "h": 398
+    },
+    {
+      "file": "dorowani-pose-swim-together.png",
+      "x": 526,
+      "y": 0,
+      "w": 263,
+      "h": 398
+    },
+    {
+      "file": "gabu-pose-arms-up.png",
+      "x": 789,
+      "y": 0,
+      "w": 292,
+      "h": 295
+    },
+    {
+      "file": "gabu-pose-crouch.png",
+      "x": 1081,
+      "y": 0,
+      "w": 292,
+      "h": 295
+    },
+    {
+      "file": "gabu-pose-leaf-throw.png",
+      "x": 1373,
+      "y": 0,
+      "w": 292,
+      "h": 295
+    },
+    {
+      "file": "gabu-pose-stand.png",
+      "x": 1665,
+      "y": 0,
+      "w": 292,
+      "h": 295
+    },
+    {
+      "file": "kittember-pose-sit-look.png",
+      "x": 0,
+      "y": 398,
+      "w": 287,
+      "h": 304
+    },
+    {
+      "file": "kittember-pose-tail-down.png",
+      "x": 287,
+      "y": 398,
+      "w": 287,
+      "h": 304
+    },
+    {
+      "file": "kittember-pose-tail-up.png",
+      "x": 574,
+      "y": 398,
+      "w": 287,
+      "h": 304
+    },
+    {
+      "file": "kittember-pose-walk-a.png",
+      "x": 861,
+      "y": 398,
+      "w": 287,
+      "h": 304
+    },
+    {
+      "file": "kittember-pose-walk-b.png",
+      "x": 1148,
+      "y": 398,
+      "w": 287,
+      "h": 304
+    },
+    {
+      "file": "mochii-pose-round.png",
+      "x": 1435,
+      "y": 398,
+      "w": 380,
+      "h": 380
+    },
+    {
+      "file": "mochii-pose-splash-flat.png",
+      "x": 0,
+      "y": 778,
+      "w": 380,
+      "h": 380
+    },
+    {
+      "file": "mochii-pose-squash-wide.png",
+      "x": 380,
+      "y": 778,
+      "w": 380,
+      "h": 380
+    },
+    {
+      "file": "mochii-pose-stretch-tall.png",
+      "x": 760,
+      "y": 778,
+      "w": 380,
+      "h": 380
+    },
+    {
+      "file": "mochii-pose-tilt.png",
+      "x": 1140,
+      "y": 778,
+      "w": 380,
+      "h": 380
+    },
+    {
+      "file": "mythar-pose-wings-down.png",
+      "x": 1520,
+      "y": 778,
+      "w": 434,
+      "h": 350
+    },
+    {
+      "file": "mythar-pose-wings-fold.png",
+      "x": 0,
+      "y": 1158,
+      "w": 434,
+      "h": 350
+    },
+    {
+      "file": "mythar-pose-wings-neutral.png",
+      "x": 434,
+      "y": 1158,
+      "w": 434,
+      "h": 350
+    },
+    {
+      "file": "mythar-pose-wings-up.png",
+      "x": 868,
+      "y": 1158,
+      "w": 434,
+      "h": 350
+    },
+    {
+      "file": "razorgater-pose-mouth-closed.png",
+      "x": 1302,
+      "y": 1158,
+      "w": 265,
+      "h": 266
+    },
+    {
+      "file": "razorgater-pose-mouth-half.png",
+      "x": 1567,
+      "y": 1158,
+      "w": 265,
+      "h": 266
+    },
+    {
+      "file": "razorgater-pose-mouth-open.png",
+      "x": 0,
+      "y": 1508,
+      "w": 265,
+      "h": 266
+    },
+    {
+      "file": "sproutle-pose-stand.png",
+      "x": 265,
+      "y": 1508,
+      "w": 259,
+      "h": 333
+    },
+    {
+      "file": "sproutle-pose-step.png",
+      "x": 524,
+      "y": 1508,
+      "w": 259,
+      "h": 333
+    },
+    {
+      "file": "sproutle-pose-wave.png",
+      "x": 783,
+      "y": 1508,
+      "w": 259,
+      "h": 333
+    },
+    {
+      "file": "tyrage-pose-impact.png",
+      "x": 1042,
+      "y": 1508,
+      "w": 327,
+      "h": 305
+    },
+    {
+      "file": "tyrage-pose-roar-up.png",
+      "x": 1369,
+      "y": 1508,
+      "w": 327,
+      "h": 305
+    },
+    {
+      "file": "tyrage-pose-stand.png",
+      "x": 1696,
+      "y": 1508,
+      "w": 327,
+      "h": 305
+    },
+    {
+      "file": "tyrage-pose-stomp-up.png",
+      "x": 0,
+      "y": 1841,
+      "w": 327,
+      "h": 305
+    },
+    {
+      "file": "wispkin-pose-hands-face.png",
+      "x": 327,
+      "y": 1841,
+      "w": 288,
+      "h": 609
+    },
+    {
+      "file": "wispkin-pose-hands-peel.png",
+      "x": 615,
+      "y": 1841,
+      "w": 288,
+      "h": 609
+    },
+    {
+      "file": "wispkin-pose-hands-press.png",
+      "x": 903,
+      "y": 1841,
+      "w": 288,
+      "h": 609
+    },
+    {
+      "file": "wispkin-pose-smoke-puff.png",
+      "x": 1191,
+      "y": 1841,
+      "w": 288,
+      "h": 609
+    },
+    {
+      "file": "wispkin-pose-tilt-left.png",
+      "x": 1479,
+      "y": 1841,
+      "w": 288,
+      "h": 609
+    },
+    {
+      "file": "wispkin-pose-tilt-right.png",
+      "x": 0,
+      "y": 2450,
+      "w": 288,
+      "h": 609
+    },
+    {
+      "file": "yogiferno-pose-lean.png",
+      "x": 288,
+      "y": 2450,
+      "w": 145,
+      "h": 190
+    },
+    {
+      "file": "yogiferno-pose-pass.png",
+      "x": 433,
+      "y": 2450,
+      "w": 145,
+      "h": 190
+    },
+    {
+      "file": "yogiferno-pose-step-a.png",
+      "x": 578,
+      "y": 2450,
+      "w": 145,
+      "h": 190
+    }
+  ]
+}
