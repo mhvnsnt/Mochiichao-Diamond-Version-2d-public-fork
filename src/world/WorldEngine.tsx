@@ -92,8 +92,9 @@ export function hexTeamMember(playerSpeciesId: string): any | null {
  * with createMochii at the map level, so trainer, wild and player
  * creatures all use the same stat system and the same existing
  * species base stats — no new stats invented. Members whose id/name
- * do NOT match SPECIES_DB (e.g. Bug Catcher Rick's team lists id
- * "004" named "Squirmite", while SPECIES_DB "004" is Razorgater)
+ * do NOT match SPECIES_DB (e.g. Bug Catcher Rick's team now lists id
+ * "016" named "Squirmite", which has no SPECIES_DB entry yet, so it
+ * stays on map stats until a 016 code entry exists)
  * are left on their map stats unchanged and flagged in the PR body
  * as pre-existing map-data mismatches, not silently renamed.
  */

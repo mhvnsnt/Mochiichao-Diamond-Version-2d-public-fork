@@ -30,7 +30,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   },
   "003": {
     id: "003",
-    name: "Aquari-OS",
+    name: "AquariiOS",
     types: ["WATER", "PSYCHIC"],
     baseStats: { hp: 79, atk: 83, def: 100, spa: 85, spd: 105, spe: 78 },
     catchRate: 45, baseExpYield: 239, growthRate: "Medium Slow",
@@ -51,7 +51,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   },
   "005": {
     id: "005",
-    name: "Chromedile",
+    name: "Chromejaww",
     types: ["STEEL", "DARK"],
     baseStats: { hp: 65, atk: 80, def: 80, spa: 59, spd: 63, spe: 58 },
     catchRate: 45, baseExpYield: 142, growthRate: "Medium Slow",
@@ -116,7 +116,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
     id: "038",
     name: "Sproutle",
     types: ["GRASS"],
-    baseStats: { hp: 50, atk: 60, def: 50, spa: 40, spd: 40, spe: 30 },
+    baseStats: { hp: 55, atk: 68, def: 64, spa: 45, spd: 55, spe: 31 },
     catchRate: 200, baseExpYield: 50, growthRate: "Medium Fast",
     description: "A little plant turtle.",
     learnset: [...BASIC_MOVES, { level: 6, moveId: "VINE_LASH" }, { level: 14, moveId: "RAZOR_LEAF" }],
@@ -125,12 +125,21 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   },
   "039": {
     id: "039",
-    name: "Dreadtoise",
+    name: "Shellguard",
     types: ["GRASS", "STEEL"],
-    baseStats: { hp: 90, atk: 90, def: 110, spa: 60, spd: 80, spe: 40 },
+    baseStats: { hp: 75, atk: 89, def: 85, spa: 55, spd: 65, spe: 36 },
     catchRate: 45, baseExpYield: 180, growthRate: "Medium Fast",
     description: "A fortress with a steel shell covered in moss.",
     learnset: [...BASIC_MOVES, { level: 18, moveId: "METAL_STRIKE" }, { level: 32, moveId: "SOLAR_BLAST" }],
-    pokeApiId: 389 // torterra
+    evolution: { targetId: "040", level: 32 }
+  },
+  "040": {
+    id: "040",
+    name: "Dreadtoise",
+    types: ["GRASS", "STEEL"],
+    baseStats: { hp: 95, atk: 109, def: 105, spa: 75, spd: 85, spe: 56 },
+    catchRate: 45, baseExpYield: 239, growthRate: "Medium Fast",
+    description: "A walking dreadnought whose steel shell has grown into a forest fortress.",
+    learnset: [...BASIC_MOVES, { level: 6, moveId: "VINE_LASH" }, { level: 18, moveId: "RAZOR_LEAF" }, { level: 24, moveId: "METAL_STRIKE" }]
   }
 };

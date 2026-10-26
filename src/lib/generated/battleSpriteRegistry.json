@@ -99,7 +99,7 @@
   {
    "slug": "aquariios",
    "rosterId": "003",
-   "displayName": "Aquari-OS",
+   "displayName": "AquariiOS",
    "atlas": {
     "repoPath": "src/assets/sprite-atlases/aquariios/aquariios_atlas_64_locked.png",
     "file": "aquariios_atlas_64_locked.png",
@@ -378,7 +378,7 @@
   {
    "slug": "chromejaww",
    "rosterId": "005",
-   "displayName": "Chromedile",
+   "displayName": "Chromejaww",
    "atlas": {
     "repoPath": "src/assets/sprite-atlases/chromejaww/chromejaww_atlas_64_locked.png",
     "file": "chromejaww_atlas_64_locked.png",
@@ -3360,7 +3360,7 @@
   {
    "slug": "shellguard",
    "rosterId": "039",
-   "displayName": "Dreadtoise",
+   "displayName": "Shellguard",
    "atlas": {
     "repoPath": "src/assets/sprite-atlases/shellguard/shellguard_atlas_64_locked.png",
     "file": "shellguard_atlas_64_locked.png",
