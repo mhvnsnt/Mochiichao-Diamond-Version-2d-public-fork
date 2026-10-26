@@ -1,0 +1,31 @@
+{
+ "creature": "pyromonk",
+ "hurt_version": "hurt-v1-2026-10-25",
+ "mapped_from_locked_atlas": false,
+ "mapped_note": "No locked-atlas cell carries a hurt/recoil/lean-back role in any of the 50 locked manifests (verified by role scan 2026-10-25); mapped count for this set is 0. A standing/walk cell was NOT re-labelled as hurt.",
+ "status": "done",
+ "source": "generated_v1",
+ "source_raw_file": "media-generation-pyromonk-hurt-raw-v1-0-637eea7f-8b20-4a3a-9fbc-0212dce89a91.webp",
+ "frames": [
+  {
+   "frame": 0,
+   "file": "pyromonk_hurt_cell_00.png",
+   "role": "hurt",
+   "duration_ms": 500,
+   "display": "shown during recoil + first half of recover, then crossfade to standing"
+  }
+ ],
+ "timing": {
+  "windup_ms": 250,
+  "impact_hold_ms": 90,
+  "recoil_ms": 300,
+  "recover_ms": 400,
+  "total_ms": 1040,
+  "hurt_frame_hold_ms": 500,
+  "hurt_frame_note": "Hurt frame shown across recoil (300 ms) + first half of recover (200 ms), then crossfade to standing. Matches battleTreatments.js HURT_FRAME.HOLD_MS and TIMING."
+ },
+ "treatments_fallback": "Until hurt art exists, the hit is carried by battleTreatments.js: impact flash (white/red on crit) + recoil translation + screen shake + particle burst + camera push-in + 90 ms held impact frame. Fallback is NOT a substitute for art; it is what plays alongside art once art exists.",
+ "pose_spec": "Red monkey body leaning back, head tilted back, eyes squeezed shut, mouth grimacing, flame fists raised guarding, flames blown back, legs braced; gold flame markings, gold wrist/ankle bands and flame tail kept.",
+ "eye_check": "PASS at presentation size and at 64px (58x64 cell). All signature features present, no missing limbs.",
+ "note": "Original art only, battle_front cell as reference. Cut to 64px (border-connected white-bg removal, interior whites kept)."
+}
