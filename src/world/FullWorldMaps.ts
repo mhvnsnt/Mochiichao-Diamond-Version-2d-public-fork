@@ -69,7 +69,18 @@ export const SECTOR_0: any = {
     // npc.isHeal path, already used by the MochiiPlex nurse).
     // The first-time Mom intro dialogue is a separate event
     // (v4_mom_intro, no isHeal flag) and is unaffected.
-    { id:"mom", x:5, y:7, sprite:"👩", name:"Your Mom", facing:"down", isHeal: true, dialog:["Sweetie! You're finally heading out on your journey?","Go to the Lab just up ahead and see Prof. Aeon.","Those Hacker Grunts are messing with Mochiichao in the wild — be careful.","Come back and talk to me any time — I'll patch your partner right up."] },
+    // v5.3 Mom findability: Mom used to sit at (5,7), which is a
+    // BUILDING tile inside the west house block (rows 7-8, cols
+    // 4-7), with wall/building/door-with-no-doors-entry neighbours
+    // — no walkable tile is ever adjacent, so the facing-tile
+    // interact prompt could never fire and the v5.2 playtest found
+    // a "yellow figure at the west house" with no prompt. Mom now
+    // stands at (5,9), on the path row directly in front of that
+    // house, facing down; the player approaches from the row-10
+    // grass and faces her. Dialogue, name and isHeal are unchanged;
+    // the first-time v4_mom_intro event is separate and untouched.
+    // This placement is an implementation addition, NOT Mars canon.
+    { id:"mom", x:5, y:9, sprite:"👩", name:"Your Mom", facing:"down", isHeal: true, dialog:["Sweetie! You're finally heading out on your journey?","Go to the Lab just up ahead and see Prof. Aeon.","Those Hacker Grunts are messing with Mochiichao in the wild — be careful.","Come back and talk to me any time — I'll patch your partner right up."] },
     { id:"rival_hex", x:15, y:10, sprite:"😤", name:"Hex", facing:"down", dialog:["You again? I already picked my starter. Razorgater, obviously.","Don't think I'll go easy on you just because we grew up here.","Next time we meet, we BATTLE. Count on it."], battle: { team:[{ id:"004", name:"Razorgater", hp:50, maxHp:50, atk:65, def:64, spd:48, moves:["Metal Claw","Tackle"], type:"Water", level:5 }], reward:100, badge:null } },
     { id:"fat_guy", x:9, y:13, sprite:"🧑‍🦲", name:"Technology Enthusiast", facing:"down", dialog:["Technology is incredible!", "You can now store up to 6 Mochiichao in your party!", "Any more you catch are instantly sent to your PC!"] },
   ],
