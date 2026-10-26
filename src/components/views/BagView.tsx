@@ -74,8 +74,17 @@ export default function BagView({ onBack }: { onBack: () => void }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [confirmToss, current]);
 
+  // Bag Y2K skin ONLY (per-menu skins 2/8): .bag-y2k (index.css) gives
+  // this screen the Y2K skin — glossy green gradient, white border,
+  // glow, star/heart accents. Pocket order, inputs, and behaviour are
+  // unchanged; the sparkles below are decorative (aria-hidden,
+  // non-interactive) and sit in the screen's padding corners.
   return (
-    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="bag-y2k game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+      <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 left-3 text-lime-200 text-lg">✦</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 right-3 text-yellow-300 text-lg">♥</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 left-3 text-emerald-200 text-base">★</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 right-3 text-lime-300 text-base">✦</span>
       <div className="flex justify-between items-center mb-4 shrink-0">
         <h2 className="game-title text-2xl">Bag</h2>
         <button onClick={onBack} className="game-button px-4 py-2 min-h-[48px]">Close</button>
