@@ -512,6 +512,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             <img src={menuV32Background} alt="" className="absolute inset-0 w-full h-full object-cover" />
           )}
         >
+          {/* Locked menu movement (restoration spec, menu-background-
+              animation-spec.md, FireRed sine method): cloud + Mochii
+              bob on SINE OFFSETS on top of their spec positions —
+              base left/top never change, only the translate offset
+              moves. Panels and logo stay static (tappable/readable).
+              Baked symbols in the v32 background PNG cannot move
+              individually (single image) — that part is NOT faked
+              here. prefers-reduced-motion freezes to static v32. */}
+          <style>{`@keyframes menu-bob-cloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } } @keyframes menu-bob-mochii { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } } .menu-bob-cloud { animation: menu-bob-cloud 5s ease-in-out infinite; } .menu-bob-mochii { animation: menu-bob-mochii 4.5s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .menu-bob-cloud, .menu-bob-mochii { animation: none; } }`}</style>
           {/* Logo slot: y180, width 900 (150-1050). Crop aspect
               764x450 -> 530 tall, centre ~445 (spec ~454, spec
               height is approximate "~548"). */}
@@ -525,15 +534,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           <img
             src={puffyCloud}
             alt=""
-            className="absolute object-contain"
-            style={{ left: 250, top: 648, width: 700, height: 180 }}
+            className="absolute object-contain menu-bob-cloud"
+            style={{ left: 250, top: 648, width: 700, height: 180, pointerEvents: 'none' }}
           />
           {/* Mochii mascot cue: x170, y~790, width 110. */}
           <img
             src={mochiiCutout}
             alt="Mochii"
-            className="absolute object-contain"
-            style={{ left: 170, top: 790, width: 110, height: 110 }}
+            className="absolute object-contain menu-bob-mochii"
+            style={{ left: 170, top: 790, width: 110, height: 110, pointerEvents: 'none' }}
           />
           {mainItems.map((item, i) => {
             const isSelected = i === safeMain;
