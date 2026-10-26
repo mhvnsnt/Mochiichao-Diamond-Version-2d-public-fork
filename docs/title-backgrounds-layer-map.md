@@ -102,16 +102,22 @@ vertical / ~21px horizontal):
   from the HG speed ratios, in one data file for Mars to tune.
 
 Creature-to-card assignment (sources labelled; PROPOSED = no canon
-source yet, shown to Mars first for correction):
+source yet, shown to Mars first for correction). Count, plain:
+8 biome cards, 10 title-pool creatures — night holds 3, every
+other card holds 1, total 10, no card empty.
+
+Corrections (Mars, 2026-10-25 ~23:44 CDT): Wispkin goes on the
+purple/night card (was forest); Dorowani goes on water; Gabu does
+NOT go on water; Mochii goes on rain.
 
 - snow: Yogiferno (canon-habitat: snow/ice in titleRotation; snow walk variant already shipped)
 - grass: Sproutle (canon-vfx: Flora/Chrome, fresh sprout)
-- water: Mochii (canon-vfx: glides, ripple, bubbles), Dorowani (title-vibe: blue water starter), Gabu (PROPOSED: teal turtle, title-vibe only)
+- water: Dorowani (Mars-confirmed; title-vibe: blue water starter)
 - sand: Tyrage (canon-vfx: sheds sand, roar dust storm)
 - stone: Razorgater (canon-vfx: scanning lasers, blue-electricity sparks)
-- forest: Wispkin (canon-vfx: bobs, dark smoke; evolves into Duskfiend, guardian of the dark forest)
-- rain: none yet (no title-pool creature has a rain canon source)
-- night: Mythar (canon-vfx: never touches ground, three golden rings orbit), Kittember (PROPOSED: ember tail orb, warm glow reads at night)
+- forest: Gabu (PROPOSED FILL — the card Wispkin vacated, filled so no card is empty; Mars to confirm this is the different card he meant, or name another)
+- rain: Mochii (Mars-confirmed; canon-vfx: glides, ripple, bubbles)
+- night: Wispkin (Mars-confirmed purple/night; canon-vfx: bobs, dark smoke), Mythar (canon-vfx: never touches ground, three golden rings orbit), Kittember (PROPOSED: ember tail orb, warm glow reads at night)
 
 Per-creature action + burst (from each creature's own manifest VFX
 where one exists; no audio — cries/chimes are visual only here):
@@ -133,12 +139,11 @@ constructor sets that, so the map itself never draws). Ripple rings
 + shimmer stay as the fallback. Skipped under
 prefers-reduced-motion.
 
-Rain card candidate, researched NOT wired: Stormtalon #021 — canon
-manifest says "summons dark clouds and lightning when it flaps",
-wrapped in a dark cloud with jagged lightning flashes inside it.
-That is the rain card's creature on paper, but Stormtalon is NOT in
-the 10-creature title pool and has no clean title cutout, so adding
-him is a pool + art decision for Mars, not a silent assignment.
+Rain card candidate, SUPERSEDED by Mars 2026-10-25 ~23:45 CDT:
+Stormtalon #021 was researched (canon: "summons dark clouds and
+lightning when it flaps") but Mars said the rain card can be
+Mochii, so Stormtalon is NOT assigned and rain is Mochii. Kept
+here only so the research is not lost.
 
 NOT wired, stated plainly: the full-screen TITLE phase in
 IntroSequence still uses its old gradient + stardust (that swap is
@@ -153,7 +158,7 @@ Pages rebuild — merged code alone is not a playable show.
   (stone, forest, rain, night) — see PRs, each additions only, 0 deletions
 - Dedicated per-biome background motion: 8/8 = 100% (drift values in titleCardEffects.ts)
 - Per-card signature effects: 8/8 = 100% (one per biome)
-- Per-creature card assignment: 10/10 creatures assigned, 8/10 from canon/vibe sources, 2/10 PROPOSED (Gabu, Kittember); rain card 0 primary creatures
+- Per-creature card assignment: 10/10 creatures assigned across 8/8 cards = 100% filled (night holds 3, all others hold 1); 8/10 Mars-confirmed or canon/vibe, 2/10 PROPOSED (Gabu forest fill, Kittember night); rain card now Mochii (Mars-confirmed), forest now Gabu (fill, to confirm)
 - Per-creature action bursts: 10/10 = 100% (one action + burst per title-pool creature)
 - Water DisplacementFilter ripple: 1/1 = 100% (water card only, generated map, no asset shipped)
 - Pokemon art in any shipped file: 0 files

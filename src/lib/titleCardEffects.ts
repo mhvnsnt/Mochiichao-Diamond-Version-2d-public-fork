@@ -39,10 +39,15 @@
 // and the mapping is shown to him first for correction. A
 // proposed mapping is data in this file only; changing it is a
 // one-line edit, not a code change.
-// Rain card has no primary creature yet: no title-pool creature
-// has a rain canon source. Any creature can still be shown on the
-// rain card by passing biome='rain' directly; the card's own
-// rain/lightning/splash effects run regardless of the figure.
+// Card count, plain: there are 8 biome cards and 10 title-pool
+// creatures, so the mapping cannot be 1-to-1 — night holds 3 and
+// every other card holds 1, which is 10 total and no card empty.
+// Corrections (Mars, 2026-10-25 ~23:44 CDT): Wispkin goes on the
+// purple/night card (was forest in batch 3); Dorowani goes on
+// water; Gabu does NOT go on water; Mochii goes on rain. Gabu's
+// new card is the one open question: forest is the card Wispkin
+// vacated, so Gabu fills forest here until Mars names a different
+// card — that fill is labelled 'proposed', not canon.
 import type { TitleBiomeId } from './titleBiomes';
 
 export interface TitleBiomeMotion {
@@ -105,9 +110,7 @@ export const TITLE_CARD_CREATURES: Record<TitleBiomeId, TitleCardCreature[]> = {
     { name: 'Sproutle', source: 'canon-vfx', sourceNote: 'Flora/Chrome grass starter; title-vibe "fresh sprout".' },
   ],
   water: [
-    { name: 'Mochii', source: 'canon-vfx', sourceNote: 'Aqua; manifest VFX: glides, ripple trail, bubbles pop; title-vibe "Boot Harbor dawn".' },
-    { name: 'Dorowani', source: 'title-vibe', sourceNote: 'Title-vibe "blue water starter"; no canon VFX in the manifests yet (Gen 2, #147).' },
-    { name: 'Gabu', source: 'proposed', sourceNote: 'PROPOSED — teal spiky turtle, title-vibe only; no habitat canon yet (Gen 2, #148). Mars to confirm or move.' },
+    { name: 'Dorowani', source: 'title-vibe', sourceNote: 'Mars 2026-10-25: Dorowani goes on water. Title-vibe "blue water starter"; no canon VFX in the manifests yet (Gen 2, #147).' },
   ],
   sand: [
     { name: 'Tyrage', source: 'canon-vfx', sourceNote: 'Core desert kaiju; manifest VFX: sheds sand, roar kicks up a dust storm.' },
@@ -116,10 +119,13 @@ export const TITLE_CARD_CREATURES: Record<TitleBiomeId, TitleCardCreature[]> = {
     { name: 'Razorgater', source: 'canon-vfx', sourceNote: 'Chrome; manifest VFX: scanning lasers, attack sparks blue electricity.' },
   ],
   forest: [
-    { name: 'Wispkin', source: 'canon-vfx', sourceNote: 'Umbral; manifest VFX: bobs rhythmically, dark smoke sheds; evolves into Duskfiend, guardian of the dark forest.' },
+    { name: 'Gabu', source: 'proposed', sourceNote: 'PROPOSED FILL — Mars 2026-10-25: Gabu does NOT go on water. Forest is the card Wispkin vacated, so Gabu fills it here until Mars names a different card — confirm or move, do not treat as canon.' },
   ],
-  rain: [],
+  rain: [
+    { name: 'Mochii', source: 'canon-vfx', sourceNote: 'Mars 2026-10-25: rain card can be Mochii. Aqua; manifest VFX: glides, ripple trail, bubbles pop; title-vibe "Boot Harbor dawn".' },
+  ],
   night: [
+    { name: 'Wispkin', source: 'canon-vfx', sourceNote: 'Mars 2026-10-25: Wispkin goes on the purple/night card (was forest in batch 3). Umbral; manifest VFX: bobs rhythmically, dark smoke sheds; evolves into Duskfiend, guardian of the dark forest.' },
     { name: 'Mythar', source: 'canon-vfx', sourceNote: 'Mythic celestial guardian; manifest VFX: never touches ground, three golden rings orbit, roar is a harmonic chime (visual rings only here, no audio).' },
     { name: 'Kittember', source: 'proposed', sourceNote: 'PROPOSED — fire feline, ember tail orb; warm glow reads at night, but no fire biome exists and no night canon is stated. Mars to confirm or move.' },
   ],
@@ -157,7 +163,7 @@ export const CREATURE_ACTIONS: Record<string, CreatureAction> = {
   Kittember:   { action: 'bounce', burst: 'fire',    color: 0xf97316, note: 'Title-vibe ember tail orb; fire burst is the card reading, no canon VFX in manifests.' },
   Sproutle:    { action: 'shield', burst: 'shield',  color: 0x4ade80, note: 'Manifest: ducks in helmet-shell, hexagonal energy shield.' },
   Dorowani:    { action: 'glide',  burst: 'bubbles', color: 0x60a5fa, note: 'Title-vibe blue water starter; bubbles follow the Mochii water line, no canon VFX yet.' },
-  Gabu:        { action: 'hop',    burst: 'bubbles', color: 0x2dd4bf, note: 'Proposed water card; teal hop + bubbles, Mars to confirm.' },
+  Gabu:        { action: 'hop',    burst: 'bubbles', color: 0x2dd4bf, note: 'Forest fill card (to confirm); teal hop + bubbles, Mars to confirm the card.' },
   Wispkin:     { action: 'bob',    burst: 'smoke',   color: 0xa855f7, note: 'Manifest: bobs rhythmically, dark smoke sheds from tail.' },
   Yogiferno:   { action: 'roar',   burst: 'fire',    color: 0xf97316, note: 'Manifest: fire halo, attack dims the environment; the burst + fire trail carry it visually, no audio.' },
   Mythar:      { action: 'orbit',  burst: 'sparkle', color: 0xf0eee4, note: 'Manifest: never touches ground, three golden rings orbit; sparkle burst stands in for the ring flash.' },
