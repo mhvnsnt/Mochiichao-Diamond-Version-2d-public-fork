@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { motion, useAnimationFrame, useMotionValue, useReducedMotion } from 'motion/react';
 import { useGameStore } from '../../store/gameStore';
 import StdWindow from './StdWindow';
 import {
@@ -10,7 +11,7 @@ import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
 import {
-  MenuCustomSettings, DEFAULT_MENU_CUSTOM, loadMenuCustom, persistMenuCustom,
+  MenuCustomSettings, MenuAnimationStyle, DEFAULT_MENU_CUSTOM, loadMenuCustom, persistMenuCustom,
   applyMenuCustom, customToLayoutRecord, resolveDayNightPalette,
   resolveBackgroundBiome, biomeBackgroundCss, spriteDisplayScale,
   ANIMATION_STYLES, MENU_ANCHORS, MENU_ORDERS, BACKGROUND_BIOMES,
@@ -69,6 +70,56 @@ const CURSOR_SHAPES = [
 ];
 const LOGO_IMAGES = ['OFFICIAL', 'V1', 'V2', 'V3'];
 const TEXT_COLORS = ['#f1f5f9', '#fbbf24', '#f472b6', '#22d3ee', '#4ade80'];
+
+/**
+ * Batch-B follow-up: real preview-strip motion, replacing the
+ * Tailwind pulse stand-in. One motion layer: Motion (MIT,
+ * already a dependency) via useAnimationFrame + motion values —
+ * no CSS pulse, no new package.
+ * - SINE: FireRed method, offset = Sin(angle, amplitude)
+ *   (pokefirered-leafgreen battle_anim_*.c: sprite->y2 =
+ *   Sin(data, amplitude)); amplitude = sway px, angle advances
+ *   2PI per 2s at 1x, scaled by animationSpeed.
+ * - FLOW: linear drift loop, x sweeping -2*sway..+2*sway px over
+ *   4s at 1x, scaled by animationSpeed (sway 0 = still).
+ * - RISE_FADE: 2s loop at 1x, y rises 0..-12px while opacity
+ *   fades 1..0, then restarts.
+ * Reduced motion: static whenever the REDUCED MOTION row is ON
+ * OR the OS prefers-reduced-motion (Motion useReducedMotion).
+ * This animates ONLY the Menu Custom preview strip; title /
+ * main-menu symbol-layer motion in game is still NEED.
+ */
+function MenuPreviewMotion({ style, speed, sway, reduced }: { style: MenuAnimationStyle; speed: number; sway: number; reduced: boolean }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const opacity = useMotionValue(1);
+  const osReduced = useReducedMotion();
+  const frozen = reduced || osReduced === true;
+  useAnimationFrame((t) => {
+    if (frozen) { x.set(0); y.set(0); opacity.set(1); return; }
+    const sec = (t / 1000) * speed;
+    if (style === 'SINE') {
+      x.set(0);
+      y.set(Math.sin(sec * Math.PI) * sway);
+      opacity.set(1);
+    } else if (style === 'FLOW') {
+      const cycle = ((sec % 4) + 4) % 4 / 4;
+      x.set((cycle * 2 - 1) * sway * 2);
+      y.set(0);
+      opacity.set(1);
+    } else {
+      const phase = ((sec % 2) + 2) % 2 / 2;
+      x.set(0);
+      y.set(-phase * 12);
+      opacity.set(1 - phase);
+    }
+  });
+  return (
+    <motion.div style={{ x, y, opacity }}>
+      ✦ Menu preview strip — real {style} motion (Motion frame driver{style === 'SINE' ? '; FireRed Sin(angle, sway)' : ''}); title/main-menu symbol-layer motion in game is still NEED.
+    </motion.div>
+  );
+}
 
 export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   const settings = useGameStore(s => s.settings);
@@ -290,9 +341,9 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     // Animation — style / speed / sway. Preview strip below shows
     // the chosen style at the chosen speed; title / main-menu
     // symbol-layer animation in game is NEED (existing page-3 note).
-    { label: 'ANIMATION STYLE', value: custom.animationStyle, onLeft: () => setC({ animationStyle: cycle(ANIMATION_STYLES, custom.animationStyle, -1) }), onRight: () => setC({ animationStyle: cycle(ANIMATION_STYLES, custom.animationStyle, 1) }), note: 'SINE = sine offset x amplitude; FLOW = flowing symbol motion; RISE_FADE = rise + fade (locked v32 motion). Preview strip only in this batch; in-game menu animation: NEED.' },
+    { label: 'ANIMATION STYLE', value: custom.animationStyle, onLeft: () => setC({ animationStyle: cycle(ANIMATION_STYLES, custom.animationStyle, -1) }), onRight: () => setC({ animationStyle: cycle(ANIMATION_STYLES, custom.animationStyle, 1) }), note: 'SINE = sine offset x amplitude (FireRed Sin method); FLOW = flowing symbol motion; RISE_FADE = rise + fade (locked v32 motion). Preview strip below uses real Motion-frame motion; in-game menu animation: NEED.' },
     { label: 'ANIMATION SPEED', value: `${custom.animationSpeed.toFixed(2)}x`, onLeft: () => setC({ animationSpeed: clampStep(custom.animationSpeed, 0.5, 2, 0.25, -1) }), onRight: () => setC({ animationSpeed: clampStep(custom.animationSpeed, 0.5, 2, 0.25, 1) }), note: 'Global animation speed multiplier (also the gameplay-adjacent animation-speed row — one row, counted once). Sets --menu-anim-speed; preview strip duration follows it.' },
-    { label: 'SWAY', value: String(custom.sway), onLeft: () => setC({ sway: Math.max(0, custom.sway - 1) }), onRight: () => setC({ sway: Math.min(8, custom.sway + 1) }), note: 'Sine sway amplitude (px, locked v32 = 3). Preview strip label only in this batch; full sine motion on real menus: NEED.' },
+    { label: 'SWAY', value: String(custom.sway), onLeft: () => setC({ sway: Math.max(0, custom.sway - 1) }), onRight: () => setC({ sway: Math.min(8, custom.sway + 1) }), note: 'Sine sway amplitude (px, locked v32 = 3). Drives the preview strip SINE/FLOW motion live; full sine motion on real menus: NEED.' },
     // Background — biome / painted GAP / symbol layer / fade.
     { label: 'BACKGROUND BIOME', value: custom.backgroundBiome, onLeft: () => setC({ backgroundBiome: cycle(BACKGROUND_BIOMES, custom.backgroundBiome, -1) }), onRight: () => setC({ backgroundBiome: cycle(BACKGROUND_BIOMES, custom.backgroundBiome, 1) }), note: 'AUTO follows game time (NITE -> night, MORN/DAY -> grass, EVE -> forest). Applies as this screen\'s background gradient on return. Biomes are the existing 8 title biomes (generic terrain only).' },
     { label: 'PAINTED BACKGROUND', value: 'NEED — menu wiring', onLeft: () => undefined, onRight: () => undefined, note: 'GAP for menus, labelled: painted title backgrounds now exist for 8/8 biomes (Title Backgrounds lane, complete) but they are NOT wired as menu backgrounds yet, so this row changes nothing. Do not claim painted menu backgrounds until that wiring lands.' },
@@ -319,7 +370,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     { label: 'DIALOGUE BOX STYLE', value: custom.dialogueBoxStyle, onLeft: () => setC({ dialogueBoxStyle: cycle(DIALOGUE_BOX_STYLES, custom.dialogueBoxStyle, -1) }), onRight: () => setC({ dialogueBoxStyle: cycle(DIALOGUE_BOX_STYLES, custom.dialogueBoxStyle, 1) }), note: 'Dialogue box corner style: ROUNDED 14 / SQUARE 2 / GLOSS 18 / MINIMAL 8 (px radius). Applies to DialogueBox via --menu-dialogue-radius on return.' },
     // Gameplay-adjacent.
     { label: 'CAMERA SHAKE', value: custom.cameraShake ? 'ON' : 'OFF', onLeft: () => setC({ cameraShake: !custom.cameraShake }), onRight: () => setC({ cameraShake: !custom.cameraShake }), note: 'Stored + exported. Camera-shake application in battle/world cameras is NEED — no camera in this build reads the flag yet, so this row claims storage only.' },
-    { label: 'REDUCED MOTION', value: custom.reducedMotion ? 'ON' : 'OFF', onLeft: () => setC({ reducedMotion: !custom.reducedMotion }), onRight: () => setC({ reducedMotion: !custom.reducedMotion }), note: 'ON stops the preview strip animation and sets --menu-reduced-motion=none on return. Full motion suppression across battle/world animation is NEED.' },
+    { label: 'REDUCED MOTION', value: custom.reducedMotion ? 'ON' : 'OFF', onLeft: () => setC({ reducedMotion: !custom.reducedMotion }), onRight: () => setC({ reducedMotion: !custom.reducedMotion }), note: 'ON holds the preview strip static and sets --menu-reduced-motion=none on return; the strip is also static when the OS prefers-reduced-motion. Full motion suppression across battle/world animation is NEED.' },
     { label: 'TOUCH SIZE', value: `${custom.touchSize}px`, onLeft: () => setC({ touchSize: cycle([44, 48, 56], custom.touchSize, -1) }), onRight: () => setC({ touchSize: cycle([44, 48, 56], custom.touchSize, 1) }), note: 'Touch target height for rows. Default 48px (existing row height). Applies to this screen\'s row buttons immediately in this screen.' },
     { label: 'SAFE AREA', value: custom.safeArea ? 'ON' : 'OFF', onLeft: () => setC({ safeArea: !custom.safeArea }), onRight: () => setC({ safeArea: !custom.safeArea }), note: 'ON = screen padding honours env(safe-area-inset-*) (phone notch/home bar); OFF = fixed padding. Applies to this screen\'s outer padding on return.' },
     { label: 'BACK TO MENU CREATOR', value: '◄ BACK', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR') },
@@ -464,10 +515,8 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
         {screen === 'MENU_CUSTOM' && (
           <StdWindow style={{ ...panelStyle, borderRadius: DIALOGUE_BOX_RADIUS[custom.dialogueBoxStyle] }} className="px-3 py-2">
             <div style={{ fontSize: `${TEXT_SIZE_PX[custom.textSize]}px`, lineHeight: custom.lineSpacing, color: custom.textColor, textShadow: custom.textShadow ? '0 2px 0 rgba(0,0,0,0.6)' : 'none' }}>
-              <div className="font-bold">Preview — {custom.animationStyle} at {custom.animationSpeed.toFixed(2)}x, sway ±{custom.sway}px</div>
-              <div className={custom.reducedMotion ? '' : 'animate-pulse'} style={{ animationDuration: `${1 / custom.animationSpeed}s`, animationPlayState: custom.reducedMotion ? 'paused' : 'running' }}>
-                ✦ Menu preview strip — pulse only in this batch; full sine/flow/rise-fade motion on real menus is NEED.
-              </div>
+              <div className="font-bold">Preview — {custom.animationStyle} at {custom.animationSpeed.toFixed(2)}x, sway ±{custom.sway}px{custom.reducedMotion ? ' (reduced motion: static)' : ''}</div>
+              <MenuPreviewMotion style={custom.animationStyle} speed={custom.animationSpeed} sway={custom.sway} reduced={custom.reducedMotion} />
               <div className="mt-1">Sprite: {custom.spriteProportion}{spriteScale.fallback ? ' — falls back to Chibi, never blank' : ' — chibi path'} · Order: {custom.layout.order} · Anchor: {custom.layout.anchor} · Biome: {renderBiome || 'none'} · Day/night: {custom.dayNightMode === 'AUTO' ? `${gameVisual} (game time)` : custom.dayNightMode === 'CUSTOM' ? custom.dayNightCustom : 'OFF'} · Camera shake: {custom.cameraShake ? 'ON (stored only — NEED in cameras)' : 'OFF'}</div>
             </div>
           </StdWindow>
