@@ -1,0 +1,184 @@
+{
+ "creature": "ashemit",
+ "roster_id": "044",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-ashemit-sheet-0-2e14c12e-8d5f-46ad-b0a1-310133ff4db0.webp",
+  "width": 1920,
+  "height": 1280
+ },
+ "atlas_file": "ashemit_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 128
+ },
+ "frame_count": 8,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_front",
+   "file": "ashemit_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "SWAP: eye-check shows front (face visible); was battle_back",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "battle_back",
+   "file": "ashemit_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "SWAP: eye-check shows back (no face); was battle_front",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "overworld_back",
+   "file": "ashemit_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "overworld_front",
+   "file": "ashemit_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_side",
+   "file": "ashemit_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_side_2",
+   "file": "ashemit_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_side_3",
+   "file": "ashemit_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_side_4",
+   "file": "ashemit_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": "icon_derived",
+   "role": "icon",
+   "file": "icons/ashemit_icon64.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "Derived head crop from battle_front cell 0 (no icon cell in atlas)"
+  }
+ ],
+ "qa_notes": [
+  {
+   "tool": "prune_cells.py",
+   "dropped_or_merged": [
+    {
+     "cells": [
+      4
+     ],
+     "action": "dropped",
+     "role": "walk_front_1"
+    },
+    {
+     "cells": [
+      5
+     ],
+     "action": "dropped",
+     "role": "walk_front_0"
+    },
+    {
+     "cells": [
+      6
+     ],
+     "action": "dropped",
+     "role": "walk_front_2"
+    },
+    {
+     "cells": [
+      11
+     ],
+     "action": "dropped",
+     "role": "icon"
+    },
+    {
+     "cells": [
+      12
+     ],
+     "action": "dropped",
+     "role": "walk_front_3"
+    },
+    {
+     "cells": [
+      13
+     ],
+     "action": "dropped",
+     "role": "walk_side_0"
+    }
+   ],
+   "note": "Cells were standalone fire/ember orb panels, not Ashemit poses. Small head icon not extracted: icon missing."
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "ashemit.manifest.json",
+ "game_ready_cell_count": 8,
+ "game_ready_atlas_file": "ashemit_atlas_64_locked.png",
+ "icon_file": "icons/ashemit_icon64.png",
+ "icon_source": "head crop from cell 0",
+ "white_spot_cleanup_px_cleared": 159,
+ "white_spot_cleanup_bg": [
+  246,
+  244,
+  240
+ ]
+}
