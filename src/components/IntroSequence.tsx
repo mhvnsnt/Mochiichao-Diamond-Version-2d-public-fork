@@ -9,6 +9,7 @@ import { frameAccent } from "../lib/gameSettings";
 import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
+import IntroVideoPlayer from "./game/IntroVideoPlayer";
 import TitleCreatureFigure from "./game/TitleCreatureFigure";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
@@ -101,7 +102,6 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // UNCHANGED except SETTINGS now opens the real Settings screen.
   const [phase, setPhase] = useState<"BOOT" | "INTRO" | "TITLE" | "MAIN_MENU" | "SETTINGS" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("BOOT");
   const [showPrompt, setShowPrompt] = useState(false);
-  const [introScene, setIntroScene] = useState(0);
   const [titleFading, setTitleFading] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
@@ -197,10 +197,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // a hold time yet. Title fade is a white fade, then MAIN_MENU.
   const advanceIntro = () => {
     if (phase === "BOOT") setPhase("INTRO");
-    else if (phase === "INTRO") {
-      if (introScene < 3) setIntroScene(s => s + 1);
-      else setPhase("TITLE");
-    } else if (phase === "TITLE" && !titleFading) {
+    else if (phase === "INTRO") setPhase("TITLE");
+    else if (phase === "TITLE" && !titleFading) {
       setTitleFading(true);
       setTimeout(() => { setTitleFading(false); setPhase("MAIN_MENU"); }, 350);
     }
@@ -224,7 +222,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         window.removeEventListener("mousedown", handler);
       };
     }
-  }, [phase, introScene, titleFading]);
+  }, [phase, titleFading]);
 
   if (phase === "BOOT") {
     return (
@@ -250,32 +248,13 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   }
 
   if (phase === "INTRO") {
-    const scenes = [
-      { title: 'M HEAVENSENT STUDIOS', body: 'Studio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.', gap: 'GAP: studio scene art — original art needed.' },
-      { title: 'WORLD CLOSE-UP', body: 'Scene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).', gap: 'GAP: intro scene art — original art needed.' },
-      { title: 'WORLD PAN + CREATURE CLOSE-UPS', body: 'Scene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.', gap: 'GAP: intro scene art — original art needed.' },
-      { title: 'CREATURE FIGHT BEAT', body: 'Scene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.', gap: 'GAP: intro scene art — original art needed.' },
-    ];
-    const scene = scenes[introScene];
-    return (
-      <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
-        <div className="w-full max-w-md text-center">
-          <div className="text-teal-300 text-xs tracking-[0.3em] mb-4">INTRO MOVIE — SCENE {introScene + 1} / 4 · ANY KEY SKIPS</div>
-          <StdWindow accent={frameColor} className="p-6">
-            <div className="text-white text-xl font-black tracking-widest">{scene.title}</div>
-            <p className="text-slate-300 text-sm mt-4 leading-relaxed">{scene.body}</p>
-            <p className="text-yellow-300 text-xs mt-4">{scene.gap}</p>
-          </StdWindow>
-          <button
-            onClick={(e) => { e.stopPropagation(); advanceIntro(); }}
-            className="game-button px-6 py-3 font-bold min-h-[48px] mt-6"
-          >
-            {introScene < 3 ? 'NEXT SCENE ►' : 'TO TITLE ►'}
-          </button>
-          <div className="text-gray-500 text-xs mt-4">Intro music: GAP — original music needed. Any key skips and stops the intro.</div>
-        </div>
-      </div>
-    );
+    // Intro playback from a saved preset (Pixi): the creator's most
+    // recently saved preset plays, else the locked default. Any key
+    // or click skips the whole intro to TITLE (the player also calls
+    // onDone on skip / at the total duration — both converge here,
+    // idempotently). The old 4 GAP text scenes are replaced, not kept
+    // alongside the player.
+    return <IntroVideoPlayer onDone={() => setPhase("TITLE")} />;
   }
 
   if (phase === "TITLE") {
