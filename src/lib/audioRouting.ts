@@ -37,12 +37,25 @@
  *   original synthesized tones (oscillator, no audio file, no
  *   Pokemon sound) panned left then right through the ui bus, so
  *   the MONO vs STEREO difference is hearable on the SOUND row.
- * - WIRED as a helper, NOT yet called for any game sound:
- *   playAudioUrl() fetches + decodes any URL through a bus. The
- *   boot sound (UI Art option B) and press-start sound (M3 chirp)
- *   are NOT wired here — those slots belong to their own lanes
- *   and are still owed there; this helper only gives those lanes
- *   a routed path to call instead of inventing a second engine.
+ * - WIRED, settled roles (Mars decisions, never swapped): BOOT =
+ *   UI Art Option B rising arpeggio, PRESS-START = M3 Mochii
+ *   Chirp (PR #36). playBootSound() / playPressStartSound() play
+ *   those exact repo files through the buses below; M3 is NEVER
+ *   used for boot and Option B is NEVER used for press-start.
+ *   The Option B file ships in the repo at
+ *   public/audio/mochiichao-boot-ui-art-option-b-rising-arpeggio.wav
+ *   (verified in the tree at this batch's base — not the
+ *   shorthand 'boot-sounds/...' path, which is not a repo path).
+ *   If either file were missing, its play call would fail closed
+ *   (fetch 404 -> false) and the slot would stay labelled GAP —
+ *   no replacement sound is ever invented here.
+ * - Autoplay honesty: press-start always follows a user gesture,
+ *   so it always plays. Boot has no preceding gesture on a cold
+ *   load, so a browser may keep the context suspended through
+ *   the 2.5s BOOT window and the scheduled boot sound is dropped
+ *   when BOOT unmounts; on any later boot (e.g. Quit to Title,
+ *   after clicks) the context is running and boot plays. A
+ *   first-gesture unlock retry is NEED, not faked here.
  * - NEED (labelled, not faked): music / SFX / UI sound banks
  *   themselves (no tracks are shipped for them), and fade /
  *   ducking (nothing plays long enough to fade yet). Map music
@@ -190,12 +203,17 @@ export function playUiPreview(): boolean {
   return first || second;
 }
 
+/** Settled audio roles (Mars decisions). Paths are the real repo
+ *  paths under public/ (served from the site root as /audio/...).
+ *  BOOT = UI Art Option B ONLY; PRESS-START = M3 chirp ONLY. */
+export const BOOT_SOUND_URL = '/audio/mochiichao-boot-ui-art-option-b-rising-arpeggio.wav';
+export const PRESS_START_SOUND_URL = '/audio/mochiichao-boot-M3-mochii-chirp.wav';
+
 /**
- * Routed file playback for later lanes (boot / press-start slots):
- * fetches + decodes a URL and plays it through a bus, so it honours
- * the current MONO / STEREO routing. NOT called by any game screen
- * in this batch — the boot and press-start wirings are owed by
- * their own lanes and must not be claimed from here.
+ * Routed file playback: fetches + decodes a URL and plays it
+ * through a bus, so it honours the current MONO / STEREO routing.
+ * Returns false (never throws) when audio is unavailable or the
+ * file cannot be fetched/decoded — a missing file stays GAP.
  */
 export async function playAudioUrl(url: string, bus: AudioBus = 'music'): Promise<boolean> {
   const audio = ensureContext();
@@ -215,4 +233,14 @@ export async function playAudioUrl(url: string, bus: AudioBus = 'music'): Promis
   } catch {
     return false;
   }
+}
+
+/** Boot slot: UI Art Option B rising arpeggio, music bus. */
+export function playBootSound(): Promise<boolean> {
+  return playAudioUrl(BOOT_SOUND_URL, 'music');
+}
+
+/** Title press-start slot: M3 Mochii Chirp, ui bus. */
+export function playPressStartSound(): Promise<boolean> {
+  return playAudioUrl(PRESS_START_SOUND_URL, 'ui');
 }
