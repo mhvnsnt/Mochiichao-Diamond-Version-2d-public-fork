@@ -1,0 +1,31 @@
+{
+ "creature": "astroleviathan",
+ "hurt_version": "hurt-v1-2026-10-25",
+ "mapped_from_locked_atlas": false,
+ "mapped_note": "No locked-atlas cell carries a hurt/recoil/lean-back role in any of the 50 locked manifests (verified by role scan 2026-10-25); mapped count for this set is 0. A standing/walk cell was NOT re-labelled as hurt.",
+ "status": "done",
+ "source": "generated_v1",
+ "source_raw_file": "media-generation-astroleviathan-hurt-raw-0-9ba65114-605b-4a62-ae48-e54f59024e4a.webp",
+ "frames": [
+  {
+   "frame": 0,
+   "file": "astroleviathan_hurt_cell_00.png",
+   "role": "hurt",
+   "duration_ms": 500,
+   "display": "shown during recoil + first half of recover, then crossfade to standing"
+  }
+ ],
+ "timing": {
+  "windup_ms": 250,
+  "impact_hold_ms": 90,
+  "recoil_ms": 300,
+  "recover_ms": 400,
+  "total_ms": 1040,
+  "hurt_frame_hold_ms": 500,
+  "hurt_frame_note": "Hurt frame shown across recoil (300 ms) + first half of recover (200 ms), then crossfade to standing. Matches battleTreatments.js HURT_FRAME.HOLD_MS and TIMING."
+ },
+ "treatments_fallback": "Until hurt art exists, the hit is carried by battleTreatments.js: impact flash (white/red on crit) + recoil translation + screen shake + particle burst + camera push-in + 90 ms held impact frame. Fallback is NOT a substitute for art; it is what plays alongside art once art exists.",
+ "pose_spec": "Swimming/floating recoil: long serpentine body arched sharply back, wing-like fins swept back, head thrown back, eyes squeezed shut, mouth grimacing. No legs.",
+ "eye_check": "PASS at presentation size and at 64px. Dark body and purple galaxy swirls match locked battle_front (astroleviathan_cell_01.png).",
+ "note": "Original art only, battle_front cell as reference. Cut to 64px (border-connected white-bg removal, scipy label method; interior whites kept). Local staging only \u2014 no push, no work-clone git changes, no src/assets/ changes."
+}
