@@ -75,6 +75,22 @@
       "rms": 0.235,
       "peak": 0.707,
       "build_script": "build_vocal_mix_v16.sh"
+    },
+    "v17": {
+      "base": "v16 chain (lead v6 377Hz glide 20ms formant 1.5, OTT, octave-up, pancake overdub, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
+      "third_layer": "V15 main lead vocal-autotune-v5.wav (pitch x2.73, formant 1.4, D major, glide 55ms) with EXACT V15 EQ1 (HP120, -4@250, +6@3k, +6@5k, +5@8k, +4@12k air, deesser 0.6, comp 0.10/4:1, vol 3.0) then volume 1.5 = +50% louder than V15, mixed through wet chorus+delay as the loudest single layer",
+      "complimentary_mix": "main v6 lead = body (centre, dry), third v5 layer = brightest + loudest (wet, chorus+delay), octave-up = sparkle, pancake overdub = width, title carved -8@3k \u2014 industry layering: lead + louder brighter double + harmony + wide overdub",
+      "measured": {
+        "rms": 0.232,
+        "peak": 0.707,
+        "lufs": -9.8,
+        "vocal_band_1_8khz_share": 0.135,
+        "v16_vocal_band": 0.084,
+        "tail_39.8_40.3s": 0.147,
+        "fade_in": "sec0 0.033 -> sec4 0.201"
+      },
+      "note": "Overall RMS flat vs v16 (0.232 vs 0.233) but vocal-band share +61% and LUFS +0.5dB \u2014 third layer cuts through without blowing up overall level; peak still safe under limiter.",
+      "build_script": "build_vocal_mix_v17.sh"
     }
   },
   "delay_math_140bpm": {
