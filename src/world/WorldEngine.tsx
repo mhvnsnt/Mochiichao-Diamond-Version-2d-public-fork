@@ -3,6 +3,7 @@ import { TYPE_COLORS, calcDamage, makeBattleMon, GAME_DATA as IMPORTED_GAME_DATA
 import { FULL_WORLD } from "./FullWorldMaps";
 import { useGameStore } from "../store/gameStore";
 import PixiWorldCanvas from "../components/game/PixiWorldCanvas";
+import type { NpcWalkState } from "../components/game/PixiWorldCanvas";
 import CreaturePortrait from "../components/game/CreaturePortrait";
 import { PauseMenu, WorldHud } from "../components/game/GameShell";
 import { getDayPhase, DAY_TINT, DAY_AMBIENT, WEATHER_CONFIG } from "./WorldConstants";
@@ -233,6 +234,132 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [animWalk, setAnimWalk] = useState(0);
   const [heldDir, setHeldDir] = useState<{dx:number, dy:number} | null>(null);
+
+  // ── NPC MOVEMENT, PRODUCER SIDE (PR #130 seam consumer) ──
+  // FireRed template (PR #130 research): each map object event
+  // carries movement_type + x_radius/y_radius around its spawn
+  // tile, and the engine runs face -> move one tile -> random
+  // medium delay -> pick a direction -> collision check -> walk.
+  // Mochiichao map fields: `movement: "wander"` + `wanderRadius`
+  // (one radius, used for both axes) on NPC entries in
+  // FullWorldMaps.ts. Standing is the default: battle NPCs,
+  // starter balls, display creatures, and staged story NPCs
+  // carry no movement field and never get a state.
+  // The tick below is WorldEngine's own clock (650ms) — it does
+  // NOT piggyback on animWalk, which advances only on player
+  // steps. Frame alternation still follows the seam's rule
+  // (odd step = step frame, even = idle, layout from the slot).
+  type NpcRuntime = {
+    homeX: number; homeY: number;
+    x: number; y: number;
+    dir: NpcWalkState["dir"];
+    step: number; moving: boolean; delay: number;
+  };
+  const npcRuntimeRef = React.useRef<Record<string, NpcRuntime>>({});
+  const [npcStates, setNpcStates] = useState<Record<string, NpcWalkState>>({});
+  // Refs so the tick callback stays stable while the player
+  // walks (otherwise the interval would restart on every step
+  // and wandering NPCs would rarely move).
+  const npcStatesRef = React.useRef<Record<string, NpcWalkState>>({});
+  const playerPosRef = React.useRef(playerPos);
+  const currentMapRef = React.useRef(currentMap);
+  const defeatedRef = React.useRef(defeatedTrainers);
+  useEffect(() => { playerPosRef.current = playerPos; }, [playerPos]);
+  useEffect(() => { defeatedRef.current = defeatedTrainers; }, [defeatedTrainers]);
+  const npcFacingToDir = (facing: any): NpcWalkState["dir"] =>
+    facing === "up" ? "back" : facing === "left" ? "left" : facing === "right" ? "right" : "front";
+  // Reset wanderers to home on map/slot change (fresh world entry).
+  useEffect(() => {
+    currentMapRef.current = currentMap;
+    const map: any = FULL_WORLD[currentMap] || FULL_WORLD["sector0"];
+    const rt: Record<string, NpcRuntime> = {};
+    const states: Record<string, NpcWalkState> = {};
+    (map.npcs || []).forEach((n: any) => {
+      if (n.movement !== "wander") return;
+      const dir = npcFacingToDir(n.facing);
+      rt[n.id] = { homeX: n.x, homeY: n.y, x: n.x, y: n.y, dir, step: 0, moving: false, delay: 1 + Math.floor(Math.random() * 3) };
+      states[n.id] = { x: n.x, y: n.y, dir, moving: false, step: 0 };
+    });
+    npcRuntimeRef.current = rt;
+    npcStatesRef.current = states;
+    setNpcStates(states);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentMap, saveSlot]);
+  // Live position lookup: a wanderer's live tile wins over its
+  // map (home) tile, so player collision, interaction, and the
+  // interact prompt all agree with what the canvas renders.
+  const npcAt = (x: number, y: number): any | undefined => {
+    const map: any = FULL_WORLD[currentMapRef.current] || FULL_WORLD["sector0"];
+    return (map.npcs || []).find((n: any) => {
+      const s = npcStatesRef.current[n.id];
+      return (s ? s.x : n.x) === x && (s ? s.y : n.y) === y;
+    });
+  };
+  const npcTick = useCallback(() => {
+    const map: any = FULL_WORLD[currentMapRef.current] || FULL_WORLD["sector0"];
+    const rt = npcRuntimeRef.current;
+    const wanderers: any[] = (map.npcs || []).filter((n: any) => n.movement === "wander" && !defeatedRef.current.includes(n.id));
+    // Occupancy: static NPCs at map tiles, wanderers at live tiles.
+    const occupied = new Set<string>();
+    (map.npcs || []).forEach((n: any) => {
+      if (defeatedRef.current.includes(n.id)) return;
+      if (n.movement === "wander") return;
+      occupied.add(`${n.x},${n.y}`);
+    });
+    wanderers.forEach((n: any) => {
+      const r = rt[n.id];
+      if (r) occupied.add(`${r.x},${r.y}`);
+    });
+    const DIRS = [
+      { dx: 0, dy: 1, dir: "front" as const },
+      { dx: 0, dy: -1, dir: "back" as const },
+      { dx: -1, dy: 0, dir: "left" as const },
+      { dx: 1, dy: 0, dir: "right" as const },
+    ];
+    const next: Record<string, NpcWalkState> = {};
+    wanderers.forEach((n: any) => {
+      const r = rt[n.id];
+      if (!r) return;
+      r.moving = false;
+      if (r.delay > 0) {
+        r.delay -= 1;
+      } else {
+        const d = DIRS[Math.floor(Math.random() * DIRS.length)];
+        const tx = r.x + d.dx;
+        const ty = r.y + d.dy;
+        const radius = n.wanderRadius ?? 1;
+        const tile = map.tiles?.[ty]?.[tx];
+        const blocked =
+          tx < 0 || ty < 0 || tx >= map.width || ty >= map.height ||
+          tile === 1 || tile === 4 || tile === 2 ||
+          (map.exits || []).some((e: any) => e.x === tx && e.y === ty) ||
+          (map.doors || []).some((e: any) => e.x === tx && e.y === ty) ||
+          occupied.has(`${tx},${ty}`) ||
+          (tx === playerPosRef.current.x && ty === playerPosRef.current.y);
+        if (blocked) {
+          // WanderAround collision: re-face instead of walking.
+          r.dir = d.dir;
+          r.delay = 1 + Math.floor(Math.random() * 3);
+        } else {
+          occupied.delete(`${r.x},${r.y}`);
+          occupied.add(`${tx},${ty}`);
+          r.x = tx; r.y = ty; r.dir = d.dir; r.moving = true; r.step += 1;
+          r.delay = 2 + Math.floor(Math.random() * 3);
+        }
+      }
+      next[n.id] = { x: r.x, y: r.y, dir: r.dir, moving: r.moving, step: r.step };
+    });
+    npcStatesRef.current = next;
+    setNpcStates(next);
+  }, []);
+  useEffect(() => {
+    // NPCs freeze during battle, dialogue, menus, and map
+    // transitions — notably, a wanderer never walks away while
+    // the player is talking to it.
+    if (screen !== "overworld" || pauseOpen || menuOpen || isTransitioning) return;
+    const iv = setInterval(npcTick, 650);
+    return () => clearInterval(iv);
+  }, [screen, pauseOpen, menuOpen, isTransitioning, npcTick]);
 
   // Shims for backwards compatibility
   const playerTeam: any = party;
@@ -504,8 +631,10 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     if (!noclip) {
       if (tile === 1 || tile === 4) return; // solid
       if (tile === 2) return; // water block
-      // Basic NPC collision (solid)
-      const npcHere = mapData.npcs?.find(n => n.x === nx && n.y === ny);
+      // Basic NPC collision (solid) — live wanderer tiles win
+      // over home tiles, so the player can neither walk through
+      // a moved NPC nor be blocked by its empty home tile.
+      const npcHere = npcAt(nx, ny);
       if (npcHere) return; // can't walk through them
     }
 
@@ -661,7 +790,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     const nx = playerPos.x + dx;
     const ny = playerPos.y + dy;
 
-    let npcHere = mapData.npcs?.find((n: any) => n.x === nx && n.y === ny);
+    let npcHere = npcAt(nx, ny);
     if (npcHere) {
       if (npcHere.eventId && npcHere.eventId.startsWith("pick_starter_") && hasStarter) {
         setDialog({ lines: ["You already have a partner!"], npc: npcHere });
@@ -1474,6 +1603,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         defeatedIds={defeatedTrainers}
         phase={phase}
         animWalk={animWalk}
+        npcStates={npcStates}
       />
 
       {/* v4 goal line: the missing "where do I start". The route
@@ -1577,7 +1707,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         const dx = playerDir === "right" ? 1 : playerDir === "left" ? -1 : 0;
         const dy = playerDir === "down" ? 1 : playerDir === "up" ? -1 : 0;
         const fx = playerPos.x + dx, fy = playerPos.y + dy;
-        const npc = mapData.npcs?.find((n: any) => n.x === fx && n.y === fy);
+        const npc = npcAt(fx, fy);
         const door = mapData.doors?.find((d: any) => d.x === fx && d.y === fy);
         const sign = mapData.signs?.find((s: any) => s.x === fx && s.y === fy);
         const label = npc ? `Talk to ${npc.name}` : door ? `Enter ${door.label || "door"}` : sign ? "Read sign" : null;
