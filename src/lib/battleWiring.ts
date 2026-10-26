@@ -20,6 +20,16 @@
  * stat/status/recoil/multi-hit/flinch application, end-of-turn
  * burn/poison ticks of 1/16 max HP.
  *
+ * BATTLE-MATH PR (batch 1): the resolver damage path above now routes
+ * through src/lib/battle-math.ts — crit is the stage table {16,8,4,3,2}
+ * at x2 (the old flat 6% / x1.5 is gone), stages are exact fractions,
+ * paralysis quarters Speed and is a 25% full-paralysis check, burn/poison
+ * ticks are 1/8 max HP, multi-hit is 35/35/15/15, and speed ties are a
+ * coin flip. The DAMAGE paragraph above describes the pre-batch resolver
+ * and is superseded by battleResolver.ts's battle-math header for those
+ * numbers; the chart decision in this file (legacy chart, not True
+ * Elements) is unchanged.
+ *
  * SCOPE (per-battle only, no store schema change): stat stages, status
  * and volatile (charging) state are carried in a BattleView ref for the
  * duration of one battle and are NEVER written back to the store, so a
