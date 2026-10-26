@@ -1,0 +1,159 @@
+{
+ "creature": "stormtalon",
+ "roster_id": "021",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-stormtalon-sheet-v1-0-f43260f9-32dd-4b3a-9d78-7673d4440bad.webp",
+  "width": 1920,
+  "height": 1280
+ },
+ "atlas_file": "stormtalon_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 128
+ },
+ "frame_count": 11,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_back",
+   "file": "stormtalon_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "overworld_front",
+   "file": "stormtalon_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "battle_front",
+   "file": "stormtalon_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "overworld_back",
+   "file": "stormtalon_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_front_2",
+   "file": "stormtalon_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_front_3",
+   "file": "stormtalon_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_front_4",
+   "file": "stormtalon_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_front_5",
+   "file": "stormtalon_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "overworld_side",
+   "file": "stormtalon_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "overworld_side_2",
+   "file": "stormtalon_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "icon",
+   "file": "stormtalon_cell_10.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 256,
+   "atlas_y": 64
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "stormtalon.manifest.json",
+ "game_ready_cell_count": 11,
+ "game_ready_atlas_file": "stormtalon_atlas_64_locked.png",
+ "icon_file": "icons/stormtalon_icon64.png",
+ "icon_source": "atlas icon cell 10",
+ "white_spot_cleanup_px_cleared": 217,
+ "white_spot_cleanup_bg": [
+  240,
+  240,
+  240
+ ]
+}
