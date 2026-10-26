@@ -1,0 +1,501 @@
+{
+ "creature": "dreadtoise",
+ "tag": "artic-pipev3-20261026",
+ "method": "V3 contour-fit mouth on pilot attack cells, impact frame only",
+ "mouth_src_measured_cell_00": [
+  31.7,
+  37.0
+ ],
+ "shell_ram_cell_06": "frame index 1 (lean) only, ships as pilot base verbatim; see builder docstring + VERIFICATION for the locked-canon resolution",
+ "sets": {
+  "atk_physical_shell_ram": {
+   "family": "physical",
+   "expression": "open-bite",
+   "files": [
+    "dreadtoise-artic-pipev3-20261026-atk_physical_shell_ram-cell-00.png",
+    "dreadtoise-artic-pipev3-20261026-atk_physical_shell_ram-cell-01.png",
+    "dreadtoise-artic-pipev3-20261026-atk_physical_shell_ram-cell-02.png",
+    "dreadtoise-artic-pipev3-20261026-atk_physical_shell_ram-cell-03.png",
+    "dreadtoise-artic-pipev3-20261026-atk_physical_shell_ram-cell-04.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.05,
+      "sy": 0.95,
+      "dx": -6
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 200
+    },
+    {
+     "frame": 1,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_06.png",
+     "transform": {
+      "sx": 1.0,
+      "sy": 1.0,
+      "dx": 6
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 130
+    },
+    {
+     "frame": 2,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.18,
+      "sy": 0.9,
+      "dx": 26
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 110
+    },
+    {
+     "frame": 3,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.22,
+      "sy": 0.85,
+      "dx": 30
+     },
+     "propagated_mouth_centre": [
+      39.13,
+      35.05
+     ],
+     "action": "v3-mouth-open-bite",
+     "gate": {
+      "changed": 189,
+      "bbox": [
+       30,
+       29,
+       20,
+       13
+      ],
+      "fill_ratio": 0.727,
+      "inside_mask_bbox": true,
+      "off_silhouette": false
+     },
+     "duration_ms": 90
+    },
+    {
+     "frame": 4,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {},
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 300
+    }
+   ],
+   "total_ms": 830
+  },
+  "atk_special_water_gun": {
+   "family": "special",
+   "expression": "grin",
+   "files": [
+    "dreadtoise-artic-pipev3-20261026-atk_special_water_gun-cell-00.png",
+    "dreadtoise-artic-pipev3-20261026-atk_special_water_gun-cell-01.png",
+    "dreadtoise-artic-pipev3-20261026-atk_special_water_gun-cell-02.png",
+    "dreadtoise-artic-pipev3-20261026-atk_special_water_gun-cell-03.png",
+    "dreadtoise-artic-pipev3-20261026-atk_special_water_gun-cell-04.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 0.98,
+      "sy": 1.02
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 200
+    },
+    {
+     "frame": 1,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.02,
+      "sy": 1.0,
+      "dx": -16
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 120
+    },
+    {
+     "frame": 2,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.05,
+      "sy": 0.98,
+      "dx": -16
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 110
+    },
+    {
+     "frame": 3,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.0,
+      "sy": 1.0,
+      "dx": -8
+     },
+     "propagated_mouth_centre": [
+      29.7,
+      31.0
+     ],
+     "action": "v3-mouth-grin",
+     "gate": {
+      "changed": 112,
+      "bbox": [
+       22,
+       27,
+       16,
+       9
+      ],
+      "fill_ratio": 0.778,
+      "inside_mask_bbox": true,
+      "off_silhouette": false
+     },
+     "duration_ms": 110
+    },
+    {
+     "frame": 4,
+     "role": [
+      "windup",
+      "lean",
+      "strike",
+      "impact",
+      "recover"
+     ],
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {},
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 300
+    }
+   ],
+   "total_ms": 840
+  },
+  "atk_signature_twin_cannon_barrage": {
+   "family": "signature",
+   "expression": "open-bite",
+   "files": [
+    "dreadtoise-artic-pipev3-20261026-atk_signature_twin_cannon_barrage-cell-00.png",
+    "dreadtoise-artic-pipev3-20261026-atk_signature_twin_cannon_barrage-cell-01.png",
+    "dreadtoise-artic-pipev3-20261026-atk_signature_twin_cannon_barrage-cell-02.png",
+    "dreadtoise-artic-pipev3-20261026-atk_signature_twin_cannon_barrage-cell-03.png",
+    "dreadtoise-artic-pipev3-20261026-atk_signature_twin_cannon_barrage-cell-04.png",
+    "dreadtoise-artic-pipev3-20261026-atk_signature_twin_cannon_barrage-cell-05.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 0.95,
+      "sy": 1.05
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 200
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.02,
+      "sy": 1.0,
+      "dx": -14
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 100
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.02,
+      "sy": 1.0,
+      "dx": -14
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 100
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.08,
+      "sy": 0.97,
+      "dx": -14
+     },
+     "propagated_mouth_centre": [
+      28.18,
+      31.81
+     ],
+     "action": "v3-mouth-open-bite",
+     "gate": {
+      "changed": 183,
+      "bbox": [
+       20,
+       25,
+       18,
+       15
+      ],
+      "fill_ratio": 0.678,
+      "inside_mask_bbox": true,
+      "off_silhouette": false
+     },
+     "duration_ms": 140
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.05,
+      "sy": 0.95,
+      "dx": -8
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 120
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {},
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 300
+    }
+   ],
+   "total_ms": 960
+  },
+  "atk_heavy_fortress_slam_finisher": {
+   "family": "heavy",
+   "expression": "grimace",
+   "files": [
+    "dreadtoise-artic-pipev3-20261026-atk_heavy_fortress_slam_finisher-cell-00.png",
+    "dreadtoise-artic-pipev3-20261026-atk_heavy_fortress_slam_finisher-cell-01.png",
+    "dreadtoise-artic-pipev3-20261026-atk_heavy_fortress_slam_finisher-cell-02.png",
+    "dreadtoise-artic-pipev3-20261026-atk_heavy_fortress_slam_finisher-cell-03.png",
+    "dreadtoise-artic-pipev3-20261026-atk_heavy_fortress_slam_finisher-cell-04.png",
+    "dreadtoise-artic-pipev3-20261026-atk_heavy_fortress_slam_finisher-cell-05.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 0.92,
+      "sy": 1.12,
+      "dy": -8
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 220
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.25,
+      "sy": 0.78,
+      "dy": 6
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 140
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.2,
+      "sy": 0.82
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 120
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.15,
+      "sy": 0.88
+     },
+     "propagated_mouth_centre": [
+      31.65,
+      34.24
+     ],
+     "action": "v3-mouth-grimace",
+     "gate": {
+      "changed": 126,
+      "bbox": [
+       23,
+       30,
+       18,
+       9
+      ],
+      "fill_ratio": 0.778,
+      "inside_mask_bbox": true,
+      "off_silhouette": false
+     },
+     "duration_ms": 120
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {
+      "sx": 1.05,
+      "sy": 0.95
+     },
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 100
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": {},
+     "propagated_mouth_centre": null,
+     "action": "copy-pilot",
+     "gate": {},
+     "duration_ms": 420
+    }
+   ],
+   "total_ms": 1120
+  }
+ },
+ "gif": {
+  "file": "dreadtoise-attacks-artic-pipev3-20261026.gif",
+  "frames": 22,
+  "durations_ms": [
+   200,
+   130,
+   110,
+   90,
+   550,
+   200,
+   120,
+   110,
+   110,
+   550,
+   200,
+   100,
+   100,
+   140,
+   120,
+   550,
+   220,
+   140,
+   120,
+   120,
+   100,
+   670
+  ]
+ }
+}
