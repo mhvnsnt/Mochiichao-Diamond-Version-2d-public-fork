@@ -1,0 +1,51 @@
+{
+  "creature": "kittember",
+  "roster_id": "010",
+  "status": "done",
+  "directions": {
+    "down": 2,
+    "up": 2,
+    "left": 2,
+    "right": 2
+  },
+  "frames": [
+    {
+      "file": "kittember_walk_down_0.png",
+      "role": "walk_down_0"
+    },
+    {
+      "file": "kittember_walk_down_1.png",
+      "role": "walk_down_1"
+    },
+    {
+      "file": "kittember_walk_up_0.png",
+      "role": "walk_up_0"
+    },
+    {
+      "file": "kittember_walk_up_1.png",
+      "role": "walk_up_1"
+    },
+    {
+      "file": "kittember_walk_left_0.png",
+      "role": "walk_left_0"
+    },
+    {
+      "file": "kittember_walk_left_1.png",
+      "role": "walk_left_1"
+    },
+    {
+      "file": "kittember_walk_right_0.png",
+      "role": "walk_right_0"
+    },
+    {
+      "file": "kittember_walk_right_1.png",
+      "role": "walk_right_1"
+    }
+  ],
+  "raw_sheet": "media-generation-kittember-walk-v1-0-ce14aabf-5fe1-4c68-b530-4b144b6c831b.webp",
+  "source_locked_manifest": "game-ready/kittember/kittember.manifest.locked.json",
+  "source_reference": "game-ready/kittember/cells/kittember_cell_02.png (battle_front); 2D sheet kittember-sheet-v1",
+  "method": "original art, one generated 8-panel sheet (4x2), equal split, border-connected white-bg flood removal (scipy label), interior whites kept, fit to 64x64 RGBA",
+  "eye_check": "enlarged raw sheet PASS + 64px montage PASS (all 8 cells present, directions distinct)",
+  "movement_note": "Black kitten, orange ember tail orb. CAVEAT: ground shadow ellipse from the sheet survives in all 8 cells (Razorgater-class caveat)."
+}
