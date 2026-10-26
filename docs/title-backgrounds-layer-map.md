@@ -121,14 +121,29 @@ where one exists; no audio — cries/chimes are visual only here):
 - Sproutle shield + shield ring, Wispkin bob + smoke,
   Yogiferno roar + fire, Mythar orbit (hovers, never grounds) + sparkle
 
-NOT wired in this batch, stated plainly: PixiJS DisplacementFilter
-water ripple (researched, needs a displacement texture asset — the
-water card already moves via ripple rings + shimmer, so it is a
-later one-filter addition, not a gap in motion); the full-screen
-TITLE phase in IntroSequence still uses its old gradient + stardust
-(that swap is main-lane work, not claimed here); live animated
-playback needs a Pages rebuild — the merged code alone is not a
-playable show.
+## Animation — water ripple filter (batch 4, 2026-10-25)
+
+The DisplacementFilter water ripple is now wired, water card only:
+PixiJS v8 `DisplacementFilter` (official Pixi docs, red = horizontal
+offset, green = vertical), scale {x: 14, y: 10}, map generated in
+code (64x64 random grayscale upscaled with smoothing to 256x256,
+repeat wrap, scrolling 20px/s horizontal / 12px/s vertical), map
+sprite added to the scene with renderable=false (the filter
+constructor sets that, so the map itself never draws). Ripple rings
++ shimmer stay as the fallback. Skipped under
+prefers-reduced-motion.
+
+Rain card candidate, researched NOT wired: Stormtalon #021 — canon
+manifest says "summons dark clouds and lightning when it flaps",
+wrapped in a dark cloud with jagged lightning flashes inside it.
+That is the rain card's creature on paper, but Stormtalon is NOT in
+the 10-creature title pool and has no clean title cutout, so adding
+him is a pool + art decision for Mars, not a silent assignment.
+
+NOT wired, stated plainly: the full-screen TITLE phase in
+IntroSequence still uses its old gradient + stardust (that swap is
+main-lane work, not claimed here); live animated playback needs a
+Pages rebuild — merged code alone is not a playable show.
 
 ## Counts
 
@@ -140,5 +155,6 @@ playable show.
 - Per-card signature effects: 8/8 = 100% (one per biome)
 - Per-creature card assignment: 10/10 creatures assigned, 8/10 from canon/vibe sources, 2/10 PROPOSED (Gabu, Kittember); rain card 0 primary creatures
 - Per-creature action bursts: 10/10 = 100% (one action + burst per title-pool creature)
+- Water DisplacementFilter ripple: 1/1 = 100% (water card only, generated map, no asset shipped)
 - Pokemon art in any shipped file: 0 files
 - Text baked into any background: 0 files
