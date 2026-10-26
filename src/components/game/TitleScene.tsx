@@ -16,7 +16,8 @@ import {
 /**
  * TitleScene — the shared title/start scene system (Mars, 2026-10-25).
  * Layers, traced from Pokemon title screens, Mochiichao content:
- *   1. sky background (two-tone gradient band, Pixi-drawn)
+ *   0. painted background (original 1600x900 PNG, when the biome has one)
+ *   1. sky background (two-tone gradient band, Pixi-drawn; fallback only)
  *   2. ground band + ground line
  *   3. optional figure sprite (Yogiferno clean cutout only, shipped
  *      in this PR — NO Pokemon creature art, NO placeholder figure)
@@ -97,23 +98,49 @@ export default function TitleScene({
       scene.position.set(W / 2, H / 2);
       app.stage.addChild(scene);
 
+      // Layer 0: painted background, when this biome has one.
+      // Added to the camera `scene` container (not app.stage) so
+      // the Black 2 camera pan/zoom moves it with everything else.
+      // Cover-crop, centred, so the title-safe centre haze of the
+      // painting lands under the logo / creature / press layers.
+      // If the painting is absent or fails to load, fall through
+      // to the Pixi sky/ground rectangles below — never a blank.
+      let painted = false;
+      if (b.backgroundImage) {
+        try {
+          const bgTex: Texture = await Assets.load(b.backgroundImage);
+          const bg = new Sprite(bgTex);
+          const scale = Math.max(W / bgTex.width, H / bgTex.height);
+          bg.scale.set(scale);
+          bg.anchor.set(0.5, 0.5);
+          bg.x = W / 2; bg.y = H / 2;
+          scene.addChild(bg);
+          painted = true;
+        } catch {
+          painted = false;
+        }
+      }
       // Layer 1+2: sky + ground, Pixi-drawn, biome palette only.
-      const sky = new Graphics();
-      sky.rect(0, 0, W, groundY).fill(b.sky);
-      sky.rect(0, 0, W, Math.floor(groundY / 2)).fill(b.sky2);
-      scene.addChild(sky);
-      const ground = new Graphics();
-      ground.rect(0, groundY, W, H - groundY).fill(b.ground);
-      ground.rect(0, groundY, W, 2).fill(b.groundLine);
-      scene.addChild(ground);
-      if (b.tufts) {
+      // Skipped when a painting is showing; kept as the fallback
+      // for biomes whose batch has not landed yet.
+      if (!painted) {
+        const sky = new Graphics();
+        sky.rect(0, 0, W, groundY).fill(b.sky);
+        sky.rect(0, 0, W, Math.floor(groundY / 2)).fill(b.sky2);
+        scene.addChild(sky);
+        const ground = new Graphics();
+        ground.rect(0, groundY, W, H - groundY).fill(b.ground);
+        ground.rect(0, groundY, W, 2).fill(b.groundLine);
+        scene.addChild(ground);
+      }
+      if (b.tufts && !painted) {
         const tufts = new Graphics();
         for (let x = 8; x < W; x += 34) {
           tufts.moveTo(x, groundY + 22).lineTo(x + 3, groundY + 8).lineTo(x + 6, groundY + 22).fill(b.groundLine);
         }
         scene.addChild(tufts);
       }
-      if (b.shimmer) {
+      if (b.shimmer && !painted) {
         const shim = new Graphics();
         for (let x = 0; x < W; x += 44) shim.rect(x, groundY + 14, 22, 2).fill(0xffffff);
         shim.alpha = 0.5;
@@ -391,7 +418,7 @@ export default function TitleScene({
         </div>
       )}
       <div className="text-center text-[10px] text-gray-500 mt-1">
-        {caption || `${bLabel(biome)} — Pixi scene: sky, ground, weather, figure, fire trail (where wired) + title systems: FireRed spawner, HeartGold flash, Ruby shine, Black 2 camera/blur, Platinum fades.`}
+        {caption || `${bLabel(biome)} — ${TITLE_BIOMES[biome].backgroundImage ? 'Painted background + Pixi' : 'Pixi'} scene: sky, ground, weather, figure, fire trail (where wired) + title systems: FireRed spawner, HeartGold flash, Ruby shine, Black 2 camera/blur, Platinum fades.`}
         {figureUrl ? '' : ' Figure: GAP — no figure shipped for this biome screen yet.'}
       </div>
     </div>
