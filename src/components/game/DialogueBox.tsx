@@ -3,6 +3,7 @@ import HumanPortrait from './HumanPortrait';
 import StdWindow from './StdWindow';
 import { useGameStore } from '../../store/gameStore';
 import { TEXT_SPEED_MS } from '../../lib/gameSettings';
+import { isConfirmKey } from '../../lib/buttonMode';
 import type { HumanSlot } from '../../lib/humanSheets';
 
 /**
@@ -74,6 +75,10 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
   // Settings wiring: TEXT SPEED row controls this interval.
   // MID 18ms is the pre-existing interval, kept exactly.
   const textSpeed = useGameStore(s => s.settings.textSpeed);
+  // BUTTON MODE: 'l' copies A (Enter / Space) when L_EQUALS_A —
+  // buttonMode.ts. LR shoulders have no list to flip in a message
+  // box, so they do nothing here (NEED, labelled in buttonMode.ts).
+  const buttonMode = useGameStore(s => s.settings.buttonMode);
   const typeInterval = TEXT_SPEED_MS[textSpeed] ?? 18;
   const page = pages[Math.min(pageIdx, pages.length - 1)];
   const typingDone = shown >= page.length;
@@ -125,14 +130,14 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         if (e.key === 'n' || e.key === 'N') { onChoice(false); return; }
         return;
       }
-      if (e.key === 'Enter' || e.key === ' ') {
+      if (isConfirmKey(e, buttonMode)) {
         e.preventDefault();
         advance();
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [advance, choice, onChoice]);
+  }, [advance, choice, onChoice, buttonMode]);
 
   return (
     <StdWindow
@@ -140,12 +145,6 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
         padding: '16px', cursor: 'pointer',
         bottom: 'max(1rem, env(safe-area-inset-bottom))',
-        // Batch B: dialogue box style row (corner radius) via CSS
-        // var, applied by Settings > Menu Creator > Menu
-        // Customisation on SAVE + BACK (applyMenuCustom). Fallback
-        // 14px is the pre-existing .std-window radius, unchanged
-        // until a player saves a different style.
-        borderRadius: 'var(--menu-dialogue-radius, 14px)',
       }}
       onClick={advance}
     >
@@ -162,7 +161,7 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
           {/* Dialogue text uses the DIALOGUE FONT placement
               (--dialogue-font, default 01 Digitall); the speaker
               name above uses the MAIN FONT via the body stack. */}
-          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)', fontSize: 'var(--menu-text-size, 16px)', lineHeight: 'var(--menu-line-height, 1.625)', color: 'var(--menu-text-color, #ffffff)', textShadow: 'var(--menu-text-shadow, none)' }}>
+          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)' }}>
             {page.slice(0, shown)}
           </div>
           {!isLast && typingDone && (
