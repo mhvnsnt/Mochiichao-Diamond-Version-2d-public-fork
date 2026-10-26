@@ -1134,8 +1134,7 @@
  ],
  "ring_capture_zone": {
   "zone": "NEW separate retro-arcade-THEMED zone (theme/setting only; NOT Harbor City Safari/preserve; NOT literally named 'Arcade Zone')",
-  "name_status": "NOT LOCKED \u2014 Mars picks from candidates: The Ringcade, Neon Loop Hall, Pixel Ring Hall (from ring-capture-zone-spec.md, PR #37)",
-  "proposed_map_key": "ring_zone (PROPOSED key only; wiring step assigns the final key when the zone map is created)",
+  "name_status": "LOCKED 2026-10-25 ~21:18 CDT (Mars decision) \u2014 The Ringcade. No other name applies.",
   "proposed_exit_hook": "NEON_CITY (FullWorldMaps) \u2014 neon theme adjacency; exit/enter coordinates assigned at zone-map creation, not invented here",
   "gate": "zoneVisited + zonePlayed -> ring capture unlocked -> shop ring items usable whenever; default capture remains Luigi Cubes",
   "placement_kind": "event_play_zone",
@@ -1149,6 +1148,8 @@
    "pyropaw",
    "terradog"
   ],
-  "placed_creatures_note": "PROPOSED starter-friendly ring-play roster (8 common creatures, all walk-complete wired). Wild encounter rates/levels for the ring zone are NOT set here \u2014 parent/game wiring sets them; this file only places the creatures and the zone."
+  "placed_creatures_note": "PROPOSED starter-friendly ring-play roster (8 common creatures, all walk-complete wired). Wild encounter rates/levels for the ring zone are NOT set here \u2014 parent/game wiring sets them; this file only places the creatures and the zone.",
+  "name": "The Ringcade",
+  "proposed_map_key": "ring_zone (PROPOSED key only; wiring step assigns the final key when the zone map is created)"
  }
 }
