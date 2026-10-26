@@ -3,13 +3,59 @@
 ## Status
 
 - Preset set defined: **10/10** (one per on-main title biome).
-- Wired into any creator screen: **0/10** — deliberately not done here.
-  This batch is definitions only, so it cannot conflict with the
-  creator export worker's open PR #155, which touches creator screens.
+- Wired into the game (selectable, this branch stacking on #157):
+  **10/10** — Settings TITLE SCREEN row cycles Locked Default +
+  the 10 presets, with a TitleScene preview strip for the picked
+  preset; the TITLE phase renders the picked preset full-screen.
+  Wiring targets the #157 branch, NOT main, and is blocked on #157
+  merging first. Creator-screen wiring (PR #155's screens) is still
+  owed separately — this branch does not touch creator screens.
 - Locked default title + v32 main menu: untouched, still the default.
   No preset in this set is the default, and selecting a preset must
-  never overwrite the locked default (that guard is the creator-UI
-  plumbing step's job, owed after #155 merges).
+  never overwrite the locked default. With no pick, the TITLE phase
+  renders the locked phi stage exactly as before; a pick replaces
+  the TITLE scene only, and clearing the pick (or RESET TO LOCKED
+  DEFAULT) restores the phi stage.
+
+## Wiring (this branch — selection, not definitions)
+
+- `src/lib/titleScreenPresetSelection.ts` (NEW) — the player
+  choice, mirroring titlePlayerPreference.ts storage: localStorage
+  key `mochiichao_player_title_screen_preset`, try/catch fallback
+  to the locked default. The key is PLAYER-scoped, not creator
+  preset storage, so it cannot collide with PR #155's storage.
+  Unknown / stale ids read back as null (locked default), never a
+  broken scene. `TITLE_SCREEN_PRESET_CYCLE` = [null, ...10 ids].
+- `src/components/game/SettingsScreen.tsx` (hook only) — TITLE
+  SCREEN row after the skin rows, same LEFT/RIGHT cycle pattern;
+  saved immediately on cycling (like skins); RESET TO LOCKED
+  DEFAULT clears the pick. Preview strip below the rows renders
+  the picked preset via the seam's own step
+  (`<TitleScene {...toTitleSceneProps(resolved)} />`); Locked
+  Default shows no strip, because the phi stage is not a TitleScene.
+- `src/components/IntroSequence.tsx` (hook only) — the TITLE phase
+  reads the pick first: a pick renders the preset scene
+  (TitleScene, full viewport) + the PRESS ANY KEY prompt owned
+  here (TitleScene startPrompt stays false for presets, per the
+  seam, so there is no double prompt); no pick renders the locked
+  phi stage, whose code is untouched. Press behaviour is the
+  existing path (M3 chirp, white fade 350ms, MAIN_MENU) — reused,
+  not redefined.
+- `src/components/game/TitleScene.tsx` (additive prop only) —
+  optional `fullHeight` (default false): the in-game TITLE phase
+  passes it for a full-viewport scene; every other caller keeps
+  the 180px preview strip exactly as before.
+- Preset title scenes carry NO logo overlay in this wiring: the
+  seam defines a preset as background + creature + particles +
+  press prompt, with no logo slot, and inventing a logo position
+  would guess at the locked title's layout. The locked default's
+  logo PNG (never font text) is untouched. Whether presets should
+  also carry the logo PNG is a Mars decision, flagged in the PR —
+  not silently added here.
+- The `status: 'defined'` field on each preset is NOT changed by
+  this wiring: validateTitleScreenPresets() requires it, and the
+  table itself is unchanged. Selection state lives in the new
+  selection module, not in the preset table.
 
 ## Files (all NEW, 0 edits to existing files)
 
@@ -119,10 +165,15 @@ creator field today:
 - Per-preset music themes: 0/10 exist (all presets share the
   existing `title` theme). New themes are the Title Music lane's
   gated work, not invented here.
-- Creator-UI plumbing (list / preview / select / persist a preset
-  in the creator screens): 0/1 — owed after PR #155 merges. This
-  includes choosing a selection storage key (deliberately not
-  invented here, to avoid colliding with #155's preset storage).
+- In-game selection plumbing (list / preview / select / persist
+  a preset in Settings + TITLE phase): DONE on this branch (see
+  Wiring above). Its storage key is player-scoped
+  (mochiichao_player_title_screen_preset), chosen so it cannot
+  collide with #155's creator storage.
+- Creator-screen plumbing (list / preview / select / persist a
+  preset in the creator screens themselves): 0/1 — still owed
+  after PR #155 merges. The in-game wiring above does not touch
+  creator screens.
 - Live playtest of a selected preset on a device: 0/1 — build +
   typecheck verify the definitions, not a played session.
 - Logo: untouched (PNG, never font text). Locked default: untouched.
