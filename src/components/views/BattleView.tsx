@@ -4,7 +4,21 @@ import { MochiiInstance } from '../../lib/types';
 import { createMochii, gainExp } from '../../lib/engine';
 import { SPECIES_DB } from '../../lib/species';
 import { MOVES_DB } from '../../lib/moves';
-import { calcTypeMultiplier, TYPES } from '../../lib/constants';
+import { TYPES } from '../../lib/constants';
+import {
+  resolveTurn,
+  type Action,
+  type BattleEvent,
+  type StageMap,
+  type TurnResult,
+} from '../../lib/battleResolver';
+import {
+  LEGACY_TYPE_CHART,
+  buildLegacyMoveTable,
+  carriedFromInstance,
+  makeResolverBattler,
+  type CarriedBattlerState,
+} from '../../lib/battleWiring';
 import { creatureDisplayName } from '../../lib/spriteSheets';
 import { fuseStats, fusionName } from '../../lib/monster-tamer-systems';
 import CreaturePortrait from '../game/CreaturePortrait';
@@ -78,6 +92,32 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   const [switchOptions, setSwitchOptions] = useState<Array<{ idx: number; m: MochiiInstance }> | null>(null);
   const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string; damageFraction: number; isCrit: boolean } | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
+  // Resolver wiring (PR #107 -> live BattleView): one resolveTurn call per
+  // turn, played back event by event through the existing Pixi pipeline.
+  // Per-battle carried state (stages/status/charging) lives in this ref
+  // only — it is never written back to the store, so a battle's stages
+  // reset when the battle ends. PP is likewise resolver-internal only.
+  const battleCarriedRef = useRef<{ player: CarriedBattlerState; foe: CarriedBattlerState } | null>(null);
+  const battleHpRef = useRef<{ player: number; foe: number }>({ player: 0, foe: 0 });
+  interface QueuedTurn {
+    events: BattleEvent[];
+    idx: number;
+    finalPlayerHp: number;
+    finalFoeHp: number;
+    finalPlayerStages: StageMap;
+    finalFoeStages: StageMap;
+    finalPlayerStatus: string | null;
+    finalFoeStatus: string | null;
+    finalPlayerVolatile: { chargingMoveId?: string | null };
+    finalFoeVolatile: { chargingMoveId?: string | null };
+    foeSpeciesId: string;
+    foeLevel: number;
+  }
+  const queueRef = useRef<QueuedTurn | null>(null);
+  const queueTimerRef = useRef<number | null>(null);
+  useEffect(() => () => {
+    if (queueTimerRef.current !== null) window.clearTimeout(queueTimerRef.current);
+  }, []);
 
   const pushLog = (msg: string) => setLog(prev => [...prev.slice(-15), msg]);
 
@@ -94,6 +134,13 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     const newEnemy = createMochii(enemyId, level);
     if (newEnemy) {
       setEnemy(newEnemy);
+      // Resolver per-battle state starts from the instances as created
+      // (stages 0, status null) and is carried in a ref for this battle.
+      battleCarriedRef.current = {
+        player: carriedFromInstance(party[firstAlive]),
+        foe: carriedFromInstance(newEnemy),
+      };
+      battleHpRef.current = { player: party[firstAlive].hp, foe: newEnemy.hp };
       updateDex(enemyId, 'seen');
       pushLog(`A wild ${newEnemy.nickname} appeared!`);
       // BATTLE SCENE OFF skips the intro delay; ON keeps 1000ms.
@@ -135,172 +182,210 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     }
   };
 
-  const executeDamage = (attacker: MochiiInstance, defender: MochiiInstance, moveId: string) => {
-    const move = MOVES_DB[moveId];
-    if (!move || move.cat === 'Status') return { damage: 0, text: `${attacker.nickname} used ${move?.name || 'a move'}!`, isCrit: false, damageFraction: 0 };
-    const aStat = move.cat === 'Physical' ? attacker.stats.atk : attacker.stats.spa;
-    const dStat = move.cat === 'Physical' ? defender.stats.def : defender.stats.spd;
-    let baseDmg = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * move.bp * aStat / dStat) / 50) + 2;
-    const defenderType1 = SPECIES_DB[defender.speciesId].types[0];
-    const defenderType2 = SPECIES_DB[defender.speciesId].types[1];
-    const typeMult = calcTypeMultiplier(move.type, defenderType1, defenderType2);
-    const isStab = SPECIES_DB[attacker.speciesId].types.includes(move.type);
-    const stabMult = isStab ? 1.5 : 1;
-    const crit = Math.random() < 0.06 ? 1.5 : 1.0;
-    const roll = (85 + Math.random() * 15) / 100;
-    const finalDmg = Math.floor(baseDmg * typeMult * stabMult * crit * roll);
-    let narrative = `${attacker.nickname} used ${move.name}! `;
-    if (typeMult > 1) narrative += "It's super effective! ";
-    if (typeMult < 1 && typeMult > 0) narrative += "It's not very effective... ";
-    if (typeMult === 0) narrative += "It had no effect... ";
-    if (crit > 1) narrative += "A critical hit! ";
-    return { damage: finalDmg, text: narrative, isCrit: crit > 1, damageFraction: finalDmg / defender.maxHp };
+  // NOTE: the old inline executeDamage is gone. Damage now comes from
+  // battleResolver.calculateDamage via resolveTurn (see battleWiring.ts
+  // for the verification note: identical base formula, legacy chart).
+  // Reset the player side's per-battle carried state when a new creature
+  // is sent in (SHIFT choice or SET auto-next): the incoming creature
+  // starts from its own stages/status, never the fainted one's.
+  const resetPlayerCarried = (idx: number) => {
+    const m = useGameStore.getState().party[idx];
+    if (!m) return;
+    if (battleCarriedRef.current) battleCarriedRef.current.player = carriedFromInstance(m);
+    battleHpRef.current.player = m.hp;
+  };
+
+  // End of a resolver turn: sync HP + carried state, then exactly one of
+  // victory / switch-or-defeat / next player turn. Foe faint wins over
+  // player faint (the resolver's outcome priority): if the foe fainted,
+  // the battle is won even if the active member also fainted (e.g. a
+  // recoil suicide) — in that edge case EXP is skipped (no living
+  // active recipient) while the unchanged victory reward is kept.
+  const finishTurnQueue = () => {
+    const q = queueRef.current;
+    if (!q) return;
+    queueRef.current = null;
+    battleCarriedRef.current = {
+      player: { stages: q.finalPlayerStages, status: q.finalPlayerStatus, volatile: q.finalPlayerVolatile },
+      foe: { stages: q.finalFoeStages, status: q.finalFoeStatus, volatile: q.finalFoeVolatile },
+    };
+    battleHpRef.current = { player: q.finalPlayerHp, foe: q.finalFoeHp };
+    // Final HP sync: damage events already drained HP at impact, but
+    // end-of-turn burn/poison ticks (events without a damage field)
+    // only land here, so bars and store end exactly on resolver HPs.
+    setEnemy(prev => prev ? { ...prev, hp: q.finalFoeHp } : null);
+    const partyBefore = useGameStore.getState().party;
+    const cur = partyBefore[activeIdx];
+    if (cur) updatePartyMember(activeIdx, { ...cur, hp: q.finalPlayerHp });
+    if (q.finalFoeHp <= 0) {
+      const active = useGameStore.getState().party[activeIdx];
+      if (active && q.finalPlayerHp > 0) {
+        const expGained = Math.floor((SPECIES_DB[q.foeSpeciesId].baseExpYield * q.foeLevel) / 5);
+        pushLog(`${active.nickname} gained ${expGained} EXP!`);
+        const { leveledUp, newLevel } = gainExp(active, expGained);
+        if (leveledUp) pushLog(`${active.nickname} grew to Level ${newLevel}!`);
+        updatePartyMember(activeIdx, active);
+      }
+      gainWallet(50);
+      pushLog('You found 50 Credits.');
+      setBState('VICTORY');
+      setTimeout(onLeave, 3000);
+      return;
+    }
+    if (q.finalPlayerHp <= 0) {
+      // BATTLE STYLE: SHIFT offers a switch choice; SET sends the
+      // next alive creature automatically (pre-existing behaviour).
+      const partyAfter = useGameStore.getState().party;
+      const aliveOpts = partyAfter
+        .map((p, idx) => ({ idx, m: idx === activeIdx ? { ...p, hp: q.finalPlayerHp } : p }))
+        .filter(o => o.m.hp > 0);
+      if (battleStyle === 'SHIFT' && aliveOpts.length > 0) {
+        pushLog('Choose your next Mochiichao!');
+        setSwitchOptions(aliveOpts);
+        setBState('SWITCH_CHOICE');
+        return;
+      }
+      if (aliveOpts.length > 0) {
+        pushLog(`Go! ${aliveOpts[0].m.nickname}!`);
+        resetPlayerCarried(aliveOpts[0].idx);
+        setActiveIdx(aliveOpts[0].idx);
+        setBState('PLAYER_TURN');
+        return;
+      }
+      pushLog('You have no more Mochiichao. You blacked out!');
+      setBState('DEFEAT');
+      setTimeout(onLeave, 3000);
+      return;
+    }
+    setBState('PLAYER_TURN');
+  };
+
+  // Play the next queued resolver event. Damage events (including 0 for
+  // a no-effect hit) and misses animate through the Pixi pipeline and
+  // advance again from onAttackDone; every other event (flinch text,
+  // status/stat application, faint text, charge text, end-of-turn
+  // ticks) is log-only and advances after a readable pause.
+  const advanceTurnQueue = () => {
+    const q = queueRef.current;
+    if (!q) return;
+    if (q.idx >= q.events.length) { finishTurnQueue(); return; }
+    const ev = q.events[q.idx];
+    q.idx += 1;
+    pushLog(ev.text);
+    const isAnim = ev.damage !== undefined || ev.missed === true;
+    if (isAnim && ev.actor && ev.moveId) {
+      const mv = MOVES_DB[ev.moveId];
+      const attacker = ev.actor === 'player' ? 'player' : 'enemy';
+      const targetMax = ev.actor === 'player' ? (enemy?.maxHp ?? 1) : (playerActive?.maxHp ?? 1);
+      const dmg = ev.damage ?? 0;
+      pendingRef.current = { damage: dmg, text: ev.text, attacker, moveId: ev.moveId, damageFraction: dmg / targetMax, isCrit: !!ev.isCrit };
+      setBState('ANIMATING');
+      setAttack({ nonce: Date.now(), attacker, category: mv?.cat || 'Physical', color: mv ? TYPES[mv.type]?.color || '#ffffff' : '#ffffff', damageFraction: dmg / targetMax, isCrit: !!ev.isCrit });
+      return;
+    }
+    queueTimerRef.current = window.setTimeout(advanceTurnQueue, 650);
   };
 
   // Called by the Pixi canvas at the impact frame: HP drains here, not before.
+  // HP is tracked in battleHpRef (authoritative mid-turn) so an impact
+  // never double-subtracts from a stale closure value.
   const onAttackImpact = () => {
     const p = pendingRef.current;
-    if (!p || !enemy) return;
+    if (!p) return;
     pendingRef.current = null;
     if (p.attacker === 'player') {
-      const newEnemyHp = Math.max(0, enemy.hp - p.damage);
+      const newEnemyHp = Math.max(0, battleHpRef.current.foe - p.damage);
+      battleHpRef.current.foe = newEnemyHp;
       setEnemy(prev => prev ? { ...prev, hp: newEnemyHp } : null);
-      (window as any).__battleEnemyHp = newEnemyHp;
       if (p.damage > 0) setLastDamage({ amount: p.damage, target: 'enemy', nonce: Date.now() });
-    } else if (playerActive) {
-      const newPlayerHp = Math.max(0, playerActive.hp - p.damage);
-      updatePartyMember(activeIdx, { ...playerActive, hp: newPlayerHp });
-      (window as any).__battlePlayerHp = newPlayerHp;
+    } else {
+      const newPlayerHp = Math.max(0, battleHpRef.current.player - p.damage);
+      battleHpRef.current.player = newPlayerHp;
+      const cur = useGameStore.getState().party[activeIdx];
+      if (cur) updatePartyMember(activeIdx, { ...cur, hp: newPlayerHp });
       if (p.damage > 0) setLastDamage({ amount: p.damage, target: 'player', nonce: Date.now() });
     }
   };
 
+  // An attack animation finished: play the next queued resolver event.
   const onAttackDone = () => {
-    const p = (window as any).__battleLastAttack as { attacker: 'player' | 'enemy'; text: string } | undefined;
-    const enemyHp = (window as any).__battleEnemyHp as number | undefined;
-    const playerHp = (window as any).__battlePlayerHp as number | undefined;
-    if (p?.attacker === 'player' && enemy) {
-      const newEnemyHp = enemyHp ?? enemy.hp;
-      if (newEnemyHp <= 0) {
-        pushLog(`Enemy ${enemy.nickname} fainted!`);
-        const expGained = Math.floor((SPECIES_DB[enemy.speciesId].baseExpYield * enemy.level) / 5);
-        pushLog(`${playerActive.nickname} gained ${expGained} EXP!`);
-        const { leveledUp, newLevel } = gainExp(playerActive, expGained);
-        if (leveledUp) pushLog(`${playerActive.nickname} grew to Level ${newLevel}!`);
-        updatePartyMember(activeIdx, playerActive);
-        gainWallet(50);
-        pushLog('You found 50 Credits.');
-        setBState('VICTORY');
-        setTimeout(onLeave, 3000);
-      } else {
-        setBState('ENEMY_TURN');
+    advanceTurnQueue();
+  };
+
+  // Start ONE resolver turn. The player action is the chosen move, or a
+  // pass for the catch break-free follow-up (ENEMY_TURN); the foe action
+  // is BattleView's existing random enemy move pick — the resolver
+  // accepts actions as input and does not choose them (AI is owed
+  // separately). Turn order, target, accuracy, damage, secondaries and
+  // the win check all come from resolveTurn now, in resolver order
+  // (priority, then effective Speed) — not player-then-enemy.
+  const startResolverTurn = (playerMoveId: string | null) => {
+    if (!enemy || !playerActive) return;
+    const carried = battleCarriedRef.current ?? {
+      player: carriedFromInstance(playerActive),
+      foe: carriedFromInstance(enemy),
+    };
+    // Fused attacker: same species/types as the active creature (for
+    // STAB), fused stats + fused name only — as before.
+    const attackerInst = fusedAttacker || playerActive;
+    const playerBattler = makeResolverBattler('player', attackerInst, SPECIES_DB[playerActive.speciesId].types, carried.player);
+    const foeBattler = makeResolverBattler('foe', enemy, SPECIES_DB[enemy.speciesId].types, carried.foe);
+    const actions: Action[] = [];
+    if (playerMoveId) actions.push({ kind: 'move', side: 'player', moveId: playerMoveId });
+    else actions.push({ kind: 'pass', side: 'player' });
+    const enemyMoveId = enemy.moves[Math.floor(Math.random() * enemy.moves.length)];
+    if (enemyMoveId) actions.push({ kind: 'move', side: 'foe', moveId: enemyMoveId });
+    else actions.push({ kind: 'pass', side: 'foe' });
+    const result: TurnResult = resolveTurn(
+      { player: playerBattler, foe: foeBattler },
+      actions,
+      buildLegacyMoveTable(),
+      LEGACY_TYPE_CHART,
+    );
+    queueRef.current = {
+      events: result.events,
+      idx: 0,
+      finalPlayerHp: result.battlers.player.hp,
+      finalFoeHp: result.battlers.foe.hp,
+      finalPlayerStages: result.battlers.player.stages,
+      finalFoeStages: result.battlers.foe.stages,
+      finalPlayerStatus: result.battlers.player.status,
+      finalFoeStatus: result.battlers.foe.status,
+      finalPlayerVolatile: { chargingMoveId: result.battlers.player.volatile?.chargingMoveId ?? null },
+      finalFoeVolatile: { chargingMoveId: result.battlers.foe.volatile?.chargingMoveId ?? null },
+      foeSpeciesId: enemy.speciesId,
+      foeLevel: enemy.level,
+    };
+    // BATTLE SCENE OFF: apply the same resolver result directly, no
+    // Pixi animation — all event texts logged, final HPs synced by the
+    // shared finish path. The floating damage number keeps the last
+    // damage event, as the old OFF path showed one number per attack.
+    if (battleScene === 'OFF') {
+      for (const ev of result.events) pushLog(ev.text);
+      const lastDmg = [...result.events].reverse().find(ev => ev.damage !== undefined && ev.damage > 0);
+      if (lastDmg && lastDmg.target) {
+        setLastDamage({ amount: lastDmg.damage ?? 0, target: lastDmg.target === 'foe' ? 'enemy' : 'player', nonce: Date.now() });
       }
-    } else if (p?.attacker === 'enemy' && playerActive) {
-      const newPlayerHp = playerHp ?? playerActive.hp;
-      if (newPlayerHp <= 0) {
-        pushLog(`${playerActive.nickname} fainted!`);
-        // BATTLE STYLE: SHIFT offers a switch choice; SET sends the
-        // next alive creature automatically (pre-existing behaviour).
-        const aliveOpts = party
-          .map((p, idx) => ({ idx, m: idx === activeIdx ? { ...p, hp: newPlayerHp } : p }))
-          .filter(o => o.m.hp > 0);
-        if (battleStyle === 'SHIFT' && aliveOpts.length > 0) {
-          pushLog('Choose your next Mochiichao!');
-          setSwitchOptions(aliveOpts);
-          setBState('SWITCH_CHOICE');
-          return;
-        }
-        const nextIdx = party.findIndex(p => p.hp > 0);
-        if (nextIdx !== -1) {
-          pushLog(`Go! ${party[nextIdx].nickname}!`);
-          setActiveIdx(nextIdx);
-          setBState('PLAYER_TURN');
-        } else {
-          pushLog('You have no more Mochiichao. You blacked out!');
-          setBState('DEFEAT');
-          setTimeout(onLeave, 3000);
-        }
-      } else {
-        setBState('PLAYER_TURN');
-      }
+      finishTurnQueue();
+      return;
     }
+    setBState('ANIMATING');
+    advanceTurnQueue();
   };
 
   const handlePlayerMove = (moveId: string) => {
     if (!enemy || bState !== 'PLAYER_TURN' || !playerActive) return;
-    const move = MOVES_DB[moveId];
-    const result = executeDamage(fusedAttacker || playerActive, enemy, moveId);
-    pushLog(result.text);
-    // BATTLE SCENE OFF: apply damage directly, no Pixi animation.
-    // This mirrors onAttackDone's player branch with computed HP
-    // (not stale closure state), so no animation frame is needed.
-    if (battleScene === 'OFF') {
-      const newEnemyHp = Math.max(0, enemy.hp - result.damage);
-      setEnemy({ ...enemy, hp: newEnemyHp });
-      if (result.damage > 0) setLastDamage({ amount: result.damage, target: 'enemy', nonce: Date.now() });
-      if (newEnemyHp <= 0) {
-        pushLog(`Enemy ${enemy.nickname} fainted!`);
-        const expGained = Math.floor((SPECIES_DB[enemy.speciesId].baseExpYield * enemy.level) / 5);
-        pushLog(`${playerActive.nickname} gained ${expGained} EXP!`);
-        const { leveledUp, newLevel } = gainExp(playerActive, expGained);
-        if (leveledUp) pushLog(`${playerActive.nickname} grew to Level ${newLevel}!`);
-        updatePartyMember(activeIdx, playerActive);
-        gainWallet(50);
-        pushLog('You found 50 Credits.');
-        setBState('VICTORY');
-        setTimeout(onLeave, 3000);
-      } else {
-        setBState('ENEMY_TURN');
-      }
-      return;
-    }
-    setBState('ANIMATING');
-    // Fused attacker: same species/types as the active creature (for
-    // STAB in executeDamage), fused stats + fused name only.
-    (window as any).__battleLastAttack = { attacker: 'player', text: result.text };
-    pendingRef.current = { damage: result.damage, text: result.text, attacker: 'player', moveId, damageFraction: result.damageFraction, isCrit: result.isCrit };
-    setAttack({ nonce: Date.now(), attacker: 'player', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff', damageFraction: result.damageFraction, isCrit: result.isCrit });
+    startResolverTurn(moveId);
   };
 
+  // ENEMY_TURN now only arrives from a failed catch (Luigi Cube break
+  // free): the follow-up is a resolver turn in which the player passes
+  // and the foe attacks, so it goes through the same order/resolve/win
+  // path as a normal turn instead of the old inline enemy phase.
   useEffect(() => {
     if (bState === 'ENEMY_TURN' && enemy && playerActive) {
       const t = setTimeout(() => {
-        const randomMove = enemy.moves[Math.floor(Math.random() * enemy.moves.length)];
-        const move = MOVES_DB[randomMove];
-        const result = executeDamage(enemy, playerActive, randomMove);
-        pushLog(result.text);
-        // BATTLE SCENE OFF: apply enemy damage directly, mirroring
-        // onAttackDone's enemy branch with computed HP.
-        if (battleScene === 'OFF') {
-          const newPlayerHp = Math.max(0, playerActive.hp - result.damage);
-          updatePartyMember(activeIdx, { ...playerActive, hp: newPlayerHp });
-          if (result.damage > 0) setLastDamage({ amount: result.damage, target: 'player', nonce: Date.now() });
-          if (newPlayerHp <= 0) {
-            pushLog(`${playerActive.nickname} fainted!`);
-            const aliveOpts = party
-              .map((p, idx) => ({ idx, m: idx === activeIdx ? { ...p, hp: newPlayerHp } : p }))
-              .filter(o => o.m.hp > 0);
-            if (battleStyle === 'SHIFT' && aliveOpts.length > 0) {
-              pushLog('Choose your next Mochiichao!');
-              setSwitchOptions(aliveOpts);
-              setBState('SWITCH_CHOICE');
-            } else if (aliveOpts.length > 0) {
-              pushLog(`Go! ${aliveOpts[0].m.nickname}!`);
-              setActiveIdx(aliveOpts[0].idx);
-              setBState('PLAYER_TURN');
-            } else {
-              pushLog('You have no more Mochiichao. You blacked out!');
-              setBState('DEFEAT');
-              setTimeout(onLeave, 3000);
-            }
-          } else {
-            setBState('PLAYER_TURN');
-          }
-          return;
-        }
-            (window as any).__battleLastAttack = { attacker: 'enemy', text: result.text };
-        pendingRef.current = { damage: result.damage, text: result.text, attacker: 'enemy', moveId: randomMove, damageFraction: result.damageFraction, isCrit: result.isCrit };
-        setAttack({ nonce: Date.now(), attacker: 'enemy', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff', damageFraction: result.damageFraction, isCrit: result.isCrit });
+        startResolverTurn(null);
       }, battleScene === 'OFF' ? 0 : 1000);
       return () => clearTimeout(t);
     }
@@ -399,7 +484,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
             <div className="text-white font-bold text-sm mb-2">Choose your next Mochiichao! (BATTLE STYLE: SHIFT)</div>
             <div className="flex flex-wrap gap-2">
               {switchOptions.map(o => (
-                <button key={o.idx} onClick={() => { pushLog(`Go! ${o.m.nickname}!`); setActiveIdx(o.idx); setSwitchOptions(null); setBState('PLAYER_TURN'); }} className="game-button px-3 py-2 text-sm font-bold min-h-[48px]">
+                <button key={o.idx} onClick={() => { pushLog(`Go! ${o.m.nickname}!`); resetPlayerCarried(o.idx); setActiveIdx(o.idx); setSwitchOptions(null); setBState('PLAYER_TURN'); }} className="game-button px-3 py-2 text-sm font-bold min-h-[48px]">
                   {o.m.nickname} (Lv.{o.m.level}, {Math.ceil(o.m.hp)}/{o.m.maxHp} HP)
                 </button>
               ))}
