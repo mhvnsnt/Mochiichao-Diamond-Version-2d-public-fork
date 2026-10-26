@@ -344,7 +344,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           >
             {introScene < 3 ? 'NEXT SCENE ►' : 'TO TITLE ►'}
           </button>
-          <div className="text-gray-500 text-xs mt-4">Intro music wired — official intro track. Any key or tap steps to the next scene.</div>
+          <div className="text-gray-500 text-xs mt-4">Any key or tap steps to the next scene.</div>
         </div>
       </div>
     );
@@ -816,7 +816,6 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               <div className="text-gray-400 group-hover:text-pink-400 font-bold tracking-widest mt-2">GIRL</div>
             </button>
           </div>
-          <div className="text-slate-400 text-sm mt-8">Choose GIRL to play as Player A (teal/chrome jacket).</div>
         </StdWindow>
       </div>
     );
