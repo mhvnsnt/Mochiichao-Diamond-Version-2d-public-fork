@@ -14,6 +14,7 @@ import ArenaBattleView from './components/views/ArenaBattleView';
 import CreatureModeView from './components/views/CreatureModeView';
 import CheatConsoleView from './components/views/CheatConsoleView';
 import IntroSequence from './components/IntroSequence';
+import { stopMusic } from './lib/music';
 import MochiiMindUI from './components/MochiiMindUI';
 
 export type ViewState = 'STARTER_SELECT' | 'WORLD' | 'BATTLE' | 'ROSTER' | 'SHOP' | 'BAG' | 'PC' | 'GARDEN' | 'RING' | 'ARENA' | 'CREATURE' | 'CHEATS';
@@ -28,8 +29,8 @@ export default function App() {
   if (!introCompleted) {
     return (
       <IntroSequence
-        onComplete={() => { completeIntro(); setView('WORLD'); }}
-        onEnterWorld={() => { completeIntro(); setView('WORLD'); }}
+        onComplete={() => { stopMusic(0); completeIntro(); setView('WORLD'); }}
+        onEnterWorld={() => { stopMusic(0); completeIntro(); setView('WORLD'); }}
       />
     );
   }
