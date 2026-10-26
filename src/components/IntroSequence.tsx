@@ -12,6 +12,7 @@ import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
 import TitleCreatureFigure from "./game/TitleCreatureFigure";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
+import { playMusic, playSfx, stopMusic } from "../lib/music";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -162,6 +163,26 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     }
   }, [phase]);
 
+  // Music wiring (official tracks, 2026-10-25): BOOT plays the boot SFX
+  // once, INTRO plays the official intro once (no loop), TITLE loops
+  // the official title, MAIN_MENU / SETTINGS / SAVE_SLOTS loop the
+  // main-menu track, and later phases (prof intro, name entry, etc.)
+  // stop music so the world starts silent. playMusic() fades the old
+  // track out over 1000 ms (Pokemon 60-frame fade) and is a no-op if
+  // the same track is already playing, so B back to TITLE restarts
+  // title music without restarting the loop on every render.
+  useEffect(() => {
+    if (phase === "BOOT") playSfx("boot");
+    else if (phase === "INTRO") playMusic("intro");
+    else if (phase === "TITLE") playMusic("title");
+    else if (phase === "MAIN_MENU" || phase === "SETTINGS" || phase === "SAVE_SLOTS") playMusic("mainMenu");
+    else stopMusic();
+  }, [phase]);
+
+  useEffect(() => {
+    return () => stopMusic(0);
+  }, []);
+
   // v3 main menu controls: up/down + confirm, B/back to title. Tap /
   // click on a window works as well (see the MAIN_MENU render).
   useEffect(() => {
@@ -201,6 +222,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       if (introScene < 3) setIntroScene(s => s + 1);
       else setPhase("TITLE");
     } else if (phase === "TITLE" && !titleFading) {
+      playSfx("pressStart");
       setTitleFading(true);
       setTimeout(() => { setTitleFading(false); setPhase("MAIN_MENU"); }, 350);
     }
@@ -272,7 +294,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           >
             {introScene < 3 ? 'NEXT SCENE ►' : 'TO TITLE ►'}
           </button>
-          <div className="text-gray-500 text-xs mt-4">Intro music: GAP — original music needed. Any key skips and stops the intro.</div>
+          <div className="text-gray-500 text-xs mt-4">Intro music: official intro track. Any key skips to the title.</div>
         </div>
       </div>
     );
@@ -343,7 +365,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
             <div className="text-center text-gray-400 text-[10px] tracking-widest mt-1">M HEAVENSENT STUDIOS · TITLE COPYRIGHT SLOT</div>
-            <div className="text-center text-gray-500 text-[10px] mt-2">Title background scene art: GAP — original art needed · Title music: GAP</div>
+            <div className="text-center text-gray-500 text-[10px] mt-2">Title background scene art: GAP — original art needed · Title music: official title track (loops)</div>
           </div>
         </div>
 
