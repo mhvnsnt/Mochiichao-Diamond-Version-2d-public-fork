@@ -288,3 +288,196 @@ Respect `prefers-reduced-motion`: with it on, all idle/twinkle motion off, hover
 ## Page instructions not followed
 
 None encountered. No page content instructed a change of mission; all pages were treated as source material only.
+
+
+---
+
+## Lab studies added 2026-10-26 (UI lane research finish)
+
+The five closest lab studies, added as a complete edit on 2026-10-26. This section only appends; it changes no existing recommendation, number, or threshold above.
+
+## Standing caveat (keep verbatim, at the top of the added section)
+
+> No lab study measures neurotransmitter release from a specific menu colour,
+> menu density, or fade. The studies below measure neurotransmitter-related
+> signals during gameplay, rewarded play, animal interaction, or group singing
+> — not during menu use. Every design recommendation drawn from them is
+> principled, not validated: it is a hypothesis to A/B-test (for example,
+> menu variant A vs. variant B on time-to-first-action, return rate, and
+> self-reported calm / excitement), not a proven threshold. Do not quote any
+> number below as "the amount of dopamine / oxytocin / serotonin / endorphin
+> a menu colour produces."
+
+## Study 1/5 — Dopamine during gameplay (Koepp et al., 1998)
+
+What was actually done: 8 male volunteers played a goal-directed video game
+(steering a tank around an arena to collect flags for a monetary incentive)
+during a [11C]raclopride PET scan, and looked at an empty screen during a
+second scan (order randomised). Reduced raclopride binding in the striatum
+during play, versus baseline, was read as increased endogenous dopamine
+release; the reduction correlated with performance level and was greatest
+in the ventral striatum.
+
+What it does NOT show: anything about a colour, a menu, a symbol count, or
+a fade. The task was goal-directed play with a monetary incentive, not
+looking at a title screen.
+
+Design bridge (principled, to A/B-test): dopamine tracks anticipation and
+performance during goal-directed play, so the menu's job is to set up the
+next goal cleanly (a visible next step, a reward cue such as yellow sparkles
+before play) rather than to deliver the reward itself. Test: does a menu
+with one clear next-step cue shorten time-to-first-action versus a menu
+with several competing cues?
+
+Full citation: Koepp, M. J., Gunn, R. N., Lawrence, A. D., Cunningham, V. J.,
+Dagher, A., Jones, T., Brooks, D. J., Bench, C. J., & Grasby, P. M. (1998).
+Evidence for striatal dopamine release during a video game. Nature, 393(6682),
+266–268. https://doi.org/10.1038/30498 (PMID 9607763).
+
+## Study 2/5 — Dopamine during rewarded Tetris, and its return to baseline (Kim et al.)
+
+What was actually done: 7 healthy, right-handed, non-smoking volunteers were
+scanned with [11C]raclopride PET for 120 minutes (50 minutes resting, 40
+minutes playing Tetris, 30 minutes resting), receiving a bolus plus constant
+infusion of the radioligand. During play they were periodically rewarded
+with unpredictable monetary amounts for improved performance. Striatal
+binding (V3′) fell during play versus baseline — caudate −15 ± 6%,
+putamen −30 ± 10% — indicating increased dopamine release, and it rose
+gradually back toward baseline during the 30 minutes after play ended.
+The size of the fall correlated with task performance.
+
+Accuracy note: this record is a conference-abstract record, not a
+peer-reviewed journal article as retrieved (OSTI / IAEA records for the
+2002 Asia-Oceania Congress of Nuclear Medicine and Biology abstract, with
+a 2004 re-listing). Cite it as such; do not invent a journal, volume, or
+page range for it. Its numbers are the most-cited Tetris figures in the
+existing report, and they survive here only with that provenance flag.
+
+What it does NOT show: anything about a colour or a menu. The reward was
+unpredictable money for performance in an active game, and the signal
+returned toward baseline after play stopped.
+
+Design bridge (principled, to A/B-test): unpredictable, performance-linked
+rewards during play — not static menu decoration — are what the dopamine
+record actually tracks, and the signal decays after play. So a menu should
+not be asked to "hold" a dopamine state; it should hand off to play quickly
+and let play carry the reward. Test: does a shorter menu-to-play path
+change session length versus a menu that lingers on reward art?
+
+Full citation: Kim, S. E., Cho, S. S., Choe, Y. S., Lee, S. Y., Kang, E., &
+Kim, B. T. Temporal changes of striatal dopamine release during and after
+a video game with a monetary reward: A PET study with [11C]raclopride
+continuous infusion. Conference abstract, 8th Asia-Oceania Congress of
+Nuclear Medicine and Biology (2002); OSTI record 20400383.
+https://www.osti.gov/etdeweb/biblio/20400383
+
+## Study 3/5 — Oxytocin and serotonin during dog interaction (Santaniello et al., 2025)
+
+What was actually done: 30 dialysis patients with chronic kidney disease
+(15 men, 15 women) were divided into two experimental groups and one
+control group. The experimental groups received weekly animal-assisted
+activity sessions with a dog–zootherapist–vet pair for 3 months (12
+sessions); each session lasted about an hour, with about 40 minutes of
+interaction with the dog. Blood samples taken at the start and end of
+each session showed that both oxytocin and serotonin increased during
+sessions versus the control group, with a progressively increasing effect
+between consecutive weeks.
+
+What it does NOT show: that a picture of a creature, a mascot on a menu,
+or a colour raises blood oxytocin or serotonin. The intervention was
+40 minutes of live interaction with a real dog, in person, repeated
+weekly for 3 months, in patients on dialysis — a specific, high-contact,
+clinical setting.
+
+Design bridge (principled, to A/B-test): bonding cues in the game should
+mimic interaction, not just appearance — a mascot that reacts, is petted /
+fed / played with in the Garden, and remembers the player across sessions
+is closer to the studied intervention than a static cute image. Test:
+does an interactive mascot greeting on return (versus a static mascot
+image) change return rate over 2 weeks?
+
+Full citation: Santaniello, A., Perruolo, G., Amato, A., Garzillo, S.,
+Mormone, F., Morelli, C., Formisano, P., Sansone, M., Fioretti, A., &
+Oriente, F. (2025). Animal assisted activities (AAAs) with dogs in a
+dialysis center in Southern Italy: Evaluation of serotonin and oxytocin
+values in involved patients. Biomedicines, 13(12), 2944.
+https://doi.org/10.3390/biomedicines13122944 (PMID 41462956).
+
+## Study 4/5 — Cat–owner oxytocin correlation and proximity (Takagi et al., 2026)
+
+What was actually done: 19 owners and 29 pet cats were followed for one
+month. Cats wore Bluetooth beacons that estimated physical proximity to
+the owner's phone; urine samples from both cats and owners were assayed
+for oxytocin and cortisol, and owners completed mood questionnaires.
+Owners' and cats' urinary oxytocin concentrations were positively
+correlated; higher oxytocin in cats was associated with lower cortisol
+and fewer negative feelings in owners, and owners whose cats stayed
+closer scored higher on vigour/activity. Hormone comparisons rested on
+24 cats whose urine could be collected and their 17 owners.
+
+Accuracy notes, kept with the citation: the authors report associations,
+not cause and effect — the study does not establish whether happier
+owners make cats happier or vice versa, and the household-level analysis
+kept only the links between cat oxytocin and owner confusion/anxiety.
+Closeness was measured by beacon signal strength, not by minutes together,
+and the "positive mood" link was specifically vigour/activity, not every
+positive-mood measure. Years of ownership did not reliably predict mood
+once multi-cat households were accounted for.
+
+What it does NOT show: that a game creature, a colour, or a menu raises
+oxytocin in either party. The bond studied is a live, physical,
+petting-and-proximity relationship over a month.
+
+Design bridge (principled, to A/B-test): proximity and repeated contact
+beat ownership duration — so the game should reward daily return and
+close interaction (Garden visits, petting/feeding loops) rather than
+collection size alone. Test: does a daily-proximity streak (versus a
+collection-count display) change 7-day return rate?
+
+Full citation: Takagi, S., Tsubomura, T., Nagasawa, M., & Kikusui, T.
+(2026). Cats and humans show correlated affiliative physiological states.
+iScience. Published online 13 October 2026.
+https://doi.org/10.1016/j.isci.2026.117934
+
+## Study 5/5 — Group singing, pain threshold as an endorphin proxy (Weinstein et al., 2016)
+
+What was actually done: members of a community choir were tested before
+and after 90 minutes of singing, in small groups (n = 20–80) and in a
+combined "megachoir" (n = 232). Self-reported social bonding and pain
+threshold — used as a proxy assay for central endorphin release, not a
+direct endorphin measurement — both increased across rehearsals, and the
+pain-threshold effect was comparable in the large and small groups,
+while social closeness rose more in the large group (from a lower start).
+
+Accuracy notes, kept with the citation: the paper is Weinstein, Launay,
+Pearce, Dunbar, & Stewart (2016) — "Dunbar 2016" in shorthand is Dunbar
+as a co-author, not sole author. Pain threshold is a proxy, not a blood
+or brain endorphin level, and the activity was 90 minutes of active
+group singing, not listening to music (earlier work in the same line
+found listening alone did not raise pain threshold).
+
+What it does NOT show: that menu music, a boot chime, or a colour raises
+endorphins. The effect tracked active, synchronous group performance.
+
+Design bridge (principled, to A/B-test): endorphin-adjacent design in a
+game is about real, effortful, synchronous activity — a hard-won battle,
+a co-op / group Garden event, a race — not about a menu sound. Test:
+does a synchronous group event (versus the same rewards delivered solo)
+change self-reported energy / closeness after play?
+
+Full citation: Weinstein, D., Launay, J., Pearce, E., Dunbar, R. I. M., &
+Stewart, L. (2016). Singing and social bonding: Changes in connectivity
+and pain threshold as a function of group size. Evolution and Human
+Behavior, 37(2), 152–158. https://doi.org/10.1016/j.evolhumbehav.2015.10.002
+
+## What stays unchanged by this edit
+
+- The existing recommendations (75–85% blank bottom area, 12–18 symbols,
+  fade to pure white 16–24 px above CONTINUE, pastel Y2K palette, saturated
+  red/orange 0% field / <2% total) are NOT validated by any study above and
+  are NOT upgraded by this edit. They remain principled design choices to
+  A/B-test.
+- No study above was run on a menu, a title screen, or a colour. Any
+  sentence that implies otherwise is a misreading of this edit.
+- Counts after this edit: lab studies added 5/5 = 100% (Koepp 1998, Kim
+  Tetris, Santaniello 2025, Takagi 2026, Weinstein/Dunbar 2016).
