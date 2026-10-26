@@ -1,0 +1,270 @@
+{
+ "creature": "dreadtoise",
+ "tag": "hand20261026",
+ "method": "Layer 2 hand overlays only on approved/staged face finals; 0 generations; base finals untouched",
+ "source_final": "retime Mode A",
+ "timing_mode": "impact",
+ "clawed_physical": false,
+ "paw_note": false,
+ "sets": {
+  "hurt_light_flinch": {
+   "kind": "hurt",
+   "family": "flinch",
+   "roles": [
+    "impact",
+    "recoil",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "folded",
+    "folded"
+   ],
+   "files": [
+    "dreadtoise-hand20261026-hurt_light_flinch-cell-00.png",
+    "dreadtoise-hand20261026-hurt_light_flinch-cell-01.png",
+    "dreadtoise-hand20261026-hurt_light_flinch-cell-02.png"
+   ],
+   "durations_ms": [
+    120,
+    180,
+    220
+   ],
+   "total_ms": 520,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "guard",
+     "source": "dreadtoise-retime20261026-hurt_light_flinch-cell-00.png",
+     "applied": true,
+     "changed_px": 117,
+     "diff_bbox": [
+      16,
+      40,
+      50,
+      48
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "folded",
+     "source": "dreadtoise-retime20261026-hurt_light_flinch-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "dreadtoise-retime20261026-hurt_light_flinch-cell-02.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_heavy_knockback": {
+   "kind": "hurt",
+   "family": "knockback",
+   "roles": [
+    "impact",
+    "recoil",
+    "stagger",
+    "recover"
+   ],
+   "hand_states": [
+    "flail",
+    "flail",
+    "droop",
+    "folded"
+   ],
+   "files": [
+    "dreadtoise-hand20261026-hurt_heavy_knockback-cell-00.png",
+    "dreadtoise-hand20261026-hurt_heavy_knockback-cell-01.png",
+    "dreadtoise-hand20261026-hurt_heavy_knockback-cell-02.png",
+    "dreadtoise-hand20261026-hurt_heavy_knockback-cell-03.png"
+   ],
+   "durations_ms": [
+    80,
+    140,
+    180,
+    300
+   ],
+   "total_ms": 700,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "flail",
+     "source": "dreadtoise-retime20261026-hurt_heavy_knockback-cell-00.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      8,
+      20,
+      58,
+      28
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "flail",
+     "source": "dreadtoise-retime20261026-hurt_heavy_knockback-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "hand_state": "droop",
+     "source": "dreadtoise-retime20261026-hurt_heavy_knockback-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "dreadtoise-retime20261026-hurt_heavy_knockback-cell-03.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_status_wobble": {
+   "kind": "hurt",
+   "family": "wobble",
+   "roles": [
+    "impact",
+    "recoil",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "flail",
+    "folded"
+   ],
+   "files": [
+    "dreadtoise-hand20261026-hurt_status_wobble-cell-00.png",
+    "dreadtoise-hand20261026-hurt_status_wobble-cell-01.png",
+    "dreadtoise-hand20261026-hurt_status_wobble-cell-02.png"
+   ],
+   "durations_ms": [
+    220,
+    220,
+    300
+   ],
+   "total_ms": 740,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "guard",
+     "source": "dreadtoise-retime20261026-hurt_status_wobble-cell-00.png",
+     "applied": true,
+     "changed_px": 111,
+     "diff_bbox": [
+      16,
+      40,
+      50,
+      48
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "flail",
+     "source": "dreadtoise-retime20261026-hurt_status_wobble-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "dreadtoise-retime20261026-hurt_status_wobble-cell-02.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_near_faint_stagger": {
+   "kind": "hurt",
+   "family": "stagger",
+   "roles": [
+    "impact",
+    "recoil",
+    "stagger",
+    "recover"
+   ],
+   "hand_states": [
+    "droop",
+    "droop",
+    "droop",
+    "folded"
+   ],
+   "files": [
+    "dreadtoise-hand20261026-hurt_near_faint_stagger-cell-00.png",
+    "dreadtoise-hand20261026-hurt_near_faint_stagger-cell-01.png",
+    "dreadtoise-hand20261026-hurt_near_faint_stagger-cell-02.png",
+    "dreadtoise-hand20261026-hurt_near_faint_stagger-cell-03.png"
+   ],
+   "durations_ms": [
+    260,
+    260,
+    260,
+    400
+   ],
+   "total_ms": 1180,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "droop",
+     "source": "dreadtoise-retime20261026-hurt_near_faint_stagger-cell-00.png",
+     "applied": false,
+     "flag": "anchor-outside-silhouette"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "droop",
+     "source": "dreadtoise-retime20261026-hurt_near_faint_stagger-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "hand_state": "droop",
+     "source": "dreadtoise-retime20261026-hurt_near_faint_stagger-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "dreadtoise-retime20261026-hurt_near_faint_stagger-cell-03.png",
+     "applied": false
+    }
+   ]
+  }
+ },
+ "gifs": {
+  "hurt": {
+   "gif": "dreadtoise-hurts-hand20261026.gif",
+   "frames": 14
+  }
+ },
+ "flags": [
+  {
+   "set": "hurt_near_faint_stagger",
+   "frame": 0,
+   "reason": "anchor-outside-silhouette"
+  }
+ ],
+ "counts": {
+  "hand_frames": 3,
+  "copy_frames": 10,
+  "flagged_frames": 1,
+  "cells": 14
+ },
+ "gate_g1_copy_identical": true
+}
