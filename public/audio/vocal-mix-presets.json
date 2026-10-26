@@ -1,11 +1,114 @@
 {
   "note": "Vocal-chain presets, checkpoint rule: every version is its own file, never overwritten. Rebuild a version from its preset + the named lead file + the named build script.",
   "presets": {
-    "v11": {"lead": "vocal-autotune-v2.wav (pitch x2.0, formant x1.4, D major, glide 55ms)", "lead_pitch_hz": 290, "vocal_bus": 6.0, "title_bus": 1.00, "delay": "none (chorus only)", "bus": "limiter only", "rms": 0.242},
-    "v12": {"lead": "vocal-autotune-v3.wav (pitch x2.41, formant x1.4, D major, glide 55ms)", "lead_pitch_hz": 334, "vocal_bus": 6.0, "title_bus": 1.00, "delay": "chorus + echo 140/240ms", "bus": "limiter only", "rms": 0.238},
-    "v13": {"lead": "vocal-autotune-v3.wav (pitch x2.41, formant x1.4, D major, glide 55ms)", "lead_pitch_hz": 334, "vocal_bus": 6.0, "title_bus": 1.00, "delay": "dotted-eighth 321.4ms + 642ms tap, wet 0.25, chorus (dreamy, tempo-synced at 140 BPM)", "reverb_echo_wet": 0.25, "god_particle_style_bus": "EQ + compressor 0.15/3:1/10ms/120ms/makeup 4dB + saturation bits=12 mix=0.3 + limiter 0.89, Amount equivalent 100% (Jaycen default)", "rms": 0.284, "peak": 0.707, "build_script": "build_vocal_mix_v13.sh"}
+    "v11": {
+      "lead": "vocal-autotune-v2.wav (pitch x2.0, formant x1.4, D major, glide 55ms)",
+      "lead_pitch_hz": 290,
+      "vocal_bus": 6.0,
+      "title_bus": 1.0,
+      "delay": "none (chorus only)",
+      "bus": "limiter only",
+      "rms": 0.242
+    },
+    "v12": {
+      "lead": "vocal-autotune-v3.wav (pitch x2.41, formant x1.4, D major, glide 55ms)",
+      "lead_pitch_hz": 334,
+      "vocal_bus": 6.0,
+      "title_bus": 1.0,
+      "delay": "chorus + echo 140/240ms",
+      "bus": "limiter only",
+      "rms": 0.238
+    },
+    "v13": {
+      "lead": "vocal-autotune-v3.wav (pitch x2.41, formant x1.4, D major, glide 55ms)",
+      "lead_pitch_hz": 334,
+      "vocal_bus": 6.0,
+      "title_bus": 1.0,
+      "delay": "dotted-eighth 321.4ms + 642ms tap, wet 0.25, chorus (dreamy, tempo-synced at 140 BPM)",
+      "reverb_echo_wet": 0.25,
+      "god_particle_style_bus": "EQ + compressor 0.15/3:1/10ms/120ms/makeup 4dB + saturation bits=12 mix=0.3 + limiter 0.89, Amount equivalent 100% (Jaycen default)",
+      "rms": 0.284,
+      "peak": 0.707,
+      "build_script": "build_vocal_mix_v13.sh"
+    },
+    "v14": {
+      "lead": "vocal-autotune-v4.wav (pitch x2.58, formant x1.4, D major, glide 55ms)",
+      "lead_pitch_hz": 368,
+      "vocal_bus": 4.0,
+      "title_bus": 1.0,
+      "eq1_vocal": "HP120, -4@250, +6@3k, +5@5k, +3@8k, deesser 0.6@7kHz, comp 0.10/4:1",
+      "eq2_bus": "-2@100 shelf, -3@400, +2@10k shelf (different curve from EQ1)",
+      "limiter": "alimiter 0.89, light bus comp 0.20/2:1 makeup 2dB, NO bus crusher",
+      "delay": "dotted-eighth 321.4ms + 642ms tap wet 0.25",
+      "overdub": "low autotune-v2 (290Hz) + Pancake-style auto-pan 0.4Hz LFO + heavenly chorus (chorus 0.5/25|35ms), vol 0.35",
+      "fade_in_s": 4,
+      "rms": 0.235,
+      "peak": 0.707,
+      "build_script": "build_vocal_mix_v14.sh"
+    }
   },
-  "delay_math_140bpm": {"quarter_ms": 428.6, "dotted_eighth_ms": 321.4, "eighth_ms": 214.3, "sixteenth_ms": 107.1, "formula": "ms = 60000 / BPM * note_beats"},
-  "god_particle_research": {"plugin": "Cradle The God Particle (Jaycen Joshua)", "amount_default_pct": 100, "amount_range_pct": "0-200", "functions": ["EQ", "multiband compression low/mid/high", "saturation/excitation", "stereo widening", "adaptive limiter"], "method": "mix INTO it from the start, hit input targets (green brackets)", "our_build": "open-source ffmpeg equivalent of those functions, NOT the paid plugin itself"},
-  "reverse_engineer_tool": "reverse_engineer.py — given any reference song, measures RMS/peak/crest, band power, vocal pitch median, stereo width, and outputs a suggested preset JSON in presets/reverse-<label>.json"
+  "delay_math_140bpm": {
+    "quarter_ms": 428.6,
+    "dotted_eighth_ms": 321.4,
+    "eighth_ms": 214.3,
+    "sixteenth_ms": 107.1,
+    "formula": "ms = 60000 / BPM * note_beats"
+  },
+  "god_particle_research": {
+    "plugin": "Cradle The God Particle (Jaycen Joshua)",
+    "amount_default_pct": 100,
+    "amount_range_pct": "0-200",
+    "functions": [
+      "EQ",
+      "multiband compression low/mid/high",
+      "saturation/excitation",
+      "stereo widening",
+      "adaptive limiter"
+    ],
+    "method": "mix INTO it from the start, hit input targets (green brackets)",
+    "our_build": "open-source ffmpeg equivalent of those functions, NOT the paid plugin itself"
+  },
+  "reverse_engineer_tool": "reverse_engineer.py \u2014 given any reference song, measures RMS/peak/crest, band power, vocal pitch median, stereo width, and outputs a suggested preset JSON in presets/reverse-<label>.json",
+  "neptune_deep_reverse": {
+    "top_notes_per_second": [
+      "F4 (349Hz) x31",
+      "F#4 (370Hz) x25",
+      "G4 (392Hz) x21",
+      "C#4 x20"
+    ],
+    "sections_30s": [
+      {
+        "s": "0-30",
+        "rms": 0.152,
+        "pitch_hz": 374,
+        "bass": 0.92
+      },
+      {
+        "s": "30-60",
+        "rms": 0.189,
+        "pitch_hz": 350,
+        "bass": 0.78
+      },
+      {
+        "s": "60-90",
+        "rms": 0.189,
+        "pitch_hz": 350,
+        "bass": 0.77
+      },
+      {
+        "s": "90-120",
+        "rms": 0.193,
+        "pitch_hz": 356,
+        "bass": 0.79
+      },
+      {
+        "s": "120-135",
+        "rms": 0.093,
+        "pitch_hz": 394,
+        "bass": 0.7,
+        "vocalband": 0.229
+      }
+    ],
+    "conclusion": "vocal lives F4-G4 (349-392Hz), AVANNA top G4; v14 lead 368Hz sits inside it; outro section is vocal-forward (vocalband 0.229 vs 0.05 elsewhere)"
+  }
 }
