@@ -1,4 +1,4 @@
-// captureLoop.js — Mochiichao capture systems (LOCAL BUILD, 2026-10-25).
+// captureLoop.js — Mochiichao capture systems (GATED REVISION, 2026-10-25).
 //
 // TWO capture paths, kept separate on purpose:
 //   A. Ring capture (Ranger-style spec, from public design concepts —
@@ -10,6 +10,42 @@
 //      below): throw a capture orb; the orb shakes up to 4 times;
 //      all 4 shakes capture. The formula is the public documented
 //      form, reimplemented here in original code.
+//
+// GATING — Mars, 2026-10-25 ~19:49 CDT (supersedes the ~19:45 "remove
+// the ring track" instruction; the ring track is NOT removed and NOT
+// unused-marked). Ring capture is an OPTIONAL, Mochiichao-proprietary
+// system, usable ONLY when BOTH conditions hold:
+//   (1) the player has VISITED and PLAYED the NEW arcade ring zone
+//       that introduces ring capture (zoneVisited + zonePlayed),
+//   (2) the player OWNS ring-capture items, bought in shops after the
+//       unlock (ringItems > 0).
+// Until both hold, ring capture is UNAVAILABLE: createRingCapture
+// returns an encounter flagged ringAvailable: false, and completeLoop
+// refuses to fill the meter or capture, whatever path is drawn.
+// Default capture is ALWAYS normal orb-throw capture (Luigi Cubes in
+// Mochiichao canon) — ring capture never replaces it, it is an
+// opt-in option after unlock.
+//
+// THEME — Mars, 2026-10-25 ~19:51 + ~19:54 CDT (supersedes the
+// Safari-type framing of the ~19:49 note AND the arcade-as-mechanic
+// reading). The ring zone is NOT the Safari Zone: Mochiichao already
+// has its own Safari/preserve area at Harbor City (Dojo 6 / Wave-Ride
+// beat) and the ring zone is a NEW, SEPARATE zone. Its name is
+// arcade-evocative but NOT literally "Arcade Zone", and is NOT locked
+// by this module: ring-capture-zone-spec.md proposes candidates for
+// Mars to pick. The arcade part is THEME AND SETTING ONLY — the zone
+// feels like walking into a retro game arcade (cabinets, neon, retro
+// scenery as atmosphere). It is NOT mixed with arcade games as a
+// mechanic: no token economy, no cabinet mini-games, no high-score
+// scoring layer. The ring capture MECHANIC itself stays ring capture
+// (Mochiichao's own version, loop / meter / struggle / assist as
+// implemented below), played inside that retro-arcade-themed zone.
+// The zone layout, unlock trigger, shop inventory/pricing hooks and
+// item-consumption rules are specified in ring-capture-zone-spec.md
+// (same batch); the zone map and shop UI themselves are separate
+// work, not built by this module.
+// Gate checks are pure functions (isRingCaptureUnlocked) so the game
+// can test unlock state without starting an encounter.
 //
 // Source note for path B: the modified-rate / shake-threshold /
 // four-shake-chance shape follows the Gen VIII capturing formula as
@@ -87,11 +123,35 @@ function rollCapture(x, orbId, rng) {
   return Object.freeze({ success: shakes === CAPTURE.SHAKE_COUNT, shakes });
 }
 
+// ---------------------------------------------------------------- path A gate
+// unlock: { zoneVisited: bool, zonePlayed: bool, ringItems: number }.
+// All three must hold: visited AND played AND at least one ring item
+// owned. Anything else (missing object, false flag, 0 items) = locked.
+function isRingCaptureUnlocked(unlock) {
+  if (!unlock || typeof unlock !== 'object') return false;
+  return unlock.zoneVisited === true
+    && unlock.zonePlayed === true
+    && typeof unlock.ringItems === 'number'
+    && unlock.ringItems > 0;
+}
+// Consume one ring-capture item when a ring encounter starts. Returns
+// the new count; refuses (returns the count unchanged) when locked or
+// empty, so the game can never spend its way below zero.
+function consumeRingItem(unlock) {
+  if (!isRingCaptureUnlocked(unlock)) {
+    return typeof unlock === 'object' && typeof unlock.ringItems === 'number'
+      ? unlock.ringItems : 0;
+  }
+  return unlock.ringItems - 1;
+}
+
 // ---------------------------------------------------------------- path A: ring
 function createRingCapture(options) {
   const o = options || {};
+  const unlocked = isRingCaptureUnlocked(o.unlock);
   return {
     creatureName: typeof o.creatureName === 'string' ? o.creatureName : 'wild creature',
+    ringAvailable: unlocked,
     meter: 0,
     meterMax: typeof o.meterMax === 'number' ? o.meterMax : CAPTURE.RING_METER_MAX,
     loopGain: typeof o.loopGain === 'number' ? o.loopGain : CAPTURE.RING_LOOP_GAIN,
@@ -117,6 +177,9 @@ function addRingPoint(enc, x, y) {
 // A ring closes when the path returns near its start AND is long
 // enough to plausibly encircle a creature. Pure check; completing
 // the loop is a separate call so the game can stage the close.
+// NOTE: closure is a geometry check only — the gate lives in
+// completeLoop, so a locked encounter can draw a closed ring and
+// still never fill the meter or capture.
 function ringCloses(enc) {
   if (!enc || enc.points.length < 3) return false;
   const first = enc.points[0];
@@ -126,10 +189,16 @@ function ringCloses(enc) {
 }
 // Complete a closed loop: fill the meter (assist multiplies the
 // gain), count the loop, clear the path. A full meter captures.
+// GATE: a locked encounter (ringAvailable false) completes nothing —
+// meter stays 0, loops stay 0, captured stays false — and reports
+// available: false so the game can fall back to normal capture.
 function completeLoop(enc, assist) {
   if (!enc || enc.captured) return Object.freeze({ captured: false, meter: enc ? enc.meter : 0, loops: 0 });
+  if (enc.ringAvailable !== true) {
+    return Object.freeze({ captured: false, meter: enc.meter, loops: enc.loopsCompleted, closed: false, available: false });
+  }
   if (!ringCloses(enc)) {
-    return Object.freeze({ captured: false, meter: enc.meter, loops: enc.loopsCompleted, closed: false });
+    return Object.freeze({ captured: false, meter: enc.meter, loops: enc.loopsCompleted, closed: false, available: true });
   }
   const gain = enc.loopGain * (assist ? enc.assistMult : 1);
   enc.meter = Math.min(enc.meterMax, enc.meter + gain);
@@ -139,20 +208,22 @@ function completeLoop(enc, assist) {
   if (enc.meter >= enc.meterMax) enc.captured = true;
   return Object.freeze({
     captured: enc.captured, meter: enc.meter,
-    loops: enc.loopsCompleted, closed: true, gain,
+    loops: enc.loopsCompleted, closed: true, gain, available: true,
   });
 }
 // Meter decay over time while the player is not looping.
+// A locked encounter has no meter to decay; this is a no-op for it.
 function decayRingMeter(enc, dtMs) {
-  if (!enc || enc.captured) return enc;
+  if (!enc || enc.captured || enc.ringAvailable !== true) return enc;
   enc.meter = Math.max(0, enc.meter - enc.decayPerSec * (dtMs / 1000));
   return enc;
 }
 // Creature struggle: on a struggle roll the creature drains meter
 // and breaks the in-progress ring (path cleared). The roll is
 // caller-injected (rng < struggleChance means it struggles).
+// A locked encounter never struggles: there is no meter to drain.
 function creatureStruggle(enc, rng, struggleChance) {
-  if (!enc || enc.captured) return Object.freeze({ struggled: false, meter: enc ? enc.meter : 0 });
+  if (!enc || enc.captured || enc.ringAvailable !== true) return Object.freeze({ struggled: false, meter: enc ? enc.meter : 0 });
   const r = typeof rng === 'function' ? rng : Math.random;
   const chance = typeof struggleChance === 'number' ? struggleChance : 0.25;
   if (r() >= chance) return Object.freeze({ struggled: false, meter: enc.meter });
@@ -168,6 +239,7 @@ if (typeof module !== 'undefined' && module.exports) {
     CAPTURE,
     lowLevelBonus, captureRateX, shakeThreshold, isGuaranteed,
     captureChance, rollCapture,
+    isRingCaptureUnlocked, consumeRingItem,
     createRingCapture, addRingPoint, ringCloses, completeLoop,
     decayRingMeter, creatureStruggle,
   };

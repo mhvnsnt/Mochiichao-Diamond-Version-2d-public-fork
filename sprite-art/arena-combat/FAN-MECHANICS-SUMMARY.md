@@ -89,3 +89,13 @@ flags, and zone effects fire only through chosen-attack resolution.
 
 Mochii, Razorgater, Tyrage, Dorowani, Gabu only. No other
 creature names appear in the shipped code.
+
+## Correction 2026-10-25 (ring capture gating + arcade theme, supersedes §captureLoop above)
+
+- Ring capture is NOT removed and NOT the default: it is an OPTIONAL system gated on
+  (zone visited + played) AND (ring-capture items owned); without both, only normal
+  orb-throw capture (Luigi Cubes) is offered. See captureLoop.js gate + ring-capture-zone-spec.md.
+- The ring zone is a NEW, SEPARATE zone — NOT the Harbor City Safari/preserve — with a
+  retro-arcade THEME (cabinets, neon, retro scenery as setting only). Its name is NOT locked;
+  ring-capture-zone-spec.md proposes candidates (The Ringcade, Neon Loop Hall, Pixel Ring Hall)
+  for Mars to pick. No token economy, cabinet mini-games, or high-score mechanics are included.
