@@ -1,0 +1,276 @@
+{
+  "champion": {
+    "holder": null,
+    "note": "OPEN SLOT — Mars-only. Conflict unresolved: Hex (lane story) vs Mythar (in code, MAUVEVILLE_ARENA champion_mythar; also Grand Champion Mythar, Region 5, in lane post-game data). Do NOT pick one here. The slot exists so the Elite gate can hand off to a champion fight once Mars resolves it.",
+    "reward_cr": null,
+    "status": "open_slot",
+    "team": null
+  },
+  "dojos": [
+    {
+      "badge_flag": "dojo_1_badge",
+      "badge_name": "Core Fragment",
+      "dialogue_status": "in_code",
+      "leader": "Master Lin",
+      "leader_status": "locked",
+      "number": 1,
+      "team_status": "in_code"
+    },
+    {
+      "badge_flag": "dojo_2_badge",
+      "badge_name": "Wind Fragment",
+      "dialogue_status": "locked_approved",
+      "leader": "Master Falk",
+      "leader_status": "locked",
+      "number": 2,
+      "team_status": "locked_019_020_021"
+    },
+    {
+      "badge_flag": "dojo_3_badge",
+      "badge_name": null,
+      "dialogue_status": "open_slot",
+      "leader": "Tetsu",
+      "leader_status": "locked",
+      "number": 3,
+      "team_status": "open_slot",
+      "note": "Name locked in PR Batch 3 (parent task 2026-10-26); dialogue, team, and Fragment name remain open slots, not invented."
+    },
+    {
+      "badge_flag": "dojo_4_badge",
+      "badge_name": null,
+      "dialogue_status": "open_slot",
+      "leader": "Kenji",
+      "leader_status": "locked",
+      "number": 4,
+      "team_status": "open_slot",
+      "note": "Name locked in PR Batch 3 (parent task 2026-10-26); dialogue, team, and Fragment name remain open slots, not invented."
+    },
+    {
+      "badge_flag": "dojo_5_badge",
+      "badge_name": null,
+      "dialogue_status": "open_slot",
+      "leader": "Phantom",
+      "leader_status": "locked",
+      "number": 5,
+      "team_status": "open_slot",
+      "note": "Name locked in PR Batch 3 as Phantom (Japanese samurai oni mask). NOT Kage: Kage is a Pokemon name and is not used. Dialogue, team, and Fragment name remain open slots, not invented."
+    },
+    {
+      "badge_flag": "dojo_6_badge",
+      "badge_name": null,
+      "dialogue_status": "open_slot",
+      "leader": "Shizuku",
+      "leader_status": "locked",
+      "number": 6,
+      "team_status": "open_slot",
+      "note": "Name locked in PR Batch 3 (parent task 2026-10-26); dialogue, team, and Fragment name remain open slots, not invented."
+    },
+    {
+      "badge_flag": "dojo_7_badge",
+      "badge_name": null,
+      "dialogue_status": "open_slot",
+      "leader": "Homura",
+      "leader_status": "locked",
+      "number": 7,
+      "team_status": "open_slot",
+      "note": "Name locked in PR Batch 3 (parent task 2026-10-26); dialogue, team, and Fragment name remain open slots, not invented."
+    },
+    {
+      "badge_flag": "dojo_8_badge",
+      "badge_name": null,
+      "dialogue_status": "open_slot",
+      "leader": null,
+      "leader_status": "open_slot",
+      "number": 8,
+      "team_status": "open_slot_lane_candidates_not_confirmed"
+    }
+  ],
+  "elite_four": [
+    {
+      "dialogue_status": "open_slot",
+      "name": "Umi",
+      "order": 1,
+      "status": "open_slot",
+      "team": null,
+      "name_status": "locked",
+      "note": "Name locked in PR Batch 3 (parent task 2026-10-26); dialogue and team remain open slots, not invented."
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": "Gin",
+      "order": 2,
+      "status": "open_slot",
+      "team": null,
+      "name_status": "locked",
+      "note": "Name locked in PR Batch 3 (parent task 2026-10-26); dialogue and team remain open slots, not invented."
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": "Hono",
+      "order": 3,
+      "status": "open_slot",
+      "team": null,
+      "name_status": "locked",
+      "note": "Name locked in PR Batch 3 (parent task 2026-10-26); dialogue and team remain open slots, not invented."
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": "Yoru",
+      "order": 4,
+      "status": "open_slot",
+      "team": null,
+      "name_status": "locked",
+      "note": "Name locked in PR Batch 3 (parent task 2026-10-26); dialogue and team remain open slots, not invented."
+    }
+  ],
+  "flags": [
+    "has_starter",
+    "visited_boot_harbor",
+    "visited_victory_route",
+    "rested_at_harbor",
+    "dojo_1_badge",
+    "dojo_2_badge",
+    "dojo_3_badge",
+    "dojo_4_badge",
+    "dojo_5_badge",
+    "dojo_6_badge",
+    "dojo_7_badge",
+    "dojo_8_badge",
+    "victory_route_opened",
+    "elite_four_cleared",
+    "champion_defeated"
+  ],
+  "format": "Progression flag registry + gate definitions. Flag names mirror FireRed FLAG_BADGE01_GET..08_GET (SYS_FLAGS+0x20..0x27) in SHAPE only: Mochiichao flags are dojo_N_badge, and the prize is a Fragment, not a Pokemon badge. No flag here is set by this file — flags are set only by winning a Dojo fight (in game) or by the validator's simulated flag sets.",
+  "gates": [
+    {
+      "blocked_until": "dojo_1_badge",
+      "gate": "dojo_gate_sample",
+      "kind": "badge_gate",
+      "requires_flags": [
+        "dojo_1_badge"
+      ]
+    },
+    {
+      "blocked_until": "all 8 dojo flags",
+      "gate": "victory_route_gate",
+      "kind": "victory_route_gate",
+      "note": "Victory Route gate opens after Dojo 8 in sequence: in practice it requires all 8, because Dojo 8 is last. The validator asserts BOTH the 7/8-blocked and 8/8-open cases.",
+      "requires_flags": [
+        "dojo_1_badge",
+        "dojo_2_badge",
+        "dojo_3_badge",
+        "dojo_4_badge",
+        "dojo_5_badge",
+        "dojo_6_badge",
+        "dojo_7_badge",
+        "dojo_8_badge"
+      ]
+    },
+    {
+      "blocked_until": "all 8 dojo flags",
+      "gate": "elite_chamber_gate",
+      "kind": "elite_gate",
+      "note": "Re-checked at the Elite chambers themselves, so a save edited past the Victory Route arch still cannot enter the Elite Four early.",
+      "requires_flags": [
+        "dojo_1_badge",
+        "dojo_2_badge",
+        "dojo_3_badge",
+        "dojo_4_badge",
+        "dojo_5_badge",
+        "dojo_6_badge",
+        "dojo_7_badge",
+        "dojo_8_badge"
+      ]
+    },
+    {
+      "blocked_until": "elite_four_cleared AND champion slot filled by Mars",
+      "gate": "champion_gate",
+      "kind": "champion_gate",
+      "requires_flags": [
+        "elite_four_cleared"
+      ]
+    }
+  ],
+  "syndicate_admins": [
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 1,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 2,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 3,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 4,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 5,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 6,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 7,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 8,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 9,
+      "theme": null
+    },
+    {
+      "dialogue_status": "open_slot",
+      "name": null,
+      "placement": null,
+      "slot": 10,
+      "theme": null
+    }
+  ],
+  "_batch3": {
+    "date": "2026-10-26",
+    "dojo_leaders_named": "7/8 (Lin, Falk in code + Tetsu, Kenji, Phantom, Shizuku, Homura newly locked; Dojo 8 leader still null/open)",
+    "dojo_dialogue_teams": "Dialogue locked 1/8 (Falk approved; Lin in_code) + teams locked 2/8 (Lin in_code, Falk 019/020/021); Dojo 3-7 dialogue/teams/Fragment names open",
+    "elite_names": "4/4 named (Umi, Gin, Hono, Yoru); elite dialogue 0/4, elite teams 0/4",
+    "champion": "0/1 resolved: holder null/open_slot (Hex vs Mythar conflict unresolved, NOT resolved here)",
+    "syndicate_admins": "0/10 named (not in this batch's task; left null)",
+    "dialogue_sample": "6 knots / 10 stitches / 14 lines / 11 choices (unchanged staged sample; no Pokemon dialogue copied verbatim)",
+    "maps": "2/2 sample maps (boot_harbor_gate_sample, victory_route_gate_sample)"
+  }
+}
