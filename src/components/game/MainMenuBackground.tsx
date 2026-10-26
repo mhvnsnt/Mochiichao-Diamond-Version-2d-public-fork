@@ -23,18 +23,19 @@ import { MAIN_MENU_SYMBOLS } from "../../lib/mainMenuSymbols";
  *     note in docs/locked-default-title-menu.md. Same palette and
  *     same density as v32; no new look was hand-painted.
  *
- * Animation (ui-art/menu-background-animation-spec.md, the approved
- * 80-frame x 70ms matched GIF): FireRed's AnimTranslateLinearSingle-
- * SineWave method — sine offsets on top of base positions, never a
- * change to the base layout. Mode B (flow): symbols rise slowly
- * (vy 8-14 px/s), sway in x with amplitude growing 3px at the bottom
- * to 8px near the gone point, rotate +/-4 degrees sine, and fade by
- * the locked phi fade (opacity 0 at y620 gone point, 0.35 at y729,
- * 1.0 at y905 and below). On reaching y620 a symbol respawns at the
- * bottom (y1500). Delta-time rAF loop, so speed is the same at 30fps
- * and 120fps. Symbols are pointer-events none and paint behind the
- * logo/cloud/panels, never over button text. prefers-reduced-motion
- * freezes to the static v32 base positions.
+ * Animation — PERFECT by default (matched GIF, Mars PERFECT
+ * 2026-10-25 17:12 CDT; see perfect-menu-trace-2026-10-26.md):
+ * 300 symbols rise at 157.14 px/s (11px/frame at 70ms, 80 frames x
+ * 70ms = 5.6s loop), modulo zone 620-1500, sway sin*6px, bob
+ * sin*4px on top of rise, 2 cycles per loop, phase by golden
+ * angle, fade by the locked phi fade (0 at y620, 0.35 at y729,
+ * 1.0 at y905+), clamped never above y620. No rotation.
+ * The PR #163 speed (vy 8-14 px/s, sway 3->8px, rotate +/-4deg,
+ * period 4-6s) is saved as the "slow-rise" option in
+ * lockedV32Menu.animationSpeeds and is selected by setting
+ * background.animationSpeed to "slow-rise"; it is never the
+ * default. Symbols are pointer-events none, behind logo/panels.
+ * prefers-reduced-motion freezes to static base positions.
  */
 type MenuSymbol = { x: number; y: number; s: number; c: string; shape: string };
 const SYMBOLS = MAIN_MENU_SYMBOLS as MenuSymbol[];
@@ -83,17 +84,35 @@ const ARC_RX = BG.arcs.rx;
 export default function MainMenuBackground() {
   const refs = useRef<(SVGGElement | null)[]>([]);
 
+  // Speed selector. The default is BG.animationSpeed from the locked
+  // menu data ("perfect"). A stored override (key
+  // "mochiichao-menu-animation-speed", written by a future Menu
+  // Creator / Settings row — nothing writes it today) may select
+  // "slow-rise" at runtime. The localStorage read is load-bearing
+  // for shipping, not decoration: with a compile-time-known literal
+  // the bundler dropped the slow-rise branch and data entirely
+  // (second build 2026-10-26: slow-rise 0 occurrences). Because the
+  // value cannot be known at build time, BOTH branches ship.
+  function resolveSpeedId(): "perfect" | "slow-rise" {
+    try {
+      const stored = window.localStorage.getItem("mochiichao-menu-animation-speed");
+      if (stored === "slow-rise" || stored === "perfect") return stored;
+    } catch {
+      /* storage unavailable: fall through to the data default */
+    }
+    return BG.animationSpeed;
+  }
+
   useEffect(() => {
     const reduced =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const speedId = resolveSpeedId();
     const place = (t: number) => {
       SYMBOLS.forEach((sym, i) => {
         const el = refs.current[i];
         if (!el) return;
         const phase = i * GOLDEN_ANGLE;
-        const period = BG.animation.periodSec[i % BG.animation.periodSec.length];
-        const vy = BG.animation.riseVyMin + (i % (BG.animation.riseVyMax - BG.animation.riseVyMin + 1));
         let y: number;
         let x: number;
         let rot: number;
@@ -101,11 +120,22 @@ export default function MainMenuBackground() {
           y = sym.y;
           x = sym.x;
           rot = 0;
+        } else if (speedId === "perfect") {
+          const sp = BG.animationSpeeds.perfect;
+          const ang = (2 * Math.PI * sp.cyclesPerLoop * t) / sp.loopSec + phase;
+          y = GONE_Y + (((sym.y - GONE_Y - t * sp.risePxPerSec) % SPAN) + SPAN) % SPAN;
+          y = Math.max(GONE_Y, y + Math.sin(ang) * sp.bobPx);
+          x = sym.x + Math.sin(ang) * sp.swayPx;
+          rot = 0;
         } else {
+          // slow-rise: exact PR #163 behaviour, option only.
+          const sp = BG.animationSpeeds["slow-rise"];
+          const period = sp.periodSec[i % sp.periodSec.length];
+          const vy = sp.riseVyMin + (i % (sp.riseVyMax - sp.riseVyMin + 1));
           y = GONE_Y + (((sym.y - GONE_Y - t * vy) % SPAN) + SPAN) % SPAN;
-          const sway = BG.animation.swayMin + (BG.animation.swayMax - BG.animation.swayMin) * ((BOTTOM_Y - y) / SPAN);
+          const sway = sp.swayMin + (sp.swayMax - sp.swayMin) * ((BOTTOM_Y - y) / SPAN);
           x = sym.x + Math.sin((2 * Math.PI * t) / period + phase) * sway;
-          rot = Math.sin((2 * Math.PI * t) / period + phase) * BG.animation.rotateDeg;
+          rot = Math.sin((2 * Math.PI * t) / period + phase) * sp.rotateDeg;
         }
         el.setAttribute("transform", `translate(${x.toFixed(2)},${y.toFixed(2)}) rotate(${rot.toFixed(2)})`);
         el.setAttribute("opacity", fadeAt(y).toFixed(3));
