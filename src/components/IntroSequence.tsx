@@ -385,7 +385,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               style={{ width: 96, animation: 'title-shine 2.4s ease-in-out 2' }}
             />
           </div>
-          <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink { 0%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }`}</style>
+          <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink-first { 0%, 100% { opacity: 1; } } @keyframes press-blink { 0%, 49% { opacity: 0; } 50%, 100% { opacity: 1; } }`}</style>
 
           {/* Logo slot: 900 wide, centre (600, 450). Crop aspect
               764x450 -> 530 tall, so top = 450 - 265 = 185. */}
@@ -405,11 +405,11 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           >
             ✦ DIAMOND VERSION ✦
           </div>
-          {/* PRESS ANY KEY: bottom phi line y=927, blink 30 on /
-              15 off (HeartGold 45-frame cycle, CSS steps). */}
+          {/* PRESS ANY KEY: bottom phi line y=927, blink FireRed
+              tempo: 60 frames first, then 30 on / 30 off (CSS steps). */}
           <div
             className="absolute text-center text-white font-bold"
-            style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink 0.75s steps(1) infinite' }}
+            style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink-first 1s steps(1) 1, press-blink 1s steps(1) 1s infinite' }}
           >
             PRESS ANY KEY
           </div>

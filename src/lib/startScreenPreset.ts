@@ -15,7 +15,7 @@
  * Locked layout slots (spec-pinned, 1200x1500 canvas, centre coords):
  *   logo       — width 900, centre (600, 450)
  *   subtitle   — width 556, centre (600, 735), font PINNED, never changes
- *   pressAnyKey— y = 927, blink 30 frames on / 15 frames off
+ *   pressAnyKey— y = 927, blink FireRed tempo: 60 frames first, then 30 frames on / 30 frames off
  *   studioLogo — width 556, centre (600, 1222)
  * Moving a slot is the Layout Editor's job and restyling a slot is
  * the UI Creator's job — this creator reuses those existing creators
@@ -64,8 +64,9 @@ export interface LockedStartScreenLayout {
   subtitleCentreY: 735;
   subtitleFontPinned: true;
   pressAnyKeyY: 927;
+  pressAnyKeyBlinkFirstFrames: 60;
   pressAnyKeyBlinkOnFrames: 30;
-  pressAnyKeyBlinkOffFrames: 15;
+  pressAnyKeyBlinkOffFrames: 30;
   studioLogoWidth: 556;
   studioLogoCentreX: 600;
   studioLogoCentreY: 1222;
@@ -80,8 +81,9 @@ export const LOCKED_START_SCREEN_LAYOUT: LockedStartScreenLayout = {
   subtitleCentreY: 735,
   subtitleFontPinned: true,
   pressAnyKeyY: 927,
+  pressAnyKeyBlinkFirstFrames: 60,
   pressAnyKeyBlinkOnFrames: 30,
-  pressAnyKeyBlinkOffFrames: 15,
+  pressAnyKeyBlinkOffFrames: 30,
   studioLogoWidth: 556,
   studioLogoCentreX: 600,
   studioLogoCentreY: 1222,

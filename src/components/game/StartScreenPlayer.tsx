@@ -24,7 +24,7 @@ import yogifernoWalkCutout from '../../assets/title/yogiferno-walk-cutout.png';
  * canvas from PR #44, letterboxed and centred in its host:
  *   logo         — 900 wide, centre (600, 450)
  *   subtitle     — 556 wide, centre (600, 735), font PINNED
- *   PRESS ANY KEY— y = 927, blink 30 frames on / 15 frames off
+ *   PRESS ANY KEY— y = 927, blink FireRed tempo: 60 frames first, then 30 frames on / 30 frames off
  *   studio logo  — 556 wide, centre (600, 1222)
  *   creature     — feet at y = 1180, centred x = 600 (position is
  *     NOT a locked slot in PR #44 — the creator preview box only;
@@ -177,7 +177,7 @@ export default function StartScreenPlayer() {
         subtitle.position.set(L.subtitleCentreX, L.subtitleCentreY);
         scene.addChild(subtitle);
 
-        // PRESS ANY KEY slot: y = 927, blink 30 on / 15 off (frames).
+        // PRESS ANY KEY slot: y = 927, blink FireRed tempo: 60 frames first, then 30 on / 30 off (frames).
         const press = new Text({
           text: 'PRESS ANY KEY',
           style: {
@@ -310,8 +310,9 @@ export default function StartScreenPlayer() {
           const dt = ticker.deltaTime / 60;
           t += dt;
           frame += ticker.deltaTime;
-          // Blink: 30 frames on / 15 frames off (45-frame cycle).
-          press.visible = Math.floor(frame) % 45 < 30;
+          // Blink, FireRed Task_TitleScreen_BlinkPressStart: first interval 60 frames visible, then 30 off / 30 on.
+          const blinkFrame = Math.floor(frame);
+          press.visible = blinkFrame < 60 ? true : ((blinkFrame - 60) % 60) >= 30;
           if (figure) {
             figure.y = 1180 + Math.sin(t * 2) * 6;
             figure.x = CW / 2 + Math.sin(t * 2) * 3;
