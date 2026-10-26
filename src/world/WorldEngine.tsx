@@ -12,6 +12,7 @@ import { SPECIES_DB } from '../lib/species';
 import { MOVES_DB } from '../lib/moves';
 import { createMochii } from '../lib/engine';
 import DialogueBox from "../components/game/DialogueBox";
+import { isConfirmKey } from "../lib/buttonMode";
 import { slotForNpc } from "../lib/humanSheets";
 
 const TILE_SIZE = 40; // match PDF size because it renders better in viewports
@@ -187,6 +188,11 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const playerGender = useGameStore(s => s.playerGender);
   const rivalName = useGameStore(s => s.rivalName) || 'Hex';
   const setMapState = useGameStore(s => s.setMapState);
+  // BUTTON MODE (buttonMode.ts): 'l' copies A when L_EQUALS_A.
+  // LR shoulders have no list to flip on the field, so they do
+  // nothing here (NEED, labelled in buttonMode.ts); the pause
+  // menu itself has no keyboard selection to remap (NEED).
+  const buttonMode = useGameStore(s => s.settings.buttonMode);
 
   const [screen, setScreen] = useState("overworld"); 
 
@@ -560,8 +566,8 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         if (e.key === "ArrowDown" || e.key === "s") { e.preventDefault(); move(0, 1); }
         if (e.key === "ArrowLeft" || e.key === "a") { e.preventDefault(); move(-1, 0); }
         if (e.key === "ArrowRight" || e.key === "d") { e.preventDefault(); move(1, 0); }
-        if (e.key === "Enter" || e.key === " ") { 
-          e.preventDefault(); 
+        if (isConfirmKey(e, buttonMode)) {
+          e.preventDefault();
           interact();
         }
         if (e.key === "Escape" || e.key === "x") {
@@ -586,7 +592,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         // the on-screen Continue button) advance it; without this
         // branch battle keys did nothing at all, so a keyboard-only
         // player could never leave the banner.
-        if (e.key === "Enter" || e.key === " ") {
+        if (isConfirmKey(e, buttonMode)) {
           e.preventDefault();
           finishBattleEnd();
         }
@@ -604,7 +610,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [screen, move, dialog, playerPos, playerDir, battleState]);
+  }, [screen, move, dialog, playerPos, playerDir, battleState, buttonMode]);
 
   const interact = () => {
     let dx = 0, dy = 0;

@@ -37,7 +37,7 @@
  *   - Audio: this batch wires NO audio. The start-screen MUSIC
  *     slot is name only and empty (GAP), like PR #63 did for music.
  *     The settled BOOT Option B / PRESS-START M3 roles are already
- *     wired on main (PR #71, bootAudio.ts via advanceIntro) —
+ *     wired on main (PR #79, bootAudio.ts via advanceIntro) —
  *     no second audio path is created here, and that audio code
  *     (and advanceIntro) is not edited.
  *   - Fonts: the DIAMOND VERSION subtitle font stays PINNED
