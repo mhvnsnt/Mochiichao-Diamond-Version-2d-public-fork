@@ -284,8 +284,13 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     // Autosave roughly every 60s
     const iv = setInterval(() => {
       if (autosaveHeldForSlot === saveSlot) return;
-      saveGame(saveSlot, 'auto', `AUTOSAVE - ${FULL_WORLD[currentMap]?.name || currentMap}`, useGameStore.getState());
-      notify("Game Autosaved", "#88ccff");
+      // Only notify on a real write: saveGame returns null when
+      // the central gate refuses an auto-write to a held slot
+      // (e.g. a persisted hold restored after a reload). Notifying
+      // on a refused write made a held slot look saved when it
+      // was not, and hid the gate doing its job.
+      const written = saveGame(saveSlot, 'auto', `AUTOSAVE - ${FULL_WORLD[currentMap]?.name || currentMap}`, useGameStore.getState());
+      if (written) notify("Game Autosaved", "#88ccff");
     }, 60000);
     return () => clearInterval(iv);
   }, [saveSlot, currentMap, autosaveHeldForSlot]);
