@@ -7,6 +7,7 @@ import DialogueBox from "./game/DialogueBox";
 import SettingsScreen from "./game/SettingsScreen";
 import { frameAccent } from "../lib/gameSettings";
 import { isConfirmKey, shoulderKey } from "../lib/buttonMode";
+import { playBootSound, playPressStartSound } from "../lib/audioRouting";
 import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
@@ -204,6 +205,10 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       if (introScene < 3) setIntroScene(s => s + 1);
       else setPhase("TITLE");
     } else if (phase === "TITLE" && !titleFading) {
+      // PRESS-START slot (settled role): M3 Mochii Chirp, routed
+      // through the SOUND graph. This branch only runs on a key
+      // press / click, so the browser allows the audio to play.
+      void playPressStartSound();
       setTitleFading(true);
       setTimeout(() => { setTitleFading(false); setPhase("MAIN_MENU"); }, 350);
     }
@@ -211,6 +216,12 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
 
   useEffect(() => {
     if (phase === "BOOT") {
+      // BOOT slot (settled role): UI Art Option B rising arpeggio,
+      // routed through the SOUND graph. Cold-load autoplay caveat
+      // (see audioRouting.ts): with no prior gesture the browser
+      // may suspend the context through this window; on later
+      // boots (e.g. Quit to Title) it plays. Never M3 here.
+      void playBootSound();
       const t = setTimeout(() => setPhase("INTRO"), 2500);
       return () => clearTimeout(t);
     }
@@ -234,10 +245,12 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
         {/* Boot: black screen, M Heavensent Studios logo alone, phi
             boot size (742 on a 1200 canvas, responsive max-width).
-            Boot sound is GAP — original sound needed, no file
-            invented, no Pokemon chime copied. Hold 2.5s is an
-            implementation choice, not a locked Mars value; any key
-            skips immediately. */}
+            Boot sound is WIRED (settled role): UI Art Option B
+            rising arpeggio, routed through the SOUND graph
+            (audioRouting.ts) — never M3, never a Pokemon chime.
+            Cold-load autoplay caveat in audioRouting.ts. Hold 2.5s
+            is an implementation choice, not a locked Mars value;
+            any key skips immediately. */}
         <img
           src={heavensentLogo}
           alt="M Heavensent Studios"
@@ -246,7 +259,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         />
         <div className="text-white text-lg tracking-[0.3em] text-center mt-2">M HEAVENSENT STUDIOS</div>
         <div className="text-gray-500 text-xs tracking-[0.2em] mt-8 text-center">
-          Boot sound: GAP — original sound needed · Press any key to skip
+          Boot sound: UI Art Option B rising arpeggio · Press any key to skip
         </div>
       </div>
     );
