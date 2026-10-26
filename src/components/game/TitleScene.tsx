@@ -296,7 +296,7 @@ export default function TitleScene({
       }
 
       // Layer 4+5: weather + fire trail particles.
-      interface P { g: Graphics; vx: number; vy: number; life: number; max: number; kind: 'ember' | 'scorch' | 'flake' | 'rain' | 'leaf' | 'dust' | 'bubble' | 'spark' | 'sandburst' | 'smoke' | 'fire' | 'sparkle' | 'shield' | 'splash'; sway: number; }
+      interface P { g: Graphics; vx: number; vy: number; life: number; max: number; kind: 'ember' | 'scorch' | 'flake' | 'rain' | 'leaf' | 'leaves' | 'dust' | 'bubble' | 'spark' | 'sandburst' | 'smoke' | 'fire' | 'sparkle' | 'shield' | 'splash'; sway: number; }
       const particles: P[] = [];
       // Creature effect burst (FireRed scene 3 "attack" beat): one
       // burst kind per creature, from its own manifest VFX in
@@ -315,6 +315,7 @@ export default function TitleScene({
           const g = new Graphics();
           const r = kind === 'smoke' ? 5 + Math.random() * 4 : 2 + Math.random() * 2.5;
           if (kind === 'sparkle') g.circle(0, 0, r).fill(0xffffff);
+          else if (kind === 'leaves') g.ellipse(0, 0, 4, 2).fill(color);
           else g.circle(0, 0, r).fill(color);
           const a = (i / count) * Math.PI * 2 + Math.random() * 0.5;
           const sp = kind === 'spark' || kind === 'fire' ? 40 + Math.random() * 40 : 14 + Math.random() * 18;
@@ -322,7 +323,7 @@ export default function TitleScene({
           particles.push({
             g,
             vx: Math.cos(a) * sp,
-            vy: kind === 'bubble' || kind === 'smoke' ? -30 - Math.random() * 20 : Math.sin(a) * sp - 10,
+            vy: kind === 'bubble' || kind === 'smoke' ? -30 - Math.random() * 20 : kind === 'leaves' ? 10 + Math.random() * 12 : Math.sin(a) * sp - 10,
             life: 0, max: 0.9 + Math.random() * 0.5,
             kind: kind as P['kind'], sway: Math.random() * Math.PI * 2,
           });
@@ -589,6 +590,7 @@ export default function TitleScene({
           const k = 1 - p.life / p.max;
           if (p.kind === 'ember') { p.g.x += (p.vx + Math.sin(t * 6 + p.sway) * 8) * dt / 60; p.g.y += p.vy * dt / 60; p.g.alpha = k; }
           else if (p.kind === 'bubble' || p.kind === 'smoke') { p.g.x += Math.sin(t * 4 + p.sway) * 6 * dt / 60; p.g.y += p.vy * dt / 60; p.g.alpha = k * 0.8; if (p.kind === 'smoke') p.g.scale.set(1 + p.life); }
+          else if (p.kind === 'leaves') { p.g.x += (p.vx + Math.sin(t * 4 + p.sway) * 10) * dt / 60; p.g.y += (p.vy + 8) * dt / 60; p.g.alpha = k; p.g.rotation = Math.sin(t * 3 + p.sway) * 0.5; }
           else if (p.kind === 'spark' || p.kind === 'fire' || p.kind === 'sandburst') { p.g.x += p.vx * dt / 60; p.g.y += p.vy * dt / 60; p.g.alpha = k; }
           else if (p.kind === 'sparkle') { p.g.alpha = 0.3 + 0.7 * Math.abs(Math.sin(t * 6 + p.sway)); }
           else if (p.kind === 'shield') { p.g.scale.set(1 + p.life * 1.2); p.g.alpha = k; }
