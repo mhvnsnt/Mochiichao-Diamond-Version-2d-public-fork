@@ -1,0 +1,339 @@
+{
+ "creature": "strikechamp_unsuited_full",
+ "roster_id": "030",
+ "variant": "unsuited-full",
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-strikechamp-main-unsuited-0-dc01fa98-9a0c-4258-9640-2f7728230866.webp",
+  "width": 1920,
+  "height": 1280
+ },
+ "atlas_file": "strikechamp_unsuited_full_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 320
+ },
+ "frame_count": 28,
+ "draft": false,
+ "draft_note": "",
+ "notes": "Full unsuited set (no helmet, red suit) - QA PASS candidate to replace lower-only unsuited atlas",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_front",
+   "file": "strikechamp_unsuited_full_cell_00.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "battle_back",
+   "file": "strikechamp_unsuited_full_cell_01.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "overworld_side",
+   "file": "strikechamp_unsuited_full_cell_02.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "overworld_front",
+   "file": "strikechamp_unsuited_full_cell_03.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_back",
+   "file": "strikechamp_unsuited_full_cell_04.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_side_2",
+   "file": "strikechamp_unsuited_full_cell_05.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "icon",
+   "file": "strikechamp_unsuited_full_cell_06.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "walk_side_0",
+   "file": "strikechamp_unsuited_full_cell_07.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "walk_front_0",
+   "file": "strikechamp_unsuited_full_cell_08.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "walk_front_1",
+   "file": "strikechamp_unsuited_full_cell_09.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "walk_back_0",
+   "file": "strikechamp_unsuited_full_cell_10.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 256,
+   "atlas_y": 64
+  },
+  {
+   "cell": 11,
+   "role": "walk_side_1",
+   "file": "strikechamp_unsuited_full_cell_11.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 320,
+   "atlas_y": 64
+  },
+  {
+   "cell": 12,
+   "role": "walk_back_1",
+   "file": "strikechamp_unsuited_full_cell_12.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 0,
+   "atlas_y": 128
+  },
+  {
+   "cell": 13,
+   "role": "walk_side_2",
+   "file": "strikechamp_unsuited_full_cell_13.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 64,
+   "atlas_y": 128
+  },
+  {
+   "cell": 14,
+   "role": "walk_front_2",
+   "file": "strikechamp_unsuited_full_cell_14.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 128,
+   "atlas_y": 128
+  },
+  {
+   "cell": 15,
+   "role": "walk_front_3",
+   "file": "strikechamp_unsuited_full_cell_15.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 192,
+   "atlas_y": 128
+  },
+  {
+   "cell": 16,
+   "role": "walk_back_2",
+   "file": "strikechamp_unsuited_full_cell_16.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 256,
+   "atlas_y": 128
+  },
+  {
+   "cell": 17,
+   "role": "walk_back_3",
+   "file": "strikechamp_unsuited_full_cell_17.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 320,
+   "atlas_y": 128
+  },
+  {
+   "cell": 18,
+   "role": "walk_back_4",
+   "file": "strikechamp_unsuited_full_cell_18.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 0,
+   "atlas_y": 192
+  },
+  {
+   "cell": 19,
+   "role": "walk_back_5",
+   "file": "strikechamp_unsuited_full_cell_19.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 64,
+   "atlas_y": 192
+  },
+  {
+   "cell": 20,
+   "role": "walk_back_6",
+   "file": "strikechamp_unsuited_full_cell_20.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 128,
+   "atlas_y": 192
+  },
+  {
+   "cell": 21,
+   "role": "attack_side_0",
+   "file": "strikechamp_unsuited_full_cell_21.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 192,
+   "atlas_y": 192
+  },
+  {
+   "cell": 22,
+   "role": "attack_side_1",
+   "file": "strikechamp_unsuited_full_cell_22.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 256,
+   "atlas_y": 192
+  },
+  {
+   "cell": 23,
+   "role": "attack_side_2",
+   "file": "strikechamp_unsuited_full_cell_23.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 320,
+   "atlas_y": 192
+  },
+  {
+   "cell": 24,
+   "role": "attack_side_3",
+   "file": "strikechamp_unsuited_full_cell_24.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 0,
+   "atlas_y": 256
+  },
+  {
+   "cell": 25,
+   "role": "attack_front_0",
+   "file": "strikechamp_unsuited_full_cell_25.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 64,
+   "atlas_y": 256
+  },
+  {
+   "cell": 26,
+   "role": "attack_front_1",
+   "file": "strikechamp_unsuited_full_cell_26.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 128,
+   "atlas_y": 256
+  },
+  {
+   "cell": 27,
+   "role": "attack_side_4",
+   "file": "strikechamp_unsuited_full_cell_27.png",
+   "game_ready": true,
+   "eye_status": "eye_confirmed",
+   "lock_note": "Eye-assigned from full-unsuited sheet montage 2026-10-25; walk_side faces one way (mirror gives other side)",
+   "atlas_x": 192,
+   "atlas_y": 256
+  },
+  {
+   "cell": "7mir",
+   "role": "walk_side_mirror",
+   "file": "strikechamp_unsuited_full_cell_07mir.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "Mirrored from cell 7",
+   "atlas_x": 256,
+   "atlas_y": 256
+  },
+  {
+   "cell": "11mir",
+   "role": "walk_side_mirror",
+   "file": "strikechamp_unsuited_full_cell_11mir.png",
+   "game_ready": true,
+   "source_cell": 11,
+   "lock_note": "Mirrored from cell 11",
+   "atlas_x": 320,
+   "atlas_y": 256
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-assigned from full-unsuited main sheet + extraction montage; QA PASS at sheet level confirmed",
+ "original_manifest": "strikechamp_unsuited_full_unsuited-full.manifest.json (extraction temp, /tmp/sc_full)",
+ "game_ready_cell_count": 30,
+ "game_ready_atlas_file": "strikechamp_unsuited_full_atlas_64_locked.png",
+ "icon_file": "icons/strikechamp_unsuited_full_icon64.png",
+ "icon_source": "atlas icon cell 6 (circle head)",
+ "white_spot_cleanup_px_cleared": 0,
+ "white_spot_cleanup_bg": [
+  246,
+  244,
+  240
+ ],
+ "variant_note": "RECOMMENDED canonical unsuited set: full (no helmet, red suit), QA PASS. Lower-only atlas (helmeted, bare chest) retained as variant; look difference needs Mars confirm (see GAP doc)."
+}
