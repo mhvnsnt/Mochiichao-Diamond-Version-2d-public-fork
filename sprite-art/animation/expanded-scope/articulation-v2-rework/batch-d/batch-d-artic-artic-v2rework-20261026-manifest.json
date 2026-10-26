@@ -1,0 +1,2685 @@
+{
+ "tag": "artic-v2rework-20261026",
+ "method": "PIPELINE-V2 eyes-only; mouths HELD for V3 contour-fit (Mars 2026-10-26 ~10:50 CDT). Mode A impact-frame only (index 3). Teeth: none drawn (no Batch D front cell shows teeth). Hurts stay base, not staged. Batch B untouched; these are Batch D duplicate-dir versions.",
+ "creatures": {
+  "squirmite": {
+   "front": "squirmite_cell_01.png",
+   "eye_kind": "black-disc",
+   "eyes_old": [
+    [
+     25,
+     17
+    ],
+    [
+     38,
+     17
+    ]
+   ],
+   "eyes_new": [
+    [
+     25.5,
+     16.9
+    ],
+    [
+     37.6,
+     17.0
+    ]
+   ],
+   "widened_half_source": [
+    5,
+    5
+   ],
+   "mouth_measured_for_V3": null,
+   "mouth_status": "none (no measurable mouth)",
+   "sets": {
+    "atk_physical_coil_lunge": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-00.png",
+      "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-01.png",
+      "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-02.png",
+      "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-03.png",
+      "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         33.4,
+         22.7
+        ],
+        [
+         48.5,
+         22.8
+        ]
+       ],
+       "eye_feature_counts": [
+        25,
+        24
+       ],
+       "verified": true,
+       "changed_px": 179,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "squirmite-attacks-artic-v2rework-20261026-atk_physical_coil_lunge.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_sprout_shot": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-00.png",
+      "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-01.png",
+      "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-02.png",
+      "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-03.png",
+      "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         19.8,
+         10.9
+        ],
+        [
+         31.3,
+         11.0
+        ]
+       ],
+       "eye_feature_counts": [
+        26,
+        28
+       ],
+       "verified": true,
+       "changed_px": 176,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "squirmite-attacks-artic-v2rework-20261026-atk_special_sprout_shot.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_verdant_burst": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-00.png",
+      "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-01.png",
+      "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-02.png",
+      "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-03.png",
+      "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-04.png",
+      "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         19.5,
+         15.6
+        ],
+        [
+         33.4,
+         15.7
+        ]
+       ],
+       "eye_feature_counts": [
+        31,
+        29
+       ],
+       "verified": true,
+       "changed_px": 196,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "squirmite-attacks-artic-v2rework-20261026-atk_signature_verdant_burst.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_overrun_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-00.png",
+      "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-01.png",
+      "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-02.png",
+      "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-03.png",
+      "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-04.png",
+      "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         27.5,
+         24.1
+        ],
+        [
+         43.3,
+         24.2
+        ]
+       ],
+       "eye_feature_counts": [
+        25,
+        23
+       ],
+       "verified": true,
+       "changed_px": 177,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "squirmite-attacks-artic-v2rework-20261026-atk_heavy_overrun_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "squirmite-eye-check-artic-v2rework-20261026.png"
+  },
+  "stormtalon": {
+   "front": "stormtalon_cell_02.png",
+   "eye_kind": "cyan",
+   "eyes_old": [
+    [
+     27,
+     22
+    ],
+    [
+     36,
+     22
+    ]
+   ],
+   "eyes_new": [
+    [
+     26.3,
+     21.0
+    ],
+    [
+     36.0,
+     21.0
+    ]
+   ],
+   "widened_half_source": [
+    3,
+    3
+   ],
+   "mouth_measured_for_V3": null,
+   "mouth_status": "none (no measurable mouth)",
+   "sets": {
+    "atk_physical_talon_dive": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-00.png",
+      "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-01.png",
+      "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-02.png",
+      "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-03.png",
+      "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         34.4,
+         25.8
+        ],
+        [
+         46.5,
+         25.8
+        ]
+       ],
+       "eye_feature_counts": [
+        3,
+        3
+       ],
+       "verified": true,
+       "changed_px": 79,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "stormtalon-attacks-artic-v2rework-20261026-atk_physical_talon_dive.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_storm_blast": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-00.png",
+      "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-01.png",
+      "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-02.png",
+      "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-03.png",
+      "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         20.6,
+         15.0
+        ],
+        [
+         29.8,
+         15.0
+        ]
+       ],
+       "eye_feature_counts": [
+        5,
+        3
+       ],
+       "verified": true,
+       "changed_px": 76,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "stormtalon-attacks-artic-v2rework-20261026-atk_special_storm_blast.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_tempest_barrage": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-00.png",
+      "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-01.png",
+      "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-02.png",
+      "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-03.png",
+      "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-04.png",
+      "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         20.4,
+         19.3
+        ],
+        [
+         31.6,
+         19.3
+        ]
+       ],
+       "eye_feature_counts": [
+        5,
+        5
+       ],
+       "verified": true,
+       "changed_px": 82,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "stormtalon-attacks-artic-v2rework-20261026-atk_signature_tempest_barrage.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_thunder_crash_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-00.png",
+      "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-01.png",
+      "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-02.png",
+      "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-03.png",
+      "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-04.png",
+      "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         28.6,
+         27.0
+        ],
+        [
+         41.2,
+         27.0
+        ]
+       ],
+       "eye_feature_counts": [
+        5,
+        4
+       ],
+       "verified": true,
+       "changed_px": 78,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "stormtalon-attacks-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "stormtalon-eye-check-artic-v2rework-20261026.png"
+  },
+  "strikechamp": {
+   "front": "strikechamp_cell_04.png",
+   "eye_kind": "visor",
+   "eyes_old": [
+    [
+     26,
+     15
+    ],
+    [
+     38,
+     15
+    ]
+   ],
+   "eyes_new": [
+    [
+     26,
+     15
+    ],
+    [
+     38,
+     15
+    ]
+   ],
+   "widened_half_source": [
+    3,
+    2
+   ],
+   "mouth_measured_for_V3": null,
+   "mouth_status": "none (no measurable mouth)",
+   "sets": {
+    "atk_physical_champ_punch": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-00.png",
+      "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-01.png",
+      "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-02.png",
+      "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-03.png",
+      "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         34.0,
+         21.2
+        ],
+        [
+         49.0,
+         21.2
+        ]
+       ],
+       "eye_feature_counts": [
+        18,
+        19
+       ],
+       "verified": true,
+       "changed_px": 64,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp-attacks-artic-v2rework-20261026-atk_physical_champ_punch.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_power_shot": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-00.png",
+      "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-01.png",
+      "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-02.png",
+      "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-03.png",
+      "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         20.3,
+         9.0
+        ],
+        [
+         31.7,
+         9.0
+        ]
+       ],
+       "eye_feature_counts": [
+        14,
+        19
+       ],
+       "verified": true,
+       "changed_px": 70,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp-attacks-artic-v2rework-20261026-atk_special_power_shot.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_champ_barrage": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-00.png",
+      "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-01.png",
+      "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-02.png",
+      "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-03.png",
+      "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-04.png",
+      "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         20.1,
+         13.9
+        ],
+        [
+         33.9,
+         13.9
+        ]
+       ],
+       "eye_feature_counts": [
+        16,
+        17
+       ],
+       "verified": true,
+       "changed_px": 64,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp-attacks-artic-v2rework-20261026-atk_signature_champ_barrage.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_knockout_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-00.png",
+      "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-01.png",
+      "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-02.png",
+      "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-03.png",
+      "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-04.png",
+      "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         28.2,
+         22.7
+        ],
+        [
+         43.8,
+         22.7
+        ]
+       ],
+       "eye_feature_counts": [
+        16,
+        19
+       ],
+       "verified": true,
+       "changed_px": 72,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp-attacks-artic-v2rework-20261026-atk_heavy_knockout_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "strikechamp-eye-check-artic-v2rework-20261026.png"
+  },
+  "strikechamp_unsuited": {
+   "front": "strikechamp_unsuited_cell_05.png",
+   "eye_kind": "humanoid",
+   "eyes_old": [
+    [
+     29,
+     14
+    ],
+    [
+     34,
+     14
+    ]
+   ],
+   "eyes_new": [
+    [
+     29,
+     14
+    ],
+    [
+     34,
+     14
+    ]
+   ],
+   "widened_half_source": [
+    2,
+    2
+   ],
+   "mouth_measured_for_V3": [
+    32,
+    17
+   ],
+   "mouth_status": "HELD for V3 contour-fit \u2014 not drawn",
+   "sets": {
+    "atk_physical_bare_punch": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_physical_bare_punch-cell-00.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_physical_bare_punch-cell-01.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_physical_bare_punch-cell-02.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_physical_bare_punch-cell-03.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_physical_bare_punch-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         37.8,
+         20.5
+        ],
+        [
+         44.0,
+         20.5
+        ]
+       ],
+       "eye_feature_counts": [
+        27,
+        24
+       ],
+       "verified": true,
+       "changed_px": 38,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp_unsuited-attacks-artic-v2rework-20261026-atk_physical_bare_punch.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_bare_shot": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_special_bare_shot-cell-00.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_special_bare_shot-cell-01.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_special_bare_shot-cell-02.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_special_bare_shot-cell-03.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_special_bare_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         23.1,
+         8.0
+        ],
+        [
+         27.9,
+         8.0
+        ]
+       ],
+       "eye_feature_counts": [
+        25,
+        26
+       ],
+       "verified": true,
+       "changed_px": 36,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp_unsuited-attacks-artic-v2rework-20261026-atk_special_bare_shot.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_bare_barrage": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_signature_bare_barrage-cell-00.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_signature_bare_barrage-cell-01.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_signature_bare_barrage-cell-02.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_signature_bare_barrage-cell-03.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_signature_bare_barrage-cell-04.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_signature_bare_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         23.6,
+         13.0
+        ],
+        [
+         29.3,
+         13.0
+        ]
+       ],
+       "eye_feature_counts": [
+        22,
+        25
+       ],
+       "verified": true,
+       "changed_px": 41,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp_unsuited-attacks-artic-v2rework-20261026-atk_signature_bare_barrage.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_knockout_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-00.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-01.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-02.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-03.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-04.png",
+      "strikechamp_unsuited-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         32.1,
+         22.0
+        ],
+        [
+         38.6,
+         22.0
+        ]
+       ],
+       "eye_feature_counts": [
+        26,
+        25
+       ],
+       "verified": true,
+       "changed_px": 42,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp_unsuited-attacks-artic-v2rework-20261026-atk_heavy_knockout_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "strikechamp_unsuited-eye-check-artic-v2rework-20261026.png"
+  },
+  "strikechamp_unsuited_full": {
+   "front": "strikechamp_unsuited_full_cell_00.png",
+   "eye_kind": "humanoid",
+   "eyes_old": [
+    [
+     28,
+     14
+    ],
+    [
+     32,
+     14
+    ]
+   ],
+   "eyes_new": [
+    [
+     28,
+     14
+    ],
+    [
+     32,
+     14
+    ]
+   ],
+   "widened_half_source": [
+    2,
+    2
+   ],
+   "mouth_measured_for_V3": [
+    30,
+    18
+   ],
+   "mouth_status": "HELD for V3 contour-fit \u2014 not drawn",
+   "sets": {
+    "atk_physical_suit_punch": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_physical_suit_punch-cell-00.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_physical_suit_punch-cell-01.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_physical_suit_punch-cell-02.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_physical_suit_punch-cell-03.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_physical_suit_punch-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         36.5,
+         20.5
+        ],
+        [
+         41.5,
+         20.5
+        ]
+       ],
+       "eye_feature_counts": [
+        14,
+        21
+       ],
+       "verified": true,
+       "changed_px": 33,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp_unsuited_full-attacks-artic-v2rework-20261026-atk_physical_suit_punch.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_suit_shot": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_special_suit_shot-cell-00.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_special_suit_shot-cell-01.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_special_suit_shot-cell-02.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_special_suit_shot-cell-03.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_special_suit_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         22.2,
+         8.0
+        ],
+        [
+         26.0,
+         8.0
+        ]
+       ],
+       "eye_feature_counts": [
+        14,
+        17
+       ],
+       "verified": true,
+       "changed_px": 34,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp_unsuited_full-attacks-artic-v2rework-20261026-atk_special_suit_shot.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_suit_barrage": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_signature_suit_barrage-cell-00.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_signature_suit_barrage-cell-01.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_signature_suit_barrage-cell-02.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_signature_suit_barrage-cell-03.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_signature_suit_barrage-cell-04.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_signature_suit_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         22.4,
+         13.0
+        ],
+        [
+         27.0,
+         13.0
+        ]
+       ],
+       "eye_feature_counts": [
+        12,
+        21
+       ],
+       "verified": true,
+       "changed_px": 38,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp_unsuited_full-attacks-artic-v2rework-20261026-atk_signature_suit_barrage.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_knockout_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-00.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-01.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-02.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-03.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-04.png",
+      "strikechamp_unsuited_full-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         30.8,
+         22.0
+        ],
+        [
+         36.0,
+         22.0
+        ]
+       ],
+       "eye_feature_counts": [
+        9,
+        23
+       ],
+       "verified": true,
+       "changed_px": 38,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "strikechamp_unsuited_full-attacks-artic-v2rework-20261026-atk_heavy_knockout_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "strikechamp_unsuited_full-eye-check-artic-v2rework-20261026.png"
+  },
+  "terradog": {
+   "front": "terradog_cell_00.png",
+   "eye_kind": "dark-angry",
+   "eyes_old": [
+    [
+     25,
+     13
+    ],
+    [
+     38,
+     13
+    ]
+   ],
+   "eyes_new": [
+    [
+     24.5,
+     13.2
+    ],
+    [
+     38.3,
+     13.2
+    ]
+   ],
+   "widened_half_source": [
+    4,
+    4
+   ],
+   "mouth_measured_for_V3": null,
+   "mouth_status": "none (no measurable mouth)",
+   "sets": {
+    "atk_physical_terra_charge": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "terradog-artic-v2rework-20261026-atk_physical_terra_charge-cell-00.png",
+      "terradog-artic-v2rework-20261026-atk_physical_terra_charge-cell-01.png",
+      "terradog-artic-v2rework-20261026-atk_physical_terra_charge-cell-02.png",
+      "terradog-artic-v2rework-20261026-atk_physical_terra_charge-cell-03.png",
+      "terradog-artic-v2rework-20261026-atk_physical_terra_charge-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         32.1,
+         19.9
+        ],
+        [
+         49.4,
+         19.9
+        ]
+       ],
+       "eye_feature_counts": [
+        12,
+        13
+       ],
+       "verified": true,
+       "changed_px": 121,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "terradog-attacks-artic-v2rework-20261026-atk_physical_terra_charge.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_rock_shot": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "terradog-artic-v2rework-20261026-atk_special_rock_shot-cell-00.png",
+      "terradog-artic-v2rework-20261026-atk_special_rock_shot-cell-01.png",
+      "terradog-artic-v2rework-20261026-atk_special_rock_shot-cell-02.png",
+      "terradog-artic-v2rework-20261026-atk_special_rock_shot-cell-03.png",
+      "terradog-artic-v2rework-20261026-atk_special_rock_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         18.9,
+         7.2
+        ],
+        [
+         32.0,
+         7.2
+        ]
+       ],
+       "eye_feature_counts": [
+        14,
+        14
+       ],
+       "verified": true,
+       "changed_px": 118,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "terradog-attacks-artic-v2rework-20261026-atk_special_rock_shot.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_terra_barrage": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "terradog-artic-v2rework-20261026-atk_signature_terra_barrage-cell-00.png",
+      "terradog-artic-v2rework-20261026-atk_signature_terra_barrage-cell-01.png",
+      "terradog-artic-v2rework-20261026-atk_signature_terra_barrage-cell-02.png",
+      "terradog-artic-v2rework-20261026-atk_signature_terra_barrage-cell-03.png",
+      "terradog-artic-v2rework-20261026-atk_signature_terra_barrage-cell-04.png",
+      "terradog-artic-v2rework-20261026-atk_signature_terra_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         18.4,
+         12.3
+        ],
+        [
+         34.2,
+         12.3
+        ]
+       ],
+       "eye_feature_counts": [
+        13,
+        17
+       ],
+       "verified": true,
+       "changed_px": 133,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "terradog-attacks-artic-v2rework-20261026-atk_signature_terra_barrage.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_quake_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "terradog-artic-v2rework-20261026-atk_heavy_quake_finisher-cell-00.png",
+      "terradog-artic-v2rework-20261026-atk_heavy_quake_finisher-cell-01.png",
+      "terradog-artic-v2rework-20261026-atk_heavy_quake_finisher-cell-02.png",
+      "terradog-artic-v2rework-20261026-atk_heavy_quake_finisher-cell-03.png",
+      "terradog-artic-v2rework-20261026-atk_heavy_quake_finisher-cell-04.png",
+      "terradog-artic-v2rework-20261026-atk_heavy_quake_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         26.2,
+         21.4
+        ],
+        [
+         44.2,
+         21.4
+        ]
+       ],
+       "eye_feature_counts": [
+        14,
+        16
+       ],
+       "verified": true,
+       "changed_px": 126,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "terradog-attacks-artic-v2rework-20261026-atk_heavy_quake_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "terradog-eye-check-artic-v2rework-20261026.png"
+  },
+  "toxitacle": {
+   "front": "toxitacle_cell_05.png",
+   "eye_kind": "purple",
+   "eyes_old": [
+    [
+     25,
+     26
+    ],
+    [
+     34,
+     26
+    ]
+   ],
+   "eyes_new": [
+    [
+     24.5,
+     26.0
+    ],
+    [
+     33.7,
+     25.7
+    ]
+   ],
+   "widened_half_source": [
+    3,
+    3
+   ],
+   "mouth_measured_for_V3": null,
+   "mouth_status": "none (no measurable mouth)",
+   "sets": {
+    "atk_physical_tentacle_lash": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "toxitacle-artic-v2rework-20261026-atk_physical_tentacle_lash-cell-00.png",
+      "toxitacle-artic-v2rework-20261026-atk_physical_tentacle_lash-cell-01.png",
+      "toxitacle-artic-v2rework-20261026-atk_physical_tentacle_lash-cell-02.png",
+      "toxitacle-artic-v2rework-20261026-atk_physical_tentacle_lash-cell-03.png",
+      "toxitacle-artic-v2rework-20261026-atk_physical_tentacle_lash-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         32.1,
+         29.5
+        ],
+        [
+         43.6,
+         29.3
+        ]
+       ],
+       "eye_feature_counts": [
+        3,
+        3
+       ],
+       "verified": true,
+       "changed_px": 74,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "toxitacle-attacks-artic-v2rework-20261026-atk_physical_tentacle_lash.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_toxin_jet": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "toxitacle-artic-v2rework-20261026-atk_special_toxin_jet-cell-00.png",
+      "toxitacle-artic-v2rework-20261026-atk_special_toxin_jet-cell-01.png",
+      "toxitacle-artic-v2rework-20261026-atk_special_toxin_jet-cell-02.png",
+      "toxitacle-artic-v2rework-20261026-atk_special_toxin_jet-cell-03.png",
+      "toxitacle-artic-v2rework-20261026-atk_special_toxin_jet-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         18.9,
+         20.0
+        ],
+        [
+         27.6,
+         19.7
+        ]
+       ],
+       "eye_feature_counts": [
+        2,
+        2
+       ],
+       "verified": true,
+       "changed_px": 72,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "toxitacle-attacks-artic-v2rework-20261026-atk_special_toxin_jet.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_venom_barrage": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "toxitacle-artic-v2rework-20261026-atk_signature_venom_barrage-cell-00.png",
+      "toxitacle-artic-v2rework-20261026-atk_signature_venom_barrage-cell-01.png",
+      "toxitacle-artic-v2rework-20261026-atk_signature_venom_barrage-cell-02.png",
+      "toxitacle-artic-v2rework-20261026-atk_signature_venom_barrage-cell-03.png",
+      "toxitacle-artic-v2rework-20261026-atk_signature_venom_barrage-cell-04.png",
+      "toxitacle-artic-v2rework-20261026-atk_signature_venom_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         18.4,
+         23.8
+        ],
+        [
+         29.0,
+         23.5
+        ]
+       ],
+       "eye_feature_counts": [
+        2,
+        1
+       ],
+       "verified": true,
+       "changed_px": 84,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "toxitacle-attacks-artic-v2rework-20261026-atk_signature_venom_barrage.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_toxic_crash_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "toxitacle-artic-v2rework-20261026-atk_heavy_toxic_crash_finisher-cell-00.png",
+      "toxitacle-artic-v2rework-20261026-atk_heavy_toxic_crash_finisher-cell-01.png",
+      "toxitacle-artic-v2rework-20261026-atk_heavy_toxic_crash_finisher-cell-02.png",
+      "toxitacle-artic-v2rework-20261026-atk_heavy_toxic_crash_finisher-cell-03.png",
+      "toxitacle-artic-v2rework-20261026-atk_heavy_toxic_crash_finisher-cell-04.png",
+      "toxitacle-artic-v2rework-20261026-atk_heavy_toxic_crash_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         26.2,
+         30.6
+        ],
+        [
+         38.2,
+         30.4
+        ]
+       ],
+       "eye_feature_counts": [
+        2,
+        2
+       ],
+       "verified": true,
+       "changed_px": 76,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "toxitacle-attacks-artic-v2rework-20261026-atk_heavy_toxic_crash_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "toxitacle-eye-check-artic-v2rework-20261026.png"
+  },
+  "yogiferno": {
+   "front": "yogiferno_cell_00.png",
+   "eye_kind": "pale-slit",
+   "eyes_old": [
+    [
+     28,
+     20
+    ],
+    [
+     35,
+     20
+    ]
+   ],
+   "eyes_new": [
+    [
+     28,
+     20.5
+    ],
+    [
+     35,
+     20
+    ]
+   ],
+   "widened_half_source": [
+    1,
+    3
+   ],
+   "mouth_measured_for_V3": null,
+   "mouth_status": "none (no measurable mouth)",
+   "sets": {
+    "atk_physical_yogi_charge": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "yogiferno-artic-v2rework-20261026-atk_physical_yogi_charge-cell-00.png",
+      "yogiferno-artic-v2rework-20261026-atk_physical_yogi_charge-cell-01.png",
+      "yogiferno-artic-v2rework-20261026-atk_physical_yogi_charge-cell-02.png",
+      "yogiferno-artic-v2rework-20261026-atk_physical_yogi_charge-cell-03.png",
+      "yogiferno-artic-v2rework-20261026-atk_physical_yogi_charge-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         36.5,
+         25.4
+        ],
+        [
+         45.2,
+         25.0
+        ]
+       ],
+       "eye_feature_counts": [
+        12,
+        10
+       ],
+       "verified": true,
+       "changed_px": 33,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "yogiferno-attacks-artic-v2rework-20261026-atk_physical_yogi_charge.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_flame_shot": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "yogiferno-artic-v2rework-20261026-atk_special_flame_shot-cell-00.png",
+      "yogiferno-artic-v2rework-20261026-atk_special_flame_shot-cell-01.png",
+      "yogiferno-artic-v2rework-20261026-atk_special_flame_shot-cell-02.png",
+      "yogiferno-artic-v2rework-20261026-atk_special_flame_shot-cell-03.png",
+      "yogiferno-artic-v2rework-20261026-atk_special_flame_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         22.2,
+         14.5
+        ],
+        [
+         28.9,
+         14.0
+        ]
+       ],
+       "eye_feature_counts": [
+        9,
+        12
+       ],
+       "verified": true,
+       "changed_px": 42,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "yogiferno-attacks-artic-v2rework-20261026-atk_special_flame_shot.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_inferno_barrage": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "yogiferno-artic-v2rework-20261026-atk_signature_inferno_barrage-cell-00.png",
+      "yogiferno-artic-v2rework-20261026-atk_signature_inferno_barrage-cell-01.png",
+      "yogiferno-artic-v2rework-20261026-atk_signature_inferno_barrage-cell-02.png",
+      "yogiferno-artic-v2rework-20261026-atk_signature_inferno_barrage-cell-03.png",
+      "yogiferno-artic-v2rework-20261026-atk_signature_inferno_barrage-cell-04.png",
+      "yogiferno-artic-v2rework-20261026-atk_signature_inferno_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         22.4,
+         18.9
+        ],
+        [
+         30.5,
+         18.4
+        ]
+       ],
+       "eye_feature_counts": [
+        10,
+        9
+       ],
+       "verified": true,
+       "changed_px": 39,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "yogiferno-attacks-artic-v2rework-20261026-atk_signature_inferno_barrage.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_blaze_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "yogiferno-artic-v2rework-20261026-atk_heavy_blaze_finisher-cell-00.png",
+      "yogiferno-artic-v2rework-20261026-atk_heavy_blaze_finisher-cell-01.png",
+      "yogiferno-artic-v2rework-20261026-atk_heavy_blaze_finisher-cell-02.png",
+      "yogiferno-artic-v2rework-20261026-atk_heavy_blaze_finisher-cell-03.png",
+      "yogiferno-artic-v2rework-20261026-atk_heavy_blaze_finisher-cell-04.png",
+      "yogiferno-artic-v2rework-20261026-atk_heavy_blaze_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         30.8,
+         26.7
+        ],
+        [
+         39.9,
+         26.3
+        ]
+       ],
+       "eye_feature_counts": [
+        13,
+        11
+       ],
+       "verified": true,
+       "changed_px": 40,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "yogiferno-attacks-artic-v2rework-20261026-atk_heavy_blaze_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "yogiferno-eye-check-artic-v2rework-20261026.png"
+  },
+  "zephling": {
+   "front": "zephling_cell_00.png",
+   "eye_kind": "black-disc",
+   "eyes_old": [
+    [
+     26,
+     19
+    ],
+    [
+     37,
+     19
+    ]
+   ],
+   "eyes_new": [
+    [
+     25.8,
+     18.8
+    ],
+    [
+     37.2,
+     18.8
+    ]
+   ],
+   "widened_half_source": [
+    3.5,
+    3.5
+   ],
+   "mouth_measured_for_V3": null,
+   "mouth_status": "none (no measurable mouth)",
+   "sets": {
+    "atk_physical_zephyr_dive": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "zephling-artic-v2rework-20261026-atk_physical_zephyr_dive-cell-00.png",
+      "zephling-artic-v2rework-20261026-atk_physical_zephyr_dive-cell-01.png",
+      "zephling-artic-v2rework-20261026-atk_physical_zephyr_dive-cell-02.png",
+      "zephling-artic-v2rework-20261026-atk_physical_zephyr_dive-cell-03.png",
+      "zephling-artic-v2rework-20261026-atk_physical_zephyr_dive-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         33.8,
+         24.1
+        ],
+        [
+         48.0,
+         24.1
+        ]
+       ],
+       "eye_feature_counts": [
+        7,
+        7
+       ],
+       "verified": true,
+       "changed_px": 98,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.25,
+        "sy": 0.75,
+        "dx": 38
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "zephling-attacks-artic-v2rework-20261026-atk_physical_zephyr_dive.gif",
+     "durations_ms": [
+      180,
+      120,
+      100,
+      90,
+      300
+     ]
+    },
+    "atk_special_gust_shot": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "zephling-artic-v2rework-20261026-atk_special_gust_shot-cell-00.png",
+      "zephling-artic-v2rework-20261026-atk_special_gust_shot-cell-01.png",
+      "zephling-artic-v2rework-20261026-atk_special_gust_shot-cell-02.png",
+      "zephling-artic-v2rework-20261026-atk_special_gust_shot-cell-03.png",
+      "zephling-artic-v2rework-20261026-atk_special_gust_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         20.1,
+         12.8
+        ],
+        [
+         30.9,
+         12.8
+        ]
+       ],
+       "eye_feature_counts": [
+        10,
+        8
+       ],
+       "verified": true,
+       "changed_px": 100,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 0.95,
+        "sy": 1.0,
+        "dx": -24
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "zephling-attacks-artic-v2rework-20261026-atk_special_gust_shot.gif",
+     "durations_ms": [
+      200,
+      140,
+      110,
+      110,
+      300
+     ]
+    },
+    "atk_signature_cyclone_barrage": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "zephling-artic-v2rework-20261026-atk_signature_cyclone_barrage-cell-00.png",
+      "zephling-artic-v2rework-20261026-atk_signature_cyclone_barrage-cell-01.png",
+      "zephling-artic-v2rework-20261026-atk_signature_cyclone_barrage-cell-02.png",
+      "zephling-artic-v2rework-20261026-atk_signature_cyclone_barrage-cell-03.png",
+      "zephling-artic-v2rework-20261026-atk_signature_cyclone_barrage-cell-04.png",
+      "zephling-artic-v2rework-20261026-atk_signature_cyclone_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         19.9,
+         17.3
+        ],
+        [
+         33.0,
+         17.3
+        ]
+       ],
+       "eye_feature_counts": [
+        10,
+        10
+       ],
+       "verified": true,
+       "changed_px": 105,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.15,
+        "sy": 0.9,
+        "dx": -20
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "zephling-attacks-artic-v2rework-20261026-atk_signature_cyclone_barrage.gif",
+     "durations_ms": [
+      200,
+      220,
+      100,
+      140,
+      120,
+      300
+     ]
+    },
+    "atk_heavy_tempest_finisher": {
+     "kind": "attack",
+     "timing": "Mode A impact-only (frame 3)",
+     "files": [
+      "zephling-artic-v2rework-20261026-atk_heavy_tempest_finisher-cell-00.png",
+      "zephling-artic-v2rework-20261026-atk_heavy_tempest_finisher-cell-01.png",
+      "zephling-artic-v2rework-20261026-atk_heavy_tempest_finisher-cell-02.png",
+      "zephling-artic-v2rework-20261026-atk_heavy_tempest_finisher-cell-03.png",
+      "zephling-artic-v2rework-20261026-atk_heavy_tempest_finisher-cell-04.png",
+      "zephling-artic-v2rework-20261026-atk_heavy_tempest_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 1,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 2,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 3,
+       "pred_eyes": [
+        [
+         27.9,
+         25.5
+        ],
+        [
+         42.8,
+         25.5
+        ]
+       ],
+       "eye_feature_counts": [
+        7,
+        8
+       ],
+       "verified": true,
+       "changed_px": 97,
+       "post_gate": "pass",
+       "transform": {
+        "sx": 1.3,
+        "sy": 0.72,
+        "dx": 16
+       },
+       "action": "overlay-impact-eyes-only-v2"
+      },
+      {
+       "frame": 4,
+       "action": "base-mode-A-non-impact"
+      },
+      {
+       "frame": 5,
+       "action": "base-mode-A-non-impact"
+      }
+     ],
+     "gif": "zephling-attacks-artic-v2rework-20261026-atk_heavy_tempest_finisher.gif",
+     "durations_ms": [
+      220,
+      160,
+      140,
+      120,
+      100,
+      420
+     ]
+    }
+   },
+   "eye_check": "zephling-eye-check-artic-v2rework-20261026.png"
+  }
+ }
+}
