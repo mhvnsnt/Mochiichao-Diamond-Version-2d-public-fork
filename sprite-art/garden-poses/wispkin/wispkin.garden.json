@@ -1,0 +1,11 @@
+{
+  "creature": "wispkin",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "wispkin_cell_02.png"
+}
