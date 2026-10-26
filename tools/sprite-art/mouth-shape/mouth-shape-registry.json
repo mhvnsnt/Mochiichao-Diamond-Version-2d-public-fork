@@ -1,0 +1,14 @@
+{
+  "rule": "VERSION-LOCK RULE (Mars, 2026-10-26 ~15:31 CDT, standing forever): when a new version replaces an old one, NOBODY uses the old version when the new one is required. Monotonic version numbers only go up, dated filenames, never overwrite a version Mars has seen. Check this registry before using any asset; superseded = DO NOT USE.",
+  "assets": [
+    {
+      "asset": "razorgater-attacks",
+      "current": {"version": "take-6", "tag": "artic-pipev3w6-20261026", "mouth_shape": "triangle", "status": "LOCKED MAIN — Mars approved perfect 2026-10-26 ~15:29 CDT", "tool": "tools/sprite-art/mouth-shape/mouth_shape.py"},
+      "superseded_do_not_use": [
+        {"version": "take-5", "tag": "artic-pipev3w5-20261026", "mouth_shape": "ellipse"},
+        {"version": "take-4", "tag": "artic-pipev3w4-20261026", "mouth_shape": "ellipse"},
+        {"version": "take-1/2/3", "status": "earlier failed checkpoints"}
+      ]
+    }
+  ]
+}
