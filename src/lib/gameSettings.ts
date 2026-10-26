@@ -64,6 +64,32 @@ export interface GameSettings {
   cursorShape: string;
   cursorColor: string;
   cursorGlow: boolean;
+  /** Batch A (UI/HUD) — HUD rows, see src/lib/hudCustom.ts. */
+  hudHealthbar: string;
+  hudBattleLayout: string;
+  hudMoveLayout: string;
+  hudPpType: string;
+  hudMessageStyle: string;
+  hudDamageStyle: string;
+  /** Batch A — border rows beyond FRAME 1-20: shadow and opacity
+   *  are new settings (radius / border width / white border /
+   *  gloss / glow / gradient stay preset fields, rendered by
+   *  SettingsScreen's panel style); per-menu rows are stored here
+   *  so every screen can read them from the store, and presets
+   *  carry them via their settings snapshot. Per-menu frame 0 =
+   *  follow the global FRAME row. */
+  panelShadow: boolean;
+  panelOpacity: number;
+  perMenuPanelColor: Record<string, string>;
+  perMenuFrame: Record<string, number>;
+  /** Batch A — cursor rows beyond shape / colour / glow. */
+  cursorShadow: boolean;
+  cursorBlink: boolean;
+  cursorBlinkSpeed: string;
+  cursorHighlight: string;
+  /** Stored flag only: no audio engine in this build to play a
+   *  move sound through yet (SOUND flag precedent, PR #28). */
+  cursorSound: boolean;
 }
 
 export const DEFAULT_SETTINGS: GameSettings = {
@@ -82,6 +108,21 @@ export const DEFAULT_SETTINGS: GameSettings = {
   cursorShape: 'ARROW',
   cursorColor: '#fbbf24',
   cursorGlow: true,
+  hudHealthbar: 'CLASSIC',
+  hudBattleLayout: 'CLASSIC',
+  hudMoveLayout: 'GRID_2X2',
+  hudPpType: 'FULL',
+  hudMessageStyle: 'CLASSIC',
+  hudDamageStyle: 'PLAIN',
+  panelShadow: false,
+  panelOpacity: 100,
+  perMenuPanelColor: { ROSTER: 'pink', SHOP: 'yellow', BAG: 'green', BATTLE: 'red', PC: 'blue', GARDEN: 'purple', SETTINGS: 'blue', PARTY: 'pink' },
+  perMenuFrame: { ROSTER: 0, SHOP: 0, BAG: 0, BATTLE: 0, PC: 0, GARDEN: 0, SETTINGS: 0, PARTY: 0 },
+  cursorShadow: false,
+  cursorBlink: false,
+  cursorBlinkSpeed: 'MID',
+  cursorHighlight: '#fcd34d',
+  cursorSound: false,
 };
 
 /** Dialogue typewriter interval in ms per character. MID 18ms is the
