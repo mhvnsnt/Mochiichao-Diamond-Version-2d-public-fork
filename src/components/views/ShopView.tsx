@@ -90,8 +90,18 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
     setSelected(0);
   };
 
+  // Shop Y2K skin ONLY (per-menu skins 3/8): .shop-y2k (index.css) gives
+  // this screen the Y2K skin — glossy yellow gradient, white border,
+  // glow, star/heart accents. Buy/Sell/Quit order, stock, prices,
+  // wording, item order, inputs, and behaviour are unchanged; the
+  // sparkles below are decorative (aria-hidden, non-interactive)
+  // and sit in the screen's padding corners.
   return (
-    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="shop-y2k game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+      <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 left-3 text-yellow-200 text-lg">✦</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 right-3 text-amber-300 text-lg">♥</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 left-3 text-yellow-300 text-base">★</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 right-3 text-amber-200 text-base">✦</span>
       <div className="flex justify-between items-end mb-4 shrink-0">
         <div>
           <h2 className="game-title text-2xl">Syndicate Kiosk</h2>
