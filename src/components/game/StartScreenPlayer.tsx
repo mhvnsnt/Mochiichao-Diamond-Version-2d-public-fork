@@ -262,7 +262,7 @@ export default function StartScreenPlayer() {
         }
         labels.push(
           `Preset: ${resolved.sourceName} (${resolved.source === 'saved' ? 'most recently saved' : 'locked default'}) · ` +
-            `Audio: ${START_SCREEN_AUDIO_SLOT.name} — GAP (name only, empty); press-start chirp already wired on main (bootAudio) · ` +
+            `Audio: per-preset music slot "${START_SCREEN_AUDIO_SLOT.name}" is name-only (empty); title music plays via the wired official title track · press-start chirp already wired on main (bootAudio) · ` +
             `Reset to Locked Default in Settings → Menu Creator → CREATE START SCREEN`,
         );
         labels.forEach((line, i) => {
@@ -355,7 +355,7 @@ export default function StartScreenPlayer() {
         <div className="text-slate-300 font-bold tracking-widest mt-2">M HEAVENSENT STUDIOS</div>
         <div className="text-slate-400 text-xs mt-2">
           Preset: {resolved.sourceName} · Background: {preset.background}
-          {resolved.paintedBackgroundGap ? ' — PAINTED GAP (slate fallback)' : ''} · Particles: {preset.particles} · Music: GAP (name only, empty); press-start chirp wired on main
+          {resolved.paintedBackgroundGap ? ' — PAINTED GAP (slate fallback)' : ''} · Particles: {preset.particles} · Music: official title track (wired); per-preset slot name-only · press-start chirp wired on main
         </div>
       </div>
     );

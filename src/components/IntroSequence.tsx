@@ -16,7 +16,9 @@ import StartScreenPlayer from "./game/StartScreenPlayer";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
+import mochiichaoLogo from "../assets/ui/mochiichao-main-logo-official-band.png";
 import { playMusic, stopMusic } from "../lib/music";
+import { getTitlePlayer, getIntroPlayer } from "../lib/titlePlayerPreference";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -106,6 +108,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // UNCHANGED except SETTINGS now opens the real Settings screen.
   const [phase, setPhase] = useState<"BOOT" | "INTRO" | "TITLE" | "MAIN_MENU" | "SETTINGS" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("BOOT");
   const [showPrompt, setShowPrompt] = useState(false);
+  const [introScene, setIntroScene] = useState(0);
   const [titleFading, setTitleFading] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
@@ -183,8 +186,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // world starts silent. BOOT and TITLE-press sounds are NOT here:
   // they are already wired on main in src/lib/bootAudio.ts (BOOT =
   // UI Art Option B, press = M3), and duplicating them would play
-  // both twice. TITLE render itself is StartScreenPlayer (PR #101,
-  // left untouched — this effect only adds the music layer).
+  // both twice. TITLE render is the classic DOM title by default
+  // (boot→menu restoration 2026-10-26); the Pixi player is a Menu
+  // Creator preset only — this effect only adds the music layer.
   // playMusic() fades the old track out over 1000 ms (Pokemon
   // 60-frame fade) and is a no-op if the same track is already
   // playing, so B back to TITLE restarts title music without
@@ -242,7 +246,13 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   const bootPlayedRef = React.useRef(false);
   const advanceIntro = () => {
     if (phase === "BOOT") setPhase("INTRO");
-    else if (phase === "INTRO") setPhase("TITLE");
+    else if (phase === "INTRO") {
+      // Restoration: the classic intro steps its 4 scenes; the Pixi
+      // player (a Menu Creator preset only) skips the whole intro
+      // to TITLE, converging with the player's own onDone.
+      if (getIntroPlayer() === 'classic' && introScene < 3) setIntroScene(s => s + 1);
+      else setPhase("TITLE");
+    }
     else if (phase === "TITLE" && !titleFading) {
       playPressStartSound();
       setTitleFading(true);
@@ -275,7 +285,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         window.removeEventListener("mousedown", handler);
       };
     }
-  }, [phase, titleFading]);
+  }, [phase, introScene, titleFading]);
 
   if (phase === "BOOT") {
     return (
@@ -301,33 +311,158 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   }
 
   if (phase === "INTRO") {
-    // Intro playback from a saved preset (Pixi): the creator's most
-    // recently saved preset plays, else the locked default. Any key
-    // or click skips the whole intro to TITLE (the player also calls
-    // onDone on skip / at the total duration — both converge here,
-    // idempotently). The old 4 GAP text scenes are replaced, not kept
-    // alongside the player.
-    return <IntroVideoPlayer onDone={() => setPhase("TITLE")} />;
+    // Restoration (2026-10-26): the classic 4 scenes are the default
+    // intro again. The Pixi player is a Menu Creator preset only —
+    // it plays only when selected in CREATE INTRO VIDEO, never by
+    // default.
+    if (getIntroPlayer() === 'pixi') {
+      // Intro playback from a saved preset (Pixi): the creator's most
+      // recently saved preset plays, else the locked default. Any key
+      // or click skips the whole intro to TITLE (the player also calls
+      // onDone on skip / at the total duration — both converge here,
+      // idempotently).
+      return <IntroVideoPlayer onDone={() => setPhase("TITLE")} />;
+    }
+    const scenes = [
+      { title: 'M HEAVENSENT STUDIOS', body: 'Studio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.', gap: 'GAP: studio scene art — original art needed.' },
+      { title: 'WORLD CLOSE-UP', body: 'Scene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).', gap: 'GAP: intro scene art — original art needed.' },
+      { title: 'WORLD PAN + CREATURE CLOSE-UPS', body: 'Scene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.', gap: 'GAP: intro scene art — original art needed.' },
+      { title: 'CREATURE FIGHT BEAT', body: 'Scene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.', gap: 'GAP: intro scene art — original art needed.' },
+    ];
+    const scene = scenes[introScene];
+    return (
+      <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
+        <div className="w-full max-w-md text-center">
+          <div className="text-teal-300 text-xs tracking-[0.3em] mb-4">INTRO MOVIE — SCENE {introScene + 1} / 4 · ANY KEY SKIPS</div>
+          <StdWindow accent={frameColor} className="p-6">
+            <div className="text-white text-xl font-black tracking-widest">{scene.title}</div>
+            <p className="text-slate-300 text-sm mt-4 leading-relaxed">{scene.body}</p>
+            <p className="text-yellow-300 text-xs mt-4">{scene.gap}</p>
+          </StdWindow>
+          <button
+            onClick={(e) => { e.stopPropagation(); advanceIntro(); }}
+            className="game-button px-6 py-3 font-bold min-h-[48px] mt-6"
+          >
+            {introScene < 3 ? 'NEXT SCENE ►' : 'TO TITLE ►'}
+          </button>
+          <div className="text-gray-500 text-xs mt-4">Intro music: official intro track. Any key skips to the title.</div>
+        </div>
+      </div>
+    );
   }
 
   if (phase === "TITLE") {
+    // Pixi start-screen preset (Menu Creator only, never the
+    // default): plays the most recently saved user preset, else
+    // the locked default (see startScreenPlayback.ts). It plays
+    // only when selected in CREATE START SCREEN.
+    if (getTitlePlayer() === 'pixi') {
+      return (
+        <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden cursor-pointer p-4">
+          {/* Locked phi slots, pinned subtitle font, 30/15 press
+              blink all live inside StartScreenPlayer. Any-key/click
+              advance (advanceIntro, incl. the press-start chirp),
+              the 350ms white fade to MAIN_MENU, and the BOOT/INTRO
+              phases are untouched here. No audio is wired here (no
+              second audio path — the music effect above plays the
+              title track). */}
+          <StartScreenPlayer />
+
+          {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
+          <div className={`absolute bottom-4 text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
+            ▼ PRESS ANY KEY ▼
+          </div>
+        </div>
+      );
+    }
+    // Classic DOM title (restored, pre-#101 structure). Phone-fit
+    // sizing only: the root scrolls vertically on short screens
+    // instead of clipping, and the subtitle letter-spacing clamps
+    // so it cannot overflow a ~390px viewport. No content, art,
+    // text, or canon changed. Engine shadow is NOT added here:
+    // the restored path keeps its pre-#101 figure rendering, and
+    // a shadow is a separate show-first decision for Mars.
     return (
-      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden cursor-pointer p-4">
-        {/* Start-screen playback (batch: saved preset in Pixi):
-            the TITLE phase IS the saved Start Screen preset now —
-            most recently saved user preset, else the locked default
-            (see startScreenPlayback.ts). Locked phi slots, pinned
-            subtitle font, 30/15 press blink all live inside
-            StartScreenPlayer. Any-key/click advance (advanceIntro,
-            incl. the PR #71 press-start chirp), the 350ms white
-            fade to MAIN_MENU, and the BOOT/INTRO phases are
-            untouched here. The old DOM title content (rotation
-            featured creature + YogifernoTitleWalk /
-            TitleCreatureFigure strips) is replaced by this player
-            only — rotation state/effect above is left in place to
-            keep this diff to the playback phase, and no audio is
-            wired here (no second audio path). */}
-        <StartScreenPlayer />
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-x-hidden overflow-y-auto cursor-pointer p-4">
+        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
+        {/* Shine sweep: white band moving left to right, twice
+            (Ruby x+=4, brighten to 31 then darken to 0, twice).
+            CSS animation stands in for the frame-count shine. */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div
+            className="absolute top-0 bottom-0 w-24 bg-white/20 blur-md"
+            style={{ animation: 'title-shine 2.4s ease-in-out 2' }}
+          />
+        </div>
+        <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink { 0%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }`}</style>
+
+        {/* Phi title layout, responsive version of the 1200x1500 spec:
+            logo 900 (75% width) centre top third, DIAMOND VERSION
+            556 (900/phi) below it, PRESS ANY KEY at the 61.8% line,
+            studio logo 556 in the copyright slot below it. */}
+        <div className="z-10 flex flex-col items-center w-full max-w-2xl" style={{ animation: 'title-slide-up 0.6s ease-out' }}>
+          <div className="text-center">
+            {/* Logo is Mars's uploaded PNG (mochiichao-main-logo-
+                official), cropped to its art band only — no art
+                pixel changed, original file untouched. It sits in
+                the locked phi slot: 900/1200 = 75% width, centre
+                top third. Font text is NEVER a substitute for this
+                image (Mars 2026-10-26 logo rule). */}
+            <img
+              src={mochiichaoLogo}
+              alt="MOCHIICHAO"
+              className="w-3/4 mx-auto object-contain drop-shadow-md"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+            {/* DIAMOND VERSION subtitle font is PINNED (Mars font
+                correction): this stack never changes, no font row
+                touches it, in TITLE or MAIN_MENU. Letter-spacing
+                clamps on narrow screens so the subtitle cannot
+                overflow a ~390px viewport; at desktop widths it
+                is exactly 0.4em as before. */}
+            <div className="text-teal-300 text-xl font-bold tracking-[0.4em] drop-shadow-lg mt-3" style={{ animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: PINNED_SUBTITLE_FONT, letterSpacing: 'clamp(3px, 1.5vw, 8px)' }}>
+              ✦ DIAMOND VERSION ✦
+            </div>
+          </div>
+          {/* Title rotation: featured creature + its theme. Art is
+              GAP — silhouette art for this creature is not shipped
+              in this code PR; the name/theme wiring is real. */}
+          <div className="mt-6 text-center" style={{ color: titleCreature.primary }}>
+            <div className="text-sm font-bold tracking-widest">FEATURED: {titleCreature.name}{titleCreature.dex ? ` ${titleCreature.dex}` : ''}</div>
+            <div className="text-[11px] mt-1" style={{ color: titleCreature.accent }}>{titleCreature.vibe}</div>
+            <div className="text-[10px] text-gray-500 mt-1">Title creature art: clean cutout wired (10/10)</div>
+          </div>
+          {titleCreature.name === 'Yogiferno' && (
+            <div className="mt-4 w-full max-w-md">
+              <div className="text-center text-[11px] mb-1" style={{ color: titleCreature.accent }}>
+                Yogiferno — {titleVariant === 'snow' ? 'snow walk variant (fire trail on snow)' : 'walk variant'}
+              </div>
+              <YogifernoTitleWalk variant={titleVariant} />
+            </div>
+          )}
+          {titleCreature.name !== 'Yogiferno' && (
+            <div className="mt-4 w-full max-w-md">
+              <div className="text-center text-[11px] mb-1" style={{ color: titleCreature.accent }}>
+                {titleCreature.name} — clean cutout title figure
+              </div>
+              <TitleCreatureFigure name={titleCreature.name} />
+            </div>
+          )}
+          <div className="mt-10 text-sm font-bold tracking-widest" style={{ animation: 'press-blink 0.75s steps(1) infinite', color: titleCreature.primary }}>
+            PRESS ANY KEY
+          </div>
+          <div className="mt-8 w-full max-w-[420px]">
+            <img
+              src={heavensentLogo}
+              alt="M Heavensent Studios"
+              className="w-full aspect-square object-contain"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+            <div className="text-center text-gray-400 text-[10px] tracking-widest mt-1">M HEAVENSENT STUDIOS · TITLE COPYRIGHT SLOT</div>
+            <div className="text-center text-gray-500 text-[10px] mt-2 break-words">Title background scene art: GAP — original art needed · Title music: official title track (loop, wired)</div>
+          </div>
+        </div>
 
         {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
         <div className={`absolute bottom-4 text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>

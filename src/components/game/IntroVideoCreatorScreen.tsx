@@ -23,9 +23,11 @@
  *   code).
  *
  * What is GAP here, labelled in the UI, never claimed:
- * - Playback of a saved preset as the game's intro (later batch).
- *   This screen's preview is DOM/CSS applying the same camera +
- *   keyframe math; Pixi playback from a preset is the later batch.
+ * - Playing a saved preset as the game's intro: select the Pixi
+ *   player in the Presets section (classic 4 scenes are the
+ *   default). This screen's preview is DOM/CSS applying the same
+ *   camera + keyframe math; Pixi playback from a preset is the
+ *   preset option, not the default.
  * - Video file export (Phase 2: FFmpeg desktop / MediaRecorder).
  * - Painted backgrounds and 9/10 creature cutouts (see
  *   introVideoCreator.ts GAP notes). No Pokemon sprites, dialogue,
@@ -49,6 +51,7 @@ import {
   type IntroVideoTransition, type IntroVideoBackground,
 } from '../../lib/introVideoCreator';
 import { FONT_OPTIONS, PINNED_SUBTITLE_FONT } from '../../lib/fonts';
+import { getIntroPlayer, setIntroPlayer } from '../../lib/titlePlayerPreference';
 
 function clonePreset(p: IntroVideoPreset): IntroVideoPreset {
   return JSON.parse(JSON.stringify(p)) as IntroVideoPreset;
@@ -71,6 +74,7 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
   const [playing, setPlaying] = useState(false);
   const [skippedMsg, setSkippedMsg] = useState('');
   const [msg, setMsg] = useState('');
+  const [introPlayer, setIntroPlayerState] = useState(() => getIntroPlayer());
   const [newKeyframeTarget, setNewKeyframeTarget] = useState<IntroVideoKeyframeTarget>('position');
   const [importText, setImportText] = useState('');
   const rafRef = useRef<number>(0);
@@ -215,7 +219,7 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
     const next: IntroVideoPreset = { ...clonePreset(preset), name, createdAt: Date.now(), locked: false };
     if (saveIntroVideoPreset(next)) {
       setSavedPresets(loadIntroVideoPresets());
-      setMsg(`Saved as preset "${name}" (localStorage key ${INTRO_VIDEO_PRESETS_KEY}).`);
+      setMsg(`Saved as preset "${name}" (localStorage key ${INTRO_VIDEO_PRESETS_KEY}). It plays when the Pixi intro player is selected below.`);
     } else {
       setMsg('Save failed (storage unavailable).');
     }
@@ -502,6 +506,12 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
         {/* Presets */}
         <StdWindow style={panel} className="p-3">
           <div className="text-white font-bold tracking-widest text-sm mb-2">SAVE AS PRESET · LOAD PRESET · EXPORT JSON</div>
+          <div className="flex flex-wrap gap-2 items-center mb-2">
+            <span className="text-xs text-slate-300">INTRO PLAYER:</span>
+            <button onClick={() => { setIntroPlayer('classic'); setIntroPlayerState('classic'); }} className={`${btn} ${introPlayer === 'classic' ? 'ring-2 ring-yellow-300' : ''}`}>Classic 4 scenes (default)</button>
+            <button onClick={() => { setIntroPlayer('pixi'); setIntroPlayerState('pixi'); }} className={`${btn} ${introPlayer === 'pixi' ? 'ring-2 ring-yellow-300' : ''}`}>Pixi player (preset)</button>
+            <span className="text-xs text-slate-400">Classic 4 scenes are the default intro. Pixi player plays the most recently saved preset, else the locked default — selectable here, never the default.</span>
+          </div>
           <div className="flex flex-wrap gap-2 items-end">
             <div className="flex-1 min-w-[200px]">
               <label className="text-xs text-slate-300 block mb-1">Preset name (for SAVE AS PRESET)</label>
@@ -526,7 +536,7 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
           </div>
           {msg && <div className="text-teal-300 text-sm mt-2 font-bold">{msg}</div>}
           <div className="text-slate-400 text-xs mt-2">
-            GAP, not in this batch: playing a saved preset as the game's intro (later batch), video file export (Phase 2: FFmpeg desktop / MediaRecorder),
+            GAP, not in this batch: video file export (Phase 2: FFmpeg desktop / MediaRecorder),
             Blender project export (.blend, desktop only). Blender concepts are translated to this JSON — the Blender binary is NOT shipped;
             install note only (GPL desktop tool, blender.org). No Pokemon sprites, dialogue, music, cries or art in this screen.
           </div>
