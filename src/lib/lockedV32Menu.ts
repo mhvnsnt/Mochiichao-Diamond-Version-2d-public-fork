@@ -92,12 +92,14 @@ export const MENU_ANIMATION_SPEEDS = {
 
 export const LOCKED_V32_MENU = {
   canvas: { w: 1200, h: 1500, centreX: 600 },
-  // Logo stays the image, never font text. MAIN MENU logo (round 2,
-  // 2026-10-26) = src/assets/ui/mochiichao-main-logo-v32-matched.png:
+  // Logo stays the image, never font text. MAIN MENU logo (orbitfix,
+  // 2026-10-26) = src/assets/ui/mochiichao-main-logo-v32-orbitfix-20261026.png:
   // Mars's upload letters, keyed from black, with the v32 picture's
   // own geometry -- thick black outline (dilate 10px), thick black
-  // orbit ring (centre (618,500), a=440, b=200, stroke 30, thin white
-  // centre line), sparkle stars. The previous build's keyed upload
+  // orbit ring (centre (619,472), a=425, b=186, stroke 30, thin white
+  // centre line), sparkle stars. Section-O fix (2026-10-26): the
+  // round-2 ring (618,500,440,200) was re-fitted from clean strips
+  // and corrected to the values above. The previous build's keyed upload
   // (src/assets/ui/mochiichao-main-logo.png: thin white orbit, no
   // outline) vanishes on the white menu -- that is what Mars
   // rejected on his phone 2026-10-26 12:38 CDT, and it is NOT reused
