@@ -96,3 +96,10 @@ if (typeof module !== 'undefined' && module.exports) {
     createFollowerState, recordPlayerStep, trailTarget, updateFollowers,
   };
 }
+
+// ESM export (2026-10-25): see captureLoop.js note — the CJS guard never
+// fires under "type": "module"; this export is what the ESM test imports.
+export {
+  DIRS, facingFromDelta, facingTowardPlayer,
+  createFollowerState, recordPlayerStep, trailTarget, updateFollowers,
+};
