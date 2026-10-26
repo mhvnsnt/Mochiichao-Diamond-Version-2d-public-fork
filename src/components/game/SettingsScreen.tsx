@@ -16,6 +16,12 @@ import {
 } from '../../lib/menuSkins';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
+import TitleScene from './TitleScene';
+import {
+  TITLE_SCREEN_PRESET_CYCLE, getSelectedTitleScreenPresetId, setSelectedTitleScreenPresetId,
+  titleScreenPresetSelectionLabel,
+} from '../../lib/titleScreenPresetSelection';
+import { getTitleScreenPreset, resolveTitleScreenPreset, toTitleSceneProps } from '../../lib/titleScreenPresets';
 import {
   MenuCustomSettings, MenuAnimationStyle, DEFAULT_MENU_CUSTOM, loadMenuCustom, persistMenuCustom,
   applyMenuCustom, customToLayoutRecord, resolveDayNightPalette,
@@ -186,6 +192,19 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   const skinLabel = (menu: MenuSkinMenu) =>
     MENU_SKIN_FLAVOURS.find(f => f.flavour === skinChoices[menu])?.label || 'Default';
 
+  // Title-screen preset picker (PR #157 wiring): one row, same
+  // cycle pattern as the skin rows. Locked Default = the locked
+  // phi title, unchanged; a preset replaces the TITLE phase scene
+  // only. Saved immediately on cycling (like skins), independent
+  // of SAVE + EXIT — but RESET TO LOCKED DEFAULT below clears it,
+  // so a reset always restores the locked default title.
+  const [presetChoice, setPresetChoice] = useState<string | null>(() => getSelectedTitleScreenPresetId());
+  const cyclePresetChoice = (dir: 1 | -1) => {
+    const next = cycle(TITLE_SCREEN_PRESET_CYCLE, presetChoice, dir);
+    setSelectedTitleScreenPresetId(next);
+    setPresetChoice(next);
+  };
+
   // SETTINGS menu frame: per-menu override wins over the global
   // FRAME row when set (0 = follow global), per hudCustom.
   const accent = menuFrameAccent('SETTINGS', draft);
@@ -236,6 +255,12 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     setDraft(d);
     setPreset(p);
     setCustom(c);
+    // Locked default means the locked default title too: a picked
+    // title-screen preset is cleared, so the next TITLE phase is
+    // the phi stage again. (Skins stay independent of reset; the
+    // title preset is the title itself, so it does not.)
+    setSelectedTitleScreenPresetId(null);
+    setPresetChoice(null);
     saveAll(d, p, c);
     setSavedMsg('Reset to Locked Default (v32).');
   };
@@ -279,8 +304,18 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
       onRight: () => cycleSkin(m.menu, 1),
       note: `Per-menu Y2K skin preset (${m.presetFile}): Default / Pastel Day / Chrome Midnight / Bubblegum Pop. Applies live to ${m.label}; main menu and logo are never skinned.`,
     })),
+    // Title-screen preset picker (PR #157 wiring, 10 presets):
+    // Locked Default = the locked phi title, unchanged, still the
+    // default. A preset replaces the TITLE phase scene only (its
+    // painted background + creature + particles, per the seam doc);
+    // press-start, main menu, logo and save data never change, and
+    // the preset is never written over the locked default. The
+    // preview strip below the rows shows the picked preset; the
+    // locked default has no strip (it is the phi stage, not a
+    // TitleScene). Saved immediately on cycling, like skins.
+    { label: 'TITLE SCREEN', value: titleScreenPresetSelectionLabel(presetChoice), onLeft: () => cyclePresetChoice(-1), onRight: () => cyclePresetChoice(1), note: 'Interchangeable title-screen preset (PR #157): Locked Default = the locked phi title, unchanged. A preset replaces the TITLE phase scene only — painted background + creature + particles — with the same PRESS ANY KEY / 350ms white fade to MAIN MENU. Main menu, logo and saves never change. Back to Locked Default (or RESET TO LOCKED DEFAULT) restores the phi title.' },
     { label: 'CANCEL', value: 'SAVE + EXIT', onLeft: saveAndBack, onRight: saveAndBack, onSelect: saveAndBack, note: 'Saves all rows to the save + localStorage and returns to the main menu.' },
-  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices]); // eslint-disable-line react-hooks/exhaustive-deps
+  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices, presetChoice]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const menuCreatorRows: Row[] = useMemo(() => {
     const pages: Record<number, Row[]> = {
@@ -571,6 +606,13 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     return <StartScreenCreator onBack={() => setScreen('MENU_CREATOR')} />;
   }
 
+  // Title-screen preset preview (PR #157 seam render step, verbatim):
+  // the picked preset as a TitleScene strip. Locked Default has no
+  // strip — the locked phi title is not a TitleScene, and this
+  // preview must never imply it is.
+  const titlePresetPreviewDef = presetChoice ? getTitleScreenPreset(presetChoice) : null;
+  const titlePresetPreviewProps = titlePresetPreviewDef ? toTitleSceneProps(resolveTitleScreenPreset(titlePresetPreviewDef)) : null;
+
   return (
     <div className="game-screen bg-[#050810] flex flex-col items-center relative overflow-hidden p-4" style={{ background: renderBackground, justifyContent: anchorJustify, paddingTop: custom.safeArea ? 'max(1rem, env(safe-area-inset-top))' : '1rem', paddingBottom: custom.safeArea ? 'max(1rem, env(safe-area-inset-bottom))' : '1rem' }}>
       <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
@@ -616,6 +658,14 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
             </button>
           ))}
         </StdWindow>
+
+        {screen === 'SETTINGS' && titlePresetPreviewProps && (
+          <StdWindow style={panelStyle} className="px-3 py-2">
+            <div className="font-bold mb-1">Title preset preview — {titlePresetPreviewDef?.label}</div>
+            <TitleScene {...titlePresetPreviewProps} />
+            <div className="text-xs text-slate-400 mt-1">Preview only: the TITLE phase shows this scene full-screen when the preset is picked. PRESS ANY KEY still goes to MAIN MENU after the 350ms white fade.</div>
+          </StdWindow>
+        )}
 
         {screen === 'MENU_CUSTOM' && (
           <StdWindow style={{ ...panelStyle, borderRadius: DIALOGUE_BOX_RADIUS[custom.dialogueBoxStyle] }} className="px-3 py-2">
