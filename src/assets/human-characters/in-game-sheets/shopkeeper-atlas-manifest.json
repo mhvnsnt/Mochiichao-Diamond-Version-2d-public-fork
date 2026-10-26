@@ -1,0 +1,104 @@
+{
+  "atlas": "shopkeeper-atlas-64x64.png",
+  "cell_size": 64,
+  "layout": "b",
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "top_runs": [
+    [
+      151,
+      395
+    ],
+    [
+      718,
+      962
+    ],
+    [
+      1286,
+      1530
+    ],
+    [
+      1848,
+      2093
+    ]
+  ],
+  "bottom_runs": [
+    [
+      121,
+      446
+    ],
+    [
+      686,
+      1009
+    ],
+    [
+      1234,
+      1559
+    ],
+    [
+      1796,
+      2119
+    ]
+  ],
+  "world": "top0,top2,bottom0,bottom2",
+  "steps": "top1,top3,bottom1,bottom3",
+  "walk": "media-generation-shopkeeper-walk-frames-v1-0-28370721-db33-4e45-b689-0a2bf57c9155.webp",
+  "battle": "media-generation-shopkeeper-battle-front-fullsi-0-f42d4f48-4266-4d10-b7d5-9c6380d96d6d.webp",
+  "portrait": "media-generation-shopkeeper-portrait-v2-cel-0-8ab2b02b-a1ad-4394-8fd8-b232db97b812.webp"
+}
