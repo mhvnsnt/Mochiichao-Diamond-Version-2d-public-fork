@@ -256,17 +256,29 @@ export default function PixiWorldCanvas({
           const human = !def ? slotForNpc(npc) : null;
           if (human && human.sheetUrl) {
             if (!npcState) {
-              // No movement state: the standing rendering, unchanged.
-              const key = `npc-human-${npc.id}`;
+              // No movement state: standing rendering, now facing
+              // the direction the map entry states (npc.facing),
+              // using the row-0 direction frame — the same
+              // distinct-left / mirror-right rule as the player
+              // branch and the movement seam above. Unknown or
+              // missing facing falls back to front, exactly as
+              // before. Null-sheet slots never reach this branch
+              // (fallback figure below, unchanged), and the
+              // movement seam branch below is untouched.
+              const facingView: HumanView = npc.facing === 'up' ? 'back' : npc.facing === 'left' ? 'left' : npc.facing === 'right' ? 'right' : 'front';
+              const distinctLeft = human.frames.left !== human.frames.right;
+              const showView = facingView === 'left' && !distinctLeft ? 'right' : facingView;
+              const key = `npc-human-${npc.id}-${showView}`;
               let sp = sheetSpritesRef.current.get(key);
               if (!sp) {
                 sp = new Sprite();
                 sheetSpritesRef.current.set(key, sp);
-                sheetTexture(human.sheetUrl, human.frames.front).then(tex => { sp!.texture = tex; }).catch(() => {});
+                sheetTexture(human.sheetUrl, human.frames[showView]).then(tex => { sp!.texture = tex; }).catch(() => {});
               }
               sp.anchor.set(0.5, 1);
               sp.position.set(cx, cy + tile * 0.5);
               sp.width = tile * 1.25; sp.height = tile * 1.25;
+              sp.scale.x = Math.abs(sp.scale.x) * (facingView === 'left' && !distinctLeft ? -1 : 1);
               parent.addChild(sp);
             } else {
               // Live movement state: face the state's direction and,
