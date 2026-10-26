@@ -108,6 +108,11 @@ vertical / ~21px horizontal):
   lantern -3/1 @0.12. Values are assistant proposals
   from the HG speed ratios, in one data file for Mars to tune.
 
+FireRed intro Scene 1 background zoom (pull-in 1c): TitleScene
+zooms the painted background only over the first 60 frames
+(0.97 -> 1.00 of the stored cover scale, then held); the Black 2
+scene camera is untouched, and prefers-reduced-motion skips it.
+
 Creature-to-card assignment (sources labelled; PROPOSED = no canon
 source yet, shown to Mars first for correction). Count, plain:
 10 cards, 10 title-pool creatures — one creature per card, total
