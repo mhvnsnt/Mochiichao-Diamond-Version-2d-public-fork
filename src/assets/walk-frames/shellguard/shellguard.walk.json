@@ -1,0 +1,52 @@
+{
+ "creature": "shellguard",
+ "roster_id": "039",
+ "status": "done",
+ "frames": [
+  {
+   "file": "shellguard_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "shellguard_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "shellguard_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "shellguard_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "shellguard_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "shellguard_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "shellguard_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "shellguard_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "method": "8-panel sheet 4x2 split; border-connected near-white (>=240) removal, interior whites kept; fit 64x64 RGBA",
+ "raw_sheet": "media-generation-shellguard-walk-v1-0-647dd052-2aa1-4cb4-bb13-0920338c7bcc.webp",
+ "source_reference": "game-ready/shellguard/cells locked battle_front",
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "eye_check": "Enlarged + 64px montage PASS (this session, pre-existing set from previous builder, raw sheet 647dd052 \u2014 NOT rebuilt here). Grey shell, 4 red lights, blue limbs; all 4 directions with alternating leg phases. A spare up-only sheet generated this session was NOT cut (redundant).",
+ "movement_note": "grounded_standard",
+ "style_note": "original art, roster style; no baked shadow in shipped cells"
+}
