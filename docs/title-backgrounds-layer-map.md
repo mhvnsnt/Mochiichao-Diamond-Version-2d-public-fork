@@ -144,7 +144,7 @@ forest." Forest is canon for Gabu, no longer a proposed fill.
 Per-creature action + burst (from each creature's own manifest VFX
 where one exists; no audio — cries/chimes are visual only here):
 
-- Mochii glide + bubbles, Dorowani glide + bubbles, Gabu hop + bubbles
+- Mochii glide + bubbles, Dorowani glide + bubbles, Gabu hop + LEAVES (Mars 2026-10-26 ~06:52 CDT: leaves instead of bubbles; bubbles were a leftover from his old water placement)
 - Razorgater scan + sparks, Tyrage roar + sand, Kittember bounce + fire
 - Sproutle shield + shield ring, Wispkin bob + smoke,
   Yogiferno roar + fire, Mythar orbit (hovers, never grounds) + sparkle
@@ -185,3 +185,7 @@ Pages rebuild — merged code alone is not a playable show.
 - Water DisplacementFilter ripple: 1/1 = 100% (water card only, generated map, no asset shipped)
 - Pokemon art in any shipped file: 0 files
 - Text baked into any background: 0 files
+- Action-shot drafts saved: 10/10 = 100% (draft-<creature>-action-shot-v*.png, Gabu v2 leaves, Tyrage v2; superseded Tyrage v1 + Gabu v1 bubbles stay staging-only, NOT in repo)
+- Action-shot layering + setup saved: 1/1 = 100% (docs/title-action-shots-layer-setup.md + src/lib/titleActionShots.ts, draft + per-card animation styles)
+- Per-card animation styles defined: 10/10 = 100% (each card its own rest side + action; Mythar stays centre)
+- Animated versions built: 0/10 = 0% (next step, different filenames, never overwrite drafts)

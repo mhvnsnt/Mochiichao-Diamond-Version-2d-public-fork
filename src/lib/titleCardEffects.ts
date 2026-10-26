@@ -162,7 +162,7 @@ export type CreatureActionKind =
   | 'bounce' | 'hop' | 'glide' | 'bob' | 'scan' | 'roar' | 'shield' | 'orbit';
 
 export type CreatureBurstKind =
-  | 'bubbles' | 'sparks' | 'sand' | 'smoke' | 'fire' | 'sparkle' | 'shield' | 'none';
+  | 'bubbles' | 'sparks' | 'sand' | 'smoke' | 'fire' | 'sparkle' | 'shield' | 'leaves' | 'none';
 
 export interface CreatureAction {
   action: CreatureActionKind;
@@ -181,7 +181,7 @@ export const CREATURE_ACTIONS: Record<string, CreatureAction> = {
   Kittember:   { action: 'bounce', burst: 'fire',    color: 0xf97316, note: 'Title-vibe ember tail orb; fire burst is the card reading, no canon VFX in manifests.' },
   Sproutle:    { action: 'shield', burst: 'shield',  color: 0x4ade80, note: 'Manifest: ducks in helmet-shell, hexagonal energy shield.' },
   Dorowani:    { action: 'glide',  burst: 'bubbles', color: 0x60a5fa, note: 'Title-vibe blue water starter; bubbles follow the Mochii water line, no canon VFX yet.' },
-  Gabu:        { action: 'hop',    burst: 'bubbles', color: 0x2dd4bf, note: 'Mars-confirmed forest card; teal hop + bubbles.' },
+  Gabu:        { action: 'hop',    burst: 'leaves',  color: 0x4ade80, note: 'Mars 2026-10-26 ~06:52 CDT: Gabu needs leaves around him instead of bubbles. Forest card; hop + leaf swirl. Bubbles were a leftover from his old water placement, corrected here and in draft-gabu-action-shot-v2.png.' },
   Wispkin:     { action: 'bob',    burst: 'smoke',   color: 0xa855f7, note: 'Manifest: bobs rhythmically, dark smoke sheds from tail.' },
   Yogiferno:   { action: 'roar',   burst: 'fire',    color: 0xf97316, note: 'Manifest: fire halo, attack dims the environment; the burst + fire trail carry it visually, no audio.' },
   Mythar:      { action: 'orbit',  burst: 'sparkle', color: 0xf0eee4, note: 'Manifest: never touches ground, three golden rings orbit; sparkle burst stands in for the ring flash.' },
