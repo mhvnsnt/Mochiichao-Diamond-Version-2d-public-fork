@@ -10,6 +10,10 @@ import {
 import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
 import { setSoundMode, playUiPreview } from '../../lib/audioRouting';
 import { isConfirmKey, shoulderKey, buttonModeNote } from '../../lib/buttonMode';
+import {
+  MENU_SKIN_MENUS, MENU_SKIN_FLAVOURS, loadMenuSkinChoices, setMenuSkin,
+  type MenuSkinMenu, type MenuSkinChoices,
+} from '../../lib/menuSkins';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
 import {
@@ -165,6 +169,22 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   // Selector only — the colour / frame values themselves live in
   // the settings (draft) and are saved with the preset's snapshot.
   const [perMenuTarget, setPerMenuTarget] = useState<MenuKey>('SETTINGS');
+  // Y2K skin selector (skins PR #151 wiring): one row per owed menu
+  // in settingsRows below. Stored under menuSkins.ts's own
+  // localStorage key and applied live (no reload, no save needed):
+  // cycling a row writes immediately and re-renders the target menu
+  // via the menuSkins change event. Independent of SAVE + EXIT and
+  // of RESET TO LOCKED DEFAULT (v32) — skins never touch the locked
+  // default, and the default is what a row returns to on 'Default'.
+  const [skinChoices, setSkinChoices] = useState<MenuSkinChoices>(() => loadMenuSkinChoices());
+  const cycleSkin = (menu: MenuSkinMenu, dir: 1 | -1) => {
+    const flavours = MENU_SKIN_FLAVOURS.map(f => f.flavour);
+    const next = cycle(flavours, skinChoices[menu], dir);
+    setMenuSkin(menu, next);
+    setSkinChoices(loadMenuSkinChoices());
+  };
+  const skinLabel = (menu: MenuSkinMenu) =>
+    MENU_SKIN_FLAVOURS.find(f => f.flavour === skinChoices[menu])?.label || 'Default';
 
   // SETTINGS menu frame: per-menu override wins over the global
   // FRAME row when set (0 = follow global), per hudCustom.
@@ -247,8 +267,20 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     { label: 'FRAME', value: frameName(draft.frame), onLeft: () => set({ frame: draft.frame <= 1 ? 20 : draft.frame - 1 }), onRight: () => set({ frame: draft.frame >= 20 ? 1 : draft.frame + 1 }), note: 'Original Mochiichao Y2K frames in Pokemon frame slots (1-10 FireRed base, 11-20 HeartGold/Platinum extra). Reloads live on return.' },
     { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, note: 'Six independent placements (Mars font correction): MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font in fonts-settings-list.md independently, including Default — Trebuchet MS / system sans. Applies live on return. DIAMOND VERSION subtitle font is PINNED and never changes.' },
     { label: 'MENU CREATOR', value: 'OPEN ►', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR'), note: 'Full screen: Logo / Background / Animation / Panels. Presets only, never overwrites v32.' },
+    // Y2K skin rows (one per owed menu, skins PR #151 presets):
+    // Default = the menu's existing look, unchanged. A flavour
+    // recolours that menu's panels/text/selected frame only — layout,
+    // actions and save data never change, and the locked v32 main
+    // menu is never offered here. Saved immediately on cycling.
+    ...MENU_SKIN_MENUS.map(m => ({
+      label: `SKIN — ${m.label.toUpperCase()}`,
+      value: skinLabel(m.menu),
+      onLeft: () => cycleSkin(m.menu, -1),
+      onRight: () => cycleSkin(m.menu, 1),
+      note: `Per-menu Y2K skin preset (${m.presetFile}): Default / Pastel Day / Chrome Midnight / Bubblegum Pop. Applies live to ${m.label}; main menu and logo are never skinned.`,
+    })),
     { label: 'CANCEL', value: 'SAVE + EXIT', onLeft: saveAndBack, onRight: saveAndBack, onSelect: saveAndBack, note: 'Saves all rows to the save + localStorage and returns to the main menu.' },
-  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset]); // eslint-disable-line react-hooks/exhaustive-deps
+  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const menuCreatorRows: Row[] = useMemo(() => {
     const pages: Record<number, Row[]> = {
