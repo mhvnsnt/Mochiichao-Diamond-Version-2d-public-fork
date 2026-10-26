@@ -124,6 +124,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // every rotation pick that lands on Yogiferno.
   const [titleVariant, setTitleVariant] = useState<'walk' | 'snow'>('walk');
   const [showOverwriteConfirm, setShowOverwriteConfirm] = useState(false);
+  // Playtest 2026-10-26 (live Pages, step 5): SAVE_SLOTS is shared by
+  // CONTINUE and NEW GAME, and it used to load an occupied slot in
+  // both cases — so NEW GAME with all 3 slots occupied dead-ended:
+  // every slot just loaded an old save, no lab intro, no starter
+  // pick. The mode below separates them: CONTINUE keeps the load
+  // path, NEW GAME asks for an explicit overwrite confirmation per
+  // occupied slot (pendingOverwriteSlot) before starting over.
+  const [saveSlotsMode, setSaveSlotsMode] = useState<'CONTINUE' | 'NEW_GAME'>('CONTINUE');
+  const [pendingOverwriteSlot, setPendingOverwriteSlot] = useState<number | null>(null);
   const settings = useGameStore(s => s.settings);
   const frameColor = frameAccent(settings.frame);
   const cursorGlyph = settings.cursorShape === 'DIAMOND' ? '◆' : settings.cursorShape === 'STAR' ? '✦' : settings.cursorShape === 'RING' ? '◎' : '►';
@@ -211,8 +220,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         e.preventDefault();
         const keys = hasSaves ? ['CONTINUE', 'NEW GAME', 'SETTINGS'] : ['NEW GAME', 'SETTINGS'];
         const key = keys[Math.min(mainSelected, keys.length - 1)];
-        if (key === 'CONTINUE') setPhase("SAVE_SLOTS");
-        else if (key === 'NEW GAME') { if (hasSaves) setShowOverwriteConfirm(true); else setPhase("SAVE_SLOTS"); }
+        if (key === 'CONTINUE') { setSaveSlotsMode('CONTINUE'); setPhase("SAVE_SLOTS"); }
+        else if (key === 'NEW GAME') { setSaveSlotsMode('NEW_GAME'); if (hasSaves) setShowOverwriteConfirm(true); else setPhase("SAVE_SLOTS"); }
         else if (key === 'SETTINGS') setPhase("SETTINGS");
       }
       else if (e.key === 'Escape' || e.key.toLowerCase() === 'b') setPhase("TITLE");
@@ -370,12 +379,13 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     const safeMain = Math.min(mainSelected, mainItems.length - 1);
 
     const activateMain = (key: string) => {
-      if (key === 'CONTINUE' && hasSaves) setPhase("SAVE_SLOTS");
+      if (key === 'CONTINUE' && hasSaves) { setSaveSlotsMode('CONTINUE'); setPhase("SAVE_SLOTS"); }
       else if (key === 'NEW GAME') {
         // Overwrite confirm BEFORE starting over, when a save exists.
         // No save is erased here: the existing flow goes to SAVE_SLOTS,
         // and a save is only replaced when the player later saves over
         // a slot in-game (SaveMenu). No second save system was built.
+        setSaveSlotsMode('NEW_GAME');
         if (hasSaves) setShowOverwriteConfirm(true);
         else setPhase("SAVE_SLOTS");
       } else if (key === 'SETTINGS') {
@@ -479,18 +489,35 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   }
 
   if (phase === "SAVE_SLOTS") {
+    // NEW GAME mode: an occupied slot no longer loads that save (the
+    // playtest dead-end). It opens the overwrite confirmation below,
+    // and only "Start new game here" enters the Prof intro for that
+    // slot — nothing is erased at confirmation time; the old save is
+    // replaced only when the player later saves over the slot in-game.
+    // CONTINUE mode keeps the old load path unchanged.
+    const pendingSave = pendingOverwriteSlot !== null ? slots[pendingOverwriteSlot - 1] : null;
     return (
-      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center p-4">
+      <div className="game-screen bg-[#050810] flex flex-col items-center justify-center p-4 relative">
         <h2 className="text-teal-300 text-xl font-bold tracking-widest mb-8">SELECT A SAVE FILE</h2>
+        <div className="text-slate-400 text-sm mb-4 text-center">
+          {saveSlotsMode === 'NEW_GAME'
+            ? 'Empty slots start fresh. Occupied slots ask before starting over — nothing is erased until you save over a slot.'
+            : 'Choose a save to continue, or an empty slot to start fresh.'}
+        </div>
         <div className="flex flex-col gap-4 w-full max-w-lg">
           {[1,2,3].map(slot => {
             const save = slots[slot-1];
+            const isNewGameOccupied = saveSlotsMode === 'NEW_GAME' && !!save;
             return (
               <StdWindow
                 key={slot}
                 className="p-4 text-left flex justify-between items-center cursor-pointer"
                 onClick={() => {
                   if (save) {
+                    if (isNewGameOccupied) {
+                      setPendingOverwriteSlot(slot);
+                      return;
+                    }
                     // Load latest save from this slot
                     const file = getSaves(slot).sort((a,b)=>b.timestamp-a.timestamp)[0];
                     if (file) {
@@ -515,7 +542,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   )}
                 </div>
                 {!save && <span className="text-yellow-400 font-bold">NEW GAME ►</span>}
-                {save && <span className="text-yellow-400 font-bold">LOAD ►</span>}
+                {save && !isNewGameOccupied && <span className="text-yellow-400 font-bold">LOAD ►</span>}
+                {isNewGameOccupied && <span className="text-yellow-400 font-bold">START OVER ►</span>}
               </StdWindow>
             )
           })}
@@ -523,6 +551,22 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         <button onClick={() => setPhase("MAIN_MENU")} className="game-button mt-8 px-4 py-3 font-bold min-h-[48px]">
            ◄ BACK
         </button>
+        {pendingOverwriteSlot !== null && (
+          <div className="absolute inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
+            <div className="game-panel p-6 w-full max-w-sm">
+              <div className="text-white font-bold text-lg mb-2">Start over in SLOT {pendingOverwriteSlot}?</div>
+              <p className="text-sm text-slate-400 mb-4">
+                {pendingSave ? `${pendingSave.player} — ${pendingSave.map}. ` : ''}
+                This starts the Prof intro and starter pick for a new game in this slot. The old save is NOT erased here — it is only replaced if you later save over this slot in-game.
+              </p>
+              <div className="flex flex-col gap-2">
+                <button onClick={() => { const s = pendingOverwriteSlot; setPendingOverwriteSlot(null); setSelectedSlot(s); setPhase("PROF_INTRO_1"); }} className="game-button px-4 py-2 font-bold min-h-[48px]">Start new game here</button>
+                <button onClick={() => { const file = getSaves(pendingOverwriteSlot).sort((a,b)=>b.timestamp-a.timestamp)[0]; setPendingOverwriteSlot(null); if (file) { loadState(file.data); onEnterWorld(); } }} className="game-button px-4 py-2 font-bold min-h-[48px]">Load this save instead</button>
+                <button onClick={() => setPendingOverwriteSlot(null)} className="game-button px-4 py-2 font-bold min-h-[48px]">Cancel</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
