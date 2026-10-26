@@ -315,7 +315,7 @@ export default function TitleScene({
           const g = new Graphics();
           const r = kind === 'smoke' ? 5 + Math.random() * 4 : 2 + Math.random() * 2.5;
           if (kind === 'sparkle') g.circle(0, 0, r).fill(0xffffff);
-          else if (kind === 'leaves') g.ellipse(0, 0, 4, 2).fill(color);
+          else if (kind === 'leaves') { g.moveTo(-5, 0).lineTo(0, -3).lineTo(5, 0).lineTo(0, 3).lineTo(-5, 0).fill(color); g.moveTo(-5, 0).lineTo(-8, 2).stroke({ color, width: 1 }); }
           else g.circle(0, 0, r).fill(color);
           const a = (i / count) * Math.PI * 2 + Math.random() * 0.5;
           const sp = kind === 'spark' || kind === 'fire' ? 40 + Math.random() * 40 : 14 + Math.random() * 18;
@@ -346,7 +346,7 @@ export default function TitleScene({
         for (let i = 0; i < b.weatherCount; i++) {
           const g = new Graphics();
           if (b.weather === 'rain') g.rect(0, 0, 1.5, 10).fill(0xbfdbfe);
-          else if (b.weather === 'leaves') g.ellipse(0, 0, 4, 2).fill(0x4ade80);
+          else if (b.weather === 'leaves') g.moveTo(-5, 0).lineTo(0, -3).lineTo(5, 0).lineTo(0, 3).lineTo(-5, 0).fill(0x4ade80);
           else if (b.weather === 'dust') g.circle(0, 0, 2).fill(0xfde68a);
           else g.circle(0, 0, 1.5 + Math.random() * 2).fill(0xffffff);
           g.x = Math.random() * W; g.y = Math.random() * H;

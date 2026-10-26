@@ -23,8 +23,11 @@
 // on file is Gabu v2 (built 2026-10-26, leaves correction):
 // cutout 292x295 scaled to 554x560, x 523, y 122, feet y 700, hop -18.
 //
-// ANIMATION STYLES (proposal for the next, animated versions, Mars
-// 2026-10-26 ~06:55 CDT): each card gets its OWN placement and its OWN
+// ANIMATION STYLES - LOCKED (Mars, 2026-10-26 ~07:07 CDT: "I give the
+// okay on all those per card styles, lock those in, those are good").
+// Previously a proposal (Mars 2026-10-26 ~06:55 CDT); now locked, do
+// not change rest sides, actions, or bursts without Mars saying so.
+// Each card gets its OWN placement and its OWN
 // animation style, NOT all placed the same. Rest X is the figure's
 // position after the entrance, relative to screen centre (1600-wide
 // draft frame): negative = left, positive = right, 0 = stays centre.
@@ -33,6 +36,16 @@
 // See docs/title-action-shots-layer-setup.md for the Pokemon-file
 // research behind the entrance + press-start tempo, and for what is
 // Pokemon canon vs what is a Mochiichao adaptation.
+// See docs/title-pokemon-leaf-research.md for the actual LeafGreen
+// leaf file (shape, tumbling, motion, palette) that Gabu's leaves are
+// built from, and docs/title-animation-v2-complex.md for the locked
+// styles expanded to more detailed, more complex animation than the
+// Pokemon title cards, still built on the Pokemon file structure.
+// Gabu leaf update (Mars 2026-10-26 ~07:07 CDT: "use the actual leaves
+// from the Pokemon games files"): Gabu's animated version is v2
+// (gabu-action-anim-v2.gif/png) with real leaf shapes, replacing the
+// v1 green-ellipse leaves. Draft-gabu-action-shot-v2.png is NOT
+// overwritten - v1 anim and v2 draft stay as they were.
 
 import type { CreatureAction } from './titleCardEffects';
 

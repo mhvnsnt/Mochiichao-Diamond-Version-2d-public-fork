@@ -189,3 +189,6 @@ Pages rebuild — merged code alone is not a playable show.
 - Action-shot layering + setup saved: 1/1 = 100% (docs/title-action-shots-layer-setup.md + src/lib/titleActionShots.ts, draft + per-card animation styles)
 - Per-card animation styles defined: 10/10 = 100% (each card its own rest side + action; Mythar stays centre)
 - Animated versions built: 0/10 = 0% (next step, different filenames, never overwrite drafts)
+- Per-card animation styles LOCKED: 10/10 = 100% (Mars 2026-10-26 ~07:07 CDT)
+- Pokemon leaf research saved: 1/1 = 100% (docs/title-pokemon-leaf-research.md, LeafGreen leaf structure, Mochiichao leaf swap, no Pokemon tile pixels shipped)
+- Complex animation v2 spec saved: 1/1 = 100% (docs/title-animation-v2-complex.md, 9 moving layers vs Pokemon title's 2)
