@@ -17,11 +17,11 @@
 //     stone scan-line sweep: a periodic, frame-counted overlay,
 //     not a random flicker.
 //   - PixiJS v8 DisplacementFilter (official Pixi docs) is the
-//     researched water-ripple route, but it is NOT wired here:
-//     it needs a displacement texture asset, and the water card
-//     already reads as moving water from ripple rings + shimmer.
-//     Adding it later is a one-filter change on the water card,
-//     not a rewrite.
+//     water-ripple route, and it IS wired in TitleScene for the
+//     water card only: the displacement map is generated in code
+//     (64x64 random grayscale upscaled to 256x256, repeat wrap),
+//     so no displacement texture asset is shipped. Ripple rings +
+//     shimmer stay as the fallback if the filter fails.
 //
 // Per-biome drift values are assistant proposals from the HG
 // speed ratios above, not Mars-approved numbers — they live in
