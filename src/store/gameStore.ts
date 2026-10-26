@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { MochiiInstance } from '../lib/types';
 import { createMochii } from '../lib/engine';
+import type { GardenCreature } from '../lib/mochiichao-systems';
+import type { GuardianAssignment } from '../lib/monster-tamer-systems';
 import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
 import { applyFontRoles } from '../lib/fonts';
 
@@ -26,6 +28,16 @@ interface GameState {
   // settings never erases a save.
   settings: GameSettings;
   setSettings: (patch: Partial<GameSettings>) => void;
+
+  // Creature Mode / Garden shared state (pass 3): Garden records used
+  // to live only in GardenView's local state, so Creature Mode could not
+  // read the +9% Garden bonus and a Guardian assignment vanished on
+  // leaving the screen. Both now live in the shared store, so SaveMenu
+  // (which serializes the whole state) saves and loads them with the game.
+  gardenRecords: Record<string, GardenCreature>;
+  setGardenRecord: (creatureId: string, record: GardenCreature) => void;
+  guardian: GuardianAssignment | null;
+  setGuardian: (guardian: GuardianAssignment | null) => void;
 
   // Overworld state
   currentMap: string;
@@ -75,6 +87,10 @@ export const useGameStore = create<GameState>((set, get) => ({
   dex: {},
   completedEvents: [],
   defeatedTrainers: [],
+  gardenRecords: {},
+  setGardenRecord: (creatureId, record) => set(s => ({ gardenRecords: { ...s.gardenRecords, [creatureId]: record } })),
+  guardian: null,
+  setGuardian: (guardian) => set({ guardian }),
   currentMap: 'sector0',
   playerPos: { x: 21, y: 14 },
   settings: loadStoredSettings(),
