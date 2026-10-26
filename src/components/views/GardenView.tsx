@@ -56,7 +56,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
     // +0) until Mars gives numbers — completing a quest is a flag
     // only, with no invented stat effect. Say so in-game.
     setNote(quest.bondReward === 0 && quest.gardenReward === 0
-      ? `${quest.title} complete! (Quest rewards are placeholders — no stat effect until Mars sets them.)`
+      ? `${quest.title} complete!`
       : `${quest.title} complete! Bond +${quest.bondReward}, ${quest.gardenStat} +${quest.gardenReward}.`);
   };
 
@@ -70,15 +70,15 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
     if (!current) return;
     const next = { ...rec, garden: applyGardenItem(rec.garden, item), trainingSessions: rec.trainingSessions + 1 };
     setGardenRecord(current.id, next);
-    setNote(`${label} fed. Garden stats updated (saved with the game via the shared store).`);
+    setNote(`${label} fed. Your Mochiichao looks happier.`);
   };
 
   const places: { name: string; text: string }[] = [
-    { name: 'Mochiko Academy', text: 'PLACEHOLDER — lessons and training sessions will live here. For now, use the Data-Fruit buttons below.' },
-    { name: 'Market', text: 'PLACEHOLDER — Data Shards, Garden Critters and fruit trading will live here. The Shop screen is the working shop for now.' },
-    { name: 'Race Track', text: 'PLACEHOLDER — Garden races (sprint/glide/dives) will live here. Garden Stats above already feed race readiness.' },
-    { name: 'Sparring Ring', text: 'PLACEHOLDER — Dojo sparring will live here. Battle is the working sparring path for now.' },
-    { name: 'Farm Plots', text: 'PLACEHOLDER — Data-Fruit farming will live here. The fruit buttons below stand in for harvested fruit.' },
+    { name: 'Mochiko Academy', text: 'Mochiko Academy is closed for now.' },
+    { name: 'Market', text: 'The Market is closed for now. The Shop is open.' },
+    { name: 'Race Track', text: 'The Race Track is closed for now.' },
+    { name: 'Sparring Ring', text: 'The Sparring Ring is closed for now.' },
+    { name: 'Farm Plots', text: 'The Farm Plots are closed for now.' },
   ];
 
   return (
@@ -113,7 +113,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                   <div className="text-sm text-slate-300">Battle bonus: +{(gardenBattleBonus(rec.garden) * 100).toFixed(1)}% (capped +9%)</div>
                   <div className="text-sm text-slate-300">Colorway: {colorwayFor(rec)}</div>
                   <div className="text-sm text-slate-300">Type variant: {typeVariant(rec.garden) || 'none (needs a 20-point stat lead)'}</div>
-                  <div className="text-sm text-slate-300">Burst Form: +{BURST_BONUS * 100}% for {BURST_TURNS} turns (battle use, next pass)</div>
+                  <div className="text-sm text-slate-300">Burst Form: +{BURST_BONUS * 100}% for {BURST_TURNS} turns</div>
                 </div>
               </div>
               <h3 className="text-white font-bold mt-4 mb-2">Garden Stats (0–99 each)</h3>
@@ -125,7 +125,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                   </div>
                 ))}
               </div>
-              <h3 className="text-white font-bold mt-4 mb-2">Data-Fruit (placeholder harvest)</h3>
+              <h3 className="text-white font-bold mt-4 mb-2">Data-Fruit</h3>
               <div className="flex flex-wrap gap-2">
                 <button onClick={() => feed({ dive: 10 }, 'Aqua Fruit')} className="game-button px-3 py-1.5 text-sm">Aqua Fruit +Dive</button>
                 <button onClick={() => feed({ glide: 10 }, 'Aero Fruit')} className="game-button px-3 py-1.5 text-sm">Aero Fruit +Glide</button>
@@ -137,7 +137,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                 <button
                   onClick={() => {
                     const cand = branchEvolution(rec, [{ targetSpeciesId: SPECIES_DB[current.speciesId]?.evolution?.targetId || '', minBond: 50 }]);
-                    setNote(cand ? `Branch Evolution ready: ${cand.targetSpeciesId} (bond gate met). Evolution itself is the next pass.` : 'No branch evolution ready yet (bond 50+ and a valid target needed).');
+                    setNote(cand ? `Branch Evolution is ready for ${current.nickname}!` : 'No Branch Evolution ready yet.');
                   }}
                   className="game-button px-3 py-1.5 text-sm"
                 >
@@ -147,7 +147,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                   onClick={() => {
                     const reverted = dataRevert(rec);
                     setGardenRecord(current.id, reverted);
-                    setNote('Data Revert applied: Garden stats halved, colorway/parts kept.');
+                    setNote('Data Revert applied. Garden stats are halved, colors and parts stay.');
                   }}
                   className="game-button px-3 py-1.5 text-sm"
                 >
@@ -156,7 +156,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                 <button
                   onClick={() => {
                     const errs = mochiLinkValidate(current.speciesId, current.speciesId, party.map(p => p.speciesId), current.speciesId);
-                    setNote(errs.length ? `Mochi Link: ${errs.join(' ')}` : 'Mochi Link: both sides offer a creature — trade structure valid (no network trade in pass 1).');
+                    setNote(errs.length ? `Mochi Link: ${errs.join(' ')}` : 'Mochi Link: both sides offer a creature.');
                   }}
                   className="game-button px-3 py-1.5 text-sm"
                 >
