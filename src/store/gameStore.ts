@@ -4,6 +4,7 @@ import { createMochii } from '../lib/engine';
 import type { GardenCreature } from '../lib/mochiichao-systems';
 import type { GuardianAssignment } from '../lib/monster-tamer-systems';
 import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
+import { setAutosaveHold } from '../lib/saveSystem';
 import { applyFontRoles } from '../lib/fonts';
 import { applySoundMode } from '../lib/audioRouting';
 
@@ -121,7 +122,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   setCheatFlags: (flags) => set(flags),
 
   autosaveHeldForSlot: null,
-  setAutosaveHeldForSlot: (slot) => set({ autosaveHeldForSlot: slot }),
+  setAutosaveHeldForSlot: (slot) => { setAutosaveHold(slot); set({ autosaveHeldForSlot: slot }); },
 
   setPlayerInfo: (name, gender, slot) => set({ playerName: name, playerGender: gender, saveSlot: slot }),
   setRivalName: (name) => set({ rivalName: name }),
@@ -148,6 +149,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     persistSettings(nextSettings);
     applyFontRoles(nextSettings);
     applySoundMode(nextSettings.sound);
+    setAutosaveHold(null);
     set({ ...state, settings: nextSettings, introCompleted: true, rivalName: (state as any).rivalName || 'Hex', autosaveHeldForSlot: null });
   },
   completeIntro: () => set({ introCompleted: true }),
