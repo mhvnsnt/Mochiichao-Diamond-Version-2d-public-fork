@@ -323,7 +323,7 @@ export default function IntroVideoPlayer({
           <div className="text-yellow-300 text-[10px] mt-1">Creature cutout GAP (no fake art): {gapCreatures.join(', ')} — only Yogiferno has a clean cutout.</div>
         )}
         <div className="text-gray-500 text-[10px] mt-1">
-          Music: GAP — {scene.music ? `slot name "${scene.music}" only, no audio file wired` : 'original music needed, slot empty'} · Total {total.toFixed(1)}s
+          Music: official intro track (wired){scene.music ? ` — scene slot "${scene.music}" is a label only, no separate file` : ''} · Total {total.toFixed(1)}s
         </div>
       </div>
       <button
