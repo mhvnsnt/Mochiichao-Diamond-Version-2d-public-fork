@@ -1,0 +1,930 @@
+[
+  {
+    "player": "Mochii",
+    "foe": "Razorgater",
+    "move": "Aqua Shot",
+    "type": "WATER",
+    "cat": "Special",
+    "power": 40,
+    "kind": "projectile",
+    "foeMaxHp": 125,
+    "rawDmg": 25,
+    "turns": 5,
+    "totalDealt": 125,
+    "clashes": 5,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1720,
+    "severities": [
+      "medium"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 25,
+        "mult": 1,
+        "dealt": 25,
+        "frac": 0.2,
+        "severity": "medium",
+        "foeHp": 100
+      },
+      {
+        "turn": 2,
+        "raw": 25,
+        "mult": 1,
+        "dealt": 25,
+        "frac": 0.2,
+        "severity": "medium",
+        "foeHp": 75
+      },
+      {
+        "turn": 3,
+        "raw": 25,
+        "mult": 1,
+        "dealt": 25,
+        "frac": 0.2,
+        "severity": "medium",
+        "foeHp": 50
+      },
+      {
+        "turn": 4,
+        "raw": 25,
+        "mult": 1,
+        "dealt": 25,
+        "frac": 0.2,
+        "severity": "medium",
+        "foeHp": 25
+      },
+      {
+        "turn": 5,
+        "raw": 25,
+        "mult": 1,
+        "dealt": 25,
+        "frac": 0.2,
+        "severity": "medium",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Water",
+    "vfxShape": "drop",
+    "vfxRing": "ripple",
+    "cryBaseHz": 571,
+    "cryMs": 460,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Razorgater",
+    "foe": "Mochii",
+    "move": "Metal Strike",
+    "type": "STEEL",
+    "cat": "Physical",
+    "power": 50,
+    "kind": "melee",
+    "foeMaxHp": 120,
+    "rawDmg": 31,
+    "turns": 4,
+    "totalDealt": 132,
+    "clashes": 4,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1770,
+    "severities": [
+      "medium"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.275,
+        "severity": "medium",
+        "foeHp": 87
+      },
+      {
+        "turn": 2,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.275,
+        "severity": "medium",
+        "foeHp": 54
+      },
+      {
+        "turn": 3,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.275,
+        "severity": "medium",
+        "foeHp": 21
+      },
+      {
+        "turn": 4,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.275,
+        "severity": "medium",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Chrome",
+    "vfxShape": "shard",
+    "vfxRing": "glint",
+    "cryBaseHz": 428,
+    "cryMs": 560,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Tyrage",
+    "foe": "Kittember",
+    "move": "Earth Tremor",
+    "type": "GROUND",
+    "cat": "Physical",
+    "power": 100,
+    "kind": "melee",
+    "foeMaxHp": 115,
+    "rawDmg": 68,
+    "turns": 2,
+    "totalDealt": 142,
+    "clashes": 2,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 2055,
+    "severities": [
+      "critical"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 68,
+        "mult": 1.05,
+        "dealt": 71,
+        "frac": 0.617,
+        "severity": "critical",
+        "foeHp": 44
+      },
+      {
+        "turn": 2,
+        "raw": 68,
+        "mult": 1.05,
+        "dealt": 71,
+        "frac": 0.617,
+        "severity": "critical",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Earth",
+    "vfxShape": "chunk",
+    "vfxRing": "dust",
+    "cryBaseHz": 369,
+    "cryMs": 600,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Kittember",
+    "foe": "Tyrage",
+    "move": "Ember Toss",
+    "type": "FIRE",
+    "cat": "Special",
+    "power": 40,
+    "kind": "projectile",
+    "foeMaxHp": 120,
+    "rawDmg": 28,
+    "turns": 5,
+    "totalDealt": 140,
+    "clashes": 5,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1720,
+    "severities": [
+      "medium"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.233,
+        "severity": "medium",
+        "foeHp": 92
+      },
+      {
+        "turn": 2,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.233,
+        "severity": "medium",
+        "foeHp": 64
+      },
+      {
+        "turn": 3,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.233,
+        "severity": "medium",
+        "foeHp": 36
+      },
+      {
+        "turn": 4,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.233,
+        "severity": "medium",
+        "foeHp": 8
+      },
+      {
+        "turn": 5,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.233,
+        "severity": "medium",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Flame",
+    "vfxShape": "flame",
+    "vfxRing": "none",
+    "cryBaseHz": 376,
+    "cryMs": 520,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Pyropaw",
+    "foe": "Sproutle",
+    "move": "Fire Stream",
+    "type": "FIRE",
+    "cat": "Special",
+    "power": 90,
+    "kind": "projectile",
+    "foeMaxHp": 130,
+    "rawDmg": 59,
+    "turns": 3,
+    "totalDealt": 177,
+    "clashes": 3,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1720,
+    "severities": [
+      "heavy"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 59,
+        "mult": 1,
+        "dealt": 59,
+        "frac": 0.454,
+        "severity": "heavy",
+        "foeHp": 71
+      },
+      {
+        "turn": 2,
+        "raw": 59,
+        "mult": 1,
+        "dealt": 59,
+        "frac": 0.454,
+        "severity": "heavy",
+        "foeHp": 12
+      },
+      {
+        "turn": 3,
+        "raw": 59,
+        "mult": 1,
+        "dealt": 59,
+        "frac": 0.454,
+        "severity": "heavy",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Flame",
+    "vfxShape": "flame",
+    "vfxRing": "none",
+    "cryBaseHz": 354,
+    "cryMs": 600,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Sproutle",
+    "foe": "Pyropaw",
+    "move": "Razor Leaf",
+    "type": "GRASS",
+    "cat": "Physical",
+    "power": 55,
+    "kind": "melee",
+    "foeMaxHp": 135,
+    "rawDmg": 31,
+    "turns": 5,
+    "totalDealt": 165,
+    "clashes": 5,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1770,
+    "severities": [
+      "medium"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.244,
+        "severity": "medium",
+        "foeHp": 102
+      },
+      {
+        "turn": 2,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.244,
+        "severity": "medium",
+        "foeHp": 69
+      },
+      {
+        "turn": 3,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.244,
+        "severity": "medium",
+        "foeHp": 36
+      },
+      {
+        "turn": 4,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.244,
+        "severity": "medium",
+        "foeHp": 3
+      },
+      {
+        "turn": 5,
+        "raw": 31,
+        "mult": 1.05,
+        "dealt": 33,
+        "frac": 0.244,
+        "severity": "medium",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Earth",
+    "vfxShape": "chunk",
+    "vfxRing": "dust",
+    "cryBaseHz": 609,
+    "cryMs": 420,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Zephling",
+    "foe": "Squirmite",
+    "move": "Gust Wave",
+    "type": "FLYING",
+    "cat": "Special",
+    "power": 40,
+    "kind": "projectile",
+    "foeMaxHp": 105,
+    "rawDmg": 28,
+    "turns": 4,
+    "totalDealt": 112,
+    "clashes": 4,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1720,
+    "severities": [
+      "medium"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.267,
+        "severity": "medium",
+        "foeHp": 77
+      },
+      {
+        "turn": 2,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.267,
+        "severity": "medium",
+        "foeHp": 49
+      },
+      {
+        "turn": 3,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.267,
+        "severity": "medium",
+        "foeHp": 21
+      },
+      {
+        "turn": 4,
+        "raw": 28,
+        "mult": 1,
+        "dealt": 28,
+        "frac": 0.267,
+        "severity": "medium",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Aero",
+    "vfxShape": "streak",
+    "vfxRing": "none",
+    "cryBaseHz": 480,
+    "cryMs": 640,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Squirmite",
+    "foe": "Zephling",
+    "move": "Swarm Strike",
+    "type": "BUG",
+    "cat": "Physical",
+    "power": 25,
+    "kind": "melee",
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 13,
+        "mult": 1.05,
+        "dealt": 42,
+        "frac": 0.365,
+        "severity": "heavy",
+        "foeHp": 73
+      },
+      {
+        "turn": 2,
+        "raw": 13,
+        "mult": 1.05,
+        "dealt": 42,
+        "frac": 0.365,
+        "severity": "heavy",
+        "foeHp": 31
+      },
+      {
+        "turn": 3,
+        "raw": 13,
+        "mult": 1.05,
+        "dealt": 42,
+        "frac": 0.365,
+        "severity": "heavy",
+        "foeHp": 0
+      }
+    ],
+    "foeMaxHp": 115,
+    "rawDmg": 13,
+    "turns": 3,
+    "totalDealt": 126,
+    "clashes": 3,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 3030,
+    "severities": [
+      "heavy"
+    ],
+    "vfxElement": "Bug",
+    "vfxShape": "mote",
+    "vfxRing": "none",
+    "cryBaseHz": 646,
+    "cryMs": 460,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Punchkid",
+    "foe": "Gearkid",
+    "move": "Power Strike",
+    "type": "FIGHTING",
+    "cat": "Physical",
+    "power": 85,
+    "kind": "melee",
+    "foeMaxHp": 115,
+    "rawDmg": 39,
+    "turns": 3,
+    "totalDealt": 123,
+    "clashes": 3,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1770,
+    "severities": [
+      "heavy"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 39,
+        "mult": 1.05,
+        "dealt": 41,
+        "frac": 0.357,
+        "severity": "heavy",
+        "foeHp": 74
+      },
+      {
+        "turn": 2,
+        "raw": 39,
+        "mult": 1.05,
+        "dealt": 41,
+        "frac": 0.357,
+        "severity": "heavy",
+        "foeHp": 33
+      },
+      {
+        "turn": 3,
+        "raw": 39,
+        "mult": 1.05,
+        "dealt": 41,
+        "frac": 0.357,
+        "severity": "heavy",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Strike",
+    "vfxShape": "star",
+    "vfxRing": "shockwave",
+    "cryBaseHz": 423,
+    "cryMs": 600,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Gearkid",
+    "foe": "Punchkid",
+    "move": "Flash Cannon",
+    "type": "STEEL",
+    "cat": "Special",
+    "power": 80,
+    "kind": "projectile",
+    "foeMaxHp": 125,
+    "rawDmg": 42,
+    "turns": 3,
+    "totalDealt": 126,
+    "clashes": 3,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1720,
+    "severities": [
+      "medium"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 42,
+        "mult": 1,
+        "dealt": 42,
+        "frac": 0.336,
+        "severity": "medium",
+        "foeHp": 83
+      },
+      {
+        "turn": 2,
+        "raw": 42,
+        "mult": 1,
+        "dealt": 42,
+        "frac": 0.336,
+        "severity": "medium",
+        "foeHp": 41
+      },
+      {
+        "turn": 3,
+        "raw": 42,
+        "mult": 1,
+        "dealt": 42,
+        "frac": 0.336,
+        "severity": "medium",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Chrome",
+    "vfxShape": "shard",
+    "vfxRing": "glint",
+    "cryBaseHz": 408,
+    "cryMs": 600,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Wispkin",
+    "foe": "Ashemit",
+    "move": "Shadow Pulse",
+    "type": "GHOST",
+    "cat": "Special",
+    "power": 80,
+    "kind": "projectile",
+    "foeMaxHp": 115,
+    "rawDmg": 44,
+    "turns": 3,
+    "totalDealt": 132,
+    "clashes": 3,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1720,
+    "severities": [
+      "heavy"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 44,
+        "mult": 1,
+        "dealt": 44,
+        "frac": 0.383,
+        "severity": "heavy",
+        "foeHp": 71
+      },
+      {
+        "turn": 2,
+        "raw": 44,
+        "mult": 1,
+        "dealt": 44,
+        "frac": 0.383,
+        "severity": "heavy",
+        "foeHp": 27
+      },
+      {
+        "turn": 3,
+        "raw": 44,
+        "mult": 1,
+        "dealt": 44,
+        "frac": 0.383,
+        "severity": "heavy",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Umbral",
+    "vfxShape": "wisp",
+    "vfxRing": "smoke",
+    "cryBaseHz": 536,
+    "cryMs": 600,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "player": "Mythar",
+    "foe": "Yogiferno",
+    "move": "Mind Blast",
+    "type": "PSYCHIC",
+    "cat": "Special",
+    "power": 90,
+    "kind": "projectile",
+    "foeMaxHp": 155,
+    "rawDmg": 46,
+    "turns": 4,
+    "totalDealt": 184,
+    "clashes": 4,
+    "maxPressure": 0,
+    "lowHpCrossed": true,
+    "timelineMs": 1720,
+    "severities": [
+      "medium"
+    ],
+    "hits": [
+      {
+        "turn": 1,
+        "raw": 46,
+        "mult": 1,
+        "dealt": 46,
+        "frac": 0.297,
+        "severity": "medium",
+        "foeHp": 109
+      },
+      {
+        "turn": 2,
+        "raw": 46,
+        "mult": 1,
+        "dealt": 46,
+        "frac": 0.297,
+        "severity": "medium",
+        "foeHp": 63
+      },
+      {
+        "turn": 3,
+        "raw": 46,
+        "mult": 1,
+        "dealt": 46,
+        "frac": 0.297,
+        "severity": "medium",
+        "foeHp": 17
+      },
+      {
+        "turn": 4,
+        "raw": 46,
+        "mult": 1,
+        "dealt": 46,
+        "frac": 0.297,
+        "severity": "medium",
+        "foeHp": 0
+      }
+    ],
+    "vfxElement": "Mythic",
+    "vfxShape": "sparkle",
+    "vfxRing": "glint",
+    "cryBaseHz": 365,
+    "cryMs": 560,
+    "treatmentTotalMs": 1040,
+    "ko": true
+  },
+  {
+    "critCheck": {
+      "move": {
+        "name": "Aqua Shot",
+        "kind": "projectile",
+        "power": 40,
+        "accuracy": 100,
+        "critChance": 0,
+        "weight": "light",
+        "hits": 1
+      },
+      "hit": true,
+      "isCrit": true,
+      "severity": "critical",
+      "damageDealt": 25,
+      "damageFraction": 0.2,
+      "powerMultiplier": 1,
+      "effectiveAccuracy": 100,
+      "foeHp": 100,
+      "foeMaxHp": 125,
+      "fainted": false,
+      "returnSkipped": false,
+      "timeline": {
+        "phases": [
+          {
+            "phase": "TELEGRAPH",
+            "startMs": 0,
+            "endMs": 300
+          },
+          {
+            "phase": "CAST",
+            "startMs": 300,
+            "endMs": 600
+          },
+          {
+            "phase": "WINDUP",
+            "startMs": 600,
+            "endMs": 850
+          },
+          {
+            "phase": "STRIKE",
+            "startMs": 850,
+            "endMs": 930
+          },
+          {
+            "phase": "IMPACT_HOLD",
+            "startMs": 930,
+            "endMs": 1020
+          },
+          {
+            "phase": "RECOIL",
+            "startMs": 1020,
+            "endMs": 1320
+          },
+          {
+            "phase": "RETURN",
+            "startMs": 1320,
+            "endMs": 1720
+          }
+        ],
+        "totalMs": 1720,
+        "treatmentBeats": {
+          "windupMs": 250,
+          "impactHoldMs": 90,
+          "recoilMs": 300,
+          "recoverMs": 400
+        },
+        "hits": 1,
+        "modifiers": {
+          "powerPct": 0,
+          "accuracyMod": 5,
+          "effectiveAccuracy": 100,
+          "critChance": 0,
+          "powerMultiplier": 1,
+          "rangeBand": "Far",
+          "flankArc": "Front",
+          "breakdown": {
+            "rangePower": 0,
+            "rangeAcc": 5,
+            "flankPower": 0,
+            "flankAcc": 0,
+            "momentumPower": 0,
+            "rawPower": 0
+          }
+        },
+        "faintPath": {
+          "faintMs": 1000,
+          "fadeMs": 400,
+          "skipsReturn": true
+        }
+      }
+    },
+    "missCheck": {
+      "move": {
+        "name": "Aqua Shot",
+        "kind": "projectile",
+        "power": 40,
+        "accuracy": 100,
+        "critChance": 0,
+        "weight": "light",
+        "hits": 1
+      },
+      "hit": false,
+      "isCrit": false,
+      "severity": "light",
+      "damageDealt": 0,
+      "damageFraction": 0,
+      "powerMultiplier": 1,
+      "effectiveAccuracy": 100,
+      "foeHp": 125,
+      "foeMaxHp": 125,
+      "fainted": false,
+      "returnSkipped": false,
+      "timeline": {
+        "phases": [
+          {
+            "phase": "TELEGRAPH",
+            "startMs": 0,
+            "endMs": 300
+          },
+          {
+            "phase": "CAST",
+            "startMs": 300,
+            "endMs": 600
+          },
+          {
+            "phase": "WINDUP",
+            "startMs": 600,
+            "endMs": 850
+          },
+          {
+            "phase": "STRIKE",
+            "startMs": 850,
+            "endMs": 930
+          },
+          {
+            "phase": "IMPACT_HOLD",
+            "startMs": 930,
+            "endMs": 1020
+          },
+          {
+            "phase": "RECOIL",
+            "startMs": 1020,
+            "endMs": 1320
+          },
+          {
+            "phase": "RETURN",
+            "startMs": 1320,
+            "endMs": 1720
+          }
+        ],
+        "totalMs": 1720,
+        "treatmentBeats": {
+          "windupMs": 250,
+          "impactHoldMs": 90,
+          "recoilMs": 300,
+          "recoverMs": 400
+        },
+        "hits": 1,
+        "modifiers": {
+          "powerPct": 0,
+          "accuracyMod": 5,
+          "effectiveAccuracy": 100,
+          "critChance": 0,
+          "powerMultiplier": 1,
+          "rangeBand": "Far",
+          "flankArc": "Front",
+          "breakdown": {
+            "rangePower": 0,
+            "rangeAcc": 5,
+            "flankPower": 0,
+            "flankAcc": 0,
+            "momentumPower": 0,
+            "rawPower": 0
+          }
+        },
+        "faintPath": {
+          "faintMs": 1000,
+          "fadeMs": 400,
+          "skipsReturn": true
+        }
+      }
+    }
+  }
+]
