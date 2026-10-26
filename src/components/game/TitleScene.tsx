@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Application, Assets, Container, DisplacementFilter, Graphics, Sprite, Texture } from 'pixi.js';
 import { TITLE_BIOMES, type TitleBiomeId } from '../../lib/titleBiomes';
+import { TITLE_CARD_ANIMATION_STYLES } from '../../lib/titleActionShots';
 import {
   CREATURE_ACTIONS, TITLE_BIOME_MOTION, TITLE_CARD_EFFECTS,
   creatureActionFrame,
@@ -36,6 +37,11 @@ import {
  *      lightning + splash / fireflies / pollen / dust motes) +
  *      per-creature action burst (FireRed scene 3: hop -> burst
  *      -> recoil, 360-frame cycle)
+ *   V2 (locked styles, titleActionShots.ts): figure fades in at
+ *   centre (frames 0-59), eases to its locked rest offset (frames
+ *   60-119, restX * W/1600, Mythar 0), then the action loop runs
+ *   at rest instead of the old endless walk; 4 wind streaks run
+ *   behind the figure (LeafGreen streak idea, alpha 0.3).
  *   5. Yogiferno fire trail (only when figureUrl is set): embers
  *      spawning behind the feet + fading scorch glow on the ground,
  *      fire halo is baked into the clean cutout itself.
@@ -227,6 +233,37 @@ export default function TitleScene({
         scene.addChild(c); clouds.push(c);
       }
 
+      // Layer 2.5: v2 wind streaks (locked per-card animation v2,
+      // docs/title-animation-v2-complex.md). LeafGreen streak idea
+      // from docs/title-pokemon-leaf-research.md: fast thin lines
+      // moving left, wrapping to the right edge, heights cycling.
+      // Separate from the FireRed streak spawner below (leaf biomes
+      // only, alpha 0.7, in front): these run on every biome, are
+      // subtle (alpha 0.3), and are created BEFORE the figure so
+      // they sit BEHIND it. Speed is 7 px/frame at the 1600-wide
+      // draft reference, scaled by W/1600 to this host.
+      interface V2Streak { g: Graphics; x: number; yIndex: number; }
+      const v2StreakHeights = [0.25, 0.5, 0.68, 0.4];
+      const v2StreakSpeed = 7 * (W / 1600);
+      const v2StreakLen = Math.max(16, 24 * (W / 1600));
+      const v2Streaks: V2Streak[] = [];
+      for (let i = 0; i < 4; i++) {
+        const g = new Graphics();
+        g.rect(0, 0, v2StreakLen, 2).fill({ color: 0xffffff, alpha: 0.3 });
+        g.x = W + 20 + i * 60;
+        g.y = H * v2StreakHeights[i];
+        scene.addChild(g);
+        v2Streaks.push({ g, x: g.x, yIndex: i });
+      }
+      // Locked per-card animation style for this figure, when it is
+      // a title-pool creature (titleActionShots.ts, LOCKED Mars
+      // 2026-10-26 ~07:07 CDT). restX is in 1600-wide draft-frame
+      // px, scaled to this host. Unset figures have no locked
+      // style and keep the old walk (see ticker), no action claimed.
+      const v2Style = figureName ? TITLE_CARD_ANIMATION_STYLES.find((s) => s.creature === figureName) : undefined;
+      const v2RestOffset = v2Style ? v2Style.restX * (W / 1600) : 0;
+      const easeOutCubic = (p: number) => 1 - Math.pow(1 - p, 3);
+
       // Layer 3: figure sprite, if supplied. Scaled to ~150px tall
       // inside the 180px host, anchored at the feet.
       let figure: Sprite | null = null;
@@ -252,6 +289,10 @@ export default function TitleScene({
           figure.scale.set(scale);
           figure.anchor.set(0.5, 1);
           figure.x = W / 2; figure.y = groundY + 6;
+          // V2 entrance starts invisible at centre; the ticker
+          // fades it in over the first 60 frames. Unset figures
+          // stay fully visible (old walk, no entrance claimed).
+          if (v2Style) figure.alpha = 0;
           scene.addChild(figure);
           shadow = new Graphics();
           const dispW = tex.width * scale;
@@ -535,6 +576,17 @@ export default function TitleScene({
           rippleSprite.y = (t * 12) % 256;
         }
         for (const c of clouds) { c.x += 6 * dt / 60; if (c.x > W + 50) c.x = -50; }
+        // V2 wind streaks: move left, wrap to the right edge,
+        // heights cycle through v2StreakHeights on each wrap.
+        for (const st of v2Streaks) {
+          st.x -= v2StreakSpeed * dt;
+          if (st.x < -v2StreakLen) {
+            st.x = W + 20;
+            st.yIndex = (st.yIndex + 1) % v2StreakHeights.length;
+            st.g.y = H * v2StreakHeights[st.yIndex];
+          }
+          st.g.x = st.x;
+        }
         if (figure) {
           // Black 2 motion blur: ghost holds the last position.
           if (ghost) {
@@ -542,9 +594,28 @@ export default function TitleScene({
             ghost.x = figure.x; ghost.y = figure.y;
             ghost.alpha = black2MotionBlurAlpha(exitKindRef.current !== 'none');
           }
-          x += 42 * dt / 60;
-          if (x > W + 80) x = -80;
-          figure.x = x + Math.sin(t * 2) * 3;
+          // V2 entrance + rest (locked per-card styles): fade in
+          // at centre for frames 0-59, ease-out to the locked rest
+          // offset over frames 60-119, then stay at rest. Mythar's
+          // rest is 0, so it fades in at centre and stays centre,
+          // never grounding (orbit -18 below still applies).
+          // Unset figures keep the old endless walk, unchanged.
+          if (v2Style) {
+            if (frameInt < 60) {
+              figure.alpha = frameInt / 60;
+              figure.x = W / 2 + Math.sin(t * 2) * 3;
+            } else if (frameInt < 120) {
+              figure.alpha = 1;
+              figure.x = W / 2 + v2RestOffset * easeOutCubic((frameInt - 60) / 60) + Math.sin(t * 2) * 3;
+            } else {
+              figure.alpha = 1;
+              figure.x = W / 2 + v2RestOffset + Math.sin(t * 2) * 3;
+            }
+          } else {
+            x += 42 * dt / 60;
+            if (x > W + 80) x = -80;
+            figure.x = x + Math.sin(t * 2) * 3;
+          }
           figure.y = groundY + 6 + Math.sin(t * 8) * 4;
           // Per-creature action (FireRed scene 3 order: idle -> hop
           // -> effect burst -> recoil -> idle, 360-frame cycle).
@@ -564,8 +635,10 @@ export default function TitleScene({
               spawnCreatureBurst(act.burst, figure.x, figure.y, act.color);
             }
           }
-          // Ground shadow follows the walk (x) but stays on the
-          // ground: it never bobs, hops or orbits with the figure.
+          // Ground shadow follows the figure (rest position for
+          // v2 styled figures, walk x for unset figures) but stays
+          // on the ground: it never bobs, hops or orbits with the
+          // figure.
           // When the figure lifts (orbit, hop, bob peak) the shadow
           // shrinks and fades slightly, like a shadow under a
           // rising creature — never below 75% size.
@@ -579,9 +652,9 @@ export default function TitleScene({
           }
           if (fireTrail) {
             emberTimer -= dt / 60;
-            if (emberTimer <= 0) { spawnEmber(x - 24, groundY - 8); emberTimer = 0.08; }
+            if (emberTimer <= 0) { spawnEmber(figure.x - 24, groundY - 8); emberTimer = 0.08; }
             scorchTimer -= dt / 60;
-            if (scorchTimer <= 0) { spawnScorch(x - 20); scorchTimer = 0.25; }
+            if (scorchTimer <= 0) { spawnScorch(figure.x - 20); scorchTimer = 0.25; }
           }
         }
         for (let i = particles.length - 1; i >= 0; i--) {
