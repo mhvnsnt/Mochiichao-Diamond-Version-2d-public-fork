@@ -158,12 +158,33 @@ export const LOCKED_V32_MENU = {
         { rx: 475, ry: 230, color: "#ff96c8", rotate: 0 },
       ],
     },
-    // Confetti symbols: the MEASURED field (round 2, 2026-10-26,
-    // see mainMenuSymbols.ts). 285 symbols measured from the
-    // matched GIF; history's field is 300, so the shortfall is
-    // 15 = 5.0%, named in that file and in the PR body, NOT filled
-    // with generated guesses (the PR #170 generated fill is what
-    // Mars rejected).
+    // Small logo-zone emblems (2026-10-26 widened brief): MEASURED
+    // from the locked v32 picture mochiichao-main-menu-phi-fade-v32.png
+    // (no coordinate table exists in the history, so picture
+    // measurement is the only source, labelled as such). These are
+    // the little emblems AROUND THE LOGO the current render was
+    // missing: black 4-point stars, one blue heart, one pink heart,
+    // one pink circle. Centres/sizes in full-scale canvas px; the
+    // blue heart's height (51) is the crop-visual value -- its
+    // opened bbox merged with the arc below. Rendered static (they
+    // are top-layer decorations, not rising symbols), AFTER the
+    // symbol field so they stay solid over the faded field, as in
+    // the picture. Version sources: v14 (blue/pink circles, blue/pink
+    // hearts, black sparkles), v15 (rainbow semi-circles), v25
+    // (hearts/stars mirrored). The logo image itself is NOT touched.
+    logoEmblems: [
+      { x: 600, y: 194, w: 41, h: 41, c: "#000000", shape: "star" },
+      { x: 139, y: 533, w: 45, h: 45, c: "#000000", shape: "star" },
+      { x: 1059, y: 533, w: 53, h: 53, c: "#000000", shape: "star" },
+      { x: 169, y: 405, w: 63, h: 51, c: "#95cbfe", shape: "heart" },
+      { x: 230, y: 637, w: 53, h: 37, c: "#fe95c7", shape: "heart" },
+      { x: 1054, y: 412, w: 46, h: 46, c: "#fe95c7", shape: "circle" },
+    ] as { x: number; y: number; w: number; h: number; c: string; shape: string }[],
+    // Confetti symbols: the FORMULA field v2 (2026-10-26,
+    // see mainMenuSymbols.ts). 300 symbols by the exact research
+    // phi-lattice formula; the round-2 MEASURED set (285) is
+    // SUPERSEDED -- DO NOT USE -- by Mars's order 2026-10-26
+    // 14:18 CDT ("stop cheating. Follow the formula").
     symbols: MAIN_MENU_SYMBOLS,
     // Locked phi fade.
     fade: { gone: 620, mid: 729, full: 905 },
