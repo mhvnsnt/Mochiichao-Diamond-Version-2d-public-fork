@@ -18,7 +18,7 @@
  "frame_count": 25,
  "draft": false,
  "draft_note": "",
- "notes": "Suited = default look.",
+ "notes": "CANONICAL STRUCTURE (Mars FINAL ruling 2026-10-25 ~19:01 CDT, supersedes PR #30 second-atlas designation): suited = DEFAULT look. Regular no-armor look = helmeted lower-only atlas (strikechamp_unsuited: bare chest, red pants, helmet). Rare shiny variant (~10%) = no-helmet full unsuited atlas (strikechamp_unsuited_full: face showing, red suit). Suited stays default; nothing else about Strikechamp changes. See game-ready-canonical/strikechamp-variant-structure.json. Canonical variant per ATLAS-RECONCILIATION-REPORT.md (2026-10-25, Phase A): this atlas PNG + locked manifest is the ONE canonical variant for this set. It supersedes atlases/<name>/*_atlas_64_clean.png + *.manifest-clean.json and game-ready duplicate *_atlas_64_locked_clean.png / *_icon64_clean.png variants, which are EXCLUDED from the art PR batch (see report superseded-files list). Frames, roles, atlas tiles and pointers are unchanged from the locked manifest.",
  "role_unconfirmed": [],
  "frames": [
   {
@@ -309,5 +309,11 @@
   248,
   244,
   240
- ]
+ ],
+ "notes_pre_correction": "Suited = default look.",
+ "variant_role": "default",
+ "variant_rate": "default (100% unless a variant roll applies)",
+ "canonical_note": "Canonical variant per ATLAS-RECONCILIATION-REPORT.md (2026-10-25, Phase A): this atlas PNG + locked manifest is the ONE canonical variant for this set. It supersedes atlases/<name>/*_atlas_64_clean.png + *.manifest-clean.json and game-ready duplicate *_atlas_64_locked_clean.png / *_icon64_clean.png variants, which are EXCLUDED from the art PR batch (see report superseded-files list). Frames, roles, atlas tiles and pointers are unchanged from the locked manifest.",
+ "canonical_phase": "A",
+ "canonical_source": "game-ready/strikechamp/strikechamp.manifest.locked.json + strikechamp_atlas_64_locked.png (byte-identical atlas copy)"
 }
