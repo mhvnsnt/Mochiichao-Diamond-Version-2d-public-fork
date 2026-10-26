@@ -5,6 +5,7 @@ import type { GardenCreature } from '../lib/mochiichao-systems';
 import type { GuardianAssignment } from '../lib/monster-tamer-systems';
 import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
 import { applyFontRoles } from '../lib/fonts';
+import { applySoundMode } from '../lib/audioRouting';
 
 interface GameState {
   playerName: string;
@@ -98,6 +99,9 @@ export const useGameStore = create<GameState>((set, get) => ({
     const next = { ...s.settings, ...patch };
     persistSettings(next);
     applyFontRoles(next);
+    // SOUND routing: the stored mode is applied to the Web Audio
+    // graph on every settings change, not just in SettingsScreen.
+    applySoundMode(next.sound);
     return { settings: next };
   }),
   cheated: false,
@@ -112,6 +116,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     const nextSettings = { ...DEFAULT_SETTINGS, ...((state as any).settings || {}) };
     persistSettings(nextSettings);
     applyFontRoles(nextSettings);
+    applySoundMode(nextSettings.sound);
     set({ ...state, settings: nextSettings, introCompleted: true, rivalName: (state as any).rivalName || 'Hex' });
   },
   completeIntro: () => set({ introCompleted: true }),
