@@ -61,12 +61,14 @@
   encounter handoff so the two lanes agree.
 - Status: spec exists; in-game wiring 0% (Creature Mode lane owns it).
 
-## 5. Ring-capture zone placement (separate, name NOT locked)
-- Zone: NEW separate retro-arcade-THEMED zone — theme/setting only
-  (cabinets, neon, retro scenery as atmosphere). NOT Harbor City
-  Safari/preserve. NOT literally called "Arcade Zone".
-- Name: NOT locked. Candidates for Mars to pick (from
-  ring-capture-zone-spec.md): The Ringcade, Neon Loop Hall, Pixel Ring Hall.
+## 5. Ring-capture zone placement — The Ringcade (name LOCKED)
+- Zone: The Ringcade — NEW separate retro-arcade-THEMED zone, theme
+  and setting only (cabinets, neon, retro scenery as atmosphere).
+  NOT Harbor City Safari/preserve. NOT literally called "Arcade Zone".
+  Mechanic stays ring capture (Mochiichao's own version).
+- Name: LOCKED 2026-10-25 ~21:18 CDT (Mars decision) — The Ringcade.
+  This name is used in all specs/docs from here on; no other name
+  applies to this zone.
 - Proposed map key: `ring_zone` (proposed only; final key assigned when
   the zone map is created). Proposed exit hook: NEON_CITY.
 - Gate (unchanged): zoneVisited + zonePlayed -> ring capture unlocked ->

@@ -31,24 +31,10 @@ dialogue — none of those appear here.
   any earlier draft containing those is superseded and must not be
   implemented from.
 
-## 2. Zone name — CANDIDATES FOR MARS TO PICK (nothing locked)
+## 2. Zone name — DECIDED BY MARS (2026-10-25 ~21:18 CDT): The Ringcade
 
-The exact name is Mars's pick. All three are arcade-evocative WITHOUT
-literally being "Arcade Zone":
-
-1. **The Ringcade** — the tightest ring + arcade blend; reads instantly,
-   shortest signage, easiest to say in dialogue. Risk: it sounds like a
-   single cabinet rather than a whole zone.
-2. **Neon Loop Hall** — neon (the arcade vibe) + loop (the ring action)
-   + hall (a place, not a game). Reads as a venue you walk into.
-   Risk: "loop" is slightly less obvious than "ring" at a glance.
-3. **Pixel Ring Hall** — pixel (retro-game vibe) + ring (the mechanic)
-   + hall (a venue). Most explicit that the setting is retro.
-   Risk: longest of the three; "pixel" dates the theme to one era.
-
-Until Mars picks, code and docs refer to it only as "the arcade ring
-zone". Do NOT silently lock any candidate into a map label, shop sign,
-or dialogue line.
+Mars picked **The Ringcade**. Code and docs refer to the zone as
+The Ringcade from here on.
 
 ## 3. Zone purpose, theme, and layout (concept, not a map)
 
