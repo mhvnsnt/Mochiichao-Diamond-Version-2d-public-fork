@@ -1,0 +1,53 @@
+{
+ "creature": "wispkin",
+ "roster_id": "042",
+ "status": "done",
+ "method": "movement treatment derived from existing locked game-ready cells by transform only (no new generation, no redraw): bob/shift/tilt/scale/mirror as noted per creature",
+ "frames": [
+  {
+   "file": "wispkin_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "wispkin_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "wispkin_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "wispkin_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "wispkin_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "wispkin_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "wispkin_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "wispkin_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "movement_note": "Hover bob: phases are vertical bob (0 vs -3px). No true side cell exists in the locked V1 set, so left/right are tilt variants of the front cell (Mochii precedent for creatures with no profile distinction) \u2014 direction read by lean, not by a new profile drawing. V1 likeness only; V2/V3 trait sheets NOT used.",
+ "source_cells": {
+  "down": "game-ready/wispkin/cells/wispkin_cell_01.png (overworld_front)",
+  "up": "game-ready/wispkin/cells/wispkin_cell_03.png (overworld_back)",
+  "left/right": "tilt variants of wispkin_cell_01.png (no locked side cell exists)"
+ },
+ "eye_check": "Enlarged montage PASS as treatment. Hover bob (0 vs -3px); sides are tilt variants of the front cell (no locked side cell exists); V1 likeness only."
+}
