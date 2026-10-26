@@ -33,8 +33,9 @@ import { TITLE_BIOMES } from '../../lib/titleBiomes';
  * Preview: slot boxes on the 1200x1500 canvas, scaled to fit.
  * PRESS ANY KEY blinks 30 frames on / 15 frames off (500ms / 250ms
  * at 60fps). This is the CREATOR preview only — playing a saved
- * preset as the real start screen is a later batch (GAP here),
- * as is Phase 2 export (FFmpeg desktop / MediaRecorder).
+ * preset as the real start screen (TITLE phase, StartScreenPlayer)
+ * is wired in the playback batch; Phase 2 export (FFmpeg desktop /
+ * MediaRecorder) is still GAP.
  * No Pokemon sprites, dialogue, music, cries, names, or art.
  */
 
@@ -93,7 +94,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
     }
     setPresets(loadStartScreenPresets());
     setPreset(next);
-    setSavedMsg(`Saved preset "${name}". It does NOT become the default until Mars locks it in.`);
+    setSavedMsg(`Saved preset "${name}". It now plays as the start screen (TITLE phase) — the most recently saved preset plays; the locked default is never overwritten.`);
   };
 
   const loadPreset = (name: string) => {
@@ -169,7 +170,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
             </div>
           </div>
           <div className="text-xs text-slate-400 mt-2 text-center">
-            Preview only — locked slots at spec positions. Playing a saved preset as the real start screen is a later batch (GAP).
+            Preview only — locked slots at spec positions. A saved preset now plays as the real start screen (TITLE phase, StartScreenPlayer).
           </div>
         </StdWindow>
 
@@ -219,7 +220,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
             </div>
           </div>
           <div className="px-3 pb-2 text-xs text-slate-400">
-            GAP in this batch (later batches, not claimed): playback of a saved preset as the real start screen; Phase 2 export (FFmpeg desktop / MediaRecorder); Blender .blend export. Creature cutout GAP: {startScreenCreatureArtGapNames().join(', ')}.
+            GAP in this batch (later batches, not claimed): Phase 2 export (FFmpeg desktop / MediaRecorder); Blender .blend export. Playback of a saved preset as the real start screen is wired (TITLE phase, StartScreenPlayer). Creature cutout GAP: {startScreenCreatureArtGapNames().join(', ')}.
           </div>
         </StdWindow>
 
