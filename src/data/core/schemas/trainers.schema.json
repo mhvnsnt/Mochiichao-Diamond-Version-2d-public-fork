@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./trainers.schema.json",
+  "title": "trainers",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "trainers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "class": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "mapId": {
+            "type": "string"
+          },
+          "aiFlags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "party": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "speciesId": {
+                  "type": "string"
+                },
+                "level": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "ivs": {
+                  "type": "object"
+                },
+                "evs": {
+                  "type": "object"
+                },
+                "moves": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "heldItem": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "ability": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "nature": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "speciesId",
+                "level",
+                "moves"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "class",
+          "name",
+          "party"
+        ]
+      }
+    }
+  },
+  "required": [
+    "trainers"
+  ],
+  "additionalProperties": true
+}
