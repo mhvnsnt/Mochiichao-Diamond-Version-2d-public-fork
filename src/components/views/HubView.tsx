@@ -25,12 +25,12 @@ export default function HubView({
   return (
     <div className="flex-1 p-8 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 to-slate-950 flex flex-col items-center justify-center">
       
-      <h2 className="text-3xl font-bold text-teal-500 mb-2 tracking-widest uppercase">System Hub</h2>
-      <p className="text-slate-400 mb-12">Select your next protocol directive.</p>
+      <h2 className="text-3xl font-bold text-teal-500 mb-2 tracking-widest uppercase">Hub</h2>
+      <p className="text-slate-400 mb-12">Where to next?</p>
 
       {isPartyFainted && (
         <div className="bg-red-950/50 border border-red-500/50 text-red-400 p-4 rounded mb-8 w-full max-w-md text-center text-sm">
-          System Alert: Party integrity critically compromised. Please execute Heal Protocol.
+          Your whole team is fainted. Heal them first.
         </div>
       )}
 
@@ -42,16 +42,16 @@ export default function HubView({
           className="group relative p-6 bg-slate-900 border border-teal-900 hover:border-teal-400 disabled:opacity-50 disabled:border-slate-800 disabled:cursor-not-allowed rounded-lg overflow-hidden transition-all text-left"
         >
           <div className="absolute inset-0 bg-teal-500/5 translate-y-full group-hover:translate-y-0 transition-transform"></div>
-          <div className="relative font-bold text-teal-100 text-lg mb-1 group-hover:text-teal-400 transition-colors">Start Simulation</div>
-          <div className="relative text-xs text-slate-500">Initiate combat with a rogue entity in the wild.</div>
+          <div className="relative font-bold text-teal-100 text-lg mb-1 group-hover:text-teal-400 transition-colors">Wild Battle</div>
+          <div className="relative text-xs text-slate-500">Battle a wild Mochiichao.</div>
         </button>
 
         <button 
-          onClick={() => { healParty(); alert('Party restored to optimal operating capacity.'); }}
+          onClick={() => { healParty(); alert('Your team is fully healed.'); }}
           className="group relative p-6 bg-slate-900 border border-teal-900 hover:border-teal-400 rounded-lg overflow-hidden transition-all text-left"
         >
           <div className="absolute inset-0 bg-teal-500/5 translate-y-full group-hover:translate-y-0 transition-transform"></div>
-          <div className="relative font-bold text-teal-100 text-lg mb-1 group-hover:text-teal-400 transition-colors">Heal Protocol</div>
+          <div className="relative font-bold text-teal-100 text-lg mb-1 group-hover:text-teal-400 transition-colors">Heal Team</div>
           <div className="relative text-xs text-slate-500">Restore all Mochiichao to maximum health and cure status conditions.</div>
         </button>
 
