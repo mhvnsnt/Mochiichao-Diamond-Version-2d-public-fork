@@ -1,0 +1,5478 @@
+{
+ "tag": "artic-pipev3q-20261026",
+ "method": "V3 contour-fit mouth on V2 eyes-only frames (queue-wide)",
+ "batches": {
+  "batch-a": {
+   "creatures": {
+    "razorgater": {
+     "sets": {
+      "atk_physical_razor_rush": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "razorgater-artic-pipev3q-20261026-atk_physical_razor_rush-cell-00.png",
+        "razorgater-artic-pipev3q-20261026-atk_physical_razor_rush-cell-01.png",
+        "razorgater-artic-pipev3q-20261026-atk_physical_razor_rush-cell-02.png",
+        "razorgater-artic-pipev3q-20261026-atk_physical_razor_rush-cell-03.png",
+        "razorgater-artic-pipev3q-20261026-atk_physical_razor_rush-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 203,
+          "bbox": [
+           31,
+           31,
+           22,
+           13
+          ],
+          "fill_ratio": 0.71,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          41.5,
+          37.0
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_blade_wave": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "razorgater-artic-pipev3q-20261026-atk_special_blade_wave-cell-00.png",
+        "razorgater-artic-pipev3q-20261026-atk_special_blade_wave-cell-01.png",
+        "razorgater-artic-pipev3q-20261026-atk_special_blade_wave-cell-02.png",
+        "razorgater-artic-pipev3q-20261026-atk_special_blade_wave-cell-03.png",
+        "razorgater-artic-pipev3q-20261026-atk_special_blade_wave-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 118,
+          "bbox": [
+           19,
+           25,
+           15,
+           11
+          ],
+          "fill_ratio": 0.715,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          26.0,
+          30.0
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_cross_slash": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "razorgater-artic-pipev3q-20261026-atk_signature_cross_slash-cell-00.png",
+        "razorgater-artic-pipev3q-20261026-atk_signature_cross_slash-cell-01.png",
+        "razorgater-artic-pipev3q-20261026-atk_signature_cross_slash-cell-02.png",
+        "razorgater-artic-pipev3q-20261026-atk_signature_cross_slash-cell-03.png",
+        "razorgater-artic-pipev3q-20261026-atk_signature_cross_slash-cell-04.png",
+        "razorgater-artic-pipev3q-20261026-atk_signature_cross_slash-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 206,
+          "bbox": [
+           18,
+           26,
+           19,
+           15
+          ],
+          "fill_ratio": 0.723,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          27.0,
+          32.8
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_jaw_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "razorgater-artic-pipev3q-20261026-atk_heavy_jaw_crash_finisher-cell-00.png",
+        "razorgater-artic-pipev3q-20261026-atk_heavy_jaw_crash_finisher-cell-01.png",
+        "razorgater-artic-pipev3q-20261026-atk_heavy_jaw_crash_finisher-cell-02.png",
+        "razorgater-artic-pipev3q-20261026-atk_heavy_jaw_crash_finisher-cell-03.png",
+        "razorgater-artic-pipev3q-20261026-atk_heavy_jaw_crash_finisher-cell-04.png",
+        "razorgater-artic-pipev3q-20261026-atk_heavy_jaw_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 143,
+          "bbox": [
+           27,
+           33,
+           20,
+           10
+          ],
+          "fill_ratio": 0.715,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          36.0,
+          37.8
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       32,
+       36
+      ],
+      "teeth": true,
+      "reason": null,
+      "gif": "razorgater-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "tyrage": {
+     "sets": {
+      "atk_physical_rage_charge": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "tyrage-artic-pipev3q-20261026-atk_physical_rage_charge-cell-00.png",
+        "tyrage-artic-pipev3q-20261026-atk_physical_rage_charge-cell-01.png",
+        "tyrage-artic-pipev3q-20261026-atk_physical_rage_charge-cell-02.png",
+        "tyrage-artic-pipev3q-20261026-atk_physical_rage_charge-cell-03.png",
+        "tyrage-artic-pipev3q-20261026-atk_physical_rage_charge-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 180,
+          "bbox": [
+           27,
+           26,
+           21,
+           11
+          ],
+          "fill_ratio": 0.779,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          37.1,
+          31.4
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_rage_blast": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "tyrage-artic-pipev3q-20261026-atk_special_rage_blast-cell-00.png",
+        "tyrage-artic-pipev3q-20261026-atk_special_rage_blast-cell-01.png",
+        "tyrage-artic-pipev3q-20261026-atk_special_rage_blast-cell-02.png",
+        "tyrage-artic-pipev3q-20261026-atk_special_rage_blast-cell-03.png",
+        "tyrage-artic-pipev3q-20261026-atk_special_rage_blast-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 107,
+          "bbox": [
+           16,
+           18,
+           15,
+           9
+          ],
+          "fill_ratio": 0.793,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          22.7,
+          22.5
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_tyrant_flare": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "tyrage-artic-pipev3q-20261026-atk_signature_tyrant_flare-cell-00.png",
+        "tyrage-artic-pipev3q-20261026-atk_signature_tyrant_flare-cell-01.png",
+        "tyrage-artic-pipev3q-20261026-atk_signature_tyrant_flare-cell-02.png",
+        "tyrage-artic-pipev3q-20261026-atk_signature_tyrant_flare-cell-03.png",
+        "tyrage-artic-pipev3q-20261026-atk_signature_tyrant_flare-cell-04.png",
+        "tyrage-artic-pipev3q-20261026-atk_signature_tyrant_flare-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 197,
+          "bbox": [
+           14,
+           19,
+           19,
+           14
+          ],
+          "fill_ratio": 0.741,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          23.0,
+          26.1
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_cataclysm_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "tyrage-artic-pipev3q-20261026-atk_heavy_cataclysm_finisher-cell-00.png",
+        "tyrage-artic-pipev3q-20261026-atk_heavy_cataclysm_finisher-cell-01.png",
+        "tyrage-artic-pipev3q-20261026-atk_heavy_cataclysm_finisher-cell-02.png",
+        "tyrage-artic-pipev3q-20261026-atk_heavy_cataclysm_finisher-cell-03.png",
+        "tyrage-artic-pipev3q-20261026-atk_heavy_cataclysm_finisher-cell-04.png",
+        "tyrage-artic-pipev3q-20261026-atk_heavy_cataclysm_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 134,
+          "bbox": [
+           22,
+           28,
+           20,
+           9
+          ],
+          "fill_ratio": 0.744,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          31.4,
+          32.4
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       28.5,
+       28.5
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "tyrage-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "sproutle": {
+     "sets": {
+      "atk_physical_vine_lunge": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-00.png",
+        "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-01.png",
+        "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-02.png",
+        "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-03.png",
+        "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 178,
+          "bbox": [
+           31,
+           25,
+           21,
+           12
+          ],
+          "fill_ratio": 0.706,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          40.9,
+          30.6
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_seed_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-00.png",
+        "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-01.png",
+        "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-02.png",
+        "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-03.png",
+        "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "base-gate-failed",
+         "gate": {
+          "changed": 101,
+          "bbox": [
+           19,
+           18,
+           14,
+           8
+          ],
+          "fill_ratio": 0.902,
+          "inside_mask_dil2": true,
+          "off_silhouette": false,
+          "pre_ok": true
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_bloom_burst": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-00.png",
+        "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-01.png",
+        "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-02.png",
+        "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-03.png",
+        "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-04.png",
+        "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "base-gate-failed",
+         "gate": {
+          "changed": 186,
+          "bbox": [
+           18,
+           19,
+           18,
+           12
+          ],
+          "fill_ratio": 0.861,
+          "inside_mask_dil2": true,
+          "off_silhouette": false,
+          "pre_ok": true
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_overgrowth_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-00.png",
+        "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-01.png",
+        "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-02.png",
+        "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-03.png",
+        "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-04.png",
+        "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 123,
+          "bbox": [
+           26,
+           28,
+           19,
+           8
+          ],
+          "fill_ratio": 0.809,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          35.4,
+          31.7
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       31.5,
+       27.5
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "sproutle-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 2
+    },
+    "kittember": {
+     "sets": {
+      "atk_physical_ember_pounce": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "kittember-artic-pipev3q-20261026-atk_physical_ember_pounce-cell-00.png",
+        "kittember-artic-pipev3q-20261026-atk_physical_ember_pounce-cell-01.png",
+        "kittember-artic-pipev3q-20261026-atk_physical_ember_pounce-cell-02.png",
+        "kittember-artic-pipev3q-20261026-atk_physical_ember_pounce-cell-03.png",
+        "kittember-artic-pipev3q-20261026-atk_physical_ember_pounce-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "reuse-pipev3-verbatim",
+         "gate": {
+          "source": "articulation-pipev3 proof build (gates passed there)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_ember_spray": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "kittember-artic-pipev3q-20261026-atk_special_ember_spray-cell-00.png",
+        "kittember-artic-pipev3q-20261026-atk_special_ember_spray-cell-01.png",
+        "kittember-artic-pipev3q-20261026-atk_special_ember_spray-cell-02.png",
+        "kittember-artic-pipev3q-20261026-atk_special_ember_spray-cell-03.png",
+        "kittember-artic-pipev3q-20261026-atk_special_ember_spray-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "reuse-pipev3-verbatim",
+         "gate": {
+          "source": "articulation-pipev3 proof build (gates passed there)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_inferno_pounce": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "kittember-artic-pipev3q-20261026-atk_signature_inferno_pounce-cell-00.png",
+        "kittember-artic-pipev3q-20261026-atk_signature_inferno_pounce-cell-01.png",
+        "kittember-artic-pipev3q-20261026-atk_signature_inferno_pounce-cell-02.png",
+        "kittember-artic-pipev3q-20261026-atk_signature_inferno_pounce-cell-03.png",
+        "kittember-artic-pipev3q-20261026-atk_signature_inferno_pounce-cell-04.png",
+        "kittember-artic-pipev3q-20261026-atk_signature_inferno_pounce-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "reuse-pipev3-verbatim",
+         "gate": {
+          "source": "articulation-pipev3 proof build (gates passed there)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_blaze_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "kittember-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-00.png",
+        "kittember-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-01.png",
+        "kittember-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-02.png",
+        "kittember-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-03.png",
+        "kittember-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-04.png",
+        "kittember-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "reuse-pipev3-verbatim",
+         "gate": {
+          "source": "articulation-pipev3 proof build (gates passed there)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "reuse",
+      "gif": "kittember-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "tiidebiite": {
+     "sets": {
+      "atk_physical_tide_ram": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "tiidebiite-artic-pipev3q-20261026-atk_physical_tide_ram-cell-00.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_physical_tide_ram-cell-01.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_physical_tide_ram-cell-02.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_physical_tide_ram-cell-03.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_physical_tide_ram-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "reuse-pipev3-verbatim",
+         "gate": {
+          "source": "articulation-pipev3 proof build (gates passed there)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_tide_jet": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "tiidebiite-artic-pipev3q-20261026-atk_special_tide_jet-cell-00.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_special_tide_jet-cell-01.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_special_tide_jet-cell-02.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_special_tide_jet-cell-03.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_special_tide_jet-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "reuse-pipev3-verbatim",
+         "gate": {
+          "source": "articulation-pipev3 proof build (gates passed there)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_surge_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "tiidebiite-artic-pipev3q-20261026-atk_signature_surge_barrage-cell-00.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_signature_surge_barrage-cell-01.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_signature_surge_barrage-cell-02.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_signature_surge_barrage-cell-03.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_signature_surge_barrage-cell-04.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_signature_surge_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "reuse-pipev3-verbatim",
+         "gate": {
+          "source": "articulation-pipev3 proof build (gates passed there)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_tsunami_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "tiidebiite-artic-pipev3q-20261026-atk_heavy_tsunami_finisher-cell-00.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_heavy_tsunami_finisher-cell-01.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_heavy_tsunami_finisher-cell-02.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_heavy_tsunami_finisher-cell-03.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_heavy_tsunami_finisher-cell-04.png",
+        "tiidebiite-artic-pipev3q-20261026-atk_heavy_tsunami_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "reuse-pipev3-verbatim",
+         "gate": {
+          "source": "articulation-pipev3 proof build (gates passed there)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "reuse",
+      "gif": "tiidebiite-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    }
+   }
+  },
+  "batch-c": {
+   "creatures": {
+    "krakenox": {
+     "sets": {
+      "atk_physical_tentacle_lash": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "krakenox-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-00.png",
+        "krakenox-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-01.png",
+        "krakenox-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-02.png",
+        "krakenox-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-03.png",
+        "krakenox-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth (v1 + v2 rule)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_ink_jet": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "krakenox-artic-pipev3q-20261026-atk_special_ink_jet-cell-00.png",
+        "krakenox-artic-pipev3q-20261026-atk_special_ink_jet-cell-01.png",
+        "krakenox-artic-pipev3q-20261026-atk_special_ink_jet-cell-02.png",
+        "krakenox-artic-pipev3q-20261026-atk_special_ink_jet-cell-03.png",
+        "krakenox-artic-pipev3q-20261026-atk_special_ink_jet-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth (v1 + v2 rule)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_abyss_surge": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "krakenox-artic-pipev3q-20261026-atk_signature_abyss_surge-cell-00.png",
+        "krakenox-artic-pipev3q-20261026-atk_signature_abyss_surge-cell-01.png",
+        "krakenox-artic-pipev3q-20261026-atk_signature_abyss_surge-cell-02.png",
+        "krakenox-artic-pipev3q-20261026-atk_signature_abyss_surge-cell-03.png",
+        "krakenox-artic-pipev3q-20261026-atk_signature_abyss_surge-cell-04.png",
+        "krakenox-artic-pipev3q-20261026-atk_signature_abyss_surge-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth (v1 + v2 rule)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_kraken_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "krakenox-artic-pipev3q-20261026-atk_heavy_kraken_crash_finisher-cell-00.png",
+        "krakenox-artic-pipev3q-20261026-atk_heavy_kraken_crash_finisher-cell-01.png",
+        "krakenox-artic-pipev3q-20261026-atk_heavy_kraken_crash_finisher-cell-02.png",
+        "krakenox-artic-pipev3q-20261026-atk_heavy_kraken_crash_finisher-cell-03.png",
+        "krakenox-artic-pipev3q-20261026-atk_heavy_kraken_crash_finisher-cell-04.png",
+        "krakenox-artic-pipev3q-20261026-atk_heavy_kraken_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth (v1 + v2 rule)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no measurable front mouth (v1 + v2 rule)",
+      "gif": "krakenox-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "mythar": {
+     "sets": {
+      "atk_physical_star_pounce": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "mythar-artic-pipev3q-20261026-atk_physical_star_pounce-cell-00.png",
+        "mythar-artic-pipev3q-20261026-atk_physical_star_pounce-cell-01.png",
+        "mythar-artic-pipev3q-20261026-atk_physical_star_pounce-cell-02.png",
+        "mythar-artic-pipev3q-20261026-atk_physical_star_pounce-cell-03.png",
+        "mythar-artic-pipev3q-20261026-atk_physical_star_pounce-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 193,
+          "bbox": [
+           31,
+           25,
+           21,
+           12
+          ],
+          "fill_ratio": 0.766,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          40.9,
+          30.6
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_star_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "mythar-artic-pipev3q-20261026-atk_special_star_shot-cell-00.png",
+        "mythar-artic-pipev3q-20261026-atk_special_star_shot-cell-01.png",
+        "mythar-artic-pipev3q-20261026-atk_special_star_shot-cell-02.png",
+        "mythar-artic-pipev3q-20261026-atk_special_star_shot-cell-03.png",
+        "mythar-artic-pipev3q-20261026-atk_special_star_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 111,
+          "bbox": [
+           18,
+           17,
+           16,
+           9
+          ],
+          "fill_ratio": 0.771,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          25.5,
+          21.5
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_orbit_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "mythar-artic-pipev3q-20261026-atk_signature_orbit_barrage-cell-00.png",
+        "mythar-artic-pipev3q-20261026-atk_signature_orbit_barrage-cell-01.png",
+        "mythar-artic-pipev3q-20261026-atk_signature_orbit_barrage-cell-02.png",
+        "mythar-artic-pipev3q-20261026-atk_signature_orbit_barrage-cell-03.png",
+        "mythar-artic-pipev3q-20261026-atk_signature_orbit_barrage-cell-04.png",
+        "mythar-artic-pipev3q-20261026-atk_signature_orbit_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 207,
+          "bbox": [
+           17,
+           18,
+           20,
+           14
+          ],
+          "fill_ratio": 0.739,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          26.4,
+          25.1
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_nova_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "mythar-artic-pipev3q-20261026-atk_heavy_nova_crash_finisher-cell-00.png",
+        "mythar-artic-pipev3q-20261026-atk_heavy_nova_crash_finisher-cell-01.png",
+        "mythar-artic-pipev3q-20261026-atk_heavy_nova_crash_finisher-cell-02.png",
+        "mythar-artic-pipev3q-20261026-atk_heavy_nova_crash_finisher-cell-03.png",
+        "mythar-artic-pipev3q-20261026-atk_heavy_nova_crash_finisher-cell-04.png",
+        "mythar-artic-pipev3q-20261026-atk_heavy_nova_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 144,
+          "bbox": [
+           26,
+           27,
+           20,
+           9
+          ],
+          "fill_ratio": 0.8,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          35.4,
+          31.7
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       31.5,
+       27.5
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "mythar-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "pebblefist": {
+     "sets": {
+      "atk_physical_rock_punch": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "pebblefist-artic-pipev3q-20261026-atk_physical_rock_punch-cell-00.png",
+        "pebblefist-artic-pipev3q-20261026-atk_physical_rock_punch-cell-01.png",
+        "pebblefist-artic-pipev3q-20261026-atk_physical_rock_punch-cell-02.png",
+        "pebblefist-artic-pipev3q-20261026-atk_physical_rock_punch-cell-03.png",
+        "pebblefist-artic-pipev3q-20261026-atk_physical_rock_punch-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth (v1 + v2 rule)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_pebble_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "pebblefist-artic-pipev3q-20261026-atk_special_pebble_shot-cell-00.png",
+        "pebblefist-artic-pipev3q-20261026-atk_special_pebble_shot-cell-01.png",
+        "pebblefist-artic-pipev3q-20261026-atk_special_pebble_shot-cell-02.png",
+        "pebblefist-artic-pipev3q-20261026-atk_special_pebble_shot-cell-03.png",
+        "pebblefist-artic-pipev3q-20261026-atk_special_pebble_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth (v1 + v2 rule)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_boulder_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "pebblefist-artic-pipev3q-20261026-atk_signature_boulder_barrage-cell-00.png",
+        "pebblefist-artic-pipev3q-20261026-atk_signature_boulder_barrage-cell-01.png",
+        "pebblefist-artic-pipev3q-20261026-atk_signature_boulder_barrage-cell-02.png",
+        "pebblefist-artic-pipev3q-20261026-atk_signature_boulder_barrage-cell-03.png",
+        "pebblefist-artic-pipev3q-20261026-atk_signature_boulder_barrage-cell-04.png",
+        "pebblefist-artic-pipev3q-20261026-atk_signature_boulder_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth (v1 + v2 rule)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_avalanche_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "pebblefist-artic-pipev3q-20261026-atk_heavy_avalanche_finisher-cell-00.png",
+        "pebblefist-artic-pipev3q-20261026-atk_heavy_avalanche_finisher-cell-01.png",
+        "pebblefist-artic-pipev3q-20261026-atk_heavy_avalanche_finisher-cell-02.png",
+        "pebblefist-artic-pipev3q-20261026-atk_heavy_avalanche_finisher-cell-03.png",
+        "pebblefist-artic-pipev3q-20261026-atk_heavy_avalanche_finisher-cell-04.png",
+        "pebblefist-artic-pipev3q-20261026-atk_heavy_avalanche_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth (v1 + v2 rule)"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no measurable front mouth (v1 + v2 rule)",
+      "gif": "pebblefist-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "ashemit": {
+     "sets": {
+      "atk_physical_ash_charge": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-00.png",
+        "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-01.png",
+        "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-02.png",
+        "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-03.png",
+        "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 195,
+          "bbox": [
+           24,
+           25,
+           21,
+           12
+          ],
+          "fill_ratio": 0.774,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          34.0,
+          30.6
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_ember_spray": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-00.png",
+        "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-01.png",
+        "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-02.png",
+        "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-03.png",
+        "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 112,
+          "bbox": [
+           13,
+           17,
+           16,
+           9
+          ],
+          "fill_ratio": 0.778,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          20.3,
+          21.5
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_flame_tail_sweep": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-00.png",
+        "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-01.png",
+        "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-02.png",
+        "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-03.png",
+        "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-04.png",
+        "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 201,
+          "bbox": [
+           11,
+           18,
+           20,
+           14
+          ],
+          "fill_ratio": 0.718,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          20.1,
+          25.1
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_inferno_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-00.png",
+        "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-01.png",
+        "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-02.png",
+        "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-03.png",
+        "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-04.png",
+        "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 130,
+          "bbox": [
+           19,
+           27,
+           19,
+           9
+          ],
+          "fill_ratio": 0.76,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          28.2,
+          31.7
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       26,
+       27.5
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "ashemit-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "dorowani": {
+     "sets": {
+      "atk_physical_glide_ram": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "dorowani-artic-pipev3q-20261026-atk_physical_glide_ram-cell-00.png",
+        "dorowani-artic-pipev3q-20261026-atk_physical_glide_ram-cell-01.png",
+        "dorowani-artic-pipev3q-20261026-atk_physical_glide_ram-cell-02.png",
+        "dorowani-artic-pipev3q-20261026-atk_physical_glide_ram-cell-03.png",
+        "dorowani-artic-pipev3q-20261026-atk_physical_glide_ram-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no distinct mouth line on front cell; old (31,24) sits on plain snout"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_spray_jet": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "dorowani-artic-pipev3q-20261026-atk_special_spray_jet-cell-00.png",
+        "dorowani-artic-pipev3q-20261026-atk_special_spray_jet-cell-01.png",
+        "dorowani-artic-pipev3q-20261026-atk_special_spray_jet-cell-02.png",
+        "dorowani-artic-pipev3q-20261026-atk_special_spray_jet-cell-03.png",
+        "dorowani-artic-pipev3q-20261026-atk_special_spray_jet-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no distinct mouth line on front cell; old (31,24) sits on plain snout"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_wave_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "dorowani-artic-pipev3q-20261026-atk_signature_wave_barrage-cell-00.png",
+        "dorowani-artic-pipev3q-20261026-atk_signature_wave_barrage-cell-01.png",
+        "dorowani-artic-pipev3q-20261026-atk_signature_wave_barrage-cell-02.png",
+        "dorowani-artic-pipev3q-20261026-atk_signature_wave_barrage-cell-03.png",
+        "dorowani-artic-pipev3q-20261026-atk_signature_wave_barrage-cell-04.png",
+        "dorowani-artic-pipev3q-20261026-atk_signature_wave_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no distinct mouth line on front cell; old (31,24) sits on plain snout"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_deluge_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "dorowani-artic-pipev3q-20261026-atk_heavy_deluge_finisher-cell-00.png",
+        "dorowani-artic-pipev3q-20261026-atk_heavy_deluge_finisher-cell-01.png",
+        "dorowani-artic-pipev3q-20261026-atk_heavy_deluge_finisher-cell-02.png",
+        "dorowani-artic-pipev3q-20261026-atk_heavy_deluge_finisher-cell-03.png",
+        "dorowani-artic-pipev3q-20261026-atk_heavy_deluge_finisher-cell-04.png",
+        "dorowani-artic-pipev3q-20261026-atk_heavy_deluge_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no distinct mouth line on front cell; old (31,24) sits on plain snout"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no distinct mouth line on front cell; old (31,24) sits on plain snout",
+      "gif": "dorowani-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "floatcalf": {
+     "sets": {
+      "atk_physical_float_ram": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "floatcalf-artic-pipev3q-20261026-atk_physical_float_ram-cell-00.png",
+        "floatcalf-artic-pipev3q-20261026-atk_physical_float_ram-cell-01.png",
+        "floatcalf-artic-pipev3q-20261026-atk_physical_float_ram-cell-02.png",
+        "floatcalf-artic-pipev3q-20261026-atk_physical_float_ram-cell-03.png",
+        "floatcalf-artic-pipev3q-20261026-atk_physical_float_ram-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 150,
+          "bbox": [
+           31,
+           26,
+           21,
+           10
+          ],
+          "fill_ratio": 0.714,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          40.9,
+          29.9
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_prism_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "floatcalf-artic-pipev3q-20261026-atk_special_prism_shot-cell-00.png",
+        "floatcalf-artic-pipev3q-20261026-atk_special_prism_shot-cell-01.png",
+        "floatcalf-artic-pipev3q-20261026-atk_special_prism_shot-cell-02.png",
+        "floatcalf-artic-pipev3q-20261026-atk_special_prism_shot-cell-03.png",
+        "floatcalf-artic-pipev3q-20261026-atk_special_prism_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 93,
+          "bbox": [
+           18,
+           18,
+           16,
+           7
+          ],
+          "fill_ratio": 0.83,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          25.5,
+          20.5
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_sky_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "floatcalf-artic-pipev3q-20261026-atk_signature_sky_barrage-cell-00.png",
+        "floatcalf-artic-pipev3q-20261026-atk_signature_sky_barrage-cell-01.png",
+        "floatcalf-artic-pipev3q-20261026-atk_signature_sky_barrage-cell-02.png",
+        "floatcalf-artic-pipev3q-20261026-atk_signature_sky_barrage-cell-03.png",
+        "floatcalf-artic-pipev3q-20261026-atk_signature_sky_barrage-cell-04.png",
+        "floatcalf-artic-pipev3q-20261026-atk_signature_sky_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 157,
+          "bbox": [
+           17,
+           20,
+           20,
+           11
+          ],
+          "fill_ratio": 0.714,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          26.4,
+          24.2
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_cloud_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "floatcalf-artic-pipev3q-20261026-atk_heavy_cloud_crash_finisher-cell-00.png",
+        "floatcalf-artic-pipev3q-20261026-atk_heavy_cloud_crash_finisher-cell-01.png",
+        "floatcalf-artic-pipev3q-20261026-atk_heavy_cloud_crash_finisher-cell-02.png",
+        "floatcalf-artic-pipev3q-20261026-atk_heavy_cloud_crash_finisher-cell-03.png",
+        "floatcalf-artic-pipev3q-20261026-atk_heavy_cloud_crash_finisher-cell-04.png",
+        "floatcalf-artic-pipev3q-20261026-atk_heavy_cloud_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "base-gate-failed",
+         "gate": {
+          "changed": 111,
+          "bbox": [
+           26,
+           29,
+           20,
+           6
+          ],
+          "fill_ratio": 0.925,
+          "inside_mask_dil2": true,
+          "off_silhouette": false,
+          "pre_ok": true
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       31.5,
+       26.5
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "floatcalf-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 3
+    },
+    "gabu": {
+     "sets": {
+      "atk_physical_forest_lunge": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "gabu-artic-pipev3q-20261026-atk_physical_forest_lunge-cell-00.png",
+        "gabu-artic-pipev3q-20261026-atk_physical_forest_lunge-cell-01.png",
+        "gabu-artic-pipev3q-20261026-atk_physical_forest_lunge-cell-02.png",
+        "gabu-artic-pipev3q-20261026-atk_physical_forest_lunge-cell-03.png",
+        "gabu-artic-pipev3q-20261026-atk_physical_forest_lunge-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 201,
+          "bbox": [
+           32,
+           26,
+           20,
+           12
+          ],
+          "fill_ratio": 0.838,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          41.5,
+          31.8
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_leaf_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "gabu-artic-pipev3q-20261026-atk_special_leaf_shot-cell-00.png",
+        "gabu-artic-pipev3q-20261026-atk_special_leaf_shot-cell-01.png",
+        "gabu-artic-pipev3q-20261026-atk_special_leaf_shot-cell-02.png",
+        "gabu-artic-pipev3q-20261026-atk_special_leaf_shot-cell-03.png",
+        "gabu-artic-pipev3q-20261026-atk_special_leaf_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 119,
+          "bbox": [
+           19,
+           18,
+           15,
+           10
+          ],
+          "fill_ratio": 0.793,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          26.0,
+          23.0
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_canopy_burst": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "gabu-artic-pipev3q-20261026-atk_signature_canopy_burst-cell-00.png",
+        "gabu-artic-pipev3q-20261026-atk_signature_canopy_burst-cell-01.png",
+        "gabu-artic-pipev3q-20261026-atk_signature_canopy_burst-cell-02.png",
+        "gabu-artic-pipev3q-20261026-atk_signature_canopy_burst-cell-03.png",
+        "gabu-artic-pipev3q-20261026-atk_signature_canopy_burst-cell-04.png",
+        "gabu-artic-pipev3q-20261026-atk_signature_canopy_burst-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 211,
+          "bbox": [
+           17,
+           20,
+           20,
+           13
+          ],
+          "fill_ratio": 0.812,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          27.0,
+          26.5
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_timber_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "gabu-artic-pipev3q-20261026-atk_heavy_timber_finisher-cell-00.png",
+        "gabu-artic-pipev3q-20261026-atk_heavy_timber_finisher-cell-01.png",
+        "gabu-artic-pipev3q-20261026-atk_heavy_timber_finisher-cell-02.png",
+        "gabu-artic-pipev3q-20261026-atk_heavy_timber_finisher-cell-03.png",
+        "gabu-artic-pipev3q-20261026-atk_heavy_timber_finisher-cell-04.png",
+        "gabu-artic-pipev3q-20261026-atk_heavy_timber_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 139,
+          "bbox": [
+           27,
+           28,
+           20,
+           9
+          ],
+          "fill_ratio": 0.772,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          36.0,
+          32.8
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       32,
+       29
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "gabu-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "inklet": {
+     "sets": {
+      "atk_physical_ink_lash": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "inklet-artic-pipev3q-20261026-atk_physical_ink_lash-cell-00.png",
+        "inklet-artic-pipev3q-20261026-atk_physical_ink_lash-cell-01.png",
+        "inklet-artic-pipev3q-20261026-atk_physical_ink_lash-cell-02.png",
+        "inklet-artic-pipev3q-20261026-atk_physical_ink_lash-cell-03.png",
+        "inklet-artic-pipev3q-20261026-atk_physical_ink_lash-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth; mouth on underside, not front"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_ink_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "inklet-artic-pipev3q-20261026-atk_special_ink_shot-cell-00.png",
+        "inklet-artic-pipev3q-20261026-atk_special_ink_shot-cell-01.png",
+        "inklet-artic-pipev3q-20261026-atk_special_ink_shot-cell-02.png",
+        "inklet-artic-pipev3q-20261026-atk_special_ink_shot-cell-03.png",
+        "inklet-artic-pipev3q-20261026-atk_special_ink_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth; mouth on underside, not front"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_abyss_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "inklet-artic-pipev3q-20261026-atk_signature_abyss_barrage-cell-00.png",
+        "inklet-artic-pipev3q-20261026-atk_signature_abyss_barrage-cell-01.png",
+        "inklet-artic-pipev3q-20261026-atk_signature_abyss_barrage-cell-02.png",
+        "inklet-artic-pipev3q-20261026-atk_signature_abyss_barrage-cell-03.png",
+        "inklet-artic-pipev3q-20261026-atk_signature_abyss_barrage-cell-04.png",
+        "inklet-artic-pipev3q-20261026-atk_signature_abyss_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth; mouth on underside, not front"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_ink_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "inklet-artic-pipev3q-20261026-atk_heavy_ink_crash_finisher-cell-00.png",
+        "inklet-artic-pipev3q-20261026-atk_heavy_ink_crash_finisher-cell-01.png",
+        "inklet-artic-pipev3q-20261026-atk_heavy_ink_crash_finisher-cell-02.png",
+        "inklet-artic-pipev3q-20261026-atk_heavy_ink_crash_finisher-cell-03.png",
+        "inklet-artic-pipev3q-20261026-atk_heavy_ink_crash_finisher-cell-04.png",
+        "inklet-artic-pipev3q-20261026-atk_heavy_ink_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no measurable front mouth; mouth on underside, not front"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no measurable front mouth; mouth on underside, not front",
+      "gif": "inklet-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    }
+   }
+  },
+  "batch-d": {
+   "creatures": {
+    "squirmite": {
+     "sets": {
+      "atk_physical_coil_lunge": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "squirmite-artic-pipev3q-20261026-atk_physical_coil_lunge-cell-00.png",
+        "squirmite-artic-pipev3q-20261026-atk_physical_coil_lunge-cell-01.png",
+        "squirmite-artic-pipev3q-20261026-atk_physical_coil_lunge-cell-02.png",
+        "squirmite-artic-pipev3q-20261026-atk_physical_coil_lunge-cell-03.png",
+        "squirmite-artic-pipev3q-20261026-atk_physical_coil_lunge-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_sprout_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "squirmite-artic-pipev3q-20261026-atk_special_sprout_shot-cell-00.png",
+        "squirmite-artic-pipev3q-20261026-atk_special_sprout_shot-cell-01.png",
+        "squirmite-artic-pipev3q-20261026-atk_special_sprout_shot-cell-02.png",
+        "squirmite-artic-pipev3q-20261026-atk_special_sprout_shot-cell-03.png",
+        "squirmite-artic-pipev3q-20261026-atk_special_sprout_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_verdant_burst": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "squirmite-artic-pipev3q-20261026-atk_signature_verdant_burst-cell-00.png",
+        "squirmite-artic-pipev3q-20261026-atk_signature_verdant_burst-cell-01.png",
+        "squirmite-artic-pipev3q-20261026-atk_signature_verdant_burst-cell-02.png",
+        "squirmite-artic-pipev3q-20261026-atk_signature_verdant_burst-cell-03.png",
+        "squirmite-artic-pipev3q-20261026-atk_signature_verdant_burst-cell-04.png",
+        "squirmite-artic-pipev3q-20261026-atk_signature_verdant_burst-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_overrun_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "squirmite-artic-pipev3q-20261026-atk_heavy_overrun_finisher-cell-00.png",
+        "squirmite-artic-pipev3q-20261026-atk_heavy_overrun_finisher-cell-01.png",
+        "squirmite-artic-pipev3q-20261026-atk_heavy_overrun_finisher-cell-02.png",
+        "squirmite-artic-pipev3q-20261026-atk_heavy_overrun_finisher-cell-03.png",
+        "squirmite-artic-pipev3q-20261026-atk_heavy_overrun_finisher-cell-04.png",
+        "squirmite-artic-pipev3q-20261026-atk_heavy_overrun_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no mouth rule",
+      "gif": "squirmite-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "stormtalon": {
+     "sets": {
+      "atk_physical_talon_dive": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "stormtalon-artic-pipev3q-20261026-atk_physical_talon_dive-cell-00.png",
+        "stormtalon-artic-pipev3q-20261026-atk_physical_talon_dive-cell-01.png",
+        "stormtalon-artic-pipev3q-20261026-atk_physical_talon_dive-cell-02.png",
+        "stormtalon-artic-pipev3q-20261026-atk_physical_talon_dive-cell-03.png",
+        "stormtalon-artic-pipev3q-20261026-atk_physical_talon_dive-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_storm_blast": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "stormtalon-artic-pipev3q-20261026-atk_special_storm_blast-cell-00.png",
+        "stormtalon-artic-pipev3q-20261026-atk_special_storm_blast-cell-01.png",
+        "stormtalon-artic-pipev3q-20261026-atk_special_storm_blast-cell-02.png",
+        "stormtalon-artic-pipev3q-20261026-atk_special_storm_blast-cell-03.png",
+        "stormtalon-artic-pipev3q-20261026-atk_special_storm_blast-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_tempest_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "stormtalon-artic-pipev3q-20261026-atk_signature_tempest_barrage-cell-00.png",
+        "stormtalon-artic-pipev3q-20261026-atk_signature_tempest_barrage-cell-01.png",
+        "stormtalon-artic-pipev3q-20261026-atk_signature_tempest_barrage-cell-02.png",
+        "stormtalon-artic-pipev3q-20261026-atk_signature_tempest_barrage-cell-03.png",
+        "stormtalon-artic-pipev3q-20261026-atk_signature_tempest_barrage-cell-04.png",
+        "stormtalon-artic-pipev3q-20261026-atk_signature_tempest_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_thunder_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "stormtalon-artic-pipev3q-20261026-atk_heavy_thunder_crash_finisher-cell-00.png",
+        "stormtalon-artic-pipev3q-20261026-atk_heavy_thunder_crash_finisher-cell-01.png",
+        "stormtalon-artic-pipev3q-20261026-atk_heavy_thunder_crash_finisher-cell-02.png",
+        "stormtalon-artic-pipev3q-20261026-atk_heavy_thunder_crash_finisher-cell-03.png",
+        "stormtalon-artic-pipev3q-20261026-atk_heavy_thunder_crash_finisher-cell-04.png",
+        "stormtalon-artic-pipev3q-20261026-atk_heavy_thunder_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no mouth rule",
+      "gif": "stormtalon-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "strikechamp": {
+     "sets": {
+      "atk_physical_champ_punch": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "strikechamp-artic-pipev3q-20261026-atk_physical_champ_punch-cell-00.png",
+        "strikechamp-artic-pipev3q-20261026-atk_physical_champ_punch-cell-01.png",
+        "strikechamp-artic-pipev3q-20261026-atk_physical_champ_punch-cell-02.png",
+        "strikechamp-artic-pipev3q-20261026-atk_physical_champ_punch-cell-03.png",
+        "strikechamp-artic-pipev3q-20261026-atk_physical_champ_punch-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_power_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "strikechamp-artic-pipev3q-20261026-atk_special_power_shot-cell-00.png",
+        "strikechamp-artic-pipev3q-20261026-atk_special_power_shot-cell-01.png",
+        "strikechamp-artic-pipev3q-20261026-atk_special_power_shot-cell-02.png",
+        "strikechamp-artic-pipev3q-20261026-atk_special_power_shot-cell-03.png",
+        "strikechamp-artic-pipev3q-20261026-atk_special_power_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_champ_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "strikechamp-artic-pipev3q-20261026-atk_signature_champ_barrage-cell-00.png",
+        "strikechamp-artic-pipev3q-20261026-atk_signature_champ_barrage-cell-01.png",
+        "strikechamp-artic-pipev3q-20261026-atk_signature_champ_barrage-cell-02.png",
+        "strikechamp-artic-pipev3q-20261026-atk_signature_champ_barrage-cell-03.png",
+        "strikechamp-artic-pipev3q-20261026-atk_signature_champ_barrage-cell-04.png",
+        "strikechamp-artic-pipev3q-20261026-atk_signature_champ_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_knockout_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "strikechamp-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-00.png",
+        "strikechamp-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-01.png",
+        "strikechamp-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-02.png",
+        "strikechamp-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-03.png",
+        "strikechamp-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-04.png",
+        "strikechamp-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no mouth rule",
+      "gif": "strikechamp-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "strikechamp_unsuited": {
+     "sets": {
+      "atk_physical_bare_punch": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_physical_bare_punch-cell-00.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_physical_bare_punch-cell-01.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_physical_bare_punch-cell-02.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_physical_bare_punch-cell-03.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_physical_bare_punch-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 179,
+          "bbox": [
+           32,
+           17,
+           20,
+           13
+          ],
+          "fill_ratio": 0.688,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          41.5,
+          22.8
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_bare_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_special_bare_shot-cell-00.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_special_bare_shot-cell-01.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_special_bare_shot-cell-02.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_special_bare_shot-cell-03.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_special_bare_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 108,
+          "bbox": [
+           19,
+           6,
+           15,
+           10
+          ],
+          "fill_ratio": 0.72,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          26.0,
+          11.0
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_bare_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_signature_bare_barrage-cell-00.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_signature_bare_barrage-cell-01.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_signature_bare_barrage-cell-02.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_signature_bare_barrage-cell-03.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_signature_bare_barrage-cell-04.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_signature_bare_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 172,
+          "bbox": [
+           18,
+           9,
+           19,
+           15
+          ],
+          "fill_ratio": 0.604,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          27.0,
+          15.7
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_knockout_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-00.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-01.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-02.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-03.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-04.png",
+        "strikechamp_unsuited-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 122,
+          "bbox": [
+           27,
+           20,
+           19,
+           9
+          ],
+          "fill_ratio": 0.713,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          36.0,
+          24.2
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       32,
+       17
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "strikechamp_unsuited-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "strikechamp_unsuited_full": {
+     "sets": {
+      "atk_physical_suit_punch": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_physical_suit_punch-cell-00.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_physical_suit_punch-cell-01.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_physical_suit_punch-cell-02.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_physical_suit_punch-cell-03.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_physical_suit_punch-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 188,
+          "bbox": [
+           29,
+           18,
+           20,
+           12
+          ],
+          "fill_ratio": 0.783,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          39.0,
+          23.5
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_suit_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_special_suit_shot-cell-00.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_special_suit_shot-cell-01.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_special_suit_shot-cell-02.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_special_suit_shot-cell-03.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_special_suit_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 119,
+          "bbox": [
+           17,
+           7,
+           15,
+           10
+          ],
+          "fill_ratio": 0.793,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          24.1,
+          12.0
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_suit_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_signature_suit_barrage-cell-00.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_signature_suit_barrage-cell-01.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_signature_suit_barrage-cell-02.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_signature_suit_barrage-cell-03.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_signature_suit_barrage-cell-04.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_signature_suit_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 188,
+          "bbox": [
+           16,
+           10,
+           19,
+           14
+          ],
+          "fill_ratio": 0.707,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          24.7,
+          16.6
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_knockout_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-00.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-01.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-02.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-03.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-04.png",
+        "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 127,
+          "bbox": [
+           24,
+           21,
+           19,
+           9
+          ],
+          "fill_ratio": 0.743,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          33.4,
+          24.9
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       30,
+       18
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "strikechamp_unsuited_full-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "terradog": {
+     "sets": {
+      "atk_physical_terra_charge": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "terradog-artic-pipev3q-20261026-atk_physical_terra_charge-cell-00.png",
+        "terradog-artic-pipev3q-20261026-atk_physical_terra_charge-cell-01.png",
+        "terradog-artic-pipev3q-20261026-atk_physical_terra_charge-cell-02.png",
+        "terradog-artic-pipev3q-20261026-atk_physical_terra_charge-cell-03.png",
+        "terradog-artic-pipev3q-20261026-atk_physical_terra_charge-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_rock_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "terradog-artic-pipev3q-20261026-atk_special_rock_shot-cell-00.png",
+        "terradog-artic-pipev3q-20261026-atk_special_rock_shot-cell-01.png",
+        "terradog-artic-pipev3q-20261026-atk_special_rock_shot-cell-02.png",
+        "terradog-artic-pipev3q-20261026-atk_special_rock_shot-cell-03.png",
+        "terradog-artic-pipev3q-20261026-atk_special_rock_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_terra_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "terradog-artic-pipev3q-20261026-atk_signature_terra_barrage-cell-00.png",
+        "terradog-artic-pipev3q-20261026-atk_signature_terra_barrage-cell-01.png",
+        "terradog-artic-pipev3q-20261026-atk_signature_terra_barrage-cell-02.png",
+        "terradog-artic-pipev3q-20261026-atk_signature_terra_barrage-cell-03.png",
+        "terradog-artic-pipev3q-20261026-atk_signature_terra_barrage-cell-04.png",
+        "terradog-artic-pipev3q-20261026-atk_signature_terra_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_quake_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "terradog-artic-pipev3q-20261026-atk_heavy_quake_finisher-cell-00.png",
+        "terradog-artic-pipev3q-20261026-atk_heavy_quake_finisher-cell-01.png",
+        "terradog-artic-pipev3q-20261026-atk_heavy_quake_finisher-cell-02.png",
+        "terradog-artic-pipev3q-20261026-atk_heavy_quake_finisher-cell-03.png",
+        "terradog-artic-pipev3q-20261026-atk_heavy_quake_finisher-cell-04.png",
+        "terradog-artic-pipev3q-20261026-atk_heavy_quake_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no mouth rule",
+      "gif": "terradog-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "toxitacle": {
+     "sets": {
+      "atk_physical_tentacle_lash": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "toxitacle-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-00.png",
+        "toxitacle-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-01.png",
+        "toxitacle-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-02.png",
+        "toxitacle-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-03.png",
+        "toxitacle-artic-pipev3q-20261026-atk_physical_tentacle_lash-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_toxin_jet": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "toxitacle-artic-pipev3q-20261026-atk_special_toxin_jet-cell-00.png",
+        "toxitacle-artic-pipev3q-20261026-atk_special_toxin_jet-cell-01.png",
+        "toxitacle-artic-pipev3q-20261026-atk_special_toxin_jet-cell-02.png",
+        "toxitacle-artic-pipev3q-20261026-atk_special_toxin_jet-cell-03.png",
+        "toxitacle-artic-pipev3q-20261026-atk_special_toxin_jet-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_venom_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "toxitacle-artic-pipev3q-20261026-atk_signature_venom_barrage-cell-00.png",
+        "toxitacle-artic-pipev3q-20261026-atk_signature_venom_barrage-cell-01.png",
+        "toxitacle-artic-pipev3q-20261026-atk_signature_venom_barrage-cell-02.png",
+        "toxitacle-artic-pipev3q-20261026-atk_signature_venom_barrage-cell-03.png",
+        "toxitacle-artic-pipev3q-20261026-atk_signature_venom_barrage-cell-04.png",
+        "toxitacle-artic-pipev3q-20261026-atk_signature_venom_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_toxic_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "toxitacle-artic-pipev3q-20261026-atk_heavy_toxic_crash_finisher-cell-00.png",
+        "toxitacle-artic-pipev3q-20261026-atk_heavy_toxic_crash_finisher-cell-01.png",
+        "toxitacle-artic-pipev3q-20261026-atk_heavy_toxic_crash_finisher-cell-02.png",
+        "toxitacle-artic-pipev3q-20261026-atk_heavy_toxic_crash_finisher-cell-03.png",
+        "toxitacle-artic-pipev3q-20261026-atk_heavy_toxic_crash_finisher-cell-04.png",
+        "toxitacle-artic-pipev3q-20261026-atk_heavy_toxic_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no mouth rule",
+      "gif": "toxitacle-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "yogiferno": {
+     "sets": {
+      "atk_physical_yogi_charge": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "yogiferno-artic-pipev3q-20261026-atk_physical_yogi_charge-cell-00.png",
+        "yogiferno-artic-pipev3q-20261026-atk_physical_yogi_charge-cell-01.png",
+        "yogiferno-artic-pipev3q-20261026-atk_physical_yogi_charge-cell-02.png",
+        "yogiferno-artic-pipev3q-20261026-atk_physical_yogi_charge-cell-03.png",
+        "yogiferno-artic-pipev3q-20261026-atk_physical_yogi_charge-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_flame_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "yogiferno-artic-pipev3q-20261026-atk_special_flame_shot-cell-00.png",
+        "yogiferno-artic-pipev3q-20261026-atk_special_flame_shot-cell-01.png",
+        "yogiferno-artic-pipev3q-20261026-atk_special_flame_shot-cell-02.png",
+        "yogiferno-artic-pipev3q-20261026-atk_special_flame_shot-cell-03.png",
+        "yogiferno-artic-pipev3q-20261026-atk_special_flame_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_inferno_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "yogiferno-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-00.png",
+        "yogiferno-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-01.png",
+        "yogiferno-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-02.png",
+        "yogiferno-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-03.png",
+        "yogiferno-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-04.png",
+        "yogiferno-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_blaze_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "yogiferno-artic-pipev3q-20261026-atk_heavy_blaze_finisher-cell-00.png",
+        "yogiferno-artic-pipev3q-20261026-atk_heavy_blaze_finisher-cell-01.png",
+        "yogiferno-artic-pipev3q-20261026-atk_heavy_blaze_finisher-cell-02.png",
+        "yogiferno-artic-pipev3q-20261026-atk_heavy_blaze_finisher-cell-03.png",
+        "yogiferno-artic-pipev3q-20261026-atk_heavy_blaze_finisher-cell-04.png",
+        "yogiferno-artic-pipev3q-20261026-atk_heavy_blaze_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no mouth rule",
+      "gif": "yogiferno-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    },
+    "zephling": {
+     "sets": {
+      "atk_physical_zephyr_dive": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "zephling-artic-pipev3q-20261026-atk_physical_zephyr_dive-cell-00.png",
+        "zephling-artic-pipev3q-20261026-atk_physical_zephyr_dive-cell-01.png",
+        "zephling-artic-pipev3q-20261026-atk_physical_zephyr_dive-cell-02.png",
+        "zephling-artic-pipev3q-20261026-atk_physical_zephyr_dive-cell-03.png",
+        "zephling-artic-pipev3q-20261026-atk_physical_zephyr_dive-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_gust_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "zephling-artic-pipev3q-20261026-atk_special_gust_shot-cell-00.png",
+        "zephling-artic-pipev3q-20261026-atk_special_gust_shot-cell-01.png",
+        "zephling-artic-pipev3q-20261026-atk_special_gust_shot-cell-02.png",
+        "zephling-artic-pipev3q-20261026-atk_special_gust_shot-cell-03.png",
+        "zephling-artic-pipev3q-20261026-atk_special_gust_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_cyclone_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "zephling-artic-pipev3q-20261026-atk_signature_cyclone_barrage-cell-00.png",
+        "zephling-artic-pipev3q-20261026-atk_signature_cyclone_barrage-cell-01.png",
+        "zephling-artic-pipev3q-20261026-atk_signature_cyclone_barrage-cell-02.png",
+        "zephling-artic-pipev3q-20261026-atk_signature_cyclone_barrage-cell-03.png",
+        "zephling-artic-pipev3q-20261026-atk_signature_cyclone_barrage-cell-04.png",
+        "zephling-artic-pipev3q-20261026-atk_signature_cyclone_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_tempest_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "zephling-artic-pipev3q-20261026-atk_heavy_tempest_finisher-cell-00.png",
+        "zephling-artic-pipev3q-20261026-atk_heavy_tempest_finisher-cell-01.png",
+        "zephling-artic-pipev3q-20261026-atk_heavy_tempest_finisher-cell-02.png",
+        "zephling-artic-pipev3q-20261026-atk_heavy_tempest_finisher-cell-03.png",
+        "zephling-artic-pipev3q-20261026-atk_heavy_tempest_finisher-cell-04.png",
+        "zephling-artic-pipev3q-20261026-atk_heavy_tempest_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no mouth rule"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no mouth rule",
+      "gif": "zephling-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    }
+   }
+  },
+  "batch-e": {
+   "creatures": {
+    "punchkid": {
+     "sets": {
+      "atk_physical_jab_rush": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-00.png",
+        "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-01.png",
+        "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-02.png",
+        "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-03.png",
+        "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 184,
+          "bbox": [
+           32,
+           20,
+           21,
+           13
+          ],
+          "fill_ratio": 0.674,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          42.1,
+          25.8
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_power_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-00.png",
+        "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-01.png",
+        "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-02.png",
+        "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-03.png",
+        "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grin",
+         "gate": {
+          "changed": 115,
+          "bbox": [
+           19,
+           10,
+           15,
+           10
+          ],
+          "fill_ratio": 0.767,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          26.5,
+          15.0
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_combo_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-00.png",
+        "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-01.png",
+        "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-02.png",
+        "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-03.png",
+        "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-04.png",
+        "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-open-bite",
+         "gate": {
+          "changed": 202,
+          "bbox": [
+           18,
+           12,
+           20,
+           15
+          ],
+          "fill_ratio": 0.673,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          27.6,
+          19.3
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_knockout_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-00.png",
+        "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-01.png",
+        "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-02.png",
+        "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-03.png",
+        "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-04.png",
+        "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "v3-mouth-grimace",
+         "gate": {
+          "changed": 131,
+          "bbox": [
+           27,
+           23,
+           20,
+           9
+          ],
+          "fill_ratio": 0.728,
+          "inside_mask_dil2": true,
+          "off_silhouette": false
+         },
+         "final_mouth": [
+          36.6,
+          27.0
+         ]
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": [
+       32.5,
+       21.0
+      ],
+      "teeth": false,
+      "reason": null,
+      "gif": "punchkid-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 4
+    },
+    "pyromonk": {
+     "sets": {
+      "atk_physical_flame_fist": {
+       "family": "physical",
+       "expression": "open-bite",
+       "files": [
+        "pyromonk-artic-pipev3q-20261026-atk_physical_flame_fist-cell-00.png",
+        "pyromonk-artic-pipev3q-20261026-atk_physical_flame_fist-cell-01.png",
+        "pyromonk-artic-pipev3q-20261026-atk_physical_flame_fist-cell-02.png",
+        "pyromonk-artic-pipev3q-20261026-atk_physical_flame_fist-cell-03.png",
+        "pyromonk-artic-pipev3q-20261026-atk_physical_flame_fist-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no cleanly measurable mouth line; face pattern noise swamps any line"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_special_flame_shot": {
+       "family": "special",
+       "expression": "grin",
+       "files": [
+        "pyromonk-artic-pipev3q-20261026-atk_special_flame_shot-cell-00.png",
+        "pyromonk-artic-pipev3q-20261026-atk_special_flame_shot-cell-01.png",
+        "pyromonk-artic-pipev3q-20261026-atk_special_flame_shot-cell-02.png",
+        "pyromonk-artic-pipev3q-20261026-atk_special_flame_shot-cell-03.png",
+        "pyromonk-artic-pipev3q-20261026-atk_special_flame_shot-cell-04.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no cleanly measurable mouth line; face pattern noise swamps any line"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_signature_inferno_barrage": {
+       "family": "signature",
+       "expression": "open-bite",
+       "files": [
+        "pyromonk-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-00.png",
+        "pyromonk-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-01.png",
+        "pyromonk-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-02.png",
+        "pyromonk-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-03.png",
+        "pyromonk-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-04.png",
+        "pyromonk-artic-pipev3q-20261026-atk_signature_inferno_barrage-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no cleanly measurable mouth line; face pattern noise swamps any line"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      },
+      "atk_heavy_blaze_crash_finisher": {
+       "family": "heavy",
+       "expression": "grimace",
+       "files": [
+        "pyromonk-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-00.png",
+        "pyromonk-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-01.png",
+        "pyromonk-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-02.png",
+        "pyromonk-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-03.png",
+        "pyromonk-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-04.png",
+        "pyromonk-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-05.png"
+       ],
+       "frames": [
+        {
+         "frame": 0,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 1,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 2,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 3,
+         "action": "eyes-only",
+         "gate": {
+          "reason": "no cleanly measurable mouth line; face pattern noise swamps any line"
+         },
+         "final_mouth": null
+        },
+        {
+         "frame": 4,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        },
+        {
+         "frame": 5,
+         "action": "copy-v2eyes",
+         "gate": {},
+         "final_mouth": null
+        }
+       ]
+      }
+     },
+     "mouth": {
+      "source": null,
+      "teeth": false,
+      "reason": "no cleanly measurable mouth line; face pattern noise swamps any line",
+      "gif": "pyromonk-attacks-artic-pipev3q-20261026.gif",
+      "gif_frames": 22
+     },
+     "mouth_applied_sets": 0
+    }
+   }
+  }
+ },
+ "totals": {
+  "cells": 528,
+  "impact": 96,
+  "mouth_applied": 45,
+  "eyes_only_impact": 51,
+  "nonimpact_byte_identical": 432,
+  "nonimpact_total": 432
+ }
+}
