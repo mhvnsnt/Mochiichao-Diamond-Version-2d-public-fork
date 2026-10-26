@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Application, Container, Graphics, Sprite } from 'pixi.js';
-import { getSheetDef, fallbackColorFor, battleSpriteUrl } from '../../lib/spriteSheets';
-import { sheetCellTexture, fullImageTexture } from './pixiSheet';
+import { getSheetDef, fallbackColorFor, battleSpriteUrl, battleCell } from '../../lib/spriteSheets';
+import { sheetCellTextureXY, fullImageTexture } from './pixiSheet';
 import { buildHitTimeline, sampleHitPose } from '../../lib/battleTreatments';
 
 /**
@@ -119,13 +119,17 @@ export default function PixiBattleCanvas({
           sp.height = tw > 1 ? size * (th / tw) : size;
           cont.addChild(sp);
         } else {
+          // Locked-atlas creatures crop their battle cell by (x, y);
+          // legacy 147/148 sheets crop row 0, exactly as before
+          // (battleCell returns { x: frames[view], y: 0 } for them).
           const view = isPlayer ? 'back' : 'front';
+          const cell = battleCell(def, view);
           const key = `${side}-${def.speciesId}-${view}`;
           let sp = spritesRef.current.get(key);
           if (!sp) {
             sp = new Sprite();
             spritesRef.current.set(key, sp);
-            sheetCellTexture(def.sheetUrl, def.frames[view]).then(tex => { sp!.texture = tex; }).catch(() => {});
+            sheetCellTextureXY(def.sheetUrl, cell.x, cell.y).then(tex => { sp!.texture = tex; }).catch(() => {});
           }
           sp.anchor.set(0.5, 1);
           sp.width = size; sp.height = size;
