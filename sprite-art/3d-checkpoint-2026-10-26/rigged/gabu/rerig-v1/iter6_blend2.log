@@ -1,0 +1,11 @@
+verts=1599257 joints=25
+seam verts: 23263 (1.45%)
+  hop 1: 18512 verts
+  hop 2: 17606 verts
+  hop 3: 17797 verts
+protected verts (dominant in ['LeftArm', 'LeftForeArm', 'LeftHand', 'LeftShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightShoulder']): 284938
+blended verts (s>0): 52980
+  iter 1: mean max-weight 0.869
+  iter 2: mean max-weight 0.868
+  iter 3: mean max-weight 0.868
+wrote gabu-iter6-blend2.glb 192926256 bytes
