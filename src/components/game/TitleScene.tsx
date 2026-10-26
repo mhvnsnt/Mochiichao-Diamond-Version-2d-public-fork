@@ -19,8 +19,8 @@ import {
  *   0. painted background (original 1600x900 PNG, when the biome has one)
  *   1. sky background (two-tone gradient band, Pixi-drawn; fallback only)
  *   2. ground band + ground line
- *   3. optional figure sprite (Yogiferno clean cutout only, shipped
- *      in this PR — NO Pokemon creature art, NO placeholder figure)
+ *   3. figure sprite, supplied by the caller (Yogiferno PR #33
+ *      + the other 9 cutouts in this batch — NO Pokemon art)
  *   4. weather / particle layer: snow, rain, leaves, dust, shimmer
  *   5. Yogiferno fire trail (only when figureUrl is set): embers
  *      spawning behind the feet + fading scorch glow on the ground,
@@ -42,8 +42,9 @@ import {
  * blur (12/4, 8/8 on exit), Platinum entry/exit fades (entry
  * black 48 frames, exit delay 10 + white 6 + white-in 6, clear-
  * save black 6, BGM fade 60 frames as a documented duration —
- * no audio is shipped). The other 9/10 title creatures stay GAP:
- * no creature art is invented for them here.
+ * no audio is shipped). All 10/10 title creatures now have
+ * clean cutouts: Yogiferno (PR #33) + the other 9 in this
+ * batch, wired via TitleCreatureFigure. No art is invented here.
  */
 export default function TitleScene({
   biome = 'snow',

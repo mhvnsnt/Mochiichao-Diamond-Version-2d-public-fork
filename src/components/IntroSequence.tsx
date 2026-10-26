@@ -9,6 +9,7 @@ import { frameAccent } from "../lib/gameSettings";
 import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
+import TitleCreatureFigure from "./game/TitleCreatureFigure";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 
@@ -313,7 +314,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           <div className="mt-6 text-center" style={{ color: titleCreature.primary }}>
             <div className="text-sm font-bold tracking-widest">FEATURED: {titleCreature.name}{titleCreature.dex ? ` ${titleCreature.dex}` : ''}</div>
             <div className="text-[11px] mt-1" style={{ color: titleCreature.accent }}>{titleCreature.vibe}</div>
-            <div className="text-[10px] text-gray-500 mt-1">Title creature art: GAP — silhouette art needed</div>
+            <div className="text-[10px] text-gray-500 mt-1">Title creature art: clean cutout wired (10/10)</div>
           </div>
           {titleCreature.name === 'Yogiferno' && (
             <div className="mt-4 w-full max-w-md">
@@ -321,6 +322,14 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                 Yogiferno — {titleVariant === 'snow' ? 'snow walk variant (fire trail on snow)' : 'walk variant'}
               </div>
               <YogifernoTitleWalk variant={titleVariant} />
+            </div>
+          )}
+          {titleCreature.name !== 'Yogiferno' && (
+            <div className="mt-4 w-full max-w-md">
+              <div className="text-center text-[11px] mb-1" style={{ color: titleCreature.accent }}>
+                {titleCreature.name} — clean cutout title figure
+              </div>
+              <TitleCreatureFigure name={titleCreature.name} />
             </div>
           )}
           <div className="mt-10 text-sm font-bold tracking-widest" style={{ animation: 'press-blink 0.75s steps(1) infinite', color: titleCreature.primary }}>
