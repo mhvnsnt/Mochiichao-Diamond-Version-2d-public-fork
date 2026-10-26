@@ -1,0 +1,4778 @@
+{
+ "generatedFrom": "sprite-art/game-ready/*.manifest.locked.json + animation/attack/*.attack.json (Step 1 finish batch) + animation/idle/*.idle.json + animation/hurt/*.hurt.json (local staging, 2026-10-25)",
+ "atlasSourceOnMain": "src/assets/sprite-atlases/<slug>/<slug>_atlas_64_locked.png (PR #30; re-verify live main head before PR)",
+ "note": "front/back/icon coordinates are LIVE on main via the locked atlas PNGs. Attack/hurt/idle cells are LOCAL STAGING ONLY (Step 1 finish batch) until their PR lands; battleIntegration.ts falls back to treatments (flash/recoil/shake/camera) whenever a pending cell is absent, and never invents a cell path. Transform attack frames are NOT atlas cells (cells [] by design); their PNG roles + durations are in attack.frames.",
+ "sets": [
+  {
+   "slug": "aerobeak",
+   "rosterId": "020",
+   "displayName": "aerobeak",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/aerobeak/aerobeak_atlas_64_locked.png",
+    "file": "aerobeak_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "aerobeak_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "aerobeak_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/aerobeak_icon64.png",
+    "sourceCell": 0
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/aerobeak/aerobeak.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "aerobeak_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "aerobeak_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/aerobeak/aerobeak_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/aerobeak/aerobeak.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "aquariios",
+   "rosterId": "003",
+   "displayName": "Aquari-OS",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/aquariios/aquariios_atlas_64_locked.png",
+    "file": "aquariios_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": "0a",
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": null,
+    "inAtlas": true,
+    "file": "aquariios_cell_00a.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 128,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "aquariios_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 10,
+    "x": 320,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "aquariios_cell_10.png",
+    "sourceCell": 10
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/aquariios/aquariios.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "aquariios_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "aquariios_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/aquariios/aquariios_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/aquariios/aquariios.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "ashemit",
+   "rosterId": "044",
+   "displayName": "ashemit",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/ashemit/ashemit_atlas_64_locked.png",
+    "file": "ashemit_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "ashemit_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "ashemit_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/ashemit_icon64.png",
+    "sourceCell": 0
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/ashemit/ashemit.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "ashemit_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "ashemit_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/ashemit/ashemit_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "seated",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/ashemit/ashemit.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "astroleviathan",
+   "rosterId": "025",
+   "displayName": "astroleviathan",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/astroleviathan/astroleviathan_atlas_64_locked.png",
+    "file": "astroleviathan_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "astroleviathan_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "astroleviathan_cell_02.png",
+    "sourceCell": 2
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 15,
+    "x": 192,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "astroleviathan_cell_15.png",
+    "sourceCell": 15
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/astroleviathan/astroleviathan.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "astroleviathan_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "astroleviathan_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/astroleviathan/astroleviathan_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/astroleviathan/astroleviathan.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "chromejaww",
+   "rosterId": "005",
+   "displayName": "Chromedile",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/chromejaww/chromejaww_atlas_64_locked.png",
+    "file": "chromejaww_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "chromejaww_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "chromejaww_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 20,
+    "x": 128,
+    "y": 192,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "chromejaww_cell_20.png",
+    "sourceCell": 20
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/chromejaww/chromejaww.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "chromejaww_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "chromejaww_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/chromejaww/chromejaww_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/chromejaww/chromejaww.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "cocoonode",
+   "rosterId": "017",
+   "displayName": "cocoonode",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/cocoonode/cocoonode_atlas_64_locked.png",
+    "file": "cocoonode_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "cocoonode_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "cocoonode_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 10,
+    "x": 256,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "cocoonode_cell_10.png",
+    "sourceCell": 10
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/cocoonode/cocoonode.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "cocoonode_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "cocoonode_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/cocoonode/cocoonode_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2200,
+    "idleClass": "static_crystal",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/cocoonode/cocoonode.idle.json",
+    "onMain": false
+   },
+   "caveats": [
+    "front/back are judgement calls: faceless by design, front/back indistinguishable by eye; locked as labelled, Mars-overridable (gap doc)"
+   ]
+  },
+  {
+   "slug": "cragarm",
+   "rosterId": "036",
+   "displayName": "cragarm",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/cragarm/cragarm_atlas_64_locked.png",
+    "file": "cragarm_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "cragarm_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "cragarm_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/cragarm_icon64.png",
+    "sourceCell": 0
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/cragarm/cragarm.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "cragarm_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "cragarm_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/cragarm/cragarm_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2800,
+    "idleClass": "heavy_slow",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/cragarm/cragarm.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "dorowani",
+   "rosterId": "147",
+   "displayName": "Dorowani",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/dorowani/dorowani_atlas_64_locked.png",
+    "file": "dorowani_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "dorowani_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": "1a",
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": null,
+    "inAtlas": true,
+    "file": "dorowani_cell_01a.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 11,
+    "x": 0,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "dorowani_cell_11.png",
+    "sourceCell": 11
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/dorowani/dorowani.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "dorowani_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "dorowani_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/dorowani/dorowani_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/dorowani/dorowani.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "dreadtoise",
+   "rosterId": "040",
+   "displayName": "dreadtoise",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/dreadtoise/dreadtoise_atlas_64_locked.png",
+    "file": "dreadtoise_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "dreadtoise_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "dreadtoise_cell_02.png",
+    "sourceCell": 2
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 19,
+    "x": 0,
+    "y": 192,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "dreadtoise_cell_19.png",
+    "sourceCell": 19
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/dreadtoise/dreadtoise.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "dreadtoise_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "dreadtoise_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/dreadtoise/dreadtoise_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2800,
+    "idleClass": "heavy_slow",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/dreadtoise/dreadtoise.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "duneclaw",
+   "rosterId": "008",
+   "displayName": "Duneclaw",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/duneclaw/duneclaw_atlas_64_locked.png",
+    "file": "duneclaw_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "duneclaw_cell_02.png",
+    "sourceCell": 2
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "duneclaw_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "duneclaw_cell_04.png",
+    "sourceCell": 4
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/duneclaw/duneclaw.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "duneclaw_cell_02.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "duneclaw_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/duneclaw/duneclaw_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/duneclaw/duneclaw.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "duskfiend",
+   "rosterId": "043",
+   "displayName": "duskfiend",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/duskfiend/duskfiend_atlas_64_locked.png",
+    "file": "duskfiend_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "duskfiend_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "duskfiend_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 9,
+    "x": 192,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "duskfiend_cell_09.png",
+    "sourceCell": 9
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/duskfiend/duskfiend.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "duskfiend_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "duskfiend_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/duskfiend/duskfiend_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/duskfiend/duskfiend.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "finblade",
+   "rosterId": "022",
+   "displayName": "finblade",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/finblade/finblade_atlas_64_locked.png",
+    "file": "finblade_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "finblade_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "finblade_cell_02.png",
+    "sourceCell": 2
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 10,
+    "x": 256,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "finblade_cell_10.png",
+    "sourceCell": 10
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/finblade/finblade.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "finblade_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "finblade_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/finblade/finblade_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/finblade/finblade.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "floatcalf",
+   "rosterId": "024",
+   "displayName": "floatcalf",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/floatcalf/floatcalf_atlas_64_locked.png",
+    "file": "floatcalf_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "floatcalf_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "floatcalf_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 10,
+    "x": 0,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "floatcalf_cell_10.png",
+    "sourceCell": 10
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/floatcalf/floatcalf.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "floatcalf_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "floatcalf_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/floatcalf/floatcalf_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "float_hover",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/floatcalf/floatcalf.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "gabu",
+   "rosterId": "148",
+   "displayName": "Gabu",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/gabu/gabu_atlas_64_locked.png",
+    "file": "gabu_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "gabu_cell_02.png",
+    "sourceCell": 2
+   },
+   "back": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "gabu_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 7,
+    "x": 64,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "gabu_cell_07.png",
+    "sourceCell": 7
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/gabu/gabu.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "gabu_cell_02.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "gabu_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/gabu/gabu_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/gabu/gabu.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "gearkid",
+   "rosterId": "032",
+   "displayName": "gearkid",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/gearkid/gearkid_atlas_64_locked.png",
+    "file": "gearkid_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "gearkid_cell_02.png",
+    "sourceCell": 2
+   },
+   "back": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "gearkid_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/gearkid_icon64.png",
+    "sourceCell": 2
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/gearkid/gearkid.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "gearkid_cell_02.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "gearkid_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/gearkid/gearkid_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/gearkid/gearkid.idle.json",
+    "onMain": false
+   },
+   "caveats": [
+    "battle_back provisional: cell shows eyes at 64px, closest back candidate; re-verify at sheet resolution before shipping battle (gap doc)"
+   ]
+  },
+  {
+   "slug": "gorokappa",
+   "rosterId": "034",
+   "displayName": "gorokappa",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/gorokappa/gorokappa_atlas_64_locked.png",
+    "file": "gorokappa_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "gorokappa_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "gorokappa_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 8,
+    "x": 128,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "gorokappa_cell_08.png",
+    "sourceCell": 8
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/gorokappa/gorokappa.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "gorokappa_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "gorokappa_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/gorokappa/gorokappa_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2800,
+    "idleClass": "heavy_slow",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/gorokappa/gorokappa.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "inklet",
+   "rosterId": "026",
+   "displayName": "inklet",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/inklet/inklet_atlas_64_locked.png",
+    "file": "inklet_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "inklet_cell_03.png",
+    "sourceCell": 3
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "inklet_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 10,
+    "x": 256,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "inklet_cell_10.png",
+    "sourceCell": 10
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/inklet/inklet.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "inklet_cell_03.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "inklet_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/inklet/inklet_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1600,
+    "idleClass": "small_bouncy",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/inklet/inklet.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "kickmaster",
+   "rosterId": "031",
+   "displayName": "kickmaster",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/kickmaster/kickmaster_atlas_64_locked.png",
+    "file": "kickmaster_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "kickmaster_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "kickmaster_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 17,
+    "x": 320,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "kickmaster_cell_17.png",
+    "sourceCell": 17
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/kickmaster/kickmaster.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "kickmaster_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "kickmaster_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/kickmaster/kickmaster_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/kickmaster/kickmaster.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "kittember",
+   "rosterId": "010",
+   "displayName": "Kittember",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/kittember/kittember_atlas_64_locked.png",
+    "file": "kittember_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "kittember_cell_02.png",
+    "sourceCell": 2
+   },
+   "back": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "kittember_cell_04.png",
+    "sourceCell": 4
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/kittember_icon64.png",
+    "sourceCell": 2
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/kittember/kittember.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "kittember_cell_02.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "kittember_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/kittember/kittember_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/kittember/kittember.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "krakenox",
+   "rosterId": "028",
+   "displayName": "krakenox",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/krakenox/krakenox_atlas_64_locked.png",
+    "file": "krakenox_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": "0a",
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": null,
+    "inAtlas": true,
+    "file": "krakenox_cell_00a.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": "0b",
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": null,
+    "inAtlas": true,
+    "file": "krakenox_cell_00b.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 12,
+    "x": 128,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "krakenox_cell_12.png",
+    "sourceCell": 12
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/krakenox/krakenox.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "krakenox_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "krakenox_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/krakenox/krakenox_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2800,
+    "idleClass": "heavy_slow",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/krakenox/krakenox.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "manticlaw",
+   "rosterId": "012",
+   "displayName": "manticlaw",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/manticlaw/manticlaw_atlas_64_locked.png",
+    "file": "manticlaw_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "manticlaw_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "manticlaw_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 15,
+    "x": 192,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "manticlaw_cell_15.png",
+    "sourceCell": 15
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/manticlaw/manticlaw.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "manticlaw_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "manticlaw_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/manticlaw/manticlaw_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/manticlaw/manticlaw.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "mechapion",
+   "rosterId": "033",
+   "displayName": "mechapion",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/mechapion/mechapion_atlas_64_locked.png",
+    "file": "mechapion_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 1,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mechapion_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 2,
+    "x": 64,
+    "y": 0,
+    "role": "overworld_back",
+    "eyeStatus": "extractor_assigned_spot_checked",
+    "inAtlas": true,
+    "file": "mechapion_cell_02.png",
+    "sourceCell": 2
+   },
+   "backNote": "overworld_back cell designated battle_back per GAME-INTEGRATION-ART-GAP.md QA fallback (ringed cell 0 excluded; clean cell 1 front / clean cell 2 back)",
+   "icon": {
+    "cell": 4,
+    "x": 192,
+    "y": 0,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mechapion_cell_04.png",
+    "sourceCell": 4
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/mechapion/mechapion.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "mechapion_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "mechapion_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/mechapion/mechapion_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/mechapion/mechapion.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "megalochrome",
+   "rosterId": "023",
+   "displayName": "megalochrome",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/megalochrome/megalochrome_atlas_64_locked.png",
+    "file": "megalochrome_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 64
+   },
+   "front": {
+    "cell": 2,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "megalochrome_cell_02.png",
+    "sourceCell": 2
+   },
+   "back": {
+    "cell": 3,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "megalochrome_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/megalochrome_icon64.png",
+    "sourceCell": 2
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/megalochrome/megalochrome.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "megalochrome_cell_02.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "megalochrome_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/megalochrome/megalochrome_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/megalochrome/megalochrome.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "mochii",
+   "rosterId": "001",
+   "displayName": "Mochii",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/mochii/mochii_atlas_64_locked.png",
+    "file": "mochii_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mochii_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mochii_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 18,
+    "x": 0,
+    "y": 192,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mochii_cell_18.png",
+    "sourceCell": 18
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/mochii/mochii.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "mochii_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "mochii_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/mochii/mochii_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1600,
+    "idleClass": "small_bouncy",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/mochii/mochii.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "mothrix",
+   "rosterId": "018",
+   "displayName": "mothrix",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/mothrix/mothrix_atlas_64_locked.png",
+    "file": "mothrix_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mothrix_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mothrix_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 17,
+    "x": 320,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mothrix_cell_17.png",
+    "sourceCell": 17
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/mothrix/mothrix.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "mothrix_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "mothrix_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/mothrix/mothrix_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/mothrix/mothrix.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "mythar",
+   "rosterId": "331",
+   "displayName": "Mythar",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/mythar/mythar_atlas_64_locked.png",
+    "file": "mythar_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mythar_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mythar_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 18,
+    "x": 64,
+    "y": 192,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "mythar_cell_18.png",
+    "sourceCell": 18
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/mythar/mythar.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "mythar_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "mythar_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/mythar/mythar_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/mythar/mythar.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "oblivirex",
+   "rosterId": "009",
+   "displayName": "Oblivirex",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/oblivirex/oblivirex_atlas_64_locked.png",
+    "file": "oblivirex_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "oblivirex_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "oblivirex_cell_02.png",
+    "sourceCell": 2
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "oblivirex_cell_04.png",
+    "sourceCell": 4
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/oblivirex/oblivirex.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "oblivirex_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "oblivirex_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/oblivirex/oblivirex_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2800,
+    "idleClass": "heavy_slow",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/oblivirex/oblivirex.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "pebblefist",
+   "rosterId": "035",
+   "displayName": "pebblefist",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/pebblefist/pebblefist_atlas_64_locked.png",
+    "file": "pebblefist_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pebblefist_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pebblefist_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 12,
+    "x": 0,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pebblefist_cell_12.png",
+    "sourceCell": 12
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/pebblefist/pebblefist.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "pebblefist_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "pebblefist_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/pebblefist/pebblefist_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2800,
+    "idleClass": "heavy_slow",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/pebblefist/pebblefist.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "pixilite",
+   "rosterId": "041",
+   "displayName": "pixilite",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/pixilite/pixilite_atlas_64_locked.png",
+    "file": "pixilite_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pixilite_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pixilite_cell_02.png",
+    "sourceCell": 2
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 11,
+    "x": 256,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pixilite_cell_11.png",
+    "sourceCell": 11
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/pixilite/pixilite.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "pixilite_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "pixilite_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/pixilite/pixilite_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1600,
+    "idleClass": "small_bouncy",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/pixilite/pixilite.idle.json",
+    "onMain": false
+   },
+   "caveats": [
+    "front/back are judgement calls: faceless by design, front/back indistinguishable by eye; locked as labelled, Mars-overridable (gap doc)"
+   ]
+  },
+  {
+   "slug": "punchkid",
+   "rosterId": "029",
+   "displayName": "punchkid",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/punchkid/punchkid_atlas_64_locked.png",
+    "file": "punchkid_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "punchkid_cell_02.png",
+    "sourceCell": 2
+   },
+   "back": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "punchkid_cell_03.png",
+    "sourceCell": 3
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 7,
+    "x": 64,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "punchkid_cell_07.png",
+    "sourceCell": 7
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/punchkid/punchkid.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "punchkid_cell_02.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "punchkid_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/punchkid/punchkid_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/punchkid/punchkid.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "pupbble",
+   "rosterId": "013",
+   "displayName": "pupbble",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/pupbble/pupbble_atlas_64_locked.png",
+    "file": "pupbble_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pupbble_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pupbble_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 20,
+    "x": 128,
+    "y": 192,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pupbble_cell_20.png",
+    "sourceCell": 20
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/pupbble/pupbble.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "pupbble_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "pupbble_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/pupbble/pupbble_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1600,
+    "idleClass": "small_bouncy",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/pupbble/pupbble.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "pyromonk",
+   "rosterId": "045",
+   "displayName": "pyromonk",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/pyromonk/pyromonk_atlas_64_locked.png",
+    "file": "pyromonk_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 320
+   },
+   "front": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pyromonk_cell_04.png",
+    "sourceCell": 4
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pyromonk_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 29,
+    "x": 320,
+    "y": 256,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pyromonk_cell_29.png",
+    "sourceCell": 29
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/pyromonk/pyromonk.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "pyromonk_cell_04.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "pyromonk_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/pyromonk/pyromonk_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/pyromonk/pyromonk.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "pyropaw",
+   "rosterId": "011",
+   "displayName": "pyropaw",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/pyropaw/pyropaw_atlas_64_locked.png",
+    "file": "pyropaw_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pyropaw_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pyropaw_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 14,
+    "x": 128,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "pyropaw_cell_14.png",
+    "sourceCell": 14
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/pyropaw/pyropaw.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "pyropaw_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "pyropaw_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/pyropaw/pyropaw_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/pyropaw/pyropaw.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "quakehound",
+   "rosterId": "015",
+   "displayName": "quakehound",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/quakehound/quakehound_atlas_64_locked.png",
+    "file": "quakehound_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "quakehound_cell_03.png",
+    "sourceCell": 3
+   },
+   "back": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "quakehound_cell_02.png",
+    "sourceCell": 2
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 16,
+    "x": 256,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "quakehound_cell_16.png",
+    "sourceCell": 16
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/quakehound/quakehound.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "quakehound_cell_03.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "quakehound_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/quakehound/quakehound_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/quakehound/quakehound.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "razorgater",
+   "rosterId": "004",
+   "displayName": "Razorgater",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/razorgater/razorgater_atlas_64_locked.png",
+    "file": "razorgater_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "razorgater_cell_04.png",
+    "sourceCell": 4
+   },
+   "back": {
+    "cell": 5,
+    "x": 320,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "razorgater_cell_05.png",
+    "sourceCell": 5
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 6,
+    "x": 0,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "razorgater_cell_06.png",
+    "sourceCell": 6
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/razorgater/razorgater.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "razorgater_cell_04.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "razorgater_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/razorgater/razorgater.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "reaperdile",
+   "rosterId": "006",
+   "displayName": "Reaperdile",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/reaperdile/reaperdile_atlas_64_locked.png",
+    "file": "reaperdile_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "reaperdile_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "reaperdile_cell_02.png",
+    "sourceCell": 2
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 10,
+    "x": 256,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "reaperdile_cell_10.png",
+    "sourceCell": 10
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/reaperdile/reaperdile.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "reaperdile_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "reaperdile_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/reaperdile/reaperdile_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/reaperdile/reaperdile.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "shellguard",
+   "rosterId": "039",
+   "displayName": "Dreadtoise",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/shellguard/shellguard_atlas_64_locked.png",
+    "file": "shellguard_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "shellguard_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "shellguard_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/shellguard_icon64.png",
+    "sourceCell": 1
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/shellguard/shellguard.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "shellguard_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "shellguard_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/shellguard/shellguard_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/shellguard/shellguard.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "sproutle",
+   "rosterId": "038",
+   "displayName": "Sproutle",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/sproutle/sproutle_atlas_64_locked.png",
+    "file": "sproutle_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "sproutle_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "sproutle_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 22,
+    "x": 192,
+    "y": 192,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "sproutle_cell_22.png",
+    "sourceCell": 22
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/sproutle/sproutle.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "sproutle_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "sproutle_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/sproutle/sproutle_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1600,
+    "idleClass": "small_bouncy",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/sproutle/sproutle.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "squirmite",
+   "rosterId": "016",
+   "displayName": "squirmite",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/squirmite/squirmite_atlas_64_locked.png",
+    "file": "squirmite_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "squirmite_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "squirmite_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/squirmite_icon64.png",
+    "sourceCell": 1
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/squirmite/squirmite.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "squirmite_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "squirmite_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/squirmite/squirmite_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1600,
+    "idleClass": "small_bouncy",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/squirmite/squirmite.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "stormtalon",
+   "rosterId": "021",
+   "displayName": "stormtalon",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/stormtalon/stormtalon_atlas_64_locked.png",
+    "file": "stormtalon_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "stormtalon_cell_02.png",
+    "sourceCell": 2
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "stormtalon_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 10,
+    "x": 256,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "stormtalon_cell_10.png",
+    "sourceCell": 10
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/stormtalon/stormtalon.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "stormtalon_cell_02.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "stormtalon_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/stormtalon/stormtalon_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/stormtalon/stormtalon.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "strikechamp",
+   "rosterId": "030",
+   "displayName": "strikechamp",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/strikechamp/strikechamp_atlas_64_locked.png",
+    "file": "strikechamp_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 320
+   },
+   "front": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_cell_04.png",
+    "sourceCell": 4
+   },
+   "back": {
+    "cell": 5,
+    "x": 320,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_cell_05.png",
+    "sourceCell": 5
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 6,
+    "x": 0,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_cell_06.png",
+    "sourceCell": 6
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/strikechamp/strikechamp.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "strikechamp_cell_04.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "strikechamp_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/strikechamp/strikechamp_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/strikechamp/strikechamp.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "strikechamp_unsuited",
+   "rosterId": "030",
+   "displayName": "strikechamp_unsuited",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/strikechamp_unsuited/strikechamp_unsuited_atlas_64_locked.png",
+    "file": "strikechamp_unsuited_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 320
+   },
+   "front": {
+    "cell": 5,
+    "x": 320,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_unsuited_cell_05.png",
+    "sourceCell": 5
+   },
+   "back": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_unsuited_cell_04.png",
+    "sourceCell": 4
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 6,
+    "x": 0,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_unsuited_cell_06.png",
+    "sourceCell": 6
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/strikechamp_unsuited/strikechamp_unsuited.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "strikechamp_unsuited_cell_05.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "strikechamp_unsuited_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/strikechamp_unsuited/strikechamp_unsuited_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/strikechamp_unsuited/strikechamp_unsuited.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "strikechamp_unsuited_full",
+   "rosterId": "030",
+   "displayName": "strikechamp_unsuited_full",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/strikechamp_unsuited_full/strikechamp_unsuited_full_atlas_64_locked.png",
+    "file": "strikechamp_unsuited_full_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 320
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_unsuited_full_cell_00.png"
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_unsuited_full_cell_01.png"
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 6,
+    "x": 0,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "strikechamp_unsuited_full_cell_06.png"
+   },
+   "attack": {
+    "status": "extracted",
+    "cells": [
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27
+    ],
+    "files": [
+     "strikechamp_unsuited_full_cell_21.png",
+     "strikechamp_unsuited_full_cell_22.png",
+     "strikechamp_unsuited_full_cell_23.png",
+     "strikechamp_unsuited_full_cell_24.png",
+     "strikechamp_unsuited_full_cell_25.png",
+     "strikechamp_unsuited_full_cell_26.png",
+     "strikechamp_unsuited_full_cell_27.png"
+    ],
+    "frames": [
+     {
+      "file": "strikechamp_unsuited_full_cell_21.png",
+      "role": "attack",
+      "durationMs": null
+     },
+     {
+      "file": "strikechamp_unsuited_full_cell_22.png",
+      "role": "attack",
+      "durationMs": null
+     },
+     {
+      "file": "strikechamp_unsuited_full_cell_23.png",
+      "role": "attack",
+      "durationMs": null
+     },
+     {
+      "file": "strikechamp_unsuited_full_cell_24.png",
+      "role": "attack",
+      "durationMs": null
+     },
+     {
+      "file": "strikechamp_unsuited_full_cell_25.png",
+      "role": "attack",
+      "durationMs": null
+     },
+     {
+      "file": "strikechamp_unsuited_full_cell_26.png",
+      "role": "attack",
+      "durationMs": null
+     },
+     {
+      "file": "strikechamp_unsuited_full_cell_27.png",
+      "role": "attack",
+      "durationMs": null
+     }
+    ],
+    "method": "extracted_cells_kept_as_is",
+    "stagingPath": "sprite-art/animation/attack/strikechamp_unsuited_full/strikechamp_unsuited_full.attack.json",
+    "onMain": false
+   },
+   "hurt": {
+    "status": "done",
+    "file": "strikechamp_unsuited_full_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/strikechamp_unsuited_full/strikechamp_unsuited_full_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/strikechamp_unsuited_full/strikechamp_unsuited_full.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "terradog",
+   "rosterId": "014",
+   "displayName": "terradog",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/terradog/terradog_atlas_64_locked.png",
+    "file": "terradog_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "terradog_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "terradog_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "terradog_cell_04.png",
+    "sourceCell": 4
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/terradog/terradog.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "terradog_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "terradog_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/terradog/terradog_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/terradog/terradog.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "terrapod",
+   "rosterId": "037",
+   "displayName": "terrapod",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/terrapod/terrapod_atlas_64_locked.png",
+    "file": "terrapod_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "terrapod_cell_01.png",
+    "sourceCell": 1
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "terrapod_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/terrapod_icon64.png",
+    "sourceCell": 1
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/terrapod/terrapod.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "terrapod_cell_01.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "terrapod_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/terrapod/terrapod_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/terrapod/terrapod.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "tiidebiite",
+   "rosterId": "002",
+   "displayName": "Tiidebiite",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/tiidebiite/tiidebiite_atlas_64_locked.png",
+    "file": "tiidebiite_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "tiidebiite_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "tiidebiite_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 14,
+    "x": 128,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "tiidebiite_cell_14.png",
+    "sourceCell": 14
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/tiidebiite/tiidebiite.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "tiidebiite_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "tiidebiite_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/tiidebiite/tiidebiite_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1600,
+    "idleClass": "small_bouncy",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/tiidebiite/tiidebiite.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "toxitacle",
+   "rosterId": "027",
+   "displayName": "toxitacle",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/toxitacle/toxitacle_atlas_64_locked.png",
+    "file": "toxitacle_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 5,
+    "x": 320,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "toxitacle_cell_05.png",
+    "sourceCell": 5
+   },
+   "back": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "toxitacle_cell_04.png",
+    "sourceCell": 4
+   },
+   "backNote": "",
+   "icon": {
+    "cell": "icon_derived",
+    "x": null,
+    "y": null,
+    "role": "icon",
+    "eyeStatus": null,
+    "inAtlas": false,
+    "file": "icons/toxitacle_icon64.png",
+    "sourceCell": 5
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/toxitacle/toxitacle.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "toxitacle_cell_05.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "toxitacle_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/toxitacle/toxitacle_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/toxitacle/toxitacle.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "tyrage",
+   "rosterId": "007",
+   "displayName": "Tyrage",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/tyrage/tyrage_atlas_64_locked.png",
+    "file": "tyrage_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 256
+   },
+   "front": {
+    "cell": 3,
+    "x": 192,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "tyrage_cell_03.png",
+    "sourceCell": 3
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "tyrage_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 4,
+    "x": 256,
+    "y": 0,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "tyrage_cell_04.png",
+    "sourceCell": 4
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/tyrage/tyrage.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "tyrage_cell_03.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "tyrage_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/tyrage/tyrage_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/tyrage/tyrage.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "wispkin",
+   "rosterId": "042",
+   "displayName": "wispkin",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/wispkin/wispkin_atlas_64_locked.png",
+    "file": "wispkin_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 2,
+    "x": 128,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "wispkin_cell_02.png",
+    "sourceCell": 2
+   },
+   "back": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "wispkin_cell_00.png",
+    "sourceCell": 0
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 9,
+    "x": 192,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "wispkin_cell_09.png",
+    "sourceCell": 9
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/wispkin/wispkin.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "wispkin_cell_02.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "wispkin_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/wispkin/wispkin_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "float_hover",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/wispkin/wispkin.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "yogiferno",
+   "rosterId": "046",
+   "displayName": "yogiferno",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/yogiferno/yogiferno_atlas_64_locked.png",
+    "file": "yogiferno_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 192
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "yogiferno_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "yogiferno_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 17,
+    "x": 256,
+    "y": 128,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "yogiferno_cell_17.png",
+    "sourceCell": 17
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/yogiferno/yogiferno.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "yogiferno_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "yogiferno_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/yogiferno/yogiferno_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 2400,
+    "idleClass": "grounded_standard",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/yogiferno/yogiferno.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  },
+  {
+   "slug": "zephling",
+   "rosterId": "019",
+   "displayName": "zephling",
+   "atlas": {
+    "repoPath": "src/assets/sprite-atlases/zephling/zephling_atlas_64_locked.png",
+    "file": "zephling_atlas_64_locked.png",
+    "cellSize": 64,
+    "width": 384,
+    "height": 128
+   },
+   "front": {
+    "cell": 0,
+    "x": 0,
+    "y": 0,
+    "role": "battle_front",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "zephling_cell_00.png",
+    "sourceCell": 0
+   },
+   "back": {
+    "cell": 1,
+    "x": 64,
+    "y": 0,
+    "role": "battle_back",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "zephling_cell_01.png",
+    "sourceCell": 1
+   },
+   "backNote": "",
+   "icon": {
+    "cell": 10,
+    "x": 256,
+    "y": 64,
+    "role": "icon",
+    "eyeStatus": "eye_confirmed",
+    "inAtlas": true,
+    "file": "zephling_cell_10.png",
+    "sourceCell": 10
+   },
+   "attack": {
+    "status": "done_transform",
+    "cells": [],
+    "files": [
+     "attack_a_windup.png",
+     "attack_b_strike.png",
+     "attack_c_impact.png",
+     "attack_d_recover.png"
+    ],
+    "frames": [
+     {
+      "file": "attack_a_windup.png",
+      "role": "windup",
+      "durationMs": 250
+     },
+     {
+      "file": "attack_b_strike.png",
+      "role": "strike_lunge",
+      "durationMs": 120
+     },
+     {
+      "file": "attack_c_impact.png",
+      "role": "impact_hold",
+      "durationMs": 90
+     },
+     {
+      "file": "attack_d_recover.png",
+      "role": "recover",
+      "durationMs": 400
+     }
+    ],
+    "method": "transform_from_locked_battle_front",
+    "stagingPath": "sprite-art/animation/attack/zephling/zephling.attack.json",
+    "onMain": false,
+    "sourceLockedCell": "zephling_cell_00.png"
+   },
+   "hurt": {
+    "status": "done",
+    "file": "zephling_hurt_cell_00.png",
+    "stagingPath": "sprite-art/animation/hurt/zephling/zephling_hurt_cell_00.png",
+    "onMain": false
+   },
+   "idle": {
+    "cycleMs": 1800,
+    "idleClass": "hover_swim",
+    "loop": true,
+    "stagingPath": "sprite-art/animation/idle/zephling/zephling.idle.json",
+    "onMain": false
+   },
+   "caveats": []
+  }
+ ]
+}
