@@ -1,0 +1,24 @@
+{
+  "sets": [
+    {
+      "name": "scorch",
+      "file": "aftermath_scorch.png",
+      "use": "fire/electric aftermath, fade at battle end"
+    },
+    {
+      "name": "crater",
+      "file": "aftermath_crater.png",
+      "use": "ground/rock aftermath, fade at battle end"
+    },
+    {
+      "name": "splash",
+      "file": "aftermath_splash.png",
+      "use": "water aftermath, fade at battle end"
+    }
+  ],
+  "size_px": 256,
+  "format": "transparent PNG overlay, applied on battle floor at runtime, NOT baked into creature cells",
+  "method": "scripted procedural (Pillow, seeded 20261025), no hand pixel edits, no Pokemon art",
+  "status": "done_provisional",
+  "note": "Per-surface application (which surface gets which mark) follows the arena surface list once confirmed by Mars; marks themselves are surface-agnostic overlays."
+}
