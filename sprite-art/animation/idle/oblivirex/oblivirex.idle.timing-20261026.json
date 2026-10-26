@@ -1,0 +1,49 @@
+{
+ "audit": "idle timing reconciliation, Segment 7 re-verification 2026-10-26",
+ "creature": "oblivirex",
+ "roster": "009",
+ "phase": "A",
+ "idle_class": "heavy_slow",
+ "current_cycle_ms": 2800,
+ "baseline_ms": 2400,
+ "delta_vs_baseline_ms": 400,
+ "frame_count_steps": 4,
+ "frame_durations_ms": [
+  800,
+  600,
+  800,
+  600
+ ],
+ "frame_sum_ms": 2800,
+ "frame_sum_matches_cycle": true,
+ "distinct_frame_pngs": [
+  "idle_a.png",
+  "idle_b.png",
+  "idle_c.png"
+ ],
+ "distinct_png_count": 3,
+ "pngs_present_on_disk": {
+  "idle_a.png": true,
+  "idle_b.png": true,
+  "idle_c.png": true
+ },
+ "png_core_match": "3/3 present",
+ "all_pngs_in_dir": [
+  "idle_a.png",
+  "idle_b.png",
+  "idle_c.png"
+ ],
+ "all_png_count": 3,
+ "extra_variant_pngs_not_referenced_by_manifest": [],
+ "previous_cycle_ms_in_manifest": 2800,
+ "manifest_timing_change_recorded": "KEPT 2800",
+ "recommendation": "keep",
+ "recommended_cycle_ms_at_wiring": null,
+ "recommended_frame_durations_ms_at_wiring": null,
+ "reason": "Large/heavy slow deep whole-torso breath (bob -1px + scaleY 1.01); 2800ms = low end of s5.3 large/heavy 2.8-3.5s. NOTE: Section 6 table example for large/heavy is 3200ms; 2800ms is range-valid, so the range governs and 2800ms is kept, not an error. Deliberately 400ms over baseline. Keep at wiring.",
+ "research_ref": "BATTLE-ANIMATION-RESEARCH.md s5.2 calm breath 2.0-3.0s (baseline 2400ms midpoint), s5.2 nervous floor ~1.5s, s5.3 per-body ranges, Section 6 table (calm 2400 / small-fast 1600 / large-heavy example 3200)",
+ "applied_in_this_pass": false,
+ "original_manifest_untouched": true,
+ "sidecar_file": "oblivirex.idle.timing-20261026.json",
+ "note": "Wiring-time recommendation only. No manifest, PNG, registry, or game file was changed in this pass. The 2026-10-25 reconciled file (<creature>.idle.reconciled-20261025.json) is a separate, earlier record and was not overwritten."
+}
