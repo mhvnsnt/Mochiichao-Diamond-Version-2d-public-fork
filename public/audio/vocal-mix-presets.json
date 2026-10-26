@@ -91,6 +91,27 @@
       },
       "note": "Overall RMS flat vs v16 (0.232 vs 0.233) but vocal-band share +61% and LUFS +0.5dB \u2014 third layer cuts through without blowing up overall level; peak still safe under limiter.",
       "build_script": "build_vocal_mix_v17.sh"
+    },
+    "v18": {
+      "base": "v17 chain (main v6, third v7, OTT, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
+      "formant_answer": "WORLD spectral-envelope warp: envelope frequency axis resampled by 1/formant_ratio, so formant peaks move up by that ratio while F0 is multiplied separately \u2014 pitch and formant are independent knobs. First separated in v11 (pitch 2.0, formant 1.4); v16 pushed formant to 1.5 + breath 0.5.",
+      "all_layers_formant_1.5": {
+        "main_lead": "vocal-autotune-v6 (pitch 2.73, formant 1.5, 377Hz)",
+        "third_layer": "vocal-autotune-v7 NEW (pitch 2.73, formant 1.5, glide 55ms V15-style, breath 0.5, 394Hz, dropouts 2.7%)",
+        "harmony": "vocal-harm-v6 NEW \u2014 v6 lead pitched +5 semitones with rubberband formant=preserved, so formants stay 1.5 instead of shifting with pitch (old: rubberband 1.335 on raw vocal, formants male 1.0, 271Hz -> new 446Hz)",
+        "octave_up": "vocal-oct-v6 NEW \u2014 v6 lead pitched x2.0 with formant=preserved, formants stay 1.5 instead of x2.0 chipmunk (old 406Hz -> new 501Hz)",
+        "overdub_low": "vocal-overdub-v6 NEW \u2014 v6 lead pitched x0.77 with formant=preserved + pancake 0.4Hz, low pitch kept (302Hz) with formants at 1.5 (old: autotune-v2 formant 1.4, 290Hz)"
+      },
+      "measured": {
+        "rms": 0.232,
+        "peak": 0.707,
+        "lufs": -9.8,
+        "vocal_band_1_8khz": 0.139,
+        "v17_vocal_band": 0.135,
+        "tail_39.8_40.3s": 0.148
+      },
+      "honest_note": "Overall meters barely moved vs v17 (RMS/LUFS same) because main+third already dominated the vocal band; the v18 change is timbral \u2014 formant character is now consistent across every layer through the whole song, not just the leads.",
+      "build_script": "build_vocal_mix_v18.sh"
     }
   },
   "delay_math_140bpm": {
