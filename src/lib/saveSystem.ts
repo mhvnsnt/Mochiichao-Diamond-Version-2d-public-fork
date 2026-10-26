@@ -29,11 +29,39 @@ export const getSaves = (slotId: number): SaveEntry[] => {
 // goes through: an 'auto' write to a held slot is refused outright
 // (no entry, no timestamp change), while 'manual' writes always
 // pass. The store keeps the hold in sync via setAutosaveHold.
-let autosaveHoldSlot: number | null = null;
-export const setAutosaveHold = (slot: number | null) => { autosaveHoldSlot = slot; };
+// Playtest 2026-10-26 (attempt 8, PR #132 re-test): the hold above
+// was memory-only, and Quit to Title does window.location.reload(),
+// which wipes module state. Any auto-write after a reload — a
+// re-entered world, a restored tab, a second tab — therefore saw
+// hold = null and stamped a fresh timestamp onto the held slot's
+// old content (content held, timestamp advanced, exactly the
+// symptom observed). The hold is therefore PERSISTED in
+// localStorage and restored on import, so it survives reloads and
+// is honoured by every tab/session. It is cleared only by an
+// explicit manual save or an explicit load (both call
+// setAutosaveHold(null) via the store), never by time passing,
+// navigation, or a reload.
+const AUTOSAVE_HOLD_KEY = 'mochii_autosave_hold';
+const readPersistedHold = (): number | null => {
+  try {
+    const raw = localStorage.getItem(AUTOSAVE_HOLD_KEY);
+    if (raw === null) return null;
+    const n = Number(raw);
+    return Number.isFinite(n) && n >= 1 && n <= 3 ? n : null;
+  } catch { return null; }
+};
+let autosaveHoldSlot: number | null = readPersistedHold();
+export const getAutosaveHold = (): number | null => autosaveHoldSlot ?? readPersistedHold();
+export const setAutosaveHold = (slot: number | null) => {
+  autosaveHoldSlot = slot;
+  try {
+    if (slot === null) localStorage.removeItem(AUTOSAVE_HOLD_KEY);
+    else localStorage.setItem(AUTOSAVE_HOLD_KEY, String(slot));
+  } catch { /* private mode: in-memory hold still applies this session */ }
+};
 
 export const saveGame = (slotId: number, type: 'manual' | 'auto', label: string, gameState: any): SaveEntry | null => {
-  if (type === 'auto' && autosaveHoldSlot === slotId) return null;
+  if (type === 'auto' && getAutosaveHold() === slotId) return null;
   const saves = getSaves(slotId);
   const newSave: SaveEntry = {
     id: crypto.randomUUID(),

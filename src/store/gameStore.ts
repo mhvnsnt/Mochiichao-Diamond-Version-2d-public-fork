@@ -4,7 +4,7 @@ import { createMochii } from '../lib/engine';
 import type { GardenCreature } from '../lib/mochiichao-systems';
 import type { GuardianAssignment } from '../lib/monster-tamer-systems';
 import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
-import { setAutosaveHold } from '../lib/saveSystem';
+import { setAutosaveHold, getAutosaveHold } from '../lib/saveSystem';
 import { applyFontRoles } from '../lib/fonts';
 import { applySoundMode } from '../lib/audioRouting';
 
@@ -121,7 +121,10 @@ export const useGameStore = create<GameState>((set, get) => ({
   fastForward: false,
   setCheatFlags: (flags) => set(flags),
 
-  autosaveHeldForSlot: null,
+  // Restored from the persisted hold (saveSystem), so a START OVER
+  // hold survives Quit-to-Title reloads instead of silently
+  // vanishing with module state (attempt 8 timestamp-stamp bug).
+  autosaveHeldForSlot: getAutosaveHold(),
   setAutosaveHeldForSlot: (slot) => { setAutosaveHold(slot); set({ autosaveHeldForSlot: slot }); },
 
   setPlayerInfo: (name, gender, slot) => set({ playerName: name, playerGender: gender, saveSlot: slot }),
