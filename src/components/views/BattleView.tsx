@@ -33,6 +33,7 @@ import {
   type HealthbarStyle, type BattleHudLayout, type MoveButtonLayout,
   type PpTypeDisplay, type MessageWindowStyle, type DamageNumberStyle,
 } from '../../lib/hudCustom';
+import { isConfirmKey, shoulderKey } from '../../lib/buttonMode';
 
 type BattleState = 'START' | 'PLAYER_TURN' | 'ANIMATING' | 'ENEMY_TURN' | 'CAUGHT' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'SWITCH_CHOICE';
 
@@ -89,6 +90,9 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     const t = setTimeout(() => setLastDamage(null), 1400);
     return () => clearTimeout(t);
   }, [lastDamage]);
+  // BUTTON MODE (buttonMode.ts): battle had no keyboard handler
+  // before this batch — this is its first, PLAYER_TURN only.
+  const buttonMode = useGameStore(s => s.settings.buttonMode);
   const [switchOptions, setSwitchOptions] = useState<Array<{ idx: number; m: MochiiInstance }> | null>(null);
   const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string; damageFraction: number; isCrit: boolean } | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
@@ -382,6 +386,33 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   // free): the follow-up is a resolver turn in which the player passes
   // and the foe attacks, so it goes through the same order/resolve/win
   // path as a normal turn instead of the old inline enemy phase.
+  // Battle keyboard (BUTTON MODE, buttonMode.ts): only on the
+  // player's turn, and never while a switch choice is open (the
+  // switch buttons are click-only; firing a move under them would
+  // act on a fainted creature). LR: Q/E move the selected move
+  // (the hover/focus index the move buttons already use). A:
+  // Enter / Space, plus 'l' when L_EQUALS_A, fires the selected
+  // move — the same handlePlayerMove the buttons call. NEED:
+  // switch-choice keys, catch/run keys, and end-state keys (those
+  // screens leave on timers today, unchanged).
+  useEffect(() => {
+    if (bState !== 'PLAYER_TURN' || switchOptions) return;
+    const handler = (e: KeyboardEvent) => {
+      const moveCount = playerActive?.moves?.length ?? 0;
+      if (moveCount === 0) return;
+      const shoulder = shoulderKey(e, buttonMode);
+      if (shoulder === 'L') { e.preventDefault(); setSelectedMove(s => (s - 1 + moveCount) % moveCount); return; }
+      if (shoulder === 'R') { e.preventDefault(); setSelectedMove(s => (s + 1) % moveCount); return; }
+      if (isConfirmKey(e, buttonMode)) {
+        e.preventDefault();
+        const moveId = playerActive?.moves?.[selectedMove];
+        if (moveId) handlePlayerMove(moveId);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [bState, switchOptions, buttonMode, selectedMove, playerActive]);
+
   useEffect(() => {
     if (bState === 'ENEMY_TURN' && enemy && playerActive) {
       const t = setTimeout(() => {
