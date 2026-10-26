@@ -105,3 +105,10 @@ stated explicitly rather than inventing entries.
 - File count: 6 files, 0 deletions, 0 images, 0 audio files.
 - Tests: 55/55 passing at ship time (31 existing arenaCombat +
   16 fanMechanics + 8 captureLoop), run with node --test.
+
+## Correction 2026-10-25 (ring capture gating + arcade theme)
+
+- The ring capture spec is now Mochiichao's own gated optional system (see captureLoop.js +
+  ring-capture-zone-spec.md), NOT an ungated default path. Arcade elements are theme/setting
+  only — no token economy, cabinet mini-games, or high-score mechanics. Zone name candidates
+  (The Ringcade, Neon Loop Hall, Pixel Ring Hall) are proposals for Mars to pick, not locked names.
