@@ -1,0 +1,35 @@
+{
+ "creature": "quakehound",
+ "hurt_version": "hurt-v1-2026-10-25",
+ "mapped_from_locked_atlas": false,
+ "mapped_note": "No locked-atlas cell carries a hurt/recoil/lean-back role in any of the 50 locked manifests (verified by role scan 2026-10-25); mapped count for this set is 0. A standing/walk cell was NOT re-labelled as hurt.",
+ "status": "done",
+ "source": "generated_v1",
+ "source_raw_file": "media-generation-quakehound-hurt-v1-0-2a521e78-1cd7-482f-aa76-acb0c8a5d61e.png",
+ "frames": [
+  {
+   "frame": 0,
+   "file": "quakehound_hurt_cell_00.png",
+   "role": "hurt",
+   "duration_ms": 500,
+   "display": "shown during recoil + first half of recover, then crossfade to standing"
+  }
+ ],
+ "timing": {
+  "windup_ms": 250,
+  "impact_hold_ms": 90,
+  "recoil_ms": 300,
+  "recover_ms": 400,
+  "total_ms": 1040,
+  "hurt_frame_hold_ms": 500,
+  "hurt_frame_note": "Hurt frame shown across recoil (300 ms) + first half of recover (200 ms), then crossfade to standing. Matches battleTreatments.js HURT_FRAME.HOLD_MS and TIMING."
+ },
+ "treatments_fallback": "Until hurt art exists, the hit is carried by battleTreatments.js: impact flash (white/red on crit) + recoil translation + screen shake + particle burst + camera push-in + 90 ms held impact frame. Fallback is NOT a substitute for art; it is what plays alongside art once art exists.",
+ "pose_spec": "Quadruped rearing back, head thrown up, eyes squeezed shut, jaw open in a grimace, front rocky paws thrown up/back, legs braced; dark rocky body, orange lava cracks, spiky back ridge, large rocky paws all kept. Pixel-rendered style, matching the pixel locked cells. Caveat: rearing/side-profile pose rather than the quadruped front stance; all features present.",
+ "eye_check": "PASS at presentation size and at 64px (enlarged 8x cell check). No missing limbs or signature features.",
+ "note": "Original art only, locked atlas as reference. Cut to 64px (border-connected white-bg removal, interior whites kept).",
+ "source_cells": {
+  "battle_front_labelled": "quakehound_cell_03.png (rear view in locked atlas \u2014 see note)",
+  "face_reference": "quakehound_cell_00.png (overworld_front) / quakehound_cell_02.png (battle_back, face view)"
+ }
+}

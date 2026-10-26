@@ -1,0 +1,31 @@
+{
+ "creature": "mochii",
+ "hurt_version": "hurt-v1-2026-10-25",
+ "mapped_from_locked_atlas": false,
+ "mapped_note": "No locked-atlas cell carries a hurt/recoil/lean-back role in any of the 50 locked manifests (verified by role scan 2026-10-25); mapped count for this set is 0. A standing/walk cell was NOT re-labelled as hurt.",
+ "status": "done",
+ "source": "approved_pilot_cut",
+ "source_raw_file": "animation/pilot/media-generation-mochii-hurt-pilot-0-43187417-d24b-446c-802b-5be5c23d444f.png",
+ "frames": [
+  {
+   "frame": 0,
+   "file": "mochii_hurt_cell_00.png",
+   "role": "hurt",
+   "duration_ms": 500,
+   "display": "shown during recoil + first half of recover, then crossfade to standing"
+  }
+ ],
+ "timing": {
+  "windup_ms": 250,
+  "impact_hold_ms": 90,
+  "recoil_ms": 300,
+  "recover_ms": 400,
+  "total_ms": 1040,
+  "hurt_frame_hold_ms": 500,
+  "hurt_frame_note": "Hurt frame shown across recoil (300 ms) + first half of recover (200 ms), then crossfade to standing. Matches battleTreatments.js HURT_FRAME.HOLD_MS and TIMING."
+ },
+ "treatments_fallback": "Until hurt art exists, the hit is carried by battleTreatments.js: impact flash (white/red on crit) + recoil translation + screen shake + particle burst + camera push-in + 90 ms held impact frame. Fallback is NOT a substitute for art; it is what plays alongside art once art exists.",
+ "pose_spec": "Body squashed leaning back, arms folded to the front with hands together (CORRECTED read, Mars 2026-10-25 ~19:01 CDT: the old 'ambiguous oval' read was wrong), eyes squeezed shut, downturned grimace, small droplets flung to the right, wave belly pattern kept.",
+ "eye_check": "PASS at presentation size and at 64px (upscaled montage). APPROVED by Mars as perfect; NOT regenerated, pilot kept as-is.",
+ "note": "Pilot approved 2026-10-25 ~19:01 CDT. Cut to 64px here from the pilot (white-bg flood removal, border-connected only, interior whites kept); pilot file untouched."
+}
