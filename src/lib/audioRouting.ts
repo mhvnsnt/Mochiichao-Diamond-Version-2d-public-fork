@@ -82,6 +82,11 @@ let buses: Record<AudioBus, GainNode | null> = { music: null, sfx: null, ui: nul
 let modeInput: AudioNode | null = null;
 /** Extra nodes owned by the current mono chain, for teardown. */
 let monoChain: AudioNode[] = [];
+/** <audio> elements routed into the music bus (routeMediaElement).
+ * Kept so a MONO / STEREO rebuild reconnects them to the new bus
+ * instead of leaving them on a disconnected node. */
+const routedElements = new WeakMap<HTMLAudioElement, MediaElementAudioSourceNode>();
+const routedSources = new Set<MediaElementAudioSourceNode>();
 
 export function getSoundMode(): SoundMode {
   return mode;
@@ -137,6 +142,17 @@ function buildGraph(): void {
     modeInput = passthrough;
   }
   for (const bus of Object.values(buses)) bus?.connect(modeInput);
+  // Reconnect any routed music elements to the new music bus: the old
+  // bus was disconnected above, so without this a mode switch would
+  // silence music mid-track.
+  for (const src of routedSources) {
+    try {
+      src.disconnect();
+      if (buses.music) src.connect(buses.music);
+    } catch {
+      // Element gone or already disconnected — stays silent, never throws.
+    }
+  }
 }
 
 function ensureContext(): AudioContext | null {
@@ -192,6 +208,44 @@ export function playTone(opts: {
 }
 
 /**
+ * Route a music <audio> element through the graph's music bus, so the
+ * Settings MONO / STEREO setting actually reaches music. One source
+ * node per element (createMediaElementSource throws on a second call
+ * for the same element); repeat calls just re-attach to the current
+ * bus. Returns false (never throws) when audio is unavailable — the
+ * element then plays directly, as before.
+ */
+export function routeMediaElement(el: HTMLAudioElement): boolean {
+  const audio = ensureContext();
+  if (!audio || !buses.music) return false;
+  try {
+    let src = routedElements.get(el);
+    if (!src) {
+      src = audio.createMediaElementSource(el);
+      routedElements.set(el, src);
+      routedSources.add(src);
+    }
+    src.disconnect();
+    src.connect(buses.music);
+    void audio.resume();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Resume the graph context after a user gesture (a music element
+ * routed into a suspended context stays silent until this runs). */
+export function resumeAudioGraph(): void {
+  if (!ctx) return;
+  try {
+    void ctx.resume();
+  } catch {
+    // No context to resume — stays silent, never throws.
+  }
+}
+
+/**
  * Audible MONO / STEREO proof for the Settings SOUND row: a tone
  * panned hard left, then a different tone panned hard right. In
  * STEREO the two tones sit on opposite sides; in MONO the
@@ -202,6 +256,25 @@ export function playUiPreview(): boolean {
   const first = playTone({ frequency: 880, pan: -0.8, duration: 0.18, bus: 'ui' });
   const second = playTone({ frequency: 660, pan: 0.8, duration: 0.18, bus: 'ui', atOffset: 0.24 });
   return first || second;
+}
+
+/**
+ * UI sound effects — original synthesized tones through the ui bus
+ * (no audio files, no Pokemon sounds), so they honour MONO / STEREO.
+ * Wired call sites: main-menu cursor / confirm / back in
+ * IntroSequence. Hover sounds are deliberately NOT wired: a blip on
+ * every mouseenter would fire constantly on desktop.
+ */
+export function playUiMove(): boolean {
+  return playTone({ frequency: 660, duration: 0.07, bus: 'ui', volume: 0.15 });
+}
+export function playUiConfirm(): boolean {
+  const first = playTone({ frequency: 880, duration: 0.1, bus: 'ui', volume: 0.2 });
+  const second = playTone({ frequency: 1320, duration: 0.12, bus: 'ui', volume: 0.18, atOffset: 0.08 });
+  return first || second;
+}
+export function playUiBack(): boolean {
+  return playTone({ frequency: 440, duration: 0.12, bus: 'ui', volume: 0.18 });
 }
 
 /** Settled audio roles (Mars decisions). Paths are the real repo
