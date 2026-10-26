@@ -4,6 +4,7 @@ import CreaturePortrait from '../game/CreaturePortrait';
 import { SPECIES_DB } from '../../lib/species';
 import { DATA_CARD_ID } from '../../lib/monster-tamer-systems';
 import { MenuHelpLine } from '../game/MenuList';
+import { useMenuSkin, menuSkinVars } from '../../lib/menuSkins';
 
 /**
  * PC storage, v2 structure (pokemon_storage_system_menu.c, structure/
@@ -33,6 +34,11 @@ export default function PcView({ onBack }: { onBack: () => void }) {
   const [selected, setSelected] = useState(() => boxCursor[0] || 0);
   const [confirm, setConfirm] = useState<{ kind: 'deposit' | 'withdraw'; id: string; name: string } | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  // Y2K skin wiring (skins PR #151 presets via menuSkins.ts): null =
+  // default look, untouched. When set, data-menu-skin + variables on
+  // the root restyle .game-panel frames/text via menuSkins.css; the
+  // selected slot wears .skin-selected instead of the yellow ring.
+  const skin = useMenuSkin('pc');
 
   const boxCount = Math.max(1, Math.ceil(pc.length / BOX_SIZE));
   const safeBox = Math.min(box, boxCount - 1);
@@ -62,7 +68,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
   };
 
   return (
-    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]" data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
       <div className="flex justify-between items-center mb-4 shrink-0">
         <h2 className="game-title text-2xl">PC Storage</h2>
         <button onClick={onBack} className="game-button px-4 py-2 min-h-[48px]">Close</button>
@@ -95,7 +101,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
                   onClick={() => selectSlot(i)}
                   onMouseEnter={() => selectSlot(i)}
                   onFocus={() => selectSlot(i)}
-                  className={`game-panel p-2 flex flex-col items-center gap-1 min-h-[48px] ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}
+                  className={`game-panel p-2 flex flex-col items-center gap-1 min-h-[48px] ${i === selected ? (skin ? 'skin-selected' : 'ring-2 ring-yellow-300') : 'opacity-80'}`}
                 >
                   <CreaturePortrait speciesId={m.speciesId} view="front" size={48} />
                   <span className="text-xs text-white truncate w-full text-center">{i === selected ? '► ' : ''}{m.nickname}</span>
