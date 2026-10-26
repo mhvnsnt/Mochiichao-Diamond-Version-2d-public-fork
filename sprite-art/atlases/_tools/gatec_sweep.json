@@ -1,0 +1,156 @@
+{
+ "scanned": 205,
+ "hits": [
+  {
+   "file": "animation/idle/oblivirex/idle_a.png",
+   "gatec_cut": [],
+   "gatec_flag": [
+    {
+     "gate": "C-between-limbs-loop",
+     "size": 138,
+     "bbox": [
+      24,
+      32,
+      38,
+      47
+     ],
+     "hole": 10,
+     "maxDist": 2.799999952316284,
+     "reason": "thick-loop-needs-review"
+    }
+   ]
+  },
+  {
+   "file": "animation/idle/oblivirex/idle_b.png",
+   "gatec_cut": [],
+   "gatec_flag": [
+    {
+     "gate": "C-between-limbs-loop",
+     "size": 138,
+     "bbox": [
+      24,
+      31,
+      38,
+      46
+     ],
+     "hole": 10,
+     "maxDist": 2.799999952316284,
+     "reason": "thick-loop-needs-review"
+    }
+   ]
+  },
+  {
+   "file": "animation/idle/oblivirex/idle_c.png",
+   "gatec_cut": [],
+   "gatec_flag": [
+    {
+     "gate": "C-between-limbs-loop",
+     "size": 140,
+     "bbox": [
+      24,
+      31,
+      38,
+      47
+     ],
+     "hole": 10,
+     "maxDist": 2.799999952316284,
+     "reason": "thick-loop-needs-review"
+    }
+   ]
+  },
+  {
+   "file": "animation/hurt/razorgater/razorgater_hurt_cell_00.png",
+   "gatec_cut": [
+    {
+     "gate": "C-between-limbs-loop",
+     "size": 154,
+     "bbox": [
+      40,
+      32,
+      59,
+      53
+     ],
+     "hole": 15,
+     "maxDist": 2.196899890899658
+    }
+   ],
+   "gatec_flag": []
+  },
+  {
+   "file": "animation/hurt/finblade/finblade_hurt_cell_00.png",
+   "gatec_cut": [],
+   "gatec_flag": [
+    {
+     "gate": "C-between-limbs-loop",
+     "size": 128,
+     "bbox": [
+      4,
+      28,
+      19,
+      42
+     ],
+     "hole": 11,
+     "maxDist": 2.799999952316284,
+     "reason": "thick-loop-needs-review"
+    }
+   ]
+  },
+  {
+   "file": "animation/hurt/gearkid/gearkid_hurt_cell_00.png",
+   "gatec_cut": [],
+   "gatec_flag": [
+    {
+     "gate": "C-between-limbs-loop",
+     "size": 261,
+     "bbox": [
+      25,
+      34,
+      49,
+      54
+     ],
+     "hole": 31,
+     "maxDist": 3.59689998626709,
+     "reason": "thick-loop-needs-review"
+    }
+   ]
+  },
+  {
+   "file": "animation/hurt/oblivirex/oblivirex_hurt_cell_00.png",
+   "gatec_cut": [],
+   "gatec_flag": [
+    {
+     "gate": "C-between-limbs-loop",
+     "size": 156,
+     "bbox": [
+      23,
+      38,
+      41,
+      52
+     ],
+     "hole": 11,
+     "maxDist": 3.59689998626709,
+     "reason": "thick-loop-needs-review"
+    }
+   ]
+  },
+  {
+   "file": "animation/hurt/shellguard/shellguard_hurt_cell_00.png",
+   "gatec_cut": [],
+   "gatec_flag": [
+    {
+     "gate": "C-between-limbs-loop",
+     "size": 201,
+     "bbox": [
+      19,
+      30,
+      38,
+      46
+     ],
+     "hole": 24,
+     "maxDist": 2.799999952316284,
+     "reason": "thick-loop-needs-review"
+    }
+   ]
+  }
+ ]
+}
