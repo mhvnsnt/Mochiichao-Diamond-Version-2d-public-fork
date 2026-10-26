@@ -1,11 +1,12 @@
 // fanMechanics.test.js — tests for fanMechanics.js
 // Run: node --test fanMechanics.test.js (from this directory)
+// ESM: package.json declares "type": "module", so this file uses import
+// (converted 2026-10-25 from require(); assertions unchanged).
 // No game imports, no DOM. Deterministic: rng is injected everywhere
 // a test needs randomness.
-'use strict';
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const {
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {
   FAN, createDashPool, useDash, regenDash,
   createEnergyPool, regenEnergy, spendEnergy, maxUses,
   speedUpsFromStat, knockbackDecay, separateBodies,
@@ -16,7 +17,7 @@ const {
   softenedTypeStep, hitFeedback,
   createGroundMark, tickGroundMarks, createZone, tickZone,
   suddenDeathMultiplier, sparringDodge, chosenDodge, applyDodgeToDamage,
-} = require('./fanMechanics.js');
+} from './fanMechanics.js';
 
 const seqRng = (vals) => { let i = 0; return () => vals[i++ % vals.length]; };
 
