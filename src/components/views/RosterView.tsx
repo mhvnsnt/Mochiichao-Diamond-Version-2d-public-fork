@@ -37,7 +37,16 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
   const selectSlot = (i: number) => { lastSelectedSlot = i; setSelected(i); setContextOpen(false); };
   const current = party[Math.min(selected, Math.max(0, party.length - 1))];
   const species = current ? SPECIES_DB[current.speciesId] : undefined;
-  const pct = current ? Math.max(0, (current.hp / current.maxHp) * 100) : 0;
+  const pct = current && current.maxHp ? Math.max(0, (current.hp / current.maxHp) * 100) : 0;
+  // v5.3: a party member must never crash this panel. Caught wild
+  // creatures used to arrive in flat wild-battle shape (atk/def/spd,
+  // no stats.*, no pp), so current.stats.atk threw and the Team
+  // panel went black in the v5.2 playtest when Sproutle was clicked.
+  // New catches are rebuilt as MochiiInstances (see WorldEngine
+  // catch), but members already in an older save may still be flat
+  // — read stats/pp defensively here, never assuming the shape.
+  const statVal = (m: any, key: string, flatKey?: string) => m?.stats?.[key] ?? (flatKey ? m?.[flatKey] : undefined) ?? '—';
+  const ppVal = (m: any, j: number) => m?.pp?.[j] ?? '—';
   // Mainframe Variants (monster-tamer spec step 2): variant field keyed
   // by creature instance, NOT a new species ID. Same species, a sector
   // + a True Element tag. Display tag only — battle types and stats
@@ -91,8 +100,10 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
             })}
           </div>
 
-          {/* Detail side */}
-          {current && species && (
+          {/* Detail side — v5.3: render for any current member,
+              even if its species entry is missing; species fields
+              fall back to the member's own data, never a crash. */}
+          {current && (
             <div className="game-panel p-4 sm:p-5 flex-1 overflow-y-auto">
               <div className="flex gap-5 items-start flex-wrap">
                 <CreaturePortrait speciesId={current.speciesId} view="front" size={128} />
@@ -101,13 +112,13 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
                     {current.nickname}
                     {current.status && <span className="ml-2 bg-purple-900 text-purple-200 text-xs px-2 py-0.5 rounded align-middle">{current.status}</span>}
                   </div>
-                  <div className="text-slate-300 text-sm mt-1">Lv. {current.level} · {species.name}</div>
+                  <div className="text-slate-300 text-sm mt-1">Lv. {current.level} · {species?.name || current.speciesId}</div>
                   <div className="flex gap-1 mt-2 flex-wrap">
-                    {species.types.map(t => (
+                    {(species?.types || []).map(t => (
                       <span key={t} className="text-xs bg-white/10 text-slate-100 px-2 py-0.5 rounded-full">{t}</span>
                     ))}
                   </div>
-                  <p className="text-sm text-slate-400 mt-3 leading-relaxed">{species.description}</p>
+                  <p className="text-sm text-slate-400 mt-3 leading-relaxed">{species?.description || ''}</p>
                 </div>
               </div>
               <div className="mt-4">
@@ -119,12 +130,12 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-2 mt-4 text-sm">
-                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">ATK</div><div className="text-white font-bold">{current.stats.atk}</div></div>
-                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">DEF</div><div className="text-white font-bold">{current.stats.def}</div></div>
-                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">SPD</div><div className="text-white font-bold">{current.stats.spe}</div></div>
-                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">SPA</div><div className="text-white font-bold">{current.stats.spa}</div></div>
-                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">SPD</div><div className="text-white font-bold">{current.stats.spd}</div></div>
-                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">EXP</div><div className="text-white font-bold">{current.experience}</div></div>
+                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">ATK</div><div className="text-white font-bold">{statVal(current, 'atk', 'atk')}</div></div>
+                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">DEF</div><div className="text-white font-bold">{statVal(current, 'def', 'def')}</div></div>
+                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">SPD</div><div className="text-white font-bold">{statVal(current, 'spe', 'spd')}</div></div>
+                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">SPA</div><div className="text-white font-bold">{statVal(current, 'spa')}</div></div>
+                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">SPD</div><div className="text-white font-bold">{statVal(current, 'spd')}</div></div>
+                <div className="bg-black/40 rounded-lg p-2"><div className="text-slate-400 text-[11px]">EXP</div><div className="text-white font-bold">{current.experience ?? '—'}</div></div>
               </div>
               {/* Slot context menu (v2): a menu, NOT a new screen. Summary
                   shows this detail panel; Switch swaps this creature with
@@ -144,7 +155,7 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
                 </button>
                 {contextOpen && (
                   <div className="game-panel p-3 mt-2 flex flex-wrap gap-2" role="menu">
-                    <button className="game-button px-3 py-2 text-sm min-h-[48px]" onClick={() => { setContextOpen(false); setContextMessage(`Summary: ${current.nickname} — Lv. ${current.level} · ${species.name}.`); }}>Summary</button>
+                    <button className="game-button px-3 py-2 text-sm min-h-[48px]" onClick={() => { setContextOpen(false); setContextMessage(`Summary: ${current.nickname} — Lv. ${current.level} · ${species?.name || current.speciesId}.`); }}>Summary</button>
                     <button
                       className="game-button px-3 py-2 text-sm min-h-[48px]"
                       disabled={selected === 0}
@@ -190,10 +201,10 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
               </div>
               <h3 className="text-white font-bold mt-5 mb-2">Moves</h3>
               <div className="grid grid-cols-2 gap-2">
-                {current.moves.map((m, j) => (
+                {(current.moves || []).map((m, j) => (
                   <div key={j} className="bg-black/40 border border-white/10 p-2 rounded-lg text-xs">
-                    <div className="text-white">{MOVES_DB[m]?.name || m.replace(/_/g, ' ')}</div>
-                    <div className="text-slate-400">PP {current.pp[j]}/{MOVES_DB[m]?.pp ?? '—'}</div>
+                    <div className="text-white">{MOVES_DB[m]?.name || String(m).replace(/_/g, ' ')}</div>
+                    <div className="text-slate-400">PP {ppVal(current, j)}/{MOVES_DB[m]?.pp ?? '—'}</div>
                   </div>
                 ))}
               </div>
