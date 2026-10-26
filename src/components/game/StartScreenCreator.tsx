@@ -9,6 +9,7 @@ import {
   type StartScreenBackground, type StartScreenParticle, type StartScreenPreset,
 } from '../../lib/startScreenPreset';
 import { TITLE_BIOMES } from '../../lib/titleBiomes';
+import { getTitlePlayer, setTitlePlayer } from '../../lib/titlePlayerPreference';
 
 /**
  * CREATE START SCREEN — full dedicated screen (batch E, spec section 2).
@@ -32,10 +33,10 @@ import { TITLE_BIOMES } from '../../lib/titleBiomes';
  *
  * Preview: slot boxes on the 1200x1500 canvas, scaled to fit.
  * PRESS ANY KEY blinks 30 frames on / 15 frames off (500ms / 250ms
- * at 60fps). This is the CREATOR preview only — playing a saved
- * preset as the real start screen (TITLE phase, StartScreenPlayer)
- * is wired in the playback batch; Phase 2 export (FFmpeg desktop /
- * MediaRecorder) is still GAP.
+ * at 60fps). This is the CREATOR preview only — the Pixi player
+ * (StartScreenPlayer) is available as a preset below; the classic
+ * DOM title is the default start screen. Phase 2 export (FFmpeg
+ * desktop / MediaRecorder) is still GAP.
  * No Pokemon sprites, dialogue, music, cries, names, or art.
  */
 
@@ -52,6 +53,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
   const [presets, setPresets] = useState<StartScreenPreset[]>(() => loadStartScreenPresets());
   const [presetName, setPresetName] = useState('My Start Screen 1');
   const [savedMsg, setSavedMsg] = useState('');
+  const [titlePlayer, setTitlePlayerState] = useState(() => getTitlePlayer());
   const [blinkOn, setBlinkOn] = useState(true);
 
   // PRESS ANY KEY blink: 30 frames on / 15 frames off at 60fps.
@@ -82,6 +84,14 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
   }, [onBack]);
 
   const set = (patch: Partial<StartScreenPreset>) => setPreset(p => ({ ...p, ...patch }));
+  // Restoration 2026-10-26: the Pixi player is a preset only, never
+  // the default. This toggle records which renderer the TITLE phase
+  // uses; classic DOM title is the default.
+  const toggleTitlePlayer = () => {
+    const next = titlePlayer === 'classic' ? 'pixi' : 'classic';
+    setTitlePlayer(next);
+    setTitlePlayerState(next);
+  };
   const artGap = !startScreenCreatureArtAvailable(preset.creature);
   const biome = preset.background === 'painted' ? null : TITLE_BIOMES[preset.background];
 
@@ -94,7 +104,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
     }
     setPresets(loadStartScreenPresets());
     setPreset(next);
-    setSavedMsg(`Saved preset "${name}". It now plays as the start screen (TITLE phase) — the most recently saved preset plays; the locked default is never overwritten.`);
+    setSavedMsg(`Saved preset "${name}". The classic DOM title is the default start screen; this preset plays when the Pixi player is selected below. The locked default is never overwritten.`);
   };
 
   const loadPreset = (name: string) => {
@@ -170,7 +180,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
             </div>
           </div>
           <div className="text-xs text-slate-400 mt-2 text-center">
-            Preview only — locked slots at spec positions. A saved preset now plays as the real start screen (TITLE phase, StartScreenPlayer).
+            Preview only — locked slots at spec positions. The classic DOM title is the default start screen; a saved preset plays when the Pixi player is selected below.
           </div>
         </StdWindow>
 
@@ -188,6 +198,9 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
             note="fire / snow / rain / leaves / embers / smoke — same particle set as the intro timeline."
             onLeft={() => set({ particles: cycle(START_SCREEN_PARTICLES, preset.particles, -1) })}
             onRight={() => set({ particles: cycle(START_SCREEN_PARTICLES, preset.particles, 1) })} />
+          <CreatorRow label="START SCREEN PLAYER" value={titlePlayer === 'pixi' ? 'Pixi player (preset)' : 'Classic DOM title (default)'}
+            note="Classic DOM title is the default start screen. Pixi player plays the most recently saved preset, else the locked default — selectable here, never the default."
+            onLeft={toggleTitlePlayer} onRight={toggleTitlePlayer} />
         </StdWindow>
 
         <StdWindow className="p-2">
@@ -220,7 +233,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
             </div>
           </div>
           <div className="px-3 pb-2 text-xs text-slate-400">
-            GAP in this batch (later batches, not claimed): Phase 2 export (FFmpeg desktop / MediaRecorder); Blender .blend export. Playback of a saved preset as the real start screen is wired (TITLE phase, StartScreenPlayer). Creature cutout GAP: {startScreenCreatureArtGapNames().join(', ')}.
+            GAP in this batch (later batches, not claimed): Phase 2 export (FFmpeg desktop / MediaRecorder); Blender .blend export. Playback of a saved preset as the real start screen: select the Pixi player below (classic DOM title is the default). Creature cutout GAP: {startScreenCreatureArtGapNames().join(', ')}.
           </div>
         </StdWindow>
 
