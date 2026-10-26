@@ -75,6 +75,7 @@ export default function TitleScene({
   caption,
   startPrompt = false,
   exitKind = 'none',
+  fullHeight = false,
 }: {
   biome?: TitleBiomeId;
   figureUrl?: string;
@@ -96,6 +97,10 @@ export default function TitleScene({
    *  IntroSequence does NOT set this yet — that hookup is a later
    *  batch, so no exit is claimed as input-triggered here. */
   exitKind?: PlatinumExitKind;
+  /** Full-viewport host (the in-game TITLE phase only). Default
+   *  false keeps the 180px preview strip every other caller uses
+   *  (creator previews, Settings preview) exactly as before. */
+  fullHeight?: boolean;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [startVisible, setStartVisible] = useState(true);
@@ -769,7 +774,7 @@ export default function TitleScene({
 
   return (
     <div className="w-full">
-      <div ref={hostRef} className="w-full h-[180px] relative overflow-hidden rounded" />
+      <div ref={hostRef} className={fullHeight ? 'w-full h-[100dvh] relative overflow-hidden' : 'w-full h-[180px] relative overflow-hidden rounded'} />
       {startPrompt && (
         <div className="text-center text-xs font-bold tracking-widest" style={{ visibility: startVisible ? 'visible' : 'hidden' }}>
           PRESS ANY KEY
