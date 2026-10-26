@@ -1,0 +1,11 @@
+{
+  "creature": "terrapod",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "terrapod_cell_01.png"
+}
