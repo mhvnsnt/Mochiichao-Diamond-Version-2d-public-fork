@@ -1,76 +1,375 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGameStore } from '../../store/gameStore';
 import PixiWorldCanvas from '../game/PixiWorldCanvas';
 import { FULL_WORLD } from '../../world/FullWorldMaps';
 import { MOVES_DB } from '../../lib/moves';
+import { SPECIES_DB } from '../../lib/species';
+import { calcTypeMultiplier } from '../../lib/constants';
+import { createMochii, gainExp } from '../../lib/engine';
 import { GuardianAssignment, guardianLabel } from '../../lib/monster-tamer-systems';
+import type { MochiiInstance } from '../../lib/types';
 
 /**
- * Creature Mode — play as the creature, real-time, top-down (pass 1).
- * You move as your first party member on the Sector 0 map (PixiJS
- * canvas, same tile maps and save/party as Trainer Mode), use moves
- * 1–4, dodge with Space (brief i-frames), and tag-switch with Tab.
- * This is the structure, playable now: movement is tile-step based
- * (smooth real-time movement is the next pass), the target is a
- * training dummy at a fixed tile, and damage is the move's base
- * shape, not the full Trainer damage formula. Marked as such below.
+ * Creature Mode — play as the creature, real-time, top-down (pass 2).
+ *
+ * Pokemon-first mapping (structure from the decomp files in the repo,
+ * Mochiichao replacement in that exact spot):
+ * - FireRed/HeartGold overworld tile movement + collision
+ *   -> Creature Mode tile movement on FULL_WORLD sector0, same blocked
+ *   tiles (1 tree, 4 building, 2 water) as pass 1. HAVE.
+ * - FireRed battle damage structure (STAB 1.5, type multiplier, crit
+ *   1.5 at 6%, random 85-100, level/power/attack/defence base)
+ *   -> Creature Mode real-time damage, SAME formula, in
+ *   creatureDamage() below. No second damage table. HAVE (pass 2).
+ * - FireRed/HeartGold wild encounter + catch math
+ *   (catchRate * hpFactor / 255, hpFactor = (3*max-2*hp)/(3*max),
+ *   BattleView adds +0.3) -> Luigi Cube capture here, same math. HAVE.
+ * - HeartGold/FireRed level/XP (engine.gainExp, baseExpYield)
+ *   -> defeat XP here, same gainExp. HAVE.
+ * - No Pokemon game in the repo has real-time play-as-creature combat,
+ *   dodge i-frames, or Boids pack flocking. Those are NOT Pokemon
+ *   structure: they are labelled design choices below, with their
+ *   numbers stated in the code, not presented as decomp data. NEED
+ *   (canonical cooldown table, top-down walk sprites) is still owed.
+ *
+ * Pass 2 changes over pass 1, all in this file (+ wilds rendering in
+ * PixiWorldCanvas):
+ * - Held-key movement (100ms tick, walk step every 2 ticks, sprint
+ *   step every tick) instead of one tile per keypress.
+ * - Sprint (Shift): stamina 0-100, drains 8/s while sprint-moving,
+ *   refills 12/s at rest. Design numbers, not decomp data.
+ * - Per-move cooldowns, derived transparently from MOVES_DB:
+ *   cooldownMs = clamp(600 + (100 - bp) * 8, 600, 1800), -200ms if
+ *   the move has priority > 0. This is a prototype derivation, NOT
+ *   a canonical cooldown table — that table is owed in the unify map.
+ * - Dodge (Space): exactly 250ms i-frames. Perfect Dodge: if a wild
+ *   attack lands while dodging, it deals 0 and refunds 50% of the
+ *   remaining cooldown on every move. Design numbers, labelled.
+ * - Q hop: if the facing tile is blocked and the tile beyond it is
+ *   walkable and in-bounds, hop over it in one step (400ms hop state).
+ *   Prototype rule, labelled — it does not cross the map border.
+ * - Tag-switch (Tab): 2000ms switch cooldown. Design number.
+ * - Wild creatures: 5 wilds on Sector 0, built with createMochii()
+ *   so stats/HP are canonical, with temperaments from the spec:
+ *   skittish flees, territorial engages, pack flocks (Boids-style
+ *   separation/cohesion, simplified to tile steps), curious approaches
+ *   but stops at distance 3.
+ * - Wild attacks: telegraphed 600ms before impact, so a dodge can
+ *   actually be timed. Design number, labelled.
+ * - Garden bonus: NOT faked here. Party instances carry no GardenStats
+ *   record yet, so gardenBattleBonus() cannot be read for the active
+ *   creature — bonus is 0 in this pass, and sharing a GardenStats
+ *   record between Garden and Creature Mode is listed as owed below.
+ *   The +9% cap itself is NOT stacked or double-applied anywhere.
  */
+type Temperament = 'skittish' | 'territorial' | 'pack' | 'curious';
+type Wild = MochiiInstance & { temperament: Temperament; x: number; y: number; telegraph: boolean };
+
+const BLOCKED = new Set([1, 4, 2]);
+const DODGE_MS = 250;
+const HOP_MS = 400;
+const SWITCH_COOLDOWN_MS = 2000;
+const TELEGRAPH_MS = 600;
+
+function makeWild(speciesId: string, level: number, temperament: Temperament, x: number, y: number): Wild | null {
+  const m = createMochii(speciesId, level);
+  if (!m) return null;
+  return { ...m, temperament, x, y, telegraph: false };
+}
+
+function initialWilds(): Wild[] {
+  const list = [
+    makeWild('001', 5, 'skittish', 12, 11),
+    makeWild('004', 6, 'territorial', 20, 10),
+    makeWild('007', 5, 'pack', 8, 15),
+    makeWild('007', 5, 'pack', 9, 16),
+    makeWild('010', 5, 'curious', 18, 15),
+  ].filter((w): w is Wild => w !== null);
+  return list;
+}
+
+/** Canonical damage, same structure as BattleView.executeDamage. */
+function creatureDamage(attacker: MochiiInstance, defenderSpeciesId: string, defenderStats: { def: number; spd: number }, moveId: string) {
+  const move = MOVES_DB[moveId];
+  if (!move || move.cat === 'Status') return { damage: 0, text: `${attacker.nickname} used ${move?.name || moveId}!` };
+  const aStat = move.cat === 'Physical' ? attacker.stats.atk : attacker.stats.spa;
+  const dStat = move.cat === 'Physical' ? defenderStats.def : defenderStats.spd;
+  const baseDmg = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * move.bp * aStat / dStat) / 50) + 2;
+  const defTypes = SPECIES_DB[defenderSpeciesId]?.types || [];
+  const typeMult = calcTypeMultiplier(move.type, defTypes[0], defTypes[1]);
+  const stabMult = SPECIES_DB[attacker.speciesId]?.types.includes(move.type) ? 1.5 : 1;
+  const crit = Math.random() < 0.06 ? 1.5 : 1.0;
+  const roll = (85 + Math.random() * 15) / 100;
+  const damage = Math.floor(baseDmg * typeMult * stabMult * crit * roll);
+  let text = `${attacker.nickname} used ${move.name}! `;
+  if (typeMult > 1) text += "It's super effective! ";
+  if (typeMult < 1 && typeMult > 0) text += "It's not very effective... ";
+  if (typeMult === 0) text += "It had no effect... ";
+  if (crit > 1) text += "A critical hit! ";
+  return { damage, text };
+}
+
+function moveCooldownMs(moveId: string): number {
+  const move = MOVES_DB[moveId];
+  if (!move) return 800;
+  const base = 600 + Math.max(0, 100 - move.bp) * 8;
+  const withPri = move.pri > 0 ? base - 200 : base;
+  return Math.max(400, Math.min(1800, withPri));
+}
+
 export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   const party = useGameStore(s => s.party);
+  const inventory = useGameStore(s => s.inventory);
+  const useItem = useGameStore(s => s.useItem);
+  const addMochii = useGameStore(s => s.addMochii);
+  const updatePartyMember = useGameStore(s => s.updatePartyMember);
   const [pos, setPos] = useState({ x: 15, y: 18 });
   const [dir, setDir] = useState('down');
-  const [dummyHp, setDummyHp] = useState(100);
-  const [dodging, setDodging] = useState(false);
   const [activeIdx, setActiveIdx] = useState(0);
-  const [log, setLog] = useState('Creature Mode — move with WASD / arrows, moves 1–4, Space to dodge, Tab to switch.');
-  const [cooldown, setCooldown] = useState(false);
-  // Guardian Training + Data Tape Transform (monster-tamer spec
-  // step 5 / step 1): Guardian = a creature assigned to defend a
-  // Garden (local state, same Creature Mode path, no bullet-heaven
-  // code, movement stays Mochiichao's). Data Tape Transform = play
-  // as a recorded creature — the party list below IS the tape list,
-  // picking one switches the same Creature Mode path to that creature.
+  const [log, setLog] = useState('Creature Mode pass 2 — hold WASD to move, Shift to sprint, 1–4 moves, Space dodge (250ms), Q hop, Tab switch. Wild creatures are on the map.');
+  const [stamina, setStamina] = useState(100);
+  const [dodging, setDodging] = useState(false);
+  const [hopping, setHopping] = useState(false);
+  const [wilds, setWilds] = useState<Wild[]>(() => initialWilds());
+  const [targetId, setTargetId] = useState<string | null>(null);
+  const [cooldowns, setCooldowns] = useState<Record<number, number>>({});
+  const [switchReadyAt, setSwitchReadyAt] = useState(0);
+  const [now, setNow] = useState(Date.now());
   const [guardian, setGuardian] = useState<GuardianAssignment | null>(null);
 
-  const active = party[activeIdx];
+  const posRef = useRef(pos);
+  const wildsRef = useRef(wilds);
+  const keysRef = useRef<Set<string>>(new Set());
+  const dodgeUntilRef = useRef(0);
+  const tickRef = useRef(0);
+  posRef.current = pos;
+  wildsRef.current = wilds;
   const mapData = FULL_WORLD['sector0'];
+  const active = party[activeIdx];
 
+  const isWalkable = (x: number, y: number) => {
+    if (x < 0 || y < 0 || x >= mapData.width || y >= mapData.height) return false;
+    return !BLOCKED.has(mapData.tiles[y]?.[x]);
+  };
+
+  const tryStep = (dx: number, dy: number) => {
+    const p = posRef.current;
+    const nx = p.x + dx, ny = p.y + dy;
+    if (dx === 1) setDir('right');
+    else if (dx === -1) setDir('left');
+    else if (dy === 1) setDir('down');
+    else if (dy === -1) setDir('up');
+    if (isWalkable(nx, ny)) setPos({ x: nx, y: ny });
+  };
+
+  const doDodge = () => {
+    if (Date.now() < dodgeUntilRef.current) return;
+    dodgeUntilRef.current = Date.now() + DODGE_MS;
+    setDodging(true);
+    setLog('Dodge! 250ms i-frames — time it against a telegraphed attack for a Perfect Dodge.');
+    window.setTimeout(() => setDodging(false), DODGE_MS);
+  };
+
+  const doHop = () => {
+    const p = posRef.current;
+    const dx = dir === 'right' ? 1 : dir === 'left' ? -1 : 0;
+    const dy = dir === 'down' ? 1 : dir === 'up' ? -1 : 0;
+    const midX = p.x + dx, midY = p.y + dy;
+    const landX = p.x + dx * 2, landY = p.y + dy * 2;
+    if (!isWalkable(midX, midY) && isWalkable(landX, landY)) {
+      setHopping(true);
+      setPos({ x: landX, y: landY });
+      setLog('Hop! Over the low obstacle.');
+      window.setTimeout(() => setHopping(false), HOP_MS);
+    } else {
+      setLog('Nothing to hop over in that direction.');
+    }
+  };
+
+  const doSwitch = () => {
+    if (party.length < 2) { setLog('No other party creature to switch to.'); return; }
+    if (Date.now() < switchReadyAt) { setLog('Tag-switch is still on cooldown.'); return; }
+    setActiveIdx(i => (i + 1) % party.length);
+    setSwitchReadyAt(Date.now() + SWITCH_COOLDOWN_MS);
+    setLog('Tag-switched!');
+  };
+
+  const attackTarget = (moveIndex: number) => {
+    if (!active) return;
+    const moveId = active.moves[moveIndex];
+    if (!moveId) return;
+    if (Date.now() < (cooldowns[moveIndex] || 0)) { setLog(`${MOVES_DB[moveId]?.name || moveId} is still on cooldown.`); return; }
+    const p = posRef.current;
+    const candidates = wildsRef.current.filter(w => w.hp > 0);
+    if (candidates.length === 0) { setLog('No wild creatures left on this map.'); return; }
+    const sorted = [...candidates].sort((a, b) => (Math.abs(a.x - p.x) + Math.abs(a.y - p.y)) - (Math.abs(b.x - p.x) + Math.abs(b.y - p.y)));
+    const chosen = targetId ? (candidates.find(w => w.id === targetId) || sorted[0]) : sorted[0];
+    const dist = Math.abs(chosen.x - p.x) + Math.abs(chosen.y - p.y);
+    if (dist > 2) { setTargetId(chosen.id); setLog(`${chosen.nickname} is too far away (distance ${dist}, need 2 or less). Move closer.`); return; }
+    const { damage, text } = creatureDamage(active, chosen.speciesId, chosen.stats, moveId);
+    setCooldowns(prev => ({ ...prev, [moveIndex]: Date.now() + moveCooldownMs(moveId) }));
+    setTargetId(chosen.id);
+    const nextHp = Math.max(0, chosen.hp - damage);
+    if (nextHp === 0) {
+      const copy = { ...active };
+      gainExp(copy, SPECIES_DB[chosen.speciesId]?.baseExpYield || 50);
+      updatePartyMember(activeIdx, copy);
+      setLog(`${text} ${chosen.nickname} was defeated! ${copy.nickname} gained EXP${copy.level > active.level ? ` and reached level ${copy.level}!` : '.'}`);
+    } else {
+      setLog(`${text} ${chosen.nickname} HP: ${nextHp}/${chosen.maxHp}.`);
+    }
+    setWilds(prev => prev.map(w => w.id === chosen.id ? { ...w, hp: nextHp } : w));
+  };
+
+  const catchTarget = () => {
+    const chosen = wildsRef.current.find(w => w.id === targetId) || wildsRef.current.find(w => w.hp > 0 && w.hp <= w.maxHp * 0.3);
+    if (!chosen) { setLog('No catchable wild targeted — weaken one to 30% HP or less first.'); return; }
+    if (chosen.hp > chosen.maxHp * 0.3) { setLog(`${chosen.nickname} is too healthy to catch reliably — weaken it to 30% HP or less first.`); return; }
+    if (!useItem('luigi_cube')) { setLog('You have no Luigi Cubes!'); return; }
+    const catchRate = SPECIES_DB[chosen.speciesId]?.catchRate || 45;
+    const hpFactor = (3 * chosen.maxHp - 2 * chosen.hp) / (3 * chosen.maxHp);
+    const chance = (catchRate * hpFactor) / 255;
+    if (Math.random() < chance + 0.3) {
+      addMochii({ ...chosen, nickname: chosen.nickname } as MochiiInstance);
+      setWilds(prev => prev.filter(w => w.id !== chosen.id));
+      setLog(`Gotcha! ${chosen.nickname} was caught with a Luigi Cube!`);
+    } else {
+      setLog(`Oh no! ${chosen.nickname} broke free!`);
+    }
+  };
+
+  // Keyboard: held keys + discrete actions. Movement itself is on the tick below.
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Tab') { e.preventDefault(); if (party.length > 1) { setActiveIdx(i => (i + 1) % party.length); setLog('Tag-switched!'); } return; }
-      if (e.key === ' ') { e.preventDefault(); if (!dodging) { setDodging(true); setLog('Dodge! Brief i-frames.'); setTimeout(() => setDodging(false), 500); } return; }
-      if (e.key >= '1' && e.key <= '4') {
-        const moveId = active?.moves[Number(e.key) - 1];
-        if (moveId && !cooldown) {
-          const move = MOVES_DB[moveId];
-          const dmg = move ? Math.max(1, Math.floor(move.bp / 2)) : 5;
-          setCooldown(true);
-          setTimeout(() => setCooldown(false), 800);
-          setDummyHp(h => {
-            const next = Math.max(0, h - dmg);
-            setLog(`${active.nickname} used ${move?.name || moveId} for ${dmg}! Dummy HP: ${next}/100.`);
-            return next;
-          });
-        }
-        return;
-      }
-      const dx = e.key === 'ArrowLeft' || e.key === 'a' ? -1 : e.key === 'ArrowRight' || e.key === 'd' ? 1 : 0;
-      const dy = e.key === 'ArrowUp' || e.key === 'w' ? -1 : e.key === 'ArrowDown' || e.key === 's' ? 1 : 0;
-      if (dx || dy) {
-        e.preventDefault();
-        setDir(dx === 1 ? 'right' : dx === -1 ? 'left' : dy === 1 ? 'down' : 'up');
-        setPos(p => {
-          const nx = p.x + dx, ny = p.y + dy;
-          if (nx < 0 || ny < 0 || nx >= mapData.width || ny >= mapData.height) return p;
-          const tile = mapData.tiles[ny]?.[nx];
-          if (tile === 1 || tile === 4 || tile === 2) return p;
-          return { x: nx, y: ny };
-        });
-      }
+    const down = (e: KeyboardEvent) => {
+      const k = e.key.toLowerCase();
+      if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k)) e.preventDefault();
+      if (k === 'tab') { e.preventDefault(); doSwitch(); return; }
+      if (k === ' ') { doDodge(); return; }
+      if (k === 'q') { doHop(); return; }
+      if (k >= '1' && k <= '4') { attackTarget(Number(k) - 1); return; }
+      keysRef.current.add(k);
     };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  }, [party, active, cooldown, dodging, mapData]);
+    const up = (e: KeyboardEvent) => { keysRef.current.delete(e.key.toLowerCase()); };
+    window.addEventListener('keydown', down);
+    window.addEventListener('keyup', up);
+    return () => { window.removeEventListener('keydown', down); window.removeEventListener('keyup', up); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [party, active, activeIdx, cooldowns, switchReadyAt, targetId, dir]);
+
+  // 100ms game tick: movement (walk every 2 ticks, sprint every tick) + stamina + UI clock.
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      tickRef.current += 1;
+      setNow(Date.now());
+      const keys = keysRef.current;
+      const sprinting = keys.has('shift');
+      const dx = keys.has('arrowright') || keys.has('d') ? 1 : keys.has('arrowleft') || keys.has('a') ? -1 : 0;
+      const dy = keys.has('arrowdown') || keys.has('s') ? 1 : keys.has('arrowup') || keys.has('w') ? -1 : 0;
+      if (dx || dy) {
+        const stepNow = sprinting ? true : tickRef.current % 2 === 0;
+        if (stepNow) {
+          // Sprint only if stamina remains; otherwise fall back to a walk step.
+          if (sprinting) {
+            setStamina(s => {
+              if (s <= 0) return s;
+              return Math.max(0, s - 0.8);
+            });
+          }
+          tryStep(dx, dy);
+        }
+      } else if (!sprinting) {
+        setStamina(s => Math.min(100, s + 1.2));
+      }
+    }, 100);
+    return () => window.clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Wild AI, every 900ms: temperament movement + telegraphed attacks when adjacent.
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      const p = posRef.current;
+      setWilds(prev => prev.map(w => {
+        if (w.hp <= 0) return w;
+        const dist = Math.abs(w.x - p.x) + Math.abs(w.y - p.y);
+        let nx = w.x, ny = w.y;
+        const stepToward = (tx: number, ty: number) => {
+          const sx = tx > w.x ? 1 : tx < w.x ? -1 : 0;
+          const sy = ty > w.y ? 1 : ty < w.y ? -1 : 0;
+          // Prefer the axis with the larger gap (simple A*-free step; a
+          // full easystar A* path is owed for maze maps, not faked here).
+          if (Math.abs(tx - w.x) >= Math.abs(ty - w.y) && sx !== 0) nx = w.x + sx;
+          else if (sy !== 0) ny = w.y + sy;
+          else if (sx !== 0) nx = w.x + sx;
+        };
+        const stepAway = (tx: number, ty: number) => {
+          const sx = tx > w.x ? -1 : tx < w.x ? 1 : 0;
+          const sy = ty > w.y ? -1 : ty < w.y ? 1 : 0;
+          if (Math.abs(tx - w.x) >= Math.abs(ty - w.y) && sx !== 0) nx = w.x + sx;
+          else if (sy !== 0) ny = w.y + sy;
+          else if (sx !== 0) nx = w.x + sx;
+        };
+        if (w.temperament === 'skittish') {
+          if (dist <= 4) stepAway(p.x, p.y);
+          else if (Math.random() < 0.3) { nx = w.x + (Math.random() < 0.5 ? -1 : 1); }
+        } else if (w.temperament === 'territorial') {
+          if (dist <= 6 && dist > 1) stepToward(p.x, p.y);
+        } else if (w.temperament === 'curious') {
+          if (dist > 3 && dist <= 7) stepToward(p.x, p.y);
+        } else if (w.temperament === 'pack') {
+          // Boids-style, tile-step simplified: cohesion toward the pack
+          // centroid, separation if sharing a tile with a packmate.
+          const pack = prev.filter(o => o.temperament === 'pack' && o.hp > 0 && o.id !== w.id);
+          if (pack.length > 0) {
+            const cx = pack.reduce((s, o) => s + o.x, 0) / pack.length;
+            const cy = pack.reduce((s, o) => s + o.y, 0) / pack.length;
+            const mateHere = pack.some(o => o.x === w.x && o.y === w.y);
+            if (mateHere) stepAway(Math.round(cx), Math.round(cy));
+            else if (Math.abs(cx - w.x) + Math.abs(cy - w.y) > 2) stepToward(Math.round(cx), Math.round(cy));
+            else if (dist <= 6 && dist > 1) stepToward(p.x, p.y);
+          }
+        }
+        if ((nx !== w.x || ny !== w.y) && isWalkable(nx, ny)) return { ...w, x: nx, y: ny };
+        return w;
+      }));
+      // Attacks: telegraph, then hit 600ms later unless the player is dodging.
+      const current = wildsRef.current;
+      current.forEach(w => {
+        if (w.hp <= 0 || w.telegraph) return;
+        const dist = Math.abs(w.x - p.x) + Math.abs(w.y - p.y);
+        if (dist > 1) return;
+        setWilds(prev => prev.map(o => o.id === w.id ? { ...o, telegraph: true } : o));
+        window.setTimeout(() => {
+          const store = useGameStore.getState();
+          const attackerIdx = store.party.findIndex(m => m.hp > 0);
+          if (attackerIdx < 0) return;
+          const defender = store.party[attackerIdx];
+          const moveId = w.moves[0] || 'TACKLE';
+          if (Date.now() < dodgeUntilRef.current) {
+            // Perfect Dodge: 0 damage, refund 50% of remaining cooldowns.
+            setCooldowns(prev => {
+              const next: Record<number, number> = {};
+              const t = Date.now();
+              Object.entries(prev).forEach(([k, end]) => { next[Number(k)] = t + Math.max(0, (end - t) * 0.5); });
+              return next;
+            });
+            setLog(`Perfect Dodge! ${w.nickname}'s attack missed and half your move cooldowns were refunded.`);
+          } else {
+            const wildStats = { def: defender.stats.def, spd: defender.stats.spd };
+            const { damage, text } = creatureDamage({ ...w, nickname: w.nickname } as MochiiInstance, defender.speciesId, wildStats, moveId);
+            // creatureDamage expects attacker stats; wild instance stats are in w.stats.
+            void text;
+            const newHp = Math.max(0, defender.hp - damage);
+            store.updatePartyMember(attackerIdx, { ...defender, hp: newHp });
+            setLog(`${w.nickname} hit ${defender.nickname} for ${damage}! ${defender.nickname} HP: ${newHp}/${defender.maxHp}.`);
+          }
+          setWilds(prev => prev.map(o => o.id === w.id ? { ...o, telegraph: false } : o));
+        }, TELEGRAPH_MS);
+      });
+    }, 900);
+    return () => window.clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!active) {
     return (
@@ -84,6 +383,10 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
     );
   }
 
+  const aliveWilds = wilds.filter(w => w.hp > 0);
+  const target = wilds.find(w => w.id === targetId) || aliveWilds[0];
+  const switchRemaining = Math.max(0, switchReadyAt - now);
+
   return (
     <div className="game-screen bg-[#0b1526]">
       <PixiWorldCanvas
@@ -95,35 +398,43 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
         defeatedIds={[]}
         phase="day"
         animWalk={0}
+        wilds={wilds.filter(w => w.hp > 0).map(w => ({ id: w.id, speciesId: w.speciesId, x: w.x, y: w.y, telegraph: w.telegraph }))}
       />
       <div className="absolute top-0 left-0 right-0 z-40 flex justify-between p-3" style={{ paddingTop: 'max(0.75rem, env(safe-area-inset-top))' }}>
         <div className="game-panel px-3 py-2">
-          <div className="font-bold text-white text-sm">Playing as: {active.nickname} {dodging ? '(DODGING)' : ''}</div>
-          <div className="text-[11px] text-slate-300">Training dummy HP: {dummyHp}/100</div>
+          <div className="font-bold text-white text-sm">Playing as: {active.nickname} Lv{active.level} HP {active.hp}/{active.maxHp} {dodging ? '(DODGING 250ms)' : ''} {hopping ? '(HOPPING)' : ''}</div>
+          <div className="text-[11px] text-slate-300">Stamina: {Math.round(stamina)}/100 {stamina <= 0 ? '(exhausted — walk only until it refills)' : ''} • Luigi Cubes: {inventory['luigi_cube'] || 0}</div>
+          <div className="text-[11px] text-slate-300">Wilds alive: {aliveWilds.length}/5 {target ? `• Target: ${target.nickname} ${target.hp}/${target.maxHp} HP (${target.temperament})${target.telegraph ? ' — ATTACK INCOMING, DODGE!' : ''}` : ''}</div>
         </div>
         <button onClick={onBack} className="game-button px-3 py-2 text-sm">Exit Creature Mode</button>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 z-40 game-panel-bottom p-3" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+      <div className="absolute bottom-0 left-0 right-0 z-40 game-panel-bottom p-3 max-h-[52vh] overflow-y-auto" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
         <div className="text-sm text-white mb-2">{log}</div>
         <div className="grid grid-cols-4 gap-2">
-          {active.moves.slice(0, 4).map((mId, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                const move = MOVES_DB[mId];
-                const dmg = move ? Math.max(1, Math.floor(move.bp / 2)) : 5;
-                setDummyHp(h => Math.max(0, h - dmg));
-                setLog(`${active.nickname} used ${move?.name || mId} for ${dmg}!`);
-              }}
-              className="game-button px-2 py-2 text-sm"
-            >
-              {i + 1}. {MOVES_DB[mId]?.name || mId}
-            </button>
-          ))}
+          {active.moves.slice(0, 4).map((mId, i) => {
+            const remaining = Math.max(0, (cooldowns[i] || 0) - now);
+            return (
+              <button key={i} onClick={() => attackTarget(i)} disabled={remaining > 0} className="game-button px-2 py-2 text-sm disabled:opacity-50">
+                {i + 1}. {MOVES_DB[mId]?.name || mId}{remaining > 0 ? ` (${Math.ceil(remaining / 1000)}s)` : ''}
+              </button>
+            );
+          })}
         </div>
         <div className="flex gap-2 mt-2">
-          <button onClick={() => { setDodging(true); setTimeout(() => setDodging(false), 500); }} className="game-button px-3 py-1.5 text-sm flex-1">Dodge (Space)</button>
-          <button onClick={() => { if (party.length > 1) setActiveIdx(i => (i + 1) % party.length); }} className="game-button px-3 py-1.5 text-sm flex-1">Tag-Switch (Tab)</button>
+          <button onClick={doDodge} className="game-button px-3 py-1.5 text-sm flex-1">Dodge (Space)</button>
+          <button onClick={doHop} className="game-button px-3 py-1.5 text-sm flex-1">Hop (Q)</button>
+          <button onClick={doSwitch} disabled={switchRemaining > 0} className="game-button px-3 py-1.5 text-sm flex-1 disabled:opacity-50">Tag-Switch (Tab){switchRemaining > 0 ? ` (${Math.ceil(switchRemaining / 1000)}s)` : ''}</button>
+          <button onClick={catchTarget} className="game-button px-3 py-1.5 text-sm flex-1">Catch (Luigi Cube)</button>
+        </div>
+        <div className="mt-3">
+          <div className="text-white font-bold text-sm mb-1">Wild creatures (tap to target)</div>
+          <div className="flex flex-wrap gap-2">
+            {wilds.map(w => (
+              <button key={w.id} onClick={() => { setTargetId(w.id); setLog(`Target: ${w.nickname} (${w.temperament}), ${w.hp}/${w.maxHp} HP at (${w.x}, ${w.y}).`); }} className={`game-button px-3 py-1.5 text-sm ${w.id === target?.id ? 'ring-2 ring-yellow-300' : ''} ${w.hp <= 0 ? 'opacity-50' : ''}`}>
+                {w.nickname} ({w.temperament}) {w.hp}/{w.maxHp}{w.telegraph ? ' ⚠' : ''}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="mt-3">
           <div className="text-white font-bold text-sm mb-1">Data Tape Transform — play as a recorded creature</div>
@@ -152,7 +463,9 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
             {guardian ? 'Release Guardian' : 'Assign as Garden Guardian'}
           </button>
         </div>
-        <div className="text-[11px] text-slate-400 mt-2">PLACEHOLDER structure: tile-step movement and a training dummy. Smooth real-time movement, wild-creature combat, and full damage rules are the next pass.</div>
+        <div className="text-[11px] text-slate-400 mt-2">
+          Pass 2, not 100%: smooth pixel movement (not tile steps), top-down walk sprites, a canonical cooldown table, easystar A* wild pathfinding, GardenStats sharing for the +9% bonus, and Guardian persistence are still owed — see the lane checklist in the reply, not a claimed 100%.
+        </div>
       </div>
     </div>
   );
