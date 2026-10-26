@@ -1,0 +1,626 @@
+{
+  "_meta": {
+    "date": "2026-10-26",
+    "decompShape": "Pokemon trainer party table: per trainer, an ordered party list of {species, level, items, moves, AI flags} (FireRed src/data/trainers.h + trainer_parties.h pattern; HeartGold extracted 738 trainers / 1,776 party members, 0 unresolved; Black 2 extracted 814 trainers / 1,808 party members, 0 unresolved \u2014 src/lib/generated/decomp_heartgold_trainers.json, decomp_black2_trainers.json). Mochiichao replacement keeps the same shape: ordered party, speciesId + level per slot, moves + heldItem slots present even when unfilled (null = NEED TO MAKE, never invented).",
+    "rosterNote": "Species IDs/names/elements below follow global_roster.json (47 creatures) EXCEPT where a code entry disagrees \u2014 those disagreements are flagged in the team's notes and NOT silently resolved.",
+    "rule": "Fixed teams are the DEFAULT (Mars locked 2026-10-26 12:34-12:37 CDT). Randomized teams are a settings option only \u2014 see randomized-mode.json. No per-draw approval is needed; the pool/system is canon.",
+    "slice": "pokemon-parity-fill slice 3 \u2014 TRAINER TEAMS (fixed default) + ITEMS/SHOP/CAPTURE/SAVE",
+    "status": "STAGED ONLY \u2014 NOT committed, NOT pushed, NO PR. Show-first for Mars.",
+    "statusValues": "LOCKED = Mars-locked canon. SHOW-FIRST = Muse-picked within locked canon, awaiting Mars eye-check/veto. CARRY-OVER = already in game code (FullWorldMaps.ts), restated here unchanged, not newly claimed as Mars canon. SPECIES-LOCKED = species locked, levels/moves open."
+  },
+  "carryOverInCodeTeams": [
+    {
+      "badge": null,
+      "fightPoint": "early",
+      "notes": "Type label differs between the two code entries (Water vs Steel) \u2014 wiring flag, team itself identical. Later Hex fights are NOT staged (no locked later team).",
+      "party": [
+        {
+          "heldItem": null,
+          "level": 5,
+          "moves": [
+            "Metal Claw",
+            "Tackle"
+          ],
+          "slot": 1,
+          "speciesId": "004",
+          "speciesName": "Razorgater"
+        }
+      ],
+      "reward": 100,
+      "source": "FullWorldMaps.ts rival_hex + hex_battle_event (same team in both entries). Hex's starter Razorgater is locked by his dialogue ('I already picked my starter. Razorgater, obviously.').",
+      "status": "CARRY-OVER",
+      "trainerId": "hex",
+      "trainerName": "Hex"
+    },
+    {
+      "badge": null,
+      "party": [
+        {
+          "heldItem": null,
+          "level": 5,
+          "moves": [
+            "String Shot",
+            "Tackle"
+          ],
+          "slot": 1,
+          "speciesId": "038",
+          "speciesName": "Sproutle"
+        }
+      ],
+      "reward": 120,
+      "source": "FullWorldMaps.ts trainer_youngster.",
+      "status": "CARRY-OVER",
+      "trainerId": "youngster_jay",
+      "trainerName": "Youngster Jay"
+    },
+    {
+      "badge": null,
+      "party": [
+        {
+          "heldItem": null,
+          "level": 4,
+          "moves": [
+            "Bubble",
+            "Tackle"
+          ],
+          "slot": 1,
+          "speciesId": "001",
+          "speciesName": "Mochii"
+        }
+      ],
+      "reward": 100,
+      "source": "FullWorldMaps.ts trainer_lass.",
+      "status": "CARRY-OVER",
+      "trainerId": "lass_amy",
+      "trainerName": "Lass Amy"
+    },
+    {
+      "badge": null,
+      "party": [
+        {
+          "heldItem": null,
+          "level": 6,
+          "moves": [
+            "Pound",
+            "Tackle"
+          ],
+          "slot": 1,
+          "speciesId": "007",
+          "speciesName": "Tyrage"
+        }
+      ],
+      "reward": 180,
+      "source": "FullWorldMaps.ts trainer_hiker.",
+      "status": "CARRY-OVER",
+      "trainerId": "hiker_dan",
+      "trainerName": "Hiker Dan"
+    },
+    {
+      "badge": null,
+      "notes": "WIRING FLAG: code gives this entry id '004' but name 'Squirmite'; id 004 is Razorgater in global_roster.json, and Squirmite has no entry in the 47-creature roster extract. Team restated code-faithfully; ID resolution is a wiring task, not a team change.",
+      "party": [
+        {
+          "heldItem": null,
+          "level": 3,
+          "moves": [
+            "String Shot",
+            "Tackle"
+          ],
+          "slot": 1,
+          "speciesId": "004",
+          "speciesName": "Squirmite (as named in code)"
+        }
+      ],
+      "reward": 80,
+      "source": "FullWorldMaps.ts trainer_bugcatcher.",
+      "status": "CARRY-OVER",
+      "trainerId": "bug_catcher_rick",
+      "trainerName": "Bug Catcher Rick"
+    },
+    {
+      "badge": null,
+      "party": [
+        {
+          "heldItem": null,
+          "level": 8,
+          "moves": [
+            "Pound",
+            "Tackle"
+          ],
+          "slot": 1,
+          "speciesId": "007",
+          "speciesName": "Tyrage"
+        }
+      ],
+      "reward": 300,
+      "source": "FullWorldMaps.ts dojo_acolyte_1 (+ repeated event entries, same team).",
+      "status": "CARRY-OVER",
+      "trainerId": "acolyte_ken",
+      "trainerName": "Acolyte Ken"
+    },
+    {
+      "badge": null,
+      "party": [
+        {
+          "heldItem": null,
+          "level": 9,
+          "moves": [
+            "Metal Claw",
+            "Tackle"
+          ],
+          "slot": 1,
+          "speciesId": "004",
+          "speciesName": "Razorgater"
+        }
+      ],
+      "reward": 350,
+      "source": "FullWorldMaps.ts dojo_acolyte_2 (+ repeated event entries, same team).",
+      "status": "CARRY-OVER",
+      "trainerId": "acolyte_ren",
+      "trainerName": "Acolyte Ren"
+    },
+    {
+      "badge": null,
+      "party": [
+        {
+          "heldItem": null,
+          "level": 10,
+          "moves": [
+            "Aqua Shot",
+            "Quick Attack"
+          ],
+          "slot": 1,
+          "speciesId": "001",
+          "speciesName": "Mochii"
+        }
+      ],
+      "reward": 400,
+      "source": "FullWorldMaps.ts dojo_acolyte_3.",
+      "status": "CARRY-OVER",
+      "trainerId": "acolyte_shin",
+      "trainerName": "Acolyte Shin"
+    },
+    {
+      "badge": null,
+      "party": [
+        {
+          "heldItem": null,
+          "level": 11,
+          "moves": [
+            "Vine Lash",
+            "Tackle"
+          ],
+          "slot": 1,
+          "speciesId": "038",
+          "speciesName": "Sproutle"
+        }
+      ],
+      "reward": 450,
+      "source": "FullWorldMaps.ts dojo_acolyte_4.",
+      "status": "CARRY-OVER",
+      "trainerId": "acolyte_ryu",
+      "trainerName": "Acolyte Ryu"
+    },
+    {
+      "badge": null,
+      "notes": "Move-list variant between duplicate code entries is a wiring flag (pick one list at wiring). Other Hacker grunts have no locked team; under the variation system they are pool-only (no mainstays required) once a pool is defined \u2014 no pool is defined in this slice.",
+      "party": [
+        {
+          "heldItem": null,
+          "level": 12,
+          "moves": [
+            "Shadow Sneak",
+            "Leer"
+          ],
+          "slot": 1,
+          "speciesId": "010",
+          "speciesName": "Kittember"
+        }
+      ],
+      "reward": 350,
+      "source": "FullWorldMaps.ts hacker_grunt2 (+ repeated event entries; one entry's moves read Scratch/Leer vs Shadow Sneak/Leer \u2014 team species/level identical).",
+      "status": "CARRY-OVER",
+      "trainerId": "hacker_grunt",
+      "trainerName": "Hacker Grunt"
+    }
+  ],
+  "counts": {
+    "carryOverSlots": 10,
+    "carryOverTeams": 10,
+    "cowboySlots": 6,
+    "cowboySpeciesLockedTeams": 1,
+    "fixedDefaultSlots": 17,
+    "fixedDefaultTeams": 5,
+    "stagedTeamsMovesOpen": 5,
+    "stagedTeamsWithMoves": 11,
+    "totalStagedSlots": 33,
+    "totalStagedTeams": 16
+  },
+  "fixedDefaultTeams": [
+    {
+      "badge": null,
+      "fightPoint": "first",
+      "levelBand": "13-15",
+      "notes": "Mainstay stages correct: Wispkin below Lv28 Duskfiend threshold; Razorgater below Lv18 Chromejaww threshold. Moves/reward NEED TO MAKE (not invented here). Variant First-B (Gearkid instead of Inklet) is retained as a randomized-mode example draw, not discarded.",
+      "party": [
+        {
+          "elements": [
+            "Umbral"
+          ],
+          "heldItem": null,
+          "level": 14,
+          "moves": null,
+          "role": "mainstay",
+          "slot": 1,
+          "speciesId": "042",
+          "speciesName": "Wispkin"
+        },
+        {
+          "elements": [
+            "Chrome"
+          ],
+          "heldItem": null,
+          "level": 15,
+          "moves": null,
+          "role": "mainstay",
+          "slot": 2,
+          "speciesId": "004",
+          "speciesName": "Razorgater"
+        },
+        {
+          "elements": [
+            "Aqua",
+            "Umbral"
+          ],
+          "heldItem": null,
+          "level": 13,
+          "moves": null,
+          "role": "fixed pick (was a randomized-pool slot)",
+          "slot": 3,
+          "speciesId": "026",
+          "speciesName": "Inklet"
+        }
+      ],
+      "reward": null,
+      "source": "JAX-FIGHT-TEAMS-PROPOSAL-2026-10-26.md Variant First-A, promoted to the fixed default. Mainstays + theme pool locked in TEAM-VARIATION-SYSTEM-PROPOSAL-2026-10-26.md (Umbral = dark/ghost analogue, Chrome = metal/steel analogue; roster has NO Ghost and NO Poison element; poison is name-based only, e.g. Toxitacle).",
+      "status": "SHOW-FIRST",
+      "teamSize": 3,
+      "trainerId": "jax",
+      "trainerName": "Jax"
+    },
+    {
+      "badge": null,
+      "fightPoint": "mid",
+      "levelBand": "29-31",
+      "notes": "FLAG (not a blocker, trainer-table convention): Chromejaww at Lv31 sits past its Lv30 Reaperdile threshold in global_roster.json \u2014 trainer-held unevolved forms past a threshold are normal in Pokemon trainer tables (same pattern as Falk's Zephling, see below), so this is kept as proposed, not 'fixed'. Moves/reward NEED TO MAKE. Variant Mid-B (Duneclaw + Finblade) retained as a randomized-mode example draw.",
+      "party": [
+        {
+          "elements": [
+            "Umbral"
+          ],
+          "heldItem": null,
+          "level": 30,
+          "moves": null,
+          "role": "mainstay (Wispkin evolved, Lv28 threshold passed)",
+          "slot": 1,
+          "speciesId": "043",
+          "speciesName": "Duskfiend"
+        },
+        {
+          "elements": [
+            "Chrome",
+            "Strike"
+          ],
+          "heldItem": null,
+          "level": 31,
+          "moves": null,
+          "role": "mainstay (Razorgater evolved, Lv18 passed; below Lv30 Reaperdile threshold in proposal terms \u2014 see flag)",
+          "slot": 2,
+          "speciesId": "005",
+          "speciesName": "Chromejaww"
+        },
+        {
+          "elements": [
+            "Aqua",
+            "Umbral"
+          ],
+          "heldItem": null,
+          "level": 29,
+          "moves": null,
+          "role": "fixed pick, poison-flavoured (name-based only, NOT an element)",
+          "slot": 3,
+          "speciesId": "027",
+          "speciesName": "Toxitacle"
+        },
+        {
+          "elements": [
+            "Chrome",
+            "Core"
+          ],
+          "heldItem": null,
+          "level": 30,
+          "moves": null,
+          "role": "fixed pick",
+          "slot": 4,
+          "speciesId": "033",
+          "speciesName": "Mechapion"
+        }
+      ],
+      "reward": null,
+      "source": "JAX-FIGHT-TEAMS-PROPOSAL-2026-10-26.md Variant Mid-A, promoted to the fixed default.",
+      "status": "SHOW-FIRST",
+      "teamSize": 4,
+      "trainerId": "jax",
+      "trainerName": "Jax"
+    },
+    {
+      "badge": null,
+      "fightPoint": "last",
+      "levelBand": "44-47",
+      "notes": "No duplicates, no same-line doubles. Moves/reward NEED TO MAKE. Variant Last-B (Toxitacle + Cragarm + Megalochrome + Pebblefist) retained as a randomized-mode example draw. Pebblefist HP is NOT set by this file \u2014 it remains a separate Mars-only confirmation.",
+      "party": [
+        {
+          "elements": [
+            "Umbral"
+          ],
+          "heldItem": null,
+          "level": 46,
+          "moves": null,
+          "role": "mainstay, fully evolved",
+          "slot": 1,
+          "speciesId": "043",
+          "speciesName": "Duskfiend"
+        },
+        {
+          "elements": [
+            "Chrome",
+            "Strike"
+          ],
+          "heldItem": null,
+          "level": 47,
+          "moves": null,
+          "role": "mainstay, fully evolved (Lv30 threshold long passed)",
+          "slot": 2,
+          "speciesId": "006",
+          "speciesName": "Reaperdile"
+        },
+        {
+          "elements": [
+            "Core",
+            "Umbral"
+          ],
+          "heldItem": null,
+          "level": 45,
+          "moves": null,
+          "role": "fixed pick, late-only pool",
+          "slot": 3,
+          "speciesId": "009",
+          "speciesName": "Oblivirex"
+        },
+        {
+          "elements": [
+            "Aqua",
+            "Umbral"
+          ],
+          "heldItem": null,
+          "level": 44,
+          "moves": null,
+          "role": "fixed pick",
+          "slot": 4,
+          "speciesId": "028",
+          "speciesName": "Krakenox"
+        },
+        {
+          "elements": [
+            "Chrome",
+            "Core"
+          ],
+          "heldItem": null,
+          "level": 46,
+          "moves": null,
+          "role": "fixed pick",
+          "slot": 5,
+          "speciesId": "034",
+          "speciesName": "Gorokappa"
+        },
+        {
+          "elements": [
+            "Core",
+            "Chrome"
+          ],
+          "heldItem": null,
+          "level": 47,
+          "moves": null,
+          "role": "fixed pick, late-only pool",
+          "slot": 6,
+          "speciesId": "037",
+          "speciesName": "Terrapod"
+        }
+      ],
+      "reward": null,
+      "source": "JAX-FIGHT-TEAMS-PROPOSAL-2026-10-26.md Variant Last-A, promoted to the fixed default.",
+      "status": "SHOW-FIRST",
+      "teamSize": 6,
+      "trainerId": "jax",
+      "trainerName": "Jax"
+    },
+    {
+      "badge": "Wind Fragment",
+      "fightPoint": "dojo2",
+      "hmRewardLabelInCode": "Cut",
+      "levelBand": "18-20",
+      "notes": "MARS-ONLY FLAGS (staged exactly as locked, NOT altered): (1) This team is three stages of ONE evolution line (Zephling -> Aerobeak -> Stormtalon) in a single team \u2014 an explicit exception to the team-system 'no same-line doubles' rule; do not 'fix' it by swapping species without Mars saying so. (2) Evolution-threshold tension in global_roster.json: Zephling -> Aerobeak at Lv16 (so Lv18 Zephling is a trainer-held unevolved form, normal in Pokemon tables), but Aerobeak -> Stormtalon at Lv34, so a Lv20 Stormtalon cannot come from level evolution under the current roster data. Either the roster threshold, the team level, or the evolution method for Falk's Stormtalon needs a Mars call. Moves NEED TO MAKE (the placeholder's Razor Leaf is NOT carried over \u2014 wrong theme, single-species placeholder).",
+      "party": [
+        {
+          "elements": [
+            "Aero",
+            "Wind"
+          ],
+          "heldItem": null,
+          "level": 18,
+          "moves": null,
+          "role": "locked",
+          "slot": 1,
+          "speciesId": "019",
+          "speciesName": "Zephling"
+        },
+        {
+          "elements": [
+            "Aero",
+            "Wind"
+          ],
+          "heldItem": null,
+          "level": 19,
+          "moves": null,
+          "role": "locked",
+          "slot": 2,
+          "speciesId": "020",
+          "speciesName": "Aerobeak"
+        },
+        {
+          "elements": [
+            "Aero",
+            "Wind"
+          ],
+          "heldItem": null,
+          "level": 20,
+          "moves": null,
+          "role": "locked",
+          "slot": 3,
+          "speciesId": "021",
+          "speciesName": "Stormtalon"
+        }
+      ],
+      "reward": 1500,
+      "source": "Task lock for this slice + TEAM-VARIATION-SYSTEM-PROPOSAL \u00a77 ('Falk: DONE \u2014 team 019/020/021 all locked'); lane replacement team for the FullWorldMaps.ts placeholder (single Sproutle 038, Grass, Lv20 \u2014 wrong theme for an Aero dojo). Name 'Master Falk', Aero theme, Wind Fragment, reward 1500 already in FullWorldMaps.ts (master_falk).",
+      "status": "LOCKED",
+      "teamSize": 3,
+      "trainerId": "falk",
+      "trainerName": "Master Falk"
+    },
+    {
+      "badge": "Core Fragment",
+      "fightPoint": "dojo1",
+      "hmRewardLabelInCode": "Strength",
+      "levelBand": "14",
+      "notes": "WIRING FLAG (not a team change): the code entry says id 039 = Dreadtoise (matching the 12-species species.ts, where Sproutle 038 -> Dreadtoise 039 at Lv18), but global_roster.json (47 creatures) says 039 = Shellguard and 040 = Dreadtoise (Sproutle 038 -> Shellguard 039 at Lv18 -> Dreadtoise 040 at Lv32). Wiring must resolve which ID table is authoritative before this team is wired; the staged team is code-faithful and does not pick a winner. A second, conflicting Lin entry exists in Maps.ts (Cocoonode + Squirmite, Silk Badge) \u2014 FullWorldMaps.ts is treated as current; the Maps.ts entry is legacy, not staged.",
+      "party": [
+        {
+          "elements": [
+            "Grass",
+            "Steel"
+          ],
+          "heldItem": null,
+          "level": 14,
+          "moves": [
+            "Iron Defense",
+            "Tackle",
+            "Shell Smash",
+            "Rock Slide"
+          ],
+          "role": "dojo boss",
+          "slot": 1,
+          "speciesId": "039",
+          "speciesName": "Dreadtoise"
+        }
+      ],
+      "reward": 1500,
+      "source": "FullWorldMaps.ts DOJO_1 master_lin entry, restated unchanged: single Dreadtoise Lv14, reward 1500, badge Core Fragment, hmReward label 'Strength'.",
+      "status": "SHOW-FIRST",
+      "teamSize": 1,
+      "trainerId": "lin",
+      "trainerName": "Master Lin"
+    }
+  ],
+  "speciesLockedTeams": [
+    {
+      "badge": null,
+      "fightPoint": "story",
+      "levelBand": null,
+      "notes": "Levels + moves are OPEN (Mars/lane still owe them) \u2014 this file does not invent them. Evolution chain verified in global_roster.json: Pupbble 013 -> Terradog 014 (Lv16) -> Quakehound 015 (Lv32). 'Teridax' is NOT in the roster. Floatcalf elements not filled in from the roster extract used here \u2014 verify against global_roster.json at wiring; the species itself is locked regardless.",
+      "party": [
+        {
+          "elements": [
+            "Beast",
+            "Earth"
+          ],
+          "heldItem": null,
+          "level": null,
+          "moves": null,
+          "role": "mid-fight evolution slot: Pupbble -> Terradog (014) MID-FIGHT, cancellable like Pokemon evolution",
+          "slot": 1,
+          "speciesId": "013",
+          "speciesName": "Pupbble"
+        },
+        {
+          "elements": null,
+          "heldItem": null,
+          "level": null,
+          "moves": null,
+          "role": "surprise, old guy's farm",
+          "slot": 2,
+          "speciesId": "024",
+          "speciesName": "Floatcalf"
+        },
+        {
+          "elements": [
+            "Flora",
+            "Chrome"
+          ],
+          "heldItem": null,
+          "level": null,
+          "moves": null,
+          "role": "surprise, old guy's farm",
+          "slot": 3,
+          "speciesId": "038",
+          "speciesName": "Sproutle"
+        },
+        {
+          "elements": [
+            "Beast",
+            "Earth"
+          ],
+          "heldItem": null,
+          "level": null,
+          "moves": null,
+          "role": "his own; Terradog's final evolution as a SEPARATE later slot (not the mid-fight slot)",
+          "slot": 4,
+          "speciesId": "015",
+          "speciesName": "Quakehound"
+        },
+        {
+          "elements": [
+            "Flora",
+            "Chrome"
+          ],
+          "heldItem": null,
+          "level": null,
+          "moves": null,
+          "role": "surprise, old guy's farm, heaviest hitter",
+          "slot": 5,
+          "speciesId": "040",
+          "speciesName": "Dreadtoise"
+        },
+        {
+          "elements": [
+            "Aqua",
+            "Mythic"
+          ],
+          "heldItem": null,
+          "level": null,
+          "moves": null,
+          "role": "almost-mythical, non-farm surprise; NOT Mythar 331; Yogiferno NOT chosen",
+          "slot": 6,
+          "speciesId": "003",
+          "speciesName": "AquariiOS"
+        }
+      ],
+      "reward": null,
+      "source": "COWBOY-PARTY-REVISED-2026-10-26.md, LOCKED 2026-10-26 ~12:20 CDT. NOT varied under any mode (excluded from the team-variation system).",
+      "status": "SPECIES-LOCKED",
+      "teamSize": 6,
+      "trainerId": "cowboy",
+      "trainerName": "Cowboy Kid"
+    }
+  ]
+}
