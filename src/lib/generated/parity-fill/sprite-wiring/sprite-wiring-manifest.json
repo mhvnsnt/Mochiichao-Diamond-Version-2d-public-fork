@@ -1,0 +1,3524 @@
+{
+ "module": "sprite-wiring",
+ "date": "2026-10-26",
+ "status": "STAGED ONLY \u2014 NOT APPLIED TO THE GAME. NO commit, NO PR, NO repo edit, NO file Mars has seen overwritten. Coordinator applies on merge; UI round-2 matched-frame menu fix in flight is NOT touched.",
+ "pokemon_baseline": "Pokemon per-creature slots, from decomp files: front.png, back.png, icon.png, shiny.pal (palette swap, NOT new art), footprint.png (Pokedex), overworld 4-dir walk, cry.wav. FireRed graphics/pokemon/<species>/ + Black 2 res/pokemon/<species>/ (see sprite audit \u00a72).",
+ "mochiichao_replacement_rule": "Same slots, same structure, Mochiichao creatures/art/words in Pokemon's slots. Only literal Pokemon species/characters/logos/dialogue are swapped; systems, structure, data shapes are brought over literally (Mars, 2026-10-26 ~13:07).",
+ "live_wiring_today": "0/51 verified wired live (parity report \u00a714; Region 1 live playtest showed placeholder blobs in BattleView/Team). spriteSheets.ts today imports only dorowani (147) + gabu (148); every other species renders the coloured-silhouette fallback. This manifest does NOT change that \u2014 it is the staged map the coordinator wires from.",
+ "counts": {
+  "creatures": 51,
+  "wired_staged": 50,
+  "staged_unwired": 1,
+  "missing_creature_level": 0,
+  "battle_front_wired_staged": "50/51 (51st look mapped from game-ready, not lock-verified)",
+  "battle_back_wired_staged": "50/51 (mechapion STAGED-UNWIRED: no back role)",
+  "icons_wired_staged": "51/51 (approval 41/51 = 80%, 10 derived head-crops await Mars)",
+  "idle_wired_staged": "51/51",
+  "hurt_wired_staged": "51/51",
+  "attack_wired_staged": "51/51",
+  "shiny_v2_wired_staged": "51/51 fronts + 51/51 palettes (17 sources changed vs old shiny, 34 unchanged)",
+  "footprint_wired_staged": "37/51 = 73%",
+  "footprint_no_footprint": "14/51 = 27% (with reasons, feet never invented)",
+  "walk_dirs_present": "50/51 = 98% (strikechamp_unsuited_full has no separate walk dir)",
+  "walk_full_8plus": "42/50 = 84%",
+  "walk_partial_by_design": "8/50 = 16% (flyer/swimmer/hover)",
+  "cry_wired": "0/51 = 0% (hook only, no audio generated)",
+  "title_second_action_shots": "STAGED 10/10 = 100% (13 files on disk incl. kept v2/v3 variants); WIRED LIVE 0/10 = 0%"
+ },
+ "walk_qa_note": "Task-supplied 'walk frames 15/50 = 30%' is the OLD QA PASS baseline (2+ frames x 4 dirs, QA-verified) from walk-frames/WALK-INDEX.md, later reconciled to 29/51 = 57% at that batch's Step 1 end. It is NOT the current disk state: disk today is 50/50 walk dirs present, 42/50 full 8-frame = 84%. Both figures are recorded here so the coordinator does not mistake the old QA baseline for today's disk count; QA re-verification of the 42 full dirs is still owed.",
+ "global_slots": {
+  "cry_audio": {
+   "status": "MISSING",
+   "count": "0/51",
+   "hook": "getCry(slug) -> null until audio exists; title cry spec staged, 0/10 title-pool cries made, final lock 7/10 = 70% for title pool only"
+  },
+  "title_second_action_shots": {
+   "status": "STAGED-UNWIRED",
+   "count": "staged 10/10, wired live 0/10",
+   "note": "CORRECTION to task brief's '0/10': the 0 is the LIVE-wired count. Staged set exists at ui-art/title-backgrounds/action-shots/ (verified this pass: 13 files, 7.8 MB; 10 creatures: dorowani, gabu, kittember, mochii, mythar, razorgater, sproutle, tyrage, wispkin, yogiferno; Tyrage v2 FINAL kept alongside v1, Gabu v3 kept \u2014 nothing overwritten). Built from clean cutouts + card v2 backgrounds + titleCardEffects.ts mapping only. PR gating + live playtest still owed; NOT claimed done. Title lane owns the build; this module only records the slot so wiring does not re-make it."
+  },
+  "move_to_attack_set_assignment": {
+   "status": "MISSING",
+   "count": "0/51",
+   "note": "Maps each move to one of its creature's attack sets; blocks Layer 2 wiring (sprite audit \u00a75). Separate slice, not invented here."
+  }
+ },
+ "creatures": {
+  "aerobeak": {
+   "slug": "aerobeak",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/aerobeak/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/aerobeak/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/aerobeak/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/aerobeak/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/aerobeak/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/aerobeak/"
+   },
+   "game_ready_cells": 17,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Partial by design (4 PNGs) \u2014 flyer/swimmer/hover movement, not a leg-walk shortfall; walk-gate decision still owed before shipping.",
+    "frames_png": 4,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/aerobeak_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/aerobeak_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/aerobeak_shiny_swatch.png",
+    "source": "game-ready/aerobeak/cells/aerobeak_cell_00.png",
+    "source_diff_px_vs_old_shiny": 120,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/aerobeak_footprint.png",
+    "foot_type": "talon",
+    "confidence": "medium",
+    "note": "clawed talon shape visible; exact toe count not resolvable at 64px"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "aquariios": {
+   "slug": "aquariios",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/aquariios/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/aquariios/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/aquariios/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/aquariios/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/aquariios/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/aquariios/"
+   },
+   "game_ready_cells": 12,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (9 PNGs).",
+    "frames_png": 9,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/aquariios_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/aquariios_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/aquariios_shiny_swatch.png",
+    "source": "game-ready/aquariios/cells/aquariios_cell_00a.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "bottom shows fins/tail only, no feet (swimmer) \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "ashemit": {
+   "slug": "ashemit",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/ashemit/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/ashemit/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/ashemit/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/ashemit/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/ashemit/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/ashemit/"
+   },
+   "game_ready_cells": 8,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/ashemit_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/ashemit_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/ashemit_shiny_swatch.png",
+    "source": "game-ready/ashemit/cells/ashemit_cell_00.png",
+    "source_diff_px_vs_old_shiny": 43,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/ashemit_footprint.png",
+    "foot_type": "paw",
+    "confidence": "medium",
+    "note": "Bottom-centre crossed paw isolated by colour (grey paws vs orange body); toe detail not resolvable."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "astroleviathan": {
+   "slug": "astroleviathan",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/astroleviathan/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/astroleviathan/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/astroleviathan/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/astroleviathan/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/astroleviathan/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/astroleviathan/"
+   },
+   "game_ready_cells": 16,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/astroleviathan_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/astroleviathan_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/astroleviathan_shiny_swatch.png",
+    "source": "atlases/astroleviathan/astroleviathan_cell_01.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "sea creature; bottom shows tail flukes, no feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "chromejaww": {
+   "slug": "chromejaww",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/chromejaww/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/chromejaww/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/chromejaww/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/chromejaww/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/chromejaww/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/chromejaww/"
+   },
+   "game_ready_cells": 21,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/chromejaww_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/chromejaww_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/chromejaww_shiny_swatch.png",
+    "source": "game-ready/chromejaww/cells/chromejaww_cell_01.png",
+    "source_diff_px_vs_old_shiny": 69,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/chromejaww_footprint.png",
+    "foot_type": "small foot",
+    "confidence": "medium-low",
+    "note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "cocoonode": {
+   "slug": "cocoonode",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/cocoonode/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/cocoonode/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/cocoonode/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/cocoonode/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/cocoonode/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/cocoonode/"
+   },
+   "game_ready_cells": 11,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/cocoonode_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/cocoonode_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/cocoonode_shiny_swatch.png",
+    "source": "atlases/cocoonode/cocoonode_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "cocoon; pointed base, no feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "cragarm": {
+   "slug": "cragarm",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/cragarm/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/cragarm/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/cragarm/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/cragarm/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/cragarm/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/cragarm/"
+   },
+   "game_ready_cells": 19,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/cragarm_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/cragarm_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/cragarm_shiny_swatch.png",
+    "source": "atlases/cragarm/cragarm_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/cragarm_footprint.png",
+    "foot_type": "rock foot",
+    "confidence": "medium",
+    "note": "rocky foot with toe bumps; exact count not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "dorowani": {
+   "slug": "dorowani",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/dorowani/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/dorowani/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/dorowani/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/dorowani/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/dorowani/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/dorowani/"
+   },
+   "game_ready_cells": 13,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/dorowani_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/dorowani_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/dorowani_shiny_swatch.png",
+    "source": "atlases/dorowani/dorowani_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/dorowani_footprint.png",
+    "foot_type": "foot",
+    "confidence": "medium",
+    "note": "feet visible on legs; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   },
+   "pivot_2d": {
+    "status": "WIRED-STAGED",
+    "note": "Pivot Phase 2 (2026-10-26, staged, NO PR): 2D set verified complete (dorowani 13 cells / gabu 20 cells); game-path mapping 8/8 bake files \u2192 locked 2D cells staged at sprite-art/animation/expanded-scope/pivot-2d-20261026/. Dorowani V3 mouths 0/4 (no front mouth line) \u2014 eyes-only ships, Mars decision owed."
+   }
+  },
+  "dreadtoise": {
+   "slug": "dreadtoise",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/dreadtoise/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/dreadtoise/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/dreadtoise/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/dreadtoise/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/dreadtoise/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/dreadtoise/"
+   },
+   "game_ready_cells": 24,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/dreadtoise_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/dreadtoise_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/dreadtoise_shiny_swatch.png",
+    "source": "atlases/dreadtoise/dreadtoise_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/dreadtoise_footprint.png",
+    "foot_type": "foot",
+    "confidence": "medium",
+    "note": "animal feet on legs; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "duneclaw": {
+   "slug": "duneclaw",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/duneclaw/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/duneclaw/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/duneclaw/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/duneclaw/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/duneclaw/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/duneclaw/"
+   },
+   "game_ready_cells": 23,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/duneclaw_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/duneclaw_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/duneclaw_shiny_swatch.png",
+    "source": "game-ready/duneclaw/cells/duneclaw_cell_02.png",
+    "source_diff_px_vs_old_shiny": 50,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/duneclaw_footprint.png",
+    "foot_type": "clawed foot",
+    "confidence": "medium",
+    "note": "claws visible; exact toe count not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "duskfiend": {
+   "slug": "duskfiend",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/duskfiend/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/duskfiend/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/duskfiend/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/duskfiend/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/duskfiend/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/duskfiend/"
+   },
+   "game_ready_cells": 20,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/duskfiend_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/duskfiend_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/duskfiend_shiny_swatch.png",
+    "source": "atlases/duskfiend/duskfiend_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "spectral; bottom is ghostly wisps, no solid feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "finblade": {
+   "slug": "finblade",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/finblade/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/finblade/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/finblade/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/finblade/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/finblade/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/finblade/"
+   },
+   "game_ready_cells": 18,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Partial by design (4 PNGs) \u2014 flyer/swimmer/hover movement, not a leg-walk shortfall; walk-gate decision still owed before shipping.",
+    "frames_png": 4,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/finblade_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/finblade_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/finblade_shiny_swatch.png",
+    "source": "atlases/finblade/finblade_cell_01.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "swimmer; bottom shows fins, no feet (canon: swimmer, water under him) \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "floatcalf": {
+   "slug": "floatcalf",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/floatcalf/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/floatcalf/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/floatcalf/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/floatcalf/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/floatcalf/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/floatcalf/"
+   },
+   "game_ready_cells": 14,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Partial by design (6 PNGs) \u2014 flyer/swimmer/hover movement, not a leg-walk shortfall; walk-gate decision still owed before shipping.",
+    "frames_png": 6,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/floatcalf_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/floatcalf_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/floatcalf_shiny_swatch.png",
+    "source": "atlases/floatcalf/floatcalf_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "hoverer; smooth dome base, no feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "gabu": {
+   "slug": "gabu",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/gabu/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/gabu/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/gabu/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/gabu/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/gabu/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/gabu/"
+   },
+   "game_ready_cells": 20,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gabu_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gabu_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gabu_shiny_swatch.png",
+    "source": "atlases/gabu/gabu_cell_02.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/gabu_footprint.png",
+    "foot_type": "small foot",
+    "confidence": "medium",
+    "note": "small feet visible; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   },
+   "pivot_2d": {
+    "status": "WIRED-STAGED",
+    "note": "Pivot Phase 2 (2026-10-26, staged, NO PR): 2D set verified complete (dorowani 13 cells / gabu 20 cells); game-path mapping 8/8 bake files \u2192 locked 2D cells staged at sprite-art/animation/expanded-scope/pivot-2d-20261026/. Dorowani V3 mouths 0/4 (no front mouth line) \u2014 eyes-only ships, Mars decision owed."
+   }
+  },
+  "gearkid": {
+   "slug": "gearkid",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/gearkid/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/gearkid/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/gearkid/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/gearkid/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/gearkid/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/gearkid/"
+   },
+   "game_ready_cells": 20,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (16 PNGs).",
+    "frames_png": 16,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gearkid_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gearkid_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gearkid_shiny_swatch.png",
+    "source": "atlases/gearkid/gearkid_cell_02.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/gearkid_footprint.png",
+    "foot_type": "mechanical foot",
+    "confidence": "medium",
+    "note": "mechanical foot shape; no toes"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "gorokappa": {
+   "slug": "gorokappa",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/gorokappa/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/gorokappa/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/gorokappa/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/gorokappa/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/gorokappa/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/gorokappa/"
+   },
+   "game_ready_cells": 19,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gorokappa_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gorokappa_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/gorokappa_shiny_swatch.png",
+    "source": "atlases/gorokappa/gorokappa_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/gorokappa_footprint.png",
+    "foot_type": "mechanical foot",
+    "confidence": "medium",
+    "note": "mechanical foot shape; no toes"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "inklet": {
+   "slug": "inklet",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/inklet/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/inklet/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/inklet/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/inklet/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/inklet/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/inklet/"
+   },
+   "game_ready_cells": 11,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/inklet_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/inklet_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/inklet_shiny_swatch.png",
+    "source": "atlases/inklet/inklet_cell_03.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "tentacles, no feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "kickmaster": {
+   "slug": "kickmaster",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/kickmaster/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/kickmaster/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/kickmaster/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/kickmaster/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/kickmaster/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/kickmaster/"
+   },
+   "game_ready_cells": 20,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/kickmaster_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/kickmaster_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/kickmaster_shiny_swatch.png",
+    "source": "atlases/kickmaster/kickmaster_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/kickmaster_footprint.png",
+    "foot_type": "humanoid foot",
+    "confidence": "medium",
+    "note": "humanoid foot; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "kittember": {
+   "slug": "kittember",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/kittember/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/kittember/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/kittember/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/kittember/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/kittember/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/kittember/"
+   },
+   "game_ready_cells": 38,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/kittember_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/kittember_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/kittember_shiny_swatch.png",
+    "source": "game-ready/kittember/cells/kittember_cell_02.png",
+    "source_diff_px_vs_old_shiny": 22,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/kittember_footprint.png",
+    "foot_type": "round base impression",
+    "confidence": "low",
+    "note": "Feet not distinctly separated from the round body at 64px; print is the body's ground-contact dome, not an invented paw."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "krakenox": {
+   "slug": "krakenox",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/krakenox/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/krakenox/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/krakenox/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/krakenox/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/krakenox/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/krakenox/"
+   },
+   "game_ready_cells": 15,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/krakenox_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/krakenox_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/krakenox_shiny_swatch.png",
+    "source": "game-ready/krakenox/cells/krakenox_cell_00a.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "tentacles, no feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "manticlaw": {
+   "slug": "manticlaw",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/manticlaw/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/manticlaw/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/manticlaw/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/manticlaw/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/manticlaw/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/manticlaw/"
+   },
+   "game_ready_cells": 16,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/manticlaw_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/manticlaw_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/manticlaw_shiny_swatch.png",
+    "source": "atlases/manticlaw/manticlaw_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/manticlaw_footprint.png",
+    "foot_type": "large clawed paw",
+    "confidence": "medium",
+    "note": "large paw with claws, side view; front view ground mass merged"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "mechapion": {
+   "slug": "mechapion",
+   "wiring_status": "STAGED-UNWIRED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/mechapion/cells/"
+   },
+   "battle_back": {
+    "status": "STAGED-UNWIRED",
+    "note": "Cells exist (22 game-ready cells) but NO battle_back role assigned \u2014 pose-only per sprite audit; never guessed. Wiring must fall back to front/mirror until a true back is assigned.",
+    "staged_path": null
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/mechapion/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/mechapion/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/mechapion/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/mechapion/"
+   },
+   "game_ready_cells": 22,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mechapion_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mechapion_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mechapion_shiny_swatch.png",
+    "source": "atlases/mechapion/mechapion_cell_01.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/mechapion_footprint.png",
+    "foot_type": "mechanical foot",
+    "confidence": "medium",
+    "note": "robot foot shape; no toes"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "megalochrome": {
+   "slug": "megalochrome",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/megalochrome/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/megalochrome/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/megalochrome/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/megalochrome/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/megalochrome/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/megalochrome/"
+   },
+   "game_ready_cells": 13,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Partial by design (4 PNGs) \u2014 flyer/swimmer/hover movement, not a leg-walk shortfall; walk-gate decision still owed before shipping.",
+    "frames_png": 4,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/megalochrome_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/megalochrome_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/megalochrome_shiny_swatch.png",
+    "source": "game-ready/megalochrome/cells/megalochrome_cell_02.png",
+    "source_diff_px_vs_old_shiny": 117,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "levitator; no legs by canon, engine shadow only \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "mochii": {
+   "slug": "mochii",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/mochii/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/mochii/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/mochii/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/mochii/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/mochii/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/mochii/"
+   },
+   "game_ready_cells": 19,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (9 PNGs).",
+    "frames_png": 9,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mochii_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mochii_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mochii_shiny_swatch.png",
+    "source": "atlases/mochii/mochii_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "blob base; no distinct feet in front or walk views \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "mothrix": {
+   "slug": "mothrix",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/mothrix/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/mothrix/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/mothrix/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/mothrix/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/mothrix/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/mothrix/"
+   },
+   "game_ready_cells": 21,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Partial by design (4 PNGs) \u2014 flyer/swimmer/hover movement, not a leg-walk shortfall; walk-gate decision still owed before shipping.",
+    "frames_png": 4,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mothrix_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mothrix_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mothrix_shiny_swatch.png",
+    "source": "atlases/mothrix/mothrix_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/mothrix_footprint.png",
+    "foot_type": "insect legs",
+    "confidence": "low",
+    "note": "thin insect legs only; print is a small leg-cluster mark"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "mythar": {
+   "slug": "mythar",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/mythar/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/mythar/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/mythar/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/mythar/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/mythar/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/mythar/"
+   },
+   "game_ready_cells": 20,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mythar_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mythar_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/mythar_shiny_swatch.png",
+    "source": "atlases/mythar/mythar_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/mythar_footprint.png",
+    "foot_type": "foot",
+    "confidence": "medium",
+    "note": "feet visible; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "oblivirex": {
+   "slug": "oblivirex",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/oblivirex/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/oblivirex/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/oblivirex/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/oblivirex/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/oblivirex/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/oblivirex/"
+   },
+   "game_ready_cells": 15,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/oblivirex_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/oblivirex_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/oblivirex_shiny_swatch.png",
+    "source": "game-ready/oblivirex/cells/oblivirex_cell_00.png",
+    "source_diff_px_vs_old_shiny": 188,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/oblivirex_footprint.png",
+    "foot_type": "clawed paw",
+    "confidence": "medium",
+    "note": "claws visible; exact toe count not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "pebblefist": {
+   "slug": "pebblefist",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/pebblefist/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/pebblefist/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/pebblefist/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/pebblefist/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/pebblefist/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/pebblefist/"
+   },
+   "game_ready_cells": 13,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pebblefist_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pebblefist_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pebblefist_shiny_swatch.png",
+    "source": "atlases/pebblefist/pebblefist_cell_01.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/pebblefist_footprint.png",
+    "foot_type": "short rock foot",
+    "confidence": "low-medium",
+    "note": "short feet visible in walk side view; front view unclear"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "pixilite": {
+   "slug": "pixilite",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/pixilite/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/pixilite/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/pixilite/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/pixilite/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/pixilite/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/pixilite/"
+   },
+   "game_ready_cells": 12,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pixilite_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pixilite_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pixilite_shiny_swatch.png",
+    "source": "atlases/pixilite/pixilite_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/pixilite_footprint.png",
+    "foot_type": "small foot",
+    "confidence": "medium",
+    "note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "punchkid": {
+   "slug": "punchkid",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/punchkid/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/punchkid/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/punchkid/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/punchkid/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/punchkid/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/punchkid/"
+   },
+   "game_ready_cells": 13,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/punchkid_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/punchkid_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/punchkid_shiny_swatch.png",
+    "source": "game-ready/punchkid/cells/punchkid_cell_02.png",
+    "source_diff_px_vs_old_shiny": 18,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/punchkid_footprint.png",
+    "foot_type": "humanoid foot",
+    "confidence": "medium",
+    "note": "humanoid foot; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "pupbble": {
+   "slug": "pupbble",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/pupbble/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/pupbble/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/pupbble/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/pupbble/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/pupbble/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/pupbble/"
+   },
+   "game_ready_cells": 21,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pupbble_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pupbble_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pupbble_shiny_swatch.png",
+    "source": "atlases/pupbble/pupbble_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/pupbble_footprint.png",
+    "foot_type": "foot",
+    "confidence": "medium",
+    "note": "feet visible; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "pyromonk": {
+   "slug": "pyromonk",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/pyromonk/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/pyromonk/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/pyromonk/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/pyromonk/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/pyromonk/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/pyromonk/"
+   },
+   "game_ready_cells": 30,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pyromonk_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pyromonk_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pyromonk_shiny_swatch.png",
+    "source": "game-ready/pyromonk/cells/pyromonk_cell_04.png",
+    "source_diff_px_vs_old_shiny": 64,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/pyromonk_footprint.png",
+    "foot_type": "humanoid foot",
+    "confidence": "medium",
+    "note": "humanoid foot; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "pyropaw": {
+   "slug": "pyropaw",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/pyropaw/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/pyropaw/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/pyropaw/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/pyropaw/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/pyropaw/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/pyropaw/"
+   },
+   "game_ready_cells": 15,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pyropaw_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pyropaw_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/pyropaw_shiny_swatch.png",
+    "source": "atlases/pyropaw/pyropaw_cell_01.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/pyropaw_footprint.png",
+    "foot_type": "paw",
+    "confidence": "medium",
+    "note": "paws visible; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "quakehound": {
+   "slug": "quakehound",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/quakehound/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/quakehound/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/quakehound/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/quakehound/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/quakehound/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/quakehound/"
+   },
+   "game_ready_cells": 17,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/quakehound_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/quakehound_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/quakehound_shiny_swatch.png",
+    "source": "game-ready/quakehound/cells/quakehound_cell_03.png",
+    "source_diff_px_vs_old_shiny": 119,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/quakehound_footprint.png",
+    "foot_type": "paw",
+    "confidence": "medium",
+    "note": "paw, side view; front view ground mass merged"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "razorgater": {
+   "slug": "razorgater",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/razorgater/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/razorgater/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/razorgater/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/razorgater/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/razorgater/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/razorgater/"
+   },
+   "game_ready_cells": 27,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (9 PNGs).",
+    "frames_png": 9,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/razorgater_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/razorgater_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/razorgater_shiny_swatch.png",
+    "source": "animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png",
+    "source_diff_px_vs_old_shiny": 191,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/razorgater_footprint.png",
+    "foot_type": "clawed reptile foot",
+    "confidence": "medium",
+    "note": "claws visible; exact toe count not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "reaperdile": {
+   "slug": "reaperdile",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/reaperdile/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/reaperdile/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/reaperdile/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/reaperdile/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/reaperdile/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/reaperdile/"
+   },
+   "game_ready_cells": 15,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (10 PNGs).",
+    "frames_png": 10,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/reaperdile_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/reaperdile_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/reaperdile_shiny_swatch.png",
+    "source": "game-ready/reaperdile/cells/reaperdile_cell_01.png",
+    "source_diff_px_vs_old_shiny": 63,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/reaperdile_footprint.png",
+    "foot_type": "clawed foot",
+    "confidence": "medium",
+    "note": "claws visible; exact toe count not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "shellguard": {
+   "slug": "shellguard",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/shellguard/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/shellguard/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/shellguard/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/shellguard/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/shellguard/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/shellguard/"
+   },
+   "game_ready_cells": 13,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/shellguard_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/shellguard_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/shellguard_shiny_swatch.png",
+    "source": "atlases/shellguard/shellguard_cell_01.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/shellguard_footprint.png",
+    "foot_type": "foot",
+    "confidence": "medium",
+    "note": "feet visible; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "sproutle": {
+   "slug": "sproutle",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/sproutle/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/sproutle/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/sproutle/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/sproutle/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/sproutle/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/sproutle/"
+   },
+   "game_ready_cells": 23,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/sproutle_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/sproutle_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/sproutle_shiny_swatch.png",
+    "source": "stage-show-sproutle-fix/sproutle_cell_00_spotfree.png",
+    "source_diff_px_vs_old_shiny": 13,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/sproutle_footprint.png",
+    "foot_type": "small foot",
+    "confidence": "medium-low",
+    "note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "squirmite": {
+   "slug": "squirmite",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/squirmite/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/squirmite/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/squirmite/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/squirmite/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/squirmite/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/squirmite/"
+   },
+   "game_ready_cells": 13,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Partial by design (4 PNGs) \u2014 flyer/swimmer/hover movement, not a leg-walk shortfall; walk-gate decision still owed before shipping.",
+    "frames_png": 4,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/squirmite_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/squirmite_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/squirmite_shiny_swatch.png",
+    "source": "atlases/squirmite/squirmite_cell_01.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "grub/blob body; no feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "stormtalon": {
+   "slug": "stormtalon",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/stormtalon/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/stormtalon/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/stormtalon/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/stormtalon/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/stormtalon/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/stormtalon/"
+   },
+   "game_ready_cells": 11,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Partial by design (5 PNGs) \u2014 flyer/swimmer/hover movement, not a leg-walk shortfall; walk-gate decision still owed before shipping.",
+    "frames_png": 5,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/stormtalon_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/stormtalon_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/stormtalon_shiny_swatch.png",
+    "source": "atlases/stormtalon/stormtalon_cell_02.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/stormtalon_footprint.png",
+    "foot_type": "talon",
+    "confidence": "medium",
+    "note": "talons visible in walk view; front view unclear"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "strikechamp": {
+   "slug": "strikechamp",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/strikechamp/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/strikechamp/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/strikechamp/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/strikechamp/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/strikechamp/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/strikechamp/"
+   },
+   "game_ready_cells": 25,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_shiny_swatch.png",
+    "source": "atlases/strikechamp/strikechamp_cell_04.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/strikechamp_footprint.png",
+    "foot_type": "humanoid foot",
+    "confidence": "medium",
+    "note": "humanoid foot; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "strikechamp_unsuited": {
+   "slug": "strikechamp_unsuited",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/strikechamp_unsuited/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/strikechamp_unsuited/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/strikechamp_unsuited/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/strikechamp_unsuited/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/strikechamp_unsuited/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/strikechamp_unsuited/"
+   },
+   "game_ready_cells": 26,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_unsuited_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_unsuited_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_unsuited_shiny_swatch.png",
+    "source": "atlases/strikechamp_unsuited/strikechamp_unsuited_cell_05.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/strikechamp_unsuited_footprint.png",
+    "foot_type": "humanoid foot",
+    "confidence": "medium",
+    "note": "humanoid foot; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "strikechamp_unsuited_full": {
+   "slug": "strikechamp_unsuited_full",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "In game-ready (30 cells) but has NO separate locked atlas, so its front was not lock-verified like the other 50. Mapped here from game-ready, flagged.",
+    "staged_path": "sprite-art/game-ready/strikechamp_unsuited_full/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/strikechamp_unsuited_full/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/strikechamp_unsuited_full/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/strikechamp_unsuited_full/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/strikechamp_unsuited_full/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/strikechamp_unsuited_full/"
+   },
+   "game_ready_cells": 30,
+   "walk": {
+    "status": "MISSING",
+    "note": "No separate walk-frames dir for this 51st look. Wiring decision owed: share strikechamp base walk, or make a separate set. NOT assumed.",
+    "frames_png": 0,
+    "dir_present": false
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_unsuited_full_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_unsuited_full_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/strikechamp_unsuited_full_shiny_swatch.png",
+    "source": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/strikechamp_unsuited_full_footprint.png",
+    "foot_type": "humanoid foot",
+    "confidence": "medium",
+    "note": "humanoid foot; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "terradog": {
+   "slug": "terradog",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/terradog/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/terradog/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/terradog/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/terradog/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/terradog/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/terradog/"
+   },
+   "game_ready_cells": 18,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/terradog_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/terradog_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/terradog_shiny_swatch.png",
+    "source": "game-ready/terradog/cells/terradog_cell_00.png",
+    "source_diff_px_vs_old_shiny": 64,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/terradog_footprint.png",
+    "foot_type": "paw",
+    "confidence": "medium",
+    "note": "paws visible; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "terrapod": {
+   "slug": "terrapod",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/terrapod/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/terrapod/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/terrapod/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/terrapod/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/terrapod/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/terrapod/"
+   },
+   "game_ready_cells": 12,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/terrapod_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/terrapod_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/terrapod_shiny_swatch.png",
+    "source": "atlases/terrapod/terrapod_cell_01.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/terrapod_footprint.png",
+    "foot_type": "stumpy foot",
+    "confidence": "medium",
+    "note": "stumpy foot, side view; front view ground mass merged"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "tiidebiite": {
+   "slug": "tiidebiite",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/tiidebiite/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/tiidebiite/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/tiidebiite/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/tiidebiite/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/tiidebiite/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/tiidebiite/"
+   },
+   "game_ready_cells": 17,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/tiidebiite_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/tiidebiite_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/tiidebiite_shiny_swatch.png",
+    "source": "atlases/tiidebiite/tiidebiite_cell_00.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/tiidebiite_footprint.png",
+    "foot_type": "foot",
+    "confidence": "medium-low",
+    "note": "single foot clearly visible; other foot obscured"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "toxitacle": {
+   "slug": "toxitacle",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/toxitacle/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/toxitacle/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/toxitacle/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/toxitacle/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/toxitacle/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/toxitacle/"
+   },
+   "game_ready_cells": 22,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/toxitacle_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/toxitacle_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/toxitacle_shiny_swatch.png",
+    "source": "atlases/toxitacle/toxitacle_cell_05.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "tentacles, no feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "tyrage": {
+   "slug": "tyrage",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/tyrage/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/tyrage/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/tyrage/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/tyrage/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/tyrage/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/tyrage/"
+   },
+   "game_ready_cells": 23,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/tyrage_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/tyrage_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/tyrage_shiny_swatch.png",
+    "source": "animation/expanded-scope/batch-a/corrected-bases/tyrage_cell_03_spotfree.png",
+    "source_diff_px_vs_old_shiny": 47,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/tyrage_footprint.png",
+    "foot_type": "clawed foot",
+    "confidence": "medium",
+    "note": "claws visible; exact toe count not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "wispkin": {
+   "slug": "wispkin",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/wispkin/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/wispkin/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/wispkin/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/wispkin/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/wispkin/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/wispkin/"
+   },
+   "game_ready_cells": 13,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/wispkin_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/wispkin_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/wispkin_shiny_swatch.png",
+    "source": "atlases/wispkin/wispkin_cell_02.png",
+    "source_diff_px_vs_old_shiny": 0,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "floating; no legs, mask held by hands \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "yogiferno": {
+   "slug": "yogiferno",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/yogiferno/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/yogiferno/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/yogiferno/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/yogiferno/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/yogiferno/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/yogiferno/"
+   },
+   "game_ready_cells": 18,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Full 8-frame walk dir on disk (8 PNGs).",
+    "frames_png": 8,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/yogiferno_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/yogiferno_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/yogiferno_shiny_swatch.png",
+    "source": "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "source_diff_px_vs_old_shiny": 58,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "WIRED-STAGED",
+    "file": "sprite-art/animation/expanded-scope/footprints-real/yogiferno_footprint.png",
+    "foot_type": "foot",
+    "confidence": "medium",
+    "note": "feet visible; toe detail not resolvable"
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  },
+  "zephling": {
+   "slug": "zephling",
+   "wiring_status": "WIRED-STAGED",
+   "battle_front": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_front, eye-checked at lock (audit: 50/50 atlas dirs).",
+    "staged_path": "sprite-art/game-ready/zephling/cells/"
+   },
+   "battle_back": {
+    "status": "WIRED-STAGED",
+    "note": "Locked battle_back role (audit: 49/50 roles assigned; this creature is one of the 49).",
+    "staged_path": "sprite-art/game-ready/zephling/cells/ (battle_back role cell \u2014 see locked manifest for exact cell)"
+   },
+   "icon": {
+    "status": "WIRED-STAGED",
+    "note": "Icons staged 51/51 (audit); 41/51 Mars-approved, 10 derived head-crops await Mars approval \u2014 approval gap, not a wiring gap.",
+    "staged_path": "sprite-art/game-ready/zephling/cells/ (icon role cell \u2014 see locked manifest)"
+   },
+   "idle": {
+    "status": "WIRED-STAGED",
+    "note": "Idle loop dir exists (audit: 51/51, 201 PNGs + 51 sidecar JSONs).",
+    "staged_path": "sprite-art/animation/idle/zephling/"
+   },
+   "hurt": {
+    "status": "WIRED-STAGED",
+    "note": "Hurt baseline + expanded 4-set hurt sets staged (audit: 51/51 sets, 408 attack+hurt sets).",
+    "staged_path": "sprite-art/animation/hurt/zephling/"
+   },
+   "attack": {
+    "status": "WIRED-STAGED",
+    "note": "Attack baseline + expanded 4-set attack sets staged (audit: 51/51 sets); pose-redrawn 0/51, transforms+VFX \u2014 Layer 2, beyond Pokemon parity.",
+    "staged_path": "sprite-art/animation/attack/zephling/"
+   },
+   "game_ready_cells": 18,
+   "walk": {
+    "status": "WIRED-STAGED",
+    "note": "Partial by design (4 PNGs) \u2014 flyer/swimmer/hover movement, not a leg-walk shortfall; walk-gate decision still owed before shipping.",
+    "frames_png": 4,
+    "dir_present": true
+   },
+   "shiny_v2": {
+    "status": "WIRED-STAGED",
+    "front": "sprite-art/animation/expanded-scope/lane100/shiny-v2/zephling_shiny_front.png",
+    "palette": "sprite-art/animation/expanded-scope/lane100/shiny-v2/zephling_shiny_palette.json",
+    "swatch": "sprite-art/animation/expanded-scope/lane100/shiny-v2/zephling_shiny_swatch.png",
+    "source": "game-ready/zephling/cells/zephling_cell_00.png",
+    "source_diff_px_vs_old_shiny": 18,
+    "note": "Shiny-v2 rebuilt from freshest source per creature; STAGED, NO PR. Live shiny display still 0/51 until this module is applied + SHINY-ON path wired."
+   },
+   "footprint": {
+    "status": "NO-FOOTPRINT",
+    "file": null,
+    "foot_type": null,
+    "confidence": null,
+    "note": "hoverer; smooth dome base, no feet \u2014 feet never invented; MochiDex shows no footprint for this creature."
+   },
+   "cry": {
+    "status": "MISSING",
+    "file": null,
+    "note": "Cry audio 0/51. Hook shape only in this module (getCry returns null until audio exists). treatments module references only mochii + razorgater by name; no audio generated here."
+   },
+   "game_paths": {
+    "battle": "fresh-start/src/components/views/BattleView.tsx (enemy = front, player = back)",
+    "team": "fresh-start/src/components/views/RosterView.tsx (party screen; NO TeamView.tsx exists \u2014 RosterView IS the team path) via fresh-start/src/components/game/CreaturePortrait.tsx",
+    "sheet_loader": "fresh-start/src/lib/spriteSheets.ts (today imports ONLY dorowani 147 + gabu 148 sheets; all other species fall back to coloured silhouette + 'Art in progress' label \u2014 that label is menu-meta item #30)",
+    "future_asset_home": "fresh-start/src/assets/sprites/<slug>/ (target only \u2014 NOT created by this staged module; coordinator applies on merge)"
+   }
+  }
+ }
+}

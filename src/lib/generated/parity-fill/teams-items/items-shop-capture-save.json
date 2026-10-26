@@ -1,0 +1,273 @@
+{
+  "_meta": {
+    "date": "2026-10-26",
+    "decompPrinciple": "Bag pockets, shop Buy/Sell, capture devices, and save slots are Pokemon STRUCTURES with Mochiichao names/prices plugged in. Only literal Pokemon things (species, logos, in-game dialogue) are swapped; systems, data shapes, rules, and workflows come over literally (Mars parity order 2026-10-26 ~13:07 CDT).",
+    "status": "BATCH 4 — capsule price/rate/variants FILLED BY DERIVATION (flagged, NOT Mars-locked); save shape 13/14 defined (flags 1/14 NEED). Shapes only, NOT live code wiring; no commit claims beyond this PR batch.",
+    "batch4": "2026-10-26: Capture Capsule 600 CR / 1.5x + Prime Capsule 1200 CR / 2.0x derived from FireRed Great/Ultra Ball prices + sBallCatchBonuses (see captureCapsuleDerivation + CAPTURE-CAPSULE-DERIVATION.md). No Coordinator B derivation file found; this derivation stands as the filled value."
+  },
+  "bag": {
+    "decompSource": "FireRed/HeartGold bag: item list grouped by pocket (Items / Medicine / Poke Balls / TMs & HMs / Berries / Key Items), cursor + description per item. Mochiichao replacement keeps pocket-grouped list + description; pocket names are the in-code ones.",
+    "haveInCode": "BagView.tsx ITEM_DETAILS groups items by pocket and sorts pocket-then-name. Pockets in code: Capture, Medicine, Storage, Other (fallback for unlisted items).",
+    "itemsByPocket": {
+      "Capture": [
+        "luigi_cube — Luigi Cube"
+      ],
+      "Medicine": [
+        "mend_patch — Mend Patch",
+        "revive_core — Revive Core"
+      ],
+      "Other": [
+        "any item without an ITEM_DETAILS entry (fallback pocket, not a designed pocket)"
+      ],
+      "Storage": [
+        "data_card — Data Card"
+      ]
+    },
+    "needToMake": [
+      "Formal pocket list decision: is 'Other' a real pocket or a fallback only? (Staged as fallback — do not ship it as a designed pocket without a call.)",
+      "TM/HM-equivalent pocket: none in code (HM 'Strength'/'Cut' appear only as dojo reward labels in FullWorldMaps.ts). No TM/HM items are staged here.",
+      "Key-item pocket equivalent: none in code; fragments/badges live in the badges array, not the bag — see save shape."
+    ],
+    "pocketsHave": 4
+  },
+  "capture": {
+    "decompSource": "FireRed Oak lab beat: Pokedex gift, then 5 Poke Balls, then catching explanation. Mochiichao replacement keeps the BEAT STRUCTURE only; device name, gift count source, and capsule beats are Mochiichao canon.",
+    "devices": {
+      "capture_capsules": "PLACEHOLDER (see capsulePlaceholder).",
+      "luigi_cube": {
+        "costCR": 250,
+        "defaultDevice": true,
+        "giftAtStarter": 5,
+        "note": "Default capture device. Starter gift is +5 Luigi Cubes in gameStore.initializeStarter. SEPARATE number found in code: the default (pre-starter) inventory in gameStore.ts holds 10 luigi_cube + 5 mend_patch — whether a fresh save should start with 10 before the starter gift, or the 10 IS the post-gift state, is a wiring flag, not resolved here.",
+        "shopPriceCR": 250
+      }
+    },
+    "rateShapeInCode": "mochiichao-systems.ts ringCaptureChance + catchRateShape clamped 3-255 (decomp catch_rate shape, Pokemon 3-255 range carried over literally). Party-full overflow goes to PC (gameStore.addMochii: party < 6 else pc) — the Pokemon party/box shape, Mochiichao-named (PC).",
+    "capsulesDerived": {
+      "status": "DERIVED (see captureCapsuleDerivation) — NOT Mars-locked",
+      "firstObtainable": "First store (NOT the lab, NOT The Ringcade) — AEON-CAPTURE-CAPSULE-INTRO.md",
+      "note": "Aeon EXPLAINS Capture Capsules at the lab Dex-gift beat but does NOT give them, for cost/science reasons. If the player has earned enough money by the first store, they MAY buy capsules early.",
+      "variants": [
+        {
+          "id": "capture_capsule",
+          "name": "Capture Capsule",
+          "tier": "standard (Great tier)",
+          "priceCR": 600,
+          "catchBonusTenths": 15,
+          "multiplierVsBase": "1.5x",
+          "sellCR": 300
+        },
+        {
+          "id": "prime_capsule",
+          "name": "Prime Capsule",
+          "tier": "prime (Ultra tier)",
+          "priceCR": 1200,
+          "catchBonusTenths": 20,
+          "multiplierVsBase": "2.0x",
+          "sellCR": 600
+        }
+      ]
+    }
+  },
+  "save": {
+    "decompSource": "Pokemon save: player, party (max 6), box/PC, money, bag, badges, Dex seen/caught, flags, location/heal point. Mochiichao replacement keeps every slot; field names below are the in-code ones where they exist.",
+    "fields": [
+      {
+        "field": "playerName / playerGender / rivalName",
+        "have": "HAVE (gameStore.ts; rivalName defaults 'Hex')"
+      },
+      {
+        "field": "party (max 6) + pc (overflow)",
+        "have": "HAVE (gameStore.addMochii)"
+      },
+      {
+        "field": "wallet (CR)",
+        "have": "HAVE (default 1000 in gameStore.ts)"
+      },
+      {
+        "field": "inventory (itemId -> count)",
+        "have": "HAVE (gameStore.ts)"
+      },
+      {
+        "field": "badges (holds Fragments: 'Core Fragment', 'Wind Fragment', etc.)",
+        "have": "HAVE (gameStore.badges; getSlotSummaries counts badges.length as progress). Naming flag: the field is called badges but the rewards are Fragments — wiring may rename or keep; not changed here."
+      },
+      {
+        "field": "dex (speciesId -> 'caught'; Seen marking via MOCHII-ALL cheat only)",
+        "have": "HAVE, partial (Seen/Caught completion rewards: none)"
+      },
+      {
+        "field": "completedEvents",
+        "have": "HAVE (gameStore.ts)"
+      },
+      {
+        "field": "defeatedTrainers",
+        "have": "HAVE (gameStore.ts) — this is what makes fixed-team trainers stay defeated; randomized-mode resolved teams must ALSO be stored or a rematch could redraw (see resolvedTeams)."
+      },
+      {
+        "field": "currentMap + playerPos",
+        "have": "HAVE (gameStore.ts; default sector0, x21 y14)"
+      },
+      {
+        "field": "saveSlot (1-3) + slot summaries",
+        "have": "HAVE (saveSystem.ts: 3 slots; manual saves capped at 8 per slot, autosaves keep newest only; localStorage key mochii_saves_<slotId>; SaveEntry id/timestamp/type/label/data)"
+      },
+      {
+        "field": "healPoint (saved last-heal location)",
+        "have": "SHAPE-FILLED in Batch 4 (definition in save.healPointShape below; no gameStore/saveSystem code change in this batch — wiring owed)"
+      },
+      {
+        "field": "settings.teamMode ('fixed' | 'randomized')",
+        "have": "SHAPE-FILLED in Batch 4 (definition in save.teamModeShape below; no gameStore code change in this batch — wiring owed)"
+      },
+      {
+        "field": "resolvedTeams (trainerId + fightPoint -> resolved party + seed)",
+        "have": "SHAPE-FILLED in Batch 4 (definition in save.resolvedTeamsShape below; no gameStore code change in this batch — wiring owed)"
+      },
+      {
+        "field": "flags (story flags beyond completedEvents)",
+        "have": "NEED TO MAKE (formal flags list; completedEvents is the current generic mechanism)"
+      }
+    ],
+    "haveCount": "SHAPE 13/14 fields defined (10 HAVE-in-code incl. dex partial + 3 SHAPE-FILLED in Batch 4: healPoint, settings.teamMode, resolvedTeams); 1/14 NEED TO MAKE (flags formal list; completedEvents is the current generic mechanism). CORRECTION to staged claim: staged file said 11/14 HAVE + 3/14 NEED, but its own field list gave 10 HAVE + 4 NEED (healPoint, teamMode, resolvedTeams, flags). This batch adds the 3 named fields (3/3 = 100% of the named ask); flags is the 1 remaining NEED.",
+    "healPoint": {
+      "decompSource": "Pokemon Center heal + Mom heal. Mochiichao replacement, both in code: (1) Mom, Sector 0 home, isHeal: true — talking to Mom fully heals (gameStore.healParty, v5.1: writes BOTH hp and currentHp and clears status). (2) MochiiPlex Center Nurse (healer_1), isHeal: true. healParty is the shared heal action.",
+      "haveInCode": [
+        "Mom heal (Sector 0)",
+        "MochiiPlex Center Nurse heal",
+        "healParty: full HP + status clear"
+      ],
+      "needToMake": [
+        "Heal point per town/region beyond Sector 0 + MochiiPlex — no other heal NPCs found in FullWorldMaps.ts in this slice.",
+        "Saved healPoint field (above) so a future 'return to last heal point' / respawn rule has a slot. No respawn rule is staged here — Pokemon white-out equivalent is NOT defined in canon found, so it is not invented."
+      ]
+    },
+    "healPointShape": {
+      "mapId": "string (map id of last heal location)",
+      "x": "int (tile x)",
+      "y": "int (tile y)",
+      "healerNpcId": "string | null (Mom / MochiiPlex Center Nurse / other heal NPC id)",
+      "setOn": "every healParty call (Mom Sector 0 home + MochiiPlex Center Nurse are the in-code healers)",
+      "respawnRule": "NOT defined — no Pokemon white-out equivalent is staged here; the field only records the point, it does not define what happens on defeat"
+    },
+    "teamModeShape": {
+      "field": "settings.teamMode",
+      "type": "'fixed' | 'randomized'",
+      "default": "fixed",
+      "source": "randomized-mode.json settingsToggle (default fixed, Mars locked 2026-10-26 12:34-12:37 CDT)",
+      "midSaveChange": "STAGED recommendation (not canon): applies only to fight points not yet met; never redraws already-stored resolvedTeams"
+    },
+    "resolvedTeamsShape": {
+      "key": "'<trainerId>:<fightPoint>' (e.g. 'jax:first')",
+      "value": {
+        "seed": "hash(saveFileId + trainerId + fightPoint) — algorithm is an implementation choice, not canon",
+        "party": [
+          {
+            "speciesId": "string",
+            "level": "int"
+          }
+        ],
+        "resolvedAt": "first meeting at that fight point"
+      },
+      "rule": "Resolve once, store, never redraw for that save (randomized-mode.json rule 6). Fixed-mode playthroughs store nothing here; fixed teams are read from team tables directly."
+    }
+  },
+  "shop": {
+    "buySellShape": {
+      "confirmBeforeMoney": true,
+      "decompSource": "FireRed shop.c structure (per ShopView header comment): Buy / Sell / Quit FIRST, not a direct item list; buy rows = icon + name + price, cursor at row, scroll arrows, description + icon for selected item, confirm window BEFORE money is taken, then back to the item list (NOT back to the world). Mochiichao replacement: same flow, CR as money.",
+      "haveInCode": "ShopView.tsx implements exactly this: mode menu (Buy/Sell/Quit), buy list, sell list (only items owned), confirm dialog, disabled buy when wallet < cost, 'Not enough Credits' message.",
+      "sellRule": "sellPrice = floor(buyCost / 2) — HAVE in ShopView.tsx (Pokemon half-price sell rule, carried over literally)."
+    },
+    "items": [
+      {
+        "costCR": 250,
+        "desc": "A sketchy syndicate-brand capture device.",
+        "have": "HAVE (ShopView SHOP_ITEMS + BagView ITEM_DETAILS, pocket Capture)",
+        "id": "luigi_cube",
+        "name": "Luigi Cube"
+      },
+      {
+        "costCR": 150,
+        "desc": "Restores 50 HP.",
+        "have": "HAVE",
+        "id": "mend_patch",
+        "name": "Mend Patch"
+      },
+      {
+        "costCR": 500,
+        "desc": "Reboots a fainted Mochiichao to 50% capacity.",
+        "have": "HAVE",
+        "id": "revive_core",
+        "name": "Revive Core"
+      },
+      {
+        "costCR": 300,
+        "desc": "Stores a captured creature's data. Swap it at the PC.",
+        "have": "HAVE (monster-tamer-systems.ts DATA_CARD_COST = 300, DATA_CARD_ID = 'data_card')",
+        "id": "data_card",
+        "name": "Data Card"
+      },
+      {
+        "costCR": 600,
+        "desc": "A standard capture device, stronger than a Luigi Cube.",
+        "have": "DERIVED (see captureCapsuleDerivation) — NOT Mars-locked; shape-only until ShopView wiring",
+        "id": "capture_capsule",
+        "name": "Capture Capsule"
+      },
+      {
+        "costCR": 1200,
+        "desc": "A prime capture device, stronger than a standard Capture Capsule.",
+        "have": "DERIVED (see captureCapsuleDerivation) — NOT Mars-locked; shape-only until ShopView wiring",
+        "id": "prime_capsule",
+        "name": "Prime Capsule"
+      }
+    ],
+    "itemsHave": "6/6 shop rows priced (4 HAVE-in-code + 2 DERIVED, flagged not Mars-locked); live ShopView wiring 4/6 rows (capsule rows shape-only until wired)."
+  },
+  "captureCapsuleDerivation": {
+    "status": "DERIVED — NOT Mars-locked. Stands as the filled value per parent task 2026-10-26; Mars may veto/replace any number. No Coordinator B derivation file was found (filename search of pokemon-parity-fill/ and goals/; only CHECKPOINT-COORDINATOR.md, a sprite-art file, and AEON-CAPTURE-CAPSULE-INTRO.md, which withholds price/rate as Mars-only) — so this derivation is the filled value.",
+    "firered_sources": {
+      "prices": "pokefirered-leafgreen/src/data/items.json: ITEM_POKE_BALL 200, ITEM_GREAT_BALL 600, ITEM_ULTRA_BALL 1200, ITEM_MASTER_BALL 0 (not sold).",
+      "catch_bonuses_tenths": "pokefirered-leafgreen/src/battle_script_commands.c sBallCatchBonuses: ITEM_POKE_BALL 10, ITEM_GREAT_BALL 15, ITEM_ULTRA_BALL 20, ITEM_SAFARI_BALL 15. Tenths units: 10 = 1.0x, 15 = 1.5x, 20 = 2.0x.",
+      "specialty_balls_1000": "Net/Dive/Nest/Repeat/Timer/Luxury Balls are 1000 in FireRed; they are specialty-condition balls, NOT used here — Mochiichao variants follow the plain tier ladder only, so no condition bonus is invented."
+    },
+    "anchor": "Luigi Cube 250 CR is the Mochiichao default device (in code: costCR 250, starter gift +5, defaultDevice true). It sits on the Poke-Ball tier: bonus 10 (1.0x). Its 250 CR price is existing Mochiichao canon, NOT derived here; the FireRed Poke Ball price 200 is only the tier anchor (250/200 = 1.25x, Mochiichao rounding).",
+    "tiers": [
+      {
+        "device": "Luigi Cube",
+        "tier": "base/default",
+        "priceCR": 250,
+        "catchBonusTenths": 10,
+        "multiplierVsBase": "1.0x",
+        "sellCR": 125,
+        "source": "in code (ShopView SHOP_ITEMS + gameStore); bonus = FireRed Poke Ball tier"
+      },
+      {
+        "device": "Capture Capsule",
+        "tier": "standard (Great tier)",
+        "priceCR": 600,
+        "catchBonusTenths": 15,
+        "multiplierVsBase": "1.5x",
+        "sellCR": 300,
+        "source": "FireRed Great Ball price 600 + bonus 15 carried over literally"
+      },
+      {
+        "device": "Prime Capsule",
+        "tier": "prime (Ultra tier)",
+        "priceCR": 1200,
+        "catchBonusTenths": 20,
+        "multiplierVsBase": "2.0x",
+        "sellCR": 600,
+        "source": "FireRed Ultra Ball price 1200 + bonus 20 carried over literally"
+      }
+    ],
+    "catch_rate_step_vs_luigi_cube": "Luigi Cube bonus 10 -> Capture Capsule 15 (+5 tenths, 1.5x) -> Prime Capsule 20 (+10 tenths, 2.0x). Applied inside the existing Mochiichao catchRateShape (3-255, ringCaptureChance in mochiichao-systems.ts); this batch changes NO catch formula in code — the bonus mapping to chance is wiring owed.",
+    "sell_rule": "sellPrice = floor(buyCost / 2), the ShopView half-price rule already in code: Luigi Cube 125, Capture Capsule 300, Prime Capsule 600.",
+    "bound_check": "Aeon canon bound satisfied: Capture Capsule 600 CR > Luigi Cube 250 CR; Prime Capsule 1200 CR > 250 CR. The first-store design intent (player usually cannot afford capsules yet) is preserved: 600 CR vs default wallet 1000 CR in code still leaves room, but capsule + other purchases exceed early funds — exact early economy is NOT rebalanced here.",
+    "first_obtainable": "First store (NOT the lab, NOT The Ringcade) — per AEON-CAPTURE-CAPSULE-INTRO.md. Aeon EXPLAINS capsules at the lab Dex-gift beat but does NOT give them.",
+    "master_tier": "NOT priced, NOT sold, NO guaranteed-catch capsule invented. Mirrors FireRed Master Ball price 0 (unsold/gift-only). A master-tier capsule, if Mars ever wants one, is a separate Mars-only decision.",
+    "variants_named": "2/2: Capture Capsule (standard) + Prime Capsule (prime). No further variant names invented.",
+    "not_claimed": "Live ShopView listing (SHOP_ITEMS in code still holds 4 items; capsule rows are shape-only until wired), live capture bonus wiring, and Mars lock — none claimed."
+  }
+}
