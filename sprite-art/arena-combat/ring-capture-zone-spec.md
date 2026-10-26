@@ -1,4 +1,4 @@
-# Ring capture zone spec — retro-arcade-themed zone, ring mechanic unchanged (Mars, 2026-10-25 ~19:49 + ~19:51 + ~19:54 CDT)
+# The Ringcade — ring-capture zone spec — retro-arcade-themed zone, ring mechanic unchanged (Mars, 2026-10-25 ~19:49 + ~19:51 + ~19:54 CDT; name decided ~21:18 CDT)
 
 Status: SPEC + GATE CODE ONLY. No zone map, no shop UI, no art is built
 here. The gate code lives in `captureLoop.js`
