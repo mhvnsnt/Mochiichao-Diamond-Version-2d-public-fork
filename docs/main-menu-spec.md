@@ -84,16 +84,20 @@ A, the tonic, when the loop restarts — V → I, the strongest loop cadence).
 
 ## Wiring (in the same PR as this track)
 
-- New file `src/lib/music.ts`: one music Audio element + one SFX path,
-  playMusic(track, fadeMs=1000), stopMusic(fadeMs), playSfx(track),
-  pending-track retry on first gesture (autoplay policy), same-track
-  no-op so re-renders do not restart loops.
-- `src/components/IntroSequence.tsx`: phase effect — BOOT → boot SFX,
-  INTRO → intro (one-shot), TITLE → title (loop), MAIN_MENU/SETTINGS/
-  SAVE_SLOTS → main menu (loop), later phases → stop music; TITLE
-  press → pressStart SFX; unmount → stopMusic(0). Two UI strings
-  updated from "music: GAP" to the wired tracks (title background art
-  GAP string is unchanged — that art gap is real and separate).
+- New file `src/lib/music.ts`: music only (intro/title/mainMenu),
+  playMusic(track, fadeMs=1000), stopMusic(fadeMs), pending-track
+  retry on first gesture (autoplay policy), same-track no-op so
+  re-renders do not restart loops, BASE_URL paths so Pages sub-path
+  works. Boot/press-start are NOT in this module: they were already
+  wired on main in `src/lib/bootAudio.ts` (BOOT = B, press = M3),
+  and duplicating them would double-play both sounds.
+- `src/components/IntroSequence.tsx`: phase effect — INTRO → intro
+  (one-shot), TITLE → title (loop), MAIN_MENU/SETTINGS/SAVE_SLOTS →
+  main menu (loop), later phases → stop music; BOOT sound and TITLE
+  press sound stay with `src/lib/bootAudio.ts` (already on main);
+  unmount → stopMusic(0). Two UI strings updated from "music: GAP"
+  to the wired tracks (title background art GAP string is unchanged
+  — that art gap is real and separate).
 - `src/App.tsx`: onComplete / onEnterWorld → stopMusic(0) before
   entering the world, so menu music does not bleed into gameplay.
 - No other game logic, saves, rendering, or store code was touched.
