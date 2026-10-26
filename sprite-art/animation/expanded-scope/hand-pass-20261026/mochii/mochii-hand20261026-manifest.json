@@ -1,0 +1,471 @@
+{
+ "creature": "mochii",
+ "tag": "hand20261026",
+ "method": "Layer 2 hand overlays only on approved/staged face finals; 0 generations; base finals untouched",
+ "source_final": "retime Mode B",
+ "timing_mode": "persistent",
+ "clawed_physical": false,
+ "paw_note": false,
+ "sets": {
+  "atk_physical_body_slam": {
+   "kind": "attack",
+   "family": "physical",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "guard",
+    "punch",
+    "punch",
+    "folded"
+   ],
+   "files": [
+    "mochii-hand20261026-atk_physical_body_slam-cell-00.png",
+    "mochii-hand20261026-atk_physical_body_slam-cell-01.png",
+    "mochii-hand20261026-atk_physical_body_slam-cell-02.png",
+    "mochii-hand20261026-atk_physical_body_slam-cell-03.png",
+    "mochii-hand20261026-atk_physical_body_slam-cell-04.png"
+   ],
+   "durations_ms": [
+    180,
+    120,
+    100,
+    90,
+    300
+   ],
+   "total_ms": 790,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "guard",
+     "source": "mochii-retime20261026-atk_physical_body_slam-cell-00.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      16,
+      42,
+      48,
+      50
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "guard",
+     "source": "mochii-retime20261026-atk_physical_body_slam-cell-01.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      16,
+      42,
+      48,
+      50
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "mochii-retime20261026-atk_physical_body_slam-cell-02.png",
+     "applied": true,
+     "changed_px": 112,
+     "diff_bbox": [
+      44,
+      35,
+      59,
+      45
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "punch",
+     "source": "mochii-retime20261026-atk_physical_body_slam-cell-03.png",
+     "applied": true,
+     "changed_px": 112,
+     "diff_bbox": [
+      44,
+      35,
+      59,
+      45
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "mochii-retime20261026-atk_physical_body_slam-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_special_aqua_shot": {
+   "kind": "attack",
+   "family": "special",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "cast",
+    "cast",
+    "cast",
+    "cast",
+    "folded"
+   ],
+   "files": [
+    "mochii-hand20261026-atk_special_aqua_shot-cell-00.png",
+    "mochii-hand20261026-atk_special_aqua_shot-cell-01.png",
+    "mochii-hand20261026-atk_special_aqua_shot-cell-02.png",
+    "mochii-hand20261026-atk_special_aqua_shot-cell-03.png",
+    "mochii-hand20261026-atk_special_aqua_shot-cell-04.png"
+   ],
+   "durations_ms": [
+    200,
+    140,
+    110,
+    110,
+    300
+   ],
+   "total_ms": 860,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "cast",
+     "source": "mochii-retime20261026-atk_special_aqua_shot-cell-00.png",
+     "applied": true,
+     "changed_px": 129,
+     "diff_bbox": [
+      42,
+      26,
+      54,
+      38
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "cast",
+     "source": "mochii-retime20261026-atk_special_aqua_shot-cell-01.png",
+     "applied": true,
+     "changed_px": 129,
+     "diff_bbox": [
+      42,
+      26,
+      54,
+      38
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "cast",
+     "source": "mochii-retime20261026-atk_special_aqua_shot-cell-02.png",
+     "applied": true,
+     "changed_px": 129,
+     "diff_bbox": [
+      42,
+      26,
+      54,
+      38
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "cast",
+     "source": "mochii-retime20261026-atk_special_aqua_shot-cell-03.png",
+     "applied": true,
+     "changed_px": 129,
+     "diff_bbox": [
+      42,
+      26,
+      54,
+      38
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "mochii-retime20261026-atk_special_aqua_shot-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_signature_aqua_cannon": {
+   "kind": "attack",
+   "family": "signature",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "guard",
+    "guard",
+    "guard",
+    "guard",
+    "folded"
+   ],
+   "files": [
+    "mochii-hand20261026-atk_signature_aqua_cannon-cell-00.png",
+    "mochii-hand20261026-atk_signature_aqua_cannon-cell-01.png",
+    "mochii-hand20261026-atk_signature_aqua_cannon-cell-02.png",
+    "mochii-hand20261026-atk_signature_aqua_cannon-cell-03.png",
+    "mochii-hand20261026-atk_signature_aqua_cannon-cell-04.png",
+    "mochii-hand20261026-atk_signature_aqua_cannon-cell-05.png"
+   ],
+   "durations_ms": [
+    200,
+    220,
+    100,
+    140,
+    120,
+    300
+   ],
+   "total_ms": 1080,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "guard",
+     "source": "mochii-retime20261026-atk_signature_aqua_cannon-cell-00.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      16,
+      42,
+      48,
+      50
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "guard",
+     "source": "mochii-retime20261026-atk_signature_aqua_cannon-cell-01.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      16,
+      42,
+      48,
+      50
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "guard",
+     "source": "mochii-retime20261026-atk_signature_aqua_cannon-cell-02.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      16,
+      42,
+      48,
+      50
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "guard",
+     "source": "mochii-retime20261026-atk_signature_aqua_cannon-cell-03.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      16,
+      42,
+      48,
+      50
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "guard",
+     "source": "mochii-retime20261026-atk_signature_aqua_cannon-cell-04.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      16,
+      42,
+      48,
+      50
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "mochii-retime20261026-atk_signature_aqua_cannon-cell-05.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_heavy_hydro_surge_finisher": {
+   "kind": "attack",
+   "family": "heavy",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "grab",
+    "grab",
+    "punch",
+    "grab",
+    "grab",
+    "folded"
+   ],
+   "files": [
+    "mochii-hand20261026-atk_heavy_hydro_surge_finisher-cell-00.png",
+    "mochii-hand20261026-atk_heavy_hydro_surge_finisher-cell-01.png",
+    "mochii-hand20261026-atk_heavy_hydro_surge_finisher-cell-02.png",
+    "mochii-hand20261026-atk_heavy_hydro_surge_finisher-cell-03.png",
+    "mochii-hand20261026-atk_heavy_hydro_surge_finisher-cell-04.png",
+    "mochii-hand20261026-atk_heavy_hydro_surge_finisher-cell-05.png"
+   ],
+   "durations_ms": [
+    220,
+    160,
+    140,
+    120,
+    100,
+    420
+   ],
+   "total_ms": 1160,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "grab",
+     "source": "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-00.png",
+     "applied": true,
+     "changed_px": 118,
+     "diff_bbox": [
+      24,
+      46,
+      40,
+      54
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "grab",
+     "source": "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-01.png",
+     "applied": true,
+     "changed_px": 119,
+     "diff_bbox": [
+      24,
+      46,
+      40,
+      54
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-02.png",
+     "applied": true,
+     "changed_px": 112,
+     "diff_bbox": [
+      44,
+      35,
+      59,
+      45
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "grab",
+     "source": "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-03.png",
+     "applied": true,
+     "changed_px": 119,
+     "diff_bbox": [
+      24,
+      46,
+      40,
+      54
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "grab",
+     "source": "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-04.png",
+     "applied": true,
+     "changed_px": 118,
+     "diff_bbox": [
+      24,
+      46,
+      40,
+      54
+     ],
+     "anchors": "pilot-measured"
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-05.png",
+     "applied": false
+    }
+   ]
+  }
+ },
+ "gifs": {
+  "attack": {
+   "gif": "mochii-attacks-hand20261026.gif",
+   "frames": 22
+  }
+ },
+ "flags": [],
+ "counts": {
+  "hand_frames": 18,
+  "copy_frames": 4,
+  "flagged_frames": 0,
+  "cells": 22
+ },
+ "gate_g1_copy_identical": true
+}
