@@ -16,7 +16,24 @@ export const getSaves = (slotId: number): SaveEntry[] => {
   }
 };
 
-export const saveGame = (slotId: number, type: 'manual' | 'auto', label: string, gameState: any) => {
+// Playtest 2026-10-26 (attempt 7, PR #128 re-test): the START OVER
+// autosave hold lived only in WorldEngine's effect guards, so any
+// autosave that fired outside those guards — and, critically, the
+// map-change effect firing on world entry right after a LOAD —
+// still wrote the slot. A world-entry autosave writes the loaded
+// state back with a fresh timestamp, so the slot summary's content
+// looked held while its timestamp advanced; and a load-then-enter
+// autosave after a manual save would write the OLD loaded content
+// over the manual save's summary, matching the revert the playtest
+// saw. The hold therefore lives HERE, in the one function every save
+// goes through: an 'auto' write to a held slot is refused outright
+// (no entry, no timestamp change), while 'manual' writes always
+// pass. The store keeps the hold in sync via setAutosaveHold.
+let autosaveHoldSlot: number | null = null;
+export const setAutosaveHold = (slot: number | null) => { autosaveHoldSlot = slot; };
+
+export const saveGame = (slotId: number, type: 'manual' | 'auto', label: string, gameState: any): SaveEntry | null => {
+  if (type === 'auto' && autosaveHoldSlot === slotId) return null;
   const saves = getSaves(slotId);
   const newSave: SaveEntry = {
     id: crypto.randomUUID(),
