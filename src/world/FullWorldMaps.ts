@@ -80,9 +80,9 @@ export const SECTOR_0: any = {
     // grass and faces her. Dialogue, name and isHeal are unchanged;
     // the first-time v4_mom_intro event is separate and untouched.
     // This placement is an implementation addition, NOT Mars canon.
-    { id:"mom", x:5, y:9, sprite:"👩", name:"Your Mom", facing:"down", isHeal: true, dialog:["Sweetie! You're finally heading out on your journey?","Go to the Lab just up ahead and see Prof. Aeon.","Those Hacker Grunts are messing with Mochiichao in the wild — be careful.","Come back and talk to me any time — I'll patch your partner right up."] },
+    { id:"mom", x:5, y:9, sprite:"👩", name:"Your Mom", facing:"down", movement:"wander", wanderRadius:1, isHeal: true, dialog:["Sweetie! You're finally heading out on your journey?","Go to the Lab just up ahead and see Prof. Aeon.","Those Hacker Grunts are messing with Mochiichao in the wild — be careful.","Come back and talk to me any time — I'll patch your partner right up."] },
     { id:"rival_hex", x:15, y:10, sprite:"😤", name:"Hex", facing:"down", dialog:["You again? I already picked my starter. Razorgater, obviously.","Don't think I'll go easy on you just because we grew up here.","Next time we meet, we BATTLE. Count on it."], battle: { team:[{ id:"004", name:"Razorgater", hp:50, maxHp:50, atk:65, def:64, spd:48, moves:["Metal Claw","Tackle"], type:"Water", level:5 }], reward:100, badge:null } },
-    { id:"fat_guy", x:9, y:13, sprite:"🧑‍🦲", name:"Technology Enthusiast", facing:"down", dialog:["Technology is incredible!", "You can now store up to 6 Mochiichao in your party!", "Any more you catch are instantly sent to your PC!"] },
+    { id:"fat_guy", x:9, y:13, sprite:"🧑‍🦲", name:"Technology Enthusiast", facing:"down", movement:"wander", wanderRadius:1, dialog:["Technology is incredible!", "You can now store up to 6 Mochiichao in your party!", "Any more you catch are instantly sent to your PC!"] },
   ],
   signs: [
     // v5: Sector 0 had sign TILES (tile 10) but an empty signs array,
@@ -125,8 +125,8 @@ export const AEON_LAB: any = {
     });
   })(),
   npcs: [
-    { id:"prof_aeon", x:6, y:4, sprite:"🔬", name:"Prof. Aeon", facing:"down", dialog:["Welcome! I'm glad you could make it.","These five Mochiichao are ready for a partner.","Go ahead, pick one!"] },
-    { id:"asst_mochiko", x:9, y:4, sprite:"👩‍🔬", name:"Assistant Mochiko", facing:"down", dialog:["I'm Professor Aeon's assistant, Mochiko!","He's been waiting for you to choose your first partner."] },
+    { id:"prof_aeon", x:6, y:4, sprite:"🔬", name:"Prof. Aeon", facing:"down", movement:"wander", wanderRadius:1, dialog:["Welcome! I'm glad you could make it.","These five Mochiichao are ready for a partner.","Go ahead, pick one!"] },
+    { id:"asst_mochiko", x:9, y:4, sprite:"👩‍🔬", name:"Assistant Mochiko", facing:"down", movement:"wander", wanderRadius:1, dialog:["I'm Professor Aeon's assistant, Mochiko!","He's been waiting for you to choose your first partner."] },
     // v4: in-lab Hex is dialogue-only. The FIRST battle is the
     // lab-exit event (hex_battle_event, dynamic team, rival name),
     // not this NPC — keeping both would give three Hex battles
@@ -222,8 +222,8 @@ export const MOCHIIPLEX_1: any = {
     });
   })(),
   npcs: [
-    { id: "healer_1", x: 7, y: 3, sprite: "👩‍⚕️", name: "Center Nurse", facing: "down", dialog: ["Welcome to the MochiiPlex!", "Let me heal your Mochiichao...", "All done! Take care!"], isHeal: true },
-    { id: "shop_1", x: 3, y: 3, sprite: "🛒", name: "Clerk", facing: "down", dialog: ["Need some supplies?", "Take a look at what we have!"], isShop: true }
+    { id: "healer_1", x: 7, y: 3, sprite: "👩‍⚕️", name: "Center Nurse", facing: "down", movement: "wander", wanderRadius: 1, dialog: ["Welcome to the MochiiPlex!", "Let me heal your Mochiichao...", "All done! Take care!"], isHeal: true },
+    { id: "shop_1", x: 3, y: 3, sprite: "🛒", name: "Clerk", facing: "down", movement: "wander", wanderRadius: 1, dialog: ["Need some supplies?", "Take a look at what we have!"], isShop: true }
   ],
   signs: [],
   exits: [],
@@ -262,9 +262,9 @@ export const BINARY_FIELDS: any = {
     });
   })(),
   npcs: [
-    { id:"dojo1_guard", x:14, y:9, sprite:"🥋", name:"Dojo Acolyte", facing:"down", dialog:["The Binary Dojo awaits within!", "Master Lin is the strongest trainer in Silicon Town."] },
-    { id:"town_lass", x:10, y:20, sprite:"👧", name:"Town Girl", facing:"down", dialog:["This is Silicon Town! It's a bustling hub of commerce.", "You should check out the MochiiPlex to the East!"] },
-    { id:"town_oldman", x:23, y:12, sprite:"👴", name:"Old Man", facing:"left", dialog:["They say before the Mainframe Region was coded...", "There was a glowing ethereal creator named Mythar...", "He's the origin of all Mochiichao. A true mythical deity!"] }
+    { id:"dojo1_guard", x:14, y:9, sprite:"🥋", name:"Dojo Acolyte", facing:"down", movement:"wander", wanderRadius:1, dialog:["The Binary Dojo awaits within!", "Master Lin is the strongest trainer in Silicon Town."] },
+    { id:"town_lass", x:10, y:20, sprite:"👧", name:"Town Girl", facing:"down", movement:"wander", wanderRadius:1, dialog:["This is Silicon Town! It's a bustling hub of commerce.", "You should check out the MochiiPlex to the East!"] },
+    { id:"town_oldman", x:23, y:12, sprite:"👴", name:"Old Man", facing:"left", movement:"wander", wanderRadius:1, dialog:["They say before the Mainframe Region was coded...", "There was a glowing ethereal creator named Mythar...", "He's the origin of all Mochiichao. A true mythical deity!"] }
   ],
   signs: [
     { x:12, y:8, text:"BINARY DOJO\nMaster Lin - The Unbreakable Core" },
@@ -406,7 +406,7 @@ export const CAVE_OF_ECHOES: any = {
     });
   })(),
   npcs: [
-    { id:"miner_npc", x:12, y:13, sprite:"🧗", name:"Miner Cleff", dialog:["This cave runs DEEP."] }
+    { id:"miner_npc", x:12, y:13, sprite:"🧗", name:"Miner Cleff", movement:"wander", wanderRadius:1, dialog:["This cave runs DEEP."] }
   ],
   exits: [
     { x:5, y:0, to:"binary_woods", enterAt:{x:27, y:38}, dir:"up" }
@@ -458,8 +458,8 @@ export const NEON_CITY: any = {
     });
   })(),
   npcs: [
-    { id:"neon_astrologer", x:14, y:30, sprite:"🔮", name:"Data Astrologer", facing:"down", dialog:["The cosmic code is aligning in the Mainframe.", "I have sensed signatures from the 331 to 359 spectrum...", "Legendary beings built from raw data, myth, and stars!"] },
-    { id:"neon_shaman", x:24, y:20, sprite:"📿", name:"Cyber Shaman", facing:"left", dialog:["Mythar, the first legend... he slumbers deep in the digital cosmos.", "But numerology and myths say more celestial Mochiichao will awaken soon."] }
+    { id:"neon_astrologer", x:14, y:30, sprite:"🔮", name:"Data Astrologer", facing:"down", movement:"wander", wanderRadius:1, dialog:["The cosmic code is aligning in the Mainframe.", "I have sensed signatures from the 331 to 359 spectrum...", "Legendary beings built from raw data, myth, and stars!"] },
+    { id:"neon_shaman", x:24, y:20, sprite:"📿", name:"Cyber Shaman", facing:"left", movement:"wander", wanderRadius:1, dialog:["Mythar, the first legend... he slumbers deep in the digital cosmos.", "But numerology and myths say more celestial Mochiichao will awaken soon."] }
   ],
   exits: [
     ...buildVertExits(0, 15, 25, "scrap_junkyard", 32, "left"),
@@ -540,7 +540,7 @@ export const CORAL_APPROACH: any = {
     });
   })(),
   npcs: [
-    { id:"boat_captain", x:4, y:20, sprite:"⛵", name:"Capt. Neri", dialog:["My boat can take you to Castagnoli Island"] }
+    { id:"boat_captain", x:4, y:20, sprite:"⛵", name:"Capt. Neri", movement:"wander", wanderRadius:1, dialog:["My boat can take you to Castagnoli Island"] }
   ],
   exits: [
     ...buildVertExits(0, 15, 25, "neon_city", 34, "left"),
