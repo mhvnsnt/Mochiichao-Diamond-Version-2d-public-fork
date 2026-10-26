@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Application, Assets, Container, Graphics, Sprite, Texture } from 'pixi.js';
 import { TITLE_BIOMES, type TitleBiomeId } from '../../lib/titleBiomes';
 import {
+  CREATURE_ACTIONS, TITLE_BIOME_MOTION, TITLE_CARD_EFFECTS,
+  creatureActionFrame,
+} from '../../lib/titleCardEffects';
+import {
   black2CameraPose, black2MotionBlurAlpha, fireRedParticleStep, fireRedStreakStep,
   heartGoldStartFlashVisible, platinumExitOverlay, rubyPhase1Refires, rubyShineStart,
   rubyShineStep, FIRE_RED_FLAME_OFFSET_CYCLE, FIRE_RED_FLAME_SPAWN_DELAY,
@@ -16,12 +20,20 @@ import {
 /**
  * TitleScene — the shared title/start scene system (Mars, 2026-10-25).
  * Layers, traced from Pokemon title screens, Mochiichao content:
- *   0. painted background (original 1600x900 PNG, when the biome has one)
+ *   0. painted background (original 1600x900 PNG, when the biome has one),
+ *      drifting per biome (titleCardEffects: far layer moves slowest,
+ *      HeartGold flyover order) inside a 1.06 cover overscan
  *   1. sky background (two-tone gradient band, Pixi-drawn; fallback only)
  *   2. ground band + ground line
  *   3. figure sprite, supplied by the caller (Yogiferno PR #33
  *      + the other 9 cutouts in this batch — NO Pokemon art)
+ *   3.5. foreground frame, in front of the figure's feet (grass
+ *      tufts / water line / snow drifts / forest corners)
  *   4. weather / particle layer: snow, rain, leaves, dust, shimmer
+ *   4.5. per-card signature effect (twinkle / ripple / scan /
+ *      lightning + splash / fireflies / pollen / dust motes) +
+ *      per-creature action burst (FireRed scene 3: hop -> burst
+ *      -> recoil, 360-frame cycle)
  *   5. Yogiferno fire trail (only when figureUrl is set): embers
  *      spawning behind the feet + fading scorch glow on the ground,
  *      fire halo is baked into the clean cutout itself.
@@ -50,6 +62,7 @@ export default function TitleScene({
   biome = 'snow',
   figureUrl,
   figureAlt = 'Title figure',
+  figureName,
   fireTrail = false,
   caption,
   startPrompt = false,
@@ -58,6 +71,11 @@ export default function TitleScene({
   biome?: TitleBiomeId;
   figureUrl?: string;
   figureAlt?: string;
+  /** Title-pool creature name, when the figure is one: drives its
+   *  per-creature action (hop / bob / roar / shield / orbit) and
+   *  its effect burst from titleCardEffects. Unset figures keep
+   *  the plain walk + sine sway, no action claimed. */
+  figureName?: string;
   fireTrail?: boolean;
   caption?: string;
   /** HeartGold start flash prompt (0 show / 30 hide / 45 cycle).
@@ -107,15 +125,22 @@ export default function TitleScene({
       // If the painting is absent or fails to load, fall through
       // to the Pixi sky/ground rectangles below — never a blank.
       let painted = false;
+      let bgSprite: Sprite | null = null;
       if (b.backgroundImage) {
         try {
           const bgTex: Texture = await Assets.load(b.backgroundImage);
           const bg = new Sprite(bgTex);
-          const scale = Math.max(W / bgTex.width, H / bgTex.height);
+          // Cover x 1.06 overscan: the per-biome drift (titleCardEffects)
+          // moves the painting up to 10px, and the overscan margin is
+          // ~10px vertical / ~21px horizontal at this host size, so
+          // drift can never reveal an edge. Scale stays fixed; only
+          // position drifts, so the cover never shrinks below full.
+          const scale = Math.max(W / bgTex.width, H / bgTex.height) * 1.06;
           bg.scale.set(scale);
           bg.anchor.set(0.5, 0.5);
           bg.x = W / 2; bg.y = H / 2;
           scene.addChild(bg);
+          bgSprite = bg;
           painted = true;
         } catch {
           painted = false;
@@ -160,6 +185,7 @@ export default function TitleScene({
       // inside the 180px host, anchored at the feet.
       let figure: Sprite | null = null;
       let figureTex: Texture | null = null;
+      let figureBaseScale = 1;
       if (figureUrl) {
         try {
           const tex: Texture = await Assets.load(figureUrl);
@@ -167,6 +193,7 @@ export default function TitleScene({
           figure = new Sprite(tex);
           const targetH = 150;
           const scale = targetH / tex.height;
+          figureBaseScale = scale;
           figure.scale.set(scale);
           figure.anchor.set(0.5, 1);
           figure.x = W / 2; figure.y = groundY + 6;
@@ -176,9 +203,69 @@ export default function TitleScene({
         }
       }
 
+      // Layer 3.5: foreground frame, drawn AFTER the figure so it
+      // sits in front of its feet — the Pokemon title layering
+      // (grass / water / drift in front of the creature), kept to
+      // the bottom strip and top corners only, never over the
+      // figure's centre, and low enough that feet stay readable.
+      // It runs whether or not a painting is showing: the painting
+      // already has its own edge detail, and this frame is the
+      // moving-scene foreground that ties figure to ground.
+      {
+        const fg = new Graphics();
+        fg.rect(0, H - 26, W, 26).fill({ color: 0x000000, alpha: 0.18 });
+        if (biome === 'grass' || biome === 'forest') {
+          for (let x = 10; x < W; x += 52) {
+            fg.moveTo(x, H).lineTo(x + 3, H - 10).lineTo(x + 6, H).fill(b.groundLine);
+          }
+        }
+        if (biome === 'water') {
+          fg.rect(0, groundY + 14, W, 2).fill({ color: 0xffffff, alpha: 0.35 });
+        }
+        if (biome === 'snow') {
+          fg.ellipse(14, H, 30, 10).fill({ color: 0xffffff, alpha: 0.5 });
+          fg.ellipse(W - 14, H, 30, 10).fill({ color: 0xffffff, alpha: 0.5 });
+        }
+        if (biome === 'forest') {
+          fg.moveTo(0, 0).lineTo(26, 0).lineTo(0, 22).fill({ color: 0x052e16, alpha: 0.55 });
+          fg.moveTo(W, 0).lineTo(W - 26, 0).lineTo(W, 22).fill({ color: 0x052e16, alpha: 0.55 });
+        }
+        scene.addChild(fg);
+      }
+
       // Layer 4+5: weather + fire trail particles.
-      interface P { g: Graphics; vx: number; vy: number; life: number; max: number; kind: 'ember' | 'scorch' | 'flake' | 'rain' | 'leaf' | 'dust'; sway: number; }
+      interface P { g: Graphics; vx: number; vy: number; life: number; max: number; kind: 'ember' | 'scorch' | 'flake' | 'rain' | 'leaf' | 'dust' | 'bubble' | 'spark' | 'sandburst' | 'smoke' | 'fire' | 'sparkle' | 'shield' | 'splash'; sway: number; }
       const particles: P[] = [];
+      // Creature effect burst (FireRed scene 3 "attack" beat): one
+      // burst kind per creature, from its own manifest VFX in
+      // titleCardEffects. Shield is a single expanding ring around
+      // the figure; the rest are small particles from the figure.
+      const spawnCreatureBurst = (kind: string, x: number, y: number, color: number) => {
+        if (kind === 'shield') {
+          const g = new Graphics();
+          g.circle(0, 0, 26).stroke({ color, width: 3 });
+          g.x = x; g.y = y - 60; scene.addChild(g);
+          particles.push({ g, vx: 0, vy: 0, life: 0, max: 1.0, kind: 'shield', sway: 0 });
+          return;
+        }
+        const count = kind === 'sand' ? 10 : kind === 'smoke' ? 5 : 8;
+        for (let i = 0; i < count; i++) {
+          const g = new Graphics();
+          const r = kind === 'smoke' ? 5 + Math.random() * 4 : 2 + Math.random() * 2.5;
+          if (kind === 'sparkle') g.circle(0, 0, r).fill(0xffffff);
+          else g.circle(0, 0, r).fill(color);
+          const a = (i / count) * Math.PI * 2 + Math.random() * 0.5;
+          const sp = kind === 'spark' || kind === 'fire' ? 40 + Math.random() * 40 : 14 + Math.random() * 18;
+          g.x = x; g.y = y - 60; scene.addChild(g);
+          particles.push({
+            g,
+            vx: Math.cos(a) * sp,
+            vy: kind === 'bubble' || kind === 'smoke' ? -30 - Math.random() * 20 : Math.sin(a) * sp - 10,
+            life: 0, max: 0.9 + Math.random() * 0.5,
+            kind: kind as P['kind'], sway: Math.random() * Math.PI * 2,
+          });
+        }
+      };
       const spawnEmber = (x: number, y: number) => {
         const g = new Graphics();
         g.circle(0, 0, 2 + Math.random() * 3).fill(Math.random() < 0.5 ? 0xf97316 : 0xef4444);
@@ -202,6 +289,51 @@ export default function TitleScene({
           g.x = Math.random() * W; g.y = Math.random() * H;
           scene.addChild(g);
           weather.push({ g, speed: b.weather === 'rain' ? 90 + Math.random() * 60 : 12 + Math.random() * 20, phase: Math.random() * Math.PI * 2 });
+        }
+      }
+
+      // Layer 4 (card effect): one signature effect per biome, from
+      // TITLE_CARD_EFFECTS, drawn after the figure. Twinkle /
+      // firefly / pollen / dust dots pulse and drift; water ripple
+      // rings expand from the shore; the stone scan-line sweeps
+      // only when the figure is Razorgater (its manifest scan), and
+      // other stone figures get slow dust motes instead.
+      const cardEffect = TITLE_CARD_EFFECTS[biome];
+      interface Tw { g: Graphics; phase: number; baseY: number; }
+      const twinkles: Tw[] = [];
+      if (cardEffect.kind === 'twinkle' || cardEffect.kind === 'fireflies' || cardEffect.kind === 'pollen' || cardEffect.kind === 'dustmotes') {
+        for (let i = 0; i < cardEffect.count; i++) {
+          const g = new Graphics();
+          g.circle(0, 0, 1.5 + Math.random() * 1.5).fill(cardEffect.color);
+          g.x = Math.random() * W; g.y = Math.random() * (H - 40);
+          scene.addChild(g);
+          twinkles.push({ g, phase: Math.random() * Math.PI * 2, baseY: g.y });
+        }
+      }
+      interface Ring { g: Graphics; r: number; }
+      const ripples: Ring[] = [];
+      if (cardEffect.kind === 'ripple') {
+        for (let i = 0; i < cardEffect.count; i++) {
+          const g = new Graphics();
+          g.circle(0, 0, 8).stroke({ color: cardEffect.color, width: 2 });
+          g.x = W / 2; g.y = groundY + 12;
+          scene.addChild(g);
+          ripples.push({ g, r: 8 + i * 14 });
+        }
+      }
+      let scanLine: Graphics | null = null;
+      const showScan = cardEffect.kind === 'scan' && figureName === 'Razorgater';
+      if (showScan) {
+        scanLine = new Graphics();
+        scanLine.rect(0, 0, 2, H).fill({ color: cardEffect.color, alpha: 0.3 });
+        scene.addChild(scanLine);
+      } else if (biome === 'stone') {
+        for (let i = 0; i < 10; i++) {
+          const g = new Graphics();
+          g.circle(0, 0, 1.5).fill(0xe2e8f0);
+          g.x = Math.random() * W; g.y = Math.random() * (H - 40);
+          scene.addChild(g);
+          twinkles.push({ g, phase: Math.random() * Math.PI * 2, baseY: g.y });
         }
       }
 
@@ -241,6 +373,13 @@ export default function TitleScene({
       shineBg.rect(0, 0, W, H).fill(0xffffff);
       shineBg.alpha = 0;
       app.stage.addChild(shineBg);
+      // Rain card lightning: a screen-space white flash, frame-counted
+      // (every 420 frames, 6 frames at full alpha, then decay) — the
+      // HeartGold flash structure, not a random flicker.
+      const lightning = new Graphics();
+      lightning.rect(0, 0, W, H).fill(0xffffff);
+      lightning.alpha = 0;
+      app.stage.addChild(lightning);
 
       // FireRed spawners. GBA space is stepped with the pure
       // functions, then scaled to canvas space at draw time.
@@ -291,6 +430,7 @@ export default function TitleScene({
         return;
       }
       let x = -80; let t = 0; let emberTimer = 0; let scorchTimer = 0;
+      let lastBurstCycle = -1; let splashTimer = 0;
       let frame = 0;
       let flameTimer = 0; let leafTimer = 0;
       let leafDelay = FIRE_RED_LEAF_DELAY_BASE + Math.floor(Math.random() * FIRE_RED_LEAF_DELAY_RANGE);
@@ -317,6 +457,14 @@ export default function TitleScene({
         scene.x = W / 2 + pose.panX * 12;
         scene.y = H / 2 + pose.panY * 12;
         scene.scale.set(pose.zoom);
+        // Per-biome background drift (HeartGold parallax order: the
+        // far layer moves slowest). On top of the camera motion,
+        // inside the 1.06 overscan margin, so no edge ever shows.
+        if (bgSprite) {
+          const m = TITLE_BIOME_MOTION[biome];
+          bgSprite.x = W / 2 + Math.sin(t * m.speed) * m.ampX;
+          bgSprite.y = H / 2 + Math.sin(t * m.speed * 0.7) * m.ampY;
+        }
         for (const c of clouds) { c.x += 6 * dt / 60; if (c.x > W + 50) c.x = -50; }
         if (figure) {
           // Black 2 motion blur: ghost holds the last position.
@@ -329,6 +477,24 @@ export default function TitleScene({
           if (x > W + 80) x = -80;
           figure.x = x + Math.sin(t * 2) * 3;
           figure.y = groundY + 6 + Math.sin(t * 8) * 4;
+          // Per-creature action (FireRed scene 3 order: idle -> hop
+          // -> effect burst -> recoil -> idle, 360-frame cycle).
+          // Bob creatures sway instead of bouncing; orbit creatures
+          // (Mythar) hover above the ground instead of standing on
+          // it, per their manifest. Burst fires once per cycle.
+          const act = figureName ? CREATURE_ACTIONS[figureName] : undefined;
+          if (act) {
+            const af = creatureActionFrame(frameInt);
+            if (act.action === 'bob') figure.y += Math.sin(t * 2) * 6;
+            if (act.action === 'orbit') figure.y -= 18;
+            figure.y -= af.hopY;
+            figure.x += af.recoilX;
+            figure.scale.set(figureBaseScale * af.scaleMul);
+            if (af.burst && lastBurstCycle !== Math.floor(frameInt / 360)) {
+              lastBurstCycle = Math.floor(frameInt / 360);
+              spawnCreatureBurst(act.burst, figure.x, figure.y, act.color);
+            }
+          }
           if (fireTrail) {
             emberTimer -= dt / 60;
             if (emberTimer <= 0) { spawnEmber(x - 24, groundY - 8); emberTimer = 0.08; }
@@ -341,7 +507,42 @@ export default function TitleScene({
           if (p.life >= p.max) { scene.removeChild(p.g); p.g.destroy(); particles.splice(i, 1); continue; }
           const k = 1 - p.life / p.max;
           if (p.kind === 'ember') { p.g.x += (p.vx + Math.sin(t * 6 + p.sway) * 8) * dt / 60; p.g.y += p.vy * dt / 60; p.g.alpha = k; }
+          else if (p.kind === 'bubble' || p.kind === 'smoke') { p.g.x += Math.sin(t * 4 + p.sway) * 6 * dt / 60; p.g.y += p.vy * dt / 60; p.g.alpha = k * 0.8; if (p.kind === 'smoke') p.g.scale.set(1 + p.life); }
+          else if (p.kind === 'spark' || p.kind === 'fire' || p.kind === 'sandburst') { p.g.x += p.vx * dt / 60; p.g.y += p.vy * dt / 60; p.g.alpha = k; }
+          else if (p.kind === 'sparkle') { p.g.alpha = 0.3 + 0.7 * Math.abs(Math.sin(t * 6 + p.sway)); }
+          else if (p.kind === 'shield') { p.g.scale.set(1 + p.life * 1.2); p.g.alpha = k; }
+          else if (p.kind === 'splash') { p.g.scale.set(1 + p.life * 2); p.g.alpha = 0.5 * k; }
           else p.g.alpha = 0.35 * k;
+        }
+        // Card effect layer updates.
+        for (const tw of twinkles) {
+          tw.g.alpha = 0.25 + 0.75 * Math.abs(Math.sin(t * 1.5 + tw.phase));
+          if (cardEffect.kind === 'fireflies' || cardEffect.kind === 'pollen') {
+            tw.g.y -= 6 * dt / 60;
+            if (tw.g.y < 10) { tw.g.y = H - 40; tw.g.x = Math.random() * W; }
+          }
+        }
+        for (const r of ripples) {
+          r.r += 18 * dt / 60;
+          if (r.r > 48) r.r = 8;
+          r.g.clear();
+          r.g.circle(0, 0, r.r).stroke({ color: cardEffect.color, width: 2 });
+          r.g.alpha = 1 - r.r / 48;
+        }
+        if (scanLine) {
+          scanLine.x = ((frameInt % 360) / 360) * (W + 10) - 5;
+        }
+        if (cardEffect.kind === 'lightning') {
+          const lc = frameInt % 420;
+          lightning.alpha = lc < 6 ? 0.7 : Math.max(0, lightning.alpha - 0.15 * dt);
+          splashTimer -= dt / 60;
+          if (splashTimer <= 0) {
+            splashTimer = 0.25;
+            const g = new Graphics();
+            g.ellipse(0, 0, 6, 2).fill({ color: 0xbfdbfe, alpha: 0.5 });
+            g.x = Math.random() * W; g.y = groundY + 8; scene.addChild(g);
+            particles.push({ g, vx: 0, vy: 0, life: 0, max: 0.4, kind: 'splash', sway: 0 });
+          }
         }
         // FireRed spawners (frame-counted, not wall-clock).
         if (frMode === 'flame') {
@@ -408,7 +609,7 @@ export default function TitleScene({
       });
     });
     return () => { cancelled = true; app.destroy(true); };
-  }, [biome, figureUrl, fireTrail]);
+  }, [biome, figureUrl, figureName, fireTrail]);
 
   return (
     <div className="w-full">
@@ -419,7 +620,7 @@ export default function TitleScene({
         </div>
       )}
       <div className="text-center text-[10px] text-gray-500 mt-1">
-        {caption || `${bLabel(biome)} — ${TITLE_BIOMES[biome].backgroundImage ? 'Painted background + Pixi' : 'Pixi'} scene: sky, ground, weather, figure, fire trail (where wired) + title systems: FireRed spawner, HeartGold flash, Ruby shine, Black 2 camera/blur, Platinum fades.`}
+        {caption || `${bLabel(biome)} — ${TITLE_BIOMES[biome].backgroundImage ? 'Painted background + Pixi' : 'Pixi'} scene: drifting background, foreground frame, weather, card effect (${TITLE_CARD_EFFECTS[biome].kind}), figure${figureName ? ` + ${figureName} action (${CREATURE_ACTIONS[figureName]?.action ?? 'walk'})` : ''}, fire trail (where wired) + title systems: FireRed spawner, HeartGold flash, Ruby shine, Black 2 camera/blur, Platinum fades.`}
         {figureUrl ? '' : ' Figure: GAP — no figure shipped for this biome screen yet.'}
       </div>
     </div>

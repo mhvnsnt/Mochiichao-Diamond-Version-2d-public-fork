@@ -22,6 +22,7 @@ export default function YogifernoTitleWalk({ variant, biome }: { variant: 'walk'
       biome={resolvedBiome}
       figureUrl={yogifernoWalkCutout}
       figureAlt="Yogiferno walking"
+      figureName="Yogiferno"
       fireTrail
       caption={`Yogiferno walk — clean cutout (145x190, transparent) + Pixi particles + sine sway, ${resolvedBiome} biome. Fire halo is in the cutout.`}
     />

@@ -1,5 +1,6 @@
 import React from 'react';
 import TitleScene from './TitleScene';
+import { primaryCardForCreature } from '../../lib/titleCardEffects';
 import mochiiWalkCutout from '../../assets/title/mochii-walk-cutout.png';
 import razorgaterWalkCutout from '../../assets/title/razorgater-walk-cutout.png';
 import tyrageWalkCutout from '../../assets/title/tyrage-walk-cutout.png';
@@ -43,8 +44,12 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  * shadow, not a new drawing, and TitleScene's own ground band
  * sits under it. A shadow-separate pass (engine-drawn shadow,
  * baked shadow stripped) is a later cleanup, not claimed here.
- * Biome is left at TitleScene's default — per-creature biome
- * assignment belongs to the title-backgrounds batch, not this one.
+ * Biome assignment (title-backgrounds batch, 2026-10-25): each
+ * creature now shows on its own card from titleCardEffects
+ * (primaryCardForCreature), with its per-card effect and its own
+ * action burst. The mapping table there labels every source;
+ * Gabu (water) and Kittember (night) are PROPOSED, not canon,
+ * and rain has no primary creature yet — Mars corrects the table.
  */
 const FIGURES: Record<string, { url: string; size: string }> = {
   Mochii: { url: mochiiWalkCutout, size: '380x380' },
@@ -63,9 +68,11 @@ export default function TitleCreatureFigure({ name }: { name: string }) {
   if (!fig) return null;
   return (
     <TitleScene
+      biome={primaryCardForCreature(name) ?? 'snow'}
       figureUrl={fig.url}
       figureAlt={`${name} title figure`}
-      caption={`${name} — clean cutout (${fig.size}, transparent) + Pixi sine sway. No fire trail; Wispkin smoke and Mythar halo are in their cutouts.`}
+      figureName={name}
+      caption={`${name} — clean cutout (${fig.size}, transparent) on its ${primaryCardForCreature(name) ?? 'snow'} card + Pixi sine sway + ${name} action burst. No fire trail; Wispkin smoke and Mythar halo are in their cutouts.`}
     />
   );
 }

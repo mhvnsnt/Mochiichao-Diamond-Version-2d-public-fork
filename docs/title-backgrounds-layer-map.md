@@ -71,21 +71,64 @@ trail stay on top, unchanged. The full-screen TITLE phase in
 `IntroSequence.tsx` still uses its old gradient + stardust until the
 main lane swaps it — that swap is NOT claimed here.
 
-## Animation (partly inherited, dedicated pass still next)
+## Animation — dedicated per-biome motion + per-card effects (batch 3, 2026-10-25)
 
-Per Pokemon title timings (structure only): FireRed flash 128->0 step -4
-then fade-in, `BlinkPressStart` blink; Ruby/Emerald shine sweep
-(x += 4/frame, brighten +2 to 31 then darken -2 to 0, re-fire at
-counters 160 and 64); HeartGold 60-frame fade on A/Start. On current
-main, TitleScene already wires those systems (`titleAnimations.ts`:
-FireRed spawner, HeartGold flash, Ruby shine, Black 2 camera/blur,
-Platinum fades) — and the painted layer is added to the Black 2
-camera container, so it pans/zooms with the camera and the Pixi
-weather/figure layers move over it. What is still NOT done, and
-follows AFTER Mars sees the static v2 set, is a dedicated
-per-biome PNG motion pass (scroll/parallax beyond the camera, and
-any biome-specific drift) — so a rejected painting is not animated
-in its own right.
+Mars approved all 8 static v2 backgrounds, then ordered movement,
+layering like the Pokemon files, and effects per title card and per
+creature canon. Batch 3 adds that in `src/lib/titleCardEffects.ts`
+(data only) + `TitleScene.tsx` (wiring), with no painting repainted
+and no creature art changed.
+
+Layer order, back to front, updated (TitleScene now):
+
+| # | Pokemon layer (structure) | Mochiichao layer |
+|---|---------------------------|------------------|
+| 0 | HeartGold MAIN 3 (farthest) | Painted background, drifting per biome (far layer = slowest, HG scene_2 speed order: 0x140 / 0xC0 / 0x40) |
+| 1 | HeartGold MAIN 2 / MAIN 1 | Pixi sky/ground fallback only (skipped when a painting shows) |
+| 2 | FireRed box-art creature | Figure sprite, walking + sine sway (existing) |
+| 2.5 | FireRed scene grass (nearest, in front) | Foreground frame in front of the figure's feet: grass/forest tufts, water line, snow drifts, forest top corners, bottom scrim |
+| 3 | FireRed flame/leaf spawner | Weather particles (existing) |
+| 4 | Ruby shine / HG flash (overlay) | Per-card signature effect: snow twinkle, grass pollen, water ripple rings, sand dust motes, stone scan-line (Razorgater only; others get motes), forest fireflies, rain lightning flash (every 420 frames) + splashes, night star twinkle |
+| 5 | FireRed scene 3 fight beat | Per-creature action burst: 360-frame cycle — idle, hop (frames 240-269), burst at 270, recoil (270-281), settle. Burst kind per creature manifest VFX (see table below) |
+| 6 | FireRed logo / press tiles | Logo + PRESS line: game UI layers, unchanged, over everything |
+
+Per-biome drift (px at the 180px host, sine; painting is cover x 1.06
+overscan, so drift can never reveal an edge — safe margin ~10px
+vertical / ~21px horizontal):
+
+- snow 10/3 @0.25, grass 8/2 @0.35, water 4/6 @0.50, sand 10/2 @0.30,
+  stone 0/0 (rock steady, intentional), forest -5/2 @0.22,
+  rain 2/6 @0.40, night -3/1 @0.12. Values are assistant proposals
+  from the HG speed ratios, in one data file for Mars to tune.
+
+Creature-to-card assignment (sources labelled; PROPOSED = no canon
+source yet, shown to Mars first for correction):
+
+- snow: Yogiferno (canon-habitat: snow/ice in titleRotation; snow walk variant already shipped)
+- grass: Sproutle (canon-vfx: Flora/Chrome, fresh sprout)
+- water: Mochii (canon-vfx: glides, ripple, bubbles), Dorowani (title-vibe: blue water starter), Gabu (PROPOSED: teal turtle, title-vibe only)
+- sand: Tyrage (canon-vfx: sheds sand, roar dust storm)
+- stone: Razorgater (canon-vfx: scanning lasers, blue-electricity sparks)
+- forest: Wispkin (canon-vfx: bobs, dark smoke; evolves into Duskfiend, guardian of the dark forest)
+- rain: none yet (no title-pool creature has a rain canon source)
+- night: Mythar (canon-vfx: never touches ground, three golden rings orbit), Kittember (PROPOSED: ember tail orb, warm glow reads at night)
+
+Per-creature action + burst (from each creature's own manifest VFX
+where one exists; no audio — cries/chimes are visual only here):
+
+- Mochii glide + bubbles, Dorowani glide + bubbles, Gabu hop + bubbles
+- Razorgater scan + sparks, Tyrage roar + sand, Kittember bounce + fire
+- Sproutle shield + shield ring, Wispkin bob + smoke,
+  Yogiferno roar + fire, Mythar orbit (hovers, never grounds) + sparkle
+
+NOT wired in this batch, stated plainly: PixiJS DisplacementFilter
+water ripple (researched, needs a displacement texture asset — the
+water card already moves via ripple rings + shimmer, so it is a
+later one-filter addition, not a gap in motion); the full-screen
+TITLE phase in IntroSequence still uses its old gradient + stardust
+(that swap is main-lane work, not claimed here); live animated
+playback needs a Pages rebuild — the merged code alone is not a
+playable show.
 
 ## Counts
 
@@ -93,8 +136,9 @@ in its own right.
 - Layer map: 1/1 = 100%
 - TitleScene wiring: batch 1 (snow, grass, water, sand) + batch 2
   (stone, forest, rain, night) — see PRs, each additions only, 0 deletions
-- Animation per Pokemon timings: TitleScene systems on main inherited
-  (camera/weather/shine/fades move over and with the painting);
-  dedicated per-biome PNG motion: 0/8 = 0% (next step, after Mars eye-check)
+- Dedicated per-biome background motion: 8/8 = 100% (drift values in titleCardEffects.ts)
+- Per-card signature effects: 8/8 = 100% (one per biome)
+- Per-creature card assignment: 10/10 creatures assigned, 8/10 from canon/vibe sources, 2/10 PROPOSED (Gabu, Kittember); rain card 0 primary creatures
+- Per-creature action bursts: 10/10 = 100% (one action + burst per title-pool creature)
 - Pokemon art in any shipped file: 0 files
 - Text baked into any background: 0 files
