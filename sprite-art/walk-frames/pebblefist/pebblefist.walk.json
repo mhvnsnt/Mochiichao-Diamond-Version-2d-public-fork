@@ -1,0 +1,49 @@
+{
+ "creature": "pebblefist",
+ "roster_id": "035",
+ "status": "done",
+ "method": "one generated 8-panel sheet, quarter-split, border-connected white-bg flood removal (scipy label), interior whites kept, flat bottom shadow-ellipse strip where present, fit to 64x64 RGBA; plus near-pure-white pocket strip (no white design elements on this creature)",
+ "frames": [
+  {
+   "file": "pebblefist_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "pebblefist_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "pebblefist_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "pebblefist_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "pebblefist_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "pebblefist_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "pebblefist_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "pebblefist_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "movement_note": "Grey rock body, orange lava cracks, floating fists kept with body poses. Ground shadow ellipses stripped per shadows-separate rule.",
+ "raw_sheet": "media-generation-pebblefist-walk-v1-0-2f3ba525-6e4d-4e5a-9b6b-118d61ffb166.webp",
+ "eye_check": "Enlarged + 64px montage PASS after fixes: grey shadow ellipses stripped + enclosed white between-legs pockets stripped (Pebblefist has no white design elements, safe). Faint grey shadow remnant line under down feet remains, flagged minor. Floating fists kept with body poses."
+}
