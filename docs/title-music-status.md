@@ -25,12 +25,14 @@ until Mars changes it in his own words.
   wired as final. See `docs/title-music-v2-spec.md`.
 - Intro v2 (`public/audio/mochiichao-intro-v2.wav`, PR #59) — LOCKED DRAFT (same).
   See `docs/title-music-v2-spec.md`.
-- Title v3 (`public/audio/mochiichao-title-v3.wav`, this batch) — DRAFT, layered
-  on v2 (guitar/synth/organ/sub-bass/hip-hop drums), awaiting Mars listen +
-  approval. See `docs/title-music-v3-spec.md`.
-- Intro v3 (`public/audio/mochiichao-intro-v3.wav`, this batch) — DRAFT, rap-like
-  (bass/drums/guitar only, fewer layers than title), awaiting Mars listen +
-  approval. See `docs/title-music-v3-spec.md`.
+- Title v3 (`public/audio/mochiichao-title-v3.wav`, PR #70) — OFFICIAL TITLE
+  TRACK (Mars, 2026-10-25: "those are awesome", save as official). Layered
+  on v2 (guitar/synth/organ/sub-bass/hip-hop drums). See
+  `docs/title-music-v3-spec.md` and `docs/game-music-production-conversation.md`.
+- Intro v3 (`public/audio/mochiichao-intro-v3.wav`, PR #70) — OFFICIAL INTRO
+  TRACK (same decision). Rap-like (bass/drums/guitar only, fewer layers
+  than title). See `docs/title-music-v3-spec.md` and
+  `docs/game-music-production-conversation.md`.
 
 ## Rule
 

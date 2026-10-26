@@ -1,8 +1,12 @@
-# Mochiichao Title / Intro Music v3 — DRAFTS, show to Mars first
+# Mochiichao Title / Intro Music v3 — OFFICIAL TRACKS
 
 Title Music lane, 2026-10-25. v3 is built ON TOP of v2. v2 files are NOT deleted,
 NOT replaced, NOT overwritten — they stay on main as LOCKED DRAFTS. v3 is a new,
-separate pair of files. Nothing in this batch is wired as final.
+separate pair of files. Mars approved v3 on 2026-10-25 ("those are awesome")
+and made it official — see `docs/title-music-status.md` and
+`docs/game-music-production-conversation.md`. Wiring into the playable game
+is a separate, explicit step (see status doc); this spec records the tracks
+and how they were made.
 
 ## What Mars asked for (2026-10-25 ~21:41 CDT)
 
@@ -136,7 +140,7 @@ Stem EQ + levels (ffmpeg, frequency slotting so instruments do not fight):
 | File | Status | Wire? |
 |---|---|---|
 | `mochiichao-title-v2.wav`, `mochiichao-intro-v2.wav` | LOCKED DRAFTS (Mars: "lock them in") | No — kept, not wired as final, not deleted |
-| `mochiichao-title-v3.wav`, `mochiichao-intro-v3.wav` (this batch) | DRAFT, awaiting Mars listen + approval | No, until Mars approves after listening |
+| `mochiichao-title-v3.wav`, `mochiichao-intro-v3.wav` (this batch) | OFFICIAL (Mars, 2026-10-25) | Yes, when the wiring step runs — wiring itself is not in this spec batch |
 | BOOT = UI Art Option B, PRESS-START = M3 | CHOSEN (unchanged) | Yes, those slots only, when wiring runs |
 | M1/M2, UI Art A/C, title/intro v1 | DRAFT / OPTIONS (unchanged) | No |
 
