@@ -26,8 +26,11 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  *
  * - Mochii: the Mars-confirmed cutout, copied as-is
  *   (380x380, transparent, blue water blob with wave pattern).
- * - Razorgater: 268x285, steel crocodile, front, ground shadow
- *   from the sheet remains under his feet (see note below).
+ * - Razorgater: 265x266, steel crocodile, front. Baked
+ *   ground shadow removed (rembg u2netp, 2026-10-25 fix;
+ *   GrabCut left the shadow in and was rejected for him).
+ *   Eye-colour drift NOT decided here (main sheet red eyes
+ *   vs angles sheets blue eyes — Mars to pick).
  * - Tyrage: 327x305, front, ground cracks from the sheet remain.
  *   White spot between feet removed, baked shadow removed
  *   (rembg u2netp, 2026-10-25 white-spot/shadow fix).
@@ -47,13 +50,17 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  *   black drop body, wisp smoke. Duskfiend is NOT in this pool.
  * - Mythar: 434x350, front, stained-glass wings + halo ring.
  *
- * Shadow note: Tyrage, Kittember, Sproutle and Dorowani no
- * longer carry a baked sheet shadow (2026-10-25 fix above;
- * Pokemon-first: FireRed draws shadow as a separate 32x8
- * sprite, gEnemyMonShadow_Gfx / PALTAG_SHADOW, not baked into
- * the battler sprite — engine-drawn shadow is the later layer,
- * not claimed here). Razorgater still carries his sheet
- * shadow, and Gabu was confirmed fine by Mars and is untouched.
+ * Shadow note: Tyrage, Kittember, Sproutle, Dorowani and
+ * now Razorgater no longer carry a baked sheet shadow
+ * (2026-10-25 fixes above; Pokemon-first: FireRed draws
+ * shadow as a separate 32x8 sprite, gEnemyMonShadow_Gfx /
+ * PALTAG_SHADOW, not baked into the battler sprite —
+ * engine-drawn shadow is the later layer, not claimed here).
+ * Wispkin (wisp smoke), Mythar (halo ring) and Yogiferno
+ * (fire halo) carry design elements, not ground shadows,
+ * verified on black; Gabu was confirmed fine by Mars and
+ * is untouched. No title cutout in the 10-pool now carries
+ * a baked ground shadow.
  * Biome assignment (title-backgrounds batch, 2026-10-25; corrected
  * by Mars ~23:44 CDT): each creature now shows on its own card
  * from titleCardEffects (primaryCardForCreature), with its
@@ -65,7 +72,7 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  */
 const FIGURES: Record<string, { url: string; size: string }> = {
   Mochii: { url: mochiiWalkCutout, size: '380x380' },
-  Razorgater: { url: razorgaterWalkCutout, size: '268x285' },
+  Razorgater: { url: razorgaterWalkCutout, size: '265x266' },
   Tyrage: { url: tyrageWalkCutout, size: '327x305' },
   Kittember: { url: kittemberWalkCutout, size: '287x304' },
   Sproutle: { url: sproutleWalkCutout, size: '259x333' },
