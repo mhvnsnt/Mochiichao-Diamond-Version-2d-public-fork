@@ -54,12 +54,14 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  * the battler sprite — engine-drawn shadow is the later layer,
  * not claimed here). Razorgater still carries his sheet
  * shadow, and Gabu was confirmed fine by Mars and is untouched.
- * Biome assignment (title-backgrounds batch, 2026-10-25): each
- * creature now shows on its own card from titleCardEffects
- * (primaryCardForCreature), with its per-card effect and its own
- * action burst. The mapping table there labels every source;
- * Gabu (water) and Kittember (night) are PROPOSED, not canon,
- * and rain has no primary creature yet — Mars corrects the table.
+ * Biome assignment (title-backgrounds batch, 2026-10-25; corrected
+ * by Mars ~23:44 CDT): each creature now shows on its own card
+ * from titleCardEffects (primaryCardForCreature), with its
+ * per-card effect and its own action burst. Wispkin is on night
+ * (purple), Dorowani on water, Mochii on rain; Gabu is NOT on
+ * water and fills forest only as a proposed fill until Mars names
+ * his card; Kittember (night) is still PROPOSED, not canon.
+ * 8 cards, 10 creatures, night holds 3, no card empty.
  */
 const FIGURES: Record<string, { url: string; size: string }> = {
   Mochii: { url: mochiiWalkCutout, size: '380x380' },
