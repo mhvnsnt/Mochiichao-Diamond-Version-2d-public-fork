@@ -1,0 +1,512 @@
+{
+ "aerobeak": {
+  "source": "locked battle_front aerobeak_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 101,
+  "file": "aerobeak_footprint.png"
+ },
+ "aquariios": {
+  "source": "game-ready fallback aquariios_cell_00a.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 31,
+  "file": "aquariios_footprint.png"
+ },
+ "ashemit": {
+  "source": "locked battle_front ashemit_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 123,
+  "file": "ashemit_footprint.png"
+ },
+ "astroleviathan": {
+  "source": "locked battle_front astroleviathan_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 105,
+  "file": "astroleviathan_footprint.png"
+ },
+ "chromejaww": {
+  "source": "locked battle_front chromejaww_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 152,
+  "file": "chromejaww_footprint.png"
+ },
+ "cocoonode": {
+  "source": "locked battle_front cocoonode_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 126,
+  "file": "cocoonode_footprint.png"
+ },
+ "cragarm": {
+  "source": "locked battle_front cragarm_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 127,
+  "file": "cragarm_footprint.png"
+ },
+ "dorowani": {
+  "source": "locked battle_front dorowani_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 76,
+  "file": "dorowani_footprint.png"
+ },
+ "dreadtoise": {
+  "source": "locked battle_front dreadtoise_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 118,
+  "file": "dreadtoise_footprint.png"
+ },
+ "duneclaw": {
+  "source": "locked battle_front duneclaw_cell_02.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 147,
+  "file": "duneclaw_footprint.png"
+ },
+ "duskfiend": {
+  "source": "locked battle_front duskfiend_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 129,
+  "file": "duskfiend_footprint.png"
+ },
+ "finblade": {
+  "source": "locked battle_front finblade_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 56,
+  "file": "finblade_footprint.png"
+ },
+ "floatcalf": {
+  "source": "locked battle_front floatcalf_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 128,
+  "file": "floatcalf_footprint.png"
+ },
+ "gabu": {
+  "source": "locked battle_front gabu_cell_02.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 80,
+  "file": "gabu_footprint.png"
+ },
+ "gearkid": {
+  "source": "locked battle_front gearkid_cell_02.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 98,
+  "file": "gearkid_footprint.png"
+ },
+ "gorokappa": {
+  "source": "locked battle_front gorokappa_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 89,
+  "file": "gorokappa_footprint.png"
+ },
+ "inklet": {
+  "source": "locked battle_front inklet_cell_03.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 162,
+  "file": "inklet_footprint.png"
+ },
+ "kickmaster": {
+  "source": "locked battle_front kickmaster_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 81,
+  "file": "kickmaster_footprint.png"
+ },
+ "kittember": {
+  "source": "locked battle_front kittember_cell_02.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 136,
+  "file": "kittember_footprint.png"
+ },
+ "krakenox": {
+  "source": "game-ready fallback krakenox_cell_00a.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 37,
+  "file": "krakenox_footprint.png"
+ },
+ "manticlaw": {
+  "source": "locked battle_front manticlaw_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 166,
+  "file": "manticlaw_footprint.png"
+ },
+ "mechapion": {
+  "source": "locked battle_front mechapion_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 127,
+  "file": "mechapion_footprint.png"
+ },
+ "megalochrome": {
+  "source": "locked battle_front megalochrome_cell_02.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 103,
+  "file": "megalochrome_footprint.png"
+ },
+ "mochii": {
+  "source": "locked battle_front mochii_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 156,
+  "file": "mochii_footprint.png"
+ },
+ "mothrix": {
+  "source": "locked battle_front mothrix_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 81,
+  "file": "mothrix_footprint.png"
+ },
+ "mythar": {
+  "source": "locked battle_front mythar_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 115,
+  "file": "mythar_footprint.png"
+ },
+ "oblivirex": {
+  "source": "locked battle_front oblivirex_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 118,
+  "file": "oblivirex_footprint.png"
+ },
+ "pebblefist": {
+  "source": "locked battle_front pebblefist_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 126,
+  "file": "pebblefist_footprint.png"
+ },
+ "pixilite": {
+  "source": "locked battle_front pixilite_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 130,
+  "file": "pixilite_footprint.png"
+ },
+ "punchkid": {
+  "source": "locked battle_front punchkid_cell_02.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 122,
+  "file": "punchkid_footprint.png"
+ },
+ "pupbble": {
+  "source": "locked battle_front pupbble_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 128,
+  "file": "pupbble_footprint.png"
+ },
+ "pyromonk": {
+  "source": "locked battle_front pyromonk_cell_04.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 113,
+  "file": "pyromonk_footprint.png"
+ },
+ "pyropaw": {
+  "source": "locked battle_front pyropaw_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 67,
+  "file": "pyropaw_footprint.png"
+ },
+ "quakehound": {
+  "source": "locked battle_front quakehound_cell_03.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 129,
+  "file": "quakehound_footprint.png"
+ },
+ "razorgater": {
+  "source": "locked battle_front razorgater_cell_04.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 146,
+  "file": "razorgater_footprint.png"
+ },
+ "reaperdile": {
+  "source": "locked battle_front reaperdile_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 120,
+  "file": "reaperdile_footprint.png"
+ },
+ "shellguard": {
+  "source": "locked battle_front shellguard_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 116,
+  "file": "shellguard_footprint.png"
+ },
+ "sproutle": {
+  "source": "locked battle_front sproutle_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 129,
+  "file": "sproutle_footprint.png"
+ },
+ "squirmite": {
+  "source": "locked battle_front squirmite_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 84,
+  "file": "squirmite_footprint.png"
+ },
+ "stormtalon": {
+  "source": "locked battle_front stormtalon_cell_02.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 130,
+  "file": "stormtalon_footprint.png"
+ },
+ "strikechamp": {
+  "source": "locked battle_front strikechamp_cell_04.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 133,
+  "file": "strikechamp_footprint.png"
+ },
+ "strikechamp_unsuited": {
+  "source": "locked battle_front strikechamp_unsuited_cell_05.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 126,
+  "file": "strikechamp_unsuited_footprint.png"
+ },
+ "strikechamp_unsuited_full": {
+  "source": "game-ready fallback strikechamp_unsuited_full_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 83,
+  "file": "strikechamp_unsuited_full_footprint.png"
+ },
+ "terradog": {
+  "source": "locked battle_front terradog_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 176,
+  "file": "terradog_footprint.png"
+ },
+ "terrapod": {
+  "source": "locked battle_front terrapod_cell_01.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 145,
+  "file": "terrapod_footprint.png"
+ },
+ "tiidebiite": {
+  "source": "locked battle_front tiidebiite_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 98,
+  "file": "tiidebiite_footprint.png"
+ },
+ "toxitacle": {
+  "source": "locked battle_front toxitacle_cell_05.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 109,
+  "file": "toxitacle_footprint.png"
+ },
+ "tyrage": {
+  "source": "locked battle_front tyrage_cell_03.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 127,
+  "file": "tyrage_footprint.png"
+ },
+ "wispkin": {
+  "source": "locked battle_front wispkin_cell_02.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 60,
+  "file": "wispkin_footprint.png"
+ },
+ "yogiferno": {
+  "source": "locked battle_front yogiferno_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 128,
+  "file": "yogiferno_footprint.png"
+ },
+ "zephling": {
+  "source": "locked battle_front zephling_cell_00.png",
+  "size": [
+   16,
+   16
+  ],
+  "mode": "1",
+  "black_px": 141,
+  "file": "zephling_footprint.png"
+ }
+}
