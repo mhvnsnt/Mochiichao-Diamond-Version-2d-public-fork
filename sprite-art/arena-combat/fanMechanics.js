@@ -491,3 +491,20 @@ if (typeof module !== 'undefined' && module.exports) {
     sparringDodge, chosenDodge, applyDodgeToDamage,
   };
 }
+
+// ESM export (2026-10-25): see captureLoop.js note — the CJS guard never
+// fires under "type": "module"; this export is what the ESM test imports.
+export {
+  FAN, AIM_SHAPES,
+  createDashPool, useDash, regenDash,
+  createEnergyPool, regenEnergy, spendEnergy, maxUses,
+  speedUpsFromStat, knockbackDecay, separateBodies,
+  aimAngle, homingTurn, projectileReach, dashReach,
+  createAimState, updateAimError,
+  aiMovement, createStrafeState, updateStrafe,
+  movePickScore, pickBestMove, offenseScore, matchupScore, shouldSwitch,
+  softenedTypeStep,
+  hitFeedback, createGroundMark, tickGroundMarks, createZone, tickZone,
+  suddenDeathMultiplier,
+  sparringDodge, chosenDodge, applyDodgeToDamage,
+};

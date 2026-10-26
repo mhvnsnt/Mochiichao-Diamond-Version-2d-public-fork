@@ -1,13 +1,13 @@
 // followerWalk.test.js — tests for followerWalk.js (HANDOFF prototype).
-// Run: node --test followerWalk.test.js (from this directory, no
-// "type": "module" package.json in scope — this file uses require).
-'use strict';
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const {
+// Run: node --test followerWalk.test.js (from this directory).
+// ESM: package.json declares "type": "module", so this file uses import
+// (converted 2026-10-25 from require(); assertions unchanged).
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {
   facingFromDelta, facingTowardPlayer,
   createFollowerState, recordPlayerStep, trailTarget, updateFollowers,
-} = require('./followerWalk.js');
+} from './followerWalk.js';
 
 // Walk the player right from (0,0) to (5,0), updating followers each step.
 function walkRight(state, steps) {
