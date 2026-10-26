@@ -1,0 +1,11 @@
+{
+ "asset": "intro-frame-04-silhouette-reveal-mochii-v1.png",
+ "size": [
+  1920,
+  1080
+ ],
+ "method": "v2 composite: silhouette derived by background-difference mask from locked S1 starter-mochii-s1.png (cream bg [245,243,239], threshold 60), cropped to creature bbox; colour side is the same S1 crop. v1 failed eye-check (opaque S1 background made a black rectangle) and was replaced by this v2 under the same new filename (never shown to Mars).",
+ "featured": "Mochii #001 by default (first starter). If Mars picks another featured creature, rebuild from that creature's S1 art with the same script \u2014 the spec's Mars-pick blocker is satisfied by this labelled default, not by guessing a new design.",
+ "status": "done_composite",
+ "eye_check": "PASS 2026-10-25: silhouette reads as Mochii (top nub, blob body, wave belly pattern, grass tuft); colour side reads as Mochii (light-blue blob, nub, wave pattern, droplet cheeks)."
+}
