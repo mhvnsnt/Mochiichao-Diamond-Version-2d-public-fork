@@ -7,6 +7,7 @@ import { messageWindowStyle } from '../../lib/hudCustom';
 import type { MessageWindowStyle } from '../../lib/hudCustom';
 import { isConfirmKey } from '../../lib/buttonMode';
 import type { HumanSlot } from '../../lib/humanSheets';
+import { cellPos } from '../../lib/humanSheets';
 
 /**
  * DialogueBox — game-flow v4 dialogue system (field_message_box.c
@@ -165,7 +166,7 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
       <div className="flex gap-3 items-start">
         {speakerSlot && (
           <div className="shrink-0">
-            <HumanPortrait slot={speakerSlot} view="front" size={56} />
+            <HumanPortrait slot={speakerSlot} view="front" size={56} cell={speakerSlot.portraitCell != null ? cellPos(speakerSlot.portraitCell) : undefined} />
           </div>
         )}
         <div className="flex-1 min-w-0">
