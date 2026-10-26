@@ -1,0 +1,11 @@
+{
+  "creature": "strikechamp",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "strikechamp_cell_04.png"
+}
