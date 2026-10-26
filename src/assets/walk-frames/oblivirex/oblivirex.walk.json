@@ -1,0 +1,52 @@
+{
+ "creature": "oblivirex",
+ "roster_id": "009",
+ "status": "done",
+ "frames": [
+  {
+   "file": "oblivirex_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "oblivirex_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "oblivirex_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "oblivirex_walk_up_1.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "oblivirex_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "oblivirex_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "oblivirex_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "oblivirex_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "method": "8-panel sheet 4x2 split; border-connected near-white (>=240) removal, interior whites kept; fit 64x64 RGBA",
+ "raw_sheet": "media-generation-oblivirex-walk-v1-0-19a7f703-4c71-4317-a225-f98c9c48ca08.webp",
+ "source_reference": "game-ready/oblivirex/cells locked battle_front",
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "eye_check": "enlarged raw sheet PASS + 64px montage check in Segment 6 (see CHECKPOINT-STEP3.md)",
+ "movement_note": "heavy_slow",
+ "style_note": "original art, roster style; no baked shadow in shipped cells"
+}
