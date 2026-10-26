@@ -46,6 +46,8 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
       label: saved ? 'Saved!' : 'Save Game',
       help: 'Save your current progress.',
       action: () => {
+        // Explicit manual save releases a START OVER autosave hold.
+        gameState.setAutosaveHeldForSlot(null);
         saveGame(saveSlot, 'manual', `PAUSE SAVE - ${gameState.currentMap}`, gameState);
         setSaved(true);
         setTimeout(() => setSaved(false), 2000);

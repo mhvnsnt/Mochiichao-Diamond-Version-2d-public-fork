@@ -33,6 +33,8 @@ export default function SaveMenu({ onClose }: SaveMenuProps) {
   }, [viewing, selectedSave]);
 
   const handleSave = () => {
+    // Explicit manual save releases a START OVER autosave hold.
+    gameState.setAutosaveHeldForSlot(null);
     // Generate a Skyrim-like label based on location
     const mapName = gameState.currentMap;
     const label = `${mapName.toUpperCase()} - Lvl ${gameState.party.length ? gameState.party[0].level : 5}`;

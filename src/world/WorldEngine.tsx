@@ -270,19 +270,27 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const { gameHour, phase, tint, ambient } = useDayNight(1000);
   const weatherCfg = WEATHER_CONFIG[(mapData as any).weather ?? "clear"];
 
+  // Playtest 2026-10-26 (attempt 6): autosaves are HELD for a START
+  // OVER slot until the player saves manually — otherwise the first
+  // world entry / map change already overwrote the old save the
+  // dialogs promised to keep. No save, no "Game Autosaved" notice.
+  const autosaveHeldForSlot = useGameStore(s => s.autosaveHeldForSlot);
+  const setAutosaveHeldForSlot = useGameStore(s => s.setAutosaveHeldForSlot);
   useEffect(() => {
     // Autosave roughly every 60s
     const iv = setInterval(() => {
+      if (autosaveHeldForSlot === saveSlot) return;
       saveGame(saveSlot, 'auto', `AUTOSAVE - ${FULL_WORLD[currentMap]?.name || currentMap}`, useGameStore.getState());
       notify("Game Autosaved", "#88ccff");
     }, 60000);
     return () => clearInterval(iv);
-  }, [saveSlot, currentMap]);
+  }, [saveSlot, currentMap, autosaveHeldForSlot]);
 
   useEffect(() => {
-    // Autosave on map change
+    // Autosave on map change (held for a START OVER slot — see above)
+    if (autosaveHeldForSlot === saveSlot) return;
     saveGame(saveSlot, 'auto', `AUTOSAVE - Map Change`, useGameStore.getState());
-  }, [saveSlot, currentMap]);
+  }, [saveSlot, currentMap, autosaveHeldForSlot]);
 
   // v4 Mom-first dialogue: on the first world entry in Sector 0 with
   // no partner yet, Mom speaks first (one DialogueBox, portrait),
@@ -313,11 +321,11 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     setTimeout(() => setNotification(null), 2500);
   };
 
-  const triggerWildBattle = useCallback((wildMonId: string) => {
+  const triggerWildBattle = useCallback((wildMonId: string): boolean => {
     const aliveIdx = playerTeam.findIndex((m: any) => (m.currentHp ?? m.hp) > 0);
     if (aliveIdx === -1) {
       notify("You have no Mochiichao able to battle!", "#f44336");
-      return;
+      return false;
     }
 
     const playerMon = playerTeam[aliveIdx];
@@ -383,15 +391,16 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       reward: 0
     });
     setScreen("battle");
+    return true;
   }, [playerTeam]);
 
-  const triggerTrainerBattle = useCallback((npc: any) => {
+  const triggerTrainerBattle = useCallback((npc: any): boolean => {
     const aliveIdx = playerTeam.findIndex((m: any) => (m.currentHp ?? m.hp) > 0);
     if (aliveIdx === -1) {
       notify("You have no Mochiichao able to battle!", "#f44336");
-      return;
+      return false;
     }
-    if (!npc.battle || npc.battle.team.length === 0) return;
+    if (!npc.battle || npc.battle.team.length === 0) return false;
 
     const playerMon = playerTeam[aliveIdx];
     // v4: Hex battles use the rival name from the store and the
@@ -423,6 +432,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       badge: npc.battle.badge
     });
     setScreen("battle");
+    return true;
   }, [playerTeam, rivalName]);
 
   const move = useCallback((dx: number, dy: number) => {
@@ -576,6 +586,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
         }
         if (e.key === "F5") {
           e.preventDefault();
+          setAutosaveHeldForSlot(null);
           saveGame(saveSlot, 'manual', `QUICKSAVE - ${FULL_WORLD[currentMap]?.name || currentMap}`, useGameStore.getState());
           notify("Game Quicksaved", "#88ccff");
         }
@@ -650,7 +661,17 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       }
 
       let lines = npcHere.dialog || ["...", ""];
-      if (npcHere.battle && !defeatedTrainers.includes(npcHere.id)) {
+      // Playtest 2026-10-26 (attempt 6, pre-starter Hex soft-lock):
+      // a trainer battle with no living party member used to append
+      // "...Let's battle!" and, on completion, only fire a notify —
+      // finishDialog never cleared the dialogue or restored the
+      // overworld, so every further press re-fired the notice and
+      // movement stayed blocked. Never enter the battle flow
+      // without a party: show a plain, dismissible prompt instead.
+      const hasLivingParty = playerTeam.some((m: any) => (m.currentHp ?? m.hp) > 0);
+      if (npcHere.battle && !defeatedTrainers.includes(npcHere.id) && !hasLivingParty) {
+        setDialog({ lines: [...lines, "You need a partner before you can battle. Go see Prof. Aeon at the lab, just north of here."], npc: npcHere });
+      } else if (npcHere.battle && !defeatedTrainers.includes(npcHere.id)) {
         setDialog({ lines: [...lines, "...Let's battle!"], npc: npcHere, afterBattle: true });
       } else {
         if (npcHere.battle && npcHere.postBattleDialog && defeatedTrainers.includes(npcHere.id)) {
@@ -691,7 +712,15 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       setCompletedEvents(ce => [...ce, dialog.eventId]);
     }
     if (dialog.afterBattle && dialog.npc) {
-      triggerTrainerBattle(dialog.npc);
+      // Belt-and-braces for the pre-starter soft-lock: if no battle
+      // started (no living party), the dialogue MUST close and the
+      // overworld MUST return — never leave the player on a dead
+      // dialogue screen with movement blocked.
+      const started = triggerTrainerBattle(dialog.npc);
+      if (!started) {
+        setScreen("overworld");
+        setDialog(null);
+      }
     } else if (dialog.npc?.isShop) {
       if (setView) setView("SHOP");
       setDialog(null);

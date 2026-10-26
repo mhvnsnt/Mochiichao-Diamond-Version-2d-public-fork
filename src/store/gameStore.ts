@@ -52,6 +52,16 @@ interface GameState {
   fastForward: boolean;
   setCheatFlags: (flags: Partial<{ cheated: boolean; shiny: boolean; noclip: boolean; fastForward: boolean }>) => void;
 
+  // Playtest 2026-10-26 (attempt 6): a START OVER run autosaved over
+  // its occupied slot on world entry / map change, even though the
+  // START OVER dialogs promise the old save is replaced only when
+  // the player later saves over the slot. When this holds a slot
+  // number, WorldEngine autosaves into that slot are skipped until
+  // the player makes an explicit manual save, which clears the hold.
+  // Loading a save also clears it (that run is established).
+  autosaveHeldForSlot: number | null;
+  setAutosaveHeldForSlot: (slot: number | null) => void;
+
   // Actions
   setPlayerInfo: (name: string, gender: 'boy' | 'girl', slot: number) => void;
   setRivalName: (name: string) => void;
@@ -110,6 +120,9 @@ export const useGameStore = create<GameState>((set, get) => ({
   fastForward: false,
   setCheatFlags: (flags) => set(flags),
 
+  autosaveHeldForSlot: null,
+  setAutosaveHeldForSlot: (slot) => set({ autosaveHeldForSlot: slot }),
+
   setPlayerInfo: (name, gender, slot) => set({ playerName: name, playerGender: gender, saveSlot: slot }),
   setRivalName: (name) => set({ rivalName: name }),
   loadState: (state) => {
@@ -135,7 +148,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     persistSettings(nextSettings);
     applyFontRoles(nextSettings);
     applySoundMode(nextSettings.sound);
-    set({ ...state, settings: nextSettings, introCompleted: true, rivalName: (state as any).rivalName || 'Hex' });
+    set({ ...state, settings: nextSettings, introCompleted: true, rivalName: (state as any).rivalName || 'Hex', autosaveHeldForSlot: null });
   },
   completeIntro: () => set({ introCompleted: true }),
   
