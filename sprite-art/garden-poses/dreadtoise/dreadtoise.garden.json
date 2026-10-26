@@ -1,0 +1,11 @@
+{
+  "creature": "dreadtoise",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "dreadtoise_cell_00.png"
+}
