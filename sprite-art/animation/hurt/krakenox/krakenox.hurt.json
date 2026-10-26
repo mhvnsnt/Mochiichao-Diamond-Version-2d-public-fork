@@ -1,0 +1,31 @@
+{
+ "creature": "krakenox",
+ "hurt_version": "hurt-v1-2026-10-25",
+ "mapped_from_locked_atlas": false,
+ "mapped_note": "No locked-atlas cell carries a hurt/recoil/lean-back role in any of the 50 locked manifests (verified by role scan 2026-10-25); mapped count for this set is 0. A standing/walk cell was NOT re-labelled as hurt.",
+ "status": "done",
+ "source": "generated_v1",
+ "source_raw_file": "media-generation-krakenox-hurt-raw-v2-0-b4f8153f-5dc0-4d2b-93be-beb5520fa32a.webp",
+ "frames": [
+  {
+   "frame": 0,
+   "file": "krakenox_hurt_cell_00.png",
+   "role": "hurt",
+   "duration_ms": 500,
+   "display": "shown during recoil + first half of recover, then crossfade to standing"
+  }
+ ],
+ "timing": {
+  "windup_ms": 250,
+  "impact_hold_ms": 90,
+  "recoil_ms": 300,
+  "recover_ms": 400,
+  "total_ms": 1040,
+  "hurt_frame_hold_ms": 500,
+  "hurt_frame_note": "Hurt frame shown across recoil (300 ms) + first half of recover (200 ms), then crossfade to standing. Matches battleTreatments.js HURT_FRAME.HOLD_MS and TIMING."
+ },
+ "treatments_fallback": "Until hurt art exists, the hit is carried by battleTreatments.js: impact flash (white/red on crit) + recoil translation + screen shake + particle burst + camera push-in + 90 ms held impact frame. Fallback is NOT a substitute for art; it is what plays alongside art once art exists.",
+ "pose_spec": "Recoil: body tilted sharply back, black tentacles flung back and curling, eyes squeezed shut, mouth grimacing. All spikes/tentacles black/dark.",
+ "eye_check": "PASS at presentation size and at 64px (v2). Dark tentacled body and black spiky top match the locked atlas (krakenox_cell_00a.png + enlarged cell montage check). Caveat: red eye not visible because eyes are squeezed shut, as designed (same precedent as Razorgater). REJECTED v1 (media-generation-krakenox-hurt-raw-0-cb45745f-7d10-40e6-a7b0-bba91fecdf72.webp) added gold crown/spikes not in the locked atlas; no cell was cut from v1.",
+ "note": "Original art only, battle_front cell as reference. Cut to 64px (border-connected white-bg removal, scipy label method; interior whites kept). Local staging only \u2014 no push, no work-clone git changes, no src/assets/ changes."
+}
