@@ -20,10 +20,17 @@ until Mars changes it in his own words.
 
 - Title v1 (`public/audio/mochiichao-title.wav`, PR #36) — draft, superseded by v2 draft.
 - Intro v1 (`public/audio/mochiichao-intro.wav`, PR #36) — draft, superseded by v2 draft.
-- Title v2 (`public/audio/mochiichao-title-v2.wav`, this batch) — draft, awaiting Mars
-  listen + approval. See `docs/title-music-v2-spec.md`.
-- Intro v2 (`public/audio/mochiichao-intro-v2.wav`, this batch) — draft, awaiting Mars
-  listen + approval. See `docs/title-music-v2-spec.md`.
+- Title v2 (`public/audio/mochiichao-title-v2.wav`, PR #59) — LOCKED DRAFT (Mars:
+  "lock them in", 2026-10-25). Kept on main, not deleted, not replaced, not
+  wired as final. See `docs/title-music-v2-spec.md`.
+- Intro v2 (`public/audio/mochiichao-intro-v2.wav`, PR #59) — LOCKED DRAFT (same).
+  See `docs/title-music-v2-spec.md`.
+- Title v3 (`public/audio/mochiichao-title-v3.wav`, this batch) — DRAFT, layered
+  on v2 (guitar/synth/organ/sub-bass/hip-hop drums), awaiting Mars listen +
+  approval. See `docs/title-music-v3-spec.md`.
+- Intro v3 (`public/audio/mochiichao-intro-v3.wav`, this batch) — DRAFT, rap-like
+  (bass/drums/guitar only, fewer layers than title), awaiting Mars listen +
+  approval. See `docs/title-music-v3-spec.md`.
 
 ## Rule
 
