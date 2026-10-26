@@ -1,0 +1,33 @@
+{
+ "creature": "megalochrome",
+ "roster_id": "023",
+ "status": "done",
+ "method": "generated sheet, quarter-split (or stated grid), border-connected white-bg flood removal (scipy label), interior whites kept, flat bottom shadow-ellipse strip where present, fit to 64x64 RGBA",
+ "frames": [
+  {
+   "file": "megalochrome_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "megalochrome_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "megalochrome_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "megalochrome_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 0,
+  "right": 0
+ },
+ "movement_note": "Swimmer down/up only: front tail-sway phases (toothy grin), back tail-sway phases faceless. No legs. Completes set with game-ready side swim coverage. DRIFT FLAGGED: round sparkle eyes, same as accepted icon drift vs locked cell blue-ringed concentric eyes; v2 eye re-match optional.",
+ "raw_sheet": "media-generation-megalochrome-swim-downup-v1-0-4c113663-69f5-4cb1-aa3b-a515b121df17.webp",
+ "eye_check": "Enlarged + 64px montage PASS. Swimmer down/up only: front tail-sway phases (toothy grin), back tail-sway phases faceless. DRIFT FLAGGED: round sparkle eyes, same as accepted icon drift vs locked cell blue-ringed concentric eyes; v2 eye re-match optional."
+}
