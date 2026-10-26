@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useGameStore } from "../store/gameStore";
 import { getSlotSummaries, getSaves, loadGame } from "../lib/saveSystem";
 import HumanPortrait from "./game/HumanPortrait";
@@ -7,9 +7,8 @@ import DialogueBox from "./game/DialogueBox";
 import SettingsScreen from "./game/SettingsScreen";
 import { frameAccent } from "../lib/gameSettings";
 import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
-import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
-import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
-import TitleCreatureFigure from "./game/TitleCreatureFigure";
+import StartScreenPlayback from "./game/StartScreenPlayback";
+import { playStartScreenBootSound, playStartScreenPressSound, resolveActiveStartScreenPreset } from "../lib/startScreenPlayback";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 
@@ -100,25 +99,29 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // main-menu, or save system is created. Main menu itself is
   // UNCHANGED except SETTINGS now opens the real Settings screen.
   const [phase, setPhase] = useState<"BOOT" | "INTRO" | "TITLE" | "MAIN_MENU" | "SETTINGS" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("BOOT");
-  const [showPrompt, setShowPrompt] = useState(false);
   const [introScene, setIntroScene] = useState(0);
   const [titleFading, setTitleFading] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
   // v3 main menu: window selection, overwrite confirm.
   const [mainSelected, setMainSelected] = useState(0);
-  // Title rotation (Mars 18:26/18:28/18:31 CDT): first pick excludes
-  // the last stored creature (previous startup), so a startup never
-  // repeats the previous startup's creature. Every return to TITLE
-  // re-picks, excluding the current creature and the stored one.
-  const [titleCreature, setTitleCreature] = useState<TitleCreature>(() => {
-    const last = readLastTitleCreature();
-    return pickRotation(last ? [last] : []);
-  });
-  // Yogiferno title variant: same walk, or the snow variant (same
-  // walk on a snow background, fire trail on snow). Re-rolled on
-  // every rotation pick that lands on Yogiferno.
-  const [titleVariant, setTitleVariant] = useState<'walk' | 'snow'>('walk');
+  // Start-screen playback (batch after CREATE START SCREEN):
+  // the TITLE phase now plays the active saved preset (most
+  // recently saved user preset, else the locked default — see
+  // resolveActiveStartScreenPreset). The old title-rotation pick
+  // (pickRotation / YogifernoTitleWalk / TitleCreatureFigure) is
+  // superseded on this phase only: those modules are untouched,
+  // so rotation can return, but while a preset plays, the preset
+  // creature — not the rotation pick — is what shows. Re-resolved
+  // on every phase change, so returning to TITLE (B from main
+  // menu) re-reads presets saved in Settings meanwhile.
+  const activeStartScreen = useMemo(() => resolveActiveStartScreenPreset(), [phase]);
+  // Synchronous guards (state updates lag one render, so the
+  // window keydown/mousedown handler + the playback click can
+  // both fire advanceIntro for one press): one boot sound per
+  // BOOT entry, one press sound + one fade per TITLE press.
+  const bootSoundPlayedRef = useRef(false);
+  const titleFadingRef = useRef(false);
   const [showOverwriteConfirm, setShowOverwriteConfirm] = useState(false);
   const settings = useGameStore(s => s.settings);
   const frameColor = frameAccent(settings.frame);
@@ -139,27 +142,19 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   const setMapState = useGameStore(s => s.setMapState);
 
   useEffect(() => {
-    // Pulse animation for prompts
-    const iv = setInterval(() => setShowPrompt(p => !p), 800);
-    return () => clearInterval(iv);
-  }, []);
-
-  useEffect(() => {
     if (phase === "MAIN_MENU") {
       setSlots(getSlotSummaries());
     }
   }, [phase]);
 
+  // BOOT sound (settled role only): UI Art Option B rising
+  // arpeggio, once per BOOT entry. M3 is NEVER the boot sound.
   useEffect(() => {
-    if (phase === "TITLE") {
-      setTitleCreature(prev => {
-        const last = readLastTitleCreature();
-        const next = pickRotation([prev.name, ...(last ? [last] : [])]);
-        writeLastTitleCreature(next.name);
-        if (next.name === 'Yogiferno') setTitleVariant(Math.random() < 0.5 ? 'snow' : 'walk');
-        return next;
-      });
+    if (phase === "BOOT" && !bootSoundPlayedRef.current) {
+      bootSoundPlayedRef.current = true;
+      playStartScreenBootSound();
     }
+    if (phase !== "BOOT") bootSoundPlayedRef.current = false;
   }, [phase]);
 
   // v3 main menu controls: up/down + confirm, B/back to title. Tap /
@@ -200,9 +195,14 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     else if (phase === "INTRO") {
       if (introScene < 3) setIntroScene(s => s + 1);
       else setPhase("TITLE");
-    } else if (phase === "TITLE" && !titleFading) {
+    } else if (phase === "TITLE" && !titleFadingRef.current) {
+      // PRESS-START sound (settled role only): M3 Mochii Chirp
+      // (PR #36). One sound per press — the ref guard stops the
+      // window handler + playback click double-firing it.
+      titleFadingRef.current = true;
+      playStartScreenPressSound();
       setTitleFading(true);
-      setTimeout(() => { setTitleFading(false); setPhase("MAIN_MENU"); }, 350);
+      setTimeout(() => { titleFadingRef.current = false; setTitleFading(false); setPhase("MAIN_MENU"); }, 350);
     }
   };
 
@@ -231,10 +231,10 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
         {/* Boot: black screen, M Heavensent Studios logo alone, phi
             boot size (742 on a 1200 canvas, responsive max-width).
-            Boot sound is GAP — original sound needed, no file
-            invented, no Pokemon chime copied. Hold 2.5s is an
-            implementation choice, not a locked Mars value; any key
-            skips immediately. */}
+            Boot sound (settled role): UI Art Option B rising
+            arpeggio, played once on BOOT entry — never M3, never
+            a Pokemon chime. Hold 2.5s is an implementation
+            choice, not a locked Mars value; any key skips. */}
         <img
           src={heavensentLogo}
           alt="M Heavensent Studios"
@@ -243,7 +243,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         />
         <div className="text-white text-lg tracking-[0.3em] text-center mt-2">M HEAVENSENT STUDIOS</div>
         <div className="text-gray-500 text-xs tracking-[0.2em] mt-8 text-center">
-          Boot sound: GAP — original sound needed · Press any key to skip
+          Boot sound: UI Art Option B rising arpeggio · Press any key to skip
         </div>
       </div>
     );
@@ -279,78 +279,25 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   }
 
   if (phase === "TITLE") {
+    // Start-screen playback: the saved preset (or locked
+    // default) plays in Pixi at the locked 1200x1500 slots.
+    // The old DOM title block (rotation creature, CSS shine /
+    // press-blink, studio PNG) is superseded here — the Pixi
+    // component owns logo / subtitle / press / studio /
+    // creature / background / particles now. INTRO phase is
+    // untouched (separate intro-playback batch); MAIN_MENU is
+    // untouched. Any key / click still advances via the window
+    // handler below, which plays the M3 press sound once.
     return (
       <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden cursor-pointer p-4">
-        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-teal-900/40 to-transparent"></div>
-        {/* Shine sweep: white band moving left to right, twice
-            (Ruby x+=4, brighten to 31 then darken to 0, twice).
-            CSS animation stands in for the frame-count shine. */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div
-            className="absolute top-0 bottom-0 w-24 bg-white/20 blur-md"
-            style={{ animation: 'title-shine 2.4s ease-in-out 2' }}
+        <div className="z-10 flex flex-col items-center w-full max-w-2xl">
+          <StartScreenPlayback
+            preset={activeStartScreen.preset}
+            source={activeStartScreen.source}
+            onPress={advanceIntro}
           />
         </div>
-        <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink { 0%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }`}</style>
-
-        {/* Phi title layout, responsive version of the 1200x1500 spec:
-            logo 900 (75% width) centre top third, DIAMOND VERSION
-            556 (900/phi) below it, PRESS ANY KEY at the 61.8% line,
-            studio logo 556 in the copyright slot below it. */}
-        <div className="z-10 flex flex-col items-center w-full max-w-2xl" style={{ animation: 'title-slide-up 0.6s ease-out' }}>
-          <div className="text-center">
-            <div className="text-white text-4xl sm:text-5xl font-black tracking-widest drop-shadow-md" style={{ fontFamily: 'var(--bold-font, "Trebuchet MS", sans-serif)' }}>MOCHIICHAO</div>
-            {/* DIAMOND VERSION subtitle font is PINNED (Mars font
-                correction): this stack never changes, no font row
-                touches it, in TITLE or MAIN_MENU. */}
-            <div className="text-teal-300 text-xl font-bold tracking-[0.4em] drop-shadow-lg mt-3" style={{ animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: PINNED_SUBTITLE_FONT }}>
-              ✦ DIAMOND VERSION ✦
-            </div>
-          </div>
-          {/* Title rotation: featured creature + its theme. Art is
-              GAP — silhouette art for this creature is not shipped
-              in this code PR; the name/theme wiring is real. */}
-          <div className="mt-6 text-center" style={{ color: titleCreature.primary }}>
-            <div className="text-sm font-bold tracking-widest">FEATURED: {titleCreature.name}{titleCreature.dex ? ` ${titleCreature.dex}` : ''}</div>
-            <div className="text-[11px] mt-1" style={{ color: titleCreature.accent }}>{titleCreature.vibe}</div>
-            <div className="text-[10px] text-gray-500 mt-1">Title creature art: clean cutout wired (10/10)</div>
-          </div>
-          {titleCreature.name === 'Yogiferno' && (
-            <div className="mt-4 w-full max-w-md">
-              <div className="text-center text-[11px] mb-1" style={{ color: titleCreature.accent }}>
-                Yogiferno — {titleVariant === 'snow' ? 'snow walk variant (fire trail on snow)' : 'walk variant'}
-              </div>
-              <YogifernoTitleWalk variant={titleVariant} />
-            </div>
-          )}
-          {titleCreature.name !== 'Yogiferno' && (
-            <div className="mt-4 w-full max-w-md">
-              <div className="text-center text-[11px] mb-1" style={{ color: titleCreature.accent }}>
-                {titleCreature.name} — clean cutout title figure
-              </div>
-              <TitleCreatureFigure name={titleCreature.name} />
-            </div>
-          )}
-          <div className="mt-10 text-sm font-bold tracking-widest" style={{ animation: 'press-blink 0.75s steps(1) infinite', color: titleCreature.primary }}>
-            PRESS ANY KEY
-          </div>
-          <div className="mt-8 w-full max-w-[420px]">
-            <img
-              src={heavensentLogo}
-              alt="M Heavensent Studios"
-              className="w-full aspect-square object-contain"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            />
-            <div className="text-center text-gray-400 text-[10px] tracking-widest mt-1">M HEAVENSENT STUDIOS · TITLE COPYRIGHT SLOT</div>
-            <div className="text-center text-gray-500 text-[10px] mt-2">Title background scene art: GAP — original art needed · Title music: GAP</div>
-          </div>
-        </div>
-
         {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
-        <div className={`absolute bottom-4 text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
-          ▼ PRESS ANY KEY ▼
-        </div>
       </div>
     );
   }
