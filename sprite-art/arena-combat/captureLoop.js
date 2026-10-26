@@ -145,6 +145,26 @@ function consumeRingItem(unlock) {
   return unlock.ringItems - 1;
 }
 
+// Unlock-flag helpers (research addendum, 2026-10-25 sweep — see
+// ring-capture-zone-spec.md §8). The unlock object is PERSISTENT save
+// state; an encounter object is SESSION state. Keep them apart: leaving
+// the zone ends the session (encounter discarded) but never clears the
+// unlock, and spending to 0 items only greys the option out until
+// restocked. Pure functions returning new objects; the game owns the
+// actual save write.
+function createRingUnlock() {
+  return { zoneVisited: false, zonePlayed: false, ringItems: 0 };
+}
+function visitRingZone(unlock) {
+  const u = unlock && typeof unlock === 'object' ? unlock : createRingUnlock();
+  return { zoneVisited: true, zonePlayed: u.zonePlayed === true, ringItems: u.ringItems };
+}
+function playRingZone(unlock) {
+  // Playing implies visiting: a completed tutorial sets both flags.
+  const u = unlock && typeof unlock === 'object' ? unlock : createRingUnlock();
+  return { zoneVisited: true, zonePlayed: true, ringItems: u.ringItems };
+}
+
 // ---------------------------------------------------------------- path A: ring
 function createRingCapture(options) {
   const o = options || {};
@@ -240,7 +260,21 @@ if (typeof module !== 'undefined' && module.exports) {
     lowLevelBonus, captureRateX, shakeThreshold, isGuaranteed,
     captureChance, rollCapture,
     isRingCaptureUnlocked, consumeRingItem,
+    createRingUnlock, visitRingZone, playRingZone,
     createRingCapture, addRingPoint, ringCloses, completeLoop,
     decayRingMeter, creatureStruggle,
   };
 }
+
+// ESM export (2026-10-25): package.json declares "type": "module", so the
+// CJS guard above never fires under node --test; this export is what the
+// ESM test suite imports. Same names, same functions, no logic change.
+export {
+  CAPTURE,
+  lowLevelBonus, captureRateX, shakeThreshold, isGuaranteed,
+  captureChance, rollCapture,
+  isRingCaptureUnlocked, consumeRingItem,
+  createRingUnlock, visitRingZone, playRingZone,
+  createRingCapture, addRingPoint, ringCloses, completeLoop,
+  decayRingMeter, creatureStruggle,
+};
