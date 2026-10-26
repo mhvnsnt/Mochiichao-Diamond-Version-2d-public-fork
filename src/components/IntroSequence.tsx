@@ -6,6 +6,7 @@ import StdWindow from "./game/StdWindow";
 import DialogueBox from "./game/DialogueBox";
 import SettingsScreen from "./game/SettingsScreen";
 import { frameAccent } from "../lib/gameSettings";
+import { BOOT_SOUND_URL, PRESS_START_SOUND_URL, playOneShot } from "../lib/audio";
 import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
@@ -201,6 +202,11 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       if (introScene < 3) setIntroScene(s => s + 1);
       else setPhase("TITLE");
     } else if (phase === "TITLE" && !titleFading) {
+      // PRESS-START sound, settled role: M3 Mochii Chirp (NOT the
+      // boot sound). Played on the advance gesture itself, so
+      // autoplay policy is satisfied; it plays through the 350 ms
+      // white fade into MAIN_MENU and is not stopped on phase change.
+      void playOneShot(PRESS_START_SOUND_URL).catch(() => {});
       setTitleFading(true);
       setTimeout(() => { setTitleFading(false); setPhase("MAIN_MENU"); }, 350);
     }
@@ -212,6 +218,27 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       return () => clearTimeout(t);
     }
     return undefined;
+  }, [phase]);
+
+  // BOOT sound, settled role: UI Art Option B, rising arpeggio
+  // (NOT M3). Attempted on BOOT mount; browsers block sound before
+  // a user gesture, so on rejection the sound retries on the first
+  // key/click — which is also the skip gesture — and plays through
+  // into INTRO instead of being cut off. Any key still skips as before.
+  useEffect(() => {
+    if (phase !== "BOOT") return undefined;
+    let cancelled = false;
+    const retry = () => { void playOneShot(BOOT_SOUND_URL).catch(() => {}); };
+    void playOneShot(BOOT_SOUND_URL).catch(() => {
+      if (cancelled) return;
+      window.addEventListener("keydown", retry, { once: true });
+      window.addEventListener("mousedown", retry, { once: true });
+    });
+    return () => {
+      cancelled = true;
+      window.removeEventListener("keydown", retry);
+      window.removeEventListener("mousedown", retry);
+    };
   }, [phase]);
 
   useEffect(() => {
@@ -231,10 +258,11 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
         {/* Boot: black screen, M Heavensent Studios logo alone, phi
             boot size (742 on a 1200 canvas, responsive max-width).
-            Boot sound is GAP — original sound needed, no file
-            invented, no Pokemon chime copied. Hold 2.5s is an
-            implementation choice, not a locked Mars value; any key
-            skips immediately. */}
+            Boot sound is WIRED: UI Art Option B, rising arpeggio
+            (src/lib/audio.ts BOOT_SOUND_URL), played once on BOOT
+            mount, or on first gesture if autoplay blocks it. Hold
+            2.5s is an implementation choice, not a locked Mars
+            value; any key skips immediately. */}
         <img
           src={heavensentLogo}
           alt="M Heavensent Studios"
@@ -243,7 +271,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         />
         <div className="text-white text-lg tracking-[0.3em] text-center mt-2">M HEAVENSENT STUDIOS</div>
         <div className="text-gray-500 text-xs tracking-[0.2em] mt-8 text-center">
-          Boot sound: GAP — original sound needed · Press any key to skip
+          Press any key to skip
         </div>
       </div>
     );
