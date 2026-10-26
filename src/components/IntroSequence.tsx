@@ -20,6 +20,9 @@ import menuV32Background from "../assets/ui/main-menu-v32-background.png";
 import puffyCloud from "../assets/ui/puffy-cloud.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
+import TitleScene from "./game/TitleScene";
+import { getSelectedResolvedTitleScreenPreset } from "../lib/titleScreenPresetSelection";
+import { toTitleSceneProps } from "../lib/titleScreenPresets";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -347,6 +350,38 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   }
 
   if (phase === "TITLE") {
+    // Title-screen preset hook (PR #157 wiring, opt-in only): when
+    // the player picked a preset in Settings, the TITLE phase shows
+    // that preset's scene — the seam's own TitleScene props, full
+    // viewport — instead of the locked phi stage below. Press
+    // behaviour is NOT redefined here: the existing any-key/click
+    // handler above still plays the M3 chirp, white-fades 350ms,
+    // then MAIN_MENU, which is the preset press-start behaviour.
+    // With no pick (null), this branch is skipped and the locked
+    // default below renders exactly as before — the default title
+    // code is untouched, not moved behind a flag.
+    const selectedPreset = getSelectedResolvedTitleScreenPreset();
+    if (selectedPreset) {
+      return (
+        <div className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer">
+          <style>{`@keyframes press-blink { 0%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }`}</style>
+          <TitleScene {...toTitleSceneProps(selectedPreset)} fullHeight />
+          {/* Press prompt, owned here (TitleScene's startPrompt is
+              false for presets, per the seam): same PRESS ANY KEY
+              text and 30-on/15-off blink as the locked default. */}
+          <div
+            className="absolute left-0 right-0 text-center text-white font-bold"
+            style={{ bottom: '12%', fontSize: 44, letterSpacing: 6, animation: 'press-blink 0.75s steps(1) infinite', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
+          >
+            PRESS ANY KEY
+          </div>
+          <div className="absolute bottom-4 left-0 right-0 text-center text-gray-300 text-[10px] tracking-widest" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
+            Title preset: {selectedPreset.label} — change it in Settings from the main menu
+          </div>
+          {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
+        </div>
+      );
+    }
     // Restored locked title (phi spec, 1200x1500 stage): logo PNG in
     // its phi slot, DIAMOND VERSION banner, PRESS ANY KEY at the
     // bottom phi line, Heavensent logo in the copyright slot. The
