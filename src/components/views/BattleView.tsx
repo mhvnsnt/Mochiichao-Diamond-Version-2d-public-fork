@@ -25,7 +25,7 @@ import CreaturePortrait from '../game/CreaturePortrait';
 import HumanPortrait from '../game/HumanPortrait';
 import { UiPanel } from '../game/UiArt';
 import { UI_ART } from '../../lib/uiArt';
-import { playerSlot } from '../../lib/humanSheets';
+import { playerSlot, cellPos } from '../../lib/humanSheets';
 import PixiBattleCanvas, { BattleAttack } from '../game/PixiBattleCanvas';
 import {
   healthbarStyle, battleHudPositions, moveButtonContainerClass, ppTypeLine,
@@ -487,7 +487,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
         )}
         {/* Small portraits in the corners, for creatures whose sheet is the proof */}
         <div className="absolute bottom-2 left-2 opacity-90 pointer-events-none hidden sm:block">
-          <HumanPortrait slot={playerSlot(playerGender)} view="back" size={56} />
+          <HumanPortrait slot={playerSlot(playerGender)} view="back" size={56} cell={playerSlot(playerGender).battleCell != null ? cellPos(playerSlot(playerGender).battleCell!) : undefined} />
         </div>
         <div className="absolute bottom-2 right-2 opacity-90 pointer-events-none hidden sm:block">
           <CreaturePortrait speciesId={enemy.speciesId} view="front" size={56} />

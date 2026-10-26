@@ -20,9 +20,13 @@
  * 256x256 4-column grid (not a 192x64 strip): row 0 = world
  * front/back/left/right, rows 1-2 = walk idle/step frames, row 3 =
  * battle_back + portrait. Walk cells are wired by PixiWorldCanvas
- * for the moving player (see walk on HumanSlot); battle_back and
- * portrait cells are present in the atlas + manifest but not yet
- * wired by game code — that is a follow-up pass, not claimed here.
+ * for the moving player (see walk on HumanSlot); battle_back (cell
+ * 12) is wired by BattleView's player figure and portrait (cell 13)
+ * is wired by DialogueBox's speaker portrait (see battleCell /
+ * portraitCell on HumanSlot) — except Player A's portrait, which is
+ * deliberately WITHHELD below: her portrait cell carries the flagged
+ * eye drift, so her dialogue keeps the row-0 front until the Human
+ * lane delivers a corrected portrait or Mars decides.
  * Portrait eye drift, noted not fixed: portrait v1 eyes drifted to
  * teal/blue; model/walk eyes are brown and brown is canon. The atlas
  * was NOT hand-edited to fix eyes; correction is a full-stack edit
@@ -33,13 +37,16 @@ import playerAAtlas from '../assets/human-characters/in-game-sheets/player-a-atl
 // below is a 256x256 4x4 grid of 64x64 cells with the SAME row-0 layout
 // as the Player A atlas — row 0 = world front/back/left/right, row 3 =
 // battle (cell 12) + portrait (cell 13) — verified against each atlas's
-// manifest (cells 0-3 world, 12 battle, 13 portrait). Walk rows differ
-// by batch (see ROWS_WALK vs PAIRS_WALK): PR #100 atlases are idle row
-// then step row (idle 4-7, step 8-11), Player A is direction pairs
-// (down 4/5, up 6/7, left 8/9, right 10/11). Walk cells are consumed by
-// PixiWorldCanvas for the moving player; battle and portrait cells are
-// present in the atlases + manifests but NOT yet wired by game code —
-// that is a follow-up pass, not claimed here.
+// manifest (cells 0-3 world, 12 battle, 13 portrait) and by pixels
+// (cell 13 differs from front cell 0, cell 12 differs from back cell 1,
+// on every sampled atlas). Walk rows differ by batch (see ROWS_WALK
+// vs PAIRS_WALK): PR #100 atlases are idle row then step row (idle
+// 4-7, step 8-11), Player A is direction pairs (down 4/5, up 6/7,
+// left 8/9, right 10/11). Row 3 is the SAME on both batches, so battle
+// and portrait cells need no per-batch mapping. Battle cells are
+// consumed by BattleView's player figure and portrait cells by
+// DialogueBox's speaker portrait (see battleCell / portraitCell);
+// Player A's portrait cell is withheld (eye drift, see below).
 import shopkeeperAtlas from '../assets/human-characters/in-game-sheets/shopkeeper-atlas-64x64.png';
 import krixAtlas from '../assets/human-characters/in-game-sheets/krix-atlas-64x64.png';
 import syndicateAtlas from '../assets/human-characters/in-game-sheets/syndicate-grunt-atlas-64x64.png';
@@ -103,6 +110,18 @@ export interface HumanSlot {
    *  stand still in current maps, so their walk cells do not animate
    *  yet. Absent = render row-0 standing frame exactly as before. */
   walk?: HumanWalkFrames;
+  /** Row-3 grid cell index (0-15) of the battle figure in this slot's
+   *  4x4 atlas: 12 = (col 0, row 3). Consumed by BattleView's player
+   *  figure. Absent = render the current row-0 view exactly as before
+   *  (old strips, null sheets, and any slot whose battle cell is not
+   *  verified from its own manifest). */
+  battleCell?: number;
+  /** Row-3 grid cell index (0-15) of the dialogue portrait in this
+   *  slot's 4x4 atlas: 13 = (col 1, row 3). Consumed by DialogueBox's
+   *  speaker portrait. Absent = render the current row-0 front exactly
+   *  as before. Player A's portrait cell is deliberately absent (see
+   *  player_girl below): her cell 13 carries the flagged eye drift. */
+  portraitCell?: number;
   /** Number of 64x64 columns in the sheet image. Default 3 (strips); 4 for the Player A atlas. */
   sheetCols?: number;
   /** Number of 64x64 rows in the sheet image. Default 1 (strips); 4 for the Player A atlas. */
@@ -123,10 +142,17 @@ function slot(slotId: string, label: string, role: string, color: string): Human
 /** Atlas slot: same row-0 world frames as Player A (front 0, back 64,
  *  left 128, right 192 — distinct right cell, NOT mirrored left), 4x4
  *  grid, PR #100 rows walk layout (idle 4-7, step 8-11). Battle (12)
- *  and portrait (13) are in the atlas but not yet consumed by game
- *  code — that is still a follow-up pass, not claimed here. */
+ *  and portrait (13) cells are verified from each atlas's own manifest
+ *  and wired: BattleView's player figure (battleCell) and DialogueBox's
+ *  speaker portrait (portraitCell). */
 function atlasSlot(slotId: string, label: string, role: string, sheetUrl: string, color: string): HumanSlot {
-  return { slotId, label, role, sheetUrl, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: ROWS_WALK, sheetCols: 4, sheetRows: 4, color };
+  return { slotId, label, role, sheetUrl, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: ROWS_WALK, battleCell: 12, portraitCell: 13, sheetCols: 4, sheetRows: 4, color };
+}
+
+/** Grid (col, row) of a 4x4 atlas cell index, for HumanPortrait's
+ *  `cell` prop. Cell 12 -> (0, 3), cell 13 -> (1, 3). */
+export function cellPos(cell: number): { col: number; row: number } {
+  return { col: cell % 4, row: Math.floor(cell / 4) };
 }
 
 /**
@@ -155,10 +181,17 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // A/B/C/D picker yet. Row-0 world cells: front 0, back 64, left 128,
   // right 192 (distinct right cell, NOT mirrored left). Walk cells use
   // Player A's own pairs layout (PAIRS_WALK), NOT the PR #100 rows
-  // layout — see PAIRS_WALK. Battle_back (12) and portrait (13) are in
-  // the atlas + manifest but NOT yet wired by game code — follow-up
-  // pass, not claimed.
-  player_girl: { slotId: 'player_girl', label: 'Player (girl)', role: 'player', sheetUrl: playerAAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: PAIRS_WALK, sheetCols: 4, sheetRows: 4, color: '#f48fb1' },
+  // layout — see PAIRS_WALK. Battle_back (12) IS wired (BattleView's
+  // player figure — a back view, so the eye drift cannot show).
+  // Portrait (13) is deliberately NOT wired: her portrait cell differs
+  // from her front cell (pixel mean abs diff 66.2) and carries the
+  // flagged teal/blue eye drift, while her row-0 front carries the
+  // canon brown eyes. Switching dialogue to cell 13 would put the
+  // drifted eyes in every Player A dialogue portrait, so her dialogue
+  // keeps the row-0 front until the Human lane delivers a corrected
+  // portrait or Mars decides otherwise. This is a flagged decision,
+  // not a silent swap and not a hand-fix: the atlas is untouched.
+  player_girl: { slotId: 'player_girl', label: 'Player (girl)', role: 'player', sheetUrl: playerAAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: PAIRS_WALK, battleCell: 12, sheetCols: 4, sheetRows: 4, color: '#f48fb1' },
   hex: slot('hex', 'Hex (rival)', 'rival', '#b388ff'),
   prof_aeon: slot('prof_aeon', 'Prof. Aeon', 'professor', '#e0e0e0'),
   mochiko: slot('mochiko', 'Assistant Mochiko', 'assistant', '#80cbc4'),
