@@ -8,6 +8,8 @@ import {
   MenuPreset, LOCKED_PRESET, loadPresets, savePresets, presetToJson,
 } from '../../lib/gameSettings';
 import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
+import { setSoundMode, playUiPreview } from '../../lib/audioRouting';
+import { isConfirmKey, shoulderKey, buttonModeNote } from '../../lib/buttonMode';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
 import {
@@ -40,11 +42,19 @@ import {
  * FONT. Effects: text speed -> DialogueBox interval; battle scene ->
  * BattleView animation skip; battle style -> BattleView switch
  * choice; frame -> frameAccent() on real windows; font -> --game-font.
- * SOUND is a stored flag only — there is no audio engine in this
- * build to route yet (map music fields are names only), labelled
- * NEED in the UI, not faked. BUTTON MODE is honoured in this screen
- * (LEFT/RIGHT cycle, L confirms when L=EQUALS=A); wider control
- * remapping is NEED, labelled in the UI.
+ * SOUND is routed, not just stored (2026-10-25): audioRouting.ts
+ * builds a real Web Audio graph — STEREO passthrough, MONO
+ * downmix (split, halve, sum to one channel) — applied live while
+ * cycling and on every save; pressing A on the SOUND row plays a
+ * left/right preview tone through it. Boot / press-start slots
+ * are wired separately in bootAudio.ts (PR #79, settled roles:
+ * BOOT = UI Art Option B,
+ * PRESS-START = M3 chirp — never swapped). BUTTON MODE is
+ * honoured here and, via buttonMode.ts, on the main menu, in
+ * dialogue, in battle, and in world movement; the surfaces where
+ * a mode has no honest action (dialogue LR, overworld LR,
+ * pause-menu keys, HELP toggle) stay labelled NEED in
+ * buttonMode.ts, not faked.
  *
  * Preset rows (Menu Creator family) are saved as presets and NEVER
  * overwrite locked v32 until Mars locks a new one. Reset to Locked
@@ -177,6 +187,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     setSettings(next);
     persistSettings(next);
     applyFontRoles(next);
+    setSoundMode(next.sound);
     persistMenuCustom(c);
     applyMenuCustom(c);
     if (nextPreset) {
@@ -231,8 +242,8 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     { label: 'TEXT SPEED', value: draft.textSpeed, onLeft: () => set({ textSpeed: cycle(TEXT_SPEEDS, draft.textSpeed, -1) }), onRight: () => set({ textSpeed: cycle(TEXT_SPEEDS, draft.textSpeed, 1) }), note: 'Dialogue typewriter speed. SLOW 45ms / MID 18ms / FAST 6ms per character.' },
     { label: 'BATTLE SCENE', value: draft.battleScene, onLeft: () => set({ battleScene: cycle(BATTLE_SCENES, draft.battleScene, -1) }), onRight: () => set({ battleScene: cycle(BATTLE_SCENES, draft.battleScene, 1) }), note: 'ON = battle animations play. OFF = animations skipped, results applied directly.' },
     { label: 'BATTLE STYLE', value: draft.battleStyle, onLeft: () => set({ battleStyle: cycle(BATTLE_STYLES, draft.battleStyle, -1) }), onRight: () => set({ battleStyle: cycle(BATTLE_STYLES, draft.battleStyle, 1) }), note: 'SHIFT = choose your next creature when one faints. SET = next creature sent automatically.' },
-    { label: 'SOUND', value: draft.sound, onLeft: () => set({ sound: cycle(SOUNDS, draft.sound, -1) }), onRight: () => set({ sound: cycle(SOUNDS, draft.sound, 1) }), note: 'NEED: stored flag only — no audio engine in this build yet to route mono/stereo.' },
-    { label: 'BUTTON MODE', value: draft.buttonMode, onLeft: () => set({ buttonMode: cycle(BUTTON_MODES, draft.buttonMode, -1) }), onRight: () => set({ buttonMode: cycle(BUTTON_MODES, draft.buttonMode, 1) }), note: 'Honoured in Settings: LEFT/RIGHT cycle, L confirms when L=EQUALS=A. Wider remapping is NEED.' },
+    { label: 'SOUND', value: draft.sound, onLeft: () => { const next = cycle(SOUNDS, draft.sound, -1); set({ sound: next }); setSoundMode(next); }, onRight: () => { const next = cycle(SOUNDS, draft.sound, 1); set({ sound: next }); setSoundMode(next); }, onSelect: () => { playUiPreview(); }, note: 'Routed through Web Audio (audioRouting.ts): STEREO keeps left/right separate, MONO downmixes to one channel. Press A (Enter) on this row to hear the left/right preview. Boot = Option B, press-start = M3 chirp, both wired via bootAudio.ts (PR #79), not this graph. NEED, not wired here: music / SFX banks and fade/ducking — no tracks exist yet to route.' },
+    { label: 'BUTTON MODE', value: draft.buttonMode, onLeft: () => set({ buttonMode: cycle(BUTTON_MODES, draft.buttonMode, -1) }), onRight: () => set({ buttonMode: cycle(BUTTON_MODES, draft.buttonMode, 1) }), note: buttonModeNote(draft.buttonMode) + ' Q/E are the LR shoulders in list screens (Menu Creator pages, battle moves). NEED: dialogue LR, overworld LR, pause-menu keys, HELP toggle (no help system exists).' },
     { label: 'FRAME', value: frameName(draft.frame), onLeft: () => set({ frame: draft.frame <= 1 ? 20 : draft.frame - 1 }), onRight: () => set({ frame: draft.frame >= 20 ? 1 : draft.frame + 1 }), note: 'Original Mochiichao Y2K frames in Pokemon frame slots (1-10 FireRed base, 11-20 HeartGold/Platinum extra). Reloads live on return.' },
     { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, note: 'Six independent placements (Mars font correction): MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font in fonts-settings-list.md independently, including Default — Trebuchet MS / system sans. Applies live on return. DIAMOND VERSION subtitle font is PINNED and never changes.' },
     { label: 'MENU CREATOR', value: 'OPEN ►', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR'), note: 'Full screen: Logo / Background / Animation / Panels. Presets only, never overwrites v32.' },
@@ -464,15 +475,23 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
       else if (e.key === 'ArrowDown') { e.preventDefault(); setCursor(c => (c + 1) % rows.length); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); rows[safeCursor]?.onLeft(); }
       else if (e.key === 'ArrowRight') { e.preventDefault(); rows[safeCursor]?.onRight(); }
-      else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); const r = rows[safeCursor]; if (r?.onSelect) r.onSelect(); else r?.onRight(); }
+      else if (isConfirmKey(e, draft.buttonMode)) { e.preventDefault(); const r = rows[safeCursor]; if (r?.onSelect) r.onSelect(); else r?.onRight(); }
       else if (e.key === 'Escape' || e.key.toLowerCase() === 'b') {
         e.preventDefault();
         if (screen === 'SETTINGS') saveAndBack();
         else if (screen === 'MENU_CREATOR') setScreen('SETTINGS');
         else if (screen === 'FONT_SETTINGS') setScreen(fontReturn);
         else setScreen('MENU_CREATOR');
-      } else if (draft.buttonMode === 'L_EQUALS_A' && e.key.toLowerCase() === 'l') {
-        e.preventDefault(); const r = rows[safeCursor]; if (r?.onSelect) r.onSelect(); else r?.onRight();
+      } else if (shoulderKey(e, draft.buttonMode)) {
+        // LR shoulders (Q = L, E = R): Menu Creator pages flip,
+        // other rows cycle their value — the FR list-menu page
+        // keys, via buttonMode.ts. Typing targets are exempt
+        // inside shoulderKey(), so preset-name typing is safe.
+        e.preventDefault();
+        const shoulder = shoulderKey(e, draft.buttonMode);
+        if (screen === 'MENU_CREATOR') setMenuPage(p => shoulder === 'L' ? (p <= 1 ? 4 : p - 1) : (p >= 4 ? 1 : p + 1));
+        else if (shoulder === 'L') rows[safeCursor]?.onLeft();
+        else rows[safeCursor]?.onRight();
       }
     };
     window.addEventListener('keydown', handler);
