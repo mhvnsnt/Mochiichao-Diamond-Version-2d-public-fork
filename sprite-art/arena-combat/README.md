@@ -105,13 +105,11 @@ Read in order; the latest correction wins where they differ.
   inside that retro-arcade-themed zone. (This supersedes any
   "arcade-style ring mechanics / tokens / cabinets-as-mechanics"
   reading: arcade = setting and name direction, not the mechanic.)
-- **Zone name: NOT chosen.** Direction-locked (ring + arcade blend),
-  exact name TBD. Candidates PROPOSED here for Mars to pick — none
-  locked, none used in code: Ringcade, Neon Ring Hall, Loop Arcade,
-  The Ring Room, Cabinet Ring. Whoever builds the zone picks one with
-  Mars; until then every doc says "the ring+arcade zone (name TBD)".
+- **Zone name: The Ringcade (LOCKED 2026-10-25 ~21:18 CDT, Mars decision).**
+  Direction-locked (ring + arcade blend); see ring-capture-zone-spec.md §2.
+  Code and docs refer to the zone as The Ringcade from here on.
 - **Unlock flow (the flags):**
-  1. Player visits the ring+arcade zone (name TBD) and plays its
+  1. Player visits The Ringcade and plays its
      ring-capture introduction → sets flag `ringCaptureUnlocked`.
   2. Shops then sell ring-capture items → player buys them →
      `ringItemsOwned > 0` (consumable items; one spent per ring
