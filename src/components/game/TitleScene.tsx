@@ -69,6 +69,8 @@ import {
 export default function TitleScene({
   biome = 'snow',
   figureUrl,
+  figureCycleUrls,
+  figureCycleMs = 500,
   figureAlt = 'Title figure',
   figureName,
   fireTrail = false,
@@ -78,6 +80,16 @@ export default function TitleScene({
 }: {
   biome?: TitleBiomeId;
   figureUrl?: string;
+  /** Optional frame cycle for one figure (Kittember glow only,
+   *  2026-10-26 wiring): textures are swapped on the SAME sprite
+   *  in the ticker, so the scene is never recreated per frame.
+   *  Unset = the old single-figure path, unchanged. All frames
+   *  must share the figure's size, so scale/shadow stay valid. */
+  figureCycleUrls?: string[];
+  /** Milliseconds per cycle frame (Kittember: 500). Converted to
+   *  frames at 60fps in the ticker, matching this file's other
+   *  frame-counted systems. */
+  figureCycleMs?: number;
   figureAlt?: string;
   /** Title-pool creature name, when the figure is one: drives its
    *  per-creature action (hop / bob / roar / shield / orbit) and
@@ -303,6 +315,22 @@ export default function TitleScene({
         } catch {
           figure = null; // figure missing: scene still renders, caption labels the gap
           shadow = null;
+        }
+      }
+      // Figure frame cycle (Kittember glow only): preload every
+      // frame now; the ticker swaps figure.texture, never the
+      // sprite, so position/scale/shadow/action all keep running.
+      // Any load failure disables cycling and leaves the base
+      // figure (cycle[0]) in place — a missing glow frame must
+      // never blank the figure or shift the cycle out of order.
+      let cycleTextures: Texture[] = [];
+      let lastCycleIndex = 0;
+      if (figure && figureCycleUrls && figureCycleUrls.length > 1) {
+        try {
+          const loaded = await Promise.all(figureCycleUrls.map((u) => Assets.load(u)));
+          if (loaded.length === figureCycleUrls.length) cycleTextures = loaded;
+        } catch {
+          cycleTextures = [];
         }
       }
 
@@ -588,6 +616,20 @@ export default function TitleScene({
           st.g.x = st.x;
         }
         if (figure) {
+          // Figure frame cycle (Kittember glow only, 500ms/frame
+          // = 30 frames at 60fps): swap texture only, on the same
+          // sprite; the ghost follows so the blur never shows a
+          // stale glow step. Reduced-motion scenes never reach
+          // this ticker, so they stay on cycle[0] (glow off).
+          if (cycleTextures.length > 1) {
+            const framesPerStep = Math.max(1, Math.round((figureCycleMs / 1000) * 60));
+            const idx = Math.floor(frameInt / framesPerStep) % cycleTextures.length;
+            if (idx !== lastCycleIndex) {
+              lastCycleIndex = idx;
+              figure.texture = cycleTextures[idx];
+              if (ghost) ghost.texture = cycleTextures[idx];
+            }
+          }
           // Black 2 motion blur: ghost holds the last position.
           if (ghost) {
             ghost.visible = true;
@@ -765,7 +807,7 @@ export default function TitleScene({
       });
     });
     return () => { cancelled = true; app.destroy(true); };
-  }, [biome, figureUrl, figureName, fireTrail]);
+  }, [biome, figureUrl, figureCycleUrls, figureCycleMs, figureName, fireTrail]);
 
   return (
     <div className="w-full">
