@@ -74,8 +74,15 @@ export default function BagView({ onBack }: { onBack: () => void }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [confirmToss, current]);
 
+  // Bag Y2K skin ONLY (.bag-y2k-panel in index.css): bag-y2k-panel
+  // class on the root + decorative sparkles below. Pocket order,
+  // inputs, behaviour unchanged; MenuList/MenuHelpLine untouched.
   return (
-    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="game-screen bag-y2k-panel flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+      <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 left-3 text-pink-300 text-lg">✦</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 right-3 text-yellow-300 text-lg">♥</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 left-3 text-green-200 text-base">★</span>
+      <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 right-3 text-pink-300 text-base">✦</span>
       <div className="flex justify-between items-center mb-4 shrink-0">
         <h2 className="game-title text-2xl">Bag</h2>
         <button onClick={onBack} className="game-button px-4 py-2 min-h-[48px]">Close</button>
