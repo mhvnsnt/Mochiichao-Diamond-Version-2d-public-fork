@@ -6,6 +6,7 @@ import { TEXT_SPEED_MS } from '../../lib/gameSettings';
 import { messageWindowStyle } from '../../lib/hudCustom';
 import type { MessageWindowStyle } from '../../lib/hudCustom';
 import { isConfirmKey } from '../../lib/buttonMode';
+import { useMenuSkin, menuSkinVars, menuSkinPanelShadow } from '../../lib/menuSkins';
 import type { HumanSlot } from '../../lib/humanSheets';
 import { cellPos } from '../../lib/humanSheets';
 
@@ -85,6 +86,13 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
   const typeInterval = TEXT_SPEED_MS[textSpeed] ?? 18;
   // Batch A: message window style + border opacity / shadow rows.
   const hudSettings = useGameStore(s => s.settings);
+  // Y2K skin wiring (skins PR #151 dialogue presets via menuSkins.ts):
+  // null = default look, untouched. When set, the box restyles via
+  // menuSkins.css (fill/border/text); placement, 2-lines-per-page,
+  // typewriter and choice behaviour are unchanged, and the Batch B
+  // radius row still wins on radius (it already equals the preset
+  // 14px). Dialogue font/logo rules are untouched.
+  const skin = useMenuSkin('dialogue');
   const msgStyle = messageWindowStyle(hudSettings.hudMessageStyle as MessageWindowStyle, hudSettings.panelOpacity || 100);
   const page = pages[Math.min(pageIdx, pages.length - 1)];
   const typingDone = shown >= page.length;
@@ -145,7 +153,13 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
     return () => window.removeEventListener('keydown', handler);
   }, [advance, choice, onChoice, buttonMode]);
 
+  // NOTE: data-menu-skin lives on this wrapper, not on StdWindow
+  // itself (StdWindow does not forward data attributes): the CSS
+  // rules are descendant selectors, so the wrapper still skins the
+  // box. The wrapper is unpositioned, so the box's absolute
+  // placement resolves exactly as before.
   return (
+    <div data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
     <StdWindow
       style={{
         position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
@@ -157,9 +171,11 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         // background / shadow / opacity above still apply, and Batch A
         // radii still apply fully on BattleView's message panel.
         borderRadius: 'var(--menu-dialogue-radius, 14px)',
-        boxShadow: hudSettings.panelShadow
-          ? '0 10px 30px rgba(0,0,0,0.65)'
-          : msgStyle.boxShadow,
+        boxShadow: skin
+          ? menuSkinPanelShadow(skin)
+          : (hudSettings.panelShadow
+            ? '0 10px 30px rgba(0,0,0,0.65)'
+            : msgStyle.boxShadow),
       }}
       onClick={advance}
     >
@@ -176,7 +192,7 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
           {/* Dialogue text uses the DIALOGUE FONT placement
               (--dialogue-font, default 01 Digitall); the speaker
               name above uses the MAIN FONT via the body stack. */}
-          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)', fontSize: 'var(--menu-text-size, 16px)', lineHeight: 'var(--menu-line-height, 1.625)', color: 'var(--menu-text-color, #ffffff)', textShadow: 'var(--menu-text-shadow, none)' }}>
+          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)', fontSize: 'var(--menu-text-size, 16px)', lineHeight: 'var(--menu-line-height, 1.625)', color: skin ? skin.text.label : 'var(--menu-text-color, #ffffff)', textShadow: 'var(--menu-text-shadow, none)' }}>
             {page.slice(0, shown)}
           </div>
           {!isLast && typingDone && (
@@ -194,5 +210,6 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
         </div>
       </div>
     </StdWindow>
+    </div>
   );
 }
