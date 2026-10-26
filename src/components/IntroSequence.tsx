@@ -17,6 +17,7 @@ import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 import mochiichaoLogo from "../assets/ui/mochiichao-main-logo.png";
+import mochiichaoMenuLogo from "../assets/ui/mochiichao-main-logo-v32-matched.png";
 import MainMenuBackground from "./game/MainMenuBackground";
 import puffyCloud from "../assets/ui/puffy-cloud.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
@@ -560,10 +561,15 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               freezes to static (MainMenuBackground freezes too). */}
           <style>{`@keyframes menu-bob-cloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.cloud.bobAmp}px); } } @keyframes menu-bob-mochii { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.mochii.bobAmp}px); } } .menu-bob-cloud { animation: menu-bob-cloud ${LOCKED_V32_MENU.cloud.bobPeriod}s ease-in-out infinite; } .menu-bob-mochii { animation: menu-bob-mochii ${LOCKED_V32_MENU.mochii.bobPeriod}s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .menu-bob-cloud, .menu-bob-mochii { animation: none; } }`}</style>
           {/* Logo slot from locked data: y180, width 900 (150-1050).
-              Crop aspect 764x450 -> 530 tall, centre ~445 (spec
-              ~454, spec height is approximate "~548"). */}
+              Round-2 menu asset (v32-matched, 900x548, centre 454):
+              upload letters with thick black outline + thick black
+              orbit ring, built from the v32 picture's own geometry.
+              The TITLE slot above keeps the original keyed upload
+              (thin white orbit reads on the dark title background);
+              the pale keyed upload is NOT used here -- it vanished
+              on the white menu and Mars rejected it 2026-10-26. */}
           <img
-            src={mochiichaoLogo}
+            src={mochiichaoMenuLogo}
             alt="MOCHIICHAO"
             className="absolute object-contain"
             style={{ left: LOCKED_V32_MENU.logo.x, top: LOCKED_V32_MENU.logo.y, width: LOCKED_V32_MENU.logo.w }}

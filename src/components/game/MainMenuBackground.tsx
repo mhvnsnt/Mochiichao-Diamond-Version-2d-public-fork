@@ -14,18 +14,20 @@ import { MAIN_MENU_SYMBOLS } from "../../lib/mainMenuSymbols";
  *
  * This layer is therefore rebuilt as separate pieces, in the locked
  * v32 layout (1200x1500, centre x=600):
- *   - white paper + rainbow arcs (SVG ellipses centred (600,454),
- *     palette sampled from the v32 art's top band)
- *   - confetti symbols as SEPARATE shapes, whose positions, sizes,
- *     and colours were extracted from the v32 PNG's visible areas
- *     (outside the logo/cloud/panel/Mochii rects the live layers
- *     cover) — see src/lib/mainMenuSymbols.ts and the extraction
- *     note in docs/locked-default-title-menu.md. Same palette and
- *     same density as v32; no new look was hand-painted.
+ *   - white paper + rainbow arcs (SVG CIRCLES centred (600,454),
+ *     radii/colours measured from the v32 picture in round 2,
+ *     2026-10-26 — the old ellipses were wrong; see
+ *     lockedV32Menu.ts arcs comment for the measurements)
+ *   - confetti symbols as SEPARATE shapes, MEASURED from the
+ *     matched GIF (round 2, 2026-10-26) — see
+ *     src/lib/mainMenuSymbols.ts. 285 symbols; history's field is
+ *     300, shortfall 15 = 5.0%, named there, NOT filled with
+ *     generated guesses (the PR #170 generated fill is what Mars
+ *     rejected 2026-10-26 12:38 CDT).
  *
  * Animation — PERFECT by default (matched GIF, Mars PERFECT
  * 2026-10-25 17:12 CDT; see perfect-menu-trace-2026-10-26.md):
- * 300 symbols rise at 157.14 px/s (11px/frame at 70ms, 80 frames x
+ * 285 measured symbols rise at 157.14 px/s (11px/frame at 70ms, 80 frames x
  * 70ms = 5.6s loop), modulo zone 620-1500, sway sin*6px, bob
  * sin*4px on top of rise, 2 cycles per loop, phase by golden
  * angle, fade by the locked phi fade (0 at y620, 0.35 at y729,

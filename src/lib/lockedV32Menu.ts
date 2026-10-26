@@ -92,9 +92,20 @@ export const MENU_ANIMATION_SPEEDS = {
 
 export const LOCKED_V32_MENU = {
   canvas: { w: 1200, h: 1500, centreX: 600 },
-  // Logo stays the image, never font text. OFFICIAL = Mars's upload
-  // (src/assets/ui/mochiichao-main-logo.png, imported by the renderer).
-  logo: { image: "OFFICIAL" as const, x: 150, y: 180, w: 900 },
+  // Logo stays the image, never font text. MAIN MENU logo (round 2,
+  // 2026-10-26) = src/assets/ui/mochiichao-main-logo-v32-matched.png:
+  // Mars's upload letters, keyed from black, with the v32 picture's
+  // own geometry -- thick black outline (dilate 10px), thick black
+  // orbit ring (centre (618,500), a=440, b=200, stroke 30, thin white
+  // centre line), sparkle stars. The previous build's keyed upload
+  // (src/assets/ui/mochiichao-main-logo.png: thin white orbit, no
+  // outline) vanishes on the white menu -- that is what Mars
+  // rejected on his phone 2026-10-26 12:38 CDT, and it is NOT reused
+  // for the main menu. TITLE keeps the original upload import
+  // (IntroSequence line ~390, dark title background, where the thin
+  // white orbit reads correctly); only the MAIN_MENU slot uses the
+  // v32-matched asset. Asset canvas 900x548 = this slot exactly.
+  logo: { image: "V32_MATCHED" as const, x: 150, y: 180, w: 900 },
   cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5 },
   mochii: { x: 170, y: 790, w: 110, h: 110, bobAmp: 8, bobPeriod: 4.5 },
   panels: [
@@ -122,22 +133,37 @@ export const LOCKED_V32_MENU = {
   background: {
     type: "layered-animated" as const,
     paper: "#ffffff",
-    // Rainbow arcs: SVG ellipses centred (600,454), palette sampled
-    // from the v32 art's top band. This is NOT the old flat PNG.
+    // Rainbow arcs: MEASURED from the v32 picture (round 2,
+    // 2026-10-26), correcting the PR #170 ellipses. The picture's
+    // arcs are concentric CIRCLES centred (600,454), not ellipses:
+    // exact-colour side-region pixels give single radii with std
+    // 2.0px (purple 437, mint 381, yellow 353; blue 411 after
+    // removing the tilted-orbit pixels; orange 325 on a radial ray).
+    // Colour order runs outward purple -> blue -> mint -> yellow ->
+    // orange (the old list had it reversed and added two circles,
+    // pink and lavender, that are not in the picture). The two
+    // tilted orbits were also wrong: fitted unrotated ellipses
+    // (blue a=515, b=265; pink a=475, b=230, both centre (600,454))
+    // match 83-90% of their exact-colour pixels within 5%, while
+    // the old rotated orbits matched 7-13%. Stroke 5 kept (picture
+    // strokes ~5-7px effective with anti-aliasing).
     arcs: {
       centre: { x: 600, y: 454 },
-      rx: [300, 345, 390, 435, 480, 525, 570],
-      ryRatio: 0.76,
-      colors: ["#c8aaff", "#8cd2ff", "#a0e6b4", "#ffe696", "#ffc27a", "#f9a8d4", "#d8c8ff"],
+      rx: [325, 353, 381, 411, 437],
+      ryRatio: 1.0,
+      colors: ["#ffc27a", "#ffe696", "#a0e6b4", "#8cd2ff", "#c8aaff"],
       strokeWidth: 5,
       orbits: [
-        { rx: 570, ry: 300, color: "#8cd2ff", rotate: -14 },
-        { rx: 560, ry: 310, color: "#f9a8d4", rotate: 10 },
+        { rx: 515, ry: 265, color: "#8cd2ff", rotate: 0 },
+        { rx: 475, ry: 230, color: "#ff96c8", rotate: 0 },
       ],
     },
-    // Confetti symbols: the PERFECT 300-symbol field (see
-    // mainMenuSymbols.ts). First 94 are picture-extracted; the rest
-    // restore the matched-GIF field size.
+    // Confetti symbols: the MEASURED field (round 2, 2026-10-26,
+    // see mainMenuSymbols.ts). 285 symbols measured from the
+    // matched GIF; history's field is 300, so the shortfall is
+    // 15 = 5.0%, named in that file and in the PR body, NOT filled
+    // with generated guesses (the PR #170 generated fill is what
+    // Mars rejected).
     symbols: MAIN_MENU_SYMBOLS,
     // Locked phi fade.
     fade: { gone: 620, mid: 729, full: 905 },
