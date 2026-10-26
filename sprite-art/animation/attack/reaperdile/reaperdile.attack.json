@@ -1,0 +1,165 @@
+{
+ "creature": "reaperdile",
+ "animation": "attack",
+ "method": "transform_from_locked_battle_front",
+ "method_note": "Windup lean-back, strike lunge, impact hold, recover, rendered from the creature's own locked battle_front cell. NOT a redrawn attack pose; redrawn poses are a per-creature stage-7 polish upgrade, not a wiring blocker (same precedent as the accepted idle transform loops).",
+ "source_locked_cell": "reaperdile_cell_01.png",
+ "source_path": "sprite-art/atlases/reaperdile/reaperdile_cell_01.png",
+ "frames": [
+  {
+   "file": "attack_a_windup.png",
+   "role": "windup",
+   "duration_ms": 250,
+   "transform": "from_locked_battle_front_reaperdile_cell_01.png"
+  },
+  {
+   "file": "attack_b_strike.png",
+   "role": "strike_lunge",
+   "duration_ms": 120,
+   "transform": "from_locked_battle_front_reaperdile_cell_01.png"
+  },
+  {
+   "file": "attack_c_impact.png",
+   "role": "impact_hold",
+   "duration_ms": 90,
+   "transform": "from_locked_battle_front_reaperdile_cell_01.png"
+  },
+  {
+   "file": "attack_d_recover.png",
+   "role": "recover",
+   "duration_ms": 400,
+   "transform": "from_locked_battle_front_reaperdile_cell_01.png"
+  }
+ ],
+ "timing": {
+  "windup_ms": 250,
+  "strike_lunge_ms": 120,
+  "impact_hold_ms": 90,
+  "recover_ms": 400,
+  "hit_total_ms": 1040,
+  "note": "Strike lunge is a travel pre-phase on top of the 1040 ms hit (see treatments WIRING.md \u00a71)."
+ },
+ "treatments": "battleTreatments.js (windup 250 / hitstop 90 / recoil 300 / recover 400)",
+ "status": "done_transform",
+ "move_data": {
+  "scope_correction_2026-10-25": "Mars ~19:44 CDT: moves and animations are NOT replaced (moves/animations cannot be copyrighted). ONLY Pokemon creature names, sounds, art, and dialogue are excluded. This lane genericized NO move name into a shape: attack frames are move-agnostic lunge frames, and move identity/timing/power below uses REAL data.",
+  "decomp_source": "fresh-start/src/lib/generated/decomp_firered_moves.json (pret pokefirered battle_moves.h, 354 moves)",
+  "decomp_reference_contact_moves": {
+   "MOVE_POUND": {
+    "sourceConstant": "MOVE_POUND",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35,
+    "secondaryEffectChance": 0,
+    "priority": 0,
+    "effect": "HIT",
+    "type": "NORMAL",
+    "target": "SELECTED",
+    "flags": [
+     "MAKES_CONTACT",
+     "PROTECT_AFFECTED",
+     "MIRROR_MOVE_AFFECTED",
+     "KINGS_ROCK_AFFECTED"
+    ],
+    "derivedCategory": "Physical"
+   },
+   "MOVE_TACKLE": {
+    "sourceConstant": "MOVE_TACKLE",
+    "power": 35,
+    "accuracy": 95,
+    "pp": 35,
+    "secondaryEffectChance": 0,
+    "priority": 0,
+    "effect": "HIT",
+    "type": "NORMAL",
+    "target": "SELECTED",
+    "flags": [
+     "MAKES_CONTACT",
+     "PROTECT_AFFECTED",
+     "MIRROR_MOVE_AFFECTED",
+     "KINGS_ROCK_AFFECTED"
+    ],
+    "derivedCategory": "Physical"
+   },
+   "MOVE_QUICK_ATTACK": {
+    "sourceConstant": "MOVE_QUICK_ATTACK",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "secondaryEffectChance": 0,
+    "priority": 1,
+    "effect": "QUICK_ATTACK",
+    "type": "NORMAL",
+    "target": "SELECTED",
+    "flags": [
+     "MAKES_CONTACT",
+     "PROTECT_AFFECTED",
+     "MIRROR_MOVE_AFFECTED",
+     "KINGS_ROCK_AFFECTED"
+    ],
+    "derivedCategory": "Physical"
+   },
+   "MOVE_SCRATCH": {
+    "sourceConstant": "MOVE_SCRATCH",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35,
+    "secondaryEffectChance": 0,
+    "priority": 0,
+    "effect": "HIT",
+    "type": "NORMAL",
+    "target": "SELECTED",
+    "flags": [
+     "MAKES_CONTACT",
+     "PROTECT_AFFECTED",
+     "MIRROR_MOVE_AFFECTED",
+     "KINGS_ROCK_AFFECTED"
+    ],
+    "derivedCategory": "Physical"
+   },
+   "MOVE_EMBER": {
+    "sourceConstant": "MOVE_EMBER",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 25,
+    "secondaryEffectChance": 10,
+    "priority": 0,
+    "effect": "BURN_HIT",
+    "type": "FIRE",
+    "target": "SELECTED",
+    "flags": [
+     "PROTECT_AFFECTED",
+     "MIRROR_MOVE_AFFECTED"
+    ],
+    "derivedCategory": "Special"
+   },
+   "MOVE_WATER_GUN": {
+    "sourceConstant": "MOVE_WATER_GUN",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 25,
+    "secondaryEffectChance": 0,
+    "priority": 0,
+    "effect": "HIT",
+    "type": "WATER",
+    "target": "SELECTED",
+    "flags": [
+     "PROTECT_AFFECTED",
+     "MIRROR_MOVE_AFFECTED",
+     "KINGS_ROCK_AFFECTED"
+    ],
+    "derivedCategory": "Special"
+   }
+  },
+  "mochiichao_canon_moves_source": "fresh-start/src/lib/moves.ts MOVES_DB (e.g. Aqua Shot 40/100/25, Aqua Cannon 90/100/15, Hydro Surge 120/80/5, Ember Toss 40/100/25) \u2014 Step 2 battle wiring selects the creature's actual move from MOVES_DB; the lunge frames play under it, and Step 4 adds the move's real elemental VFX (fire/water/etc.) by move name, not by generic shape.",
+  "timing_rule": "Frame durations stay at battleTreatments.js values (windup 250 / hitstop 90 / recoil 300 / recover 400) for every move; move power/accuracy/priority change damage and turn order, not frame durations.",
+  "capture_note": "No capture track built or wired by this lane. Default capture stays normal Pokemon-style (Luigi Cubes). Ring capture is a separate, later, OPTIONAL gated system (Safari-type zone unlock + shop items, Mars ~19:49 CDT refinement) \u2014 not built here, not the default.",
+  "exclusions_kept": [
+   "Pokemon creature names",
+   "Pokemon sounds",
+   "Pokemon art",
+   "Pokemon dialogue"
+  ],
+  "slots_047_146": "NOT designed, named, or generated by this lane \u2014 stay empty on purpose until the game is more built."
+ }
+}
