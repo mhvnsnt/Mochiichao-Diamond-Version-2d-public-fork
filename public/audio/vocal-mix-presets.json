@@ -65,6 +65,16 @@
       "rms": 0.235,
       "peak": 0.707,
       "build_script": "build_vocal_mix_v15.sh"
+    },
+    "v16": {
+      "lead": "vocal-autotune-v6.wav (pitch x2.73, formant x1.5, breath x0.5, D major, glide 20ms = humanize LESS)",
+      "lead_pitch_hz": 377,
+      "dropouts_pct": 2.5,
+      "chain": "v15 chain (EQ1 highs + air, OTT 0.15, octave-up, pancake overdub, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
+      "pedalboard_master_test": "REJECTED for this loop: comp master lifted tail 0.145->0.198, limiter-only master went to peak 0.0dBFS / LUFS -8.2 / tail 0.229 \u2014 shipped version is the ffmpeg render, NOT pedalboard-mastered",
+      "rms": 0.235,
+      "peak": 0.707,
+      "build_script": "build_vocal_mix_v16.sh"
     }
   },
   "delay_math_140bpm": {
