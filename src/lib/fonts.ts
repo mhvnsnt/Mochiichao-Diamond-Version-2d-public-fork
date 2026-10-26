@@ -27,6 +27,21 @@
  *     Braille), mapped to an open lookalike family, never a file.
  *   pending — row stays in the list, file NOT in hand yet, falls
  *     back to the default stack until the file lands. Never dropped.
+ *
+ * Batch C (2026-10-25, wiring batch C — Fonts): the 13 open Y2K
+ * Google Fonts in §5 below plus Press Start 2P are now SHIPPED as
+ * local OFL files in src/assets/fonts/ (pulled from the public
+ * google/fonts repo, METADATA.pb licence verified OFL per font,
+ * OFL.txt present per font dir). They were previously webfont-only
+ * via the Google Fonts stylesheet in index.html; that stylesheet
+ * is kept as a fallback only. The 6 Font Settings rows already
+ * cycle FONT_OPTIONS independently with live-on-return (see
+ * SettingsScreen FONT_SETTINGS + applyFontRoles) — no row logic
+ * changed in this batch. Behance Y2K Typeface stays PENDING
+ * (file not arrived, falls back, NOT dropped, NOT claimed shipped).
+ * Custom logo-lettering font: GAP 0/1 — NOT built in this batch
+ * (would require lettering extraction from the logo + a design
+ * pass); it is NOT in this list and must NOT be claimed to exist.
  */
 
 export type FontStatus = 'shipped' | 'webfont' | 'slot' | 'pending';
@@ -54,20 +69,20 @@ export const FONT_OPTIONS: FontOption[] = [
   { id: 'slot-female', label: 'Female-style (slot)', family: 'Fredoka', status: 'slot', note: 'Pokemon Female-style slot, mapped to Fredoka (open lookalike).' },
   { id: 'slot-braille', label: 'Braille-style (slot)', family: 'Rajdhani', status: 'slot', note: 'Pokemon Braille-style slot, mapped to Rajdhani (open lookalike). Braille glyphs themselves are not claimed.' },
   // 5. Open-source Y2K Google Fonts, in the brief's order.
-  { id: 'bungee', label: 'Bungee', family: 'Bungee', status: 'webfont', note: 'Google Fonts, OFL lookalike already in the Y2K theme.' },
-  { id: 'titan-one', label: 'Titan One', family: 'Titan One', status: 'webfont', note: 'Google Fonts, OFL lookalike already in the Y2K theme.' },
-  { id: 'fredoka', label: 'Fredoka', family: 'Fredoka', status: 'webfont', note: 'Google Fonts, OFL lookalike already in the Y2K theme.' },
-  { id: 'coiny', label: 'Coiny', family: 'Coiny', status: 'webfont', note: 'Google Fonts, bubble / rounded Y2K.' },
-  { id: 'dangrek', label: 'Dangrek', family: 'Dangrek', status: 'webfont', note: 'Google Fonts, bubble / rounded Y2K.' },
-  { id: 'sniglet', label: 'Sniglet', family: 'Sniglet', status: 'webfont', note: 'Google Fonts, bubble / rounded Y2K.' },
-  { id: 'rubik-bubbles', label: 'Rubik Bubbles', family: 'Rubik Bubbles', status: 'webfont', note: 'Google Fonts, bubble / rounded Y2K.' },
-  { id: 'orbitron', label: 'Orbitron', family: 'Orbitron', status: 'webfont', note: 'Google Fonts, tech / digital Y2K.' },
-  { id: 'audiowide', label: 'Audiowide', family: 'Audiowide', status: 'webfont', note: 'Google Fonts, tech / digital Y2K.' },
-  { id: 'michroma', label: 'Michroma', family: 'Michroma', status: 'webfont', note: 'Google Fonts, tech / digital Y2K.' },
-  { id: 'turret-road', label: 'Turret Road', family: 'Turret Road', status: 'webfont', note: 'Google Fonts, tech / digital Y2K.' },
-  { id: 'rajdhani', label: 'Rajdhani', family: 'Rajdhani', status: 'webfont', note: 'Google Fonts, tech / digital Y2K.' },
-  { id: 'exo-2', label: 'Exo 2', family: 'Exo 2', status: 'webfont', note: 'Google Fonts, tech / digital Y2K.' },
-  { id: 'press-start-2p', label: 'Press Start 2P (pixel, sparingly)', family: 'Press Start 2P', status: 'webfont', note: 'Google Fonts, pixel / arcade Y2K branch — use sparingly, not as body text (fonts-settings-list.md §3).' },
+  { id: 'bungee', label: 'Bungee', family: 'Bungee', status: 'shipped', note: 'Shipped (Batch C): bungee-regular.ttf (118,996 bytes), google/fonts ofl/bungee, licence OFL verified.' },
+  { id: 'titan-one', label: 'Titan One', family: 'Titan One', status: 'shipped', note: 'Shipped (Batch C): titan-one-regular.ttf (55,712 bytes), google/fonts ofl/titanone, licence OFL verified.' },
+  { id: 'fredoka', label: 'Fredoka', family: 'Fredoka', status: 'shipped', note: 'Shipped (Batch C): fredoka-variable.ttf (159,184 bytes, wdth+wght variable), google/fonts ofl/fredoka, licence OFL verified.' },
+  { id: 'coiny', label: 'Coiny', family: 'Coiny', status: 'shipped', note: 'Shipped (Batch C): coiny-regular.ttf (156,520 bytes), google/fonts ofl/coiny, licence OFL verified, bubble / rounded Y2K.' },
+  { id: 'dangrek', label: 'Dangrek', family: 'Dangrek', status: 'shipped', note: 'Shipped (Batch C): dangrek-regular.ttf (62,464 bytes), google/fonts ofl/dangrek, licence OFL verified, bubble / rounded Y2K.' },
+  { id: 'sniglet', label: 'Sniglet', family: 'Sniglet', status: 'shipped', note: 'Shipped (Batch C): sniglet-regular.ttf (75,212 bytes; ExtraBold weight exists upstream, not shipped), google/fonts ofl/sniglet, licence OFL verified, bubble / rounded Y2K.' },
+  { id: 'rubik-bubbles', label: 'Rubik Bubbles', family: 'Rubik Bubbles', status: 'shipped', note: 'Shipped (Batch C): rubik-bubbles-regular.ttf (219,564 bytes), google/fonts ofl/rubikbubbles, licence OFL verified, bubble / rounded Y2K.' },
+  { id: 'orbitron', label: 'Orbitron', family: 'Orbitron', status: 'shipped', note: 'Shipped (Batch C): orbitron-variable.ttf (38,576 bytes, wght variable), google/fonts ofl/orbitron, licence OFL verified, tech / digital Y2K.' },
+  { id: 'audiowide', label: 'Audiowide', family: 'Audiowide', status: 'shipped', note: 'Shipped (Batch C): audiowide-regular.ttf (69,916 bytes), google/fonts ofl/audiowide, licence OFL verified, tech / digital Y2K.' },
+  { id: 'michroma', label: 'Michroma', family: 'Michroma', status: 'shipped', note: 'Shipped (Batch C): michroma-regular.ttf (64,344 bytes), google/fonts ofl/michroma, licence OFL verified, tech / digital Y2K.' },
+  { id: 'turret-road', label: 'Turret Road', family: 'Turret Road', status: 'shipped', note: 'Shipped (Batch C): turret-road-regular.ttf (51,680 bytes; other weights exist upstream, not shipped), google/fonts ofl/turretroad, licence OFL verified, tech / digital Y2K.' },
+  { id: 'rajdhani', label: 'Rajdhani', family: 'Rajdhani', status: 'shipped', note: 'Shipped (Batch C): rajdhani-regular.ttf (377,860 bytes; other weights exist upstream, not shipped), google/fonts ofl/rajdhani, licence OFL verified, tech / digital Y2K.' },
+  { id: 'exo-2', label: 'Exo 2', family: 'Exo 2', status: 'shipped', note: 'Shipped (Batch C): exo2-variable.ttf (303,940 bytes, wght variable; italic variant exists upstream, not shipped), google/fonts ofl/exo2, licence OFL verified, tech / digital Y2K.' },
+  { id: 'press-start-2p', label: 'Press Start 2P (pixel, sparingly)', family: 'Press Start 2P', status: 'shipped', note: 'Shipped (Batch C): press-start-2p-regular.ttf (118,204 bytes), google/fonts ofl/pressstart2p, licence OFL verified, pixel / arcade Y2K branch — use sparingly, not as body text (fonts-settings-list.md §3).' },
   // Locked default: the pre-existing main-menu look, not a new font.
   { id: 'locked-default', label: 'Locked Default (v32 look)', family: 'Trebuchet MS', status: 'slot', note: 'Default until Mars locks a new one. Choosing a font is a preset, like every other Menu Creator choice.' },
 ];

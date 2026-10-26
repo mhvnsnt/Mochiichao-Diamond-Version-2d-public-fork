@@ -5,7 +5,15 @@
  * 01 Digitall: 01-digitall.ttf (48,832 bytes).
  * Licence gate removed by Mars (2026-10-25); no payment made, no paid
  * licence bought. Behance Y2K Typeface has no @font-face here yet —
- * its file has not arrived, so its row falls back (see fonts.ts). */
+ * its file has not arrived, so its row falls back (see fonts.ts).
+ * Batch C (2026-10-25, wiring batch C — Fonts): the 13 open Y2K
+ * Google Fonts + Press Start 2P below, all OFL, pulled from the
+ * public google/fonts repo (METADATA.pb licence OFL verified per
+ * font). Files renamed to clean names on import; upstream names
+ * are listed in src/lib/generated/fonts-y2k-ofl-PROVENANCE.md.
+ * The Google Fonts stylesheet in index.html is kept as fallback
+ * only; the local files below are what ships. DIAMOND VERSION
+ * subtitle font is PINNED (fonts.ts) and untouched here. */
 @font-face {
   font-family: 'Yagiza';
   font-style: normal;
@@ -18,6 +26,92 @@
   font-style: normal;
   font-weight: normal;
   src: url('./assets/fonts/01-digitall.ttf') format('truetype');
+}
+
+/* Batch C — open Y2K Google Fonts, OFL, local files. */
+@font-face {
+  font-family: 'Bungee';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/bungee-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Titan One';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/titan-one-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 300 700;
+  src: url('./assets/fonts/fredoka-variable.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Coiny';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/coiny-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Dangrek';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/dangrek-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sniglet';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/sniglet-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik Bubbles';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/rubik-bubbles-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400 900;
+  src: url('./assets/fonts/orbitron-variable.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Audiowide';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/audiowide-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Michroma';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/michroma-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Turret Road';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/turret-road-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/rajdhani-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('./assets/fonts/exo2-variable.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/press-start-2p-regular.ttf') format('truetype');
 }
 
 @theme {
