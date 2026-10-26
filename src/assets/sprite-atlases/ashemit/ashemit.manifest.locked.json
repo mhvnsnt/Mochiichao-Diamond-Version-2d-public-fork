@@ -18,7 +18,7 @@
  "frame_count": 8,
  "draft": false,
  "draft_note": "",
- "notes": "",
+ "notes": "RE-LOCK 2026-10-26: role labels corrected only (see relock_2026_10_26); atlas PNG untouched, 0px changed.",
  "role_unconfirmed": [],
  "frames": [
   {
@@ -45,7 +45,7 @@
   },
   {
    "cell": 2,
-   "role": "overworld_back",
+   "role": "overworld_side",
    "file": "ashemit_cell_02.png",
    "game_ready": true,
    "source_cell": 2,
@@ -67,7 +67,7 @@
   },
   {
    "cell": 4,
-   "role": "overworld_side",
+   "role": "overworld_back",
    "file": "ashemit_cell_04.png",
    "game_ready": true,
    "source_cell": 4,
@@ -180,5 +180,23 @@
   246,
   244,
   240
- ]
+ ],
+ "relock_2026_10_26": {
+  "date": "2026-10-26",
+  "base_head": "023e038713312d7933adb574d0d05a00befe8932",
+  "change": "role_labels_only",
+  "cells": [
+   {
+    "cell": 2,
+    "old_role": "overworld_back",
+    "new_role": "overworld_side"
+   },
+   {
+    "cell": 4,
+    "old_role": "overworld_side",
+    "new_role": "overworld_back"
+   }
+  ],
+  "notes": "Unmapped cells NOT relabelled (open scope question, see LOCK-UPDATE note)."
+ }
 }
