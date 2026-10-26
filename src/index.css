@@ -288,3 +288,59 @@ body {
   border-radius: 16px;
   box-shadow: 0 0 16px rgba(34, 211, 238, 0.35);
 }
+
+/*
+ * Bag menu Y2K skin ONLY (per-menu skins 2/8).
+ * Per-menu colour: Bag = green.
+ * Scoped to .bag-y2k, which only BagView renders, so no other menu,
+ * the main menu, title, Settings, fonts, rotation, or saves change.
+ * The .game-panel / .game-button / .game-title rules above are NOT edited;
+ * these later, equal-or-higher-specificity rules win only inside Bag.
+ * BagView's own bg-[#0b1526] utility is overridden here by this later
+ * stylesheet rule, same as the Pause pattern leaves its panel classes
+ * in place. Pocket order, inputs, and behaviour are unchanged.
+ * If the UI Art lane later delivers a dedicated Bag panel asset,
+ * re-attach it in lib/uiArt.ts (bag_menu_panel) and delete this block.
+ */
+.bag-y2k {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(135deg, #064e3b 0%, #15803d 48%, #65a30d 100%);
+}
+
+/* Y2K heading: italic, white -> gold -> green gradient, green glow.
+ * Font family unchanged (game font) — fonts are out of scope this batch. */
+.bag-y2k .game-title {
+  font-style: italic;
+  background: linear-gradient(180deg, #ffffff 15%, #fef08a 55%, #86efac 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.45)) drop-shadow(0 0 14px rgba(74, 222, 128, 0.55));
+}
+
+/* Y2K buttons (Close, Use, Toss, Quit, Yes/No): glossy green,
+ * white border, rounded 18px+. */
+.bag-y2k .game-button {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 55%),
+    linear-gradient(180deg, #16a34a, #14532d);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.45), 0 0 14px rgba(74, 222, 128, 0.35);
+}
+
+/* Y2K panels (item rows, detail panel, message, help line, toss
+ * confirm): glossy rounded panels, white border, green glow, dark
+ * glass so white text stays readable. The gold selected ring
+ * (ring-yellow-300) comes from BagView and is left untouched. */
+.bag-y2k .game-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 55%),
+    rgba(6, 30, 20, 0.78);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.35), 0 0 20px rgba(74, 222, 128, 0.35), 0 8px 24px rgba(0, 0, 0, 0.45);
+}
