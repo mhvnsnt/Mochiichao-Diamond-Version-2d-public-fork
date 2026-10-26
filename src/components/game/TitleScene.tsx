@@ -146,6 +146,7 @@ export default function TitleScene({
       // to the Pixi sky/ground rectangles below — never a blank.
       let painted = false;
       let bgSprite: Sprite | null = null;
+      let bgBaseScale = 1;
       let rippleSprite: Sprite | null = null;
       if (b.backgroundImage) {
         try {
@@ -158,6 +159,12 @@ export default function TitleScene({
           // position drifts, so the cover never shrinks below full.
           const scale = Math.max(W / bgTex.width, H / bgTex.height) * 1.06;
           bg.scale.set(scale);
+          // FireRed intro Scene 1 background zoom (pull-in 1c):
+          // stored base scale for the 60-frame background-only
+          // zoom-in in the ticker below. This scales bgSprite only;
+          // the Black 2 scene camera above is untouched, so the two
+          // never fight.
+          bgBaseScale = scale;
           bg.anchor.set(0.5, 0.5);
           bg.x = W / 2; bg.y = H / 2;
           scene.addChild(bg);
@@ -596,6 +603,18 @@ export default function TitleScene({
           const m = TITLE_BIOME_MOTION[biome];
           bgSprite.x = W / 2 + Math.sin(t * m.speed) * m.ampX;
           bgSprite.y = H / 2 + Math.sin(t * m.speed * 0.7) * m.ampY;
+          // FireRed intro Scene 1 background zoom (pull-in 1c):
+          // background-only zoom-in over the first 60 frames,
+          // settling at the stored cover scale. 0.97 x 1.06 overscan
+          // = 1.028 > 1.0 cover, so the zoom can never reveal an
+          // edge. Skipped under prefers-reduced-motion: that path
+          // returns before this ticker is added, so the painting
+          // stays static there.
+          if (frameInt < 60) {
+            bgSprite.scale.set(bgBaseScale * (0.97 + 0.03 * frameInt / 60));
+          } else {
+            bgSprite.scale.set(bgBaseScale);
+          }
         }
         // Water displacement map scrolls slowly; wrapMode repeat
         // means the 256px loop never shows a seam.
