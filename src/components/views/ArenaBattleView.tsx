@@ -108,7 +108,6 @@ export default function ArenaBattleView({ onBack }: { onBack: () => void }) {
         <h2 className="game-title text-xl">Arena Mode — Doubles</h2>
         <button onClick={onBack} className="game-button px-4 py-2">Leave Arena</button>
       </div>
-      <div className="text-xs text-slate-400 px-4 pb-2 shrink-0">PLACEHOLDER VFX: scale + flash stand in for the full Arena camera timeline. Dorowani/Gabu opponents use sprite-test stats (not canon).</div>
       <div className="flex-1 relative flex flex-col justify-between px-4 py-2 min-h-0">
         <div className="flex justify-center gap-8">{slot(fighters[2], 2, false)}{slot(fighters[3], 3, true)}</div>
         <div className="flex justify-center gap-8">{slot(fighters[0], 0, true)}{slot(fighters[1], 1, false)}</div>
