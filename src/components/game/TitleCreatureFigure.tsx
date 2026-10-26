@@ -5,6 +5,8 @@ import mochiiWalkCutout from '../../assets/title/mochii-walk-cutout.png';
 import razorgaterWalkCutout from '../../assets/title/razorgater-walk-cutout.png';
 import tyrageWalkCutout from '../../assets/title/tyrage-walk-cutout.png';
 import kittemberWalkCutout from '../../assets/title/kittember-walk-cutout.png';
+import kittemberGlowCycleAOff from '../../assets/title/kittember-glow-cycle-a-off-20261026.png';
+import kittemberGlowCycleCStrong from '../../assets/title/kittember-glow-cycle-c-strong-20261026.png';
 import sproutleWalkCutout from '../../assets/title/sproutle-walk-cutout.png';
 import dorowaniWalkCutout from '../../assets/title/dorowani-walk-cutout.png';
 import gabuWalkCutout from '../../assets/title/gabu-walk-cutout.png';
@@ -38,6 +40,12 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  *   White wedge between head and tail removed, baked shadow
  *   removed (rembg u2netp, 2026-10-25 fix; two tiny satellite
  *   bubbles lost their orange fill in the model pass, noted).
+ *   Glow cycle (2026-10-26 wiring, docs/kittember-glow-cycle-
+ *   wiring-20261026.md): A off -> B glow (the PR #162 shipped
+ *   cutout, reused as-is) -> C stronger -> B -> A, 500ms per
+ *   frame, 2500ms loop. The v2 glow rebuild (B2/C2, blur +
+ *   whiter core) stays staged only — this wiring uses the v1
+ *   cycle Mars was shown, not the v2 frames.
  * - Sproutle: 259x333, front, goggles + shell. White spot
  *   between feet removed, baked shadow removed
  *   (rembg u2netp, 2026-10-25 fix).
@@ -73,11 +81,17 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  * (lanterns illuminating + Kittember's ember illuminating).
  * 10 cards, 10 creatures, one per card, no card empty.
  */
-const FIGURES: Record<string, { url: string; size: string }> = {
+const FIGURES: Record<string, { url: string; size: string; cycle?: string[] }> = {
   Mochii: { url: mochiiWalkCutout, size: '380x380' },
   Razorgater: { url: razorgaterWalkCutout, size: '265x266' },
   Tyrage: { url: tyrageWalkCutout, size: '327x305' },
-  Kittember: { url: kittemberWalkCutout, size: '287x304' },
+  // Kittember cycle: A off, B glow (shipped PR #162 cutout),
+  // C stronger, B, A — the final A is the loop wrap, so A is
+  // held 1000ms per loop exactly as in the staged cycle GIF.
+  Kittember: {
+    url: kittemberWalkCutout, size: '287x304',
+    cycle: [kittemberGlowCycleAOff, kittemberWalkCutout, kittemberGlowCycleCStrong, kittemberWalkCutout, kittemberGlowCycleAOff],
+  },
   Sproutle: { url: sproutleWalkCutout, size: '259x333' },
   Dorowani: { url: dorowaniWalkCutout, size: '263x398' },
   Gabu: { url: gabuWalkCutout, size: '292x295' },
@@ -91,10 +105,12 @@ export default function TitleCreatureFigure({ name }: { name: string }) {
   return (
     <TitleScene
       biome={primaryCardForCreature(name) ?? 'snow'}
-      figureUrl={fig.url}
+      figureUrl={fig.cycle ? fig.cycle[0] : fig.url}
+      figureCycleUrls={fig.cycle}
+      figureCycleMs={500}
       figureAlt={`${name} title figure`}
       figureName={name}
-      caption={`${name} — clean cutout (${fig.size}, transparent) on its ${primaryCardForCreature(name) ?? 'snow'} card + Pixi sine sway + ${name} action burst. No fire trail; Wispkin smoke and Mythar halo are in their cutouts.`}
+      caption={`${name} — clean cutout (${fig.size}, transparent) on its ${primaryCardForCreature(name) ?? 'snow'} card + Pixi sine sway + ${name} action burst. No fire trail; Wispkin smoke and Mythar halo are in their cutouts.${fig.cycle ? ' Kittember glow cycle: off -> glow -> stronger -> glow -> off, 500ms/frame.' : ''}`}
     />
   );
 }
