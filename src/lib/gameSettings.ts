@@ -166,6 +166,14 @@ export const LOCKED_DEFAULT_V32 = {
 export interface MenuPreset {
   name: string;
   settings: GameSettings;
+  /** Batch B menu customisation (themes / day-night / animation /
+   *  background / sprite proportions / text extras / gameplay).
+   *  Optional so presets saved before batch B still load; readers
+   *  merge DEFAULT_MENU_CUSTOM over a missing block. Stored here
+   *  so preset JSON export carries the custom block, and mirrored
+   *  from the preset into the standalone custom store on save.
+   *  Type-only import: no runtime cycle with menuCustom.ts. */
+  custom?: import('./menuCustom').MenuCustomSettings;
   logoImage: string;
   logoSize: number;
   panelRadius: number;
@@ -184,9 +192,12 @@ export interface MenuPreset {
   savedAt: number;
 }
 
+import { DEFAULT_MENU_CUSTOM } from './menuCustom';
+
 export const LOCKED_PRESET: MenuPreset = {
   name: 'Locked Default (v32)',
   settings: { ...DEFAULT_SETTINGS },
+  custom: { ...DEFAULT_MENU_CUSTOM, layout: { ...DEFAULT_MENU_CUSTOM.layout } },
   logoImage: 'OFFICIAL',
   logoSize: 900,
   panelRadius: 14,
@@ -209,6 +220,7 @@ export const LOCKED_PRESET: MenuPreset = {
 export const ORIGINAL_DEFAULTS_PRESET: MenuPreset = {
   name: 'Original Defaults (open fonts)',
   settings: { ...DEFAULT_SETTINGS, mainFont: 'bungee', menuFont: 'titan-one', dialogueFont: 'fredoka', smallFont: 'fredoka', boldFont: 'bungee', battleFont: 'fredoka' },
+  custom: { ...DEFAULT_MENU_CUSTOM, layout: { ...DEFAULT_MENU_CUSTOM.layout } },
   logoImage: 'OFFICIAL',
   logoSize: 900,
   panelRadius: 14,
