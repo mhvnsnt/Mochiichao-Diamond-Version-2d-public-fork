@@ -1,0 +1,49 @@
+{
+ "audit": "idle timing reconciliation, Segment 7 re-verification 2026-10-26",
+ "creature": "kickmaster",
+ "roster": "031",
+ "phase": "A",
+ "idle_class": "grounded_standard",
+ "current_cycle_ms": 2400,
+ "baseline_ms": 2400,
+ "delta_vs_baseline_ms": 0,
+ "frame_count_steps": 4,
+ "frame_durations_ms": [
+  700,
+  500,
+  700,
+  500
+ ],
+ "frame_sum_ms": 2400,
+ "frame_sum_matches_cycle": true,
+ "distinct_frame_pngs": [
+  "idle_a.png",
+  "idle_b.png",
+  "idle_c.png"
+ ],
+ "distinct_png_count": 3,
+ "pngs_present_on_disk": {
+  "idle_a.png": true,
+  "idle_b.png": true,
+  "idle_c.png": true
+ },
+ "png_core_match": "3/3 present",
+ "all_pngs_in_dir": [
+  "idle_a.png",
+  "idle_b.png",
+  "idle_c.png"
+ ],
+ "all_png_count": 3,
+ "extra_variant_pngs_not_referenced_by_manifest": [],
+ "previous_cycle_ms_in_manifest": 1800,
+ "manifest_timing_change_recorded": "RETIMED 1800->2400",
+ "recommendation": "keep",
+ "recommended_cycle_ms_at_wiring": null,
+ "recommended_frame_durations_ms_at_wiring": null,
+ "reason": "Grounded bob -2px + breath scaleY 1.02; 2400ms = calm baseline, inside medium-biped 2.0-2.5s / quadruped 2.2-2.8s and calm 2.0-3.0s (s5.2/s5.3). No body reason to differ; keep at wiring.",
+ "research_ref": "BATTLE-ANIMATION-RESEARCH.md s5.2 calm breath 2.0-3.0s (baseline 2400ms midpoint), s5.2 nervous floor ~1.5s, s5.3 per-body ranges, Section 6 table (calm 2400 / small-fast 1600 / large-heavy example 3200)",
+ "applied_in_this_pass": false,
+ "original_manifest_untouched": true,
+ "sidecar_file": "kickmaster.idle.timing-20261026.json",
+ "note": "Wiring-time recommendation only. No manifest, PNG, registry, or game file was changed in this pass. The 2026-10-25 reconciled file (<creature>.idle.reconciled-20261025.json) is a separate, earlier record and was not overwritten."
+}
