@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Application, Assets, Container, Graphics, Sprite, Texture } from 'pixi.js';
+import { Application, Assets, Container, DisplacementFilter, Graphics, Sprite, Texture } from 'pixi.js';
 import { TITLE_BIOMES, type TitleBiomeId } from '../../lib/titleBiomes';
 import {
   CREATURE_ACTIONS, TITLE_BIOME_MOTION, TITLE_CARD_EFFECTS,
@@ -22,7 +22,9 @@ import {
  * Layers, traced from Pokemon title screens, Mochiichao content:
  *   0. painted background (original 1600x900 PNG, when the biome has one),
  *      drifting per biome (titleCardEffects: far layer moves slowest,
- *      HeartGold flyover order) inside a 1.06 cover overscan
+ *      HeartGold flyover order) inside a 1.06 cover overscan;
+ *      water card adds a Pixi DisplacementFilter ripple (generated
+ *      noise map, scrolling) on top of the drift
  *   1. sky background (two-tone gradient band, Pixi-drawn; fallback only)
  *   2. ground band + ground line
  *   3. figure sprite, supplied by the caller (Yogiferno PR #33
@@ -126,6 +128,7 @@ export default function TitleScene({
       // to the Pixi sky/ground rectangles below — never a blank.
       let painted = false;
       let bgSprite: Sprite | null = null;
+      let rippleSprite: Sprite | null = null;
       if (b.backgroundImage) {
         try {
           const bgTex: Texture = await Assets.load(b.backgroundImage);
@@ -142,6 +145,49 @@ export default function TitleScene({
           scene.addChild(bg);
           bgSprite = bg;
           painted = true;
+          // Water card only: PixiJS v8 DisplacementFilter ripple,
+          // from the official Pixi docs (red = horizontal offset,
+          // green = vertical). The displacement map is generated
+          // in code, not shipped as an asset: a 64x64 random
+          // grayscale canvas upscaled with smoothing to 256x256
+          // gives the cloudy noise a displacement map needs.
+          // The filter constructor sets the map sprite
+          // renderable=false, so adding it to the scene does NOT
+          // draw it — it only gives it a live transform for the
+          // filter matrix, which is what makes the map scroll.
+          // Skipped under prefers-reduced-motion (static painting
+          // must not be distorted). Ripple rings + shimmer stay
+          // as the fallback if this filter ever fails to apply.
+          if (biome === 'water' && !reduced) {
+            try {
+              const small = document.createElement('canvas');
+              small.width = 64; small.height = 64;
+              const sctx = small.getContext('2d');
+              if (sctx) {
+                const img = sctx.createImageData(64, 64);
+                for (let i = 0; i < img.data.length; i += 4) {
+                  const v = Math.floor(Math.random() * 256);
+                  img.data[i] = v; img.data[i + 1] = v; img.data[i + 2] = v; img.data[i + 3] = 255;
+                }
+                sctx.putImageData(img, 0, 0);
+                const big = document.createElement('canvas');
+                big.width = 256; big.height = 256;
+                const bctx = big.getContext('2d');
+                if (bctx) {
+                  bctx.imageSmoothingEnabled = true;
+                  bctx.drawImage(small, 0, 0, 256, 256);
+                  const mapTex = Texture.from(big);
+                  mapTex.source.style.addressMode = 'repeat';
+                  rippleSprite = new Sprite(mapTex);
+                  rippleSprite.scale.set((W * 2) / 256, (H * 2) / 256);
+                  scene.addChild(rippleSprite);
+                  bg.filters = [new DisplacementFilter({ sprite: rippleSprite, scale: { x: 14, y: 10 } })];
+                }
+              }
+            } catch {
+              rippleSprite = null; // filter failed: rings + shimmer still run
+            }
+          }
         } catch {
           painted = false;
         }
@@ -464,6 +510,12 @@ export default function TitleScene({
           const m = TITLE_BIOME_MOTION[biome];
           bgSprite.x = W / 2 + Math.sin(t * m.speed) * m.ampX;
           bgSprite.y = H / 2 + Math.sin(t * m.speed * 0.7) * m.ampY;
+        }
+        // Water displacement map scrolls slowly; wrapMode repeat
+        // means the 256px loop never shows a seam.
+        if (rippleSprite) {
+          rippleSprite.x = (t * 20) % 256;
+          rippleSprite.y = (t * 12) % 256;
         }
         for (const c of clouds) { c.x += 6 * dt / 60; if (c.x > W + 50) c.x = -50; }
         if (figure) {
