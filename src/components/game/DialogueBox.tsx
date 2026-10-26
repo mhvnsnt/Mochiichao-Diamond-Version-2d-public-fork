@@ -6,6 +6,7 @@ import { TEXT_SPEED_MS } from '../../lib/gameSettings';
 import { messageWindowStyle } from '../../lib/hudCustom';
 import type { MessageWindowStyle } from '../../lib/hudCustom';
 import { isConfirmKey } from '../../lib/buttonMode';
+import { getDayNightMenuVariant } from '../../lib/dayNightMenuVariants';
 import type { HumanSlot } from '../../lib/humanSheets';
 import { cellPos } from '../../lib/humanSheets';
 
@@ -86,6 +87,14 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
   // Batch A: message window style + border opacity / shadow rows.
   const hudSettings = useGameStore(s => s.settings);
   const msgStyle = messageWindowStyle(hudSettings.hudMessageStyle as MessageWindowStyle, hudSettings.panelOpacity || 100);
+  // Day/night variants wiring (spec, stacked on PR #153): the
+  // dialogue row changes panel / accent / text / tint, with NO
+  // sky gradient over the world. The panel background itself is
+  // the Batch A message-window style above and is NOT overridden
+  // here — only the frame accent is wired, via StdWindow's accent
+  // prop (border colour only). No label, margin, font, or cursor
+  // change; the box sits over game art, which is never repainted.
+  const dnVariant = getDayNightMenuVariant();
   const page = pages[Math.min(pageIdx, pages.length - 1)];
   const typingDone = shown >= page.length;
   const isLast = pageIdx >= pages.length - 1;
@@ -147,6 +156,7 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
 
   return (
     <StdWindow
+      accent={dnVariant.vars['--menu-daynight-accent']}
       style={{
         position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
         padding: '16px', cursor: 'pointer',
