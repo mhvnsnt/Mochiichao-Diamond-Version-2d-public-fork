@@ -58,7 +58,13 @@ function slot(slotId: string, label: string, fallback: string, assetUrl: string 
 export const UI_ART: Record<string, UiArtSlot> = {
   title_art: slot('title_art', 'Title art', 'gradient + game-title text'),
   main_menu_panel: slot('main_menu_panel', 'Main menu panel', 'game-panel', panelMain),
-  pause_menu_panel: slot('pause_menu_panel', 'Pause menu panel', 'game-panel', panelMain),
+  // Batch 3 — Pause menu Y2K skin: Pause no longer uses the shared generic
+  // panel-main.svg. Its skin is the .pause-y2k-panel CSS in index.css
+  // (glossy cyan→blue→violet gradient, white border, glow, pink star
+  // accents). If the UI Art lane later delivers a dedicated Pause panel
+  // asset, re-attach it here and remove that CSS block. No other slot
+  // is changed by this batch.
+  pause_menu_panel: slot('pause_menu_panel', 'Pause menu panel', 'pause-y2k-panel CSS skin'),
   hud_panel: slot('hud_panel', 'HUD panel', 'game-panel', hudTop),
   battle_panel: slot('battle_panel', 'Battle panels (HP + move menu)', 'game-panel', dialogueBox),
   roster_panel: slot('roster_panel', 'Roster panel', 'game-panel', panelMain),
