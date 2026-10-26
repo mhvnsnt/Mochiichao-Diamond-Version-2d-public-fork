@@ -1,19 +1,32 @@
-// captureLoop.test.js — tests for captureLoop.js
-// Run: node --test captureLoop.test.js (from this directory)
+// captureLoop.test.js — tests for captureLoop.js (GATED REVISION, 2026-10-25).
+// Run: node --test captureLoop.test.js (from this directory, no
+// "type": "module" package.json in scope — this file uses require).
 // Deterministic: every roll injects an rng sequence.
+//
+// Gating (Mars, 2026-10-25 ~19:49 CDT, zone reframed ~19:51 CDT): ring
+// capture works ONLY when the player has visited AND played the NEW
+// arcade ring zone (NOT the Harbor City Safari/preserve) AND owns
+// ring-capture items. The pre-existing ring tests below therefore pass
+// a gated unlock; the new gate tests prove every ungated state cannot
+// ring-capture while normal (orb / Luigi Cube) capture is unaffected.
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
   CAPTURE, lowLevelBonus, captureRateX, shakeThreshold, isGuaranteed,
   captureChance, rollCapture,
+  isRingCaptureUnlocked, consumeRingItem,
   createRingCapture, addRingPoint, ringCloses, completeLoop,
   decayRingMeter, creatureStruggle,
 } = require('./captureLoop.js');
 
-const seqRng = (vals) => { let i = 0; return () => vals[i++ % vals.length]; };
 const zeroRng = () => 0; // always passes a shake check
 const oneRng = () => 0.999999; // always fails a shake check
+// A fully gated unlock: zone visited + played + 3 ring items owned.
+const GATED = () => ({ zoneVisited: true, zonePlayed: true, ringItems: 3 });
+const squareLoop = (enc) => {
+  for (const [x, y] of [[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]]) addRingPoint(enc, x, y);
+};
 
 test('low-level bonus: level 5 -> 2.5x, level 21+ -> 1x', () => {
   assert.equal(lowLevelBonus(5), 2.5);
@@ -52,33 +65,35 @@ test('rollCapture: zero rng captures in 4 shakes; failing rng captures 0', () =>
   assert.deepEqual(sure, { success: true, shakes: 4 });
 });
 
-test('ring: short or open path does not close; closed loop fills meter', () => {
-  const enc = createRingCapture({ creatureName: 'Mochii' });
+test('ring (gated): short or open path does not close; closed loop fills meter', () => {
+  const enc = createRingCapture({ creatureName: 'Mochii', unlock: GATED() });
+  assert.equal(enc.ringAvailable, true);
   addRingPoint(enc, 0, 0); addRingPoint(enc, 1, 0); addRingPoint(enc, 0.2, 0.2);
   assert.equal(ringCloses(enc), false);
   // Square loop of side 2, returning to start: path 8, closure 0.
-  const enc2 = createRingCapture({ creatureName: 'Razorgater' });
-  for (const [x, y] of [[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]]) addRingPoint(enc2, x, y);
+  const enc2 = createRingCapture({ creatureName: 'Razorgater', unlock: GATED() });
+  squareLoop(enc2);
   assert.equal(ringCloses(enc2), true);
   const res = completeLoop(enc2, false);
   assert.equal(res.closed, true);
+  assert.equal(res.available, true);
   assert.equal(res.meter, 25);
   assert.equal(res.captured, false);
   assert.equal(enc2.loopsCompleted, 1);
 });
 
-test('ring: assist multiplies gain; 4 loops capture (assist: fewer)', () => {
-  const enc = createRingCapture({});
-  const loop = () => { for (const [x, y] of [[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]]) addRingPoint(enc, x, y); return completeLoop(enc, true); };
+test('ring (gated): assist multiplies gain; 4 loops capture (assist: fewer)', () => {
+  const enc = createRingCapture({ unlock: GATED() });
+  const loop = () => { squareLoop(enc); return completeLoop(enc, true); };
   let res;
   for (let i = 0; i < 3; i++) res = loop();
   assert.equal(res.captured, true); // 37.5 x 3 = 112.5 -> capped 100
   assert.equal(enc.meter, 100);
 });
 
-test('ring: decay drains meter; struggle drains + breaks path', () => {
-  const enc = createRingCapture({});
-  for (const [x, y] of [[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]]) addRingPoint(enc, x, y);
+test('ring (gated): decay drains meter; struggle drains + breaks path', () => {
+  const enc = createRingCapture({ unlock: GATED() });
+  squareLoop(enc);
   completeLoop(enc, false);
   assert.equal(enc.meter, 25);
   decayRingMeter(enc, 2000); // -10
@@ -92,10 +107,65 @@ test('ring: decay drains meter; struggle drains + breaks path', () => {
   assert.equal(calm.struggled, false);
 });
 
-test('ring: completing a non-closed path changes nothing', () => {
-  const enc = createRingCapture({});
+test('ring (gated): completing a non-closed path changes nothing', () => {
+  const enc = createRingCapture({ unlock: GATED() });
   addRingPoint(enc, 0, 0); addRingPoint(enc, 1, 0);
   const res = completeLoop(enc, false);
   assert.equal(res.closed, false);
   assert.equal(res.meter, 0);
+});
+
+test('gate: unlock requires visited AND played AND items owned', () => {
+  assert.equal(isRingCaptureUnlocked(GATED()), true);
+  assert.equal(isRingCaptureUnlocked(undefined), false);
+  assert.equal(isRingCaptureUnlocked({}), false);
+  assert.equal(isRingCaptureUnlocked({ zoneVisited: true, zonePlayed: true, ringItems: 0 }), false);
+  assert.equal(isRingCaptureUnlocked({ zoneVisited: true, zonePlayed: false, ringItems: 3 }), false);
+  assert.equal(isRingCaptureUnlocked({ zoneVisited: false, zonePlayed: true, ringItems: 3 }), false);
+  assert.equal(isRingCaptureUnlocked({ zoneVisited: true, zonePlayed: true, ringItems: -1 }), false);
+});
+
+test('gate: every ungated state cannot ring-capture, even with a closed loop', () => {
+  const ungated = [
+    {}, // no unlock at all
+    { zoneVisited: true, zonePlayed: false, ringItems: 3 }, // visited, never played
+    { zoneVisited: false, zonePlayed: true, ringItems: 3 }, // played flag without visit
+    { zoneVisited: true, zonePlayed: true, ringItems: 0 }, // unlocked zone, no items
+  ];
+  for (const unlock of ungated) {
+    const enc = createRingCapture({ unlock });
+    assert.equal(enc.ringAvailable, false, JSON.stringify(unlock));
+    squareLoop(enc);
+    assert.equal(ringCloses(enc), true, 'geometry still closes; the gate, not geometry, blocks');
+    const res = completeLoop(enc, false);
+    assert.equal(res.available, false);
+    assert.equal(res.captured, false);
+    assert.equal(res.meter, 0);
+    assert.equal(enc.loopsCompleted, 0);
+    assert.equal(enc.captured, false);
+  }
+});
+
+test('gate: locked encounters never decay or struggle (no meter exists to move)', () => {
+  const enc = createRingCapture({});
+  decayRingMeter(enc, 5000);
+  assert.equal(enc.meter, 0);
+  const s = creatureStruggle(enc, zeroRng, 1);
+  assert.equal(s.struggled, false);
+  assert.equal(enc.meter, 0);
+});
+
+test('gate: ring-item consumption spends one item, never below zero, never when locked', () => {
+  assert.equal(consumeRingItem(GATED()), 2);
+  assert.equal(consumeRingItem({ zoneVisited: true, zonePlayed: true, ringItems: 1 }), 0);
+  assert.equal(consumeRingItem({ zoneVisited: true, zonePlayed: true, ringItems: 0 }), 0);
+  assert.equal(consumeRingItem({}), 0);
+  assert.equal(consumeRingItem(undefined), 0);
+});
+
+test('gate: normal (orb / Luigi Cube) capture is unaffected by ring lock', () => {
+  // No unlock anywhere near this path: the orb formula never consults it.
+  const win = rollCapture(45, 'standard', zeroRng);
+  assert.deepEqual(win, { success: true, shakes: 4 });
+  assert.equal(captureChance(3, 'sure'), 1);
 });
