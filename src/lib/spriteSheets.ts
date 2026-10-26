@@ -2,13 +2,15 @@
  * Sprite-sheet loader — "looks 3D, runs 2D".
  *
  * The game ONLY eats 2D sprite sheets. Dorowani (147) and Gabu (148) are
- * Mars's own creatures, baked from his own Tripo models into 192x64 sheets:
- * three 64x64 cells, left to right: front (x=0), back (x=64), side (x=128).
- * The side frame is mirrored in code for the opposite direction until a
- * second side angle is baked. No GLBs are loaded by the game, and no
- * Pokemon sprites are loaded anywhere in this module.
+ * Mars's own creatures, and since the Phase 3 pivot (2026-10-26) their
+ * game-path art is their LOCKED 2D-sheet atlases
+ * (src/assets/sprite-atlases/dorowani + gabu, *.manifest.locked.json) —
+ * the Blender bakes of his Tripo models left the game path (the bake PNGs
+ * stay in src/assets/sprites/ as history, unreferenced; 0 files deleted).
+ * No GLBs are loaded by the game, and no Pokemon sprites are loaded
+ * anywhere in this module.
  *
- * Every other roster creature with a locked atlas uses its own
+ * Every roster creature with a locked atlas uses its own
  * src/assets/sprite-atlases/<creature>/<creature>_atlas_64_locked.png
  * (Sprite Art lane lock, *.manifest.locked.json). Those defs are
  * GENERATED from the manifests (see gen_locked_atlas_defs.py in the
@@ -25,17 +27,20 @@
 import type { CSSProperties } from 'react';
 import { SPECIES_DB } from './species';
 import { TYPES } from './constants';
-import dorowaniSheet from '../assets/sprites/dorowani/dorowani_sheet.png';
-import gabuSheet from '../assets/sprites/gabu/gabu_sheet.png';
+// Phase 3 pivot: 147/148 game-path art is the locked 2D atlases, not the
+// Tripo-model bakes (see header). The bake PNGs are unreferenced history.
+import atlas_dorowani from '../assets/sprite-atlases/dorowani/dorowani_atlas_64_locked.png';
+import atlas_gabu from '../assets/sprite-atlases/gabu/gabu_atlas_64_locked.png';
 // Battle-only three-quarter cuts. These are CROPS cut straight from the
 // Sprite Art lane's 2d-sheets (no new likeness, no AI mock creature):
 // - Dorowani player: angles+lighting sheet, 4x2 grid, cell (2,0) —
 //   three-quarter, shell on back/left, head profile right, red frill, red eye.
 // - Gabu opponent: angles sheet, 4x2 grid, cell (3,0) —
 //   three-quarter, facing left toward the player.
-// The old front/back cuts (dorowani-front-2d-cut.png, dorowani-back-2d-cut.png)
-// and the old cutout-battle.png composite are superseded FOR THIS BATTLE
-// WIRING only; the 192x64 sheets below stay the fallback for world/other views.
+// Phase 3 decision (default KEEP, per the pivot task): the cuts stay as the
+// battle overrides — they are already 2D angles-sheet crops, and swapping
+// them to the locked battle cells is Mars's call, not this wiring's. The
+// locked atlases below are the fallback for world/other views.
 import dorowaniBattlePlayer from '../assets/sprites/dorowani/dorowani-player-threequarter-right-cut.png';
 import gabuBattleOpponent from '../assets/sprites/gabu/gabu-threequarter-left-cut.png';
 // Locked-atlas imports (generated from *.manifest.locked.json).
@@ -109,8 +114,8 @@ export interface SheetDef {
 }
 
 export const SHEET_DEFS: Record<string, SheetDef> = {
-  '147': { speciesId: '147', name: 'Dorowani', sheetUrl: dorowaniSheet, cellSize: 64, frames: { front: 0, back: 64, side: 128 }, battle: { player: dorowaniBattlePlayer } },
-  '148': { speciesId: '148', name: 'Gabu', sheetUrl: gabuSheet, cellSize: 64, frames: { front: 0, back: 64, side: 128 }, battle: { opponent: gabuBattleOpponent } },
+  '147': { speciesId: '147', name: 'Dorowani', sheetUrl: atlas_dorowani, cellSize: 64, frames: { front: 0, back: 64, side: 256 }, cells: { front: { x: 0, y: 0 }, back: { x: 64, y: 0 }, side: { x: 256, y: 0 } }, atlasWidth: 384, atlasHeight: 192, worldCells: { front: { x: 64, y: 64 }, back: { x: 192, y: 0 }, side: { x: 256, y: 0 } }, battle: { player: dorowaniBattlePlayer } },
+  '148': { speciesId: '148', name: 'Gabu', sheetUrl: atlas_gabu, cellSize: 64, frames: { front: 128, back: 192, side: 128 }, cells: { front: { x: 128, y: 0 }, back: { x: 192, y: 0 }, side: { x: 128, y: 64 } }, atlasWidth: 384, atlasHeight: 256, worldCells: { front: { x: 64, y: 0 }, back: { x: 0, y: 0 }, side: { x: 128, y: 64 } }, battle: { opponent: gabuBattleOpponent } },
   // Locked-atlas defs below — GENERATED from *.manifest.locked.json, do not hand-edit.
 '001': { speciesId: '001', name: "Mochii", sheetUrl: atlas_mochii, cellSize: 64, frames: { front: 0, back: 192, side: 256 }, cells: { front: { x: 0, y: 0 }, back: { x: 192, y: 0 }, side: { x: 256, y: 0 } }, atlasWidth: 384, atlasHeight: 256, worldCells: { front: { x: 64, y: 0 }, back: { x: 128, y: 0 }, side: { x: 256, y: 0 } } },
   '002': { speciesId: '002', name: "Tiidebiite", sheetUrl: atlas_tiidebiite, cellSize: 64, frames: { front: 0, back: 64, side: 192 }, cells: { front: { x: 0, y: 0 }, back: { x: 64, y: 0 }, side: { x: 192, y: 0 } }, atlasWidth: 384, atlasHeight: 192, worldCells: { front: { x: 128, y: 0 }, back: { x: 256, y: 0 }, side: { x: 192, y: 0 } } },
@@ -174,8 +179,8 @@ export function battleCell(def: SheetDef, view: SheetView): SheetCellXY {
 /**
  * Overworld cell for a def, or null when that view has no world art.
  * Locked defs: only the views their manifest actually carries (a missing
- * view stays a fallback figure — never a guessed cell). Legacy 147/148
- * defs: the same front/back/side cells as battle.
+ * view stays a fallback figure — never a guessed cell). Defs without
+ * worldCells: the same front/back/side cells as battle.
  */
 export function worldCell(def: SheetDef, view: SheetView): SheetCellXY | null {
   if (def.worldCells) return def.worldCells[view] ?? null;
