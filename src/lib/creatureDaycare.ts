@@ -19,19 +19,13 @@
  *   MED 50, MAX 70. Scoring inputs are species, trainer IDs,
  *   genders, and egg groups (daycare.c GetDaycareCompatibilityScore).
  *
- * What is NOT invented in this lane:
- * - Mochiichao's store has NO gender field and NO egg-group field,
- *   so a real compatibility number cannot be computed here yet.
- *   daycareCompatibility() therefore returns null with the reason,
- *   instead of a guessed 20/50/70. The function shape and the
- *   FireRed scoring table are in this file, ready for the Chao
- *   Garden lane's breeding wiring (which owns gender/egg-group
- *   decisions) to supply those two inputs.
- * - Egg species choice (which parent's base form) is likewise
- *   NOT decided here — it is a Chao Garden lane decision, and
- *   with only one deposited creature (the Guardian) there is no
- *   pair to roll for anyway. eggReady() is false until a second
- *   deposited creature exists AND the 256-step check hits.
+ * Pass 8 update (Mars order 2026-10-26: get egg + compatibility
+ * done, whatever deposit setup it needs): a second deposit slot
+ * (Partner, same shape as Guardian) was added, and the
+ * compatibility rule below replaces the Pass 7 null — same
+ * species = 50, different species = 20, one shared breeding
+ * group, gender not a gate. Egg species = Guardian's base form,
+ * hatching at Lv 5 after 256 more steps. See daycareCompatibility.
  * - No level, EXP, or cost number is invented: 1, 100, 100, and
  *   256 are all FireRed's own numbers, applied through
  *   Mochiichao's gainExp() and CR wallet.
@@ -63,23 +57,37 @@ export function daycareEggCheckHit(steps: number): boolean {
 }
 
 /**
- * Compatibility for a deposited pair. Returns null (not a guess)
- * while gender/egg-group inputs are missing from the store.
- * A pair is breedable only when both slots are filled; with the
- * single Guardian slot this lane has, the answer is always null.
+ * Pass 8 compatibility rule (Mars order 2026-10-26: get the egg +
+ * compatibility thing done, whatever deposit setup it needs).
+ * Mochiichao mapping, stated plainly so it can be changed:
+ * - The store has no gender field and no egg-group field, and
+ *   Mochiichao breeding is Bonding Season (Chao Garden conversion),
+ *   not gendered pairing — so gender is NOT a gate here, and all
+ *   Mochiichao creatures share one breeding group (no creature in
+ *   the store is marked unbreedable).
+ * - Both deposited creatures belong to the player, so the trainer
+ *   is always the same — FireRed's 70 (same species, different
+ *   trainer) is unreachable with two player-owned creatures.
+ * - FireRed's remaining branches, with FireRed's own numbers:
+ *   same species, same trainer = 50; different species, same
+ *   trainer = 20. No number is invented; the branches that need
+ *   gender/egg-group data are the ones dropped, by this rule.
+ * Returns null only when there is no second deposited creature.
  */
 export function daycareCompatibility(input: {
   hasSecondCreature: boolean;
-  genderKnown: boolean;
-  eggGroupsKnown: boolean;
+  sameSpecies: boolean;
 }): { score: number } | null {
   if (!input.hasSecondCreature) return null;
-  if (!input.genderKnown || !input.eggGroupsKnown) return null;
-  // Inputs supplied by the breeding lane would branch here through
-  // the FireRed table (same species/different trainer = 70,
-  // same species/same trainer or different species/different
-  // trainer = 50, different species/same trainer = 20, else 0).
-  return null;
+  return { score: input.sameSpecies ? DAYCARE_COMPATIBILITY.MED : DAYCARE_COMPATIBILITY.LOW };
+}
+
+/** Egg record, persisted in the store. */
+export interface DaycareEgg {
+  speciesId: string;
+  parentA: string;
+  parentB: string;
+  createdAtSteps: number;
 }
 
 /** Egg is ready only with a pair AND a 256-step check hit. */

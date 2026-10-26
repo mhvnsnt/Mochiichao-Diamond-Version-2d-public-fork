@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { MochiiInstance } from '../lib/types';
 import { createMochii } from '../lib/engine';
 import type { GardenCreature } from '../lib/mochiichao-systems';
+import type { DaycareEgg } from '../lib/creatureDaycare';
 import type { GuardianAssignment } from '../lib/monster-tamer-systems';
 import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
 import { setAutosaveHold, getAutosaveHold } from '../lib/saveSystem';
@@ -51,6 +52,13 @@ interface GameState {
   // so these steps persist with saves like gardenRecords/guardian.
   daycareSteps: number;
   setDaycareSteps: (steps: number) => void;
+  // Creature Mode Pass 8 — second deposit slot (Partner) + egg.
+  // Partner is the same GuardianAssignment shape as guardian;
+  // egg is null until a 256-step egg roll passes (see creatureDaycare).
+  daycarePartner: GuardianAssignment | null;
+  setDaycarePartner: (partner: GuardianAssignment | null) => void;
+  daycareEgg: DaycareEgg | null;
+  setDaycareEgg: (egg: DaycareEgg | null) => void;
 
   // Overworld state
   currentMap: string;
@@ -118,6 +126,10 @@ export const useGameStore = create<GameState>((set, get) => ({
   setGardenMinutes: (minutes) => set({ gardenMinutes: minutes }),
   daycareSteps: 0,
   setDaycareSteps: (steps) => set({ daycareSteps: steps }),
+  daycarePartner: null,
+  setDaycarePartner: (partner) => set({ daycarePartner: partner }),
+  daycareEgg: null,
+  setDaycareEgg: (egg) => set({ daycareEgg: egg }),
   currentMap: 'sector0',
   playerPos: { x: 21, y: 14 },
   settings: loadStoredSettings(),

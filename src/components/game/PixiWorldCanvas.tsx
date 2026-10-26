@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Application, Container, Graphics, Sprite, Text } from 'pixi.js';
+import { Application, Container, Graphics, Sprite, Text, Texture } from 'pixi.js';
 import { getSheetDef, worldCell } from '../../lib/spriteSheets';
 import { fallbackColorFor } from '../../lib/spriteSheets';
 import { playerSlot, slotForNpc } from '../../lib/humanSheets';
@@ -91,7 +91,7 @@ export interface NpcWalkState {
 
 export default function PixiWorldCanvas({
   mapData, playerPos, playerDir, playerSpeciesId, defeatedIds, phase, animWalk,
-  playerKind = 'human', playerGender = 'boy', wilds = [], npcStates, playerAuraColor = null,
+  playerKind = 'human', playerGender = 'boy', wilds = [], npcStates, playerAuraColor = null, playerWalkFrameUrl = null,
 }: {
   mapData: any;
   playerPos: { x: number; y: number };
@@ -117,6 +117,11 @@ export default function PixiWorldCanvas({
       the player sprite only; Trainer Mode passes nothing, so it
       renders exactly as before. */
   playerAuraColor?: string | null;
+  /** Creature Mode only, pass 8: wired walk-frame PNG URL for the
+      player creature (direction + step phase, from
+      creatureWalkFrames). Null = old sheet-cell path, exactly as
+      before. Trainer Mode passes nothing. */
+  playerWalkFrameUrl?: string | null;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<Application | null>(null);
@@ -439,6 +444,22 @@ export default function PixiWorldCanvas({
           const fg = new Graphics();
           drawTrainerFigure(fg, cx, cy + bob, tile * 1.0, parseInt(humanPlayer.color.replace('#', ''), 16));
           parent.addChild(fg);
+          return;
+        }
+        // Pass 8: wired walk frame wins over the static sheet cell
+        // when Creature Mode passes one; otherwise the old path runs.
+        if (playerWalkFrameUrl) {
+          const key = `player-walk-${playerWalkFrameUrl}`;
+          let sp = sheetSpritesRef.current.get(key);
+          if (!sp) {
+            sp = new Sprite();
+            sheetSpritesRef.current.set(key, sp);
+            sp.texture = Texture.from(playerWalkFrameUrl);
+          }
+          sp.anchor.set(0.5, 1);
+          sp.position.set(cx, cy + tile * 0.5 + bob);
+          sp.width = tile * 1.3; sp.height = tile * 1.3;
+          parent.addChild(sp);
           return;
         }
         const def = getSheetDef(playerSpeciesId);
