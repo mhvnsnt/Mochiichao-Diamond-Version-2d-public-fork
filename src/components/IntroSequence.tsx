@@ -12,11 +12,12 @@ import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type Title
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
 import TitleCreatureFigure from "./game/TitleCreatureFigure";
 import LockedStage from "./game/LockedStage";
+import { LOCKED_V32_MENU } from "../lib/lockedV32Menu";
 import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 import mochiichaoLogo from "../assets/ui/mochiichao-main-logo.png";
-import menuV32Background from "../assets/ui/main-menu-v32-background.png";
+import MainMenuBackground from "./game/MainMenuBackground";
 import puffyCloud from "../assets/ui/puffy-cloud.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
@@ -486,21 +487,20 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       }
     };
 
-    // Locked v32 main menu (restoration 2026-10-26): the 1200x1500
-    // stage from ui-art/main-menu-default-locked-v32.md, rendered
-    // through LockedStage so it fits any phone width without ever
-    // truncating the logo. Placements are the spec, not a new
-    // layout: logo y180 w900, cloud centre (600,738) 700x180,
-    // Mochii cue x170 y~790 w110, CONTINUE pink y788 h110 /
-    // NEW GAME yellow y918 h70 / SETTINGS blue y1008 h70 /
-    // BACK TO TITLE green y1098 h70. Panel labels follow MENU
-    // FONT (the only menu text a font row touches); the logo is
-    // the image, never font text. Selection, activation,
-    // saveSlotsMode, and the overwrite dialog below are unchanged.
-    const v32PanelStyle = (top: number, height: number, bg: string, selected: boolean): React.CSSProperties => ({
-      position: 'absolute', left: 300, top, width: 600, height,
-      background: bg, border: selected ? '4px solid #fbbf24' : '3px solid #000',
-      borderRadius: 28, display: 'flex', flexDirection: 'column',
+    // Locked v32 main menu, rendered FROM the locked data
+    // (src/lib/lockedV32Menu.ts) — same spec numbers as before,
+    // now data the game loads instead of JSX literals, so a future
+    // preset-select can swap the definition instead of rebuilding
+    // the menu by hand. Panel labels follow MENU FONT (the only
+    // menu text a font row touches); the logo is the image, never
+    // font text. Selection, activation, saveSlotsMode, and the
+    // overwrite dialog below are unchanged.
+    const panelByKey = (key: string) => LOCKED_V32_MENU.panels.find(p => p.key === key)!;
+    const v32PanelStyle = (panel: typeof LOCKED_V32_MENU.panels[number], selected: boolean): React.CSSProperties => ({
+      position: 'absolute', left: panel.x, top: panel.y, width: panel.w, height: panel.h,
+      background: `linear-gradient(180deg, ${panel.gradientTop}, ${panel.gradientBottom})`,
+      border: selected ? `${LOCKED_V32_MENU.panelStyle.selectedBorderWidth}px solid ${LOCKED_V32_MENU.panelStyle.selectedBorderColor}` : `${LOCKED_V32_MENU.panelStyle.borderWidth}px solid #000`,
+      borderRadius: LOCKED_V32_MENU.panelStyle.borderRadius, display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
       fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)',
       boxShadow: selected ? '0 0 0 4px rgba(251, 191, 36, 0.55), 0 6px 24px rgba(0,0,0,0.35)' : '0 6px 24px rgba(0,0,0,0.25)',
@@ -509,40 +509,48 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       <div className="game-screen bg-[#050810] relative overflow-hidden" role="menu" aria-label="Main menu">
         <LockedStage
           background={(
-            <img src={menuV32Background} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-white" />
           )}
         >
-          {/* Locked menu movement (restoration spec, menu-background-
-              animation-spec.md, FireRed sine method): cloud + Mochii
-              bob on SINE OFFSETS on top of their spec positions —
-              base left/top never change, only the translate offset
-              moves. Panels and logo stay static (tappable/readable).
-              Baked symbols in the v32 background PNG cannot move
-              individually (single image) — that part is NOT faked
-              here. prefers-reduced-motion freezes to static v32. */}
-          <style>{`@keyframes menu-bob-cloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } } @keyframes menu-bob-mochii { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } } .menu-bob-cloud { animation: menu-bob-cloud 5s ease-in-out infinite; } .menu-bob-mochii { animation: menu-bob-mochii 4.5s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .menu-bob-cloud, .menu-bob-mochii { animation: none; } }`}</style>
-          {/* Logo slot: y180, width 900 (150-1050). Crop aspect
-              764x450 -> 530 tall, centre ~445 (spec ~454, spec
-              height is approximate "~548"). */}
+          {/* L0 clean background (2026-10-26 layer fix): white + rainbow
+              arcs + SEPARATE animated confetti symbols, rebuilt from
+              the v32 art in MainMenuBackground — the old v32 PNG was
+              itself a full-menu picture (logo/cloud/panels painted
+              in) and drawing it behind the live layers showed TWO
+              menus. That PNG stays in the repo as the locked
+              reference picture only and is never a background again.
+              L1 logo/cloud/Mochii and L2 live panels below are the
+              only logo/cloud/panel instances on screen. */}
+          <MainMenuBackground />
+          {/* Locked menu movement (menu-background-animation-spec.md,
+              FireRed sine method): cloud + Mochii bob on SINE OFFSETS
+              on top of their spec positions — base left/top never
+              change, only the translate offset moves. Panels and logo
+              stay static (tappable/readable). prefers-reduced-motion
+              freezes to static (MainMenuBackground freezes too). */}
+          <style>{`@keyframes menu-bob-cloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.cloud.bobAmp}px); } } @keyframes menu-bob-mochii { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.mochii.bobAmp}px); } } .menu-bob-cloud { animation: menu-bob-cloud ${LOCKED_V32_MENU.cloud.bobPeriod}s ease-in-out infinite; } .menu-bob-mochii { animation: menu-bob-mochii ${LOCKED_V32_MENU.mochii.bobPeriod}s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .menu-bob-cloud, .menu-bob-mochii { animation: none; } }`}</style>
+          {/* Logo slot from locked data: y180, width 900 (150-1050).
+              Crop aspect 764x450 -> 530 tall, centre ~445 (spec
+              ~454, spec height is approximate "~548"). */}
           <img
             src={mochiichaoLogo}
             alt="MOCHIICHAO"
             className="absolute object-contain"
-            style={{ left: 150, top: 180, width: 900 }}
+            style={{ left: LOCKED_V32_MENU.logo.x, top: LOCKED_V32_MENU.logo.y, width: LOCKED_V32_MENU.logo.w }}
           />
-          {/* Cloud (real SVG): centre (600,738), 700x180. */}
+          {/* Cloud (real SVG) from locked data: centre (600,738), 700x180. */}
           <img
             src={puffyCloud}
             alt=""
             className="absolute object-contain menu-bob-cloud"
-            style={{ left: 250, top: 648, width: 700, height: 180, pointerEvents: 'none' }}
+            style={{ left: LOCKED_V32_MENU.cloud.x, top: LOCKED_V32_MENU.cloud.y, width: LOCKED_V32_MENU.cloud.w, height: LOCKED_V32_MENU.cloud.h, pointerEvents: 'none' }}
           />
-          {/* Mochii mascot cue: x170, y~790, width 110. */}
+          {/* Mochii mascot cue from locked data: x170, y~790, width 110. */}
           <img
             src={mochiiCutout}
             alt="Mochii"
             className="absolute object-contain menu-bob-mochii"
-            style={{ left: 170, top: 790, width: 110, height: 110, pointerEvents: 'none' }}
+            style={{ left: LOCKED_V32_MENU.mochii.x, top: LOCKED_V32_MENU.mochii.y, width: LOCKED_V32_MENU.mochii.w, height: LOCKED_V32_MENU.mochii.h, pointerEvents: 'none' }}
           />
           {mainItems.map((item, i) => {
             const isSelected = i === safeMain;
@@ -553,9 +561,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   onClick={() => activateMain('CONTINUE')}
                   onMouseEnter={() => setMainSelected(i)}
                   onFocus={() => setMainSelected(i)}
-                  style={v32PanelStyle(788, 110, 'linear-gradient(180deg, #f9a8d4, #f472b6)', isSelected)}
+                  style={v32PanelStyle(panelByKey('CONTINUE'), isSelected)}
                 >
-                  <div className="font-bold tracking-widest text-black" style={{ fontSize: 34 }}>
+                  <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize }}>
                     <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE
                   </div>
                   {latestData ? (
@@ -569,17 +577,16 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                 </button>
               );
             }
-            const panelTop = item.key === 'NEW GAME' ? 918 : 1008;
-            const panelBg = item.key === 'NEW GAME' ? 'linear-gradient(180deg, #fde68a, #facc15)' : 'linear-gradient(180deg, #93c5fd, #60a5fa)';
+            const panel = panelByKey(item.key);
             return (
               <button
                 key={item.key}
                 onClick={() => activateMain(item.key)}
                 onMouseEnter={() => setMainSelected(i)}
                 onFocus={() => setMainSelected(i)}
-                style={v32PanelStyle(panelTop, 70, panelBg, isSelected)}
+                style={v32PanelStyle(panel, isSelected)}
               >
-                <div className="font-bold tracking-widest text-black" style={{ fontSize: 32 }}>
+                <div className="font-bold tracking-widest text-black" style={{ fontSize: panel.labelSize }}>
                   <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
                 </div>
               </button>
@@ -587,9 +594,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           })}
           <button
             onClick={() => setPhase("TITLE")}
-            style={v32PanelStyle(1098, 70, 'linear-gradient(180deg, #86efac, #4ade80)', false)}
+            style={v32PanelStyle(panelByKey('BACK TO TITLE'), false)}
           >
-            <div className="font-bold tracking-widest text-black" style={{ fontSize: 32 }}>◄ BACK TO TITLE (B)</div>
+            <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize }}>◄ BACK TO TITLE (B)</div>
           </button>
           <div className="absolute text-center text-slate-700" style={{ left: 0, top: 1210, width: 1200, fontSize: 20 }}>
             {safeMain === 0 && hasSaves ? 'Continue your saved adventure.' : safeMain === 0 ? 'Start a new adventure.' : mainItems[safeMain]?.key === 'NEW GAME' ? 'Start a new adventure. Existing saves are kept until you save over a slot.' : 'Settings — text speed, battle scene/style, sound, button mode, frame, font.'}
