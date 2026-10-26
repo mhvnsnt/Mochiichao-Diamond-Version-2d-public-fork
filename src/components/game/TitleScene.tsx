@@ -232,6 +232,15 @@ export default function TitleScene({
       let figure: Sprite | null = null;
       let figureTex: Texture | null = null;
       let figureBaseScale = 1;
+      // Engine-drawn ground shadow, Pokemon-first: FireRed draws the
+      // shadow as a SEPARATE 32x8 sprite (gEnemyMonShadow_Gfx,
+      // PALTAG_SHADOW, SetBattlerShadowSpriteCallback), never baked
+      // into the creature art. Title cutouts are now shadow-free
+      // (PR #84 white-spot batch, PR #95 Razorgater), so the engine
+      // owns the shadow here: one ellipse under the figure's feet,
+      // drawn BEFORE the figure so feet overlap it, never bobbing
+      // with the figure — a ground shadow stays on the ground.
+      let shadow: Graphics | null = null;
       if (figureUrl) {
         try {
           const tex: Texture = await Assets.load(figureUrl);
@@ -244,8 +253,15 @@ export default function TitleScene({
           figure.anchor.set(0.5, 1);
           figure.x = W / 2; figure.y = groundY + 6;
           scene.addChild(figure);
+          shadow = new Graphics();
+          const dispW = tex.width * scale;
+          const shW = dispW * 0.65;
+          shadow.ellipse(0, 0, shW / 2, shW * 0.25 / 2).fill({ color: 0x000000, alpha: 0.32 });
+          shadow.x = figure.x; shadow.y = groundY + 12;
+          scene.addChildAt(shadow, scene.children.indexOf(figure));
         } catch {
           figure = null; // figure missing: scene still renders, caption labels the gap
+          shadow = null;
         }
       }
 
@@ -546,6 +562,19 @@ export default function TitleScene({
               lastBurstCycle = Math.floor(frameInt / 360);
               spawnCreatureBurst(act.burst, figure.x, figure.y, act.color);
             }
+          }
+          // Ground shadow follows the walk (x) but stays on the
+          // ground: it never bobs, hops or orbits with the figure.
+          // When the figure lifts (orbit, hop, bob peak) the shadow
+          // shrinks and fades slightly, like a shadow under a
+          // rising creature — never below 75% size.
+          if (shadow) {
+            shadow.x = figure.x;
+            shadow.y = groundY + 12;
+            const elev = (groundY + 6) - figure.y;
+            const shScale = Math.max(0.75, Math.min(1, 1 - elev / 200));
+            shadow.scale.set(shScale);
+            shadow.alpha = 0.32 * shScale;
           }
           if (fireTrail) {
             emberTimer -= dt / 60;
