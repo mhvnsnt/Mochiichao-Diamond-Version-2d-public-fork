@@ -1,0 +1,323 @@
+# treatments-wiring.patch — APPLY TO A CLEAN CHECKOUT ONLY (see WIRING.md §0)
+# The work clone's BattleView.tsx has uncommitted other-lane work in
+# flight as of 2026-10-25; applying this over that dirty tree risks a
+# clobber. Verify with `git apply --check` on a clean checkout first,
+# then run the game build. Context lines below are taken verbatim from
+# the files as read 2026-10-25; if context has shifted, rebase the hunks
+# by hand — do NOT force-apply with fuzz and hope.
+#
+# Files touched:
+#   src/lib/battleTreatments.ts          (NEW — full text in battleTreatments.ts.txt, same folder)
+#   src/components/game/PixiBattleCanvas.tsx
+#   src/components/views/BattleView.tsx
+#
+# Behaviour change summary (see WIRING.md §3–§4 for the full flow):
+#   - BattleAttack gains damageFraction + isCrit; executeDamage returns them.
+#   - Pixi driver becomes treatments-driven: windup 250 (cameraZoom on the
+#     ATTACKER) → travel 450 (existing lunge/projectile) → contact:
+#     flash + directional particles + sampled shake, 90 ms frozen hold →
+#     onImpact() at hold end (HP drains AFTER the freeze, not at contact)
+#     → recoil 300 (sampled offset/rotation) → recover 400 (ease back,
+#     camera release) → onDone(). Totals 1,490 ms physical/special.
+#   - Old helpers flash()/shake() with Math.random() shake, fixed 14 px
+#     recoil snap, and 220 ms flash fade are DELETED (replaced by sampling).
+#   - Status branch is UNCHANGED (glow, impact 500 ms, done 900 ms).
+
+--- a/src/components/game/PixiBattleCanvas.tsx
++++ b/src/components/game/PixiBattleCanvas.tsx
+@@
+ import { getSheetDef, fallbackColorFor, battleSpriteUrl } from '../../lib/spriteSheets';
+ import { sheetCellTexture, fullImageTexture } from './pixiSheet';
++import { buildHitTimeline, sampleHitPose } from '../../lib/battleTreatments';
+@@
+ export interface BattleAttack {
+   nonce: number;
+   attacker: 'player' | 'enemy';
+   category: 'Physical' | 'Special' | 'Status';
+   color: string;
++  // Treatments inputs (BattleView fills these from executeDamage):
++  // damageFraction = final damage / defender max HP; isCrit = crit roll.
++  // Absent (old callers) = 0 / false = light, non-crit hit.
++  damageFraction?: number;
++  isCrit?: boolean;
+ }
+@@
+-  // Attack timeline driver.
++  // Attack timeline driver — TREATMENTS-DRIVEN (WIRING.md §3).
++  // Phases: windup 250 (treatments) -> travel 450 (existing lunge /
++  // projectile) -> contact: flash + particles + sampled shake, 90 ms
++  // frozen hold -> onImpact() at hold end -> recoil 300 -> recover 400
++  // -> onDone(). Treatments time is sampled, never re-implemented here:
++  // windup samples t=0..250, travel holds t=250, contact samples
++  // t=250..1040. Direction: player (left) hits right = +1, enemy = -1.
+   useEffect(() => {
+     if (!attack || attack.nonce === 0) return;
+     const app = appRef.current;
+     const st = stateRef.current;
+     if (!app || !st) return;
+     const attacker = attack.attacker === 'player' ? st.player : st.enemy;
+     const target = attack.attacker === 'player' ? st.enemy : st.player;
+     const baseA = { x: attacker.position.x, y: attacker.position.y };
+     const baseT = { x: target.position.x, y: target.position.y };
+     const vw = app.screen.width;
+     const vh = app.screen.height;
+     let raf = 0;
+     let impactFired = false;
+     const start = performance.now();
+     const color = hex(attack.color);
+-
+-    const flash = () => {
+-      const f = new Graphics();
+-      f.circle(0, -vh * 0.12, Math.min(vw, vh) * 0.16).fill({ color: 0xffffff, alpha: 0.85 });
+-      target.addChild(f);
+-      const t0 = performance.now();
+-      const fade = () => {
+-        const p = (performance.now() - t0) / 220;
+-        if (p >= 1) { target.removeChild(f); f.destroy(); return; }
+-        f.alpha = 1 - p;
+-        raf = requestAnimationFrame(fade);
+-      };
+-      raf = requestAnimationFrame(fade);
+-    };
+-
+-    const shake = () => {
+-      const stage = app.stage;
+-      const t0 = performance.now();
+-      const tick = () => {
+-        const p = (performance.now() - t0) / 220;
+-        if (p >= 1) { stage.position.set(0, 0); return; }
+-        const amp = (1 - p) * 6;
+-        stage.position.set((Math.random() - 0.5) * 2 * amp, (Math.random() - 0.5) * 2 * amp);
+-        raf = requestAnimationFrame(tick);
+-      };
+-      raf = requestAnimationFrame(tick);
+-    };
++    // DELETED: old flash()/shake() helpers (random shake, fixed fade).
++    // Flash/shake/particles below are sampled from the timeline.
++    const direction = attack.attacker === 'player' ? 1 : -1;
++    const timeline = buildHitTimeline({
++      damageFraction: attack.damageFraction ?? 0,
++      isCrit: !!attack.isCrit, direction, seed: attack.nonce,
++    });
++    const CONTACT = 700; // windup 250 + travel 450
++    const gap = attack.attacker === 'player' ? 70 : -70;
++    const lungeEnd = { x: baseT.x + gap, y: baseT.y };
++    let flashG: Graphics | null = null;
++    let particleGs: Graphics[] = [];
++    const spawnContactFx = () => {
++      // Flash overlay: colour from the timeline (red on crit), alpha
++      // sampled per frame from pose.flash (100 ms fade in the module).
++      flashG = new Graphics();
++      flashG.circle(0, -vh * 0.12, Math.min(vw, vh) * 0.16)
++        .fill({ color: timeline.flash === 'red' ? 0xff3333 : 0xffffff, alpha: 1 });
++      target.addChild(flashG);
++      // Particles: module gives count/angle/speed/size; wiring gives
++      // only colour (move type) and the spawn point. Angles already fan
++      // along the hit direction — do NOT re-randomise them here.
++      particleGs = timeline.particles.map((p) => {
++        const g = new Graphics();
++        g.circle(0, 0, Math.max(2, p.sizePx * 0.6)).fill(color);
++        g.position.set(baseT.x, baseT.y - vh * 0.12);
++        (g as unknown as { __p: typeof p }).__p = p;
++        st.arena.addChild(g);
++        return g;
++      });
++    };
++    const clearContactFx = () => {
++      if (flashG) { target.removeChild(flashG); flashG.destroy(); flashG = null; }
++      particleGs.forEach((g) => { st.arena.removeChild(g); g.destroy(); });
++      particleGs = [];
++    };
++    const resetAll = () => {
++      clearContactFx();
++      attacker.position.set(baseA.x, baseA.y);
++      attacker.scale.set(1, 1);
++      target.position.set(baseT.x, baseT.y);
++      target.rotation = 0;
++      app.stage.position.set(0, 0);
++    };
+ 
+     const step = () => {
+       const t = performance.now() - start;
+       if (attack.category === 'Status') {
+         // No approach: glow on target, impact at 500ms, done at 900ms.
+         const pulse = 1 + 0.08 * Math.sin((t / 500) * Math.PI);
+         target.scale.set(pulse, pulse);
+-        if (t >= 500 && !impactFired) { impactFired = true; callbacksRef.current.onImpact(); flash(); }
++        if (t >= 500 && !impactFired) { impactFired = true; callbacksRef.current.onImpact(); }
+         if (t >= 900) { target.scale.set(1, 1); callbacksRef.current.onDone(); return; }
+         raf = requestAnimationFrame(step);
+         return;
+       }
+-      if (attack.category === 'Special') {
+-        // Projectile travels attacker -> target over 450ms after a 300ms windup.
+-        if (t < 300) {
+-          const pulse = 1 + 0.06 * Math.sin((t / 300) * Math.PI);
+-          attacker.scale.set(pulse, pulse);
+-          raf = requestAnimationFrame(step);
+-          return;
+-        }
+-        const p = Math.min(1, (t - 300) / 450);
+-        const proj = st.arena.children.find(c => (c as any).__proj) as Graphics | undefined;
+-        let dot = proj;
+-        if (!dot) {
+-          dot = new Graphics();
+-          (dot as any).__proj = true;
+-          dot.circle(0, 0, 12).fill(color);
+-          st.arena.addChild(dot);
+-        }
+-        dot.position.set(baseA.x + (baseT.x - baseA.x) * p, baseA.y - 40 + (baseT.y - 40 - (baseA.y - 40)) * p);
+-        if (p >= 1 && !impactFired) {
+-          impactFired = true;
+-          st.arena.removeChild(dot); dot.destroy();
+-          callbacksRef.current.onImpact(); flash(); shake();
+-          target.position.x = baseT.x + (attack.attacker === 'player' ? 14 : -14);
+-          setTimeout(() => { target.position.set(baseT.x, baseT.y); }, 180);
+-          setTimeout(() => callbacksRef.current.onDone(), 500);
+-          return;
+-        }
+-        raf = requestAnimationFrame(step);
+-        return;
+-      }
+-      // Physical: windup 0-350ms, lunge 350-800ms, impact at 800ms, return by 1250ms.
+-      if (t < 350) {
+-        const pulse = 1 + 0.06 * Math.sin((t / 350) * Math.PI);
+-        attacker.scale.set(pulse, pulse);
+-        raf = requestAnimationFrame(step);
+-        return;
+-      }
+-      if (t < 800) {
+-        const p = (t - 350) / 450;
+-        const ease = 1 - Math.pow(1 - p, 2);
+-        const gap = attack.attacker === 'player' ? 70 : -70;
+-        attacker.position.set(baseA.x + (baseT.x + gap - baseA.x) * ease, baseA.y + (baseT.y - baseA.y) * ease);
+-        raf = requestAnimationFrame(step);
+-        return;
+-      }
+-      if (!impactFired) {
+-        impactFired = true;
+-        callbacksRef.current.onImpact(); flash(); shake();
+-        target.position.x = baseT.x + (attack.attacker === 'player' ? 14 : -14);
+-      }
+-      if (t < 1250) {
+-        const p = (t - 800) / 450;
+-        const ease = p * p;
+-        attacker.position.set(
+-          (baseT.x + (attack.attacker === 'player' ? 70 : -70)) + (baseA.x - (baseT.x + (attack.attacker === 'player' ? 70 : -70))) * ease,
+-          baseA.y,
+-        );
+-        if (t >= 980) target.position.set(baseT.x, baseT.y);
+-        raf = requestAnimationFrame(step);
+-        return;
+-      }
+-      attacker.position.set(baseA.x, baseA.y);
+-      attacker.scale.set(1, 1);
+-      target.position.set(baseT.x, baseT.y);
+-      callbacksRef.current.onDone();
++      // Phase A — windup 0-250 ms: treatments cameraZoom ON THE ATTACKER.
++      if (t < 250) {
++        const pose = sampleHitPose(t, timeline);
++        attacker.scale.set(pose.cameraZoom, pose.cameraZoom);
++        raf = requestAnimationFrame(step);
++        return;
++      }
++      // Phase B — travel 250-700 ms: zoom held at its windup-end value.
++      if (t < CONTACT) {
++        const p = (t - 250) / 450;
++        const ease = 1 - Math.pow(1 - p, 2);
++        attacker.scale.set(sampleHitPose(250, timeline).cameraZoom,
++          sampleHitPose(250, timeline).cameraZoom);
++        if (attack.category === 'Special') {
++          const proj = st.arena.children.find(c => (c as unknown as { __proj?: boolean }).__proj) as Graphics | undefined;
++          let dot = proj;
++          if (!dot) {
++            dot = new Graphics();
++            (dot as unknown as { __proj: boolean }).__proj = true;
++            dot.circle(0, 0, 12).fill(color);
++            st.arena.addChild(dot);
++          }
++          dot.position.set(baseA.x + (baseT.x - baseA.x) * p,
++            baseA.y - 40 + (baseT.y - 40 - (baseA.y - 40)) * p);
++        } else {
++          attacker.position.set(baseA.x + (lungeEnd.x - baseA.x) * ease,
++            baseA.y + (lungeEnd.y - baseA.y) * ease);
++        }
++        raf = requestAnimationFrame(step);
++        return;
++      }
++      // Phase C/D/E — contact: treatments t = 250 + (t - CONTACT).
++      const s = t - CONTACT; // 0..790 ms of treatments time after impact
++      const pose = sampleHitPose(Math.min(250 + s, timeline.totalMs), timeline);
++      if (s === 0 || !flashG) spawnContactFx();
++      // NOTE: the Special projectile dot is removed at contact by the
++      // branch below on first contact frame (it served its travel role).
++      const oldProj = st.arena.children.find(c => (c as unknown as { __proj?: boolean }).__proj) as Graphics | undefined;
++      if (oldProj && s < 16) { st.arena.removeChild(oldProj); oldProj.destroy(); }
++      if (flashG) flashG.alpha = pose.flash;
++      // Particles ride their module angle/speed for PARTICLE_MS 450 ms.
++      const elapsedSec = s / 1000;
++      particleGs.forEach((g) => {
++        const p = (g as unknown as { __p: { angleRad: number; speedPxPerSec: number; lifeMs: number } }).__p;
++        if (s > p.lifeMs) { g.visible = false; return; }
++        g.position.set(baseT.x + Math.cos(p.angleRad) * p.speedPxPerSec * elapsedSec,
++          baseT.y - vh * 0.12 + Math.sin(p.angleRad) * p.speedPxPerSec * elapsedSec);
++        g.alpha = 1 - s / p.lifeMs;
++      });
++      // Sampled shake replaces the old random shake; frozen hold means
++      // nothing else advances here except flash/particles (above).
++      app.stage.position.set(pose.shakeX, pose.shakeY);
++      target.position.set(baseT.x + pose.defenderOffsetX, baseT.y + pose.defenderOffsetY);
++      target.rotation = (pose.defenderRotationDeg * Math.PI) / 180;
++      // Hurt-art hook: if a hurt cell exists for this species, swap the
++      // target sprite when pose.defenderArt === 'hurt'; otherwise keep
++      // standing (fallback rule, WIRING.md §5). Cell swap is a pixiSheet
++      // addition at apply time — do NOT invent a cell name here.
++      attacker.scale.set(pose.cameraZoom, pose.cameraZoom);
++      // Attacker returns to base during recover (treatments t 640-1040).
++      if (attack.category !== 'Special' && s >= 390) {
++        const p = Math.min(1, (s - 390) / 400);
++        const ease = p * p;
++        attacker.position.set(lungeEnd.x + (baseA.x - lungeEnd.x) * ease, baseA.y);
++      }
++      // onImpact() fires at hold end (s = 90), NOT at contact (s = 0):
++      // HP drains AFTER the freeze (WIRING.md §4).
++      if (s >= 90 && !impactFired) { impactFired = true; callbacksRef.current.onImpact(); }
++      if (s >= 790) { resetAll(); callbacksRef.current.onDone(); return; }
++      raf = requestAnimationFrame(step);
+     };
+     raf = requestAnimationFrame(step);
+-    return () => cancelAnimationFrame(raf);
++    return () => { cancelAnimationFrame(raf); clearContactFx(); };
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [attack?.nonce]);
+
+--- a/src/components/views/BattleView.tsx
++++ b/src/components/views/BattleView.tsx
+@@
+-  const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string } | null>(null);
++  const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string; damageFraction: number; isCrit: boolean } | null>(null);
+@@
+   const executeDamage = (attacker: MochiiInstance, defender: MochiiInstance, moveId: string) => {
+     const move = MOVES_DB[moveId];
+-    if (!move || move.cat === 'Status') return { damage: 0, text: `${attacker.nickname} used ${move?.name || 'a move'}!` };
++    if (!move || move.cat === 'Status') return { damage: 0, text: `${attacker.nickname} used ${move?.name || 'a move'}!`, isCrit: false, damageFraction: 0 };
+@@
+-    return { damage: finalDmg, text: narrative };
++    return { damage: finalDmg, text: narrative, isCrit: crit > 1, damageFraction: finalDmg / defender.maxHp };
+   };
+@@
+     const result = executeDamage(fusedAttacker || playerActive, enemy, moveId);
+     pushLog(result.text);
+     (window as any).__battleLastAttack = { attacker: 'player', text: result.text };
+-    pendingRef.current = { damage: result.damage, text: result.text, attacker: 'player', moveId };
+-    setAttack({ nonce: Date.now(), attacker: 'player', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff' });
++    pendingRef.current = { damage: result.damage, text: result.text, attacker: 'player', moveId, damageFraction: result.damageFraction, isCrit: result.isCrit };
++    setAttack({ nonce: Date.now(), attacker: 'player', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff', damageFraction: result.damageFraction, isCrit: result.isCrit });
+@@
+         const result = executeDamage(enemy, playerActive, randomMove);
+         pushLog(result.text);
+             (window as any).__battleLastAttack = { attacker: 'enemy', text: result.text };
+-        pendingRef.current = { damage: result.damage, text: result.text, attacker: 'enemy', moveId: randomMove };
+-        setAttack({ nonce: Date.now(), attacker: 'enemy', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff' });
++        pendingRef.current = { damage: result.damage, text: result.text, attacker: 'enemy', moveId: randomMove, damageFraction: result.damageFraction, isCrit: result.isCrit };
++        setAttack({ nonce: Date.now(), attacker: 'enemy', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff', damageFraction: result.damageFraction, isCrit: result.isCrit });
