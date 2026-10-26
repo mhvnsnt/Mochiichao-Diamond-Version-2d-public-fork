@@ -1,0 +1,11 @@
+{
+  "creature": "mochii",
+  "archetype": "grounded",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked idle_a, no redraw"
+}
