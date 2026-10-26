@@ -16,6 +16,7 @@ import {
 } from '../../lib/menuSkins';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
+import MusicMixerScreen from './MusicMixerScreen';
 import {
   MenuCustomSettings, MenuAnimationStyle, DEFAULT_MENU_CUSTOM, loadMenuCustom, persistMenuCustom,
   applyMenuCustom, customToLayoutRecord, resolveDayNightPalette,
@@ -65,7 +66,7 @@ import {
  * Default restores DEFAULT_SETTINGS + LOCKED_PRESET.
  */
 
-type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'MENU_CUSTOM' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR';
+type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'MENU_CUSTOM' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR' | 'MUSIC_MIXER';
 
 interface Row {
   label: string;
@@ -279,6 +280,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
       onRight: () => cycleSkin(m.menu, 1),
       note: `Per-menu Y2K skin preset (${m.presetFile}): Default / Pastel Day / Chrome Midnight / Bubblegum Pop. Applies live to ${m.label}; main menu and logo are never skinned.`,
     })),
+    { label: 'MUSIC MIXER', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_MIXER'), onRight: () => setScreen('MUSIC_MIXER'), onSelect: () => setScreen('MUSIC_MIXER'), note: 'Full dedicated screen: FL-Studio-style mixer for the title v3 + vocal stems (default project loads on open, DELETE removes a stem, NEW clears, LOAD DEFAULT restores). Draggable mixer window (Mars 2026-10-26, explicitly asked). Game music pauses while mixing.' },
     { label: 'CANCEL', value: 'SAVE + EXIT', onLeft: saveAndBack, onRight: saveAndBack, onSelect: saveAndBack, note: 'Saves all rows to the save + localStorage and returns to the main menu.' },
   ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -508,7 +510,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   useEffect(() => { setCursor(0); }, [screen, menuPage]);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR') return; // creator screens own their keys (any-key-skips + B: BACK)
+      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR' || screen === 'MUSIC_MIXER') return; // creator screens own their keys (any-key-skips + B: BACK); the mixer owns its own keys (Esc / B: BACK)
       if (e.key === 'ArrowUp') { e.preventDefault(); setCursor(c => (c - 1 + rows.length) % rows.length); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); setCursor(c => (c + 1) % rows.length); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); rows[safeCursor]?.onLeft(); }
@@ -575,6 +577,12 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   // B: BACK inside it returns to MENU_CREATOR via onBack.
   if (screen === 'START_SCREEN_CREATOR') {
     return <StartScreenCreator onBack={() => setScreen('MENU_CREATOR')} />;
+  }
+
+  // MUSIC MIXER is its own full dedicated screen under Settings (Mars
+  // 2026-10-26). B: BACK inside it returns to SETTINGS via onBack.
+  if (screen === 'MUSIC_MIXER') {
+    return <MusicMixerScreen onBack={() => setScreen('SETTINGS')} />;
   }
 
   return (
