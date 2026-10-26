@@ -1,0 +1,33 @@
+{
+ "creature": "zephling",
+ "roster_id": "019",
+ "status": "done",
+ "method": "generated sheet, quarter-split (or stated grid), border-connected white-bg flood removal (scipy label), interior whites kept, flat bottom shadow-ellipse strip where present, fit to 64x64 RGBA",
+ "frames": [
+  {
+   "file": "zephling_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "zephling_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "zephling_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "zephling_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 0,
+  "right": 0
+ },
+ "movement_note": "Flyer down/up only: front wing-beat phases (wings up/down, orange beak), back wing-beat phases faceless. No legs. Completes set with game-ready side flight coverage.",
+ "raw_sheet": "media-generation-zephling-swim-downup-v1-0-2d619637-79f9-463a-adfd-5b883a3aa1b3.webp",
+ "eye_check": "Enlarged + 64px montage PASS. Flyer down/up only: front wing-beat phases (up/down, orange beak), back wing-beat phases faceless."
+}

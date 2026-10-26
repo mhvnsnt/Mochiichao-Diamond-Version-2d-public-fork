@@ -1,0 +1,33 @@
+{
+ "creature": "astroleviathan",
+ "roster_id": "025",
+ "status": "done",
+ "method": "generated sheet, quarter-split (or stated grid), border-connected white-bg flood removal (scipy label), interior whites kept, flat bottom shadow-ellipse strip where present, fit to 64x64 RGBA",
+ "frames": [
+  {
+   "file": "astroleviathan_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "astroleviathan_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "astroleviathan_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "astroleviathan_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 0,
+  "right": 0
+ },
+ "movement_note": "Swimmer down/up only: front tail-sway phases (face, galaxy belly), back tail-sway phases faceless. No legs. Completes set with game-ready side swim coverage.",
+ "raw_sheet": "media-generation-astroleviathan-swim-downup-v1-0-683604ea-ebba-48f0-a677-151d48d59583.webp",
+ "eye_check": "Enlarged montage PASS. Swimmer down/up only: front tail-sway phases (face, galaxy belly), back tail-sway phases faceless."
+}

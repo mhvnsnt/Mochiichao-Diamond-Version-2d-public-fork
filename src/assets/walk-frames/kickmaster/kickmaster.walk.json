@@ -1,0 +1,51 @@
+{
+  "creature": "kickmaster",
+  "roster_id": "031",
+  "status": "done",
+  "directions": {
+    "down": 2,
+    "up": 2,
+    "left": 2,
+    "right": 2
+  },
+  "frames": [
+    {
+      "file": "kickmaster_walk_down_0.png",
+      "role": "walk_down_0"
+    },
+    {
+      "file": "kickmaster_walk_down_1.png",
+      "role": "walk_down_1"
+    },
+    {
+      "file": "kickmaster_walk_up_0.png",
+      "role": "walk_up_0"
+    },
+    {
+      "file": "kickmaster_walk_up_1.png",
+      "role": "walk_up_1"
+    },
+    {
+      "file": "kickmaster_walk_left_0.png",
+      "role": "walk_left_0"
+    },
+    {
+      "file": "kickmaster_walk_left_1.png",
+      "role": "walk_left_1"
+    },
+    {
+      "file": "kickmaster_walk_right_0.png",
+      "role": "walk_right_0"
+    },
+    {
+      "file": "kickmaster_walk_right_1.png",
+      "role": "walk_right_1"
+    }
+  ],
+  "raw_sheet": "media-generation-kickmaster-walk-v1-0-ccb47bf9-7645-47ca-8378-c8e699f62954.webp",
+  "source_locked_manifest": "game-ready/kickmaster/kickmaster.manifest.locked.json",
+  "source_reference": "game-ready/kickmaster/cells/kickmaster_cell_00.png (battle_front); 2D sheet kickmaster-sheet-v1",
+  "method": "original art, one generated 8-panel sheet (4x2), equal split, border-connected white-bg flood removal (scipy label), interior whites kept, fit to 64x64 RGBA",
+  "eye_check": "enlarged raw sheet PASS + 64px montage PASS (all 8 cells present, directions distinct)",
+  "movement_note": "Dark humanoid, glowing cyan markings, flared fin-feet. Walking only, no kicks. CAVEAT: down pair near-identical (diff 10123) \u2014 front walk will read subtle."
+}

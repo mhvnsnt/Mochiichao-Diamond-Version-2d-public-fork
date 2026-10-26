@@ -1,0 +1,25 @@
+{
+ "creature": "strikechamp_unsuited",
+ "roster_id": "030",
+ "status": "done",
+ "method": "generated sheet, quarter-split (or stated grid), border-connected white-bg flood removal (scipy label), interior whites kept, flat bottom shadow-ellipse strip where present, fit to 64x64 RGBA",
+ "frames": [
+  {
+   "file": "strikechamp_unsuited_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "strikechamp_unsuited_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "directions": {
+  "down": 0,
+  "up": 2,
+  "left": 0,
+  "right": 0
+ },
+ "movement_note": "Walk-up only (regular look, red helmet + gold centre stripe, bare back, red pants, gold belt). Two stride phases: planted leg alternates. V1 bald sheet REJECTED (helmet missing) and NOT cut. Completes set with game-ready down/side coverage.",
+ "raw_sheet": "media-generation-strikechamp-walk-up-v2-0-4e5af19b-a480-4827-b93d-e6fefcf8f59f.webp",
+ "eye_check": "Enlarged + 64px montage PASS (v2 sheet). Walk-up only, regular look: red helmet + gold centre stripe, bare back, red pants, gold belt; planted leg alternates. V1 bald sheet REJECTED (helmet missing) and NOT cut; a duplicate v2 webp from an aborted call is spare, NOT cut."
+}

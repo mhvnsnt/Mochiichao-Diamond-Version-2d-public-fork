@@ -1,0 +1,51 @@
+{
+  "creature": "duneclaw",
+  "roster_id": "008",
+  "status": "done",
+  "directions": {
+    "down": 2,
+    "up": 2,
+    "left": 2,
+    "right": 2
+  },
+  "frames": [
+    {
+      "file": "duneclaw_walk_down_0.png",
+      "role": "walk_down_0"
+    },
+    {
+      "file": "duneclaw_walk_down_1.png",
+      "role": "walk_down_1"
+    },
+    {
+      "file": "duneclaw_walk_up_0.png",
+      "role": "walk_up_0"
+    },
+    {
+      "file": "duneclaw_walk_up_1.png",
+      "role": "walk_up_1"
+    },
+    {
+      "file": "duneclaw_walk_left_0.png",
+      "role": "walk_left_0"
+    },
+    {
+      "file": "duneclaw_walk_left_1.png",
+      "role": "walk_left_1"
+    },
+    {
+      "file": "duneclaw_walk_right_0.png",
+      "role": "walk_right_0"
+    },
+    {
+      "file": "duneclaw_walk_right_1.png",
+      "role": "walk_right_1"
+    }
+  ],
+  "raw_sheet": "media-generation-duneclaw-walk-v1-0-687e3648-717b-41e1-8e3c-19392f1048f1.webp",
+  "source_locked_manifest": "game-ready/duneclaw/duneclaw.manifest.locked.json",
+  "source_reference": "game-ready/duneclaw/cells/duneclaw_cell_02.png (battle_front)",
+  "method": "original art, one generated 8-panel sheet (4x2), equal split, border-connected white-bg flood removal (scipy label), interior whites kept, fit to 64x64 RGBA",
+  "eye_check": "enlarged raw sheet PASS + 64px montage PASS (all 8 cells present, directions distinct)",
+  "movement_note": "Tan quadruped, pale skull-like head, dark spots. CAVEAT: down_0 has large dark claw blades, down_1 arms are plain legs \u2014 claw inconsistency across the front pair."
+}

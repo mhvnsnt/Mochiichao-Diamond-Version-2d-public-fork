@@ -1,0 +1,25 @@
+{
+ "creature": "sproutle",
+ "roster_id": "038",
+ "status": "done",
+ "method": "generated sheet, quarter-split (or stated grid), border-connected white-bg flood removal (scipy label), interior whites kept, flat bottom shadow-ellipse strip where present, fit to 64x64 RGBA",
+ "frames": [
+  {
+   "file": "sproutle_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "sproutle_walk_down_1.png",
+   "role": "walk_down_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "up": 0,
+  "left": 0,
+  "right": 0
+ },
+ "movement_note": "Down top-up only: front-view 2-phase walk (legs alternate, arms swing). Completes set with game-ready down/up/side coverage; other directions remain game-ready cells, not regenerated.",
+ "raw_sheet": "media-generation-sproutle-walk-down-v1-0-4e3518f7-b153-42c8-8128-8d485ac885c9.webp",
+ "eye_check": "Enlarged + 64px montage PASS. Down top-up only: front-view 2-phase walk, legs/arms alternate."
+}

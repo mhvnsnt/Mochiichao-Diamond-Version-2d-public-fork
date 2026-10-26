@@ -1,0 +1,51 @@
+{
+  "creature": "dorowani",
+  "roster_id": "147",
+  "status": "done",
+  "directions": {
+    "down": 2,
+    "up": 2,
+    "left": 2,
+    "right": 2
+  },
+  "frames": [
+    {
+      "file": "dorowani_walk_down_0.png",
+      "role": "walk_down_0"
+    },
+    {
+      "file": "dorowani_walk_down_1.png",
+      "role": "walk_down_1"
+    },
+    {
+      "file": "dorowani_walk_up_0.png",
+      "role": "walk_up_0"
+    },
+    {
+      "file": "dorowani_walk_up_1.png",
+      "role": "walk_up_1"
+    },
+    {
+      "file": "dorowani_walk_left_0.png",
+      "role": "walk_left_0"
+    },
+    {
+      "file": "dorowani_walk_left_1.png",
+      "role": "walk_left_1"
+    },
+    {
+      "file": "dorowani_walk_right_0.png",
+      "role": "walk_right_0"
+    },
+    {
+      "file": "dorowani_walk_right_1.png",
+      "role": "walk_right_1"
+    }
+  ],
+  "raw_sheet": "media-generation-dorowani-walk-v1-0-5c349c1a-1993-4e79-a0c4-254083bb1434.webp",
+  "source_locked_manifest": "game-ready/dorowani/dorowani.manifest.locked.json",
+  "source_reference": "game-ready/dorowani/cells/dorowani_cell_00.png (battle_front); 2D sheet dorowani_sheet_v1.webp",
+  "method": "original art, one generated 8-panel sheet (4x2), equal split, border-connected white-bg flood removal (scipy label), interior whites kept, fit to 64x64 RGBA",
+  "eye_check": "enlarged raw sheet PASS + 64px montage PASS (all 8 cells present, directions distinct)",
+  "movement_note": "Blue biped, cream belly, orange cheek fins, red eyes. CAVEAT: down pair near-identical (pair diff 10933 vs 125k+ for other directions) \u2014 down animation will read subtle; v2 could widen stride if Mars wants."
+}
