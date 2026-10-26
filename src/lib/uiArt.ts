@@ -65,6 +65,13 @@ export const UI_ART: Record<string, UiArtSlot> = {
   // asset, re-attach it here and remove that CSS block. No other slot
   // is changed by this batch.
   pause_menu_panel: slot('pause_menu_panel', 'Pause menu panel', 'pause-y2k-panel CSS skin'),
+  // Bag menu Y2K skin (per-menu skins 2/8): BagView is a full-screen
+  // view, not a UiPanel, so this slot documents the skin rather than
+  // rendering an asset — its skin is the .bag-y2k CSS in index.css
+  // (glossy green gradient, white border, glow, star/heart accents).
+  // If the UI Art lane later delivers a dedicated Bag panel asset,
+  // re-attach it here. No other slot is changed by this batch.
+  bag_menu_panel: slot('bag_menu_panel', 'Bag menu panel', 'bag-y2k CSS skin'),
   hud_panel: slot('hud_panel', 'HUD panel', 'game-panel', hudTop),
   battle_panel: slot('battle_panel', 'Battle panels (HP + move menu)', 'game-panel', dialogueBox),
   roster_panel: slot('roster_panel', 'Roster panel', 'game-panel', panelMain),
