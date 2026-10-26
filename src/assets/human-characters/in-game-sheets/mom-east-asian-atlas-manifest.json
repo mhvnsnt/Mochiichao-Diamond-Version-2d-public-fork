@@ -1,0 +1,104 @@
+{
+  "atlas": "mom-east-asian-atlas-64x64.png",
+  "cell_size": 64,
+  "layout": "b",
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "top_runs": [
+    [
+      109,
+      457
+    ],
+    [
+      661,
+      1008
+    ],
+    [
+      1249,
+      1567
+    ],
+    [
+      1793,
+      2114
+    ]
+  ],
+  "bottom_runs": [
+    [
+      133,
+      457
+    ],
+    [
+      683,
+      1007
+    ],
+    [
+      1236,
+      1560
+    ],
+    [
+      1782,
+      2105
+    ]
+  ],
+  "world": "top0,top2,bottom0,bottom2",
+  "steps": "top1,top3,bottom1,bottom3",
+  "walk": "media-generation-mom-east-asian-walk-frames-v1-0-df076ff7-3fee-471d-8156-eeadca2cfbe5.webp",
+  "battle": "media-generation-mom-east-asian-battle-front-fu-0-bfd8874d-3897-4a6c-a49d-0a657cf59dc7.webp",
+  "portrait": "media-generation-mom-east-asian-portrait-v1-0-02141306-a86b-4ec2-8e51-3a464ae185f8.webp"
+}
