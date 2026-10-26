@@ -1,0 +1,525 @@
+{
+  "$schema": "./schemas/trainers.schema.json",
+  "version": "1.0.0",
+  "source": "Seed trainer set (8 trainers, 16 party members), original classes/names written for this core. No trainer canon exists on main, so this is a seed, not a region roster: full region trainers are owed. Map ids reference the maps schema (map definitions themselves are owed by the maps/world lane, not defined here).",
+  "trainers": [
+    {
+      "id": "t01",
+      "class": "Rookie Tamer",
+      "name": "Pip",
+      "mapId": "meadow-route-01",
+      "aiFlags": [
+        "basic"
+      ],
+      "party": [
+        {
+          "speciesId": "038",
+          "level": 3,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "VINE_LASH"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        },
+        {
+          "speciesId": "013",
+          "level": 3,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        }
+      ]
+    },
+    {
+      "id": "t02",
+      "class": "Garden Keeper",
+      "name": "Mara",
+      "mapId": "meadow-route-01",
+      "aiFlags": [
+        "basic"
+      ],
+      "party": [
+        {
+          "speciesId": "016",
+          "level": 4,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "SWARM_STRIKE"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        },
+        {
+          "speciesId": "019",
+          "level": 4,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "GUST_WAVE"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        }
+      ]
+    },
+    {
+      "id": "t03",
+      "class": "Trail Scout",
+      "name": "Joss",
+      "mapId": "meadow-route-01",
+      "aiFlags": [
+        "basic"
+      ],
+      "party": [
+        {
+          "speciesId": "010",
+          "level": 5,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "EMBER_TOSS"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        },
+        {
+          "speciesId": "013",
+          "level": 4,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        }
+      ]
+    },
+    {
+      "id": "t04",
+      "class": "Pond Watcher",
+      "name": "Nia",
+      "mapId": "pond-route-01",
+      "aiFlags": [
+        "basic"
+      ],
+      "party": [
+        {
+          "speciesId": "001",
+          "level": 5,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "AQUA_SHOT"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        },
+        {
+          "speciesId": "026",
+          "level": 5,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "SHADOW_PULSE"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        }
+      ]
+    },
+    {
+      "id": "t05",
+      "class": "Pond Watcher",
+      "name": "Taro",
+      "mapId": "pond-route-01",
+      "aiFlags": [
+        "basic"
+      ],
+      "party": [
+        {
+          "speciesId": "022",
+          "level": 6,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "AQUA_SHOT"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        },
+        {
+          "speciesId": "001",
+          "level": 5,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "QUICK_ATTACK"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        }
+      ]
+    },
+    {
+      "id": "t06",
+      "class": "Cave Delver",
+      "name": "Bram",
+      "mapId": "cave-route-01",
+      "aiFlags": [
+        "basic"
+      ],
+      "party": [
+        {
+          "speciesId": "032",
+          "level": 7,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "METAL_STRIKE"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        },
+        {
+          "speciesId": "029",
+          "level": 6,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "POWER_STRIKE"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        }
+      ]
+    },
+    {
+      "id": "t07",
+      "class": "Cave Delver",
+      "name": "Sable",
+      "mapId": "cave-route-01",
+      "aiFlags": [
+        "basic"
+      ],
+      "party": [
+        {
+          "speciesId": "035",
+          "level": 8,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "MUD_BLAST"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        },
+        {
+          "speciesId": "041",
+          "level": 7,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "VINE_LASH"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        }
+      ]
+    },
+    {
+      "id": "t08",
+      "class": "Meadow Ranger",
+      "name": "Wren",
+      "mapId": "meadow-route-01",
+      "aiFlags": [
+        "basic"
+      ],
+      "party": [
+        {
+          "speciesId": "019",
+          "level": 6,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "GUST_WAVE"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        },
+        {
+          "speciesId": "038",
+          "level": 6,
+          "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+          },
+          "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "moves": [
+            "TACKLE",
+            "VINE_LASH"
+          ],
+          "heldItem": null,
+          "ability": null,
+          "nature": null
+        }
+      ]
+    }
+  ]
+}
