@@ -40,6 +40,9 @@ interface GameState {
   setGardenRecord: (creatureId: string, record: GardenCreature) => void;
   guardian: GuardianAssignment | null;
   setGuardian: (guardian: GuardianAssignment | null) => void;
+  // Preserved from Chao Garden PR #225 (live main): Garden minutes.
+  gardenMinutes: number;
+  setGardenMinutes: (minutes: number) => void;
   // Creature Mode Pass 7 — Daycare steps: persisted tile steps taken
   // in Creature Mode while a Guardian is assigned (deposited).
   // FireRed daycare.c: steps accumulate for deposited creatures
@@ -111,6 +114,8 @@ export const useGameStore = create<GameState>((set, get) => ({
   setGardenRecord: (creatureId, record) => set(s => ({ gardenRecords: { ...s.gardenRecords, [creatureId]: record } })),
   guardian: null,
   setGuardian: (guardian) => set({ guardian }),
+  gardenMinutes: 0,
+  setGardenMinutes: (minutes) => set({ gardenMinutes: minutes }),
   daycareSteps: 0,
   setDaycareSteps: (steps) => set({ daycareSteps: steps }),
   currentMap: 'sector0',
