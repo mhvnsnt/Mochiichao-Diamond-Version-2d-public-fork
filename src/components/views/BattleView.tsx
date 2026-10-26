@@ -59,7 +59,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   const battleScene = useGameStore(s => s.settings.battleScene);
   const battleStyle = useGameStore(s => s.settings.battleStyle);
   const [switchOptions, setSwitchOptions] = useState<Array<{ idx: number; m: MochiiInstance }> | null>(null);
-  const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string } | null>(null);
+  const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string; damageFraction: number; isCrit: boolean } | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
 
   const pushLog = (msg: string) => setLog(prev => [...prev.slice(-15), msg]);
@@ -120,7 +120,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
 
   const executeDamage = (attacker: MochiiInstance, defender: MochiiInstance, moveId: string) => {
     const move = MOVES_DB[moveId];
-    if (!move || move.cat === 'Status') return { damage: 0, text: `${attacker.nickname} used ${move?.name || 'a move'}!` };
+    if (!move || move.cat === 'Status') return { damage: 0, text: `${attacker.nickname} used ${move?.name || 'a move'}!`, isCrit: false, damageFraction: 0 };
     const aStat = move.cat === 'Physical' ? attacker.stats.atk : attacker.stats.spa;
     const dStat = move.cat === 'Physical' ? defender.stats.def : defender.stats.spd;
     let baseDmg = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * move.bp * aStat / dStat) / 50) + 2;
@@ -137,7 +137,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     if (typeMult < 1 && typeMult > 0) narrative += "It's not very effective... ";
     if (typeMult === 0) narrative += "It had no effect... ";
     if (crit > 1) narrative += "A critical hit! ";
-    return { damage: finalDmg, text: narrative };
+    return { damage: finalDmg, text: narrative, isCrit: crit > 1, damageFraction: finalDmg / defender.maxHp };
   };
 
   // Called by the Pixi canvas at the impact frame: HP drains here, not before.
@@ -238,8 +238,8 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     // Fused attacker: same species/types as the active creature (for
     // STAB in executeDamage), fused stats + fused name only.
     (window as any).__battleLastAttack = { attacker: 'player', text: result.text };
-    pendingRef.current = { damage: result.damage, text: result.text, attacker: 'player', moveId };
-    setAttack({ nonce: Date.now(), attacker: 'player', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff' });
+    pendingRef.current = { damage: result.damage, text: result.text, attacker: 'player', moveId, damageFraction: result.damageFraction, isCrit: result.isCrit };
+    setAttack({ nonce: Date.now(), attacker: 'player', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff', damageFraction: result.damageFraction, isCrit: result.isCrit });
   };
 
   useEffect(() => {
@@ -278,8 +278,8 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
           return;
         }
             (window as any).__battleLastAttack = { attacker: 'enemy', text: result.text };
-        pendingRef.current = { damage: result.damage, text: result.text, attacker: 'enemy', moveId: randomMove };
-        setAttack({ nonce: Date.now(), attacker: 'enemy', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff' });
+        pendingRef.current = { damage: result.damage, text: result.text, attacker: 'enemy', moveId: randomMove, damageFraction: result.damageFraction, isCrit: result.isCrit };
+        setAttack({ nonce: Date.now(), attacker: 'enemy', category: move?.cat || 'Physical', color: move ? TYPES[move.type]?.color || '#ffffff' : '#ffffff', damageFraction: result.damageFraction, isCrit: result.isCrit });
       }, battleScene === 'OFF' ? 0 : 1000);
       return () => clearTimeout(t);
     }
