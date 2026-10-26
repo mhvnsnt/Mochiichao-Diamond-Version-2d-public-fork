@@ -34,8 +34,20 @@ until Mars changes it in his own words.
   than title). See `docs/title-music-v3-spec.md` and
   `docs/game-music-production-conversation.md`.
 
+## Wiring (2026-10-25, wiring batch)
+
+- Title v3, intro v3, boot B, press-start M3: WIRED via `src/lib/music.ts`
+  + `src/components/IntroSequence.tsx` phase effect + `src/App.tsx`
+  world-entry stop. BOOT → boot SFX, INTRO → intro one-shot,
+  TITLE → title loop, MAIN_MENU/SETTINGS/SAVE_SLOTS → main-menu loop,
+  later phases → music stops, world entry → music stops.
+- Main menu v1 (`public/audio/mochiichao-main-menu-v1.wav`): DRAFT, wired
+  for testing. NOT official until Mars says so. See
+  `docs/main-menu-spec.md` for its loop audit and style research.
+
 ## Rule
 
 Show Mars the draft tracks first (playable live links, not download links, not
 in-chat attachments) and keep working on everything else to 100% while waiting.
-Nothing here is wired as final until Mars approves it after listening.
+Nothing here is wired as final until Mars approves it after listening —
+except title v3 / intro v3, which Mars made official on 2026-10-25.
