@@ -1,6 +1,7 @@
 // captureLoop.test.js — tests for captureLoop.js (GATED REVISION, 2026-10-25).
-// Run: node --test captureLoop.test.js (from this directory, no
-// "type": "module" package.json in scope — this file uses require).
+// Run: node --test captureLoop.test.js (from this directory).
+// ESM: package.json declares "type": "module", so this file uses import
+// (converted 2026-10-25 from require(); assertions unchanged).
 // Deterministic: every roll injects an rng sequence.
 //
 // Gating (Mars, 2026-10-25 ~19:49 CDT, zone reframed ~19:51 CDT): ring
@@ -9,16 +10,15 @@
 // ring-capture items. The pre-existing ring tests below therefore pass
 // a gated unlock; the new gate tests prove every ungated state cannot
 // ring-capture while normal (orb / Luigi Cube) capture is unaffected.
-'use strict';
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const {
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {
   CAPTURE, lowLevelBonus, captureRateX, shakeThreshold, isGuaranteed,
   captureChance, rollCapture,
-  isRingCaptureUnlocked, consumeRingItem,
+  isRingCaptureUnlocked, consumeRingItem, createRingUnlock, visitRingZone, playRingZone,
   createRingCapture, addRingPoint, ringCloses, completeLoop,
   decayRingMeter, creatureStruggle,
-} = require('./captureLoop.js');
+} from './captureLoop.js';
 
 const zeroRng = () => 0; // always passes a shake check
 const oneRng = () => 0.999999; // always fails a shake check
@@ -161,6 +161,33 @@ test('gate: ring-item consumption spends one item, never below zero, never when 
   assert.equal(consumeRingItem({ zoneVisited: true, zonePlayed: true, ringItems: 0 }), 0);
   assert.equal(consumeRingItem({}), 0);
   assert.equal(consumeRingItem(undefined), 0);
+});
+
+test('unlock helpers: fresh unlock is locked; visit sets visited only; play sets both', () => {
+  const fresh = createRingUnlock();
+  assert.deepEqual(fresh, { zoneVisited: false, zonePlayed: false, ringItems: 0 });
+  assert.equal(isRingCaptureUnlocked(fresh), false);
+  const visited = visitRingZone(fresh);
+  assert.equal(visited.zoneVisited, true);
+  assert.equal(visited.zonePlayed, false);
+  assert.equal(fresh.zoneVisited, false, 'helpers are pure: input not mutated');
+  const played = playRingZone(visited);
+  assert.equal(played.zoneVisited, true);
+  assert.equal(played.zonePlayed, true);
+  assert.equal(isRingCaptureUnlocked(played), false, 'still locked with 0 items');
+  assert.equal(isRingCaptureUnlocked({ ...played, ringItems: 1 }), true);
+});
+
+test('unlock helpers: session vs persistent state stay apart', () => {
+  // Leaving the zone discards the encounter, never the unlock.
+  const unlocked = { ...playRingZone(createRingUnlock()), ringItems: 2 };
+  const enc = createRingCapture({ unlock: unlocked });
+  assert.equal(enc.ringAvailable, true);
+  const afterSpend = { ...unlocked, ringItems: consumeRingItem(unlocked) };
+  assert.equal(afterSpend.ringItems, 1);
+  assert.equal(afterSpend.zonePlayed, true, 'spending never clears flags');
+  assert.equal(isRingCaptureUnlocked({ ...unlocked, ringItems: 0 }), false,
+    '0 items greys the option out; flags stay true for restock');
 });
 
 test('gate: normal (orb / Luigi Cube) capture is unaffected by ring lock', () => {

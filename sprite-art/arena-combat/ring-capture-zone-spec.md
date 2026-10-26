@@ -130,7 +130,70 @@ any one missing       -> ring option unavailable; Luigi Cubes unaffected
   before the zone exists in the player's path, Luigi Cube capture
   works exactly as before and is the only capture offered.
 
-## 7. What is NOT in this batch (separate work, not silently assumed)
+## 8. Research addendum — 2026-10-25 sweep: what was newly found, what it improves, where it got wired in
+
+Sources actually read this pass (no guessed citations): the repo's own
+decomp files — FireRed `src/safari_zone.c` (flag-gated zone mode,
+session inventory cleared on exit) and HeartGold
+`src/battle_arcade_game_board.c` (a 4x4 panel board, 16 panels, cursor
+selection) — plus public design writing on ability-gating (optional
+abilities must not gate the main path; teach by ramping) and public
+Safari documentation (Kanto: 30 balls + step limit; Johto: no step
+limit, leave by retiring / walking out / running out of balls).
+
+What each find improved, and where it went:
+
+1. **Persistent unlock vs session state (FireRed Safari flag pattern).**
+   FireRed gates its zone with a mode flag and zeroes session counters
+   on exit. Wired in as a HARD RULE in code, not just prose:
+   `captureLoop.js` now exports `createRingUnlock`,
+   `visitRingZone`, `playRingZone` (pure, non-mutating) — the unlock
+   object is persistent save state, an encounter object is session
+   state, and leaving the zone discards the encounter without ever
+   clearing flags. Tests assert spending never clears flags and that
+   0 items only greys the option out until restocked (§6 updated by
+   this rule). What was NOT copied: Safari's step limit and
+   zone-only balls — our zone deliberately has neither (see 3).
+2. **Optional-ability rule (public ability-gating writing).** Optional
+   abilities must never gate the main path, or the game soft-locks
+   players who miss them. Wired in as §6's standing rule, now stated
+   explicitly: the ring unlock is NEVER on the critical path — no
+   story beat, badge, or area may require ring capture, and no
+   creature may be obtainable ONLY by ring capture. If a future
+   design puts ring capture on the main path, that design conflicts
+   with this spec and needs Mars's call.
+3. **No step limit, no zone-only balls (Johto Safari precedent).**
+   Johto's Safari variant dropped the step limit entirely (exit by
+   retiring, walking out, or running out of balls). That precedent
+   supports our deliberate divergence from Kanto Safari: our zone has
+   no step limit and ring items are ordinary shop stock usable
+   anywhere after unlock — not a zone-only currency. Stated here so a
+   future builder does not "fix" these back toward Kanto rules.
+4. **Tutorial ramp (teach-by-ramping writing).** The tutorial must
+   ramp, not just demonstrate: practice capture 1 uses a slow-moving
+   practice creature with a forgiving struggle rate; only after a
+   full clean capture does the tutorial offer a standard-speed
+   practice round (optional, before the unlock is granted — the
+   unlock requires ONE full practice capture, §6, not both rounds).
+   Wired into §6's tutorial paragraph as a staging requirement for
+   the overworld agent.
+5. **4x4 panel floor motif (HeartGold Battle Arcade board, THEME ONLY).**
+   The arcade board's 4x4 grid of panels is borrowed as FLOOR
+   DRESSING only: the zone floor may use a 4x4 glowing-panel grid
+   motif in its tiling, and zone signage may echo panel shapes.
+   The board's selection/roulette MECHANIC is explicitly NOT borrowed
+   — panels are never selectable, never randomise anything, and never
+   affect capture. This is the line the ~19:54 correction draws, and
+   this motif stays on the theme side of it.
+6. **Searched and NOT wired (stated so it is not re-proposed silently).**
+   Bait/rock-style flee manipulation from Safari encounters: rejected
+   — ring capture already has its own tension (meter vs struggle)
+   and adding a second flee lever would muddy it. Cabinet fees,
+   token payouts, and scoreboards: rejected per the ~19:54 correction
+   (mechanic reading superseded). Battle Arcade roulette outcomes
+   affecting capture: rejected for the same reason.
+
+## 9. What is NOT in this batch (separate work, not silently assumed)
 
 - The zone map, arcade dressing/art, tutorial script, shop UI and
   shop prices, and any creature roster for the zone. The overworld
