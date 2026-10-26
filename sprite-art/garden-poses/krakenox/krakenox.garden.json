@@ -1,0 +1,11 @@
+{
+  "creature": "krakenox",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "krakenox_cell_00a.png"
+}
