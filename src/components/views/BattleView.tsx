@@ -13,6 +13,12 @@ import { UiPanel } from '../game/UiArt';
 import { UI_ART } from '../../lib/uiArt';
 import { playerSlot } from '../../lib/humanSheets';
 import PixiBattleCanvas, { BattleAttack } from '../game/PixiBattleCanvas';
+import {
+  healthbarStyle, battleHudPositions, moveButtonContainerClass, ppTypeLine,
+  messageWindowStyle, damageNumberStyle, menuPanelColor,
+  type HealthbarStyle, type BattleHudLayout, type MoveButtonLayout,
+  type PpTypeDisplay, type MessageWindowStyle, type DamageNumberStyle,
+} from '../../lib/hudCustom';
 
 type BattleState = 'START' | 'PLAYER_TURN' | 'ANIMATING' | 'ENEMY_TURN' | 'CAUGHT' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'SWITCH_CHOICE';
 
@@ -58,6 +64,17 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   // Settings wiring: BATTLE SCENE (ON/OFF) and BATTLE STYLE (SHIFT/SET).
   const battleScene = useGameStore(s => s.settings.battleScene);
   const battleStyle = useGameStore(s => s.settings.battleStyle);
+  // Batch A — HUD / border settings (Settings > Menu Creator > UI Creator).
+  const settings = useGameStore(s => s.settings);
+  const hbStyle = healthbarStyle(settings.hudHealthbar as HealthbarStyle);
+  const hudPos = battleHudPositions(settings.hudBattleLayout as BattleHudLayout);
+  const battleAccent = menuPanelColor('BATTLE', settings);
+  const [lastDamage, setLastDamage] = useState<{ amount: number; target: 'enemy' | 'player'; nonce: number } | null>(null);
+  useEffect(() => {
+    if (!lastDamage) return;
+    const t = setTimeout(() => setLastDamage(null), 1400);
+    return () => clearTimeout(t);
+  }, [lastDamage]);
   const [switchOptions, setSwitchOptions] = useState<Array<{ idx: number; m: MochiiInstance }> | null>(null);
   const pendingRef = useRef<{ damage: number; text: string; attacker: 'player' | 'enemy'; moveId: string } | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
@@ -149,10 +166,12 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
       const newEnemyHp = Math.max(0, enemy.hp - p.damage);
       setEnemy(prev => prev ? { ...prev, hp: newEnemyHp } : null);
       (window as any).__battleEnemyHp = newEnemyHp;
+      if (p.damage > 0) setLastDamage({ amount: p.damage, target: 'enemy', nonce: Date.now() });
     } else if (playerActive) {
       const newPlayerHp = Math.max(0, playerActive.hp - p.damage);
       updatePartyMember(activeIdx, { ...playerActive, hp: newPlayerHp });
       (window as any).__battlePlayerHp = newPlayerHp;
+      if (p.damage > 0) setLastDamage({ amount: p.damage, target: 'player', nonce: Date.now() });
     }
   };
 
@@ -218,6 +237,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     if (battleScene === 'OFF') {
       const newEnemyHp = Math.max(0, enemy.hp - result.damage);
       setEnemy({ ...enemy, hp: newEnemyHp });
+      if (result.damage > 0) setLastDamage({ amount: result.damage, target: 'enemy', nonce: Date.now() });
       if (newEnemyHp <= 0) {
         pushLog(`Enemy ${enemy.nickname} fainted!`);
         const expGained = Math.floor((SPECIES_DB[enemy.speciesId].baseExpYield * enemy.level) / 5);
@@ -254,6 +274,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
         if (battleScene === 'OFF') {
           const newPlayerHp = Math.max(0, playerActive.hp - result.damage);
           updatePartyMember(activeIdx, { ...playerActive, hp: newPlayerHp });
+          if (result.damage > 0) setLastDamage({ amount: result.damage, target: 'player', nonce: Date.now() });
           if (newPlayerHp <= 0) {
             pushLog(`${playerActive.nickname} fainted!`);
             const aliveOpts = party
@@ -309,29 +330,45 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
             decomp rule, kept unchanged. React layer above canvas, never
             moves with shake. Placement: enemy top-left, player
             bottom-right. */}
-        <div className="absolute top-3 left-3 pointer-events-none z-10 w-[46%] max-w-[280px]">
-          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)' }}>
+        {/* Batch A: positions from hudBattleLayout, border accent from
+            the BATTLE per-menu panel colour, bar geometry from
+            hudHealthbar, opacity / shadow from the border rows. */}
+        <div className={hudPos.enemy}>
+          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)', borderColor: battleAccent, opacity: (settings.panelOpacity || 100) / 100, boxShadow: settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined }}>
             <div className="flex justify-between items-baseline">
               <span className="font-bold text-white uppercase text-sm truncate">{enemy.nickname}</span>
               <span className="text-xs text-slate-300">Lv.{enemy.level}</span>
             </div>
-            <div className="h-2.5 bg-black/70 rounded-full overflow-hidden mt-1 border border-white/20">
-              <div className="h-full transition-all duration-300" style={{ width: `${enemyPct}%`, background: hpColor(enemyPct) }} />
+            {settings.hudHealthbar === 'NUMERIC' && (
+              <div className="text-[11px] text-slate-300 text-right">{Math.ceil(enemy.hp)} / {enemy.maxHp} HP</div>
+            )}
+            <div className="bg-black/70 overflow-hidden mt-1 border border-white/20" style={{ height: hbStyle.height, borderRadius: hbStyle.radius }}>
+              <div className="h-full transition-all duration-300" style={{ width: `${enemyPct}%`, backgroundColor: hpColor(enemyPct), backgroundImage: hbStyle.segmented ? 'repeating-linear-gradient(90deg, transparent 0 8px, rgba(0,0,0,0.35) 8px 10px)' : undefined }} />
             </div>
           </div>
         </div>
-        <div className="absolute bottom-3 right-3 pointer-events-none z-10 w-[46%] max-w-[280px]">
-          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)' }}>
+        <div className={hudPos.player}>
+          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)', borderColor: battleAccent, opacity: (settings.panelOpacity || 100) / 100, boxShadow: settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined }}>
             <div className="flex justify-between items-baseline">
               <span className="font-bold text-white uppercase text-sm truncate">{playerActive.nickname}</span>
               <span className="text-xs text-slate-300">Lv.{playerActive.level}</span>
             </div>
             <div className="text-[11px] text-slate-300 text-right">{Math.ceil(playerActive.hp)} / {playerActive.maxHp} HP</div>
-            <div className="h-2.5 bg-black/70 rounded-full overflow-hidden mt-1 border border-white/20">
-              <div className="h-full transition-all duration-300" style={{ width: `${playerPct}%`, background: hpColor(playerPct) }} />
+            <div className="bg-black/70 overflow-hidden mt-1 border border-white/20" style={{ height: hbStyle.height, borderRadius: hbStyle.radius }}>
+              <div className="h-full transition-all duration-300" style={{ width: `${playerPct}%`, backgroundColor: hpColor(playerPct), backgroundImage: hbStyle.segmented ? 'repeating-linear-gradient(90deg, transparent 0 8px, rgba(0,0,0,0.35) 8px 10px)' : undefined }} />
             </div>
           </div>
         </div>
+        {/* Batch A: floating damage number on impact, style from
+            hudDamageStyle; cleared after 1.4s. */}
+        {lastDamage && (
+          <div
+            className={`absolute ${lastDamage.target === 'enemy' ? 'top-24' : 'bottom-24'} left-1/2 -translate-x-1/2 z-20 pointer-events-none animate-pulse`}
+            style={damageNumberStyle(settings.hudDamageStyle as DamageNumberStyle)}
+          >
+            -{lastDamage.amount}
+          </div>
+        )}
         {/* Small portraits in the corners, for creatures whose sheet is the proof */}
         <div className="absolute bottom-2 left-2 opacity-90 pointer-events-none hidden sm:block">
           <HumanPortrait slot={playerSlot(playerGender)} view="back" size={56} />
@@ -351,7 +388,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
       <div className="game-panel-bottom flex flex-col shrink-0 z-20" style={{ paddingBottom: 'env(safe-area-inset-bottom)', fontFamily: 'var(--battle-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)' }}>
         <UiPanel
           slot={UI_ART.battle_panel}
-          style={{ margin: '8px 12px 0', padding: '12px 16px', minHeight: '56px' }}
+          style={{ margin: '8px 12px 0', padding: '12px 16px', minHeight: '56px', borderColor: battleAccent, ...messageWindowStyle(settings.hudMessageStyle as MessageWindowStyle, settings.panelOpacity || 100), boxShadow: settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined }}
         >
           <div className="text-white font-bold text-base leading-relaxed">
             {log.length > 0 ? log[log.length - 1] : `A wild ${creatureDisplayName(enemy.speciesId)} appeared!`}
@@ -380,15 +417,16 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
             {(() => {
               const selId = playerActive.moves[selectedMove];
               const sel = selId ? MOVES_DB[selId] : undefined;
-              return sel ? (
+              if (!sel || settings.hudPpType === 'HIDDEN') return null;
+              const detail = ppTypeLine(settings.hudPpType as PpTypeDisplay, TYPES[sel.type]?.name || sel.type, playerActive.pp[selectedMove], sel.pp);
+              return (
                 <div className="text-xs text-slate-200 mb-2">
                   Selected: <span className="font-bold text-white">{sel.name}</span>
-                  {' · '}{TYPES[sel.type]?.name || sel.type}
-                  {' · '}PP {playerActive.pp[selectedMove]}/{sel.pp}
+                  {detail ? ` · ${detail}` : ''}
                 </div>
-              ) : null;
+              );
             })()}
-            <div className="grid grid-cols-2 gap-2">
+            <div className={moveButtonContainerClass(settings.hudMoveLayout as MoveButtonLayout)}>
               {playerActive.moves.slice(0, 4).map((mId, i) => {
                 const mv = MOVES_DB[mId];
                 const color = mv ? TYPES[mv.type]?.color : '#888888';
@@ -403,7 +441,9 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
                     style={{ borderColor: color }}
                   >
                     <span className="font-bold text-white block truncate">{mv ? mv.name : '-'}</span>
-                    {mv && <span className="text-[11px]" style={{ color }}>{TYPES[mv.type]?.name || mv.type} · PP {playerActive.pp[i]}/{mv.pp}</span>}
+                    {mv && ppTypeLine(settings.hudPpType as PpTypeDisplay, TYPES[mv.type]?.name || mv.type, playerActive.pp[i], mv.pp) && (
+                      <span className="text-[11px]" style={{ color }}>{ppTypeLine(settings.hudPpType as PpTypeDisplay, TYPES[mv.type]?.name || mv.type, playerActive.pp[i], mv.pp)}</span>
+                    )}
                   </button>
                 );
               })}
