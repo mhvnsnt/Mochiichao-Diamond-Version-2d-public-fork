@@ -28,22 +28,32 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
  *   (380x380, transparent, blue water blob with wave pattern).
  * - Razorgater: 268x285, steel crocodile, front, ground shadow
  *   from the sheet remains under his feet (see note below).
- * - Tyrage: 326x305, front, ground cracks from the sheet remain.
- * - Kittember: 289x312, front, ember tail orb in the cutout.
- * - Sproutle: 261x337, front, goggles + shell.
- * - Dorowani: 269x409, front (sheet cell 2,0), faint sheet
- *   ground-shadow patch remains under her feet, as in the
- *   earlier Dorowani cut — it is in the sheet, not invented.
+ * - Tyrage: 327x305, front, ground cracks from the sheet remain.
+ *   White spot between feet removed, baked shadow removed
+ *   (rembg u2netp, 2026-10-25 white-spot/shadow fix).
+ * - Kittember: 287x304, front, ember tail orb in the cutout.
+ *   White wedge between head and tail removed, baked shadow
+ *   removed (rembg u2netp, 2026-10-25 fix; two tiny satellite
+ *   bubbles lost their orange fill in the model pass, noted).
+ * - Sproutle: 259x333, front, goggles + shell. White spot
+ *   between feet removed, baked shadow removed
+ *   (rembg u2netp, 2026-10-25 fix).
+ * - Dorowani: 263x398, front (sheet cell 2,0). White spot
+ *   between legs removed, baked shadow removed
+ *   (OpenCV GrabCut, 2026-10-25 fix — u2netp damaged her belly
+ *   and was rejected for her, GrabCut was clean).
  * - Gabu: 292x295, front (sheet cell 2,0, grid-line inset).
  * - Wispkin: 288x609, V1 sheet only — white cracked skull face,
  *   black drop body, wisp smoke. Duskfiend is NOT in this pool.
  * - Mythar: 434x350, front, stained-glass wings + halo ring.
  *
- * Shadow note: several of these cutouts still carry the soft
- * ground shadow baked into their sheet cell. That is the sheet's
- * shadow, not a new drawing, and TitleScene's own ground band
- * sits under it. A shadow-separate pass (engine-drawn shadow,
- * baked shadow stripped) is a later cleanup, not claimed here.
+ * Shadow note: Tyrage, Kittember, Sproutle and Dorowani no
+ * longer carry a baked sheet shadow (2026-10-25 fix above;
+ * Pokemon-first: FireRed draws shadow as a separate 32x8
+ * sprite, gEnemyMonShadow_Gfx / PALTAG_SHADOW, not baked into
+ * the battler sprite — engine-drawn shadow is the later layer,
+ * not claimed here). Razorgater still carries his sheet
+ * shadow, and Gabu was confirmed fine by Mars and is untouched.
  * Biome assignment (title-backgrounds batch, 2026-10-25): each
  * creature now shows on its own card from titleCardEffects
  * (primaryCardForCreature), with its per-card effect and its own
@@ -54,10 +64,10 @@ import mytharWalkCutout from '../../assets/title/mythar-walk-cutout.png';
 const FIGURES: Record<string, { url: string; size: string }> = {
   Mochii: { url: mochiiWalkCutout, size: '380x380' },
   Razorgater: { url: razorgaterWalkCutout, size: '268x285' },
-  Tyrage: { url: tyrageWalkCutout, size: '326x305' },
-  Kittember: { url: kittemberWalkCutout, size: '289x312' },
-  Sproutle: { url: sproutleWalkCutout, size: '261x337' },
-  Dorowani: { url: dorowaniWalkCutout, size: '269x409' },
+  Tyrage: { url: tyrageWalkCutout, size: '327x305' },
+  Kittember: { url: kittemberWalkCutout, size: '287x304' },
+  Sproutle: { url: sproutleWalkCutout, size: '259x333' },
+  Dorowani: { url: dorowaniWalkCutout, size: '263x398' },
   Gabu: { url: gabuWalkCutout, size: '292x295' },
   Wispkin: { url: wispkinWalkCutout, size: '288x609' },
   Mythar: { url: mytharWalkCutout, size: '434x350' },
