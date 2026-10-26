@@ -1,0 +1,11 @@
+{
+  "creature": "inklet",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "inklet_cell_03.png"
+}
