@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGameStore } from '../../store/gameStore';
 import { DATA_CARD_ID } from '../../lib/monster-tamer-systems';
 import { ITEM_ICONS } from '../../lib/uiArt';
@@ -50,6 +50,29 @@ export default function BagView({ onBack }: { onBack: () => void }) {
     .sort((a, b) => a.pocket.localeCompare(b.pocket) || a.name.localeCompare(b.name));
   const current = entries[Math.min(selected, Math.max(0, entries.length - 1))];
   const pockets = [...new Set(entries.map(e => e.pocket))];
+
+  // v5.3: Y/N keys for the Toss confirm prompt. DialogueBox already
+  // answers Y/N for choice dialogues, but this prompt is a separate
+  // component in BagView with no key handler at all — so in the
+  // v5.2 playtest pressing N did nothing and the prompt had to be
+  // clicked away. Y confirms the toss, N cancels it; wording and
+  // behaviour are otherwise unchanged.
+  const doTossYes = () => {
+    if (!current) return;
+    useItem(current.id);
+    setMessage(`Tossed one ${current.name}.`);
+    setConfirmToss(false);
+  };
+  useEffect(() => {
+    if (!confirmToss) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'y' || e.key === 'Y') doTossYes();
+      else if (e.key === 'n' || e.key === 'N') setConfirmToss(false);
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [confirmToss, current]);
 
   return (
     <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
@@ -112,6 +135,19 @@ export default function BagView({ onBack }: { onBack: () => void }) {
                       // currentHp is a battle-copy field (v5.1 HP
                       // sync), not on the MochiiInstance type, so
                       // read it via any — hp is the store truth.
+                      // v5.3 verified: this target selection already
+                      // skips fainted members (cur > 0 required), so
+                      // no target-logic change was needed. The v5.2
+                      // playtest's "fainted healed first" is
+                      // explained, not a code bug: a full-party loss
+                      // blacks out and heals the party to 30% of
+                      // maxHp (6/20), so the member was damaged,
+                      // not fainted, when the Bag was used. A party
+                      // with only fainted members is unreachable in
+                      // the overworld (full loss triggers blackout),
+                      // so the only-fainted refusal message below
+                      // remains untested in live play — stated
+                      // plainly, not claimed as verified.
                       const cur = (m: any) => m.hp ?? m.currentHp ?? 0;
                       const idx = party.findIndex(m => cur(m) > 0 && cur(m) < m.maxHp);
                       if (idx === -1) {
@@ -148,7 +184,7 @@ export default function BagView({ onBack }: { onBack: () => void }) {
             <div className="text-white font-bold text-lg mb-2">Toss one {current.name}?</div>
             <p className="text-sm text-slate-400 mb-4">It will be removed from your bag.</p>
             <div className="flex gap-2">
-              <button onClick={() => { useItem(current.id); setMessage(`Tossed one ${current.name}.`); setConfirmToss(false); }} className="game-button px-4 py-2 font-bold min-h-[48px] flex-1">Yes</button>
+              <button onClick={doTossYes} className="game-button px-4 py-2 font-bold min-h-[48px] flex-1">Yes</button>
               <button onClick={() => setConfirmToss(false)} className="game-button px-4 py-2 font-bold min-h-[48px] flex-1">No</button>
             </div>
           </div>
