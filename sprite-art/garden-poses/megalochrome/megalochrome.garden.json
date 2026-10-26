@@ -1,0 +1,11 @@
+{
+  "creature": "megalochrome",
+  "poses": [
+    "feed",
+    "play",
+    "sleep",
+    "reaction_happy"
+  ],
+  "method": "transform of locked battle_front, no redraw",
+  "source": "megalochrome_cell_02.png"
+}
