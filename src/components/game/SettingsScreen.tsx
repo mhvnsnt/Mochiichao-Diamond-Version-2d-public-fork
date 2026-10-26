@@ -7,6 +7,7 @@ import {
   MenuPreset, LOCKED_PRESET, loadPresets, savePresets, presetToJson,
 } from '../../lib/gameSettings';
 import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
+import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 
 /**
  * Settings — real full screen, NOT a note, NOT a popup.
@@ -32,7 +33,7 @@ import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
  * Default restores DEFAULT_SETTINGS + LOCKED_PRESET.
  */
 
-type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS';
+type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR';
 
 interface Row {
   label: string;
@@ -147,6 +148,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
         { label: 'CURSOR CREATOR', value: 'OPEN ►', onLeft: () => setScreen('CURSOR_CREATOR'), onRight: () => setScreen('CURSOR_CREATOR'), onSelect: () => setScreen('CURSOR_CREATOR') },
         { label: 'PANEL FRAME EDITOR', value: 'OPEN ►', onLeft: () => setScreen('PANEL_FRAME_EDITOR'), onRight: () => setScreen('PANEL_FRAME_EDITOR'), onSelect: () => setScreen('PANEL_FRAME_EDITOR') },
         { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, note: 'Best submenu path: Settings > Menu Creator > Font Settings. Six rows: MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font independently.' },
+        { label: 'CREATE INTRO VIDEO', value: 'OPEN ►', onLeft: () => setScreen('INTRO_VIDEO_CREATOR'), onRight: () => setScreen('INTRO_VIDEO_CREATOR'), onSelect: () => setScreen('INTRO_VIDEO_CREATOR'), note: 'Full dedicated screen: scene list, timeline ruler, keyframes, presets. Presets only; locked default never overwritten. Playback from a saved preset + video export are later batches (GAP).' },
         { label: 'NEXT PAGE', value: 'BACKGROUND ►', onLeft: () => setMenuPage(2), onRight: () => setMenuPage(2), onSelect: () => setMenuPage(2) },
       ],
       2: [
@@ -263,6 +265,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   useEffect(() => { setCursor(0); }, [screen, menuPage]);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      if (screen === 'INTRO_VIDEO_CREATOR') return; // creator screen owns its keys (any-key-skips + B: BACK)
       if (e.key === 'ArrowUp') { e.preventDefault(); setCursor(c => (c - 1 + rows.length) % rows.length); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); setCursor(c => (c + 1) % rows.length); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); rows[safeCursor]?.onLeft(); }
@@ -290,6 +293,10 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     boxShadow: preset.glow ? `0 0 0 2px ${accent}55, 0 6px 24px rgba(0,0,0,0.45)` : undefined,
   };
   const cursorGlyph = CURSOR_SHAPES.find(c => c.id === draft.cursorShape)?.glyph || '►';
+
+  if (screen === 'INTRO_VIDEO_CREATOR') {
+    return <IntroVideoCreatorScreen onBack={() => setScreen('MENU_CREATOR')} />;
+  }
 
   return (
     <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
