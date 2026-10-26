@@ -10,6 +10,7 @@ import { GuardianAssignment, guardianLabel } from '../../lib/monster-tamer-syste
 import { creatureCooldownMs } from '../../lib/creatureCooldowns';
 import { findNextStep } from '../../lib/creaturePathfinding';
 import { gardenBattleBonus } from '../../lib/mochiichao-systems';
+import { gardenFormPresentation, MAINFRAME_GARDENS } from '../../lib/creatureGardenForm';
 import type { MochiiInstance } from '../../lib/types';
 
 /**
@@ -198,6 +199,7 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   const [cooldowns, setCooldowns] = useState<Record<number, number>>({});
   const [switchReadyAt, setSwitchReadyAt] = useState(0);
   const [now, setNow] = useState(Date.now());
+  const [showGarden, setShowGarden] = useState(false);
 
   const posRef = useRef(pos);
   const wildsRef = useRef(wilds);
@@ -225,6 +227,9 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   const WALK_TILES_PER_SEC = 4;
   const SPRINT_TILES_PER_SEC = 6;
   const gardenBonus = active ? gardenBattleBonus(gardenRecords[active.id]?.garden || { dive: 0, glide: 0, sprint: 0, might: 0, endurance: 0 }) : 0;
+  // Pass 5: Garden Form presentation for the active creature, from the
+  // shared store record only. Null = no Garden record yet, not faked.
+  const gardenFormPres = active ? gardenFormPresentation(gardenRecords[active.id] ?? null) : null;
   const tryMove = (dx: number, dy: number, sprinting: boolean) => {
     const p = posRef.current;
     if (dx === 1) setDir('right');
@@ -540,15 +545,19 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
         defeatedIds={[]}
         phase="day"
         animWalk={walkStep}
+        playerAuraColor={gardenFormPres?.auraColor ?? null}
         wilds={wilds.filter(w => w.hp > 0).map(w => ({ id: w.id, speciesId: w.speciesId, x: w.x, y: w.y, telegraph: w.telegraph }))}
       />
       <div className="absolute top-0 left-0 right-0 z-40 flex justify-between p-3" style={{ paddingTop: 'max(0.75rem, env(safe-area-inset-top))' }}>
         <div className="game-panel px-3 py-2">
-          <div className="font-bold text-white text-sm">Playing as: {active.nickname} Lv{active.level} HP {active.hp}/{active.maxHp} {dodging ? '(DODGING 250ms)' : ''} {hopping ? '(HOPPING)' : ''} {gardenBonus > 0 ? `(+${(gardenBonus * 100).toFixed(1)}% Garden bonus)` : ''}</div>
+          <div className="font-bold text-white text-sm">Playing as: {active.nickname} Lv{active.level} HP {active.hp}/{active.maxHp} {dodging ? '(DODGING 250ms)' : ''} {hopping ? '(HOPPING)' : ''} {gardenBonus > 0 ? `(+${(gardenBonus * 100).toFixed(1)}% Garden bonus)` : ''} {gardenFormPres?.auraColor ? `• ${gardenFormPres.form} aura` : ''}</div>
           <div className="text-[11px] text-slate-300">Stamina: {Math.round(stamina)}/100 {stamina <= 0 ? '(exhausted — walk only until it refills)' : ''} • Luigi Cubes: {inventory['luigi_cube'] || 0}</div>
           <div className="text-[11px] text-slate-300">Wilds alive: {aliveWilds.length}/5 {target ? `• Target: ${target.nickname} ${target.hp}/${target.maxHp} HP (${target.temperament})${target.telegraph ? ' — ATTACK INCOMING, DODGE!' : ''}` : ''}</div>
         </div>
-        <button onClick={onBack} className="game-button px-3 py-2 text-sm">Exit Creature Mode</button>
+        <div className="flex gap-2">
+          <button onClick={() => setShowGarden(true)} className="game-button px-3 py-2 text-sm">Garden / Daycare</button>
+          <button onClick={onBack} className="game-button px-3 py-2 text-sm">Exit Creature Mode</button>
+        </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 z-40 game-panel-bottom p-3 max-h-[52vh] overflow-y-auto" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
         <div className="text-sm text-white mb-2">{log}</div>
@@ -609,6 +618,46 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
           Hitstop 90ms with HP draining after it, tag-team pack engagement, territorial strafe.
         </div>
       </div>
+      {showGarden && (
+        <div className="game-screen bg-[#0b1526] absolute inset-0 z-50 overflow-y-auto p-4" style={{ paddingTop: 'max(1rem, env(safe-area-inset-top))', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+          <div className="flex justify-between items-center mb-3">
+            <div className="font-bold text-white text-lg">Garden / Daycare</div>
+            <button onClick={() => setShowGarden(false)} className="game-button px-3 py-2 text-sm">Back</button>
+          </div>
+          <div className="text-sm text-slate-300 mb-3">Dedicated full screen, in the FireRed screen pattern (menu / summary screens are full screens, not popups). Garden Form is palette + accessories + aura — it never changes species or evolution.</div>
+          {gardenFormPres ? (
+            <div className="game-panel p-3 mb-3">
+              <div className="font-bold text-white text-sm mb-2">{active.nickname} — {gardenFormPres.form} • {gardenFormPres.alignment}</div>
+              <div className="text-sm text-slate-200 mb-2">Palette: {gardenFormPres.palettePrimary ? (
+                <span className="inline-flex items-center gap-2">
+                  <span className="inline-block w-4 h-4 rounded" style={{ background: gardenFormPres.palettePrimary }} />
+                  <span className="inline-block w-4 h-4 rounded" style={{ background: gardenFormPres.paletteAccent || '#ffffff' }} />
+                  {gardenFormPres.palettePrimary} / {gardenFormPres.paletteAccent}
+                </span>
+              ) : 'base colour (Neutral — the species\' own colours)'} • Aura: {gardenFormPres.auraColor ? `${gardenFormPres.auraColor} (${gardenFormPres.auraStrength}) — also shown as the ring under {active.nickname} in-world` : 'none (Base form has no aura layer)'}</div>
+              <div className="text-sm text-slate-200">Dominant Garden stat: {gardenFormPres.dominant} • Colorway: {gardenFormPres.colorway} • Battle bonus: +{gardenFormPres.bonusPct.toFixed(1)}% (capped +9%)</div>
+              <div className="text-sm text-slate-200">Garden stats — Dive {gardenFormPres.garden.dive} • Glide {gardenFormPres.garden.glide} • Sprint {gardenFormPres.garden.sprint} • Might {gardenFormPres.garden.might} • Endurance {gardenFormPres.garden.endurance}</div>
+              <div className="text-sm text-slate-200">Bond {gardenFormPres.bond} • Care mistakes {gardenFormPres.careMistakes} • Accessories (parts): {gardenFormPres.parts.length > 0 ? gardenFormPres.parts.join(', ') : 'none'}</div>
+              <div className="text-[11px] text-slate-400 mt-2">Palette sprite sheets are sprite-lane production. Until those sheets land, palette here is swatches + the in-world aura ring — an overlay, not a new sheet, and not a species change.</div>
+            </div>
+          ) : (
+            <div className="game-panel p-3 mb-3 text-sm text-slate-200">No Garden record yet for {active.nickname}. Feed and train in the Garden to earn a Garden Form — bonus is 0 until then, not faked.</div>
+          )}
+          <div className="game-panel p-3 mb-3">
+            <div className="font-bold text-white text-sm mb-2">Daycare slots (FireRed daycare structure)</div>
+            <div className="text-sm text-slate-200">Slot 1: {guardian ? `${guardian.nickname} — Guardian, ${guardian.garden}` : 'Empty — assign a Guardian from Creature Mode'}</div>
+            <div className="text-sm text-slate-200">Slot 2: Empty — this lane's store has only one guardian field, so no second deposited creature is invented here.</div>
+            <div className="text-[11px] text-slate-400 mt-1">No level gain, egg, or compatibility number is shown here — those fields do not exist in the store yet, so they are not guessed.</div>
+          </div>
+          <div className="game-panel p-3">
+            <div className="font-bold text-white text-sm mb-2">Mainframe Gardens (environments)</div>
+            {MAINFRAME_GARDENS.map(g => (
+              <div key={g.name} className="text-sm text-slate-200">{g.name} — {g.alignment} • {g.capacity} creatures per garden</div>
+            ))}
+            <div className="text-[11px] text-slate-400 mt-1">Creature Mode still runs on Sector 0. These are the Garden environments from the conversion doc, listed here — no new tileset is invented in this lane.</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
