@@ -1,0 +1,313 @@
+{
+ "creature": "kickmaster",
+ "roster_id": "031",
+ "variant": null,
+ "version": "atlas-from-2d-sheet-v1-locked-v1",
+ "cell_size": 64,
+ "game_rule": "looks 3D, runs 2D - game eats only these 2D cells",
+ "source_sheet": {
+  "file": "media-generation-kickmaster-sheet-v1-0-f9993b84-5f56-4f73-8631-937ecc8774d4.webp",
+  "width": 1760,
+  "height": 1408
+ },
+ "atlas_file": "kickmaster_atlas_64_locked.png",
+ "atlas_size": {
+  "width": 384,
+  "height": 256
+ },
+ "frame_count": 18,
+ "draft": false,
+ "draft_note": "",
+ "notes": "",
+ "role_unconfirmed": [],
+ "frames": [
+  {
+   "cell": 0,
+   "role": "battle_front",
+   "file": "kickmaster_cell_00.png",
+   "game_ready": true,
+   "source_cell": 0,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 0,
+   "atlas_y": 0
+  },
+  {
+   "cell": 1,
+   "role": "battle_back",
+   "file": "kickmaster_cell_01.png",
+   "game_ready": true,
+   "source_cell": 1,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 64,
+   "atlas_y": 0
+  },
+  {
+   "cell": 2,
+   "role": "overworld_back",
+   "file": "kickmaster_cell_02.png",
+   "game_ready": true,
+   "source_cell": 2,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 0
+  },
+  {
+   "cell": 3,
+   "role": "overworld_front",
+   "file": "kickmaster_cell_03.png",
+   "game_ready": true,
+   "source_cell": 3,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 0
+  },
+  {
+   "cell": 4,
+   "role": "overworld_side_2",
+   "file": "kickmaster_cell_04.png",
+   "game_ready": true,
+   "source_cell": 4,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 0
+  },
+  {
+   "cell": 5,
+   "role": "overworld_back_2",
+   "file": "kickmaster_cell_05.png",
+   "game_ready": true,
+   "source_cell": 5,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 0
+  },
+  {
+   "cell": 6,
+   "role": "overworld_back_3",
+   "file": "kickmaster_cell_06.png",
+   "game_ready": true,
+   "source_cell": 6,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 64
+  },
+  {
+   "cell": 7,
+   "role": "overworld_side_3",
+   "file": "kickmaster_cell_07.png",
+   "game_ready": true,
+   "source_cell": 7,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 64
+  },
+  {
+   "cell": 8,
+   "role": "walk_back_0",
+   "file": "kickmaster_cell_08.png",
+   "game_ready": true,
+   "source_cell": 8,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 64
+  },
+  {
+   "cell": 9,
+   "role": "walk_side_2",
+   "file": "kickmaster_cell_09.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 64
+  },
+  {
+   "cell": 10,
+   "role": "walk_side_3",
+   "file": "kickmaster_cell_10.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 64
+  },
+  {
+   "cell": 11,
+   "role": "walk_side_4",
+   "file": "kickmaster_cell_11.png",
+   "game_ready": true,
+   "source_cell": 11,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 320,
+   "atlas_y": 64
+  },
+  {
+   "cell": 12,
+   "role": "walk_side_1",
+   "file": "kickmaster_cell_12.png",
+   "game_ready": true,
+   "source_cell": 12,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 0,
+   "atlas_y": 128
+  },
+  {
+   "cell": 13,
+   "role": "walk_back_1",
+   "file": "kickmaster_cell_13.png",
+   "game_ready": true,
+   "source_cell": 13,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 64,
+   "atlas_y": 128
+  },
+  {
+   "cell": 14,
+   "role": "walk_side_7",
+   "file": "kickmaster_cell_14.png",
+   "game_ready": true,
+   "source_cell": 14,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 128,
+   "atlas_y": 128
+  },
+  {
+   "cell": 15,
+   "role": "walk_side_6",
+   "file": "kickmaster_cell_15.png",
+   "game_ready": true,
+   "source_cell": 15,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 192,
+   "atlas_y": 128
+  },
+  {
+   "cell": 16,
+   "role": "walk_side_8",
+   "file": "kickmaster_cell_16.png",
+   "game_ready": true,
+   "source_cell": 16,
+   "lock_note": "",
+   "eye_status": "extractor_assigned_spot_checked",
+   "atlas_x": 256,
+   "atlas_y": 128
+  },
+  {
+   "cell": 17,
+   "role": "icon",
+   "file": "kickmaster_cell_17.png",
+   "game_ready": true,
+   "source_cell": 17,
+   "lock_note": "",
+   "eye_status": "eye_confirmed",
+   "atlas_x": 320,
+   "atlas_y": 128
+  },
+  {
+   "cell": "9mir",
+   "role": "walk_side_mirror",
+   "file": "kickmaster_cell_09mir.png",
+   "game_ready": true,
+   "source_cell": 9,
+   "lock_note": "Mirrored from cell 9 (QA mirror-only side); facing direction not invented",
+   "atlas_x": 0,
+   "atlas_y": 192
+  },
+  {
+   "cell": "10mir",
+   "role": "walk_side_mirror",
+   "file": "kickmaster_cell_10mir.png",
+   "game_ready": true,
+   "source_cell": 10,
+   "lock_note": "Mirrored from cell 10 (QA mirror-only side); facing direction not invented",
+   "atlas_x": 64,
+   "atlas_y": 192
+  }
+ ],
+ "qa_notes": [
+  {
+   "tool": "prune_cells.py",
+   "dropped_or_merged": [
+    {
+     "cells": [
+      5,
+      9
+     ],
+     "action": "merged",
+     "new_source": {
+      "file": "media-generation-kickmaster-sheet-v1-0-f9993b84-5f56-4f73-8631-937ecc8774d4.webp",
+      "x": 121,
+      "y": 261,
+      "w": 322,
+      "h": 458
+     }
+    },
+    {
+     "cells": [
+      10,
+      15
+     ],
+     "action": "merged",
+     "new_source": {
+      "file": "media-generation-kickmaster-sheet-v1-0-f9993b84-5f56-4f73-8631-937ecc8774d4.webp",
+      "x": 121,
+      "y": 719,
+      "w": 322,
+      "h": 322
+     }
+    },
+    {
+     "cells": [
+      16,
+      21
+     ],
+     "action": "merged",
+     "new_source": {
+      "file": "media-generation-kickmaster-sheet-v1-0-f9993b84-5f56-4f73-8631-937ecc8774d4.webp",
+      "x": 121,
+      "y": 1041,
+      "w": 322,
+      "h": 354
+     }
+    },
+    {
+     "cells": [
+      4
+     ],
+     "action": "dropped",
+     "role": "overworld_side"
+    }
+   ],
+   "note": "Vertical-strip split cut interleaved kick-combo poses: cell 4 was a legs-only fragment (pruned); adjacent upper/lower fragments merged back into full poses (5+9 high-kick, 10+15, 16+21)."
+  }
+ ],
+ "lock_date": "2026-10-25",
+ "lock_method": "Eye-check of every atlas montage (BF/BB/icon per atlas) + QA sheet verdicts; walk/overworld sub-roles are extractor-assigned and montage-spot-checked, not cell-by-cell direction-verified, except QA-PASS sets where QA verified walk at sheet level.",
+ "original_manifest": "kickmaster.manifest.json",
+ "game_ready_cell_count": 20,
+ "game_ready_atlas_file": "kickmaster_atlas_64_locked.png",
+ "icon_file": "icons/kickmaster_icon64.png",
+ "icon_source": "atlas icon cell 17",
+ "white_spot_cleanup_px_cleared": 372,
+ "white_spot_cleanup_bg": [
+  245,
+  240,
+  227
+ ]
+}
