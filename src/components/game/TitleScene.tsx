@@ -17,6 +17,7 @@ import {
   PLATINUM_EXIT_FADE_DELAY, PLATINUM_EXIT_FADE_FRAMES, RUBY_PHASE1_COUNTER_START,
   type PlatinumExitKind, type RubyShineState, type SubpixelParticle,
 } from '../../lib/titleAnimations';
+import { playTitleCry, titleCryUrl, TITLE_CRY_WAIT_MS } from '../../lib/titleCryGate';
 
 /**
  * TitleScene — the shared title/start scene system (Mars, 2026-10-25).
@@ -65,6 +66,13 @@ import {
  * no audio is shipped). All 10/10 title creatures now have
  * clean cutouts: Yogiferno (PR #33) + the other 9 in this
  * batch, wired via TitleCreatureFigure. No art is invented here.
+ *
+ * Title cry gate (title 10 only, Mars-confirmed 2026-10-26): where
+ * startPrompt is true, a press plays the current figure's cry
+ * (titleCryGate.ts, species-indexed, SFX bus, centre pan, normal
+ * priority, no music ducking), waits 90 frames (1.5s), then drives
+ * the Platinum 'normal' white fade. No other creature is in the
+ * table; unknown figures get no cry and no exit.
  */
 export default function TitleScene({
   biome = 'snow',
@@ -101,20 +109,62 @@ export default function TitleScene({
   /** HeartGold start flash prompt (0 show / 30 hide / 45 cycle).
    *  Default false: IntroSequence keeps its own press-blink wiring
    *  (PR #28) untouched; set true only where TitleScene itself
-   *  should own the prompt. */
+   *  should own the prompt. Where true, the title cry gate also
+   *  owns the press: cry -> 90-frame wait -> white fade. */
   startPrompt?: boolean;
   /** Platinum exit driver: 'normal' (white out/in) or 'clearSave'
    *  (black out). 'none' (default) leaves the scene running.
-   *  IntroSequence does NOT set this yet — that hookup is a later
-   *  batch, so no exit is claimed as input-triggered here. */
+   *  IntroSequence does NOT set this yet. The title cry gate
+   *  (startPrompt=true only) sets the internal exit to 'normal'
+   *  90 frames after a press, so a press IS input-triggered there. */
   exitKind?: PlatinumExitKind;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [startVisible, setStartVisible] = useState(true);
+  // Title cry gate state: the internal exit the gate sets 90 frames
+  // after a press. An explicit exitKind prop always wins; otherwise
+  // the gate's exit drives the Platinum exit driver below.
+  const [cryExitKind, setCryExitKind] = useState<PlatinumExitKind>('none');
+  const cryGateFiredRef = useRef(false);
+  const cryGateTimerRef = useRef<number | null>(null);
   const exitKindRef = useRef<PlatinumExitKind>(exitKind);
-  useEffect(() => { exitKindRef.current = exitKind; }, [exitKind]);
+  const effectiveExitKind: PlatinumExitKind = exitKind !== 'none' ? exitKind : cryExitKind;
+  useEffect(() => { exitKindRef.current = effectiveExitKind; }, [effectiveExitKind]);
   const startPromptRef = useRef<boolean>(startPrompt);
   useEffect(() => { startPromptRef.current = startPrompt; }, [startPrompt]);
+
+  // Title cry gate (title 10 only): press -> PlayCry for the current
+  // title creature -> 90-frame (1.5s) wait -> white fade. Active ONLY
+  // where TitleScene itself owns the prompt (startPrompt=true);
+  // callers without startPrompt (IntroSequence, TitleCreatureFigure,
+  // YogifernoTitleWalk) are untouched, and a figure outside the
+  // title 10 table gets no cry and no exit — the scene keeps running
+  // exactly as before. The press also stops the start-flash prompt:
+  // a consumed press must not keep flashing through the wait.
+  // prefers-reduced-motion: the cry still plays on press, but the
+  // white fade itself is ticker-driven, so a static scene stays
+  // static there (existing reduced-motion behaviour, unchanged).
+  useEffect(() => {
+    if (!startPrompt) return;
+    const onPress = () => {
+      if (cryGateFiredRef.current) return;
+      if (!titleCryUrl(figureName)) return;
+      cryGateFiredRef.current = true;
+      startPromptRef.current = false;
+      setStartVisible(false);
+      void playTitleCry(figureName);
+      cryGateTimerRef.current = window.setTimeout(() => {
+        setCryExitKind('normal');
+      }, TITLE_CRY_WAIT_MS);
+    };
+    window.addEventListener('keydown', onPress);
+    window.addEventListener('pointerdown', onPress);
+    return () => {
+      window.removeEventListener('keydown', onPress);
+      window.removeEventListener('pointerdown', onPress);
+      if (cryGateTimerRef.current !== null) window.clearTimeout(cryGateTimerRef.current);
+    };
+  }, [startPrompt, figureName]);
 
   useEffect(() => {
     const host = hostRef.current;
