@@ -141,3 +141,16 @@ every time, never overwriting a draft.
 - Per-pixel placement numbers for the 9 non-Gabu drafts were never
   saved by staging; they are recorded as centre + ground line +
   burst moment, not invented.
+
+## 7. Update 2026-10-26 ~07:07 CDT - leaves, locked styles, complex v2
+
+- Per-card animation styles LOCKED (Mars 2026-10-26 ~07:07 CDT).
+  See `titleActionShots.ts` header and `title-animation-v2-complex.md`.
+- Gabu leaves rebuilt from the actual LeafGreen leaf file structure
+  (see `title-pokemon-leaf-research.md`): 16x16 class, pointed blade
+  + stem + vein, 3 greens, tumbling rotation, leftward drift,
+  frequent spawns. Pokemon tile pixels NOT shipped; the leaf is a
+  Mochiichao-original swap, per the pull-then-swap rule.
+- Animated versions shipped in the next PR are 800x450 previews
+  (Gabu v2 with real leaves, others v1). Full-res anims + full v2
+  game wiring are the next step, after Mars okays the previews.
