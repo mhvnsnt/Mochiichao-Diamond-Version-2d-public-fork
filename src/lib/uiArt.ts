@@ -72,6 +72,14 @@ export const UI_ART: Record<string, UiArtSlot> = {
   // If the UI Art lane later delivers a dedicated Bag panel asset,
   // re-attach it here. No other slot is changed by this batch.
   bag_menu_panel: slot('bag_menu_panel', 'Bag menu panel', 'bag-y2k CSS skin'),
+  // Shop menu Y2K skin (per-menu skins 3/8): ShopView is a full-screen
+  // view, not a UiPanel, so this slot documents the skin rather than
+  // rendering an asset — its skin is the .shop-y2k CSS in index.css
+  // (glossy yellow gradient, white border, glow, star/heart accents).
+  // The existing shop_panel slot above is unchanged. If the UI Art
+  // lane later delivers a dedicated Shop panel asset, re-attach it
+  // here. No other slot is changed by this batch.
+  shop_menu_panel: slot('shop_menu_panel', 'Shop menu panel', 'shop-y2k CSS skin'),
   hud_panel: slot('hud_panel', 'HUD panel', 'game-panel', hudTop),
   battle_panel: slot('battle_panel', 'Battle panels (HP + move menu)', 'game-panel', dialogueBox),
   roster_panel: slot('roster_panel', 'Roster panel', 'game-panel', panelMain),
