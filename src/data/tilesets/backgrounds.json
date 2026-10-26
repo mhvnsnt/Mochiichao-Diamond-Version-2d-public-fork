@@ -1,0 +1,36 @@
+{
+  "$schema": "tileset-backgrounds-v1",
+  "notes": [
+    "One background definition per BIOME, not per place. A battle in any place uses its place row's battleBiome — that is why 30+ places do not need 30 paintings.",
+    "Title backgrounds are NOT wired here. The 8 painted title-bg-*-v2.png files on main are a separate Title Backgrounds lane and are NOT used as menu or battle backgrounds until Mars has seen the actual PNGs (show-first rule). titleBackgroundsWired is false on purpose.",
+    "Colours are hex numbers (Pixi 0xRRGGBB as JSON integers). sky2 is the gradient second stop; farLayer is the parallax silhouette colour; platform is the battle platform colour.",
+    "Palettes are delivered via tint / ColorMatrixFilter at runtime (see pixiLayers.applyTimeTint), not as per-variant paintings. Day/night + season variants multiply these base colours."
+  ],
+  "titleBackgroundsWired": false,
+  "titleBackgroundsNote": "src/assets/title/title-bg-{snow,grass,water,sand,stone,forest,rain,night}-v2.png exist on main but are NOT referenced by any background, battle, or menu path in this PR. Show-first: Mars reviews the PNGs, then a later PR wires them if approved.",
+  "biomes": {
+    "grass":    { "label": "Grass field",   "sky": 5673907, "sky2": 14398119, "far": 4378986, "ground": 5064312, "platform": 9078320, "weatherKind": "none" },
+    "forest":   { "label": "Forest",        "sky": 1327437, "sky2": 1452613,  "far": 2162688, "ground": 2265736, "platform": 9078320, "weatherKind": "leaves" },
+    "water":    { "label": "Open water",    "sky": 8204540, "sky2": 14737662, "far": 3739163, "ground": 3702976, "platform": 9078320, "weatherKind": "none" },
+    "shore":    { "label": "Shore / bay",   "sky": 8204540, "sky2": 14737662, "far": 3739163, "ground": 13902616, "platform": 9078320, "weatherKind": "none" },
+    "town":     { "label": "Town",          "sky": 8900331, "sky2": 14398119, "far": 9078320, "ground": 13166376, "platform": 9078320, "weatherKind": "none" },
+    "city":     { "label": "Neon city",     "sky": 1710618, "sky2": 3355443,  "far": 8388736, "ground": 1710638, "platform": 9078320, "weatherKind": "rain" },
+    "industrial":{ "label": "Industrial",   "sky": 9737365, "sky2": 14737662, "far": 4868680, "ground": 4868680, "platform": 9078320, "weatherKind": "smog" },
+    "interior": { "label": "Interior",      "sky": 3355443, "sky2": 3355443,  "far": 3355443, "ground": 9078320, "platform": 9078320, "weatherKind": "none" },
+    "arena":    { "label": "Arena",         "sky": 1710618, "sky2": 3355443,  "far": 8388736, "ground": 4868680, "platform": 9078320, "weatherKind": "none" },
+    "cave":     { "label": "Cave",          "sky": 3355443, "sky2": 3355443,  "far": 3815992, "ground": 3815992, "platform": 9078320, "weatherKind": "none" },
+    "snow":     { "label": "Snow",          "sky": 7284226, "sky2": 16382463, "far": 16382463, "ground": 16382463, "platform": 9078320, "weatherKind": "snow" }
+  },
+  "battleBackgroundNote": "Battle backgrounds derive from the battled biome's row above (sky + ground + platform). No per-place battle painting exists or is planned. The sprite lane's battle-background v2 structure (sky/ground/platform/objects, 6 surfaces) is a separate painted-detail pass and is NOT replaced by this file.",
+  "layerOrder": ["sky", "far", "groundBottom", "groundMiddle", "actors", "overheadTop", "weather", "tintOverlay"],
+  "layerNotes": {
+    "sky": "Parallax 0.25, gradient sky + sky2.",
+    "far": "Parallax 0.5, silhouette band (treeline / skyline / cliffs).",
+    "groundBottom": "Tiled layer 'GroundBottom': metatiles with layer=bottom.",
+    "groundMiddle": "Tiled layer 'GroundMiddle': metatiles with layer=middle (tall grass, walls, signs).",
+    "actors": "Player, NPCs, creatures — Y-sorted, Z by screen Y.",
+    "overheadTop": "Tiled layer 'OverheadTop': metatiles with layer=top (bridges, canopies). Drawn over actors.",
+    "weather": "Particle pool, capped at 200 (see weather.json).",
+    "tintOverlay": "Day/night + season tint + lightning flash. UI is NOT a layer: UI is React/DOM outside the canvas and is never tinted."
+  }
+}

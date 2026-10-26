@@ -1,0 +1,218 @@
+{
+  "$schema": "tileset-weather-v1",
+  "notes": [
+    "fieldWeatherId aligns 1:1 with main src/lib/fieldWeather.ts WEATHER_TABLE (PR #64, merged; Black 2 table order 0-14, generic keys). fieldWeather.ts owns the state machine; this file owns per-place selection, particle caps, lightning switching, and presentation fade limits.",
+    "Mist and smog have no exact entry in the #64 table: they use the closest tint/fog entry and say so (fieldWeatherNote), with a presentation-only particle kind. Nothing here pretends the table contains them.",
+    "FireRed/Emerald note: neither game has time-of-day lighting, so no FireRed/Emerald weather-lighting values exist in this file. Time tables come from the HeartGold/Crystal structure only (see timeOfDay.ts)."
+  ],
+  "globalRules": {
+    "maxParticles": 200,
+    "particleCapNote": "Every variant's particleCount is <= 200. The Pixi pool (pixiLayers.createParticlePool) enforces the same cap in code.",
+    "lightning": {
+      "defaultEnabled": true,
+      "offSwitch": "settings.weather.lightning (to be added by the settings lane; until it exists, lightningFlash() takes lightningEnabled as an argument and refuses to flash when false)",
+      "offSwitchNote": "When the switch is off, thunderstorm shows rain + dark tint only \u2014 never a flash. Photosensitivity safety is a refusal in code, not a UI promise."
+    },
+    "timeFade": {
+      "minFrames": 60,
+      "maxFrames": 120,
+      "seconds": "1-2",
+      "note": "PR #64 source fade frames are preserved in each variant's sourceFadeFrames; the presentation layer clamps crossfades to 60-120 frames. Sunny's source 160 frames (2.67 s) is therefore clamped, not silently rewritten."
+    },
+    "seasonVariants": {
+      "spring": {
+        "hex": 16777215,
+        "alpha": 0,
+        "note": "No seasonal tint."
+      },
+      "summer": {
+        "hex": 16773324,
+        "alpha": 0.06
+      },
+      "autumn": {
+        "hex": 16759087,
+        "alpha": 0.1
+      },
+      "winter": {
+        "hex": 13626367,
+        "alpha": 0.12,
+        "note": "Winter tint does not replace the snow-cover secondary tileset; both may apply."
+      }
+    },
+    "dateGatedSparkle": {
+      "note": "HeartGold date-gated sparkle weather (main src/lib/fieldWeather.ts DATE_GATED_SPARKLE_DATES, PR #64 merged): on these 8 month/day pairs a summit-type map may use 'specks' instead of its map weather. All 8 verified against main.",
+      "verifiedDates": [
+        {
+          "month": 1,
+          "day": 1
+        },
+        {
+          "month": 1,
+          "day": 31
+        },
+        {
+          "month": 2,
+          "day": 1
+        },
+        {
+          "month": 2,
+          "day": 29
+        },
+        {
+          "month": 3,
+          "day": 15
+        },
+        {
+          "month": 10,
+          "day": 10
+        },
+        {
+          "month": 12,
+          "day": 3
+        },
+        {
+          "month": 12,
+          "day": 31
+        }
+      ]
+    }
+  },
+  "variants": {
+    "clear": {
+      "label": "Clear",
+      "fieldWeatherId": 0,
+      "fieldWeatherKey": "sunny",
+      "particleKind": "none",
+      "particleCount": 0,
+      "hasLightning": false,
+      "sourceFadeFrames": 160,
+      "presentationFadeFrames": 120,
+      "fog": "none"
+    },
+    "snow": {
+      "label": "Snowfall",
+      "fieldWeatherId": 1,
+      "fieldWeatherKey": "snowFlakes",
+      "particleKind": "snow",
+      "particleCount": 150,
+      "hasLightning": false,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "pale"
+    },
+    "rain": {
+      "label": "Rain",
+      "fieldWeatherId": 2,
+      "fieldWeatherKey": "rain",
+      "particleKind": "rain",
+      "particleCount": 180,
+      "hasLightning": false,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "pale"
+    },
+    "neon-rain": {
+      "label": "Neon rain",
+      "fieldWeatherId": 2,
+      "fieldWeatherKey": "rain",
+      "particleKind": "rain",
+      "particleCount": 180,
+      "hasLightning": false,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "violet",
+      "fieldWeatherNote": "Place weather 'neon_rain' from main WEATHER_CONFIG (violet fog + rain particles); #64 id 2 is its rain engine."
+    },
+    "sandstorm": {
+      "label": "Sandstorm",
+      "fieldWeatherId": 3,
+      "fieldWeatherKey": "sandstorm",
+      "particleKind": "dust",
+      "particleCount": 150,
+      "hasLightning": false,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "tinted"
+    },
+    "blizzard": {
+      "label": "Blizzard",
+      "fieldWeatherId": 4,
+      "fieldWeatherKey": "blizzard",
+      "particleKind": "snow",
+      "particleCount": 180,
+      "hasLightning": false,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "white"
+    },
+    "leaves": {
+      "label": "Drifting leaves",
+      "fieldWeatherId": 5,
+      "fieldWeatherKey": "flutter",
+      "particleKind": "leaves",
+      "particleCount": 60,
+      "hasLightning": false,
+      "sourceFadeFrames": 60,
+      "presentationFadeFrames": 60,
+      "fog": "none"
+    },
+    "jungle-leaves": {
+      "label": "Jungle leaves",
+      "fieldWeatherId": 5,
+      "fieldWeatherKey": "flutter",
+      "particleKind": "leaves",
+      "particleCount": 60,
+      "hasLightning": false,
+      "sourceFadeFrames": 60,
+      "presentationFadeFrames": 60,
+      "fog": "green",
+      "fieldWeatherNote": "Place weather 'jungle' from main WEATHER_CONFIG (green fog + leaves); #64 id 5 is its flutter engine."
+    },
+    "storm": {
+      "label": "Thunderstorm",
+      "fieldWeatherId": 6,
+      "fieldWeatherKey": "thunderstorm",
+      "particleKind": "rain",
+      "particleCount": 180,
+      "hasLightning": true,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "pale"
+    },
+    "mist": {
+      "label": "Mist",
+      "fieldWeatherId": 9,
+      "fieldWeatherKey": "tintFixed",
+      "particleKind": "mist",
+      "particleCount": 0,
+      "hasLightning": false,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "pale-blue",
+      "fieldWeatherNote": "No exact mist entry in the #64 table: tintFixed (id 9) carries the fog; 'mist' particles are presentation-only fog drift, count 0 in the pool."
+    },
+    "smog": {
+      "label": "Smog",
+      "fieldWeatherId": 11,
+      "fieldWeatherKey": "tintB",
+      "particleKind": "smog",
+      "particleCount": 40,
+      "hasLightning": false,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "brown",
+      "fieldWeatherNote": "Place weather 'smog' from main WEATHER_CONFIG (brown fog + smog drift); #64 tint entry carries the fog, smog drift is presentation-only."
+    },
+    "specks": {
+      "label": "Sparkle specks (date-gated)",
+      "fieldWeatherId": 8,
+      "fieldWeatherKey": "specks",
+      "particleKind": "specks",
+      "particleCount": 40,
+      "hasLightning": false,
+      "sourceFadeFrames": 90,
+      "presentationFadeFrames": 90,
+      "fog": "none"
+    }
+  }
+}
