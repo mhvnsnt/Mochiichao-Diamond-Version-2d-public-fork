@@ -100,6 +100,46 @@ export function gardenFormPresentation(record: GardenCreature | null | undefined
   };
 }
 
+/**
+ * Pass 6 — SA Chao data structure, Mochiichao values only.
+ * Source pulled 2026-10-26 (open source, local work area only):
+ * X-Hax sa_tools + nostalgianinja ChaoModding_Docs, ChaoDataStruct.md
+ * (ChaoDataBase: StatLevels 0-99, PowerRun slider -Power/+Run,
+ * FlySwim slider -Fly/+Swim, Alignment -1/0/1, EvolutionProgress
+ * magnitude, Happiness). No Sonic character names, dialogue, cries,
+ * logos, or town names are used. No SA game files are used.
+ * Mapping, all computed from the existing Garden record, no new data:
+ * - PowerRun slider = sprint - might (Sprint ~ Run, Might ~ Power)
+ * - FlySwim slider = dive - glide (Dive ~ Swim, Glide ~ Fly)
+ * - Alignment numeric: Umbral = -1, Neutral = 0, Bright = +1
+ * - EvolutionProgress = total Garden stats / 495 (0..1; Form I at
+ *   150/495, Form II at 300/495 in mochiichao-systems.ts)
+ * - Happiness = bond (already 0-100 in the store)
+ * StatGrades, lifespan, and reincarnation count are NOT shown here:
+ * the store GardenCreature has no grade/lifespan/rebirth fields yet,
+ * so those values are not guessed — see the Garden screen note.
+ */
+export interface SaChaoPresentation {
+  powerRunSlider: number;
+  flySwimSlider: number;
+  alignmentNumeric: -1 | 0 | 1;
+  evolutionProgress: number;
+  happiness: number;
+}
+
+export function saChaoPresentation(record: GardenCreature | null | undefined): SaChaoPresentation | null {
+  if (!record) return null;
+  const alignment = alignmentFromCare(record.careScore);
+  const total = record.garden.dive + record.garden.glide + record.garden.sprint + record.garden.might + record.garden.endurance;
+  return {
+    powerRunSlider: record.garden.sprint - record.garden.might,
+    flySwimSlider: record.garden.dive - record.garden.glide,
+    alignmentNumeric: alignment === 'Umbral' ? -1 : alignment === 'Bright' ? 1 : 0,
+    evolutionProgress: total / 495,
+    happiness: record.bond,
+  };
+}
+
 export const MAINFRAME_GARDENS = [
   { name: 'Sector 0 Plaza', alignment: 'Neutral' as Alignment, capacity: 8 },
   { name: 'Aeon Spire Garden', alignment: 'Bright' as Alignment, capacity: 8 },

@@ -10,7 +10,7 @@ import { GuardianAssignment, guardianLabel } from '../../lib/monster-tamer-syste
 import { creatureCooldownMs } from '../../lib/creatureCooldowns';
 import { findNextStep } from '../../lib/creaturePathfinding';
 import { gardenBattleBonus } from '../../lib/mochiichao-systems';
-import { gardenFormPresentation, MAINFRAME_GARDENS } from '../../lib/creatureGardenForm';
+import { gardenFormPresentation, saChaoPresentation, MAINFRAME_GARDENS } from '../../lib/creatureGardenForm';
 import type { MochiiInstance } from '../../lib/types';
 
 /**
@@ -230,6 +230,8 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
   // Pass 5: Garden Form presentation for the active creature, from the
   // shared store record only. Null = no Garden record yet, not faked.
   const gardenFormPres = active ? gardenFormPresentation(gardenRecords[active.id] ?? null) : null;
+  // Pass 6: SA Chao data sliders, computed from the same Garden record.
+  const saChaoPres = active ? saChaoPresentation(gardenRecords[active.id] ?? null) : null;
   const tryMove = (dx: number, dy: number, sprinting: boolean) => {
     const p = posRef.current;
     if (dx === 1) setDir('right');
@@ -644,7 +646,20 @@ export default function CreatureModeView({ onBack }: { onBack: () => void }) {
             <div className="game-panel p-3 mb-3 text-sm text-slate-200">No Garden record yet for {active.nickname}. Feed and train in the Garden to earn a Garden Form — bonus is 0 until then, not faked.</div>
           )}
           <div className="game-panel p-3 mb-3">
+            <div className="font-bold text-white text-sm mb-2">Chao data (SA structure, Mochiichao values)</div>
+            {saChaoPres ? (
+              <div>
+                <div className="text-sm text-slate-200">Power/Run slider: {saChaoPres.powerRunSlider} (Sprint − Might, −99 to +99) • Fly/Swim slider: {saChaoPres.flySwimSlider} (Dive − Glide, −99 to +99)</div>
+                <div className="text-sm text-slate-200">Alignment: {saChaoPres.alignmentNumeric} (−1 Umbral / 0 Neutral / +1 Bright) • Evolution progress: {(saChaoPres.evolutionProgress * 100).toFixed(1)}% • Happiness: {saChaoPres.happiness} (= Bond)</div>
+                <div className="text-[11px] text-slate-400 mt-1">Stat grades, lifespan, and reincarnation count are not shown — the store has no grade/lifespan/rebirth fields yet, so they are not guessed. Source: SA Tools + ChaoModding docs (ChaoDataStruct), pulled 2026-10-26, open source only.</div>
+              </div>
+            ) : (
+              <div className="text-sm text-slate-200">No Garden record yet — sliders and progress are 0 until then, not faked.</div>
+            )}
+          </div>
+          <div className="game-panel p-3 mb-3">
             <div className="font-bold text-white text-sm mb-2">Daycare slots (FireRed daycare structure)</div>
+            <div className="text-sm text-slate-200">Daycare steps this session: {walkStep} real moves in Creature Mode. FireRed daycare counts steps while a creature is deposited — here the count is shown, no EXP or level is applied from it yet.</div>
             <div className="text-sm text-slate-200">Slot 1: {guardian ? `${guardian.nickname} — Guardian, ${guardian.garden}` : 'Empty — assign a Guardian from Creature Mode'}</div>
             <div className="text-sm text-slate-200">Slot 2: Empty — this lane's store has only one guardian field, so no second deposited creature is invented here.</div>
             <div className="text-[11px] text-slate-400 mt-1">No level gain, egg, or compatibility number is shown here — those fields do not exist in the store yet, so they are not guessed.</div>
