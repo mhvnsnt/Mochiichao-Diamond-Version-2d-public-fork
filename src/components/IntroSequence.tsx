@@ -6,6 +6,7 @@ import StdWindow from "./game/StdWindow";
 import DialogueBox from "./game/DialogueBox";
 import SettingsScreen from "./game/SettingsScreen";
 import { frameAccent } from "../lib/gameSettings";
+import { isConfirmKey, shoulderKey } from "../lib/buttonMode";
 import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
@@ -177,7 +178,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       }
       if (e.key === 'ArrowUp') { e.preventDefault(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); setMainSelected(s => (s + 1) % itemCount); }
-      else if (e.key === 'Enter' || e.key === ' ') {
+      else if (shoulderKey(e, settings.buttonMode) === 'L') { e.preventDefault(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
+      else if (shoulderKey(e, settings.buttonMode) === 'R') { e.preventDefault(); setMainSelected(s => (s + 1) % itemCount); }
+      else if (isConfirmKey(e, settings.buttonMode)) {
         e.preventDefault();
         const keys = hasSaves ? ['CONTINUE', 'NEW GAME', 'SETTINGS'] : ['NEW GAME', 'SETTINGS'];
         const key = keys[Math.min(mainSelected, keys.length - 1)];
@@ -189,7 +192,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [phase, mainSelected, slots, showOverwriteConfirm]);
+  }, [phase, mainSelected, slots, showOverwriteConfirm, settings.buttonMode]);
 
   // Boot / intro / title advance: any key or click skips to the next
   // phase (Pokemon any-key skip). Boot hold time is an implementation
