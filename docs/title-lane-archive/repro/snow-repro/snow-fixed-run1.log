@@ -1,0 +1,46 @@
+[locked step 0] "INTRO MOVIE — SCENE 1 / 4 · ANY KEY SKIPS\nM HEAVENSENT STUDIOS\n\nStudio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.\n\nGAP: studio scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 1] "INTRO MOVIE — SCENE 2 / 4 · ANY KEY SKIPS\nWORLD CLOSE-UP\n\nScene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 2] "INTRO MOVIE — SCENE 3 / 4 · ANY KEY SKIPS\nWORLD PAN + CREATURE CLOSE-UPS\n\nScene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 3] "INTRO MOVIE — SCENE 4 / 4 · ANY KEY SKIPS\nCREATURE FIGHT BEAT\n\nScene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.\n\nGAP: intro scene art — original art needed.\n\nTO TITLE ►\nAny key or tap steps to the next scene."
+[locked step 4] "✦ DIAMOND VERSION ✦\nPRESS ANY KEY\n▼ PRESS ANY KEY ▼"
+--- TITLE (locked, before preset) ---
+✦ DIAMOND VERSION ✦
+PRESS ANY KEY
+▼ PRESS ANY KEY ▼
+--- localStorage before ---
+null
+[preset step 0] "INTRO MOVIE — SCENE 1 / 4 · ANY KEY SKIPS\nM HEAVENSENT STUDIOS\n\nStudio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.\n\nGAP: studio scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 1] "INTRO MOVIE — SCENE 2 / 4 · ANY KEY SKIPS\nWORLD CLOSE-UP\n\nScene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 2] "INTRO MOVIE — SCENE 3 / 4 · ANY KEY SKIPS\nWORLD PAN + CREATURE CLOSE-UPS\n\nScene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 3] "INTRO MOVIE — SCENE 4 / 4 · ANY KEY SKIPS\nCREATURE FIGHT BEAT\n\nScene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.\n\nGAP: intro scene art — original art needed.\n\nTO TITLE ►\nAny key or tap steps to the next scene."
+[preset step 4] "✦ DIAMOND VERSION ✦\nPRESS ANY KEY\nRESET TITLE ✕ (R)"
+--- TITLE (preset title-snow-yogiferno) ---
+✦ DIAMOND VERSION ✦
+PRESS ANY KEY
+RESET TITLE ✕ (R)
+--- DOM probes ---
+fallback note present: false
+RESET TITLE button present: true
+video elements: 1
+video src: [ 'snow-fix/dist/assets/yogiferno-title-anim-final-ujoB_BFk.mp4' ]
+video readyState: [ 4 ]
+video error: [ null ]
+canvas elements: 1
+img count: 3
+--- console messages ---
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[log.warning] []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[log.warning] [.WebGL-0x29c029d1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0x29c029d1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0x29c029d1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0x29c029d1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+--- exceptions ---
