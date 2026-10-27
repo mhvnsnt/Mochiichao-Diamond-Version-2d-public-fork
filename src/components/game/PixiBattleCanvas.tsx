@@ -7,6 +7,7 @@ import type { AttackSetChoice } from '../../lib/creatureAnimation';
 import { sheetCellTextureXY, fullImageTexture } from './pixiSheet';
 import { buildHitTimeline, sampleHitPose } from '../../lib/battleTreatments';
 import { aimForCanvasAttack, pixiSideToCombatSide, tableOffsetFor, type OriginAngleTable } from '../../lib/combatAiming';
+import { OPPONENT_VECTORS as OPPONENT_DIRECTION_VECTORS } from '../../lib/opponentDirection';
 import originAngleTable from '../../lib/generated/combatOriginAngleTable.json';
 
 /**
@@ -257,7 +258,16 @@ export default function PixiBattleCanvas({
       baseA, baseT,
       tableOffsetFor(originAngleTable as unknown as OriginAngleTable, attack.moveId),
     );
-    const direction = aim.directionSign;
+    // Opponent-direction table (playable-wiring pass): the travel sign for an
+    // attack comes from the staged opponent vector table, not a hardcoded
+    // sign. Single-battle format here; doubles vectors live in the same
+    // table but this canvas is the single-battle path. Per-move rows are
+    // NOT joined here: game move ids are Mochiichao's own, source move
+    // slugs are not a mapping, and body-part origins are 0/560 confirmed.
+    const tableDirection = attack.attacker === 'enemy'
+      ? Math.sign(OPPONENT_DIRECTION_VECTORS.single.dx)
+      : Math.sign(OPPONENT_DIRECTION_VECTORS.single.dx) * -1;
+    const direction = tableDirection !== 0 ? tableDirection : aim.directionSign;
     const timeline = buildHitTimeline({
       damageFraction: attack.damageFraction ?? 0,
       isCrit: !!attack.isCrit, direction, seed: attack.nonce,
