@@ -146,10 +146,14 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
 // Roster-verbatim: name, baseStats, evolution, apiSearchTags (from global_roster.json, HEAD + Pebblefist HP 40 fix).
 // NOTE 2026-10-27: main 08648398 already carries the roster-wins corrections (003 AquariiOS, 005 Chromejaww,
 //   038 roster stats, 039 Shellguard, 040 Dreadtoise) — those 13 entries are untouched; this block adds the other 34.
-// PROVISIONAL (labelled, pending True Elements lock + canon): types use the mapping below;
-//   Aqua->WATER, Flora->GRASS, Chrome->STEEL, Core/Earth->GROUND, Strike->FIGHTING, Beast->NORMAL,
-//   Umbral->GHOST, Mythic->PSYCHIC, Flame->FIRE, Aero/Wind->FLYING, Silk/Bug->BUG, Neon->ELECTRIC.
-//   Collapses: Aero+Wind->FLYING, Bug+Silk->BUG, Core+Earth->GROUND. Beast->NORMAL keeps Beast distinct from Strike.
+// TYPES FOLLOW MARS'S LOCKED TRUE ELEMENTS LIST (2026-10-26): Core->ROCK, Umbral->DARK, Mythic->DRAGON;
+//   Aqua->WATER, Flora->GRASS, Chrome->STEEL, Earth->GROUND, Strike->FIGHTING, Beast->NORMAL,
+//   Flame->FIRE, Aero/Wind->FLYING, Silk/Bug->BUG, Neon->ELECTRIC.
+//   (2026-10-27 merge fix: the provisional mapping had Core->GROUND, Umbral->GHOST, Mythic->PSYCHIC —
+//   corrected here to the locked list. Paranormal->GHOST, Clairvoyant->PSYCHIC, Cryptid->FAIRY,
+//   Frost->ICE, Toxic->POISON are defined by the locked list but unused in this block, 0 species; Deep has
+//   no engine code and 0 Gen 1 creatures.)
+//   Collapses: Aero+Wind->FLYING, Bug+Silk->BUG (a species with both collapses to one type). Beast->NORMAL keeps Beast distinct from Strike.
 //   catchRate 45, baseExpYield 100, growthRate "Medium Slow", learnset BASIC_MOVES are neutral defaults, NOT canon.
 //   description is a placeholder sentence, NOT lore. HELD OUT: 147 Dorowani, 148 Gabu — Mars numbers owed. NOT added here.
   "011": {
@@ -314,7 +318,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "026": {
     id: "026",
     name: "Inklet",
-    types: ["WATER", "GHOST"],
+    types: ["WATER", "DARK"],
     baseStats: { hp: 40, atk: 40, def: 40, spa: 60, spd: 60, spe: 50 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -325,7 +329,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "027": {
     id: "027",
     name: "Toxitacle",
-    types: ["WATER", "GHOST"],
+    types: ["WATER", "DARK"],
     baseStats: { hp: 60, atk: 60, def: 60, spa: 85, spd: 85, spe: 70 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -336,7 +340,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "028": {
     id: "028",
     name: "Krakenox",
-    types: ["WATER", "GHOST"],
+    types: ["WATER", "DARK"],
     baseStats: { hp: 85, atk: 85, def: 85, spa: 115, spd: 115, spe: 90 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -346,7 +350,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "029": {
     id: "029",
     name: "Punchkid",
-    types: ["GROUND", "FIGHTING"],
+    types: ["ROCK", "FIGHTING"],
     baseStats: { hp: 50, atk: 70, def: 50, spa: 35, spd: 35, spe: 60 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -357,7 +361,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "030": {
     id: "030",
     name: "Strikechamp",
-    types: ["GROUND", "FIGHTING"],
+    types: ["ROCK", "FIGHTING"],
     baseStats: { hp: 70, atk: 110, def: 70, spa: 50, spd: 50, spe: 80 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -368,7 +372,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "031": {
     id: "031",
     name: "Kickmaster",
-    types: ["GROUND", "FIGHTING"],
+    types: ["ROCK", "FIGHTING"],
     baseStats: { hp: 70, atk: 110, def: 70, spa: 50, spd: 50, spe: 80 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -378,7 +382,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "032": {
     id: "032",
     name: "Gearkid",
-    types: ["STEEL", "GROUND"],
+    types: ["STEEL", "ROCK"],
     baseStats: { hp: 40, atk: 55, def: 70, spa: 40, spd: 50, spe: 30 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -389,7 +393,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "033": {
     id: "033",
     name: "Mechapion",
-    types: ["STEEL", "GROUND"],
+    types: ["STEEL", "ROCK"],
     baseStats: { hp: 60, atk: 75, def: 95, spa: 60, spd: 70, spe: 50 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -400,7 +404,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "034": {
     id: "034",
     name: "Gorokappa",
-    types: ["STEEL", "GROUND"],
+    types: ["STEEL", "ROCK"],
     baseStats: { hp: 80, atk: 105, def: 125, spa: 80, spd: 90, spe: 70 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -410,7 +414,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "035": {
     id: "035",
     name: "Pebblefist",
-    types: ["GROUND", "STEEL"],
+    types: ["ROCK", "STEEL"],
     baseStats: { hp: 40, atk: 80, def: 100, spa: 30, spd: 30, spe: 20 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -421,7 +425,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "036": {
     id: "036",
     name: "Cragarm",
-    types: ["GROUND", "STEEL"],
+    types: ["ROCK", "STEEL"],
     baseStats: { hp: 65, atk: 105, def: 130, spa: 45, spd: 45, spe: 30 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -432,7 +436,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "037": {
     id: "037",
     name: "Terrapod",
-    types: ["GROUND", "STEEL"],
+    types: ["ROCK", "STEEL"],
     baseStats: { hp: 85, atk: 135, def: 160, spa: 55, spd: 55, spe: 40 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -452,7 +456,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "042": {
     id: "042",
     name: "Wispkin",
-    types: ["GHOST"],
+    types: ["DARK"],
     baseStats: { hp: 40, atk: 30, def: 30, spa: 60, spd: 60, spe: 70 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -463,7 +467,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "043": {
     id: "043",
     name: "Duskfiend",
-    types: ["GHOST"],
+    types: ["DARK"],
     baseStats: { hp: 60, atk: 60, def: 60, spa: 110, spd: 110, spe: 100 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -473,7 +477,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "044": {
     id: "044",
     name: "Ashemit",
-    types: ["FIRE", "PSYCHIC"],
+    types: ["FIRE", "DRAGON"],
     baseStats: { hp: 40, atk: 50, def: 40, spa: 70, spd: 50, spe: 60 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -484,7 +488,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "045": {
     id: "045",
     name: "Pyromonk",
-    types: ["FIRE", "PSYCHIC"],
+    types: ["FIRE", "DRAGON"],
     baseStats: { hp: 60, atk: 70, def: 60, spa: 90, spd: 70, spe: 80 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -495,7 +499,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "046": {
     id: "046",
     name: "Yogiferno",
-    types: ["FIRE", "PSYCHIC"],
+    types: ["FIRE", "DRAGON"],
     baseStats: { hp: 80, atk: 90, def: 70, spa: 120, spd: 90, spe: 110 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
@@ -505,7 +509,7 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
   "331": {
     id: "331",
     name: "Mythar",
-    types: ["PSYCHIC"],
+    types: ["DRAGON"],
     baseStats: { hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100 },
     catchRate: 45, baseExpYield: 100, growthRate: "Medium Slow",
     description: "Promoted from global_roster.json (provisional — description owed).",
