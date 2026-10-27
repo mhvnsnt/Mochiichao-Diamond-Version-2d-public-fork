@@ -109,3 +109,10 @@ Game-repo application: display-name strings renamed on a
 dedicated branch off main; internal file/id keys (e.g.
 binary_woods.json, story-flag ids) unchanged so wiring cannot
 break. Show-side: SEASON-CANON-MAP carries all three rulings.
+
+Rename EXECUTED same day: game repo PR #339 (branch
+feature/canon-renames-1, commits 7a90142 + 0802b4e) - Dark
+Forest (34 occurrences / 22 files) + Illuminate (2) +
+Mochiioteca (6 files), verified at branch head; identifiers
+(map ids, story flags) deliberately unchanged; PR open,
+unmerged, awaiting the owner.
