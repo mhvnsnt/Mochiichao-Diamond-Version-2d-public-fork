@@ -1,0 +1,171 @@
+diff --git a/src/components/views/BattleView.tsx b/src/components/views/BattleView.tsx
+index e1630d7..17903a4 100644
+--- a/src/components/views/BattleView.tsx
++++ b/src/components/views/BattleView.tsx
+@@ -13,10 +13,10 @@ import {
+   type TurnResult,
+ } from '../../lib/battleResolver';
+ import {
+-  LEGACY_TYPE_CHART,
+-  buildLegacyMoveTable,
++  TRUE_TYPE_CHART_19,
++  buildTrueMoveTable,
+   carriedFromInstance,
+-  makeResolverBattler,
++  makeTrueResolverBattler,
+   type CarriedBattlerState,
+ } from '../../lib/battleWiring';
+ import { creatureDisplayName } from '../../lib/spriteSheets';
+@@ -342,8 +342,8 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
+     // Fused attacker: same species/types as the active creature (for
+     // STAB), fused stats + fused name only — as before.
+     const attackerInst = fusedAttacker || playerActive;
+-    const playerBattler = makeResolverBattler('player', attackerInst, SPECIES_DB[playerActive.speciesId].types, carried.player);
+-    const foeBattler = makeResolverBattler('foe', enemy, SPECIES_DB[enemy.speciesId].types, carried.foe);
++    const playerBattler = makeTrueResolverBattler('player', attackerInst, SPECIES_DB[playerActive.speciesId].types, carried.player);
++    const foeBattler = makeTrueResolverBattler('foe', enemy, SPECIES_DB[enemy.speciesId].types, carried.foe);
+     const actions: Action[] = [];
+     if (playerMoveId) actions.push({ kind: 'move', side: 'player', moveId: playerMoveId });
+     else actions.push({ kind: 'pass', side: 'player' });
+@@ -353,8 +353,8 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
+     const result: TurnResult = resolveTurn(
+       { player: playerBattler, foe: foeBattler },
+       actions,
+-      buildLegacyMoveTable(),
+-      LEGACY_TYPE_CHART,
++      buildTrueMoveTable(),
++      TRUE_TYPE_CHART_19,
+     );
+     queueRef.current = {
+       events: result.events,
+diff --git a/src/lib/battleWiring.ts b/src/lib/battleWiring.ts
+index b7bdd8e..f52e55d 100644
+--- a/src/lib/battleWiring.ts
++++ b/src/lib/battleWiring.ts
+@@ -54,6 +54,7 @@ import {
+   type TypeChart,
+ } from './battleResolver';
+ import type { ElementType, MochiiInstance } from './types';
++import { TRUE_TYPE_CHART_19, LEGACY_TO_TRUE_ELEMENT } from './trueElementsChart19';
+ 
+ /** The legacy 18-type chart, exactly as constants.ts computes it. */
+ export const LEGACY_TYPE_CHART: TypeChart = (() => {
+@@ -67,6 +68,41 @@ export const LEGACY_TYPE_CHART: TypeChart = (() => {
+   return chart;
+ })();
+ 
++/**
++ * STAGED — True-Elements wiring adapter (not live until a wiring PR).
++ * Maps the legacy vocabulary to True names at ONE boundary, for BOTH
++ * moves and battlers, so STAB comparisons inside the resolver stay
++ * consistent (move.type and battler.types are both True names when
++ * they reach resolveTurn). The resolver itself is NOT touched:
++ * damage formula, crit stage table {16,8,4,3,2} x2, multi-hit
++ * 35/35/15/15, speed ties, priority, effects and turn order all live
++ * in battleResolver/battle-math and are unchanged by this diff.
++ * Deep: no legacy type maps to Deep, so no Gen 1 lookup can hit a
++ * TBD cell; a Deep lookup (Gen 2+) flags typeChartMissing in the
++ * resolver and plays x1 until Mars rules Deep's matchups.
++ */
++export function buildTrueMoveTable(): MoveTable {
++  const moves: MoveTable['moves'] = {};
++  for (const [id, m] of Object.entries(MOVES_DB)) {
++    const rm = legacyMoveToResolverMove(id, m);
++    moves[id] = { ...rm, type: LEGACY_TO_TRUE_ELEMENT[m.type] ?? m.type };
++  }
++  return { moves };
++}
++
++export function mapSpeciesTypesToTrue(types: string[]): string[] {
++  return types.map((t) => LEGACY_TO_TRUE_ELEMENT[t] ?? t);
++}
++
++export function makeTrueResolverBattler(
++  side: 'player' | 'foe',
++  inst: MochiiInstance,
++  speciesTypes: string[],
++  carried: CarriedBattlerState,
++): ResolverBattler {
++  return makeResolverBattler(side, inst, mapSpeciesTypesToTrue(speciesTypes), carried);
++}
++
+ /** All 36 moves.ts moves converted through the resolver's legacy adapter. */
+ export function buildLegacyMoveTable(): MoveTable {
+   const moves: MoveTable['moves'] = {};
+diff --git a/src/lib/trueElementsChart19.ts b/src/lib/trueElementsChart19.ts
+new file mode 100644
+index 0000000..0d45fda
+--- /dev/null
++++ b/src/lib/trueElementsChart19.ts
+@@ -0,0 +1,71 @@
++/**
++ * True-Elements 19-element matchup chart — STAGED wiring data, 2026-10-26.
++ * NOT YET WIRED: this file does not exist on main. It is proposed by the
++ * staged wiring diff only, for Mars to judge before any wiring PR.
++ *
++ * Sources: 17x17 core from Black 2 `src/ov167/btl_calc.c:61`
++ * (data_ov167_021d7500[17][17]), cross-checked 0 diffs against FireRed
++ * `src/battle_main.c:312` (gTypeEffectiveness[336]); Cryptid/Fairy row
++ * + column ONLY from live-main `src/lib/constants.ts` effectiveness()
++ * (Fairy is in NO decomp — all three predate Gen 6).
++ *
++ * DEEP IS ABSENT ON PURPOSE: Deep has no Pokemon equivalent and Mars
++ * has not ruled its matchups, so Deep has NO row and NO column keys
++ * here. The resolver (battleResolver.ts typeMultiplier /
++ * calculateDamage) flags an absent row/cell as typeChartMissing and
++ * plays x1 — flagged, never silent. No Gen 1 move or battler can
++ * produce a Deep lookup (no legacy type maps to Deep), so the TBD
++ * cells affect zero Gen 1 battles. Do NOT fill Deep with 1s.
++ *
++ * This module REPLACES the data model of src/lib/battleTypeChart.ts
++ * (old 12-element derivation, merged Umbral/Mythic, 24 conflict cells,
++ * 44 owed cells). That file's data must be retired by the wiring PR,
++ * not shipped alongside this one — two charts would make two battles
++ * from the same move (battleTypeChart.ts header warning).
++ */
++import type { TypeChart } from "./battleResolver";
++
++export const TRUE_ELEMENTS_19: string[] = [
++  "Water", "Chrome", "Earth", "Bug", "Umbral", "Aero",
++  "Core", "Strike", "Deep", "Flame", "Mythic", "Normal",
++  "Neon", "Flora", "Frost", "Toxic", "Cryptid", "Paranormal",
++  "Clairvoyant",
++];
++
++export const LEGACY_TO_TRUE_ELEMENT: Record<string, string> = {
++  WATER: "Water", FIRE: "Flame", GRASS: "Flora", GROUND: "Earth",
++  ROCK: "Core", STEEL: "Chrome", DARK: "Umbral", GHOST: "Paranormal",
++  PSYCHIC: "Clairvoyant", DRAGON: "Mythic", FIGHTING: "Strike",
++  NORMAL: "Normal", BUG: "Bug", ELECTRIC: "Neon", FLYING: "Aero",
++  ICE: "Frost", POISON: "Toxic", FAIRY: "Cryptid",
++};
++
++export const TRUE_TYPE_CHART_19: TypeChart = {
++  Water: { Water: 0.5, Chrome: 1, Earth: 2, Bug: 1, Umbral: 1, Aero: 1, Core: 2, Strike: 1, Flame: 2, Mythic: 0.5, Normal: 1, Neon: 1, Flora: 0.5, Frost: 1, Toxic: 1, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Chrome: { Water: 0.5, Chrome: 0.5, Earth: 1, Bug: 1, Umbral: 1, Aero: 1, Core: 2, Strike: 1, Flame: 0.5, Mythic: 1, Normal: 1, Neon: 0.5, Flora: 1, Frost: 2, Toxic: 1, Cryptid: 2, Paranormal: 1, Clairvoyant: 1 },
++  Earth: { Water: 1, Chrome: 2, Earth: 1, Bug: 0.5, Umbral: 1, Aero: 0, Core: 2, Strike: 1, Flame: 2, Mythic: 1, Normal: 1, Neon: 2, Flora: 0.5, Frost: 1, Toxic: 2, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Bug: { Water: 1, Chrome: 0.5, Earth: 1, Bug: 1, Umbral: 2, Aero: 0.5, Core: 1, Strike: 0.5, Flame: 0.5, Mythic: 1, Normal: 1, Neon: 1, Flora: 2, Frost: 1, Toxic: 0.5, Cryptid: 0.5, Paranormal: 0.5, Clairvoyant: 2 },
++  Umbral: { Water: 1, Chrome: 0.5, Earth: 1, Bug: 1, Umbral: 0.5, Aero: 1, Core: 1, Strike: 0.5, Flame: 1, Mythic: 1, Normal: 1, Neon: 1, Flora: 1, Frost: 1, Toxic: 1, Cryptid: 0.5, Paranormal: 2, Clairvoyant: 2 },
++  Aero: { Water: 1, Chrome: 0.5, Earth: 1, Bug: 2, Umbral: 1, Aero: 1, Core: 0.5, Strike: 2, Flame: 1, Mythic: 1, Normal: 1, Neon: 0.5, Flora: 2, Frost: 1, Toxic: 1, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Core: { Water: 1, Chrome: 0.5, Earth: 0.5, Bug: 2, Umbral: 1, Aero: 2, Core: 1, Strike: 0.5, Flame: 2, Mythic: 1, Normal: 1, Neon: 1, Flora: 1, Frost: 2, Toxic: 1, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Strike: { Water: 1, Chrome: 2, Earth: 1, Bug: 0.5, Umbral: 2, Aero: 0.5, Core: 2, Strike: 1, Flame: 1, Mythic: 1, Normal: 2, Neon: 1, Flora: 1, Frost: 2, Toxic: 0.5, Cryptid: 0.5, Paranormal: 0, Clairvoyant: 0.5 },
++  Flame: { Water: 0.5, Chrome: 2, Earth: 1, Bug: 2, Umbral: 1, Aero: 1, Core: 0.5, Strike: 1, Flame: 0.5, Mythic: 0.5, Normal: 1, Neon: 1, Flora: 2, Frost: 2, Toxic: 1, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Mythic: { Water: 1, Chrome: 0.5, Earth: 1, Bug: 1, Umbral: 1, Aero: 1, Core: 1, Strike: 1, Flame: 1, Mythic: 2, Normal: 1, Neon: 1, Flora: 1, Frost: 1, Toxic: 1, Cryptid: 0, Paranormal: 1, Clairvoyant: 1 },
++  Normal: { Water: 1, Chrome: 0.5, Earth: 1, Bug: 1, Umbral: 1, Aero: 1, Core: 0.5, Strike: 1, Flame: 1, Mythic: 1, Normal: 1, Neon: 1, Flora: 1, Frost: 1, Toxic: 1, Cryptid: 1, Paranormal: 0, Clairvoyant: 1 },
++  Neon: { Water: 2, Chrome: 1, Earth: 0, Bug: 1, Umbral: 1, Aero: 2, Core: 1, Strike: 1, Flame: 1, Mythic: 0.5, Normal: 1, Neon: 0.5, Flora: 0.5, Frost: 1, Toxic: 1, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Flora: { Water: 2, Chrome: 0.5, Earth: 2, Bug: 0.5, Umbral: 1, Aero: 0.5, Core: 2, Strike: 1, Flame: 0.5, Mythic: 0.5, Normal: 1, Neon: 1, Flora: 0.5, Frost: 1, Toxic: 0.5, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Frost: { Water: 0.5, Chrome: 0.5, Earth: 2, Bug: 1, Umbral: 1, Aero: 2, Core: 1, Strike: 1, Flame: 0.5, Mythic: 2, Normal: 1, Neon: 1, Flora: 2, Frost: 0.5, Toxic: 1, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Toxic: { Water: 1, Chrome: 0, Earth: 0.5, Bug: 1, Umbral: 1, Aero: 1, Core: 0.5, Strike: 1, Flame: 1, Mythic: 1, Normal: 1, Neon: 1, Flora: 2, Frost: 1, Toxic: 0.5, Cryptid: 2, Paranormal: 0.5, Clairvoyant: 1 },
++  Cryptid: { Water: 1, Chrome: 0.5, Earth: 1, Bug: 1, Umbral: 2, Aero: 1, Core: 1, Strike: 2, Flame: 0.5, Mythic: 2, Normal: 1, Neon: 1, Flora: 1, Frost: 1, Toxic: 0.5, Cryptid: 1, Paranormal: 1, Clairvoyant: 1 },
++  Paranormal: { Water: 1, Chrome: 0.5, Earth: 1, Bug: 1, Umbral: 0.5, Aero: 1, Core: 1, Strike: 1, Flame: 1, Mythic: 1, Normal: 0, Neon: 1, Flora: 1, Frost: 1, Toxic: 1, Cryptid: 1, Paranormal: 2, Clairvoyant: 2 },
++  Clairvoyant: { Water: 1, Chrome: 0.5, Earth: 1, Bug: 1, Umbral: 0, Aero: 1, Core: 1, Strike: 2, Flame: 1, Mythic: 1, Normal: 1, Neon: 1, Flora: 1, Frost: 1, Toxic: 2, Cryptid: 1, Paranormal: 1, Clairvoyant: 0.5 },
++};
++
++export const TRUE_CHART_COVERAGE = {
++  totalCells: 361,
++  decompCells: 289,
++  modernRepoCells: 35,
++  deepTbdCells: 37,
++  derivedCells: 324,
++} as const;
++
