@@ -1,0 +1,624 @@
+{
+ "source": "pokebw2/res/field",
+ "sourceCommit": "e522642f9ec496783642df075f05fcd07d3cbc1b",
+ "note": "Sanitized structure-only extraction. Anonymous IDs in sorted-file order; source filenames are NOT stored.",
+ "count": 154,
+ "places": [
+  {
+   "id": "place_000",
+   "has_name": true
+  },
+  {
+   "id": "place_001",
+   "has_name": true
+  },
+  {
+   "id": "place_002",
+   "has_name": true
+  },
+  {
+   "id": "place_003",
+   "has_name": true
+  },
+  {
+   "id": "place_004",
+   "has_name": true
+  },
+  {
+   "id": "place_005",
+   "has_name": true
+  },
+  {
+   "id": "place_006",
+   "has_name": true
+  },
+  {
+   "id": "place_007",
+   "has_name": true
+  },
+  {
+   "id": "place_008",
+   "has_name": true
+  },
+  {
+   "id": "place_009",
+   "has_name": true
+  },
+  {
+   "id": "place_010",
+   "has_name": true
+  },
+  {
+   "id": "place_011",
+   "has_name": true
+  },
+  {
+   "id": "place_012",
+   "has_name": true
+  },
+  {
+   "id": "place_013",
+   "has_name": true
+  },
+  {
+   "id": "place_014",
+   "has_name": true
+  },
+  {
+   "id": "place_015",
+   "has_name": true
+  },
+  {
+   "id": "place_016",
+   "has_name": true
+  },
+  {
+   "id": "place_017",
+   "has_name": true
+  },
+  {
+   "id": "place_018",
+   "has_name": true
+  },
+  {
+   "id": "place_019",
+   "has_name": true
+  },
+  {
+   "id": "place_020",
+   "has_name": true
+  },
+  {
+   "id": "place_021",
+   "has_name": true
+  },
+  {
+   "id": "place_022",
+   "has_name": true
+  },
+  {
+   "id": "place_023",
+   "has_name": true
+  },
+  {
+   "id": "place_024",
+   "has_name": true
+  },
+  {
+   "id": "place_025",
+   "has_name": true
+  },
+  {
+   "id": "place_026",
+   "has_name": true
+  },
+  {
+   "id": "place_027",
+   "has_name": true
+  },
+  {
+   "id": "place_028",
+   "has_name": true
+  },
+  {
+   "id": "place_029",
+   "has_name": true
+  },
+  {
+   "id": "place_030",
+   "has_name": true
+  },
+  {
+   "id": "place_031",
+   "has_name": true
+  },
+  {
+   "id": "place_032",
+   "has_name": true
+  },
+  {
+   "id": "place_033",
+   "has_name": true
+  },
+  {
+   "id": "place_034",
+   "has_name": true
+  },
+  {
+   "id": "place_035",
+   "has_name": true
+  },
+  {
+   "id": "place_036",
+   "has_name": true
+  },
+  {
+   "id": "place_037",
+   "has_name": true
+  },
+  {
+   "id": "place_038",
+   "has_name": true
+  },
+  {
+   "id": "place_039",
+   "has_name": true
+  },
+  {
+   "id": "place_040",
+   "has_name": true
+  },
+  {
+   "id": "place_041",
+   "has_name": true
+  },
+  {
+   "id": "place_042",
+   "has_name": true
+  },
+  {
+   "id": "place_043",
+   "has_name": true
+  },
+  {
+   "id": "place_044",
+   "has_name": true
+  },
+  {
+   "id": "place_045",
+   "has_name": true
+  },
+  {
+   "id": "place_046",
+   "has_name": true
+  },
+  {
+   "id": "place_047",
+   "has_name": true
+  },
+  {
+   "id": "place_048",
+   "has_name": true
+  },
+  {
+   "id": "place_049",
+   "has_name": true
+  },
+  {
+   "id": "place_050",
+   "has_name": true
+  },
+  {
+   "id": "place_051",
+   "has_name": true
+  },
+  {
+   "id": "place_052",
+   "has_name": true
+  },
+  {
+   "id": "place_053",
+   "has_name": true
+  },
+  {
+   "id": "place_054",
+   "has_name": true
+  },
+  {
+   "id": "place_055",
+   "has_name": true
+  },
+  {
+   "id": "place_056",
+   "has_name": true
+  },
+  {
+   "id": "place_057",
+   "has_name": true
+  },
+  {
+   "id": "place_058",
+   "has_name": true
+  },
+  {
+   "id": "place_059",
+   "has_name": true
+  },
+  {
+   "id": "place_060",
+   "has_name": true
+  },
+  {
+   "id": "place_061",
+   "has_name": true
+  },
+  {
+   "id": "place_062",
+   "has_name": true
+  },
+  {
+   "id": "place_063",
+   "has_name": true
+  },
+  {
+   "id": "place_064",
+   "has_name": true
+  },
+  {
+   "id": "place_065",
+   "has_name": true
+  },
+  {
+   "id": "place_066",
+   "has_name": true
+  },
+  {
+   "id": "place_067",
+   "has_name": true
+  },
+  {
+   "id": "place_068",
+   "has_name": true
+  },
+  {
+   "id": "place_069",
+   "has_name": true
+  },
+  {
+   "id": "place_070",
+   "has_name": true
+  },
+  {
+   "id": "place_071",
+   "has_name": true
+  },
+  {
+   "id": "place_072",
+   "has_name": true
+  },
+  {
+   "id": "place_073",
+   "has_name": true
+  },
+  {
+   "id": "place_074",
+   "has_name": true
+  },
+  {
+   "id": "place_075",
+   "has_name": true
+  },
+  {
+   "id": "place_076",
+   "has_name": true
+  },
+  {
+   "id": "place_077",
+   "has_name": true
+  },
+  {
+   "id": "place_078",
+   "has_name": true
+  },
+  {
+   "id": "place_079",
+   "has_name": true
+  },
+  {
+   "id": "place_080",
+   "has_name": true
+  },
+  {
+   "id": "place_081",
+   "has_name": true
+  },
+  {
+   "id": "place_082",
+   "has_name": true
+  },
+  {
+   "id": "place_083",
+   "has_name": true
+  },
+  {
+   "id": "place_084",
+   "has_name": true
+  },
+  {
+   "id": "place_085",
+   "has_name": true
+  },
+  {
+   "id": "place_086",
+   "has_name": true
+  },
+  {
+   "id": "place_087",
+   "has_name": true
+  },
+  {
+   "id": "place_088",
+   "has_name": true
+  },
+  {
+   "id": "place_089",
+   "has_name": true
+  },
+  {
+   "id": "place_090",
+   "has_name": true
+  },
+  {
+   "id": "place_091",
+   "has_name": true
+  },
+  {
+   "id": "place_092",
+   "has_name": true
+  },
+  {
+   "id": "place_093",
+   "has_name": true
+  },
+  {
+   "id": "place_094",
+   "has_name": true
+  },
+  {
+   "id": "place_095",
+   "has_name": true
+  },
+  {
+   "id": "place_096",
+   "has_name": true
+  },
+  {
+   "id": "place_097",
+   "has_name": true
+  },
+  {
+   "id": "place_098",
+   "has_name": true
+  },
+  {
+   "id": "place_099",
+   "has_name": true
+  },
+  {
+   "id": "place_100",
+   "has_name": true
+  },
+  {
+   "id": "place_101",
+   "has_name": true
+  },
+  {
+   "id": "place_102",
+   "has_name": true
+  },
+  {
+   "id": "place_103",
+   "has_name": true
+  },
+  {
+   "id": "place_104",
+   "has_name": true
+  },
+  {
+   "id": "place_105",
+   "has_name": true
+  },
+  {
+   "id": "place_106",
+   "has_name": true
+  },
+  {
+   "id": "place_107",
+   "has_name": true
+  },
+  {
+   "id": "place_108",
+   "has_name": true
+  },
+  {
+   "id": "place_109",
+   "has_name": true
+  },
+  {
+   "id": "place_110",
+   "has_name": true
+  },
+  {
+   "id": "place_111",
+   "has_name": true
+  },
+  {
+   "id": "place_112",
+   "has_name": true
+  },
+  {
+   "id": "place_113",
+   "has_name": true
+  },
+  {
+   "id": "place_114",
+   "has_name": true
+  },
+  {
+   "id": "place_115",
+   "has_name": true
+  },
+  {
+   "id": "place_116",
+   "has_name": true
+  },
+  {
+   "id": "place_117",
+   "has_name": true
+  },
+  {
+   "id": "place_118",
+   "has_name": true
+  },
+  {
+   "id": "place_119",
+   "has_name": true
+  },
+  {
+   "id": "place_120",
+   "has_name": true
+  },
+  {
+   "id": "place_121",
+   "has_name": true
+  },
+  {
+   "id": "place_122",
+   "has_name": true
+  },
+  {
+   "id": "place_123",
+   "has_name": true
+  },
+  {
+   "id": "place_124",
+   "has_name": true
+  },
+  {
+   "id": "place_125",
+   "has_name": true
+  },
+  {
+   "id": "place_126",
+   "has_name": true
+  },
+  {
+   "id": "place_127",
+   "has_name": true
+  },
+  {
+   "id": "place_128",
+   "has_name": true
+  },
+  {
+   "id": "place_129",
+   "has_name": true
+  },
+  {
+   "id": "place_130",
+   "has_name": true
+  },
+  {
+   "id": "place_131",
+   "has_name": true
+  },
+  {
+   "id": "place_132",
+   "has_name": true
+  },
+  {
+   "id": "place_133",
+   "has_name": true
+  },
+  {
+   "id": "place_134",
+   "has_name": true
+  },
+  {
+   "id": "place_135",
+   "has_name": true
+  },
+  {
+   "id": "place_136",
+   "has_name": true
+  },
+  {
+   "id": "place_137",
+   "has_name": true
+  },
+  {
+   "id": "place_138",
+   "has_name": true
+  },
+  {
+   "id": "place_139",
+   "has_name": true
+  },
+  {
+   "id": "place_140",
+   "has_name": true
+  },
+  {
+   "id": "place_141",
+   "has_name": true
+  },
+  {
+   "id": "place_142",
+   "has_name": true
+  },
+  {
+   "id": "place_143",
+   "has_name": true
+  },
+  {
+   "id": "place_144",
+   "has_name": true
+  },
+  {
+   "id": "place_145",
+   "has_name": true
+  },
+  {
+   "id": "place_146",
+   "has_name": true
+  },
+  {
+   "id": "place_147",
+   "has_name": true
+  },
+  {
+   "id": "place_148",
+   "has_name": true
+  },
+  {
+   "id": "place_149",
+   "has_name": true
+  },
+  {
+   "id": "place_150",
+   "has_name": true
+  },
+  {
+   "id": "place_151",
+   "has_name": true
+  },
+  {
+   "id": "place_152",
+   "has_name": true
+  },
+  {
+   "id": "place_153",
+   "has_name": true
+  }
+ ]
+}
