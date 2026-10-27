@@ -1,6 +1,7 @@
 import { MochiiInstance, SpeciesData } from "./types";
 import { SPECIES_DB } from "./species";
 import { MOVES_DB } from "./moves";
+import { getSpeciesLearnset } from "./learnsets-loader";
 
 export function generateId(): string {
   return Math.random().toString(36).substr(2, 9);
@@ -27,8 +28,9 @@ export function createMochii(speciesId: string, level: number): MochiiInstance |
   const spd = calculateStat(species.baseStats.spd, iv, ev, level, false);
   const spe = calculateStat(species.baseStats.spe, iv, ev, level, false);
 
-  // Find up to 4 recent moves
-  const available = species.learnset.filter(l => l.level <= level).map(l => l.moveId);
+  // Find up to 4 recent moves (learnset loader: JSON level list +
+  // inline extras, not the inline stub alone -- PR D).
+  const available = getSpeciesLearnset(speciesId).filter(l => l.level <= level).map(l => l.moveId);
   const moves = available.slice(-4);
   const pp = moves.map(m => MOVES_DB[m]?.pp || 10);
 
@@ -112,7 +114,7 @@ export function evolveInstance(instance: MochiiInstance, targetId: string): bool
   instance.stats.spd = calculateStat(target.baseStats.spd, 15, 0, instance.level, false);
   instance.stats.spe = calculateStat(target.baseStats.spe, 15, 0, instance.level, false);
 
-  const available = target.learnset.filter(l => l.level <= instance.level).map(l => l.moveId);
+  const available = getSpeciesLearnset(targetId).filter(l => l.level <= instance.level).map(l => l.moveId);
   instance.moves = available.slice(-4);
   instance.pp = instance.moves.map(m => MOVES_DB[m]?.pp || 10);
   return true;
