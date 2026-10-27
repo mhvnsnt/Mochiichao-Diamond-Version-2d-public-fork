@@ -1,0 +1,177 @@
+{
+  "schema": "mochiichao-show/character-sheet/v1",
+  "species": "sproutle",
+  "kind": "character-sheet clip bundle",
+  "created_utc": "2026-10-27T22:48:55.492729+00:00",
+  "source": {
+    "rig": "show/production/rigs/builds/sproutle/ (TextRig whole-image DEFORM rig over the canon cutout)",
+    "rig_texture_md5": "44068950bda8d0b427af1209565ab2e9",
+    "canon_cutout_md5": "44068950bda8d0b427af1209565ab2e9",
+    "likeness_note": "The rig deforms the canon pixels themselves - no redraw, no drift by construction."
+  },
+  "canvas": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "note": "square sheet canvas; armature auto-fit to 90% of frame, as rendered by the TextRig renderer"
+  },
+  "poster": {
+    "path": "sproutle-poster.png",
+    "sha256": "195e8640912103226682f84baf24e6b16f23b952c82e62a185818ca92a46a3ce",
+    "bytes": 181690,
+    "source": "frame 0 of idle_breathe (transparent PNG)"
+  },
+  "animations": {
+    "idle_breathe": {
+      "role": "idle",
+      "rig_animation_name": "idle_breathe",
+      "duration_s_rig": 3.6,
+      "motion_verification": {
+        "distinct_frame_checksums": 106,
+        "distinct_mesh_vertex_states": 108,
+        "frames_total": 108,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "sproutle-idle_breathe.mp4",
+        "sha256": "f645ea6a029e8639dcb1d45249d7b3f05b6703940c385fa8547efbfd4cf87f68",
+        "bytes": 126589,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 108,
+          "duration_s": 3.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "sproutle-idle_breathe.transparent.webm",
+        "sha256": "10e317ca561c5ba40e4a6437001fe829673069155e550d259ec7aa036d2865d4",
+        "bytes": 308273,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 108,
+          "duration_s": 3.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "sprout_wiggle": {
+      "role": "signature animation",
+      "rig_animation_name": "sprout_wiggle",
+      "duration_s_rig": 1.8,
+      "motion_verification": {
+        "distinct_frame_checksums": 54,
+        "distinct_mesh_vertex_states": 54,
+        "frames_total": 54,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "sproutle-sprout_wiggle.mp4",
+        "sha256": "4c7298ad3effa461fa1f975b97603d3f7e00c234cd1307476565061a90481ed5",
+        "bytes": 65675,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 54,
+          "duration_s": 1.8,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "sproutle-sprout_wiggle.transparent.webm",
+        "sha256": "26a64634daba35557441834e64eb01da8b454f1a82456e6e6fc4bd820ef7fb42",
+        "bytes": 174529,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 54,
+          "duration_s": 1.8,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "head_tilt": {
+      "role": "expression animation",
+      "rig_animation_name": "head_tilt",
+      "duration_s_rig": 1.6,
+      "motion_verification": {
+        "distinct_frame_checksums": 25,
+        "distinct_mesh_vertex_states": 25,
+        "frames_total": 48,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "sproutle-head_tilt.mp4",
+        "sha256": "945728473ef8ef73208e543a47022eb5bd4c9c4a665f2b47ebdb633db4d009b2",
+        "bytes": 38790,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "sproutle-head_tilt.transparent.webm",
+        "sha256": "05c9fc1fbf248e981f9c0792f07a4da345219101eca491706b40dd8308ae29a0",
+        "bytes": 63325,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "promotion_status": "PENDING_OWNER",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "clip_gated": "sproutle-idle_breathe.mp4",
+    "reference": "canon full-body cutout sproutle.png (full-body mode; pose-matched references retired)",
+    "verdict_recommendation": "PASS",
+    "metrics": {
+      "ssim_union": 0.7711,
+      "silhouette_iou": 0.9721,
+      "rgb_mad_255": 15.915,
+      "rgb_mad_norm": 0.0624
+    },
+    "thresholds": {
+      "ssim_min": 0.5,
+      "silhouette_iou_min": 0.55,
+      "rgb_mad_255_max": 40.0
+    }
+  }
+}

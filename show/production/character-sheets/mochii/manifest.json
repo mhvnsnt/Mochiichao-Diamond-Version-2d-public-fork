@@ -1,0 +1,177 @@
+{
+  "schema": "mochiichao-show/character-sheet/v1",
+  "species": "mochii",
+  "kind": "character-sheet clip bundle",
+  "created_utc": "2026-10-27T22:48:52.071090+00:00",
+  "source": {
+    "rig": "show/production/rigs/builds/mochii/ (TextRig whole-image DEFORM rig over the canon cutout)",
+    "rig_texture_md5": "aa95714f06b146c3464d139837b6cbab",
+    "canon_cutout_md5": "aa95714f06b146c3464d139837b6cbab",
+    "likeness_note": "The rig deforms the canon pixels themselves - no redraw, no drift by construction."
+  },
+  "canvas": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "note": "square sheet canvas; armature auto-fit to 90% of frame, as rendered by the TextRig renderer"
+  },
+  "poster": {
+    "path": "mochii-poster.png",
+    "sha256": "0a19d9b82372129d73b05e3fcf35a2ee4ae166e3ad36cb66e4f00bb32c8b5d40",
+    "bytes": 161161,
+    "source": "frame 0 of idle_bob (transparent PNG)"
+  },
+  "animations": {
+    "idle_bob": {
+      "role": "idle",
+      "rig_animation_name": "idle_bob",
+      "duration_s_rig": 3.6,
+      "motion_verification": {
+        "distinct_frame_checksums": 107,
+        "distinct_mesh_vertex_states": 108,
+        "frames_total": 108,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "mochii-idle_bob.mp4",
+        "sha256": "be9cd690af44b3435928b4c6c1749e875584e96a50e475c728053a73159a65a7",
+        "bytes": 150913,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 108,
+          "duration_s": 3.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "mochii-idle_bob.transparent.webm",
+        "sha256": "57106a90a106d1442a8639feb9494ae0a2b5d7a8eaaaacee408597aa5d285ab3",
+        "bytes": 342160,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 108,
+          "duration_s": 3.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "squash_hop": {
+      "role": "signature animation",
+      "rig_animation_name": "squash_hop",
+      "duration_s_rig": 1.6,
+      "motion_verification": {
+        "distinct_frame_checksums": 48,
+        "distinct_mesh_vertex_states": 48,
+        "frames_total": 48,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "mochii-squash_hop.mp4",
+        "sha256": "3ede38ec94a3392483c4bd71e0573437c1e8acead6da65c58b7a1e46c822a519",
+        "bytes": 112305,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "mochii-squash_hop.transparent.webm",
+        "sha256": "81111ad93d2427ddad2ed7b0b8849a1475084665f0c7b6b8f47d0f989f2a237e",
+        "bytes": 280207,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "tip_wiggle": {
+      "role": "expression animation",
+      "rig_animation_name": "tip_wiggle",
+      "duration_s_rig": 1.8,
+      "motion_verification": {
+        "distinct_frame_checksums": 54,
+        "distinct_mesh_vertex_states": 54,
+        "frames_total": 54,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "mochii-tip_wiggle.mp4",
+        "sha256": "bf947e80dc8e41842b88a9b0052d82031ec63f6f0826bc79053bbba80a61a094",
+        "bytes": 86088,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 54,
+          "duration_s": 1.8,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "mochii-tip_wiggle.transparent.webm",
+        "sha256": "f88dce4a187c6b294e34e4cf367daa3c1182cccefd3a18472d6cb0c5ae5a3104",
+        "bytes": 234498,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 54,
+          "duration_s": 1.8,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "promotion_status": "PENDING_OWNER",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "clip_gated": "mochii-idle_bob.mp4",
+    "reference": "canon full-body cutout mochii.png (full-body mode; pose-matched references retired)",
+    "verdict_recommendation": "PASS",
+    "metrics": {
+      "ssim_union": 0.5814,
+      "silhouette_iou": 0.9126,
+      "rgb_mad_255": 26.755,
+      "rgb_mad_norm": 0.1049
+    },
+    "thresholds": {
+      "ssim_min": 0.5,
+      "silhouette_iou_min": 0.55,
+      "rgb_mad_255_max": 40.0
+    }
+  }
+}

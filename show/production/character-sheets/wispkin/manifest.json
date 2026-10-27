@@ -1,0 +1,177 @@
+{
+  "schema": "mochiichao-show/character-sheet/v1",
+  "species": "wispkin",
+  "kind": "character-sheet clip bundle",
+  "created_utc": "2026-10-27T22:48:57.760550+00:00",
+  "source": {
+    "rig": "show/production/rigs/builds/wispkin/ (TextRig whole-image DEFORM rig over the canon cutout)",
+    "rig_texture_md5": "4741bc9a97b80e99106a764d1aa6c3f8",
+    "canon_cutout_md5": "4741bc9a97b80e99106a764d1aa6c3f8",
+    "likeness_note": "The rig deforms the canon pixels themselves - no redraw, no drift by construction."
+  },
+  "canvas": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "note": "square sheet canvas; armature auto-fit to 90% of frame, as rendered by the TextRig renderer"
+  },
+  "poster": {
+    "path": "wispkin-poster.png",
+    "sha256": "61ec46ba8cd428d62764fcd4d27e358590aaf38d01907caab20409c15732f33d",
+    "bytes": 85488,
+    "source": "frame 0 of float_idle (transparent PNG)"
+  },
+  "animations": {
+    "float_idle": {
+      "role": "idle",
+      "rig_animation_name": "float_idle",
+      "duration_s_rig": 4,
+      "motion_verification": {
+        "distinct_frame_checksums": 119,
+        "distinct_mesh_vertex_states": 120,
+        "frames_total": 120,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "wispkin-float_idle.mp4",
+        "sha256": "82d166361ae8af059ded53f587ab7bdc0dc97cf75b816158820dd64c6f026192",
+        "bytes": 63149,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 120,
+          "duration_s": 4.0,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "wispkin-float_idle.transparent.webm",
+        "sha256": "a5ccdd4c28009f15ac3d312a7ef37d072a61ee3f75f994ede5d0caf00ba41a1e",
+        "bytes": 275071,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 120,
+          "duration_s": 4.0,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "float_up": {
+      "role": "signature animation",
+      "rig_animation_name": "float_up",
+      "duration_s_rig": 2.4,
+      "motion_verification": {
+        "distinct_frame_checksums": 72,
+        "distinct_mesh_vertex_states": 72,
+        "frames_total": 72,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "wispkin-float_up.mp4",
+        "sha256": "c93b569cc423cd1c6632d5a92da6fe2e5b5f41795b1b768bef6b70da82f2e13a",
+        "bytes": 44169,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 72,
+          "duration_s": 2.4,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "wispkin-float_up.transparent.webm",
+        "sha256": "2fb450fbd157f6f87633d16f2a672fcdf6e8ff367b4e25149d27fae085b8af16",
+        "bytes": 177030,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 72,
+          "duration_s": 2.4,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "mask_tilt_left": {
+      "role": "expression animation",
+      "rig_animation_name": "mask_tilt_left",
+      "duration_s_rig": 1.6,
+      "motion_verification": {
+        "distinct_frame_checksums": 25,
+        "distinct_mesh_vertex_states": 25,
+        "frames_total": 48,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "wispkin-mask_tilt_left.mp4",
+        "sha256": "347283e9b6e9236776b6af5ee09e3f5f412cc9b68e6b39a31aa62922742a64b9",
+        "bytes": 23253,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "wispkin-mask_tilt_left.transparent.webm",
+        "sha256": "7ec3508d8cb5e2041359d1bc338a6066a8f242b4c23caf3fd5dd216231d6502e",
+        "bytes": 48688,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "promotion_status": "PENDING_OWNER",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "clip_gated": "wispkin-float_idle.mp4",
+    "reference": "canon full-body cutout wispkin.png (full-body mode; pose-matched references retired)",
+    "verdict_recommendation": "PASS",
+    "metrics": {
+      "ssim_union": 0.6895,
+      "silhouette_iou": 0.8253,
+      "rgb_mad_255": 20.643,
+      "rgb_mad_norm": 0.081
+    },
+    "thresholds": {
+      "ssim_min": 0.5,
+      "silhouette_iou_min": 0.55,
+      "rgb_mad_255_max": 40.0
+    }
+  }
+}

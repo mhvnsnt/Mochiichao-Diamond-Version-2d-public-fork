@@ -1,0 +1,177 @@
+{
+  "schema": "mochiichao-show/character-sheet/v1",
+  "species": "gabu",
+  "kind": "character-sheet clip bundle",
+  "created_utc": "2026-10-27T22:48:53.194202+00:00",
+  "source": {
+    "rig": "show/production/rigs/builds/gabu/ (TextRig whole-image DEFORM rig over the canon cutout)",
+    "rig_texture_md5": "bddcbfff8571ec8022083b9e87945259",
+    "canon_cutout_md5": "bddcbfff8571ec8022083b9e87945259",
+    "likeness_note": "The rig deforms the canon pixels themselves - no redraw, no drift by construction."
+  },
+  "canvas": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "note": "square sheet canvas; armature auto-fit to 90% of frame, as rendered by the TextRig renderer"
+  },
+  "poster": {
+    "path": "gabu-poster.png",
+    "sha256": "e1284b52b6b2b5e60c7e07e6785bccac3df0aa22be2fc43267a71a69cba5a436",
+    "bytes": 208329,
+    "source": "frame 0 of idle_breathe (transparent PNG)"
+  },
+  "animations": {
+    "idle_breathe": {
+      "role": "idle",
+      "rig_animation_name": "idle_breathe",
+      "duration_s_rig": 4,
+      "motion_verification": {
+        "distinct_frame_checksums": 119,
+        "distinct_mesh_vertex_states": 120,
+        "frames_total": 120,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "gabu-idle_breathe.mp4",
+        "sha256": "a9ba67626f2043a9bf616df7353c3750e6ac9581b8f88e06b459b7bb6b348c85",
+        "bytes": 190503,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 120,
+          "duration_s": 4.0,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "gabu-idle_breathe.transparent.webm",
+        "sha256": "ab5e76efe80f5ad1ef5e3199243afb1fbd2553758113ab01ecccadd42e54fa59",
+        "bytes": 343111,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 120,
+          "duration_s": 4.0,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "jaw_chomp": {
+      "role": "signature animation",
+      "rig_animation_name": "jaw_chomp",
+      "duration_s_rig": 1.4,
+      "motion_verification": {
+        "distinct_frame_checksums": 42,
+        "distinct_mesh_vertex_states": 42,
+        "frames_total": 42,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "gabu-jaw_chomp.mp4",
+        "sha256": "20ffd486fb6c2b32a7f24a076efbefbf6da2f7aab9d7dcfc25dc7a3439f7c54d",
+        "bytes": 96142,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 42,
+          "duration_s": 1.4,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "gabu-jaw_chomp.transparent.webm",
+        "sha256": "9e1088458aa0c8498d4919d996d2e63f1f02928928492dab9099e626b5ad70c3",
+        "bytes": 200956,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 42,
+          "duration_s": 1.4,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "head_tilt": {
+      "role": "expression animation",
+      "rig_animation_name": "head_tilt",
+      "duration_s_rig": 1.6,
+      "motion_verification": {
+        "distinct_frame_checksums": 25,
+        "distinct_mesh_vertex_states": 25,
+        "frames_total": 48,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "gabu-head_tilt.mp4",
+        "sha256": "82292607956b130db353a92aeb9d0f8c34f1a3959bdb261be12d223fbfc154aa",
+        "bytes": 68188,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "gabu-head_tilt.transparent.webm",
+        "sha256": "6b8995fbb9c5a97a9a773f110b417908e1c055f59094cd0346c18fca027a592e",
+        "bytes": 125361,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "promotion_status": "PENDING_OWNER",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "clip_gated": "gabu-idle_breathe.mp4",
+    "reference": "canon full-body cutout gabu.png (full-body mode; pose-matched references retired)",
+    "verdict_recommendation": "PASS",
+    "metrics": {
+      "ssim_union": 0.6543,
+      "silhouette_iou": 0.9676,
+      "rgb_mad_255": 24.324,
+      "rgb_mad_norm": 0.0954
+    },
+    "thresholds": {
+      "ssim_min": 0.5,
+      "silhouette_iou_min": 0.55,
+      "rgb_mad_255_max": 40.0
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "schema": "mochiichao-show/character-sheet/v1",
+  "species": "dorowani",
+  "kind": "character-sheet clip bundle",
+  "created_utc": "2026-10-27T22:48:56.659134+00:00",
+  "source": {
+    "rig": "show/production/rigs/builds/dorowani/ (TextRig whole-image DEFORM rig over the canon cutout)",
+    "rig_texture_md5": "342315e9063e2fd9de348a434f07dc1f",
+    "canon_cutout_md5": "342315e9063e2fd9de348a434f07dc1f",
+    "likeness_note": "The rig deforms the canon pixels themselves - no redraw, no drift by construction."
+  },
+  "canvas": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "note": "square sheet canvas; armature auto-fit to 90% of frame, as rendered by the TextRig renderer"
+  },
+  "poster": {
+    "path": "dorowani-poster.png",
+    "sha256": "f138d057f0e98e6ef232e83c7e1c4ef0168419608c726afbabf154a9463e1397",
+    "bytes": 149066,
+    "source": "frame 0 of idle_breathe (transparent PNG)"
+  },
+  "animations": {
+    "idle_breathe": {
+      "role": "idle",
+      "rig_animation_name": "idle_breathe",
+      "duration_s_rig": 4,
+      "motion_verification": {
+        "distinct_frame_checksums": 119,
+        "distinct_mesh_vertex_states": 120,
+        "frames_total": 120,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "dorowani-idle_breathe.mp4",
+        "sha256": "76294b718dfc74036c7f4934e9a89ccf93cb47ebd8f7459ede0c94448497413a",
+        "bytes": 210078,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 120,
+          "duration_s": 4.0,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "dorowani-idle_breathe.transparent.webm",
+        "sha256": "5c7316f4df835dd8df9afb3473b0e5407a240e281603fe68362c9da176e74ac3",
+        "bytes": 406841,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 120,
+          "duration_s": 4.0,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "water_orb_charge": {
+      "role": "signature animation",
+      "rig_animation_name": "water_orb_charge",
+      "duration_s_rig": 2.6,
+      "motion_verification": {
+        "distinct_frame_checksums": 48,
+        "distinct_mesh_vertex_states": 48,
+        "frames_total": 78,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "dorowani-water_orb_charge.mp4",
+        "sha256": "f2144fbfcb9b0eea9da301dde7db7ffc29c50a84e141b41a5cea6c42f52eaa40",
+        "bytes": 147584,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 78,
+          "duration_s": 2.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "dorowani-water_orb_charge.transparent.webm",
+        "sha256": "e768a8889b67d0c0a7afda5c26ac900b8820f0e4a5636ec12db2e08345bc92d6",
+        "bytes": 315067,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 78,
+          "duration_s": 2.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "fin_flick": {
+      "role": "expression animation",
+      "rig_animation_name": "fin_flick",
+      "duration_s_rig": 1.2,
+      "motion_verification": {
+        "distinct_frame_checksums": 36,
+        "distinct_mesh_vertex_states": 36,
+        "frames_total": 36,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "dorowani-fin_flick.mp4",
+        "sha256": "b7c18830ef208947a88b6c70d025ef86b9f8012dacdfa00a54eee4fc7d684f26",
+        "bytes": 43423,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 36,
+          "duration_s": 1.2,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "dorowani-fin_flick.transparent.webm",
+        "sha256": "0d73ed53c0ad1829f9648474efa0f3361a7fc375d2918ec85c101e3084682703",
+        "bytes": 83475,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 36,
+          "duration_s": 1.2,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "promotion_status": "PENDING_OWNER",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "clip_gated": "dorowani-idle_breathe.mp4",
+    "reference": "canon full-body cutout dorowani.png (full-body mode; pose-matched references retired)",
+    "verdict_recommendation": "PASS",
+    "metrics": {
+      "ssim_union": 0.5122,
+      "silhouette_iou": 0.9186,
+      "rgb_mad_255": 29.03,
+      "rgb_mad_norm": 0.1138
+    },
+    "thresholds": {
+      "ssim_min": 0.5,
+      "silhouette_iou_min": 0.55,
+      "rgb_mad_255_max": 40.0
+    }
+  }
+}
