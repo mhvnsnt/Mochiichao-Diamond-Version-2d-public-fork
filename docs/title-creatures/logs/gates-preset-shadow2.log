@@ -1,0 +1,12 @@
+> react-example@0.0.0 lint
+> tsc --noEmit
+
+LINT_EXIT:0
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1m 42s
+BUILD_EXIT:0
+  WARN: Sheet Gabu (148): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+
+validate:reference PASSED (warnings are open decisions, not failures).
+VALIDATE_EXIT:0
