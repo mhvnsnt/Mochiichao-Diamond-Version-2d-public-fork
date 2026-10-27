@@ -1,0 +1,31 @@
+{
+  "base": "yogiferno-white-speck-clean-v2-20261026.png",
+  "size": [
+    145,
+    190
+  ],
+  "warm_fire_core_px": 693,
+  "halo_zone_def": "within 15px of warm fire pixel (warm = R-G>=30, R-B>=40, R>=120)",
+  "removal_rule": "opaque AND dist<=6 from warm core AND NOT warm AND NOT barrier AND min>=200 AND spread<=60; alpha only",
+  "removed_total": 210,
+  "removed_dist1_3": 141,
+  "removed_dist4_6": 56,
+  "removed_neutral_spread_le20": 121,
+  "removed_pale_grad_spread21_60": 89,
+  "removed_y_ge_20": 0,
+  "v2_opaque": 13669,
+  "v3_opaque": 13459,
+  "warm_preserved": 693,
+  "body_changed_px": 0,
+  "rgb_changed_px": 0,
+  "halo_ring_light_remaining": 0,
+  "dist7_15_light_kept_head_fur": 272,
+  "left_deliberately": {
+    "halo_base_transition_min150_199_dist_le6": 33,
+    "dist7_15_head_fur_light": 272,
+    "bright_yellow_fire_glow_spread_gt60_dist1_3": 160,
+    "note": "transition shading (y13-19, darker grey/tan) and head fur (y20-28, continuous with body) are design, not halo specks; yellow glow is fire design"
+  },
+  "removed_dist_fractional_3_to_4": 13,
+  "note_bands": "dist bands use integer bounds; 13 removal px have Euclidean distance in (3,4), counted in the <=6 total but in neither integer band"
+}
