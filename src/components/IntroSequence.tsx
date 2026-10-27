@@ -333,7 +333,17 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         window.removeEventListener("mousedown", handler);
       };
     }
-  }, [phase, titleFading]);
+    // Trap-fix round 3 (2026-10-27): introScene MUST be a dep.
+    // Without it the registered handler closes over a stale
+    // introScene (it never re-registers while phase stays
+    // INTRO), so keyboard stepping can push introScene past
+    // the last scene: scenes[introScene] is undefined and
+    // .title throws during render, blanking the whole app
+    // (no boundary sits above IntroSequence). Proven by a
+    // real-browser capture: rapid Enter presses through the
+    // intro produced exactly that TypeError; button clicks
+    // (fresh render closure) did not.
+  }, [phase, titleFading, introScene]);
 
   if (phase === "BOOT") {
     return (
@@ -370,7 +380,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       { title: 'WORLD PAN + CREATURE CLOSE-UPS', body: 'Scene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.', gap: 'GAP: intro scene art — original art needed.' },
       { title: 'CREATURE FIGHT BEAT', body: 'Scene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.', gap: 'GAP: intro scene art — original art needed.' },
     ];
-    const scene = scenes[introScene];
+    // Belt-and-braces with the dep fix above: no stale state
+    // may ever index past the scene list and blank the app.
+    const scene = scenes[Math.min(Math.max(introScene, 0), scenes.length - 1)];
     return (
       <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
         <div className="w-full max-w-md text-center">
