@@ -1,0 +1,85 @@
+{
+ "creature": "cragarm",
+ "roster_id": "036",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "frames": [
+  {
+   "file": "cragarm_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "cragarm_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "cragarm_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "cragarm_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "cragarm_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "cragarm_walk_right_1.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "cragarm_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "cragarm_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/cragarm/cragarm.manifest.locked.json",
+ "source_cells": {
+  "cragarm_walk_down_0.png": {
+   "locked_cell": "cragarm_cell_11.png",
+   "transform": "copy"
+  },
+  "cragarm_walk_down_1.png": {
+   "locked_cell": "cragarm_cell_17.png",
+   "transform": "copy"
+  },
+  "cragarm_walk_up_0.png": {
+   "locked_cell": "cragarm_cell_01.png",
+   "transform": "copy"
+  },
+  "cragarm_walk_up_1.png": {
+   "locked_cell": "cragarm_cell_01.png",
+   "transform": "bob"
+  },
+  "cragarm_walk_left_0.png": {
+   "locked_cell": "cragarm_cell_05.png",
+   "transform": "copy"
+  },
+  "cragarm_walk_left_1.png": {
+   "locked_cell": "cragarm_cell_06.png",
+   "transform": "copy"
+  },
+  "cragarm_walk_right_0.png": {
+   "locked_cell": "cragarm_cell_05.png",
+   "transform": "mirror"
+  },
+  "cragarm_walk_right_1.png": {
+   "locked_cell": "cragarm_cell_06.png",
+   "transform": "mirror"
+  }
+ },
+ "method": "locked-cell transforms only (copy / horizontal mirror / 2px-up bob variant), 64x64 RGBA, new filenames only; no generation in this batch; no file shown to Mars overwritten",
+ "movement_note": "Locked walk_* labels are unreliable (many 'walk_front' cells are side views, eye-checked). Down = walking fronts 11/17; sides = side views 05/06 + mirrors; up = single locked back 01 + 2px-up bob variant (only one distinct back exists).",
+ "walk_gate_note": "STAGING ONLY. Mars's walk-gate pick (QA-PASS locked-sheet walk art vs walk-frames dirs/PNGs) is still PENDING as of 2026-10-26. This dir prepares the walk-frames option; it does not decide the gate. No PR merged, no game src touched.",
+ "eye_check": "Final 8-frame montage PASS (2026-10-26) with caveat: up pair is subtle (single locked back + 2px-up bob variant). Down walking fronts, sides + mirrors correct.",
+ "staged": "2026-10-26 lane-finish segment 4 (walk frames only)"
+}

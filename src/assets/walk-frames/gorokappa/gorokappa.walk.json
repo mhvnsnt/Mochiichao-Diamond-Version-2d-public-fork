@@ -1,0 +1,85 @@
+{
+ "creature": "gorokappa",
+ "roster_id": "034",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "frames": [
+  {
+   "file": "gorokappa_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "gorokappa_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "gorokappa_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "gorokappa_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "gorokappa_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "gorokappa_walk_right_1.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "gorokappa_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "gorokappa_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/gorokappa/gorokappa.manifest.locked.json",
+ "source_cells": {
+  "gorokappa_walk_down_0.png": {
+   "locked_cell": "gorokappa_cell_17.png",
+   "transform": "copy"
+  },
+  "gorokappa_walk_down_1.png": {
+   "locked_cell": "gorokappa_cell_18.png",
+   "transform": "copy"
+  },
+  "gorokappa_walk_up_0.png": {
+   "locked_cell": "gorokappa_cell_12.png",
+   "transform": "copy"
+  },
+  "gorokappa_walk_up_1.png": {
+   "locked_cell": "gorokappa_cell_13.png",
+   "transform": "copy"
+  },
+  "gorokappa_walk_left_0.png": {
+   "locked_cell": "gorokappa_cell_16.png",
+   "transform": "copy"
+  },
+  "gorokappa_walk_left_1.png": {
+   "locked_cell": "gorokappa_cell_16.png",
+   "transform": "bob"
+  },
+  "gorokappa_walk_right_0.png": {
+   "locked_cell": "gorokappa_cell_16.png",
+   "transform": "mirror"
+  },
+  "gorokappa_walk_right_1.png": {
+   "locked_cell": "gorokappa_cell_16.png",
+   "transform": "mirror"
+  }
+ },
+ "method": "locked-cell transforms only (copy / horizontal mirror / 2px-up bob variant), 64x64 RGBA, new filenames only; no generation in this batch; no file shown to Mars overwritten",
+ "movement_note": "Single locked side cell 16: left = 16 + 2px-up bob variant; right = mirrors of both. Down = fronts 17/18, up = backs 12/13.",
+ "walk_gate_note": "STAGING ONLY. Mars's walk-gate pick (QA-PASS locked-sheet walk art vs walk-frames dirs/PNGs) is still PENDING as of 2026-10-26. This dir prepares the walk-frames option; it does not decide the gate. No PR merged, no game src touched.",
+ "eye_check": "Final 8-frame montage PASS (2026-10-26) with caveat: left pair is subtle (single locked side + 2px-up bob variant; right = mirrors of both).",
+ "staged": "2026-10-26 lane-finish segment 4 (walk frames only)"
+}

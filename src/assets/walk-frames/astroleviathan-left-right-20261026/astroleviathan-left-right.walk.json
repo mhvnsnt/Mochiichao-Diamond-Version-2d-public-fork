@@ -1,0 +1,32 @@
+{
+  "creature": "astroleviathan",
+  "directions": {
+    "down": 2,
+    "left": 2,
+    "right": 2,
+    "up": 2
+  },
+  "frames": [
+    {
+      "file": "astroleviathan_walk_left_0_20261026.png",
+      "role": "walk_left_0"
+    },
+    {
+      "file": "astroleviathan_walk_left_1_20261026.png",
+      "role": "walk_left_1"
+    },
+    {
+      "file": "astroleviathan_walk_right_0_20261026.png",
+      "role": "walk_right_0"
+    },
+    {
+      "file": "astroleviathan_walk_right_1_20261026.png",
+      "role": "walk_right_1"
+    }
+  ],
+  "status": "done",
+  "roster_id": "025",
+  "source": "sprite-art/animation/expanded-scope/astroleviathan-left-right-20261026 (left/right only)",
+  "confirmation": "Mars confirmed 2026-10-26 ~19:32 CDT. Down/up frames stay in the live src/assets/walk-frames/astroleviathan/ dir; this dir supplies left/right only.",
+  "method": "locked side cells verbatim + mirror, 0 new colours, 0 baked shadow pixels"
+}

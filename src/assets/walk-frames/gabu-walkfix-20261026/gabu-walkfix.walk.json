@@ -1,0 +1,48 @@
+{
+  "creature": "gabu",
+  "directions": {
+    "down": 2,
+    "left": 2,
+    "right": 2,
+    "up": 2
+  },
+  "frames": [
+    {
+      "file": "gabu_walk_down_0.png",
+      "role": "walk_down_0"
+    },
+    {
+      "file": "gabu_walk_down_1.png",
+      "role": "walk_down_1"
+    },
+    {
+      "file": "gabu_walk_up_0.png",
+      "role": "walk_up_0"
+    },
+    {
+      "file": "gabu_walk_up_1.png",
+      "role": "walk_up_1"
+    },
+    {
+      "file": "gabu_walk_left_0.png",
+      "role": "walk_left_0"
+    },
+    {
+      "file": "gabu_walk_left_1.png",
+      "role": "walk_left_1"
+    },
+    {
+      "file": "gabu_walk_right_0.png",
+      "role": "walk_right_0"
+    },
+    {
+      "file": "gabu_walk_right_1.png",
+      "role": "walk_right_1"
+    }
+  ],
+  "status": "done",
+  "roster_id": "148",
+  "source": "sprite-art/walk-frames/gabu-walkfix-20261026 (all 8 rebuilt from locked cells)",
+  "confirmation": "Mars confirmed 2026-10-26 ~18:37 CDT ('perfect I confirm that'). Replaces the shell-missing live dir for wiring; the live dir itself is NOT modified by this PR.",
+  "method": "rebuilt from locked cells verbatim, 0 new colours, tan turtle shell present"
+}

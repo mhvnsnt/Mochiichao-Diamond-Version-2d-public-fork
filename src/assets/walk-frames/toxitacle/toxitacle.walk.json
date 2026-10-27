@@ -1,0 +1,85 @@
+{
+ "creature": "toxitacle",
+ "roster_id": "027",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "frames": [
+  {
+   "file": "toxitacle_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "toxitacle_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "toxitacle_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "toxitacle_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "toxitacle_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "toxitacle_walk_right_1.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "toxitacle_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "toxitacle_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/toxitacle/toxitacle.manifest.locked.json",
+ "source_cells": {
+  "toxitacle_walk_down_0.png": {
+   "locked_cell": "toxitacle_cell_01.png",
+   "transform": "copy"
+  },
+  "toxitacle_walk_down_1.png": {
+   "locked_cell": "toxitacle_cell_05.png",
+   "transform": "copy"
+  },
+  "toxitacle_walk_up_0.png": {
+   "locked_cell": "toxitacle_cell_12.png",
+   "transform": "copy"
+  },
+  "toxitacle_walk_up_1.png": {
+   "locked_cell": "toxitacle_cell_13.png",
+   "transform": "copy"
+  },
+  "toxitacle_walk_left_0.png": {
+   "locked_cell": "toxitacle_cell_07.png",
+   "transform": "copy"
+  },
+  "toxitacle_walk_left_1.png": {
+   "locked_cell": "toxitacle_cell_08.png",
+   "transform": "copy"
+  },
+  "toxitacle_walk_right_0.png": {
+   "locked_cell": "toxitacle_cell_07.png",
+   "transform": "mirror"
+  },
+  "toxitacle_walk_right_1.png": {
+   "locked_cell": "toxitacle_cell_08.png",
+   "transform": "mirror"
+  }
+ },
+ "method": "locked-cell transforms only (copy / horizontal mirror / 2px-up bob variant), 64x64 RGBA, new filenames only; no generation in this batch; no file shown to Mars overwritten",
+ "movement_note": "LOCK-LABEL CORRECTION (eye-checked 2026-10-26): locked walk_front cells 15/16 are 3/4 side-front views, not pure fronts, and walk cell 06 is a back-ish view, not a side. Corrected: down = true fronts 01 (overworld_front) + 05 (battle_front) \u2014 standing fronts, no stride-phase front walks exist in locked art; up = backs 12/13; sides = profiles 07/08 + mirrors.",
+ "walk_gate_note": "STAGING ONLY. Mars's walk-gate pick (QA-PASS locked-sheet walk art vs walk-frames dirs/PNGs) is still PENDING as of 2026-10-26. This dir prepares the walk-frames option; it does not decide the gate. No PR merged, no game src touched.",
+ "eye_check": "Final 8-frame montage PASS after lock-label correction (2026-10-26) with caveat: down pair are standing fronts (no stride-phase front walks exist in locked art).",
+ "staged": "2026-10-26 lane-finish segment 4 (walk frames only)"
+}
