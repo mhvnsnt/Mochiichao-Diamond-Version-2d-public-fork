@@ -37,6 +37,19 @@ Contradiction with canon = reject before GPU time is spent.
   Wispkin criteria: rigs/builds/wispkin/BODY-SPEC-OWNER-DIRECTION.md.
 - LICENCE: free umbrella; CC-BY-NC weights are scratch-only,
   never shipped (manifest.json restricted_weights).
+- LICENCE/PRICING HONESTY (owner law, 2026-10-27): classify every
+  tool by what the SOFTWARE actually is, verified at the source
+  before the label is written. Never put a fake paywall on
+  software that is not paywalled - if it is free/open-source and
+  a vendor charges only for optional prebuilt binaries, support
+  or hosting, say exactly that (Ardour is GPL free software;
+  ardour.org's fee is only for its convenience binaries; distro
+  packages, Flathub and source are fully free). Never call
+  something free that has a real paywall, a required paid tier,
+  or a paid licence for the use needed. Buckets stay distinct
+  and named: open source (licence named), free proprietary,
+  free-but-restricted, paid. A wrong label in either direction
+  is an error, corrected in the log like any other.
 - ANIMATION: stills/animatics are timing proofs, never shipped
   as animation. Frame-verify every visual before presenting it.
 
