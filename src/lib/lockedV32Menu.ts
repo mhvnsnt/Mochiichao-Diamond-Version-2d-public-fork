@@ -133,7 +133,43 @@ export const LOCKED_V32_MENU = {
   // File untouched. BANNED / DO NOT USE: mochiichao-main-cloud-v32.svg
   // (the #184 trace) — deleted from main by Mars's order 2026-10-26;
   // it is NOT the cloud file and must never be rendered again.
-  cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5, imgBox: { x: 225, y: 599, w: 823, h: 258 } },
+  // EXACT-TARGET RETUNE (2026-10-26, Mars 19:57 CDT bar: the corrected
+  // cloud must look like the TARGET panel EXACTLY, not close, not
+  // 99.9%): the fixed3 frame above landed interior 258-942 x 653-811
+  // in the app render and 258-942 x 654-816 for the isolated element
+  // — both short of target interior 257-942 x 655-815. DECOMP CHECK
+  // FIRST (Pokemon-first, FireRed then HeartGold then Black 2): NO
+  // decomp pins a menu-cloud placement for this element — FireRed
+  // title_screen.c has flame/leaf/slash sprites + background bitmaps
+  // (no cloud sprite), main_menu.c has text window templates (no
+  // cloud), HeartGold title_screen.c has zero 'cloud' matches (3D
+  // scene; any clouds are baked into model/texture assets), Black 2
+  // src has no title/menu cloud placement. The 250-950 x 648-828 box
+  // is the Mochiichao v21 spec value, NOT a decomp value — stated
+  // plainly. So the frame below is tuned by isolated-element
+  // measurement (same white-interior flood method that reproduces
+  // the picture's target interior 257-942 x 655-815 exactly as the
+  // largest enclosed component): frame (224,601,825x254) renders
+  // isolated interior 257-942 x 655-815 (685x160) — all four edges
+  // EXACT, stroke 249-951 x 649-820 (within 1px of the picture's
+  // stroke on every edge; that 1px is edge-threshold, not shape —
+  // same file, same stretch mode, same shape).
+  // APP CORRECTION (2026-10-26, measured in the true 1200x1500 app
+  // render): the isolated rig's interior bottom (815) is the CENTRE
+  // bottom, which the CONTINUE panel hides in the game — so in the
+  // app the visible interior bottom is the LOBES, and the picture's
+  // lobes sit 6px lower than the element's (picture right-lobe stroke
+  // 819 vs element 813, left 813 vs ~807; app right-lobe stroke
+  // measured IDENTICAL to isolated, 813, same taper — so the app
+  // element is exact and the picture's cloud is a uniform vertical
+  // stretch x1.039 about the top: interior height 160 vs 154,
+  // (819-649)/(813-649) = 1.037). Frame (224,599,825x264) applies
+  // that stretch in the app: predicted interior 257-942 x 655-815,
+  // right-lobe stroke ~819, left-lobe stroke ~813, top/left/right
+  // unchanged (width unchanged, top re-anchored: 599 + 0.191x264).
+  // Verified by app re-render + measurement, not by the isolated
+  // rig alone.
+  cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5, imgBox: { x: 224, y: 599, w: 825, h: 264 } },
   mochii: { x: 170, y: 790, w: 110, h: 110, bobAmp: 8, bobPeriod: 4.5 },
   panels: [
     { key: "CONTINUE", x: 300, y: 788, w: 600, h: 110, fill: "#ff96c8", labelSize: 34 },
@@ -194,22 +230,45 @@ export const LOCKED_V32_MENU = {
     symbols: MAIN_MENU_SYMBOLS,
     // Locked phi fade.
     fade: { gone: 620, mid: 729, full: 905 },
-    // Symbol speed, selectable. 'perfect' is the DEFAULT (matched
-    // GIF, Mars PERFECT 2026-10-25 17:12 CDT). 'slow-rise' is the
-    // exact PR #163 speed, saved as an option only (Mars 2026-10-26
-    // 10:54 CDT) — changing this field selects it; nothing else in
-    // this file changes when it is selected. NOTE: the type is
-    // deliberately the two-value union, NOT a single literal:
-    // with a literal type the bundler tree-shakes the slow-rise
-    // branch and data out of the build entirely, and the option
-    // would not actually ship. Keep the union, and keep `as const`
-    // off this object: the outer const assertion re-narrowed
-    // animationSpeed back to the literal "perfect", and the second
-    // build (2026-10-26) shipped slow-rise 0 times even after the
-    // union was added. With the union preserved, MainMenuBackground
-    // keeps both branches.
-    animationSpeed: "perfect" as "perfect" | "slow-rise",
+    // Symbol speed, selectable. 'slow-rise' is the DEFAULT from
+    // Mars's 2026-10-26 19:54 CDT order (the rising emblems moved
+    // too fast; use the slow speed locked earlier today). 'slow-rise'
+    // is the exact PR #163 speed (rise vy 8-14 px/s, sway 3-8px,
+    // rotate +/-4deg, period 4-6s; saved as an option Mars
+    // 2026-10-26 10:54 CDT, made the default by his 19:54 CDT order).
+    // 'perfect' (matched GIF, Mars PERFECT 2026-10-25 17:12 CDT:
+    // 157.14 px/s) is kept as the option — changing this field
+    // selects it; nothing else in this file changes when it is
+    // selected. NOTE: the type is deliberately the two-value union,
+    // NOT a single literal: with a literal type the bundler
+    // tree-shakes the slow-rise branch and data out of the build
+    // entirely, and the option would not actually ship. Keep the
+    // union, and keep `as const` off this object: the outer const
+    // assertion re-narrowed animationSpeed back to the literal
+    // "perfect", and the second build (2026-10-26) shipped slow-rise
+    // 0 times even after the union was added. With the union
+    // preserved, MainMenuBackground keeps both branches.
+    animationSpeed: "slow-rise" as "perfect" | "slow-rise",
     animationSpeeds: MENU_ANIMATION_SPEEDS,
+    // Logo hearts (Mars 2026-10-26 19:54 CDT: blue + pink hearts by the
+    // logo at their exact yesterday placements, on their exact layer).
+    // MEASURED from the v32 picture (not copied from PR #214): blue
+    // visible bbox 138-200 x 397-446 (centre (169,421.5), 63x50, fill
+    // #8cd2ff); pink visible bbox 204-256 x 621-660 (centre (230,640.5),
+    // 53x40, fill #ff96c8). PR #214's numbers were off: blue y 405 was
+    // 16.5px too high (its own comment admits the crop bbox merged
+    // with the arc below), pink y 637 was 3.5px high and h 37 was 3px
+    // short, colours #95cbfe/#fe95c7 vs picture fills #8cd2ff/#ff96c8.
+    // Centres/sizes below are the picture measurements. Layer (v28,
+    // Mars direction): white -> background symbols -> arcs/circles/
+    // hearts -> logo -> cloud -> panels; rendered last in
+    // MainMenuBackground's SVG (above arcs + symbols, below logo),
+    // static, full opacity (the pink heart sits at y640 inside the
+    // fade band but is SOLID in the picture, so no fade applies).
+    logoHearts: [
+      { x: 169, y: 421.5, w: 63, h: 50, c: "#8cd2ff" },
+      { x: 230, y: 640.5, w: 53, h: 40, c: "#ff96c8" },
+    ],
   },
 };
 
