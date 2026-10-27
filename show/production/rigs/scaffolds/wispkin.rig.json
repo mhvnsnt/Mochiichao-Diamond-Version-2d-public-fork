@@ -1,0 +1,114 @@
+{
+  "schema": "mochiichao-rig-scaffold/v1",
+  "character": "Wispkin",
+  "planned_file": "MC101_ORIGINAL_PUPPET_WISPKIN_VERSION_001",
+  "rig_style": "puppet_cutout_2d",
+  "fps": 24,
+  "body_plan": "ghost_float",
+  "layer_hierarchy": [
+    "head>eyes(->symbol:expressions)",
+    "head>pupils",
+    "head>brows",
+    "head>nose",
+    "head>mouth(->symbol:visemes)",
+    "head>ears_or_features",
+    "torso",
+    "arm_L_upper",
+    "arm_L_lower",
+    "hand_L(->symbol:hand_poses)",
+    "arm_R_upper",
+    "arm_R_lower",
+    "hand_R(->symbol:hand_poses)",
+    "wisp_tail_trail",
+    "smoke_wisps",
+    "glow_core",
+    "accessories",
+    "fx"
+  ],
+  "symbol_nesting": {
+    "mouth": {
+      "type": "Graphic",
+      "frames": [
+        "rest",
+        "A_I",
+        "E",
+        "O",
+        "U",
+        "M_B_P",
+        "F_V",
+        "L_T_D_N_Th",
+        "C_D_G_K_S_Z",
+        "W_Q"
+      ],
+      "note": "Preston Blair 10-shape viseme set; graphic symbol for frame-accurate lip sync"
+    },
+    "eyes": {
+      "type": "Graphic",
+      "frames": [
+        "neutral",
+        "blink",
+        "happy_closed",
+        "wide",
+        "half_lid",
+        "angry",
+        "sad",
+        "dizzy_spiral",
+        "sleep",
+        "star"
+      ]
+    },
+    "hands": {
+      "type": "Graphic",
+      "frames": [
+        "open",
+        "fist",
+        "point",
+        "grip",
+        "wave",
+        "thumbs_up"
+      ]
+    }
+  },
+  "controls": [
+    "root_translate",
+    "root_rotate",
+    "body_squash",
+    "body_stretch",
+    "body_lean",
+    "head_turn",
+    "head_tilt",
+    "head_bob",
+    "arm_L_ik",
+    "arm_R_ik",
+    "mouth_step",
+    "eye_step",
+    "blink_auto",
+    "drift_sine",
+    "trail_length",
+    "glow_pulse",
+    "phase_flicker"
+  ],
+  "deformation": {
+    "squash_stretch": "volume-preserving scale on torso+head groups; anticipation 4-8f on jumps",
+    "smear_frames": "dedicated smear drawings for fast limb moves (house style)",
+    "holds": "animate on 2s/3s; held body with mouth/eyes only for dialogue (HB method)"
+  },
+  "pose_library": [
+    "idle_drift",
+    "giggle_wobble",
+    "spook_pose",
+    "sleep_dim",
+    "peek"
+  ],
+  "rom_tests": [
+    "neutral_stand",
+    "full_reach_overhead",
+    "deep_crouch",
+    "sit",
+    "run_cycle_8f",
+    "jump_squash_land",
+    "trail_stretch_max",
+    "full_squash_ghost"
+  ],
+  "gate": "UNIVERSAL-RIG-STANDARD adapted: no ship without ROM battery pass + before/after proof frames reviewed"
+}

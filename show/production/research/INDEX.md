@@ -67,3 +67,14 @@ into this repo** — use the pointers to go to the shelf.
 - **Settei / Pierrot material: none anywhere.** The Naruto route is
   the published Movic 2026 sets (see acquisition-checklist.md), not
   anything already on the shelf.
+
+### Framing note — studio rigs stay pointers
+The Nick study folder above includes a studio character rig (a Maya
+`.ma` file) and an episode animatic. In this index they are, and
+remain, **pointers only** (location + catalog description). Per
+Jamar's filter for this show — no characters / no character names /
+no logos — a studio character rig **is** the character (mesh +
+deformation), and an animatic is those characters acting; neither
+converts into Mochiichao-native material by re-skinning, so neither
+is copied or converted. The rig *capability* the show needs is
+authored natively instead — see `show/production/rigs/`.
