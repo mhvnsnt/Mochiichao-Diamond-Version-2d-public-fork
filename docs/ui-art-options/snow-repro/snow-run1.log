@@ -1,0 +1,25 @@
+--- TITLE (locked, before preset) ---
+localhost is blocked
+
+The connection is blocked because it was initiated by a public page to connect to devices or servers on your local network.
+
+ERR_BLOCKED_BY_LOCAL_NETWORK_ACCESS_CHECKS
+--- localStorage before ---
+undefined
+--- TITLE (preset title-snow-yogiferno) ---
+localhost is blocked
+
+The connection is blocked because it was initiated by a public page to connect to devices or servers on your local network.
+
+ERR_BLOCKED_BY_LOCAL_NETWORK_ACCESS_CHECKS
+--- DOM probes ---
+fallback note present: false
+RESET TITLE button present: false
+video elements: 0
+video src: []
+video readyState: []
+video error: []
+canvas elements: 0
+img count: 2
+--- console messages ---
+--- exceptions ---
