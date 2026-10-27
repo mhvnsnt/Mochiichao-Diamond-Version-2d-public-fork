@@ -40,7 +40,7 @@ copied town/route names or dialogue.
 Biomes to map (7 named by Mars + core set): desert, forest, rain,
 safari-type, mountain, snow/ice, plus cave, beach/coast, grassland,
 city/town (from existing Mochiichao maps: Sector 0, Route 1.0,
-Binary Woods, Quartz Caverns, Silicon Town, MochiiPlex, Castagnoli
+The Dark Forest, Quartz Caverns, Silicon Town, MochiiPlex, Castagnoli
 Island — these are Mochiichao places, not Pokemon places).
 Mapping status: biome LIST 100% (named above), biome-to-region
 PLACEMENT 0% — that placement belongs to the World Builder lane

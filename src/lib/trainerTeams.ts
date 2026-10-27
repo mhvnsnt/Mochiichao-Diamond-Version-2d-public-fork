@@ -76,7 +76,7 @@ export const TRAINER_TEAMS: TrainerRow[] = [
   {
     "id": "R1-005",
     "trainer": "Bug Catcher \u2014 Mira",
-    "location": "Binary Woods",
+    "location": "The Dark Forest",
     "ai": "Novice",
     "team": [
       {
@@ -93,7 +93,7 @@ export const TRAINER_TEAMS: TrainerRow[] = [
   {
     "id": "R1-006",
     "trainer": "Woods Walker \u2014 Tess",
-    "location": "Binary Woods",
+    "location": "The Dark Forest",
     "ai": "Balanced",
     "team": [
       {
@@ -110,7 +110,7 @@ export const TRAINER_TEAMS: TrainerRow[] = [
   {
     "id": "R1-007",
     "trainer": "Hacker Grunt (KEEP)",
-    "location": "Binary Woods",
+    "location": "The Dark Forest",
     "ai": "Balanced",
     "team": [
       {

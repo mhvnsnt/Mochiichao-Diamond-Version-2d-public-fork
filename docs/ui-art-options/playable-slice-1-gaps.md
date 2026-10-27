@@ -17,7 +17,7 @@ UX/UI/menus/gameplay. This is the gap audit + what to finish first.
 - Silicon Town: Dojo Acolyte, Town Girl, Old Man (Mythar lore).
 - Dojo 1 — The Core Gate: 4 acolytes (Ken/Ren/Shin/Ryu) +
   Master Lin boss (Dreadtoise 039, reward Core Fragment).
-- Binary Woods: Hacker Grunt (Liberation Front), wild Kittember.
+- The Dark Forest: Hacker Grunt (Liberation Front), wild Kittember.
 - Cave of Echoes, Neon City, etc. exist as later maps — NOT slice 1.
 
 So slice 1 is NOT "build a world from scratch" — it is finish,
@@ -95,7 +95,7 @@ clean, and wire what is already mapped, in this order.
 New Game -> Prof intro -> name -> home/Mom -> lab -> starter ->
 Hex battle -> gifts -> Route 1.0 (catch at least 2 wild, beat at
 least 2 of the 4 trainers) -> Silicon Town (heal + shop) -> Dojo 1
-(beat at least 1 acolyte, Master Lin attempt) -> Binary Woods
+(beat at least 1 acolyte, Master Lin attempt) -> The Dark Forest
 (Hacker Grunt) -> save + Continue works. All with: no emoji NPCs,
 no terminal menus, no title in battle, dialogue box with portrait
 + ▼, help lines, HP panels, 2x2 moves, Luigi Cube catch, PC
