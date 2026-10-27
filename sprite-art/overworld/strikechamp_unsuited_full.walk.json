@@ -1,0 +1,115 @@
+{
+ "creature": "strikechamp_unsuited_full",
+ "roster_id": "030",
+ "variant": "unsuited-full",
+ "movement_class": "grounded_standard",
+ "idle_class": "grounded_standard",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 480,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_03.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_08.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_09.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_1"
+    }
+   ],
+   "loop": [
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_03.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_08.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_03.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_09.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_04.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_10.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_12.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_1"
+    }
+   ],
+   "loop": [
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_04.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_10.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_04.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_12.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_07.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_0"
+    },
+    {
+     "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_11.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_1"
+    }
+   ],
+   "loop": [
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_02.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_07.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_02.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_11.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/strikechamp_unsuited_full/strikechamp_unsuited_full_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_07mir.png",
+     "provenance": "locked_walk_mirror",
+     "source_role": "walk_side_mirror"
+    },
+    {
+     "file": "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_11mir.png",
+     "provenance": "locked_walk_mirror",
+     "source_role": "walk_side_mirror"
+    }
+   ],
+   "loop": [
+    "walk/strikechamp_unsuited_full/strikechamp_unsuited_full_walk_right_stand.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_07mir.png",
+    "walk/strikechamp_unsuited_full/strikechamp_unsuited_full_walk_right_stand.png",
+    "game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_11mir.png"
+   ]
+  }
+ }
+}
