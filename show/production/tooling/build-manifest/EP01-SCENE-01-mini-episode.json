@@ -1,0 +1,17 @@
+{
+  "episode": "EP01-SCENE-01-mini",
+  "note": "Example episode spec for episode_build.py, mirroring the LOCAL test build of 2026-10-27 (see PRODUCTION-LOG-2026-10-27.md, EPISODE BUILDER entry). One scene, the five locked Scene 1 cuts at their storyboard durations (01: 8s, 02: 6s, 03: 5s, 04: 8s, 05: 10s = 37s), audio from the gated Scene 1 bed WAV in the repo. The shot paths below name where per-cut shot specs (composite_shot.py format) live for this scene; in the local test every cut used the proven gate-proof setup (living Gate background show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4 + the Dorowani idle transparent twin at x=422, y=266, scale 0.6, audio null) because no per-cut shot specs exist yet for cuts 02-05 - per-cut specs land with their scenes. Paths resolve against the episode spec's folder, then the CWD, then the repo root.",
+  "scenes": [
+    {
+      "name": "EP01-SCENE-01-gate-morning",
+      "audio_bed": {"file": "show/episodes/EP01/audio/EP01-SCENE-01-gate-morning.wav"},
+      "cuts": [
+        {"id": "01", "shot": "show/production/tooling/build-manifest/episode-shots/EP01-SCENE-01/shot-01.json"},
+        {"id": "02", "shot": "show/production/tooling/build-manifest/episode-shots/EP01-SCENE-01/shot-02.json"},
+        {"id": "03", "shot": "show/production/tooling/build-manifest/episode-shots/EP01-SCENE-01/shot-03.json"},
+        {"id": "04", "shot": "show/production/tooling/build-manifest/episode-shots/EP01-SCENE-01/shot-04.json"},
+        {"id": "05", "shot": "show/production/tooling/build-manifest/episode-shots/EP01-SCENE-01/shot-05.json"}
+      ]
+    }
+  ]
+}
