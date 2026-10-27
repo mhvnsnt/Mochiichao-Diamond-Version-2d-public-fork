@@ -28,7 +28,7 @@
     "ear_L",
     "ear_R",
     "tail_flame",
-    "orb_companion",
+    "tail_flame_tip",
     "accessories",
     "fx"
   ],
@@ -92,7 +92,7 @@
     "blink_auto",
     "ear_twitch",
     "tail_flame_flicker",
-    "orb_bob",
+    "tail_flick",
     "pounce_stretch"
   ],
   "deformation": {

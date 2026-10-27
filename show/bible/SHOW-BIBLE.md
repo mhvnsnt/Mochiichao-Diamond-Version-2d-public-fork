@@ -55,9 +55,9 @@ keeps not being looked at.
 | MOCHII | Creature — round blue drop | Bouncing squeak-cry | Welcome, speed, joy; the Garden's heartbeat |
 | DOROWANI | Creature — bipedal amphibian, red fin cheeks, shell | Low steady croak | Steady hand; carries the Manual; thesis keeper |
 | GABU | Creature — long-armed turtle bruiser | Foghorn bellow | Confidence without plans; the muscle; comedy engine |
-| KITTEMBER | Creature — black cat, flame orb | Thin mewl | Sensor; the orb reacts before anyone sees |
+| KITTEMBER | Creature — black cat, flame ON THE TAIL TIP (attached, owner canon) | Thin mewl | Sensor; the tail flame reacts before anyone sees |
 | SPROUTLE | Creature — plant biped | Soft chirps | Noticer; reads the ground; gentle courage |
-| WISPKIN | Creature — dark wisp over smoke | Whisper-wail | Night keeper; the Garden's secret shift; EP01's heart |
+| WISPKIN | Creature — dark wisp over smoke, wears a SKULL MASK (owner canon) | Whisper-wail | Night keeper; the Garden's secret shift; EP01's heart. Pre-mask Wispkin appears in flashback only (approved asset: show/assets/flashback/) |
 
 Full roster: 47 species (cast.json; species.json) + human cast
 (docs/human-characters/). **Digimon rotation law:** featured

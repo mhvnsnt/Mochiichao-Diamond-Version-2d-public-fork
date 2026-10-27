@@ -18,14 +18,14 @@ context and Mochiko's reactions.
    Dorowani, the steady hand, carries the keeper's manual.
 2. **The oddity (1:00–1:45)** — Berries Mochii stacked are
    un-stacked. A toy rolls uphill. Nobody there. Kittember's flame
-   orb flickers at nothing.
+   tail flame flickers at nothing.
 3. **Investigation (1:45–3:15)** — Gabu volunteers as ghost-catcher
    (all confidence, no plan). Dorowani checks the manual: "Garden
    Rule 12: everything in the garden belongs to somebody."
    Footprints? No — a trail of cold spots. Sproutle notices the
    pattern: the moved things spell a wobbly arrow to the pond.
 4. **False scare (3:15–4:15)** — Pond at dusk. Gabu's big grab
-   catches only smoke. Kittember's orb flares — a tall shadow looms
+   catches only smoke. Kittember's tail flame flares — a tall shadow looms
    (it's Sproutle's sprout silhouette, gag) — then the real shape:
    small, dark, shaking.
 5. **Reveal (4:15–5:15)** — It's Wispkin, the garden's night

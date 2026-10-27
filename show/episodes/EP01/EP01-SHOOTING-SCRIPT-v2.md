@@ -40,7 +40,7 @@ so there is no version confusion.**
 | MOCHII | Cry file: mochii-cry.wav (performed variants TBD) | Bounce cycle BANK |
 | DOROWANI | Cry file: dorowani-cry.wav | Carries the Manual |
 | GABU | Cry file: gabu-cry.wav | Action beat A |
-| KITTEMBER | Cry file: kittember-cry.wav | Orb reacts first |
+| KITTEMBER | Cry file: kittember-cry.wav | Tail flame reacts first |
 | SPROUTLE | Cry file: sproutle-cry.wav | Finds the trail |
 | WISPKIN | Cry file: wispkin-cry.wav | Action beat B (float-up) |
 
@@ -60,11 +60,11 @@ trampoline. Got it." / (reading) "Rule one: mind the gate." —
 ### SCENE 2 — INT./EXT. GARDEN POND — CONTINUOUS (cuts 06–09)
 **VISUAL:** Pond glassy. Berry pyramid, stacked with pride.
 **ACTION:** Behind the tour patter, the pyramid un-stacks itself,
-one berry at a time. A toy duck rolls uphill. Kittember's orb
+one berry at a time. A toy duck rolls uphill. Kittember's tail flame
 flickers at empty air; ears flat.
 **DIALOGUE:** MOCHIKO: "You stacked those. Who unstacked those?"
 / "Ducks don't roll uphill."
-**SUBTITLES:** None. **SFX:** berry plops, duck squeak, orb hum.
+**SUBTITLES:** None. **SFX:** berry plops, duck squeak, tail-flame hum.
 **MUSIC:** T1 stems thin out under the oddity.
 
 ### SCENE 3 — EXT. GARDEN GREEN — DAY (cuts 10–12)
@@ -82,7 +82,7 @@ cue sheet). **MUSIC:** T1 out; investigation pulse from stems.
 ### SCENE 4 — EXT. GARDEN POND — DUSK (cuts 13–19)
 **VISUAL:** Dusk grade on the pond BG. Mist at knee height.
 **ACTION:** Stakeout. Gabu LUNGES (action beat A) — comes up
-holding smoke that pours through his fingers. The orb FLARES: a
+holding smoke that pours through his fingers. The tail flame FLARES: a
 tall spiky shadow — which is Sproutle's sprout, backlit (gag
 mechanism, played straight). Mist parts: Wispkin, small, shaking,
 holding the duck up like an apology. The softest wail yet, up at

@@ -56,16 +56,16 @@ every rig; the per-character primary is named in each spec.
 - **Character ROM extremes:** arms_crossed_tight (the Universal Rig
   Standard battery pose), full_overhead_slam.
 
-## Kittember — small feline + flame orb
+## Kittember — small feline, tail-flame
 - **Planned file:** `MC101_ORIGINAL_PUPPET_KITTEMBER_VERSION_001`
 - **Body plan:** small cat; expressive ears; flame-tipped tail; a
-  floating flame orb companion is part of the rig (separate root).
+  the flame is ATTACHED to the tail tip (owner canon, corrected 2026-10-27) — it is part of the tail, never a separate floating orb.
 - **Primary study:** Dexter's Lab (compact characters) + Foster's
   puppet process.
-- **Special layers:** ear_L, ear_R, tail_flame, orb_companion (own
+- **Special layers:** ear_L, ear_R, tail (with tail_flame at its tip)
   root + bob control, parented optionally).
 - **Controls:** ear_twitch (independent L/R), tail_flame_flicker
-  (symbol cycle), orb_bob, pounce_stretch.
+  (symbol cycle), tail_flick, pounce_stretch.
 - **Deformation:** pounce = full-body stretch with ear/tail lag
   (follow-through offsets 2–3f); startled arch is a spine pose set.
 - **Pose library:** idle_sit, pounce, groom, startled_arch, sleep_loaf.
