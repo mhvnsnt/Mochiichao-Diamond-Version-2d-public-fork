@@ -1,0 +1,120 @@
+{
+  "schema": "mochiichao-show/cast/v1",
+  "updated": "2026-10-27",
+  "note": "Two-way index: every character points at its GAME assets (in place, no copies) and its SHOW assets. Full roster source of truth stays in src/data/core/species.json (47 species) and docs/human-characters/; this manifest seeds the principal cast (pilot six).",
+  "roster_sources": {
+    "species": "src/data/core/species.json",
+    "species_roster": "src/lib/global_roster.json",
+    "human_cast": "docs/human-characters/CANON-HUMAN-CHARACTERS.md"
+  },
+  "principal_cast": [
+    {
+      "id": "mochii",
+      "body_plan": "compact_round",
+      "game_assets": {
+        "portrait": "sprite-art/portraits-scripted-v3/mochii-portrait-scripted-v3.png",
+        "lustre_front": "public/assets/variants/lustre/mochii_lustre_front.png",
+        "animation_folder": "sprite-art/animation/",
+        "garden_poses": "sprite-art/garden-poses/mochii/",
+        "cry": "public/audio/cries/mochii-cry-r1.wav",
+        "title_video": "src/assets/title/videos/mochii-title-anim-final.mp4"
+      },
+      "show_assets": {
+        "bundle": "public/assets/show-bundles/mochii/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "rig_scaffold": "show/production/rigs/scaffolds/mochii.rig.json",
+        "voice_entry": null
+      }
+    },
+    {
+      "id": "dorowani",
+      "body_plan": "bipedal_amphibian",
+      "game_assets": {
+        "portrait": "sprite-art/portraits-scripted-v3/dorowani-portrait-scripted-v3.png",
+        "lustre_front": "public/assets/variants/lustre/dorowani_lustre_front.png",
+        "animation_folder": "sprite-art/animation/",
+        "garden_poses": "sprite-art/garden-poses/dorowani/",
+        "cry": "public/audio/cries/dorowani-cry-r1.wav",
+        "title_video": "src/assets/title/videos/dorowani-title-anim-final.mp4"
+      },
+      "show_assets": {
+        "bundle": "public/assets/show-bundles/dorowani/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "rig_scaffold": "show/production/rigs/scaffolds/dorowani.rig.json",
+        "voice_entry": null
+      }
+    },
+    {
+      "id": "gabu",
+      "body_plan": "bulky_bruiser",
+      "game_assets": {
+        "portrait": "sprite-art/portraits-scripted-v3/gabu-portrait-scripted-v3.png",
+        "lustre_front": "public/assets/variants/lustre/gabu_lustre_front.png",
+        "animation_folder": "sprite-art/animation/",
+        "garden_poses": "sprite-art/garden-poses/gabu/",
+        "cry": "public/audio/cries/gabu-cry-r1.wav",
+        "title_video": "src/assets/title/videos/gabu-title-anim-final.mp4"
+      },
+      "show_assets": {
+        "bundle": "public/assets/show-bundles/gabu/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "rig_scaffold": "show/production/rigs/scaffolds/gabu.rig.json",
+        "voice_entry": null
+      }
+    },
+    {
+      "id": "kittember",
+      "body_plan": "small_feline",
+      "game_assets": {
+        "portrait": "sprite-art/portraits-scripted-v3/kittember-portrait-scripted-v3.png",
+        "lustre_front": "public/assets/variants/lustre/kittember_lustre_front.png",
+        "animation_folder": "sprite-art/animation/",
+        "garden_poses": "sprite-art/garden-poses/kittember/",
+        "cry": "public/audio/cries/kittember-cry-r1.wav",
+        "title_video": "src/assets/title/videos/kittember-title-anim-final.mp4"
+      },
+      "show_assets": {
+        "bundle": "public/assets/show-bundles/kittember/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "rig_scaffold": "show/production/rigs/scaffolds/kittember.rig.json",
+        "voice_entry": null
+      }
+    },
+    {
+      "id": "sproutle",
+      "body_plan": "small_plant_biped",
+      "game_assets": {
+        "portrait": "sprite-art/portraits-scripted-v3/sproutle-portrait-scripted-v3.png",
+        "lustre_front": "public/assets/variants/lustre/sproutle_lustre_front.png",
+        "animation_folder": "sprite-art/animation/",
+        "garden_poses": "sprite-art/garden-poses/sproutle/",
+        "cry": "public/audio/cries/sproutle-cry-r1.wav",
+        "title_video": "src/assets/title/videos/sproutle-title-anim-final.mp4"
+      },
+      "show_assets": {
+        "bundle": "public/assets/show-bundles/sproutle/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "rig_scaffold": "show/production/rigs/scaffolds/sproutle.rig.json",
+        "voice_entry": null
+      }
+    },
+    {
+      "id": "wispkin",
+      "body_plan": "ghost_float",
+      "game_assets": {
+        "portrait": "sprite-art/portraits-scripted-v3/wispkin-portrait-scripted-v3.png",
+        "lustre_front": "public/assets/variants/lustre/wispkin_lustre_front.png",
+        "animation_folder": "sprite-art/animation/",
+        "garden_poses": "sprite-art/garden-poses/wispkin/",
+        "cry": "public/audio/cries/wispkin-cry-r1.wav",
+        "title_video": "src/assets/title/videos/wispkin-title-anim-final.mp4"
+      },
+      "show_assets": {
+        "bundle": "public/assets/show-bundles/wispkin/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "rig_scaffold": "show/production/rigs/scaffolds/wispkin.rig.json",
+        "voice_entry": null
+      }
+    }
+  ]
+}

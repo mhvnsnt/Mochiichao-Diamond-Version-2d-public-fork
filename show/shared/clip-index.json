@@ -1,0 +1,63 @@
+{
+  "schema": "mochiichao-show/clip-index/v1",
+  "updated": "2026-10-27",
+  "note": "Every finished clip and where it is used, both directions (show + game). quality_status is honest by design: clips marked rejected_placeholder were procedural stills composites rejected by Jamar on 2026-10-27 and must NOT ship; they stay indexed so nothing quietly reuses them.",
+  "clips": [
+    {
+      "id": "title-videos-10",
+      "path": "src/assets/title/videos/<species>-title-anim-final.mp4",
+      "species": [
+        "mochii",
+        "dorowani",
+        "gabu",
+        "kittember",
+        "mythar",
+        "razorgater",
+        "sproutle",
+        "tyrage",
+        "wispkin",
+        "yogiferno"
+      ],
+      "spec": "1280x720, 30fps, 6s",
+      "used_by": [
+        "game:title"
+      ],
+      "quality_status": "game_native"
+    },
+    {
+      "id": "show-bundles-pilot-six",
+      "path": "public/assets/show-bundles/<species>/",
+      "species": [
+        "mochii",
+        "dorowani",
+        "gabu",
+        "kittember",
+        "sproutle",
+        "wispkin"
+      ],
+      "spec": "720x720, 8s, 24fps + transparent WebM twins",
+      "used_by": [
+        "show:placeholder_only"
+      ],
+      "quality_status": "rejected_placeholder_do_not_ship"
+    },
+    {
+      "id": "pilot-episode-trailer",
+      "path": "public/assets/show-trailers/mochiichao-pilot-episode-trailer.mp4",
+      "spec": "28s, 720x720",
+      "used_by": [
+        "marketing:placeholder_only"
+      ],
+      "quality_status": "rejected_placeholder_do_not_ship"
+    },
+    {
+      "id": "marketing-trailer-vertical",
+      "path": "public/assets/show-trailers/mochiichao-marketing-trailer-vertical.mp4",
+      "spec": "18s, 720x1280",
+      "used_by": [
+        "marketing:placeholder_only"
+      ],
+      "quality_status": "rejected_placeholder_do_not_ship"
+    }
+  ]
+}
