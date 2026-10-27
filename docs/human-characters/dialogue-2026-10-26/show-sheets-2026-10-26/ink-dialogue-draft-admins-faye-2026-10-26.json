@@ -1,0 +1,1003 @@
+{
+  "format": "Ink/inkjs pattern, hand-shaped JSON, same shape as ink-dialogue.json (story -> knots -> stitches -> lines / choices). DRAFT FILE ONLY.",
+  "status": "DRAFT / SHOW-FIRST ONLY -- STAGED, NOT IN REPO, NOT MERGED INTO ink-dialogue.json, NOT WIRED, NOT LIVE, NOT LOCKED CANON. Ink is staged text only in this batch; it is NOT wired into the game.",
+  "entries": [
+    "admin_voss",
+    "admin_ferren",
+    "admin_marlow",
+    "admin_tamsin",
+    "admin_corvin",
+    "admin_ilsa",
+    "admin_aldous",
+    "admin_mireille",
+    "admin_cassian",
+    "admin_soren",
+    "nurse_faye_battle"
+  ],
+  "flags": [],
+  "notes": [
+    "Admin mid_battle stitch: source trigger is first creature down. Existing ink-dialogue.json battle mapping triggers intro / about_to_win / defeat / after. Mars decides whether admin mid_battle is wired as written or the lines are rewritten for about_to_win. This draft does not silently rename the trigger.",
+    "FLAGGED VERBATIM ISSUES, not silently fixed: Mireille intro contains an em dash; Tamsin defeat, Aldous intro, and Cassian defeat use a single-character ellipsis. Mars rewrites or approves an exception; see show-sheet-admins-2026-10-26.md.",
+    "NOT included, still owed: iwao revised knot (no revised lines exist yet, 0/1), representation named-pick knots broker/mechanic/cook/cartographer-Voss (names not picked, no dialogue drafted, 0/4), champion knot (conflict unresolved, content does not exist). See ink-draft-owed-list-2026-10-26.md.",
+    "Admin knots set no badge flag. Faye battle knot sets no badge flag and does not gate healing."
+  ],
+  "knots": {
+    "admin_voss": {
+      "character": "Admin Voss",
+      "kind": "admin",
+      "theme": "Archivist, Umbral records",
+      "town": "Region 1, Pale Town Tower",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "You are not in the catalogue yet. Stand still and I will fix that."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_voss",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_voss",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_voss",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_voss",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "You are not in the catalogue yet. Stand still and I will fix that."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "Noted. Your team deviates from the expected pattern. Interesting."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "File this under 'unexpected'. The tower is yours. The copies are not."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "I keep the originals. You will find that matters, later."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_ferren": {
+      "character": "Ferren",
+      "kind": "admin",
+      "theme": "Warden, Chrome machinery",
+      "town": "Region 1, Central City HQ top",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Do you know how long it takes to lock down a tower properly? And you just walk in."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_ferren",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_ferren",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_ferren",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_ferren",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Do you know how long it takes to lock down a tower properly? And you just walk in."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Fine. We do this the loud way. Everything in this building is louder than you think."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Take the tower. It was never the point. The point is what it connects to."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Tell whoever sent you: the locks were the easy part."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_marlow": {
+      "character": "Marlow",
+      "kind": "admin",
+      "theme": "Smuggler, water/earth routes",
+      "town": "Region 2, Mahogany Hideout",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "Everything in this building is going somewhere. You, I think, are going to be a delay."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_marlow",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_marlow",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_marlow",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_marlow",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "Everything in this building is going somewhere. You, I think, are going to be a delay."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "I could have sold you a way out. I still could. The price just went up."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "Take the ledger. It is last month's. The current one left on last night's boat."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "You will see my boats again. You just will not see me on them."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_tamsin": {
+      "character": "Tamsin",
+      "kind": "admin",
+      "theme": "Signal hijacker, neon/silk",
+      "town": "Region 2, Goldenrod Radio Tower",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "Good, you are here. The city should hear this part too."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_tamsin",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_tamsin",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_tamsin",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_tamsin",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "Good, you are here. The city should hear this part too."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "You are interrupting a broadcast. Do you know how rude that is, technically?"
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "Cut the feed. …Fine. Cut it. They heard enough."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "A signal does not die because you switch it off. It waits."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_corvin": {
+      "character": "Corvin",
+      "kind": "admin",
+      "theme": "Frontier fixer, heavy generalist",
+      "town": "Region 3, Lilycove Hideout",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "You are the loose end. I am here to tie it."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_corvin",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_corvin",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_corvin",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_corvin",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "You are the loose end. I am here to tie it."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "You are harder to tie than expected. Noted."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "Then you are not a loose end. You are a problem for someone above me. That is worse for you."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "I will report exactly what happened. I do not embellish."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_ilsa": {
+      "character": "Ilsa",
+      "kind": "admin",
+      "theme": "Power engineer, industrial",
+      "town": "Region 3, Mauville",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "Do not touch anything. Half of this floor is holding the other half up."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_ilsa",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_ilsa",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_ilsa",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_ilsa",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "Do not touch anything. Half of this floor is holding the other half up."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "You are overloading the floor. Stop. You are going to break something that works."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "Fine. Take the floor. But you cannot unbuild what I built. Someone will switch it back on."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "The machines do not care who runs them. Remember that when you are the one running them."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_aldous": {
+      "character": "Aldous",
+      "kind": "admin",
+      "theme": "Institute public face, specimens",
+      "town": "Region 4, Jubilife City",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "We welcome scrutiny. We always have. …No cameras now. Good. Then we can be honest."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_aldous",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_aldous",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_aldous",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_aldous",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "We welcome scrutiny. We always have. …No cameras now. Good. Then we can be honest."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "You have no idea what scrutiny costs. I do. I pay it every day."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "Print whatever you like. The institute will still be here tomorrow. That is what an institute is."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "You have won a room. The building is still standing."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_mireille": {
+      "character": "Mireille",
+      "kind": "admin",
+      "theme": "Rift sampler, heavy specimens",
+      "town": "Region 4, Veilstone warehouses",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Oh, good, a fresh sample. I mean — a visitor. A visitor who fights. Even better."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_mireille",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_mireille",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_mireille",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_mireille",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Oh, good, a fresh sample. I mean — a visitor. A visitor who fights. Even better."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Fascinating. Your team holds together under pressure. Mine was not built to. Mine was built to survive."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Take the warehouse. The cracks are still there. They do not close because you won a fight."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Come back when you have seen the Rift properly. Then you will understand why I do this."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_cassian": {
+      "character": "Cassian",
+      "kind": "admin",
+      "theme": "Coordinator, whole network",
+      "town": "Central/roving, Rift gate",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "You are behind schedule. Everyone in this network is behind schedule, lately. You most of all."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_cassian",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_cassian",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_cassian",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_cassian",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "You are behind schedule. Everyone in this network is behind schedule, lately. You most of all."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "This was not on the schedule. I will have to revise the schedule."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "…The network will hold without me. It held before me. But it will not hold as neatly. That is something, I suppose."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "Above me there are two people. One of them is a joke you have already met. The other is not a joke. Ask yourself which one you have actually been fighting."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_soren": {
+      "character": "Soren",
+      "kind": "admin",
+      "theme": "Rift hunter, Rift pursuit",
+      "town": "Central/roving, Rift gate",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from SYNDICATE-ADMINS-2026-10-26.md. Mid-battle stitch trigger is first creature down in the source, NOT the dojo about-to-win trigger; see show-sheet-admins-2026-10-26.md flag. No badge flag set.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "You tracked me here. Good. Most people track the Rift and lose it. You tracked me and found it."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_soren",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_soren",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_soren",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_soren",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "You tracked me here. Good. Most people track the Rift and lose it. You tracked me and found it."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "The Rift does not fight fair. Neither do I. That is the only honest thing about this work."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "Take the gate. Behind it there is no more network. There is a joke, and then there is the man who told it."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "If you go through the Rift, do not expect it to make sense. It never has. Not for me either."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "nurse_faye_battle": {
+      "character": "Nurse Faye",
+      "kind": "battle",
+      "theme": "Heal/battle",
+      "town": "Every location (same nurse)",
+      "note": "DRAFT ONLY, staged 2026-10-26, NOT merged into ink-dialogue.json, NOT wired, NOT locked. Lines verbatim from show-sheet-nurse-faye-battle-2026-10-26.md. Battle is optional only and healing is never gated behind it. Heal knot nurse_faye_heal already exists separately in ink-dialogue.json.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "You look rested enough to want a real test. I am Faye, and yes, I keep a team of my own."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "nurse_faye_battle",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "nurse_faye_battle",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "nurse_faye_battle",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "nurse_faye_battle",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "You look rested enough to want a real test. I am Faye, and yes, I keep a team of my own."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "This is only if you want it. No challenge, no pressure, and the bench stays open either way."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Ready when you are. My team is small, but they train on this bench road every day."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "You are down to your last one... and my team still has fight left in them."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Steady now. One more push from my side, and this friendly bout is mine."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Well fought! You beat the nurse's team, fair and clean."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "That was a joy to watch. You earned this win, truly."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Win or lose, the bench is still yours. Let me look after your whole team now, free as always."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Rest here whenever you need it. Healing is never the prize for beating me... it is just what I do."
+            }
+          ],
+          "exit": true
+        }
+      }
+    }
+  }
+}
