@@ -102,19 +102,25 @@ export const MENU_ANIMATION_SPEEDS = {
 
 export const LOCKED_V32_MENU = {
   canvas: { w: 1200, h: 1500, centreX: 600 },
-  // Logo stays the image, never font text. MAIN MENU logo (round 2,
-  // 2026-10-26) = src/assets/ui/mochiichao-main-logo-v32-matched.png:
+  // Logo stays the image, never font text. MAIN MENU logo (orbitfix,
+  // 2026-10-26) = src/assets/ui/mochiichao-main-logo-v32-orbitfix-20261026.png:
   // Mars's upload letters, keyed from black, with the v32 picture's
   // own geometry -- thick black outline (dilate 10px), thick black
-  // orbit ring (centre (618,500), a=440, b=200, stroke 30, thin white
-  // centre line), sparkle stars. The previous build's keyed upload
+  // orbit ring (centre (619,472), a=425, b=186, stroke 30, thin white
+  // centre line), sparkle stars. Section-O fix (2026-10-26): the
+  // round-2 ring (618,500,440,200) was re-fitted from clean strips
+  // and corrected to the values above. The previous build's keyed upload
   // (src/assets/ui/mochiichao-main-logo.png: thin white orbit, no
   // outline) vanishes on the white menu -- that is what Mars
   // rejected on his phone 2026-10-26 12:38 CDT, and it is NOT reused
   // for the main menu. TITLE keeps the original upload import
   // (IntroSequence line ~390, dark title background, where the thin
   // white orbit reads correctly); only the MAIN_MENU slot uses the
-  // v32-matched asset. Asset canvas 900x548 = this slot exactly.
+  // orbitfix asset. Asset canvas 900x548 = this slot exactly.
+  // (Comment restored from merged PR #215 in commit 3 of this PR:
+  // the cut base predated #215, so this comment — comment-only, no
+  // code value — was missing from the branch. The orbitfix asset
+  // itself is restored in the same commit.)
   logo: { image: "V32_MATCHED" as const, x: 150, y: 180, w: 900 },
   // Cloud VISIBLE-shape box (locked spec + v21 step): the visible cloud
   // shape spans x250-950, y648-828, centre (600,738), 700x180.
