@@ -1,0 +1,28 @@
+{
+  "schema": "mochiichao-show/identity-kit/v1",
+  "locked": "2026-10-27",
+  "logo": "docs/ui-art-options/mochiichao-main-logo-official.png",
+  "palette_sampled_from_real_art": {
+    "brand_blue": "#70b0d0",
+    "brand_blue_light": "#b0d0f0",
+    "brand_blue_mid": "#90b0d0",
+    "dorowani_body": "#30b0d0",
+    "dorowani_belly": "#d0f0f0",
+    "dorowani_deep": "#3070b0",
+    "accent_red": "#a03436",
+    "ink": "#101010",
+    "mochii_blue": "#50b0f0"
+  },
+  "sampling_note": "Hexes measured 2026-10-27 from the official logo PNG, Dorowani transparent master (show bundle) and pilot portraits/lustre art - not eyeballed.",
+  "rules": [
+    "One dominant colour per screen (Persona rule): garden scenes = brand blue family; accent red is reserved for Dorowani's fins/eyes and alert UI only.",
+    "Title cards: official logo lockup top, white guiding line under it, episode title bottom-left in the key font - same layout every episode.",
+    "Title cards: official logo lockup top, white guiding line under it, episode title in Bungee, body text in Fredoka - both already in src/assets/fonts/.",
+    "Character colours never drift: per-species palette sheets in the model-sheet sets are the reference; finish step runs palette-enforce against them."
+  ],
+  "key_fonts": {
+    "display": "Bungee (src/assets/fonts/bungee-regular.ttf)",
+    "text": "Fredoka (src/assets/fonts/fredoka-variable.ttf)",
+    "note": "Already in the game repo - no new font needed."
+  }
+}
