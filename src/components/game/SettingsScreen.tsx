@@ -7,6 +7,7 @@ import {
   SOUNDS, BUTTON_MODES, frameAccent, frameName, persistSettings,
   MenuPreset, LOCKED_PRESET, loadPresets, savePresets, presetToJson,
 } from '../../lib/gameSettings';
+import { restoreLockedV32Snapshot, isLockedV32SnapshotActive } from '../../lib/lockedV32Snapshot';
 import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
 import { setSoundMode, playUiPreview } from '../../lib/audioRouting';
 import { isConfirmKey, shoulderKey, buttonModeNote } from '../../lib/buttonMode';
@@ -267,6 +268,30 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
     setSavedMsg('Reset to Locked Default (v32).');
   };
 
+  // Full-snapshot restore (2026-10-27): ONE row that persists the
+  // locked v32 snapshot as loadable data (lockedV32Snapshot.ts) AND
+  // mirrors its values into screen + zustand state, so the row shows
+  // LOCKED v32 ACTIVE immediately and the main menu renders the
+  // snapshot on return. Unlike the old RESET row alone, this writes
+  // the snapshot JSON itself; unlike PR #260's editor RESTORE (draft
+  // only, unmerged), this persists in the same click — no second
+  // SAVE step. The locked default is never overwritten.
+  const restoreLockedSnapshot = () => {
+    const snap = restoreLockedV32Snapshot();
+    const c = { ...snap.custom, layout: { ...snap.custom.layout } };
+    setDraft({ ...snap.settings });
+    setPreset({ ...snap.preset });
+    setPresets([{ ...snap.preset }]);
+    setCustom(c);
+    setSettings({ ...snap.settings });
+    applyFontRoles({ ...snap.settings });
+    setSoundMode(snap.settings.sound);
+    applyMenuCustom(c);
+    setSelectedTitleStartScreenId(null);
+    setTitleChoice(null);
+    setSavedMsg('Locked v32 snapshot restored — full menu + settings saved as a loadable preset. Change any row and save to move away; restore again any time.');
+  };
+
   const exportPreset = () => {
     const blob = new Blob([presetToJson({ ...preset, settings: draft, custom: { ...custom, layout: { ...custom.layout } }, layout: { ...preset.layout, ...customToLayoutRecord(custom) } })], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -308,6 +333,7 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
     })),
     { label: 'TITLE SCREEN', value: titleStartScreenLabel(titleChoice), onLeft: () => cycleTitleChoice(-1), onRight: () => cycleTitleChoice(1), note: 'Interchangeable start screen for the TITLE phase only. Locked Default = the locked phi title, unchanged. A preset shows that preset\'s video + TitleScene + the locked logo/subtitle/press overlay, and presses the same way (M3 chirp, white fade 350ms, MAIN_MENU). Saved immediately on cycling. RESET TO LOCKED DEFAULT clears it.' },
     { label: 'RESET TITLE SCREEN', value: titleChoice ? 'RESET ►' : 'LOCKED', onLeft: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, onRight: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, onSelect: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, note: 'Clears ONLY the TITLE SCREEN pick, back to Locked Default. Other settings untouched. (Full RESET TO LOCKED DEFAULT lives in Menu Creator.)' },
+    { label: 'RESTORE LOCKED V32', value: isLockedV32SnapshotActive() ? 'LOCKED v32 ACTIVE' : 'RESTORE ►', onLeft: restoreLockedSnapshot, onRight: restoreLockedSnapshot, onSelect: restoreLockedSnapshot, note: 'Full-snapshot restore: persists the locked v32 menu (canvas, logo, cloud, panels, background layers, symbol animation) + all settings / custom / preset values as one loadable preset, and the game reads it on return to the main menu. One click, no second SAVE step. Change any row and save to move away; restore again any time. Locked default itself is never overwritten.' },
     { label: 'MUSIC MIXER', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_MIXER'), onRight: () => setScreen('MUSIC_MIXER'), onSelect: () => setScreen('MUSIC_MIXER'), note: 'Full dedicated screen: FL-Studio-style mixer for the title v3 + vocal stems (default project loads on open, DELETE removes a stem, NEW clears, LOAD DEFAULT restores). Draggable mixer window (Mars 2026-10-26, explicitly asked). Game music pauses while mixing.' },
     { label: 'SOUND CREATOR', value: 'OPEN ►', onLeft: () => setScreen('SOUND_CREATOR'), onRight: () => setScreen('SOUND_CREATOR'), onSelect: () => setScreen('SOUND_CREATOR'), note: 'Full dedicated screen under DigiCore Audio: make chirps/jingles, set boot / press-start / menu select / start-button sounds, mic Chatter (Chatot, DPPT), Ball Seals for send-out.' },
     { label: 'MUSIC CREATOR', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_CREATOR'), onRight: () => setScreen('MUSIC_CREATOR'), onSelect: () => setScreen('MUSIC_CREATOR'), note: 'Full dedicated screen under DigiCore Audio: make soundtracks and background music, step sequencer, 8-bit synth + piano/guitar/drums/organ/bass + vocal takes.' },
@@ -348,6 +374,7 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
         { label: 'GRADIENT', value: preset.gradient ? 'ON' : 'OFF', onLeft: () => setP({ gradient: !preset.gradient }), onRight: () => setP({ gradient: !preset.gradient }) },
         { label: 'SAVE PRESET', value: presetName || 'My Preset 1', onLeft: () => saveAll(draft, { ...preset, name: presetName || 'My Preset 1', settings: draft, savedAt: Date.now() }), onRight: () => saveAll(draft, { ...preset, name: presetName || 'My Preset 1', settings: draft, savedAt: Date.now() }), onSelect: () => saveAll(draft, { ...preset, name: presetName || 'My Preset 1', settings: draft, savedAt: Date.now() }), note: 'Saves as a preset. It does NOT become the default until Mars locks it in.' },
         { label: 'EXPORT PRESET JSON', value: 'DOWNLOAD', onLeft: exportPreset, onRight: exportPreset, onSelect: exportPreset, note: 'Layout-as-data idea (Tuxemon idea, our own JSON, not Tuxemon code).' },
+        { label: 'RESTORE LOCKED V32 (SNAPSHOT)', value: isLockedV32SnapshotActive() ? 'LOCKED v32 ACTIVE' : 'RESTORE ►', onLeft: restoreLockedSnapshot, onRight: restoreLockedSnapshot, onSelect: restoreLockedSnapshot, note: 'Same full-snapshot restore as the Settings screen row: persists the locked v32 preset as loadable data in one click.' },
         { label: 'RESET TO LOCKED DEFAULT (v32)', value: 'RESET', onLeft: resetLocked, onRight: resetLocked, onSelect: resetLocked },
         { label: 'BACK TO SETTINGS', value: '◄ BACK', onLeft: () => setScreen('SETTINGS'), onRight: () => setScreen('SETTINGS'), onSelect: () => setScreen('SETTINGS') },
       ],
