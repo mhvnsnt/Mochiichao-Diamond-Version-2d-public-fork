@@ -1,0 +1,11 @@
+{
+  "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+  "duration_s": 8,
+  "layers": [
+    {"clip": "/home/hatch/workspace/mochiichao-show/composite-test-sproutle/sproutle-shadow-post.webm",
+     "x": 434, "y": 297, "scale": 1.12, "start_s": 0, "loop": true},
+    {"clip": "/home/hatch/workspace/mochiichao-show/composite-test-sproutle/sproutle-idle-clean.webm",
+     "x": 434, "y": 297, "scale": 1.12, "start_s": 0, "loop": true}
+  ],
+  "audio": "background"
+}

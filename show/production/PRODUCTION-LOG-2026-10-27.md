@@ -297,3 +297,29 @@ NOT USABLE (baked ground shadow; the clean sproutle.png is
 current). Every uploaded file was verified by downloading the
 blob back and md5-matching the local file (hashes in the
 folder README and the landing PR).
+
+## STAGING FOLLOW-THROUGH (2026-10-27)
+Follow-through on the staging audit (PR #358): the remaining
+local-only production items that fit GitHub are now staged,
+each verified by downloading the blob back and md5-matching
+the local file (hashes in the folder READMEs and the landing
+PR):
+- Rig previews (idle GIFs + filmstrips, all six pilot
+  species; renders of the committed TextRig rigs) ->
+  show/production/rigs/previews/
+- Clean-Sproutle composite finals (the no-baked-shadows
+  proof: final MP4, character + post-shadow WebMs, shot
+  spec, frame grabs, feet zoom) ->
+  show/production/tooling/build-manifest/composite-tests/sproutle-clean/
+- Rejected Wan test 1 evidence (Wispkin likeness fail) ->
+  show/production/tooling/avatar-stack/rejected-tests/
+  (marked REJECTED, gate evidence only, not production)
+- Gate debug_alignment.png from the retired pose-matched
+  calibration run ->
+  show/production/tooling/avatar-stack/gate-debug/
+  (calibration history only)
+- gallery/persona-band.png -> show/production/model-sheets/
+Remaining known local-only material is scratch by verdict
+(composite-test frame intermediates and strips, superseded
+still-plate composite variants, rejected avatar options) —
+not production, and it stays off the repo.
