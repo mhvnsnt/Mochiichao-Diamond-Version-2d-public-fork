@@ -424,6 +424,12 @@ export const CAVE_OF_ECHOES: any = {
   })(),
   npcs: [
     { id:"miner_npc", x:12, y:13, sprite:"🧗", name:"Miner Cleff", movement:"wander", wanderRadius:1, dialog:["This cave runs DEEP."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:50,moves:["Tackle","Quick Attack"],type:"Earth",level:16}], reward:340, badge:null } },
+    // Dialogue attribution R1-BEAT5: Cave guide, previously the only
+    // missing Region 1 speaker with a world map (Mochiko garden gate
+    // belongs to GardenView, not a world map). Line is verbatim from
+    // region1-dialogue.json; placed at (4,2) on a CAVE tile by the
+    // entrance, clear of the STAIRS_UP tile at (5,2). No battle.
+    { id:"cave_guide", x:4, y:2, sprite:"🕯️", name:"Cave Guide", facing:"down", dialog:["The cave echoes what you bring into it. Bring a steady team, and it echoes back steady."] },
     { id:"trainer_caverunner_pike", x:19, y:10, sprite:"🏃", name:"Cave Runner Pike", facing:"down", dialog:["I run these tunnels every day."], battle:{ team:[{id:"013",name:"Pupbble",hp:45,maxHp:45,atk:60,def:50,spd:50,moves:["Tackle","Quick Attack"],type:"Earth",level:16},{id:"036",name:"Cragarm",hp:65,maxHp:65,atk:105,def:130,spd:30,moves:["Tackle","Quick Attack"],type:"Steel",level:17}], reward:380, badge:null } },
   ],
   exits: [
