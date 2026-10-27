@@ -1,2 +1,30 @@
 mapping: 89, on branch: 75, missing: 14
 missing: docs/title-creatures/logs/disc-to-repo-resume-log-20261027.txt
+docs/title-creatures/logs/disc-to-repo-resume-log-20261027.txt: HTTP 201 blob=5983521bcfeaaa30e57df50d83d235193d6f0260
+missing: docs/title-creatures/logs/gates-shadow.log
+docs/title-creatures/logs/gates-shadow.log: HTTP 201 blob=95686c3fde5b6bb0ce2d7f10417e8c83b4873c83
+missing: docs/title-creatures/logs/gates-shadow2.log
+docs/title-creatures/logs/gates-shadow2.log: HTTP 201 blob=9f45adc2011f512c502561b4c6d357db0408f3ba
+missing: docs/title-creatures/logs/gates.log
+docs/title-creatures/logs/gates.log: HTTP 201 blob=9c832c963c2ce2f3646d0d35498f5f977ed24cf4
+missing: docs/title-creatures/logs/gates2.log
+docs/title-creatures/logs/gates2.log: HTTP 201 blob=4142d818373d1fd99fad355551e5b2a48ab8cedf
+missing: docs/title-creatures/logs/local-serve.log
+docs/title-creatures/logs/local-serve.log: HTTP 201 blob=68e2e900eb20551a173639c8f7f2a9ddb28ddece
+missing: docs/title-creatures/logs/mythar-v6-gates-log-20261026.txt
+docs/title-creatures/logs/mythar-v6-gates-log-20261026.txt: HTTP 201 blob=24ed9ab3cc84142449b4fda61e947a0715bcb9b5
+missing: docs/title-creatures/logs/mythar-v6-rerun-gates-log-20261026.txt
+docs/title-creatures/logs/mythar-v6-rerun-gates-log-20261026.txt: HTTP 201 blob=9f4e6e3e165d17d335e2bccb1a9e81b8e67535f2
+missing: docs/title-creatures/logs/mythar-v6-rerun-merge-log-20261026.txt
+docs/title-creatures/logs/mythar-v6-rerun-merge-log-20261026.txt: HTTP 201 blob=36e80d641fc6e3a4b7259786220e133329ef3741
+missing: docs/title-creatures/logs/mythar-v6-upload-log-20261026.txt
+docs/title-creatures/logs/mythar-v6-upload-log-20261026.txt: HTTP 201 blob=6594f3d4c0dff4da05a2b47766d951f4afd7d5bb
+missing: docs/title-creatures/logs/razorgater_test.log
+docs/title-creatures/logs/razorgater_test.log: HTTP 201 blob=ff1656f2958b3ed0457d6420784ea7c8488b10e1
+missing: docs/title-creatures/logs/rembg_test.log
+docs/title-creatures/logs/rembg_test.log: HTTP 201 blob=3ece8c6ab4326ada26d8cf6ddf4c460ff680ead2
+missing: docs/title-creatures/logs/yogiferno-feather-gates.log
+docs/title-creatures/logs/yogiferno-feather-gates.log: HTTP 201 blob=96222d7c27481879eed066adffca3b807d4d3fd5
+missing: docs/title-creatures/logs/yogiferno-feather-merge.log
+docs/title-creatures/logs/yogiferno-feather-merge.log: HTTP 201 blob=5601bbf38c3ee5686305b6bf2f589d9a63912702
+RESUME OK — all non-self-log files on branch
