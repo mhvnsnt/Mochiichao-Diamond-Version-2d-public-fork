@@ -4,8 +4,8 @@ Format: ~6 minutes · Cast: Mochiko (human lead), pilot six ·
 Locations (3, all from parts-catalog): Garden Gate, Garden Pond,
 Garden Green (battle-bg-garden) · Featured species: **Wispkin**
 Show convention (Jamar, 2026-10-27): creatures do NOT talk in words -
-they vocalize, Pokemon-like (their cries; whether they say their own
-names is UNDECIDED - open question, do not lock in). Only humans
+they vocalize - PURE CRIES AND SOUNDS ONLY (decided by Jamar
+2026-10-27; no name-saying either). Only humans
 (Mochiko) speak word-dialogue. Meaning comes from performance,
 context and Mochiko's reactions.
 
@@ -39,3 +39,13 @@ lunge-and-miss, full-body. (B) Beat 5 — Wispkin's reveal: smoke
 swirl + first full float-up.
 **Reusable assets created:** keeper board (prop), garden gate sign,
 cold-spot trail FX, Wispkin smoke cycle.
+
+**Stinger (Jamar, 2026-10-27):** after the tag, cut to the DARK
+FOREST in full daylight — light that doesn't reach in, no birdsong,
+suspense held on stillness. The Rule 12 line appears as a SUBTITLE
+over the forest and holds: "Everything in the garden belongs to
+somebody — and everybody belongs in the garden." The line is the
+show's warm thesis AND its warning, depending on what's under it.
+New location flagged: the Dark Forest (daylit-horror set) — a MAKE
+item for the parts catalog; what stopped moving in there is not
+shown in EP01.
