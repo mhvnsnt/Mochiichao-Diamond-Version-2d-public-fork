@@ -215,12 +215,27 @@ export const LOCKED_V32_MENU = {
     // the picture. Version sources: v14 (blue/pink circles, blue/pink
     // hearts, black sparkles), v15 (rainbow semi-circles), v25
     // (hearts/stars mirrored). The logo image itself is NOT touched.
+    // PROPOSAL 2026-10-27 (Mars verdicts batch, item 1 — UNMERGED PR,
+    // NOT a new lock): the two hearts above are corrected to the
+    // picture-exact measurements (blue centre (169,421.5), 63x50,
+    // #8cd2ff; pink 53x40, #ff96c8) and the pink heart is MIRRORED
+    // across x=600 from (230,640.5) to (970,640.5), same size/colour,
+    // still rendered last in MainMenuBackground's SVG (above arcs +
+    // symbols, below logo/cloud/panels). VISIBILITY WARNING, measured
+    // against the current orbitfix logo asset (900x548, slot 150,180):
+    // the mirrored pink box is 100% logo-opaque, so under the logo it
+    // is 0% visible; the left box it leaves is 0% logo-opaque and the
+    // blue box is 28% logo-opaque (~72% visible). Mars judges the
+    // renders first — if the pink heart must be seen, it needs a new
+    // order (above the logo, or a gap position), not this move alone.
+    // Nothing else in this file changes in this PR: panels, logo,
+    // cloud, arcs, symbols and the animation default are untouched.
     logoEmblems: [
       { x: 600, y: 194, w: 41, h: 41, c: "#000000", shape: "star" },
       { x: 139, y: 533, w: 45, h: 45, c: "#000000", shape: "star" },
       { x: 1059, y: 533, w: 53, h: 53, c: "#000000", shape: "star" },
-      { x: 169, y: 405, w: 63, h: 51, c: "#95cbfe", shape: "heart" },
-      { x: 230, y: 637, w: 53, h: 37, c: "#fe95c7", shape: "heart" },
+      { x: 169, y: 421.5, w: 63, h: 50, c: "#8cd2ff", shape: "heart" },
+      { x: 970, y: 640.5, w: 53, h: 40, c: "#ff96c8", shape: "heart" },
       { x: 1054, y: 412, w: 46, h: 46, c: "#fe95c7", shape: "circle" },
     ] as { x: number; y: number; w: number; h: number; c: string; shape: string }[],
     // Confetti symbols: the FORMULA field v2 (2026-10-26,

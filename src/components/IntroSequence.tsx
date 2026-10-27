@@ -17,7 +17,7 @@ import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 import mochiichaoLogo from "../assets/ui/mochiichao-main-logo.png";
-import mochiichaoMenuLogo from "../assets/ui/mochiichao-main-logo-v32-matched.png";
+import mochiichaoMenuLogo from "../assets/ui/mochiichao-main-logo-v32-orbitfix-20261026.png";
 import MainMenuBackground from "./game/MainMenuBackground";
 import puffyCloud from "../assets/ui/puffy-cloud.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
@@ -615,7 +615,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     // below renders the v32 spec (logo/cloud/panels at spec
     // coordinates) through LockedStage. CONTINUE is tall (stats
     // inside), NEW GAME short below it, SETTINGS below that.
-    // Selected panel = gold frame + cursor. No Mystery Gift
+    // Selected panel = cursor glyph only (no gold frame, no drop
+    // shadow -- see the proof note below). No Mystery Gift
     // equivalent, no version footer, no fake patch number.
     const mainItems = [
       ...(hasSaves ? [{ key: 'CONTINUE', tall: true }] : []),
@@ -671,25 +672,38 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight,
       fontStyle: LOCKED_V32_MENU.panelLabel.fontStyle,
     });
-    // Proof pixels: CONTINUE + SETTINGS labels carry a white outline
-    // halo; NEW GAME / BACK TO TITLE are plain black. The CONTINUE
-    // sublabel in the proof also carries the thin white halo (see
-    // the enlarged proof crop) — "plain sublabel" in Mars's 11:17
-    // note is read as plain clean font, not no-halo, because the
-    // proof file itself shows the halo. Halo method: 8-way
-    // text-shadow, NOT WebkitTextStroke — stroke paints OVER the
-    // fill and washed SETTINGS out at phone scale (shot1, 2026-10-26:
-    // SETTINGS nearly unreadable while plain NEW GAME stayed solid
-    // black). Shadow is painted BEHIND the fill, so the black core
-    // stays solid at every scale and the white fringe still reads
-    // as the proof's halo. labelStrokePx/sublabelStrokePx from the
-    // locked data are the halo radii.
-    const halo = (r: number): string =>
-      [`${r}px 0 0 #fff`, `-${r}px 0 0 #fff`, `0 ${r}px 0 #fff`, `0 -${r}px 0 #fff`,
-       `${r}px ${r}px 0 #fff`, `-${r}px -${r}px 0 #fff`, `${r}px -${r}px 0 #fff`, `-${r}px ${r}px 0 #fff`].join(', ');
+    // Target pixels, re-measured 2026-10-27 (v32 picture + matched
+    // GIF frame 0 + proof GIF, all three agree): CONTINUE + SETTINGS
+    // labels are WHITE letters with a BLACK outline; the CONTINUE
+    // sublabel is likewise white with a black outline. NEW GAME and
+    // BACK TO TITLE are plain black in all three targets (white
+    // pixel count in their label bands is 0), so both stay plain
+    // black here — no white halo is added to BACK TO TITLE, because
+    // that would contradict the targets. The earlier "white halo"
+    // reading is superseded by this measurement. FireRed agrees in
+    // direction (main_menu.c sTextColor1 = {10,11,12} = white fg per
+    // graphics/main_menu/textbox.pal); the black outline itself is
+    // Mochiichao target spec, not a decomp value. Alignment is
+    // already left (PR #206, merged): panel paddingLeft =
+    // labelMargin - border, sublabel marginLeft = sublabelMargin -
+    // labelMargin, verified within 1px of the v32 targets — this PR
+    // does not re-centre or re-margin anything. Halo radii are
+    // labelStrokePx/sublabelStrokePx from the locked data.
+    // Halo ink is a parameter (default white, kept for callers that
+    // still want it): the 2026-10-27 target reading puts CONTINUE /
+    // SETTINGS / sublabel in WHITE letters with a BLACK outline, so
+    // those call sites pass "#000" below. Halo method unchanged:
+    // 8-way text-shadow, NOT WebkitTextStroke — stroke paints OVER
+    // the fill and washed SETTINGS out at phone scale (shot1,
+    // 2026-10-26). Shadow is painted BEHIND the fill, so the white
+    // core stays solid at every scale and the black fringe still
+    // reads as the target's outline.
+    const halo = (r: number, ink = "#fff"): string =>
+      [`${r}px 0 0 ${ink}`, `-${r}px 0 0 ${ink}`, `0 ${r}px 0 ${ink}`, `0 -${r}px 0 ${ink}`,
+       `${r}px ${r}px 0 ${ink}`, `-${r}px -${r}px 0 ${ink}`, `${r}px -${r}px 0 ${ink}`, `-${r}px ${r}px 0 ${ink}`].join(', ');
     const labelStroke = (key: string): React.CSSProperties =>
       (LOCKED_V32_MENU.panelLabel.strokeLabels as readonly string[]).includes(key)
-        ? { textShadow: halo(LOCKED_V32_MENU.panelLabel.labelStrokePx) }
+        ? { textShadow: halo(LOCKED_V32_MENU.panelLabel.labelStrokePx, "#000") }
         : {};
     return (
       <div className="game-screen bg-[#050810] relative overflow-hidden" role="menu" aria-label="Main menu">
@@ -716,9 +730,17 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               freezes to static (MainMenuBackground freezes too). */}
           <style>{`@keyframes menu-bob-cloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.cloud.bobAmp}px); } } @keyframes menu-bob-mochii { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.mochii.bobAmp}px); } } .menu-bob-cloud { animation: menu-bob-cloud ${LOCKED_V32_MENU.cloud.bobPeriod}s ease-in-out infinite; } .menu-bob-mochii { animation: menu-bob-mochii ${LOCKED_V32_MENU.mochii.bobPeriod}s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .menu-bob-cloud, .menu-bob-mochii { animation: none; } }`}</style>
           {/* Logo slot from locked data: y180, width 900 (150-1050).
-              Round-2 menu asset (v32-matched, 900x548, centre 454):
+              Menu asset (orbitfix, 2026-10-26, 900x548, centre 454):
               upload letters with thick black outline + thick black
               orbit ring, built from the v32 picture's own geometry.
+              Section-O orbit fix (2026-10-26): ring re-fitted from
+              clean strips (left/right/top, star boxes excluded) to
+              centre (619,472), a=425, b=186, stroke 30 -- the round-2
+              ring (618,500,440,200) scored 0.48 on those pixels
+              (top 0.25) vs 0.98 for the corrected ring. Version-lock
+              settlement: the corrected ring ships as a NEW dated file
+              (mochiichao-main-logo-v32-orbitfix-20261026.png); the
+              round-2 v32-matched asset stays in the repo untouched.
               The TITLE slot above keeps the original keyed upload
               (thin white orbit reads on the dark title background);
               the pale keyed upload is NOT used here -- it vanished
@@ -729,11 +751,36 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             className="absolute object-contain"
             style={{ left: LOCKED_V32_MENU.logo.x, top: LOCKED_V32_MENU.logo.y, width: LOCKED_V32_MENU.logo.w }}
           />
+          {/* Fixed orbit side sparkles (section O, 2026-10-26): black
+              4-point stars present at the SAME positions in all three
+              targets (v32 picture, matched GIF frame 0, proof) -- left
+              (118-162, 512-556), right (1034-1086, 508-560) -- but
+              absent from the menu: both sit outside the 900-wide logo
+              asset box, and no element drew them. Shape is the game's
+              own star path (fill 0.327 vs target stars ~0.30). Static
+              like the logo (no bob); above the symbol layer, so
+              rising symbols pass behind them. */}
+          <svg
+            aria-hidden="true"
+            className="absolute"
+            style={{ left: 118, top: 512, width: 45, height: 45, pointerEvents: 'none' }}
+            viewBox="-22.5 -22.5 45 45"
+          >
+            <path d="M 0 -22.5 Q 5.4 -5.4 22.5 0 Q 5.4 5.4 0 22.5 Q -5.4 5.4 -22.5 0 Q -5.4 -5.4 0 -22.5 Z" fill="#000000" />
+          </svg>
+          <svg
+            aria-hidden="true"
+            className="absolute"
+            style={{ left: 1034, top: 508, width: 53, height: 53, pointerEvents: 'none' }}
+            viewBox="-26.5 -26.5 53 53"
+          >
+            <path d="M 0 -26.5 Q 6.36 -6.36 26.5 0 Q 6.36 6.36 0 26.5 Q -6.36 6.36 -26.5 0 Q -6.36 -6.36 0 -26.5 Z" fill="#000000" />
+          </svg>
           {/* Cloud: ORIGINAL puffy-cloud.svg only, SHAPED by transform
               (Mars 2026-10-26 18:13 CDT: transform only, zero path edits,
               zero drawing, zero new artwork). The <svg><image
               preserveAspectRatio="none"> applies the calibrated imgBox
-              shape transform (225,599,823x258) so the file's VISIBLE
+              shape transform (224,599,825x264) so the file's VISIBLE
               path lands exactly on the locked box x250-950, y648-828,
               centre (600,738). A plain <img> cannot do this: Chrome
               applies meet inside <img> and letterboxes the viewBox
@@ -770,16 +817,16 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   onFocus={() => setMainSelected(i)}
                   style={v32PanelStyle(panelByKey('CONTINUE'), isSelected)}
                 >
-                  <div className="text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('CONTINUE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke('CONTINUE') }}>
+                  <div className="text-white" style={{ fontSize: panelByKey('CONTINUE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('CONTINUE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke('CONTINUE') }}>
                     <span style={{ color: settings.cursorColor, marginRight: isSelected ? 7 : 0 }}>{isSelected ? cursorGlyph : ''}</span>CONTINUE
                   </div>
                   {latestData ? (
                     <>
-                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
-                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
+                      <div className="text-white" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx, "#000") }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
+                      <div className="text-white" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx, "#000") }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
                     </>
                   ) : (
-                    <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player • Roster • Dojos • CR • Last: Core Fragment</div>
+                    <div className="text-white" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx, "#000") }}>Player • Roster • Dojos • CR • Last: Core Fragment</div>
                   )}
                 </button>
               );
@@ -793,7 +840,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                 onFocus={() => setMainSelected(i)}
                 style={v32PanelStyle(panel, isSelected)}
               >
-                <div className="text-black" style={{ fontSize: panel.labelSize, lineHeight: 1.15, letterSpacing: `${panel.labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke(item.key) }}>
+                <div className={item.key === 'SETTINGS' ? "text-white" : "text-black"} style={{ fontSize: panel.labelSize, lineHeight: 1.15, letterSpacing: `${panel.labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke(item.key) }}>
                   <span style={{ color: settings.cursorColor, marginRight: isSelected ? 7 : 0 }}>{isSelected ? cursorGlyph : ''}</span>{item.key}
                 </div>
               </button>
