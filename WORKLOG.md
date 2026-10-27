@@ -62,3 +62,18 @@ named in the commit message and approved.
   measurements (avatar.get + ffprobe); repo roster art.
 - Backups: none needed — new files only, no asset replaced.
 - Deletions in this change: NONE.
+
+## 2026-10-27 — Doro (Muse, show lane), branch feature/show-sources-cn-gigaleak-1
+- What: Added docs/show-sources/cn-gigaleak/ — INDEX.md plus SOURCE.md
+  for gumball, teen-titans, space-ghost, johnny-bravo, hero-files (the
+  five-show mix from cape-jones docs/SHOW-BIBLE.md). Stacked on
+  feature/avatar-pipeline-1 (PR #309). This entry is appended only.
+- Why: Mars asked 2026-10-27 to mix the CN / CN Gigaleak show sources
+  into Mochiichao for the game and the show (main lane help package +
+  draft index CN-SOURCES-INDEX-DRAFT.md, read-only inventory).
+- Source: mhvnsnt/cn-gigaleak-* repo family, cape-jones docs,
+  TRIPPEDD animation-study catalogs, TorBox/TeraBox live checks
+  (main lane, 2026-10-27).
+- Backups: none needed — new files only, no asset replaced.
+- Deletions in this change: NONE. No leak media and no download /
+  mirror / magnet links were committed — metadata/index only.
