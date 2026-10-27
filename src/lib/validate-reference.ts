@@ -74,10 +74,21 @@ for (const def of Object.values(SHEET_DEFS)) {
   const manifestPath = path.join(dir, `${def.name.toLowerCase()}.manifest.json`);
   if (!fs.existsSync(manifestPath)) { warnings.push(`Sheet ${def.name}: manifest missing at ${manifestPath}`); continue; }
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  // Sheet geometry comes from the manifest itself, not a hardcoded
+  // 192-wide sheet: locked atlases are 384 wide (dorowani 384x192,
+  // gabu 384x256) and the old <name>_sheet.png files were deleted
+  // 2026-10-26 per Mars order, so the old check flagged live art
+  // as missing. Fall back to the old 192 / <name>_sheet.png check
+  // only for manifests that name no sheet.
+  const sheetWidth = manifest.sheet?.width ?? 192;
+  const sheetFile = manifest.sheet?.file
+    ? path.join(path.resolve(SRC, '..'), manifest.sheet.file)
+    : path.join(dir, `${def.name.toLowerCase()}_sheet.png`);
   for (const f of manifest.frames || []) {
-    if (f.x < 0 || f.x + 64 > 192) errors.push(`Sheet ${def.name}: frame ${f.view} x=${f.x} outside 192-wide sheet`);
+    const fw = f.width ?? 64;
+    if (f.x < 0 || f.x + fw > sheetWidth) errors.push(`Sheet ${def.name}: frame ${f.view} x=${f.x} outside ${sheetWidth}-wide sheet`);
   }
-  if (!fs.existsSync(path.join(dir, `${def.name.toLowerCase()}_sheet.png`))) errors.push(`Sheet ${def.name}: sheet PNG missing`);
+  if (!fs.existsSync(sheetFile)) errors.push(`Sheet ${def.name}: sheet PNG missing at ${sheetFile}`);
   if (!SPECIES_DB[def.speciesId]) warnings.push(`Sheet ${def.name} (${def.speciesId}): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)`);
 }
 
