@@ -18,7 +18,7 @@ Intro order: studio scene -> grass close-up -> forest pan ->
   M Heavensent Studios logo, phi 742 boot / 556 title -> HAVE logo,
   NEED sparkles/star animation (open source sparkle frames).
 - Grass close-up spot (full BG, scroll + zoom) ->
-  Binary Woods / grass background, Mochiichao grass tiles -> NEED.
+  The Dark Forest / grass background, Mochiichao grass tiles -> NEED.
 - Forest pan spot (wide BG pan, then close-ups) ->
   Forest background + 2 creature close-ups (rotation pool) -> HAVE
   creature sheets, NEED forest background.

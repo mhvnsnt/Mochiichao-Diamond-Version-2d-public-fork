@@ -341,7 +341,7 @@ export const DOJO_1: any = {
 
 // Additional Maps
 export const BINARY_WOODS: any = {
-  name: "Binary Woods",
+  name: "The Dark Forest",
   music: "woods_theme",
   weather: "mist",
   width: 32, height: 45,
@@ -982,7 +982,7 @@ export const SIGNAL_TUNNEL: any = {
   ],
   doors: [],
   events: [],
-  // Light-Pulse gate for the dark section is owed in the story/engine
+  // Illuminate gate for the dark section is owed in the story/engine
   // pass (region1-wiring.md Break/Phase B note): no engine gate string
   // is invented here, and none is claimed as live.
   encounters: [] // wild pool owed: trainer lane / roster expansion, not invented here

@@ -38,7 +38,7 @@ catch -> no progress, and the starter door is the broken link.
   a map header that says the current map + objective ("Go to
   Prof. Aeon's Lab" until starter chosen).
 - Tall grass in Boot Harbor: Sector 0 has NO encounter pool in
-  the map data (pools are on Route 1.0, Binary Woods, Cave).
+  the map data (pools are on Route 1.0, The Dark Forest, Cave).
   That is correct in Pokemon terms (no wild battles before the
   starter in the starting town) — but the game must TELL the
   player that, instead of silently doing nothing. Fix: when a

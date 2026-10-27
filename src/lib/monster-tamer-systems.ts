@@ -37,7 +37,7 @@ export type TrueElement = (typeof TRUE_ELEMENTS)[number];
 /** Mainframe sectors already in the game's maps (no new locations). */
 export const MAINFRAME_SECTORS = [
   "Sector 0 — Boot Harbor",
-  "Binary Woods",
+  "The Dark Forest",
   "Cave of Echoes",
   "Neon City",
   "Scrap Junkyard",

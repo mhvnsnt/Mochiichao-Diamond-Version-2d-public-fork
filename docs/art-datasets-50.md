@@ -65,7 +65,7 @@ entry in src/lib/art-sets.ts, so game code can reference it by id.
     HeartGold-style top-down + 2.5D depth. SPEC.
 22. Route world set — Route 1.0 / 4.0, tall grass equivalent, caves
     (Quartz Caverns), water, bridges. SPEC.
-23. Binary Woods set — digital forest, glowing data trees, glitch
+23. The Dark Forest set — digital forest, glowing data trees, glitch
     patches. SPEC.
 24. Silicon Town set — market, academy, dojo, Mainframe Gardens
     entrances. SPEC.

@@ -340,7 +340,7 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   sparring_staff: slot('sparring_staff', 'Sparring Staff', 'garden-staff', '#ce93d8'),
   // Hacker Grunt (staged atlas, 432-finish draft): standard ROWS
   // walk, battle front 12, portrait 13. The existing slotForNpc
-  // hacker/grunt route already points here, so Binary Woods'
+  // hacker/grunt route already points here, so The Dark Forest's
   // hacker_grunt2 ("Hacker Grunt") now renders this art — same
   // routing logic as PR #265, only the slot stops being null.
   // Battle back QUEUED (on main:
@@ -352,7 +352,7 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // itself is name-verified, not guessed.
   syndicate: atlasSlot('syndicate', 'Syndicate Member', 'antagonist', syndicateAtlas, '#8d6e63'),
   // Liberation Front (PR #100 atlas, current = v2): routed by
-  // slotForNpc below (id includes 'liberation'). NOTE: Binary Woods'
+  // slotForNpc below (id includes 'liberation'). NOTE: The Dark Forest's
   // hacker_grunt2 ("Hacker Grunt", dialogue "The woods belong to the
   // Liberation Front now!") does NOT route here — its id/name are
   // Hacker Grunt, so it keeps the hacker slot (no atlas yet). The

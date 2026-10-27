@@ -67,14 +67,14 @@ Each is a whole line, so the choice changes that line's typing:
 
 - `Maps.ts`: hand-built tile grids, NpcDef { id, x, y, sprite, name, dialog, battle? },
   MapExit { x, y, to, enterAt }, Encounter { mochiId, rate, level }, EventDef.
-  Contains Sector 0 and Binary Woods.
+  Contains Sector 0 and The Dark Forest.
 - `FullWorldMaps.ts`: buildMap + TILE constants, exits with `dir` and `label`,
   conditions (e.g. Mauveville Arena requires ciphers>=10), larger world:
-  Sector 0, Binary Woods, Cave of Echoes, Neon City, Scrap Junkyard,
+  Sector 0, The Dark Forest, Cave of Echoes, Neon City, Scrap Junkyard,
   Mauveville Arena, Castagnoli Island, Luigi's Mansion.
 - Canonical: the FullWorldMaps shape, because it already contains all six
   landmarks and the exit conditions. Maps.ts content must be checked against it
-  map-by-map (Sector 0, Binary Woods) and any NPC/dialog/encounter present only
+  map-by-map (Sector 0, The Dark Forest) and any NPC/dialog/encounter present only
   in Maps.ts must be ported into the FullWorldMaps map of the same name —
   e.g. the branded-Kittember event and Master Lin's dojo battle in Maps.ts.
   Do not keep two live world systems; the renderer must read one.
