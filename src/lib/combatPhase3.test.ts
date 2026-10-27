@@ -69,19 +69,28 @@ function move(over: Partial<MoveInput> = {}): MoveInput {
   return { power: 80, accuracy: 100, category: "Physical", element: "NORMAL", priority: 0, ...over };
 }
 
-describe("phase 3: live-main verification (36/36 script map)", () => {
-  it("gameMoveScriptMap on main is 36/36 with 0 unmatched", () => {
+describe("phase 3: live-main verification (121-move script map: 86 routed, 35 named-unrouted)", () => {
+  it("gameMoveScriptMap on main is 86/121 with 35 named-unrouted", () => {
     expect(scriptMapCounts()).toEqual({
-      gameMoves: 36, exactId: 10, mappedHere: 26, totalMatched: 36, unmatched: 0,
+      gameMoves: 121, exactId: 10, mappedHere: 76, totalMatched: 86, unmatched: 35,
     });
   });
-  it("all 36 game moves have a schema and a script route, none unrouted", () => {
+  it("all 121 game moves have a schema and a script route; the 35 unrouted are named, never silent", () => {
     const all = allGameMoveSchemas();
-    expect(all).toHaveLength(36);
+    expect(all).toHaveLength(121);
     expect(all.filter((s) => s.scriptRoute === "exact-id")).toHaveLength(10);
-    expect(all.filter((s) => s.scriptRoute === "mapped")).toHaveLength(26);
-    expect(all.filter((s) => s.scriptRoute === "unrouted")).toHaveLength(0);
-    expect(all.every((s) => s.scriptKey !== null)).toBe(true);
+    expect(all.filter((s) => s.scriptRoute === "mapped")).toHaveLength(76);
+    const unrouted = all.filter((s) => s.scriptRoute === "unrouted").map((s) => s.id).sort();
+    expect(unrouted).toEqual([
+      "ACID_SPLASH", "ANCIENT_SURGE", "BURROW_STRIKE", "CHASE_DOWN", "CINDER_WHEEL",
+      "CRAB_SNAP", "DREAM_BITE", "DUST_SLAP", "EMBER_CYCLONE", "FAIRY_LIGHT",
+      "FROST_JAB", "FUTURE_STRIKE", "GLACIER_STORM", "GLIMMER_BURST", "GUARD_WALL",
+      "LEAF_EDGE", "LEAF_WHIP", "MUD_PELLET", "ORIGIN_VERDICT", "PIXIE_KISS",
+      "QUICK_SAND", "RAGE_STORM", "SEED_BURST", "SHADOW_AMBUSH", "SIGNAL_FLASH",
+      "SKY_DIVE", "SLUDGE_TOSS", "SMOG_CLOUD", "STORM_CALL", "SWIFT_STRIKE",
+      "TWIN_STING", "UMBRAL_ORB", "VOLT_PUNCH", "WHIRL_TRAP", "WIND_GUST",
+    ]);
+    expect(all.every((s) => s.scriptKey !== null || s.scriptRoute === "unrouted")).toBe(true);
   });
   it("IRON_BARRAGE routes to GEAR_GRIND (Mars multi-hit decision)", () => {
     expect(gameMoveSchema("IRON_BARRAGE")?.scriptKey).toBe("GEAR_GRIND");
@@ -109,11 +118,14 @@ describe("phase 3: union schema counts (moveScripts.json)", () => {
 });
 
 describe("phase 3: effect dispatch covers every effect string in moves.ts", () => {
-  it("13 distinct effect strings, none silently falling through to none", () => {
+  it("28 distinct effect strings: 20 dispatched, 8 named-pending, none silently falling through to none", () => {
     const table = effectDispatchTable();
     expect(Object.keys(table).sort()).toEqual([
-      "ACC_DOWN1", "BURN", "CHARGE_TURN", "DEF_DOWN1", "FLINCH", "HIGH_CRIT",
-      "MULTI_HIT", "NONE", "PARALYSIS", "POISON", "RECOIL_25", "SPDEF_DOWN1", "SPE_DOWN1",
+      "ACC_DOWN1", "ALL_UP1", "ATK_DOWN1", "ATK_DOWN2", "ATK_UP1", "BURN",
+      "CHARGE_TURN", "CONFUSE", "DEF_DOWN1", "DEF_UP1", "DEF_UP2", "DRAIN",
+      "FLINCH", "FORM_TYPE", "FREEZE", "HIGH_CRIT", "MULTI_HIT", "NONE", "PARALYSIS",
+      "POISON", "PROTECT", "RECOIL_25", "SLEEP", "SPDEF_DOWN1", "SPDEF_UP1",
+      "SPDEF_UP2", "SPE_DOWN1", "TRAP",
     ]);
     expect(table["NONE"]).toBe("none");
     expect(table["BURN"]).toBe("status");
@@ -128,6 +140,30 @@ describe("phase 3: effect dispatch covers every effect string in moves.ts", () =
     expect(table["HIGH_CRIT"]).toBe("highCrit");
     expect(table["CHARGE_TURN"]).toBe("chargeTurn");
     expect(table["FLINCH"]).toBe("flinch");
+    // Batch 2 stat tokens (2026-10-27): dispatched through the "stat" kind.
+    expect(table["ATK_UP1"]).toBe("stat");
+    expect(table["ATK_DOWN1"]).toBe("stat");
+    expect(table["ATK_DOWN2"]).toBe("stat");
+    expect(table["DEF_UP1"]).toBe("stat");
+    expect(table["DEF_UP2"]).toBe("stat");
+    expect(table["SPDEF_UP1"]).toBe("stat");
+    expect(table["SPDEF_UP2"]).toBe("stat");
+    // Named-pending, NOT silent: these 7 have no resolver kind yet
+    // (no multi-stat / confuse / drain / trap / protect kind; sleep and
+    // freeze have no turn logic) -- see mochiichao_moves_provenance.json
+    // meta.newEffectTokensNeedingEngine. A future token that lands here
+    // without a dispatch fails this test by name, it cannot hide in "none".
+    expect(table["ALL_UP1"]).toBe("none");
+    expect(table["CONFUSE"]).toBe("none");
+    expect(table["DRAIN"]).toBe("none");
+    expect(table["FREEZE"]).toBe("none");
+    expect(table["PROTECT"]).toBe("none");
+    expect(table["SLEEP"]).toBe("none");
+    expect(table["TRAP"]).toBe("none");
+    // FORM_TYPE is "none" here by design, not pending: ORIGIN_VERDICT's
+    // form behaviour lives in mytharPick.ts (typeRule FORM_TYPE), not in
+    // the resolver's effect dispatch. Pre-existing, not batch 2.
+    expect(table["FORM_TYPE"]).toBe("none");
   });
 });
 
@@ -192,14 +228,14 @@ describe("phase 3: turn order and accuracy (battle-math, via resolver order)", (
 });
 
 describe("phase 3: targets (singles table, live in battleWiring)", () => {
-  it("35 foe + EARTH_TREMOR allFoes, in both the table and the live move table", () => {
+  it("120 foe + EARTH_TREMOR allFoes, in both the table and the live move table", () => {
     const rows = targetTable();
-    expect(rows).toHaveLength(36);
+    expect(rows).toHaveLength(121);
     expect(rows.filter((r) => r.resolverTarget === "allFoes").map((r) => r.moveId)).toEqual(["EARTH_TREMOR"]);
-    expect(rows.filter((r) => r.resolverTarget === "foe")).toHaveLength(35);
+    expect(rows.filter((r) => r.resolverTarget === "foe")).toHaveLength(120);
     expect(rows.find((r) => r.moveId === "EARTH_TREMOR")?.black2Target).toBe("ADJACENT_FOES");
     const live = buildLegacyMoveTable();
-    expect(Object.keys(live.moves)).toHaveLength(36);
+    expect(Object.keys(live.moves)).toHaveLength(121);
     expect(live.moves["EARTH_TREMOR"].target).toBe("allFoes");
     expect(live.moves["TACKLE"].target).toBe("foe");
   });

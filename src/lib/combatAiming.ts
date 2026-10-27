@@ -26,8 +26,9 @@
  * [0, 0] — battler-centre origin, exactly what the inventory proved:
  * no generation on disk has a per-move mouth/hand/cannon table, and
  * this module invents none. A missing entry falls back to centre too,
- * never to a guessed body part. The staged v1 table (36 game moves,
- * centre offsets) is verified against these anchors by
+ * never to a guessed body part. The staged v1 table (36 centre entries
+ * for the original 36 game moves; batch-2 moves fall back to centre
+ * per the module rule) is verified against these anchors by
  * combatPhase3.test.ts.
  *
  * Camera: battles are turn-based core with XD/Colosseum-style camera

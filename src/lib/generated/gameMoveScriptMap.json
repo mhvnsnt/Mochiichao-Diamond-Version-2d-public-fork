@@ -1,7 +1,7 @@
 {
-  "version": "phase1-2026-10-26",
-  "source": "src/lib/generated/moveScripts.json (Layer 1 union scripts, PR #168) + src/lib/moves.ts (36 game moves)",
-  "method": "Match requires same script type (particle) AND same script category (motion class) AND same timing family (single-hit damage / damage_with_status status puff / multi_hit beats / two_turn charge). Within damage family, the script effect string is decomp provenance, not an executed step: damage-family steps are projectile/lunge + impact only, so an effect-name difference with no step difference does not block a match and is noted per entry. For damage_with_status games the status puff must match the game secondary status. Power proximity breaks ties; decomp accuracy (decomp_black2_moves.json) breaks ties where noted. No game move data, category, effect, or learnset was changed or invented; this file routes game move ids to existing scripts only. Exact-id game moves (10) are NOT listed here: they resolve directly from moveScripts.json and take precedence in getMoveScript(). IRON_BARRAGE correction 2026-10-26 (Mars decision): effect NONE -> MULTI_HIT in src/lib/moves.ts (description 'Fires 2-5 iron shards' unchanged); IRON_BARRAGE now maps to GEAR_GRIND below, so the matched total is 36/36.",
+  "version": "phase1-2026-10-26+batch2-2026-10-27",
+  "source": "src/lib/generated/moveScripts.json (Layer 1 union scripts, PR #168) + src/lib/moves.ts (121 game moves)",
+  "method": "Match requires same script type (particle) AND same script category (motion class) AND same timing family (single-hit damage / damage_with_status status puff / multi_hit beats / two_turn charge). Within damage family, the script effect string is decomp provenance, not an executed step: damage-family steps are projectile/lunge + impact only, so an effect-name difference with no step difference does not block a match and is noted per entry. For damage_with_status games the status puff must match the game secondary status. Power proximity breaks ties; decomp accuracy (decomp_black2_moves.json) breaks ties where noted. No game move data, category, effect, or learnset was changed or invented; this file routes game move ids to existing scripts only. Exact-id game moves (10) are NOT listed here: they resolve directly from moveScripts.json and take precedence in getMoveScript(). IRON_BARRAGE correction 2026-10-26 (Mars decision): effect NONE -> MULTI_HIT in src/lib/moves.ts (description 'Fires 2-5 iron shards' unchanged); IRON_BARRAGE now maps to GEAR_GRIND below, so the matched total is 36/36. Batch 2 (2026-10-27, wiring lane): 50 of the 84 catalogue moves route by their decomp sourceConstant (all 50 type/category/power-exact, puff rule enforced both ways); 34 catalogue moves stay unmatched with per-move reasons in `unmatched` (20 category mismatches from the FireRed-vs-modern split, 3 FAIRY type mismatches with no Fairy script in the union, 5 power deltas over 15, 1 two-turn script for a single-hit game move, 1 single-hit game move for a multi-hit script, 1 protect move with no protect-family script, 2 status-secondary games whose scripts carry no matching puff, 1 drain game whose script carries an unjustified sleep puff). ORIGIN_VERDICT (MYTHIC original) stays unmatched: no decomp source. Counts now 121 game moves: 10 exact-id + 76 mapped, 35 unmatched.",
   "qualityDefs": {
     "exact": "Type, category, timing family, and mapped effect all match, and power is equal (name-normalization entries included).",
     "fit": "Type, category, and timing family match and power is within 15, but the script effect string differs in provenance only (no step difference), or a name-normalized script is within 5 power."
@@ -44,7 +44,57 @@
     "MIND_BLAST": "PSYCHIC",
     "POWER_STRIKE": "SKY_UPPERCUT",
     "SWARM_STRIKE": "TWINEEDLE",
-    "IRON_BARRAGE": "GEAR_GRIND"
+    "IRON_BARRAGE": "GEAR_GRIND",
+    "CLAW_SWIPE": "SCRATCH",
+    "VICE_HOLD": "VICE_GRIP",
+    "HEAD_RAM": "HEADBUTT",
+    "FURY_BARRAGE": "FURY_SWIPES",
+    "WAR_CRY": "GROWL",
+    "COLD_STARE": "LEER",
+    "TIDE_SHOT": "WATER_GUN",
+    "SURGE_RIDE": "SURF",
+    "BUBBLE_BURST": "BUBBLE_BEAM",
+    "TIDE_SPOUT": "WATER_SPOUT",
+    "EMBER_FLICK": "EMBER",
+    "HEAT_SURGE": "HEAT_WAVE",
+    "GHOST_FLAME": "WILL_O_WISP",
+    "DRAIN_BITE": "ABSORB",
+    "SPORE_CLOUD": "SLEEP_POWDER",
+    "STUN_POLLEN": "STUN_SPORE",
+    "STATIC_JOLT": "THUNDER_SHOCK",
+    "STATIC_WAVE": "THUNDER_WAVE",
+    "CHARGE_UP": "CHARGE",
+    "SNOW_DUST": "POWDER_SNOW",
+    "CHILL_WIND": "ICY_WIND",
+    "CHOP_STRIKE": "KARATE_CHOP",
+    "TWIN_KICK": "DOUBLE_KICK",
+    "SKY_KICK": "SKY_UPPERCUT",
+    "BRICK_SMASH": "BRICK_BREAK",
+    "INNER_FOCUS": "MEDITATE",
+    "VENOM_STING": "POISON_STING",
+    "TOXIN_CLOUD": "POISON_GAS",
+    "BONE_TOSS": "BONE_CLUB",
+    "BEAK_JAB": "PECK",
+    "DRILL_BEAK": "DRILL_PECK",
+    "TRUE_WING": "AERIAL_ACE",
+    "MIND_JAB": "CONFUSION",
+    "MIND_BEAM": "PSYBEAM",
+    "MIND_SHIELD": "AMNESIA",
+    "WEB_SHOT": "STRING_SHOT",
+    "LEECH_BITE": "LEECH_LIFE",
+    "STONE_TOSS": "ROCK_THROW",
+    "STONE_SLIDE": "ROCK_SLIDE",
+    "STONE_BURST": "ROCK_BLAST",
+    "GHOST_TOUCH": "LICK",
+    "CURSE_GAZE": "CONFUSE_RAY",
+    "PHANTOM_FIST": "SHADOW_PUNCH",
+    "DRAKE_BREATH": "DRAGON_BREATH",
+    "DRAGON_SURGE": "DRAGON_PULSE",
+    "UMBRAL_PULSE": "DARK_PULSE",
+    "STEEL_TAIL": "IRON_TAIL",
+    "CHROME_WING": "STEEL_WING",
+    "IRON_CLAW": "METAL_CLAW",
+    "IRON_FORTRESS": "IRON_DEFENSE"
   },
   "entries": {
     "AQUA_SHOT": {
@@ -716,14 +766,1348 @@
           "black2"
         ]
       }
+    },
+    "CLAW_SWIPE": {
+      "script": "SCRATCH",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 40, HIT, physical_contact. Game 'Rakes the foe with sharp claws.' = SCRATCH presentation.",
+      "game": {
+        "name": "Claw Swipe",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "bp": 40,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "NORMAL",
+        "category": "Physical",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "VICE_HOLD": {
+      "script": "VICE_GRIP",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 55, HIT, physical_contact. Game 'Grips the foe in a crushing hold.' = VICE_GRIP presentation.",
+      "game": {
+        "name": "Vice Hold",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "bp": 55,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "NORMAL",
+        "category": "Physical",
+        "power": 55,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "HEAD_RAM": {
+      "script": "HEADBUTT",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 70, FLINCH_HIT, physical_contact. Game 'Rams the foe head-first. May cause flinch.' = HEADBUTT presentation.",
+      "game": {
+        "name": "Head Ram",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "bp": 70,
+        "acc": 100,
+        "effect": "FLINCH",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "NORMAL",
+        "category": "Physical",
+        "power": 70,
+        "effect": "BATTLE_EFFECT_FLINCH_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "FURY_BARRAGE": {
+      "script": "FURY_SWIPES",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 18, MULTI_HIT, multi_hit. Game 'Slashes wildly 2-5 times in a row.' = FURY_SWIPES presentation.",
+      "game": {
+        "name": "Fury Barrage",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "bp": 18,
+        "acc": 80,
+        "effect": "MULTI_HIT",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "NORMAL",
+        "category": "Physical",
+        "power": 18,
+        "effect": "BATTLE_EFFECT_MULTI_HIT",
+        "template": "multi_hit",
+        "family": "multi_hit",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "WAR_CRY": {
+      "script": "GROWL",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, ATTACK_DOWN, stat_change. Game 'A daunting cry that lowers the foe's Attack.' = GROWL presentation.",
+      "game": {
+        "name": "War Cry",
+        "type": "NORMAL",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 100,
+        "effect": "ATK_DOWN1",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "NORMAL",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_ATK_DOWN",
+        "template": "stat_change",
+        "family": "stat_change",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "COLD_STARE": {
+      "script": "LEER",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, DEFENSE_DOWN, stat_change. Game 'A cold stare that lowers the foe's Defense.' = LEER presentation.",
+      "game": {
+        "name": "Cold Stare",
+        "type": "NORMAL",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 100,
+        "effect": "DEF_DOWN1",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "NORMAL",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_DEF_DOWN",
+        "template": "stat_change",
+        "family": "stat_change",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "TIDE_SHOT": {
+      "script": "WATER_GUN",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 40, HIT, special_projectile. Game 'A small jet of tidewater fired at the foe.' = WATER_GUN presentation.",
+      "game": {
+        "name": "Tide Shot",
+        "type": "WATER",
+        "cat": "Special",
+        "bp": 40,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "WATER",
+        "category": "Special",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "SURGE_RIDE": {
+      "script": "SURF",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 95, special_projectile. Script effect BATTLE_EFFECT_DOUBLE_DAMAGE_DIVE is provenance only: SURF doubles damage vs diving targets; the game move has no dive interaction. Game 'Rides a great wave over the foe.' = SURF presentation.",
+      "game": {
+        "name": "Surge Ride",
+        "type": "WATER",
+        "cat": "Special",
+        "bp": 95,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "WATER",
+        "category": "Special",
+        "power": 95,
+        "effect": "BATTLE_EFFECT_DOUBLE_DAMAGE_DIVE",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "BUBBLE_BURST": {
+      "script": "BUBBLE_BEAM",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 65, SPEED_DOWN_HIT, special_projectile. Game 'Bursts bubbles at the foe. May lower Speed.' = BUBBLE_BEAM presentation.",
+      "game": {
+        "name": "Bubble Burst",
+        "type": "WATER",
+        "cat": "Special",
+        "bp": 65,
+        "acc": 100,
+        "effect": "SPE_DOWN1",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "WATER",
+        "category": "Special",
+        "power": 65,
+        "effect": "BATTLE_EFFECT_LOWER_SPEED_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "TIDE_SPOUT": {
+      "script": "WATER_SPOUT",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 150, special_projectile. Script effect BATTLE_EFFECT_DECREASE_POWER_WITH_LESS_USER_HP is provenance only: WATER_SPOUT scales with the user's HP; the game move is flat power. Game 'A towering spout of water. Strongest at full health in spirit, plain damage here.' = WATER_SPOUT presentation.",
+      "game": {
+        "name": "Tide Spout",
+        "type": "WATER",
+        "cat": "Special",
+        "bp": 150,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "WATER",
+        "category": "Special",
+        "power": 150,
+        "effect": "BATTLE_EFFECT_DECREASE_POWER_WITH_LESS_USER_HP",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "EMBER_FLICK": {
+      "script": "EMBER",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 40, BURN_HIT with burn puff, special_projectile. Game 'Flicks a small ember at the foe. May burn.' = EMBER presentation.",
+      "game": {
+        "name": "Ember Flick",
+        "type": "FIRE",
+        "cat": "Special",
+        "bp": 40,
+        "acc": 100,
+        "effect": "BURN",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "FIRE",
+        "category": "Special",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_BURN_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "HEAT_SURGE": {
+      "script": "HEAT_WAVE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 100, BURN_HIT with burn puff, special_projectile. Game 'A surging wave of heat. May burn.' = HEAT_WAVE presentation.",
+      "game": {
+        "name": "Heat Surge",
+        "type": "FIRE",
+        "cat": "Special",
+        "bp": 100,
+        "acc": 90,
+        "effect": "BURN",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "FIRE",
+        "category": "Special",
+        "power": 100,
+        "effect": "BATTLE_EFFECT_BURN_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "GHOST_FLAME": {
+      "script": "WILL_O_WISP",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, WILL_O_WISP, status_condition. Game 'A spectral flame that burns the foe.' = WILL_O_WISP presentation.",
+      "game": {
+        "name": "Ghost Flame",
+        "type": "FIRE",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 75,
+        "effect": "BURN",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "FIRE",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_STATUS_BURN",
+        "template": "status_condition",
+        "family": "status_condition",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "DRAIN_BITE": {
+      "script": "ABSORB",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 20, ABSORB, special_projectile. Game 'Bites and drains the foe's strength, restoring health.' = ABSORB presentation.",
+      "game": {
+        "name": "Drain Bite",
+        "type": "GRASS",
+        "cat": "Special",
+        "bp": 20,
+        "acc": 100,
+        "effect": "DRAIN",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "GRASS",
+        "category": "Special",
+        "power": 20,
+        "effect": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "SPORE_CLOUD": {
+      "script": "SLEEP_POWDER",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, SLEEP, status_condition. Game 'A drifting spore cloud that puts the foe to sleep.' = SLEEP_POWDER presentation.",
+      "game": {
+        "name": "Spore Cloud",
+        "type": "GRASS",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 75,
+        "effect": "SLEEP",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "GRASS",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_STATUS_SLEEP",
+        "template": "status_condition",
+        "family": "status_condition",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "STUN_POLLEN": {
+      "script": "STUN_SPORE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, PARALYZE, status_condition. Game 'Stiffening pollen that paralyzes the foe.' = STUN_SPORE presentation.",
+      "game": {
+        "name": "Stun Pollen",
+        "type": "GRASS",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 75,
+        "effect": "PARALYSIS",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "GRASS",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_STATUS_PARALYZE",
+        "template": "status_condition",
+        "family": "status_condition",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "STATIC_JOLT": {
+      "script": "THUNDER_SHOCK",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 40, PARALYZE_HIT with paralysis puff, special_projectile. Game 'A crackling jolt. May paralyze.' = THUNDER_SHOCK presentation.",
+      "game": {
+        "name": "Static Jolt",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "bp": 40,
+        "acc": 100,
+        "effect": "PARALYSIS",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "ELECTRIC",
+        "category": "Special",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_PARALYZE_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "STATIC_WAVE": {
+      "script": "THUNDER_WAVE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, PARALYZE, status_condition. Game 'A wave of static that paralyzes the foe.' = THUNDER_WAVE presentation.",
+      "game": {
+        "name": "Static Wave",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 100,
+        "effect": "PARALYSIS",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "ELECTRIC",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_STATUS_PARALYZE",
+        "template": "status_condition",
+        "family": "status_condition",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "CHARGE_UP": {
+      "script": "CHARGE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, CHARGE, stat_change. Game 'Charges up, raising Special Defense.' = CHARGE presentation.",
+      "game": {
+        "name": "Charge Up",
+        "type": "ELECTRIC",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 100,
+        "effect": "SPDEF_UP1",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "ELECTRIC",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_SP_DEF_UP_DOUBLE_ELECTRIC_POWER",
+        "template": "stat_change",
+        "family": "stat_change",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "SNOW_DUST": {
+      "script": "POWDER_SNOW",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 40, FREEZE_HIT with freeze puff, special_projectile. Game 'A flurry of snow dust. May freeze.' = POWDER_SNOW presentation.",
+      "game": {
+        "name": "Snow Dust",
+        "type": "ICE",
+        "cat": "Special",
+        "bp": 40,
+        "acc": 100,
+        "effect": "FREEZE",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "ICE",
+        "category": "Special",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_FREEZE_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "CHILL_WIND": {
+      "script": "ICY_WIND",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 55, SPEED_DOWN_HIT, special_projectile. Game 'A chilling wind that lowers the foe's Speed.' = ICY_WIND presentation.",
+      "game": {
+        "name": "Chill Wind",
+        "type": "ICE",
+        "cat": "Special",
+        "bp": 55,
+        "acc": 95,
+        "effect": "SPE_DOWN1",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "ICE",
+        "category": "Special",
+        "power": 55,
+        "effect": "BATTLE_EFFECT_LOWER_SPEED_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "CHOP_STRIKE": {
+      "script": "KARATE_CHOP",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 50, HIGH_CRITICAL, physical_contact. Game 'A chopping strike. High critical-hit rate.' = KARATE_CHOP presentation.",
+      "game": {
+        "name": "Chop Strike",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "bp": 50,
+        "acc": 100,
+        "effect": "HIGH_CRIT",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FIGHTING",
+        "category": "Physical",
+        "power": 50,
+        "effect": "BATTLE_EFFECT_HIGH_CRITICAL",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "TWIN_KICK": {
+      "script": "DOUBLE_KICK",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 30, multi_hit. Script effect BATTLE_EFFECT_HIT_TWICE is provenance only: DOUBLE_KICK hits exactly twice; the game move hits 2-5 times (MULTI_HIT). Game 'Two kicks in quick succession.' = DOUBLE_KICK presentation.",
+      "game": {
+        "name": "Twin Kick",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "bp": 30,
+        "acc": 100,
+        "effect": "MULTI_HIT",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "FIGHTING",
+        "category": "Physical",
+        "power": 30,
+        "effect": "BATTLE_EFFECT_HIT_TWICE",
+        "template": "multi_hit",
+        "family": "multi_hit",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "SKY_KICK": {
+      "script": "SKY_UPPERCUT",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 85, physical_contact. Script effect BATTLE_EFFECT_HIT_FLY is provenance only: SKY_UPPERCUT hits flying targets; the game move is a plain strike. Game 'An uppercut kick launched skyward.' = SKY_UPPERCUT presentation.",
+      "game": {
+        "name": "Sky Kick",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "bp": 85,
+        "acc": 90,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FIGHTING",
+        "category": "Physical",
+        "power": 85,
+        "effect": "BATTLE_EFFECT_HIT_FLY",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "BRICK_SMASH": {
+      "script": "BRICK_BREAK",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 75, physical_contact. Script effect BATTLE_EFFECT_REMOVE_SCREENS is provenance only: BRICK_BREAK removes screens; the game move has no screen interaction. Game 'A smashing blow that breaks through guards.' = BRICK_BREAK presentation.",
+      "game": {
+        "name": "Brick Smash",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "bp": 75,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FIGHTING",
+        "category": "Physical",
+        "power": 75,
+        "effect": "BATTLE_EFFECT_REMOVE_SCREENS",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "INNER_FOCUS": {
+      "script": "MEDITATE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, ATTACK_UP, stat_change. Game 'Focuses inward, raising Attack.' = MEDITATE presentation.",
+      "game": {
+        "name": "Inner Focus",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 0,
+        "effect": "ATK_UP1",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "PSYCHIC",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_ATK_UP",
+        "template": "stat_change",
+        "family": "stat_change",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "VENOM_STING": {
+      "script": "POISON_STING",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 15, POISON_HIT with poison puff, physical. Game 'A venomous sting. May poison.' = POISON_STING presentation.",
+      "game": {
+        "name": "Venom Sting",
+        "type": "POISON",
+        "cat": "Physical",
+        "bp": 15,
+        "acc": 100,
+        "effect": "POISON",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "POISON",
+        "category": "Physical",
+        "power": 15,
+        "effect": "BATTLE_EFFECT_POISON_HIT",
+        "template": "physical",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "TOXIN_CLOUD": {
+      "script": "POISON_GAS",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, POISON, status_condition. Game 'A toxic cloud that poisons the foe.' = POISON_GAS presentation.",
+      "game": {
+        "name": "Toxin Cloud",
+        "type": "POISON",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 55,
+        "effect": "POISON",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "POISON",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_STATUS_POISON",
+        "template": "status_condition",
+        "family": "status_condition",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "BONE_TOSS": {
+      "script": "BONE_CLUB",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 65, FLINCH_HIT, physical. Game 'Hurls a bone club. May cause flinch.' = BONE_CLUB presentation.",
+      "game": {
+        "name": "Bone Toss",
+        "type": "GROUND",
+        "cat": "Physical",
+        "bp": 65,
+        "acc": 85,
+        "effect": "FLINCH",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "GROUND",
+        "category": "Physical",
+        "power": 65,
+        "effect": "BATTLE_EFFECT_FLINCH_HIT",
+        "template": "physical",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "BEAK_JAB": {
+      "script": "PECK",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 35, HIT, physical_contact. Game 'A quick jab with the beak.' = PECK presentation.",
+      "game": {
+        "name": "Beak Jab",
+        "type": "FLYING",
+        "cat": "Physical",
+        "bp": 35,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FLYING",
+        "category": "Physical",
+        "power": 35,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "DRILL_BEAK": {
+      "script": "DRILL_PECK",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 80, HIT, physical_contact. Game 'A spinning drill strike with the beak.' = DRILL_PECK presentation.",
+      "game": {
+        "name": "Drill Beak",
+        "type": "FLYING",
+        "cat": "Physical",
+        "bp": 80,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FLYING",
+        "category": "Physical",
+        "power": 80,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "TRUE_WING": {
+      "script": "AERIAL_ACE",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 60, physical_contact. Script effect BATTLE_EFFECT_BYPASS_ACCURACY is provenance only: AERIAL_ACE bypasses accuracy; the game move uses normal accuracy. Game 'A wing strike that never misses.' = AERIAL_ACE presentation.",
+      "game": {
+        "name": "True Wing",
+        "type": "FLYING",
+        "cat": "Physical",
+        "bp": 60,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FLYING",
+        "category": "Physical",
+        "power": 60,
+        "effect": "BATTLE_EFFECT_BYPASS_ACCURACY",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "MIND_JAB": {
+      "script": "CONFUSION",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 50, CONFUSE_HIT with confusion puff, special_projectile. Game 'A mental jab. May confuse.' = CONFUSION presentation.",
+      "game": {
+        "name": "Mind Jab",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "bp": 50,
+        "acc": 100,
+        "effect": "CONFUSE",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "PSYCHIC",
+        "category": "Special",
+        "power": 50,
+        "effect": "BATTLE_EFFECT_CONFUSE_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "MIND_BEAM": {
+      "script": "PSYBEAM",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 65, CONFUSE_HIT with confusion puff, special_projectile. Game 'A beam of mental energy. May confuse.' = PSYBEAM presentation.",
+      "game": {
+        "name": "Mind Beam",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "bp": 65,
+        "acc": 100,
+        "effect": "CONFUSE",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "PSYCHIC",
+        "category": "Special",
+        "power": 65,
+        "effect": "BATTLE_EFFECT_CONFUSE_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "MIND_SHIELD": {
+      "script": "AMNESIA",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, SPECIAL_DEFENSE_UP_2, stat_change. Game 'Clears the mind, sharply raising Special Defense.' = AMNESIA presentation.",
+      "game": {
+        "name": "Mind Shield",
+        "type": "PSYCHIC",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 0,
+        "effect": "SPDEF_UP2",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "PSYCHIC",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_SP_DEF_UP_2",
+        "template": "stat_change",
+        "family": "stat_change",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "WEB_SHOT": {
+      "script": "STRING_SHOT",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, SPEED_DOWN, stat_change. Game 'A web shot that lowers the foe's Speed.' = STRING_SHOT presentation.",
+      "game": {
+        "name": "Web Shot",
+        "type": "BUG",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 95,
+        "effect": "SPE_DOWN1",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "BUG",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_SPEED_DOWN",
+        "template": "stat_change",
+        "family": "stat_change",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "LEECH_BITE": {
+      "script": "LEECH_LIFE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 20, ABSORB, physical_contact. Game 'A draining bite that restores health.' = LEECH_LIFE presentation.",
+      "game": {
+        "name": "Leech Bite",
+        "type": "BUG",
+        "cat": "Physical",
+        "bp": 20,
+        "acc": 100,
+        "effect": "DRAIN",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "BUG",
+        "category": "Physical",
+        "power": 20,
+        "effect": "BATTLE_EFFECT_RECOVER_HALF_DAMAGE_DEALT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "STONE_TOSS": {
+      "script": "ROCK_THROW",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 50, HIT, physical. Game 'Hurls a stone at the foe.' = ROCK_THROW presentation.",
+      "game": {
+        "name": "Stone Toss",
+        "type": "ROCK",
+        "cat": "Physical",
+        "bp": 50,
+        "acc": 90,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "ROCK",
+        "category": "Physical",
+        "power": 50,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "physical",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "STONE_SLIDE": {
+      "script": "ROCK_SLIDE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 75, FLINCH_HIT, physical. Game 'A sliding rockfall. May cause flinch.' = ROCK_SLIDE presentation.",
+      "game": {
+        "name": "Stone Slide",
+        "type": "ROCK",
+        "cat": "Physical",
+        "bp": 75,
+        "acc": 90,
+        "effect": "FLINCH",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "ROCK",
+        "category": "Physical",
+        "power": 75,
+        "effect": "BATTLE_EFFECT_FLINCH_HIT",
+        "template": "physical",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "STONE_BURST": {
+      "script": "ROCK_BLAST",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 25, MULTI_HIT, multi_hit. Game 'Fires stones 2-5 times in a row.' = ROCK_BLAST presentation.",
+      "game": {
+        "name": "Stone Burst",
+        "type": "ROCK",
+        "cat": "Physical",
+        "bp": 25,
+        "acc": 80,
+        "effect": "MULTI_HIT",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "ROCK",
+        "category": "Physical",
+        "power": 25,
+        "effect": "BATTLE_EFFECT_MULTI_HIT",
+        "template": "multi_hit",
+        "family": "multi_hit",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "GHOST_TOUCH": {
+      "script": "LICK",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 20, PARALYZE_HIT with paralysis puff, physical_contact. Game 'A ghostly touch. May paralyze.' = LICK presentation.",
+      "game": {
+        "name": "Ghost Touch",
+        "type": "GHOST",
+        "cat": "Physical",
+        "bp": 20,
+        "acc": 100,
+        "effect": "PARALYSIS",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "GHOST",
+        "category": "Physical",
+        "power": 20,
+        "effect": "BATTLE_EFFECT_PARALYZE_HIT",
+        "template": "physical_contact",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "CURSE_GAZE": {
+      "script": "CONFUSE_RAY",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, CONFUSE, status_condition. Game 'A cursing gaze that confuses the foe.' = CONFUSE_RAY presentation.",
+      "game": {
+        "name": "Curse Gaze",
+        "type": "GHOST",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 100,
+        "effect": "CONFUSE",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "GHOST",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_STATUS_CONFUSE",
+        "template": "status_condition",
+        "family": "status_condition",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "PHANTOM_FIST": {
+      "script": "SHADOW_PUNCH",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 60, physical_contact. Script effect BATTLE_EFFECT_BYPASS_ACCURACY is provenance only: SHADOW_PUNCH bypasses accuracy; the game move uses normal accuracy. Game 'A phantom fist that never misses.' = SHADOW_PUNCH presentation.",
+      "game": {
+        "name": "Phantom Fist",
+        "type": "GHOST",
+        "cat": "Physical",
+        "bp": 60,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "GHOST",
+        "category": "Physical",
+        "power": 60,
+        "effect": "BATTLE_EFFECT_BYPASS_ACCURACY",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "DRAKE_BREATH": {
+      "script": "DRAGON_BREATH",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 60, PARALYZE_HIT with paralysis puff, special_projectile. Game 'A draconic breath. May paralyze.' = DRAGON_BREATH presentation.",
+      "game": {
+        "name": "Drake Breath",
+        "type": "DRAGON",
+        "cat": "Special",
+        "bp": 60,
+        "acc": 100,
+        "effect": "PARALYSIS",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "DRAGON",
+        "category": "Special",
+        "power": 60,
+        "effect": "BATTLE_EFFECT_PARALYZE_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "DRAGON_SURGE": {
+      "script": "DRAGON_PULSE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 90, BATTLE_EFFECT_HIT, special_projectile. Game 'A surging pulse of draconic energy.' = DRAGON_PULSE presentation.",
+      "game": {
+        "name": "Dragon Surge",
+        "type": "DRAGON",
+        "cat": "Special",
+        "bp": 90,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "DRAGON",
+        "category": "Special",
+        "power": 90,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "black2"
+        ]
+      }
+    },
+    "UMBRAL_PULSE": {
+      "script": "DARK_PULSE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 80, BATTLE_EFFECT_FLINCH_HIT, special_projectile. Game 'A pulse of umbral energy. May cause flinch.' = DARK_PULSE presentation.",
+      "game": {
+        "name": "Umbral Pulse",
+        "type": "DARK",
+        "cat": "Special",
+        "bp": 80,
+        "acc": 100,
+        "effect": "FLINCH",
+        "effectChance": 20
+      },
+      "scriptData": {
+        "type": "DARK",
+        "category": "Special",
+        "power": 80,
+        "effect": "BATTLE_EFFECT_FLINCH_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "black2"
+        ]
+      }
+    },
+    "STEEL_TAIL": {
+      "script": "IRON_TAIL",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 100, DEFENSE_DOWN_HIT, physical_contact. Game 'A steel tail slam. May lower Defense.' = IRON_TAIL presentation.",
+      "game": {
+        "name": "Steel Tail",
+        "type": "STEEL",
+        "cat": "Physical",
+        "bp": 100,
+        "acc": 75,
+        "effect": "DEF_DOWN1",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "STEEL",
+        "category": "Physical",
+        "power": 100,
+        "effect": "BATTLE_EFFECT_LOWER_DEFENSE_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "CHROME_WING": {
+      "script": "STEEL_WING",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 70, DEFENSE_UP_HIT, physical_contact. Game 'A chrome wing strike. May raise Defense.' = STEEL_WING presentation.",
+      "game": {
+        "name": "Chrome Wing",
+        "type": "STEEL",
+        "cat": "Physical",
+        "bp": 70,
+        "acc": 90,
+        "effect": "DEF_UP1",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "STEEL",
+        "category": "Physical",
+        "power": 70,
+        "effect": "BATTLE_EFFECT_RAISE_DEF_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "IRON_CLAW": {
+      "script": "METAL_CLAW",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 50, ATTACK_UP_HIT, physical_contact. Game 'An iron claw strike. May raise Attack.' = METAL_CLAW presentation.",
+      "game": {
+        "name": "Iron Claw",
+        "type": "STEEL",
+        "cat": "Physical",
+        "bp": 50,
+        "acc": 95,
+        "effect": "ATK_UP1",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "STEEL",
+        "category": "Physical",
+        "power": 50,
+        "effect": "BATTLE_EFFECT_RAISE_ATTACK_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "IRON_FORTRESS": {
+      "script": "IRON_DEFENSE",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 0, DEFENSE_UP_2, stat_change. Game 'Hardens into a fortress, sharply raising Defense.' = IRON_DEFENSE presentation.",
+      "game": {
+        "name": "Iron Fortress",
+        "type": "STEEL",
+        "cat": "Status",
+        "bp": 0,
+        "acc": 0,
+        "effect": "DEF_UP2",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "STEEL",
+        "category": "Status",
+        "power": 0,
+        "effect": "BATTLE_EFFECT_DEF_UP_2",
+        "template": "stat_change",
+        "family": "stat_change",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
     }
   },
-  "unmatched": {},
+  "unmatched": {
+    "SWIFT_STRIKE": "Category Physical vs script Special (SWIFT): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "GUARD_WALL": "PROTECT has no protect-family script in the union; its only script (PROTECT) is the generic fallback, not a route.",
+    "WHIRL_TRAP": "Power 15 vs script 35 (WHIRLPOOL): delta 20 is outside the fit bar (15).",
+    "CRAB_SNAP": "Category Special vs script Physical (CRABHAMMER): the script's motion template (physical_contact) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "EMBER_CYCLONE": "Power 15 vs script 35 (FIRE_SPIN): delta 20 is outside the fit bar (15).",
+    "CINDER_WHEEL": "Category Special vs script Physical (FLAME_WHEEL): the script's motion template (physical_contact) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "LEAF_WHIP": "Category Special vs script Physical (VINE_WHIP): the script's motion template (physical_contact) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "SEED_BURST": "Category Special vs script Physical (BULLET_SEED): the script's motion template (multi_hit) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "LEAF_EDGE": "Category Special vs script Physical (LEAF_BLADE): the script's motion template (physical_contact) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "VOLT_PUNCH": "Category Special vs script Physical (THUNDER_PUNCH): the script's motion template (physical_contact) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "STORM_CALL": "Game move has a paralysis secondary but the THUNDER script is damage-family with no status puff step; the puff must match the secondary.",
+    "FROST_JAB": "Category Special vs script Physical (ICE_PUNCH): the script's motion template (physical_contact) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "GLACIER_STORM": "Game move has a freeze secondary but the BLIZZARD script is damage-family with no status puff step; the puff must match the secondary.",
+    "ACID_SPLASH": "Category Physical vs script Special (ACID): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "SMOG_CLOUD": "Category Physical vs script Special (SMOG): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "SLUDGE_TOSS": "Category Physical vs script Special (SLUDGE_BOMB): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "DUST_SLAP": "Category Physical vs script Special (MUD_SLAP): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "BURROW_STRIKE": "Power 60 vs script 80 (DIG): delta 20 is outside the fit bar (15).",
+    "QUICK_SAND": "Power 15 vs script 35 (SAND_TOMB): delta 20 is outside the fit bar (15).",
+    "MUD_PELLET": "Category Physical vs script Special (MUD_SHOT): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "WIND_GUST": "Category Physical vs script Special (GUST): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "SKY_DIVE": "Game move is single-hit; source script BOUNCE is two_turn timing (burrow/bounce then strike).",
+    "DREAM_BITE": "Game move effect is DRAIN, but the DREAM_EATER script carries a status puff the game move does not justify.",
+    "FUTURE_STRIKE": "Power 80 vs script 100 (FUTURE_SIGHT): delta 20 is outside the fit bar (15).",
+    "TWIN_STING": "Game move is single-hit; source script TWINEEDLE is multi_hit timing (hits twice).",
+    "SIGNAL_FLASH": "Category Physical vs script Special (SIGNAL_BEAM): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "ANCIENT_SURGE": "Category Physical vs script Special (ANCIENT_POWER): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "UMBRAL_ORB": "Category Physical vs script Special (SHADOW_BALL): the script's motion template (special_projectile) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "RAGE_STORM": "Category Special vs script Physical (OUTRAGE): the script's motion template (physical_contact) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "SHADOW_AMBUSH": "Category Special vs script Physical (FAINT_ATTACK): the script's motion template (physical) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "CHASE_DOWN": "Category Special vs script Physical (PURSUIT): the script's motion template (physical_contact) fits the decomp category, not the game move's modern-split category; routing it would play the wrong motion.",
+    "GLIMMER_BURST": "Type FAIRY vs script PSYCHIC (PSYCHIC): no FAIRY script in the FR/B2 union for this shape (no Fairy type in FR/B2).",
+    "PIXIE_KISS": "Type FAIRY vs script NORMAL (SWEET_KISS): no FAIRY script in the FR/B2 union for this shape (no Fairy type in FR/B2).",
+    "FAIRY_LIGHT": "Type FAIRY vs script NORMAL (CHARM): no FAIRY script in the FR/B2 union for this shape (no Fairy type in FR/B2).",
+    "ORIGIN_VERDICT": "MYTHIC original; no decomp source, no script route (custom FORM_TYPE effect)."
+  },
   "counts": {
-    "gameMoves": 36,
+    "gameMoves": 121,
     "exactId": 10,
-    "mappedHere": 26,
-    "totalMatched": 36,
-    "unmatched": 0
+    "mappedHere": 76,
+    "totalMatched": 86,
+    "unmatched": 35
   }
 }
