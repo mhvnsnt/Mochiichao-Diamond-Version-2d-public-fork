@@ -1,0 +1,112 @@
+{
+ "reaperdile": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "chromejaww": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/chromejaww-back-pixel-shadowfree-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "strikechamp": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/strikechamp-back-pixel-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "stormtalon": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/stormtalon-back-pixel-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "duskfiend": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/duskfiend-back-pixel-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "finblade": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/finblade-back-pixel-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "mechapion": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/mechapion-back-pixel-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "wispkin": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/wispkin-back-pixel-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "shellguard": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/shellguard-back-pixel-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ },
+ "razorgater": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "animation/expanded-scope/trueback-pixel-20261026/cells/razorgater-back-pixel-shadowfree-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4"
+ }
+}
