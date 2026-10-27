@@ -1,0 +1,122 @@
+{
+ "creature": "dreadtoise",
+ "roster_id": "040",
+ "variant": null,
+ "movement_class": "heavy_slow",
+ "idle_class": "heavy_slow",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 800,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/dreadtoise/cells/dreadtoise_cell_01.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/dreadtoise/cells/dreadtoise_cell_17.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "game-ready/dreadtoise/cells/dreadtoise_cell_14.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_1"
+    }
+   ],
+   "loop": [
+    "game-ready/dreadtoise/cells/dreadtoise_cell_01.png",
+    "game-ready/dreadtoise/cells/dreadtoise_cell_17.png",
+    "game-ready/dreadtoise/cells/dreadtoise_cell_01.png",
+    "game-ready/dreadtoise/cells/dreadtoise_cell_14.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/dreadtoise/cells/dreadtoise_cell_03.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/dreadtoise/cells/dreadtoise_cell_10.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/dreadtoise/cells/dreadtoise_cell_11.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_1"
+    }
+   ],
+   "loop": [
+    "game-ready/dreadtoise/cells/dreadtoise_cell_03.png",
+    "game-ready/dreadtoise/cells/dreadtoise_cell_10.png",
+    "game-ready/dreadtoise/cells/dreadtoise_cell_03.png",
+    "game-ready/dreadtoise/cells/dreadtoise_cell_11.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/dreadtoise/cells/dreadtoise_cell_06.png",
+    "provenance": "locked_stand",
+    "source_role": "walk_side_0"
+   },
+   "steps": [
+    {
+     "file": "game-ready/dreadtoise/cells/dreadtoise_cell_07.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_1"
+    },
+    {
+     "file": "walk/dreadtoise/dreadtoise_walk_left_transform_step1.png",
+     "provenance": "transform_heavy_slow",
+     "source_role": "walk_side_0",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/dreadtoise/cells/dreadtoise_cell_06.png",
+    "game-ready/dreadtoise/cells/dreadtoise_cell_07.png",
+    "game-ready/dreadtoise/cells/dreadtoise_cell_06.png",
+    "walk/dreadtoise/dreadtoise_walk_left_transform_step1.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/dreadtoise/dreadtoise_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "walk_side_0"
+   },
+   "steps": [
+    {
+     "file": "walk/dreadtoise/dreadtoise_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_1",
+     "mirrored_from": "game-ready/dreadtoise/cells/dreadtoise_cell_07.png"
+    },
+    {
+     "file": "walk/dreadtoise/dreadtoise_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_0",
+     "mirrored_from": "walk/dreadtoise/dreadtoise_walk_left_transform_step1.png"
+    }
+   ],
+   "loop": [
+    "walk/dreadtoise/dreadtoise_walk_right_stand.png",
+    "walk/dreadtoise/dreadtoise_walk_right_mirror_1.png",
+    "walk/dreadtoise/dreadtoise_walk_right_stand.png",
+    "walk/dreadtoise/dreadtoise_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}

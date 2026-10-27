@@ -1,0 +1,137 @@
+{
+ "creature": "pebblefist",
+ "roster_id": "035",
+ "variant": null,
+ "movement_class": "heavy_slow",
+ "idle_class": "heavy_slow",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 800,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/pebblefist/cells/pebblefist_cell_00.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/pebblefist/cells/pebblefist_cell_11.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "walk/pebblefist/pebblefist_walk_down_transform_step1.png",
+     "provenance": "transform_heavy_slow",
+     "source_role": "overworld_front",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/pebblefist/cells/pebblefist_cell_00.png",
+    "game-ready/pebblefist/cells/pebblefist_cell_11.png",
+    "game-ready/pebblefist/cells/pebblefist_cell_00.png",
+    "walk/pebblefist/pebblefist_walk_down_transform_step1.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/pebblefist/cells/pebblefist_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "walk/pebblefist/pebblefist_walk_up_transform_step1.png",
+     "provenance": "transform_heavy_slow",
+     "source_role": "overworld_back",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    },
+    {
+     "file": "walk/pebblefist/pebblefist_walk_up_transform_step2.png",
+     "provenance": "transform_heavy_slow",
+     "source_role": "overworld_back",
+     "transform": {
+      "dx": 0,
+      "dy": 0,
+      "scale": 1.02
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/pebblefist/cells/pebblefist_cell_02.png",
+    "walk/pebblefist/pebblefist_walk_up_transform_step1.png",
+    "game-ready/pebblefist/cells/pebblefist_cell_02.png",
+    "walk/pebblefist/pebblefist_walk_up_transform_step2.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/pebblefist/cells/pebblefist_cell_08.png",
+    "provenance": "locked_stand",
+    "source_role": "walk_side_0"
+   },
+   "steps": [
+    {
+     "file": "game-ready/pebblefist/cells/pebblefist_cell_09.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_1"
+    },
+    {
+     "file": "walk/pebblefist/pebblefist_walk_left_transform_step1.png",
+     "provenance": "transform_heavy_slow",
+     "source_role": "walk_side_0",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/pebblefist/cells/pebblefist_cell_08.png",
+    "game-ready/pebblefist/cells/pebblefist_cell_09.png",
+    "game-ready/pebblefist/cells/pebblefist_cell_08.png",
+    "walk/pebblefist/pebblefist_walk_left_transform_step1.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/pebblefist/pebblefist_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "walk_side_0"
+   },
+   "steps": [
+    {
+     "file": "walk/pebblefist/pebblefist_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_1",
+     "mirrored_from": "game-ready/pebblefist/cells/pebblefist_cell_09.png"
+    },
+    {
+     "file": "walk/pebblefist/pebblefist_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_0",
+     "mirrored_from": "walk/pebblefist/pebblefist_walk_left_transform_step1.png"
+    }
+   ],
+   "loop": [
+    "walk/pebblefist/pebblefist_walk_right_stand.png",
+    "walk/pebblefist/pebblefist_walk_right_mirror_1.png",
+    "walk/pebblefist/pebblefist_walk_right_stand.png",
+    "walk/pebblefist/pebblefist_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}
