@@ -324,31 +324,41 @@ Remaining known local-only material is scratch by verdict
 still-plate composite variants, rejected avatar options) —
 not production, and it stays off the repo.
 
-## CHARACTER SHEETS - PILOT SIX CLIP BUNDLES (2026-10-27)
-Character-sheet clip bundles for all six pilot species landed
-under show/production/character-sheets/ (branch
-feature/character-sheets-1): for each species, every animation
-its TextRig rig carries (idle / signature animation /
-expression animation, rig names verbatim), each as a
-white-field MP4 + a transparent VP9-alpha WebM twin
-(alpha_mode=1), a transparent poster PNG, a manifest.json
-(ffprobe-measured spec + sha256, motion verification) and the
-idle's likeness-gate packet. Motion source: the TextRig DEFORM
-rigs over the canon cutouts (likeness by construction),
-rendered with a transparent stage at 30 fps on a 512x512 sheet
-canvas; motion verified per animation by frame checksums +
-mesh vertex-buffer checksums (all animations deform; held
-poses - head tilts, the Water Orb charge hold - show fewer
-distinct states by design). Gate (full-body mode, shipped
-thresholds) recommendations on the idles: mochii PASS
-(0.5814/0.9126/26.76), gabu PASS (0.6543/0.9676/24.32),
-kittember FAIL (0.4985/0.7520/53.45 - mid-loop pose phase vs
-the rest-pose cutout; recorded as measured), sproutle PASS
-(0.7711/0.9721/15.92), dorowani PASS (0.5122/0.9186/29.03),
-wispkin PASS (0.6895/0.8253/20.64). All bundles
-quality_status PENDING_GATE, promotion PENDING_OWNER - the
-packets recommend, the owner promotes. Naming: rig animation
-names kept exactly; signatures described neutrally (canon
-attack naming layers in separately) - Dorowani's
-water_orb_charge is his canon Water Orb attack animation, his
-alone. Sproutle rendered from the shadow-free cutout.
+## Addendum — Kaggle consistency kit staged (2026-10-27)
+Workstream: making the next Kaggle session for Wan test 2
+(notebook mochiichao-comfyui-wan, ComfyUI + Wan 2.2 TI2V-5B,
+2x Tesla T4) one-attach-and-run. Kit landed under
+show/production/tooling/avatar-stack/ (fetch_consistency_
+models.py, wan21_vace_first_last_frame.json, build_sparse_flf_
+control.py, train_character_lora.py, CHARACTER-LORA-PLAN.md,
+KAGGLE-KIT.md). Scripts/docs in the repo; weights stage to two
+named PRIVATE Kaggle Datasets (mochiichao-wan22-consistency-kit
+for models, mochiichao-character-loras for trained LoRAs) —
+nothing weight-sized in git, nothing left session-local.
+RESEARCH CORRECTION recorded the same day, superseding the
+kit's first draft AND the standing "lock stack" framing: deep
+research confirmed NO IP-Adapter and NO ControlNet exists for
+Wan 2.2 — those tools belong to the still-image/keyframe stage
+only (the kit fetches IP-Adapter only under --stills-stage,
+into STILLS_ONLY folders). Wan-native conditioning equivalents
+are VACE, Phantom, Wan-Animate-14B, S2V-14B and first/last-
+frame control — all Apache-2.0, all 14B-class = T4-marginal,
+documented not wired. The kit's working eval is VACE-1.3B
+(Wan 2.1 family, Apache-2.0, 480p per its card) including the
+sparse-keyframe FLF workflow; TI2V-5B has no FLF mode of its
+own. LoRA correction alongside: per-character IMAGE LoRA is
+the T4-feasible consistency path (musubi-tuner, ~12 GB image
+training; ai-toolkit MIT verified alternate) — VIDEO LoRA at
+recommended settings (24 GB+) is NOT T4-feasible and is a
+headline honest gap, not a plan. Also staged as commercial-
+clean post/music components, licences verified at source
+2026-10-27: ACE-Step 1.5 XL Turbo (MIT, music layer),
+RIFE via ComfyUI-VFI (MIT, interpolation; staged from the
+node's own auto-download — no direct URL was verified, so
+none was invented), RealESRGAN_x4plus_anime_6B (BSD-3-Clause,
+17.9 MB, upscale). Nothing in the kit has been run yet: the
+VACE eval, FLF pair and first image LoRA still have to earn
+gate packets in session; Wan backend status (motion proven /
+likeness unproven) is unchanged. Follow-up owed: reword the
+backends.json ip_adapter/controlnet lock entries at the next
+backends update so they cannot be read as usable Wan locks.
