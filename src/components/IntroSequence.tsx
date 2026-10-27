@@ -471,12 +471,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                     >
                       ✦ DIAMOND VERSION ✦
                     </div>
-                    <div
-                      className="absolute text-center text-white font-bold"
-                      style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink-first 1s steps(1) 1, press-blink 1s steps(1) 1s infinite' }}
-                    >
-                      PRESS ANY KEY
-                    </div>
+                    {/* PRESS ANY KEY text removed 2026-10-27 per Mars: title screens already say PRESS START; key/click advance unchanged. */}
                     <img
                       src={heavensentLogo}
                       alt="M Heavensent Studios"
@@ -515,8 +510,10 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       );
     }
     // Restored locked title (phi spec, 1200x1500 stage): logo PNG in
-    // its phi slot, DIAMOND VERSION banner, PRESS ANY KEY at the
-    // bottom phi line, Heavensent logo in the copyright slot. The
+    // its phi slot, DIAMOND VERSION banner, Heavensent logo in the
+    // copyright slot. PRESS ANY KEY text was removed 2026-10-27 per
+    // Mars (title screens already say PRESS START); key/click advance
+    // is unchanged. The
     // logo is NEVER font text — the image below is Mars's uploaded
     // logo (black-space-only crop, transparent key; original file
     // untouched in ui-art). StartScreenPlayer is a creator preset
@@ -568,14 +565,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           >
             ✦ DIAMOND VERSION ✦
           </div>
-          {/* PRESS ANY KEY: bottom phi line y=927, blink FireRed
-              tempo: 60 frames first, then 30 on / 30 off (CSS steps). */}
-          <div
-            className="absolute text-center text-white font-bold"
-            style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink-first 1s steps(1) 1, press-blink 1s steps(1) 1s infinite' }}
-          >
-            PRESS ANY KEY
-          </div>
+          {/* PRESS ANY KEY text removed 2026-10-27 per Mars: title screens already say PRESS START; key/click advance unchanged. The old bottom phi line (y=927, FireRed blink tempo 60 first then 30/30) carried this prompt. */}
           {/* Heavensent copyright slot: width 556, centre
               (600, 1222), top 944, bottom 1500. */}
           <img
@@ -588,9 +578,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         </LockedStage>
 
         {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
-        <div className={`absolute bottom-4 left-0 right-0 text-center text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
-          ▼ PRESS ANY KEY ▼
-        </div>
+        {/* Tiny PRESS ANY KEY hint removed 2026-10-27 per Mars (same order: no PRESS ANY KEY text on main title screens); key/click advance unchanged. */}
       </div>
     );
   }
