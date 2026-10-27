@@ -24,6 +24,8 @@ import {
 } from '../../lib/titleStartScreens';
 import MusicMixerScreen from './MusicMixerScreen';
 import MenuEditorScreen from './MenuEditorScreen';
+import MenuLayoutLiveEditors from './MenuLayoutLiveEditors';
+import { useMenuLayout, cssAlignment } from '../../lib/menuLayoutLive';
 import SoundCreatorScreen from './SoundCreatorScreen';
 import MusicCreatorScreen from './MusicCreatorScreen';
 import {
@@ -157,6 +159,10 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
   const setSettings = useGameStore(s => s.setSettings);
   const [draft, setDraft] = useState<GameSettings>({ ...settings });
   const [screen, setScreen] = useState<Screen>('SETTINGS');
+  // Menu-layout live wiring (additive only): this hook reads the
+  // live layout record; no existing settings row, value, preset or
+  // editor is changed by it. The editors section below is new.
+  const settingsMenuLayout = useMenuLayout('settings');
   const [menuPage, setMenuPage] = useState(1);
   const [cursor, setCursor] = useState(0);
   const [presets, setPresets] = useState<MenuPreset[]>(() => loadPresets());
@@ -631,7 +637,7 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
   const titlePresetPreviewProps = titlePresetPreviewDef ? { biome: titlePresetPreviewDef.biome, figureUrl: titlePresetPreviewDef.figureUrl, figureName: titlePresetPreviewDef.creature, startPrompt: false, caption: ' ' } : null;
 
   return (
-    <div className="game-screen bg-[#050810] flex flex-col items-center relative overflow-hidden p-4" style={{ background: renderBackground, justifyContent: anchorJustify, paddingTop: custom.safeArea ? 'max(1rem, env(safe-area-inset-top))' : '1rem', paddingBottom: custom.safeArea ? 'max(1rem, env(safe-area-inset-bottom))' : '1rem' }}>
+    <div className="game-screen bg-[#050810] flex flex-col items-center relative overflow-hidden p-4" data-menu-layout={settingsMenuLayout.entryId} style={{ background: renderBackground, justifyContent: anchorJustify, paddingTop: custom.safeArea ? 'max(1rem, env(safe-area-inset-top))' : '1rem', paddingBottom: custom.safeArea ? 'max(1rem, env(safe-area-inset-bottom))' : '1rem' }}>
       <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
       {custom.dayNightMode !== 'OFF' && (
         <div className="absolute inset-0 pointer-events-none" style={{ background: renderPalette.tint, opacity: custom.dayNightTint / 100 }}></div>
@@ -646,7 +652,7 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
           )}
         </StdWindow>
 
-        <StdWindow style={panelStyle} className="p-2">
+        <StdWindow style={{ ...panelStyle, display: 'flex', flexDirection: 'column', gap: settingsMenuLayout.overrides.rowSpacing, textAlign: cssAlignment(settingsMenuLayout.overrides.alignment) }} className="p-2">
           {rows.map((row, i) => (
             <button
               key={row.label}
@@ -713,6 +719,12 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
         )}
 
         {savedMsg && <div className="text-center text-teal-300 text-sm font-bold">{savedMsg}</div>}
+
+        {screen === 'SETTINGS' && (
+          <StdWindow style={panelStyle} className="px-3 py-2">
+            <MenuLayoutLiveEditors />
+          </StdWindow>
+        )}
 
         <StdWindow style={panelStyle} className="px-3 py-2 text-sm text-slate-200 text-center">
           A: SELECT &nbsp; LEFT/RIGHT: CHANGE &nbsp; B: BACK
