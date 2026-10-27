@@ -3,6 +3,7 @@ import { useGameStore } from '../../store/gameStore';
 import { DATA_CARD_COST, DATA_CARD_ID } from '../../lib/monster-tamer-systems';
 import { ITEM_ICONS } from '../../lib/uiArt';
 import { MenuHelpLine } from '../game/MenuList';
+import { useMenuLayout, cssAlignment } from '../../lib/menuLayoutLive';
 import { sellPrice } from '../../lib/playableWiring';
 
 /**
@@ -36,6 +37,16 @@ function ItemIcon({ id }: { id: string }) {
 }
 
 export default function ShopView({ onBack }: { onBack: () => void }) {
+  // Menu-layout live wiring: every gen's shop is a single-column
+  // list, so the visible catalogue effect here is the editor's
+  // alignment + row spacing, not a different arrangement family.
+  // Prices, order, stock and confirm flow are unchanged. Quantity
+  // selector is stored by the editor but NOT live (new UI, flagged).
+  const shopMenuLayout = useMenuLayout('shop');
+  const shopListStyle: React.CSSProperties = {
+    ...(shopMenuLayout.overrides.rowSpacing ? { gap: `${shopMenuLayout.overrides.rowSpacing}px` } : {}),
+    ...(cssAlignment(shopMenuLayout.overrides.alignment) ? { textAlign: cssAlignment(shopMenuLayout.overrides.alignment) } : {}),
+  };
   const wallet = useGameStore(s => s.wallet);
   const inventory = useGameStore(s => s.inventory);
   const buyItem = useGameStore(s => s.buyItem);
@@ -104,7 +115,7 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
   // sparkles below are decorative (aria-hidden, non-interactive)
   // and sit in the screen's padding corners.
   return (
-    <div className="shop-y2k game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="shop-y2k game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]" data-menu-layout={shopMenuLayout.entryId}>
       <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 left-3 text-yellow-200 text-lg">✦</span>
       <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 right-3 text-amber-300 text-lg">♥</span>
       <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 left-3 text-yellow-300 text-base">★</span>
@@ -135,7 +146,7 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
           </div>
           <p className="text-xs text-slate-400 mb-3 shrink-0">Shop prices are placeholders until Mars sets the CR economy — not canon. Tiers only: capture low, 50-HP heal mid, 50% revive high.</p>
           {canUp && <div className="text-center text-slate-300 text-sm shrink-0" aria-hidden="true">▲</div>}
-          <div ref={listRef} onScroll={updateArrows} className="flex-1 overflow-y-auto flex flex-col gap-2 pr-1">
+          <div ref={listRef} onScroll={updateArrows} className="flex-1 overflow-y-auto flex flex-col gap-2 pr-1" style={shopListStyle}>
             {SHOP_ITEMS.map((item, i) => (
               <button
                 key={item.id}
@@ -178,7 +189,7 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
             <div className="game-panel p-6 text-center text-slate-300">Nothing to sell — your bag is empty.</div>
           ) : (
             <>
-              <div className="flex-1 overflow-y-auto flex flex-col gap-2 pr-1">
+              <div className="flex-1 overflow-y-auto flex flex-col gap-2 pr-1" style={shopListStyle}>
                 {sellable.map((item, i) => (
                   <button
                     key={item.id}
