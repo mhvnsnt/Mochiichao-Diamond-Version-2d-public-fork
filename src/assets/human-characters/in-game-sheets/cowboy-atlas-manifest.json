@@ -1,0 +1,115 @@
+{
+  "atlas": "cowboy-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      13,
+      559
+    ],
+    [
+      571,
+      1112
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        135,
+        461
+      ],
+      [
+        675,
+        1030
+      ],
+      [
+        1232,
+        1546
+      ],
+      [
+        1768,
+        2094
+      ]
+    ],
+    [
+      [
+        146,
+        464
+      ],
+      [
+        678,
+        1004
+      ],
+      [
+        1221,
+        1538
+      ],
+      [
+        1757,
+        2082
+      ]
+    ]
+  ],
+  "world": "0:0,0:2,1:0,1:2",
+  "steps": "0:1,0:3,1:1,1:3",
+  "walk": "media-generation-cowboy-walk-frames-v1-2026-10-0-211ca64c-c627-4c14-a133-fa581bc73e0e.webp",
+  "battle": "media-generation-cowboy-battle-front-v1-2026-10-0-2c6780d0-6838-48a2-a1db-2a2b44977138.webp",
+  "portrait": "media-generation-cowboy-portrait-v1-2026-10-26-0-1f8e288b-8559-4d4a-a803-be5be4413ceb.webp"
+}
