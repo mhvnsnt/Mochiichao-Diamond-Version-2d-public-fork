@@ -1,0 +1,11 @@
+{
+  "proof": "EP01-CUT01 composite LIFE proof v1 (8s)",
+  "layers": [
+    "CL-1 cloud-shadow drift",
+    "leaf-drift particles (fg)",
+    "pollen motes"
+  ],
+  "sound": "synthesised wind bed (BREEZE state, pink-noise + slow swell) - placeholder for the location bed, licence-clean by construction",
+  "NOT_included": "gate swing (needs gate as separate layer - plate is flat), grass sway masks, population crossings, characters",
+  "status": "PROOF of ambient layers only - not a finished cut (Animation Law)"
+}
