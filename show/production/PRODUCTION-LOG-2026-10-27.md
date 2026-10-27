@@ -236,3 +236,9 @@ LivePortrait (c) Kuaishou VGIC). Substance unchanged; the
 verification-method wording is corrected in backends.json.
 Logged per the Licence Honesty Law: a wrong label is an error
 in either direction, including a wrong method claim.
+
+## WISPKIN REFERENCE OF RECORD (2026-10-27)
+Owner confirmed the canon Wispkin cutout is exactly what the
+character needs to look like. Recorded in the Wispkin body
+spec; the cutout is the likeness reference of record for the
+rig, the gate, and Wan test 2.

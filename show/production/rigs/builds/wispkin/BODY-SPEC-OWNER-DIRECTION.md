@@ -28,3 +28,13 @@ generation — the TextRig puppet already carries the exact body /
 hands / mask (canon pixels, no redraw). Generative passes supply
 smoke, atmosphere and motion reference; the puppet (or a
 composite over the canon cutout's body) supplies the body.
+
+## OWNER CONFIRMATION (2026-10-27)
+The owner reviewed the canon cutout this rig deforms and
+confirmed, verbatim in intent: "That's what he needs to look
+like." The canon Wispkin cutout is therefore the REFERENCE OF
+RECORD for Wispkin likeness - rig, gate, and all future
+generation tests (incl. Wan test 2) are judged against exactly
+this: cracked white skull mask held on by both black hands,
+fat round black body, small black flame tip on top, bottom
+dissolving into the smoke trail. No legs, no bill, no tuft.
