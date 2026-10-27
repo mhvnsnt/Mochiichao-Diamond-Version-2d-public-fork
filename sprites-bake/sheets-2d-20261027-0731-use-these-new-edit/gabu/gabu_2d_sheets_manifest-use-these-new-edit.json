@@ -1,0 +1,305 @@
+{
+ "creature": "gabu",
+ "kind": "locked_2d_front_sheets_v1_cleaned_use-these-new-edit",
+ "source": "LOCKED_2D_FRONT_SHEETS_NOT_3D_CLEANED_USE-THESE-NEW-EDIT",
+ "source_label": "2D-SOURCED CLEANED USE-THESE NEW EDIT \u2014 white leg-gap spots and grey ground shadows removed alpha-only from the 20261027 2D set. NOT 3D renders.",
+ "source_note": "Built ONLY from locked 2D front-facing sheets (locked atlases, confirmed walkfix sets, game idle/attack transform loops, hurt cells). NOT 3D renders. NOT the 3D-bake sheets-rigged set. No newly drawn anatomy, no invented poses, no mirrored backs, no new colours.",
+ "families": {
+  "idle": {
+   "status": "HAVE",
+   "frames": [
+    "gabu_idle_front_00_2d-use-these-new-edit.png",
+    "gabu_idle_front_01_2d-use-these-new-edit.png",
+    "gabu_idle_front_02_2d-use-these-new-edit.png"
+   ],
+   "strip": "gabu_idle_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    192,
+    64
+   ]
+  },
+  "walk-front": {
+   "status": "HAVE",
+   "frames": [
+    "gabu_walk_front_00_2d-use-these-new-edit.png",
+    "gabu_walk_front_01_2d-use-these-new-edit.png",
+    "gabu_walk_front_02_2d-use-these-new-edit.png",
+    "gabu_walk_front_03_2d-use-these-new-edit.png"
+   ],
+   "strip": "gabu_walk_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    256,
+    64
+   ]
+  },
+  "walk-side": {
+   "status": "HAVE",
+   "frames": [
+    "gabu_walk_side_00_2d-use-these-new-edit.png",
+    "gabu_walk_side_01_2d-use-these-new-edit.png",
+    "gabu_walk_side_02_2d-use-these-new-edit.png",
+    "gabu_walk_side_03_2d-use-these-new-edit.png"
+   ],
+   "strip": "gabu_walk_side_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    256,
+    64
+   ]
+  },
+  "ready": {
+   "status": "HAVE",
+   "frames": [
+    "gabu_ready_front_00_2d-use-these-new-edit.png"
+   ],
+   "strip": "gabu_ready_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    64,
+    64
+   ]
+  },
+  "attack": {
+   "status": "HAVE",
+   "frames": [
+    "gabu_attack_front_00_2d-use-these-new-edit.png",
+    "gabu_attack_front_01_2d-use-these-new-edit.png",
+    "gabu_attack_front_02_2d-use-these-new-edit.png",
+    "gabu_attack_front_03_2d-use-these-new-edit.png"
+   ],
+   "strip": "gabu_attack_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    256,
+    64
+   ]
+  },
+  "hit": {
+   "status": "HAVE",
+   "frames": [
+    "gabu_hit_front_00_2d-use-these-new-edit.png"
+   ],
+   "strip": "gabu_hit_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    64,
+    64
+   ]
+  },
+  "faint": {
+   "status": "GAP",
+   "frames": [],
+   "reason": "No 2D faint cells exist for this creature; animation/faint/ type templates are not creature art and were NOT used. No back view invented by mirroring."
+  }
+ },
+ "frames": [
+  {
+   "kind": "locked_2d",
+   "family": "idle",
+   "view": "front",
+   "seq": 0,
+   "source_file": "animation/idle/gabu/idle_a.png -> cleaned use-these-new-edit",
+   "source_note": "idle base = locked battle_front cell_02",
+   "source_md5": "c9860d6f2bc6bc426b30c8ed0a45af02",
+   "file": "gabu_idle_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "idle",
+   "view": "front",
+   "seq": 1,
+   "source_file": "animation/idle/gabu/idle_b.png -> cleaned use-these-new-edit",
+   "source_note": "idle bob from cell_02",
+   "source_md5": "3f6ca07818a82c0fcf6484e5ca16225f",
+   "file": "gabu_idle_front_01_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "idle",
+   "view": "front",
+   "seq": 2,
+   "source_file": "animation/idle/gabu/idle_c.png -> cleaned use-these-new-edit",
+   "source_note": "idle breath from cell_02",
+   "source_md5": "270bb1243f81484225311b010e2d174c",
+   "file": "gabu_idle_front_02_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-front",
+   "view": "front",
+   "seq": 0,
+   "source_file": "walk-frames/gabu-walkfix-20261026/gabu_walk_down_0.png -> cleaned use-these-new-edit",
+   "source_note": "walkfix down_0 = locked cell_00 verbatim, eye-mapped FRONT, confirmed perfect",
+   "source_md5": "ce755df05e35ef40c1f23f294956ef6f",
+   "file": "gabu_walk_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-front",
+   "view": "front",
+   "seq": 1,
+   "source_file": "atlases/gabu/gabu_cell_11.png -> cleaned use-these-new-edit",
+   "source_note": "locked walk_front_0 cell_11 = stand frame",
+   "source_md5": "320d43a5b7b05c9a741864b5e0954928",
+   "file": "gabu_walk_front_01_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-front",
+   "view": "front",
+   "seq": 2,
+   "source_file": "walk-frames/gabu-walkfix-20261026/gabu_walk_down_1.png -> cleaned use-these-new-edit",
+   "source_note": "walkfix down_1 = locked cell_12 verbatim, confirmed perfect",
+   "source_md5": "1ce2ae7a36bca3584e7b972fd24e70a6",
+   "file": "gabu_walk_front_02_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-front",
+   "view": "front",
+   "seq": 3,
+   "source_file": "atlases/gabu/gabu_cell_11.png -> cleaned use-these-new-edit",
+   "source_note": "locked walk_front_0 cell_11 = stand frame",
+   "source_md5": "320d43a5b7b05c9a741864b5e0954928",
+   "file": "gabu_walk_front_03_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-side",
+   "view": "front",
+   "seq": 0,
+   "source_file": "walk-frames/gabu-walkfix-20261026/gabu_walk_left_0.png -> cleaned use-these-new-edit",
+   "source_note": "walkfix left_0 = locked cell_09 verbatim, LEFT-facing, confirmed perfect",
+   "source_md5": "fd5bb0a7b9de25caa81d8dd1346de345",
+   "file": "gabu_walk_side_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-side",
+   "view": "front",
+   "seq": 1,
+   "source_file": "walk-frames/gabu-walkfix-20261026/gabu_walk_left_1.png -> cleaned use-these-new-edit",
+   "source_note": "walkfix left_1 = locked cell_10 verbatim, LEFT-facing, confirmed perfect",
+   "source_md5": "6292366a4d939d6c5fb4c865b1854dbe",
+   "file": "gabu_walk_side_01_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-side",
+   "view": "front",
+   "seq": 2,
+   "source_file": "walk-frames/gabu-walkfix-20261026/gabu_walk_left_0.png -> cleaned use-these-new-edit",
+   "source_note": "alternating-step cycle repeat (no distinct stand cell exists)",
+   "source_md5": "fd5bb0a7b9de25caa81d8dd1346de345",
+   "file": "gabu_walk_side_02_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-side",
+   "view": "front",
+   "seq": 3,
+   "source_file": "walk-frames/gabu-walkfix-20261026/gabu_walk_left_1.png -> cleaned use-these-new-edit",
+   "source_note": "alternating-step cycle repeat (no distinct stand cell exists)",
+   "source_md5": "6292366a4d939d6c5fb4c865b1854dbe",
+   "file": "gabu_walk_side_03_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "ready",
+   "view": "front",
+   "seq": 0,
+   "source_file": "atlases/gabu/gabu_cell_02.png -> cleaned use-these-new-edit",
+   "source_note": "locked battle_front cell_02 = battle stance; no distinct ready frames exist in 2D",
+   "source_md5": "c9860d6f2bc6bc426b30c8ed0a45af02",
+   "file": "gabu_ready_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "attack",
+   "view": "front",
+   "seq": 0,
+   "source_file": "animation/attack/gabu/attack_a_windup.png -> cleaned use-these-new-edit",
+   "source_note": "attack transform windup from locked cell_02",
+   "source_md5": "04d7b56d2aefcc04a0fb88ba6d0c9f05",
+   "file": "gabu_attack_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "attack",
+   "view": "front",
+   "seq": 1,
+   "source_file": "animation/attack/gabu/attack_b_strike.png -> cleaned use-these-new-edit",
+   "source_note": "attack transform strike lunge from locked cell_02",
+   "source_md5": "f19bb970fe17b7f921880e4bc4cb6382",
+   "file": "gabu_attack_front_01_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "attack",
+   "view": "front",
+   "seq": 2,
+   "source_file": "animation/attack/gabu/attack_c_impact.png -> cleaned use-these-new-edit",
+   "source_note": "attack transform impact hold from locked cell_02",
+   "source_md5": "f19bb970fe17b7f921880e4bc4cb6382",
+   "file": "gabu_attack_front_02_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "attack",
+   "view": "front",
+   "seq": 3,
+   "source_file": "animation/attack/gabu/attack_d_recover.png -> cleaned use-these-new-edit",
+   "source_note": "attack transform recover from locked cell_02",
+   "source_md5": "c9860d6f2bc6bc426b30c8ed0a45af02",
+   "file": "gabu_attack_front_03_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "hit",
+   "view": "front",
+   "seq": 0,
+   "source_file": "animation/hurt/gabu/gabu_hurt_cell_00.png -> cleaned use-these-new-edit",
+   "source_note": "hurt cell_00 (original)",
+   "source_md5": "6507b1115d0b47c0151fd0d6c34ac706",
+   "file": "gabu_hit_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  }
+ ],
+ "gaps": [
+  "faint"
+ ],
+ "family_coverage": "6/7",
+ "cell_total": 17,
+ "strip_total": 6,
+ "supersedes": "sheets-2d-20261027 (old files renamed -DO-NOT-USE)",
+ "cleaning_report": "CLEANING-REPORT-20261027-0731-use-these-new-edit.md"
+}

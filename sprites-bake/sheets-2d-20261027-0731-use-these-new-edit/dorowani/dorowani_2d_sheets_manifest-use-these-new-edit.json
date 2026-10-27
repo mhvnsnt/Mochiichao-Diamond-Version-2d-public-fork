@@ -1,0 +1,305 @@
+{
+ "creature": "dorowani",
+ "kind": "locked_2d_front_sheets_v1_cleaned_use-these-new-edit",
+ "source": "LOCKED_2D_FRONT_SHEETS_NOT_3D_CLEANED_USE-THESE-NEW-EDIT",
+ "source_label": "2D-SOURCED CLEANED USE-THESE NEW EDIT \u2014 white leg-gap spots and grey ground shadows removed alpha-only from the 20261027 2D set. NOT 3D renders.",
+ "source_note": "Built ONLY from locked 2D front-facing sheets (locked atlases, confirmed walkfix sets, game idle/attack transform loops, hurt cells). NOT 3D renders. NOT the 3D-bake sheets-rigged set. No newly drawn anatomy, no invented poses, no mirrored backs, no new colours.",
+ "families": {
+  "idle": {
+   "status": "HAVE",
+   "frames": [
+    "dorowani_idle_front_00_2d-use-these-new-edit.png",
+    "dorowani_idle_front_01_2d-use-these-new-edit.png",
+    "dorowani_idle_front_02_2d-use-these-new-edit.png"
+   ],
+   "strip": "dorowani_idle_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    192,
+    64
+   ]
+  },
+  "walk-front": {
+   "status": "HAVE",
+   "frames": [
+    "dorowani_walk_front_00_2d-use-these-new-edit.png",
+    "dorowani_walk_front_01_2d-use-these-new-edit.png",
+    "dorowani_walk_front_02_2d-use-these-new-edit.png",
+    "dorowani_walk_front_03_2d-use-these-new-edit.png"
+   ],
+   "strip": "dorowani_walk_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    256,
+    64
+   ]
+  },
+  "walk-side": {
+   "status": "HAVE",
+   "frames": [
+    "dorowani_walk_side_00_2d-use-these-new-edit.png",
+    "dorowani_walk_side_01_2d-use-these-new-edit.png",
+    "dorowani_walk_side_02_2d-use-these-new-edit.png",
+    "dorowani_walk_side_03_2d-use-these-new-edit.png"
+   ],
+   "strip": "dorowani_walk_side_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    256,
+    64
+   ]
+  },
+  "ready": {
+   "status": "HAVE",
+   "frames": [
+    "dorowani_ready_front_00_2d-use-these-new-edit.png"
+   ],
+   "strip": "dorowani_ready_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    64,
+    64
+   ]
+  },
+  "attack": {
+   "status": "HAVE",
+   "frames": [
+    "dorowani_attack_front_00_2d-use-these-new-edit.png",
+    "dorowani_attack_front_01_2d-use-these-new-edit.png",
+    "dorowani_attack_front_02_2d-use-these-new-edit.png",
+    "dorowani_attack_front_03_2d-use-these-new-edit.png"
+   ],
+   "strip": "dorowani_attack_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    256,
+    64
+   ]
+  },
+  "hit": {
+   "status": "HAVE",
+   "frames": [
+    "dorowani_hit_front_00_2d-use-these-new-edit.png"
+   ],
+   "strip": "dorowani_hit_front_strip_2d-use-these-new-edit.png",
+   "strip_size": [
+    64,
+    64
+   ]
+  },
+  "faint": {
+   "status": "GAP",
+   "frames": [],
+   "reason": "No 2D faint cells exist for this creature; animation/faint/ type templates are not creature art and were NOT used. No back view invented by mirroring."
+  }
+ },
+ "frames": [
+  {
+   "kind": "locked_2d",
+   "family": "idle",
+   "view": "front",
+   "seq": 0,
+   "source_file": "animation/idle/dorowani/idle_a.png -> cleaned use-these-new-edit",
+   "source_note": "idle base = locked battle_front cell_00",
+   "source_md5": "167b6e4317359a6be47dce8f8feeddab",
+   "file": "dorowani_idle_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "idle",
+   "view": "front",
+   "seq": 1,
+   "source_file": "animation/idle/dorowani/idle_b.png -> cleaned use-these-new-edit",
+   "source_note": "idle bob shift -2 from cell_00",
+   "source_md5": "670d9bfc8e8301980e81942c75b75b48",
+   "file": "dorowani_idle_front_01_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "idle",
+   "view": "front",
+   "seq": 2,
+   "source_file": "animation/idle/dorowani/idle_c.png -> cleaned use-these-new-edit",
+   "source_note": "idle breath scale_y 1.02 from cell_00",
+   "source_md5": "4171df427aff9d625504e420c68bea21",
+   "file": "dorowani_idle_front_02_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-front",
+   "view": "front",
+   "seq": 0,
+   "source_file": "walk-frames/dorowani-walkfix-20261026/other6-20261026/dorowani_walk_down_0_rebuilt-20261026.png -> cleaned use-these-new-edit",
+   "source_note": "walkfix down_0, confirmed, from locked cell_06",
+   "source_md5": "cedd9f901a6ae9b5cfd11a159480f856",
+   "file": "dorowani_walk_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-front",
+   "view": "front",
+   "seq": 1,
+   "source_file": "atlases/dorowani/dorowani_cell_06.png -> cleaned use-these-new-edit",
+   "source_note": "locked overworld_front cell_06 = stand frame",
+   "source_md5": "32127b4b348435049c80e347624c6d46",
+   "file": "dorowani_walk_front_01_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-front",
+   "view": "front",
+   "seq": 2,
+   "source_file": "walk-frames/dorowani-walkfix-20261026/other6-20261026/dorowani_walk_down_1_rebuilt-20261026.png -> cleaned use-these-new-edit",
+   "source_note": "walkfix down_1, confirmed, from locked cell_06",
+   "source_md5": "15a71b2843894feb73d3feec545ac56d",
+   "file": "dorowani_walk_front_02_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-front",
+   "view": "front",
+   "seq": 3,
+   "source_file": "atlases/dorowani/dorowani_cell_06.png -> cleaned use-these-new-edit",
+   "source_note": "locked overworld_front cell_06 = stand frame",
+   "source_md5": "32127b4b348435049c80e347624c6d46",
+   "file": "dorowani_walk_front_03_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-side",
+   "view": "front",
+   "seq": 0,
+   "source_file": "walk-frames/dorowani-walkfix-20261026/dorowani_walk_left_0_rebuilt-20261026.png -> cleaned use-these-new-edit",
+   "source_note": "walkfix left_0, confirmed, verbatim from locked cell_03, LEFT-facing",
+   "source_md5": "6f7ca76103eb9d20a0f89640ba075507",
+   "file": "dorowani_walk_side_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-side",
+   "view": "front",
+   "seq": 1,
+   "source_file": "atlases/dorowani/dorowani_cell_03.png -> cleaned use-these-new-edit",
+   "source_note": "locked overworld_side cell_03 = stand frame, LEFT-facing",
+   "source_md5": "c348aba16c9110397044ba30a0a2b1ec",
+   "file": "dorowani_walk_side_01_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-side",
+   "view": "front",
+   "seq": 2,
+   "source_file": "walk-frames/dorowani-walkfix-20261026/dorowani_walk_left_1_rebuilt-20261026.png -> cleaned use-these-new-edit",
+   "source_note": "walkfix left_1, confirmed, verbatim from locked cell_03, LEFT-facing",
+   "source_md5": "ede3fe3aa176735ed3f19efc4a4f1e3c",
+   "file": "dorowani_walk_side_02_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "walk-side",
+   "view": "front",
+   "seq": 3,
+   "source_file": "atlases/dorowani/dorowani_cell_03.png -> cleaned use-these-new-edit",
+   "source_note": "locked overworld_side cell_03 = stand frame, LEFT-facing",
+   "source_md5": "c348aba16c9110397044ba30a0a2b1ec",
+   "file": "dorowani_walk_side_03_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "ready",
+   "view": "front",
+   "seq": 0,
+   "source_file": "atlases/dorowani/dorowani_cell_00.png -> cleaned use-these-new-edit",
+   "source_note": "locked battle_front cell_00 = battle stance; no distinct ready frames exist in 2D",
+   "source_md5": "167b6e4317359a6be47dce8f8feeddab",
+   "file": "dorowani_ready_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "attack",
+   "view": "front",
+   "seq": 0,
+   "source_file": "animation/attack/dorowani/attack_a_windup.png -> cleaned use-these-new-edit",
+   "source_note": "attack transform windup from locked cell_00",
+   "source_md5": "d044a5ee5380328d923f27ffe71b8df9",
+   "file": "dorowani_attack_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "attack",
+   "view": "front",
+   "seq": 1,
+   "source_file": "animation/attack/dorowani/attack_b_strike.png -> cleaned use-these-new-edit",
+   "source_note": "attack transform strike lunge from locked cell_00",
+   "source_md5": "9940677504037e14aa5be1779861a08a",
+   "file": "dorowani_attack_front_01_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "attack",
+   "view": "front",
+   "seq": 2,
+   "source_file": "animation/attack/dorowani/attack_c_impact.png -> cleaned use-these-new-edit",
+   "source_note": "attack transform impact hold from locked cell_00",
+   "source_md5": "9940677504037e14aa5be1779861a08a",
+   "file": "dorowani_attack_front_02_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "attack",
+   "view": "front",
+   "seq": 3,
+   "source_file": "animation/attack/dorowani/attack_d_recover.png -> cleaned use-these-new-edit",
+   "source_note": "attack transform recover from locked cell_00",
+   "source_md5": "167b6e4317359a6be47dce8f8feeddab",
+   "file": "dorowani_attack_front_03_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  },
+  {
+   "kind": "locked_2d",
+   "family": "hit",
+   "view": "front",
+   "seq": 0,
+   "source_file": "animation/hurt/dorowani/dorowani_hurt_cell_00.png -> cleaned use-these-new-edit",
+   "source_note": "hurt cell_00 (original; FIXED/LIKENESS alternates exist unjudged, NOT used)",
+   "source_md5": "89c5ed8d8cb3043b975aa32448c40819",
+   "file": "dorowani_hit_front_00_2d-use-these-new-edit.png",
+   "width": 64,
+   "height": 64
+  }
+ ],
+ "gaps": [
+  "faint"
+ ],
+ "family_coverage": "6/7",
+ "cell_total": 17,
+ "strip_total": 6,
+ "supersedes": "sheets-2d-20261027 (old files renamed -DO-NOT-USE)",
+ "cleaning_report": "CLEANING-REPORT-20261027-0731-use-these-new-edit.md"
+}
