@@ -191,7 +191,7 @@ export function drawMenuStage(
       for (const e of cfg.emblems) {
         if (!e.visible) continue;
         ctx.save();
-        ctx.translate(e.x + e.w / 2, e.y + e.h / 2);
+        ctx.translate(e.x, e.y);
         if (e.kind === "heart") {
           ctx.translate(-e.w / 2, -e.h / 2);
           ctx.scale(e.w / 100, e.h / 100);
