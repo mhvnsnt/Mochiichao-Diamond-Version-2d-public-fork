@@ -11,7 +11,12 @@ import { TILE } from "./WorldConstants";
 
 export const TILE_IMAGE: Record<number, string> = {
   [TILE.GRASS]: "/assets/tiles/water/voda-grass.png",  // step 3: speckled grass, replaces bright Kenney grass
-  [TILE.PATH]: "/assets/tiles/town/tile_0025.png",
+  // Step 4: PATH -> speckled brown dirt (GrumpyDiamond, CC0, interior
+  // crop (22,3)-(38,19) of 16x16NewTileSet.png, viewed individually;
+  // the sheet is a composite patch, not a clean grid, so the crop is
+  // an interior 16x16, fully opaque, not the sheet's (0,0) cell).
+  // This replaces Kenney tile_0025 tan for PATH only.
+  [TILE.PATH]: "/assets/tiles/dirt/grumpydiamond-dirt.png",
   [TILE.TALL_GRASS]: "/assets/tiles/town/tile_0043.png",
   [TILE.SAND]: "/assets/tiles/water/voda-sand.png",
   [TILE.FLOWER]: "/assets/tiles/town/tile_0002.png",
@@ -21,9 +26,12 @@ export const TILE_IMAGE: Record<number, string> = {
   // house blocks AND interior furniture in current maps, so interiors
   // will also read as brick until furniture tiles are mapped separately.
   [TILE.BUILDING]: "/assets/tiles/town/tile_0126.png",
-  // CAVE -> plain dirt (same image as PATH for now). Cave stone
-  // texture is still owed; dirt is a real cave floor, not a guess.
-  [TILE.CAVE]: "/assets/tiles/town/tile_0025.png",
+  // Step 4: CAVE -> dark-brown cave stone (Vidmaster, CC-BY 3.0,
+  // credit in public/assets/tiles/CREDITS.md). Sheet GameOfCaves.png
+  // is 16x16 tiles with a 1px separator: this tile is grid (5,0),
+  // pixels (86,1)-(102,17), viewed individually. It replaces Kenney
+  // tile_0025 tan for CAVE only; PATH no longer shares CAVE's image.
+  [TILE.CAVE]: "/assets/tiles/cave/vidmaster-cave-stone.png",
   // Step 3, OGA CC0 water/grass/sand sheet (Demetrius), tiles
   // extracted at 16x16 grid positions and viewed individually:
   // water (0,0) wavy blue, grass (4,1) speckled green, sand (4,4).
