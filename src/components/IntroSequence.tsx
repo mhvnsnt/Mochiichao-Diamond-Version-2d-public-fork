@@ -577,20 +577,29 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             className="absolute object-contain"
             style={{ left: LOCKED_V32_MENU.logo.x, top: LOCKED_V32_MENU.logo.y, width: LOCKED_V32_MENU.logo.w }}
           />
-          {/* Cloud from locked data: centre (600,738), 700x180.
-              ORIGINAL cloud file restored (puffy-cloud.svg, viewBox
-              600x280, exactly as used before): the #184 traced
-              lookalike was a different-shaped file and is deleted
-              by Mars's order 2026-10-26, so only the original
-              cloud file remains. The original renders
-              with objectFit fill into the locked 700x180 box, so no
-              letterbox and no path change to the file itself. */}
-          <img
-            src={puffyCloud}
-            alt=""
+          {/* Cloud: ORIGINAL puffy-cloud.svg only, SHAPED by transform
+              (Mars 2026-10-26 18:13 CDT: transform only, zero path edits,
+              zero drawing, zero new artwork). The <svg><image
+              preserveAspectRatio="none"> applies the calibrated imgBox
+              shape transform (225,599,823x258) so the file's VISIBLE
+              path lands exactly on the locked box x250-950, y648-828,
+              centre (600,738). A plain <img> cannot do this: Chrome
+              applies meet inside <img> and letterboxes the viewBox
+              (measured: imgBox alone landed 378-844 wide); the
+              <svg><image> rendering is itself calibrated (see
+              lockedV32Menu.ts cloud comment for the measured factors).
+              BANNED / DO NOT USE: mochiichao-main-cloud-v32.svg
+              (the #184 trace) — deleted from main by Mars's order
+              2026-10-26; it is NOT the cloud file and must never be
+              rendered again. File untouched. */}
+          <svg
             className="absolute menu-bob-cloud"
-            style={{ left: LOCKED_V32_MENU.cloud.x, top: LOCKED_V32_MENU.cloud.y, width: LOCKED_V32_MENU.cloud.w, height: LOCKED_V32_MENU.cloud.h, pointerEvents: 'none', objectFit: 'fill' }}
-          />
+            style={{ left: LOCKED_V32_MENU.cloud.imgBox.x, top: LOCKED_V32_MENU.cloud.imgBox.y, width: LOCKED_V32_MENU.cloud.imgBox.w, height: LOCKED_V32_MENU.cloud.imgBox.h, pointerEvents: 'none', overflow: 'visible' }}
+            viewBox={`0 0 ${LOCKED_V32_MENU.cloud.imgBox.w} ${LOCKED_V32_MENU.cloud.imgBox.h}`}
+            aria-hidden="true"
+          >
+            <image href={puffyCloud} x={0} y={0} width={LOCKED_V32_MENU.cloud.imgBox.w} height={LOCKED_V32_MENU.cloud.imgBox.h} preserveAspectRatio="none" />
+          </svg>
           {/* Mochii mascot cue from locked data: x170, y~790, width 110. */}
           <img
             src={mochiiCutout}
