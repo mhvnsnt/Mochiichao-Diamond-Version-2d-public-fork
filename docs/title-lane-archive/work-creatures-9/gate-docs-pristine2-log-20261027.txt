@@ -1,0 +1,37 @@
+From https://github.com/mhvnsnt/Mochiichao-Diamond-Version-2d-fresh-start
+ * [new branch]      main       -> origin/main
+CHECKOUT_HEAD=f5fa59a4136a92baef842228c4987eb49db09f85
+
+> react-example@0.0.0 lint
+> tsc --noEmit
+
+docs/title-lane-archive/scripts/batch1-title-anim/TitleScene.tsx(3,49): error TS2307: Cannot find module '../../lib/titleBiomes' or its corresponding type declarations.
+docs/title-lane-archive/scripts/batch1-title-anim/TitleScene.tsx(14,8): error TS2307: Cannot find module '../../lib/titleAnimations' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-base-359dbe1d-20261027.tsx(2,23): error TS2307: Cannot find module './StdWindow' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-base-359dbe1d-20261027.tsx(10,8): error TS2307: Cannot find module '../../lib/startScreenPreset' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-base-359dbe1d-20261027.tsx(11,30): error TS2307: Cannot find module '../../lib/titleBiomes' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-base-359dbe1d-20261027.tsx(12,39): error TS2307: Cannot find module './OpenSourceAssetPicker' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-base-359dbe1d-20261027.tsx(18,8): error TS2307: Cannot find module '../../lib/introVideoExport' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-base-359dbe1d-20261027.tsx(21,8): error TS2307: Cannot find module '../../lib/openSourceAssets' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-blink-60-30-30-20261026.tsx(2,23): error TS2307: Cannot find module './StdWindow' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-blink-60-30-30-20261026.tsx(10,8): error TS2307: Cannot find module '../../lib/startScreenPreset' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/StartScreenCreator-blink-60-30-30-20261026.tsx(11,30): error TS2307: Cannot find module '../../lib/titleBiomes' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-base-20261026.tsx(3,49): error TS2307: Cannot find module '../../lib/titleBiomes' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-base-20261026.tsx(4,45): error TS2307: Cannot find module '../../lib/titleActionShots' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-base-20261026.tsx(8,8): error TS2307: Cannot find module '../../lib/titleCardEffects' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-base-20261026.tsx(19,8): error TS2307: Cannot find module '../../lib/titleAnimations' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-main-20261026.tsx(3,49): error TS2307: Cannot find module '../../lib/titleBiomes' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-main-20261026.tsx(4,45): error TS2307: Cannot find module '../../lib/titleActionShots' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-main-20261026.tsx(8,8): error TS2307: Cannot find module '../../lib/titleCardEffects' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-main-20261026.tsx(19,8): error TS2307: Cannot find module '../../lib/titleAnimations' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-merged-20261026.tsx(3,49): error TS2307: Cannot find module '../../lib/titleBiomes' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-merged-20261026.tsx(4,45): error TS2307: Cannot find module '../../lib/titleActionShots' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-merged-20261026.tsx(8,8): error TS2307: Cannot find module '../../lib/titleCardEffects' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-merged-20261026.tsx(19,8): error TS2307: Cannot find module '../../lib/titleAnimations' or its corresponding type declarations.
+docs/title-lane-archive/scripts/title-creatures-9-work/TitleScene-merged-20261026.tsx(20,62): error TS2307: Cannot find module '../../lib/titleCryGate' or its corresponding type declarations.
+docs/title-lane-archive/staging/title-creatures-9-staging/src/components/game/TitleCreatureFigure.tsx(2,24): error TS2307: Cannot find module './TitleScene' or its corresponding type declarations.
+src/components/IntroSequence.tsx(471,174): error TS2304: Cannot find name 'PINNED_SUBTITLE_FONT'.
+src/lib/wiring/phase4-garden.ts(43,14): error TS2741: Property 'fruit' is missing in type '{ planted: number; sprout: number; growing: number; bloom: number; }' but required in type 'Record<"growing" | "planted" | "sprout" | "bloom" | "fruit", number>'.
+PRISTINE2_LINT_EXIT=2
+c628df7 Title Creatures lane docs batch: finalize docs/title-creatures/logs/disc-to-repo-resume-log-20261027.txt (complete log)
+PRISTINE2_DONE
