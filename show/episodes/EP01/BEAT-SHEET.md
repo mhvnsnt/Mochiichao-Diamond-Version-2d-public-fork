@@ -5,7 +5,10 @@ Locations (3, all from parts-catalog): Garden Gate, Garden Pond,
 Garden Green (battle-bg-garden) · Featured species: **Wispkin**
 Show convention (Jamar, 2026-10-27): creatures do NOT talk in words -
 they vocalize - PURE CRIES AND SOUNDS ONLY (decided by Jamar
-2026-10-27; no name-saying either). Only humans
+2026-10-27; no name-saying either). SUBTITLES appear silent-film
+style ONLY at important moments to carry a creature's meaning
+(the Rule 12 subtitle is the model) - see bible/WRITING-STANDARD.md.
+Only humans
 (Mochiko) speak word-dialogue. Meaning comes from performance,
 context and Mochiko's reactions.
 
@@ -43,8 +46,7 @@ cold-spot trail FX, Wispkin smoke cycle.
 **Stinger (Jamar, 2026-10-27):** after the tag, cut to the DARK
 FOREST in full daylight — light that doesn't reach in, no birdsong,
 suspense held on stillness. The Rule 12 line appears as a SUBTITLE
-over the forest and holds: "Everything in the garden belongs to
-somebody — and everybody belongs in the garden." The line is the
+over the forest and holds: "Everything in the garden belongs to somebody... And everybody belongs to the Garden." The line is the
 show's warm thesis AND its warning, depending on what's under it.
 New location flagged: the Dark Forest (daylit-horror set) — a MAKE
 item for the parts catalog; what stopped moving in there is not
