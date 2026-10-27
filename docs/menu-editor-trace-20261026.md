@@ -267,3 +267,18 @@ loading a theme/layer never touches the locked default.
   whose digits read as dashes. The editor now forces the locked
   picture label stack (Trebuchet/Arial, upright) on its own panels,
   so every value reads cleanly; proof run 2 re-shot with the fix.
+- Emblem coordinates are CENTRES (v32 picture placements are
+  centres). Heart defaults follow open PR #261's measured
+  corrections, not PR #214's first numbers: blue (169,421.5) 63x50,
+  pink (230,640.5) 53x40. The first #260 upload rendered emblems
+  from top-left (wrong by half a size) and clobbered #259/#243-era
+  DexView + SettingsScreen lines; the repair commit on this branch
+  restores those lines (3-way merge, 0 files deleted) and switches
+  all three emblem render sites (game menu, editor preview, canvas
+  export) to centre coordinates. If #261 merges, its heart layer
+  and this PR's emblem layer must be reconciled to exactly one
+  layer (same rule as #214 above).
+- Deletion count, stated plainly: 0 FILE deletions in this PR.
+  The 340 "deletions" in GitHub's diff stat are replaced LINES
+  inside the 5 edited files (rewrites + reconciliations), which the
+  lane's standing rule counts as normal edits, not file deletions.
