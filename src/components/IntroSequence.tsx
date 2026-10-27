@@ -24,6 +24,8 @@ import puffyCloud from "../assets/ui/puffy-cloud.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
 import { playUiMove, playUiConfirm, playUiBack } from "../lib/audioRouting";
+import TitleStartScreen from "./game/TitleStartScreen";
+import { getSelectedTitleStartScreenId, resolveTitleStartScreen } from "../lib/titleStartScreens";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -352,6 +354,26 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   }
 
   if (phase === "TITLE") {
+    // Interchangeable start screens (opt-in only): when the player
+    // picked a preset in Settings, the TITLE phase renders that
+    // preset (TitleStartScreen) instead of the locked phi stage
+    // below. Press behaviour is NOT redefined here: the existing
+    // any-key/click handler above still plays the M3 chirp,
+    // white-fades 350ms, then MAIN_MENU, and titleFading renders
+    // the same white overlay below. With no pick (null), this
+    // branch is skipped and the locked default below renders
+    // exactly as before — the default title code is untouched,
+    // not moved behind a flag. The pick is read at render time,
+    // so a Settings change applies on the next TITLE visit.
+    const selectedPreset = resolveTitleStartScreen(getSelectedTitleStartScreenId());
+    if (selectedPreset) {
+      return (
+        <div className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer">
+          <TitleStartScreen preset={selectedPreset} />
+          {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
+        </div>
+      );
+    }
     // Menu Editor wiring (2026-10-26): the title slots below read
     // the ACTIVE menu config — the working preset when one was
     // saved, else the locked phi spec exactly. Title logo stays
@@ -631,7 +653,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           <div className="absolute inset-0" style={{ zIndex: menuCfg.layers.emblems.order, display: menuCfg.layers.emblems.visible ? undefined : 'none', pointerEvents: 'none' }}>
             <svg width={1200} height={1500}>
               {menuCfg.emblems.filter((e) => e.visible).map((e) => (
-                <g key={e.id} transform={`translate(${e.x},${e.y})`}>
+                <g key={e.id} transform={`translate(${e.x - e.w / 2},${e.y - e.h / 2})`}>
                   {e.kind === 'circle'
                     ? <circle cx={e.w / 2} cy={e.h / 2} r={Math.min(e.w, e.h) / 2} fill={e.color} />
                     : e.kind === 'star'
