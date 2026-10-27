@@ -1,0 +1,23 @@
+{
+  "scene": "EP01-STINGER-forest",
+  "cuts": [
+    "25",
+    "26",
+    "27",
+    "28"
+  ],
+  "bed_file": "EP01-STINGER-forest.wav",
+  "design": "ENGINEERED ABSENCE (locked script + LIVING-WORLD Forest bed): room tone only, no birdsong from inside, no wind cycles, no underscore. One event: a single leaf lands at 43.5s (cut 28). Rule 12 burn-in (cut 27) is a PICTURE takeover; the sound design refuses to underline it.",
+  "measured": {
+    "input_i": "-51.85",
+    "input_tp": "-30.71"
+  },
+  "gates": {
+    "loudness_target_EXEMPT_by_design": true,
+    "true_peak_ok": true,
+    "forest_rule_no_birdsong_wind_underscore": true
+  },
+  "flags": [
+    "Exemption is a DESIGN gate pass, not a miss: episode finish loudness is measured on the programme excluding the stinger's designed silence, per the finish spec note to be filed at mix"
+  ]
+}
