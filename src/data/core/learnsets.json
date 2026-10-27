@@ -1,0 +1,1050 @@
+{
+  "$schema": "./schemas/learnsets.schema.json",
+  "version": "1.0.0",
+  "source": "Plan \u00a71b shape {speciesId, levelUp:[[level,moveId]], tm, egg, tutor}. Level-up verified from species.ts for 12/47; provisional baseline for 35/47 (flagged per record). TM/egg/tutor tables are owed for 47/47 (empty here, not invented, not copied from decomp tables).",
+  "learnsets": [
+    {
+      "speciesId": "001",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ],
+        [
+          15,
+          "AQUA_JET"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "002",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ],
+        [
+          16,
+          "POWER_STRIKE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "003",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ],
+        [
+          36,
+          "MIND_BLAST"
+        ],
+        [
+          45,
+          "HYDRO_SURGE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "004",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "METAL_STRIKE"
+        ],
+        [
+          15,
+          "AQUA_SHOT"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "005",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "METAL_STRIKE"
+        ],
+        [
+          20,
+          "CRUNCH"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "006",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          15,
+          "FLASH_CANNON_MOVE"
+        ],
+        [
+          30,
+          "DRAGON_CLAW"
+        ],
+        [
+          45,
+          "IRON_BARRAGE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "007",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          9,
+          "MUD_BLAST"
+        ],
+        [
+          14,
+          "BULLDOZE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "008",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          9,
+          "MUD_BLAST"
+        ],
+        [
+          20,
+          "EARTH_POWER"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "009",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          34,
+          "SHADOW_PULSE"
+        ],
+        [
+          42,
+          "EARTH_TREMOR"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "010",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          6,
+          "EMBER_TOSS"
+        ],
+        [
+          14,
+          "FIRE_STREAM"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "011",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "EMBER_TOSS"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "012",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "EMBER_TOSS"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "013",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "014",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "015",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "016",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "SWARM_STRIKE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "017",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "SWARM_STRIKE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "018",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "SWARM_STRIKE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "019",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "GUST_WAVE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "020",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "GUST_WAVE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "021",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "GUST_WAVE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "022",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "023",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "024",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "025",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "026",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "027",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "028",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "AQUA_SHOT"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "029",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "030",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "031",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "032",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "METAL_STRIKE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "033",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "METAL_STRIKE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "034",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "METAL_STRIKE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "035",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "036",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "037",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MUD_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "038",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          6,
+          "VINE_LASH"
+        ],
+        [
+          14,
+          "RAZOR_LEAF"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "039",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "VINE_LASH"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "040",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          18,
+          "METAL_STRIKE"
+        ],
+        [
+          32,
+          "SOLAR_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "species.ts (matched by name)"
+    },
+    {
+      "speciesId": "041",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "VINE_LASH"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "042",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "SHADOW_PULSE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "043",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "SHADOW_PULSE"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "044",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "EMBER_TOSS"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "045",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "EMBER_TOSS"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "046",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "EMBER_TOSS"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    },
+    {
+      "speciesId": "047",
+      "levelUp": [
+        [
+          1,
+          "TACKLE"
+        ],
+        [
+          5,
+          "QUICK_ATTACK"
+        ],
+        [
+          8,
+          "MIND_BLAST"
+        ]
+      ],
+      "tm": [],
+      "egg": [],
+      "tutor": [],
+      "source": "provisional-baseline (TACKLE/QUICK_ATTACK + first-element move; full level-up table owed)"
+    }
+  ]
+}

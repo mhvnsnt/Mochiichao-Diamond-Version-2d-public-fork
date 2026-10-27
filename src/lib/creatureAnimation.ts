@@ -21,13 +21,20 @@
  *   the locked battle_front cell. Registry-wired (loaders below); the
  *   Pixi timeline keeps its transform treatments for these creatures,
  *   so these frames are the follow-up polish layer, not live-rendered yet.
+ *   FINISH-FIRST Item 4 (2026-10-26): PixiBattleCanvas now renders these
+ *   frames as the fallback when no pilot/articulation set resolves for the
+ *   attacker — see resolvePixiAttack() below. Precedence is unchanged for
+ *   pilot/articulation creatures; this only fills the 25 folders that had
+ *   no rendered set.
  * - articulation (24 entries, 96 sets): redrawn attack sets (physical/
  *   special/signature/heavy). Per set, the V3-queue final is used ONLY
  *   where its cell files actually exist on main (44 sets, 242 cells,
- *   11 entries); the other 52 sets fall back to the V2 eyes-only base
- *   (286 cells, 13 entries) — the v3q manifest claims 24 entries / 528
+ *   11 entries); Razorgater's 4 sets render the locked take-6 final
+ *   (22 cells, triangle mouth, docs/locked-versions.json CURRENT);
+ *   the other 48 sets fall back to the V2 eyes-only base
+ *   (264 cells, 12 entries) — the v3q manifest claims 24 entries / 528
  *   cells, but 13 entries' v3q cells were never uploaded. Mouths on
- *   41/96 sets (fresh or reuse-proof); the rest ship eyes-only, never
+ *   45/96 sets (fresh or reuse-proof); the rest ship eyes-only, never
  *   forced. Rendered by PixiBattleCanvas for Physical -> physical and
  *   Special -> special; signature/heavy sets are registry-available
  *   for per-move selection later.
@@ -347,7 +354,7 @@ export const ATTACK_TRANSFORM: Record<string, AttackFrame[]> = {
   "zephling": [{ file: "attack_a_windup.png", role: "windup", durationMs: 250 }, { file: "attack_b_strike.png", role: "strike_lunge", durationMs: 120 }, { file: "attack_c_impact.png", role: "impact_hold", durationMs: 90 }, { file: "attack_d_recover.png", role: "recover", durationMs: 400 }],
 };
 
-export interface ArticSet { family: string; mouth: 'fresh' | 'reuse-proof' | 'eyes-only'; layer: 'v3q' | 'v2'; batch: string; files: string[]; }
+export interface ArticSet { family: string; mouth: 'fresh' | 'reuse-proof' | 'eyes-only'; layer: 'v3q' | 'v2' | 'v3w6'; batch: string; files: string[]; }
 export interface ArticSpec { sets: Record<string, ArticSet>; }
 export const ARTICULATION: Record<string, ArticSpec> = {
   "ashemit": { sets: { "atk_heavy_inferno_crash_finisher": { family: "heavy", mouth: "fresh", layer: "v3q", batch: "batch-c", files: ["ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-00.png", "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-01.png", "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-02.png", "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-03.png", "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-04.png", "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-05.png"] }, "atk_physical_ash_charge": { family: "physical", mouth: "fresh", layer: "v3q", batch: "batch-c", files: ["ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-00.png", "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-01.png", "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-02.png", "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-03.png", "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-04.png"] }, "atk_signature_flame_tail_sweep": { family: "signature", mouth: "fresh", layer: "v3q", batch: "batch-c", files: ["ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-00.png", "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-01.png", "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-02.png", "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-03.png", "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-04.png", "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-05.png"] }, "atk_special_ember_spray": { family: "special", mouth: "fresh", layer: "v3q", batch: "batch-c", files: ["ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-00.png", "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-01.png", "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-02.png", "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-03.png", "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-04.png"] } } },
@@ -361,7 +368,7 @@ export const ARTICULATION: Record<string, ArticSpec> = {
   "pebblefist": { sets: { "atk_heavy_avalanche_finisher": { family: "heavy", mouth: "eyes-only", layer: "v2", batch: "batch-c", files: ["pebblefist-artic-v2rework-20261026-atk_heavy_avalanche_finisher-cell-00.png", "pebblefist-artic-v2rework-20261026-atk_heavy_avalanche_finisher-cell-01.png", "pebblefist-artic-v2rework-20261026-atk_heavy_avalanche_finisher-cell-02.png", "pebblefist-artic-v2rework-20261026-atk_heavy_avalanche_finisher-cell-03.png", "pebblefist-artic-v2rework-20261026-atk_heavy_avalanche_finisher-cell-04.png", "pebblefist-artic-v2rework-20261026-atk_heavy_avalanche_finisher-cell-05.png"] }, "atk_physical_rock_punch": { family: "physical", mouth: "eyes-only", layer: "v2", batch: "batch-c", files: ["pebblefist-artic-v2rework-20261026-atk_physical_rock_punch-cell-00.png", "pebblefist-artic-v2rework-20261026-atk_physical_rock_punch-cell-01.png", "pebblefist-artic-v2rework-20261026-atk_physical_rock_punch-cell-02.png", "pebblefist-artic-v2rework-20261026-atk_physical_rock_punch-cell-03.png", "pebblefist-artic-v2rework-20261026-atk_physical_rock_punch-cell-04.png"] }, "atk_signature_boulder_barrage": { family: "signature", mouth: "eyes-only", layer: "v2", batch: "batch-c", files: ["pebblefist-artic-v2rework-20261026-atk_signature_boulder_barrage-cell-00.png", "pebblefist-artic-v2rework-20261026-atk_signature_boulder_barrage-cell-01.png", "pebblefist-artic-v2rework-20261026-atk_signature_boulder_barrage-cell-02.png", "pebblefist-artic-v2rework-20261026-atk_signature_boulder_barrage-cell-03.png", "pebblefist-artic-v2rework-20261026-atk_signature_boulder_barrage-cell-04.png", "pebblefist-artic-v2rework-20261026-atk_signature_boulder_barrage-cell-05.png"] }, "atk_special_pebble_shot": { family: "special", mouth: "eyes-only", layer: "v2", batch: "batch-c", files: ["pebblefist-artic-v2rework-20261026-atk_special_pebble_shot-cell-00.png", "pebblefist-artic-v2rework-20261026-atk_special_pebble_shot-cell-01.png", "pebblefist-artic-v2rework-20261026-atk_special_pebble_shot-cell-02.png", "pebblefist-artic-v2rework-20261026-atk_special_pebble_shot-cell-03.png", "pebblefist-artic-v2rework-20261026-atk_special_pebble_shot-cell-04.png"] } } },
   "punchkid": { sets: { "atk_heavy_knockout_finisher": { family: "heavy", mouth: "fresh", layer: "v3q", batch: "batch-e", files: ["punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-00.png", "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-01.png", "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-02.png", "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-03.png", "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-04.png", "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-05.png"] }, "atk_physical_jab_rush": { family: "physical", mouth: "fresh", layer: "v3q", batch: "batch-e", files: ["punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-00.png", "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-01.png", "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-02.png", "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-03.png", "punchkid-artic-pipev3q-20261026-atk_physical_jab_rush-cell-04.png"] }, "atk_signature_combo_barrage": { family: "signature", mouth: "fresh", layer: "v3q", batch: "batch-e", files: ["punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-00.png", "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-01.png", "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-02.png", "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-03.png", "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-04.png", "punchkid-artic-pipev3q-20261026-atk_signature_combo_barrage-cell-05.png"] }, "atk_special_power_shot": { family: "special", mouth: "fresh", layer: "v3q", batch: "batch-e", files: ["punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-00.png", "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-01.png", "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-02.png", "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-03.png", "punchkid-artic-pipev3q-20261026-atk_special_power_shot-cell-04.png"] } } },
   "pyromonk": { sets: { "atk_heavy_blaze_crash_finisher": { family: "heavy", mouth: "eyes-only", layer: "v2", batch: "batch-e", files: ["pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-00.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-01.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-02.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-03.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-04.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-05.png"] }, "atk_physical_flame_fist": { family: "physical", mouth: "eyes-only", layer: "v2", batch: "batch-e", files: ["pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-00.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-01.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-02.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-03.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-04.png"] }, "atk_signature_inferno_barrage": { family: "signature", mouth: "eyes-only", layer: "v2", batch: "batch-e", files: ["pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-00.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-01.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-02.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-03.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-04.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-05.png"] }, "atk_special_flame_shot": { family: "special", mouth: "eyes-only", layer: "v2", batch: "batch-e", files: ["pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-00.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-01.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-02.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-03.png", "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-04.png"] } } },
-  "razorgater": { sets: { "atk_heavy_jaw_crash_finisher": { family: "heavy", mouth: "eyes-only", layer: "v2", batch: "batch-a", files: ["razorgater-artic-v2rework-20261026-atk_heavy_jaw_crash_finisher-cell-00.png", "razorgater-artic-v2rework-20261026-atk_heavy_jaw_crash_finisher-cell-01.png", "razorgater-artic-v2rework-20261026-atk_heavy_jaw_crash_finisher-cell-02.png", "razorgater-artic-v2rework-20261026-atk_heavy_jaw_crash_finisher-cell-03.png", "razorgater-artic-v2rework-20261026-atk_heavy_jaw_crash_finisher-cell-04.png", "razorgater-artic-v2rework-20261026-atk_heavy_jaw_crash_finisher-cell-05.png"] }, "atk_physical_razor_rush": { family: "physical", mouth: "eyes-only", layer: "v2", batch: "batch-a", files: ["razorgater-artic-v2rework-20261026-atk_physical_razor_rush-cell-00.png", "razorgater-artic-v2rework-20261026-atk_physical_razor_rush-cell-01.png", "razorgater-artic-v2rework-20261026-atk_physical_razor_rush-cell-02.png", "razorgater-artic-v2rework-20261026-atk_physical_razor_rush-cell-03.png", "razorgater-artic-v2rework-20261026-atk_physical_razor_rush-cell-04.png"] }, "atk_signature_cross_slash": { family: "signature", mouth: "eyes-only", layer: "v2", batch: "batch-a", files: ["razorgater-artic-v2rework-20261026-atk_signature_cross_slash-cell-00.png", "razorgater-artic-v2rework-20261026-atk_signature_cross_slash-cell-01.png", "razorgater-artic-v2rework-20261026-atk_signature_cross_slash-cell-02.png", "razorgater-artic-v2rework-20261026-atk_signature_cross_slash-cell-03.png", "razorgater-artic-v2rework-20261026-atk_signature_cross_slash-cell-04.png", "razorgater-artic-v2rework-20261026-atk_signature_cross_slash-cell-05.png"] }, "atk_special_blade_wave": { family: "special", mouth: "eyes-only", layer: "v2", batch: "batch-a", files: ["razorgater-artic-v2rework-20261026-atk_special_blade_wave-cell-00.png", "razorgater-artic-v2rework-20261026-atk_special_blade_wave-cell-01.png", "razorgater-artic-v2rework-20261026-atk_special_blade_wave-cell-02.png", "razorgater-artic-v2rework-20261026-atk_special_blade_wave-cell-03.png", "razorgater-artic-v2rework-20261026-atk_special_blade_wave-cell-04.png"] } } },
+  "razorgater": { sets: { "atk_heavy_jaw_crash_finisher": { family: "heavy", mouth: "fresh", layer: "v3w6", batch: "take-6", files: ["razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-00.png", "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-01.png", "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-02.png", "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-03.png", "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-04.png", "razorgater-artic-pipev3w6-20261026-atk_heavy_jaw_crash_finisher-cell-05.png"] }, "atk_physical_razor_rush": { family: "physical", mouth: "fresh", layer: "v3w6", batch: "take-6", files: ["razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-00.png", "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-01.png", "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-02.png", "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-03.png", "razorgater-artic-pipev3w6-20261026-atk_physical_razor_rush-cell-04.png"] }, "atk_signature_cross_slash": { family: "signature", mouth: "fresh", layer: "v3w6", batch: "take-6", files: ["razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-00.png", "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-01.png", "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-02.png", "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-03.png", "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-04.png", "razorgater-artic-pipev3w6-20261026-atk_signature_cross_slash-cell-05.png"] }, "atk_special_blade_wave": { family: "special", mouth: "fresh", layer: "v3w6", batch: "take-6", files: ["razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-00.png", "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-01.png", "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-02.png", "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-03.png", "razorgater-artic-pipev3w6-20261026-atk_special_blade_wave-cell-04.png"] } } },
   "sproutle": { sets: { "atk_heavy_overgrowth_finisher": { family: "heavy", mouth: "fresh", layer: "v3q", batch: "batch-a", files: ["sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-00.png", "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-01.png", "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-02.png", "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-03.png", "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-04.png", "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-05.png"] }, "atk_physical_vine_lunge": { family: "physical", mouth: "fresh", layer: "v3q", batch: "batch-a", files: ["sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-00.png", "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-01.png", "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-02.png", "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-03.png", "sproutle-artic-pipev3q-20261026-atk_physical_vine_lunge-cell-04.png"] }, "atk_signature_bloom_burst": { family: "signature", mouth: "eyes-only", layer: "v3q", batch: "batch-a", files: ["sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-00.png", "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-01.png", "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-02.png", "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-03.png", "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-04.png", "sproutle-artic-pipev3q-20261026-atk_signature_bloom_burst-cell-05.png"] }, "atk_special_seed_shot": { family: "special", mouth: "eyes-only", layer: "v3q", batch: "batch-a", files: ["sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-00.png", "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-01.png", "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-02.png", "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-03.png", "sproutle-artic-pipev3q-20261026-atk_special_seed_shot-cell-04.png"] } } },
   "squirmite": { sets: { "atk_heavy_overrun_finisher": { family: "heavy", mouth: "eyes-only", layer: "v2", batch: "batch-d", files: ["squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-00.png", "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-01.png", "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-02.png", "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-03.png", "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-04.png", "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-05.png"] }, "atk_physical_coil_lunge": { family: "physical", mouth: "eyes-only", layer: "v2", batch: "batch-d", files: ["squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-00.png", "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-01.png", "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-02.png", "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-03.png", "squirmite-artic-v2rework-20261026-atk_physical_coil_lunge-cell-04.png"] }, "atk_signature_verdant_burst": { family: "signature", mouth: "eyes-only", layer: "v2", batch: "batch-d", files: ["squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-00.png", "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-01.png", "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-02.png", "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-03.png", "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-04.png", "squirmite-artic-v2rework-20261026-atk_signature_verdant_burst-cell-05.png"] }, "atk_special_sprout_shot": { family: "special", mouth: "eyes-only", layer: "v2", batch: "batch-d", files: ["squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-00.png", "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-01.png", "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-02.png", "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-03.png", "squirmite-artic-v2rework-20261026-atk_special_sprout_shot-cell-04.png"] } } },
   "stormtalon": { sets: { "atk_heavy_thunder_crash_finisher": { family: "heavy", mouth: "eyes-only", layer: "v2", batch: "batch-d", files: ["stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-00.png", "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-01.png", "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-02.png", "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-03.png", "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-04.png", "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-05.png"] }, "atk_physical_talon_dive": { family: "physical", mouth: "eyes-only", layer: "v2", batch: "batch-d", files: ["stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-00.png", "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-01.png", "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-02.png", "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-03.png", "stormtalon-artic-v2rework-20261026-atk_physical_talon_dive-cell-04.png"] }, "atk_signature_tempest_barrage": { family: "signature", mouth: "eyes-only", layer: "v2", batch: "batch-d", files: ["stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-00.png", "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-01.png", "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-02.png", "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-03.png", "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-04.png", "stormtalon-artic-v2rework-20261026-atk_signature_tempest_barrage-cell-05.png"] }, "atk_special_storm_blast": { family: "special", mouth: "eyes-only", layer: "v2", batch: "batch-d", files: ["stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-00.png", "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-01.png", "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-02.png", "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-03.png", "stormtalon-artic-v2rework-20261026-atk_special_storm_blast-cell-04.png"] } } },
@@ -450,6 +457,7 @@ const hurtMods = import.meta.glob('../assets/sprite-atlases/animation/hurt/*/*.p
 const attackMods = import.meta.glob('../../sprite-art/animation/attack/*/*.png', { query: '?url', import: 'default' }) as Record<string, () => Promise<string>>;
 const articMods = import.meta.glob('../../sprite-art/animation/expanded-scope/articulation-v2-rework-v3/batch-*/*/*.png', { query: '?url', import: 'default' }) as Record<string, () => Promise<string>>;
 const articV2Mods = import.meta.glob('../../sprite-art/animation/expanded-scope/articulation-v2-rework/batch-*/*/*.png', { query: '?url', import: 'default' }) as Record<string, () => Promise<string>>;
+const take6Mods = import.meta.glob('../../tools/sprite-art/mouth-shape/razorgater/*.png', { query: '?url', import: 'default' }) as Record<string, () => Promise<string>>;
 const pilotMods = import.meta.glob('../../sprite-art/animation/expanded-scope/pilot/*/*.png', { query: '?url', import: 'default' }) as Record<string, () => Promise<string>>;
 const silMods = import.meta.glob('../../sprite-art/animation/expanded-scope/lane100/silhouettes/*.png', { query: '?url', import: 'default' }) as Record<string, () => Promise<string>>;
 
@@ -473,8 +481,9 @@ export function loadHurtFrame(folder: string): Promise<string> | null {
 export function loadAttackFrame(folder: string, file: string): Promise<string> | null {
   return pickUrl(attackMods, `/animation/attack/${folder}/${file}`);
 }
-export function loadArticCell(folder: string, layer: 'v3q' | 'v2', batch: string, file: string): Promise<string> | null {
+export function loadArticCell(folder: string, layer: 'v3q' | 'v2' | 'v3w6', batch: string, file: string): Promise<string> | null {
   if (layer === 'v3q') return pickUrl(articMods, `/articulation-v2-rework-v3/${batch}/${folder}/${file}`);
+  if (layer === 'v3w6') return pickUrl(take6Mods, `/mouth-shape/razorgater/${file}`);
   return pickUrl(articV2Mods, `/articulation-v2-rework/${batch}/${folder}/${file}`);
 }
 export function loadPilotCell(folder: string, file: string): Promise<string> | null {
@@ -486,7 +495,7 @@ export function loadSilhouette(folder: string): Promise<string> | null {
   return pickUrl(silMods, `/lane100/silhouettes/${file}`);
 }
 
-export interface AttackSetChoice { kind: 'pilot' | 'articulation'; setName: string; files: string[]; durationsMs: number[] | null; layer?: 'v3q' | 'v2'; batch?: string; }
+export interface AttackSetChoice { kind: 'pilot' | 'articulation'; setName: string; files: string[]; durationsMs: number[] | null; layer?: 'v3q' | 'v2' | 'v3w6'; batch?: string; }
 /**
  * Pick the rendered attack set for a battle attacker. Precedence:
  * pilot set by game move id (Mochii) -> pilot set by family (Dreadtoise)
@@ -542,6 +551,108 @@ export function getMoveScript(moveId: string | undefined | null): MoveScript | n
 }
 export const GAME_MOVE_SCRIPT_MAP_COUNT = Object.keys(GAME_MOVE_SCRIPT_MAP).length;
 export const MOVE_SCRIPT_COUNT = Object.keys(SCRIPTS).length;
+
+/**
+ * FINISH-FIRST Item 4 (2026-10-26) — Pixi attack rendering resolution.
+ *
+ * What PixiBattleCanvas renders for an attacker, in precedence order:
+ *  1. attackSetFor() — pilot set by game move id (Mochii), pilot set by
+ *     family (Dreadtoise), articulation set by category (24 folders).
+ *  2. ATTACK_TRANSFORM fallback (this item) — the 25 folders with no
+ *     pilot/articulation set now render their 4 transform frames
+ *     (windup/strike/impact/recover; strikechamp_unsuited_full renders
+ *     its 7 attack cells on an even split). Before this item the
+ *     transform layer was registry-only (0/51 Pixi-rendered) and the
+ *     rendered total was 26/51 folders; after it, 51/51 folders render.
+ *
+ * Per-move sequencing: the resolved move script (getMoveScript(), Phase 1
+ * map included) drives `motion`, not just the game category:
+ *  - template special_projectile -> 'projectile' (Pixi Special branch).
+ *  - template physical_contact   -> 'lunge' (Pixi Physical branch).
+ *  - template physical           -> 'stay': the script has NO sub_Lunge
+ *    step (impact only, e.g. EARTHQUAKE, BULLDOZE, AQUA_JET), so Pixi
+ *    must not lunge. Implemented in PixiBattleCanvas by neutralising
+ *    the travel target to the attacker base for stay-motion moves; the
+ *    existing travel/recover branches then become no-ops and no existing
+ *    branch line is changed.
+ *  - template multi_hit          -> 'stay' + beats = the count of
+ *    sub_MultiHitBeat steps (TWINEEDLE = 3; default 3 per the moveScripts
+ *    assumption when no beat steps are present). Beat cycling is drawn
+ *    only on the transform fallback (its roles are known); pilot/
+ *    articulation sets play their native sequence.
+ *  - template two_turn           -> 'projectile' (the unleash variant).
+ *    The charge turn itself is resolver-owned turn structure, not a
+ *    Pixi turn, so it is NOT faked as a second Pixi attack here.
+ *  - any other template, or no script at all -> game-category fallback
+ *    (Special -> projectile, Physical -> lunge), so a script-unmatched
+ *    move still renders its attack frames.
+ *
+ * IRON_BARRAGE stays script-unmatched (Mars-gated: description says
+ * 2-5 shards, effect field says NONE single-hit) and is NOT forced to
+ * any script here; it renders via the category fallback (Physical lunge
+ * + transform/articulation frames for its user) like any unmatched move.
+ *
+ * Direction (PARAMETER ONLY — DEFERRED, Mars correction 16:38 CDT):
+ * direction is side-based, not move-based — Pixi computes player = +1
+ * (LEFT) and enemy = -1 (RIGHT) and passes it as a parameter to the
+ * treatments timeline (particle fan + recoil) while lunge/projectile
+ * travel is positional between the two bases. This resolver does NOT
+ * finish direction work and does NOT claim it finished: VFX origin
+ * anchoring (blasts must shoot FROM THE MOUTH) and effect-art travel
+ * direction (opponent effects travel LEFT, player effects RIGHT) are
+ * owned by the SEPARATE VFX origin + direction pass, including the
+ * known old Dorowani jet (waist height, disconnected from the mouth,
+ * going right). Transform frames themselves are direction-neutral
+ * (front-facing lean transforms, no travel drawn in the frame —
+ * verified on mochii attack_b_strike), so no sprite mirror is applied
+ * in this resolver; the mirror/VFX pass owns facing and origin, and
+ * this item does not duplicate it.
+ *
+ * This resolver renders whatever the registry tables already point at.
+ * It does not re-point, replace, or delete any locked asset, except
+ * the one reconciliation this file itself carries: Razorgater's
+ * registry articulation set now renders the locked take-6 final
+ * (triangle mouth, docs/locked-versions.json CURRENT) via the v3w6
+ * loader branch — reconciled 2026-10-26, see the header note.
+ */
+export type PixiAttackMotion = 'lunge' | 'projectile' | 'stay' | 'status';
+export interface PixiAttackRender {
+  script: MoveScript | null;
+  scriptId: string | null;
+  set: AttackSetChoice | null;
+  transform: AttackFrame[] | null;
+  motion: PixiAttackMotion;
+  beats: number;
+}
+export function attackTransformFor(folder: string): AttackFrame[] | null {
+  const frames = ATTACK_TRANSFORM[folder];
+  return frames ? [...frames] : null;
+}
+export function resolvePixiAttack(folder: string, moveId: string | undefined | null, category: string): PixiAttackRender | null {
+  if (!folder) return null;
+  const script = getMoveScript(moveId);
+  if (category === 'Status') {
+    return { script, scriptId: script ? script.move : null, set: null, transform: null, motion: 'status', beats: 0 };
+  }
+  const set = attackSetFor(folder, moveId, category);
+  const transform = set ? null : attackTransformFor(folder);
+  let motion: PixiAttackMotion;
+  let beats = 0;
+  if (script) {
+    if (script.template === 'special_projectile') motion = 'projectile';
+    else if (script.template === 'physical_contact') motion = 'lunge';
+    else if (script.template === 'physical') motion = 'stay';
+    else if (script.template === 'multi_hit') {
+      motion = 'stay';
+      beats = script.steps.filter((s) => s.sub === 'sub_MultiHitBeat').length || 3;
+    }
+    else if (script.template === 'two_turn') motion = 'projectile';
+    else motion = category === 'Special' ? 'projectile' : 'lunge';
+  } else {
+    motion = category === 'Special' ? 'projectile' : 'lunge';
+  }
+  return { script, scriptId: script ? script.move : null, set, transform, motion, beats };
+}
 
 /** Shiny wiring is intentionally absent: the shiny-v2 set is staged show-first and NOT approved. */
 export const SHINY_WIRED = false;

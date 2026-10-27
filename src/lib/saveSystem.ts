@@ -1,3 +1,12 @@
+// 2026-10-27 wiring (saves lane, additions only): IndexedDB mirror.
+// The synchronous localStorage API below is unchanged and stays the
+// authoritative game path. The mirror below writes the same slot data
+// to the IndexedDB store in src/lib/wiring/save-store.ts (Zustand +
+// IndexedDB) as a best-effort, fire-and-forget copy, so a future
+// caller can adopt IndexedDB without any existing save being orphaned
+// or any localStorage key being deleted.
+import { writeSave as writeSaveToIndexedDB, readSave as readSaveFromIndexedDB, idbSlotKey } from "./wiring/save-store";
+
 export interface SaveEntry {
   id: string;
   slotId: number;
@@ -141,7 +150,44 @@ export const saveGame = (slotId: number, type: 'manual' | 'auto', label: string,
   }
 
   localStorage.setItem(`mochii_saves_${slotId}`, JSON.stringify(updatedSaves));
+  // Best-effort IndexedDB mirror: never blocks or throws into the
+  // synchronous save path (a missing/blocked IndexedDB just skips).
+  void syncSavesToIndexedDB(slotId);
   return newSave;
+};
+
+/**
+ * Copy one slot's current localStorage entries to IndexedDB under
+ * `slot:<slotId>` (see idbSlotKey in save-store.ts). Returns false —
+ * never throws — when IndexedDB is unavailable or the write fails.
+ * The localStorage copy is left untouched.
+ */
+export const syncSavesToIndexedDB = async (slotId: number): Promise<boolean> => {
+  try {
+    if (typeof indexedDB === "undefined") return false;
+    const saves = getSaves(slotId);
+    await writeSaveToIndexedDB(idbSlotKey(slotId), saves);
+    return true;
+  } catch { return false; }
+};
+
+/**
+ * Backward-compatible IndexedDB load: if a slot's localStorage is
+ * empty but IndexedDB holds a record for it (written by the mirror or
+ * by migrateLegacySaveSystem), restore that record into localStorage
+ * and return true. If localStorage already has entries, they ALWAYS
+ * win and nothing is overwritten — returns false. Never deletes
+ * either copy.
+ */
+export const restoreSavesFromIndexedDB = async (slotId: number): Promise<boolean> => {
+  try {
+    if (typeof indexedDB === "undefined") return false;
+    if (getSaves(slotId).length > 0) return false;
+    const record = await readSaveFromIndexedDB(idbSlotKey(slotId));
+    if (!record || !Array.isArray(record.data)) return false;
+    localStorage.setItem(`mochii_saves_${slotId}`, JSON.stringify(record.data));
+    return true;
+  } catch { return false; }
 };
 
 export const loadGame = (saveEntry: SaveEntry, loadZustandState: (state: any) => void) => {

@@ -39,6 +39,16 @@ export type LockedV32Panel = {
   // in PR #163 were invented by the restoration, not locked.
   fill: string;
   labelSize: number;
+  // Measured left margin of the label text from the panel's left
+  // edge (full 1200x1500 scale), from the three targets 2026-10-26:
+  // CONTINUE cursor 27, NEW GAME 33, SETTINGS 29, BACK 33.
+  labelMargin: number;
+  // Per-panel letter-spacing (em) derived 2026-10-26, NOT guessed:
+  // (targetWidth - measuredWidth) / (gaps * fontSize), measured by
+  // Range rects on the pass-1 render (fontSize from cap heights):
+  // CONTINUE (208-183)/(7*35)=+0.10, NEW GAME (171-146)/(7*26)=+0.14,
+  // SETTINGS (158-175)/(7*35)=-0.07, BACK (285-287)/(16*31)=0.00.
+  labelLetterSpacing: number;
 };
 
 export type MenuAnimationSpeed =
@@ -108,13 +118,40 @@ export const LOCKED_V32_MENU = {
   // white orbit reads correctly); only the MAIN_MENU slot uses the
   // v32-matched asset. Asset canvas 900x548 = this slot exactly.
   logo: { image: "V32_MATCHED" as const, x: 150, y: 180, w: 900 },
-  cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5 },
+  // Cloud VISIBLE-shape box (locked spec + v21 step): the visible cloud
+  // shape spans x250-950, y648-828, centre (600,738), 700x180.
+  // imgBox is the element box that puts the ORIGINAL puffy-cloud.svg
+  // visible path exactly on that box. The file's visible path fills only
+  // 88.3% of its viewBox width (path x10-540 of 600) and 73.2% of its
+  // height (path y40-245 of 280), so rendering it fill into the 700x180
+  // box showed a 341-wide cloud centred at x583, 132 tall — 17px left
+  // and 48px short (measured in render, not from the box).
+  // TWO measured rendering facts (Chrome, verified in a standalone
+  // render of this exact element AND in the menu render, which agree):
+  // (1) a plain <img> applies the SVG's default meet inside the box and
+  // letterboxes the viewBox (imgBox 792x246 alone landed 378-844 wide,
+  // not 250-950); (2) an <svg><image preserveAspectRatio="none">
+  // does NOT stretch to the frame either — it renders the content at
+  // 0.851 x frame width, centred 0.044 x frame width LEFT of the frame
+  // centre, 0.671 x frame height tall, top at 0.191 x frame height
+  // (measured: 674-wide content in a 792 frame, stroke 260-934 in the
+  // menu, centre 597 — centred right but 25px narrow).
+  // imgBox (225,599,823x258) is therefore the CALIBRATED frame that
+  // lands the content on the locked box under fact (2):
+  // width 823 x 0.851 = 700, centre 636.5 - 0.044 x 823 = 600,
+  // height 258 x 0.671 = 173, top 599 + 0.191 x 258 = 648.
+  // SHAPE TRANSFORM, NOT A REDRAW (Mars 2026-10-26 18:13 CDT): the file
+  // is untouched; only its rendered scale/position change.
+  // File untouched. BANNED / DO NOT USE: mochiichao-main-cloud-v32.svg
+  // (the #184 trace) — deleted from main by Mars's order 2026-10-26;
+  // it is NOT the cloud file and must never be rendered again.
+  cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5, imgBox: { x: 225, y: 599, w: 823, h: 258 } },
   mochii: { x: 170, y: 790, w: 110, h: 110, bobAmp: 8, bobPeriod: 4.5 },
   panels: [
-    { key: "CONTINUE", x: 300, y: 788, w: 600, h: 110, fill: "#ff96c8", labelSize: 34 },
-    { key: "NEW GAME", x: 300, y: 918, w: 600, h: 70, fill: "#ffe696", labelSize: 32 },
-    { key: "SETTINGS", x: 300, y: 1008, w: 600, h: 70, fill: "#8cd2ff", labelSize: 32 },
-    { key: "BACK TO TITLE", x: 300, y: 1098, w: 600, h: 70, fill: "#a0e6b4", labelSize: 32 },
+    { key: "CONTINUE", x: 300, y: 788, w: 600, h: 110, fill: "#ff96c8", labelSize: 35, labelMargin: 27, labelLetterSpacing: 0.10 },
+    { key: "NEW GAME", x: 300, y: 918, w: 600, h: 70, fill: "#ffe696", labelSize: 26, labelMargin: 33, labelLetterSpacing: 0.14 },
+    { key: "SETTINGS", x: 300, y: 1008, w: 600, h: 70, fill: "#8cd2ff", labelSize: 35, labelMargin: 29, labelLetterSpacing: -0.07 },
+    { key: "BACK TO TITLE", x: 300, y: 1098, w: 600, h: 70, fill: "#a0e6b4", labelSize: 31, labelMargin: 33, labelLetterSpacing: 0 },
   ] as LockedV32Panel[],
   // Picture panel labels: upright bold sans, NOT the slanted Yagiza
   // that var(--menu-font) gives by default. CONTINUE/SETTINGS (and
@@ -130,6 +167,12 @@ export const LOCKED_V32_MENU = {
     strokeLabels: ["CONTINUE", "SETTINGS"] as const,
     labelStrokePx: 2,
     sublabelStrokePx: 1,
+    // Sublabel size from the targets' sublabel cap height 22-23
+    // (proof + matched + v32 agree): 26 stage px. CONTINUE sublabel
+    // margin from panel left edge: 30 (targets agree).
+    sublabelSize: 26,
+    sublabelMargin: 30,
+    sublabelLineHeight: 1.15,
   },
   panelStyle: { borderRadius: 28, borderWidth: 3 },
   background: {
@@ -160,12 +203,33 @@ export const LOCKED_V32_MENU = {
         { rx: 475, ry: 230, color: "#ff96c8", rotate: 0 },
       ],
     },
-    // Confetti symbols: the MEASURED field (round 2, 2026-10-26,
-    // see mainMenuSymbols.ts). 285 symbols measured from the
-    // matched GIF; history's field is 300, so the shortfall is
-    // 15 = 5.0%, named in that file and in the PR body, NOT filled
-    // with generated guesses (the PR #170 generated fill is what
-    // Mars rejected).
+    // Small logo-zone emblems (2026-10-26 widened brief): MEASURED
+    // from the locked v32 picture mochiichao-main-menu-phi-fade-v32.png
+    // (no coordinate table exists in the history, so picture
+    // measurement is the only source, labelled as such). These are
+    // the little emblems AROUND THE LOGO the current render was
+    // missing: black 4-point stars, one blue heart, one pink heart,
+    // one pink circle. Centres/sizes in full-scale canvas px; the
+    // blue heart's height (51) is the crop-visual value -- its
+    // opened bbox merged with the arc below. Rendered static (they
+    // are top-layer decorations, not rising symbols), AFTER the
+    // symbol field so they stay solid over the faded field, as in
+    // the picture. Version sources: v14 (blue/pink circles, blue/pink
+    // hearts, black sparkles), v15 (rainbow semi-circles), v25
+    // (hearts/stars mirrored). The logo image itself is NOT touched.
+    logoEmblems: [
+      { x: 600, y: 194, w: 41, h: 41, c: "#000000", shape: "star" },
+      { x: 139, y: 533, w: 45, h: 45, c: "#000000", shape: "star" },
+      { x: 1059, y: 533, w: 53, h: 53, c: "#000000", shape: "star" },
+      { x: 169, y: 405, w: 63, h: 51, c: "#95cbfe", shape: "heart" },
+      { x: 230, y: 637, w: 53, h: 37, c: "#fe95c7", shape: "heart" },
+      { x: 1054, y: 412, w: 46, h: 46, c: "#fe95c7", shape: "circle" },
+    ] as { x: number; y: number; w: number; h: number; c: string; shape: string }[],
+    // Confetti symbols: the FORMULA field v2 (2026-10-26,
+    // see mainMenuSymbols.ts). 300 symbols by the exact research
+    // phi-lattice formula; the round-2 MEASURED set (285) is
+    // SUPERSEDED -- DO NOT USE -- by Mars's order 2026-10-26
+    // 14:18 CDT ("stop cheating. Follow the formula").
     symbols: MAIN_MENU_SYMBOLS,
     // Locked phi fade.
     fade: { gone: 620, mid: 729, full: 905 },

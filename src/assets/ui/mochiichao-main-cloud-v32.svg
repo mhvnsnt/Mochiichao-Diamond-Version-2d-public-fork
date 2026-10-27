@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" width="700" height="180">
-  <!-- Mochiichao main-menu cloud, traced from the locked v32 picture's measured puff profile (Mars 2026-10-26): top stations, span 250-949, stroke #d0d8e0. Replaces the letterboxed 600x280 puffy-cloud.svg on the main menu. -->
-  <path d="M 0 163 L 0 122 C 6.7 115.8 26.7 98.5 40 85 C 53.3 71.5 66.7 50.2 80 41 C 93.3 31.8 106.7 31.2 120 30 C 133.3 28.8 146.7 35.7 160 34 C 173.3 32.3 186.7 25.2 200 20 C 213.3 14.8 230 6.3 240 3 C 250 -0.3 250 -0.2 260 0 C 270 0.2 286.7 0 300 4 C 313.3 8 326.7 23 340 24 C 353.3 25 366.7 13 380 10 C 393.3 7 406.7 6 420 6 C 433.3 6 446.7 4.8 460 10 C 473.3 15.2 486.7 32.7 500 37 C 513.3 41.3 526.7 35.2 540 36 C 553.3 36.8 566.7 36.7 580 42 C 593.3 47.3 606.7 58.2 620 68 C 633.3 77.8 653.3 95.5 660 101 L 699 140 L 699 160 C 466 175 233 175 0 163 Z"
-        fill="#ffffff" stroke="#d0d8e0" stroke-width="6" stroke-linejoin="round"/>
-</svg>

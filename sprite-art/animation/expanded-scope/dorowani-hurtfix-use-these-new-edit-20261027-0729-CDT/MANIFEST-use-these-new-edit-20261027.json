@@ -1,0 +1,178 @@
+{
+  "package": "Dorowani picked hurt (FIXED) + cleaned non-T-pose sets A/B/C/D",
+  "verdict": "Mars 2026-10-27 ~07:26 CDT, replying to hurt-fix show sheets",
+  "picked_hurt": "FIXED variant (light-blue belly). LIKENESS variant NOT picked, kept staged.",
+  "replacement_sets": "Cleaned A/B/C/D (alpha-only cleanup, 184px removed, 0 leg-gap white px). C ships in FIXED only.",
+  "old_versions": "Original non-T-pose sets + original tan-belly hurt cell marked -DO-NOT-USE. 0 deletions in this job.",
+  "prior_deletion_stands": "C frame01-N_hurt (md5 89c5ed8d8cb3043b975aa32448c40819) deleted 2026-10-26 per DELETION-RECORD-20261026.md; remains the only deletion.",
+  "created_cdt": "20261027-0729-CDT",
+  "files": [
+    {
+      "role": "picked_hurt_cell_FIXED",
+      "file": "hurt-use-these-new-edit/dorowani_hurt_fixed_lightblue-20261026-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/dorowani_hurt_fixed_lightblue-20261026.png",
+      "md5": "62118772560c4b8e30048958f1165a06"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-frame00-cell00-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean-frame00-cell00.png",
+      "md5": "31864f031b641f2b05af1aeafaebe68e"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-frame01-cell10-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean-frame01-cell10.png",
+      "md5": "92ad5805930d4a943b254b929691b528"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-frame02-cell06s-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean-frame02-cell06s.png",
+      "md5": "f421ff4be99a923f18391cc37447b28f"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-frame03-down0-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean-frame03-down0.png",
+      "md5": "6eece0619affabb3799dd381b23b0142"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-frame04-down1-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean-frame04-down1.png",
+      "md5": "ade03808647a3279e207f4ab907b3973"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-frame05-cell06s-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean-frame05-cell06s.png",
+      "md5": "f421ff4be99a923f18391cc37447b28f"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-frame06-cell10-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean-frame06-cell10.png",
+      "md5": "92ad5805930d4a943b254b929691b528"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-frame07-cell00-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean-frame07-cell00.png",
+      "md5": "31864f031b641f2b05af1aeafaebe68e"
+    },
+    {
+      "role": "cleaned_set_A-clean",
+      "file": "A-clean-use-these-new-edit/A_clean-use-these-new-edit-20261027.gif",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/A_clean/A_clean.gif",
+      "md5": "ba38a0df79e212588c1eaab27dcebdfa"
+    },
+    {
+      "role": "cleaned_set_B-clean",
+      "file": "B-clean-use-these-new-edit/B_clean-frame00-down0-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/B_clean/B_clean-frame00-down0.png",
+      "md5": "6eece0619affabb3799dd381b23b0142"
+    },
+    {
+      "role": "cleaned_set_B-clean",
+      "file": "B-clean-use-these-new-edit/B_clean-frame01-down1-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/B_clean/B_clean-frame01-down1.png",
+      "md5": "ade03808647a3279e207f4ab907b3973"
+    },
+    {
+      "role": "cleaned_set_B-clean",
+      "file": "B-clean-use-these-new-edit/B_clean-frame02-cell06s-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/B_clean/B_clean-frame02-cell06s.png",
+      "md5": "f421ff4be99a923f18391cc37447b28f"
+    },
+    {
+      "role": "cleaned_set_B-clean",
+      "file": "B-clean-use-these-new-edit/B_clean-frame03-down1-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/B_clean/B_clean-frame03-down1.png",
+      "md5": "ade03808647a3279e207f4ab907b3973"
+    },
+    {
+      "role": "cleaned_set_B-clean",
+      "file": "B-clean-use-these-new-edit/B_clean-frame04-down0-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/B_clean/B_clean-frame04-down0.png",
+      "md5": "6eece0619affabb3799dd381b23b0142"
+    },
+    {
+      "role": "cleaned_set_B-clean",
+      "file": "B-clean-use-these-new-edit/B_clean-use-these-new-edit-20261027.gif",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/B_clean/B_clean.gif",
+      "md5": "474d6f964d585859c66f7c905ddf6860"
+    },
+    {
+      "role": "cleaned_set_C-clean-fixed",
+      "file": "C-clean-fixed-use-these-new-edit/C_clean_fixed-frame00-cell00-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/C_clean_fixed/C_clean_fixed-frame00-cell00.png",
+      "md5": "31864f031b641f2b05af1aeafaebe68e"
+    },
+    {
+      "role": "cleaned_set_C-clean-fixed",
+      "file": "C-clean-fixed-use-these-new-edit/C_clean_fixed-frame01-hurt_fixed-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/C_clean_fixed/C_clean_fixed-frame01-hurt_fixed.png",
+      "md5": "62118772560c4b8e30048958f1165a06"
+    },
+    {
+      "role": "cleaned_set_C-clean-fixed",
+      "file": "C-clean-fixed-use-these-new-edit/C_clean_fixed-frame02-cell10-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/C_clean_fixed/C_clean_fixed-frame02-cell10.png",
+      "md5": "92ad5805930d4a943b254b929691b528"
+    },
+    {
+      "role": "cleaned_set_C-clean-fixed",
+      "file": "C-clean-fixed-use-these-new-edit/C_clean_fixed-frame03-cell00-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/C_clean_fixed/C_clean_fixed-frame03-cell00.png",
+      "md5": "31864f031b641f2b05af1aeafaebe68e"
+    },
+    {
+      "role": "cleaned_set_C-clean-fixed",
+      "file": "C-clean-fixed-use-these-new-edit/C_clean_fixed-use-these-new-edit-20261027.gif",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/C_clean_fixed/C_clean_fixed.gif",
+      "md5": "ff505db9024771df9be73d4c6a440c86"
+    },
+    {
+      "role": "cleaned_set_D-clean",
+      "file": "D-clean-use-these-new-edit/D_clean-frame00-cell10-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/D_clean/D_clean-frame00-cell10.png",
+      "md5": "92ad5805930d4a943b254b929691b528"
+    },
+    {
+      "role": "cleaned_set_D-clean",
+      "file": "D-clean-use-these-new-edit/D_clean-frame01-cell06s-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/D_clean/D_clean-frame01-cell06s.png",
+      "md5": "f421ff4be99a923f18391cc37447b28f"
+    },
+    {
+      "role": "cleaned_set_D-clean",
+      "file": "D-clean-use-these-new-edit/D_clean-frame02-down0-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/D_clean/D_clean-frame02-down0.png",
+      "md5": "6eece0619affabb3799dd381b23b0142"
+    },
+    {
+      "role": "cleaned_set_D-clean",
+      "file": "D-clean-use-these-new-edit/D_clean-frame03-cell06s-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/D_clean/D_clean-frame03-cell06s.png",
+      "md5": "f421ff4be99a923f18391cc37447b28f"
+    },
+    {
+      "role": "cleaned_set_D-clean",
+      "file": "D-clean-use-these-new-edit/D_clean-frame04-cell10-use-these-new-edit-20261027.png",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/D_clean/D_clean-frame04-cell10.png",
+      "md5": "92ad5805930d4a943b254b929691b528"
+    },
+    {
+      "role": "cleaned_set_D-clean",
+      "file": "D-clean-use-these-new-edit/D_clean-use-these-new-edit-20261027.gif",
+      "source": "animation/expanded-scope/dorowani-hurtfix-20261026/cleaned-sets-20261026/D_clean/D_clean.gif",
+      "md5": "8f815eec9a9570c087a2aff45c3367cc"
+    }
+  ],
+  "counts": {
+    "media_total": 27,
+    "png": 23,
+    "gif": 4
+  }
+}

@@ -18,16 +18,19 @@ import { MAIN_MENU_SYMBOLS } from "../../lib/mainMenuSymbols";
  *     radii/colours measured from the v32 picture in round 2,
  *     2026-10-26 — the old ellipses were wrong; see
  *     lockedV32Menu.ts arcs comment for the measurements)
- *   - confetti symbols as SEPARATE shapes, MEASURED from the
- *     matched GIF (round 2, 2026-10-26) — see
- *     src/lib/mainMenuSymbols.ts. 285 symbols; history's field is
- *     300, shortfall 15 = 5.0%, named there, NOT filled with
- *     generated guesses (the PR #170 generated fill is what Mars
- *     rejected 2026-10-26 12:38 CDT).
+ *   - confetti symbols as SEPARATE shapes, by the FORMULA v2
+ *     (2026-10-26) — see src/lib/mainMenuSymbols.ts. 300 symbols
+ *     by the research phi-lattice (golden angle 137.508 deg,
+ *     radius sqrt(n)*phi, centre 61.8%/38.2% of the bottom zone,
+ *     +/-12.5% golden-ratio-fraction jitter, Fibonacci sizes).
+ *     The round-2 MEASURED set (285) is SUPERSEDED — DO NOT USE.
+ *   - small logo-zone emblems (lockedV32Menu.background.logoEmblems),
+ *     measured from the locked v32 picture, rendered static AFTER
+ *     the symbol field so they stay solid over the faded field.
  *
  * Animation — PERFECT by default (matched GIF, Mars PERFECT
  * 2026-10-25 17:12 CDT; see perfect-menu-trace-2026-10-26.md):
- * 285 measured symbols rise at 157.14 px/s (11px/frame at 70ms, 80 frames x
+ * 300 formula symbols rise at 157.14 px/s (11px/frame at 70ms, 80 frames x
  * 70ms = 5.6s loop), modulo zone 620-1500, sway sin*6px, bob
  * sin*4px on top of rise, 2 cycles per loop, phase by golden
  * angle, fade by the locked phi fade (0 at y620, 0.35 at y729,
@@ -82,6 +85,34 @@ function shapePath(sym: MenuSymbol): ReactNode {
 
 const ARC_COLORS = BG.arcs.colors;
 const ARC_RX = BG.arcs.rx;
+
+// Logo-zone emblem renderer (measured boxes, exact w/h). Star and
+// circle scale uniformly; the heart path lives in a 90x88 box
+// (x 5-95, y 0-88) centred at (50,44), so it scales non-uniformly
+// to the measured box. Emblems are static decorations, not symbols:
+// no refs, no animation, drawn after the symbol field.
+type LogoEmblem = { x: number; y: number; w: number; h: number; c: string; shape: string };
+function emblemPath(e: LogoEmblem): ReactNode {
+  if (e.shape === "circle") return <ellipse rx={e.w / 2} ry={e.h / 2} fill={e.c} />;
+  if (e.shape === "star") {
+    const qx = e.w * 0.12;
+    const qy = e.h * 0.12;
+    return (
+      <path
+        d={`M 0 ${-e.h / 2} Q ${qx} ${-qy} ${e.w / 2} 0 Q ${qx} ${qy} 0 ${e.h / 2} Q ${-qx} ${qy} ${-e.w / 2} 0 Q ${-qx} ${-qy} 0 ${-e.h / 2} Z`}
+        fill={e.c}
+      />
+    );
+  }
+  // heart
+  return (
+    <path
+      d="M50 88 C20 60 5 40 5 25 C5 10 20 0 32 8 C40 13 50 25 50 32 C50 25 60 13 68 8 C80 0 95 10 95 25 C95 40 80 60 50 88 Z"
+      fill={e.c}
+      transform={`translate(-50,-44) scale(${e.w / 90},${e.h / 88})`}
+    />
+  );
+}
 
 export default function MainMenuBackground() {
   const refs = useRef<(SVGGElement | null)[]>([]);
@@ -182,6 +213,11 @@ export default function MainMenuBackground() {
             opacity={fadeAt(sym.y)}
           >
             {shapePath(sym)}
+          </g>
+        ))}
+        {(BG.logoEmblems as LogoEmblem[]).map((e, i) => (
+          <g key={`emblem${i}`} transform={`translate(${e.x},${e.y})`}>
+            {emblemPath(e)}
           </g>
         ))}
       </svg>

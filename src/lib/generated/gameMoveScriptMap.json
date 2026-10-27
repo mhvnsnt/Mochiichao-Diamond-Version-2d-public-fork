@@ -1,7 +1,7 @@
 {
   "version": "phase1-2026-10-26",
   "source": "src/lib/generated/moveScripts.json (Layer 1 union scripts, PR #168) + src/lib/moves.ts (36 game moves)",
-  "method": "Match requires same script type (particle) AND same script category (motion class) AND same timing family (single-hit damage / damage_with_status status puff / multi_hit beats / two_turn charge). Within damage family, the script effect string is decomp provenance, not an executed step: damage-family steps are projectile/lunge + impact only, so an effect-name difference with no step difference does not block a match and is noted per entry. For damage_with_status games the status puff must match the game secondary status. Power proximity breaks ties; decomp accuracy (decomp_black2_moves.json) breaks ties where noted. No game move data, category, effect, or learnset was changed or invented; this file routes game move ids to existing scripts only. Exact-id game moves (10) are NOT listed here: they resolve directly from moveScripts.json and take precedence in getMoveScript().",
+  "method": "Match requires same script type (particle) AND same script category (motion class) AND same timing family (single-hit damage / damage_with_status status puff / multi_hit beats / two_turn charge). Within damage family, the script effect string is decomp provenance, not an executed step: damage-family steps are projectile/lunge + impact only, so an effect-name difference with no step difference does not block a match and is noted per entry. For damage_with_status games the status puff must match the game secondary status. Power proximity breaks ties; decomp accuracy (decomp_black2_moves.json) breaks ties where noted. No game move data, category, effect, or learnset was changed or invented; this file routes game move ids to existing scripts only. Exact-id game moves (10) are NOT listed here: they resolve directly from moveScripts.json and take precedence in getMoveScript(). IRON_BARRAGE correction 2026-10-26 (Mars decision): effect NONE -> MULTI_HIT in src/lib/moves.ts (description 'Fires 2-5 iron shards' unchanged); IRON_BARRAGE now maps to GEAR_GRIND below, so the matched total is 36/36.",
   "qualityDefs": {
     "exact": "Type, category, timing family, and mapped effect all match, and power is equal (name-normalization entries included).",
     "fit": "Type, category, and timing family match and power is within 15, but the script effect string differs in provenance only (no step difference), or a name-normalized script is within 5 power."
@@ -43,7 +43,8 @@
     "BODY_SLAM_MOVE": "BODY_SLAM",
     "MIND_BLAST": "PSYCHIC",
     "POWER_STRIKE": "SKY_UPPERCUT",
-    "SWARM_STRIKE": "TWINEEDLE"
+    "SWARM_STRIKE": "TWINEEDLE",
+    "IRON_BARRAGE": "GEAR_GRIND"
   },
   "entries": {
     "AQUA_SHOT": {
@@ -690,34 +691,39 @@
           "black2"
         ]
       }
-    }
-  },
-  "unmatched": {
+    },
     "IRON_BARRAGE": {
+      "script": "GEAR_GRIND",
+      "quality": "fit",
+      "basis": "Same type/category, multi_hit family with multi-hit beat steps matching game MULTI_HIT 2-5 timing (description 'Fires 2-5 iron shards'). Power 35 vs 50 (delta 15, the fit bound). Script effect HIT_TWICE is provenance only: multi_hit steps are repeated beats with no extra status beat. Mars decision 2026-10-26 resolved the effect/description conflict in favour of multi-hit (effect -> MULTI_HIT); METAL_CLAW (single-hit) no longer matches the corrected effect.",
       "game": {
         "name": "Iron Barrage",
         "type": "STEEL",
         "cat": "Physical",
         "bp": 35,
         "acc": 100,
-        "pp": 15,
-        "pri": 0,
-        "effect": "NONE",
-        "effectChance": 0,
-        "desc": "Fires 2-5 iron shards."
+        "effect": "MULTI_HIT",
+        "effectChance": 0
       },
-      "reason": "Game data conflicts with itself, so no script satisfies both fields: the description says 2-5 hits (multi_hit timing) but the effect field is NONE (single-hit, no multi-hit flag; contrast SWARM_STRIKE, which carries MULTI_HIT in the same field). GEAR_GRIND matches the description (multi_hit) but contradicts the effect field; METAL_CLAW matches the effect field (single-hit) but contradicts the description. Forcing either would hide the conflict. Left unmatched pending a Mars call on whether IRON_BARRAGE is multi-hit (effect -> MULTI_HIT) or single-hit (description fixed). No script was invented and no game data was changed.",
-      "nearestCandidates": [
-        "GEAR_GRIND (STEEL/Physical, multi_hit, power 50, HIT_TWICE) \u2014 matches description, contradicts effect field",
-        "METAL_CLAW (STEEL/Physical, single-hit, power 50) \u2014 matches effect field, contradicts description"
-      ]
+      "scriptData": {
+        "type": "STEEL",
+        "category": "Physical",
+        "power": 50,
+        "effect": "BATTLE_EFFECT_HIT_TWICE",
+        "template": "multi_hit",
+        "family": "multi_hit",
+        "sources": [
+          "black2"
+        ]
+      }
     }
   },
+  "unmatched": {},
   "counts": {
     "gameMoves": 36,
     "exactId": 10,
-    "mappedHere": 25,
-    "totalMatched": 35,
-    "unmatched": 1
+    "mappedHere": 26,
+    "totalMatched": 36,
+    "unmatched": 0
   }
 }

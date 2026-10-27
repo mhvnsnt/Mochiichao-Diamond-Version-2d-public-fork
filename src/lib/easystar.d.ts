@@ -2,6 +2,7 @@ declare module 'easystarjs' {
   export interface EasyStarInstance {
     setGrid(grid: number[][]): void;
     setAcceptableTiles(tiles: number[]): void;
+    setIterationsPerCalculation(iterations: number): void;
     enableSync(): void;
     findPath(
       startX: number,

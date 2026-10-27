@@ -1,0 +1,51 @@
+{
+ "creature": "strikechamp_unsuited_full",
+ "roster_id": "030",
+ "variant": "unsuited-full",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "left": 2,
+  "right": 2,
+  "up": 2
+ },
+ "frames": [
+  {
+   "file": "strikechamp_unsuited_full_walk_down_0_20261026.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "strikechamp_unsuited_full_walk_down_1_20261026.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "strikechamp_unsuited_full_walk_left_0_20261026.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "strikechamp_unsuited_full_walk_left_1_20261026.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "strikechamp_unsuited_full_walk_right_0_20261026.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "strikechamp_unsuited_full_walk_right_1_20261026.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "strikechamp_unsuited_full_walk_up_0_20261026.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "strikechamp_unsuited_full_walk_up_1_20261026.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/strikechamp_unsuited_full/strikechamp_unsuited_full.manifest.locked.json",
+ "method": "Locked-cell copies only (md5-verified), mapped by eye direction not manifest label; base Strikechamp walk frames NOT used (0).",
+ "staged": "2026-10-26 walk-gap-fill, animation/expanded-scope/walk-gap-fill-20261026/punchkid-51st/",
+ "eye_check": "8-frame montage on show sheet PASS: down = true fronts, up = true backs, left/right = true sides. Manifest label corrections listed in walk-gap-fill-manifest-20261026.json.",
+ "walk_gate_note": "STAGING ONLY. No PR, no lock, no game src touched. This dir prepares the walk-frames option for the 51st look; it does not decide any sheet-vs-frames gate."
+}
