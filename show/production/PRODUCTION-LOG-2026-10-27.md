@@ -278,3 +278,22 @@ replaced with the cleaned pixels; rig data (mesh/bones/
 animations) unchanged. Standing law from the owner: shadows
 are NEVER baked into art; shadows are added in post /
 compositing only.
+
+## STAGING LAW + CANON CUTOUTS STAGED (2026-10-27)
+Owner standing rule (2026-10-27): nothing production-related
+stays staged on local disk. Everything pulled in must be wired
+up, usable, and staged in GitHub (what fits) or TeraBox (what
+does not fit - weights, large media, archives). Local disk is a
+workbench, not a warehouse; local-only production material is
+staging debt. The law is written into
+show/production/pipeline/ORCHESTRATOR.md (Staging law section).
+First debt cleared under it: the canon cutouts existed only in
+the local workspace (~/workspace/mochiichao-show/canon-cutouts/).
+All seven files are now staged at show/production/canon-cutouts/
+with a README marking currency: the six clean full-body cutouts
+are CURRENT/usable (they are the likeness gate's ground-truth
+references), and sproutle-v1-baked-shadow.png is SUPERSEDED /
+NOT USABLE (baked ground shadow; the clean sproutle.png is
+current). Every uploaded file was verified by downloading the
+blob back and md5-matching the local file (hashes in the
+folder README and the landing PR).

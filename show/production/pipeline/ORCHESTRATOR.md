@@ -84,3 +84,17 @@ times into TOOLS-MANIFEST -> first locked Tier 2 generation via
 runners/kaggle_tier2_runner.py -> gate packet -> owner gate
 review -> promote or reroll. PR #320 merges once the in-flight
 wiring passes land (owner ordered clean merges).
+
+## Staging law (owner standing rule, 2026-10-27)
+Nothing production-related stays staged on local disk. Local disk
+is a workbench, not a warehouse: every pulled-in tool, asset,
+rig, clip, and document ends up staged in **GitHub** (everything
+that fits) or **TeraBox** (everything too large for GitHub -
+weights, large media, archives), with its registry/manifest
+entry pointing at where it lives. If something exists only
+locally, that is a staging debt to clear, not a state to
+accept. Installed software (venvs, tool installs under ~/opt)
+is installation, not staging - this law covers production
+assets and pulled-in material. First debt cleared under this
+law: the canon cutouts (see canon-cutouts/ + the production log,
+2026-10-27).
