@@ -1,0 +1,26 @@
+{
+ "strikechamp": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "trueback-sets-pickA-20261026/strikechamp-back-pickA-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4",
+  "identity_byte_identical": "5/5"
+ },
+ "shellguard": {
+  "attack_sets": 4,
+  "attack_frames": 22,
+  "hurt_sets": 4,
+  "hurt_frames": 14,
+  "idle_frames": 4,
+  "total_png": 40,
+  "source": "trueback-sets-pickA-20261026/shellguard-back-pickA-20261026.png",
+  "attack_centroid_right": "10/10",
+  "hurt_centroid_left": "4/4",
+  "identity_byte_identical": "5/5"
+ }
+}
