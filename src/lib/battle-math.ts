@@ -205,15 +205,28 @@ export function rngFromSequence(values: number[]): Rng {
  * multiplier (×2 in rain/sun for the matching trait) and a held-item speed
  * halver are accepted as explicit parameters because the game has no
  * trait/held-item system yet — wiring passes 1 / false until it does.
+ *
+ * Black 2 additions (btl_server_flow.c ServerEvent_CalculateSpeed):
+ * the result is capped at 10000, and when the inversion flag is set
+ * (the Trick-Room-style effect) the capped speed is replaced by
+ * 10000 - speed. The cap is applied BEFORE the inversion, exactly as
+ * in the baseline: a capped 10000 speed inverts to 0.
  */
 export function effectiveSpeed(
   battler: BattlerInput,
-  opts: { weatherSpeedMultiplier?: number; speedHalvedByItem?: boolean } = {},
+  opts: {
+    weatherSpeedMultiplier?: number;
+    speedHalvedByItem?: boolean;
+    /** Trick-Room-style inversion: capped speed becomes 10000 - speed. */
+    trickRoom?: boolean;
+  } = {},
 ): number {
   let speed = applyStage(battler.speed, battler.stages.spe);
   speed = Math.floor(speed * (opts.weatherSpeedMultiplier ?? 1));
   if (opts.speedHalvedByItem) speed = Math.floor(speed / 2);
   if (battler.status === "paralysis") speed = Math.floor(speed / 4);
+  if (speed > 10000) speed = 10000;
+  if (opts.trickRoom) speed = 10000 - speed;
   return speed;
 }
 
@@ -248,6 +261,77 @@ export function orderPair(
   return rng() < 0.5 ? [a, b] : [b, a];
 }
 
+/** Action kind for the full turn-order key, Black 2 values
+ *  (btl_server_flow.c ServerControl_MakeActionOrder): fight/shift/skip
+ *  = 0, rotation = 1, item = 2, change = 3, escape/null = 4. A higher
+ *  kind acts before any lower kind, whatever the move priority is. */
+export type ActionKind = 0 | 1 | 2 | 3 | 4;
+
+export interface OrderActionEntry {
+  id: string;
+  /** Signed move priority (-7..+7); non-move actions ignore this. */
+  priority: number;
+  /** Effective speed, precomputed by the caller via effectiveSpeed. */
+  effSpeed: number;
+  kind?: ActionKind;
+  /**
+   * Special priority (bits 13..15 of the Black 2 key): default 1.
+   * A Stall-style effect rewrites it to 0, so the battler acts last
+   * inside its own priority bracket without changing its priority.
+   */
+  specialPriority?: number;
+}
+
+/**
+ * Black 2 turn-order key (btl_server_flow.c ActionOrder_MakeKey),
+ * sorted descending: kind<<22 | (priority+7)<<16 | specialPriority<<13
+ * | (effSpeed & 0x1fff). The +7 offset maps signed priority -7..+7
+ * to the unsigned 0..14 range the baseline stores. Speed is masked
+ * to 13 bits, matching the baseline (effectiveSpeed already caps at
+ * 10000, which fits in 13 bits).
+ */
+export function actionOrderKey(entry: OrderActionEntry): number {
+  const kind = (entry.kind ?? 0) & 7;
+  const priority = (entry.priority + 7) & 0x3f;
+  const special = (entry.specialPriority ?? 1) & 7;
+  const speed = entry.effSpeed & 0x1fff;
+  return (kind << 22) | (priority << 16) | (special << 13) | speed;
+}
+
+/**
+ * Order any number of actions for one turn by the full Black 2 key.
+ * Exact key ties are broken randomly when an rng is given (Fisher-Yates
+ * shuffle inside each equal-key group, matching the baseline's random
+ * tie in ActionOrder_Sort); without an rng, ties keep input order.
+ * orderPair above is the 2-battler convenience form of this rule.
+ */
+export function orderActions<T extends OrderActionEntry>(
+  actions: T[],
+  rng?: Rng,
+): T[] {
+  const sorted = [...actions].sort((a, b) => {
+    const keyDiff = actionOrderKey(b) - actionOrderKey(a);
+    return keyDiff !== 0 ? keyDiff : 0;
+  });
+  if (rng === undefined) return sorted;
+  // Shuffle each maximal run of equal keys, in place, last-to-first.
+  let start = 0;
+  while (start < sorted.length) {
+    let end = start + 1;
+    while (end < sorted.length && actionOrderKey(sorted[end]) === actionOrderKey(sorted[start])) {
+      end += 1;
+    }
+    for (let i = end - 1; i > start; i -= 1) {
+      const j = start + Math.floor(rng() * (i - start + 1));
+      const tmp = sorted[i];
+      sorted[i] = sorted[j];
+      sorted[j] = tmp;
+    }
+    start = end;
+  }
+  return sorted;
+}
+
 // ---------------------------------------------------------------------------
 // Accuracy
 // ---------------------------------------------------------------------------
@@ -256,29 +340,143 @@ export function orderPair(
  * Accuracy threshold (percent) for a move, baseline shape:
  *   netStage = clamp(attacker acc stage - defender eva stage, -6, +6)
  *   threshold = move accuracy × accuracy-stage ratio at netStage
- * Foresight-style effects ignore evasion: pass foresight=true to use the
- * attacker's accuracy stage alone. An evasion-boosting held item scales the
- * threshold by (100 - param)/100 afterwards.
+ * Foresight-style effects: pass foresight=true. Two baselines differ
+ * here, so the rule is explicit:
+ *   - "firered" (default, kept for the pinned tests): evasion is
+ *     ignored entirely — net = attacker acc stage alone.
+ *   - "black2" (btl_server_flow.c ServerEvent_CheckHit): only a
+ *     POSITIVE evasion stage is neutralized (evasion forced to 0);
+ *     a lowered evasion stage still helps the attacker.
+ * An evasion-boosting held item scales the threshold by
+ * (100 - param)/100 afterwards.
  * Accuracy 0 (or less) = always hits; the caller must still check the
  * never-miss result, it does not roll. Thresholds above 100 are NOT clamped
- * (the baseline lets boosted accuracy exceed 100, i.e. always hit).
+ * here (FireRed's uncapped calc; a roll of 1..100 still always hits).
+ * For the Black 2 capped value, use accuracyThresholdBlack2.
  */
 export function accuracyThreshold(
   move: MoveInput,
   attacker: BattlerInput,
   defender: BattlerInput,
-  opts: { foresight?: boolean; evasionItemParam?: number } = {},
+  opts: {
+    foresight?: boolean;
+    foresightRule?: "firered" | "black2";
+    evasionItemParam?: number;
+  } = {},
 ): number {
   if (move.accuracy <= 0) return Infinity;
-  const net = opts.foresight
-    ? clampStage(attacker.stages.acc)
-    : clampStage(attacker.stages.acc - defender.stages.eva);
+  let net: number;
+  if (opts.foresight && opts.foresightRule === "black2") {
+    const effEva = defender.stages.eva > 0 ? 0 : defender.stages.eva;
+    net = clampStage(attacker.stages.acc - effEva);
+  } else if (opts.foresight) {
+    net = clampStage(attacker.stages.acc);
+  } else {
+    net = clampStage(attacker.stages.acc - defender.stages.eva);
+  }
   const [num, den] = ACCURACY_STAGE_RATIOS[net + 6];
   let threshold = Math.floor((move.accuracy * num) / den);
   if (opts.evasionItemParam !== undefined) {
     threshold = Math.floor((threshold * (100 - opts.evasionItemParam)) / 100);
   }
   return threshold;
+}
+
+/**
+ * Black 2-exact accuracy threshold (btl_calc.c
+ * BtlCalc_ApplyAccuracyStage + btl_server_flow.c ServerEvent_CheckHit):
+ * same stage math as accuracyThreshold, but the stage-adjusted value is
+ * capped at 100 (ApplyAccuracyStage caps, and CheckHit caps again after
+ * its accuracy ratio, which defaults to 1 here). The roll is still
+ * rollAccuracy: Black 2 rolls BattleRandom(100) < chance, which has
+ * the same hit probability as this module's 1..100 roll.
+ */
+export function accuracyThresholdBlack2(
+  move: MoveInput,
+  attacker: BattlerInput,
+  defender: BattlerInput,
+  opts: {
+    foresight?: boolean;
+    foresightRule?: "firered" | "black2";
+    evasionItemParam?: number;
+  } = {},
+): number {
+  if (move.accuracy <= 0) return Infinity;
+  const threshold = accuracyThreshold(move, attacker, defender, opts);
+  return Math.min(100, threshold);
+}
+
+/**
+ * Guaranteed-hit bypass (btl_server_flow.c IsGuaranteedHit +
+ * ServerEvent_CheckAlwaysHit): true when either battler has the
+ * No-Guard-style ability, the attacker has a Lock-On-style condition
+ * on this target, the attacker has an Always-Hit condition, or the
+ * move itself is flagged always-hit. A guaranteed hit skips the
+ * accuracy roll entirely; the caller still checks type immunity
+ * separately, exactly as the baseline does.
+ */
+export function isGuaranteedHit(opts: {
+  noGuard?: boolean;
+  lockOn?: boolean;
+  alwaysHitCondition?: boolean;
+  alwaysHitMove?: boolean;
+} = {}): boolean {
+  return Boolean(
+    opts.noGuard || opts.lockOn || opts.alwaysHitCondition || opts.alwaysHitMove,
+  );
+}
+
+/**
+ * One-hit-KO hit check (btl_server_flow.c ServerEvent_CheckOHKOHit,
+ * same shape in HeartGold BtlCmd_TryOHKOMove): an attacker below the
+ * target's level never lands it; otherwise the chance is the move's
+ * accuracy plus one per level the attacker leads by, rolled as
+ * floor(rng * 100) < chance. A guaranteed hit bypasses the roll.
+ */
+export function checkOHKOHit(
+  attackerLevel: number,
+  targetLevel: number,
+  moveAccuracy: number,
+  rng: Rng = Math.random,
+  opts: { guaranteed?: boolean } = {},
+): boolean {
+  if (opts.guaranteed) return true;
+  if (attackerLevel < targetLevel) return false;
+  const chance = moveAccuracy + (attackerLevel - targetLevel);
+  return Math.floor(rng() * 100) < chance;
+}
+
+/**
+ * Escape chance on the Black 2 0..256 scale
+ * (btl_server_flow.c ServerControl_EscapeSub, integer arithmetic kept
+ * exact: floor(floor(speed*4096/enemySpeed)*128/4096) + 30 per prior
+ * failed attempt). A faster raw speed escapes automatically — that
+ * case is handled by rollEscape, not by this number.
+ */
+export function escapeChance(
+  speed: number,
+  enemySpeed: number,
+  failedAttempts = 0,
+): number {
+  if (enemySpeed <= 0) return 256;
+  const base = Math.floor(Math.floor((speed * 4096) / enemySpeed) * 128 / 4096);
+  return base + failedAttempts * 30;
+}
+
+/**
+ * Escape roll: true when the battler gets away. Faster raw speed
+ * always escapes; otherwise floor(rng * 256) < escapeChance must hold,
+ * so a chance of 256+ (many failed attempts) always escapes and a
+ * chance of 0 never does.
+ */
+export function rollEscape(
+  speed: number,
+  enemySpeed: number,
+  failedAttempts = 0,
+  rng: Rng = Math.random,
+): boolean {
+  if (speed > enemySpeed) return true;
+  return Math.floor(rng() * 256) < escapeChance(speed, enemySpeed, failedAttempts);
 }
 
 /**
@@ -314,8 +512,17 @@ export function critStageFrom(opts: {
   return Math.max(0, Math.min(4, stage));
 }
 
-/** Roll a crit at a crit stage: 1-in-N chance, N from the table. */
-export function rollCrit(critStage: number, rng: Rng = Math.random): boolean {
+/**
+ * Roll a crit at a crit stage: 1-in-N chance, N from the table
+ * (Black 2: BattleRandom(denom) == 0). An always-crit move bypasses
+ * the roll (ServerEvent_CheckCritical: PML_MoveIsAlwaysCrit).
+ */
+export function rollCrit(
+  critStage: number,
+  rng: Rng = Math.random,
+  opts: { alwaysCrit?: boolean } = {},
+): boolean {
+  if (opts.alwaysCrit) return true;
   const denom =
     CRIT_CHANCE_DENOMINATORS[Math.max(0, Math.min(4, critStage))];
   return Math.floor(rng() * denom) === 0;

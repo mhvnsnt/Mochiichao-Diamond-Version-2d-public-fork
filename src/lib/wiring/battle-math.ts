@@ -47,18 +47,83 @@ export type Battler = {
 };
 export type Rng = () => number;
 
+/** Exact stat-stage ratios (Black 2 btl_calc.c: 2/8..8/2), -6..+6.
+ *  The old table rounded -5 to 0.29 and -1 to 0.67; the exact
+ *  fractions 2/7 and 2/3 change knife-edge speed comparisons. */
+export const STAGE_RATIOS: ReadonlyArray<readonly [number, number]> = [
+  [2, 8], [2, 7], [2, 6], [2, 5], [2, 4], [2, 3], [2, 2],
+  [3, 2], [4, 2], [5, 2], [6, 2], [7, 2], [8, 2],
+];
+
+/** Exact accuracy/evasion-stage ratios (Black 2: 6/18..18/6). */
+export const ACCURACY_STAGE_RATIOS: ReadonlyArray<readonly [number, number]> = [
+  [6, 18], [6, 16], [6, 14], [6, 12], [6, 10], [6, 8], [6, 6],
+  [8, 6], [10, 6], [12, 6], [14, 6], [16, 6], [18, 6],
+];
+
 export function stageMult(stage: number): number {
-  const table: Record<number, number> = {
-    "-6": 0.25, "-5": 0.29, "-4": 0.33, "-3": 0.4, "-2": 0.5, "-1": 0.67,
-    "0": 1, "1": 1.5, "2": 2, "3": 2.5, "4": 3, "5": 3.5, "6": 4,
-  };
-  return table[Math.max(-6, Math.min(6, stage))] ?? 1;
+  const [num, den] = STAGE_RATIOS[Math.max(-6, Math.min(6, Math.trunc(stage))) + 6];
+  return num / den;
+}
+
+/** Effective Speed for turn order: stage-adjusted (floored), then
+ *  paralysis quarters it, then the Black 2 cap of 10000, then the
+ *  Trick-Room-style inversion (10000 - speed) when requested. */
+export function effectiveSpeed(
+  battler: Battler,
+  opts: { trickRoom?: boolean } = {},
+): number {
+  const [num, den] = STAGE_RATIOS[Math.max(-6, Math.min(6, Math.trunc(battler.statStages?.spe ?? 0))) + 6];
+  let speed = Math.floor((battler.spe * num) / den);
+  if (battler.status === "paralysis" || battler.status === "PARALYSIS") {
+    speed = Math.floor(speed / 4);
+  }
+  if (speed > 10000) speed = 10000;
+  if (opts.trickRoom) speed = 10000 - speed;
+  return speed;
 }
 
 /** Accuracy step, before damage. Returns false on a miss. */
 export function accuracyHits(move: Move, rng: Rng = Math.random): boolean {
   if (move.acc >= 100) return true;
   return rng() * 100 < move.acc;
+}
+
+/**
+ * Stage-aware accuracy (Black 2 ServerEvent_CheckHit shape): net stage
+ * = clamp(accStage - evaStage, -6, +6); threshold = accuracy x ratio,
+ * capped at 100; hit iff floor(rng * 100) < threshold. A Black 2-style
+ * accuracy of 0 means never-misses (the move's always-hit sentinel),
+ * distinct from this module's accuracyHits where 100 means never-miss:
+ * callers pass a real 1..100 accuracy here, or bypass via a guaranteed
+ * hit for a never-miss move. Foresight (Black 2 rule) neutralizes only
+ * a positive evasion stage; the FireRed rule (ignore evasion entirely)
+ * is available as foresightRule "firered".
+ */
+export function accuracyHitsWithStages(
+  move: Move,
+  accStage: number,
+  evaStage: number,
+  opts: { foresight?: boolean; foresightRule?: "firered" | "black2"; evasionItemParam?: number } = {},
+  rng: Rng = Math.random,
+): boolean {
+  if (move.acc <= 0) return true;
+  const clamp = (v: number) => Math.max(-6, Math.min(6, Math.trunc(v)));
+  let net: number;
+  if (opts.foresight && opts.foresightRule === "firered") {
+    net = clamp(accStage);
+  } else if (opts.foresight) {
+    net = clamp(accStage - (evaStage > 0 ? 0 : evaStage));
+  } else {
+    net = clamp(accStage - evaStage);
+  }
+  const [num, den] = ACCURACY_STAGE_RATIOS[net + 6];
+  let threshold = Math.floor((move.acc * num) / den);
+  if (opts.evasionItemParam !== undefined) {
+    threshold = Math.floor((threshold * (100 - opts.evasionItemParam)) / 100);
+  }
+  if (threshold > 100) threshold = 100;
+  return Math.floor(rng() * 100) < threshold;
 }
 
 /** Crit step. Base 1/16 in older gens, 1/24 in modern gens;
@@ -100,18 +165,46 @@ function moveType(move: Move): string {
   return (move as GameMove).type ?? "";
 }
 
-/** Turn order step: priority bracket first, then speed
- *  (with stat stages), then input order on a tie. This is
- *  the order every gen from Gen 3 on uses, and Gen 5's
- *  battle_action overlay uses the same bracket. */
-export function orderTurns<T extends { move: Move; battler: Battler; index: number }>(actions: T[]): T[] {
-  return [...actions].sort((a, b) => {
+/** Turn order step: priority bracket first, then effective speed
+ *  (stage-adjusted, paralysis-quartered, capped at 10000, optionally
+ *  Trick-Room-inverted), then — only when the caller passes an rng —
+ *  a random shuffle of exact ties (Black 2 ActionOrder_Sort shape);
+ *  without an rng, ties keep input order, as before. This is the
+ *  order every gen from Gen 3 on uses, and Gen 5's battle_action
+ *  overlay uses the same bracket. */
+export function orderTurns<T extends { move: Move; battler: Battler; index: number }>(
+  actions: T[],
+  opts: { trickRoom?: boolean; rng?: Rng } = {},
+): T[] {
+  const sorted = [...actions].sort((a, b) => {
     if (b.move.pri !== a.move.pri) return b.move.pri - a.move.pri;
-    const aSpe = a.battler.spe * stageMult(a.battler.statStages?.spe ?? 0);
-    const bSpe = b.battler.spe * stageMult(b.battler.statStages?.spe ?? 0);
+    const aSpe = effectiveSpeed(a.battler, { trickRoom: opts.trickRoom });
+    const bSpe = effectiveSpeed(b.battler, { trickRoom: opts.trickRoom });
     if (bSpe !== aSpe) return bSpe - aSpe;
     return a.index - b.index;
   });
+  const rng = opts.rng;
+  if (rng === undefined) return sorted;
+  let start = 0;
+  while (start < sorted.length) {
+    let end = start + 1;
+    while (
+      end < sorted.length &&
+      sorted[end].move.pri === sorted[start].move.pri &&
+      effectiveSpeed(sorted[end].battler, { trickRoom: opts.trickRoom }) ===
+        effectiveSpeed(sorted[start].battler, { trickRoom: opts.trickRoom })
+    ) {
+      end += 1;
+    }
+    for (let i = end - 1; i > start; i -= 1) {
+      const j = start + Math.floor(rng() * (i - start + 1));
+      const tmp = sorted[i];
+      sorted[i] = sorted[j];
+      sorted[j] = tmp;
+    }
+    start = end;
+  }
+  return sorted;
 }
 
 /** Effect step, after damage. Returns the effect that
@@ -143,9 +236,16 @@ export function recoilDamage(move: Move, damage: number): number {
   return move.effect === "RECOIL_25" ? Math.floor(damage * 0.25) : 0;
 }
 
-/** Multi-hit step: 2-5 hits, rolled from rng. Deterministic
- *  in tests when rng is a fixed sequence. */
+/** Multi-hit step (Black 2 btl_calc.c cutoffs {0,0,35,70,85,100}):
+ *  roll <35 -> 2 hits, <70 -> 3, <85 -> 4, else 5
+ *  (35/35/15/15%). The old uniform 2+floor(rng*4) gave 25% each
+ *  and is replaced by this table. Deterministic in tests when
+ *  rng is a fixed sequence. */
 export function multiHitCount(move: Move, rng: Rng = Math.random): number {
   if (move.effect !== "MULTI_HIT") return 1;
-  return 2 + Math.floor(rng() * 4);
+  const roll = Math.floor(rng() * 100);
+  if (roll < 35) return 2;
+  if (roll < 70) return 3;
+  if (roll < 85) return 4;
+  return 5;
 }
