@@ -16,11 +16,8 @@ import {
 } from '../../lib/menuSkins';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
-import {
-  TITLE_START_SCREEN_CYCLE, getSelectedTitleStartScreenId, setSelectedTitleStartScreenId,
-  titleStartScreenLabel, type TitleStartScreenId,
-} from '../../lib/titleStartScreens';
 import MusicMixerScreen from './MusicMixerScreen';
+import MenuEditorScreen from './MenuEditorScreen';
 import {
   MenuCustomSettings, MenuAnimationStyle, DEFAULT_MENU_CUSTOM, loadMenuCustom, persistMenuCustom,
   applyMenuCustom, customToLayoutRecord, resolveDayNightPalette,
@@ -70,7 +67,7 @@ import {
  * Default restores DEFAULT_SETTINGS + LOCKED_PRESET.
  */
 
-type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'MENU_CUSTOM' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR' | 'MUSIC_MIXER';
+type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'MENU_CUSTOM' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR' | 'MUSIC_MIXER' | 'MENU_EDITOR';
 
 interface Row {
   label: string;
@@ -147,7 +144,7 @@ function MenuPreviewMotion({ style, speed, sway, reduced }: { style: MenuAnimati
   );
 }
 
-export default function SettingsScreen({ onBack }: { onBack: () => void }) {
+export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => void; onViewTitle?: () => void }) {
   const settings = useGameStore(s => s.settings);
   const setSettings = useGameStore(s => s.setSettings);
   const [draft, setDraft] = useState<GameSettings>({ ...settings });
@@ -190,19 +187,6 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   };
   const skinLabel = (menu: MenuSkinMenu) =>
     MENU_SKIN_FLAVOURS.find(f => f.flavour === skinChoices[menu])?.label || 'Default';
-
-  // Interchangeable title start screens: one row, same LEFT/RIGHT
-  // cycle pattern as the skin rows. Locked Default = the locked phi
-  // title, unchanged; a preset replaces the TITLE phase scene only.
-  // Saved immediately on cycling (like skins), independent of
-  // SAVE + EXIT — but RESET TO LOCKED DEFAULT below clears it, so
-  // a reset always restores the locked default title.
-  const [titleChoice, setTitleChoice] = useState<TitleStartScreenId | null>(() => getSelectedTitleStartScreenId());
-  const cycleTitleChoice = (dir: 1 | -1) => {
-    const next = cycle(TITLE_START_SCREEN_CYCLE, titleChoice, dir);
-    setSelectedTitleStartScreenId(next);
-    setTitleChoice(next);
-  };
 
   // SETTINGS menu frame: per-menu override wins over the global
   // FRAME row when set (0 = follow global), per hudCustom.
@@ -254,10 +238,6 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     setDraft(d);
     setPreset(p);
     setCustom(c);
-    // RESET TO LOCKED DEFAULT also clears the title-screen pick:
-    // a reset always restores the locked default title.
-    setSelectedTitleStartScreenId(null);
-    setTitleChoice(null);
     saveAll(d, p, c);
     setSavedMsg('Reset to Locked Default (v32).');
   };
@@ -301,10 +281,9 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
       onRight: () => cycleSkin(m.menu, 1),
       note: `Per-menu Y2K skin preset (${m.presetFile}): Default / Pastel Day / Chrome Midnight / Bubblegum Pop. Applies live to ${m.label}; main menu and logo are never skinned.`,
     })),
-    { label: 'TITLE SCREEN', value: titleStartScreenLabel(titleChoice), onLeft: () => cycleTitleChoice(-1), onRight: () => cycleTitleChoice(1), note: 'Interchangeable start screen for the TITLE phase only. Locked Default = the locked phi title, unchanged. A preset shows that preset\'s video + TitleScene + the locked logo/subtitle/press overlay, and presses the same way (M3 chirp, white fade 350ms, MAIN_MENU). Saved immediately on cycling. RESET TO LOCKED DEFAULT clears it.' },
     { label: 'MUSIC MIXER', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_MIXER'), onRight: () => setScreen('MUSIC_MIXER'), onSelect: () => setScreen('MUSIC_MIXER'), note: 'Full dedicated screen: FL-Studio-style mixer for the title v3 + vocal stems (default project loads on open, DELETE removes a stem, NEW clears, LOAD DEFAULT restores). Draggable mixer window (Mars 2026-10-26, explicitly asked). Game music pauses while mixing.' },
     { label: 'CANCEL', value: 'SAVE + EXIT', onLeft: saveAndBack, onRight: saveAndBack, onSelect: saveAndBack, note: 'Saves all rows to the save + localStorage and returns to the main menu.' },
-  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices, titleChoice]); // eslint-disable-line react-hooks/exhaustive-deps
+  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const menuCreatorRows: Row[] = useMemo(() => {
     const pages: Record<number, Row[]> = {
@@ -317,6 +296,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
         { label: 'PANEL FRAME EDITOR', value: 'OPEN ►', onLeft: () => setScreen('PANEL_FRAME_EDITOR'), onRight: () => setScreen('PANEL_FRAME_EDITOR'), onSelect: () => setScreen('PANEL_FRAME_EDITOR') },
         { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, note: 'Best submenu path: Settings > Menu Creator > Font Settings. Six rows: MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font independently.' },
         { label: 'MENU CUSTOMISATION', value: 'OPEN ►', onLeft: () => setScreen('MENU_CUSTOM'), onRight: () => setScreen('MENU_CUSTOM'), onSelect: () => setScreen('MENU_CUSTOM'), note: 'Batch B: themes, day/night colourways, animation, background, Sprite Proportions, text extras, camera shake, reduced motion, touch, safe area. Independent rows, live on return, presets never overwrite locked v32.' },
+        { label: 'MENU EDITOR', value: 'OPEN ►', onLeft: () => setScreen('MENU_EDITOR'), onRight: () => setScreen('MENU_EDITOR'), onSelect: () => setScreen('MENU_EDITOR'), note: 'Mars 2026-10-26: edit everything the UI lane did, from inside the game — live preview, draggable/minimizable panels, per-layer values, template/theme/layer/background library, PNG + video export. Working preset only; locked v32 never overwritten.' },
         { label: 'CREATE INTRO VIDEO', value: 'OPEN ►', onLeft: () => setScreen('INTRO_VIDEO_CREATOR'), onRight: () => setScreen('INTRO_VIDEO_CREATOR'), onSelect: () => setScreen('INTRO_VIDEO_CREATOR'), note: 'Full dedicated screen: scene list, timeline ruler, keyframes, presets. Presets only; locked default never overwritten. Playback from a saved preset is now live on main (PR #112). Still GAP: Phase 2 video export; painted backgrounds; creatures 1/10 ready with 9/10 GAP labels; music slot empty/name-only.' },
         { label: 'CREATE START SCREEN', value: 'OPEN ►', onLeft: () => setScreen('START_SCREEN_CREATOR'), onRight: () => setScreen('START_SCREEN_CREATOR'), onSelect: () => setScreen('START_SCREEN_CREATOR'), note: 'Full dedicated screen: one scene, locked layout slots, creature / background / particles, SAVE AS PRESET + LOAD PRESET + EXPORT JSON. Playback from a saved preset and Phase 2 export are later batches (GAP).' },
         { label: 'NEXT PAGE', value: 'BACKGROUND ►', onLeft: () => setMenuPage(2), onRight: () => setMenuPage(2), onSelect: () => setMenuPage(2) },
@@ -532,7 +512,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   useEffect(() => { setCursor(0); }, [screen, menuPage]);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR' || screen === 'MUSIC_MIXER') return; // creator screens own their keys (any-key-skips + B: BACK); the mixer owns its own keys (Esc / B: BACK)
+      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR' || screen === 'MUSIC_MIXER' || screen === 'MENU_EDITOR') return; // creator screens own their keys (any-key-skips + B: BACK); the mixer owns its own keys (Esc / B: BACK)
       if (e.key === 'ArrowUp') { e.preventDefault(); setCursor(c => (c - 1 + rows.length) % rows.length); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); setCursor(c => (c + 1) % rows.length); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); rows[safeCursor]?.onLeft(); }
@@ -593,6 +573,9 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
 
   if (screen === 'INTRO_VIDEO_CREATOR') {
     return <IntroVideoCreatorScreen onBack={() => setScreen('MENU_CREATOR')} />;
+  }
+  if (screen === 'MENU_EDITOR') {
+    return <MenuEditorScreen onBack={() => setScreen('MENU_CREATOR')} onViewTitle={onViewTitle} />;
   }
 
   // CREATE START SCREEN is its own full dedicated screen (batch E).
