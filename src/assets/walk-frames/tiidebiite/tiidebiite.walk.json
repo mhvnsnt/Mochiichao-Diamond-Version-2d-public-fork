@@ -1,0 +1,85 @@
+{
+ "creature": "tiidebiite",
+ "roster_id": "002",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "frames": [
+  {
+   "file": "tiidebiite_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "tiidebiite_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "tiidebiite_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "tiidebiite_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "tiidebiite_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "tiidebiite_walk_right_1.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "tiidebiite_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "tiidebiite_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/tiidebiite/tiidebiite.manifest.locked.json",
+ "source_cells": {
+  "tiidebiite_walk_down_0.png": {
+   "locked_cell": "tiidebiite_cell_05.png",
+   "transform": "copy"
+  },
+  "tiidebiite_walk_down_1.png": {
+   "locked_cell": "tiidebiite_cell_06.png",
+   "transform": "copy"
+  },
+  "tiidebiite_walk_up_0.png": {
+   "locked_cell": "tiidebiite_cell_11.png",
+   "transform": "copy"
+  },
+  "tiidebiite_walk_up_1.png": {
+   "locked_cell": "tiidebiite_cell_12.png",
+   "transform": "copy"
+  },
+  "tiidebiite_walk_left_0.png": {
+   "locked_cell": "tiidebiite_cell_08.png",
+   "transform": "copy"
+  },
+  "tiidebiite_walk_left_1.png": {
+   "locked_cell": "tiidebiite_cell_09.png",
+   "transform": "copy"
+  },
+  "tiidebiite_walk_right_0.png": {
+   "locked_cell": "tiidebiite_cell_08.png",
+   "transform": "mirror"
+  },
+  "tiidebiite_walk_right_1.png": {
+   "locked_cell": "tiidebiite_cell_09.png",
+   "transform": "mirror"
+  }
+ },
+ "method": "locked-cell transforms only (copy / horizontal mirror / 2px-up bob variant), 64x64 RGBA, new filenames only; no generation in this batch; no file shown to Mars overwritten",
+ "movement_note": "All 8 from distinct locked walk cells (front 05/06, back 11/12, side 08/09 + mirrors).",
+ "walk_gate_note": "STAGING ONLY. Mars's walk-gate pick (QA-PASS locked-sheet walk art vs walk-frames dirs/PNGs) is still PENDING as of 2026-10-26. This dir prepares the walk-frames option; it does not decide the gate. No PR merged, no game src touched.",
+ "eye_check": "Final 8-frame montage PASS (2026-10-26): down fronts, up backs, left sides, right mirrors \u2014 all distinct, directions correct.",
+ "staged": "2026-10-26 lane-finish segment 4 (walk frames only)"
+}
