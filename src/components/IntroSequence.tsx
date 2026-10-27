@@ -24,7 +24,9 @@ import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
 import { playUiMove, playUiConfirm, playUiBack } from "../lib/audioRouting";
 import TitleStartScreen from "./game/TitleStartScreen";
-import { getSelectedTitleStartScreenId, resolveTitleStartScreen } from "../lib/titleStartScreens";
+import PresetTitleErrorBoundary from "./game/PresetTitleErrorBoundary";
+import { TITLE_BIOMES } from "../lib/titleBiomes";
+import { getSelectedTitleStartScreenId, resolveTitleStartScreen, setSelectedTitleStartScreenId } from "../lib/titleStartScreens";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -120,6 +122,11 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   // picked up immediately as the locked default. Locked default
   // code below does not read this state.
   const [titlePresetNonce, setTitlePresetNonce] = useState(0);
+  // Preset-title pick, read at render time (the TITLE branch below
+  // used to read it inline; hoisted so the parent-level R recovery
+  // effect below can see the same pick). null = locked default.
+  // The map object is stable per id, so this does not churn effects.
+  const titlePreset = resolveTitleStartScreen(getSelectedTitleStartScreenId());
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
   // v3 main menu: window selection, overwrite confirm.
@@ -287,6 +294,35 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     return undefined;
   }, [phase]);
 
+  // Preset-title R recovery, PARENT level (trap-fix round 2):
+  // TitleStartScreen owns its own R handler, but if the preset
+  // subtree fails to mount (or its effect never runs), that handler
+  // is dead too — which is exactly the live trap on the verified
+  // PR #270 build (R dead, RESET button invisible, screen black).
+  // This listener lives in IntroSequence, outside the preset
+  // subtree, so R works even when the preset component fails.
+  // Declared BEFORE the any-key handler below: effects register
+  // in declaration order, so R is intercepted here first and the
+  // any-key handler never turns an R press into MAIN_MENU.
+  // Preset titles only: with no pick (locked default) no listener
+  // is registered and R stays an ordinary press key, as before.
+  // Skipped while titleFading so an R during the 350ms menu fade
+  // does not fight the fade.
+  useEffect(() => {
+    if (phase !== "TITLE" || !titlePreset || titleFading) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key.toLowerCase() === "r") {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setSelectedTitleStartScreenId(null);
+        setTitlePresetNonce((n) => n + 1);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [phase, titlePreset, titleFading]);
+
   useEffect(() => {
     if (phase === "BOOT" || phase === "INTRO" || phase === "TITLE") {
       const handler = () => advanceIntro();
@@ -369,16 +405,99 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     // exactly as before — the default title code is untouched,
     // not moved behind a flag. The pick is read at render time,
     // so a Settings change applies on the next TITLE visit.
-    const selectedPreset = resolveTitleStartScreen(getSelectedTitleStartScreenId());
-    if (selectedPreset) {
+    if (titlePreset) {
+      // Trap-fix round 2: the preset subtree is wrapped in an error
+      // boundary ABOVE it, and the fallback is rendered by THIS
+      // branch — not by the possibly-failing component. If anything
+      // in TitleStartScreen/TitleScene throws during render or
+      // commit, the player still sees the preset's painted
+      // background + locked overlay + a working RESET, instead of
+      // a black screen. Any key still advances (the existing TITLE
+      // handler below); R resets (the parent-level listener above).
+      const presetPaintedBg = TITLE_BIOMES[titlePreset.biome]?.backgroundImage ?? null;
+      const clearPreset = () => {
+        setSelectedTitleStartScreenId(null);
+        setTitlePresetNonce((n) => n + 1);
+      };
       return (
         <div className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer">
-          <TitleStartScreen
-            preset={selectedPreset}
-            resetNonce={titlePresetNonce}
-            onAdvance={advanceIntro}
-            onReset={() => setTitlePresetNonce((n) => n + 1)}
-          />
+          <PresetTitleErrorBoundary
+            fallback={
+              <div
+                className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer"
+                onMouseDown={(e) => {
+                  e.stopPropagation();
+                  advanceIntro();
+                }}
+              >
+                {presetPaintedBg && (
+                  <img
+                    src={presetPaintedBg}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
+                <div className="absolute inset-0 z-20 pointer-events-none">
+                  <LockedStage>
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <div
+                        className="absolute top-0 bottom-0 bg-white/20"
+                        style={{ width: 96, animation: 'title-shine 2.4s ease-in-out 2' }}
+                      />
+                    </div>
+                    <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink-first { 0%, 100% { opacity: 1; } } @keyframes press-blink { 0%, 49% { opacity: 0; } 50%, 100% { opacity: 1; } }`}</style>
+                    <img
+                      src={mochiichaoLogo}
+                      alt="MOCHIICHAO"
+                      className="absolute object-contain"
+                      style={{ left: 150, top: 185, width: 900, animation: 'title-slide-up 0.6s ease-out' }}
+                    />
+                    <div
+                      className="absolute flex items-center justify-center text-teal-300 font-bold drop-shadow-lg"
+                      style={{ left: 322, top: 698, width: 556, height: 74, fontSize: 44, letterSpacing: 4, animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: PINNED_SUBTITLE_FONT }}
+                    >
+                      ✦ DIAMOND VERSION ✦
+                    </div>
+                    <div
+                      className="absolute text-center text-white font-bold"
+                      style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink-first 1s steps(1) 1, press-blink 1s steps(1) 1s infinite' }}
+                    >
+                      PRESS ANY KEY
+                    </div>
+                    <img
+                      src={heavensentLogo}
+                      alt="M Heavensent Studios"
+                      className="absolute object-contain"
+                      style={{ left: 322, top: 944, width: 556, height: 556 }}
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                    />
+                  </LockedStage>
+                </div>
+                <div className="absolute right-3 top-3 z-30">
+                  <button
+                    type="button"
+                    aria-label="Reset title screen to locked default"
+                    onMouseDown={(e) => { e.stopPropagation(); }}
+                    onClick={(e) => { e.stopPropagation(); clearPreset(); }}
+                    className="px-3 py-2 rounded-full bg-black/70 text-white text-xs font-bold tracking-widest border border-white/40"
+                  >
+                    RESET TITLE ✕ (R)
+                  </button>
+                </div>
+                <div className="absolute bottom-3 inset-x-0 z-30 text-center text-white/70 text-xs tracking-widest">
+                  Preset failed to load — showing fallback. Press R for the locked default title.
+                </div>
+              </div>
+            }
+          >
+            <TitleStartScreen
+              preset={titlePreset}
+              resetNonce={titlePresetNonce}
+              onAdvance={advanceIntro}
+              onReset={() => setTitlePresetNonce((n) => n + 1)}
+            />
+          </PresetTitleErrorBoundary>
           {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
         </div>
       );
