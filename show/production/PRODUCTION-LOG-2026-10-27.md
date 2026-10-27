@@ -428,3 +428,35 @@ Aura Burst). NOT touched: sprite-art/arena-combat/moveData.js
 and sprite-art/playtest/playtest-step5.js (remaining prototype
 islands, listed in the mapping doc), moves.json, moves.ts,
 decomp_* datasets, history docs.
+
+## GAMEDATA ISLAND RENAME - OWNER NAMES LOCKED (2026-10-27)
+
+Follow-up to the GAMEDATA ISLAND RENAME entry above (same PR #364,
+second commit). The owner took the draft table through his own
+dictation pass and locked most names in his own words. OWNER-LOCKED
+now applied in src/world/GameData.ts + src/world/FullWorldMaps.ts:
+Bubble -> Foam Burst (owner's final word; an initial "Bubbles" was
+superseded the same day), Tail Whip -> Tail Flick (draft
+confirmed), Metal Claw -> Chrome Claw (draft confirmed), Leer ->
+Stare Down (draft confirmed), Scratch -> Claw, Pound -> Punch,
+String Shot -> Web Blast, Shadow Sneak -> Night Stealth, Metal
+Sound -> Chrome Screech (draft confirmed), Iron Defense -> Chrome
+Guard (draft confirmed), Shell Smash -> Shell Burst (draft
+confirmed), Rock Slide -> Avalanche (owner chose Avalanche AFTER
+the flag that it is itself a Pokemon move name; locked with the
+collision recorded, per his call), Dragon Tail -> Draco Tail,
+Ice Beam -> Frost Blast, Bug Bite -> Mosquito Bite, Slam -> Scoop
+Slam, Strength -> Mighty Push (hmReward; RARE class, HM04 origin),
+Cut -> Slice (draft confirmed; RARE, HM01 origin - the "Chop Down"
+question is closed). Owner-locked with NO occurrence in the island
+code (recorded in the mapping doc only): Ember -> Small Flame (the
+move does not appear in either file; "Ember Island" is a place
+name), Fly -> Ascend (RARE, HM02 origin; the move does not appear -
+only the type string "Flying"). OWNER DECISION PENDING (code keeps
+current values): Growl (Rumble unconfirmed - owner delegated the
+synonym), and Gust / Quick Attack / Crunch / Tackle (owner leaned
+Wind Blast / Swift Movement / Munch / unsettled, but all four are
+live-table names - pending his call on whether the rename reaches
+src/data/core/moves.json too). Full record:
+show/production/GAMEDATA-ISLAND-RENAME.md. moves.json and moves.ts
+NOT touched.

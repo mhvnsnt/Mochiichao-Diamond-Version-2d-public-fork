@@ -187,10 +187,10 @@ export const ROUTE_1: any = {
     return m;
   })(),
   npcs: [
-    { id:"trainer_youngster", x:8, y:7, sprite:"👦", name:"Youngster Jay", facing:"down", dialog:["Hey! You're a trainer, right?", "Sproutle's defenses are rock solid!", "Let's go!"], postBattleDialog: ["Looks like defense isn't everything.", "I need to train harder..."], battle:{ team:[{id:"038",name:"Sproutle",hp:35,maxHp:35,atk:35,def:35,spd:50,moves:["Silk Shot","Tackle"],type:"Grass", level:5}], reward:120, badge:null } },
+    { id:"trainer_youngster", x:8, y:7, sprite:"👦", name:"Youngster Jay", facing:"down", dialog:["Hey! You're a trainer, right?", "Sproutle's defenses are rock solid!", "Let's go!"], postBattleDialog: ["Looks like defense isn't everything.", "I need to train harder..."], battle:{ team:[{id:"038",name:"Sproutle",hp:35,maxHp:35,atk:35,def:35,spd:50,moves:["Web Blast","Tackle"],type:"Grass", level:5}], reward:120, badge:null } },
     { id:"trainer_lass", x:19, y:20, sprite:"👧", name:"Lass Amy", facing:"left", dialog:["My Mochiichao is the cutest!", "It's super bouncy! Watch out!"], postBattleDialog: ["Aww, my cute Mochii...", "You're really strong!"], battle:{ team:[{id:"001",name:"Mochii",hp:38,maxHp:38,atk:35,def:35,spd:45,moves:["Foam Burst","Tackle"],type:"Water", level:4}], reward:100, badge:null } },
-    { id:"trainer_hiker", x:14, y:30, sprite:"⛏️", name:"Hiker Dan", facing:"up", dialog:["This path is rough, but my partner is tough!", "Tyrage, show them your earth-shattering power!"], postBattleDialog: ["We crumbled like rocks...", "I'll carve a new path to victory next time."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:40,def:40,spd:35,moves:["Thump","Tackle"],type:"Earth", level:6}], reward:180, badge:null } },
-    { id:"trainer_bugcatcher", x:4, y:6, sprite:"🐛", name:"Bug Catcher Rick", facing:"right", dialog:["I use the tall grass to find bug Mochiichao!"], postBattleDialog: ["I should've caught stronger bugs!"], battle:{ team:[{id:"016",name:"Squirmite",hp:30,maxHp:30,atk:35,def:35,spd:50,moves:["Silk Shot","Tackle"],type:"Bug", level:3}], reward:80, badge:null } },
+    { id:"trainer_hiker", x:14, y:30, sprite:"⛏️", name:"Hiker Dan", facing:"up", dialog:["This path is rough, but my partner is tough!", "Tyrage, show them your earth-shattering power!"], postBattleDialog: ["We crumbled like rocks...", "I'll carve a new path to victory next time."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:40,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth", level:6}], reward:180, badge:null } },
+    { id:"trainer_bugcatcher", x:4, y:6, sprite:"🐛", name:"Bug Catcher Rick", facing:"right", dialog:["I use the tall grass to find bug Mochiichao!"], postBattleDialog: ["I should've caught stronger bugs!"], battle:{ team:[{id:"016",name:"Squirmite",hp:30,maxHp:30,atk:35,def:35,spd:50,moves:["Web Blast","Tackle"],type:"Bug", level:3}], reward:80, badge:null } },
   ],
   signs: [
     { x:15, y:35, text:"ROUTE 1.0\nNorth to Silicon Town" },
@@ -206,7 +206,7 @@ export const ROUTE_1: any = {
     { mapZone:"tall_grass", rate:0.15, pool:[ 
         {id:"038",name:"Sproutle",hp:35,maxHp:35,atk:35,def:35,spd:50,moves:["Tackle"],type:"Grass",level:3},
         {id:"001",name:"Mochii",hp:38,maxHp:38,atk:35,def:35,spd:45,moves:["Foam Burst","Tackle"],type:"Water",level:3},
-        {id:"010",name:"Kittember",hp:34,maxHp:34,atk:42,def:28,spd:55,moves:["Swipe","Tackle"],type:"Fire",level:4},
+        {id:"010",name:"Kittember",hp:34,maxHp:34,atk:42,def:28,spd:55,moves:["Claw","Tackle"],type:"Fire",level:4},
         {id:"016",name:"Zephling",hp:30,maxHp:30,atk:35,def:30,spd:65,moves:["Gust Wave"],type:"Flying",level:4}
     ]}
   ]
@@ -316,11 +316,11 @@ export const DOJO_1: any = {
     });
   })(),
   npcs: [
-    { id:"dojo_acolyte_1", x:7, y:12, sprite:"🥋", name:"Acolyte Ken", dialog:["Master Lin does not shout. He builds. Watch how his creatures stand."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Thump","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
+    { id:"dojo_acolyte_1", x:7, y:12, sprite:"🥋", name:"Acolyte Ken", dialog:["Master Lin does not shout. He builds. Watch how his creatures stand."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
     { id:"dojo_acolyte_2", x:4, y:8, sprite:"🥷", name:"Acolyte Ren", dialog:["Feel the power of the Core!"], battle:{ team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Chrome Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
     { id:"dojo_acolyte_3", x:11, y:8, sprite:"🤺", name:"Acolyte Shin", dialog:["Speed and precision. Can you handle it?"], battle:{ team:[{id:"001",name:"Mochii",hp:40,maxHp:40,atk:45,def:35,spd:50,moves:["Water Orb","Quick Attack"],type:"Water",level:10}], reward:400, badge:null } },
     { id:"dojo_acolyte_4", x:8, y:5, sprite:"💂", name:"Acolyte Ryu", dialog:["You must have an iron will to pass me!"], battle:{ team:[{id:"038",name:"Sproutle",hp:55,maxHp:55,atk:45,def:60,spd:30,moves:["Vine Lash","Tackle"],type:"Grass",level:11}], reward:450, badge:null } },
-    { id:"master_lin", x:8, y:2, sprite:"🥋", name:"Master Lin", dialog:["A dojo is a machine. Every part has a place. Show me where you fit."], postBattleDialog:["You fit. Take the Core Fragment. It opens roads that only a steady trainer can open."], battle:{ team:[{id:"039",name:"Shellguard",hp:90,maxHp:90,atk:55,def:95,spd:25,moves:["Chrome Guard","Tackle","Shell Burst","Rockfall"],type:"Grass",level:14}], reward:1500, badge:"Core Fragment", hmReward:"Might" }, isDojoBoss: true },
+    { id:"master_lin", x:8, y:2, sprite:"🥋", name:"Master Lin", dialog:["A dojo is a machine. Every part has a place. Show me where you fit."], postBattleDialog:["You fit. Take the Core Fragment. It opens roads that only a steady trainer can open."], battle:{ team:[{id:"039",name:"Shellguard",hp:90,maxHp:90,atk:55,def:95,spd:25,moves:["Chrome Guard","Tackle","Shell Burst","Avalanche"],type:"Grass",level:14}], reward:1500, badge:"Core Fragment", hmReward:"Mighty Push" }, isDojoBoss: true },
   ],
   signs: [],
   exits: [
@@ -329,9 +329,9 @@ export const DOJO_1: any = {
   ],
   doors: [],
   events: [
-    { id: "dojo_acolyte_1_event", x:6, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Thump","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
-    { id: "dojo_acolyte_1_event", x:7, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Thump","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
-    { id: "dojo_acolyte_1_event", x:8, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Thump","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
+    { id: "dojo_acolyte_1_event", x:6, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
+    { id: "dojo_acolyte_1_event", x:7, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
+    { id: "dojo_acolyte_1_event", x:8, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
     { id: "dojo_acolyte_2_event", x:3, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Chrome Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
     { id: "dojo_acolyte_2_event", x:4, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Chrome Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
     { id: "dojo_acolyte_2_event", x:5, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Chrome Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } }
@@ -377,7 +377,7 @@ export const BINARY_WOODS: any = {
     });
   })(),
   npcs: [
-    { id:"hacker_grunt2", x:13, y:10, sprite:"🕶️", name:"Hacker Grunt", facing:"down", dialog:["The woods belong to the Liberation Front now!"], battle:{ team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Shade Step","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
+    { id:"hacker_grunt2", x:13, y:10, sprite:"🕶️", name:"Hacker Grunt", facing:"down", dialog:["The woods belong to the Liberation Front now!"], battle:{ team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Night Stealth","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
     { id:"trainer_bugcatcher_mira", x:9, y:20, sprite:"🐛", name:"Bug Catcher Mira", facing:"down", dialog:["The woods hum. Listen, and you will hear where the wild ones are."], battle:{ team:[{id:"016",name:"Squirmite",hp:30,maxHp:30,atk:35,def:30,spd:50,moves:["Tackle","Quick Attack"],type:"Bug",level:10},{id:"017",name:"Cocoonode",hp:50,maxHp:50,atk:20,def:55,spd:30,moves:["Tackle","Quick Attack"],type:"Bug",level:11}], reward:220, badge:null } },
     { id:"trainer_woodswalker_tess", x:21, y:15, sprite:"🌲", name:"Woods Walker Tess", facing:"down", dialog:["The woods are deep. Watch your step."], battle:{ team:[{id:"038",name:"Sproutle",hp:55,maxHp:55,atk:68,def:64,spd:31,moves:["Tackle","Quick Attack"],type:"Grass",level:11},{id:"041",name:"Pixilite",hp:40,maxHp:40,atk:30,def:30,spd:70,moves:["Tackle","Quick Attack"],type:"Grass",level:11}], reward:280, badge:null } },
   ],
@@ -389,12 +389,12 @@ export const BINARY_WOODS: any = {
     { x:27, y:38, to:"cave_of_echoes", enterAt:{x:5, y:0}, label:"Cave of Echoes" }
   ],
   events: [
-    { id: "hacker_grunt2_event", x:12, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Swipe","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
-    { id: "hacker_grunt2_event", x:13, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Swipe","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
-    { id: "hacker_grunt2_event", x:14, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Swipe","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } }
+    { id: "hacker_grunt2_event", x:12, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Claw","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
+    { id: "hacker_grunt2_event", x:13, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Claw","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
+    { id: "hacker_grunt2_event", x:14, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Claw","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } }
   ],
   encounters: [
-    { mapZone:"tall_grass", rate:0.22, pool:[ {id:"010",name:"Kittember",hp:42,maxHp:42,atk:50,def:38,spd:55,moves:["Swipe"],type:"Fire",level:10} ]}
+    { mapZone:"tall_grass", rate:0.22, pool:[ {id:"010",name:"Kittember",hp:42,maxHp:42,atk:50,def:38,spd:55,moves:["Claw"],type:"Fire",level:10} ]}
   ]
 };
 
