@@ -613,3 +613,31 @@ mechanical boundary). OPEN ITEM recorded in both places:
 the canon term for the human who commands in battle — game
 data uses "trainers", "keeper" is the Garden role; no term
 coined.
+
+## GAMEDATA ISLAND RENAME — OWNER DICTATION COMPLETED (2026-10-27)
+
+Final pass on PR #364 (src/world/GameData.ts + src/world/FullWorldMaps.ts).
+The owner's dictation for the island is now COMPLETE. The four names
+that were pending resolve as: Gust -> Wind Blast (supersedes the
+interim Gust Wave live-canon application in the island), Growl ->
+Rumble (Doro's delegated pick under the owner's "find a synonym"
+instruction, confirmed), Quick Attack -> Swift Movement, Crunch ->
+Munch. The owner resolved the live-table collisions as RENAME
+EVERYWHERE (live table + island + show), so these are canon names,
+not island-only variants; stats and move data never change, only
+display names. Rock Slide -> Rockfall: the owner chose Rockfall in
+the final pass; Avalanche — picked in an earlier round after the
+collision flag (Avalanche is itself a Pokemon move name) — is
+REJECTED and appears in the record only as the rejected option.
+Tackle stays Tackle in the island code for now: status delegated,
+to be named in the full rename pass. Every other island name stands
+as OWNER-LOCKED; the full final table is the mapping record at
+show/production/GAMEDATA-ISLAND-RENAME.md. Verified: scan of both
+code files for every old Pokemon name in the table (exact quoted
+strings) — zero occurrences, Tackle excepted by the delegation; both
+files fetched back from the branch byte-identical to the verified
+edits. NOTE on this log: the branch log had diverged from main, so
+it was rebuilt onto main's current log content and this entry
+appended; the two interim island entries from earlier commits of
+this PR are superseded by this entry, and the mapping doc keeps the
+full per-round history.

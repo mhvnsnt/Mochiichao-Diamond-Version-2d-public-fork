@@ -81,7 +81,7 @@ export const SECTOR_0: any = {
     // the first-time v4_mom_intro event is separate and untouched.
     // This placement is an implementation addition, NOT Mars canon.
     { id:"mom", x:5, y:9, sprite:"👩", name:"Your Mom", facing:"down", movement:"wander", wanderRadius:1, isHeal: true, dialog:["There you are! The truck beat us here.","Come inside. Your room is upstairs. The boxes can wait. Go set the clock first — a new home needs a correct time.","Good. Now go say hello next door. Hex's family just moved in too. You two will need each other out there.","Wait. Before you run off — here. Sprint Boots. Hold B and you can run. A trainer who cannot run will always be late."] },
-    { id:"rival_hex", x:15, y:10, sprite:"😤", name:"Hex", facing:"down", dialog:["You again? I already picked my starter. Razorgater, obviously.","Don't think I'll go easy on you just because we grew up here.","Next time we meet, we BATTLE. Count on it."], battle: { team:[{ id:"004", name:"Razorgater", hp:50, maxHp:50, atk:65, def:64, spd:48, moves:["Metal Claw","Tackle"], type:"Water", level:5 }], reward:100, badge:null } },
+    { id:"rival_hex", x:15, y:10, sprite:"😤", name:"Hex", facing:"down", dialog:["You again? I already picked my starter. Razorgater, obviously.","Don't think I'll go easy on you just because we grew up here.","Next time we meet, we BATTLE. Count on it."], battle: { team:[{ id:"004", name:"Razorgater", hp:50, maxHp:50, atk:65, def:64, spd:48, moves:["Chrome Claw","Tackle"], type:"Water", level:5 }], reward:100, badge:null } },
     { id:"fat_guy", x:9, y:13, sprite:"🧑‍🦲", name:"Technology Enthusiast", facing:"down", movement:"wander", wanderRadius:1, dialog:["Technology is incredible!", "You can now store up to 6 Mochiichao in your party!", "Any more you catch are instantly sent to your PC!"] },
   ],
   signs: [
@@ -95,7 +95,7 @@ export const SECTOR_0: any = {
   ],
   exits: [
     ...buildEdgeExits(13, 17, 0, "route_1", 38, "up"),
-    { x:15, y:27, to:"boot_bay", enterAt:{x:15, y:0}, dir:"down", hmNeeded:"Surf" },
+    { x:15, y:27, to:"boot_bay", enterAt:{x:15, y:0}, dir:"down", hmNeeded:"Wave" },
   ],
   doors: [
     { x:10, y:3, to:"aeon_lab", enterAt:{x:6, y:12}, label:"Prof. Aeon's Lab" },
@@ -153,7 +153,7 @@ export const AEON_LAB: any = {
     { x:6, y:13, to:"sector0", enterAt:{x:10, y:4}, label:"Boot Harbor" }
   ],
   events: [
-    { id: "hex_battle_event", condition: "hasStarter", x:6, y:12, dialog:["Hex: Hold up! Before you leave, let's see what your partner can do!"], npc: { name: "Hex", sprite: "😤" }, battle: { team:[{id:"004",name:"Razorgater",hp:45,maxHp:45,atk:60,def:40,spd:55,moves:["Metal Claw","Tackle"],type:"Steel", level:5}], reward:100, badge:null } },
+    { id: "hex_battle_event", condition: "hasStarter", x:6, y:12, dialog:["Hex: Hold up! Before you leave, let's see what your partner can do!"], npc: { name: "Hex", sprite: "😤" }, battle: { team:[{id:"004",name:"Razorgater",hp:45,maxHp:45,atk:60,def:40,spd:55,moves:["Chrome Claw","Tackle"],type:"Steel", level:5}], reward:100, badge:null } },
     { id: "prof_speech_event", condition: "hasStarter", x:6, y:7, dialog:["Prof. Aeon: Excellent choice! Your adventure begins now!","Take good care of your new partner!"] }
   ]
 };
@@ -187,10 +187,10 @@ export const ROUTE_1: any = {
     return m;
   })(),
   npcs: [
-    { id:"trainer_youngster", x:8, y:7, sprite:"👦", name:"Youngster Jay", facing:"down", dialog:["Hey! You're a trainer, right?", "Sproutle's defenses are rock solid!", "Let's go!"], postBattleDialog: ["Looks like defense isn't everything.", "I need to train harder..."], battle:{ team:[{id:"038",name:"Sproutle",hp:35,maxHp:35,atk:35,def:35,spd:50,moves:["String Shot","Tackle"],type:"Grass", level:5}], reward:120, badge:null } },
-    { id:"trainer_lass", x:19, y:20, sprite:"👧", name:"Lass Amy", facing:"left", dialog:["My Mochiichao is the cutest!", "It's super bouncy! Watch out!"], postBattleDialog: ["Aww, my cute Mochii...", "You're really strong!"], battle:{ team:[{id:"001",name:"Mochii",hp:38,maxHp:38,atk:35,def:35,spd:45,moves:["Bubble","Tackle"],type:"Water", level:4}], reward:100, badge:null } },
-    { id:"trainer_hiker", x:14, y:30, sprite:"⛏️", name:"Hiker Dan", facing:"up", dialog:["This path is rough, but my partner is tough!", "Tyrage, show them your earth-shattering power!"], postBattleDialog: ["We crumbled like rocks...", "I'll carve a new path to victory next time."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:40,def:40,spd:35,moves:["Pound","Tackle"],type:"Earth", level:6}], reward:180, badge:null } },
-    { id:"trainer_bugcatcher", x:4, y:6, sprite:"🐛", name:"Bug Catcher Rick", facing:"right", dialog:["I use the tall grass to find bug Mochiichao!"], postBattleDialog: ["I should've caught stronger bugs!"], battle:{ team:[{id:"016",name:"Squirmite",hp:30,maxHp:30,atk:35,def:35,spd:50,moves:["String Shot","Tackle"],type:"Bug", level:3}], reward:80, badge:null } },
+    { id:"trainer_youngster", x:8, y:7, sprite:"👦", name:"Youngster Jay", facing:"down", dialog:["Hey! You're a trainer, right?", "Sproutle's defenses are rock solid!", "Let's go!"], postBattleDialog: ["Looks like defense isn't everything.", "I need to train harder..."], battle:{ team:[{id:"038",name:"Sproutle",hp:35,maxHp:35,atk:35,def:35,spd:50,moves:["Web Blast","Tackle"],type:"Grass", level:5}], reward:120, badge:null } },
+    { id:"trainer_lass", x:19, y:20, sprite:"👧", name:"Lass Amy", facing:"left", dialog:["My Mochiichao is the cutest!", "It's super bouncy! Watch out!"], postBattleDialog: ["Aww, my cute Mochii...", "You're really strong!"], battle:{ team:[{id:"001",name:"Mochii",hp:38,maxHp:38,atk:35,def:35,spd:45,moves:["Foam Burst","Tackle"],type:"Water", level:4}], reward:100, badge:null } },
+    { id:"trainer_hiker", x:14, y:30, sprite:"⛏️", name:"Hiker Dan", facing:"up", dialog:["This path is rough, but my partner is tough!", "Tyrage, show them your earth-shattering power!"], postBattleDialog: ["We crumbled like rocks...", "I'll carve a new path to victory next time."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:40,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth", level:6}], reward:180, badge:null } },
+    { id:"trainer_bugcatcher", x:4, y:6, sprite:"🐛", name:"Bug Catcher Rick", facing:"right", dialog:["I use the tall grass to find bug Mochiichao!"], postBattleDialog: ["I should've caught stronger bugs!"], battle:{ team:[{id:"016",name:"Squirmite",hp:30,maxHp:30,atk:35,def:35,spd:50,moves:["Web Blast","Tackle"],type:"Bug", level:3}], reward:80, badge:null } },
   ],
   signs: [
     { x:15, y:35, text:"ROUTE 1.0\nNorth to Silicon Town" },
@@ -205,9 +205,9 @@ export const ROUTE_1: any = {
   encounters: [
     { mapZone:"tall_grass", rate:0.15, pool:[ 
         {id:"038",name:"Sproutle",hp:35,maxHp:35,atk:35,def:35,spd:50,moves:["Tackle"],type:"Grass",level:3},
-        {id:"001",name:"Mochii",hp:38,maxHp:38,atk:35,def:35,spd:45,moves:["Bubble","Tackle"],type:"Water",level:3},
-        {id:"010",name:"Kittember",hp:34,maxHp:34,atk:42,def:28,spd:55,moves:["Scratch","Tackle"],type:"Fire",level:4},
-        {id:"016",name:"Zephling",hp:30,maxHp:30,atk:35,def:30,spd:65,moves:["Gust"],type:"Flying",level:4}
+        {id:"001",name:"Mochii",hp:38,maxHp:38,atk:35,def:35,spd:45,moves:["Foam Burst","Tackle"],type:"Water",level:3},
+        {id:"010",name:"Kittember",hp:34,maxHp:34,atk:42,def:28,spd:55,moves:["Claw","Tackle"],type:"Fire",level:4},
+        {id:"016",name:"Zephling",hp:30,maxHp:30,atk:35,def:30,spd:65,moves:["Wind Blast"],type:"Flying",level:4}
     ]}
   ]
 };
@@ -316,11 +316,11 @@ export const DOJO_1: any = {
     });
   })(),
   npcs: [
-    { id:"dojo_acolyte_1", x:7, y:12, sprite:"🥋", name:"Acolyte Ken", dialog:["Master Lin does not shout. He builds. Watch how his creatures stand."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Pound","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
-    { id:"dojo_acolyte_2", x:4, y:8, sprite:"🥷", name:"Acolyte Ren", dialog:["Feel the power of the Core!"], battle:{ team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Metal Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
-    { id:"dojo_acolyte_3", x:11, y:8, sprite:"🤺", name:"Acolyte Shin", dialog:["Speed and precision. Can you handle it?"], battle:{ team:[{id:"001",name:"Mochii",hp:40,maxHp:40,atk:45,def:35,spd:50,moves:["Aqua Shot","Quick Attack"],type:"Water",level:10}], reward:400, badge:null } },
+    { id:"dojo_acolyte_1", x:7, y:12, sprite:"🥋", name:"Acolyte Ken", dialog:["Master Lin does not shout. He builds. Watch how his creatures stand."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
+    { id:"dojo_acolyte_2", x:4, y:8, sprite:"🥷", name:"Acolyte Ren", dialog:["Feel the power of the Core!"], battle:{ team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Chrome Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
+    { id:"dojo_acolyte_3", x:11, y:8, sprite:"🤺", name:"Acolyte Shin", dialog:["Speed and precision. Can you handle it?"], battle:{ team:[{id:"001",name:"Mochii",hp:40,maxHp:40,atk:45,def:35,spd:50,moves:["Water Orb","Swift Movement"],type:"Water",level:10}], reward:400, badge:null } },
     { id:"dojo_acolyte_4", x:8, y:5, sprite:"💂", name:"Acolyte Ryu", dialog:["You must have an iron will to pass me!"], battle:{ team:[{id:"038",name:"Sproutle",hp:55,maxHp:55,atk:45,def:60,spd:30,moves:["Vine Lash","Tackle"],type:"Grass",level:11}], reward:450, badge:null } },
-    { id:"master_lin", x:8, y:2, sprite:"🥋", name:"Master Lin", dialog:["A dojo is a machine. Every part has a place. Show me where you fit."], postBattleDialog:["You fit. Take the Core Fragment. It opens roads that only a steady trainer can open."], battle:{ team:[{id:"039",name:"Shellguard",hp:90,maxHp:90,atk:55,def:95,spd:25,moves:["Iron Defense","Tackle","Shell Smash","Rock Slide"],type:"Grass",level:14}], reward:1500, badge:"Core Fragment", hmReward:"Strength" }, isDojoBoss: true },
+    { id:"master_lin", x:8, y:2, sprite:"🥋", name:"Master Lin", dialog:["A dojo is a machine. Every part has a place. Show me where you fit."], postBattleDialog:["You fit. Take the Core Fragment. It opens roads that only a steady trainer can open."], battle:{ team:[{id:"039",name:"Shellguard",hp:90,maxHp:90,atk:55,def:95,spd:25,moves:["Chrome Guard","Tackle","Shell Burst","Rockfall"],type:"Grass",level:14}], reward:1500, badge:"Core Fragment", hmReward:"Mighty Push" }, isDojoBoss: true },
   ],
   signs: [],
   exits: [
@@ -329,12 +329,12 @@ export const DOJO_1: any = {
   ],
   doors: [],
   events: [
-    { id: "dojo_acolyte_1_event", x:6, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Pound","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
-    { id: "dojo_acolyte_1_event", x:7, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Pound","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
-    { id: "dojo_acolyte_1_event", x:8, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Pound","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
-    { id: "dojo_acolyte_2_event", x:3, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Metal Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
-    { id: "dojo_acolyte_2_event", x:4, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Metal Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
-    { id: "dojo_acolyte_2_event", x:5, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Metal Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } }
+    { id: "dojo_acolyte_1_event", x:6, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
+    { id: "dojo_acolyte_1_event", x:7, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
+    { id: "dojo_acolyte_1_event", x:8, y:13, dialog:["Acolyte Ken: Stop right there! You must prove yourself!"], npc: { name: "Acolyte Ken", sprite: "🥋" }, battle: { team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:35,moves:["Punch","Tackle"],type:"Earth",level:8}], reward:300, badge:null } },
+    { id: "dojo_acolyte_2_event", x:3, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Chrome Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
+    { id: "dojo_acolyte_2_event", x:4, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Chrome Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } },
+    { id: "dojo_acolyte_2_event", x:5, y:9, dialog:["Acolyte Ren: Feel the power of the Core!"], npc: { name: "Acolyte Ren", sprite: "🥷" }, battle: { team:[{id:"004",name:"Razorgater",hp:50,maxHp:50,atk:65,def:64,spd:48,moves:["Chrome Claw","Tackle"],type:"Steel",level:9}], reward:350, badge:null } }
   ],
   encounters: []
 };
@@ -377,9 +377,9 @@ export const BINARY_WOODS: any = {
     });
   })(),
   npcs: [
-    { id:"hacker_grunt2", x:13, y:10, sprite:"🕶️", name:"Hacker Grunt", facing:"down", dialog:["The woods belong to the Liberation Front now!"], battle:{ team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Shadow Sneak","Leer"],type:"Fire",level:12}], reward:350, badge:null } },
-    { id:"trainer_bugcatcher_mira", x:9, y:20, sprite:"🐛", name:"Bug Catcher Mira", facing:"down", dialog:["The woods hum. Listen, and you will hear where the wild ones are."], battle:{ team:[{id:"016",name:"Squirmite",hp:30,maxHp:30,atk:35,def:30,spd:50,moves:["Tackle","Quick Attack"],type:"Bug",level:10},{id:"017",name:"Cocoonode",hp:50,maxHp:50,atk:20,def:55,spd:30,moves:["Tackle","Quick Attack"],type:"Bug",level:11}], reward:220, badge:null } },
-    { id:"trainer_woodswalker_tess", x:21, y:15, sprite:"🌲", name:"Woods Walker Tess", facing:"down", dialog:["The woods are deep. Watch your step."], battle:{ team:[{id:"038",name:"Sproutle",hp:55,maxHp:55,atk:68,def:64,spd:31,moves:["Tackle","Quick Attack"],type:"Grass",level:11},{id:"041",name:"Pixilite",hp:40,maxHp:40,atk:30,def:30,spd:70,moves:["Tackle","Quick Attack"],type:"Grass",level:11}], reward:280, badge:null } },
+    { id:"hacker_grunt2", x:13, y:10, sprite:"🕶️", name:"Hacker Grunt", facing:"down", dialog:["The woods belong to the Liberation Front now!"], battle:{ team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Night Stealth","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
+    { id:"trainer_bugcatcher_mira", x:9, y:20, sprite:"🐛", name:"Bug Catcher Mira", facing:"down", dialog:["The woods hum. Listen, and you will hear where the wild ones are."], battle:{ team:[{id:"016",name:"Squirmite",hp:30,maxHp:30,atk:35,def:30,spd:50,moves:["Tackle","Swift Movement"],type:"Bug",level:10},{id:"017",name:"Cocoonode",hp:50,maxHp:50,atk:20,def:55,spd:30,moves:["Tackle","Swift Movement"],type:"Bug",level:11}], reward:220, badge:null } },
+    { id:"trainer_woodswalker_tess", x:21, y:15, sprite:"🌲", name:"Woods Walker Tess", facing:"down", dialog:["The woods are deep. Watch your step."], battle:{ team:[{id:"038",name:"Sproutle",hp:55,maxHp:55,atk:68,def:64,spd:31,moves:["Tackle","Swift Movement"],type:"Grass",level:11},{id:"041",name:"Pixilite",hp:40,maxHp:40,atk:30,def:30,spd:70,moves:["Tackle","Swift Movement"],type:"Grass",level:11}], reward:280, badge:null } },
   ],
   exits: [
     ...buildVertExits(31, 15, 25, "binary_fields", 1, "right"),
@@ -389,12 +389,12 @@ export const BINARY_WOODS: any = {
     { x:27, y:38, to:"cave_of_echoes", enterAt:{x:5, y:0}, label:"Cave of Echoes" }
   ],
   events: [
-    { id: "hacker_grunt2_event", x:12, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Scratch","Leer"],type:"Fire",level:12}], reward:350, badge:null } },
-    { id: "hacker_grunt2_event", x:13, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Scratch","Leer"],type:"Fire",level:12}], reward:350, badge:null } },
-    { id: "hacker_grunt2_event", x:14, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Scratch","Leer"],type:"Fire",level:12}], reward:350, badge:null } }
+    { id: "hacker_grunt2_event", x:12, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Claw","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
+    { id: "hacker_grunt2_event", x:13, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Claw","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } },
+    { id: "hacker_grunt2_event", x:14, y:11, dialog:["Hacker Grunt: The woods belong to the Liberation Front now!"], npc: { name: "Hacker Grunt", sprite: "🕶️" }, battle: { team:[{id:"010",name:"Kittember",hp:36,maxHp:36,atk:55,def:28,spd:68,moves:["Claw","Stare Down"],type:"Fire",level:12}], reward:350, badge:null } }
   ],
   encounters: [
-    { mapZone:"tall_grass", rate:0.22, pool:[ {id:"010",name:"Kittember",hp:42,maxHp:42,atk:50,def:38,spd:55,moves:["Scratch"],type:"Fire",level:10} ]}
+    { mapZone:"tall_grass", rate:0.22, pool:[ {id:"010",name:"Kittember",hp:42,maxHp:42,atk:50,def:38,spd:55,moves:["Claw"],type:"Fire",level:10} ]}
   ]
 };
 
@@ -423,14 +423,14 @@ export const CAVE_OF_ECHOES: any = {
     });
   })(),
   npcs: [
-    { id:"miner_npc", x:12, y:13, sprite:"🧗", name:"Miner Cleff", movement:"wander", wanderRadius:1, dialog:["This cave runs DEEP."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:50,moves:["Tackle","Quick Attack"],type:"Earth",level:16}], reward:340, badge:null } },
+    { id:"miner_npc", x:12, y:13, sprite:"🧗", name:"Miner Cleff", movement:"wander", wanderRadius:1, dialog:["This cave runs DEEP."], battle:{ team:[{id:"007",name:"Tyrage",hp:45,maxHp:45,atk:60,def:40,spd:50,moves:["Tackle","Swift Movement"],type:"Earth",level:16}], reward:340, badge:null } },
     // Dialogue attribution R1-BEAT5: Cave guide, previously the only
     // missing Region 1 speaker with a world map (Mochiko garden gate
     // belongs to GardenView, not a world map). Line is verbatim from
     // region1-dialogue.json; placed at (4,2) on a CAVE tile by the
     // entrance, clear of the STAIRS_UP tile at (5,2). No battle.
     { id:"cave_guide", x:4, y:2, sprite:"🕯️", name:"Cave Guide", facing:"down", dialog:["The cave echoes what you bring into it. Bring a steady team, and it echoes back steady."] },
-    { id:"trainer_caverunner_pike", x:19, y:10, sprite:"🏃", name:"Cave Runner Pike", facing:"down", dialog:["I run these tunnels every day."], battle:{ team:[{id:"013",name:"Pupbble",hp:45,maxHp:45,atk:60,def:50,spd:50,moves:["Tackle","Quick Attack"],type:"Earth",level:16},{id:"036",name:"Cragarm",hp:65,maxHp:65,atk:105,def:130,spd:30,moves:["Tackle","Quick Attack"],type:"Steel",level:17}], reward:380, badge:null } },
+    { id:"trainer_caverunner_pike", x:19, y:10, sprite:"🏃", name:"Cave Runner Pike", facing:"down", dialog:["I run these tunnels every day."], battle:{ team:[{id:"013",name:"Pupbble",hp:45,maxHp:45,atk:60,def:50,spd:50,moves:["Tackle","Swift Movement"],type:"Earth",level:16},{id:"036",name:"Cragarm",hp:65,maxHp:65,atk:105,def:130,spd:30,moves:["Tackle","Swift Movement"],type:"Steel",level:17}], reward:380, badge:null } },
   ],
   exits: [
     { x:5, y:0, to:"binary_woods", enterAt:{x:27, y:38}, dir:"up" },
@@ -441,7 +441,7 @@ export const CAVE_OF_ECHOES: any = {
   doors: [],
   events: [],
   encounters: [
-    { mapZone:"cave", rate:0.25, pool:[ {id:"004",name:"Razorgater",hp:44,maxHp:44,atk:48,def:54,spd:38,moves:["Metal Sound","Tackle"],type:"Steel",level:15} ] }
+    { mapZone:"cave", rate:0.25, pool:[ {id:"004",name:"Razorgater",hp:44,maxHp:44,atk:48,def:54,spd:38,moves:["Chrome Screech","Tackle"],type:"Steel",level:15} ] }
   ]
 };
 
@@ -536,7 +536,7 @@ export const SCRAP_JUNKYARD: any = {
     });
   })(),
   npcs: [
-    { id:"junk_boss", x:16, y:9, sprite:"🏭", name:"Junk Warlord Krix", dialog:["Think you can survive the Junkyard?"], battle:{ team:[{id:"005",name:"Chromejaww",hp:75,maxHp:75,atk:72,def:80,spd:48,moves:["Metal Claw"],type:"Steel",level:24}], reward:750, badge:null } }
+    { id:"junk_boss", x:16, y:9, sprite:"🏭", name:"Junk Warlord Krix", dialog:["Think you can survive the Junkyard?"], battle:{ team:[{id:"005",name:"Chromejaww",hp:75,maxHp:75,atk:72,def:80,spd:48,moves:["Chrome Claw"],type:"Steel",level:24}], reward:750, badge:null } }
   ],
   exits: [
     ...buildVertExits(33, 15, 25, "neon_city", 1, "right")
@@ -544,7 +544,7 @@ export const SCRAP_JUNKYARD: any = {
   doors: [],
   events: [],
   encounters: [
-    { mapZone:"tall_grass", rate:0.22, pool:[ {id:"005",name:"Chromejaww",hp:58,maxHp:58,atk:62,def:72,spd:40,moves:["Metal Sound"],type:"Steel",level:20} ]}
+    { mapZone:"tall_grass", rate:0.22, pool:[ {id:"005",name:"Chromejaww",hp:58,maxHp:58,atk:62,def:72,spd:40,moves:["Chrome Screech"],type:"Steel",level:20} ]}
   ]
 };
 
@@ -701,9 +701,9 @@ export const DOJO_2: any = {
     });
   })(),
   npcs: [
-    { id:"master_falk", x:5, y:2, sprite:"🥋", name:"Master Falk", dialog:["Hey, hey, welcome up here. I'm Master Falk, and I'm high as a kite today, so you better keep up.","You made it to my Dojo? Good. I live free like a bird up here, no cage, no chain, just wind.","The winds favor the swift! So show me you're swift, or get blown right back down."], postBattleDialog:["Ha! Okay, okay, you clipped my wings. I'm high as a kite, but you flew higher.","Free like a bird, and today that bird is you. Take the wind with you.","Here's your Wind Fragment. Hold it tight, or the wind will take it.","Next Dojo's down the road, not up in the clouds. Don't get too comfortable on the ground, though. Stay free, stay fast."], battle:{ team:[{id:"019",name:"Zephling",hp:40,maxHp:40,atk:55,def:35,spd:60,moves:["Tackle","Quick Attack"],type:"Aero",level:18},{id:"020",name:"Aerobeak",hp:60,maxHp:60,atk:75,def:55,spd:80,moves:["Tackle","Quick Attack"],type:"Aero",level:19},{id:"021",name:"Stormtalon",hp:80,maxHp:80,atk:105,def:75,spd:110,moves:["Tackle","Quick Attack"],type:"Aero",level:20}], reward:1500, badge:"Wind Fragment", hmReward:"Cut" }, isDojoBoss: true },
-    { id:"dojo_acolyte_gale", x:3, y:6, sprite:"🥋", name:"Acolyte Gale", facing:"down", dialog:["The wind tests everyone who climbs."], battle:{ team:[{id:"019",name:"Zephling",hp:40,maxHp:40,atk:55,def:35,spd:60,moves:["Tackle","Quick Attack"],type:"Aero",level:17}], reward:500, badge:null } },
-    { id:"dojo_acolyte_skye", x:7, y:6, sprite:"🥋", name:"Acolyte Skye", facing:"down", dialog:["Master Falk's wind shows no mercy."], battle:{ team:[{id:"019",name:"Zephling",hp:40,maxHp:40,atk:55,def:35,spd:60,moves:["Tackle","Quick Attack"],type:"Aero",level:18},{id:"020",name:"Aerobeak",hp:60,maxHp:60,atk:75,def:55,spd:80,moves:["Tackle","Quick Attack"],type:"Aero",level:18}], reward:600, badge:null } },
+    { id:"master_falk", x:5, y:2, sprite:"🥋", name:"Master Falk", dialog:["Hey, hey, welcome up here. I'm Master Falk, and I'm high as a kite today, so you better keep up.","You made it to my Dojo? Good. I live free like a bird up here, no cage, no chain, just wind.","The winds favor the swift! So show me you're swift, or get blown right back down."], postBattleDialog:["Ha! Okay, okay, you clipped my wings. I'm high as a kite, but you flew higher.","Free like a bird, and today that bird is you. Take the wind with you.","Here's your Wind Fragment. Hold it tight, or the wind will take it.","Next Dojo's down the road, not up in the clouds. Don't get too comfortable on the ground, though. Stay free, stay fast."], battle:{ team:[{id:"019",name:"Zephling",hp:40,maxHp:40,atk:55,def:35,spd:60,moves:["Tackle","Swift Movement"],type:"Aero",level:18},{id:"020",name:"Aerobeak",hp:60,maxHp:60,atk:75,def:55,spd:80,moves:["Tackle","Swift Movement"],type:"Aero",level:19},{id:"021",name:"Stormtalon",hp:80,maxHp:80,atk:105,def:75,spd:110,moves:["Tackle","Swift Movement"],type:"Aero",level:20}], reward:1500, badge:"Wind Fragment", hmReward:"Slice" }, isDojoBoss: true },
+    { id:"dojo_acolyte_gale", x:3, y:6, sprite:"🥋", name:"Acolyte Gale", facing:"down", dialog:["The wind tests everyone who climbs."], battle:{ team:[{id:"019",name:"Zephling",hp:40,maxHp:40,atk:55,def:35,spd:60,moves:["Tackle","Swift Movement"],type:"Aero",level:17}], reward:500, badge:null } },
+    { id:"dojo_acolyte_skye", x:7, y:6, sprite:"🥋", name:"Acolyte Skye", facing:"down", dialog:["Master Falk's wind shows no mercy."], battle:{ team:[{id:"019",name:"Zephling",hp:40,maxHp:40,atk:55,def:35,spd:60,moves:["Tackle","Swift Movement"],type:"Aero",level:18},{id:"020",name:"Aerobeak",hp:60,maxHp:60,atk:75,def:55,spd:80,moves:["Tackle","Swift Movement"],type:"Aero",level:18}], reward:600, badge:null } },
   ],
   exits: [{ x:5, y:15, to:"binary_woods", enterAt:{x:7, y:37}, dir:"down" }], doors: [], events: [], encounters: []
 };
