@@ -1,0 +1,9 @@
+PR state: closed merged: True merge_sha: 5c1e143abccf5cda4fb3e214a59b3ed07627f5f7
+PR file: src/components/game/TitleCreatureFigure.tsx status=modified +5/-0 blob=0eb9f52e52275ae780a367c5d68f1e5a99499c1c
+PR file: src/components/game/YogifernoTitleWalk.tsx status=modified +5/-0 blob=7da292144c93474eb2259669a12c4d0e90c6635a
+PR file: src/lib/titleCryGate.ts status=modified +94/-24 blob=9321d1d73f588242d15d0fba2b5383b58ff1a5f1
+current main HEAD: 5c1e143abccf5cda4fb3e214a59b3ed07627f5f7
+main src/lib/titleCryGate.ts: sha=9321d1d73f588242d15d0fba2b5383b58ff1a5f1
+main src/components/game/TitleCreatureFigure.tsx: sha=0eb9f52e52275ae780a367c5d68f1e5a99499c1c
+main src/components/game/YogifernoTitleWalk.tsx: sha=7da292144c93474eb2259669a12c4d0e90c6635a
+main src/components/game/TitleScene.tsx: sha=49d27f7470f8e17c1af7a3fbcec706485d099edb
