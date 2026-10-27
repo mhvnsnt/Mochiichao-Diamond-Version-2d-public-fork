@@ -5,20 +5,24 @@ items resolve FROM GAME CANON (the way Pokemon's show was built
 from its games). Full cited mining: research-drafts/
 GAME-CANON-FOR-SEASON.md (workspace). Headline resolutions:
 
-## The Forest
-- Canon home-region forest = BINARY WOODS (src/lib/wiring/maps/
-  binary_woods.json): mist weather, woods_theme music, wild
-  Kittember, NPCs, doors to Aero Dojo (Wind Wing) + Cave of
+## The Forest — RENAMED BY OWNER RULING (2026-10-27)
+- The home-region forest is THE DARK FOREST. Owner ruling, whole
+  canon / whole repo / whole game scope: the place formerly named
+  "Binary Woods" (src/lib/wiring/maps/binary_woods.json) is
+  renamed — one place, one name, in game and show alike. Its canon
+  contents carry under the new name: mist weather, woods_theme
+  music, wild Kittember, NPCs (Hacker Grunt, Bug Catcher Mira,
+  Woods Walker Tess), doors to Aero Dojo (Wind Wing) + Cave of
   Echoes; connects to Binary Fields / Silicon Town. Its beat line:
   "The woods hum. Listen, and you will hear where the wild ones
-  are." Canon's woods = misty, inhabited, defined by SOUND.
-- The show's DARK FOREST (EP01 stinger, owner-directed) does NOT
-  match Binary Woods' nature. Standing treatment until the owner
-  rules: the Dark Forest is the show's own place (owner canon),
-  distinct from Binary Woods; the Cave of Echoes principle is its
-  nearest canon rhyme — "The cave is dark, but it is not empty.
-  Bring Light-Pulse, and bring patience. Both light the same way."
-  (EP05's lantern was written to this instinct before the mining.)
+  are." The EP01 stinger's dread is this same Forest's depths —
+  the surface hums; the deep interior is where things stop moving.
+- NAMING LAW (owner, same date): the world's Flash-equivalent
+  technique formerly written "Light-Pulse" is named ILLUMINATE.
+  Never "Light-Pulse" — in scripts, docs, and game text. The Cave
+  of Echoes line under the new name: "The cave is dark, but it is
+  not empty. Bring Illuminate, and bring patience. Both light the
+  same way." (EP05's lantern beat is the show's Illuminate rhyme.)
 - What stopped moving: game canon does NOT answer. Stays open.
 
 ## The opening (EP02 reconciliation — canon wins)
