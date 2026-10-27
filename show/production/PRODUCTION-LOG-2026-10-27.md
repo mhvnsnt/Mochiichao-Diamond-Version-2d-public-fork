@@ -352,3 +352,39 @@ names kept exactly; signatures described neutrally (canon
 attack naming layers in separately) - Dorowani's
 water_orb_charge is his canon Water Orb attack animation, his
 alone. Sproutle rendered from the shadow-free cutout.
+
+## MOVE RENAME BATCH 1 (2026-10-27)
+Owner MOVE RENAME LAW (Jamar, 2026-10-27, standing): rename-on-
+use - every Pokemon-named move gets a Mochiichao name in game
+canon + game code as moves are used/attached in the show and
+the game. Display names change; internal ids/keys stay exactly
+as they are so wiring cannot break.
+Batch 1 landed in src/data/core/moves.json and its source
+src/lib/moves.ts (display "name" values only - ids, stats,
+effects, anims and descriptions untouched; verified diff = the
+five name lines in each file; the two stay in sync):
+- AQUA_JET: "Aqua Jet" -> "Hydro Rush" (Mochii's signature;
+  AQUA_JET is learned by Mochii alone, 1 of 47)
+- RAZOR_LEAF: "Razor Leaf" -> "Leaf Blast" (Sproutle's
+  signature; learned by Sproutle alone)
+- SHADOW_PULSE: "Shadow Pulse" -> "Dark Wave" (Wispkin's
+  signature; Umbral family move, learnset provisional-flagged
+  in the data)
+- AQUA_SHOT: "Aqua Shot" -> "Water Orb" (Dorowani's
+  signature). Owner resolution: Water Orb REPLACES the closest
+  existing orb-like entry (its desc is literally "a small ball
+  of water hurled at the foe") instead of waiting on a new
+  entry - this SUPERSEDES the earlier "Water Orb has no
+  moves.json entry / stats owner-TBD" state (PR #345 record).
+  Stats inherited from AQUA_SHOT (WATER Special 40/100/25);
+  nothing invented. NOTE: AQUA_SHOT is shared (11 learners), so
+  per rename-on-use in game code the rename is game-wide.
+- EARTH_TREMOR: "Earth Tremor" -> "Tremor" (Gabu's signature;
+  replaces the game's Earthquake-equivalent - no EARTHQUAKE id
+  exists. Stats inherited: GROUND Physical 100/100/10.)
+Kittember's FIRE_STREAM was already an original Mochiichao
+name - unchanged. Canon mapping + owner decision record landed
+at show/production/CANON-SIGNATURE-ATTACKS.md. Stale display-
+name references in game/show docs were swept and updated in
+the same PR; historical log entries before this one keep the
+old names as written (append-only history).
