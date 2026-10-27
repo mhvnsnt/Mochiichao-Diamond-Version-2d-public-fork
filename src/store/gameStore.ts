@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { MochiiInstance } from '../lib/types';
 import { createMochii } from '../lib/engine';
-import type { GardenCreature } from '../lib/mochiichao-systems';
+import type { GardenSaveRecord } from '../lib/garden-wiring';
 import type { DaycareEgg } from '../lib/creatureDaycare';
 import type { GuardianAssignment } from '../lib/monster-tamer-systems';
 import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
@@ -37,8 +37,8 @@ interface GameState {
   // read the +9% Garden bonus and a Guardian assignment vanished on
   // leaving the screen. Both now live in the shared store, so SaveMenu
   // (which serializes the whole state) saves and loads them with the game.
-  gardenRecords: Record<string, GardenCreature>;
-  setGardenRecord: (creatureId: string, record: GardenCreature) => void;
+  gardenRecords: Record<string, GardenSaveRecord>;
+  setGardenRecord: (creatureId: string, record: GardenSaveRecord) => void;
   guardian: GuardianAssignment | null;
   setGuardian: (guardian: GuardianAssignment | null) => void;
   // Preserved from Chao Garden PR #225 (live main): Garden minutes.
