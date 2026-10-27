@@ -1,0 +1,117 @@
+{
+ "creature": "duneclaw",
+ "roster_id": "008",
+ "variant": null,
+ "movement_class": "grounded_standard",
+ "idle_class": "grounded_standard",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 480,
+ "side_gap": true,
+ "side_note": "No distinct side cell in the locked manifest; left/right stands reuse the front stand until distinct side art lands. Steps still animate.",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "walk-frames/duneclaw/duneclaw_walk_down_0.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_down_0"
+    },
+    {
+     "file": "walk-frames/duneclaw/duneclaw_walk_down_1.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_down_1"
+    }
+   ],
+   "loop": [
+    "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "walk-frames/duneclaw/duneclaw_walk_down_0.png",
+    "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "walk-frames/duneclaw/duneclaw_walk_down_1.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/duneclaw/cells/duneclaw_cell_03.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "walk-frames/duneclaw/duneclaw_walk_up_0.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_up_0"
+    },
+    {
+     "file": "walk-frames/duneclaw/duneclaw_walk_up_1.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_up_1"
+    }
+   ],
+   "loop": [
+    "game-ready/duneclaw/cells/duneclaw_cell_03.png",
+    "walk-frames/duneclaw/duneclaw_walk_up_0.png",
+    "game-ready/duneclaw/cells/duneclaw_cell_03.png",
+    "walk-frames/duneclaw/duneclaw_walk_up_1.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "provenance": "side_placeholder_front_reuse",
+    "source_role": "overworld_front",
+    "side_gap": true
+   },
+   "steps": [
+    {
+     "file": "walk-frames/duneclaw/duneclaw_walk_left_0.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_left_0"
+    },
+    {
+     "file": "walk-frames/duneclaw/duneclaw_walk_left_1.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_left_1"
+    }
+   ],
+   "loop": [
+    "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "walk-frames/duneclaw/duneclaw_walk_left_0.png",
+    "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "walk-frames/duneclaw/duneclaw_walk_left_1.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "provenance": "side_placeholder_front_reuse",
+    "source_role": "overworld_front",
+    "side_gap": true
+   },
+   "steps": [
+    {
+     "file": "walk-frames/duneclaw/duneclaw_walk_right_0.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_right_0"
+    },
+    {
+     "file": "walk-frames/duneclaw/duneclaw_walk_right_1.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_right_1"
+    }
+   ],
+   "loop": [
+    "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "walk-frames/duneclaw/duneclaw_walk_right_0.png",
+    "game-ready/duneclaw/cells/duneclaw_cell_00.png",
+    "walk-frames/duneclaw/duneclaw_walk_right_1.png"
+   ]
+  }
+ }
+}
