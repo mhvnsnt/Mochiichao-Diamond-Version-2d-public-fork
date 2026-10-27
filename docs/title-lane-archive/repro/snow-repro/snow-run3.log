@@ -1,0 +1,73 @@
+--- TITLE (locked, before preset) ---
+
+--- localStorage before ---
+null
+--- TITLE (preset title-snow-yogiferno) ---
+
+--- DOM probes ---
+fallback note present: false
+RESET TITLE button present: false
+video elements: 0
+video src: []
+video readyState: []
+video error: []
+canvas elements: 0
+img count: 0
+--- console messages ---
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+--- exceptions ---
+TypeError: Cannot read properties of undefined (reading 'title')
+    at Wee (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:507:567299)
+    at Xh (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:48595)
+    at __ (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:71461)
+    at Vv (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:81854)
+    at gT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:117718)
+    at CO (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:116758)
+    at F_ (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:116588)
+    at pT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:113361)
+    at LT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:125362)
+    at dc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:123910)
+TypeError: Cannot read properties of undefined (reading 'title')
+    at Wee (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:507:567299)
+    at Xh (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:48595)
+    at __ (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:71461)
+    at Vv (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:81854)
+    at gT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:117718)
+    at CO (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:116758)
+    at F_ (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:116588)
+    at pT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:113361)
+    at LT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:125362)
+    at dc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:123910)
