@@ -1,99 +1,123 @@
 {
-  "schema": "mochiichao-show/parts-catalog/v1",
-  "updated": "2026-10-27",
-  "rule": "Construction-kit filter (show/WORKING-METHOD.md): no characters, no character names, no logos/branding. Entries are collection-level seeds; item-level extraction proceeds donor by donor (loaded donors first) per show/production/tooling/MATERIALS-INDEX.md.",
-  "collections": [
+ "schema": "mochiichao-show/parts-catalog/v1",
+ "updated": "2026-10-27",
+ "rule": "Construction-kit filter (show/WORKING-METHOD.md): no characters, no character names, no logos/branding. Entries are collection-level seeds; item-level extraction proceeds donor by donor (loaded donors first) per show/production/tooling/MATERIALS-INDEX.md.",
+ "collections": [
+  {
+   "id": "mochiichao-battle-backgrounds",
+   "type": "backgrounds",
+   "path": "sprite-art/battle-backgrounds-v3/",
+   "items": [
+    "battle-bg-cave-v3d.png",
+    "battle-bg-dojo-v3d.png",
+    "battle-bg-garden-v3d.png",
+    "battle-bg-lake-v3d.png",
+    "battle-bg-mauveville-arena-v3d.png",
+    "battle-bg-tournament-v3d.png"
+   ],
+   "scene_use": [
+    "battle",
+    "tournament",
+    "garden"
+   ],
+   "filter": "pass (native)",
+   "status": "catalogued"
+  },
+  {
+   "id": "mochiichao-garden-poses",
+   "type": "pose_library",
+   "path": "sprite-art/garden-poses/",
+   "items": "50 species pose sets (*.garden.json + pose PNGs)",
+   "scene_use": [
+    "garden",
+    "idle",
+    "care"
+   ],
+   "filter": "pass (native)",
+   "status": "catalogued"
+  },
+  {
+   "id": "mochiichao-form-palettes",
+   "type": "palettes",
+   "path": "src/assets/garden-form-palettes/",
+   "scene_use": [
+    "all"
+   ],
+   "filter": "pass (native)",
+   "status": "catalogued"
+  },
+  {
+   "id": "mochiichao-title-backgrounds",
+   "type": "backgrounds",
+   "path": "docs/title-lane-archive/staging/backgrounds/",
+   "scene_use": [
+    "title",
+    "menus"
+   ],
+   "filter": "pass (native)",
+   "status": "collection_seed"
+  },
+  {
+   "id": "cape-jones-living-room-set",
+   "type": "environment_props_3d",
+   "repo": "mhvnsnt/cape-jones",
+   "path": "3d-assets/living-room/",
+   "scene_use": [
+    "interior",
+    "talk_segments"
+   ],
+   "filter": "pass (his own, non-character set pieces)",
+   "status": "canonical_pointer"
+  },
+  {
+   "id": "trippedd-cc0-material-sources",
+   "type": "textures_models_audio_sources",
+   "repo": "mhvnsnt/TRIPPEDD-Animation-Studio",
+   "path": "manifests/sources/",
+   "scene_use": [
+    "all"
+   ],
+   "filter": "license-gated (CC0/CC-BY per manifest)",
+   "status": "canonical_pointer"
+  },
+  {
+   "id": "donor-backgrounds-props-loaded",
+   "type": "backgrounds_props",
+   "repo": "cn donor repos (loaded: grim-adventures, my-gym-partner, scooby-doo-mystery-inc, space-ghost, duck-dodgers, robot-chicken, ed-edd-n-eddy, powerpuff-girls, looney-tunes, dexters-lab, camp-lazlo, gumball, cow-and-chicken, johnny-bravo, pink-panther, regular-show, ok-ko)",
+   "scene_use": [
+    "garden",
+    "lab",
+    "town",
+    "school",
+    "space",
+    "underworld"
+   ],
+   "filter": "per-item check required (character-branded/logo pieces fail)",
+   "status": "to_catalog_item_level"
+  },
+  {
+   "id": "garden-gate-background",
+   "type": "backgrounds",
+   "scene_use": [
+    "garden",
+    "gate"
+   ],
+   "filter": "pass (native, generated for the show; owner-accepted)",
+   "current_version": "v2-living",
+   "versions": [
     {
-      "id": "mochiichao-battle-backgrounds",
-      "type": "backgrounds",
-      "path": "sprite-art/battle-backgrounds-v3/",
-      "items": [
-        "battle-bg-cave-v3d.png",
-        "battle-bg-dojo-v3d.png",
-        "battle-bg-garden-v3d.png",
-        "battle-bg-lake-v3d.png",
-        "battle-bg-mauveville-arena-v3d.png",
-        "battle-bg-tournament-v3d.png"
-      ],
-      "scene_use": [
-        "battle",
-        "tournament",
-        "garden"
-      ],
-      "filter": "pass (native)",
-      "status": "catalogued"
+     "version": "v1-still",
+     "file": "show production source: accepted Garden Gate still plate (2048x1152 webp, scene-01 generation)",
+     "status": "SUPERSEDED as a standalone background - it is the base layer the living version is built on. Do not composite onto the still directly (Current-Version Law)."
     },
     {
-      "id": "mochiichao-garden-poses",
-      "type": "pose_library",
-      "path": "sprite-art/garden-poses/",
-      "items": "50 species pose sets (*.garden.json + pose PNGs)",
-      "scene_use": [
-        "garden",
-        "idle",
-        "care"
-      ],
-      "filter": "pass (native)",
-      "status": "catalogued"
-    },
-    {
-      "id": "mochiichao-form-palettes",
-      "type": "palettes",
-      "path": "src/assets/garden-form-palettes/",
-      "scene_use": [
-        "all"
-      ],
-      "filter": "pass (native)",
-      "status": "catalogued"
-    },
-    {
-      "id": "mochiichao-title-backgrounds",
-      "type": "backgrounds",
-      "path": "docs/title-lane-archive/staging/backgrounds/",
-      "scene_use": [
-        "title",
-        "menus"
-      ],
-      "filter": "pass (native)",
-      "status": "collection_seed"
-    },
-    {
-      "id": "cape-jones-living-room-set",
-      "type": "environment_props_3d",
-      "repo": "mhvnsnt/cape-jones",
-      "path": "3d-assets/living-room/",
-      "scene_use": [
-        "interior",
-        "talk_segments"
-      ],
-      "filter": "pass (his own, non-character set pieces)",
-      "status": "canonical_pointer"
-    },
-    {
-      "id": "trippedd-cc0-material-sources",
-      "type": "textures_models_audio_sources",
-      "repo": "mhvnsnt/TRIPPEDD-Animation-Studio",
-      "path": "manifests/sources/",
-      "scene_use": [
-        "all"
-      ],
-      "filter": "license-gated (CC0/CC-BY per manifest)",
-      "status": "canonical_pointer"
-    },
-    {
-      "id": "donor-backgrounds-props-loaded",
-      "type": "backgrounds_props",
-      "repo": "cn donor repos (loaded: grim-adventures, my-gym-partner, scooby-doo-mystery-inc, space-ghost, duck-dodgers, robot-chicken, ed-edd-n-eddy, powerpuff-girls, looney-tunes, dexters-lab, camp-lazlo, gumball, cow-and-chicken, johnny-bravo, pink-panther, regular-show, ok-ko)",
-      "scene_use": [
-        "garden",
-        "lab",
-        "town",
-        "school",
-        "space",
-        "underworld"
-      ],
-      "filter": "per-item check required (character-branded/logo pieces fail)",
-      "status": "to_catalog_item_level"
+     "version": "v2-living",
+     "file": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+     "status": "CURRENT - the background piece that gets used. Living World layers over the v1 plate: CL-1 cloud-shadow drift, foreground leaf-drift particles, pollen motes, synthesised wind bed (BREEZE).",
+     "upgrade_path": "continues per show/production/LIVING-WORLD.md: gate swing (needs the gate as a separated layer), grass-sway masks, background population crossings (SKY class bird-type Mochi), perch/water life. When a v3 lands it is marked CURRENT here and this version becomes SUPERSEDED."
     }
-  ]
+   ],
+   "status": "current"
+  }
+ ]
 }

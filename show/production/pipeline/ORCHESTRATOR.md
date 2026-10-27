@@ -37,6 +37,13 @@ Contradiction with canon = reject before GPU time is spent.
   Wispkin criteria: rigs/builds/wispkin/BODY-SPEC-OWNER-DIRECTION.md.
 - LICENCE: free umbrella; CC-BY-NC weights are scratch-only,
   never shipped (manifest.json restricted_weights).
+- VERSION (owner Current-Version Law, 2026-10-27): when a piece
+  is upgraded, the new version is marked CURRENT in its registry
+  (parts-catalog / clip-index / manifest) with the superseded
+  version named; every later use takes the marked-current piece.
+  Building on a regressed version throws away built work and is
+  an error unless the exception + reason are written beside the
+  use. Check the registry before building on any piece.
 - LICENCE/PRICING HONESTY (owner law, 2026-10-27): classify every
   tool by what the SOFTWARE actually is, verified at the source
   before the label is written. Never put a fake paywall on

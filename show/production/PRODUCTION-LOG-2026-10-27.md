@@ -188,3 +188,18 @@ idle twin over the accepted Garden Gate plate, frame-verified
 (frame 60 vs 140: performed pose change, plate clean around the
 character). The bundle is now complete and every video in it
 derives from the owner's live avatar clips.
+
+## CURRENT-VERSION LAW + composite v4 (2026-10-27)
+Owner set the law after the Gate composites (v3 + the three
+variant showings) were built on the v1 STILL plate: upgrades get
+marked as the piece that gets used, and building on a regressed
+file throws away built work. The current Garden Gate background
+piece is the LIVING background (this folder's EP01 CUT01 life
+proof: cloud-shadow drift, leaf drift, pollen, wind bed), now
+registered as garden-gate-background in parts-catalog with the
+version chain (v1-still SUPERSEDED as standalone, v2-living
+CURRENT, upgrade path named) + a clip-index entry. COMPOSITE-
+PROOF-gate-v4-living.mp4 = the real Dorowani idle twin over the
+living background (wind bed carried) - the composite proof of
+record; v3 is marked SUPERSEDED in clip-index. Verified: f60 vs
+f140 sky-region diff 3.76 (background alive inside the composite).
