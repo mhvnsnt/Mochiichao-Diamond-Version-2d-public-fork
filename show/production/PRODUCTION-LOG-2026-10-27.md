@@ -126,3 +126,14 @@ rejected_likeness_fail; file kept local, not shipped. Cause on
 record: plain image-to-video only - the triple-lock (IP-Adapter
 + ControlNet) was installed but not engaged. Speed on record:
 ~28.5 min / 49 frames at 16fps on T4.
+
+## CORRECTION — composite proof v1 was defective (2026-10-27)
+Owner caught it: COMPOSITE-PROOF-gate.mp4 v1 showed Dorowani
+frozen inside a black rectangle — the build flattened the WebM's
+alpha to black and the character did not perform. The v1 proof
+claim is WITHDRAWN. Root cause: the overlay pipeline decoded the
+VP9 WebM without its alpha. Rebuilt with explicit libvpx-vp9
+alpha decode; frame-verified (poses differ across the clip, no
+black box, plate visible around the character; source WebM
+motion measured, an idle's gentle sway). v2 replaces v1 at the
+same path.
