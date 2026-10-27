@@ -42,8 +42,10 @@ import yogifernoWalkCutout from '../../assets/title/yogiferno-walk-cutout.png';
  *   The locked slot rows below are read-only and say so.
  *
  * Preview: slot boxes on the 1200x1500 canvas, scaled to fit.
- * PRESS ANY KEY blinks 30 frames on / 15 frames off (500ms / 250ms
- * at 60fps). This is the CREATOR preview only — saved presets are
+ * PRESS ANY KEY blinks Pokemon-style: first 60 frames on, then
+ * 30 frames on / 30 frames off (1000ms first, then 500ms / 500ms
+ * at 60fps, FireRed title_screen.c Task_TitleScreen_BlinkPressStart).
+ * This is the CREATOR preview only — saved presets are
  * selectable presets (restoration 2026-10-26: the default TITLE
  * phase is the locked phi stage, never a saved preset).
  * Phase 2 export is LIVE since Creator Phase 2: EXPORT VIDEO
@@ -77,16 +79,17 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
   const exportCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const recordingRef = useRef<CanvasRecording | null>(null);
 
-  // PRESS ANY KEY blink: 30 frames on / 15 frames off at 60fps.
+  // PRESS ANY KEY blink, Pokemon-style (FireRed title_screen.c
+  // Task_TitleScreen_BlinkPressStart): first 60 frames on, then
+  // 30 frames on / 30 frames off at 60fps. Preview-only tick:
+  // on for 1000ms first, then alternate 500ms off / 500ms on.
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
-    let on = true;
-    const tick = () => {
-      on = !on;
+    const schedule = (on: boolean, delay: number) => {
       setBlinkOn(on);
-      timer = setTimeout(tick, on ? 500 : 250);
+      timer = setTimeout(() => schedule(!on, 500), delay);
     };
-    timer = setTimeout(tick, 500);
+    timer = setTimeout(() => schedule(false, 500), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -225,7 +228,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
             </div>
             <div className="text-slate-300 text-xs mt-1">
               The canvas below IS the video being recorded (canvas-2D render of the single scene: background, logo, PINNED
-              subtitle, PRESS ANY KEY blink 30/15, creature slot, studio logo, picked open-source panel/icon).
+              subtitle, PRESS ANY KEY blink 60-first/30/30, creature slot, studio logo, picked open-source panel/icon).
               Silent: a start screen has no music slot. Painted background renders the slate fallback + GAP label; only Yogiferno
               has a clean cutout, other creatures render a GAP label — never fake art.
               Need MP4 later? Desktop FFmpeg install note only: ffmpeg -i start-screen-export.webm start-screen-export.mp4.
@@ -284,7 +287,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
               style={{ width: pct(556, 1200), left: pct(600 - 278, 1200), top: pct(735 - 18, 1500), height: 36 }}>
               <span className="text-cyan-100 font-bold tracking-[0.3em] text-sm">DIAMOND VERSION</span>
             </div>
-            {/* PRESS ANY KEY slot: y = 927, blink 30/15. */}
+            {/* PRESS ANY KEY slot: y = 927, blink 60-first / 30 on / 30 off. */}
             <div className="absolute w-full text-center" style={{ top: pct(927, 1500) }}>
               <span className="text-white font-bold tracking-widest text-sm" style={{ opacity: blinkOn ? 1 : 0 }}>PRESS ANY KEY</span>
             </div>
@@ -351,7 +354,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
           <div className="text-xs text-slate-300 font-bold px-3 pt-1 pb-2 tracking-widest">LOCKED LAYOUT — READ ONLY HERE</div>
           <CreatorRow label="LOGO SLOT" value="900 wide · (600, 450)" note="Locked. Move it in the Layout Editor, restyle it in the UI Creator — no second system here." onLeft={() => undefined} onRight={() => undefined} />
           <CreatorRow label="SUBTITLE SLOT" value="556 wide · (600, 735) · PINNED" note="DIAMOND VERSION subtitle font is PINNED and never changes — no font row touches it." onLeft={() => undefined} onRight={() => undefined} />
-          <CreatorRow label="PRESS ANY KEY" value="y 927 · blink 30/15" note="Locked. Blink is 30 frames on / 15 frames off." onLeft={() => undefined} onRight={() => undefined} />
+          <CreatorRow label="PRESS ANY KEY" value="y 927 · blink 60-first/30/30" note="Locked. Blink is 60 frames first on, then 30 frames on / 30 frames off." onLeft={() => undefined} onRight={() => undefined} />
           <CreatorRow label="STUDIO LOGO" value="556 wide · (600, 1222)" note="Locked. Move it in the Layout Editor, restyle it in the UI Creator." onLeft={() => undefined} onRight={() => undefined} />
           <CreatorRow label="TIMELINE" value="1 scene · loop" note="Start screen = one scene. Scene list / add / duplicate / delete belongs to CREATE INTRO VIDEO (separate batch)." onLeft={() => undefined} onRight={() => undefined} />
         </StdWindow>
