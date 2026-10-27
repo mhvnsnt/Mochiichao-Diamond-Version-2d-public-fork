@@ -78,3 +78,7 @@ deformation), and an animatic is those characters acting; neither
 converts into Mochiichao-native material by re-skinning, so neither
 is copied or converted. The rig *capability* the show needs is
 authored natively instead — see `show/production/rigs/`.
+
+**Governing rule:** everything in this layer — and across the show
+folder — is classified under the project's working method, the
+**construction-kit rule**: [`show/WORKING-METHOD.md`](../../WORKING-METHOD.md).
