@@ -1,0 +1,48 @@
+{
+ "creature": "wispkin",
+ "roster_id": "042",
+ "date": "2026-10-26",
+ "status": "STAGED ONLY, show-first, no PR, no lock",
+ "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+ "cells": [
+  {
+   "cell": 10,
+   "role": "overworld_side",
+   "file": "wispkin_walk_side_0_20261026.png",
+   "size": "64x64 RGBA",
+   "source": "walk-frames/wispkin/wispkin_walk_left_0.png",
+   "source_md5": "2edd83e4e49cd808c5e3301118e90983",
+   "cell_md5": "2edd83e4e49cd808c5e3301118e90983",
+   "pixel_identical": true,
+   "bbox": [
+    6,
+    1,
+    52,
+    61
+   ]
+  },
+  {
+   "cell": 11,
+   "role": "overworld_side_2",
+   "file": "wispkin_walk_side_1_20261026.png",
+   "size": "64x64 RGBA",
+   "source": "walk-frames/wispkin/wispkin_walk_left_1.png",
+   "source_md5": "d3105dc328dd29ecc08564e4d111bc20",
+   "cell_md5": "d3105dc328dd29ecc08564e4d111bc20",
+   "pixel_identical": true,
+   "bbox": [
+    6,
+    0,
+    52,
+    58
+   ]
+  }
+ ],
+ "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+ "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+ "shadow_check": "Bottom rows are the wisp's own smoke trail (body effect, 7->0 px); hover creature, no ground shadow; rows 62-63 zero. No baked shadow.",
+ "pose_caveat": "walk.json: hover bob (0 vs -3px); sides are tilt variants of the front cell (no locked side cell exists). Promoted as-is, not a newly drawn profile.",
+ "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+ "gif": "wispkin-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+ "before_after": "wispkin-walk-before-after-20261026.png"
+}
