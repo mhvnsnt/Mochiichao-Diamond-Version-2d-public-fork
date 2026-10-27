@@ -7,7 +7,7 @@ import DialogueBox from "./game/DialogueBox";
 import SettingsScreen from "./game/SettingsScreen";
 import { frameAccent } from "../lib/gameSettings";
 import { isConfirmKey, shoulderKey } from "../lib/buttonMode";
-import { fontById } from "../lib/fonts";
+import { fontById, PINNED_SUBTITLE_FONT } from "../lib/fonts";
 import { getActiveMenuConfig, subtitleFontStack } from "../lib/menuEditor";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
