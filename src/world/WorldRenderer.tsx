@@ -1,5 +1,6 @@
 import React from "react";
 import { TILE_STYLE, TILE, NPC_SPRITES } from "./WorldConstants";
+import { TILE_IMAGE } from "./tileAtlas";
 
 export function renderTile({ tile, vx, vy, viewH, TILE_SIZE, isPlayer, npc, isNight, playerDir, isDefeated, hasStarter, animWalk }: any) {
   const ts = TILE_STYLE[tile] ?? TILE_STYLE[0];
@@ -10,15 +11,28 @@ export function renderTile({ tile, vx, vy, viewH, TILE_SIZE, isPlayer, npc, isNi
   let extraStyle: React.CSSProperties = {};
   let overlay = null;
 
+  // Step 1 environment tiles: a verified Kenney tile image replaces the
+  // flat colour + gradient for mapped tiles. The flat colour stays as
+  // `background` underneath, so a missing image falls back to the old
+  // look instead of a blank tile. Unmapped tiles keep flat colours.
+  const tileImage = TILE_IMAGE[tile];
+  if (tileImage) {
+    extraStyle = {
+      backgroundImage: `url(${tileImage})`,
+      backgroundSize: "100% 100%",
+      imageRendering: "pixelated",
+    };
+  }
+
   if (tile === TILE.WATER) {
     bg = "#1a5aae";
     extraStyle = { backgroundImage:"repeating-linear-gradient(135deg,#1a5aae,#2272cc 5px,#1a5aae 10px)", animation:"waterflow 2.5s linear infinite" };
   }
-  if (tile === TILE.TALL_GRASS) {
+  if (tile === TILE.TALL_GRASS && !tileImage) {
     bg = "#2a6a15";
     extraStyle = { backgroundImage:"repeating-linear-gradient(90deg,#2a6a15,#3d8a22 3px,#2a6a15 6px)" };
   }
-  if (tile === TILE.PATH) {
+  if (tile === TILE.PATH && !tileImage) {
     bg = "#c0986a";
     extraStyle = { backgroundImage:"repeating-linear-gradient(45deg,#c0986a,#c8a870 4px,#b89060 4px,#c0986a 8px)" };
   }
