@@ -1,0 +1,344 @@
+{
+ "blockedRowsAccounting": {
+  "note": "The 26 blocked rows include whole-game overlaps (WG rows) and original-content rows that were never source-fillable; this pass addresses the 11 task items named in its brief, which cover the source-fillable subset of the 26 plus the 07:46 overlays. The remaining blocked rows are listed in the report as truly-needs-Mars, not re-counted here.",
+  "ofThoseFilled": 10,
+  "ofThoseGenuinelyAbsentFromSource": 1,
+  "previouslyBlockedAllSourcesRows": 26,
+  "rowsAddressedByThisPass": 11
+ },
+ "forbiddenCheck": {
+  "method": "grep over this directory's staged files against (a) SPECIES_ constants, (b) the 652 species data-dir slugs as standalone tokens, (c) literal-dialogue markers; plus manual review for character/place names, images, logos, creature voices.",
+  "result": "0 SPECIES_ hits, 0 species-name reproductions, 0 literal-dialogue hits. The only standalone 'none' tokens are generic English ('none a battle stat multiplier', 'offers none as a user option'), the code boundary-function label 'none' (NULL entry of the boundary table), and the path res/abilities/none.json (the ability placeholder file) \u2014 none of these reproduces a species name.",
+  "tsArrayVerified": "MOVE_CATEGORY_BY_INDEX length 560; string counts STATUS 196 / PHYSICAL 221 / SPECIAL 143 (file totals incl. 1 placeholder STATUS entry; playable STATUS 195)."
+ },
+ "marsDecisionsApplied": {
+  "bagCapsLifted_2026-10-27_0746": "Black 2 canonical structure, caps removed: unlimited boxes, unlimited PC storage, stacks above source maxima, PC above 100 creatures; 30 slots per box kept.",
+  "fillFromSource_2026-10-27_0743": "See rule above.",
+  "menuSwappable_2026-10-27_0746": "No single layout picked; all gen layouts swappable, one settings editor per menu type. Staged by sibling lane (menus-wallpapers/menuLayoutCatalogue.ts + menuEditorSpec.md); referenced here, not duplicated.",
+  "trueChart19_2026-10-27_0746": "Elements locked at 19. Staged by sibling lane (true-chart/19-reconciliation.json, 361 cells); referenced here, not duplicated. See row 12.",
+  "wallpapers_2026-10-27_0746": "Wallpaper types from all games + modding communities, plus user-uploadable original art from phone storage. Staged by sibling lane (menus-wallpapers/wallpaperCatalogue.ts + uncappedStorage.ts); referenced here, not duplicated."
+ },
+ "noGameTreeEdits": true,
+ "noMerge": true,
+ "noOtherLaneStagingEdits": true,
+ "noPr": true,
+ "rows": [
+  {
+   "counts": {
+    "dataEntries": 652,
+    "firstRegularSlotNull": 2,
+    "hiddenSlotNull": 75,
+    "nonSpecialEntries": 650,
+    "nonSpecialHasHidden": 577,
+    "nonSpecialHiddenNull": 73,
+    "nonSpecialSecondRegularNull": 274,
+    "nonSpecialTwoRealRegular": 376,
+    "placeholderSlotsToNamedAbility": 0,
+    "placeholderSlotsToNull": 353,
+    "realAbilitySlots": 1603,
+    "secondRegularSlotNull": 276,
+    "slotsExamined": 1956,
+    "specialAllNullEntries": 2
+   },
+   "countsNote": "The 2 special all-null entries are data entries, not playable creatures; they account for first-regular-slot nulls (2) and 2 of the second-regular/hidden nulls. 276 = 274 + 2; 75 = 73 + 2.",
+   "filledValue": "ABILITY_NONE (index 0) resolves to null in every slot. No placeholder slot is filled with a named ability.",
+   "id": 1,
+   "sources": [
+    "pokebw2/res/pokemon/*/data.json fields 'abilities' (2 entries) and 'hidden_ability'",
+    "pokebw2/res/abilities/none.json (placeholder entry, name '--', description ' -')",
+    "pokebw2/generated/abilities.txt line 2: ABILITY_NONE = 0",
+    "batch-a/decomp_black2_abilities.json (165 ability entries; placeholder counted in batch A)"
+   ],
+   "status": "FILLED",
+   "taskItem": "Placeholder ability"
+  },
+  {
+   "counts": {
+    "dataFiles": 560,
+    "physical": 221,
+    "placeholderMoveEntries": 1,
+    "playableMoves": 559,
+    "special": 143,
+    "statusFileTotal": 196,
+    "statusPlayable": 195
+   },
+   "filledValue": "Per-move explicit category field, NOT a generation/type rule. Numeric: STATUS 0, PHYSICAL 1, SPECIAL 2. Playable moves: PHYSICAL 221, SPECIAL 143, STATUS 195 (559). Plus 1 placeholder move entry (STATUS, power 0, pp 0) = 560 data files, STATUS 196 in file totals.",
+   "id": 2,
+   "priorBlockedRow": "playable-wiring B7 (per-move category vs generation rule) \u2014 resolved to per-move category.",
+   "sources": [
+    "pokebw2/res/moves/*/data.json field 'category' (560 files)",
+    "pokebw2/res/moves/move.schema.json field 'category' (MOVE_CATEGORY_ constant family)",
+    "pokebw2/include/constants/battle.h:77-79 (STATUS 0, PHYSICAL 1, SPECIAL 2)",
+    "pokebw2/src/ov167/btl_server_flow.c:3634 (category read via move-category getter, stored as battle variable 0x1a); :3681 (category == 1 branch)",
+    "pokebw2/generated/moves.txt (index order for the staged array)"
+   ],
+   "stagedArray": "filled-from-source.ts MOVE_CATEGORY_BY_INDEX, 560 entries in generated/moves.txt order (index 0 = placeholder).",
+   "status": "FILLED",
+   "taskItem": "Physical/special canonical from Black 2 explicit move category"
+  },
+  {
+   "filledValue": "Black 2 canonical: NO stat badge boost in battle code. The only battle use of the badge count is the obedience cap: while badges < 8, maxLevel = (badges + 1) * 10. Gen-3 stat boost (player-side only, not link battles; badge1 attack, badge5 defense, badge7 sp.atk/sp.def, badge3 speed; each x110/100) is staged as a cross-gen record only, NOT as the Black 2 value.",
+   "id": 3,
+   "priorBlockedRow": "playable-wiring B13 (badge-boost counterpart) \u2014 resolved: Black 2 has no stat boost to map; the obedience cap is the coded counterpart. A progression-bonus map on top of this would be new Mochiichao design, not a source value, and is NOT staged as one.",
+   "sources": [
+    "pokebw2/src/ov167/btl_server_flow.c:943-959 (ServerControl_CheckObedience: badges < 8, maxLevel = (badges + 1) * 10)",
+    "pokebw2/src/ov167/btl_main.c:1549 (GetBadgeCount); full-repo badge-count call sites are card/shop/resort/script uses, none a battle stat multiplier \u2014 verified by grep over pokebw2/src + include",
+    "pokefirered-leafgreen/src/pokemon.c:2381 (ShouldGetStatBadgeBoost macro), :2440-2446 (110/100 boosts)",
+    "pokefirered-leafgreen/src/battle_main.c:3442-3450 (badge boost speed block, badge3, player side, not link)"
+   ],
+   "status": "FILLED",
+   "taskItem": "Badge-boost behaviour as coded"
+  },
+  {
+   "filledValue": "Bag: 6 pockets (indices 0-4 + Free Space 5; NONE sentinel 6). Slots: items 310, medicine 48, move-machines 109, berries 64, key items 83; total distinct 614; Free Space shows the 614. Stack: 999 general, 1 move-machine. Battle bag: 4 pockets. Party max: 6. Boxes: max 24, 30 per box, source total 720, 8 open at start, +8 per unlock, name length 20, battle box 1 x 6, day-care 2 slots.",
+   "id": 4,
+   "marsOverlay": "Per Mars 2026-10-27 ~07:46: box count unbounded, total PC storage unbounded, stacks above source maxima, PC above 100 creatures. Structure kept: Black 2 pockets + 30 slots per box. Sibling staging: apply-all/menus-wallpapers/uncappedStorage.ts (referenced, not duplicated).",
+   "priorBlockedRows": "playable-wiring D1/D2/D3 (canonical pocket generation) + F16/WG22 (box count) \u2014 resolved to Black 2 canonical by the fill rule; caps lifted by the 07:46 decision.",
+   "sources": [
+    "pokebw2/include/constants/bag.h:5-12 (pocket indices 0-5, NONE 6; battle pocket bit flags)",
+    "pokebw2/include/save/bag.h:16-25 (slot maxima 310/83/109/48/64, Free Space sum, stack 999 / 1), :28 (BATTLE_BAG_POCKET_COUNT 4)",
+    "pokebw2/src/ov142/bag_item.c:13-15 (pocket slot sum comment; BAG_ITEM_LIST_SLOTS 614)",
+    "pokebw2/include/save/box.h:12-13 (BOX_MAX_TRAY 24, BOX_MAX_POS 30), :74-76 (battle box 1 x 6), :108 (day-care slots 2)",
+    "pokebw2/src/system/box_savedata.c (BOX_START_TRAY 8, BOX_UNLOCK_TRAY 8, BOX_WALLPAPER_NORMAL_COUNT 16)",
+    "pokebw2/include/pml/poke_party.h:48 (PARTY_SIZE 6)"
+   ],
+   "status": "FILLED (source values) + MARS CAPS-LIFTED OVERLAY (separate fields, never wired as limits)",
+   "taskItem": "Bag pocket counts + box counts, Black 2 canonical"
+  },
+  {
+   "filledValue": "YES, offered in PC. Sequence: release -> check -> yes/no confirm -> move check -> removal (slot cleared). Blocks: last usable party member (no other usable member with HP > 0; unhatched members do not count), party member holding mail, unhatched flag, fused-form flag. Move-lock branch exists in the sequence but its trigger function returns -1 unconditionally in this decomp, so as coded no move blocks a release.",
+   "id": 5,
+   "policyConflictFlag": "The playable-wiring map records the game as currently stating release is deliberately not offered (F12). That statement is a Mochiichao policy, not a source value; the staged source value is YES. The parent lane decides whether the policy stays \u2014 this pass does not silently keep or drop it, and does not count it as a still-needs-Mars source row.",
+   "sources": [
+    "pokebw2/src/ov255/box2_seq.c:154-158 (release sequence function list), :5577-5645 (ReleaseStart/ReleaseCheck: party check, mail check, unhatched/fused checks, yes/no open), :5646-5670 (ReleaseCheckMoves/ReleaseDo: slot cleared)",
+    "pokebw2/src/ov255/box2_bmp.c:618-650 (release message types 0,1,2,3,4,5,6,7 incl. last-member type 6)",
+    "pokebw2/src/ov255/box2_main.c:954 (BattlePokeCheck: last-usable-member test), :2102-2104 (move-check trigger returns -1), :2116-2175 (move-check scan over 24 x 30 + 6 slots)"
+   ],
+   "status": "FILLED",
+   "taskItem": "Release offered as coded in PC"
+  },
+  {
+   "filledValue": "Black 2: block-table save, NOT sectors. Main save at addr 0, backup at 0x26000, each 0x26000 bytes. Footer magic 0x31053527, footer size 0x10 (count u32, size u32, magic u32, unkC u16, crc u16). Per block: footer with count u16 + crc u16. CRC-16-CCITT polynomial 0x1021 over each block and over the block-CRC table. Recovery: newer-copy CRCs tried first; per-block bad blocks recopied from the good copy; a block bad in both copies breaks the save. Box trays are main-save blocks 1..24; extra saves follow the two main copies (Hall of Fame alone has a backup).",
+   "gen3Contrast": "FireRed/LeafGreen sector shape (2 slots x 14 sectors x 3968 data + 128 footer = 4096) is a different generation's medium and is NOT the Black 2 answer; staged only so the old H7 wording is not mistaken for canonical.",
+   "id": 6,
+   "priorBlockedRow": "playable-wiring H7 (save-shape medium) \u2014 resolved: Black 2 medium is block-table + main/backup copies, not sectors.",
+   "sources": [
+    "pokebw2/src/system/save_table.c:58-62 (SAVE_MAIN_ADDR 0, SAVE_BACKUP_ADDR 0x26000, SAVE_SIZE 0x26000, SAVE_MAGIC 0x31053527), :201 (main save params), :204-226 (extra saves)",
+    "pokebw2/src/gfl/backup_system.c:22 (SAVE_FOOTER_SIZE 0x10), :35-55 (BlockFooter count/crc, SaveFooter fields, FooterCheck), :129 (CRC table init 0x1021), :394-437 (block-CRC-table CRC, footer check), :527-612 (newer-copy-first load, per-block recopy, broken result)",
+    "pokebw2/include/save/save_control.h:20-74 (block id enum incl. box main/trays, bag, party; extra-save enum; PARTIAL/BROKEN error bits)",
+    "pokefirered-leafgreen/include/save.h:6 (sector comment: 3968 + 128) \u2014 contrast only"
+   ],
+   "status": "FILLED (Black 2 canonical; Gen-3 sector shape recorded as contrast only)",
+   "taskItem": "Save-shape structure as coded"
+  },
+  {
+   "filledValue": "Black 2: NO user frame option in config; frame system is a 9-piece window frame (4 corners + 4 edges + middle, middle not drawn) selected by archive type id. FireRed: 10-entry frame table in this decomp; save field 5 bits; guard falls back to entry 0 at index >= 20 (legacy 20-border count in the field comment). HeartGold: 20 frame choices in the options app. Frame art/pixels for every type are NOT staged (original art owed, not a source value).",
+   "id": 7,
+   "priorBlockedRow": "playable-wiring C6 ('frame type: 10 values') \u2014 corrected: 10 is the FireRed table size in this decomp; HeartGold offers 20; Black 2 offers none as a user option. The 10 was not a Black 2 value.",
+   "sources": [
+    "pokebw2/include/save/config.h (Config struct: textSpeed 4 bits, soundFlags 2, kanji, cgearOn \u2014 no frame field; Config_Get/Set functions list no frame accessor)",
+    "pokebw2/include/system/bmp_winframe.h (9-piece frame comment; WINFRAME_TRANSFER_NOW/VBLANK/NONE; LoadSysMsgBox type parameter)",
+    "pokefirered-leafgreen/src/text_window_graphics.c:42-53 (gUserFrames entries Type1-Type10), :55-63 (guard idx >= 20 returns entry 0)",
+    "pokefirered-leafgreen/include/global.h:339 (optionsWindowFrameType 5 bits, 'one of the 20 decorative borders' comment)",
+    "pokefirered-leafgreen/src/option_menu.c:495-501 (frame displayed as value + 1)",
+    "pokeheartgold/src/options_app.c:113 (choices-per-entry array: text speed 3, battle scene 2, battle style 2, sound 2, button mode 2, frame 20, entry6 2)",
+    "pokeheartgold/include/options.h:13 (frame 5 bits)"
+   ],
+   "status": "FILLED (per-generation table; art NOT staged \u2014 original art is still owed, and is the only remaining frame item)",
+   "taskItem": "Options frame types as coded"
+  },
+  {
+   "camera": {
+    "boundaryFunctions": [
+     "none",
+     "restrict-rect",
+     "restrict-circle",
+     "repeal-rect"
+    ],
+    "boundarySlots": 4,
+    "createDefaults": {
+     "boundaryId": 65535,
+     "pitch": 0,
+     "useBoundary": true,
+     "yaw": 0,
+     "zoom": 120
+    },
+    "defaultsFields": [
+     "zoom",
+     "pitch",
+     "yaw",
+     "unkC",
+     "unk10",
+     "swapMode",
+     "fov",
+     "zNear",
+     "zFar",
+     "bind",
+     "target"
+    ],
+    "followDelay": {
+     "flags": 2,
+     "maxDelay": 6,
+     "ringCount": 7
+    },
+    "projectionFields": [
+     "type",
+     "param1",
+     "param2",
+     "param3",
+     "param4",
+     "near",
+     "far",
+     "ndcRangeOverride"
+    ],
+    "transformTypes": [
+     "target-relative",
+     "camera-relative",
+     "fixed-all"
+    ]
+   },
+   "id": 8,
+   "lighting": {
+    "battleSets": 10,
+    "fieldSets": 200,
+    "fullNumericStaging": "batch-b/decomp_black2_lighting.json (NOT duplicated here \u2014 disk full; shape + runtime above make those sets usable)",
+    "lightsPerPeriod": 4,
+    "periodFields": [
+     "end hour",
+     "end minutes",
+     "4 lights (enabled, colour rgb, direction xyz)",
+     "diffuse",
+     "ambient",
+     "specular",
+     "emission",
+     "fog",
+     "clear"
+    ],
+    "periodsPerSet": 15,
+    "runtimeMaxEntries": 16,
+    "runtimePick": "entry by day-seconds; period end second adjusted by season; colour + direction interpolated; flash state supported",
+    "totalLights": 12600,
+    "totalPeriods": 3150,
+    "totalSets": 210
+   },
+   "sources": [
+    "pokebw2/src/ov036/weather.c:57-68 (WEATHER_OVERLAYS[15] with overlay ids), :2-40 (FieldWeather struct: 2 layers, transition, state, current, next, fadeIn, pending, 2 tasks, overlayId)",
+    "pokebw2/src/system/zone_weather.c:47 (forced/default), :64 (seasonal calendar), :67 (zone env flags) \u2014 precedence order as coded",
+    "pokebw2/include/constants/battle.h:45-48 (battle weather 1-4)",
+    "pokebw2/include/field/field_camera.h:42-86 (boundary rect/circle structs, FieldCameraDefaults fields, FieldCamera struct with bounds[4])",
+    "pokebw2/src/ov036/field_camera.c (FieldCamera_Create: zoom 120, yaw/pitch 0, useBoundary TRUE, boundaryId 0xffff, delay ring 7/max 6/flags 2; transform func tables of 3; boundary func table of 4)",
+    "pokebw2/src/gfl/g3d_camera.c (projection struct: type, param1-4, near, far, ndcRangeOverride; look-at view)",
+    "pokebw2/src/ov036/field_light.c (FIELD_LIGHT_MAX_ENTRIES 16; FieldLightEntry: period, minute, enabled[4], colours[4], dirs[4], materials[6]; interpolators for colour/direction)",
+    "batch-b/decomp_black2_lighting.json (210 sets, period schema, counts)"
+   ],
+   "status": "FILLED",
+   "stillOpenWithinItem": "Zone/projection/camera VALUE -> Mochiichao-map assignment (which set goes on which Mochiichao map) is a Mochiichao-only assignment and stays in the truly-needs list. The code values themselves are filled.",
+   "taskItem": "Weather / projection / camera / lighting code values as coded",
+   "weather": {
+    "backgroundLayers": 2,
+    "battleWeatherCodes": {
+     "hail": 3,
+     "rain": 2,
+     "sandstorm": 4,
+     "sun": 1
+    },
+    "fieldOverlays": 15,
+    "noneSentinel": 65535,
+    "overlayIdsInOrder": [
+     74,
+     75,
+     76,
+     77,
+     75,
+     75,
+     76,
+     76,
+     75,
+     78,
+     78,
+     78,
+     77,
+     78,
+     78
+    ],
+    "precedence": [
+     "forced override",
+     "linked-game override",
+     "event-flag override",
+     "birthday override",
+     "seasonal-calendar override",
+     "zone default"
+    ],
+    "transitionFunctions": [
+     "sequential",
+     "crossfade"
+    ]
+   }
+  },
+  {
+   "filledValue": "Device RTC cached date. season = (month - 1) % 4: 0 spring, 1 summer, 2 autumn, 3 winter. Months: Jan/May/Sep spring; Feb/Jun/Oct summer; Mar/Jul/Nov autumn; Apr/Aug/Dec winter. Next/previous are modulo-4. Force-season-sync flag: while set, the stored season wins over RTC.",
+   "id": 9,
+   "priorBlockedRow": "playable-wiring 7.8 (season clock source: device vs in-game) \u2014 resolved to device RTC with a stored-season override flag.",
+   "sources": [
+    "pokebw2/src/system/season.c:29-36 (Season_GetRealTime: RTC_GetCachedDate, (month - 1) % SEASON_COUNT), :19-27 (GameData_GetSeasons: force-sync override), :38-45 (next/previous modulo 4)",
+    "pokebw2/include/system/season.h:6-12 (SEASON_SPRING 0, SUMMER 1, AUTUMN 2, WINTER 3, COUNT 4)"
+   ],
+   "status": "FILLED",
+   "taskItem": "Season clock from device RTC as coded"
+  },
+  {
+   "filledValue": "Badge mart: stock file index = BADGE_SHOP_DAT_IDS[badgeCount] = [0,1,1,2,2,3,3,4,5] for badge counts 0..8. Non-badge shops: file = fileId + 6, count from the per-file shop-item-counts table. Prices: item price parameter with bargain modifier applied. List kinds: items, move-machines with numbers, tutor moves. Currencies: money, battle points, tutor shards.",
+   "id": 10,
+   "notFilledWithinItem": "The per-file item lists themselves (which items sit in badge-mart files 0-5 and in each fileId + 6 file) live in the shop-items archive, which has no decomp JSON on disk. They are NOT guessed here; extracting them is owed work, counted in the report as 1 owed extraction, not as a Mars decision.",
+   "priorBlockedRow": "playable-wiring E14 (badge-growing stock) \u2014 resolved as a progression rule; the Mochiichao catalogue text/prices for its own shops remain original work (truly-needs list).",
+   "sources": [
+    "pokebw2/src/ov036/scrcmd_shop.c:278 (BADGE_SHOP_DAT_IDS table), :1063-1074 (ShopUI_LoadPokeMartItems: badge-mart file pick, else fileId + 6, count table, price + bargain)",
+    "pokebw2/src/ov036/scrcmd_shop.c:60-90 (shop id enum incl. badge mart; list kinds items/TMs/moves; currencies money/BP/shards)"
+   ],
+   "status": "FILLED (progression rule; per-file item lists are extraction work, not invented)",
+   "taskItem": "Shop stock progression as coded"
+  },
+  {
+   "counts": {
+    "facilities": 6,
+    "facilitySetFiles": 6000,
+    "facilityTrainerFiles": 1285,
+    "filesCarryingLevelField": 0
+   },
+   "distinction": "Non-facility trainer parties DO carry levels in pokebw2/res/trainers/data files (814 trainers staged earlier). That is a different system and must not be presented as a facility rule.",
+   "filledValue": null,
+   "id": 11,
+   "priorBlockedRow": "playable-wiring DS18/WG5 (facility level rules) \u2014 remains open ONLY as a Mochiichao design choice (pick a facility level rule for the original game), not as a source lookup. It is the single source-row that could not be filled.",
+   "reasonAbsent": "Facility trainer and set files carry no level field (set fields: creature ref, moves, ev flags, nature, held item, form). The 'level' variable in the subway picker code is a difficulty tier that selects a trainer range, not a creature level. No facility creature level rule exists in the code read to invent or copy; a commonly assumed value (e.g. 50) is deliberately NOT staged.",
+   "sources": [
+    "batch-c/decomp_black2_trainer_facilities.json (facilityCount 6, totalTrainerFiles 1285, totalPokemonSetFiles 6000, levelRange null with note 'absent: 0/1285 facility trainer files and 0/6000 set files carry a level field')",
+    "pokebw2/res/trainers/facilities/*/*/*.json set fields (creature ref, moves, ev_flags, nature, item, form \u2014 no level field)",
+    "pokebw2/src/ov033/bsubway_trainers.c:83-164 (picker 'level' selects trainer ranges by difficulty tier)"
+   ],
+   "status": "NOT FILLED FROM SOURCE \u2014 genuinely absent (counts given, nothing invented)",
+   "taskItem": "Facility level rules as coded"
+  },
+  {
+   "id": 12,
+   "menuLayouts": "Swappable all-gen layouts + one editor per menu type: apply-all/menus-wallpapers/menuLayoutCatalogue.ts, menuEditorSpec.md, MenuLayoutEditorSkeleton.tsx. No single layout is picked in this pass.",
+   "sources": [
+    "apply-all/true-chart/19-reconciliation.json (19-set, 361 cells, Deep 37 no-equivalent)",
+    "apply-all/true-chart/true-chart.json (12-set, counts sourced 28 / sourced-neutral 49 / conflict-neutral 25 / analogue-filled 19 / no-equivalent 23)",
+    "apply-all/menus-wallpapers/wallpaperCatalogue.ts, uncappedStorage.ts, menuLayoutCatalogue.ts, menuEditorSpec.md",
+    "pokebw2/src/system/box_savedata.c (BOX_WALLPAPER_NORMAL_COUNT 16; wallpapers cycle 0..15 across boxes)",
+    "pokebw2/include/save/box.h (SetFlags/CheckFlags for extra wallpaper sets 1 and 2)"
+   ],
+   "status": "APPLIED BY REFERENCE to sibling staging (other lanes' files untouched)",
+   "taskItem": "Mars 07:46 overlays: menu layouts, True chart 19, wallpapers (applied by reference, not duplicated)",
+   "trueChart19": "19 elements (18 legacy type words + Deep), 361 cells: 324 legacy cells from the modern 18 chart (Gen 6+ cross-check; decomps on disk predate the 18th type, so those cells are modern-chart, not decomp), 37 Deep-involved cells flagged neutral 1.0 with status no-equivalent (no game or modding doc on disk gives a Deep matchup). Staged in apply-all/true-chart/19-reconciliation.json; 12-element sibling chart (true-chart.json, 144 cells, 96 backed / 48 flagged) is a different vocabulary and is NOT merged into the 19-set here.",
+   "trueChartVocabularyFlag": "The live game code uses 12 True Elements while the 07:46 decision locks 19. This pass stages the 19-set as decided and flags the 12-vs-19 vocabulary reconciliation as owed parent-lane work \u2014 it does not silently pick one vocabulary for the game.",
+   "wallpapers": "Preset counts per gen + community + user-upload path: apply-all/menus-wallpapers/wallpaperCatalogue.ts (incl. correction: FireRed preset count is 16, not 17 as a main constant claims) and uncappedStorage.ts. Black 2 baseline verified here: 16 normal wallpapers cycling across boxes + 2 extra unlockable sets (box_savedata.c, box.h SetFlags/CheckFlags). Upload path (original art from phone storage) is a feature requirement from the 07:46 decision, staged in the sibling catalogue, not implemented here (staged only)."
+  }
+ ],
+ "rule": "Mars fill-from-source rule 2026-10-27 ~07:43 CDT: any gap Pokemon game code itself, all games on disk, or the modding community can fill is filled from that source at 100% and not asked. Black 2 (most recent gen on disk) is canonical where generations differ; source values/structures as-is elsewhere.",
+ "stagedOnly": true,
+ "validation": {
+  "jsonParse": "filled-from-source.json parses (verified by the report step).",
+  "tsCheck": "filled-from-source.ts is zero-import typed constants; MOVE_CATEGORY_BY_INDEX length 560 verified against generated/moves.txt order. Full tsc gate was NOT run: disk is 100% full (25 MB free at check), so no node_modules work was attempted; the PR worker must run tsc before any merge."
+ }
+}
