@@ -1,0 +1,530 @@
+{
+  "episode": "EP01 - The Garden Has a Ghost",
+  "script_status": "LOCKED (EP01-SHOOTING-SCRIPT-v2.md)",
+  "finish_target": "-14 LUFS",
+  "total_cut_seconds": 265,
+  "cuts": [
+    {
+      "cut": "01",
+      "seconds": 8,
+      "content": "Garden Gate wide, morning. Sign: GARDEN KEEPER.",
+      "assets": "BG gate (MAKE), BANK after EP01",
+      "route": "puppet",
+      "flags": [
+        "MAKE: background not yet built"
+      ],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "cloud_drift",
+          "sound": "wind_bed_soft"
+        },
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        },
+        {
+          "visual": "gate_swing_breeze",
+          "sound": "gate_creak_soft"
+        }
+      ]
+    },
+    {
+      "cut": "02",
+      "seconds": 6,
+      "content": "Mochiko arrives, backpack bigger than her.",
+      "assets": "Mochiko rig",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "cloud_drift",
+          "sound": "wind_bed_soft"
+        },
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        }
+      ]
+    },
+    {
+      "cut": "03",
+      "seconds": 5,
+      "content": "Gate swings \u2014 Mochii bouncing on it, squeak-cry.",
+      "assets": "Mochii puppet, gate",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "gate_swing_breeze",
+          "sound": "gate_creak_soft"
+        },
+        {
+          "visual": "leaf_drift",
+          "sound": "leaf_rustle_pass"
+        }
+      ]
+    },
+    {
+      "cut": "04",
+      "seconds": 8,
+      "content": "Mochii circles her at speed; Mochiko's line.",
+      "assets": "walk/bounce cycle BANK",
+      "route": "puppet",
+      "flags": [
+        "VOICE-SCRATCH: Mochiko casting OPEN - dialogue rendered scratch only",
+        "AMBIENT SOUND GAP: distant_creature_crossing_sky paired sound 'distant_cry_faint_GAP' not yet sourced (sfx_pull, FULLSTACK-WIRING phase Now)"
+      ],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        },
+        {
+          "visual": "leaf_drift",
+          "sound": "leaf_rustle_pass"
+        },
+        {
+          "visual": "distant_creature_crossing_sky",
+          "sound": "distant_cry_faint_GAP"
+        }
+      ]
+    },
+    {
+      "cut": "05",
+      "seconds": 10,
+      "content": "Dorowani enters with the Manual; gavel-tap. Rule 1 read.",
+      "assets": "Dorowani rig, Manual prop",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "cloud_drift",
+          "sound": "wind_bed_soft"
+        },
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        }
+      ]
+    },
+    {
+      "cut": "06",
+      "seconds": 12,
+      "content": "POND: tour patter; Mochii stacks berries.",
+      "assets": "BG pond (parts-catalog), berry props",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple",
+          "sound": "pond_lap_light"
+        },
+        {
+          "visual": "reeds_sway",
+          "sound": "reed_rustle"
+        }
+      ]
+    },
+    {
+      "cut": "07",
+      "seconds": 8,
+      "content": "Berries un-stack one by one, unseen hands.",
+      "assets": "berry cycle",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple",
+          "sound": "pond_lap_light"
+        }
+      ]
+    },
+    {
+      "cut": "08",
+      "seconds": 6,
+      "content": "Toy duck rolls UPHILL. Both watch it go.",
+      "assets": "duck prop",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple",
+          "sound": "pond_lap_light"
+        },
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        }
+      ]
+    },
+    {
+      "cut": "09",
+      "seconds": 7,
+      "content": "Kittember tail flame flickers at empty air; ears flat.",
+      "assets": "Kittember rig, tail-flame FX",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "reeds_sway",
+          "sound": "reed_rustle"
+        },
+        {
+          "visual": "leaf_drift",
+          "sound": "leaf_rustle_pass"
+        }
+      ]
+    },
+    {
+      "cut": "10",
+      "seconds": 9,
+      "content": "GREEN: Gabu stomps in, net-cape, chest-beat bellow.",
+      "assets": "Gabu rig (ACTION BEAT A build)",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "11",
+      "seconds": 10,
+      "content": "Sproutle ground-level: frost-patch trail.",
+      "assets": "frost FX decals",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "12",
+      "seconds": 8,
+      "content": "The trail points at the pond. Keeper device check-in eyecatch energy.",
+      "assets": "device prop (OPEN ITEM)",
+      "route": "puppet",
+      "flags": [
+        "HALT: keeper device design is an OPEN ITEM (script)"
+      ],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "13",
+      "seconds": 14,
+      "content": "POND DUSK: stakeout behind bush, five heads.",
+      "assets": "BG pond dusk variant",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple_dusk",
+          "sound": "pond_lap_dusk"
+        },
+        {
+          "visual": "reeds_still",
+          "sound": "dusk_air_hush"
+        }
+      ]
+    },
+    {
+      "cut": "14",
+      "seconds": 10,
+      "content": "Gabu LUNGES \u2014 splash \u2014 smoke through fingers. (ACTION BEAT A)",
+      "assets": "water splash FX",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "15",
+      "seconds": 8,
+      "content": "Tail-flame FLARES. Giant spiky shadow on mist.",
+      "assets": "shadow gag layout",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "16",
+      "seconds": 6,
+      "content": "Reveal of the gag: Sproutle's sprout silhouette.",
+      "assets": "Sproutle rig",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "17",
+      "seconds": 12,
+      "content": "Mist parts. Wispkin, small, shaking, holding the duck.",
+      "assets": "Wispkin float rig",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple_dusk",
+          "sound": "pond_lap_dusk"
+        }
+      ]
+    },
+    {
+      "cut": "18",
+      "seconds": 14,
+      "content": "The shy wail. SUBTITLE (earned moment 1): \"...I keep the garden at night.\"",
+      "assets": "subtitle card style",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate",
+        "subtitle-law-check (earned moments only)"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "19",
+      "seconds": 10,
+      "content": "Mochiko kneels to its level. \"Then let's do it properly.\"",
+      "assets": "\u2014",
+      "route": "puppet",
+      "flags": [
+        "VOICE-SCRATCH: Mochiko casting OPEN - dialogue rendered scratch only"
+      ],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "20",
+      "seconds": 12,
+      "content": "GATE NIGHT: name painted on the keeper board.",
+      "assets": "board prop",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "gate_still_night",
+          "sound": "night_air"
+        },
+        {
+          "visual": "board_creak",
+          "sound": "wood_creak_soft"
+        }
+      ]
+    },
+    {
+      "cut": "21",
+      "seconds": 12,
+      "content": "Rule 12 read aloud (exact wording, bible \u00a75). Cricket beat.",
+      "assets": "\u2014",
+      "route": "puppet",
+      "flags": [
+        "VOICE-SCRATCH: Mochiko casting OPEN - dialogue rendered scratch only"
+      ],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "22",
+      "seconds": 8,
+      "content": "SUBTITLE (earned moment 2), Wispkin over the board: \"...not alone anymore.\"",
+      "assets": "subtitle card",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate",
+        "subtitle-law-check (earned moments only)"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "23",
+      "seconds": 10,
+      "content": "Wispkin floats UP first time; bell rung with smoke tail. (ACTION BEAT B)",
+      "assets": "smoke cycle BANK",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "smoke_drift",
+          "sound": "night_air"
+        }
+      ]
+    },
+    {
+      "cut": "24",
+      "seconds": 6,
+      "content": "TAG: Gabu tips the net-hat. Mochiko's line.",
+      "assets": "\u2014",
+      "route": "puppet",
+      "flags": [
+        "VOICE-SCRATCH: Mochiko casting OPEN - dialogue rendered scratch only"
+      ],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "25",
+      "seconds": 20,
+      "content": "STINGER: DARK FOREST, DAY. Light not reaching in. Stillness.",
+      "assets": "Forest BG (MAKE, daylit-horror)",
+      "route": "puppet",
+      "flags": [
+        "MAKE: background not yet built",
+        "MAKE: Dark Forest BG (stinger) not yet built"
+      ],
+      "gates": [
+        "anim-gate",
+        "likeness-gate",
+        "forest-rules (STILL-FOREST camera, no pattern-fill, colour script stinger)"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "FOREST: pattern still, no cycles",
+          "sound": "forest_silence (no birdsong - by design)"
+        }
+      ]
+    },
+    {
+      "cut": "26",
+      "seconds": 10,
+      "content": "Something stops moving between trunks. Never shown.",
+      "assets": "\u2014",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "FOREST: no ambient motion",
+          "sound": "forest_silence (by design)"
+        }
+      ]
+    },
+    {
+      "cut": "27",
+      "seconds": 12,
+      "content": "SUBTITLE burns in (Rule 12, exact wording). Holds.",
+      "assets": "subtitle card, forest grade",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate",
+        "subtitle-law-check (earned moments only)"
+      ],
+      "ambient_layers": []
+    },
+    {
+      "cut": "28",
+      "seconds": 4,
+      "content": "One leaf falls straight down. SMASH TO BLACK.",
+      "assets": "\u2014",
+      "route": "puppet",
+      "flags": [],
+      "gates": [
+        "anim-gate",
+        "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "single_leaf_fall",
+          "sound": "one_leaf_land_soft"
+        }
+      ]
+    }
+  ],
+  "audio_gaps": [
+    "GAP: source from TRIPPEDD OpenGameArt index at mix",
+    "GAP: same index, or foley at mix"
+  ],
+  "ambient_gate": "PASS rule: every ambient visual layer names a paired sound row; GAP-paired layers are flagged per cut, never silent (LIVING-WORLD directive 2026-10-27)",
+  "global_open_items": [
+    "Mochiko voice casting (all Mochiko dialogue = scratch until decided)",
+    "Keeper device design (cut 12 HALT)",
+    "What stopped moving in the Dark Forest (never filled in silently)"
+  ]
+}

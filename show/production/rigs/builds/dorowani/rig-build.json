@@ -1,0 +1,56 @@
+{
+  "schema": "mochiichao-show/rig-build/v1",
+  "character": "dorowani",
+  "version": "001",
+  "source_art": "public/assets/show-bundles/dorowani/dorowani.transparent.png",
+  "canvas": [
+    1600,
+    1600
+  ],
+  "frame_rate": 24,
+  "parts": [
+    {
+      "name": "head",
+      "box": [
+        0,
+        0,
+        1600,
+        470
+      ]
+    },
+    {
+      "name": "torso",
+      "box": [
+        0,
+        470,
+        1600,
+        1150
+      ]
+    },
+    {
+      "name": "base",
+      "box": [
+        0,
+        1150,
+        1600,
+        1600
+      ]
+    }
+  ],
+  "pivots": {
+    "neck": [
+      803,
+      470
+    ],
+    "hip": [
+      803,
+      1150
+    ],
+    "root": [
+      803,
+      1590
+    ]
+  },
+  "mouth_system": "Blair 10-viseme Graphic symbols (per rig standard) - symbol frames authored at assembly",
+  "status": "SEGMENTATION + PIVOT PROOF v1. ROM proof sheet rendered from these parts. Full puppet assembly (symbol mouths/eyes/hands, deformation) is the next build step in Tahoma2D per PIPELINE.md."
+}

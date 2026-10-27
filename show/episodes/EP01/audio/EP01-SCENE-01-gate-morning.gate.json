@@ -1,0 +1,41 @@
+{
+  "scene": "EP01-SCENE-01-gate-morning",
+  "cuts": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05"
+  ],
+  "bed_file": "EP01-SCENE-01-gate-morning.wav",
+  "target": {
+    "integrated_lufs": -14.0,
+    "true_peak_dbtp": -1.0
+  },
+  "measured": {
+    "input_i": "-14.18",
+    "input_tp": "-1.00"
+  },
+  "gates": {
+    "duration_ok": true,
+    "loudness_within_1LU": true,
+    "true_peak_ok": true
+  },
+  "flags": [
+    "VOICE-SCRATCH: Mochiko lines (cuts 02/04/05 dialogue) not voiced - casting OPEN; bed = music + cries by design"
+  ],
+  "events": [
+    {
+      "at_s": 14.0,
+      "role": "Mochii squeak-cry (cut 03, gate bounce)"
+    },
+    {
+      "at_s": 19.5,
+      "role": "Mochii cry punctuation (cut 04)"
+    },
+    {
+      "at_s": 27.0,
+      "role": "Dorowani cry (cut 05, Manual entrance)"
+    }
+  ]
+}

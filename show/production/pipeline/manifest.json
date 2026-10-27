@@ -1,0 +1,31 @@
+{
+  "studio_name": "Mochiichao Production Studio",
+  "license_umbrella": "Free-to-Use (proprietary & open source eligible; non-commercial weights restricted to scratch)",
+  "tiers": {
+    "tier_1": {
+      "name": "Showrunner & Script",
+      "tools": ["House screenplay pipeline (Markdown/Fountain in git)", "build_manifest.py", "Canon validator (SEASON-CANON-MAP)"],
+      "owns": "show/episodes/, show/bible/, show/production/pipeline/state.json (tier_1 section)"
+    },
+    "tier_2": {
+      "name": "Visual Generation",
+      "tools": ["ComfyUI (Kaggle)", "Wan 2.2 TI2V 5B", "Wan22 Turbo LoRA", "ComfyUI-WanVideoWrapper", "TeaCache (finals path)", "Kaggle T4 x2"],
+      "owns": "show/production/tooling/kaggle/, show/shared/clip-index.json"
+    },
+    "tier_3": {
+      "name": "Rigging & Compositing",
+      "tools": ["Blender 4.5", "OpenToonz 1.8", "TextRig (DragonBones output)", "Rigby2D", "Natron"],
+      "owns": "show/production/rigs/, show/assets/animations/"
+    },
+    "tier_4": {
+      "name": "Editorial & Assembly",
+      "tools": ["Kdenlive", "Ardour", "Audacity", "LMMS", "MuseScore", "FFmpeg finish spine (-14 LUFS)"],
+      "owns": "show/episodes/*/animatic/, episode audio beds, show/production/PRODUCTION-LOG-*.md"
+    }
+  },
+  "restricted_weights": [
+    { "tool": "MusicGen", "licence": "CC-BY-NC (weights)", "status": "SCRATCH_ONLY_NON_SHIP" },
+    { "tool": "F5-TTS", "licence": "CC-BY-NC (weights)", "status": "SCRATCH_ONLY_NON_SHIP" },
+    { "tool": "Wan22 Turbo LoRA (Kijai repack)", "licence": "Upstream Self-Forcing MIT; repack card declares no licence", "status": "RECHECK_BEFORE_COMMERCIAL_SHIP" }
+  ]
+}
