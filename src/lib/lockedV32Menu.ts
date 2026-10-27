@@ -106,7 +106,34 @@ export const LOCKED_V32_MENU = {
   // white orbit reads correctly); only the MAIN_MENU slot uses the
   // v32-matched asset. Asset canvas 900x548 = this slot exactly.
   logo: { image: "V32_MATCHED" as const, x: 150, y: 180, w: 900 },
-  cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5 },
+  // Cloud VISIBLE-shape box (locked spec + v21 step): the visible cloud
+  // shape spans x250-950, y648-828, centre (600,738), 700x180.
+  // imgBox is the element box that puts the ORIGINAL puffy-cloud.svg
+  // visible path exactly on that box. The file's visible path fills only
+  // 88.3% of its viewBox width (path x10-540 of 600) and 73.2% of its
+  // height (path y40-245 of 280), so rendering it fill into the 700x180
+  // box showed a 341-wide cloud centred at x583, 132 tall — 17px left
+  // and 48px short (measured in render, not from the box).
+  // TWO measured rendering facts (Chrome, verified in a standalone
+  // render of this exact element AND in the menu render, which agree):
+  // (1) a plain <img> applies the SVG's default meet inside the box and
+  // letterboxes the viewBox (imgBox 792x246 alone landed 378-844 wide,
+  // not 250-950); (2) an <svg><image preserveAspectRatio="none">
+  // does NOT stretch to the frame either — it renders the content at
+  // 0.851 x frame width, centred 0.044 x frame width LEFT of the frame
+  // centre, 0.671 x frame height tall, top at 0.191 x frame height
+  // (measured: 674-wide content in a 792 frame, stroke 260-934 in the
+  // menu, centre 597 — centred right but 25px narrow).
+  // imgBox (225,599,823x258) is therefore the CALIBRATED frame that
+  // lands the content on the locked box under fact (2):
+  // width 823 x 0.851 = 700, centre 636.5 - 0.044 x 823 = 600,
+  // height 258 x 0.671 = 173, top 599 + 0.191 x 258 = 648.
+  // SHAPE TRANSFORM, NOT A REDRAW (Mars 2026-10-26 18:13 CDT): the file
+  // is untouched; only its rendered scale/position change.
+  // File untouched. BANNED / DO NOT USE: mochiichao-main-cloud-v32.svg
+  // (the #184 trace) — deleted from main by Mars's order 2026-10-26;
+  // it is NOT the cloud file and must never be rendered again.
+  cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5, imgBox: { x: 225, y: 599, w: 823, h: 258 } },
   mochii: { x: 170, y: 790, w: 110, h: 110, bobAmp: 8, bobPeriod: 4.5 },
   panels: [
     { key: "CONTINUE", x: 300, y: 788, w: 600, h: 110, fill: "#ff96c8", labelSize: 34 },
