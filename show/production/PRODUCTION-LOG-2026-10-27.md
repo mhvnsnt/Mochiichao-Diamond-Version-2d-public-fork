@@ -466,6 +466,59 @@ offline/Kaggle-seat tool, not an interactive one. backends.json
 status for birefnet is now "measured" with these numbers in
 the entry; it is not wired into generate_bundle.py.
 
+---
+
+## 2026-10-27 — FULL MACHINE-SET IMPORT PROGRAMME, PHASE 1: MASTER REGISTRY LANDED
+
+Owner programme (2026-10-27): import the complete multi-generation TM/HM move sets and their move
+animations — from the games and modern public communities, wherever publicly available — into the
+game, universe, and canon, as the reference library from which show moves and show move-animations
+are built.
+
+CANON NAMING (owner-locked): the TM-equivalent class is GENERAL MOVES; the HM-equivalent class is
+RARE MOVES. Acquisition stays Pokemon-like: General Moves are obtained by searching and fighting
+through the world; Rare Moves are the scarce class and may also arrive pre-known on a creature or
+through alternate acquisition routes (owner's comparison: how Pokemon GO hands them out).
+
+CLASS RULE (owner-locked): RARE WINS — a move that was an HM in any generation is a Rare Move even
+where later generations list it as a TM (Rock Smash, Flash; Gen-9 TM listings of Fly/Surf/Waterfall
+stay Rare). TM-only = General. Never-machine moves carry no machine class. Per-generation history is
+preserved in every registry row.
+
+TWO-LANE CANON (owner-locked): the SHOW handles moves the way the Pokemon anime does — moves are
+skill, learned through training/practice/observation/tutors; Rare Moves arrive known or are innate
+capability; machine discs are not routine on screen (an Origins-style physical machine is at most a
+rare story object). The GAME handles moves the way the Pokemon games do — the General Moves / Rare
+Moves machine system, found and fought through the world. Each lane follows its own medium's canon.
+
+WHAT LANDED (show/production/moves-registry/):
+- machine-registry.json — 352 unique moves that have ever been a TM/HM in Generations 1-9:
+  341 General Moves + 11 Rare Moves (Cut, Defog, Dive, Flash, Fly, Rock Climb, Rock Smash, Strength,
+  Surf, Waterfall, Whirlpool); rare-wins precedence applied to 7 dual-history rows. Built from 2,372
+  fetched PokeAPI machine records (BSD-3-Clause) reconciled with the in-repo tables (gen5plus,
+  Black 2 decomp); stats provenance recorded per row. 13 rows map onto our playable 36.
+- INDEX.md — computed counts, doctrine (anatomy-variance: a move's animation depends on the
+  performer's anatomy — shape, size, build, mythical/legendary class; one performance is never the
+  universal animation; every registry row carries the variance field), reconciliation, Show Bible
+  hook (incl. the anime move-count convention — no enforced four-move limit — and the two Rare Move
+  precedents: field capability as body+job, and prestige techniques gated like Z-Moves / examined
+  Terastallization), and the honest gaps list (BDSP records partial in source; Legends Z-A numbering
+  PokeAPI-only for now; TRs counted — 100 — and excluded by scope).
+- ANIMATION-SOURCE-CATALOGUE.md — public animation sources surveyed with licences verified at
+  source. Verdicts: metadata is pullable (PokeAPI pulled this phase; Showdown server tables MIT,
+  next phase); all animation choreography/appearance sources (pret decompilations,
+  fuddlesworth/pokebw2, Showdown client AGPL-3.0, Spriters Resource, Bulbagarden Archives) are
+  community-extracted reference — REFERENCE-ONLY. No animation assets were pulled.
+- RENAME-WORKSHEET-BATCH-1.md — 40 drafted near-synonym names under the synonym-rename rule
+  (coolest near-synonym, meaning preserved), DRAFT — OWNER APPROVAL PENDING. No game files changed.
+
+RECONCILIATION (computed): owner's B2/W2 list — 101/101 slots match the fetched data exactly (and
+the in-repo Black 2 item table holds exactly 101 TM/HM items). Owner's SV+DLC list — 227/229 slots
+match; 2 discrepancies: TM106 is Drill Run (not Acrobatics) and TM116 is Stealth Rock (not Energy
+Ball) — which explains the list's two internal duplicates (Acrobatics x2, Energy Ball x2; TM014
+Acrobatics and TM119 Energy Ball are correct as listed). Registry follows the games' data;
+discrepancies logged in INDEX.md, not silently corrected.
+
 ## EPISODE BUILDER - episode_build.py (2026-10-27)
 One-command episode assembler landed at
 show/production/tooling/build-manifest/episode_build.py, chaining

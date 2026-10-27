@@ -1,0 +1,177 @@
+{
+  "schema": "mochiichao-show/character-sheet/v1",
+  "species": "kittember",
+  "kind": "character-sheet clip bundle",
+  "created_utc": "2026-10-27T22:48:54.361073+00:00",
+  "source": {
+    "rig": "show/production/rigs/builds/kittember/ (TextRig whole-image DEFORM rig over the canon cutout)",
+    "rig_texture_md5": "ffb60b1cf0cc714cc35eadbf9f839935",
+    "canon_cutout_md5": "ffb60b1cf0cc714cc35eadbf9f839935",
+    "likeness_note": "The rig deforms the canon pixels themselves - no redraw, no drift by construction."
+  },
+  "canvas": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "note": "square sheet canvas; armature auto-fit to 90% of frame, as rendered by the TextRig renderer"
+  },
+  "poster": {
+    "path": "kittember-poster.png",
+    "sha256": "26d3fbe07b914728ae6aebf12e05d8589b904a7849fedce359843446227381a6",
+    "bytes": 107304,
+    "source": "frame 0 of idle (transparent PNG)"
+  },
+  "animations": {
+    "idle": {
+      "role": "idle",
+      "rig_animation_name": "idle",
+      "duration_s_rig": 3.8,
+      "motion_verification": {
+        "distinct_frame_checksums": 112,
+        "distinct_mesh_vertex_states": 114,
+        "frames_total": 114,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "kittember-idle.mp4",
+        "sha256": "9a780941c0125dd474df3d5674471133e87cd2ca55210b99c8e14bdf18efbccd",
+        "bytes": 91776,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 114,
+          "duration_s": 3.8,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "kittember-idle.transparent.webm",
+        "sha256": "a442f641936c878091fe8dd6560d65eb5d0e305751af15bdacee4ee6f1c83913",
+        "bytes": 98790,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 114,
+          "duration_s": 3.8,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "tail_flame_wave": {
+      "role": "signature animation",
+      "rig_animation_name": "tail_flame_wave",
+      "duration_s_rig": 2.2,
+      "motion_verification": {
+        "distinct_frame_checksums": 66,
+        "distinct_mesh_vertex_states": 66,
+        "frames_total": 66,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "kittember-tail_flame_wave.mp4",
+        "sha256": "dd16f91bbc3421db9c6f2a21c0196a5b3747a86b3c3fd936c476a4d17d810c92",
+        "bytes": 72462,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 66,
+          "duration_s": 2.2,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "kittember-tail_flame_wave.transparent.webm",
+        "sha256": "828db78f24928b63575226ec0358d0a3d9051d8e51cf92e5fac004fc0c8ea852",
+        "bytes": 94732,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 66,
+          "duration_s": 2.2,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    },
+    "head_tilt": {
+      "role": "expression animation",
+      "rig_animation_name": "head_tilt",
+      "duration_s_rig": 1.6,
+      "motion_verification": {
+        "distinct_frame_checksums": 25,
+        "distinct_mesh_vertex_states": 25,
+        "frames_total": 48,
+        "method": "TextRig renderer per-strip frame checksums + mesh vertex-buffer checksums (vertex states move only under real skinning/FFD deformation)"
+      },
+      "mp4": {
+        "path": "kittember-head_tilt.mp4",
+        "sha256": "1725e1b4c3672a905a8c3f84aef0ed87a1a6c0a39372855894874f0a78fb1781",
+        "bytes": 36837,
+        "spec": {
+          "codec": "h264",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": null
+        },
+        "note": "white-field MP4 (MP4 cannot hold transparency; the WebM twin carries the alpha)"
+      },
+      "transparent_webm": {
+        "path": "kittember-head_tilt.transparent.webm",
+        "sha256": "1cac6f307beeec288010c10ab93b6dece35876876536f6d595025fe9d6df3e2c",
+        "bytes": 44082,
+        "spec": {
+          "codec": "vp9",
+          "width": 512,
+          "height": 512,
+          "fps": 30.0,
+          "frames": 48,
+          "duration_s": 1.6,
+          "pix_fmt": "yuv420p",
+          "alpha_mode_tag": "1"
+        },
+        "status": "PRODUCED_NATIVE_ALPHA",
+        "method": "TextRig renderer captured with backgroundAlpha 0 (native alpha frames) -> VP9 yuva420p, alpha_mode=1"
+      }
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "promotion_status": "PENDING_OWNER",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "clip_gated": "kittember-idle.mp4",
+    "reference": "canon full-body cutout kittember.png (full-body mode; pose-matched references retired)",
+    "verdict_recommendation": "FAIL",
+    "metrics": {
+      "ssim_union": 0.4985,
+      "silhouette_iou": 0.752,
+      "rgb_mad_255": 53.454,
+      "rgb_mad_norm": 0.2096
+    },
+    "thresholds": {
+      "ssim_min": 0.5,
+      "silhouette_iou_min": 0.55,
+      "rgb_mad_255_max": 40.0
+    }
+  }
+}

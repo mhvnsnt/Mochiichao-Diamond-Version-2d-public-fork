@@ -65,14 +65,14 @@ Cooldown table (ms), provisional, from `src/lib/creatureCooldowns.ts`:
 
 | Move | ms | Move | ms | Move | ms |
 |---|---|---|---|---|---|
-| Aqua Shot | 1080 | Aqua Cannon | 680 | Hydro Surge | 600 |
-| Aqua Jet | 880 | Ember Toss | 1080 | Fire Stream | 680 |
+| Water Orb | 1080 | Aqua Cannon | 680 | Hydro Surge | 600 |
+| Hydro Rush | 880 | Ember Toss | 1080 | Fire Stream | 680 |
 | Inferno Wave | 600 | Fire Punch | 800 | Petal Barrage | 760 |
-| Solar Blast | 600 | Razor Leaf | 960 | Vine Lash | 1040 |
+| Solar Blast | 600 | Leaf Blast | 960 | Vine Lash | 1040 |
 | Spark Shot | 1080 | Thunderbolt | 680 | Wild Charge | 680 |
 | Metal Strike | 1000 | Iron Barrage | 1120 | Flash Cannon | 760 |
-| Earth Tremor | 600 | Mud Blast | 960 | Earth Power | 680 |
-| Bulldoze | 920 | Shadow Pulse | 760 | Dark Pulse | 760 |
+| Tremor | 600 | Mud Blast | 960 | Earth Power | 680 |
+| Bulldoze | 920 | Dark Wave | 760 | Dark Pulse | 760 |
 | Night Slash | 840 | Crunch | 760 | Gust Wave | 1080 |
 | Wing Assault | 720 | Tackle | 1080 | Quick Attack | 880 |
 | Body Slam | 720 | Mind Blast | 680 | Dragon Claw | 760 |
