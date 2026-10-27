@@ -30,7 +30,8 @@ import {
   MenuCustomSettings, MenuAnimationStyle, DEFAULT_MENU_CUSTOM, loadMenuCustom, persistMenuCustom,
   applyMenuCustom, customToLayoutRecord, resolveDayNightPalette,
   resolveBackgroundBiome, biomeBackgroundCss, spriteDisplayScale,
-  ANIMATION_STYLES, MENU_ANCHORS, MENU_ORDERS, BACKGROUND_BIOMES,
+  paintedBackgroundImage, sanitisePaintedBackground,
+  ANIMATION_STYLES, MENU_ANCHORS, MENU_ORDERS, BACKGROUND_BIOMES, PAINTED_BACKGROUNDS,
   SPRITE_PROPORTIONS, TEXT_SIZES, TEXT_SIZE_PX, TEXT_COLORS_CUSTOM,
   DIALOGUE_BOX_STYLES, DIALOGUE_BOX_RADIUS, DAY_NIGHT_MODES, DAY_NIGHT_VISUALS,
   getGameTimeOfDay, visualStateOf, dayNightBlend,
@@ -167,7 +168,7 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
   const [custom, setCustom] = useState<MenuCustomSettings>(() => {
     const stored = loadMenuCustom();
     const fromPreset = loadPresets()[0]?.custom;
-    if (fromPreset) return { ...DEFAULT_MENU_CUSTOM, ...fromPreset, layout: { ...DEFAULT_MENU_CUSTOM.layout, ...fromPreset.layout }, backgroundPainted: false };
+    if (fromPreset) { const painted = sanitisePaintedBackground(fromPreset.paintedBackground); return { ...DEFAULT_MENU_CUSTOM, ...fromPreset, layout: { ...DEFAULT_MENU_CUSTOM.layout, ...fromPreset.layout }, paintedBackground: painted, backgroundPainted: painted !== 'OFF' }; }
     return stored;
   });
   const setC = (patch: Partial<MenuCustomSettings>) => setCustom(c => ({ ...c, ...patch }));
@@ -426,7 +427,7 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
     const next = presets[(i < 0 ? 0 : i + dir + presets.length) % presets.length];
     setPreset(next);
     setDraft({ ...next.settings });
-    if (next.custom) setCustom({ ...DEFAULT_MENU_CUSTOM, ...next.custom, layout: { ...DEFAULT_MENU_CUSTOM.layout, ...next.custom.layout }, backgroundPainted: false });
+    if (next.custom) { const painted = sanitisePaintedBackground(next.custom.paintedBackground); setCustom({ ...DEFAULT_MENU_CUSTOM, ...next.custom, layout: { ...DEFAULT_MENU_CUSTOM.layout, ...next.custom.layout }, paintedBackground: painted, backgroundPainted: painted !== 'OFF' }); }
     setSavedMsg(`Theme loaded (draft): ${next.name}. SAVE + BACK to persist.`);
   };
   const clampStep = (v: number, min: number, max: number, step: number, dir: 1 | -1) =>
@@ -450,8 +451,8 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
     { label: 'ANIMATION SPEED', value: `${custom.animationSpeed.toFixed(2)}x`, onLeft: () => setC({ animationSpeed: clampStep(custom.animationSpeed, 0.5, 2, 0.25, -1) }), onRight: () => setC({ animationSpeed: clampStep(custom.animationSpeed, 0.5, 2, 0.25, 1) }), note: 'Global animation speed multiplier (also the gameplay-adjacent animation-speed row — one row, counted once). Sets --menu-anim-speed; preview strip duration follows it.' },
     { label: 'SWAY', value: String(custom.sway), onLeft: () => setC({ sway: Math.max(0, custom.sway - 1) }), onRight: () => setC({ sway: Math.min(8, custom.sway + 1) }), note: 'Sine sway amplitude (px, locked v32 = 3). Drives the preview strip SINE/FLOW motion live; full sine motion on real menus: NEED.' },
     // Background — biome / painted GAP / symbol layer / fade.
-    { label: 'BACKGROUND BIOME', value: custom.backgroundBiome, onLeft: () => setC({ backgroundBiome: cycle(BACKGROUND_BIOMES, custom.backgroundBiome, -1) }), onRight: () => setC({ backgroundBiome: cycle(BACKGROUND_BIOMES, custom.backgroundBiome, 1) }), note: 'AUTO follows game time (NITE -> night, MORN/DAY -> grass, EVE -> forest). Applies as this screen\'s background gradient on return. Biomes are the existing 8 title biomes (generic terrain only).' },
-    { label: 'PAINTED BACKGROUND', value: 'NEED — menu wiring', onLeft: () => undefined, onRight: () => undefined, note: 'GAP for menus, labelled: painted title backgrounds now exist for 8/8 biomes (Title Backgrounds lane, complete) but they are NOT wired as menu backgrounds yet, so this row changes nothing. Do not claim painted menu backgrounds until that wiring lands.' },
+    { label: 'BACKGROUND BIOME', value: custom.backgroundBiome, onLeft: () => setC({ backgroundBiome: cycle(BACKGROUND_BIOMES, custom.backgroundBiome, -1) }), onRight: () => setC({ backgroundBiome: cycle(BACKGROUND_BIOMES, custom.backgroundBiome, 1) }), note: 'AUTO follows game time (NITE -> night, MORN/DAY -> grass, EVE -> forest). Applies as this screen\'s background gradient on return. This gradient row offers 8 biomes; mythar + lantern exist as painted options only (see PAINTED BACKGROUND below).' },
+    { label: 'PAINTED BACKGROUND', value: custom.paintedBackground === 'OFF' ? 'OFF (gradient)' : custom.paintedBackground.toUpperCase(), onLeft: () => { const next = cycle(PAINTED_BACKGROUNDS, custom.paintedBackground, -1); setC({ paintedBackground: next, backgroundPainted: next !== 'OFF' }); }, onRight: () => { const next = cycle(PAINTED_BACKGROUNDS, custom.paintedBackground, 1); setC({ paintedBackground: next, backgroundPainted: next !== 'OFF' }); }, note: 'WIRED 2026-10-27 (Mars approval): cycles OFF + all 10 v2 title paintings (snow, grass, water, sand, stone, forest, rain, night, mythar, lantern). OFF is the default — with OFF the gradient background renders exactly as before and no painting is shown. A painting, when picked, replaces the gradient with that 1600x900 painting as this screen\'s background layer (BACKGROUND FADE still controls its opacity). No painting is mapped to a specific menu; all 10 go through this one row. Persists on SAVE + BACK like other Menu Custom rows.' },
     { label: 'SYMBOL LAYER', value: custom.symbolLayer ? 'ON' : 'OFF', onLeft: () => setC({ symbolLayer: !custom.symbolLayer }), onRight: () => setC({ symbolLayer: !custom.symbolLayer }), note: 'Hearts / stars / sparkle layer over the background. Shown on this screen when ON (symbol strip below the header).' },
     { label: 'BACKGROUND FADE', value: `${custom.backgroundFade}%`, onLeft: () => setC({ backgroundFade: Math.max(0, custom.backgroundFade - 10) }), onRight: () => setC({ backgroundFade: Math.min(100, custom.backgroundFade + 10) }), note: 'Background-layer opacity %. Applies to this screen\'s background + symbol strip on return.' },
     // Day / night — HeartGold gf_rtc structure, GAME (device) time.
@@ -595,6 +596,10 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
   // anchor, text extras on row labels, touch height on rows.
   const renderPalette = resolveDayNightPalette(custom.dayNightMode, custom.dayNightCustom, custom.dayNightTransition);
   const renderBiome = resolveBackgroundBiome(custom.backgroundBiome);
+  // Painted layer: null when OFF (gradient path below, unchanged);
+  // otherwise the picked v2 painting's bundled URL, drawn as a
+  // cover layer over the gradient and under panels/overlays.
+  const paintedImage = paintedBackgroundImage(custom.paintedBackground);
   const renderBackground = renderBiome
     ? biomeBackgroundCss(renderBiome, custom.backgroundFade)
     : `linear-gradient(180deg, ${renderPalette.skyTop} 0%, ${renderPalette.skyBottom} 100%)`;
@@ -632,6 +637,9 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
 
   return (
     <div className="game-screen bg-[#050810] flex flex-col items-center relative overflow-hidden p-4" style={{ background: renderBackground, justifyContent: anchorJustify, paddingTop: custom.safeArea ? 'max(1rem, env(safe-area-inset-top))' : '1rem', paddingBottom: custom.safeArea ? 'max(1rem, env(safe-area-inset-bottom))' : '1rem' }}>
+      {paintedImage && (
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url(${paintedImage})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: custom.backgroundFade / 100 }} aria-hidden="true"></div>
+      )}
       <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
       {custom.dayNightMode !== 'OFF' && (
         <div className="absolute inset-0 pointer-events-none" style={{ background: renderPalette.tint, opacity: custom.dayNightTint / 100 }}></div>
@@ -689,7 +697,7 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
             <div style={{ fontSize: `${TEXT_SIZE_PX[custom.textSize]}px`, lineHeight: custom.lineSpacing, color: custom.textColor, textShadow: custom.textShadow ? '0 2px 0 rgba(0,0,0,0.6)' : 'none' }}>
               <div className="font-bold">Preview — {custom.animationStyle} at {custom.animationSpeed.toFixed(2)}x, sway ±{custom.sway}px{custom.reducedMotion ? ' (reduced motion: static)' : ''}</div>
               <MenuPreviewMotion style={custom.animationStyle} speed={custom.animationSpeed} sway={custom.sway} reduced={custom.reducedMotion} />
-              <div className="mt-1">Sprite: {custom.spriteProportion}{spriteScale.fallback ? ' — falls back to Chibi, never blank' : ' — chibi path'} · Order: {custom.layout.order} · Anchor: {custom.layout.anchor} · Biome: {renderBiome || 'none'} · Day/night: {custom.dayNightMode === 'AUTO' ? `${gameVisual} (game time)` : custom.dayNightMode === 'CUSTOM' ? custom.dayNightCustom : 'OFF'} · Camera shake: {custom.cameraShake ? 'ON (stored only — NEED in cameras)' : 'OFF'}</div>
+              <div className="mt-1">Sprite: {custom.spriteProportion}{spriteScale.fallback ? ' — falls back to Chibi, never blank' : ' — chibi path'} · Order: {custom.layout.order} · Anchor: {custom.layout.anchor} · Biome: {renderBiome || 'none'} · Painted: {custom.paintedBackground === 'OFF' ? 'OFF (gradient)' : custom.paintedBackground} · Day/night: {custom.dayNightMode === 'AUTO' ? `${gameVisual} (game time)` : custom.dayNightMode === 'CUSTOM' ? custom.dayNightCustom : 'OFF'} · Camera shake: {custom.cameraShake ? 'ON (stored only — NEED in cameras)' : 'OFF'}</div>
             </div>
           </StdWindow>
         )}
