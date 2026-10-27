@@ -1,0 +1,106 @@
+{
+  "batch": "core baseline B",
+  "characters": [
+    {
+      "attributes_used": "Hair back: messy grey hair, thinning on top, grey at sides/back. Skin on neck/hands: light. Outfit back: open patched blue denim jacket, frayed edges, stitched patches, collar at back of neck, long sleeves, orange shirt at cuffs and below jacket hem, patched brown trousers, worn brown lace-up boots (backs).",
+      "flags": [
+        "Back patch placement is generator-invented: the front shows patches on the jacket front/sleeves and trouser fronts, but no canonical back-patch map exists, so the number/positions of patches on the jacket back and trouser backs are NOT a confirmed match — eye-check owed.",
+        "Gear belt buckle is front-only and correctly absent from the back; the belt itself is hidden by the jacket in this render."
+      ],
+      "label": "Junkyard townsperson (no personal name — never invented)",
+      "output": "battle-backs-2026-10-26/junkyard-battle-back-2026-10-26.webp",
+      "reference_front": "in-game-sheets/media-generation-junkyard-battle-front-v1-2026-0-66e9481a-d3d0-4f1a-9ec2-f559073c0c2a.webp",
+      "reference_step8": "in-game-sheets/junkyard-step8-2026-10-26.json",
+      "slug": "junkyard",
+      "output_file": "junkyard-battle-back-2026-10-26.webp"
+    },
+    {
+      "attributes_used": "Hair back: short curly brown hair, full rounded shape. Skin on neck/arms: light brown. Outfit back: oversized white deconstructed jacket, exposed black stitching, raw frayed hem/cuffs, white/grey patchwork, one red patch on the jacket back, wide collar at back of neck, dark grey top barely visible at neck, plain grey trousers, white lace-up sneakers (backs).",
+      "flags": [
+        "Red patch on the jacket back follows the step-8 note that patchwork continues onto the back; its exact back position (upper right) is not confirmed by the front alone — eye-check owed.",
+        "Back collar renders as a wide folded shape that reads slightly hood-like; the front shows a jacket collar, not a hood — eye-check owed."
+      ],
+      "label": "Lab Assistant",
+      "reference_front": "in-game-sheets/media-generation-lab-assistant-battle-front-v1-0-98fdca8f-6318-4c13-83ee-db7101da8a2b.webp",
+      "reference_step8": "in-game-sheets/lab-assistant-step8-2026-10-26.json",
+      "slug": "lab-assistant",
+      "output": "battle-backs-2026-10-26/lab-assistant-battle-back-2026-10-26.webp",
+      "output_file": "lab-assistant-battle-back-2026-10-26.webp"
+    },
+    {
+      "attributes_used": "Hair back: bald head, grey hair at sides/back, small grey topknot tied on top. Skin on neck/hands: light. Outfit back: dark green layered robe, wide layered shoulders, high collar at back of neck, cream patterned under-robe at sleeves and below robe hem, red/gold patterned sash wrapped around waist and visible from behind, brown wrist guards, loose black trousers with gold side stripe, woven brown sandals (backs).",
+      "flags": [
+        "Front-only items correctly absent: braided beard, gold dragon design, jade necklace, front sash pouch/device.",
+        "FLAG — trouser gold stripe position: in this back render the gold stripe runs down the inner side of each leg; the front shows the stripe on the outer side of each leg. This may be a render error — eye-check owed before use.",
+        "Back of the robe is plain dark green; no canonical back design was available to confirm against."
+      ],
+      "label": "Lin Dojo 1 leader",
+      "reference_front": "in-game-sheets/media-generation-lin-battle-front-v1-2026-10-26-0-8440ef88-4061-4756-989e-348e112733b7.webp",
+      "reference_step8": "in-game-sheets/lin-step8-2026-10-26.json",
+      "slug": "lin",
+      "output": "battle-backs-2026-10-26/lin-battle-back-2026-10-26.webp",
+      "output_file": "lin-battle-back-2026-10-26.webp"
+    },
+    {
+      "attributes_used": "Hair back: long black hair tied in a high ponytail falling down the back. Skin on neck/arms: warm tan. Outfit back: plain bright yellow short-sleeve t-shirt with no print on the back, plain blue jeans, brown lace-up boots (backs).",
+      "flags": [
+        "Chest creature print is front-only and correctly absent from the back.",
+        "Ponytail fall: the front ponytail sweeps to one side; the back render centres it down the back. Plausible for a back view, but the exact fall is not confirmed — eye-check owed."
+      ],
+      "label": "Logo Tee townsperson (no personal name — never invented)",
+      "reference_front": "in-game-sheets/media-generation-logo-tee-battle-front-v1-2026-0-9125b71c-3974-4ca2-a585-dc4fd5f659a2.webp",
+      "reference_step8": "in-game-sheets/logo-tee-step8-2026-10-26.json",
+      "slug": "logo-tee",
+      "output": "battle-backs-2026-10-26/logo-tee-battle-back-2026-10-26.webp",
+      "output_file": "logo-tee-battle-back-2026-10-26.webp"
+    },
+    {
+      "attributes_used": "Hair back: black bob ending at the jaw, teal colour at the ends/underside visible from behind. Skin on neck/hands: pale. Outfit back: teal and cream work jacket, teal shoulders/upper back, cream lower back panel, teal side panels, collar at back of neck, long sleeves, white shirt collar barely visible at neck, black cargo trousers with side cargo pockets, white sneakers with teal accents (backs).",
+      "flags": [
+        "FLAG — jacket back colour blocking is generator-interpreted: the front shows a vertical teal/cream panel split, while this back render uses a horizontal teal-over-cream split. The back blocking is NOT confirmed from the front — eye-check owed.",
+        "Front-only items correctly absent: ID lanyard/badge, circuit pocket.",
+        "FLAG — wrist device side: the device appears on the viewer's-left wrist in this back render; check against the front (device on the character's left wrist) for a possible mirror flip — eye-check owed."
+      ],
+      "label": "PC Clerk",
+      "reference_front": "in-game-sheets/media-generation-pc-clerk-battle-front-v1-2026-0-3784b13b-ee36-41e3-abbe-f7266ca57312.webp",
+      "reference_step8": "in-game-sheets/pc-clerk-step8-2026-10-26.json",
+      "slug": "pc-clerk",
+      "output": "battle-backs-2026-10-26/pc-clerk-battle-back-2026-10-26.webp",
+      "output_file": "pc-clerk-battle-back-2026-10-26.webp"
+    },
+    {
+      "attributes_used": "Hair back: short black fade haircut, textured on top, faded at sides/back. Skin on neck/hands: dark brown. Outfit back: neon green long-sleeve shirt, black racing stripes down both sleeves, black-and-white checkered racing-flag panel across the back, one purple kanji character on the lower back over the checkered panel, no pink kanji on the back, grey cargo trousers with side cargo pockets, white lace-up sneakers (backs).",
+      "flags": [
+        "Per step-8, the back shows only the purple kanji (SPEED print is front-only); the pink kanji is correctly absent from this back render.",
+        "Checkered band direction is mirrored relative to the front, as expected for a true back view — eye-check owed to confirm the mirror matches the front diagonal.",
+        "Kanji v3 is the current design per step-8; the v2 approved shirt design is not replaced by this render."
+      ],
+      "label": "Racing townsperson (no personal name — never invented; kanji v3 shirt design, current per step-8)",
+      "reference_front": "in-game-sheets/media-generation-racing-battle-front-v1-2026-10-0-41054b49-37e7-4467-af6a-6bce177eeacd.webp",
+      "reference_step8": "in-game-sheets/racing-step8-2026-10-26.json",
+      "slug": "racing",
+      "output": "battle-backs-2026-10-26/racing-battle-back-2026-10-26.webp",
+      "output_file": "racing-battle-back-2026-10-26.webp"
+    },
+    {
+      "attributes_used": "Hair back: large round black afro. Skin on neck/arms: medium brown. Outfit back: tan martial-arts gi jacket, wide collar at back of neck, loose sleeves, plain tan back, stone-pattern belt tied at waist and visible from behind, loose wide tan trousers ending above the ankle, dark brown lace-up boots (backs).",
+      "flags": [
+        "FLAG — blonde front streak side: the front streak sits on the character's right side; in this back render the blonde edge appears on the viewer's-right side, which reads as the opposite side in a true back view — possible mirror flip, eye-check owed.",
+        "FLAG — dragon wrap continuation: the front/side black dragon design does not continue onto this back render (plain tan back). Whether the dragon wraps onto the back is unknown from the front alone — NOT faked as a match, eye-check owed.",
+        "Boots render plain at the back (laces are front-facing); trousers match the front's wide cropped cut."
+      ],
+      "label": "Terra — current Warp A version (terra-atlas-64x64.png / terra-step8), NOT any superseded variant",
+      "reference_front": "in-game-sheets/media-generation-terra-battle-front-v1-2026-10-0-0fc43ccb-8791-47f3-b776-fabe23f7b7cd.webp",
+      "reference_step8": "in-game-sheets/terra-step8-2026-10-26.json",
+      "slug": "terra",
+      "output": "battle-backs-2026-10-26/terra-battle-back-2026-10-26.webp",
+      "output_file": "terra-battle-back-2026-10-26.webp"
+    }
+  ],
+  "date": "2026-10-26",
+  "method": "Reference image first, then visible attributes only. No character name and no franchise name was put in any generation prompt. All 7 outputs were eye-checked after generation: true back view, full body, no face, no face overlay, no baked shadow, cel style matching the existing battle sheets.",
+  "note_on_folder_contents": "This batch delivers exactly the 7 files below plus this manifest. A file named media-generation-garden-race-official-battle-ba-0-bea0b6eb-2e40-43fd-94a8-719407d66d02.webp was found in this folder during this task; it is NOT part of this batch and was not touched.",
+  "output_dir": "human-characters/in-game-sheets/battle-backs-2026-10-26/",
+  "status": "STAGED, SHOW-FIRST ONLY — NOT PR'd, NOT WIRED, NOT IN THE GAME, NOT ON MAIN",
+  "verification": "All 7 outputs opened and eye-checked after generation: true back view, full body, no face, no face overlay, no baked shadow. No shipped file was edited, no Mars-seen file was overwritten, no PR was made, nothing was wired."
+}
