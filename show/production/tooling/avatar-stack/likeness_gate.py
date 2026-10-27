@@ -18,6 +18,26 @@ Alignment: each image's foreground bounding box is scaled to fit a fixed
 box on a common canvas and pasted centred (scale + translation only — no
 rotation, no warping; a pose that genuinely differs SHOULD score worse).
 
+Calibration v2 (normalized path, reported ALONGSIDE v1): the first
+calibration runs showed the hosted generator REFRAMES its source (a
+full-body still becomes a zoomed upper-body performance), so v1's
+canvas margins and its bilinear-resampled mask (thresholded at >127,
+which erodes thin features on downscale and dilates on upscale) add
+measurement artefacts on top of the real framing difference. The v2
+path normalizes BOTH sides the same way: crop to the foreground bbox
+(frame mask = the same white-distance logic as v1; cutout mask = its
+alpha), resize ASPECT-PRESERVING so the crop fills a common square
+canvas on its long axis (letterbox/pad — never warped to a fixed
+non-square size, because aspect distortion corrupts IoU), resampling
+the mask with NEAREST so silhouette edges stay hard. IoU, SSIM and MAD
+are then computed with the exact v1 definitions on the normalized pair.
+
+The packet reports both paths. The packet VERDICT remains the v1 path
+checked against the shipped thresholds — v2 numbers are diagnostic
+until an owner/scorer records a calibration decision (see
+AVATAR-STACK-PIPELINE.md, "Calibration v2"). Nothing here retunes a
+threshold.
+
 The verdict in the packet is a RECOMMENDATION only. Per the orchestrator
 law (show/production/pipeline/ORCHESTRATOR.md), a gate packet never
 promotes anything itself: promotion_status is always
@@ -129,6 +149,55 @@ def align_to_canvas(rgb, mask):
     return canvas_rgb.astype(np.float32), canvas_msk > 127, scale
 
 
+def normalize_to_square(rgb, mask):
+    """Calibration-v2 normalization: bbox-crop, then aspect-preserving
+    resize so the crop fills a CANVAS x CANVAS square on its long axis,
+    padded (letterboxed) centred — white for RGB, False for the mask.
+    The mask is resampled NEAREST so the silhouette stays hard-edged
+    (v1's bilinear mask + >127 threshold erodes/dilates edges).
+    Returns (canvas_rgb float32 over white, canvas_mask bool, scale).
+    Raises if the mask is empty."""
+    ys, xs = np.where(mask)
+    if len(xs) == 0:
+        raise RuntimeError("empty foreground mask")
+    x0, x1, y0, y1 = xs.min(), xs.max(), ys.min(), ys.max()
+    bw, bh = x1 - x0 + 1, y1 - y0 + 1
+    scale = CANVAS / max(bw, bh)
+    nw, nh = max(1, round(bw * scale)), max(1, round(bh * scale))
+    rgb_crop = Image.fromarray(rgb[y0:y1 + 1, x0:x1 + 1].astype(np.uint8))
+    msk_crop = Image.fromarray((mask[y0:y1 + 1, x0:x1 + 1] * 255).astype(np.uint8))
+    rgb_r = rgb_crop.resize((nw, nh), Image.BILINEAR)
+    msk_r = msk_crop.resize((nw, nh), Image.NEAREST)
+    canvas_rgb = np.full((CANVAS, CANVAS, 3), 255, dtype=np.uint8)
+    canvas_msk = np.zeros((CANVAS, CANVAS), dtype=np.uint8)
+    ox, oy = (CANVAS - nw) // 2, (CANVAS - nh) // 2
+    canvas_rgb[oy:oy + nh, ox:ox + nw] = np.asarray(rgb_r)
+    canvas_msk[oy:oy + nh, ox:ox + nw] = np.asarray(msk_r)
+    return canvas_rgb.astype(np.float32), canvas_msk > 127, scale
+
+
+def score_pair(f_rgb, f_msk, c_rgb, c_msk):
+    """The three gate metrics, with the exact v1 definitions, computed
+    on an already-aligned pair of canvases."""
+    union = f_msk | c_msk
+    inter = f_msk & c_msk
+    iou = float(inter.sum() / union.sum())
+
+    f_gray = f_rgb.mean(axis=2) / 255.0
+    c_gray = c_rgb.mean(axis=2) / 255.0
+    smap = ssim_map(f_gray, c_gray)
+    ssim_union = float(smap[union].mean())
+
+    mad = float(np.abs(f_rgb - c_rgb)[union].mean())
+
+    return {
+        "ssim_union": round(ssim_union, 4),
+        "silhouette_iou": round(iou, 4),
+        "rgb_mad_255": round(mad, 3),
+        "rgb_mad_norm": round(mad / 255.0, 4),
+    }, int(union.sum())
+
+
 def ssim_map(x, y):
     """Windowed SSIM map for two float32 grayscale images in [0,1]."""
     C1, C2 = 0.01 ** 2, 0.03 ** 2
@@ -163,26 +232,17 @@ def measure(clip, species, cutouts_dir, frame_index=None):
     cut_rgb = cut_np[..., :3] * alpha[..., None] + 255.0 * (1 - alpha[..., None])
     cut_mask = alpha > 0.5
 
+    # --- v1 path (unchanged): bbox fit-box alignment, metrics on canvas ---
     f_rgb, f_msk, f_scale = align_to_canvas(frame, frame_mask)
     c_rgb, c_msk, c_scale = align_to_canvas(cut_rgb.astype(np.uint8), cut_mask)
+    measurements, union_px = score_pair(f_rgb, f_msk, c_rgb, c_msk)
 
-    union = f_msk | c_msk
-    inter = f_msk & c_msk
-    iou = float(inter.sum() / union.sum())
+    # --- v2 path (calibration): bbox crop + aspect-preserving letterbox ---
+    f2_rgb, f2_msk, f2_scale = normalize_to_square(frame, frame_mask)
+    c2_rgb, c2_msk, c2_scale = normalize_to_square(cut_rgb.astype(np.uint8),
+                                                   cut_mask)
+    measurements_v2, union_px_v2 = score_pair(f2_rgb, f2_msk, c2_rgb, c2_msk)
 
-    f_gray = f_rgb.mean(axis=2) / 255.0
-    c_gray = c_rgb.mean(axis=2) / 255.0
-    smap = ssim_map(f_gray, c_gray)
-    ssim_union = float(smap[union].mean())
-
-    mad = float(np.abs(f_rgb - c_rgb)[union].mean())
-
-    measurements = {
-        "ssim_union": round(ssim_union, 4),
-        "silhouette_iou": round(iou, 4),
-        "rgb_mad_255": round(mad, 3),
-        "rgb_mad_norm": round(mad / 255.0, 4),
-    }
     context = {
         "clip": str(clip),
         "clip_sha256": sha256_of(clip),
@@ -194,9 +254,19 @@ def measure(clip, species, cutouts_dir, frame_index=None):
                       "frame_scale": round(f_scale, 4),
                       "cutout_scale": round(c_scale, 4),
                       "method": "foreground-bbox fit, centred; scale+translation only"},
-        "union_pixels": int(union.sum()),
+        "union_pixels": union_px,
+        "alignment_v2_normalized": {
+            "canvas": CANVAS,
+            "frame_scale": round(f2_scale, 4),
+            "cutout_scale": round(c2_scale, 4),
+            "method": ("foreground-bbox crop, aspect-preserving resize to "
+                       "fill the square canvas on the long axis, centred "
+                       "letterbox pad; mask resampled NEAREST (hard "
+                       "silhouette); metric definitions identical to v1"),
+        },
+        "union_pixels_v2_normalized": union_px_v2,
     }
-    return measurements, context
+    return measurements, measurements_v2, context
 
 
 def main():
@@ -213,7 +283,7 @@ def main():
     thresholds = {"ssim_min": SSIM_MIN, "silhouette_iou_min": IOU_MIN,
                   "rgb_mad_255_max": RGB_MAD_MAX}
     packet = {
-        "schema": "mochiichao-show/likeness-gate-packet/v1",
+        "schema": "mochiichao-show/likeness-gate-packet/v2",
         "tool": "likeness_gate.py",
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "species": args.species,
@@ -221,24 +291,36 @@ def main():
         "promotion_status": "PENDING_OWNER_OR_SCORER_RECORD",
         "note": ("Verdict is a packet RECOMMENDATION measured from the actual "
                  "pixels. Promotion is a separate step: recording in "
-                 "show/shared/clip-index.json (orchestrator law)."),
+                 "show/shared/clip-index.json (orchestrator law). The verdict "
+                 "is the v1 measurement path against the shipped thresholds; "
+                 "measurements_v2_normalized is the calibration-v2 diagnostic "
+                 "path, reported alongside and NOT (yet) the verdict — "
+                 "adopting it is an owner/scorer calibration decision."),
     }
     try:
-        measurements, context = measure(args.clip, args.species,
-                                        args.cutouts, args.frame)
+        measurements, measurements_v2, context = measure(
+            args.clip, args.species, args.cutouts, args.frame)
         packet.update(context)
         packet["measurements"] = measurements
+        packet["measurements_v2_normalized"] = measurements_v2
         checks = {
             "ssim": measurements["ssim_union"] >= SSIM_MIN,
             "silhouette_iou": measurements["silhouette_iou"] >= IOU_MIN,
             "rgb_mad": measurements["rgb_mad_255"] <= RGB_MAD_MAX,
         }
         packet["checks"] = checks
+        packet["checks_v2_normalized"] = {
+            "ssim": measurements_v2["ssim_union"] >= SSIM_MIN,
+            "silhouette_iou": measurements_v2["silhouette_iou"] >= IOU_MIN,
+            "rgb_mad": measurements_v2["rgb_mad_255"] <= RGB_MAD_MAX,
+        }
         packet["verdict"] = "PASS" if all(checks.values()) else "FAIL"
         code = 0
     except Exception as e:  # measurement impossible — say so, never pass
         packet["measurements"] = None
+        packet["measurements_v2_normalized"] = None
         packet["checks"] = None
+        packet["checks_v2_normalized"] = None
         packet["verdict"] = "FAIL_CANNOT_MEASURE"
         packet["error"] = f"{type(e).__name__}: {e}"
         code = 2
@@ -246,12 +328,17 @@ def main():
     out_path = Path(args.out) if args.out else Path(f"likeness-gate-{args.species}.json")
     out_path.write_text(json.dumps(packet, indent=2) + "\n")
     print(f"packet: {out_path}")
-    print(f"verdict: {packet['verdict']}")
+    print(f"verdict (v1 path): {packet['verdict']}")
     if packet.get("measurements"):
         m = packet["measurements"]
-        print(f"  ssim_union     = {m['ssim_union']}  (min {SSIM_MIN})")
-        print(f"  silhouette_iou = {m['silhouette_iou']}  (min {IOU_MIN})")
-        print(f"  rgb_mad_255    = {m['rgb_mad_255']}  (max {RGB_MAD_MAX})")
+        print(f"  [v1] ssim_union     = {m['ssim_union']}  (min {SSIM_MIN})")
+        print(f"  [v1] silhouette_iou = {m['silhouette_iou']}  (min {IOU_MIN})")
+        print(f"  [v1] rgb_mad_255    = {m['rgb_mad_255']}  (max {RGB_MAD_MAX})")
+    if packet.get("measurements_v2_normalized"):
+        m = packet["measurements_v2_normalized"]
+        print(f"  [v2] ssim_union     = {m['ssim_union']}  (min {SSIM_MIN})")
+        print(f"  [v2] silhouette_iou = {m['silhouette_iou']}  (min {IOU_MIN})")
+        print(f"  [v2] rgb_mad_255    = {m['rgb_mad_255']}  (max {RGB_MAD_MAX})")
     if packet.get("error"):
         print(f"  error: {packet['error']}")
     return code
