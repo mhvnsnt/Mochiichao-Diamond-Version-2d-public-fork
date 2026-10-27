@@ -25,19 +25,24 @@ import { MAIN_MENU_SYMBOLS } from "../../lib/mainMenuSymbols";
  *     generated guesses (the PR #170 generated fill is what Mars
  *     rejected 2026-10-26 12:38 CDT).
  *
- * Animation — PERFECT by default (matched GIF, Mars PERFECT
- * 2026-10-25 17:12 CDT; see perfect-menu-trace-2026-10-26.md):
- * 285 measured symbols rise at 157.14 px/s (11px/frame at 70ms, 80 frames x
- * 70ms = 5.6s loop), modulo zone 620-1500, sway sin*6px, bob
- * sin*4px on top of rise, 2 cycles per loop, phase by golden
- * angle, fade by the locked phi fade (0 at y620, 0.35 at y729,
- * 1.0 at y905+), clamped never above y620. No rotation.
- * The PR #163 speed (vy 8-14 px/s, sway 3->8px, rotate +/-4deg,
- * period 4-6s) is saved as the "slow-rise" option in
- * lockedV32Menu.animationSpeeds and is selected by setting
- * background.animationSpeed to "slow-rise"; it is never the
- * default. Symbols are pointer-events none, behind logo/panels.
+ * Animation — SLOW-RISE by default (Mars 2026-10-26 19:54 CDT: the
+ * rising emblems moved too fast; use the slow speed locked earlier
+ * today). 285 measured symbols rise at vy 8-14 px/s (PR #163 speed),
+ * modulo zone 620-1500, sway 3->8px growing toward the bottom,
+ * rotate +/-4deg, period 4-6s, phase by golden angle, fade by the
+ * locked phi fade (0 at y620, 0.35 at y729, 1.0 at y905+), clamped
+ * never above y620. The matched-GIF PERFECT speed (157.14 px/s,
+ * 11px/frame at 70ms, 80 frames x 70ms = 5.6s loop, sway sin*6px, bob
+ * sin*4px, 2 cycles per loop, Mars PERFECT 2026-10-25 17:12 CDT)
+ * is kept as the option, selected by setting
+ * background.animationSpeed to "perfect". Symbols are
+ * pointer-events none, behind logo/panels.
  * prefers-reduced-motion freezes to static base positions.
+ * Logo hearts (blue + pink, Mars 2026-10-26 19:54 CDT) are static
+ * decorations rendered last in this SVG — above arcs + symbols,
+ * below logo/cloud/panels — at full opacity, never animated, never
+ * faded (see lockedV32Menu.background.logoHearts for the measured
+ * placements).
  */
 type MenuSymbol = { x: number; y: number; s: number; c: string; shape: string };
 const SYMBOLS = MAIN_MENU_SYMBOLS as MenuSymbol[];
@@ -80,6 +85,20 @@ function shapePath(sym: MenuSymbol): ReactNode {
   );
 }
 
+function heartPath(c: string, w: number, h: number): ReactNode {
+  // Same heart geometry as the symbol hearts (100-box path, x5-95,
+  // y0-88, centre (50,44)), scaled so the VISIBLE box is exactly w x h
+  // centred on the group's translate point: x maps -w/2..+w/2,
+  // y maps -h/2..+h/2.
+  return (
+    <path
+      d="M50 88 C20 60 5 40 5 25 C5 10 20 0 32 8 C40 13 50 25 50 32 C50 25 60 13 68 8 C80 0 95 10 95 25 C95 40 80 60 50 88 Z"
+      fill={c}
+      transform={`translate(${-50},${-44}) scale(${w / 90},${h / 88})`}
+    />
+  );
+}
+
 const ARC_COLORS = BG.arcs.colors;
 const ARC_RX = BG.arcs.rx;
 
@@ -87,7 +106,8 @@ export default function MainMenuBackground() {
   const refs = useRef<(SVGGElement | null)[]>([]);
 
   // Speed selector. The default is BG.animationSpeed from the locked
-  // menu data ("perfect"). A stored override (key
+  // menu data ("slow-rise" since Mars's 2026-10-26 19:54 CDT order;
+  // "perfect" stays selectable). A stored override (key
   // "mochiichao-menu-animation-speed", written by a future Menu
   // Creator / Settings row — nothing writes it today) may select
   // "slow-rise" at runtime. The localStorage read is load-bearing
@@ -130,7 +150,7 @@ export default function MainMenuBackground() {
           x = sym.x + Math.sin(ang) * sp.swayPx;
           rot = 0;
         } else {
-          // slow-rise: exact PR #163 behaviour, option only.
+          // slow-rise: exact PR #163 behaviour, now the default.
           const sp = BG.animationSpeeds["slow-rise"];
           const period = sp.periodSec[i % sp.periodSec.length];
           const vy = sp.riseVyMin + (i % (sp.riseVyMax - sp.riseVyMin + 1));
@@ -182,6 +202,15 @@ export default function MainMenuBackground() {
             opacity={fadeAt(sym.y)}
           >
             {shapePath(sym)}
+          </g>
+        ))}
+        {/* Logo hearts: static decorations, LAST in this SVG so they
+            sit above arcs + symbols and below logo/cloud/panels
+            (IntroSequence renders this background first). Full
+            opacity, no refs, never animated, never faded. */}
+        {BG.logoHearts.map((e, i) => (
+          <g key={`heart${i}`} transform={`translate(${e.x},${e.y})`}>
+            {heartPath(e.c, e.w, e.h)}
           </g>
         ))}
       </svg>
