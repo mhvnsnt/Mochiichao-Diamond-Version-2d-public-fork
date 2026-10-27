@@ -127,9 +127,9 @@ export const SYNDICATE_ADMINS: BattleLeader[] = Array.from({ length: 10 }, (_, i
 export const HACKER_LEADER: BattleLeader = {
   id: "hacker_leader", name: null, theme: null, town: null, badge: null, reward: null, fixedTeam: null, teamStatus: "AWAITING_MARS",
 };
-// Unplaced locked leader: Region 1 has no pure Rock dojo, so placement stays open.
+// Iwao: theme Earth + Chrome (not Rock). Dual placement locked: Region 2 Dojo 3 Chrome Goldenrod first fight, Region 3 Dojo 1 Core Rustboro return fight.
 export const UNPLACED_LEADER: BattleLeader = {
-  id: "unplaced_rock", name: "Iwao", theme: "Rock", town: null, badge: null, reward: null, fixedTeam: null, teamStatus: "AWAITING_MARS",
+  id: "iwao_dual", name: "Iwao", theme: "Earth + Chrome", town: null, badge: null, reward: null, fixedTeam: null, teamStatus: "DUAL_PLACEMENT_LOCKED",
 };
 
 // ---- Fixed teams by default; randomized as a settings option; no per-draw lock ----
