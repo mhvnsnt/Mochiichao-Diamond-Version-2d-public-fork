@@ -1,0 +1,85 @@
+{
+ "script": {
+  "files": 676,
+  "structured_files": 676,
+  "total_lines": 13354,
+  "messages": 13084,
+  "lines_without_separator": 270,
+  "message_length": {
+   "count": 13084,
+   "min": 1,
+   "max": 1039,
+   "mean": 96.54,
+   "median": 62.0,
+   "total": 1263100
+  },
+  "message_length_buckets": {
+   "51-100": 3450,
+   "21-50": 2783,
+   "101-200": 2627,
+   "1-20": 2702,
+   "201+": 1522
+  },
+  "messages_per_file": {
+   "count": 676,
+   "min": 0,
+   "max": 2198,
+   "mean": 19.36,
+   "median": 5.0,
+   "total": 13084
+  },
+  "file_size_chars": {
+   "count": 676,
+   "min": 0,
+   "max": 185195,
+   "mean": 2611.78,
+   "median": 676.5,
+   "total": 1765562
+  },
+  "placeholder_brace_count_total": 24583,
+  "backslash_count_total": 30871
+ },
+ "system": {
+  "files": 495,
+  "structured_files": 495,
+  "total_lines": 34512,
+  "messages": 33469,
+  "lines_without_separator": 1043,
+  "message_length": {
+   "count": 33469,
+   "min": 1,
+   "max": 747,
+   "mean": 47.59,
+   "median": 26,
+   "total": 1592911
+  },
+  "message_length_buckets": {
+   "21-50": 7556,
+   "1-20": 15036,
+   "51-100": 6372,
+   "101-200": 3456,
+   "201+": 1049
+  },
+  "messages_per_file": {
+   "count": 495,
+   "min": 0,
+   "max": 2416,
+   "mean": 67.61,
+   "median": 34,
+   "total": 33469
+  },
+  "file_size_chars": {
+   "count": 495,
+   "min": 0,
+   "max": 148503,
+   "mean": 5770.45,
+   "median": 1799,
+   "total": 2856371
+  },
+  "placeholder_brace_count_total": 27684,
+  "backslash_count_total": 34001
+ },
+ "files_total": 1171,
+ "structured_files": 1171,
+ "counted_only_files": 0
+}
