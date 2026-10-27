@@ -1,0 +1,754 @@
+{
+ "generated": "2026-10-26",
+ "source": "Black 2 Pokedex structure (pokebw2 ov296/ov298/ov302, include/save/pokedex.h); Mochiichao media only",
+ "footprint_rule": "Pokemon rule (zukan_info.c ZukanInfo_ShowEntry): footprint visible for CAUGHT entries only, hidden for seen-only and undiscovered",
+ "cry_rule": "Play-cry button on detail panel for seen/caught entries; default V1 (title-gate precedent, PR #232 TITLE_CRY_VARIANTS); R1 available in manifest until Mars chooses; full voice-page (stretch + 31x15 waveform + length) is a follow-up NEED",
+ "counts": {
+  "species": 49,
+  "footprint_have": 49,
+  "footprint_pending": 0
+ },
+ "entries": {
+  "001": {
+   "folder": "mochii",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/mochii_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/mochii_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/mochii-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/mochii-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "002": {
+   "folder": "tiidebiite",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/tiidebiite_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/tiidebiite_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/tiidebiite-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/tiidebiite-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "003": {
+   "folder": "aquariios",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/aquariios_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/aquariios_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/aquariios-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/aquariios-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "004": {
+   "folder": "razorgater",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/razorgater_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/razorgater_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/razorgater-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/razorgater-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "005": {
+   "folder": "chromejaww",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/chromejaww_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/chromejaww_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/chromejaww-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/chromejaww-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "006": {
+   "folder": "reaperdile",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/reaperdile_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/reaperdile_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/reaperdile-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/reaperdile-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "007": {
+   "folder": "tyrage",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/tyrage_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/tyrage_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/tyrage-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/tyrage-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "008": {
+   "folder": "duneclaw",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/duneclaw_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/duneclaw_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/duneclaw-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/duneclaw-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "009": {
+   "folder": "oblivirex",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/oblivirex_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/oblivirex_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/oblivirex-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/oblivirex-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "010": {
+   "folder": "kittember",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/kittember_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/kittember_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/kittember-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/kittember-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "011": {
+   "folder": "pyropaw",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/pyropaw_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/pyropaw_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/pyropaw-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/pyropaw-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "012": {
+   "folder": "manticlaw",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/manticlaw_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/manticlaw_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/manticlaw-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/manticlaw-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "013": {
+   "folder": "pupbble",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/pupbble_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/pupbble_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/pupbble-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/pupbble-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "014": {
+   "folder": "terradog",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/terradog_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/terradog_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/terradog-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/terradog-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "015": {
+   "folder": "quakehound",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/quakehound_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/quakehound_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/quakehound-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/quakehound-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "016": {
+   "folder": "squirmite",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/squirmite_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/squirmite_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/squirmite-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/squirmite-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "017": {
+   "folder": "cocoonode",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/cocoonode_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/cocoonode_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/cocoonode-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/cocoonode-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "018": {
+   "folder": "mothrix",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/mothrix_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/mothrix_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/mothrix-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/mothrix-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "019": {
+   "folder": "zephling",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/zephling_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/zephling_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/zephling-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/zephling-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "020": {
+   "folder": "aerobeak",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/aerobeak_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/aerobeak_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/aerobeak-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/aerobeak-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "021": {
+   "folder": "stormtalon",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/stormtalon_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/stormtalon_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/stormtalon-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/stormtalon-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "022": {
+   "folder": "finblade",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/finblade_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/finblade_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/finblade-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/finblade-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "023": {
+   "folder": "megalochrome",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/megalochrome_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/megalochrome_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/megalochrome-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/megalochrome-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "024": {
+   "folder": "floatcalf",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/floatcalf_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/floatcalf_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/floatcalf-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/floatcalf-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "025": {
+   "folder": "astroleviathan",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/astroleviathan_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/astroleviathan_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/astroleviathan-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/astroleviathan-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "026": {
+   "folder": "inklet",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/inklet_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/inklet_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/inklet-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/inklet-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "027": {
+   "folder": "toxitacle",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/toxitacle_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/toxitacle_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/toxitacle-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/toxitacle-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "028": {
+   "folder": "krakenox",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/krakenox_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/krakenox_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/krakenox-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/krakenox-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "029": {
+   "folder": "punchkid",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/punchkid_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/punchkid_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/punchkid-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/punchkid-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "030": {
+   "folder": "strikechamp",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/strikechamp_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/strikechamp_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/strikechamp-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/strikechamp-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1",
+   "form_variants_note": "suited (default) + unsuited + unsuited_full have separate silhouette/footprint files but are NOT separate Dex entries; form switcher is a follow-up NEED"
+  },
+  "031": {
+   "folder": "kickmaster",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/kickmaster_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/kickmaster_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/kickmaster-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/kickmaster-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "032": {
+   "folder": "gearkid",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/gearkid_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/gearkid_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/gearkid-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/gearkid-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "033": {
+   "folder": "mechapion",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/mechapion_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/mechapion_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/mechapion-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/mechapion-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "034": {
+   "folder": "gorokappa",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/gorokappa_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/gorokappa_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/gorokappa-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/gorokappa-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "035": {
+   "folder": "pebblefist",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/pebblefist_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/pebblefist_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/pebblefist-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/pebblefist-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "036": {
+   "folder": "cragarm",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/cragarm_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/cragarm_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/cragarm-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/cragarm-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "037": {
+   "folder": "terrapod",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/terrapod_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/terrapod_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/terrapod-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/terrapod-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "038": {
+   "folder": "sproutle",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/sproutle_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/sproutle_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/sproutle-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/sproutle-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "039": {
+   "folder": "shellguard",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/shellguard_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/shellguard_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/shellguard-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/shellguard-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "040": {
+   "folder": "dreadtoise",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/dreadtoise_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/dreadtoise_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/dreadtoise-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/dreadtoise-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "041": {
+   "folder": "pixilite",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/pixilite_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/pixilite_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/pixilite-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/pixilite-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "042": {
+   "folder": "wispkin",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/wispkin_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/wispkin_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/wispkin-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/wispkin-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "043": {
+   "folder": "duskfiend",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/duskfiend_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/duskfiend_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/duskfiend-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/duskfiend-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "044": {
+   "folder": "ashemit",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/ashemit_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/ashemit_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/ashemit-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/ashemit-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "045": {
+   "folder": "pyromonk",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/pyromonk_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/pyromonk_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/pyromonk-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/pyromonk-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "046": {
+   "folder": "yogiferno",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/yogiferno_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/yogiferno_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/yogiferno-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/yogiferno-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "147": {
+   "folder": "dorowani",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/dorowani_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/dorowani_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/dorowani-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/dorowani-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "148": {
+   "folder": "gabu",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/gabu_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/gabu_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/gabu-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/gabu-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  },
+  "331": {
+   "folder": "mythar",
+   "footprint": "sprite-art/animation/expanded-scope/footprints-real/mythar_footprint.png",
+   "footprint_status": "HAVE",
+   "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/mythar_silhouette.png",
+   "cry_v1": {
+    "path": "public/audio/cries/mythar-cry.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_r1": {
+    "path": "public/audio/cries/mythar-cry-r1.wav",
+    "status": "RESOLVED-FROM-MAIN"
+   },
+   "cry_default": "v1"
+  }
+ },
+ "pr_time_resolution": {
+  "date": "2026-10-26",
+  "footprints": "PR #237 layout verified on main: all 51 PNGs flat in footprints-real/ (no remaining14 subdir on main); staged subdir paths corrected to root",
+  "cries": "public/audio/cries/ listing on main; V1 HEAD-verified 49/49 at raw.githubusercontent.com; R1 filenames from same listing"
+ }
+}

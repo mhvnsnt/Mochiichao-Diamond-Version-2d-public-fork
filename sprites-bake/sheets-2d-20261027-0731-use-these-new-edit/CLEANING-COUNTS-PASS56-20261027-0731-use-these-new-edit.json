@@ -1,0 +1,179 @@
+{
+ "totals": {
+  "pass5_vertical": 393,
+  "pass5_horizontal": 142,
+  "pass6_fringe": 292
+ },
+ "cells": {
+  "dorowani/dorowani_idle_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 39,
+   "pass5_horizontal": 13,
+   "pass6_fringe": 31
+  },
+  "dorowani/dorowani_idle_front_01_2d-use-these-new-edit.png": {
+   "pass5_vertical": 39,
+   "pass5_horizontal": 13,
+   "pass6_fringe": 31
+  },
+  "dorowani/dorowani_idle_front_02_2d-use-these-new-edit.png": {
+   "pass5_vertical": 43,
+   "pass5_horizontal": 13,
+   "pass6_fringe": 31
+  },
+  "dorowani/dorowani_walk_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "dorowani/dorowani_walk_front_01_2d-use-these-new-edit.png": {
+   "pass5_vertical": 7,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "dorowani/dorowani_walk_front_02_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "dorowani/dorowani_walk_front_03_2d-use-these-new-edit.png": {
+   "pass5_vertical": 7,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "dorowani/dorowani_walk_side_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "dorowani/dorowani_walk_side_01_2d-use-these-new-edit.png": {
+   "pass5_vertical": 33,
+   "pass5_horizontal": 22,
+   "pass6_fringe": 6
+  },
+  "dorowani/dorowani_walk_side_02_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "dorowani/dorowani_walk_side_03_2d-use-these-new-edit.png": {
+   "pass5_vertical": 33,
+   "pass5_horizontal": 22,
+   "pass6_fringe": 6
+  },
+  "dorowani/dorowani_ready_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 39,
+   "pass5_horizontal": 13,
+   "pass6_fringe": 31
+  },
+  "dorowani/dorowani_attack_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 38,
+   "pass5_horizontal": 13,
+   "pass6_fringe": 31
+  },
+  "dorowani/dorowani_attack_front_01_2d-use-these-new-edit.png": {
+   "pass5_vertical": 38,
+   "pass5_horizontal": 10,
+   "pass6_fringe": 34
+  },
+  "dorowani/dorowani_attack_front_02_2d-use-these-new-edit.png": {
+   "pass5_vertical": 38,
+   "pass5_horizontal": 10,
+   "pass6_fringe": 34
+  },
+  "dorowani/dorowani_attack_front_03_2d-use-these-new-edit.png": {
+   "pass5_vertical": 39,
+   "pass5_horizontal": 13,
+   "pass6_fringe": 31
+  },
+  "dorowani/dorowani_hit_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 1
+  },
+  "gabu/gabu_idle_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_idle_front_01_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_idle_front_02_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_walk_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "gabu/gabu_walk_front_01_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "gabu/gabu_walk_front_02_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 5
+  },
+  "gabu/gabu_walk_front_03_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "gabu/gabu_walk_side_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_walk_side_01_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "gabu/gabu_walk_side_02_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_walk_side_03_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  },
+  "gabu/gabu_ready_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_attack_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_attack_front_01_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_attack_front_02_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_attack_front_03_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 2
+  },
+  "gabu/gabu_hit_front_00_2d-use-these-new-edit.png": {
+   "pass5_vertical": 0,
+   "pass5_horizontal": 0,
+   "pass6_fringe": 0
+  }
+ }
+}

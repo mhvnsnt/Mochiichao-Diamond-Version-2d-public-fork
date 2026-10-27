@@ -1,0 +1,375 @@
+{
+ "creature": "razorgater",
+ "batch": "batch-a-rebased",
+ "rebases": "batch-a (old locked bases, previews preserved untouched)",
+ "base_provenance": "corrected-bases/ (spot/blob removed, cracks + design whites intact) \u2014 see SOURCE-FRESHNESS.md",
+ "pilot_pattern": "expanded-scope pilot (mochii/dreadtoise)",
+ "date": "2026-10-26",
+ "method": "transform_from_existing_cells + procedural PIL VFX overlays; 0 image generations",
+ "canon_note": "Original canon-draft likeness only; set names are staging labels, not canon move names. Flavour: razor slash. Full body kept in frame every cell.",
+ "cell_size": 64,
+ "sets": {
+  "atk_physical_razor_rush": {
+   "kind": "attack",
+   "cell_count": 5,
+   "total_ms": 790,
+   "files": [
+    "atk_physical_razor_rush_cell_00.png",
+    "atk_physical_razor_rush_cell_01.png",
+    "atk_physical_razor_rush_cell_02.png",
+    "atk_physical_razor_rush_cell_03.png",
+    "atk_physical_razor_rush_cell_04.png"
+   ],
+   "cells": [
+    {
+     "file": "atk_physical_razor_rush_cell_00.png",
+     "duration_ms": 180,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.15, 'sy': 0.82, 'dy': 4}",
+     "note": "windup squash, from battle_front"
+    },
+    {
+     "file": "atk_physical_razor_rush_cell_01.png",
+     "duration_ms": 120,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 0.92, 'sy': 1.08, 'dx': 8, 'rot': -4}",
+     "note": "lean into lunge"
+    },
+    {
+     "file": "atk_physical_razor_rush_cell_02.png",
+     "duration_ms": 100,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.18, 'sy': 0.88, 'dx': 30}",
+     "note": "physical lunge, stretched"
+    },
+    {
+     "file": "atk_physical_razor_rush_cell_03.png",
+     "duration_ms": 90,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.25, 'sy': 0.75, 'dx': 38}",
+     "note": "impact squash + flavour burst"
+    },
+    {
+     "file": "atk_physical_razor_rush_cell_04.png",
+     "duration_ms": 300,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{}",
+     "note": "recover to rest pose"
+    }
+   ]
+  },
+  "atk_special_blade_wave": {
+   "kind": "attack",
+   "cell_count": 5,
+   "total_ms": 860,
+   "files": [
+    "atk_special_blade_wave_cell_00.png",
+    "atk_special_blade_wave_cell_01.png",
+    "atk_special_blade_wave_cell_02.png",
+    "atk_special_blade_wave_cell_03.png",
+    "atk_special_blade_wave_cell_04.png"
+   ],
+   "cells": [
+    {
+     "file": "atk_special_blade_wave_cell_00.png",
+     "duration_ms": 200,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 0.95, 'sy': 1.05}",
+     "note": "gather"
+    },
+    {
+     "file": "atk_special_blade_wave_cell_01.png",
+     "duration_ms": 140,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 0.9, 'sy': 1.12, 'dx': -10, 'rot': -3}",
+     "note": "aim, stretched tall, shifted left for projectile room"
+    },
+    {
+     "file": "atk_special_blade_wave_cell_02.png",
+     "duration_ms": 110,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.05, 'sy': 0.95, 'dx': -24}",
+     "note": "projectile streams right past body to frame edge"
+    },
+    {
+     "file": "atk_special_blade_wave_cell_03.png",
+     "duration_ms": 110,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 0.95, 'sy': 1.0, 'dx': -24}",
+     "note": "projectile extended, splash head"
+    },
+    {
+     "file": "atk_special_blade_wave_cell_04.png",
+     "duration_ms": 300,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{}",
+     "note": "recover"
+    }
+   ]
+  },
+  "atk_signature_cross_slash": {
+   "kind": "attack",
+   "cell_count": 6,
+   "total_ms": 1080,
+   "files": [
+    "atk_signature_cross_slash_cell_00.png",
+    "atk_signature_cross_slash_cell_01.png",
+    "atk_signature_cross_slash_cell_02.png",
+    "atk_signature_cross_slash_cell_03.png",
+    "atk_signature_cross_slash_cell_04.png",
+    "atk_signature_cross_slash_cell_05.png"
+   ],
+   "cells": [
+    {
+     "file": "atk_signature_cross_slash_cell_00.png",
+     "duration_ms": 200,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.0, 'sy': 1.0}",
+     "note": "signature ready"
+    },
+    {
+     "file": "atk_signature_cross_slash_cell_01.png",
+     "duration_ms": 220,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 0.88, 'sy': 1.15, 'dy': -2}",
+     "note": "charge: compressed tall, particles orbit"
+    },
+    {
+     "file": "atk_signature_cross_slash_cell_02.png",
+     "duration_ms": 100,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.1, 'sy': 0.92, 'dx': -20}",
+     "note": "signature blast starts, shifted left"
+    },
+    {
+     "file": "atk_signature_cross_slash_cell_03.png",
+     "duration_ms": 140,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.15, 'sy': 0.9, 'dx': -20}",
+     "note": "full blast to frame edge + impact burst"
+    },
+    {
+     "file": "atk_signature_cross_slash_cell_04.png",
+     "duration_ms": 120,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.05, 'sy': 0.95, 'dx': -10}",
+     "note": "splash/impact"
+    },
+    {
+     "file": "atk_signature_cross_slash_cell_05.png",
+     "duration_ms": 300,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{}",
+     "note": "recover"
+    }
+   ]
+  },
+  "atk_heavy_jaw_crash_finisher": {
+   "kind": "attack",
+   "cell_count": 6,
+   "total_ms": 1160,
+   "files": [
+    "atk_heavy_jaw_crash_finisher_cell_00.png",
+    "atk_heavy_jaw_crash_finisher_cell_01.png",
+    "atk_heavy_jaw_crash_finisher_cell_02.png",
+    "atk_heavy_jaw_crash_finisher_cell_03.png",
+    "atk_heavy_jaw_crash_finisher_cell_04.png",
+    "atk_heavy_jaw_crash_finisher_cell_05.png"
+   ],
+   "cells": [
+    {
+     "file": "atk_heavy_jaw_crash_finisher_cell_00.png",
+     "duration_ms": 220,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.2, 'sy': 0.78, 'dy': 6}",
+     "note": "deep crouch"
+    },
+    {
+     "file": "atk_heavy_jaw_crash_finisher_cell_01.png",
+     "duration_ms": 160,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 0.85, 'sy': 1.2, 'dy': -6}",
+     "note": "rise, energy gathering"
+    },
+    {
+     "file": "atk_heavy_jaw_crash_finisher_cell_02.png",
+     "duration_ms": 140,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.15, 'sy': 0.95, 'dx': 10}",
+     "note": "finisher surge + projectile"
+    },
+    {
+     "file": "atk_heavy_jaw_crash_finisher_cell_03.png",
+     "duration_ms": 120,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.3, 'sy': 0.72, 'dx': 16}",
+     "note": "crash + impact burst + shockwave ring"
+    },
+    {
+     "file": "atk_heavy_jaw_crash_finisher_cell_04.png",
+     "duration_ms": 100,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.1, 'sy': 0.85, 'dx': 8}",
+     "note": "dust/particles settling"
+    },
+    {
+     "file": "atk_heavy_jaw_crash_finisher_cell_05.png",
+     "duration_ms": 420,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 0.98, 'sy': 0.98}",
+     "note": "exhausted recover, slower"
+    }
+   ]
+  },
+  "hurt_light_flinch": {
+   "kind": "hurt",
+   "cell_count": 3,
+   "total_ms": 520,
+   "files": [
+    "hurt_light_flinch_cell_00.png",
+    "hurt_light_flinch_cell_01.png",
+    "hurt_light_flinch_cell_02.png"
+   ],
+   "cells": [
+    {
+     "file": "hurt_light_flinch_cell_00.png",
+     "duration_ms": 120,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'sx': 0.95, 'sy': 1.02, 'dx': -8, 'rot': 3}",
+     "note": "flinch back, hurt cell"
+    },
+    {
+     "file": "hurt_light_flinch_cell_01.png",
+     "duration_ms": 180,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'sx': 0.9, 'sy': 1.05, 'dx': -14, 'rot': 5}",
+     "note": "flinch peak, pushed back"
+    },
+    {
+     "file": "hurt_light_flinch_cell_02.png",
+     "duration_ms": 220,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{}",
+     "note": "recover to rest"
+    }
+   ]
+  },
+  "hurt_heavy_knockback": {
+   "kind": "hurt",
+   "cell_count": 4,
+   "total_ms": 700,
+   "files": [
+    "hurt_heavy_knockback_cell_00.png",
+    "hurt_heavy_knockback_cell_01.png",
+    "hurt_heavy_knockback_cell_02.png",
+    "hurt_heavy_knockback_cell_03.png"
+   ],
+   "cells": [
+    {
+     "file": "hurt_heavy_knockback_cell_00.png",
+     "duration_ms": 80,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'flash': 0.55, 'dx': -4}",
+     "note": "hit flash (white)"
+    },
+    {
+     "file": "hurt_heavy_knockback_cell_01.png",
+     "duration_ms": 140,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'sx': 0.92, 'sy': 1.05, 'dx': -30, 'rot': 10}",
+     "note": "knocked back + tilted"
+    },
+    {
+     "file": "hurt_heavy_knockback_cell_02.png",
+     "duration_ms": 180,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'sx': 1.1, 'sy': 0.85, 'dx': -34, 'dy': 4}",
+     "note": "skid low, dust"
+    },
+    {
+     "file": "hurt_heavy_knockback_cell_03.png",
+     "duration_ms": 300,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{}",
+     "note": "recover"
+    }
+   ]
+  },
+  "hurt_status_wobble": {
+   "kind": "hurt",
+   "cell_count": 3,
+   "total_ms": 740,
+   "files": [
+    "hurt_status_wobble_cell_00.png",
+    "hurt_status_wobble_cell_01.png",
+    "hurt_status_wobble_cell_02.png"
+   ],
+   "cells": [
+    {
+     "file": "hurt_status_wobble_cell_00.png",
+     "duration_ms": 220,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'rot': -8, 'dx': -6}",
+     "note": "wobble left + status bubbles"
+    },
+    {
+     "file": "hurt_status_wobble_cell_01.png",
+     "duration_ms": 220,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'rot': 8, 'dx': 6}",
+     "note": "wobble right + status bubbles"
+    },
+    {
+     "file": "hurt_status_wobble_cell_02.png",
+     "duration_ms": 300,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'tint': (120, 220, 120, 255)}",
+     "note": "settling, faint green status tint"
+    }
+   ]
+  },
+  "hurt_near_faint_stagger": {
+   "kind": "hurt",
+   "cell_count": 4,
+   "total_ms": 1180,
+   "files": [
+    "hurt_near_faint_stagger_cell_00.png",
+    "hurt_near_faint_stagger_cell_01.png",
+    "hurt_near_faint_stagger_cell_02.png",
+    "hurt_near_faint_stagger_cell_03.png"
+   ],
+   "cells": [
+    {
+     "file": "hurt_near_faint_stagger_cell_00.png",
+     "duration_ms": 260,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'rot': -6, 'sx': 0.95, 'sy': 1.0, 'dx': -6}",
+     "note": "stagger lean"
+    },
+    {
+     "file": "hurt_near_faint_stagger_cell_01.png",
+     "duration_ms": 260,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'rot': 4, 'sx': 1.05, 'sy': 0.88, 'dy': 4, 'darken': 0.82}",
+     "note": "droop, darkened"
+    },
+    {
+     "file": "hurt_near_faint_stagger_cell_02.png",
+     "duration_ms": 260,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/hurt/razorgater/razorgater_hurt_cell_00_clean.png (corrected/verified base)",
+     "transform": "{'rot': -4, 'sx': 0.98, 'sy': 0.92, 'darken': 0.82}",
+     "note": "sway, dizzy stars"
+    },
+    {
+     "file": "hurt_near_faint_stagger_cell_03.png",
+     "duration_ms": 400,
+     "source": "/home/hatch/workspace/mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png (CORRECTED base, see SOURCE-FRESHNESS.md)",
+     "transform": "{'sx': 1.05, 'sy': 0.9, 'darken': 0.88}",
+     "note": "barely standing, dimmed"
+    }
+   ]
+  }
+ },
+ "preview_attacks": "preview_attacks_4x.png (rows in set order: atk_physical_razor_rush, atk_special_blade_wave, atk_signature_cross_slash, atk_heavy_jaw_crash_finisher)",
+ "preview_hurts": "preview_hurts_4x.png (rows in set order: hurt_light_flinch, hurt_heavy_knockback, hurt_status_wobble, hurt_near_faint_stagger)"
+}

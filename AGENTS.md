@@ -20,3 +20,18 @@ Instructions for every AI agent working in this repo.
 
 ## No-data-loss rules (MANDATORY)
 Read and follow [`docs/NO-DATA-LOSS-RULES.md`](docs/NO-DATA-LOSS-RULES.md) (canonical: mhvnsnt/agent-ops). No force-push, no rebase/amend of pushed work, no history rewrite, no branch/asset deletion without backup + owner approval, PRs only, empty D-filter + gitleaks + green CI before merge, push incrementally, keep WORKLOG, back up and sha256-verify before disk cleanup, never touch other agents' or Muse's work.
+
+## CHECKPOINT SYSTEM FOR EVERYTHING (Mars, 2026-10-26, standing)
+
+Save and log EVERYTHING as it is built — every version, every phase,
+every step — so anything can be gotten back to exactly even if it gets
+lost, like a checkpoint system for everything that is built, even just
+a menu. Never overwrite a version already shown to Mars; every version
+gets its own saved file/checkpoint with a new dated name; logs are
+appended, never rewritten, never deleted. A rebuild must start from the
+saved checkpoints and history, never from guessing. Full rule and
+practice: `docs/checkpoint-system.md`. Checkpoint files are never
+deleted; a PR that deletes one is blocked until Mars approves it.
+
+## PULL-EVERYTHING-THEN-SWAP RULE (Mars, 2026-10-25 23:48 CDT, standing)
+Pull everything in 100% — official, Pokemon, fan-made, mod, open source, anything pullable — then sift through it, and swap out the small amount of copyright / proprietary files really fast for Mochiichao originals, as soon as they are identified. Do not stop work to lecture about proprietary files, do not make Mars repeat this, and do not invent a do-not-pull list he did not make. The public repo ships the swapped, cleaned version. Full text: `docs/pull-and-swap-rule.md`.

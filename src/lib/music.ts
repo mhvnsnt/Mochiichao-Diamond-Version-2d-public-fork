@@ -6,6 +6,15 @@
  * - title: mochiichao-title-v3.wav — OFFICIAL TITLE, TITLE phase, loops.
  * - mainMenu: mochiichao-main-menu-v1.wav — MAIN MENU v1 (DRAFT, wired for
  *   testing), MAIN_MENU / SETTINGS / SAVE_SLOTS phases, loops.
+ * - world / battle: NO FILE ON MAIN YET (Wiring Batch 2, 2026-10-26).
+ *   public/audio/ holds only boot / intro / title / main-menu files,
+ *   so these entries are null-src on purpose and NO filename is
+ *   invented here. playMusic() on a null-src entry fades the old
+ *   track out and stays silent — the game is silent in world/battle
+ *   exactly as today — and the day the Music lane ships a file,
+ *   only the TRACKS table below changes; the call sites (App world
+ *   entry, WorldEngine screen effect) already play it. Track
+ *   production sits behind the music gate, never ordered here.
  *
  * NOT in this module, deliberately: boot and press-start sounds are
  * already wired on main in src/lib/bootAudio.ts (settled roles: BOOT =
@@ -36,7 +45,9 @@
  * touches game state, saves, or rendering — it only plays files.
  */
 
-export type MusicTrack = "intro" | "title" | "mainMenu";
+import { routeMediaElement, resumeAudioGraph } from "./audioRouting";
+
+export type MusicTrack = "intro" | "title" | "mainMenu" | "world" | "battle";
 
 function audioUrl(file: string): string {
   const base = import.meta.env.BASE_URL ?? "/";
@@ -44,10 +55,15 @@ function audioUrl(file: string): string {
   return `${withSlash}audio/${file}`;
 }
 
-const TRACKS: Record<MusicTrack, { src: string; loop: boolean }> = {
+const TRACKS: Record<MusicTrack, { src: string | null; loop: boolean }> = {
   intro: { src: audioUrl("mochiichao-intro-v3.wav"), loop: false },
   title: { src: audioUrl("mochiichao-title-v3.wav"), loop: true },
   mainMenu: { src: audioUrl("mochiichao-main-menu-v1.wav"), loop: true },
+  // Null-src until the Music lane ships files (see header). Never
+  // invent a filename here; a missing file stays silent, never a 404
+  // loop or a guessed track.
+  world: { src: null, loop: true },
+  battle: { src: null, loop: true },
 };
 
 const MUSIC_VOLUME = 0.8;
@@ -70,6 +86,10 @@ function ensureGestureListener() {
   if (gestureListenerAttached || typeof window === "undefined") return;
   gestureListenerAttached = true;
   const retry = () => {
+    // A routed music element in a suspended context stays silent
+    // until the context resumes; the gesture that retries a pending
+    // track is also the gesture that resumes it.
+    resumeAudioGraph();
     if (pendingTrack !== null) {
       const track = pendingTrack;
       pendingTrack = null;
@@ -114,7 +134,20 @@ export function playMusic(track: MusicTrack, fadeMs = 1000): void {
       musicEl.pause();
       musicEl.onended = null;
     }
+    musicEl = null;
+    currentTrack = track;
+    // Null-src entry (world / battle until files land): fade-out
+    // already happened above; stay silent, never throw, never loop
+    // a retry. currentTrack records the intent so currentMusicTrack()
+    // still reports where the player is.
+    if (def.src === null) return;
     const el = new Audio(def.src);
+    // Route through the Web Audio graph so the Settings MONO / STEREO
+    // setting actually reaches music. Before this, plain <audio>
+    // played straight to the speakers and the setting bypassed music
+    // entirely. If routing is unavailable, the element still plays
+    // directly — fail soft, same as before.
+    routeMediaElement(el);
     el.loop = def.loop;
     el.volume = 0;
     el.preload = "auto";
@@ -124,7 +157,6 @@ export function playMusic(track: MusicTrack, fadeMs = 1000): void {
       };
     }
     musicEl = el;
-    currentTrack = track;
     const p = el.play();
     if (p && typeof (p as Promise<void>).catch === "function") {
       (p as Promise<void>).catch(() => {

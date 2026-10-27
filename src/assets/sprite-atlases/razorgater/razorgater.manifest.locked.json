@@ -18,7 +18,7 @@
  "frame_count": 17,
  "draft": false,
  "draft_note": "",
- "notes": "",
+ "notes": "RE-LOCK 2026-10-26: corrected locked tile(s) promoted from documented corrected sources (see relock_2026_10_26); no other tiles changed.",
  "role_unconfirmed": [],
  "frames": [
   {
@@ -236,5 +236,24 @@
   239,
   239,
   239
- ]
+ ],
+ "relock_2026_10_26": {
+  "date": "2026-10-26",
+  "base_head": "023e038713312d7933adb574d0d05a00befe8932",
+  "change": "pixel_tiles",
+  "cells": [
+   {
+    "cell": 4,
+    "role": "battle_front",
+    "atlas": [
+     256,
+     0
+    ],
+    "source": "mochiichao-work/sprite-art/animation/expanded-scope/batch-a/corrected-bases/razorgater_cell_04_groundblob_removed.png",
+    "diff_px": 191,
+    "direction": "locked-opaque -> transparent"
+   }
+  ],
+  "notes": "Atlas PNG tiles spliced at exact manifest coords, cell 64. All other tiles byte-identical to base."
+ }
 }

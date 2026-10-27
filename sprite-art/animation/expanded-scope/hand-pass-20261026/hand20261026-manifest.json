@@ -1,0 +1,810 @@
+{
+ "tag": "hand20261026",
+ "ship": {
+  "aquariios": {
+   "source": "pipev2 PR #164",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_aqua_ram",
+    "atk_special_aqua_jet",
+    "atk_signature_abyss_cannon",
+    "atk_heavy_maelstrom_finisher"
+   ],
+   "counts": {
+    "hand_frames": 3,
+    "copy_frames": 18,
+    "flagged_frames": 1,
+    "cells": 22
+   },
+   "flags": [
+    {
+     "set": "atk_special_aqua_jet",
+     "frame": 3,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "ashemit": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_ash_charge",
+    "atk_special_ember_spray",
+    "atk_signature_flame_tail_sweep",
+    "atk_heavy_inferno_crash_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "dreadtoise": {
+   "source": "retime Mode A",
+   "mode": "impact",
+   "sets": [
+    "hurt_light_flinch",
+    "hurt_heavy_knockback",
+    "hurt_status_wobble",
+    "hurt_near_faint_stagger"
+   ],
+   "counts": {
+    "hand_frames": 3,
+    "copy_frames": 10,
+    "flagged_frames": 1,
+    "cells": 14
+   },
+   "flags": [
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "gabu": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_forest_lunge",
+    "atk_special_leaf_shot",
+    "atk_signature_canopy_burst",
+    "atk_heavy_timber_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "mochii": {
+   "source": "retime Mode B",
+   "mode": "persistent",
+   "sets": [
+    "atk_physical_body_slam",
+    "atk_special_aqua_shot",
+    "atk_signature_aqua_cannon",
+    "atk_heavy_hydro_surge_finisher"
+   ],
+   "counts": {
+    "hand_frames": 18,
+    "copy_frames": 4,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "mythar": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_star_pounce",
+    "atk_special_star_shot",
+    "atk_signature_orbit_barrage",
+    "atk_heavy_nova_crash_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "punchkid": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_jab_rush",
+    "atk_special_power_shot",
+    "atk_signature_combo_barrage",
+    "atk_heavy_knockout_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "pyromonk": {
+   "source": "v2rework PR #174",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_flame_fist",
+    "atk_special_flame_shot",
+    "atk_signature_inferno_barrage",
+    "atk_heavy_blaze_crash_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "reaperdile": {
+   "source": "pipev2 PR #164",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_shadow_lunge",
+    "atk_special_umbral_bolt",
+    "atk_signature_reaper_sweep",
+    "atk_heavy_doom_crash_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "sproutle": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_vine_lunge",
+    "atk_special_seed_shot",
+    "atk_signature_bloom_burst",
+    "atk_heavy_overgrowth_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "strikechamp": {
+   "source": "v2rework PR #174",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_champ_punch",
+    "atk_special_power_shot",
+    "atk_signature_champ_barrage",
+    "atk_heavy_knockout_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "strikechamp_unsuited": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_bare_punch",
+    "atk_special_bare_shot",
+    "atk_signature_bare_barrage",
+    "atk_heavy_knockout_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "strikechamp_unsuited_full": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_suit_punch",
+    "atk_special_suit_shot",
+    "atk_signature_suit_barrage",
+    "atk_heavy_knockout_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "terradog": {
+   "source": "v2rework PR #174",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_terra_charge",
+    "atk_special_rock_shot",
+    "atk_signature_terra_barrage",
+    "atk_heavy_quake_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "tiidebiite": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_tide_ram",
+    "atk_special_tide_jet",
+    "atk_signature_surge_barrage",
+    "atk_heavy_tsunami_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "tyrage": {
+   "source": "v3q PR #173",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_rage_charge",
+    "atk_special_rage_blast",
+    "atk_signature_tyrant_flare",
+    "atk_heavy_cataclysm_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "yogiferno": {
+   "source": "v2rework PR #174",
+   "mode": "impact",
+   "sets": [
+    "atk_physical_yogi_charge",
+    "atk_special_flame_shot",
+    "atk_signature_inferno_barrage",
+    "atk_heavy_blaze_finisher"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  }
+ },
+ "staged": {
+  "cragarm": {
+   "source": "staged base articulation-batch-cd/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_mountain_crash_finisher",
+    "atk_physical_crag_strike",
+    "atk_signature_quake_barrage",
+    "atk_special_crystal_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 7,
+    "copy_frames": 28,
+    "flagged_frames": 1,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_light_flinch",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "dorowani": {
+   "source": "staged base articulation-v2-rework-v3/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_deluge_finisher",
+    "atk_physical_glide_ram",
+    "atk_signature_wave_barrage",
+    "atk_special_spray_jet"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "duneclaw": {
+   "source": "staged base articulation-batch-b",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_dune_crash_finisher",
+    "atk_physical_dune_charge",
+    "atk_signature_claw_rush",
+    "atk_special_sand_blast",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true
+  },
+  "duskfiend": {
+   "source": "staged base articulation-batch-cd/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_nightmare_finisher",
+    "atk_physical_shadow_lunge",
+    "atk_signature_dusk_sweep",
+    "atk_special_umbral_bolt",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true
+  },
+  "gearkid": {
+   "source": "staged base articulation-batch-cd/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_overdrive_finisher",
+    "atk_physical_gear_strike",
+    "atk_signature_clockwork_barrage",
+    "atk_special_spark_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 7,
+    "copy_frames": 28,
+    "flagged_frames": 1,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "gorokappa": {
+   "source": "staged base articulation-batch-cd/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_tide_crash_finisher",
+    "atk_physical_claw_swipe",
+    "atk_signature_cube_barrage",
+    "atk_special_water_jet",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 5,
+    "copy_frames": 28,
+    "flagged_frames": 3,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_light_flinch",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_status_wobble",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "kickmaster": {
+   "source": "staged base articulation-batch-cd/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_final_kick_finisher",
+    "atk_physical_kick_rush",
+    "atk_signature_spinning_barrage",
+    "atk_special_circuit_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 5,
+    "copy_frames": 28,
+    "flagged_frames": 3,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_heavy_knockback",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_light_flinch",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_status_wobble",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "manticlaw": {
+   "source": "staged base articulation-batch-b",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_mane_crash_finisher",
+    "atk_physical_tiger_charge",
+    "atk_signature_flame_claw_rush",
+    "atk_special_mane_blast",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true
+  },
+  "mechapion": {
+   "source": "staged base articulation-batch-cd/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_iron_crash_finisher",
+    "atk_physical_steel_strike",
+    "atk_signature_mecha_barrage",
+    "atk_special_plasma_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true
+  },
+  "oblivirex": {
+   "source": "staged base articulation-batch-b",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_oblivion_crash_finisher",
+    "atk_physical_shadow_charge",
+    "atk_signature_void_rush",
+    "atk_special_umbral_blast",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 7,
+    "copy_frames": 28,
+    "flagged_frames": 1,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_heavy_knockback",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "pixilite": {
+   "source": "staged base articulation-batch-cd/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_overgrowth_finisher",
+    "atk_physical_leaf_lunge",
+    "atk_signature_bloom_burst",
+    "atk_special_petal_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 7,
+    "copy_frames": 28,
+    "flagged_frames": 1,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "pupbble": {
+   "source": "staged base articulation-batch-b",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_tide_crash_finisher",
+    "atk_physical_bubble_ram",
+    "atk_signature_bubble_barrage",
+    "atk_special_bubble_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 6,
+    "copy_frames": 28,
+    "flagged_frames": 2,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_status_wobble",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "pyropaw": {
+   "source": "staged base articulation-batch-b",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_blaze_crash_finisher",
+    "atk_physical_flame_pounce",
+    "atk_signature_pyro_burst",
+    "atk_special_flame_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 5,
+    "copy_frames": 28,
+    "flagged_frames": 3,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_heavy_knockback",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_light_flinch",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "quakehound": {
+   "source": "staged base articulation-batch-b",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_tremor_crash_finisher",
+    "atk_physical_quake_lunge",
+    "atk_signature_seismic_barrage",
+    "atk_special_lava_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 28,
+    "flagged_frames": 4,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_heavy_knockback",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_light_flinch",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_status_wobble",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  },
+  "razorgater": {
+   "source": "staged base articulation-v2-rework-v3/batch-a",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_jaw_crash_finisher",
+    "atk_physical_razor_rush",
+    "atk_signature_cross_slash",
+    "atk_special_blade_wave"
+   ],
+   "counts": {
+    "hand_frames": 4,
+    "copy_frames": 18,
+    "flagged_frames": 0,
+    "cells": 22
+   },
+   "flags": [],
+   "g1": true
+  },
+  "shellguard": {
+   "source": "staged base articulation-batch-cd/batch-c",
+   "mode": "impact-staged-default",
+   "sets": [
+    "atk_heavy_fortress_crash_finisher",
+    "atk_physical_shell_ram",
+    "atk_signature_shield_barrage",
+    "atk_special_aqua_jet",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 6,
+    "copy_frames": 28,
+    "flagged_frames": 2,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_heavy_knockback",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true
+  }
+ },
+ "hnone_ship": {
+  "floatcalf": "levitating, no hands visible in front cell; H-none per grammar (levitating creatures)",
+  "squirmite": "limbless worm; no arms/hands visible; H-none per grammar (limbless creatures)"
+ },
+ "hnone_staged": {
+  "cocoonode": "canon: NO face, NO limbs (Batch B group 2 record); H-none",
+  "finblade": "faceless top-down front, no arms (Batch B group 3 record); H-none",
+  "megalochrome": "levitating disc, side probes/fins, no arms visible; H-none (levitating)",
+  "mothrix": "moth wings only, ~8px head; no hands, overlay scale would dwarf face (Batch B group 2 record); H-none",
+  "wispkin": "levitating wisp/smoke, no limbs visible; H-none (levitating)"
+ },
+ "excluded_ship": {
+  "inklet": "tentacles, no hands; tentacle-tip-as-hand vs glow-only needs a Mars canon call",
+  "kittember": "paws tucked into body mass in front cell, no distinct paw anchor; paw pose needs a Mars canon call",
+  "krakenox": "no delineated limbs in front cell (dark spiky mass); tentacle form needs a Mars canon call",
+  "pebblefist": "front cell is head-only framing, no arms visible; arm form needs a Mars canon call",
+  "stormtalon": "wings + talons, no hands; wing/talon-as-hand needs a Mars canon call",
+  "toxitacle": "tentacles, no hands; tentacle-tip-as-hand vs glow-only needs a Mars canon call",
+  "zephling": "bird wings, no hands; wing-as-hand needs a Mars canon call"
+ },
+ "excluded_staged": {
+  "aerobeak": "bird wings + talons, no hands; wing/talon-as-hand needs a Mars canon call",
+  "astroleviathan": "tentacle/star appendages, form unclear in front cell; appendage-as-hand needs a Mars canon call",
+  "terrapod": "rock tortoise mass, forelimbs not distinct in front cell; limb form needs a Mars canon call",
+  "chromejaww": "no staged 4-set attack/hurt base exists anywhere (audit-only, no cells)"
+ }
+}

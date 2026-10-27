@@ -1,0 +1,30 @@
+{
+ "character": "Mom East Asian",
+ "slug": "mom-east-asian",
+ "step8_file": "mom-east-asian-step8-2026-10-26-core100.json",
+ "date": "2026-10-26",
+ "run": "core100 \u2014 finish core step-8 to 100% on files, staged only",
+ "held_count_before_this_run": "4/8",
+ "steps_closed_this_run_counted": [
+  "world-views sheet",
+  "battle back full-size",
+  "new atlas + manifest (16 cells, cell 14 = new back)",
+  "new step-8 JSON"
+ ],
+ "steps_also_delivered_uncounted_packaging": [],
+ "counted_total": 4,
+ "final_count": "8/8",
+ "skin_tone": "light",
+ "new_sheet_files": [
+  "media-generation-mom-east-asian-world-views-cor-0-7f96e5f5-4f21-4fb9-8bdf-e15959c9d24b.webp",
+  "media-generation-mom-east-asian-battle-back-ful-0-12de91b5-e9e0-4818-8776-4ceec6387bc0.webp"
+ ],
+ "atlas": "mom-east-asian-atlas-core100-2026-10-26.png",
+ "atlas_manifest": "mom-east-asian-atlas-core100-2026-10-26-manifest-core100-2026-10-26.json",
+ "world_order_actually_rendered": "front, back, left, right",
+ "eye_check_flags": [
+  "True back: no face visible. Filename stem truncated by the media tool ('world-views-cor') \u2014 filename used verbatim."
+ ],
+ "method_note": "Worker plan (NOT held-file-named): held step-8 files name only aggregate gaps for most characters, so this run closed each character's recount-owed count with the listed steps. Counted vs packaging is kept separate so the 45-step arithmetic is auditable. Worker eye-check is draft only; Mars eye-check still owed on every new sheet.",
+ "status": "STAGED ONLY \u2014 not PR'd, not wired, not live. Old atlas, old manifest, and held step-8 JSON untouched."
+}

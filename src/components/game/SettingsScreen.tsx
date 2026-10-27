@@ -10,8 +10,21 @@ import {
 import { FONT_OPTIONS, fontById, applyFontRoles } from '../../lib/fonts';
 import { setSoundMode, playUiPreview } from '../../lib/audioRouting';
 import { isConfirmKey, shoulderKey, buttonModeNote } from '../../lib/buttonMode';
+import {
+  MENU_SKIN_MENUS, MENU_SKIN_FLAVOURS, loadMenuSkinChoices, setMenuSkin,
+  type MenuSkinMenu, type MenuSkinChoices,
+} from '../../lib/menuSkins';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
+import TitleScene from './TitleScene';
+import {
+  TITLE_START_SCREEN_CYCLE, getSelectedTitleStartScreenId, setSelectedTitleStartScreenId,
+  resolveTitleStartScreen,
+  titleStartScreenLabel, type TitleStartScreenId,
+} from '../../lib/titleStartScreens';
+import MusicMixerScreen from './MusicMixerScreen';
+import SoundCreatorScreen from './SoundCreatorScreen';
+import MusicCreatorScreen from './MusicCreatorScreen';
 import {
   MenuCustomSettings, MenuAnimationStyle, DEFAULT_MENU_CUSTOM, loadMenuCustom, persistMenuCustom,
   applyMenuCustom, customToLayoutRecord, resolveDayNightPalette,
@@ -61,7 +74,7 @@ import {
  * Default restores DEFAULT_SETTINGS + LOCKED_PRESET.
  */
 
-type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'MENU_CUSTOM' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR';
+type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'MENU_CUSTOM' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR' | 'MUSIC_MIXER' | 'SOUND_CREATOR' | 'MUSIC_CREATOR';
 
 interface Row {
   label: string;
@@ -165,6 +178,35 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   // Selector only — the colour / frame values themselves live in
   // the settings (draft) and are saved with the preset's snapshot.
   const [perMenuTarget, setPerMenuTarget] = useState<MenuKey>('SETTINGS');
+  // Y2K skin selector (skins PR #151 wiring): one row per owed menu
+  // in settingsRows below. Stored under menuSkins.ts's own
+  // localStorage key and applied live (no reload, no save needed):
+  // cycling a row writes immediately and re-renders the target menu
+  // via the menuSkins change event. Independent of SAVE + EXIT and
+  // of RESET TO LOCKED DEFAULT (v32) — skins never touch the locked
+  // default, and the default is what a row returns to on 'Default'.
+  const [skinChoices, setSkinChoices] = useState<MenuSkinChoices>(() => loadMenuSkinChoices());
+  const cycleSkin = (menu: MenuSkinMenu, dir: 1 | -1) => {
+    const flavours = MENU_SKIN_FLAVOURS.map(f => f.flavour);
+    const next = cycle(flavours, skinChoices[menu], dir);
+    setMenuSkin(menu, next);
+    setSkinChoices(loadMenuSkinChoices());
+  };
+  const skinLabel = (menu: MenuSkinMenu) =>
+    MENU_SKIN_FLAVOURS.find(f => f.flavour === skinChoices[menu])?.label || 'Default';
+
+  // Interchangeable title start screens: one row, same LEFT/RIGHT
+  // cycle pattern as the skin rows. Locked Default = the locked phi
+  // title, unchanged; a preset replaces the TITLE phase scene only.
+  // Saved immediately on cycling (like skins), independent of
+  // SAVE + EXIT — but RESET TO LOCKED DEFAULT below clears it, so
+  // a reset always restores the locked default title.
+  const [titleChoice, setTitleChoice] = useState<TitleStartScreenId | null>(() => getSelectedTitleStartScreenId());
+  const cycleTitleChoice = (dir: 1 | -1) => {
+    const next = cycle(TITLE_START_SCREEN_CYCLE, titleChoice, dir);
+    setSelectedTitleStartScreenId(next);
+    setTitleChoice(next);
+  };
 
   // SETTINGS menu frame: per-menu override wins over the global
   // FRAME row when set (0 = follow global), per hudCustom.
@@ -216,6 +258,10 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     setDraft(d);
     setPreset(p);
     setCustom(c);
+    // RESET TO LOCKED DEFAULT also clears the title-screen pick:
+    // a reset always restores the locked default title.
+    setSelectedTitleStartScreenId(null);
+    setTitleChoice(null);
     saveAll(d, p, c);
     setSavedMsg('Reset to Locked Default (v32).');
   };
@@ -247,8 +293,25 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     { label: 'FRAME', value: frameName(draft.frame), onLeft: () => set({ frame: draft.frame <= 1 ? 20 : draft.frame - 1 }), onRight: () => set({ frame: draft.frame >= 20 ? 1 : draft.frame + 1 }), note: 'Original Mochiichao Y2K frames in Pokemon frame slots (1-10 FireRed base, 11-20 HeartGold/Platinum extra). Reloads live on return.' },
     { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('SETTINGS'); setScreen('FONT_SETTINGS'); }, note: 'Six independent placements (Mars font correction): MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font in fonts-settings-list.md independently, including Default — Trebuchet MS / system sans. Applies live on return. DIAMOND VERSION subtitle font is PINNED and never changes.' },
     { label: 'MENU CREATOR', value: 'OPEN ►', onLeft: () => setScreen('MENU_CREATOR'), onRight: () => setScreen('MENU_CREATOR'), onSelect: () => setScreen('MENU_CREATOR'), note: 'Full screen: Logo / Background / Animation / Panels. Presets only, never overwrites v32.' },
+    // Y2K skin rows (one per owed menu, skins PR #151 presets):
+    // Default = the menu's existing look, unchanged. A flavour
+    // recolours that menu's panels/text/selected frame only — layout,
+    // actions and save data never change, and the locked v32 main
+    // menu is never offered here. Saved immediately on cycling.
+    ...MENU_SKIN_MENUS.map(m => ({
+      label: `SKIN — ${m.label.toUpperCase()}`,
+      value: skinLabel(m.menu),
+      onLeft: () => cycleSkin(m.menu, -1),
+      onRight: () => cycleSkin(m.menu, 1),
+      note: `Per-menu Y2K skin preset (${m.presetFile}): Default / Pastel Day / Chrome Midnight / Bubblegum Pop. Applies live to ${m.label}; main menu and logo are never skinned.`,
+    })),
+    { label: 'TITLE SCREEN', value: titleStartScreenLabel(titleChoice), onLeft: () => cycleTitleChoice(-1), onRight: () => cycleTitleChoice(1), note: 'Interchangeable start screen for the TITLE phase only. Locked Default = the locked phi title, unchanged. A preset shows that preset\'s video + TitleScene + the locked logo/subtitle/press overlay, and presses the same way (M3 chirp, white fade 350ms, MAIN_MENU). Saved immediately on cycling. RESET TO LOCKED DEFAULT clears it.' },
+    { label: 'RESET TITLE SCREEN', value: titleChoice ? 'RESET ►' : 'LOCKED', onLeft: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, onRight: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, onSelect: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, note: 'Clears ONLY the TITLE SCREEN pick, back to Locked Default. Other settings untouched. (Full RESET TO LOCKED DEFAULT lives in Menu Creator.)' },
+    { label: 'MUSIC MIXER', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_MIXER'), onRight: () => setScreen('MUSIC_MIXER'), onSelect: () => setScreen('MUSIC_MIXER'), note: 'Full dedicated screen: FL-Studio-style mixer for the title v3 + vocal stems (default project loads on open, DELETE removes a stem, NEW clears, LOAD DEFAULT restores). Draggable mixer window (Mars 2026-10-26, explicitly asked). Game music pauses while mixing.' },
+    { label: 'SOUND CREATOR', value: 'OPEN ►', onLeft: () => setScreen('SOUND_CREATOR'), onRight: () => setScreen('SOUND_CREATOR'), onSelect: () => setScreen('SOUND_CREATOR'), note: 'Full dedicated screen under DigiCore Audio: make chirps/jingles, set boot / press-start / menu select / start-button sounds, mic Chatter (Chatot, DPPT), Ball Seals for send-out.' },
+    { label: 'MUSIC CREATOR', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_CREATOR'), onRight: () => setScreen('MUSIC_CREATOR'), onSelect: () => setScreen('MUSIC_CREATOR'), note: 'Full dedicated screen under DigiCore Audio: make soundtracks and background music, step sequencer, 8-bit synth + piano/guitar/drums/organ/bass + vocal takes.' },
     { label: 'CANCEL', value: 'SAVE + EXIT', onLeft: saveAndBack, onRight: saveAndBack, onSelect: saveAndBack, note: 'Saves all rows to the save + localStorage and returns to the main menu.' },
-  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset]); // eslint-disable-line react-hooks/exhaustive-deps
+  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices, titleChoice]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const menuCreatorRows: Row[] = useMemo(() => {
     const pages: Record<number, Row[]> = {
@@ -261,8 +324,8 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
         { label: 'PANEL FRAME EDITOR', value: 'OPEN ►', onLeft: () => setScreen('PANEL_FRAME_EDITOR'), onRight: () => setScreen('PANEL_FRAME_EDITOR'), onSelect: () => setScreen('PANEL_FRAME_EDITOR') },
         { label: 'FONT SETTINGS', value: `${mainFontOpt.label} / ${menuFontOpt.label} / ${dialogueFontOpt.label}`, onLeft: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onRight: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, onSelect: () => { setFontReturn('MENU_CREATOR'); setScreen('FONT_SETTINGS'); }, note: 'Best submenu path: Settings > Menu Creator > Font Settings. Six rows: MAIN / MENU / DIALOGUE / SMALL / BOLD / BATTLE, each cycles every font independently.' },
         { label: 'MENU CUSTOMISATION', value: 'OPEN ►', onLeft: () => setScreen('MENU_CUSTOM'), onRight: () => setScreen('MENU_CUSTOM'), onSelect: () => setScreen('MENU_CUSTOM'), note: 'Batch B: themes, day/night colourways, animation, background, Sprite Proportions, text extras, camera shake, reduced motion, touch, safe area. Independent rows, live on return, presets never overwrite locked v32.' },
-        { label: 'CREATE INTRO VIDEO', value: 'OPEN ►', onLeft: () => setScreen('INTRO_VIDEO_CREATOR'), onRight: () => setScreen('INTRO_VIDEO_CREATOR'), onSelect: () => setScreen('INTRO_VIDEO_CREATOR'), note: 'Full dedicated screen: scene list, timeline ruler, keyframes, presets. Presets only; locked default never overwritten. Playback from a saved preset is now live on main (PR #112). Still GAP: Phase 2 video export; painted backgrounds; creatures 1/10 ready with 9/10 GAP labels; music slot empty/name-only.' },
-        { label: 'CREATE START SCREEN', value: 'OPEN ►', onLeft: () => setScreen('START_SCREEN_CREATOR'), onRight: () => setScreen('START_SCREEN_CREATOR'), onSelect: () => setScreen('START_SCREEN_CREATOR'), note: 'Full dedicated screen: one scene, locked layout slots, creature / background / particles, SAVE AS PRESET + LOAD PRESET + EXPORT JSON. Playback from a saved preset and Phase 2 export are later batches (GAP).' },
+        { label: 'CREATE INTRO VIDEO', value: 'OPEN ►', onLeft: () => setScreen('INTRO_VIDEO_CREATOR'), onRight: () => setScreen('INTRO_VIDEO_CREATOR'), onSelect: () => setScreen('INTRO_VIDEO_CREATOR'), note: 'Full dedicated screen: scene list, timeline ruler, keyframes, presets. Presets only; locked default never overwritten. Playback from a saved preset is now live on main (PR #112). Video export live (Creator Phase 2: MediaRecorder WebM, silent). Still GAP: painted backgrounds; creatures 1/10 ready with 9/10 GAP labels; music slot empty/name-only.' },
+        { label: 'CREATE START SCREEN', value: 'OPEN ►', onLeft: () => setScreen('START_SCREEN_CREATOR'), onRight: () => setScreen('START_SCREEN_CREATOR'), onSelect: () => setScreen('START_SCREEN_CREATOR'), note: 'Full dedicated screen: one scene, locked layout slots, creature / background / particles, SAVE AS PRESET + LOAD PRESET + EXPORT JSON. Playback from a saved preset is live; video export live (Creator Phase 2: MediaRecorder WebM, 6 s hold, silent).' },
         { label: 'NEXT PAGE', value: 'BACKGROUND ►', onLeft: () => setMenuPage(2), onRight: () => setMenuPage(2), onSelect: () => setMenuPage(2) },
       ],
       2: [
@@ -417,13 +480,17 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   ];
 
   // Font Settings — Mars font CORRECTION (2026-10-25 18:30 CDT,
-  // overrides the 2-row version): six rows, each cycles the full
-  // FONT_OPTIONS list independently (including the named entry
-  // "Default — Trebuchet MS / system sans" on every row), applies
-  // live on return, CANCEL saves + exits.
+  // overrides the 2-row version) + Mars readability order
+  // (2026-10-26): six rows, each cycles the full FONT_OPTIONS
+  // list independently — both groups on every row: Pokemon Base
+  // group (Pokemon Base + Pokemon slots) AND Mars's chosen fonts
+  // (Yagiza / 01 Digitall / Y2K Google fonts). Applies live on
+  // return, CANCEL saves + exits.
   // RESET FONTS restores, in row order:
-  // MAIN=Yagiza / MENU=Yagiza / DIALOGUE=01 Digitall /
+  // MAIN=Yagiza / MENU=Pokemon Base / DIALOGUE=Pokemon Base /
   // SMALL=01 Digitall / BOLD=Yagiza / BATTLE=01 Digitall.
+  // POKEMON BASE DEFAULT sets MENU + DIALOGUE to Pokemon Base
+  // in one tap (other rows untouched).
   // ORIGINAL DEFAULTS applies the open-fonts preset (Bungee /
   // Titan One / Fredoka style). DIAMOND VERSION subtitle font is
   // PINNED — no row here touches it (see fonts.ts
@@ -433,16 +500,18 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     const i = FONT_OPTIONS.findIndex(f => f.id === cur);
     return FONT_OPTIONS[(i + dir + FONT_OPTIONS.length) % FONT_OPTIONS.length].id;
   };
-  const resetFonts = () => { set({ mainFont: 'yagiza', menuFont: 'yagiza', dialogueFont: '01-digitall', smallFont: '01-digitall', boldFont: 'yagiza', battleFont: '01-digitall' }); setSavedMsg('Fonts reset: MAIN=Yagiza, MENU=Yagiza, DIALOGUE=01 Digitall, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall.'); };
+  const resetFonts = () => { set({ mainFont: 'yagiza', menuFont: 'pokemon-base', dialogueFont: 'pokemon-base', smallFont: '01-digitall', boldFont: 'yagiza', battleFont: '01-digitall' }); setSavedMsg('Fonts reset: MAIN=Yagiza, MENU=Pokemon Base, DIALOGUE=Pokemon Base, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall.'); };
+  const pokemonBaseDefault = () => { set({ menuFont: 'pokemon-base', dialogueFont: 'pokemon-base' }); setSavedMsg('Pokemon Base applied: MENU=Pokemon Base, DIALOGUE=Pokemon Base. Other rows untouched. Save with CANCEL / SAVE + BACK to persist.'); };
   const originalDefaults = () => { set({ mainFont: 'bungee', menuFont: 'titan-one', dialogueFont: 'fredoka', smallFont: 'fredoka', boldFont: 'bungee', battleFont: 'fredoka' }); setSavedMsg('Original Defaults preset applied: MAIN=Bungee, MENU=Titan One, DIALOGUE=Fredoka, SMALL=Fredoka, BOLD=Bungee, BATTLE=Fredoka (open fonts only).'); };
   const fontRows: Row[] = [
     { label: 'MAIN FONT', value: mainFontOpt.label, onLeft: () => set({ mainFont: cycleFont(draft.mainFont, -1) }), onRight: () => set({ mainFont: cycleFont(draft.mainFont, 1) }), note: 'MAIN FONT (true starting default Yagiza) = titles, menus, headings, UI labels — via --game-font (body). ' + mainFontOpt.note },
-    { label: 'MENU FONT', value: menuFontOpt.label, onLeft: () => set({ menuFont: cycleFont(draft.menuFont, -1) }), onRight: () => set({ menuFont: cycleFont(draft.menuFont, 1) }), note: 'MENU FONT (separate row, starting default also Yagiza) = menu selection row text ONLY — main-menu CONTINUE / NEW GAME / SETTINGS rows and Settings rows follow this. Main menu layout/logo/cloud/panels/colours are otherwise UNCHANGED (locked v32). ' + menuFontOpt.note },
-    { label: 'DIALOGUE FONT', value: dialogueFontOpt.label, onLeft: () => set({ dialogueFont: cycleFont(draft.dialogueFont, -1) }), onRight: () => set({ dialogueFont: cycleFont(draft.dialogueFont, 1) }), note: 'DIALOGUE FONT (01 Digitall) = dialogue boxes, NPC talk, body text — via --dialogue-font in DialogueBox. ' + dialogueFontOpt.note },
+    { label: 'MENU FONT', value: menuFontOpt.label, onLeft: () => set({ menuFont: cycleFont(draft.menuFont, -1) }), onRight: () => set({ menuFont: cycleFont(draft.menuFont, 1) }), note: 'MENU FONT (readable default Pokemon Base, Mars 2026-10-26) = menu selection row text ONLY — main-menu CONTINUE / NEW GAME / SETTINGS rows and Settings rows follow this. Main menu layout/logo/cloud/panels/colours are otherwise UNCHANGED (locked v32). ' + menuFontOpt.note },
+    { label: 'DIALOGUE FONT', value: dialogueFontOpt.label, onLeft: () => set({ dialogueFont: cycleFont(draft.dialogueFont, -1) }), onRight: () => set({ dialogueFont: cycleFont(draft.dialogueFont, 1) }), note: 'DIALOGUE FONT (readable default Pokemon Base, Mars 2026-10-26) = dialogue boxes, NPC talk, body text — via --dialogue-font in DialogueBox. ' + dialogueFontOpt.note },
     { label: 'SMALL FONT', value: smallFontOpt.label, onLeft: () => set({ smallFont: cycleFont(draft.smallFont, -1) }), onRight: () => set({ smallFont: cycleFont(draft.smallFont, 1) }), note: 'SMALL FONT (starting 01 Digitall, Pokemon FONT_SMALL slot) = small labels and notes — speaker names, Settings notes/help. ' + smallFontOpt.note },
     { label: 'BOLD FONT', value: boldFontOpt.label, onLeft: () => set({ boldFont: cycleFont(draft.boldFont, -1) }), onRight: () => set({ boldFont: cycleFont(draft.boldFont, 1) }), note: 'BOLD FONT (starting Yagiza, FONT_BOLD slot) = bold headings and action buttons — Settings header, title logo, SAVE + BACK. ' + boldFontOpt.note },
     { label: 'BATTLE FONT', value: battleFontOpt.label, onLeft: () => set({ battleFont: cycleFont(draft.battleFont, -1) }), onRight: () => set({ battleFont: cycleFont(draft.battleFont, 1) }), note: 'BATTLE FONT (starting 01 Digitall) = battle log and HUD — BattleView message/log, healthboxes, move buttons. ' + battleFontOpt.note },
-    { label: 'RESET FONTS', value: 'Yagiza / Yagiza / Digitall', onLeft: resetFonts, onRight: resetFonts, onSelect: resetFonts, note: 'Restores, in row order: MAIN=Yagiza, MENU=Yagiza, DIALOGUE=01 Digitall, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall. Save with CANCEL / SAVE + BACK to persist.' },
+    { label: 'POKEMON BASE DEFAULT', value: 'APPLY ►', onLeft: pokemonBaseDefault, onRight: pokemonBaseDefault, onSelect: pokemonBaseDefault, note: 'One tap: MENU=Pokemon Base, DIALOGUE=Pokemon Base (readable defaults). Other rows untouched. Save with CANCEL / SAVE + BACK to persist. This is also what RESET FONTS restores for those two rows.' },
+    { label: 'RESET FONTS', value: 'Yagiza / Pokemon Base', onLeft: resetFonts, onRight: resetFonts, onSelect: resetFonts, note: 'Restores, in row order: MAIN=Yagiza, MENU=Pokemon Base, DIALOGUE=Pokemon Base, SMALL=01 Digitall, BOLD=Yagiza, BATTLE=01 Digitall. Save with CANCEL / SAVE + BACK to persist.' },
     { label: 'ORIGINAL DEFAULTS', value: 'Bungee / Titan One / Fredoka', onLeft: originalDefaults, onRight: originalDefaults, onSelect: originalDefaults, note: 'Separate preset using non-proprietary open fonts (Bungee / Titan One / Fredoka style). Never a Pokemon font file. Save with CANCEL / SAVE + BACK to persist.' },
     { label: 'BACK', value: '◄ BACK', onLeft: () => setScreen(fontReturn), onRight: () => setScreen(fontReturn), onSelect: () => setScreen(fontReturn), note: 'Returns to ' + (fontReturn === 'MENU_CREATOR' ? 'Menu Creator' : 'Settings') + '. Use SAVE + BACK below to persist font changes.' },
   ];
@@ -470,7 +539,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   useEffect(() => { setCursor(0); }, [screen, menuPage]);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR') return; // creator screens own their keys (any-key-skips + B: BACK)
+      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR' || screen === 'MUSIC_MIXER' || screen === 'SOUND_CREATOR' || screen === 'MUSIC_CREATOR') return; // creator screens own their keys (any-key-skips + B: BACK); the mixer owns its own keys (Esc / B: BACK)
       if (e.key === 'ArrowUp') { e.preventDefault(); setCursor(c => (c - 1 + rows.length) % rows.length); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); setCursor(c => (c + 1) % rows.length); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); rows[safeCursor]?.onLeft(); }
@@ -539,6 +608,23 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     return <StartScreenCreator onBack={() => setScreen('MENU_CREATOR')} />;
   }
 
+  // MUSIC MIXER is its own full dedicated screen under Settings (Mars
+  // 2026-10-26). B: BACK inside it returns to SETTINGS via onBack.
+  if (screen === 'MUSIC_MIXER') {
+    return <MusicMixerScreen onBack={() => setScreen('SETTINGS')} />;
+  }
+  if (screen === 'SOUND_CREATOR') {
+    return <SoundCreatorScreen onBack={() => setScreen('SETTINGS')} />;
+  }
+  if (screen === 'MUSIC_CREATOR') {
+    return <MusicCreatorScreen onBack={() => setScreen('SETTINGS')} />;
+  }
+  // Title-screen preset preview: the picked start screen as a TitleScene strip,
+  // built the same way TitleStartScreen builds it (biome/figure/creature).
+  // Locked Default has no strip — the locked phi title is not a TitleScene.
+  const titlePresetPreviewDef = titleChoice ? resolveTitleStartScreen(titleChoice) : null;
+  const titlePresetPreviewProps = titlePresetPreviewDef ? { biome: titlePresetPreviewDef.biome, figureUrl: titlePresetPreviewDef.figureUrl, figureName: titlePresetPreviewDef.creature, startPrompt: false, caption: ' ' } : null;
+
   return (
     <div className="game-screen bg-[#050810] flex flex-col items-center relative overflow-hidden p-4" style={{ background: renderBackground, justifyContent: anchorJustify, paddingTop: custom.safeArea ? 'max(1rem, env(safe-area-inset-top))' : '1rem', paddingBottom: custom.safeArea ? 'max(1rem, env(safe-area-inset-bottom))' : '1rem' }}>
       <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
@@ -584,6 +670,14 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
             </button>
           ))}
         </StdWindow>
+
+        {screen === 'SETTINGS' && titlePresetPreviewProps && (
+          <StdWindow style={panelStyle} className="px-3 py-2">
+            <div className="font-bold mb-1">Title preset preview — {titlePresetPreviewDef?.label}</div>
+            <TitleScene {...titlePresetPreviewProps} />
+            <div className="text-xs text-slate-400 mt-1">Preview only: the TITLE phase shows this scene full-screen when the preset is picked. PRESS ANY KEY still goes to MAIN MENU after the 350ms white fade.</div>
+          </StdWindow>
+        )}
 
         {screen === 'MENU_CUSTOM' && (
           <StdWindow style={{ ...panelStyle, borderRadius: DIALOGUE_BOX_RADIUS[custom.dialogueBoxStyle] }} className="px-3 py-2">

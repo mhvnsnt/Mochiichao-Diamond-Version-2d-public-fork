@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useGameStore } from "../store/gameStore";
 import { getSaves, saveGame, SaveEntry, loadGame } from "../lib/saveSystem";
+import { useMenuSkin, menuSkinVars } from "../lib/menuSkins";
+
+// Save rows show a place name, never tile coordinates (Pokemon save screens
+// show location + time). Sector ids map to their place names here.
+const MAP_DISPLAY_NAMES: Record<string, string> = { sector0: "Boot Harbor" };
 
 interface SaveMenuProps {
   onClose: () => void;
@@ -11,6 +16,11 @@ export default function SaveMenu({ onClose }: SaveMenuProps) {
   const slotId = gameState.saveSlot;
   const [saves, setSaves] = useState<SaveEntry[]>([]);
   const [viewing, setViewing] = useState<"LIST" | "CONFIRM_SAVE" | "CONFIRM_LOAD">("LIST");
+  // Y2K skin wiring (skins PR #151 save-slots presets via
+  // menuSkins.ts): null = default teal look, untouched. When set, the
+  // std-window + save rows restyle via menuSkins.css; actions, slot
+  // order and save data are unchanged.
+  const skin = useMenuSkin('save');
   const [selectedSave, setSelectedSave] = useState<SaveEntry | null>(null);
 
   useEffect(() => {
@@ -51,7 +61,7 @@ export default function SaveMenu({ onClose }: SaveMenuProps) {
 
   return (
     <div className="absolute inset-0 bg-black/80 backdrop-blur z-[60] flex items-center justify-center">
-      <div className="std-window p-6 w-full max-w-2xl">
+      <div className="std-window p-6 w-full max-w-2xl" data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
          <div className="flex justify-between items-center mb-6 border-b-2 border-teal-900 pb-2">
             <h2 className="text-teal-300 text-2xl font-bold tracking-widest textShadow">SYSTEM / SAVE</h2>
             <button onClick={onClose} className="text-gray-400 hover:text-white font-bold tracking-widest">▼ CLOSE</button>
@@ -68,7 +78,7 @@ export default function SaveMenu({ onClose }: SaveMenuProps) {
              <div className="flex flex-col gap-2 max-h-[50vh] overflow-y-auto pr-2">
                {saves.length === 0 && <div className="text-gray-500 text-center py-8">NO SAVES YET</div>}
                {saves.map(save => (
-                 <div key={save.id} className="bg-black/50 border border-teal-900/50 p-4 rounded flex justify-between items-center group hover:border-yellow-400 transition-colors">
+                 <div key={save.id} className="bg-black/50 border border-teal-900/50 p-4 rounded flex justify-between items-center group hover:border-yellow-400 transition-colors save-skin-row">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                          <span className={`text-xs font-bold px-2 py-0.5 rounded ${save.type === 'auto' ? 'bg-indigo-900 text-indigo-300' : 'bg-teal-900 text-teal-300'}`}>
@@ -77,7 +87,7 @@ export default function SaveMenu({ onClose }: SaveMenuProps) {
                          <span className="text-yellow-400 font-bold">{save.label}</span>
                       </div>
                       <div className="text-gray-400 text-xs">
-                        {new Date(save.timestamp).toLocaleString()} • Px: {save.data.playerPos.x}, Py: {save.data.playerPos.y}
+                        {new Date(save.timestamp).toLocaleString()} • {MAP_DISPLAY_NAMES[save.data.currentMap] || save.data.currentMap || save.label}
                       </div>
                     </div>
                     <button 

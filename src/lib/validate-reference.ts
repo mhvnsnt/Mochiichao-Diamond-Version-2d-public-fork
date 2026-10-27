@@ -15,6 +15,35 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { SPECIES_DB } from './species';
 import { MOVES_DB } from './moves';
+import {
+  BLACK2_ITEM_COUNT,
+  BLACK2_ABILITY_COUNT,
+  BLACK2_NATURE_COUNT,
+  BLACK2_TYPE_COUNT,
+  BLACK2_LIGHTING_SETS,
+  BLACK2_ZONE_COUNT,
+  BLACK2_ENCOUNTER_SET_COUNT,
+  BLACK2_FACILITY_COUNT,
+  BLACK2_KEPT_CLASS_COUNT,
+  BLACK2_DROPPED_CLASS_COUNT,
+  BLACK2_AI_STRATEGY_COUNT,
+  BLACK2_NATURE_MODIFIERS,
+  BLACK2_TYPE_EFFECTIVENESS_CHART,
+  BLACK2_ABILITY_LOGIC,
+  BLACK2_FACILITY_LEVEL_RANGE,
+} from './black2Systems';
+import {
+  STAT_STAGE_RATIOS,
+  ACCURACY_STAGE_RATIOS,
+  CRIT_STAGE_DENOMINATORS,
+  BAG_POCKETS_PER_GENERATION,
+  STORAGE_RULES,
+} from './playableWiring';
+import {
+  OPPONENT_MOVE_ROWS,
+  OPPONENT_COUNTS,
+  OPPONENT_VECTORS as OPPONENT_DIRECTION_VECTORS,
+} from './opponentDirection';
 // NOTE: spriteSheets.ts imports PNGs (Vite-only), so this script reads the
 // sheet manifests from disk instead of importing that module.
 const SHEET_DEFS: Record<string, { speciesId: string; name: string }> = {
@@ -74,10 +103,21 @@ for (const def of Object.values(SHEET_DEFS)) {
   const manifestPath = path.join(dir, `${def.name.toLowerCase()}.manifest.json`);
   if (!fs.existsSync(manifestPath)) { warnings.push(`Sheet ${def.name}: manifest missing at ${manifestPath}`); continue; }
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  // Sheet geometry comes from the manifest itself, not a hardcoded
+  // 192-wide sheet: locked atlases are 384 wide (dorowani 384x192,
+  // gabu 384x256) and the old <name>_sheet.png files were deleted
+  // 2026-10-26 per Mars order, so the old check flagged live art
+  // as missing. Fall back to the old 192 / <name>_sheet.png check
+  // only for manifests that name no sheet.
+  const sheetWidth = manifest.sheet?.width ?? 192;
+  const sheetFile = manifest.sheet?.file
+    ? path.join(path.resolve(SRC, '..'), manifest.sheet.file)
+    : path.join(dir, `${def.name.toLowerCase()}_sheet.png`);
   for (const f of manifest.frames || []) {
-    if (f.x < 0 || f.x + 64 > 192) errors.push(`Sheet ${def.name}: frame ${f.view} x=${f.x} outside 192-wide sheet`);
+    const fw = f.width ?? 64;
+    if (f.x < 0 || f.x + fw > sheetWidth) errors.push(`Sheet ${def.name}: frame ${f.view} x=${f.x} outside ${sheetWidth}-wide sheet`);
   }
-  if (!fs.existsSync(path.join(dir, `${def.name.toLowerCase()}_sheet.png`))) errors.push(`Sheet ${def.name}: sheet PNG missing`);
+  if (!fs.existsSync(sheetFile)) errors.push(`Sheet ${def.name}: sheet PNG missing at ${sheetFile}`);
   if (!SPECIES_DB[def.speciesId]) warnings.push(`Sheet ${def.name} (${def.speciesId}): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)`);
 }
 
@@ -105,6 +145,63 @@ for (const f of srcFiles) {
     errors.push(`Game source imports reference data: ${path.relative(SRC, f)}`);
   }
 }
+
+// 5. Black 2 everything-else reference counts (stage2 call site).
+// These are reference-data counts only: the JSONs are parsed in §3,
+// the lookup module's constants must match them, and the four gaps
+// that were 0 in the source must still be null (not invented).
+const black2Expected: Record<string, number> = {
+  'decomp_black2_items.json': BLACK2_ITEM_COUNT,
+  'decomp_black2_abilities.json': BLACK2_ABILITY_COUNT,
+  'decomp_black2_natures.json': BLACK2_NATURE_COUNT,
+  'decomp_black2_types.json': BLACK2_TYPE_COUNT,
+  'decomp_black2_lighting.json': BLACK2_LIGHTING_SETS,
+  'decomp_black2_zones.json': BLACK2_ZONE_COUNT,
+  'decomp_black2_encounters.json': BLACK2_ENCOUNTER_SET_COUNT,
+  'decomp_black2_trainer_facilities.json': BLACK2_FACILITY_COUNT,
+  'decomp_black2_trainer_classes.json': BLACK2_KEPT_CLASS_COUNT,
+};
+for (const [file, expected] of Object.entries(black2Expected)) {
+  const p = path.join(GENERATED, file);
+  if (!fs.existsSync(p)) { warnings.push(`Black 2 reference missing: ${file} (expected count ${expected})`); continue; }
+  const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+  // Each JSON stores its count under a different key; lighting uses
+  // field/battle arrays, classes use keptGenericOrTitledClasses.
+  const actual = file === 'decomp_black2_lighting.json'
+    ? ((data.field?.length ?? 0) + (data.battle?.length ?? 0))
+    : file === 'decomp_black2_trainer_classes.json'
+      ? (data.keptGenericOrTitledClasses ?? -1)
+      : typeof data.count === 'number' ? data.count
+      : typeof data.facilityCount === 'number' ? data.facilityCount
+      : -1;
+  if (actual !== expected) errors.push(`Black 2 reference count mismatch: ${file} expected ${expected}, got ${actual}`);
+  else console.log(`  black2 OK: ${file} count ${expected}`);
+}
+if (BLACK2_DROPPED_CLASS_COUNT + BLACK2_KEPT_CLASS_COUNT !== 237) errors.push(`Black 2 classes: kept ${BLACK2_KEPT_CLASS_COUNT} + dropped ${BLACK2_DROPPED_CLASS_COUNT} != 237`);
+if (BLACK2_AI_STRATEGY_COUNT !== 14) errors.push(`Black 2 AI strategies: expected 14, got ${BLACK2_AI_STRATEGY_COUNT}`);
+if (BLACK2_NATURE_MODIFIERS !== null) errors.push('Black 2 nature modifiers must stay null (not invented)');
+if (BLACK2_TYPE_EFFECTIVENESS_CHART !== null) errors.push('Black 2 type chart must stay null (not invented)');
+if (BLACK2_ABILITY_LOGIC !== null) errors.push('Black 2 ability logic must stay null (not invented)');
+if (BLACK2_FACILITY_LEVEL_RANGE !== null) errors.push('Black 2 facility level range must stay null (not invented)');
+
+
+// 6. Playable-wiring library checks (call-site pass, not stage2-display).
+// Library presence only for most rows: in-game call sites are Shop sell
+// price, PC storage rules, and the battle-canvas direction sign. Blocked
+// rows (26) stay un-invented: no canonical bag pocket, no True chart,
+// no map/roster assignment, no facility level rule is asserted here.
+if (STAT_STAGE_RATIOS.length !== 13) errors.push(`Playable wiring: stat stages expected 13, got ${STAT_STAGE_RATIOS.length}`);
+if (ACCURACY_STAGE_RATIOS.length !== 13) errors.push(`Playable wiring: accuracy stages expected 13, got ${ACCURACY_STAGE_RATIOS.length}`);
+if (CRIT_STAGE_DENOMINATORS.length !== 5) errors.push(`Playable wiring: crit stages expected 5, got ${CRIT_STAGE_DENOMINATORS.length}`);
+if (STORAGE_RULES.slotsPerBox !== 30 || STORAGE_RULES.partyMax !== 6) errors.push('Playable wiring: storage rules expected 30 slots / 6 party');
+if (Object.keys(BAG_POCKETS_PER_GENERATION).length !== 3) errors.push('Playable wiring: bag pockets expected 3 generations, no canonical choice');
+if (OPPONENT_COUNTS.moves_total !== 560) errors.push(`Opponent direction: moves expected 560, got ${OPPONENT_COUNTS.moves_total}`);
+if (OPPONENT_COUNTS.moves_opponent_travel_confirmed !== 442) errors.push(`Opponent direction: confirmed vectors expected 442, got ${OPPONENT_COUNTS.moves_opponent_travel_confirmed}`);
+if (OPPONENT_COUNTS.moves_confirmed_origin_body_part !== 0) errors.push('Opponent direction: body-part origins must stay 0 (not invented)');
+if (OPPONENT_MOVE_ROWS.length !== 560) errors.push(`Opponent direction: move rows expected 560, got ${OPPONENT_MOVE_ROWS.length}`);
+if (OPPONENT_MOVE_ROWS.some((r: any) => r.origin_label !== 'unconfirmed')) errors.push('Opponent direction: every move origin must stay unconfirmed');
+if (Math.sign(OPPONENT_DIRECTION_VECTORS.single.dx) !== -1) errors.push('Opponent direction: single vector must travel left (dx < 0)');
+else console.log('  playable OK: stat/accuracy/crit tables, storage rules, opponent 560/442/0');
 
 console.log(`\nWarnings (${warnings.length}):`);
 for (const w of [...new Set(warnings)].slice(0, 40)) console.log(`  WARN: ${w}`);

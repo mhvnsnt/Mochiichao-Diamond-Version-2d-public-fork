@@ -1,0 +1,4 @@
+loaded ../gabu/v2-fixed/gabu-v2-fixed-posed2.glb: 1599257 verts, 3329763 unique edges, 25 joints
+  clip faint ...
+    faint: p999=9.494 max=14.981 spikes(capped)=50 max_disp=0.1159 minYmin=-0.0521 bone_flags=1
+wrote gate_gabu_v2posed2_faint.json

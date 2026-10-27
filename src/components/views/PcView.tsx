@@ -4,6 +4,8 @@ import CreaturePortrait from '../game/CreaturePortrait';
 import { SPECIES_DB } from '../../lib/species';
 import { DATA_CARD_ID } from '../../lib/monster-tamer-systems';
 import { MenuHelpLine } from '../game/MenuList';
+import { useMenuSkin, menuSkinVars } from '../../lib/menuSkins';
+import { STORAGE_RULES } from '../../lib/playableWiring';
 
 /**
  * PC storage, v2 structure (pokemon_storage_system_menu.c, structure/
@@ -17,7 +19,7 @@ import { MenuHelpLine } from '../game/MenuList';
  * data themselves are the existing store lists — no new storage
  * system, no new save field.
  */
-const BOX_SIZE = 30;
+const BOX_SIZE = STORAGE_RULES.slotsPerBox;
 
 // Preserved cursor per box (module scope, like Roster's preserved
 // cursor): a cursor, not game state, so it is not a store/save field.
@@ -33,6 +35,11 @@ export default function PcView({ onBack }: { onBack: () => void }) {
   const [selected, setSelected] = useState(() => boxCursor[0] || 0);
   const [confirm, setConfirm] = useState<{ kind: 'deposit' | 'withdraw'; id: string; name: string } | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  // Y2K skin wiring (skins PR #151 presets via menuSkins.ts): null =
+  // default look, untouched. When set, data-menu-skin + variables on
+  // the root restyle .game-panel frames/text via menuSkins.css; the
+  // selected slot wears .skin-selected instead of the yellow ring.
+  const skin = useMenuSkin('pc');
 
   const boxCount = Math.max(1, Math.ceil(pc.length / BOX_SIZE));
   const safeBox = Math.min(box, boxCount - 1);
@@ -43,7 +50,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
   const selectSlot = (i: number) => { boxCursor[safeBox] = i; setSelected(i); };
 
   const moveToParty = (id: string) => {
-    if (party.length >= 6) return;
+    if (party.length >= STORAGE_RULES.partyMax) return;
     const m = pc.find(x => x.id === id);
     if (!m) return;
     useGameStore.setState(s => ({ pc: s.pc.filter(x => x.id !== id), party: [...s.party, m] }));
@@ -62,7 +69,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
   };
 
   return (
-    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]" data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
       <div className="flex justify-between items-center mb-4 shrink-0">
         <h2 className="game-title text-2xl">PC Storage</h2>
         <button onClick={onBack} className="game-button px-4 py-2 min-h-[48px]">Close</button>
@@ -95,7 +102,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
                   onClick={() => selectSlot(i)}
                   onMouseEnter={() => selectSlot(i)}
                   onFocus={() => selectSlot(i)}
-                  className={`game-panel p-2 flex flex-col items-center gap-1 min-h-[48px] ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}
+                  className={`game-panel p-2 flex flex-col items-center gap-1 min-h-[48px] ${i === selected ? (skin ? 'skin-selected' : 'ring-2 ring-yellow-300') : 'opacity-80'}`}
                 >
                   <CreaturePortrait speciesId={m.speciesId} view="front" size={48} />
                   <span className="text-xs text-white truncate w-full text-center">{i === selected ? '► ' : ''}{m.nickname}</span>
@@ -111,7 +118,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
               {cardStored[selectedCreature.id] && <div className="text-xs text-teal-300 mt-1">Stored on Data Card — swappable at the PC</div>}
               <div className="flex flex-wrap gap-2 mt-3">
                 <button
-                  disabled={party.length >= 6}
+                  disabled={party.length >= STORAGE_RULES.partyMax}
                   onClick={() => setConfirm({ kind: 'withdraw', id: selectedCreature.id, name: selectedCreature.nickname })}
                   className="game-button px-3 py-2 text-xs min-h-[48px]"
                 >

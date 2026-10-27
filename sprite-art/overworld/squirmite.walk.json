@@ -1,0 +1,127 @@
+{
+ "creature": "squirmite",
+ "roster_id": "016",
+ "variant": null,
+ "movement_class": "crawl",
+ "idle_class": "small_bouncy",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 600,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/squirmite/cells/squirmite_cell_03.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/squirmite/cells/squirmite_cell_12.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "walk/squirmite/squirmite_walk_down_transform_step1.png",
+     "provenance": "transform_crawl",
+     "source_role": "overworld_front",
+     "transform": {
+      "dx": -1,
+      "dy": 0,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/squirmite/cells/squirmite_cell_03.png",
+    "game-ready/squirmite/cells/squirmite_cell_12.png",
+    "game-ready/squirmite/cells/squirmite_cell_03.png",
+    "walk/squirmite/squirmite_walk_down_transform_step1.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/squirmite/cells/squirmite_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/squirmite/cells/squirmite_cell_08.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "walk/squirmite/squirmite_walk_up_transform_step1.png",
+     "provenance": "transform_crawl",
+     "source_role": "overworld_back",
+     "transform": {
+      "dx": -1,
+      "dy": 0,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/squirmite/cells/squirmite_cell_02.png",
+    "game-ready/squirmite/cells/squirmite_cell_08.png",
+    "game-ready/squirmite/cells/squirmite_cell_02.png",
+    "walk/squirmite/squirmite_walk_up_transform_step1.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/squirmite/cells/squirmite_cell_06.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "game-ready/squirmite/cells/squirmite_cell_09.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_1"
+    },
+    {
+     "file": "game-ready/squirmite/cells/squirmite_cell_11.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_2"
+    }
+   ],
+   "loop": [
+    "game-ready/squirmite/cells/squirmite_cell_06.png",
+    "game-ready/squirmite/cells/squirmite_cell_09.png",
+    "game-ready/squirmite/cells/squirmite_cell_06.png",
+    "game-ready/squirmite/cells/squirmite_cell_11.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/squirmite/squirmite_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "walk/squirmite/squirmite_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_1",
+     "mirrored_from": "game-ready/squirmite/cells/squirmite_cell_09.png"
+    },
+    {
+     "file": "walk/squirmite/squirmite_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_2",
+     "mirrored_from": "game-ready/squirmite/cells/squirmite_cell_11.png"
+    }
+   ],
+   "loop": [
+    "walk/squirmite/squirmite_walk_right_stand.png",
+    "walk/squirmite/squirmite_walk_right_mirror_1.png",
+    "walk/squirmite/squirmite_walk_right_stand.png",
+    "walk/squirmite/squirmite_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}

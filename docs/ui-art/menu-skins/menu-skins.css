@@ -28,6 +28,13 @@
 :root[data-menu-skin="dialogue-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
 :root[data-menu-skin="dialogue-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
 :root[data-menu-skin="dialogue-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+/* Gap-fill preview rows (skins wiring PR): PC/Party reuse the bag values verbatim — see pc/party.y2k-skins.json. */
+:root[data-menu-skin="pc-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
+:root[data-menu-skin="pc-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="pc-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
+:root[data-menu-skin="party-pastel-day"] { --skin-panel-fill: linear-gradient(180deg, #ffffff, #fdf2f8); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #0f172a; --skin-cursor: #f472b6; }
+:root[data-menu-skin="party-chrome-midnight"] { --skin-panel-fill: linear-gradient(180deg, #16233a, #0f172a); --skin-panel-border: #22d3ee; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #f1f5f9; --skin-cursor: #fbbf24; }
+:root[data-menu-skin="party-bubblegum-pop"] { --skin-panel-fill: linear-gradient(180deg, #f472b6, #db2777); --skin-panel-border: #000000; --skin-selected-frame: 4px solid #fbbf24; --skin-text: #000000; --skin-cursor: #22d3ee; }
 
 @media (prefers-reduced-motion: reduce) {
   /* All skin bob/sway frozen to static values, per every skin's reducedMotion field. */

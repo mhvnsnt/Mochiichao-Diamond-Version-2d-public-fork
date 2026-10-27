@@ -1,0 +1,139 @@
+{
+ "creature": "yogiferno",
+ "roster_id": "046",
+ "variant": null,
+ "movement_class": "grounded_standard",
+ "idle_class": "grounded_standard",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 480,
+ "side_gap": true,
+ "side_note": "No distinct side cell in the locked manifest; left/right stands reuse the front stand until distinct side art lands. Steps still animate.",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "provenance": "locked_stand",
+    "source_role": "battle_front"
+   },
+   "steps": [
+    {
+     "file": "walk/yogiferno/yogiferno_walk_down_transform_step1.png",
+     "provenance": "transform_grounded_standard",
+     "source_role": "battle_front",
+     "transform": {
+      "dx": 0,
+      "dy": -2,
+      "scale": 1.0
+     }
+    },
+    {
+     "file": "walk/yogiferno/yogiferno_walk_down_transform_step2.png",
+     "provenance": "transform_grounded_standard",
+     "source_role": "battle_front",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "walk/yogiferno/yogiferno_walk_down_transform_step1.png",
+    "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "walk/yogiferno/yogiferno_walk_down_transform_step2.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/yogiferno/cells/yogiferno_cell_01.png",
+    "provenance": "locked_stand",
+    "source_role": "battle_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/yogiferno/cells/yogiferno_cell_03.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/yogiferno/cells/yogiferno_cell_02.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_1"
+    }
+   ],
+   "loop": [
+    "game-ready/yogiferno/cells/yogiferno_cell_01.png",
+    "game-ready/yogiferno/cells/yogiferno_cell_03.png",
+    "game-ready/yogiferno/cells/yogiferno_cell_01.png",
+    "game-ready/yogiferno/cells/yogiferno_cell_02.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "provenance": "side_placeholder_front_reuse",
+    "source_role": "battle_front",
+    "side_gap": true
+   },
+   "steps": [
+    {
+     "file": "walk/yogiferno/yogiferno_walk_left_transform_step1.png",
+     "provenance": "transform_grounded_standard",
+     "source_role": "battle_front",
+     "transform": {
+      "dx": 0,
+      "dy": -2,
+      "scale": 1.0
+     }
+    },
+    {
+     "file": "walk/yogiferno/yogiferno_walk_left_transform_step2.png",
+     "provenance": "transform_grounded_standard",
+     "source_role": "battle_front",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "walk/yogiferno/yogiferno_walk_left_transform_step1.png",
+    "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "walk/yogiferno/yogiferno_walk_left_transform_step2.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "provenance": "side_placeholder_front_reuse",
+    "source_role": "battle_front",
+    "side_gap": true
+   },
+   "steps": [
+    {
+     "file": "walk/yogiferno/yogiferno_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "battle_front",
+     "mirrored_from": "walk/yogiferno/yogiferno_walk_left_transform_step1.png"
+    },
+    {
+     "file": "walk/yogiferno/yogiferno_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "battle_front",
+     "mirrored_from": "walk/yogiferno/yogiferno_walk_left_transform_step2.png"
+    }
+   ],
+   "loop": [
+    "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "walk/yogiferno/yogiferno_walk_right_mirror_1.png",
+    "game-ready/yogiferno/cells/yogiferno_cell_00.png",
+    "walk/yogiferno/yogiferno_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}

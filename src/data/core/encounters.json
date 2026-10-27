@@ -1,0 +1,135 @@
+{
+  "$schema": "./schemas/encounters.schema.json",
+  "version": "1.0.0",
+  "source": "Seed encounter tables (3 maps, 4 method tables), written for this core from roster species only. Full region encounter tables are owed. Map ids reference the maps schema; map definitions themselves are owed by the maps/world lane.",
+  "encounters": [
+    {
+      "mapId": "meadow-route-01",
+      "method": "grass",
+      "slots": [
+        {
+          "speciesId": "038",
+          "minLevel": 2,
+          "maxLevel": 4,
+          "weight": 30
+        },
+        {
+          "speciesId": "013",
+          "minLevel": 2,
+          "maxLevel": 4,
+          "weight": 25
+        },
+        {
+          "speciesId": "016",
+          "minLevel": 2,
+          "maxLevel": 3,
+          "weight": 20
+        },
+        {
+          "speciesId": "019",
+          "minLevel": 2,
+          "maxLevel": 4,
+          "weight": 15
+        },
+        {
+          "speciesId": "010",
+          "minLevel": 3,
+          "maxLevel": 5,
+          "weight": 10
+        }
+      ],
+      "timeOfDay": null,
+      "weather": null
+    },
+    {
+      "mapId": "pond-route-01",
+      "method": "surf",
+      "slots": [
+        {
+          "speciesId": "001",
+          "minLevel": 3,
+          "maxLevel": 5,
+          "weight": 40
+        },
+        {
+          "speciesId": "026",
+          "minLevel": 3,
+          "maxLevel": 5,
+          "weight": 30
+        },
+        {
+          "speciesId": "022",
+          "minLevel": 4,
+          "maxLevel": 6,
+          "weight": 20
+        },
+        {
+          "speciesId": "024",
+          "minLevel": 5,
+          "maxLevel": 7,
+          "weight": 10
+        }
+      ],
+      "timeOfDay": null,
+      "weather": null
+    },
+    {
+      "mapId": "pond-route-01",
+      "method": "fish",
+      "slots": [
+        {
+          "speciesId": "001",
+          "minLevel": 3,
+          "maxLevel": 5,
+          "weight": 40
+        },
+        {
+          "speciesId": "022",
+          "minLevel": 4,
+          "maxLevel": 6,
+          "weight": 35
+        },
+        {
+          "speciesId": "026",
+          "minLevel": 3,
+          "maxLevel": 5,
+          "weight": 25
+        }
+      ],
+      "timeOfDay": null,
+      "weather": null
+    },
+    {
+      "mapId": "cave-route-01",
+      "method": "cave",
+      "slots": [
+        {
+          "speciesId": "032",
+          "minLevel": 5,
+          "maxLevel": 8,
+          "weight": 35
+        },
+        {
+          "speciesId": "035",
+          "minLevel": 6,
+          "maxLevel": 9,
+          "weight": 30
+        },
+        {
+          "speciesId": "029",
+          "minLevel": 5,
+          "maxLevel": 7,
+          "weight": 20
+        },
+        {
+          "speciesId": "041",
+          "minLevel": 6,
+          "maxLevel": 8,
+          "weight": 15
+        }
+      ],
+      "timeOfDay": null,
+      "weather": null
+    }
+  ]
+}

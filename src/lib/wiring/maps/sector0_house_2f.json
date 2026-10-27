@@ -1,0 +1,28 @@
+{
+  "id": "sector0_house_2f",
+  "name": "Your House — 2F",
+  "width": 13,
+  "height": 12,
+  "playerStart": [6, 10],
+  "music": "sector0_theme",
+  "weather": "clear",
+  "interior": true,
+  "tiles": [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 4, 4, 4, 3, 3, 3, 4, 4, 4, 3, 1],
+    [1, 3, 4, 4, 4, 3, 3, 3, 4, 4, 4, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 1, 1, 1, 1, 1, 20, 1, 1, 1, 1, 1, 1]
+  ],
+  "exits": [{"x": 6, "y": 11, "to": "sector0_house_1f", "enterAt": [6, 2], "dir": "down"}],
+  "npcs": [],
+  "signs": [{"x": 3, "y": 2, "text": "PC\\nYour PC. Items and Mochiichao storage live here."}, {"x": 6, "y": 5, "text": "CLOCK\\nSet the clock. A new home needs a correct time."}, {"x": 9, "y": 2, "text": "POSTER\\nA poster of a legendary Mochiichao. One day."}],
+  "noWild": true
+}

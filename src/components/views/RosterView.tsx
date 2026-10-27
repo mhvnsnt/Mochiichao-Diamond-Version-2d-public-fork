@@ -5,6 +5,8 @@ import { MOVES_DB } from '../../lib/moves';
 import CreaturePortrait from '../game/CreaturePortrait';
 import { MenuHelpLine } from '../game/MenuList';
 import { TRUE_ELEMENTS, MAINFRAME_SECTORS, MainframeVariant, variantLabel, isTrueElement } from '../../lib/monster-tamer-systems';
+import { useMenuSkin, menuSkinVars } from '../../lib/menuSkins';
+import { coatVariantFor, coatLabel, coatLook, lustreDef, lustreFrontForSpecies } from '../../lib/variants';
 
 /**
  * Roster, Pokemon-style placement: list on one side, detail panel on the
@@ -18,11 +20,6 @@ import { TRUE_ELEMENTS, MAINFRAME_SECTORS, MainframeVariant, variantLabel, isTru
  * (list + detail), as read from the decomp menu/battle structure in the
  * reference JSONs — layout only; all art/text here is Mochiichao's own.
  */
-const GEN2_PREVIEW = [
-  { speciesId: '147', name: 'Dorowani', note: 'Gen 2 starter — sheet ready' },
-  { speciesId: '148', name: 'Gabu', note: 'Gen 2 starter — sheet ready' },
-];
-
 // Preserved cursor (v2, party_menu structure only): the last selected
 // slot is kept in module scope so it survives leaving this screen and
 // returning. No new store field, no save field — it is a cursor, not
@@ -55,10 +52,15 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
   const [variants, setVariants] = useState<Record<string, MainframeVariant>>({});
   const [variantSector, setVariantSector] = useState<string>(MAINFRAME_SECTORS[0]);
   const [variantElement, setVariantElement] = useState<string>(TRUE_ELEMENTS[0]);
+  // Y2K skin wiring (skins PR #151 presets via menuSkins.ts): null =
+  // default look, untouched. Selected list row wears .skin-selected
+  // instead of the yellow ring while a skin is active.
+  const skin = useMenuSkin('party');
   const currentVariant = current ? variants[current.id] : undefined;
+  const lustreDisplay = useGameStore(s => s.shiny);
 
   return (
-    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]" data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
       <div className="flex justify-between items-center mb-4 shrink-0">
         <h2 className="game-title text-2xl">Your Team</h2>
         <button onClick={onBack} className="game-button px-4 py-2">Close</button>
@@ -84,7 +86,7 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
                 <button
                   key={mochii.id}
                   onClick={() => selectSlot(i)}
-                  className={`game-panel p-3 flex items-center gap-3 text-left shrink-0 min-h-[48px] ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}
+                  className={`game-panel p-3 flex items-center gap-3 text-left shrink-0 min-h-[48px] ${i === selected ? (skin ? 'skin-selected' : 'ring-2 ring-yellow-300') : 'opacity-80'}`}
                 >
                   <CreaturePortrait speciesId={mochii.speciesId} view="front" size={56} />
                   <div className="min-w-0 flex-1">
@@ -173,17 +175,16 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
                     >
                       Switch
                     </button>
-                    <button className="game-button px-3 py-2 text-sm min-h-[48px] opacity-60" disabled title="Held items are not stored on a creature in this build yet, so no item was given.">Give Item</button>
-                    <button className="game-button px-3 py-2 text-sm min-h-[48px] opacity-60" disabled title="Held items are not stored on a creature in this build yet, so no item was taken.">Take Item</button>
+                    <button className="game-button px-3 py-2 text-sm min-h-[48px] opacity-60" disabled>Give Item</button>
+                    <button className="game-button px-3 py-2 text-sm min-h-[48px] opacity-60" disabled>Take Item</button>
                     <button className="game-button px-3 py-2 text-sm min-h-[48px]" onClick={() => setContextOpen(false)}>Cancel</button>
                   </div>
                 )}
-                <p className="text-xs text-slate-400 mt-2">Held item: none stored on a creature in this build yet. Release is not offered here.</p>
+                <p className="text-xs text-slate-400 mt-2">Held item: none.</p>
               </div>
               <h3 className="text-white font-bold mt-5 mb-2">Mainframe Variant</h3>
               <div className="text-sm text-slate-300">
                 {currentVariant ? variantLabel(currentVariant) : 'No variant set — same species, no new ID.'}
-                <span className="block text-xs text-slate-400 mt-1">Display tag only: battle types and stats are unchanged. Capture stays Luigi Cubes + Ring Capture.</span>
               </div>
               <div className="flex flex-wrap gap-2 mt-2">
                 <select value={variantSector} onChange={e => setVariantSector(e.target.value)} className="game-button px-2 py-1 text-sm">
@@ -198,6 +199,20 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
                 >
                   Set Variant
                 </button>
+              </div>
+              <h3 className="text-white font-bold mt-5 mb-2">Lustre</h3>
+              <div className="text-sm text-slate-300">
+                {(() => {
+                  const coat = coatVariantFor(current.id);
+                  const front = lustreFrontForSpecies(species?.name);
+                  const def = lustreDef(coat);
+                  const showFront = front && (coat !== 'standard' || lustreDisplay);
+                  return (<>
+                    <span>{coat !== 'standard' ? '✦ ' : ''}{coatLabel(coat)}{def ? ` — ${coatLook(coat)}` : ''}</span>
+                    <span className="block text-xs text-slate-400 mt-1">Lustre is rare — 1 in 8,192. Each look, 1 in 81,920.</span>
+                    {showFront && <img src={front!} alt={`${species?.name || 'Creature'} Lustre look`} width={128} height={128} style={{ width: 128, height: 128, imageRendering: 'pixelated', filter: def && def.hueRotateDeg ? `hue-rotate(${def.hueRotateDeg}deg)` : undefined }} className="mt-2" />}
+                  </>);
+                })()}
               </div>
               <h3 className="text-white font-bold mt-5 mb-2">Moves</h3>
               <div className="grid grid-cols-2 gap-2">
@@ -219,21 +234,6 @@ export default function RosterView({ onBack }: { onBack: () => void }) {
         </div>
       )}
 
-      <div className="shrink-0 mt-4">
-        <h3 className="text-white font-bold mb-1 text-sm">Gen 2 starters — art preview</h3>
-        <p className="text-xs text-slate-400 mb-2">Drawn from Mars's own models. Gen 2 starters, coming later — not choosable in the lab yet.</p>
-        <div className="grid grid-cols-2 gap-3">
-          {GEN2_PREVIEW.map(c => (
-            <div key={c.speciesId} className="game-panel p-3 flex items-center gap-3">
-              <CreaturePortrait speciesId={c.speciesId} view="front" size={56} />
-              <div>
-                <div className="font-bold text-white text-sm">{c.name} <span className="text-slate-400 text-xs">#{c.speciesId}</span></div>
-                <div className="text-xs text-slate-400">{c.note}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

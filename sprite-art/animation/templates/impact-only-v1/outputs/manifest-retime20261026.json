@@ -1,0 +1,1583 @@
+{
+ "tag": "retime20261026",
+ "timing_modes": {
+  "impact": "Mode A: overlay ONLY on impact/connection frame, flash capped at IMPACT_FLASH_MS=120ms in GIF (base face resumes for remainder of beat); total set duration unchanged (Mars 2026-10-26 ~09:13 CDT, Dreadtoise hurts).",
+  "persistent": "Mode B: overlay stays through whole phase \u2014 windup, strike, impact, recover (Mars 2026-10-26 ~09:15 CDT, Mochii attacks).",
+  "base": "No overlays: face already changes on its own (Mochii hurts, face-change detection)."
+ },
+ "mochii_anatomy": "Eyes BLACK disc + WHITE highlight inside, NO white sclera. Mouth: NO TEETH ever (Mars 2026-10-26 ~09:14 CDT); squiggly (grimace) mouth + lowered (narrowed/half) eyes approved.",
+ "dreadtoise_hurts": {
+  "hurt_light_flinch": {
+   "kind": "hurt",
+   "family": "flinch",
+   "timing_mode": "impact",
+   "source_faces": [
+    "front",
+    "front",
+    "front"
+   ],
+   "face_changing": false,
+   "files": [
+    "dreadtoise-retime20261026-hurt_light_flinch-cell-00.png",
+    "dreadtoise-retime20261026-hurt_light_flinch-cell-01.png",
+    "dreadtoise-retime20261026-hurt_light_flinch-cell-02.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       22.9,
+       25.4
+      ],
+      [
+       34.5,
+       24.8
+      ]
+     ],
+     "pred_mouth": [
+      29.1,
+      32.1
+     ],
+     "eye_feature_counts": [
+      17,
+      11
+     ],
+     "verified": true,
+     "action": "overlay-o-shock-widened",
+     "duration_ms": 120
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.6,
+       25.2
+      ],
+      [
+       32.0,
+       24.2
+      ]
+     ],
+     "pred_mouth": [
+      26.9,
+      31.9
+     ],
+     "eye_feature_counts": [
+      16,
+      12
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 180
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       26.0,
+       25.0
+      ],
+      [
+       38.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      32.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      14,
+      11
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 220
+    }
+   ],
+   "overlay_visibility_ms": 120,
+   "total_ms": 520
+  },
+  "hurt_heavy_knockback": {
+   "kind": "hurt",
+   "family": "knockback",
+   "timing_mode": "impact",
+   "source_faces": [
+    "front",
+    "front",
+    "front",
+    "front"
+   ],
+   "face_changing": false,
+   "files": [
+    "dreadtoise-retime20261026-hurt_heavy_knockback-cell-00.png",
+    "dreadtoise-retime20261026-hurt_heavy_knockback-cell-01.png",
+    "dreadtoise-retime20261026-hurt_heavy_knockback-cell-02.png",
+    "dreadtoise-retime20261026-hurt_heavy_knockback-cell-03.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       25.0,
+       25.0
+      ],
+      [
+       37.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      0,
+      0
+     ],
+     "verified": false,
+     "action": "base-skipped-unverified-flash",
+     "duration_ms": 80
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       15.4,
+       26.6
+      ],
+      [
+       26.7,
+       24.9
+      ]
+     ],
+     "pred_mouth": [
+      22.2,
+      32.8
+     ],
+     "eye_feature_counts": [
+      15,
+      10
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 140
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       17.8,
+       30.9
+      ],
+      [
+       31.2,
+       30.9
+      ]
+     ],
+     "pred_mouth": [
+      24.5,
+      36.9
+     ],
+     "eye_feature_counts": [
+      19,
+      18
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 180
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       26.0,
+       25.0
+      ],
+      [
+       38.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      32.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      14,
+      11
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 300
+    }
+   ],
+   "overlay_visibility_ms": 0,
+   "total_ms": 700
+  },
+  "hurt_status_wobble": {
+   "kind": "hurt",
+   "family": "wobble",
+   "timing_mode": "impact",
+   "source_faces": [
+    "front",
+    "front",
+    "front"
+   ],
+   "face_changing": false,
+   "files": [
+    "dreadtoise-retime20261026-hurt_status_wobble-cell-00.png",
+    "dreadtoise-retime20261026-hurt_status_wobble-cell-01.png",
+    "dreadtoise-retime20261026-hurt_status_wobble-cell-02.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       27.6,
+       24.3
+      ],
+      [
+       39.5,
+       25.7
+      ]
+     ],
+     "pred_mouth": [
+      32.7,
+      32.0
+     ],
+     "eye_feature_counts": [
+      14,
+      12
+     ],
+     "verified": true,
+     "action": "overlay-grimace-dizzy",
+     "duration_ms": 220
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       24.5,
+       25.7
+      ],
+      [
+       36.4,
+       24.3
+      ]
+     ],
+     "pred_mouth": [
+      31.3,
+      32.0
+     ],
+     "eye_feature_counts": [
+      14,
+      9
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 220
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       26.0,
+       25.0
+      ],
+      [
+       38.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      32.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      18,
+      14
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 300
+    }
+   ],
+   "overlay_visibility_ms": 120,
+   "total_ms": 740
+  },
+  "hurt_near_faint_stagger": {
+   "kind": "hurt",
+   "family": "stagger",
+   "timing_mode": "impact",
+   "source_faces": [
+    "front",
+    "front",
+    "front",
+    "front"
+   ],
+   "face_changing": false,
+   "files": [
+    "dreadtoise-retime20261026-hurt_near_faint_stagger-cell-00.png",
+    "dreadtoise-retime20261026-hurt_near_faint_stagger-cell-01.png",
+    "dreadtoise-retime20261026-hurt_near_faint_stagger-cell-02.png",
+    "dreadtoise-retime20261026-hurt_near_faint_stagger-cell-03.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       26.7,
+       24.4
+      ],
+      [
+       38.7,
+       25.5
+      ]
+     ],
+     "pred_mouth": [
+      32.1,
+      31.9
+     ],
+     "eye_feature_counts": [
+      13,
+      9
+     ],
+     "verified": true,
+     "action": "overlay-frown-half",
+     "duration_ms": 260
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       25.7,
+       30.0
+      ],
+      [
+       38.3,
+       30.0
+      ]
+     ],
+     "pred_mouth": [
+      32.0,
+      36.1
+     ],
+     "eye_feature_counts": [
+      11,
+      6
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 260
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       27.7,
+       27.3
+      ],
+      [
+       39.4,
+       28.1
+      ]
+     ],
+     "pred_mouth": [
+      33.1,
+      34.1
+     ],
+     "eye_feature_counts": [
+      8,
+      5
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 260
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       25.7,
+       28.3
+      ],
+      [
+       38.3,
+       28.3
+      ]
+     ],
+     "pred_mouth": [
+      32.0,
+      34.6
+     ],
+     "eye_feature_counts": [
+      13,
+      7
+     ],
+     "verified": true,
+     "action": "base",
+     "duration_ms": 400
+    }
+   ],
+   "overlay_visibility_ms": 120,
+   "total_ms": 1180
+  }
+ },
+ "mochii_hurts": {
+  "hurt_light_flinch": {
+   "kind": "hurt",
+   "family": "flinch",
+   "timing_mode": "base",
+   "source_faces": [
+    "hurt",
+    "hurt",
+    "front"
+   ],
+   "face_changing": true,
+   "files": [
+    "mochii-retime20261026-hurt_light_flinch-cell-00.png",
+    "mochii-retime20261026-hurt_light_flinch-cell-01.png",
+    "mochii-retime20261026-hurt_light_flinch-cell-02.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       17.3,
+       25.1
+      ],
+      [
+       37.2,
+       24.0
+      ]
+     ],
+     "pred_mouth": [
+      28.1,
+      31.7
+     ],
+     "eye_feature_counts": [
+      8,
+      34
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 120
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       15.4,
+       24.7
+      ],
+      [
+       34.3,
+       23.1
+      ]
+     ],
+     "pred_mouth": [
+      25.9,
+      31.2
+     ],
+     "eye_feature_counts": [
+      10,
+      31
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 180
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.0,
+       25.0
+      ],
+      [
+       41.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      34,
+      33
+     ],
+     "verified": true,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 220
+    }
+   ],
+   "overlay_visibility_ms": 0,
+   "total_ms": 520
+  },
+  "hurt_heavy_knockback": {
+   "kind": "hurt",
+   "family": "knockback",
+   "timing_mode": "base",
+   "source_faces": [
+    "hurt",
+    "hurt",
+    "hurt",
+    "front"
+   ],
+   "face_changing": true,
+   "files": [
+    "mochii-retime20261026-hurt_heavy_knockback-cell-00.png",
+    "mochii-retime20261026-hurt_heavy_knockback-cell-01.png",
+    "mochii-retime20261026-hurt_heavy_knockback-cell-02.png",
+    "mochii-retime20261026-hurt_heavy_knockback-cell-03.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       19.0,
+       25.0
+      ],
+      [
+       40.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      30.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      0,
+      0
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 80
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       9.1,
+       27.0
+      ],
+      [
+       28.1,
+       23.6
+      ]
+     ],
+     "pred_mouth": [
+      20.4,
+      32.5
+     ],
+     "eye_feature_counts": [
+      12,
+      30
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 140
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       10.3,
+       30.9
+      ],
+      [
+       33.4,
+       30.9
+      ]
+     ],
+     "pred_mouth": [
+      22.4,
+      36.9
+     ],
+     "eye_feature_counts": [
+      14,
+      38
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 180
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.0,
+       25.0
+      ],
+      [
+       41.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      34,
+      33
+     ],
+     "verified": true,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 300
+    }
+   ],
+   "overlay_visibility_ms": 0,
+   "total_ms": 700
+  },
+  "hurt_status_wobble": {
+   "kind": "hurt",
+   "family": "wobble",
+   "timing_mode": "base",
+   "source_faces": [
+    "hurt",
+    "hurt",
+    "front"
+   ],
+   "face_changing": true,
+   "files": [
+    "mochii-retime20261026-hurt_status_wobble-cell-00.png",
+    "mochii-retime20261026-hurt_status_wobble-cell-01.png",
+    "mochii-retime20261026-hurt_status_wobble-cell-02.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       22.1,
+       23.4
+      ],
+      [
+       42.9,
+       26.3
+      ]
+     ],
+     "pred_mouth": [
+      32.0,
+      31.8
+     ],
+     "eye_feature_counts": [
+      13,
+      39
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 220
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       18.1,
+       26.7
+      ],
+      [
+       38.9,
+       23.8
+      ]
+     ],
+     "pred_mouth": [
+      30.0,
+      32.1
+     ],
+     "eye_feature_counts": [
+      9,
+      30
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 220
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.0,
+       25.0
+      ],
+      [
+       41.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      24,
+      24
+     ],
+     "verified": true,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 300
+    }
+   ],
+   "overlay_visibility_ms": 0,
+   "total_ms": 740
+  },
+  "hurt_near_faint_stagger": {
+   "kind": "hurt",
+   "family": "stagger",
+   "timing_mode": "base",
+   "source_faces": [
+    "hurt",
+    "hurt",
+    "hurt",
+    "front"
+   ],
+   "face_changing": true,
+   "files": [
+    "mochii-retime20261026-hurt_near_faint_stagger-cell-00.png",
+    "mochii-retime20261026-hurt_near_faint_stagger-cell-01.png",
+    "mochii-retime20261026-hurt_near_faint_stagger-cell-02.png",
+    "mochii-retime20261026-hurt_near_faint_stagger-cell-03.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       21.8,
+       23.8
+      ],
+      [
+       41.6,
+       25.9
+      ]
+     ],
+     "pred_mouth": [
+      31.4,
+      31.8
+     ],
+     "eye_feature_counts": [
+      10,
+      33
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 260
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       18.0,
+       30.9
+      ],
+      [
+       40.0,
+       29.3
+      ]
+     ],
+     "pred_mouth": [
+      30.0,
+      36.2
+     ],
+     "eye_feature_counts": [
+      17,
+      43
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 260
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "source_face": "hurt",
+     "pred_eyes": [
+      [
+       21.8,
+       26.9
+      ],
+      [
+       42.4,
+       28.3
+      ]
+     ],
+     "pred_mouth": [
+      32.1,
+      34.1
+     ],
+     "eye_feature_counts": [
+      14,
+      44
+     ],
+     "verified": false,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 260
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       19.4,
+       28.3
+      ],
+      [
+       41.5,
+       28.3
+      ]
+     ],
+     "pred_mouth": [
+      30.9,
+      34.6
+     ],
+     "eye_feature_counts": [
+      37,
+      37
+     ],
+     "verified": true,
+     "action": "base-no-overlay-set-changing",
+     "duration_ms": 400
+    }
+   ],
+   "overlay_visibility_ms": 0,
+   "total_ms": 1180
+  }
+ },
+ "mochii_attacks": {
+  "atk_physical_body_slam": {
+   "kind": "attack",
+   "family": "physical",
+   "timing_mode": "persistent",
+   "source_faces": [
+    "front",
+    "front",
+    "front",
+    "front",
+    "front"
+   ],
+   "face_changing": false,
+   "files": [
+    "mochii-retime20261026-atk_physical_body_slam-cell-00.png",
+    "mochii-retime20261026-atk_physical_body_slam-cell-01.png",
+    "mochii-retime20261026-atk_physical_body_slam-cell-02.png",
+    "mochii-retime20261026-atk_physical_body_slam-cell-03.png",
+    "mochii-retime20261026-atk_physical_body_slam-cell-04.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       18.2,
+       31.9
+      ],
+      [
+       42.4,
+       31.9
+      ]
+     ],
+     "pred_mouth": [
+      30.9,
+      37.7
+     ],
+     "eye_feature_counts": [
+      32,
+      33
+     ],
+     "verified": true,
+     "action": "overlay-grimace-narrowed",
+     "duration_ms": 180
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       24.9,
+       21.8
+      ],
+      [
+       44.2,
+       23.1
+      ]
+     ],
+     "pred_mouth": [
+      34.5,
+      30.0
+     ],
+     "eye_feature_counts": [
+      36,
+      33
+     ],
+     "verified": true,
+     "action": "overlay-grimace-narrowed",
+     "duration_ms": 120
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       25.3,
+       29.0
+      ],
+      [
+       50.1,
+       29.0
+      ]
+     ],
+     "pred_mouth": [
+      38.3,
+      35.1
+     ],
+     "eye_feature_counts": [
+      32,
+      34
+     ],
+     "verified": true,
+     "action": "overlay-open-roar-widened",
+     "duration_ms": 100
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       26.5,
+       33.2
+      ],
+      [
+       52.8,
+       33.2
+      ]
+     ],
+     "pred_mouth": [
+      40.2,
+      38.5
+     ],
+     "eye_feature_counts": [
+      31,
+      25
+     ],
+     "verified": true,
+     "action": "overlay-open-bite-widened",
+     "duration_ms": 90
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.0,
+       25.0
+      ],
+      [
+       41.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      34,
+      33
+     ],
+     "verified": true,
+     "action": "overlay-grin-blink",
+     "duration_ms": 300
+    }
+   ],
+   "overlay_visibility_ms": 790,
+   "total_ms": 790
+  },
+  "atk_special_aqua_shot": {
+   "kind": "attack",
+   "family": "special",
+   "timing_mode": "persistent",
+   "source_faces": [
+    "front",
+    "front",
+    "front",
+    "front",
+    "front"
+   ],
+   "face_changing": false,
+   "files": [
+    "mochii-retime20261026-atk_special_aqua_shot-cell-00.png",
+    "mochii-retime20261026-atk_special_aqua_shot-cell-01.png",
+    "mochii-retime20261026-atk_special_aqua_shot-cell-02.png",
+    "mochii-retime20261026-atk_special_aqua_shot-cell-03.png",
+    "mochii-retime20261026-atk_special_aqua_shot-cell-04.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.6,
+       23.4
+      ],
+      [
+       40.5,
+       23.4
+      ]
+     ],
+     "pred_mouth": [
+      31.1,
+      30.7
+     ],
+     "eye_feature_counts": [
+      33,
+      27
+     ],
+     "verified": true,
+     "action": "overlay-closed-narrowed",
+     "duration_ms": 200
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.2,
+       20.4
+      ],
+      [
+       39.1,
+       21.4
+      ]
+     ],
+     "pred_mouth": [
+      29.7,
+      28.7
+     ],
+     "eye_feature_counts": [
+      36,
+      34
+     ],
+     "verified": true,
+     "action": "overlay-closed-glance",
+     "duration_ms": 140
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       13.4,
+       26.7
+      ],
+      [
+       35.5,
+       26.7
+      ]
+     ],
+     "pred_mouth": [
+      24.9,
+      33.3
+     ],
+     "eye_feature_counts": [
+      35,
+      36
+     ],
+     "verified": true,
+     "action": "overlay-open-roar-widened",
+     "duration_ms": 110
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       14.6,
+       25.0
+      ],
+      [
+       34.5,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      25.1,
+      32.0
+     ],
+     "eye_feature_counts": [
+      32,
+      36
+     ],
+     "verified": true,
+     "action": "overlay-grin-glance",
+     "duration_ms": 110
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.0,
+       25.0
+      ],
+      [
+       41.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      34,
+      33
+     ],
+     "verified": true,
+     "action": "overlay-closed-blink",
+     "duration_ms": 300
+    }
+   ],
+   "overlay_visibility_ms": 860,
+   "total_ms": 860
+  },
+  "atk_signature_aqua_cannon": {
+   "kind": "attack",
+   "family": "signature",
+   "timing_mode": "persistent",
+   "source_faces": [
+    "front",
+    "front",
+    "front",
+    "front",
+    "front",
+    "front"
+   ],
+   "face_changing": false,
+   "files": [
+    "mochii-retime20261026-atk_signature_aqua_cannon-cell-00.png",
+    "mochii-retime20261026-atk_signature_aqua_cannon-cell-01.png",
+    "mochii-retime20261026-atk_signature_aqua_cannon-cell-02.png",
+    "mochii-retime20261026-atk_signature_aqua_cannon-cell-03.png",
+    "mochii-retime20261026-atk_signature_aqua_cannon-cell-04.png",
+    "mochii-retime20261026-atk_signature_aqua_cannon-cell-05.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.0,
+       25.0
+      ],
+      [
+       41.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      34,
+      23
+     ],
+     "verified": true,
+     "action": "overlay-closed-narrowed",
+     "duration_ms": 200
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       21.4,
+       19.6
+      ],
+      [
+       39.9,
+       19.6
+      ]
+     ],
+     "pred_mouth": [
+      31.1,
+      27.6
+     ],
+     "eye_feature_counts": [
+      34,
+      25
+     ],
+     "verified": true,
+     "action": "overlay-closed-narrowed",
+     "duration_ms": 220
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       13.8,
+       27.6
+      ],
+      [
+       36.9,
+       27.6
+      ]
+     ],
+     "pred_mouth": [
+      25.9,
+      34.1
+     ],
+     "eye_feature_counts": [
+      37,
+      35
+     ],
+     "verified": true,
+     "action": "overlay-open-roar-widened",
+     "duration_ms": 100
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       13.2,
+       28.3
+      ],
+      [
+       37.4,
+       28.3
+      ]
+     ],
+     "pred_mouth": [
+      25.9,
+      34.6
+     ],
+     "eye_feature_counts": [
+      37,
+      37
+     ],
+     "verified": true,
+     "action": "overlay-open-bite-widened",
+     "duration_ms": 140
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       16.9,
+       26.7
+      ],
+      [
+       39.0,
+       26.7
+      ]
+     ],
+     "pred_mouth": [
+      28.4,
+      33.3
+     ],
+     "eye_feature_counts": [
+      33,
+      34
+     ],
+     "verified": true,
+     "action": "overlay-open-bite-widened",
+     "duration_ms": 120
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.0,
+       25.0
+      ],
+      [
+       41.0,
+       25.0
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.0
+     ],
+     "eye_feature_counts": [
+      34,
+      33
+     ],
+     "verified": true,
+     "action": "overlay-grin-blink",
+     "duration_ms": 300
+    }
+   ],
+   "overlay_visibility_ms": 1080,
+   "total_ms": 1080
+  },
+  "atk_heavy_hydro_surge_finisher": {
+   "kind": "attack",
+   "family": "heavy",
+   "timing_mode": "persistent",
+   "source_faces": [
+    "front",
+    "front",
+    "front",
+    "front",
+    "front",
+    "front"
+   ],
+   "face_changing": false,
+   "files": [
+    "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-00.png",
+    "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-01.png",
+    "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-02.png",
+    "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-03.png",
+    "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-04.png",
+    "mochii-retime20261026-atk_heavy_hydro_surge_finisher-cell-05.png"
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       17.6,
+       33.8
+      ],
+      [
+       42.8,
+       33.8
+      ]
+     ],
+     "pred_mouth": [
+      30.8,
+      39.2
+     ],
+     "eye_feature_counts": [
+      32,
+      32
+     ],
+     "verified": true,
+     "action": "overlay-grimace-narrowed",
+     "duration_ms": 220
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       21.8,
+       16.9
+      ],
+      [
+       39.6,
+       16.9
+      ]
+     ],
+     "pred_mouth": [
+      31.1,
+      25.3
+     ],
+     "eye_feature_counts": [
+      35,
+      21
+     ],
+     "verified": true,
+     "action": "overlay-grimace-narrowed",
+     "duration_ms": 160
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.7,
+       26.7
+      ],
+      [
+       44.9,
+       26.7
+      ]
+     ],
+     "pred_mouth": [
+      33.4,
+      33.3
+     ],
+     "eye_feature_counts": [
+      39,
+      40
+     ],
+     "verified": true,
+     "action": "overlay-open-bite-widened",
+     "duration_ms": 140
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.4,
+       34.2
+      ],
+      [
+       47.7,
+       34.2
+      ]
+     ],
+     "pred_mouth": [
+      34.7,
+      39.3
+     ],
+     "eye_feature_counts": [
+      30,
+      18
+     ],
+     "verified": true,
+     "action": "overlay-grimace-half",
+     "duration_ms": 120
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.8,
+       29.9
+      ],
+      [
+       43.9,
+       29.9
+      ]
+     ],
+     "pred_mouth": [
+      32.9,
+      35.9
+     ],
+     "eye_feature_counts": [
+      30,
+      21
+     ],
+     "verified": true,
+     "action": "overlay-grimace-half",
+     "duration_ms": 100
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "source_face": "front",
+     "pred_eyes": [
+      [
+       20.2,
+       25.7
+      ],
+      [
+       40.8,
+       25.7
+      ]
+     ],
+     "pred_mouth": [
+      31.0,
+      32.5
+     ],
+     "eye_feature_counts": [
+      36,
+      36
+     ],
+     "verified": true,
+     "action": "overlay-grin-blink",
+     "duration_ms": 420
+    }
+   ],
+   "overlay_visibility_ms": 1160,
+   "total_ms": 1160
+  }
+ }
+}

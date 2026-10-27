@@ -34,6 +34,7 @@ import {
   type PpTypeDisplay, type MessageWindowStyle, type DamageNumberStyle,
 } from '../../lib/hudCustom';
 import { isConfirmKey, shoulderKey } from '../../lib/buttonMode';
+import { useMenuSkin, menuSkinVars, menuSkinPanelShadow } from '../../lib/menuSkins';
 
 type BattleState = 'START' | 'PLAYER_TURN' | 'ANIMATING' | 'ENEMY_TURN' | 'CAUGHT' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'SWITCH_CHOICE';
 
@@ -84,6 +85,15 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   const hbStyle = healthbarStyle(settings.hudHealthbar as HealthbarStyle);
   const hudPos = battleHudPositions(settings.hudBattleLayout as BattleHudLayout);
   const battleAccent = menuPanelColor('BATTLE', settings);
+  // Y2K skin wiring (skins PR #151 battle presets via menuSkins.ts):
+  // null = default look, untouched. When set, healthboxes + command
+  // strip + switch panel restyle via menuSkins.css, the selected move
+  // wears .skin-selected instead of the yellow ring, and the skin
+  // frame colour wins over the BATTLE panel colour. HP thresholds,
+  // move type colours, battle math and the Pixi canvas are untouched;
+  // the message panel keeps its dialogue-box.svg art when set (see
+  // menuSkins.css note), so the strip + healthboxes carry the skin.
+  const skin = useMenuSkin('battle');
   const [lastDamage, setLastDamage] = useState<{ amount: number; target: 'enemy' | 'player'; nonce: number } | null>(null);
   useEffect(() => {
     if (!lastDamage) return;
@@ -284,7 +294,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
       const dmg = ev.damage ?? 0;
       pendingRef.current = { damage: dmg, text: ev.text, attacker, moveId: ev.moveId, damageFraction: dmg / targetMax, isCrit: !!ev.isCrit };
       setBState('ANIMATING');
-      setAttack({ nonce: Date.now(), attacker, category: mv?.cat || 'Physical', color: mv ? TYPES[mv.type]?.color || '#ffffff' : '#ffffff', damageFraction: dmg / targetMax, isCrit: !!ev.isCrit });
+      setAttack({ nonce: Date.now(), attacker, category: mv?.cat || 'Physical', color: mv ? TYPES[mv.type]?.color || '#ffffff' : '#ffffff', damageFraction: dmg / targetMax, isCrit: !!ev.isCrit, moveId: ev.moveId });
       return;
     }
     queueTimerRef.current = window.setTimeout(advanceTurnQueue, 650);
@@ -430,7 +440,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   const hpColor = (pct: number) => pct > 50 ? '#4caf50' : pct > 20 ? '#ff9800' : '#f44336';
 
   return (
-    <div className="game-screen flex flex-col bg-[#0b1526] relative overflow-hidden">
+    <div className="game-screen flex flex-col bg-[#0b1526] relative overflow-hidden" data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
       {/* Pixi arena canvas */}
       <div className="relative flex-1 min-h-0">
         <PixiBattleCanvas
@@ -450,7 +460,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
             the BATTLE per-menu panel colour, bar geometry from
             hudHealthbar, opacity / shadow from the border rows. */}
         <div className={hudPos.enemy}>
-          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)', borderColor: battleAccent, opacity: (settings.panelOpacity || 100) / 100, boxShadow: settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined }}>
+          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)', borderColor: skin ? skin.panel.border : battleAccent, opacity: (settings.panelOpacity || 100) / 100, boxShadow: skin ? menuSkinPanelShadow(skin) : (settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined) }}>
             <div className="flex justify-between items-baseline">
               <span className="font-bold text-white uppercase text-sm truncate">{enemy.nickname}</span>
               <span className="text-xs text-slate-300">Lv.{enemy.level}</span>
@@ -464,7 +474,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
           </div>
         </div>
         <div className={hudPos.player}>
-          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)', borderColor: battleAccent, opacity: (settings.panelOpacity || 100) / 100, boxShadow: settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined }}>
+          <div className="game-panel px-3 py-2" style={{ fontFamily: 'var(--battle-font, "Trebuchet MS", sans-serif)', borderColor: skin ? skin.panel.border : battleAccent, opacity: (settings.panelOpacity || 100) / 100, boxShadow: skin ? menuSkinPanelShadow(skin) : (settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined) }}>
             <div className="flex justify-between items-baseline">
               <span className="font-bold text-white uppercase text-sm truncate">{playerActive.nickname}</span>
               <span className="text-xs text-slate-300">Lv.{playerActive.level}</span>
@@ -504,7 +514,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
       <div className="game-panel-bottom flex flex-col shrink-0 z-20" style={{ paddingBottom: 'env(safe-area-inset-bottom)', fontFamily: 'var(--battle-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)' }}>
         <UiPanel
           slot={UI_ART.battle_panel}
-          style={{ margin: '8px 12px 0', padding: '12px 16px', minHeight: '56px', borderColor: battleAccent, ...messageWindowStyle(settings.hudMessageStyle as MessageWindowStyle, settings.panelOpacity || 100), boxShadow: settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined }}
+          style={{ margin: '8px 12px 0', padding: '12px 16px', minHeight: '56px', borderColor: skin ? skin.panel.border : battleAccent, ...messageWindowStyle(settings.hudMessageStyle as MessageWindowStyle, settings.panelOpacity || 100), boxShadow: skin ? menuSkinPanelShadow(skin) : (settings.panelShadow ? '0 10px 30px rgba(0,0,0,0.65)' : undefined) }}
         >
           <div className="text-white font-bold text-base leading-relaxed">
             {log.length > 0 ? log[log.length - 1] : `A wild ${creatureDisplayName(enemy.speciesId)} appeared!`}
@@ -553,7 +563,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
                     onClick={() => handlePlayerMove(mId)}
                     onMouseEnter={() => setSelectedMove(i)}
                     onFocus={() => setSelectedMove(i)}
-                    className={`game-button text-left px-3 py-2 disabled:opacity-50 ${i === selectedMove ? 'ring-2 ring-yellow-300' : ''}`}
+                    className={`game-button text-left px-3 py-2 disabled:opacity-50 ${i === selectedMove ? (skin ? 'skin-selected' : 'ring-2 ring-yellow-300') : ''}`}
                     style={{ borderColor: color }}
                   >
                     <span className="font-bold text-white block truncate">{mv ? mv.name : '-'}</span>
@@ -582,7 +592,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
                 <CreaturePortrait speciesId={fusionPartner.speciesId} view="front" size={40} />
                 <div className="flex-1 min-w-0">
                   <div className="text-white font-bold text-xs truncate">{fusedAttacker.nickname}</div>
-                  <div className="text-[11px] text-slate-300">Fusion form (placeholder sheets) · ATK {fusedAttacker.stats.atk} · lasts this battle</div>
+                  <div className="text-[11px] text-slate-300">Fusion form · ATK {fusedAttacker.stats.atk} · lasts this battle</div>
                 </div>
                 <button onClick={() => { pushLog(`Data Revert split ${playerActive.nickname} and ${fusionPartner.nickname} back!`); setFusedPartnerIdx(null); }} className="game-button px-2 py-1 text-xs shrink-0">Split (Data Revert)</button>
               </div>

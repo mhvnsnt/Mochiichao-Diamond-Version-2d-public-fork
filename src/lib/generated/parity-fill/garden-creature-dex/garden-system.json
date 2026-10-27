@@ -1,0 +1,189 @@
+{
+  "$schemaNote": "STAGED ONLY — system shapes for coordinator merge. NOT wired into the live game. NOT a commit, NOT a PR. Garden design is spec (chao-garden-conversion.md); built 0% in-game per 2026-10-25 audit; GardenView in the work clone is placeholder records, not persisted to save.",
+  "source": "chao-garden-conversion.md (2026-10-25) + docs/garden-mode-spec.md + src/lib/mochiichao-systems.ts (HAVE in code: GardenStats, alignmentFromCare ±25 band, gardenForm thresholds 150/300, gardenBattleBonus cap +9%, typeVariant 20-point lead, dataRevert halving)",
+  "coreRule": "Garden growth is a SECOND layer on top of species evolution, never a replacement. Garden Form is palette + accessories + aura + small stat bonus on the same species. Roster stays 47. Breeding never creates a hybrid species.",
+  "gardenStats": {
+    "stats": ["Dive", "Glide", "Sprint", "Might", "Endurance"],
+    "range": "1-99 in conversion doc; 0-99 clamped in mochiichao-systems.ts applyGardenItem (code clamps 0-99 — conversion doc says 1-99; discrepancy flagged, code wins until Mars rules)",
+    "pointsPerLevel": "10 boxes per level (conversion doc)",
+    "storedSeparatelyFromBattleStats": true,
+    "elementMap": {
+      "Dive": "Aqua/Deep",
+      "Glide": "Aero/Wind/Silk",
+      "Sprint": "Strike/Beast/Flora",
+      "Might": "Chrome/Core/Earth",
+      "Endurance": "all"
+    },
+    "shaped": "5/5"
+  },
+  "dataShards": {
+    "note": "Chao Chaos Drives -> Data Shards. Clean stat training, no cosmetic change. Earned by defeating corrupted data / Hackers.",
+    "shards": [
+      { "id": "aqua", "name": "Aqua Shard", "stat": "Dive" },
+      { "id": "aero", "name": "Aero Shard", "stat": "Glide" },
+      { "id": "sprint", "name": "Sprint Shard", "stat": "Sprint" },
+      { "id": "might", "name": "Might Shard", "stat": "Might" },
+      { "id": "blue", "name": "Blue Data Shard", "stat": "all-small", "effect": "small all-stats" },
+      { "id": "gold-mythic", "name": "Gold Mythic Shard", "stat": "all-plus-luck", "effect": "all-stats + luck" },
+      { "id": "umbral", "name": "Umbral Shard", "stat": "random-plus-ghost-tint", "effect": "random stat + ghost tint" }
+    ],
+    "shaped": "7/7 shard types named in conversion doc"
+  },
+  "gardenCritters": {
+    "note": "Original Mochiichao helpers, NOT Sega animals. Parts in slots Head/Back/Feet/Tail/Ears, persist through Rebirth. Critters do NOT become roster species. Conversion doc names 4 examples and requires 21 types for Mythic Form — the other 17 types are UNNAMED in the doc and are NOT invented here.",
+    "named": [
+      { "id": "tide-pup", "name": "Tide-Pup", "stat": "Dive", "trait": "fins/tail, backstroke" },
+      { "id": "glider-moth", "name": "Glider-Moth", "stat": "Glide", "trait": "wings, flutter" },
+      { "id": "sprint-hare", "name": "Sprint-Hare", "stat": "Sprint", "trait": "ears/feet, hop" },
+      { "id": "forge-bear", "name": "Forge-Bear", "stat": "Might", "trait": "arms, chest-pound" }
+    ],
+    "totalTypesRequiredForMythic": 21,
+    "unnamedSlots": 17,
+    "partSlots": ["Head", "Back", "Feet", "Tail", "Ears"],
+    "shaped": "4/21 critter types named (19%); 17/21 slots held empty, NOT invented"
+  },
+  "alignment": {
+    "scale": "-100 to +100 slider (conversion doc)",
+    "codeBand": "alignmentFromCare: >=+25 Bright, <=-25 Umbral, else Neutral (mochiichao-systems.ts — HAVE in code)",
+    "values": ["Bright", "Neutral", "Umbral"],
+    "brightCaretakers": ["Prof. Aeon", "Mochiko"],
+    "umbralInfluences": ["rival Hex visits", "Deep Sector garden", "Umbral Berries", "night training"],
+    "rule": "Player does NOT join the Syndicate.",
+    "palette": { "Bright": "white/gold", "Umbral": "black/purple", "Neutral": "base colour" },
+    "shaped": "3/3"
+  },
+  "dataCocoonGardenForm": {
+    "note": "Data Cocoon -> Garden Form I/II. Form, NOT a species change. NOT 15 full sprites per species (47 x 15 = 705 sprites is unbuildable per conversion doc): one base sprite per species + palette swap + accessory overlay + aura.",
+    "formI": {
+      "sliders": ["Dive<->Glide", "Sprint<->Might"],
+      "threshold": "+/-0.5",
+      "balanced": "Normal Form",
+      "lock": "20 Critters or 40 Shards locks a type",
+      "dominance": "Dive > Sprint = Might > Glide"
+    },
+    "formII": "gradual adult change, same system as Chao second evolution; Form I + Form II = palette + accessory + aura layers",
+    "codeThresholds": "gardenForm(): Form I at Garden-stat total 150, Form II at 300 (mochiichao-systems.ts — HAVE in code; conversion-doc slider/lock rules are the fuller spec and are NOT yet in code)",
+    "shaped": "2/2 stages (I, II)"
+  },
+  "dataRebirth": {
+    "gardenYear": "1 in-game week / ~60 min active garden time",
+    "lifeApprox": "5 years",
+    "bondRange": "0-100",
+    "bondAbove50": "Rebirth Egg: same name, Lv. 1, points / 10, parts/palette kept, grades kept",
+    "bondAtOrBelow50": "grey cocoon warning first: Last-Chance window to feed/pet over threshold; if it still fails, Memorial entry in MochiDex + Legacy Egg at base stats",
+    "codeEquivalent": "dataRevert() in mochiichao-systems.ts halves Garden stats and keeps colorway/parts (HAVE in code; full Rebirth Egg/Memorial flow is NOT in code)",
+    "shaped": "rules 4/4 (year, life, >50 path, <=50 path)"
+  },
+  "mythicForm": {
+    "requirements": [
+      "Data Rebirth >= 2x",
+      "Bond > 50",
+      "all 21 Garden Critter types collected in current life",
+      "no Shards after 2nd Rebirth",
+      "alignment chosen in 3rd life"
+    ],
+    "success": "glowing Mythic Form, immortal (no death timer), cannot breed, Garden Stats locked",
+    "canonNote": "Mythar is the template / first Mythic in canon, but any species can earn a Mythic Form — it does NOT overwrite Mythar's species entry (331)",
+    "carriesToGame": "unlocks Burst move in Creature Mode, permanent aura",
+    "shaped": "5/5 requirements + 4/4 success properties"
+  },
+  "bondingSeasonHeartBerry": {
+    "rule": "adults only, Garden Form I+ required",
+    "naturalSeason": "at Garden Age 2",
+    "heartBerry": "rare Market/farm reward, last bite triggers, one per parent",
+    "signals": "flower ring + heart icon",
+    "bothInSeason": "guaranteed egg",
+    "oneInSeason": "may walk away",
+    "freeEggs": "1 free egg per life; Heart Berries allow extra eggs",
+    "MARS_ONLY_BLOCKER": "Garden breeding parent + fruit map is Mars-only — NOT filled here. See breeding-shape.json. Do NOT guess it.",
+    "shaped": "7/7 season rules (parent/fruit map excluded, blocked)"
+  },
+  "mainframeGardens": {
+    "gardens": [
+      { "alignment": "Neutral", "name": "Sector 0 Plaza" },
+      { "alignment": "Bright", "name": "Aeon Spire Garden" },
+      { "alignment": "Umbral", "name": "Deep Sector Garden" }
+    ],
+    "capacity": "8 creatures per garden, overflow to MochiiPlex storage",
+    "visitEffect": "visiting a garden shifts alignment slightly toward it (amount NOT set in doc — NOT invented; needs a number before wiring)",
+    "shaped": "3/3 gardens"
+  },
+  "mochikoAcademy": {
+    "location": "Silicon Town (Kindergarten)",
+    "aeonClinic": "Doctor: stats, grades, personality, favourite fruit, age, rebirths, race/spar records, cures sickness",
+    "classroomLessons": ["Dance", "Song", "Sketch", "Rhythm"],
+    "lessonEffect": "unlock Garden idle animations and +Bond, NOT battle power",
+    "shaped": "1 clinic + 4/4 lessons"
+  },
+  "market": {
+    "name": "Silicon Town Market (Black Market)",
+    "stockRotation": "every in-game day / after Trainer quests",
+    "unlockTiers": "by Dojo Badges and quest emblems",
+    "sells": ["palette-variant eggs", "Data-Fruit seeds", "hats/accessories", "Heart Berries", "Strong Nuts"],
+    "neverSells": "roster species — only palette eggs of species already in MochiDex",
+    "inGameNow": "PLACEHOLDER in GardenView; ShopView is the working shop for now",
+    "shaped": "5/5 sell categories"
+  },
+  "races": {
+    "name": "MochiiPlex Circuit",
+    "courses": ["Dive", "Glide", "Sprint", "Might", "Grand Circuit"],
+    "enduranceRole": "pauses/sleep",
+    "rewards": "Medals unlock toys, market tiers, training points",
+    "format": "auto-run with cheering/boost timing",
+    "shaped": "5/5 courses"
+  },
+  "dojoSparring": {
+    "name": "MochiiPlex Dojo (Karate)",
+    "format": "auto-battler",
+    "statMap": { "Endurance": "HP", "Might": "damage", "Sprint": "ring-out speed", "Dive/Glide": "dodge" },
+    "rewards": "training points and titles, NOT XP",
+    "rule": "must NOT replace Trainer/Creature battles",
+    "inGameNow": "PLACEHOLDER in GardenView; Battle is the working sparring path for now",
+    "shaped": "4/4 stat mappings"
+  },
+  "dataFruitFarming": {
+    "treesPerGarden": 3,
+    "loop": "Shake -> harvest -> feed. Regrow 1 in-game day (or ~7 min active time).",
+    "gardenFruit": "Endurance only",
+    "specials": [
+      { "name": "Bright Berry", "effect": "alignment toward Bright" },
+      { "name": "Umbral Berry", "effect": "alignment toward Umbral" },
+      { "name": "Strong Nut", "effect": "2x Endurance" },
+      { "name": "Smart Berry", "effect": "small all-stats" },
+      { "name": "element fruit", "effect": "per element, e.g. Aqua Melon, Flora Berry, Chrome Nut" }
+    ],
+    "favouriteFruit": "2x Bond",
+    "actions": ["Plant seeds", "water", "cross-pollinate for rare seeds"],
+    "MARS_ONLY_BLOCKER": "Full fruit->stat map is Mars-only — the GardenView placeholder buttons (Aqua/Aero/Swift/Chrome/Earth Fruit +10) are PLACEHOLDER values, NOT the canon map. Do NOT treat them as canon.",
+    "inGameNow": "PLACEHOLDER harvest buttons in GardenView only; Farm Plots place is PLACEHOLDER text",
+    "shaped": "specials 5/5 categories named; full per-fruit map BLOCKED (Mars-only)"
+  },
+  "gradesAndInheritance": {
+    "grades": "E -> S per Garden Stat, plus Bond, favourite Data-Fruit, personality sliders (Kind / Bold / Curious)",
+    "childInherits": "50% genes from each parent; higher grade wins visible grade 70% when parents differ; recessive grades can reappear in grandchildren",
+    "twoTone": "primary palette from one parent, accent from other",
+    "glitchShine": "dominant gene",
+    "preEvolutionTraining": "training in dominant stat can bump that grade one step",
+    "shaped": "5/5 inheritance rules"
+  },
+  "carriesToMainGame": [
+    "Garden Stat levels -> capped battle bonus: +1% per 10 Garden levels per stat, max +9% at Lv. 99, applied to matching battle stat (code: gardenBattleBonus, cap +9% — HAVE)",
+    "Garden Form palette/accessories/aura visible in battle",
+    "Bond hearts -> small crit/dodge bonus in Creature Mode, recruit chance in Dungeon recruitment",
+    "Grades -> growth rate in Trainer Mode (S-grade gains Garden Stat points faster, NOT battle XP faster)",
+    "Mythic Form -> Burst move in Creature Mode, permanent aura",
+    "Races/Sparring wins, Market unlocks, farm produce (fruit -> Trainer Mode healing/crafting items)"
+  ],
+  "doesNotCarryOrReplace": [
+    "Garden Races and Dojo Sparring never replace Trainer/Creature battles",
+    "Garden Forms never change species ID or evolution line",
+    "No Garden item required to finish story",
+    "Garden creatures live on in-game time only while save is loaded — no real-time death while away (deliberate change from Chao's clock)"
+  ],
+  "gardenMinuteToMinute": "Enter garden -> check need icons (! hungry, Z sleepy, flower ring = Bonding Season, cocoon timer) -> shake 3 trees, pick fruit, feed (favourite = 2x Bond, Strong Nut = Endurance, Bright/Umbral Berries = alignment; don't wake sleepers, don't snatch food) -> train with Shards (clean) or Critters (stats + parts) watching Dive<->Glide and Sprint<->Might sliders -> play (pet +Bond, toys, training dummy, Data Lesson) -> race / spar / breed -> leave.",
+  "haveVsNeedCounts": {
+    "gardenStatSystem": "HAVE in code (mochiichao-systems.ts) + STAGED shape here; in-game persistence NEED TO MAKE (GardenView records are local placeholder, not saved)",
+    "places": "5/5 GardenView places are PLACEHOLDER text (Academy, Market, Race Track, Sparring Ring, Farm Plots) — 0/5 playable",
+    "overall": "Garden spec 100% (conversion doc), Garden playable 0% — staged shapes here do NOT change the in-game %"
+  }
+}

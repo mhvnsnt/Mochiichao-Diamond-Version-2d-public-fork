@@ -1,0 +1,372 @@
+{
+ "creature": "dreadtoise",
+ "pilot": "expanded-scope step 3",
+ "date": "2026-10-26",
+ "method": "transform_from_existing_cells + procedural PIL VFX overlays; 0 image generations",
+ "canon_note": "Dreadtoise v2: animal body, 2 cannons in every view; full body kept in frame, no crop removes a cannon.",
+ "cell_size": 64,
+ "sets": {
+  "atk_physical_shell_ram": {
+   "kind": "attack",
+   "cell_count": 5,
+   "total_ms": 830,
+   "files": [
+    "atk_physical_shell_ram_cell_00.png",
+    "atk_physical_shell_ram_cell_01.png",
+    "atk_physical_shell_ram_cell_02.png",
+    "atk_physical_shell_ram_cell_03.png",
+    "atk_physical_shell_ram_cell_04.png"
+   ],
+   "cells": [
+    {
+     "file": "atk_physical_shell_ram_cell_00.png",
+     "duration_ms": 200,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.05, 'sy': 0.95, 'dx': -6}",
+     "note": "brace, shell forward"
+    },
+    {
+     "file": "atk_physical_shell_ram_cell_01.png",
+     "duration_ms": 130,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_06.png",
+     "transform": "{'sx': 1.0, 'sy': 1.0, 'dx': 6}",
+     "note": "charge step (walk cell) + speedlines right"
+    },
+    {
+     "file": "atk_physical_shell_ram_cell_02.png",
+     "duration_ms": 110,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.18, 'sy': 0.9, 'dx': 26}",
+     "note": "ram lunge, stretched + speedlines"
+    },
+    {
+     "file": "atk_physical_shell_ram_cell_03.png",
+     "duration_ms": 90,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.22, 'sy': 0.85, 'dx': 30}",
+     "note": "impact + burst"
+    },
+    {
+     "file": "atk_physical_shell_ram_cell_04.png",
+     "duration_ms": 300,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{}",
+     "note": "recover"
+    }
+   ]
+  },
+  "atk_special_water_gun": {
+   "kind": "attack",
+   "cell_count": 5,
+   "total_ms": 840,
+   "files": [
+    "atk_special_water_gun_cell_00.png",
+    "atk_special_water_gun_cell_01.png",
+    "atk_special_water_gun_cell_02.png",
+    "atk_special_water_gun_cell_03.png",
+    "atk_special_water_gun_cell_04.png"
+   ],
+   "cells": [
+    {
+     "file": "atk_special_water_gun_cell_00.png",
+     "duration_ms": 200,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 0.98, 'sy': 1.02}",
+     "note": "both cannon tips glow-aim (2 cannons visible)"
+    },
+    {
+     "file": "atk_special_water_gun_cell_01.png",
+     "duration_ms": 120,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.02, 'sy': 1.0, 'dx': -16}",
+     "note": "jet streams right from right cannon, shifted left"
+    },
+    {
+     "file": "atk_special_water_gun_cell_02.png",
+     "duration_ms": 110,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.05, 'sy': 0.98, 'dx': -16}",
+     "note": "jet extended to frame edge"
+    },
+    {
+     "file": "atk_special_water_gun_cell_03.png",
+     "duration_ms": 110,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.0, 'sy': 1.0, 'dx': -8}",
+     "note": "splash impact at frame edge"
+    },
+    {
+     "file": "atk_special_water_gun_cell_04.png",
+     "duration_ms": 300,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{}",
+     "note": "recover"
+    }
+   ]
+  },
+  "atk_signature_twin_cannon_barrage": {
+   "kind": "attack",
+   "cell_count": 6,
+   "total_ms": 960,
+   "files": [
+    "atk_signature_twin_cannon_barrage_cell_00.png",
+    "atk_signature_twin_cannon_barrage_cell_01.png",
+    "atk_signature_twin_cannon_barrage_cell_02.png",
+    "atk_signature_twin_cannon_barrage_cell_03.png",
+    "atk_signature_twin_cannon_barrage_cell_04.png",
+    "atk_signature_twin_cannon_barrage_cell_05.png"
+   ],
+   "cells": [
+    {
+     "file": "atk_signature_twin_cannon_barrage_cell_00.png",
+     "duration_ms": 200,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 0.95, 'sy': 1.05}",
+     "note": "both cannon tips charge-flash"
+    },
+    {
+     "file": "atk_signature_twin_cannon_barrage_cell_01.png",
+     "duration_ms": 100,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.02, 'sy': 1.0, 'dx': -14}",
+     "note": "upper stream + left tip flash"
+    },
+    {
+     "file": "atk_signature_twin_cannon_barrage_cell_02.png",
+     "duration_ms": 100,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.02, 'sy': 1.0, 'dx': -14}",
+     "note": "lower stream + right tip flash"
+    },
+    {
+     "file": "atk_signature_twin_cannon_barrage_cell_03.png",
+     "duration_ms": 140,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.08, 'sy': 0.97, 'dx': -14}",
+     "note": "TWIN streams together to frame edge"
+    },
+    {
+     "file": "atk_signature_twin_cannon_barrage_cell_04.png",
+     "duration_ms": 120,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.05, 'sy': 0.95, 'dx': -8}",
+     "note": "barrage impact"
+    },
+    {
+     "file": "atk_signature_twin_cannon_barrage_cell_05.png",
+     "duration_ms": 300,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{}",
+     "note": "recover"
+    }
+   ]
+  },
+  "atk_heavy_fortress_slam_finisher": {
+   "kind": "attack",
+   "cell_count": 6,
+   "total_ms": 1120,
+   "files": [
+    "atk_heavy_fortress_slam_finisher_cell_00.png",
+    "atk_heavy_fortress_slam_finisher_cell_01.png",
+    "atk_heavy_fortress_slam_finisher_cell_02.png",
+    "atk_heavy_fortress_slam_finisher_cell_03.png",
+    "atk_heavy_fortress_slam_finisher_cell_04.png",
+    "atk_heavy_fortress_slam_finisher_cell_05.png"
+   ],
+   "cells": [
+    {
+     "file": "atk_heavy_fortress_slam_finisher_cell_00.png",
+     "duration_ms": 220,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 0.92, 'sy': 1.12, 'dy': -8}",
+     "note": "rear up on hind legs"
+    },
+    {
+     "file": "atk_heavy_fortress_slam_finisher_cell_01.png",
+     "duration_ms": 140,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.25, 'sy': 0.78, 'dy': 6}",
+     "note": "slam down, squash + dust"
+    },
+    {
+     "file": "atk_heavy_fortress_slam_finisher_cell_02.png",
+     "duration_ms": 120,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.2, 'sy': 0.82}",
+     "note": "shockwave ring + burst"
+    },
+    {
+     "file": "atk_heavy_fortress_slam_finisher_cell_03.png",
+     "duration_ms": 120,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.15, 'sy': 0.88}",
+     "note": "shockwave widens"
+    },
+    {
+     "file": "atk_heavy_fortress_slam_finisher_cell_04.png",
+     "duration_ms": 100,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.05, 'sy': 0.95}",
+     "note": "dust settling"
+    },
+    {
+     "file": "atk_heavy_fortress_slam_finisher_cell_05.png",
+     "duration_ms": 420,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{}",
+     "note": "slow recover"
+    }
+   ]
+  },
+  "hurt_light_flinch": {
+   "kind": "hurt",
+   "cell_count": 3,
+   "total_ms": 520,
+   "files": [
+    "hurt_light_flinch_cell_00.png",
+    "hurt_light_flinch_cell_01.png",
+    "hurt_light_flinch_cell_02.png"
+   ],
+   "cells": [
+    {
+     "file": "hurt_light_flinch_cell_00.png",
+     "duration_ms": 120,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 0.97, 'sy': 1.0, 'dx': -8, 'rot': 3}",
+     "note": "flinch back, battle_front (see note: side hurt cell unused)"
+    },
+    {
+     "file": "hurt_light_flinch_cell_01.png",
+     "duration_ms": 180,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 0.95, 'sy': 1.02, 'dx': -14, 'rot': 5}",
+     "note": "flinch peak"
+    },
+    {
+     "file": "hurt_light_flinch_cell_02.png",
+     "duration_ms": 220,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{}",
+     "note": "recover"
+    }
+   ]
+  },
+  "hurt_heavy_knockback": {
+   "kind": "hurt",
+   "cell_count": 4,
+   "total_ms": 700,
+   "files": [
+    "hurt_heavy_knockback_cell_00.png",
+    "hurt_heavy_knockback_cell_01.png",
+    "hurt_heavy_knockback_cell_02.png",
+    "hurt_heavy_knockback_cell_03.png"
+   ],
+   "cells": [
+    {
+     "file": "hurt_heavy_knockback_cell_00.png",
+     "duration_ms": 80,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'flash': 0.55, 'dx': -4}",
+     "note": "hit flash"
+    },
+    {
+     "file": "hurt_heavy_knockback_cell_01.png",
+     "duration_ms": 140,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 0.95, 'sy': 1.02, 'dx': -28, 'rot': 9}",
+     "note": "knocked back, shell tilted + speedlines"
+    },
+    {
+     "file": "hurt_heavy_knockback_cell_02.png",
+     "duration_ms": 180,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.12, 'sy': 0.85, 'dx': -30, 'dy': 4}",
+     "note": "skid low, dust"
+    },
+    {
+     "file": "hurt_heavy_knockback_cell_03.png",
+     "duration_ms": 300,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{}",
+     "note": "recover"
+    }
+   ]
+  },
+  "hurt_status_wobble": {
+   "kind": "hurt",
+   "cell_count": 3,
+   "total_ms": 740,
+   "files": [
+    "hurt_status_wobble_cell_00.png",
+    "hurt_status_wobble_cell_01.png",
+    "hurt_status_wobble_cell_02.png"
+   ],
+   "cells": [
+    {
+     "file": "hurt_status_wobble_cell_00.png",
+     "duration_ms": 220,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'rot': -7, 'dx': -6}",
+     "note": "wobble left + bubbles"
+    },
+    {
+     "file": "hurt_status_wobble_cell_01.png",
+     "duration_ms": 220,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'rot': 7, 'dx': 6}",
+     "note": "wobble right + bubbles"
+    },
+    {
+     "file": "hurt_status_wobble_cell_02.png",
+     "duration_ms": 300,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'tint': (120, 220, 120, 255)}",
+     "note": "settling, green status tint"
+    }
+   ]
+  },
+  "hurt_near_faint_stagger": {
+   "kind": "hurt",
+   "cell_count": 4,
+   "total_ms": 1180,
+   "files": [
+    "hurt_near_faint_stagger_cell_00.png",
+    "hurt_near_faint_stagger_cell_01.png",
+    "hurt_near_faint_stagger_cell_02.png",
+    "hurt_near_faint_stagger_cell_03.png"
+   ],
+   "cells": [
+    {
+     "file": "hurt_near_faint_stagger_cell_00.png",
+     "duration_ms": 260,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'rot': -5, 'dx': -6}",
+     "note": "stagger lean, head/cannons droop"
+    },
+    {
+     "file": "hurt_near_faint_stagger_cell_01.png",
+     "duration_ms": 260,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.05, 'sy': 0.88, 'dy': 4, 'darken': 0.82}",
+     "note": "droop, darkened"
+    },
+    {
+     "file": "hurt_near_faint_stagger_cell_02.png",
+     "duration_ms": 260,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'rot': -4, 'sx': 0.98, 'sy': 0.92, 'darken': 0.82}",
+     "note": "sway, dizzy stars"
+    },
+    {
+     "file": "hurt_near_faint_stagger_cell_03.png",
+     "duration_ms": 400,
+     "source": "game-ready/dreadtoise/cells/dreadtoise_cell_00.png (battle_front)",
+     "transform": "{'sx': 1.05, 'sy': 0.9, 'darken': 0.88}",
+     "note": "barely standing, dimmed"
+    }
+   ]
+  }
+ },
+ "preview_attacks": "preview_attacks_4x.png (rows in set order: atk_physical_shell_ram, atk_special_water_gun, atk_signature_twin_cannon_barrage, atk_heavy_fortress_slam_finisher)",
+ "preview_hurts": "preview_hurts_4x.png (rows in set order: hurt_light_flinch, hurt_heavy_knockback, hurt_status_wobble, hurt_near_faint_stagger)"
+}
