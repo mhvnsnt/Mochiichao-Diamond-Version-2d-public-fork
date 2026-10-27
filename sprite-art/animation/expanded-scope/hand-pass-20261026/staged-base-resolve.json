@@ -1,0 +1,102 @@
+{
+ "aerobeak": [
+  "articulation-batch-b",
+  "aerobeak-articb20261026-atk_heavy_sky_crash_finisher-cell-00.png"
+ ],
+ "astroleviathan": [
+  "articulation-batch-cd/batch-c",
+  "astroleviathan-artic-batchc-20261026-atk_heavy_starfall_finisher-cell-00.png"
+ ],
+ "chromejaww": [
+  null,
+  null
+ ],
+ "cocoonode": [
+  "articulation-batch-b",
+  "cocoonode-articb20261026-atk_heavy_shatter_crash_finisher-cell-00.png"
+ ],
+ "cragarm": [
+  "articulation-batch-cd/batch-c",
+  "cragarm-artic-batchc-20261026-atk_heavy_mountain_crash_finisher-cell-00.png"
+ ],
+ "dorowani": [
+  "articulation-v2-rework-v3/batch-c",
+  "dorowani-artic-pipev3q-20261026-atk_heavy_deluge_finisher-cell-00.png"
+ ],
+ "duneclaw": [
+  "articulation-batch-b",
+  "duneclaw-articb20261026-atk_heavy_dune_crash_finisher-cell-00.png"
+ ],
+ "duskfiend": [
+  "articulation-batch-cd/batch-c",
+  "duskfiend-artic-batchc-20261026-atk_heavy_nightmare_finisher-cell-00.png"
+ ],
+ "finblade": [
+  "articulation-batch-b",
+  "finblade-articb20261026-atk_heavy_maelstrom_finisher-cell-00.png"
+ ],
+ "gearkid": [
+  "articulation-batch-cd/batch-c",
+  "gearkid-artic-batchc-20261026-atk_heavy_overdrive_finisher-cell-00.png"
+ ],
+ "gorokappa": [
+  "articulation-batch-cd/batch-c",
+  "gorokappa-artic-batchc-20261026-atk_heavy_tide_crash_finisher-cell-00.png"
+ ],
+ "kickmaster": [
+  "articulation-batch-cd/batch-c",
+  "kickmaster-artic-batchc-20261026-atk_heavy_final_kick_finisher-cell-00.png"
+ ],
+ "manticlaw": [
+  "articulation-batch-b",
+  "manticlaw-articb20261026-atk_heavy_mane_crash_finisher-cell-00.png"
+ ],
+ "mechapion": [
+  "articulation-batch-cd/batch-c",
+  "mechapion-artic-batchc-20261026-atk_heavy_iron_crash_finisher-cell-00.png"
+ ],
+ "megalochrome": [
+  "articulation-batch-b",
+  "megalochrome-articb20261026-atk_heavy_iron_crash_finisher-cell-00.png"
+ ],
+ "mothrix": [
+  "articulation-batch-b",
+  "mothrix-articb20261026-atk_heavy_gale_crash_finisher-cell-00.png"
+ ],
+ "oblivirex": [
+  "articulation-batch-b",
+  "oblivirex-articb20261026-atk_heavy_oblivion_crash_finisher-cell-00.png"
+ ],
+ "pixilite": [
+  "articulation-batch-cd/batch-c",
+  "pixilite-artic-batchc-20261026-atk_heavy_overgrowth_finisher-cell-00.png"
+ ],
+ "pupbble": [
+  "articulation-batch-b",
+  "pupbble-articb20261026-atk_heavy_tide_crash_finisher-cell-00.png"
+ ],
+ "pyropaw": [
+  "articulation-batch-b",
+  "pyropaw-articb20261026-atk_heavy_blaze_crash_finisher-cell-00.png"
+ ],
+ "quakehound": [
+  "articulation-batch-b",
+  "quakehound-articb20261026-atk_heavy_tremor_crash_finisher-cell-00.png"
+ ],
+ "razorgater": [
+  "articulation-v2-rework-v3/batch-a",
+  "razorgater-artic-pipev3q-20261026-atk_heavy_jaw_crash_finisher-cell-00.png"
+ ],
+ "shellguard": [
+  "articulation-batch-cd/batch-c",
+  "shellguard-artic-batchc-20261026-atk_heavy_fortress_crash_finisher-cell-00.png"
+ ],
+ "terrapod": [
+  "articulation-batch-cd/batch-d",
+  "terrapod-artic-batchd-20261026-atk_heavy_avalanche_finisher-cell-00.png"
+ ],
+ "wispkin": [
+  "articulation-batch-cd/batch-d",
+  "wispkin-artic-batchd-20261026-atk_heavy_haunt_finisher-cell-00.png"
+ ]
+}

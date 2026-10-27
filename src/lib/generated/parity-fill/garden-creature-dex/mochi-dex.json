@@ -1,0 +1,1218 @@
+{
+ "$schemaNote": "STAGED ONLY \u2014 Dex data shape, NOT live wiring, NOT a commit/PR. Seen/Caught defaults are all false: this shape claims NO play data. In-game Dex today = starter gift + MOCHII-ALL cheat Seen-marking only (parity \u00a724, 20% ESTIMATE).",
+ "source": "Pokemon Dex shape (Seen/Caught per species) + Mochiichao global_roster.json (47 entries, 29 evolution_reqs) + decomp species fields as REFERENCE shape only (catchRate, expYield, eggGroups, growthRate, eggCycles, friendship \u2014 see dex-source-map in README).",
+ "decompShapeReference": {
+  "firered": "species_info.h: catchRate, expYield, types, abilities, eggGroups, growthRate (386 species)",
+  "heartgold": "personal.json: catchRate, expYield, EV yields, items, genderRatio, eggCycles, friendship, growthRate, eggGroups (507 species)",
+  "black2": "res/pokemon/*/data.json: catch_rate, evolution_stage, ev_yields (652 species)",
+  "note": "Decomp fields are REFERENCE. Mochiichao Dex entries below carry only id/name/seen/caught/status \u2014 no decomp values copied in as Mochiichao data."
+ },
+ "rosterEntries": [
+  {
+   "dexId": "001",
+   "speciesId": "001",
+   "name": "Mochii",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "002",
+   "speciesId": "002",
+   "name": "Tiidebiite",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "003",
+   "speciesId": "003",
+   "name": "AquariiOS",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "004",
+   "speciesId": "004",
+   "name": "Razorgater",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "005",
+   "speciesId": "005",
+   "name": "Chromejaww",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "006",
+   "speciesId": "006",
+   "name": "Reaperdile",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "007",
+   "speciesId": "007",
+   "name": "Tyrage",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "008",
+   "speciesId": "008",
+   "name": "Duneclaw",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "009",
+   "speciesId": "009",
+   "name": "Oblivirex",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "010",
+   "speciesId": "010",
+   "name": "Kittember",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "011",
+   "speciesId": "011",
+   "name": "Pyropaw",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "012",
+   "speciesId": "012",
+   "name": "Manticlaw",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "013",
+   "speciesId": "013",
+   "name": "Pupbble",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "014",
+   "speciesId": "014",
+   "name": "Terradog",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "015",
+   "speciesId": "015",
+   "name": "Quakehound",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "016",
+   "speciesId": "016",
+   "name": "Squirmite",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "017",
+   "speciesId": "017",
+   "name": "Cocoonode",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "018",
+   "speciesId": "018",
+   "name": "Mothrix",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "019",
+   "speciesId": "019",
+   "name": "Zephling",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "020",
+   "speciesId": "020",
+   "name": "Aerobeak",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "021",
+   "speciesId": "021",
+   "name": "Stormtalon",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "022",
+   "speciesId": "022",
+   "name": "Finblade",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "023",
+   "speciesId": "023",
+   "name": "Megalochrome",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "024",
+   "speciesId": "024",
+   "name": "Floatcalf",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "025",
+   "speciesId": "025",
+   "name": "Astroleviathan",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "026",
+   "speciesId": "026",
+   "name": "Inklet",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "027",
+   "speciesId": "027",
+   "name": "Toxitacle",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "028",
+   "speciesId": "028",
+   "name": "Krakenox",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "029",
+   "speciesId": "029",
+   "name": "Punchkid",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "030",
+   "speciesId": "030",
+   "name": "Strikechamp",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "031",
+   "speciesId": "031",
+   "name": "Kickmaster",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "032",
+   "speciesId": "032",
+   "name": "Gearkid",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "033",
+   "speciesId": "033",
+   "name": "Mechapion",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "034",
+   "speciesId": "034",
+   "name": "Gorokappa",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "035",
+   "speciesId": "035",
+   "name": "Pebblefist",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "036",
+   "speciesId": "036",
+   "name": "Cragarm",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "037",
+   "speciesId": "037",
+   "name": "Terrapod",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "038",
+   "speciesId": "038",
+   "name": "Sproutle",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "039",
+   "speciesId": "039",
+   "name": "Shellguard",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "040",
+   "speciesId": "040",
+   "name": "Dreadtoise",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "041",
+   "speciesId": "041",
+   "name": "Pixilite",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "042",
+   "speciesId": "042",
+   "name": "Wispkin",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "043",
+   "speciesId": "043",
+   "name": "Duskfiend",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "044",
+   "speciesId": "044",
+   "name": "Ashemit",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "045",
+   "speciesId": "045",
+   "name": "Pyromonk",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "046",
+   "speciesId": "046",
+   "name": "Yogiferno",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  },
+  {
+   "dexId": "331",
+   "speciesId": "331",
+   "name": "Mythar",
+   "seen": false,
+   "caught": false,
+   "status": "ROSTER-SHAPED-NOT-FILLED"
+  }
+ ],
+ "rosterCount": 47,
+ "discoverableSlots": [
+  {
+   "dexId": "047",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "048",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "049",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "050",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "051",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "052",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "053",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "054",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "055",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "056",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "057",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "058",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "059",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "060",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "061",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "062",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "063",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "064",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "065",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "066",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "067",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "068",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "069",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "070",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "071",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "072",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "073",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "074",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "075",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "076",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "077",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "078",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "079",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "080",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "081",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "082",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "083",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "084",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "085",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "086",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "087",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "088",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "089",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "090",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "091",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "092",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "093",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "094",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "095",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "096",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "097",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "098",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "099",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "100",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "101",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "102",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "103",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "104",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "105",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "106",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "107",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "108",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "109",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "110",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "111",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "112",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "113",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "114",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "115",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "116",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "117",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "118",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "119",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "120",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "121",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "122",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "123",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "124",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "125",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "126",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "127",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "128",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "129",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "130",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "131",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "132",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "133",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "134",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "135",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "136",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "137",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "138",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "139",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "140",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "141",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "142",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "143",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "144",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "145",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  },
+  {
+   "dexId": "146",
+   "speciesId": null,
+   "name": null,
+   "seen": false,
+   "caught": false,
+   "status": "DISCOVERABLE-SLOT-EXPLICITLY-NOT-FILLED"
+  }
+ ],
+ "discoverableSlotCount": 100,
+ "discoverableSlotRange": "047-146 inclusive = 100 slots, ALL explicitly NOT filled \u2014 no species, no stats, no names invented",
+ "reserved": [
+  {
+   "dexId": "147",
+   "speciesId": "147",
+   "name": "Dorowani",
+   "status": "RESERVED-NOT-FILLED",
+   "blocker": "MARS-ONLY: Dorowani stats owed; walk sheets per Phase 2 report (13 locked cells) UNVERIFIED in this stale work clone"
+  },
+  {
+   "dexId": "148",
+   "speciesId": "148",
+   "name": "Gabu",
+   "status": "RESERVED-NOT-FILLED",
+   "blocker": "MARS-ONLY: Gabu stats owed; walk sheets per Phase 2 report (20 locked cells) UNVERIFIED in this stale work clone"
+  }
+ ],
+ "dexCompletionRewards": {
+  "status": "NONE-SHAPED",
+  "note": "Dex completion rewards: none in code (parity \u00a724). Shape holds the slot; reward table NOT invented."
+ },
+ "seenRules_staged": [
+  "Seen on encounter (shape; in-game only via MOCHII-ALL cheat today)",
+  "Caught on successful capture (Luigi Cube / Ring Capture / Capture Capsule spec)"
+ ],
+ "caveat": "global_roster.json in this work clone has a malformed line (entry 002 Tiidebiite: 'atk: 63' missing closing quote) \u2014 names/ids above were extracted by regex, not by JSON parse. Flagged for coordinator; NOT fixed here (no repo edits in this slice)."
+}

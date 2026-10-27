@@ -15,7 +15,7 @@
  * Locked layout slots (spec-pinned, 1200x1500 canvas, centre coords):
  *   logo       — width 900, centre (600, 450)
  *   subtitle   — width 556, centre (600, 735), font PINNED, never changes
- *   pressAnyKey— y = 927, blink 30 frames on / 15 frames off
+ *   pressAnyKey— y = 927, blink FireRed tempo: 60 frames first, then 30 frames on / 30 frames off
  *   studioLogo — width 556, centre (600, 1222)
  * Moving a slot is the Layout Editor's job and restyling a slot is
  * the UI Creator's job — this creator reuses those existing creators
@@ -38,9 +38,15 @@
  * is GAP — no music field is invented here.
  *
  * NOT in this batch (labelled GAP, later batches, never claimed):
- *   - start-screen playback from a saved preset
- *   - Phase 2 export: FFmpeg desktop render / MediaRecorder capture
  *   - Blender project export (.blend) / Blender binary (install note only)
+ * Phase 2 export is LIVE since Creator Phase 2
+ * (src/lib/introVideoExport.ts, MediaRecorder web route, WebM,
+ * 6 s hold, silent — a start screen has no music slot).
+ * Open-source components: a preset may pick components from
+ * src/lib/openSourceAssets.ts (87/87 listing); picks are stored
+ * in openSourceComponentIds, shown in the creator preview, and
+ * drawn into the exported video where the kind fits (panel as
+ * the screen frame, icon as a top-right badge).
  *
  * Format: our own JSON (layout-as-data idea, not Tuxemon code).
  * No Pokemon sprites, dialogue, music, cries, names, or art anywhere
@@ -50,6 +56,7 @@
 import { TITLE_ROTATION_POOL } from './titleRotation';
 import type { TitleBiomeId } from './titleBiomes';
 import { PINNED_SUBTITLE_FONT } from './fonts';
+import { OPEN_SOURCE_ASSETS } from './openSourceAssets';
 
 export const START_SCREEN_CANVAS_WIDTH = 1200;
 export const START_SCREEN_CANVAS_HEIGHT = 1500;
@@ -64,8 +71,9 @@ export interface LockedStartScreenLayout {
   subtitleCentreY: 735;
   subtitleFontPinned: true;
   pressAnyKeyY: 927;
+  pressAnyKeyBlinkFirstFrames: 60;
   pressAnyKeyBlinkOnFrames: 30;
-  pressAnyKeyBlinkOffFrames: 15;
+  pressAnyKeyBlinkOffFrames: 30;
   studioLogoWidth: 556;
   studioLogoCentreX: 600;
   studioLogoCentreY: 1222;
@@ -80,8 +88,9 @@ export const LOCKED_START_SCREEN_LAYOUT: LockedStartScreenLayout = {
   subtitleCentreY: 735,
   subtitleFontPinned: true,
   pressAnyKeyY: 927,
+  pressAnyKeyBlinkFirstFrames: 60,
   pressAnyKeyBlinkOnFrames: 30,
-  pressAnyKeyBlinkOffFrames: 15,
+  pressAnyKeyBlinkOffFrames: 30,
   studioLogoWidth: 556,
   studioLogoCentreX: 600,
   studioLogoCentreY: 1222,
@@ -129,6 +138,11 @@ export interface StartScreenPreset {
   creature: string;
   background: StartScreenBackground;
   particles: StartScreenParticle;
+  /**
+   * Open-source component ids picked from src/lib/openSourceAssets.ts
+   * (87/87 listing). Optional for old presets (treated as []).
+   */
+  openSourceComponentIds?: string[];
 }
 
 export const LOCKED_START_SCREEN_PRESET_NAME = 'Locked Default';
@@ -142,6 +156,7 @@ export const LOCKED_START_SCREEN_PRESET: StartScreenPreset = {
   creature: 'Yogiferno',
   background: 'snow',
   particles: 'fire',
+  openSourceComponentIds: [],
 };
 
 /** Validate a parsed preset. Returns error strings; empty = valid. */
@@ -168,6 +183,16 @@ export function validateStartScreenPreset(value: unknown): string[] {
   }
   if (!p.particles || !START_SCREEN_PARTICLES.includes(p.particles)) {
     errors.push(`particles must be one of: ${START_SCREEN_PARTICLES.join(', ')}`);
+  }
+  if (p.openSourceComponentIds !== undefined) {
+    if (!Array.isArray(p.openSourceComponentIds)) {
+      errors.push('openSourceComponentIds must be an array');
+    } else {
+      const known = new Set(OPEN_SOURCE_ASSETS.map(a => a.id));
+      for (const id of p.openSourceComponentIds) {
+        if (!known.has(id)) errors.push(`unknown open-source component '${id}'`);
+      }
+    }
   }
   return errors;
 }

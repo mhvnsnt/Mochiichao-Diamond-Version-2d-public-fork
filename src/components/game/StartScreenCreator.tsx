@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import StdWindow from './StdWindow';
 import {
   LOCKED_START_SCREEN_LAYOUT, LOCKED_START_SCREEN_PRESET,
@@ -9,6 +9,17 @@ import {
   type StartScreenBackground, type StartScreenParticle, type StartScreenPreset,
 } from '../../lib/startScreenPreset';
 import { TITLE_BIOMES } from '../../lib/titleBiomes';
+import { OpenSourceAssetPicker } from './OpenSourceAssetPicker';
+import {
+  START_EXPORT_WIDTH, START_EXPORT_HEIGHT, START_EXPORT_SECONDS,
+  drawStartFrame, startCanvasRecording, pickExportMimeType,
+  exportFileExtension, loadComponentImages,
+  type CanvasRecording, type ExportFrameImages,
+} from '../../lib/introVideoExport';
+import {
+  openSourceAssetsByIds, openSourceAssetUrl, openSourceAttribution,
+} from '../../lib/openSourceAssets';
+import yogifernoWalkCutout from '../../assets/title/yogiferno-walk-cutout.png';
 
 /**
  * CREATE START SCREEN — full dedicated screen (batch E, spec section 2).
@@ -34,8 +45,11 @@ import { TITLE_BIOMES } from '../../lib/titleBiomes';
  * PRESS ANY KEY blinks 30 frames on / 15 frames off (500ms / 250ms
  * at 60fps). This is the CREATOR preview only — saved presets are
  * selectable presets (restoration 2026-10-26: the default TITLE
- * phase is the locked phi stage, never a saved preset);
- * Phase 2 export (FFmpeg desktop / MediaRecorder) is still GAP.
+ * phase is the locked phi stage, never a saved preset).
+ * Phase 2 export is LIVE since Creator Phase 2: EXPORT VIDEO
+ * below switches this full screen to export mode (MediaRecorder
+ * web route, WebM, 6 s hold, silent — a start screen has no
+ * music slot; FFmpeg stays a desktop install note for WebM->MP4).
  * No Pokemon sprites, dialogue, music, cries, names, or art.
  */
 
@@ -53,6 +67,15 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
   const [presetName, setPresetName] = useState('My Start Screen 1');
   const [savedMsg, setSavedMsg] = useState('');
   const [blinkOn, setBlinkOn] = useState(true);
+  // --- Video export mode (full screen, not a popup) ---------------
+  const [exportMode, setExportMode] = useState(false);
+  const [exportProgress, setExportProgress] = useState(0);
+  const [exportStatus, setExportStatus] = useState('');
+  const [exportMime, setExportMime] = useState<string | null>(null);
+  const [exportBlob, setExportBlob] = useState<Blob | null>(null);
+  const [recording, setRecording] = useState(false);
+  const exportCanvasRef = useRef<HTMLCanvasElement | null>(null);
+  const recordingRef = useRef<CanvasRecording | null>(null);
 
   // PRESS ANY KEY blink: 30 frames on / 15 frames off at 60fps.
   useEffect(() => {
@@ -70,16 +93,19 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
   // B: BACK (Escape / b) returns to Menu Creator. Arrow/Enter keys
   // are handled by the row buttons; this screen adds no global
   // cursor handling so it cannot fight SettingsScreen's handler.
+  // In export mode B/Escape returns to the editor, never out of
+  // the creator mid-recording.
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape' || e.key.toLowerCase() === 'b') {
         e.preventDefault();
+        if (exportMode) { if (!recording) setExportMode(false); return; }
         onBack();
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [onBack]);
+  }, [onBack, exportMode, recording]);
 
   const set = (patch: Partial<StartScreenPreset>) => setPreset(p => ({ ...p, ...patch }));
   const artGap = !startScreenCreatureArtAvailable(preset.creature);
@@ -120,6 +146,113 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
     URL.revokeObjectURL(url);
     setSavedMsg('Preset exported as JSON (our own format, layout-as-data).');
   };
+
+  // --- Video export (MediaRecorder, full-screen export mode) ------
+  const toggleComponent = (id: string) => {
+    const cur = preset.openSourceComponentIds || [];
+    set({ openSourceComponentIds: cur.includes(id) ? cur.filter(c => c !== id) : [...cur, id] });
+  };
+
+  const loadYogifernoImage = (): Promise<HTMLImageElement | null> => new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = yogifernoWalkCutout;
+  });
+
+  const startExport = async () => {
+    const canvas = exportCanvasRef.current;
+    if (!canvas) {
+      setExportStatus('Export canvas is not ready — try again.');
+      return;
+    }
+    const mime = pickExportMimeType();
+    if (!mime) {
+      setExportStatus('Video export is not supported in this browser (no MediaRecorder mime type).');
+      return;
+    }
+    setExportStatus('Loading cutout + picked components…');
+    setExportBlob(null);
+    setExportProgress(0);
+    const images: ExportFrameImages = {
+      yogiferno: await loadYogifernoImage(),
+      components: await loadComponentImages(preset.openSourceComponentIds || []),
+    };
+    const snapshot: StartScreenPreset = { ...preset, name: presetName.trim() || preset.name };
+    try {
+      const rec = startCanvasRecording(
+        canvas, START_EXPORT_SECONDS,
+        (ctx, elapsed) => drawStartFrame(ctx, snapshot, elapsed, images),
+        (elapsed, total) => setExportProgress(total > 0 ? elapsed / total : 0),
+      );
+      recordingRef.current = rec;
+      setExportMime(rec.mimeType);
+      setRecording(true);
+      setExportStatus(`Recording… ${START_EXPORT_SECONDS}s hold, ${rec.mimeType}. Keep this screen open until it finishes.`);
+      const blob = await rec.done;
+      setRecording(false);
+      setExportBlob(blob);
+      setExportStatus(`Done — ${START_EXPORT_SECONDS}s video ready (${rec.mimeType}, ${(blob.size / 1024).toFixed(0)} KB, silent — a start screen has no music slot). Press DOWNLOAD VIDEO.`);
+    } catch (err) {
+      setRecording(false);
+      if (err instanceof Error && err.message === 'cancelled') {
+        setExportStatus('Recording cancelled.');
+      } else {
+        setExportStatus(`Export failed: ${err instanceof Error ? err.message : 'unknown error'}`);
+      }
+    }
+  };
+
+  const downloadExport = () => {
+    if (!exportBlob) return;
+    const ext = exportMime ? exportFileExtension(exportMime) : 'webm';
+    const url = URL.createObjectURL(exportBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${(presetName.trim() || preset.name || 'start-screen').replace(/[^a-z0-9]+/gi, '-').toLowerCase()}.${ext}`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  if (exportMode) {
+    return (
+      <div className="game-screen bg-[#050810] flex flex-col items-center relative overflow-hidden p-4">
+        <div className="relative z-10 w-full max-w-lg flex flex-col gap-3 max-h-full overflow-y-auto">
+          <StdWindow className="p-4 text-center">
+            <div className="text-white text-xl font-black tracking-widest">EXPORT START SCREEN VIDEO</div>
+            <div className="text-blue-200 text-xs mt-1">
+              Full screen, not a popup · MediaRecorder web route · {START_EXPORT_WIDTH}x{START_EXPORT_HEIGHT} · {START_EXPORT_SECONDS}s hold · one scene, looped hold
+            </div>
+            <div className="text-slate-300 text-xs mt-1">
+              The canvas below IS the video being recorded (canvas-2D render of the single scene: background, logo, PINNED
+              subtitle, PRESS ANY KEY blink 30/15, creature slot, studio logo, picked open-source panel/icon).
+              Silent: a start screen has no music slot. Painted background renders the slate fallback + GAP label; only Yogiferno
+              has a clean cutout, other creatures render a GAP label — never fake art.
+              Need MP4 later? Desktop FFmpeg install note only: ffmpeg -i start-screen-export.webm start-screen-export.mp4.
+            </div>
+          </StdWindow>
+          <StdWindow className="p-2">
+            <canvas ref={exportCanvasRef} width={START_EXPORT_WIDTH} height={START_EXPORT_HEIGHT}
+              className="w-full rounded border border-white/30 bg-black mx-auto block" style={{ maxHeight: 520 }} />
+            <div className="flex flex-wrap gap-2 px-1 py-3">
+              <button onClick={startExport} disabled={recording} className="game-button px-4 py-3 font-bold min-h-[48px]">● RECORD VIDEO ({START_EXPORT_SECONDS}s)</button>
+              {recording && <button onClick={() => recordingRef.current?.cancel()} className="game-button px-4 py-3 font-bold min-h-[48px]">CANCEL RECORDING</button>}
+              {exportBlob && <button onClick={downloadExport} className="game-button px-4 py-3 font-bold min-h-[48px]">DOWNLOAD VIDEO ↓</button>}
+              <button onClick={() => { if (!recording) setExportMode(false); }} disabled={recording} className="game-button px-4 py-3 font-bold min-h-[48px]">BACK TO EDITOR</button>
+            </div>
+            <div className="px-1 pb-2">
+              <div className="w-full h-3 bg-white/10 rounded overflow-hidden">
+                <div className="h-full bg-yellow-300" style={{ width: `${Math.round(exportProgress * 100)}%` }} />
+              </div>
+              <div className="text-white text-xs mt-1">{Math.round(exportProgress * 100)}% · {exportStatus || 'Press RECORD VIDEO to record this start screen.'}</div>
+              {exportMime && <div className="text-slate-400 text-xs">Format: {exportMime} ({exportFileExtension(exportMime)}).</div>}
+            </div>
+          </StdWindow>
+          <button onClick={() => { if (!recording) setExportMode(false); }} disabled={recording} className="game-button px-4 py-3 font-bold min-h-[48px]">BACK TO EDITOR</button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="game-screen bg-[#050810] flex flex-col items-center justify-center relative overflow-hidden p-4">
@@ -191,6 +324,30 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
         </StdWindow>
 
         <StdWindow className="p-2">
+          <OpenSourceAssetPicker
+            title="OPEN-SOURCE COMPONENTS"
+            selectedIds={preset.openSourceComponentIds || []}
+            onToggle={toggleComponent}
+          />
+          <div className="px-1 pb-1 text-xs text-slate-400">
+            Picked components are stored on this preset, shown here, and drawn into the exported video where the kind fits
+            (panel as the screen frame, icon as a top-right badge). Attribution travels with the pick:
+            {openSourceAssetsByIds(preset.openSourceComponentIds || []).map(a => (
+              <span key={a.id} className="block text-slate-300">· {a.id} — {openSourceAttribution(a)}</span>
+            ))}
+            {(preset.openSourceComponentIds || []).length === 0 && <span className="block">No components picked yet.</span>}
+          </div>
+          <div className="flex flex-wrap gap-2 px-1 pb-2">
+            {openSourceAssetsByIds(preset.openSourceComponentIds || []).map(a => {
+              const url = openSourceAssetUrl(a);
+              return url && /\.(png|svg)$/i.test(a.file) ? (
+                <img key={a.id} src={url} alt={a.id} title={`${a.id} — ${openSourceAttribution(a)}`} className="h-10 w-auto max-w-[120px] object-contain bg-black/30 rounded border border-white/20" />
+              ) : null;
+            })}
+          </div>
+        </StdWindow>
+
+        <StdWindow className="p-2">
           <div className="text-xs text-slate-300 font-bold px-3 pt-1 pb-2 tracking-widest">LOCKED LAYOUT — READ ONLY HERE</div>
           <CreatorRow label="LOGO SLOT" value="900 wide · (600, 450)" note="Locked. Move it in the Layout Editor, restyle it in the UI Creator — no second system here." onLeft={() => undefined} onRight={() => undefined} />
           <CreatorRow label="SUBTITLE SLOT" value="556 wide · (600, 735) · PINNED" note="DIAMOND VERSION subtitle font is PINNED and never changes — no font row touches it." onLeft={() => undefined} onRight={() => undefined} />
@@ -206,6 +363,7 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
           <div className="flex flex-wrap gap-2 px-3 py-3">
             <button onClick={saveAsPreset} className="game-button px-4 py-3 font-bold min-h-[48px]">SAVE AS PRESET</button>
             <button onClick={exportJson} className="game-button px-4 py-3 font-bold min-h-[48px]">EXPORT JSON</button>
+            <button onClick={() => setExportMode(true)} className="game-button px-4 py-3 font-bold min-h-[48px]">EXPORT VIDEO ►</button>
             <button onClick={resetLocked} className="game-button px-4 py-3 font-bold min-h-[48px]">RESET TO LOCKED DEFAULT</button>
           </div>
           <div className="px-3 pb-2">
@@ -220,7 +378,8 @@ export default function StartScreenCreator({ onBack }: { onBack: () => void }) {
             </div>
           </div>
           <div className="px-3 pb-2 text-xs text-slate-400">
-            GAP in this batch (later batches, not claimed): Phase 2 export (FFmpeg desktop / MediaRecorder); Blender .blend export. Saved presets are selectable in the creator; the default TITLE phase is the locked phi stage (restoration 2026-10-26), never a saved preset. Creature cutout GAP: {startScreenCreatureArtGapNames().join(', ')}.
+            Video export is LIVE (Creator Phase 2, MediaRecorder web route, WebM, 6 s hold, silent). Still GAP, not claimed:
+            Blender .blend export. Saved presets are selectable in the creator; the default TITLE phase is the locked phi stage (restoration 2026-10-26), never a saved preset. Creature cutout GAP: {startScreenCreatureArtGapNames().join(', ')}.
           </div>
         </StdWindow>
 

@@ -1,0 +1,19 @@
+{
+ "union_moves_total": 563,
+ "moves_routed_to_slots": {
+  "heavy": 41,
+  "physical": 181,
+  "special": 143,
+  "status": 89
+ },
+ "moves_routed_total": 454,
+ "fallback_moves_unmapped_to_set": 109,
+ "category_disagreement_moves": 54,
+ "creatures_total": 51,
+ "creatures_fully_mapped_4_slots": 51,
+ "creatures_partial": [],
+ "attack_set_names_found_total": 239,
+ "hurt_set_names_found_total": 204,
+ "signature_moves_note": "signature sets are creature-named and take no generic union moves",
+ "learnset_gap": "No per-creature Mochiichao learnset exists in repo data (species.ts covers 12 species; global_roster.json does not parse as JSON); per-creature KNOWN-move lists therefore cannot be assigned and are listed as UNMAPPED, not guessed."
+}

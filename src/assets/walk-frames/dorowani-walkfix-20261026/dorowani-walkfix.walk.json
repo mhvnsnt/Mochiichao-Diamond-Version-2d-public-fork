@@ -1,0 +1,48 @@
+{
+  "creature": "dorowani",
+  "directions": {
+    "down": 2,
+    "left": 2,
+    "right": 2,
+    "up": 2
+  },
+  "frames": [
+    {
+      "file": "dorowani_walk_left_0_rebuilt-20261026.png",
+      "role": "walk_left_0"
+    },
+    {
+      "file": "dorowani_walk_left_1_rebuilt-20261026.png",
+      "role": "walk_left_1"
+    },
+    {
+      "file": "dorowani_walk_right_0_rebuilt-20261026.png",
+      "role": "walk_right_0"
+    },
+    {
+      "file": "dorowani_walk_right_1_rebuilt-20261026.png",
+      "role": "walk_right_1"
+    },
+    {
+      "file": "dorowani_walk_down_0_downgap-20261026.png",
+      "role": "walk_down_0"
+    },
+    {
+      "file": "dorowani_walk_down_1_downgap-20261026.png",
+      "role": "walk_down_1"
+    },
+    {
+      "file": "dorowani_walk_up_0_rebuilt-20261026.png",
+      "role": "walk_up_0"
+    },
+    {
+      "file": "dorowani_walk_up_1_rebuilt-20261026.png",
+      "role": "walk_up_1"
+    }
+  ],
+  "status": "done",
+  "roster_id": "147",
+  "source": "sprite-art/walk-frames/dorowani-walkfix-20261026 (left rebuilt + other6 right/up + downgap down)",
+  "confirmation": "Mars confirmed 2026-10-26 ~18:34 CDT (left 2 + other 6 + down-gap removal). Replaces the Mudkip-like live dir for wiring; the live dir itself is NOT modified by this PR.",
+  "method": "rebuilt from locked cells verbatim, 0 new colours, baked gray shadow stripped, down leg-gap wedge removed"
+}

@@ -1,0 +1,141 @@
+{
+  "atlas": "tetsu-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_front"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world_bands": [
+    [
+      30,
+      1249
+    ]
+  ],
+  "world_runs": [
+    [
+      [
+        169,
+        362
+      ],
+      [
+        495,
+        852
+      ],
+      [
+        1068,
+        1432
+      ],
+      [
+        1555,
+        1745
+      ]
+    ]
+  ],
+  "walk_bands": [
+    [
+      17,
+      558
+    ],
+    [
+      573,
+      1104
+    ]
+  ],
+  "walk_runs": [
+    [
+      [
+        187,
+        388
+      ],
+      [
+        688,
+        1004
+      ],
+      [
+        1295,
+        1493
+      ],
+      [
+        1778,
+        2086
+      ]
+    ],
+    [
+      [
+        235,
+        339
+      ],
+      [
+        684,
+        997
+      ],
+      [
+        1337,
+        1442
+      ],
+      [
+        1771,
+        2085
+      ]
+    ]
+  ],
+  "world_order_note": "World sheet runs on disk are left, front, back, right; atlas maps 0:1=front, 0:2=back, 0:0=left, 0:3=right.",
+  "world_sheet": "media-generation-dojo-elite-tetsu-world-views-v-0-d22ee2d3-1e1e-450e-9ba9-47e89b6d6d96.webp",
+  "walk": "media-generation-dojo-elite-tetsu-walk-frames-v-0-74065972-07fb-4785-b599-08e35d9ead3b.webp",
+  "battle": "media-generation-dojo-elite-tetsu-battle-front-0-afe0c43b-9127-4ad2-afe6-4f39f52b3e19.webp",
+  "portrait": "media-generation-dojo-elite-tetsu-portrait-v1-2-0-66c95bbf-e68a-4f28-8e85-d21c5d25a837.webp"
+}

@@ -1,0 +1,126 @@
+{
+  "atlas": "yoru-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_front"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world_bands": [
+    [
+      21,
+      634
+    ],
+    [
+      649,
+      1259
+    ]
+  ],
+  "world_runs": [
+    [
+      [
+        377,
+        610
+      ],
+      [
+        1313,
+        1541
+      ]
+    ],
+    [
+      [
+        370,
+        538
+      ],
+      [
+        1381,
+        1549
+      ]
+    ]
+  ],
+  "world_order_note": "World sheet on disk is 2x2: top-left=front, top-right=back, bottom-left=faces image-left, bottom-right=faces image-right. Atlas maps left=bottom-left, right=bottom-right.",
+  "walk_bands": [
+    [
+      37,
+      883
+    ]
+  ],
+  "walk_runs": [
+    [
+      [
+        140,
+        614
+      ],
+      [
+        830,
+        1238
+      ],
+      [
+        1462,
+        1955
+      ],
+      [
+        2127,
+        2619
+      ]
+    ]
+  ],
+  "walk_flag": "WALK SHEET IS SINGLE-DIRECTION: all 4 walk frames face image-right, in stride order. Atlas step cells 8-11 are those 4 stride phases in order, NOT true front/back/left/right steps. Walk crescent pattern is much sparser (lining only) than the world sheet's all-over crescents.",
+  "world_sheet": "media-generation-dojo-elite-yoru-world-views-v1-0-e828586c-08bd-4b58-bc9b-8b37c2439e5d.webp",
+  "walk": "media-generation-dojo-elite-yoru-walk-frames-v1-0-ead1be42-7fd1-4fab-af81-e87d78d91696.webp",
+  "battle": "media-generation-dojo-elite-yoru-battle-front-v-0-aacc446b-9725-4667-9b37-26913fa5af7c.webp",
+  "portrait": "media-generation-dojo-elite-yoru-portrait-v1-20-0-666bf433-5cee-4183-a483-ad65f872b7db.webp"
+}

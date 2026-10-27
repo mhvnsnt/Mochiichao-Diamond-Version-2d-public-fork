@@ -26,7 +26,7 @@ const SAVE_STATE_KEY = (slot: number) => `mochii_savestate_${slot}`;
 export default function CheatConsoleView({ onBack }: { onBack: () => void }) {
   const gameState = useGameStore(s => s);
   const [code, setCode] = useState('');
-  const [message, setMessage] = useState('Enter a native cheat code. Any successful code sets save.cheated = true.');
+  const [message, setMessage] = useState('Enter a cheat code.');
   const [states, setStates] = useState(() => [1, 2, 3, 4].map(n => {
     try { return localStorage.getItem(SAVE_STATE_KEY(n)) ? JSON.parse(localStorage.getItem(SAVE_STATE_KEY(n))!).timestamp : null; } catch { return null; }
   }));
@@ -42,7 +42,7 @@ export default function CheatConsoleView({ onBack }: { onBack: () => void }) {
       for (const id of Object.keys(SPECIES_DB)) dex[id] = 'seen';
       useGameStore.setState({ dex });
       flagCheated();
-      setMessage('MOCHII-ALL: every species marked SEEN in the Dex (not caught). save.cheated = true.');
+      setMessage('MOCHII-ALL: every species marked Seen in the Dex.');
     } else if (c === 'MAX-LVL') {
       const party = gameState.party.map(m => {
         const copy = { ...m };
@@ -53,30 +53,30 @@ export default function CheatConsoleView({ onBack }: { onBack: () => void }) {
       });
       useGameStore.setState({ party });
       flagCheated();
-      setMessage('MAX-LVL: party raised to level 100 (decomp maximum; breaks the early-game curve — cheat only). save.cheated = true.');
+      setMessage('MAX-LVL: party raised to level 100.');
     } else if (c === 'SHINY-ON') {
       setFlags({ shiny: true });
       flagCheated();
-      setMessage('SHINY-ON: shiny display flag on (palette swap is the next pass). save.cheated = true.');
+      setMessage('SHINY-ON: Lustre display on.');
     } else if (c === 'SHINY-OFF') {
       setFlags({ shiny: false });
       flagCheated();
-      setMessage('SHINY-OFF: shiny display flag off. save.cheated = true.');
+      setMessage('SHINY-OFF: Lustre display off.');
     } else if (c === 'NOCLIP') {
       const next = !gameState.noclip;
       setFlags({ noclip: next });
       flagCheated();
-      setMessage(`NOCLIP: ${next ? 'ON — walk through solid tiles (bounds and exits still apply).' : 'OFF.'} save.cheated = true.`);
+      setMessage(`NOCLIP: ${next ? 'ON — walk through solid tiles.' : 'OFF.'}`);
     } else if (c === 'WARP-SECTOR0') {
       gameState.setMapState('sector0', { x: 15, y: 18 });
       flagCheated();
-      setMessage('WARP-SECTOR0: warped to Sector 0 — Boot Harbor. save.cheated = true.');
+      setMessage('WARP-SECTOR0: warped to Boot Harbor.');
     } else if (c === 'MONEY-1000') {
       useGameStore.setState(s => ({ wallet: Math.min(999999, s.wallet + 1000) }));
       flagCheated();
-      setMessage('MONEY-1000: +1000 CR (placeholder cheat amount, not canon; wallet clamped at 999,999). save.cheated = true.');
+      setMessage('MONEY-1000: +1000 CR.');
     } else {
-      setMessage(`Unknown code "${c}". Allowlist only: MOCHII-ALL, MAX-LVL, SHINY-ON, SHINY-OFF, NOCLIP, WARP-SECTOR0, MONEY-1000.`);
+      setMessage(`Unknown code. These codes work here: MOCHII-ALL, MAX-LVL, SHINY-ON, SHINY-OFF, NOCLIP, WARP-SECTOR0, MONEY-1000.`);
     }
     setCode('');
   };
@@ -103,8 +103,8 @@ export default function CheatConsoleView({ onBack }: { onBack: () => void }) {
       </div>
       <div className="game-panel p-4 max-w-2xl w-full mx-auto">
         <div className="text-sm text-slate-300 mb-3">
-          save.cheated: <span className={gameState.cheated ? 'text-red-300 font-bold' : 'text-teal-300 font-bold'}>{gameState.cheated ? 'TRUE' : 'false'}</span>
-          {' '}· Shiny: {gameState.shiny ? 'ON' : 'OFF'} · Noclip: {gameState.noclip ? 'ON' : 'OFF'} · Fast-forward: {gameState.fastForward ? 'ON' : 'OFF'}
+          Cheats used: <span className={gameState.cheated ? 'text-red-300 font-bold' : 'text-teal-300 font-bold'}>{gameState.cheated ? 'Yes' : 'No'}</span>
+          {' '}· Lustre: {gameState.shiny ? 'ON' : 'OFF'} · Noclip: {gameState.noclip ? 'ON' : 'OFF'} · Fast-forward: {gameState.fastForward ? 'ON' : 'OFF'}
         </div>
         <div className="flex gap-2">
           <input
@@ -142,7 +142,7 @@ export default function CheatConsoleView({ onBack }: { onBack: () => void }) {
             </div>
           ))}
         </div>
-        <div className="text-xs text-slate-400 mt-4">Real AR/GS codes cannot run here — this console is the native allowlist only, per the cheat spec. No code in this console touches battle speed or battle outcomes.</div>
+        <div className="text-xs text-slate-400 mt-4">This console takes Mochiichao cheat codes only.</div>
       </div>
     </div>
   );

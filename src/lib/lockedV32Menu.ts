@@ -39,6 +39,16 @@ export type LockedV32Panel = {
   // in PR #163 were invented by the restoration, not locked.
   fill: string;
   labelSize: number;
+  // Measured left margin of the label text from the panel's left
+  // edge (full 1200x1500 scale), from the three targets 2026-10-26:
+  // CONTINUE cursor 27, NEW GAME 33, SETTINGS 29, BACK 33.
+  labelMargin: number;
+  // Per-panel letter-spacing (em) derived 2026-10-26, NOT guessed:
+  // (targetWidth - measuredWidth) / (gaps * fontSize), measured by
+  // Range rects on the pass-1 render (fontSize from cap heights):
+  // CONTINUE (208-183)/(7*35)=+0.10, NEW GAME (171-146)/(7*26)=+0.14,
+  // SETTINGS (158-175)/(7*35)=-0.07, BACK (285-287)/(16*31)=0.00.
+  labelLetterSpacing: number;
 };
 
 export type MenuAnimationSpeed =
@@ -92,12 +102,14 @@ export const MENU_ANIMATION_SPEEDS = {
 
 export const LOCKED_V32_MENU = {
   canvas: { w: 1200, h: 1500, centreX: 600 },
-  // Logo stays the image, never font text. MAIN MENU logo (round 2,
-  // 2026-10-26) = src/assets/ui/mochiichao-main-logo-v32-matched.png:
+  // Logo stays the image, never font text. MAIN MENU logo (orbitfix,
+  // 2026-10-26) = src/assets/ui/mochiichao-main-logo-v32-orbitfix-20261026.png:
   // Mars's upload letters, keyed from black, with the v32 picture's
   // own geometry -- thick black outline (dilate 10px), thick black
-  // orbit ring (centre (618,500), a=440, b=200, stroke 30, thin white
-  // centre line), sparkle stars. The previous build's keyed upload
+  // orbit ring (centre (619,472), a=425, b=186, stroke 30, thin white
+  // centre line), sparkle stars. Section-O fix (2026-10-26): the
+  // round-2 ring (618,500,440,200) was re-fitted from clean strips
+  // and corrected to the values above. The previous build's keyed upload
   // (src/assets/ui/mochiichao-main-logo.png: thin white orbit, no
   // outline) vanishes on the white menu -- that is what Mars
   // rejected on his phone 2026-10-26 12:38 CDT, and it is NOT reused
@@ -106,13 +118,76 @@ export const LOCKED_V32_MENU = {
   // white orbit reads correctly); only the MAIN_MENU slot uses the
   // v32-matched asset. Asset canvas 900x548 = this slot exactly.
   logo: { image: "V32_MATCHED" as const, x: 150, y: 180, w: 900 },
-  cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5 },
+  // Cloud VISIBLE-shape box (locked spec + v21 step): the visible cloud
+  // shape spans x250-950, y648-828, centre (600,738), 700x180.
+  // imgBox is the element box that puts the ORIGINAL puffy-cloud.svg
+  // visible path exactly on that box. The file's visible path fills only
+  // 88.3% of its viewBox width (path x10-540 of 600) and 73.2% of its
+  // height (path y40-245 of 280), so rendering it fill into the 700x180
+  // box showed a 341-wide cloud centred at x583, 132 tall — 17px left
+  // and 48px short (measured in render, not from the box).
+  // TWO measured rendering facts (Chrome, verified in a standalone
+  // render of this exact element AND in the menu render, which agree):
+  // (1) a plain <img> applies the SVG's default meet inside the box and
+  // letterboxes the viewBox (imgBox 792x246 alone landed 378-844 wide,
+  // not 250-950); (2) an <svg><image preserveAspectRatio="none">
+  // does NOT stretch to the frame either — it renders the content at
+  // 0.851 x frame width, centred 0.044 x frame width LEFT of the frame
+  // centre, 0.671 x frame height tall, top at 0.191 x frame height
+  // (measured: 674-wide content in a 792 frame, stroke 260-934 in the
+  // menu, centre 597 — centred right but 25px narrow).
+  // imgBox (225,599,823x258) is therefore the CALIBRATED frame that
+  // lands the content on the locked box under fact (2):
+  // width 823 x 0.851 = 700, centre 636.5 - 0.044 x 823 = 600,
+  // height 258 x 0.671 = 173, top 599 + 0.191 x 258 = 648.
+  // SHAPE TRANSFORM, NOT A REDRAW (Mars 2026-10-26 18:13 CDT): the file
+  // is untouched; only its rendered scale/position change.
+  // File untouched. BANNED / DO NOT USE: mochiichao-main-cloud-v32.svg
+  // (the #184 trace) — deleted from main by Mars's order 2026-10-26;
+  // it is NOT the cloud file and must never be rendered again.
+  // EXACT-TARGET RETUNE (2026-10-26, Mars 19:57 CDT bar: the corrected
+  // cloud must look like the TARGET panel EXACTLY, not close, not
+  // 99.9%): the fixed3 frame above landed interior 258-942 x 653-811
+  // in the app render and 258-942 x 654-816 for the isolated element
+  // — both short of target interior 257-942 x 655-815. DECOMP CHECK
+  // FIRST (Pokemon-first, FireRed then HeartGold then Black 2): NO
+  // decomp pins a menu-cloud placement for this element — FireRed
+  // title_screen.c has flame/leaf/slash sprites + background bitmaps
+  // (no cloud sprite), main_menu.c has text window templates (no
+  // cloud), HeartGold title_screen.c has zero 'cloud' matches (3D
+  // scene; any clouds are baked into model/texture assets), Black 2
+  // src has no title/menu cloud placement. The 250-950 x 648-828 box
+  // is the Mochiichao v21 spec value, NOT a decomp value — stated
+  // plainly. So the frame below is tuned by isolated-element
+  // measurement (same white-interior flood method that reproduces
+  // the picture's target interior 257-942 x 655-815 exactly as the
+  // largest enclosed component): frame (224,601,825x254) renders
+  // isolated interior 257-942 x 655-815 (685x160) — all four edges
+  // EXACT, stroke 249-951 x 649-820 (within 1px of the picture's
+  // stroke on every edge; that 1px is edge-threshold, not shape —
+  // same file, same stretch mode, same shape).
+  // APP CORRECTION (2026-10-26, measured in the true 1200x1500 app
+  // render): the isolated rig's interior bottom (815) is the CENTRE
+  // bottom, which the CONTINUE panel hides in the game — so in the
+  // app the visible interior bottom is the LOBES, and the picture's
+  // lobes sit 6px lower than the element's (picture right-lobe stroke
+  // 819 vs element 813, left 813 vs ~807; app right-lobe stroke
+  // measured IDENTICAL to isolated, 813, same taper — so the app
+  // element is exact and the picture's cloud is a uniform vertical
+  // stretch x1.039 about the top: interior height 160 vs 154,
+  // (819-649)/(813-649) = 1.037). Frame (224,599,825x264) applies
+  // that stretch in the app: predicted interior 257-942 x 655-815,
+  // right-lobe stroke ~819, left-lobe stroke ~813, top/left/right
+  // unchanged (width unchanged, top re-anchored: 599 + 0.191x264).
+  // Verified by app re-render + measurement, not by the isolated
+  // rig alone.
+  cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5, imgBox: { x: 224, y: 599, w: 825, h: 264 } },
   mochii: { x: 170, y: 790, w: 110, h: 110, bobAmp: 8, bobPeriod: 4.5 },
   panels: [
-    { key: "CONTINUE", x: 300, y: 788, w: 600, h: 110, fill: "#ff96c8", labelSize: 34 },
-    { key: "NEW GAME", x: 300, y: 918, w: 600, h: 70, fill: "#ffe696", labelSize: 32 },
-    { key: "SETTINGS", x: 300, y: 1008, w: 600, h: 70, fill: "#8cd2ff", labelSize: 32 },
-    { key: "BACK TO TITLE", x: 300, y: 1098, w: 600, h: 70, fill: "#a0e6b4", labelSize: 32 },
+    { key: "CONTINUE", x: 300, y: 788, w: 600, h: 110, fill: "#ff96c8", labelSize: 35, labelMargin: 27, labelLetterSpacing: 0.10 },
+    { key: "NEW GAME", x: 300, y: 918, w: 600, h: 70, fill: "#ffe696", labelSize: 26, labelMargin: 33, labelLetterSpacing: 0.14 },
+    { key: "SETTINGS", x: 300, y: 1008, w: 600, h: 70, fill: "#8cd2ff", labelSize: 35, labelMargin: 29, labelLetterSpacing: -0.07 },
+    { key: "BACK TO TITLE", x: 300, y: 1098, w: 600, h: 70, fill: "#a0e6b4", labelSize: 31, labelMargin: 33, labelLetterSpacing: 0 },
   ] as LockedV32Panel[],
   // Picture panel labels: upright bold sans, NOT the slanted Yagiza
   // that var(--menu-font) gives by default. CONTINUE/SETTINGS (and
@@ -128,6 +203,12 @@ export const LOCKED_V32_MENU = {
     strokeLabels: ["CONTINUE", "SETTINGS"] as const,
     labelStrokePx: 2,
     sublabelStrokePx: 1,
+    // Sublabel size from the targets' sublabel cap height 22-23
+    // (proof + matched + v32 agree): 26 stage px. CONTINUE sublabel
+    // margin from panel left edge: 30 (targets agree).
+    sublabelSize: 26,
+    sublabelMargin: 30,
+    sublabelLineHeight: 1.15,
   },
   panelStyle: { borderRadius: 28, borderWidth: 3 },
   background: {
@@ -158,31 +239,75 @@ export const LOCKED_V32_MENU = {
         { rx: 475, ry: 230, color: "#ff96c8", rotate: 0 },
       ],
     },
-    // Confetti symbols: the MEASURED field (round 2, 2026-10-26,
-    // see mainMenuSymbols.ts). 285 symbols measured from the
-    // matched GIF; history's field is 300, so the shortfall is
-    // 15 = 5.0%, named in that file and in the PR body, NOT filled
-    // with generated guesses (the PR #170 generated fill is what
-    // Mars rejected).
+    // Small logo-zone emblems (2026-10-26 widened brief): MEASURED
+    // from the locked v32 picture mochiichao-main-menu-phi-fade-v32.png
+    // (no coordinate table exists in the history, so picture
+    // measurement is the only source, labelled as such). These are
+    // the little emblems AROUND THE LOGO the current render was
+    // missing: black 4-point stars, one blue heart, one pink heart,
+    // one pink circle. Centres/sizes in full-scale canvas px; the
+    // blue heart's height (51) is the crop-visual value -- its
+    // opened bbox merged with the arc below. Rendered static (they
+    // are top-layer decorations, not rising symbols), AFTER the
+    // symbol field so they stay solid over the faded field, as in
+    // the picture. Version sources: v14 (blue/pink circles, blue/pink
+    // hearts, black sparkles), v15 (rainbow semi-circles), v25
+    // (hearts/stars mirrored). The logo image itself is NOT touched.
+    logoEmblems: [
+      { x: 600, y: 194, w: 41, h: 41, c: "#000000", shape: "star" },
+      { x: 139, y: 533, w: 45, h: 45, c: "#000000", shape: "star" },
+      { x: 1059, y: 533, w: 53, h: 53, c: "#000000", shape: "star" },
+      { x: 169, y: 405, w: 63, h: 51, c: "#95cbfe", shape: "heart" },
+      { x: 230, y: 637, w: 53, h: 37, c: "#fe95c7", shape: "heart" },
+      { x: 1054, y: 412, w: 46, h: 46, c: "#fe95c7", shape: "circle" },
+    ] as { x: number; y: number; w: number; h: number; c: string; shape: string }[],
+    // Confetti symbols: the FORMULA field v2 (2026-10-26,
+    // see mainMenuSymbols.ts). 300 symbols by the exact research
+    // phi-lattice formula; the round-2 MEASURED set (285) is
+    // SUPERSEDED -- DO NOT USE -- by Mars's order 2026-10-26
+    // 14:18 CDT ("stop cheating. Follow the formula").
     symbols: MAIN_MENU_SYMBOLS,
     // Locked phi fade.
     fade: { gone: 620, mid: 729, full: 905 },
-    // Symbol speed, selectable. 'perfect' is the DEFAULT (matched
-    // GIF, Mars PERFECT 2026-10-25 17:12 CDT). 'slow-rise' is the
-    // exact PR #163 speed, saved as an option only (Mars 2026-10-26
-    // 10:54 CDT) — changing this field selects it; nothing else in
-    // this file changes when it is selected. NOTE: the type is
-    // deliberately the two-value union, NOT a single literal:
-    // with a literal type the bundler tree-shakes the slow-rise
-    // branch and data out of the build entirely, and the option
-    // would not actually ship. Keep the union, and keep `as const`
-    // off this object: the outer const assertion re-narrowed
-    // animationSpeed back to the literal "perfect", and the second
-    // build (2026-10-26) shipped slow-rise 0 times even after the
-    // union was added. With the union preserved, MainMenuBackground
-    // keeps both branches.
-    animationSpeed: "perfect" as "perfect" | "slow-rise",
+    // Symbol speed, selectable. 'slow-rise' is the DEFAULT from
+    // Mars's 2026-10-26 19:54 CDT order (the rising emblems moved
+    // too fast; use the slow speed locked earlier today). 'slow-rise'
+    // is the exact PR #163 speed (rise vy 8-14 px/s, sway 3-8px,
+    // rotate +/-4deg, period 4-6s; saved as an option Mars
+    // 2026-10-26 10:54 CDT, made the default by his 19:54 CDT order).
+    // 'perfect' (matched GIF, Mars PERFECT 2026-10-25 17:12 CDT:
+    // 157.14 px/s) is kept as the option — changing this field
+    // selects it; nothing else in this file changes when it is
+    // selected. NOTE: the type is deliberately the two-value union,
+    // NOT a single literal: with a literal type the bundler
+    // tree-shakes the slow-rise branch and data out of the build
+    // entirely, and the option would not actually ship. Keep the
+    // union, and keep `as const` off this object: the outer const
+    // assertion re-narrowed animationSpeed back to the literal
+    // "perfect", and the second build (2026-10-26) shipped slow-rise
+    // 0 times even after the union was added. With the union
+    // preserved, MainMenuBackground keeps both branches.
+    animationSpeed: "slow-rise" as "perfect" | "slow-rise",
     animationSpeeds: MENU_ANIMATION_SPEEDS,
+    // Logo hearts (Mars 2026-10-26 19:54 CDT: blue + pink hearts by the
+    // logo at their exact yesterday placements, on their exact layer).
+    // MEASURED from the v32 picture (not copied from PR #214): blue
+    // visible bbox 138-200 x 397-446 (centre (169,421.5), 63x50, fill
+    // #8cd2ff); pink visible bbox 204-256 x 621-660 (centre (230,640.5),
+    // 53x40, fill #ff96c8). PR #214's numbers were off: blue y 405 was
+    // 16.5px too high (its own comment admits the crop bbox merged
+    // with the arc below), pink y 637 was 3.5px high and h 37 was 3px
+    // short, colours #95cbfe/#fe95c7 vs picture fills #8cd2ff/#ff96c8.
+    // Centres/sizes below are the picture measurements. Layer (v28,
+    // Mars direction): white -> background symbols -> arcs/circles/
+    // hearts -> logo -> cloud -> panels; rendered last in
+    // MainMenuBackground's SVG (above arcs + symbols, below logo),
+    // static, full opacity (the pink heart sits at y640 inside the
+    // fade band but is SOLID in the picture, so no fade applies).
+    logoHearts: [
+      { x: 169, y: 421.5, w: 63, h: 50, c: "#8cd2ff" },
+      { x: 230, y: 640.5, w: 53, h: 40, c: "#ff96c8" },
+    ],
   },
 };
 

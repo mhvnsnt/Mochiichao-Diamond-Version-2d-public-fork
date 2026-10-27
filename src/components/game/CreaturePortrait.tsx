@@ -21,7 +21,7 @@ import { folderForSpecies, IDLE, loadIdleFrame, loadSilhouette, SILHOUETTES } fr
  *   silhouette loads). When there is no sheet def but a silhouette exists,
  *   the silhouette replaces the blob fallback. No dex view passes
  *   undiscovered yet; the prop is the wiring, the dex surface is owed.
- * - Shinies are NOT rendered here: the shiny set is not approved.
+ * - Lustre variants (10 looks per creature) render in the Team panel via variants.ts, not here.
  */
 export default function CreaturePortrait({
   speciesId, view = 'front', size = 96, name, showName = false, mirror = false,
@@ -127,7 +127,6 @@ export default function CreaturePortrait({
         </div>
       )}
       {showName && <div className="text-center font-bold text-white leading-tight" style={{ fontSize: Math.max(11, size * 0.16) }}>{label}</div>}
-      {showBlob && <div className="text-center text-[10px] uppercase tracking-wider text-slate-400">Art in progress</div>}
     </div>
   );
 }

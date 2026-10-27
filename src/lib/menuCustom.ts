@@ -393,8 +393,10 @@ export function applyMenuCustom(c: MenuCustomSettings, now: Date = new Date()): 
     root.style.setProperty('--menu-text-color', c.textColor);
     root.style.setProperty('--menu-text-shadow', c.textShadow ? '0 2px 0 rgba(0,0,0,0.6)' : 'none');
     root.style.setProperty('--menu-dialogue-radius', `${DIALOGUE_BOX_RADIUS[c.dialogueBoxStyle]}px`);
+    root.style.setProperty('--menu-daynight-panel', palette.panel);
     root.style.setProperty('--menu-daynight-accent', palette.accent);
     root.style.setProperty('--menu-daynight-text', palette.text);
+    root.style.setProperty('--menu-daynight-muted', palette.muted);
     root.style.setProperty('--menu-daynight-sky-top', palette.skyTop);
     root.style.setProperty('--menu-daynight-sky-bottom', palette.skyBottom);
     root.style.setProperty('--menu-daynight-tint', palette.tint);

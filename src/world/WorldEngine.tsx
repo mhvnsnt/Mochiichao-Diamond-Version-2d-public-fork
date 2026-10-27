@@ -15,6 +15,7 @@ import { createMochii } from '../lib/engine';
 import DialogueBox from "../components/game/DialogueBox";
 import { isConfirmKey } from "../lib/buttonMode";
 import { slotForNpc } from "../lib/humanSheets";
+import { personaPresentationForNpc } from "../lib/personaDialogue";
 import { playMusic } from "../lib/music";
 
 const TILE_SIZE = 40; // match PDF size because it renders better in viewports
@@ -92,8 +93,9 @@ export function hexTeamMember(playerSpeciesId: string): any | null {
  * with createMochii at the map level, so trainer, wild and player
  * creatures all use the same stat system and the same existing
  * species base stats — no new stats invented. Members whose id/name
- * do NOT match SPECIES_DB (e.g. Bug Catcher Rick's team lists id
- * "004" named "Squirmite", while SPECIES_DB "004" is Razorgater)
+ * do NOT match SPECIES_DB (e.g. Bug Catcher Rick's team now lists id
+ * "016" named "Squirmite", which has no SPECIES_DB entry yet, so it
+ * stays on map stats until a 016 code entry exists)
  * are left on their map stats unchanged and flagged in the PR body
  * as pre-existing map-data mismatches, not silently renamed.
  */
@@ -1661,6 +1663,12 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           lines={dialog.lines || []}
           speakerName={dialog.npc?.name}
           speakerSlot={dialog.npc ? slotForNpc(dialog.npc) : null}
+          // Tier 1 persona framing, scene-selected: ONLY Luigi
+          // Castagnoli's dialogue gets it (personaDialogue.ts).
+          // Every other speaker passes 'default' — the locked default
+          // dialogue look is unchanged. Mysterious Figure has no
+          // repo scene yet, so it selects nothing here; see that file.
+          presentationMode={personaPresentationForNpc(dialog.npc) ? 'persona' : 'default'}
           choice={!!dialog.isChoice}
           onComplete={finishDialog}
           onChoice={handleChoice}

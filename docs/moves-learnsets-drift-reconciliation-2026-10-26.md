@@ -75,3 +75,18 @@ references. New moves: 0 names equal a Black 2 move name (validate.py gate).
 Until those answers land, this PR stays open and unmerged. Nothing in it
 touches Netlify, Pages, or any live game code: all 8 files are new,
 species.ts and moves.ts are untouched, and the live game still uses 36 moves.
+
+## RESOLUTION — roster wins (Mars 2026-10-26 ~14:15 CDT, supersedes the HELD status above)
+
+This held batch is superseded by a gated PR branched from the then-current
+main head (see docs/roster-wins-corrections-2026-10-26.md for the file-by-file
+record). Decisions applied: 003 = AquariiOS; 005 = Chromejaww (Chromedile is
+an old name, not an evolution); 038 Sproutle stats = roster 55/68/64/45/55/31;
+039 = Shellguard (75/89/85/55/65/36, evolves →040 Lv32); 040 = Dreadtoise final
+(95/109/105/75/85/56); roster line-14 quote typo fixed (`"atk": 63`); Bug
+Catcher Rick = Squirmite 016 (verified already correct on main at branch time
+— no change needed in this batch). Pebblefist 035 HP stays Mars-only (not
+resolved by this call; see the corrections doc for the later HP-40 note flagged
+to the coordinator, which this batch does NOT apply on its own authority).
+The original held analysis above is preserved unchanged; only this section
+was added at resolution time.

@@ -1,0 +1,184 @@
+{
+ "date": "2026-10-26",
+ "order": "Mars order 2026-10-26 ~17:56 CDT: fill the gaps, no call needed",
+ "status": "STAGED ONLY, show-first, NO PR, NO lock, NO overwrite of locked files or existing frames",
+ "method": "Razorgater method: pixel-identical copies of the creature's OWN existing art, md5-verified; no generation, no redraw, no palette invention, no face changes, no baked shadows added",
+ "compute": "Local CPU only. Pixel copy/verify work on 64x64 PNGs \u2014 Kaggle GPU genuinely cannot help this step, no Kaggle job.",
+ "items": [
+  {
+   "item": 1,
+   "creature": "punchkid",
+   "roster_id": "029",
+   "fill": "overworld_side_2",
+   "count": "1/1 = 100%",
+   "new_file": "punchkid_overworld_side_2_20261026.png",
+   "source": "walk-frames/punchkid/punchkid_walk_left_1.png",
+   "source_locked_manifest": "game-ready/punchkid/punchkid.manifest.locked.json",
+   "locked_before": "1 side cell only: overworld_side (cell 06, faces RIGHT)",
+   "facing": "NEW cell faces LEFT. Lane convention: Dorowani locked side faces LEFT, side_2 faces RIGHT \u2014 side_2 is the opposite direction, not a same-direction phase.",
+   "style_caveat": "Walk sheet is smooth cartoon vs pixel locked cell (pre-existing drift in walk.json, not introduced here). New cell is a copy, not a redraw in locked pixel style.",
+   "verification": {
+    "md5": "222fb69c6711818303d32f82b7b17660",
+    "size": "64x64 RGBA",
+    "colours": 1418,
+    "pixel_identical_to_source": true,
+    "new_colours": 0
+   },
+   "locked_source_md5": "222fb69c6711818303d32f82b7b17660",
+   "show_sheet": "punchkid_before_after_20261026.png",
+   "gif": "punchkid_walk_cycle_20261026.gif (left_0 <-> left_1, 3x, 300 ms/frame, preview timing only)"
+  },
+  {
+   "item": 2,
+   "creature": "strikechamp_unsuited_full",
+   "roster_id": "030",
+   "variant": "unsuited-full (third Strikechamp variant: rare no-helmet, no-armor FULL look; NOT suited default, NOT helmeted lower-only strikechamp_unsuited)",
+   "fill": "full walk-frames dir",
+   "count": "8/8 = 100%",
+   "locked_before": "Locked side complete: 18 side/walk cells in game-ready/strikechamp_unsuited_full/; walk-frames dir MISSING (0/8)",
+   "base_walk_frames_used": 0,
+   "mapping_rule": "By EYE direction, NOT by locked manifest label (labels for this set are wrong \u2014 see label_corrections). Down = first two TRUE fronts in walk_front order (08, 14); up = first two TRUE backs in walk order (09, 12); sides = only true side cells (07/02 left, 07mir/05 right).",
+   "label_corrections": {
+    "cell_03": "labelled overworld_front, eye: BACK",
+    "cell_04": "labelled overworld_back, eye: FRONT",
+    "cell_09": "labelled walk_front_1, eye: BACK",
+    "cell_11": "labelled walk_side_1, eye: FRONT",
+    "cell_13": "labelled walk_side_2, eye: FRONT",
+    "cell_14": "labelled walk_front_2, eye: FRONT (used as down_1)",
+    "cell_10": "labelled walk_back_0, eye: FRONT",
+    "cell_16": "labelled walk_back_2, eye: FRONT"
+   },
+   "frames": [
+    {
+     "role": "walk_down_0",
+     "new_file": "strikechamp_unsuited_full_walk_down_0_20261026.png",
+     "source_locked_cell": "strikechamp_unsuited_full_cell_08.png",
+     "source_label": "walk_front_0",
+     "eye_direction": "FRONT",
+     "verification": {
+      "md5": "e53c10d9bd56ca9e535491edb4e54d67",
+      "size": "64x64 RGBA",
+      "colours": 1532,
+      "pixel_identical_to_source": true,
+      "new_colours": 0
+     }
+    },
+    {
+     "role": "walk_down_1",
+     "new_file": "strikechamp_unsuited_full_walk_down_1_20261026.png",
+     "source_locked_cell": "strikechamp_unsuited_full_cell_14.png",
+     "source_label": "walk_front_2",
+     "eye_direction": "FRONT",
+     "verification": {
+      "md5": "178528706edbe31bbc254efc34f9e133",
+      "size": "64x64 RGBA",
+      "colours": 1471,
+      "pixel_identical_to_source": true,
+      "new_colours": 0
+     }
+    },
+    {
+     "role": "walk_left_0",
+     "new_file": "strikechamp_unsuited_full_walk_left_0_20261026.png",
+     "source_locked_cell": "strikechamp_unsuited_full_cell_07.png",
+     "source_label": "walk_side_0",
+     "eye_direction": "SIDE-LEFT stride",
+     "verification": {
+      "md5": "6b81ce58318f8747d5d57869f3a8bc88",
+      "size": "64x64 RGBA",
+      "colours": 878,
+      "pixel_identical_to_source": true,
+      "new_colours": 0
+     }
+    },
+    {
+     "role": "walk_left_1",
+     "new_file": "strikechamp_unsuited_full_walk_left_1_20261026.png",
+     "source_locked_cell": "strikechamp_unsuited_full_cell_02.png",
+     "source_label": "overworld_side",
+     "eye_direction": "SIDE-LEFT standing",
+     "verification": {
+      "md5": "ddfc51f750934d41f042fd4078d69a54",
+      "size": "64x64 RGBA",
+      "colours": 795,
+      "pixel_identical_to_source": true,
+      "new_colours": 0
+     }
+    },
+    {
+     "role": "walk_right_0",
+     "new_file": "strikechamp_unsuited_full_walk_right_0_20261026.png",
+     "source_locked_cell": "strikechamp_unsuited_full_cell_07mir.png",
+     "source_label": "walk_side_mirror (locked mirror of cell 07)",
+     "eye_direction": "SIDE-RIGHT stride",
+     "verification": {
+      "md5": "c84aa30370c6484a042aa614b2cd29c5",
+      "size": "64x64 RGBA",
+      "colours": 878,
+      "pixel_identical_to_source": true,
+      "new_colours": 0
+     }
+    },
+    {
+     "role": "walk_right_1",
+     "new_file": "strikechamp_unsuited_full_walk_right_1_20261026.png",
+     "source_locked_cell": "strikechamp_unsuited_full_cell_05.png",
+     "source_label": "overworld_side_2",
+     "eye_direction": "SIDE-RIGHT standing",
+     "verification": {
+      "md5": "ef2a37660dba50bcc647339987d0576d",
+      "size": "64x64 RGBA",
+      "colours": 837,
+      "pixel_identical_to_source": true,
+      "new_colours": 0
+     }
+    },
+    {
+     "role": "walk_up_0",
+     "new_file": "strikechamp_unsuited_full_walk_up_0_20261026.png",
+     "source_locked_cell": "strikechamp_unsuited_full_cell_09.png",
+     "source_label": "walk_front_1",
+     "eye_direction": "BACK",
+     "verification": {
+      "md5": "a24a23948003706318054f7e110ae345",
+      "size": "64x64 RGBA",
+      "colours": 1592,
+      "pixel_identical_to_source": true,
+      "new_colours": 0
+     }
+    },
+    {
+     "role": "walk_up_1",
+     "new_file": "strikechamp_unsuited_full_walk_up_1_20261026.png",
+     "source_locked_cell": "strikechamp_unsuited_full_cell_12.png",
+     "source_label": "walk_back_1",
+     "eye_direction": "BACK",
+     "verification": {
+      "md5": "6ce59cdc70bff846fbb364f89cf9405b",
+      "size": "64x64 RGBA",
+      "colours": 1436,
+      "pixel_identical_to_source": true,
+      "new_colours": 0
+     }
+    }
+   ],
+   "preexisting_artefact_copied_as_is": "White patch on cell 07 / 07mir leg is in the locked cells; copied unchanged, not fixed here (no editing of locked art).",
+   "show_sheet": "strikechamp_unsuited_full_show_20261026.png",
+   "gif": "strikechamp_unsuited_full_walk_cycle_20261026.gif (all 8 frames down/left/right/up, 3x, 250 ms/frame, preview timing only)"
+  }
+ ],
+ "shadow_rule": "NO baked shadows in any new cell/frame. New files are byte-identical copies, so they add and remove nothing: bottom-row non-transparency is feet (opaque tan/red + anti-alias edges, checked at 8x), no detached gray ground ellipse in any source. Shadows are engine-rendered afterwards, never baked.",
+ "likeness_rule": "No generation was used in this task, so no generation prompt exists to check. Had generation been used, the rule would apply: reference image first, visible attributes only, NO creature name, NO franchise reference.",
+ "locked_files_untouched": [
+  "game-ready/punchkid/punchkid.manifest.locked.json",
+  "game-ready/punchkid/punchkid_atlas_64_locked.png",
+  "game-ready/strikechamp_unsuited_full/strikechamp_unsuited_full.manifest.locked.json",
+  "game-ready/strikechamp_unsuited_full/strikechamp_unsuited_full_atlas_64_locked.png",
+  "walk-frames/punchkid/* (all 8, sources only, not overwritten)"
+ ],
+ "counts": {
+  "punchkid": "1/1 = 100%",
+  "strikechamp_unsuited_full_walk": "8/8 = 100%",
+  "total_new_art_files": 9
+ }
+}

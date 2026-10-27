@@ -1,0 +1,85 @@
+{
+ "creature": "pupbble",
+ "roster_id": "013",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "frames": [
+  {
+   "file": "pupbble_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "pupbble_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "pupbble_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "pupbble_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "pupbble_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "pupbble_walk_right_1.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "pupbble_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "pupbble_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/pupbble/pupbble.manifest.locked.json",
+ "source_cells": {
+  "pupbble_walk_down_0.png": {
+   "locked_cell": "pupbble_cell_15.png",
+   "transform": "copy"
+  },
+  "pupbble_walk_down_1.png": {
+   "locked_cell": "pupbble_cell_00.png",
+   "transform": "copy"
+  },
+  "pupbble_walk_up_0.png": {
+   "locked_cell": "pupbble_cell_16.png",
+   "transform": "copy"
+  },
+  "pupbble_walk_up_1.png": {
+   "locked_cell": "pupbble_cell_18.png",
+   "transform": "copy"
+  },
+  "pupbble_walk_left_0.png": {
+   "locked_cell": "pupbble_cell_04.png",
+   "transform": "mirror"
+  },
+  "pupbble_walk_left_1.png": {
+   "locked_cell": "pupbble_cell_09.png",
+   "transform": "mirror"
+  },
+  "pupbble_walk_right_0.png": {
+   "locked_cell": "pupbble_cell_04.png",
+   "transform": "copy"
+  },
+  "pupbble_walk_right_1.png": {
+   "locked_cell": "pupbble_cell_09.png",
+   "transform": "copy"
+  }
+ },
+ "method": "locked-cell transforms only (copy / horizontal mirror / 2px-up bob variant), 64x64 RGBA, new filenames only; no generation in this batch; no file shown to Mars overwritten",
+ "movement_note": "LOCK-LABEL CORRECTION (eye-checked 2026-10-26): locked overworld_side cells 12/13/14 are all fronts, not profiles. Corrected: down = walk_front 15 + battle_front 00, up = backs 16/18, true sides face right (04/09), left = mirrors.",
+ "walk_gate_note": "STAGING ONLY. Mars's walk-gate pick (QA-PASS locked-sheet walk art vs walk-frames dirs/PNGs) is still PENDING as of 2026-10-26. This dir prepares the walk-frames option; it does not decide the gate. No PR merged, no game src touched.",
+ "eye_check": "Final 8-frame montage PASS after lock-label correction (2026-10-26): down fronts, up backs, left/right true sides correct.",
+ "staged": "2026-10-26 lane-finish segment 4 (walk frames only)"
+}

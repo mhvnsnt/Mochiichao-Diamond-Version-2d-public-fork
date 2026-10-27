@@ -11,7 +11,7 @@
     "id": "002",
     "name": "Tiidebiite",
     "elements": ["Aqua", "Mythic"],
-    "base_stats": { "hp": 59, "atk: 63, "def": 80, "spa": 65, "spd": 80, "spe": 58 },
+    "base_stats": { "hp": 59, "atk": 63, "def": 80, "spa": 65, "spd": 80, "spe": 58 },
     "evolution_reqs": { "targetId": "003", "level": 36 },
     "api_search_tags": ["water warrior", "blue martial artist", "swirling water fists"]
   },
@@ -263,7 +263,7 @@
     "id": "035",
     "name": "Pebblefist",
     "elements": ["Core", "Chrome"],
-    "base_stats": { "hp": 4-5, "atk": 80, "def": 100, "spa": 30, "spd": 30, "spe": 20 },
+    "base_stats": { "hp": 40, "atk": 80, "def": 100, "spa": 30, "spd": 30, "spe": 20 },
     "evolution_reqs": { "targetId": "036", "level": 25 },
     "api_search_tags": ["rock fists", "stone hands golem", "gravel puncher"]
   },

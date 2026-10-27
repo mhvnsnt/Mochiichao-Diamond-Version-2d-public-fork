@@ -5,7 +5,7 @@
     "tmCatalogueCount": 20,
     "hmNote": "HM shape present, assignments 0/47 -- no field system exists in Mochiichao code yet; see SOURCE-MAP.md PROPOSED HM mapping (not data).",
     "eggRule": "Egg moves only on base-form species (17 lines); evolved species [] by design; single-stage 041/331 [] (no breeding line in roster).",
-    "note": "IDs/names follow global_roster.json, NOT species.ts where they drift (005 Chromedile vs Chromejaww, 039 Dreadtoise vs Shellguard, 003 Aquari-OS vs AquariiOS). Drift is flagged for the coordinator in SOURCE-MAP.md."
+    "note": "IDs/names follow global_roster.json (roster-wins, Mars 2026-10-26: 003 AquariiOS, 005 Chromejaww, 039 Shellguard, 040 Dreadtoise). Former drift resolved; see docs/roster-wins-corrections-2026-10-26.md."
   },
   "tmCatalogue": {
     "TM01": "GUARD_WALL",

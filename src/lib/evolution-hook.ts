@@ -101,3 +101,60 @@ export const MID_FIGHT_SHOWCASE: { speciesId: string; targetId: string; fromName
 // 3. If a species would learn a move on evolving, the move-learn prompt
 //    runs AFTER the evolution prompt resolves, not before.
 // 4. Cancelling must NOT consume the level-up, the item, or the trade.
+
+// ---------------------------------------------------------------------------
+// ROSTER-WINS SAFE CHAINS (decision batch, Mars 2026-10-26 ~14:15 CDT).
+// Data + pure resolver only. BattleView does NOT call this yet for any
+// species below: 013/014/015 have no species.ts code entry, and 040
+// Dreadtoise enters code only with this same decision batch, so the
+// BattleView hook-up is a later wiring batch with its own gate. Reporting
+// this file as "wired" would be false; it is data-ready, 0% BattleView-wired.
+// ---------------------------------------------------------------------------
+
+export interface SafeEvolutionChain {
+  chainId: string;
+  links: EvolutionRule[]; // level method only, roster verbatim
+}
+
+// Pupbble #013 -> Terradog #014 Lv16 -> Quakehound #015 Lv32. canCancel true
+// is carried by buildMidFightPrompt (canCancel: true, always).
+export const SAFE_CHAIN_PUPBBLE: SafeEvolutionChain = {
+  chainId: "013-014-015",
+  links: [
+    { speciesId: "013", targetId: "014", method: "level", level: 16 },
+    { speciesId: "014", targetId: "015", method: "level", level: 32 },
+  ],
+};
+
+// Sproutle #038 -> Shellguard #039 Lv18 -> Dreadtoise #040 Lv32.
+// ROSTER-WINS: 039 is Shellguard (not code's old "Dreadtoise"), 040 is
+// Dreadtoise final. The old code 039 stats (90/90/110/60/80/40) matched
+// neither roster entry and do not survive; roster stats win.
+export const SAFE_CHAIN_SPROUTLE: SafeEvolutionChain = {
+  chainId: "038-039-040",
+  links: [
+    { speciesId: "038", targetId: "039", method: "level", level: 18 },
+    { speciesId: "039", targetId: "040", method: "level", level: 32 },
+  ],
+};
+
+export const SAFE_EVOLUTION_CHAINS: SafeEvolutionChain[] = [
+  SAFE_CHAIN_PUPBBLE,
+  SAFE_CHAIN_SPROUTLE,
+];
+
+/** Pure lookup: the level-evolution rule out of a species, if it is in a safe chain. */
+export function getSafeEvolutionRule(speciesId: string): EvolutionRule | null {
+  for (const chain of SAFE_EVOLUTION_CHAINS) {
+    for (const link of chain.links) {
+      if (link.speciesId === speciesId) return link;
+    }
+  }
+  return null;
+}
+
+/** True when a level-up at `newLevel` meets the safe-chain rule for this species. */
+export function safeEvolutionReady(speciesId: string, newLevel: number): boolean {
+  const rule = getSafeEvolutionRule(speciesId);
+  return rule !== null && rule.method === "level" && (rule.level ?? Infinity) <= newLevel;
+}

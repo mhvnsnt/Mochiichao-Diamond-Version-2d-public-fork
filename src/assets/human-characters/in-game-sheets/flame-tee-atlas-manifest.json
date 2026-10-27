@@ -1,0 +1,115 @@
+{
+  "atlas": "flame-tee-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      11,
+      561
+    ],
+    [
+      585,
+      1106
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        142,
+        414
+      ],
+      [
+        689,
+        974
+      ],
+      [
+        1270,
+        1544
+      ],
+      [
+        1820,
+        2094
+      ]
+    ],
+    [
+      [
+        168,
+        450
+      ],
+      [
+        708,
+        999
+      ],
+      [
+        1231,
+        1513
+      ],
+      [
+        1785,
+        2076
+      ]
+    ]
+  ],
+  "world": "0:0,0:2,1:0,1:2",
+  "steps": "0:1,0:3,1:1,1:3",
+  "walk": "media-generation-flame-tee-walk-frames-v1-2026-0-0ad65411-f12b-4b15-98ee-968dc09a1def.webp",
+  "battle": "media-generation-flame-tee-battle-front-v1-2026-0-e81e8ec6-fa81-41ff-9314-6b6120cc3883.webp",
+  "portrait": "media-generation-flame-tee-portrait-v1-2026-10-0-79345c51-334f-42e3-bd5f-414141bdd5e2.webp"
+}

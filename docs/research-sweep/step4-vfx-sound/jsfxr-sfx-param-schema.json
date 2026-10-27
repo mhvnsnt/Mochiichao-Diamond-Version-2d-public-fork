@@ -1,0 +1,31 @@
+{
+  "$schema": "sfx-param-schema-v1",
+  "about": "Authored parameter schema for procedural retro SFX, in the sfxr/jsfxr lineage. jsfxr's engine is reported as UNLICENSE (public-domain dedication); NO jsfxr code is staged here — only this parameter shape, so the Step 4 agent can author the lane's own original sounds with any compatible tool and export WAV/OGG. Generated sounds are the lane's own sounds; no commercial sound is copied.",
+  "parameters": {
+    "wave": ["square", "sawtooth", "sine", "noise"],
+    "base_freq_hz": "start frequency of the tone",
+    "freq_slide": "frequency change over the sound's life (negative = falling pitch, e.g. impacts)",
+    "freq_slide_type": ["linear", "exponential"],
+    "attack_s": "time to reach full volume",
+    "sustain_s": "hold time at full volume",
+    "decay_s": "fade-out time",
+    "duty_cycle": "square-wave duty, 0-1",
+    "vibrato_depth": "pitch wobble depth, 0-1",
+    "vibrato_speed_hz": "pitch wobble rate",
+    "filter_cutoff_hz": "low-pass cutoff; lower = duller impact",
+    "noise_burst_s": "noise component length for hits/explosions, 0 = pure tone"
+  },
+  "lane_presets_to_author": {
+    "impact_light": "short square blip, fast falling pitch, decay < 0.1 s",
+    "impact_heavy": "noise burst + falling sine, decay 0.2-0.3 s",
+    "ring_close": "rising sine sweep, the ring-capture close cue (Step 7)",
+    "ui_confirm": "two short sine blips, ascending",
+    "faint": "long falling slide, decay > 0.5 s"
+  },
+  "rules": [
+    "Every preset is stored as parameters + exported audio, never as a recording of another game's sound.",
+    "Impact presets fire on the battle timeline contact event (step1/step2), not on the damage-number event.",
+    "Reduced-motion / muted settings silence SFX without stopping the timeline (see step6 gate)."
+  ],
+  "wiring_target": {"owning_step_agent": "Step 4 (VFX + sound support)", "target_module": "SFX preset library + Howler playback layer (see howler-tool-note)"}
+}

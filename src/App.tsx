@@ -12,12 +12,13 @@ import GardenView from './components/views/GardenView';
 import RingCaptureView from './components/views/RingCaptureView';
 import ArenaBattleView from './components/views/ArenaBattleView';
 import CreatureModeView from './components/views/CreatureModeView';
+import DexView from './components/views/DexView';
 import CheatConsoleView from './components/views/CheatConsoleView';
 import IntroSequence from './components/IntroSequence';
 import { playMusic } from './lib/music';
 import MochiiMindUI from './components/MochiiMindUI';
 
-export type ViewState = 'STARTER_SELECT' | 'WORLD' | 'BATTLE' | 'ROSTER' | 'SHOP' | 'BAG' | 'PC' | 'GARDEN' | 'RING' | 'ARENA' | 'CREATURE' | 'CHEATS';
+export type ViewState = 'STARTER_SELECT' | 'WORLD' | 'BATTLE' | 'ROSTER' | 'SHOP' | 'BAG' | 'PC' | 'GARDEN' | 'RING' | 'ARENA' | 'CREATURE' | 'CHEATS' | 'DEX';
 
 export default function App() {
   const introCompleted = useGameStore(s => s.introCompleted);
@@ -48,6 +49,7 @@ export default function App() {
       {view === 'ARENA' && <ArenaBattleView onBack={() => setView('WORLD')} />}
       {view === 'CREATURE' && <CreatureModeView onBack={() => setView('WORLD')} />}
       {view === 'CHEATS' && <CheatConsoleView onBack={() => setView('WORLD')} />}
+      {view === 'DEX' && <DexView onBack={() => setView('WORLD')} />}
 
       {/* MochiiMind toggle — v4: moved below the HUD (top 4.5rem) so it
           no longer overlaps the WorldEngine A/B cluster at bottom-right,

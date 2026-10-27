@@ -1,0 +1,117 @@
+{
+ "creature": "chromejaww",
+ "roster_id": "005",
+ "variant": null,
+ "movement_class": "grounded_standard",
+ "idle_class": "grounded_standard",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 480,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/chromejaww/cells/chromejaww_cell_03.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/chromejaww/cells/chromejaww_cell_05.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "game-ready/chromejaww/cells/chromejaww_cell_06.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_1"
+    }
+   ],
+   "loop": [
+    "game-ready/chromejaww/cells/chromejaww_cell_03.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_05.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_03.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_06.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/chromejaww/cells/chromejaww_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/chromejaww/cells/chromejaww_cell_08.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/chromejaww/cells/chromejaww_cell_09.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_1"
+    }
+   ],
+   "loop": [
+    "game-ready/chromejaww/cells/chromejaww_cell_02.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_08.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_02.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_09.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/chromejaww/cells/chromejaww_cell_04.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "game-ready/chromejaww/cells/chromejaww_cell_12.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_0"
+    },
+    {
+     "file": "game-ready/chromejaww/cells/chromejaww_cell_13.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_1"
+    }
+   ],
+   "loop": [
+    "game-ready/chromejaww/cells/chromejaww_cell_04.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_12.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_04.png",
+    "game-ready/chromejaww/cells/chromejaww_cell_13.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/chromejaww/chromejaww_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "walk/chromejaww/chromejaww_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_0",
+     "mirrored_from": "game-ready/chromejaww/cells/chromejaww_cell_12.png"
+    },
+    {
+     "file": "walk/chromejaww/chromejaww_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_1",
+     "mirrored_from": "game-ready/chromejaww/cells/chromejaww_cell_13.png"
+    }
+   ],
+   "loop": [
+    "walk/chromejaww/chromejaww_walk_right_stand.png",
+    "walk/chromejaww/chromejaww_walk_right_mirror_1.png",
+    "walk/chromejaww/chromejaww_walk_right_stand.png",
+    "walk/chromejaww/chromejaww_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}

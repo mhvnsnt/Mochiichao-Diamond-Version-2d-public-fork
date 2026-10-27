@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./maps.schema.json",
+  "title": "maps (SCHEMA ONLY \u2014 map definitions are owned by the maps/world lane, not this core)",
+  "description": "Plan \u00a71b shape: {id, name, tilesetPrimary, tilesetSecondary, width, height, layers[], warps[], npcs[], scripts[], musicId, weather, encounterTableId}. Tiled .tmj files live alongside maps.json when the maps lane lands them; this core's encounters/trainers reference map ids (meadow-route-01, pond-route-01, cave-route-01) that the maps lane must define. Do not duplicate a map definition here.",
+  "type": "object",
+  "properties": {
+    "maps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tilesetPrimary": {
+            "type": "string"
+          },
+          "tilesetSecondary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "width": {
+            "type": "integer"
+          },
+          "height": {
+            "type": "integer"
+          },
+          "layers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "warps": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "npcs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "scripts": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "musicId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "weather": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "encounterTableId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    }
+  },
+  "required": [
+    "maps"
+  ]
+}

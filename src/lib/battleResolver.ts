@@ -14,11 +14,24 @@
  * BattleView through `resolveTurn`; until then this resolver is testable
  * standalone (pure functions, injectable rng) and does not change live play.
  *
- * Damage numbers are kept identical to BattleView.executeDamage on main
- * (level formula, STAB 1.5, crit x1.5 at 6% base, damage roll 85–100%), so
- * adopting this resolver does not silently change v5.3 battle balance.
- * The one resolver-only rule, labelled here, is HIGH_CRIT doubling the base
- * crit rate (0.06 -> 0.12); BattleView today uses a flat 6% for every move.
+ * Battle-math wiring (PR batch 1): damage, speed, accuracy, turn order,
+ * multi-hit, recoil, secondary rolls and end-turn ticks now route through
+ * src/lib/battle-math.ts, so the numbers below are the battle-math ones,
+ * NOT the old resolver ones. Player-visible changes vs the old resolver:
+ * crit uses the stage table {16,8,4,3,2} at x2 (HIGH_CRIT = +1 stage) and
+ * ignores unfavourable stages on a crit; the old flat 6% / x1.5 is gone.
+ * Stat stages use exact fractions (not the rounded table below, which is
+ * kept only for backwards-compatible exports); paralysis quarters Speed
+ * (was x0.5); burn/poison end-turn ticks are 1/8 max HP (was 1/16);
+ * multi-hit is 2/3/4/5 at 35/35/15/15 (was uniform 2–5); speed ties are a
+ * coin flip (was player-first); paralysis is a 25% full-paralysis can-act
+ * check (was never blocking). Screens, weather and held items are
+ * parameter-ready in battle-math and in calculateDamage/resolveTurn
+ * options, but no move or system on main sets them yet, so they default
+ * to none — see battle-math.ts for the exact rules when they land.
+ * Charge-turn moves already had a state machine here (chargingMoveId)
+ * and keep it; battle-math deliberately holds no charge state (it is
+ * turn state, not math), so that item is not a new held item.
  *
  * Data gaps are NOT filled silently (see docs/battle-resolver.md):
  * - A move type absent from the chart resolves at x1.0 and the event is
@@ -27,6 +40,23 @@
  *   (`unknownMove: true`), never as an invented move.
  * - Species stats, move powers and type matchups are inputs, not defaults.
  */
+
+import {
+  accuracyThreshold,
+  calculateDamage as battleMathCalculateDamage,
+  checkCanAct,
+  confusionDamage,
+  effectiveSpeed as battleMathEffectiveSpeed,
+  endTurnStatusDamage,
+  recoilDamage,
+  rollAccuracy,
+  rollMultiHitCount,
+  rollSecondaryEffect,
+  weatherEndTurnDamage,
+  type BattlerInput as BattleMathBattler,
+  type MoveInput as BattleMathMove,
+  type Weather as BattleMathWeather,
+} from "./battle-math";
 
 export type SideId = "player" | "foe";
 
@@ -61,7 +91,14 @@ export interface ResolverBattler {
   /** Parallel to `moves`; omitted entries default to the move's full PP. */
   pp?: number[];
   /** Volatile per-battle state (charging, flinch) — never persisted. */
-  volatile?: { chargingMoveId?: string | null; flinched?: boolean };
+  volatile?: {
+    chargingMoveId?: string | null;
+    flinched?: boolean;
+    sleepTurns?: number;
+    confusionTurns?: number;
+  };
+  /** Toxic counter for end-turn ticks (1 on first tick, +1 each tick). */
+  toxicCounter?: number;
 }
 
 /** Effect as data (plan §1b shape), not code per move. */
@@ -152,9 +189,32 @@ export function stageMultiplier(stage: number): number {
 }
 
 export function effectiveSpeed(b: ResolverBattler): number {
-  let spe = b.stats.spe * stageMultiplier(b.stages.spe);
-  if (b.status === "paralysis") spe *= 0.5;
-  return spe;
+  // Battle-math: stage-adjusted, then paralysis quarters (was x0.5 here).
+  return battleMathEffectiveSpeed(toBattleMathBattler(b));
+}
+
+/** Adapter: a resolver battler -> battle-math's parameterized battler input.
+ * No species or move names are involved; only numbers, elements and stages. */
+export function toBattleMathBattler(b: ResolverBattler): BattleMathBattler {
+  return {
+    level: b.level,
+    attack: b.stats.atk,
+    defense: b.stats.def,
+    spAttack: b.stats.spa,
+    spDefense: b.stats.spd,
+    speed: b.stats.spe,
+    maxHp: b.maxHp,
+    elements: [...b.types],
+    stages: {
+      atk: b.stages.atk, def: b.stages.def, spa: b.stages.spa,
+      spd: b.stages.spd, spe: b.stages.spe, acc: b.stages.acc, eva: b.stages.eva,
+    },
+    status: b.status,
+    sleepTurns: b.volatile?.sleepTurns,
+    toxicCounter: b.toxicCounter,
+    flinched: b.volatile?.flinched,
+    confusionTurns: b.volatile?.confusionTurns,
+  };
 }
 
 export function typeMultiplier(
@@ -177,26 +237,30 @@ export function typeMultiplier(
 }
 
 /**
- * Order actions Showdown-style: priority first, then effective Speed.
- * Speed ties fall back to side order (player first) for determinism;
- * callers that want a random tie-break should pre-shuffle equal-speed
- * actions. This is labelled, not hidden, because BattleView today has no
- * tie-break at all (player always acts first).
+ * Order actions: priority first, then effective Speed (battle-math), then
+ * a coin flip on an exact tie. Ties get a random key (rng is consumed
+ * only when a tie exists); non-tied actions consume no rng. This replaces
+ * the old player-first tie-break, which matched no baseline.
  */
 export function orderActions(
   actions: Action[],
   battlers: Record<SideId, ResolverBattler>,
   moves: MoveTable,
+  rng: Rng = Math.random,
 ): Action[] {
   const priorityOf = (a: Action): number =>
     a.kind === "move" ? (moves.moves[a.moveId]?.priority ?? 0) : 0;
-  return [...actions].sort((a, b) => {
-    const p = priorityOf(b) - priorityOf(a);
-    if (p !== 0) return p;
-    const s = effectiveSpeed(battlers[b.side]) - effectiveSpeed(battlers[a.side]);
-    if (s !== 0) return s;
-    return a.side === "player" ? -1 : 1;
+  const decorated = actions.map((a) => {
+    const tied = actions.some(
+      (o) =>
+        o !== a &&
+        priorityOf(o) === priorityOf(a) &&
+        effectiveSpeed(battlers[o.side]) === effectiveSpeed(battlers[a.side]),
+    );
+    return { action: a, priority: priorityOf(a), speed: effectiveSpeed(battlers[a.side]), tieKey: tied ? rng() : 0 };
   });
+  decorated.sort((x, y) => y.priority - x.priority || y.speed - x.speed || x.tieKey - y.tieKey);
+  return decorated.map((d) => d.action);
 }
 
 export interface DamageResult {
@@ -206,35 +270,50 @@ export interface DamageResult {
   typeChartMissing: boolean;
 }
 
+export interface BattleMathDamageOptions {
+  /** Defending side's screen; singles rule. No move sets one on main yet. */
+  screen?: "reflect" | "lightscreen" | null;
+  /** Battle weather; no move or system sets one on main yet. */
+  weather?: BattleMathWeather;
+}
+
 export function calculateDamage(
   attacker: ResolverBattler,
   defender: ResolverBattler,
   move: ResolverMove,
   chart: TypeChart,
   rng: Rng = Math.random,
+  opts: BattleMathDamageOptions = {},
 ): DamageResult {
-  const aStat =
-    move.category === "Physical"
-      ? attacker.stats.atk * stageMultiplier(attacker.stages.atk)
-      : attacker.stats.spa * stageMultiplier(attacker.stages.spa);
-  const dStat =
-    move.category === "Physical"
-      ? defender.stats.def * stageMultiplier(defender.stages.def)
-      : defender.stats.spd * stageMultiplier(defender.stages.spd);
-  let base = Math.floor(
-    Math.floor(Math.floor((2 * attacker.level) / 5 + 2) * move.power * aStat / Math.max(1, dStat)) / 50,
-  ) + 2;
-  if (attacker.status === "burn" && move.category === "Physical") base = Math.floor(base / 2);
-  const { multiplier, missing } = typeMultiplier(chart, move.type, defender.types);
-  const stab = attacker.types.includes(move.type) ? 1.5 : 1;
-  const critRate = move.effect.kind === "highCrit" ? 0.12 : 0.06;
-  const isCrit = rng() < critRate;
-  const crit = isCrit ? 1.5 : 1;
-  const roll = (85 + rng() * 15) / 100;
+  // Per-element multipliers from the caller's chart; an absent pair is x1
+  // and flags typeChartMissing, exactly as the old resolver did.
+  const row = chart[move.type];
+  const missing = !row || defender.types.some((t) => row[t] === undefined);
+  const typeMultipliers = defender.types.map((t) => row?.[t] ?? 1);
+  const bmMove: BattleMathMove = {
+    power: move.power,
+    accuracy: move.accuracy,
+    category: move.category,
+    element: move.type,
+    priority: move.priority,
+    // HIGH_CRIT is +1 crit stage in battle-math (table {16,8,4,3,2}).
+    critStageBonus: move.effect.kind === "highCrit" ? 1 : 0,
+  };
+  const result = battleMathCalculateDamage(
+    toBattleMathBattler(attacker),
+    toBattleMathBattler(defender),
+    bmMove,
+    {
+      typeMultipliers,
+      rng,
+      screen: opts.screen ?? null,
+      weather: opts.weather ?? "none",
+    },
+  );
   return {
-    damage: Math.floor(base * multiplier * stab * crit * roll),
-    isCrit,
-    typeMultiplier: multiplier,
+    damage: result.damage,
+    isCrit: result.isCrit,
+    typeMultiplier: result.typeMultiplier,
     typeChartMissing: missing,
   };
 }
@@ -247,6 +326,7 @@ function cloneBattler(b: ResolverBattler): ResolverBattler {
     stages: { ...b.stages },
     moves: [...b.moves],
     pp: b.pp ? [...b.pp] : undefined,
+    toxicCounter: b.toxicCounter,
     volatile: { ...(b.volatile ?? {}) },
   };
 }
@@ -272,10 +352,11 @@ function applyStatChange(
  * sides with no action pass. State is never mutated in place: a new
  * battler record is returned, so callers (and replays) keep the old state.
  *
- * Steps per action, in order: flinch check -> charging check -> accuracy
+ * Steps per action, in order: battle-math can-act check (flinch -> sleep
+ * -> freeze -> paralysis -> confusion) -> charging check -> accuracy
  * roll -> damage -> secondary effect (chance roll) -> recoil -> faint
- * check. End of turn: burn/poison tick (1/16 max HP, Showdown-standard
- * fraction, labelled a resolver rule — no canon source on main states it).
+ * check. End of turn: battle-math status ticks (poison/burn 1/8, toxic
+ * 1/16 x counter) + weather damage when opts.weather is set.
  */
 export function resolveTurn(
   state: Record<SideId, ResolverBattler>,
@@ -283,13 +364,14 @@ export function resolveTurn(
   moves: MoveTable,
   chart: TypeChart,
   rng: Rng = Math.random,
+  opts: { weather?: BattleMathWeather } = {},
 ): TurnResult {
   const battlers: Record<SideId, ResolverBattler> = {
     player: cloneBattler(state.player),
     foe: cloneBattler(state.foe),
   };
   const events: BattleEvent[] = [];
-  const ordered = orderActions(actions, battlers, moves);
+  const ordered = orderActions(actions, battlers, moves, rng);
 
   for (const action of ordered) {
     const actor = battlers[action.side];
@@ -300,10 +382,45 @@ export function resolveTurn(
       continue;
     }
     if (action.kind === "pass") continue;
-    if (actor.volatile?.flinched) {
-      events.push({ text: `${actor.name} flinched and couldn't move!`, actor: action.side });
-      actor.volatile.flinched = false;
-      continue;
+    // Battle-math can-act gate. Counters/status cleared by the gate are
+    // written back so the next turn sees them. Sleep/freeze/confusion
+    // have no inflicting move on main yet (dormant branches); paralysis
+    // full-paralysis (25%) is live. Confusion self-damage is a 40-power
+    // typeless hit against the actor itself, via battle-math.
+    {
+      const gate = checkCanAct(toBattleMathBattler(actor), rng);
+      actor.status = gate.battler.status;
+      actor.volatile = {
+        ...(actor.volatile ?? {}),
+        flinched: gate.battler.flinched ?? false,
+        sleepTurns: gate.battler.sleepTurns,
+        confusionTurns: gate.battler.confusionTurns,
+      };
+      if (!gate.canAct) {
+        // Non-strict-safe: the repo tsconfig has no "strict", so the
+        // discriminated union does not narrow on canAct here; use the
+        // "in" check instead of gate.reason directly.
+        const gateReason = "reason" in gate ? gate.reason : "couldn't move";
+        if (gateReason === "confusion-self-hit") {
+          const selfDmg = confusionDamage(toBattleMathBattler(actor), rng);
+          actor.hp = Math.max(0, actor.hp - selfDmg);
+          events.push({
+            text: `${actor.name} is confused! It hurt itself in its confusion!`,
+            actor: action.side, target: action.side, damage: selfDmg,
+          });
+          if (actor.hp <= 0) events.push({ text: `${actor.name} fainted!`, target: action.side, fainted: action.side });
+          if (checkOutcome(battlers) !== "ongoing") break;
+        } else {
+          const reasonText =
+            gateReason === "flinched" ? `${actor.name} flinched and couldn't move!`
+            : gateReason === "asleep" ? `${actor.name} is fast asleep!`
+            : gateReason === "frozen" ? `${actor.name} is frozen solid!`
+            : gateReason === "fully-paralyzed" ? `${actor.name} is fully paralyzed! It can't move!`
+            : `${actor.name} couldn't move!`;
+          events.push({ text: reasonText, actor: action.side });
+        }
+        continue;
+      }
     }
     const move = moves.moves[action.moveId];
     if (!move) {
@@ -349,21 +466,24 @@ export function resolveTurn(
       continue;
     }
 
-    const accuracyStage = stageMultiplier(actor.stages.acc) / stageMultiplier(target.stages.eva);
-    const hitChance = Math.min(100, move.accuracy * accuracyStage) / 100;
-    if (rng() >= hitChance) {
+    const threshold = accuracyThreshold(
+      { power: move.power, accuracy: move.accuracy, category: move.category, element: move.type, priority: move.priority },
+      toBattleMathBattler(actor),
+      toBattleMathBattler(target),
+    );
+    if (!rollAccuracy(threshold, rng)) {
       events.push({ text: `${actor.name} used ${move.name}, but it missed!`, actor: action.side, target: targetSide, moveId: move.id, missed: true });
       continue;
     }
 
-    const hits = move.effect.kind === "multiHit" ? 2 + Math.floor(rng() * 4) : 1;
+    const hits = move.effect.kind === "multiHit" ? rollMultiHitCount(rng) : 1;
     let totalDamage = 0;
     let lastCrit = false;
     let lastMult = 1;
     let lastMissing = false;
     for (let h = 0; h < hits; h++) {
       if (target.hp <= 0) break;
-      const dmg = calculateDamage(actor, target, move, chart, rng);
+      const dmg = calculateDamage(actor, target, move, chart, rng, { weather: opts.weather });
       target.hp = Math.max(0, target.hp - dmg.damage);
       totalDamage += dmg.damage;
       lastCrit = dmg.isCrit;
@@ -384,7 +504,10 @@ export function resolveTurn(
     events.push(ev);
 
     if (move.effect.kind === "recoil" && totalDamage > 0) {
-      const recoil = Math.floor(totalDamage * (move.effect.recoilFraction ?? 0.25));
+      const recoil =
+        move.effect.recoilFraction === undefined || move.effect.recoilFraction === 0.25
+          ? recoilDamage(totalDamage)
+          : Math.floor(totalDamage * move.effect.recoilFraction);
       actor.hp = Math.max(0, actor.hp - recoil);
       events.push({ text: `${actor.name} took ${recoil} recoil damage!`, actor: action.side });
     }
@@ -395,16 +518,25 @@ export function resolveTurn(
     if (checkOutcome(battlers) !== "ongoing") break;
   }
 
-  // End-of-turn status ticks (only while the battle is still ongoing).
+  // End-of-turn ticks (only while the battle is still ongoing).
   if (checkOutcome(battlers) === "ongoing") {
     for (const side of ["player", "foe"] as SideId[]) {
       const b = battlers[side];
       if (b.hp <= 0) continue;
-      if (b.status === "burn" || b.status === "poison") {
-        const tick = Math.max(1, Math.floor(b.maxHp / 16));
+      const tick = endTurnStatusDamage(toBattleMathBattler(b));
+      if (tick > 0) {
+        if (b.status === "toxic") b.toxicCounter = (b.toxicCounter ?? 1) + 1;
         b.hp = Math.max(0, b.hp - tick);
         events.push({ text: `${b.name} took ${tick} damage from ${b.status}!`, target: side });
         if (b.hp <= 0) events.push({ text: `${b.name} fainted!`, target: side, fainted: side });
+      }
+      if (b.hp > 0) {
+        const weatherTick = weatherEndTurnDamage(toBattleMathBattler(b), opts.weather ?? "none");
+        if (weatherTick > 0) {
+          b.hp = Math.max(0, b.hp - weatherTick);
+          events.push({ text: `${b.name} took ${weatherTick} damage from the weather!`, target: side });
+          if (b.hp <= 0) events.push({ text: `${b.name} fainted!`, target: side, fainted: side });
+        }
       }
       if (b.volatile) b.volatile.flinched = false;
     }
@@ -424,7 +556,7 @@ function applyEffectEvents(
 ): void {
   const eff = move.effect;
   if (eff.kind === "none" || eff.kind === "highCrit" || eff.kind === "multiHit" || eff.kind === "chargeTurn") return;
-  if (secondary && rng() >= eff.chance) return;
+  if (secondary && !rollSecondaryEffect(eff.chance * 100, rng)) return;
   if (eff.kind === "status" && eff.status) {
     if (target.hp > 0 && !target.status) {
       target.status = eff.status;
@@ -470,6 +602,17 @@ export function legacyEffectToResolverEffect(
     case "DEF_DOWN1": return { kind: "stat", stat: "def", stages: -1, chance };
     case "ACC_DOWN1": return { kind: "stat", stat: "acc", stages: -1, chance };
     case "SPE_DOWN1": return { kind: "stat", stat: "spe", stages: -1, chance };
+    // Batch 2 (2026-10-27, wiring lane): the catalogue's stat-stage
+    // tokens dispatch through the existing "stat" kind. Positive stages
+    // apply to the actor (self-buffs and on-hit self-raises), negative
+    // stages to the target -- the resolver's existing convention.
+    case "ATK_UP1": return { kind: "stat", stat: "atk", stages: 1, chance };
+    case "ATK_DOWN1": return { kind: "stat", stat: "atk", stages: -1, chance };
+    case "ATK_DOWN2": return { kind: "stat", stat: "atk", stages: -2, chance };
+    case "DEF_UP1": return { kind: "stat", stat: "def", stages: 1, chance };
+    case "DEF_UP2": return { kind: "stat", stat: "def", stages: 2, chance };
+    case "SPDEF_UP1": return { kind: "stat", stat: "spd", stages: 1, chance };
+    case "SPDEF_UP2": return { kind: "stat", stat: "spd", stages: 2, chance };
     case "RECOIL_25": return { kind: "recoil", recoilFraction: 0.25, chance: 1 };
     case "MULTI_HIT": return { kind: "multiHit", chance: 1 };
     case "HIGH_CRIT": return { kind: "highCrit", chance: 1 };
