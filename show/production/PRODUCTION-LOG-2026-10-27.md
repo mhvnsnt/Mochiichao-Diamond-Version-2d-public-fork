@@ -116,3 +116,13 @@ Forest (34 occurrences / 22 files) + Illuminate (2) +
 Mochiioteca (6 files), verified at branch head; identifiers
 (map ids, story flags) deliberately unchanged; PR open,
 unmerged, awaiting the owner.
+
+## Kaggle Wan 2.2 first generation test (2026-10-27)
+Pipeline PROVEN end-to-end (Kaggle 2x T4 -> ComfyUI -> Wan 2.2
+TI2V 5B -> downloaded MP4). Clip REJECTED at the likeness gate:
+realistic 3D human skull + faint smoke; canon body/hands/flame
+tip absent; style wrong. Registered in clip-index.json as
+rejected_likeness_fail; file kept local, not shipped. Cause on
+record: plain image-to-video only - the triple-lock (IP-Adapter
++ ControlNet) was installed but not engaged. Speed on record:
+~28.5 min / 49 frames at 16fps on T4.

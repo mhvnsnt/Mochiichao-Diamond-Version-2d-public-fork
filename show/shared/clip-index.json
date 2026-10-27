@@ -1,73 +1,84 @@
 {
-  "schema": "mochiichao-show/clip-index/v1",
-  "updated": "2026-10-27",
-  "note": "Every finished clip and where it is used, both directions (show + game). quality_status is honest by design: clips marked rejected_placeholder were procedural stills composites rejected by Jamar on 2026-10-27 and must NOT ship; they stay indexed so nothing quietly reuses them.",
-  "clips": [
-    {
-      "id": "title-videos-10",
-      "path": "src/assets/title/videos/<species>-title-anim-final.mp4",
-      "species": [
-        "mochii",
-        "dorowani",
-        "gabu",
-        "kittember",
-        "mythar",
-        "razorgater",
-        "sproutle",
-        "tyrage",
-        "wispkin",
-        "yogiferno"
-      ],
-      "spec": "1280x720, 30fps, 6s",
-      "used_by": [
-        "game:title"
-      ],
-      "quality_status": "game_native"
-    },
-    {
-      "id": "show-bundles-pilot-six",
-      "path": "public/assets/show-bundles/<species>/",
-      "species": [
-        "mochii",
-        "dorowani",
-        "gabu",
-        "kittember",
-        "sproutle",
-        "wispkin"
-      ],
-      "spec": "720x720, 8s, 24fps + transparent WebM twins",
-      "used_by": [
-        "show:placeholder_only"
-      ],
-      "quality_status": "rejected_placeholder_do_not_ship"
-    },
-    {
-      "id": "pilot-episode-trailer",
-      "path": "public/assets/show-trailers/mochiichao-pilot-episode-trailer.mp4",
-      "spec": "28s, 720x720",
-      "used_by": [
-        "marketing:placeholder_only"
-      ],
-      "quality_status": "rejected_placeholder_do_not_ship"
-    },
-    {
-      "id": "marketing-trailer-vertical",
-      "path": "public/assets/show-trailers/mochiichao-marketing-trailer-vertical.mp4",
-      "spec": "18s, 720x1280",
-      "used_by": [
-        "marketing:placeholder_only"
-      ],
-      "quality_status": "rejected_placeholder_do_not_ship"
-    },
-    {
-      "id": "dorowani-avatar-stack-set",
-      "character": "dorowani",
-      "source": "Muse avatar full stack (the owner's chosen Doro set - NOT the rejected glossy batch)",
-      "files": "show/assets/animations/dorowani-avatar-stack/ (4 MP4 + 4 transparent WebM twins + poster webp + transparent png)",
-      "spec": "720x720, 8s, 24fps; WebM twins carry alpha (background already removed)",
-      "quality_status": "production_owner_chosen",
-      "show_use": "Dorowani's animation source for the show (EP04 featured); composite via alpha overlay onto plates - proof: COMPOSITE-PROOF-gate.mp4 in the same folder (Gate plate, 8s, verified)",
-      "note": "Owner directive 2026-10-27: the avatar set goes into the show as animations. MP4-only sources needing background removal route through video matting (RVM-class) on the Kaggle GPU; alpha twins need none."
-    }
-  ]
+ "schema": "mochiichao-show/clip-index/v1",
+ "updated": "2026-10-27",
+ "note": "Every finished clip and where it is used, both directions (show + game). quality_status is honest by design: clips marked rejected_placeholder were procedural stills composites rejected by Jamar on 2026-10-27 and must NOT ship; they stay indexed so nothing quietly reuses them.",
+ "clips": [
+  {
+   "id": "title-videos-10",
+   "path": "src/assets/title/videos/<species>-title-anim-final.mp4",
+   "species": [
+    "mochii",
+    "dorowani",
+    "gabu",
+    "kittember",
+    "mythar",
+    "razorgater",
+    "sproutle",
+    "tyrage",
+    "wispkin",
+    "yogiferno"
+   ],
+   "spec": "1280x720, 30fps, 6s",
+   "used_by": [
+    "game:title"
+   ],
+   "quality_status": "game_native"
+  },
+  {
+   "id": "show-bundles-pilot-six",
+   "path": "public/assets/show-bundles/<species>/",
+   "species": [
+    "mochii",
+    "dorowani",
+    "gabu",
+    "kittember",
+    "sproutle",
+    "wispkin"
+   ],
+   "spec": "720x720, 8s, 24fps + transparent WebM twins",
+   "used_by": [
+    "show:placeholder_only"
+   ],
+   "quality_status": "rejected_placeholder_do_not_ship"
+  },
+  {
+   "id": "pilot-episode-trailer",
+   "path": "public/assets/show-trailers/mochiichao-pilot-episode-trailer.mp4",
+   "spec": "28s, 720x720",
+   "used_by": [
+    "marketing:placeholder_only"
+   ],
+   "quality_status": "rejected_placeholder_do_not_ship"
+  },
+  {
+   "id": "marketing-trailer-vertical",
+   "path": "public/assets/show-trailers/mochiichao-marketing-trailer-vertical.mp4",
+   "spec": "18s, 720x1280",
+   "used_by": [
+    "marketing:placeholder_only"
+   ],
+   "quality_status": "rejected_placeholder_do_not_ship"
+  },
+  {
+   "id": "dorowani-avatar-stack-set",
+   "character": "dorowani",
+   "source": "Muse avatar full stack (the owner's chosen Doro set - NOT the rejected glossy batch)",
+   "files": "show/assets/animations/dorowani-avatar-stack/ (4 MP4 + 4 transparent WebM twins + poster webp + transparent png)",
+   "spec": "720x720, 8s, 24fps; WebM twins carry alpha (background already removed)",
+   "quality_status": "production_owner_chosen",
+   "show_use": "Dorowani's animation source for the show (EP04 featured); composite via alpha overlay onto plates - proof: COMPOSITE-PROOF-gate.mp4 in the same folder (Gate plate, 8s, verified)",
+   "note": "Owner directive 2026-10-27: the avatar set goes into the show as animations. MP4-only sources needing background removal route through video matting (RVM-class) on the Kaggle GPU; alpha twins need none."
+  },
+  {
+   "id": "kaggle-wan-test-wispkin-00001",
+   "path": "workspace-local: mochiichao-show/gen-kaggle-tests/wispkin-wan-test-00001.mp4 (NOT shipped to repo)",
+   "species": [
+    "wispkin"
+   ],
+   "spec": "960x2048, 16fps, 49 frames, 3.06s - Wan 2.2 TI2V 5B on Kaggle (2x T4), plain image-to-video, seed 42",
+   "used_by": [],
+   "quality_status": "rejected_likeness_fail",
+   "notes": "PIPELINE PROOF ONLY: Kaggle GPU -> ComfyUI -> Wan 2.2 -> file round-trip works end-to-end. The clip itself FAILS the likeness gate decisively: output is a realistic 3D human skull with faint smoke - no black body, no hands holding the mask, no flame tip, wrong style (photoreal 3D vs flat 2D canon). Triple-lock nodes (IP-Adapter/ControlNet) were installed but NOT engaged in this test workflow. Next test: triple-lock workflow + tighter framing. Generation took ~28.5 min for 49 frames on T4 - production speed constraint on record."
+  }
+ ]
 }
