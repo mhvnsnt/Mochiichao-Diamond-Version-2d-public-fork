@@ -34,6 +34,34 @@ for c in cuts:
     if "STINGER" in c["content"] or "Forest" in c["content"] or "forest" in c["content"]:
         c["gates"].append("forest-rules (STILL-FOREST camera, no pattern-fill, colour script stinger)")
 
+# LIVING WORLD (owner directive 2026-10-27; FULLSTACK-WIRING wiring):
+# every scene carries ambient_layers[]; each VISUAL layer must name a
+# paired SOUND row or it is recorded as an audio-gate failure.
+AMBIENT = {
+ "01": [("cloud_drift","wind_bed_soft"), ("grass_sway","grass_rustle_light"), ("gate_swing_breeze","gate_creak_soft")],
+ "02": [("cloud_drift","wind_bed_soft"), ("grass_sway","grass_rustle_light")],
+ "03": [("gate_swing_breeze","gate_creak_soft"), ("leaf_drift","leaf_rustle_pass")],
+ "04": [("grass_sway","grass_rustle_light"), ("leaf_drift","leaf_rustle_pass"), ("distant_creature_crossing_sky","distant_cry_faint_GAP")],
+ "05": [("cloud_drift","wind_bed_soft"), ("grass_sway","grass_rustle_light")],
+ "06": [("water_ripple","pond_lap_light"), ("reeds_sway","reed_rustle")],
+ "07": [("water_ripple","pond_lap_light")],
+ "08": [("water_ripple","pond_lap_light"), ("grass_sway","grass_rustle_light")],
+ "09": [("reeds_sway","reed_rustle"), ("leaf_drift","leaf_rustle_pass")],
+ "13": [("water_ripple_dusk","pond_lap_dusk"), ("reeds_still","dusk_air_hush")],
+ "17": [("water_ripple_dusk","pond_lap_dusk")],
+ "20": [("gate_still_night","night_air"), ("board_creak","wood_creak_soft")],
+ "23": [("smoke_drift","night_air")],
+ "25": [("FOREST: pattern still, no cycles","forest_silence (no birdsong - by design)")],
+ "26": [("FOREST: no ambient motion","forest_silence (by design)")],
+ "28": [("single_leaf_fall","one_leaf_land_soft")],
+}
+for c in cuts:
+    layers = AMBIENT.get(c["cut"], [])
+    c["ambient_layers"] = [{"visual": v, "sound": s} for v, s in layers]
+    for v, s in layers:
+        if s.endswith("_GAP") or "GAP" in s:
+            c["flags"].append(f"AMBIENT SOUND GAP: {v} paired sound '{s}' not yet sourced (sfx_pull, FULLSTACK-WIRING phase Now)")
+
 cue = open(os.path.join(EP, "CUE-SHEET.md")).read()
 gaps = re.findall(r"GAP: [^|]+", cue)
 manifest = {
@@ -43,6 +71,7 @@ manifest = {
     "total_cut_seconds": sum(c["seconds"] for c in cuts),
     "cuts": cuts,
     "audio_gaps": [g.strip() for g in gaps],
+    "ambient_gate": "PASS rule: every ambient visual layer names a paired sound row; GAP-paired layers are flagged per cut, never silent (LIVING-WORLD directive 2026-10-27)",
     "global_open_items": [
         "Mochiko voice casting (all Mochiko dialogue = scratch until decided)",
         "Keeper device design (cut 12 HALT)",

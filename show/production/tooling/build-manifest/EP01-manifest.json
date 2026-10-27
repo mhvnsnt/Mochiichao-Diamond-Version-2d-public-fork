@@ -16,6 +16,20 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "cloud_drift",
+          "sound": "wind_bed_soft"
+        },
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        },
+        {
+          "visual": "gate_swing_breeze",
+          "sound": "gate_creak_soft"
+        }
       ]
     },
     {
@@ -28,6 +42,16 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "cloud_drift",
+          "sound": "wind_bed_soft"
+        },
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        }
       ]
     },
     {
@@ -40,6 +64,16 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "gate_swing_breeze",
+          "sound": "gate_creak_soft"
+        },
+        {
+          "visual": "leaf_drift",
+          "sound": "leaf_rustle_pass"
+        }
       ]
     },
     {
@@ -49,11 +83,26 @@
       "assets": "walk/bounce cycle BANK",
       "route": "puppet",
       "flags": [
-        "VOICE-SCRATCH: Mochiko casting OPEN - dialogue rendered scratch only"
+        "VOICE-SCRATCH: Mochiko casting OPEN - dialogue rendered scratch only",
+        "AMBIENT SOUND GAP: distant_creature_crossing_sky paired sound 'distant_cry_faint_GAP' not yet sourced (sfx_pull, FULLSTACK-WIRING phase Now)"
       ],
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        },
+        {
+          "visual": "leaf_drift",
+          "sound": "leaf_rustle_pass"
+        },
+        {
+          "visual": "distant_creature_crossing_sky",
+          "sound": "distant_cry_faint_GAP"
+        }
       ]
     },
     {
@@ -66,6 +115,16 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "cloud_drift",
+          "sound": "wind_bed_soft"
+        },
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        }
       ]
     },
     {
@@ -78,6 +137,16 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple",
+          "sound": "pond_lap_light"
+        },
+        {
+          "visual": "reeds_sway",
+          "sound": "reed_rustle"
+        }
       ]
     },
     {
@@ -90,6 +159,12 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple",
+          "sound": "pond_lap_light"
+        }
       ]
     },
     {
@@ -102,6 +177,16 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple",
+          "sound": "pond_lap_light"
+        },
+        {
+          "visual": "grass_sway",
+          "sound": "grass_rustle_light"
+        }
       ]
     },
     {
@@ -114,6 +199,16 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "reeds_sway",
+          "sound": "reed_rustle"
+        },
+        {
+          "visual": "leaf_drift",
+          "sound": "leaf_rustle_pass"
+        }
       ]
     },
     {
@@ -126,7 +221,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "11",
@@ -138,7 +234,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "12",
@@ -152,7 +249,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "13",
@@ -164,6 +262,16 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple_dusk",
+          "sound": "pond_lap_dusk"
+        },
+        {
+          "visual": "reeds_still",
+          "sound": "dusk_air_hush"
+        }
       ]
     },
     {
@@ -176,7 +284,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "15",
@@ -188,7 +297,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "16",
@@ -200,7 +310,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "17",
@@ -212,6 +323,12 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "water_ripple_dusk",
+          "sound": "pond_lap_dusk"
+        }
       ]
     },
     {
@@ -225,7 +342,8 @@
         "anim-gate",
         "likeness-gate",
         "subtitle-law-check (earned moments only)"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "19",
@@ -239,7 +357,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "20",
@@ -251,6 +370,16 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "gate_still_night",
+          "sound": "night_air"
+        },
+        {
+          "visual": "board_creak",
+          "sound": "wood_creak_soft"
+        }
       ]
     },
     {
@@ -265,7 +394,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "22",
@@ -278,7 +408,8 @@
         "anim-gate",
         "likeness-gate",
         "subtitle-law-check (earned moments only)"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "23",
@@ -290,6 +421,12 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "smoke_drift",
+          "sound": "night_air"
+        }
       ]
     },
     {
@@ -304,7 +441,8 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "25",
@@ -320,6 +458,12 @@
         "anim-gate",
         "likeness-gate",
         "forest-rules (STILL-FOREST camera, no pattern-fill, colour script stinger)"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "FOREST: pattern still, no cycles",
+          "sound": "forest_silence (no birdsong - by design)"
+        }
       ]
     },
     {
@@ -332,6 +476,12 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "FOREST: no ambient motion",
+          "sound": "forest_silence (by design)"
+        }
       ]
     },
     {
@@ -345,7 +495,8 @@
         "anim-gate",
         "likeness-gate",
         "subtitle-law-check (earned moments only)"
-      ]
+      ],
+      "ambient_layers": []
     },
     {
       "cut": "28",
@@ -357,6 +508,12 @@
       "gates": [
         "anim-gate",
         "likeness-gate"
+      ],
+      "ambient_layers": [
+        {
+          "visual": "single_leaf_fall",
+          "sound": "one_leaf_land_soft"
+        }
       ]
     }
   ],
@@ -364,6 +521,7 @@
     "GAP: source from TRIPPEDD OpenGameArt index at mix",
     "GAP: same index, or foley at mix"
   ],
+  "ambient_gate": "PASS rule: every ambient visual layer names a paired sound row; GAP-paired layers are flagged per cut, never silent (LIVING-WORLD directive 2026-10-27)",
   "global_open_items": [
     "Mochiko voice casting (all Mochiko dialogue = scratch until decided)",
     "Keeper device design (cut 12 HALT)",
