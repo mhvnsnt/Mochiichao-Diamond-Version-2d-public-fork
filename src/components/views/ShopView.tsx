@@ -155,6 +155,8 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
             <div className="flex-1 min-w-0">
               <div className="font-bold text-white">{buySelected.name} — {buySelected.cost} CR</div>
               <div className="text-sm text-slate-400">{buySelected.desc}</div>
+              {/* Uncapped stacks (Mars 2026-10-27): no 99 / 999 cap. buyItem already increments without a cap check; this line states it. */}
+              <div className="text-sm text-slate-400">In bag: {inventory[buySelected.id] || 0} — stacks are unlimited.</div>
             </div>
             <button
               onClick={() => setConfirm({ kind: 'buy', id: buySelected.id, name: buySelected.name, price: buySelected.cost })}
