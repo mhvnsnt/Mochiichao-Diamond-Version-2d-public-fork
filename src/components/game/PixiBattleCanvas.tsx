@@ -6,6 +6,8 @@ import { resolvePixiAttack, loadAttackFrame } from '../../lib/creatureAnimation'
 import type { AttackSetChoice } from '../../lib/creatureAnimation';
 import { sheetCellTextureXY, fullImageTexture } from './pixiSheet';
 import { buildHitTimeline, sampleHitPose } from '../../lib/battleTreatments';
+import { aimForCanvasAttack, pixiSideToCombatSide, tableOffsetFor, type OriginAngleTable } from '../../lib/combatAiming';
+import originAngleTable from '../../lib/generated/combatOriginAngleTable.json';
 
 /**
  * PixiJS battle arena, simplified Arena spec (mod layer on the existing
@@ -234,22 +236,28 @@ export default function PixiBattleCanvas({
     const color = hex(attack.color);
     // DELETED: old flash()/shake() helpers (random shake, fixed fade).
     // Flash/shake/particles below are sampled from the timeline.
-    const direction = attack.attacker === 'player' ? 1 : -1;
-    // FINISH-FIRST Item 4 direction — PARAMETER ONLY, DEFERRED (Mars
-    // correction 16:38 CDT): direction (+1 player LEFT, -1 enemy RIGHT)
-    // is passed as a parameter to the treatments timeline (particle fan
-    // + recoil, battleTreatments) and lunge/projectile travel is
-    // positional between the two bases. This wiring does NOT finish
-    // direction work and does NOT claim it finished: VFX origin anchoring
-    // (blasts shoot FROM THE MOUTH) and effect-art travel direction
-    // (opponent LEFT, player RIGHT) are owned by the SEPARATE VFX origin
-    // + direction pass — including the known old Dorowani jet (waist
-    // height, disconnected from the mouth, going right) and the current
-    // projectile origin (attacker base centre, y-40, NOT mouth-anchored).
-    // Transform frames are direction-neutral (front-facing lean
-    // transforms, no travel drawn in the frame — verified on mochii
-    // attack_b_strike), so no sprite mirror is applied here; that pass
-    // owns facing and origin, and this item does not duplicate it.
+    // PHASE 3 combat aiming (combatAiming.ts, FireRed model):
+    // origin = sideAnchor + sideSign x scriptOffset, direction =
+    // target - origin. The treatments direction sign is DERIVED from
+    // that vector now, not hardcoded: player attacks travel right (+1),
+    // foe attacks travel left toward the player side (-1). Travel
+    // itself was already positional between the two bases; what this
+    // changes is provenance — the sign and the projectile origin come
+    // from the aiming model + the origin/angle table
+    // (src/lib/generated/combatOriginAngleTable.json, v1 centre offsets
+    // until the origin/angle tables worker lands per-move offsets).
+    // Per-move mouth/hand anchors are NOT invented here: v1 offsets
+    // are [0, 0] (battler centre), so the projectile origin today is
+    // the attacker base centre exactly as before. Transform frames are
+    // direction-neutral (front-facing lean transforms, no travel drawn
+    // in the frame), so no sprite mirror is applied here; the VFX
+    // origin pass owns facing and per-move origins.
+    const aim = aimForCanvasAttack(
+      pixiSideToCombatSide(attack.attacker),
+      baseA, baseT,
+      tableOffsetFor(originAngleTable as unknown as OriginAngleTable, attack.moveId),
+    );
+    const direction = aim.directionSign;
     const timeline = buildHitTimeline({
       damageFraction: attack.damageFraction ?? 0,
       isCrit: !!attack.isCrit, direction, seed: attack.nonce,
@@ -480,8 +488,8 @@ export default function PixiBattleCanvas({
             dot.circle(0, 0, 12).fill(color);
             st.arena.addChild(dot);
           }
-          dot.position.set(baseA.x + (baseT.x - baseA.x) * p,
-            baseA.y - 40 + (baseT.y - 40 - (baseA.y - 40)) * p);
+          dot.position.set(aim.origin.x + (baseT.x - aim.origin.x) * p,
+            aim.origin.y - 40 + (baseT.y - 40 - (aim.origin.y - 40)) * p);
         } else {
           attacker.position.set(baseA.x + (lungeEnd.x - baseA.x) * ease,
             baseA.y + (lungeEnd.y - baseA.y) * ease);

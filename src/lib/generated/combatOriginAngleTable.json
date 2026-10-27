@@ -1,0 +1,330 @@
+{
+  "version": "phase3-v1-20261026",
+  "model": "origin = sideAnchor + sideSign x scriptOffset; direction = targetAnchor - origin (FireRed aiming model, Black 2 battler tables). sideSign: player +1, foe -1.",
+  "tablePath": "src/lib/generated/combatOriginAngleTable.json",
+  "consumedBy": "src/lib/combatAiming.ts (tableOffsetFor / aimForCanvasAttack) and src/components/game/PixiBattleCanvas.tsx (projectile origin + treatments direction sign).",
+  "anchors": {
+    "fireRed": {
+      "player": {
+        "x": 72,
+        "y": 80
+      },
+      "foe": {
+        "x": 176,
+        "y": 40
+      }
+    },
+    "pixiFractions": {
+      "player": {
+        "x": 0.22,
+        "y": 0.78
+      },
+      "foe": {
+        "x": 0.78,
+        "y": 0.42
+      }
+    },
+    "black2": {
+      "player": {
+        "x": 0.5,
+        "y": 0.4,
+        "z": 7.0
+      },
+      "foe": {
+        "x": 0.3,
+        "y": 0.4,
+        "z": -10.0
+      }
+    }
+  },
+  "entries": {
+    "AQUA_SHOT": {
+      "moveId": "AQUA_SHOT",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "AQUA_CANNON": {
+      "moveId": "AQUA_CANNON",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "HYDRO_SURGE": {
+      "moveId": "HYDRO_SURGE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "AQUA_JET": {
+      "moveId": "AQUA_JET",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "EMBER_TOSS": {
+      "moveId": "EMBER_TOSS",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "FIRE_STREAM": {
+      "moveId": "FIRE_STREAM",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "INFERNO_WAVE": {
+      "moveId": "INFERNO_WAVE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "FIRE_PUNCH_MOVE": {
+      "moveId": "FIRE_PUNCH_MOVE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "PETAL_BARRAGE": {
+      "moveId": "PETAL_BARRAGE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "SOLAR_BLAST": {
+      "moveId": "SOLAR_BLAST",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "RAZOR_LEAF": {
+      "moveId": "RAZOR_LEAF",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "VINE_LASH": {
+      "moveId": "VINE_LASH",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "SPARK_SHOT": {
+      "moveId": "SPARK_SHOT",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "THUNDER_BOLT": {
+      "moveId": "THUNDER_BOLT",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "WILD_CHARGE": {
+      "moveId": "WILD_CHARGE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "METAL_STRIKE": {
+      "moveId": "METAL_STRIKE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "IRON_BARRAGE": {
+      "moveId": "IRON_BARRAGE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "FLASH_CANNON_MOVE": {
+      "moveId": "FLASH_CANNON_MOVE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "EARTH_TREMOR": {
+      "moveId": "EARTH_TREMOR",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "MUD_BLAST": {
+      "moveId": "MUD_BLAST",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "EARTH_POWER": {
+      "moveId": "EARTH_POWER",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "BULLDOZE": {
+      "moveId": "BULLDOZE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "SHADOW_PULSE": {
+      "moveId": "SHADOW_PULSE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "DARK_PULSE_MOVE": {
+      "moveId": "DARK_PULSE_MOVE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "NIGHT_SLASH_MOVE": {
+      "moveId": "NIGHT_SLASH_MOVE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "CRUNCH": {
+      "moveId": "CRUNCH",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "GUST_WAVE": {
+      "moveId": "GUST_WAVE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "WING_ASSAULT": {
+      "moveId": "WING_ASSAULT",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "TACKLE": {
+      "moveId": "TACKLE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "QUICK_ATTACK": {
+      "moveId": "QUICK_ATTACK",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "BODY_SLAM_MOVE": {
+      "moveId": "BODY_SLAM_MOVE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "MIND_BLAST": {
+      "moveId": "MIND_BLAST",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "DRAGON_CLAW": {
+      "moveId": "DRAGON_CLAW",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "POWER_STRIKE": {
+      "moveId": "POWER_STRIKE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "SWARM_STRIKE": {
+      "moveId": "SWARM_STRIKE",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    },
+    "POISON_JAB": {
+      "moveId": "POISON_JAB",
+      "offset": [
+        0,
+        0
+      ],
+      "note": "Battler-centre origin (v1): no per-move body-part table exists on disk for this move; offset lands from the origin/angle tables worker. Do not read a mouth/hand anchor into this entry."
+    }
+  }
+}
