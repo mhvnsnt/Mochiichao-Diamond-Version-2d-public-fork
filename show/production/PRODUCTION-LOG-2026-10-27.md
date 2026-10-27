@@ -518,3 +518,39 @@ match; 2 discrepancies: TM106 is Drill Run (not Acrobatics) and TM116 is Stealth
 Ball) — which explains the list's two internal duplicates (Acrobatics x2, Energy Ball x2; TM014
 Acrobatics and TM119 Energy Ball are correct as listed). Registry follows the games' data;
 discrepancies logged in INDEX.md, not silently corrected.
+
+## EPISODE BUILDER - episode_build.py (2026-10-27)
+One-command episode assembler landed at
+show/production/tooling/build-manifest/episode_build.py, chaining
+the tools already wired in that folder: it renders every cut via
+composite_shot.py, concatenates the cuts in episode-spec order,
+attaches/mixes the scene audio beds at their scene offsets (an
+existing bed WAV per scene, or a "build" instruction in the shape
+scene_audio_bed.py implements), finishes with the house two-pass
+loudnorm (-14 LUFS / -1 dBTP, measured at the target, encoded-file
+peak verification with pull-down retries - the composite_shot.py
+approach), invokes episode_gate.py, and emits a build report JSON
+(per-cut status, final measured loudness, gate results, flags).
+Failure law: a failed cut halts the build with the named error
+EPISODE_BUILD_CUT_FAILED and a non-zero exit - no cut is skipped
+or substituted, and no partial output is left behind. An example
+spec (EP01-SCENE-01-mini-episode.json, same folder) mirrors the
+local test build.
+LOCAL TEST (media stays local, never in the PR): EP01 Scene 1
+mini-master, ~37s, built in ~/workspace/mochiichao-show/
+episode-build-test/. Honest equivalent, stated plainly: no
+per-cut shot specs exist for locked cuts 02-05, so all five cuts
+used the proven gate-proof-shot.json setup (living Gate
+background EP01-CUT01-composite-life-proof-v1.mp4 + Dorowani idle
+transparent twin at x=422, y=266, scale 0.6, shot audio null) at
+each cut's locked storyboard duration (8/6/5/8/10s), with the
+gated Scene 1 bed WAV (EP01-SCENE-01-gate-morning.wav) as the
+scene bed. Measured on the finished file (ffprobe + independent
+loudnorm analysis, not the plan): duration 37.000s, integrated
+-14.20 LUFS, true peak -1.00 dBTP, finish gates PASS
+(duration / loudness within 1 LU / true peak), episode_gate.py
+invoked (exit 0; all five EP01 audio gates PASS; HALT cut 12 and
+the ambient GAP flag reported by the gate as designed). The
+failure path was also tested: a spec pointing at a missing
+background halts with EPISODE_BUILD_CUT_FAILED, exit 1, no output
+file, and a HALTED build report.
