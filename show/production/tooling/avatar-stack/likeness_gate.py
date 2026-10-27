@@ -38,20 +38,6 @@ until an owner/scorer records a calibration decision (see
 AVATAR-STACK-PIPELINE.md, "Calibration v2"). Nothing here retunes a
 threshold.
 
-Option A — pose-matched references (owner decision, 2026-10-27). The
-v2 readings showed the dominant penalty is content, not placement:
-the generator performs a reframed crop of the body, so a full-body
-reference can never pixel-match it. With --reference-mode
-pose-matched, the gate instead measures against
-canon-cutouts/<species>-upper.png — the canon cutout cropped at the
-measured performed-framing line (0.91 of the silhouette height; see
-the spec, "Option A — pose-matched references"). The packet records
-reference_mode and the exact reference_file used. In pose-matched
-mode the packet additionally carries pose_matched_verdict: the
-v2-normalized path checked against the SAME shipped thresholds, as a
-recommendation only. If the -upper reference is missing the run is
-FAIL_CANNOT_MEASURE — never a silent fallback to the full cutout.
-
 --debug-dir DIR writes debug_alignment.png into DIR (never into the
 repo tree): the v2-normalized aligned reference | aligned prediction
 | contour overlay (reference silhouette contour green, prediction
@@ -71,7 +57,6 @@ default pass.
 Usage:
   likeness_gate.py --clip CLIP.mp4 --species dorowani [--out PACKET.json]
                    [--cutouts DIR] [--frame N]
-                   [--reference-mode {full,pose-matched}]
                    [--debug-dir DIR]
 Exit codes: 0 = measured verdict written (PASS or FAIL),
             2 = FAIL_CANNOT_MEASURE packet written.
@@ -234,18 +219,15 @@ def ssim_map(x, y):
 
 
 def measure(clip, species, cutouts_dir, frame_index=None,
-            reference_mode="full", want_debug=False):
+            want_debug=False):
     """Returns (measurements, measurements_v2, context, debug).
     `debug` is None unless want_debug, else a dict of the v2-normalized
     aligned canvases for write_debug_alignment(). Raises on any failure
     (missing reference included — FAIL_CANNOT_MEASURE, no fallback)."""
-    if reference_mode == "pose-matched":
-        cutout_path = Path(cutouts_dir) / f"{species}-upper.png"
-    else:
-        cutout_path = Path(cutouts_dir) / f"{species}.png"
+    cutout_path = Path(cutouts_dir) / f"{species}.png"
     if not cutout_path.exists():
         raise RuntimeError(
-            f"reference not found ({reference_mode} mode): {cutout_path}")
+            f"reference not found: {cutout_path}")
     if not Path(clip).exists():
         raise RuntimeError(f"clip not found: {clip}")
 
@@ -278,7 +260,6 @@ def measure(clip, species, cutouts_dir, frame_index=None,
         "clip_sha256": sha256_of(clip),
         "clip_spec": {"width": w, "height": h, "fps": fps, "frames": n_frames},
         "frame_index": idx,
-        "reference_mode": reference_mode,
         "reference_file": str(cutout_path),
         "cutout": str(cutout_path),
         "cutout_sha256": sha256_of(cutout_path),
@@ -313,7 +294,7 @@ def _contour(mask):
     return ndimage.binary_dilation(edge, structure=np.ones((3, 3)))
 
 
-def write_debug_alignment(debug, measurements_v2, out_dir, reference_mode):
+def write_debug_alignment(debug, measurements_v2, out_dir):
     """Write debug_alignment.png into out_dir: three CANVAS-square
     panels — aligned reference | aligned prediction | contour overlay
     (reference contour green, prediction contour red, drawn over the
@@ -337,7 +318,7 @@ def write_debug_alignment(debug, measurements_v2, out_dir, reference_mode):
     d = ImageDraw.Draw(img)
     m = measurements_v2
     d.text((8, 4),
-           f"likeness_gate debug alignment - reference mode: {reference_mode} "
+           f"likeness_gate debug alignment - full-body canon reference "
            f"(panels: aligned reference | aligned prediction | contour overlay)",
            fill=(0, 0, 0))
     d.text((8, 22),
@@ -361,13 +342,6 @@ def main():
                     help="directory holding <species>.png canon cutouts")
     ap.add_argument("--frame", type=int, default=None,
                     help="frame index to score (default: middle frame)")
-    ap.add_argument("--reference-mode", choices=["full", "pose-matched"],
-                    default="full",
-                    help="full: <species>.png canon cutout (default); "
-                         "pose-matched: <species>-upper.png, the canon "
-                         "cutout cropped at the measured performed-"
-                         "framing line (Option A). Missing -upper file "
-                         "is FAIL_CANNOT_MEASURE, never a fallback.")
     ap.add_argument("--debug-dir", default=None,
                     help="also write debug_alignment.png into this dir "
                          "(aligned reference | prediction | contours)")
@@ -381,7 +355,6 @@ def main():
         "tool": "likeness_gate.py",
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "species": args.species,
-        "reference_mode": args.reference_mode,
         "thresholds": thresholds,
         "promotion_status": "PENDING_OWNER_OR_SCORER_RECORD",
         "note": ("Verdict is a packet RECOMMENDATION measured from the actual "
@@ -395,7 +368,6 @@ def main():
     try:
         measurements, measurements_v2, context, debug = measure(
             args.clip, args.species, args.cutouts, args.frame,
-            reference_mode=args.reference_mode,
             want_debug=args.debug_dir is not None)
         packet.update(context)
         packet["measurements"] = measurements
@@ -413,18 +385,10 @@ def main():
         }
         packet["checks_v2_normalized"] = checks_v2
         packet["verdict"] = "PASS" if all(checks.values()) else "FAIL"
-        if args.reference_mode == "pose-matched":
-            # Option A recommendation: the v2-normalized path against
-            # the pose-matched reference, SAME shipped thresholds.
-            # Recommendation only — promotion_status is unchanged.
-            packet["pose_matched_checks"] = checks_v2
-            packet["pose_matched_verdict"] = (
-                "PASS" if all(checks_v2.values()) else "FAIL")
         if debug is not None:
             try:
                 dbg_path = write_debug_alignment(
-                    debug, measurements_v2, args.debug_dir,
-                    args.reference_mode)
+                    debug, measurements_v2, args.debug_dir)
                 packet["debug_alignment"] = str(dbg_path)
             except Exception as de:
                 packet["debug_alignment"] = None
@@ -435,9 +399,6 @@ def main():
         packet["measurements_v2_normalized"] = None
         packet["checks"] = None
         packet["checks_v2_normalized"] = None
-        if args.reference_mode == "pose-matched":
-            packet["pose_matched_checks"] = None
-            packet["pose_matched_verdict"] = None
         packet["verdict"] = "FAIL_CANNOT_MEASURE"
         packet["error"] = f"{type(e).__name__}: {e}"
         code = 2
@@ -456,9 +417,6 @@ def main():
         print(f"  [v2] ssim_union     = {m['ssim_union']}  (min {SSIM_MIN})")
         print(f"  [v2] silhouette_iou = {m['silhouette_iou']}  (min {IOU_MIN})")
         print(f"  [v2] rgb_mad_255    = {m['rgb_mad_255']}  (max {RGB_MAD_MAX})")
-    if packet.get("pose_matched_verdict"):
-        print(f"  pose-matched verdict (v2 path, shipped thresholds): "
-              f"{packet['pose_matched_verdict']}")
     if packet.get("debug_alignment"):
         print(f"  debug alignment: {packet['debug_alignment']}")
     if packet.get("error"):

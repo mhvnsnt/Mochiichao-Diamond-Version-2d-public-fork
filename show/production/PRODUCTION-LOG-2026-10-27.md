@@ -242,3 +242,39 @@ Owner confirmed the canon Wispkin cutout is exactly what the
 character needs to look like. Recorded in the Wispkin body
 spec; the cutout is the likeness reference of record for the
 rig, the gate, and Wan test 2.
+
+## CROPPED REFERENCES RETIRED + GATE SCRUBBED (2026-10-27)
+Owner decision: the pose-matched cropped references
+(<species>-upper.png, the 0.91 "Option A" crop) are RETIRED
+and out of the pipeline. The crop sliced the bottom ~9% - the
+feet - off a perfect full-body cutout; a feet-chopped reference
+is not usable for production. The local -upper files are
+deleted; likeness_gate.py is scrubbed back to full-body
+references only (the --reference-mode argument, the
+pose-matched reference branch, and the pose_matched packet
+fields are removed; full-mode measurements reproduce the
+published v1 numbers - Dorowani idle SSIM 0.3099 / IoU 0.7702 /
+MAD 61.281, verdict FAIL). The pose-matched threshold proposal
+(IoU>=0.75 + MAD<=65, SSIM reported-only) is NOT adopted - it
+dies with the references. Shipped thresholds stand
+(SSIM>=0.50 / IoU>=0.55 / MAD<=40). The pose-matched
+measurements stay in AVATAR-STACK-PIPELINE.md as retired-
+experiment history. Gate strategy confirmed by the owner:
+full-body canon cutouts are the only references; the gate is an
+honest measuring instrument; promotion is the human scorer's
+call.
+
+## SPROUTLE - BAKED SHADOW REMOVED + NO-BAKED-SHADOWS LAW (2026-10-27)
+Sproutle's canon cutout carried a baked-in gray ground shadow
+(ellipse under the feet). Removed by measurement: 2,803 warm
+beige-gray ellipse pixels cleared in the bottom band; claw
+pixels untouched (4,579 before and after); zero changes above
+the shadow band. The cleaned cutout is the CURRENT usable
+version; the old version is preserved locally as
+sproutle-v1-baked-shadow.png and marked NOT USABLE. The rig
+texture (show/production/rigs/builds/sproutle/sproutle_tex.png)
+was verified byte-identical to the old shadowed cutout and is
+replaced with the cleaned pixels; rig data (mesh/bones/
+animations) unchanged. Standing law from the owner: shadows
+are NEVER baked into art; shadows are added in post /
+compositing only.
