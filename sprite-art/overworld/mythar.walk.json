@@ -1,0 +1,132 @@
+{
+ "creature": "mythar",
+ "roster_id": "331",
+ "variant": null,
+ "movement_class": "grounded_standard",
+ "idle_class": "grounded_standard",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 480,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/mythar/cells/mythar_cell_04.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "walk/mythar/mythar_walk_down_transform_step1.png",
+     "provenance": "transform_grounded_standard",
+     "source_role": "overworld_front",
+     "transform": {
+      "dx": 0,
+      "dy": -2,
+      "scale": 1.0
+     }
+    },
+    {
+     "file": "walk/mythar/mythar_walk_down_transform_step2.png",
+     "provenance": "transform_grounded_standard",
+     "source_role": "overworld_front",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/mythar/cells/mythar_cell_04.png",
+    "walk/mythar/mythar_walk_down_transform_step1.png",
+    "game-ready/mythar/cells/mythar_cell_04.png",
+    "walk/mythar/mythar_walk_down_transform_step2.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/mythar/cells/mythar_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/mythar/cells/mythar_cell_05.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/mythar/cells/mythar_cell_06.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_1"
+    }
+   ],
+   "loop": [
+    "game-ready/mythar/cells/mythar_cell_02.png",
+    "game-ready/mythar/cells/mythar_cell_05.png",
+    "game-ready/mythar/cells/mythar_cell_02.png",
+    "game-ready/mythar/cells/mythar_cell_06.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/mythar/cells/mythar_cell_14.png",
+    "provenance": "locked_stand",
+    "source_role": "walk_side_0"
+   },
+   "steps": [
+    {
+     "file": "game-ready/mythar/cells/mythar_cell_15.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_1"
+    },
+    {
+     "file": "walk/mythar/mythar_walk_left_transform_step1.png",
+     "provenance": "transform_grounded_standard",
+     "source_role": "walk_side_0",
+     "transform": {
+      "dx": 0,
+      "dy": -2,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/mythar/cells/mythar_cell_14.png",
+    "game-ready/mythar/cells/mythar_cell_15.png",
+    "game-ready/mythar/cells/mythar_cell_14.png",
+    "walk/mythar/mythar_walk_left_transform_step1.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/mythar/mythar_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "walk_side_0"
+   },
+   "steps": [
+    {
+     "file": "walk/mythar/mythar_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_1",
+     "mirrored_from": "game-ready/mythar/cells/mythar_cell_15.png"
+    },
+    {
+     "file": "walk/mythar/mythar_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_0",
+     "mirrored_from": "walk/mythar/mythar_walk_left_transform_step1.png"
+    }
+   ],
+   "loop": [
+    "walk/mythar/mythar_walk_right_stand.png",
+    "walk/mythar/mythar_walk_right_mirror_1.png",
+    "walk/mythar/mythar_walk_right_stand.png",
+    "walk/mythar/mythar_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}

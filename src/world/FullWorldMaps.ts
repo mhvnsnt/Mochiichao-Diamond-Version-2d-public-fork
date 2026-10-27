@@ -40,7 +40,7 @@ export const SECTOR_0: any = {
     [1,1,1,1,0,0,0,0,0,0,3,3,3,0,0,3,3,3,0,0,3,3,0,0,0,0,0,1,1,1,1,1],
     [1,1,1,1,0,1,1,0,0,0,3,0,3,0,0,3,0,3,0,0,3,3,0,0,0,1,1,1,1,1,1,1],
     [1,1,1,1,4,4,5,4,0,0,3,0,3,0,0,3,0,3,0,0,0,0,0,0,4,4,5,4,1,1,1,1],
-    [1,1,1,1,4,4,4,4,0,0,3,3,3,0,0,3,3,3,0,0,0,0,0,0,4,4,4,4,1,1,1,1],
+    [1,1,1,1,4,4,3,4,0,0,3,3,3,0,0,3,3,3,0,0,0,0,0,0,4,4,3,4,1,1,1,1],
     [1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1],
     [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
     [1,0,10,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,1],
@@ -98,7 +98,13 @@ export const SECTOR_0: any = {
     { x:15, y:27, to:"boot_bay", enterAt:{x:15, y:0}, dir:"down", hmNeeded:"Surf" },
   ],
   doors: [
-    { x:10, y:3, to:"aeon_lab", enterAt:{x:6, y:12}, label:"Prof. Aeon's Lab" }
+    { x:10, y:3, to:"aeon_lab", enterAt:{x:6, y:12}, label:"Prof. Aeon's Lab" },
+    // Truck/house maps: (6,7) and (26,7) were DOOR tiles with no door
+    // entry and no walkable approach. The y=8 tiles below them are
+    // now PATH, so the player can step (6,9)->(6,8)->(6,7) and
+    // (26,9)->(26,8)->(26,7) into the houses.
+    { x:6, y:7, to:"sector0_house_1f", enterAt:{x:6, y:10}, label:"Your House" },
+    { x:26, y:7, to:"sector0_rival_house", enterAt:{x:6, y:10}, label:"Hex's House" }
   ],
   events: [
     { id: "block_route_1", x:13, y:1, dialog:["Wait! It's dangerous to go into the tall grass without a partner!","Go see Prof. Aeon at his lab first!"], condition: "noStarter" },
@@ -250,6 +256,8 @@ export const BINARY_FIELDS: any = {
       if (x===15&&y===8) return TILE.DOOR;
       if (x>=22&&x<=27&&y>=2&&y<=6) return TILE.BUILDING;
       if (x===24&&y===6) return TILE.DOOR;
+      if (x>=22&&x<=27&&y>=10&&y<=14) return TILE.BUILDING;
+      if (x===24&&y===14) return TILE.DOOR;
       if ((x===14||x===15)&&y>8&&y<35) return TILE.PATH;
       if (y===20&&x>=2&&x<=27) return TILE.PATH;
       if ((x>=2&&x<=9&&y>=10&&y<=18)||(x>=20&&x<=27&&y>=10&&y<=18)) return TILE.TALL_GRASS;
@@ -274,10 +282,17 @@ export const BINARY_FIELDS: any = {
   exits: [
     ...buildEdgeExits(13, 17, 34, "route_1", 1, "down"),
     ...buildVertExits(0, 15, 25, "binary_woods", 30, "left"),
+    // Victory Route gate: badges>=8 is metadata here, following the
+    // mauveville_arena 'ciphers>=10' precedent. WorldEngine enforces
+    // no exit condition except hasStarter/noStarter events, so the
+    // 8-badge enforcement is OWED by an engine-lane change and is
+    // NOT claimed as live in this PR.
+    { x:14, y:0, to:"victory_route", enterAt:{x:14, y:39}, dir:"up", condition:"badges>=8" },
   ],
   doors: [
     { x:14, y:8, to:"dojo_1", enterAt:{x:7, y:16}, label:"Binary Dojo — Core Gate" },
-    { x:24, y:6, to:"mochiiplex_1", enterAt:{x:7, y:10}, label:"MochiiPlex" }
+    { x:24, y:6, to:"mochiiplex_1", enterAt:{x:7, y:10}, label:"MochiiPlex" },
+    { x:24, y:14, to:"dojo_8", enterAt:{x:7, y:16}, label:"Return Dojo — Dojo 8" }
   ],
   events: [],
   encounters: []
@@ -412,7 +427,10 @@ export const CAVE_OF_ECHOES: any = {
     { id:"trainer_caverunner_pike", x:19, y:10, sprite:"🏃", name:"Cave Runner Pike", facing:"down", dialog:["I run these tunnels every day."], battle:{ team:[{id:"013",name:"Pupbble",hp:45,maxHp:45,atk:60,def:50,spd:50,moves:["Tackle","Quick Attack"],type:"Earth",level:16},{id:"036",name:"Cragarm",hp:65,maxHp:65,atk:105,def:130,spd:30,moves:["Tackle","Quick Attack"],type:"Steel",level:17}], reward:380, badge:null } },
   ],
   exits: [
-    { x:5, y:0, to:"binary_woods", enterAt:{x:27, y:38}, dir:"up" }
+    { x:5, y:0, to:"binary_woods", enterAt:{x:27, y:38}, dir:"up" },
+    // Phase A: STAIRS_DOWN tile at (11,27) was a dead end — no exit.
+    // It now leads to Neon City at its STAIRS_DOWN tile (18,35).
+    { x:11, y:27, to:"neon_city", enterAt:{x:18, y:35}, dir:"down" }
   ],
   doors: [],
   events: [],
@@ -467,9 +485,15 @@ export const NEON_CITY: any = {
   exits: [
     ...buildVertExits(0, 15, 25, "scrap_junkyard", 32, "left"),
     ...buildVertExits(35, 15, 25, "coral_approach", 1, "right"),
+    { x:18, y:0, to:"route_2", enterAt:{x:14, y:38}, dir:"up" },
+    // Phase A return: WorldEngine checks exits before the solid-tile
+    // return, so this border tile (18,37) fires even though it renders
+    // as BUILDING. It returns to the Cave STAIRS_DOWN tile (11,27).
+    { x:18, y:37, to:"cave_of_echoes", enterAt:{x:11, y:27}, dir:"down" }
   ],
   doors: [
-    { x:18, y:6, to:"mauveville_arena", enterAt:{x:8, y:18}, label:"Mauveville Arena", condition:"ciphers>=10" }
+    { x:18, y:6, to:"mauveville_arena", enterAt:{x:8, y:18}, label:"Mauveville Arena", condition:"ciphers>=10" },
+    { x:13, y:18, to:"dojo_3", enterAt:{x:7, y:16}, label:"Dojo 3 — Chrome Gate" }
   ],
   events: [],
   encounters: []
@@ -678,6 +702,914 @@ export const DOJO_2: any = {
   exits: [{ x:5, y:15, to:"binary_woods", enterAt:{x:7, y:37}, dir:"down" }], doors: [], events: [], encounters: []
 };
 
+
+export const SECTOR0_TRUCK: any = {
+  name: "Moving Truck — Sector 0",
+  music: "sector0_theme",
+  weather: "clear",
+  interior: true,
+  width: 12, height: 10,
+  playerStart: { x:6, y:8 },
+  tiles: (() => {
+    return buildMap(12, 10, (x, y) => {
+      if (x===6&&y===9) return TILE.DOOR;
+      if (x===0||x===11||y===0||y===9) return TILE.WALL;
+      if (y>=1&&y<=3) return TILE.BUILDING; // stacked boxes
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    { id:"mover_1", x:3, y:5, sprite:"📦", name:"Mover", facing:"down", dialog:["Careful with that one — it is the clock. A new home needs a correct time."] },
+    { id:"mover_2", x:8, y:5, sprite:"📦", name:"Mover", facing:"down", dialog:["Last box out, then we are done. Your room is upstairs."] },
+  ],
+  signs: [
+    { x:6, y:2, text:"MOVING BOXES\\nMom's things, your things, and one very important clock." },
+  ],
+  exits: [],
+  doors: [
+    { x:6, y:9, to:"sector0", enterAt:{x:15, y:10}, label:"Step off the truck" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const SECTOR0_HOUSE_1F: any = {
+  name: "Your House — 1F",
+  music: "sector0_theme",
+  weather: "clear",
+  interior: true,
+  width: 13, height: 12,
+  playerStart: { x:6, y:10 },
+  tiles: (() => {
+    return buildMap(13, 12, (x, y) => {
+      if (x===6&&y===11) return TILE.DOOR;
+      if (x===6&&y===1) return TILE.STAIRS_UP;
+      if (x===6&&y===2) return TILE.PATH; // stair approach, else the stair is unreachable
+      if (x===0||x===12||y===0||y===11) return TILE.WALL;
+      if (y>=1&&y<=2) return TILE.BUILDING; // kitchen counter / table
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    { id:"mom_house", x:5, y:8, sprite:"👩", name:"Your Mom", facing:"down", isHeal: true, dialog:["There you are! The truck beat us here.","Come inside. Your room is upstairs. The boxes can wait. Go set the clock first — a new home needs a correct time.","Good. Now go say hello next door. Hex's family just moved in too. You two will need each other out there.","Wait. Before you run off — here. Sprint Boots. Hold B and you can run. A trainer who cannot run will always be late."] },
+  ],
+  signs: [
+    { x:10, y:2, text:"KITCHEN\\nMom's cooking smells like a new start." },
+  ],
+  exits: [
+    { x:6, y:1, to:"sector0_house_2f", enterAt:{x:6, y:10}, dir:"up" }
+  ],
+  doors: [
+    { x:6, y:11, to:"sector0", enterAt:{x:6, y:9}, label:"Boot Harbor" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const SECTOR0_HOUSE_2F: any = {
+  name: "Your House — 2F",
+  music: "sector0_theme",
+  weather: "clear",
+  interior: true,
+  width: 13, height: 12,
+  playerStart: { x:6, y:10 },
+  tiles: (() => {
+    return buildMap(13, 12, (x, y) => {
+      if (x===6&&y===11) return TILE.STAIRS_DOWN;
+      if (x===0||x===12||y===0||y===11) return TILE.WALL;
+      if (x>=2&&x<=4&&y>=2&&y<=3) return TILE.BUILDING; // PC desk
+      if (x>=8&&x<=10&&y>=2&&y<=3) return TILE.BUILDING; // bed
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [],
+  signs: [
+    { x:3, y:2, text:"PC\\nYour PC. Items and Mochiichao storage live here." },
+    { x:6, y:5, text:"CLOCK\\nSet the clock. A new home needs a correct time." },
+    { x:9, y:2, text:"POSTER\\nA poster of a legendary Mochiichao. One day." },
+  ],
+  exits: [
+    { x:6, y:11, to:"sector0_house_1f", enterAt:{x:6, y:2}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const SECTOR0_RIVAL_HOUSE: any = {
+  name: "Hex's House",
+  music: "sector0_theme",
+  weather: "clear",
+  interior: true,
+  width: 13, height: 12,
+  playerStart: { x:6, y:10 },
+  tiles: (() => {
+    return buildMap(13, 12, (x, y) => {
+      if (x===6&&y===11) return TILE.DOOR;
+      if (x===0||x===12||y===0||y===11) return TILE.WALL;
+      if (y>=1&&y<=2) return TILE.BUILDING;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    { id:"hex_mom", x:5, y:8, sprite:"👩", name:"Hex's Mom", facing:"down", dialog:["Hex just moved in too. You two will need each other out there.","Go say hello — he is already talking about his starter."] },
+    { id:"rival_hex_home", x:8, y:5, sprite:"😤", name:"Hex", facing:"down", dialog:["You again? I already picked my starter. Razorgater, obviously.","Don't think I'll go easy on you just because we grew up here.","Next time we meet, we BATTLE. Count on it."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:6, y:11, to:"sector0", enterAt:{x:26, y:9}, label:"Boot Harbor" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const ROUTE_2: any = {
+  name: "Route 2.0 — Harbour Road",
+  music: "route1_theme",
+  weather: "clear",
+  width: 28, height: 40,
+  playerStart: { x:14, y:39 },
+  tiles: (() => {
+    return buildMap(28, 40, (x, y) => {
+      if (x===0||x===27||y===0||y===39) return TILE.WALL;
+      if (x>=12&&x<=16) return TILE.PATH;
+      if (y>=18&&y<=20) return TILE.PATH;
+      return TILE.TALL_GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"route2_walker", x:14, y:20, sprite:"🚶", name:"Road Walker", facing:"down", dialog:["Stoneport is north. The harbour road is long — bring a partner."] },
+  ],
+  signs: [
+    { x:14, y:10, text:"ROUTE 2.0\\nNorth to Stoneport City. South to Neon City." },
+  ],
+  exits: [
+    { x:14, y:0, to:"stoneport_city", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:39, to:"neon_city", enterAt:{x:18, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: [] // wild pool owed: 022 name not verified in live species data, not invented here
+};
+
+export const STONEPORT_CITY: any = {
+  name: "Stoneport City",
+  music: "fields_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (x>=2&&x<=6&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=10&&x<=16&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=20&&x<=26&&y>=2&&y<=6) return TILE.BUILDING;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      if (y>=25) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"dockhand_juno", x:14, y:20, sprite:"⚓", name:"Dockhand Juno", facing:"down", dialog:["The docks run on time here. Stoneport ships out to everywhere the Mainframe touches."] },
+    { id:"harbour_guard", x:14, y:10, sprite:"🧑", name:"Harbour Guard", facing:"down", dialog:["Neon City's dojo is Chrome — hard, bright, and it does not bend."] },
+    { id:"healer_stoneport", x:7, y:10, sprite:"👩‍⚕️", name:"Nurse Faye", facing:"down", isHeal: true, dialog:["Welcome to the Stoneport MochiiPlex. Your team is tired? Rest here. It is free, and it is always free."] },
+  ],
+  signs: [
+    { x:14, y:14, text:"STONEPORT CITY\\nHarbour, docks, and the road south to Neon City." },
+  ],
+  exits: [
+    { x:14, y:0, to:"route_3", enterAt:{x:14, y:39}, dir:"up" },
+    { x:14, y:29, to:"route_2", enterAt:{x:14, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DOJO_3: any = {
+  name: "Dojo 3 — Chrome Gate",
+  music: "dojo_theme",
+  weather: "clear",
+  interior: true,
+  width: 16, height: 18,
+  playerStart: { x:7, y:16 },
+  tiles: (() => {
+    return buildMap(16, 18, (x, y) => {
+      if (x===7&&y===17) return TILE.DOOR;
+      if (x===0||x===15||y===0||y===17) return TILE.WALL;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    { id:"dojo3_acolyte_volt", x:3, y:10, sprite:"🥋", name:"Acolyte Volt", facing:"down", dialog:["Chrome does not bend. It holds."] },
+    { id:"dojo3_acolyte_alloy", x:11, y:10, sprite:"🥋", name:"Acolyte Alloy", facing:"down", dialog:["The Neon Fragment is earned, not given."] },
+    // Leader battle is NOT wired here: trainer file R1-041 gives
+    // species + levels (005 Lv23, 033 Lv23, 034 Lv24) but no stats,
+    // and inventing a boss team here would clash with the trainer
+    // wiring batch. The leader is present, dialogued, and the
+    // battle is owed by that batch — not silently invented.
+    { id:"dojo3_leader", x:7, y:2, sprite:"🥋", name:"Dojo Leader", facing:"down", dialog:["Chrome is the Mainframe's spine. Bright, hard, unbent.","Beat my acolytes, then come back and show me you hold."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:7, y:17, to:"neon_city", enterAt:{x:13, y:19}, label:"Neon City" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const ROUTE_3: any = {
+  name: "Route 3.0 — Stoneport Road",
+  music: "route1_theme",
+  weather: "clear",
+  width: 28, height: 40,
+  playerStart: { x:14, y:39 },
+  tiles: (() => {
+    return buildMap(28, 40, (x, y) => {
+      if (x===0||x===27||y===0||y===39) return TILE.WALL;
+      if (x>=12&&x<=16) return TILE.PATH;
+      if (y>=18&&y<=20) return TILE.PATH;
+      return TILE.TALL_GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"route3_walker", x:14, y:20, sprite:"🚶", name:"Road Walker", facing:"down", dialog:["Stoneport is south. Signal Tunnel is north."] },
+  ],
+  signs: [
+    { x:14, y:10, text:"ROUTE 3.0\\nNorth to Signal Tunnel. South to Stoneport City." },
+  ],
+  exits: [
+    { x:14, y:0, to:"signal_tunnel", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:39, to:"stoneport_city", enterAt:{x:14, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: [] // wild pool owed: trainer lane / roster expansion, not invented here
+};
+
+export const SIGNAL_TUNNEL: any = {
+  name: "Signal Tunnel",
+  music: "cave_theme",
+  interior: true,
+  width: 28, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(28, 30, (x, y) => {
+      if (x===0||x===27||y===0||y===29) return TILE.WALL;
+      if (x>=12&&x<=16) return TILE.PATH;
+      if (y===15) return TILE.PATH;
+      return TILE.CAVE;
+    });
+  })(),
+  npcs: [
+    { id:"tunnel_keeper", x:14, y:15, sprite:"🔦", name:"Tunnel Keeper", facing:"down", dialog:["Route 3.0 is south. Pale Town is north."] },
+  ],
+  signs: [
+    { x:14, y:10, text:"SIGNAL TUNNEL\\nNorth to Pale Town. South to Route 3.0." },
+  ],
+  exits: [
+    { x:14, y:0, to:"pale_town", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:29, to:"route_3", enterAt:{x:14, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  // Light-Pulse gate for the dark section is owed in the story/engine
+  // pass (region1-wiring.md Break/Phase B note): no engine gate string
+  // is invented here, and none is claimed as live.
+  encounters: [] // wild pool owed: trainer lane / roster expansion, not invented here
+};
+
+export const PALE_TOWN: any = {
+  name: "Pale Town",
+  music: "fields_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (x>=2&&x<=6&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=10&&x<=16&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=20&&x<=26&&y>=2&&y<=6) return TILE.BUILDING;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"pale_tower_keeper", x:14, y:20, sprite:"🗼", name:"Tower Keeper", facing:"down", dialog:["This tower remembers the first trainers. The Syndicate is trying to rewrite what it remembers. Do not let them."] },
+  ],
+  signs: [
+    { x:14, y:14, text:"PALE TOWN\\nThe Tower. South to Signal Tunnel. North to Market City." },
+  ],
+  exits: [
+    { x:14, y:0, to:"market_city", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:29, to:"signal_tunnel", enterAt:{x:14, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const MARKET_CITY: any = {
+  name: "Market City",
+  music: "fields_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (x>=2&&x<=6&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=10&&x<=16&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=20&&x<=26&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x===13&&y===6) return TILE.DOOR;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"market_hideout_leader", x:14, y:20, sprite:"🎩", name:"Hideout Leader", facing:"down", dialog:["The market sells everything, even the truth. We bought the truth first."] },
+    { id:"market_clerk", x:7, y:10, sprite:"🧑", name:"Market Clerk", facing:"down", dialog:["Pale Town is south. Central City is north."] },
+  ],
+  signs: [
+    { x:14, y:14, text:"MARKET CITY\\nSouth to Pale Town. North to Central City." },
+  ],
+  exits: [
+    { x:14, y:0, to:"central_city", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:29, to:"pale_town", enterAt:{x:14, y:1}, dir:"down" }
+  ],
+  doors: [
+    { x:13, y:6, to:"dojo_4", enterAt:{x:7, y:16}, label:"Dojo 4" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const DOJO_4: any = {
+  name: "Dojo 4",
+  music: "dojo_theme",
+  weather: "clear",
+  interior: true,
+  width: 16, height: 18,
+  playerStart: { x:7, y:16 },
+  tiles: (() => {
+    return buildMap(16, 18, (x, y) => {
+      if (x===7&&y===17) return TILE.DOOR;
+      if (x===0||x===15||y===0||y===17) return TILE.WALL;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    // Leader battle is NOT wired here: no leader name, team, or badge
+    // name exists in the source spec (NAME GAP / ROSTER GAP). The
+    // leader is present and dialogued; the battle is owed by the
+    // trainer lane — same pattern as dojo_3 on main.
+    { id:"dojo4_leader", x:7, y:2, sprite:"🥋", name:"Dojo Leader", facing:"down", dialog:["Beat my acolytes, then come back and show me you hold."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:7, y:17, to:"market_city", enterAt:{x:13, y:7}, label:"Market City" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const CENTRAL_CITY: any = {
+  name: "Central City",
+  music: "fields_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (x>=2&&x<=6&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=10&&x<=16&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=20&&x<=26&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x===13&&y===6) return TILE.DOOR;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"central_citizen", x:14, y:20, sprite:"🧑", name:"Central Citizen", facing:"down", dialog:["The tower is ours again. Thank you. The dojo is open — go, before they regroup."] },
+  ],
+  signs: [
+    { x:14, y:14, text:"CENTRAL CITY\\nSouth to Market City. North to Harbor City." },
+  ],
+  exits: [
+    { x:14, y:0, to:"harbor_city", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:29, to:"market_city", enterAt:{x:14, y:1}, dir:"down" }
+  ],
+  doors: [
+    { x:13, y:6, to:"dojo_5", enterAt:{x:7, y:16}, label:"Dojo 5" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const DOJO_5: any = {
+  name: "Dojo 5",
+  music: "dojo_theme",
+  weather: "clear",
+  interior: true,
+  width: 16, height: 18,
+  playerStart: { x:7, y:16 },
+  tiles: (() => {
+    return buildMap(16, 18, (x, y) => {
+      if (x===7&&y===17) return TILE.DOOR;
+      if (x===0||x===15||y===0||y===17) return TILE.WALL;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    // Leader battle owed by the trainer lane (NAME GAP / ROSTER GAP),
+    // same pattern as dojo_3 on main.
+    { id:"dojo5_leader", x:7, y:2, sprite:"🥋", name:"Dojo Leader", facing:"down", dialog:["Beat my acolytes, then come back and show me you hold."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:7, y:17, to:"central_city", enterAt:{x:13, y:7}, label:"Central City" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const HARBOR_CITY: any = {
+  name: "Harbor City",
+  music: "fields_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (x>=2&&x<=6&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=10&&x<=16&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=20&&x<=26&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x===13&&y===6) return TILE.DOOR;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      if (y>=25) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"harbor_preserve_keeper", x:14, y:20, sprite:"🌿", name:"Preserve Keeper", facing:"down", dialog:["The preserve is not a zoo. It is a promise. Keep the promise, and I will teach you Wave-Ride. Water is a road, if you respect it."] },
+    { id:"harbor_ferry_captain", x:7, y:26, sprite:"⚓", name:"Ferry Captain", facing:"down", dialog:["The Data Ferry runs from this dock, once the Hall of Records is yours."] },
+  ],
+  signs: [
+    { x:14, y:14, text:"HARBOR CITY\\nSouth to Central City. Water route to Ember Island. Data Ferry to the Data Isles." },
+  ],
+  exits: [
+    { x:14, y:0, to:"ember_island", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:29, to:"central_city", enterAt:{x:14, y:1}, dir:"down" },
+    // Data Ferry: Hall of Records flag gate is owed in the story/engine
+    // pass — no gate string is invented here, and none is claimed live.
+    { x:7, y:29, to:"data_isle_1", enterAt:{x:12, y:22}, dir:"down" }
+  ],
+  doors: [
+    { x:13, y:6, to:"dojo_6", enterAt:{x:7, y:16}, label:"Dojo 6" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const DOJO_6: any = {
+  name: "Dojo 6",
+  music: "dojo_theme",
+  weather: "clear",
+  interior: true,
+  width: 16, height: 18,
+  playerStart: { x:7, y:16 },
+  tiles: (() => {
+    return buildMap(16, 18, (x, y) => {
+      if (x===7&&y===17) return TILE.DOOR;
+      if (x===0||x===15||y===0||y===17) return TILE.WALL;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    // Leader battle owed by the trainer lane (NAME GAP / ROSTER GAP),
+    // same pattern as dojo_3 on main.
+    { id:"dojo6_leader", x:7, y:2, sprite:"🥋", name:"Dojo Leader", facing:"down", dialog:["Beat my acolytes, then come back and show me you hold."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:7, y:17, to:"harbor_city", enterAt:{x:13, y:7}, label:"Harbor City" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const EMBER_ISLAND: any = {
+  name: "Ember Island",
+  music: "island_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (x>=2&&x<=6&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=10&&x<=16&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x===13&&y===6) return TILE.DOOR;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      if (y>=25) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"ember_ruins_guide", x:14, y:20, sprite:"🏛️", name:"Ruins Guide", facing:"down", dialog:["Harbor City is south. The lab ruins are here — read the logs, do not take them."] },
+  ],
+  signs: [
+    // Mansion log, readable not spoken (story-fill-region1.md Beat 7).
+    { x:14, y:14, text:"LOG 7\\nThe Mythic data is not a weapon. It is a memory. Whoever holds the memory holds the Mainframe. We buried it here so no one would hold it alone." },
+    { x:14, y:10, text:"EMBER ISLAND\\nSouth to Harbor City. Silicon Town return route east." },
+  ],
+  exits: [
+    { x:14, y:29, to:"harbor_city", enterAt:{x:14, y:1}, dir:"down" },
+    { x:29, y:15, to:"binary_fields", enterAt:{x:1, y:20}, dir:"right" }
+  ],
+  doors: [
+    { x:13, y:6, to:"dojo_7", enterAt:{x:7, y:16}, label:"Dojo 7" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const DOJO_7: any = {
+  name: "Dojo 7",
+  music: "dojo_theme",
+  weather: "clear",
+  interior: true,
+  width: 16, height: 18,
+  playerStart: { x:7, y:16 },
+  tiles: (() => {
+    return buildMap(16, 18, (x, y) => {
+      if (x===7&&y===17) return TILE.DOOR;
+      if (x===0||x===15||y===0||y===17) return TILE.WALL;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    // Leader battle owed by the trainer lane (NAME GAP / ROSTER GAP),
+    // same pattern as dojo_3 on main.
+    { id:"dojo7_leader", x:7, y:2, sprite:"🥋", name:"Dojo Leader", facing:"down", dialog:["Beat my acolytes, then come back and show me you hold."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:7, y:17, to:"ember_island", enterAt:{x:13, y:7}, label:"Ember Island" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const DOJO_8: any = {
+  name: "Dojo 8 — Return Dojo",
+  music: "dojo_theme",
+  weather: "clear",
+  interior: true,
+  width: 16, height: 18,
+  playerStart: { x:7, y:16 },
+  tiles: (() => {
+    return buildMap(16, 18, (x, y) => {
+      if (x===7&&y===17) return TILE.DOOR;
+      if (x===0||x===15||y===0||y===17) return TILE.WALL;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    // Syndicate boss lines verbatim from story-fill-region1.md Beat 7.
+    // Team is owed by the trainer lane (ROSTER GAP) — no team invented.
+    { id:"syndicate_boss", x:7, y:2, sprite:"🎩", name:"Syndicate Boss", facing:"down", dialog:["You have followed us across the whole Mainframe. Good. Now you will stop, here, in the town where you started."], postBattleDialog:["Take the last badge. Victory Route is open. The Plateau is waiting. Hex is already there."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:7, y:17, to:"binary_fields", enterAt:{x:24, y:15}, label:"Silicon Town" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const VICTORY_ROUTE: any = {
+  name: "Victory Route — the Gauntlet",
+  music: "route1_theme",
+  weather: "clear",
+  width: 28, height: 40,
+  playerStart: { x:14, y:39 },
+  tiles: (() => {
+    return buildMap(28, 40, (x, y) => {
+      if (x===0||x===27||y===0||y===39) return TILE.WALL;
+      if (x>=12&&x<=16) return TILE.PATH;
+      if (y>=18&&y<=20) return TILE.PATH;
+      return TILE.TALL_GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"victory_gate_keeper", x:14, y:20, sprite:"🏔️", name:"Victory Gate Keeper", facing:"down", dialog:["Eight badges. That is the gate, and it is the only gate. Walk it."] },
+  ],
+  signs: [
+    { x:14, y:10, text:"VICTORY ROUTE\\nNorth to Mainframe Plateau. South to Silicon Town." },
+  ],
+  exits: [
+    { x:14, y:0, to:"mainframe_plateau", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:39, to:"binary_fields", enterAt:{x:14, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: [] // wild pool owed: trainer lane / roster expansion, not invented here
+};
+
+export const MAINFRAME_PLATEAU: any = {
+  name: "Mainframe Plateau",
+  music: "dojo_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (x>=10&&x<=16&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x===13&&y===6) return TILE.DOOR;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"plateau_attendant", x:14, y:20, sprite:"🧑", name:"Plateau Attendant", facing:"down", dialog:["Victory Route is south. The Hall is here, when you have earned it."] },
+    // Elite Four + Champion Hex battles are owed by the trainer lane
+    // (NAME GAP for the four, ROSTER GAP teams). Their Region 1 lines
+    // live in region1-dialogue.json (Beat 8) and are not duplicated
+    // as map NPC dialog here.
+  ],
+  signs: [
+    { x:14, y:14, text:"MAINFRAME PLATEAU\\nElite Four + Champion Hex. South to Victory Route." },
+  ],
+  exits: [
+    { x:14, y:29, to:"victory_route", enterAt:{x:14, y:1}, dir:"down" },
+    // After the Hall of Records flag, the road home: Hall flag itself
+    // is owed in the story/engine pass.
+    { x:14, y:0, to:"sector0", enterAt:{x:14, y:1}, dir:"up" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DATA_ISLE_1: any = {
+  name: "Data Isle 1",
+  music: "water_theme",
+  weather: "clear",
+  width: 24, height: 24,
+  playerStart: { x:12, y:23 },
+  tiles: (() => {
+    return buildMap(24, 24, (x, y) => {
+      if (x===0||x===23||y===0||y===23) return TILE.WALL;
+      if (x===12) return TILE.PATH;
+      if (y===12) return TILE.PATH;
+      if (y>=20) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"isle1_ferry", x:12, y:20, sprite:"⚓", name:"Ferry Captain", facing:"down", dialog:["Harbor City is back down the dock. The next isle is north."] },
+  ],
+  signs: [
+    { x:12, y:12, text:"DATA ISLE 1\\nNorth to Data Isle 2. Dock to Harbor City." },
+  ],
+  exits: [
+    { x:12, y:0, to:"data_isle_2", enterAt:{x:12, y:22}, dir:"up" },
+    { x:12, y:23, to:"harbor_city", enterAt:{x:7, y:28}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DATA_ISLE_2: any = {
+  name: "Data Isle 2",
+  music: "water_theme",
+  weather: "clear",
+  width: 24, height: 24,
+  playerStart: { x:12, y:23 },
+  tiles: (() => {
+    return buildMap(24, 24, (x, y) => {
+      if (x===0||x===23||y===0||y===23) return TILE.WALL;
+      if (x===12) return TILE.PATH;
+      if (y===12) return TILE.PATH;
+      if (y>=20) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"isle2_ferry", x:12, y:20, sprite:"⚓", name:"Ferry Captain", facing:"down", dialog:["Harbor City is back down the dock. The next isle is north."] },
+  ],
+  signs: [
+    { x:12, y:12, text:"DATA ISLE 2\\nNorth to Data Isle 3. Dock to Harbor City." },
+  ],
+  exits: [
+    { x:12, y:0, to:"data_isle_3", enterAt:{x:12, y:22}, dir:"up" },
+    { x:12, y:23, to:"harbor_city", enterAt:{x:7, y:28}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DATA_ISLE_3: any = {
+  name: "Data Isle 3",
+  music: "water_theme",
+  weather: "clear",
+  width: 24, height: 24,
+  playerStart: { x:12, y:23 },
+  tiles: (() => {
+    return buildMap(24, 24, (x, y) => {
+      if (x===0||x===23||y===0||y===23) return TILE.WALL;
+      if (x===12) return TILE.PATH;
+      if (y===12) return TILE.PATH;
+      if (y>=20) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"isle3_ferry", x:12, y:20, sprite:"⚓", name:"Ferry Captain", facing:"down", dialog:["Harbor City is back down the dock. The next isle is north."] },
+  ],
+  signs: [
+    { x:12, y:12, text:"DATA ISLE 3\\nNorth to Data Isle 4. Dock to Harbor City." },
+  ],
+  exits: [
+    { x:12, y:0, to:"data_isle_4", enterAt:{x:12, y:22}, dir:"up" },
+    { x:12, y:23, to:"harbor_city", enterAt:{x:7, y:28}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DATA_ISLE_4: any = {
+  name: "Data Isle 4",
+  music: "water_theme",
+  weather: "clear",
+  width: 24, height: 24,
+  playerStart: { x:12, y:23 },
+  tiles: (() => {
+    return buildMap(24, 24, (x, y) => {
+      if (x===0||x===23||y===0||y===23) return TILE.WALL;
+      if (x===12) return TILE.PATH;
+      if (y===12) return TILE.PATH;
+      if (y>=20) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"isle4_ferry", x:12, y:20, sprite:"⚓", name:"Ferry Captain", facing:"down", dialog:["Harbor City is back down the dock. The next isle is north."] },
+  ],
+  signs: [
+    { x:12, y:12, text:"DATA ISLE 4\\nNorth to Data Isle 5. Dock to Harbor City." },
+  ],
+  exits: [
+    { x:12, y:0, to:"data_isle_5", enterAt:{x:12, y:22}, dir:"up" },
+    { x:12, y:23, to:"harbor_city", enterAt:{x:7, y:28}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DATA_ISLE_5: any = {
+  name: "Data Isle 5",
+  music: "water_theme",
+  weather: "clear",
+  width: 24, height: 24,
+  playerStart: { x:12, y:23 },
+  tiles: (() => {
+    return buildMap(24, 24, (x, y) => {
+      if (x===0||x===23||y===0||y===23) return TILE.WALL;
+      if (x===12) return TILE.PATH;
+      if (y===12) return TILE.PATH;
+      if (y>=20) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"isle5_ferry", x:12, y:20, sprite:"⚓", name:"Ferry Captain", facing:"down", dialog:["Harbor City is back down the dock. The next isle is north."] },
+  ],
+  signs: [
+    { x:12, y:12, text:"DATA ISLE 5\\nNorth to Data Isle 6. Dock to Harbor City." },
+  ],
+  exits: [
+    { x:12, y:0, to:"data_isle_6", enterAt:{x:12, y:22}, dir:"up" },
+    { x:12, y:23, to:"harbor_city", enterAt:{x:7, y:28}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DATA_ISLE_6: any = {
+  name: "Data Isle 6",
+  music: "water_theme",
+  weather: "clear",
+  width: 24, height: 24,
+  playerStart: { x:12, y:23 },
+  tiles: (() => {
+    return buildMap(24, 24, (x, y) => {
+      if (x===0||x===23||y===0||y===23) return TILE.WALL;
+      if (x===12) return TILE.PATH;
+      if (y===12) return TILE.PATH;
+      if (y>=20) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"isle6_ferry", x:12, y:20, sprite:"⚓", name:"Ferry Captain", facing:"down", dialog:["Harbor City is back down the dock. The next isle is north."] },
+  ],
+  signs: [
+    { x:12, y:12, text:"DATA ISLE 6\\nNorth to Data Isle 7. Dock to Harbor City." },
+  ],
+  exits: [
+    { x:12, y:0, to:"data_isle_7", enterAt:{x:12, y:22}, dir:"up" },
+    { x:12, y:23, to:"harbor_city", enterAt:{x:7, y:28}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DATA_ISLE_7: any = {
+  name: "Data Isle 7",
+  music: "water_theme",
+  weather: "clear",
+  width: 24, height: 24,
+  playerStart: { x:12, y:23 },
+  tiles: (() => {
+    return buildMap(24, 24, (x, y) => {
+      if (x===0||x===23||y===0||y===23) return TILE.WALL;
+      if (x===12) return TILE.PATH;
+      if (y===12) return TILE.PATH;
+      if (y>=20) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"isle7_aeon", x:12, y:12, sprite:"🔬", name:"Prof. Aeon", facing:"down", dialog:["There. A second signal. A second Mainframe shard. The ferry can reach it, now that you cleared the isles. Take the ticket. Region 2 is waiting."] },
+  ],
+  signs: [
+    { x:12, y:10, text:"DATA ISLE 7\\nNorth to Region 2 arrival. Dock to Harbor City." },
+  ],
+  exits: [
+    { x:12, y:0, to:"region2_arrival", enterAt:{x:14, y:29}, dir:"up" },
+    { x:12, y:23, to:"harbor_city", enterAt:{x:7, y:28}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const REGION2_ARRIVAL: any = {
+  name: "Region 2 Arrival — Dawnfield",
+  music: "fields_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    // Stub only (region1-wiring.md §3 #35): Region 2's own wiring spec
+    // builds its maps. No onward exit is added here on purpose.
+    { id:"arrival_ferry", x:14, y:20, sprite:"⚓", name:"Ferry Captain", facing:"down", dialog:["Dawnfield. End of the ferry, start of the chapter."] },
+  ],
+  signs: [
+    { x:14, y:14, text:"REGION 2 ARRIVAL\\nStub only. Region 2 maps are built by the Region 2 wiring pass." },
+  ],
+  exits: [
+    { x:14, y:29, to:"data_isle_7", enterAt:{x:12, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
 export const FULL_WORLD: Record<string, any> = {
   aeon_lab: AEON_LAB,
   sector0: SECTOR_0,
@@ -694,5 +1626,34 @@ export const FULL_WORLD: Record<string, any> = {
   mauveville_arena: MAUVEVILLE_ARENA,
   boot_bay: BOOT_BAY,
   luigi_mansion: LUIGI_MANSION,
-  dojo_2: DOJO_2
+  dojo_2: DOJO_2,
+  sector0_truck: SECTOR0_TRUCK,
+  sector0_house_1f: SECTOR0_HOUSE_1F,
+  sector0_house_2f: SECTOR0_HOUSE_2F,
+  sector0_rival_house: SECTOR0_RIVAL_HOUSE,
+  route_2: ROUTE_2,
+  stoneport_city: STONEPORT_CITY,
+  dojo_3: DOJO_3,
+  route_3: ROUTE_3,
+  signal_tunnel: SIGNAL_TUNNEL,
+  pale_town: PALE_TOWN,
+  market_city: MARKET_CITY,
+  dojo_4: DOJO_4,
+  central_city: CENTRAL_CITY,
+  dojo_5: DOJO_5,
+  harbor_city: HARBOR_CITY,
+  dojo_6: DOJO_6,
+  ember_island: EMBER_ISLAND,
+  dojo_7: DOJO_7,
+  dojo_8: DOJO_8,
+  victory_route: VICTORY_ROUTE,
+  mainframe_plateau: MAINFRAME_PLATEAU,
+  data_isle_1: DATA_ISLE_1,
+  data_isle_2: DATA_ISLE_2,
+  data_isle_3: DATA_ISLE_3,
+  data_isle_4: DATA_ISLE_4,
+  data_isle_5: DATA_ISLE_5,
+  data_isle_6: DATA_ISLE_6,
+  data_isle_7: DATA_ISLE_7,
+  region2_arrival: REGION2_ARRIVAL
 };

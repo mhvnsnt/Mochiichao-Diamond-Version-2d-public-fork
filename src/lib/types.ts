@@ -1,7 +1,7 @@
 export type ElementType = 
   | "NORMAL" | "FIRE" | "WATER" | "GRASS" | "ELECTRIC" | "ICE" 
   | "FIGHTING" | "POISON" | "GROUND" | "FLYING" | "PSYCHIC" 
-  | "BUG" | "ROCK" | "GHOST" | "DRAGON" | "DARK" | "STEEL" | "FAIRY";
+  | "BUG" | "ROCK" | "GHOST" | "DRAGON" | "DARK" | "STEEL" | "FAIRY" | "MYTHIC";
 
 export type MoveCategory = "Physical" | "Special" | "Status";
 

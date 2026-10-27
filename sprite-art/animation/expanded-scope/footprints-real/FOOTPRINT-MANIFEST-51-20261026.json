@@ -1,0 +1,864 @@
+{
+ "aerobeak": {
+  "status": "FOOTPRINT",
+  "foot_type": "talon",
+  "toe_count": null,
+  "toe_note": "clawed talon shape visible; exact toe count not resolvable at 64px",
+  "source_view": "walk_down_0",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/aerobeak/aerobeak_walk_down_0.png",
+  "confidence": "medium",
+  "foot_band_rows": 12,
+  "foot_component_px": 178,
+  "foot_native_size": [
+   21,
+   12
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "aquariios": {
+  "status": "FOOTPRINT",
+  "foot_type": "fin contact",
+  "toe_count": null,
+  "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/aquariios/cells/aquariios_cell_00a.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 33,
+  "foot_native_size": [
+   9,
+   7
+  ],
+  "wide_bar_flag": false,
+  "flag": null,
+  "derived_from_contact": true
+ },
+ "ashemit": {
+  "status": "FOOTPRINT",
+  "foot_type": "paw",
+  "toe_count": null,
+  "toe_note": "Bottom-centre crossed paw isolated by colour (grey paws vs orange body); toe detail not resolvable.",
+  "source_view": "battle_front (grey-paw isolation)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/ashemit/ashemit_walk_left_0.png",
+  "confidence": "medium",
+  "foot_band_rows": 12,
+  "foot_component_px": 87,
+  "foot_native_size": [
+   13,
+   9
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "astroleviathan": {
+  "status": "FOOTPRINT",
+  "foot_type": "tail-fluke print",
+  "toe_count": null,
+  "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/astroleviathan/cells/astroleviathan_cell_01.png",
+  "confidence": "medium-low",
+  "foot_band_rows": 16,
+  "foot_component_px": 219,
+  "foot_native_size": [
+   28,
+   15
+  ],
+  "wide_bar_flag": true,
+  "flag": null,
+  "derived_from_contact": true
+ },
+ "chromejaww": {
+  "status": "FOOTPRINT",
+  "foot_type": "small foot",
+  "toe_count": null,
+  "toe_note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression.",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/chromejaww/cells/chromejaww_cell_01.png",
+  "confidence": "medium-low",
+  "foot_band_rows": 14,
+  "foot_component_px": 337,
+  "foot_native_size": [
+   32,
+   13
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "cocoonode": {
+  "status": "FOOTPRINT",
+  "foot_type": "cocoon base",
+  "toe_count": null,
+  "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/cocoonode/cells/cocoonode_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 63,
+  "foot_native_size": [
+   15,
+   7
+  ],
+  "wide_bar_flag": false,
+  "flag": null,
+  "derived_from_contact": true
+ },
+ "cragarm": {
+  "status": "FOOTPRINT",
+  "foot_type": "rock foot",
+  "toe_count": null,
+  "toe_note": "rocky foot with toe bumps; exact count not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/cragarm/cells/cragarm_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 67,
+  "foot_native_size": [
+   14,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "dorowani": {
+  "status": "FOOTPRINT",
+  "foot_type": "foot",
+  "toe_count": null,
+  "toe_note": "feet visible on legs; toe detail not resolvable",
+  "source_view": "walk_left_0",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/dorowani/dorowani_walk_left_0.png",
+  "confidence": "medium",
+  "foot_band_rows": 12,
+  "foot_component_px": 98,
+  "foot_native_size": [
+   16,
+   12
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "dreadtoise": {
+  "status": "FOOTPRINT",
+  "foot_type": "foot",
+  "toe_count": null,
+  "toe_note": "animal feet on legs; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/dreadtoise/cells/dreadtoise_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 76,
+  "foot_native_size": [
+   17,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "duneclaw": {
+  "status": "FOOTPRINT",
+  "foot_type": "clawed foot",
+  "toe_count": null,
+  "toe_note": "claws visible; exact toe count not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/duneclaw/cells/duneclaw_cell_02.png",
+  "confidence": "medium",
+  "foot_band_rows": 6,
+  "foot_component_px": 47,
+  "foot_native_size": [
+   20,
+   4
+  ],
+  "wide_bar_flag": false
+ },
+ "duskfiend": {
+  "status": "FOOTPRINT",
+  "foot_type": "wisp hem",
+  "toe_count": null,
+  "toe_note": "Lowest-contact impression, not a foot; see flag.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/duskfiend/cells/duskfiend_cell_00.png",
+  "confidence": "low-medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 260,
+  "foot_native_size": [
+   44,
+   7
+  ],
+  "wide_bar_flag": true,
+  "flag": "LOW-CONFIDENCE: spectral wisps, no solid feet",
+  "derived_from_contact": true
+ },
+ "finblade": {
+  "status": "FOOTPRINT",
+  "foot_type": "fin contact",
+  "toe_count": null,
+  "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/finblade/cells/finblade_cell_01.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 109,
+  "foot_native_size": [
+   20,
+   7
+  ],
+  "wide_bar_flag": false,
+  "flag": null,
+  "derived_from_contact": true
+ },
+ "floatcalf": {
+  "status": "FOOTPRINT",
+  "foot_type": "dome base",
+  "toe_count": null,
+  "toe_note": "Lowest-contact impression, not a foot; see flag.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/floatcalf/cells/floatcalf_cell_00.png",
+  "confidence": "low-medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 164,
+  "foot_native_size": [
+   32,
+   7
+  ],
+  "wide_bar_flag": true,
+  "flag": "LOW-CONFIDENCE: hoverer, dome base impression only",
+  "derived_from_contact": true
+ },
+ "gabu": {
+  "status": "FOOTPRINT",
+  "foot_type": "small foot",
+  "toe_count": null,
+  "toe_note": "small feet visible; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/gabu/cells/gabu_cell_02.png",
+  "confidence": "medium",
+  "foot_band_rows": 6,
+  "foot_component_px": 34,
+  "foot_native_size": [
+   9,
+   5
+  ],
+  "wide_bar_flag": false
+ },
+ "gearkid": {
+  "status": "FOOTPRINT",
+  "foot_type": "mechanical foot",
+  "toe_count": null,
+  "toe_note": "mechanical foot shape; no toes",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/gearkid/cells/gearkid_cell_02.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 47,
+  "foot_native_size": [
+   9,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "gorokappa": {
+  "status": "FOOTPRINT",
+  "foot_type": "mechanical foot",
+  "toe_count": null,
+  "toe_note": "mechanical foot shape; no toes",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/gorokappa/cells/gorokappa_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 52,
+  "foot_native_size": [
+   10,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "inklet": {
+  "status": "FOOTPRINT",
+  "foot_type": "tentacle-tip spread",
+  "toe_count": null,
+  "toe_note": "Lowest-contact impression, not a foot; see flag.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/inklet/cells/inklet_cell_03.png",
+  "confidence": "low-medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 247,
+  "foot_native_size": [
+   41,
+   7
+  ],
+  "wide_bar_flag": true,
+  "flag": "LOW-CONFIDENCE: tentacle tips, no feet",
+  "derived_from_contact": true
+ },
+ "kickmaster": {
+  "status": "FOOTPRINT",
+  "foot_type": "humanoid foot",
+  "toe_count": null,
+  "toe_note": "humanoid foot; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/kickmaster/cells/kickmaster_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 53,
+  "foot_native_size": [
+   10,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "kittember": {
+  "status": "FOOTPRINT",
+  "foot_type": "round base impression",
+  "toe_count": null,
+  "toe_note": "Feet not distinctly separated from the round body at 64px; print is the body's ground-contact dome, not an invented paw.",
+  "source_view": "battle_front (ground-contact dome)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/kittember/kittember_walk_down_0.png",
+  "confidence": "low",
+  "foot_band_rows": 18,
+  "foot_component_px": 618,
+  "foot_native_size": [
+   44,
+   17
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "krakenox": {
+  "status": "FOOTPRINT",
+  "foot_type": "tentacle mass base",
+  "toe_count": null,
+  "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/krakenox/cells/krakenox_cell_00a.png",
+  "confidence": "medium-low",
+  "foot_band_rows": 8,
+  "foot_component_px": 188,
+  "foot_native_size": [
+   31,
+   7
+  ],
+  "wide_bar_flag": true,
+  "flag": null,
+  "derived_from_contact": true
+ },
+ "manticlaw": {
+  "status": "FOOTPRINT",
+  "foot_type": "large clawed paw",
+  "toe_count": null,
+  "toe_note": "large paw with claws, side view; front view ground mass merged",
+  "source_view": "walk_left_0",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/manticlaw/manticlaw_walk_left_0.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 71,
+  "foot_native_size": [
+   14,
+   8
+  ],
+  "wide_bar_flag": false
+ },
+ "mechapion": {
+  "status": "FOOTPRINT",
+  "foot_type": "mechanical foot",
+  "toe_count": null,
+  "toe_note": "robot foot shape; no toes",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/mechapion/cells/mechapion_cell_01.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 87,
+  "foot_native_size": [
+   14,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "megalochrome": {
+  "status": "FOOTPRINT",
+  "foot_type": "orbit-ring arc",
+  "toe_count": null,
+  "toe_note": "Lowest-contact impression, not a foot; see flag.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/megalochrome/cells/megalochrome_cell_02.png",
+  "confidence": "low",
+  "foot_band_rows": 16,
+  "foot_component_px": 567,
+  "foot_native_size": [
+   60,
+   15
+  ],
+  "wide_bar_flag": true,
+  "flag": "LOW-CONFIDENCE: levitator, no ground contact by canon; print = orbit-ring impression",
+  "derived_from_contact": true
+ },
+ "mochii": {
+  "status": "FOOTPRINT",
+  "foot_type": "blob base",
+  "toe_count": null,
+  "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/mochii/cells/mochii_cell_00.png",
+  "confidence": "medium-low",
+  "foot_band_rows": 8,
+  "foot_component_px": 238,
+  "foot_native_size": [
+   46,
+   7
+  ],
+  "wide_bar_flag": true,
+  "flag": null,
+  "derived_from_contact": true
+ },
+ "mothrix": {
+  "status": "FOOTPRINT",
+  "foot_type": "insect legs",
+  "toe_count": null,
+  "toe_note": "thin insect legs only; print is a small leg-cluster mark",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/mothrix/cells/mothrix_cell_00.png",
+  "confidence": "low",
+  "foot_band_rows": 8,
+  "foot_component_px": 16,
+  "foot_native_size": [
+   8,
+   3
+  ],
+  "wide_bar_flag": false
+ },
+ "mythar": {
+  "status": "FOOTPRINT",
+  "foot_type": "foot",
+  "toe_count": null,
+  "toe_note": "feet visible; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/mythar/cells/mythar_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 40,
+  "foot_native_size": [
+   7,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "oblivirex": {
+  "status": "FOOTPRINT",
+  "foot_type": "clawed paw",
+  "toe_count": null,
+  "toe_note": "claws visible; exact toe count not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/oblivirex/cells/oblivirex_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 32,
+  "foot_native_size": [
+   14,
+   3
+  ],
+  "wide_bar_flag": false
+ },
+ "pebblefist": {
+  "status": "FOOTPRINT",
+  "foot_type": "short rock foot",
+  "toe_count": null,
+  "toe_note": "short feet visible in walk side view; front view unclear",
+  "source_view": "walk_left_0",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/pebblefist/pebblefist_walk_left_0.png",
+  "confidence": "low-medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 71,
+  "foot_native_size": [
+   15,
+   8
+  ],
+  "wide_bar_flag": false
+ },
+ "pixilite": {
+  "status": "FOOTPRINT",
+  "foot_type": "small foot",
+  "toe_count": null,
+  "toe_note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression.",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/pixilite/cells/pixilite_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 14,
+  "foot_component_px": 302,
+  "foot_native_size": [
+   29,
+   13
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "punchkid": {
+  "status": "FOOTPRINT",
+  "foot_type": "humanoid foot",
+  "toe_count": null,
+  "toe_note": "humanoid foot; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/punchkid/cells/punchkid_cell_02.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 75,
+  "foot_native_size": [
+   13,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "pupbble": {
+  "status": "FOOTPRINT",
+  "foot_type": "foot",
+  "toe_count": null,
+  "toe_note": "feet visible; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/pupbble/cells/pupbble_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 6,
+  "foot_component_px": 53,
+  "foot_native_size": [
+   11,
+   6
+  ],
+  "wide_bar_flag": false
+ },
+ "pyromonk": {
+  "status": "FOOTPRINT",
+  "foot_type": "humanoid foot",
+  "toe_count": null,
+  "toe_note": "humanoid foot; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/pyromonk/cells/pyromonk_cell_04.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 60,
+  "foot_native_size": [
+   13,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "pyropaw": {
+  "status": "FOOTPRINT",
+  "foot_type": "paw",
+  "toe_count": null,
+  "toe_note": "paws visible; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/pyropaw/cells/pyropaw_cell_01.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 43,
+  "foot_native_size": [
+   7,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "quakehound": {
+  "status": "FOOTPRINT",
+  "foot_type": "paw",
+  "toe_count": null,
+  "toe_note": "paw, side view; front view ground mass merged",
+  "source_view": "walk_left_0",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/quakehound/quakehound_walk_left_0.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 69,
+  "foot_native_size": [
+   15,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "razorgater": {
+  "status": "FOOTPRINT",
+  "foot_type": "clawed reptile foot",
+  "toe_count": null,
+  "toe_note": "claws visible; exact toe count not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/razorgater/cells/razorgater_cell_04.png",
+  "confidence": "medium",
+  "foot_band_rows": 6,
+  "foot_component_px": 76,
+  "foot_native_size": [
+   21,
+   5
+  ],
+  "wide_bar_flag": false
+ },
+ "reaperdile": {
+  "status": "FOOTPRINT",
+  "foot_type": "clawed foot",
+  "toe_count": null,
+  "toe_note": "claws visible; exact toe count not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression.",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/reaperdile/cells/reaperdile_cell_01.png",
+  "confidence": "medium",
+  "foot_band_rows": 14,
+  "foot_component_px": 367,
+  "foot_native_size": [
+   45,
+   13
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "shellguard": {
+  "status": "FOOTPRINT",
+  "foot_type": "foot",
+  "toe_count": null,
+  "toe_note": "feet visible; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/shellguard/cells/shellguard_cell_01.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 67,
+  "foot_native_size": [
+   13,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "sproutle": {
+  "status": "FOOTPRINT",
+  "foot_type": "small foot",
+  "toe_count": null,
+  "toe_note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression.",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/sproutle/cells/sproutle_cell_00.png",
+  "confidence": "medium-low",
+  "foot_band_rows": 14,
+  "foot_component_px": 345,
+  "foot_native_size": [
+   33,
+   13
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "squirmite": {
+  "status": "FOOTPRINT",
+  "foot_type": "grub base",
+  "toe_count": null,
+  "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/squirmite/cells/squirmite_cell_01.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 131,
+  "foot_native_size": [
+   23,
+   7
+  ],
+  "wide_bar_flag": true,
+  "flag": null,
+  "derived_from_contact": true
+ },
+ "stormtalon": {
+  "status": "FOOTPRINT",
+  "foot_type": "talon",
+  "toe_count": null,
+  "toe_note": "talons visible in walk view; front view unclear",
+  "source_view": "walk_down_0",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/stormtalon/stormtalon_walk_down_0.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 44,
+  "foot_native_size": [
+   10,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "strikechamp": {
+  "status": "FOOTPRINT",
+  "foot_type": "humanoid foot",
+  "toe_count": null,
+  "toe_note": "humanoid foot; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/strikechamp/cells/strikechamp_cell_04.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 67,
+  "foot_native_size": [
+   11,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "strikechamp_unsuited": {
+  "status": "FOOTPRINT",
+  "foot_type": "humanoid foot",
+  "toe_count": null,
+  "toe_note": "humanoid foot; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/strikechamp_unsuited/cells/strikechamp_unsuited_cell_05.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 79,
+  "foot_native_size": [
+   13,
+   8
+  ],
+  "wide_bar_flag": false
+ },
+ "strikechamp_unsuited_full": {
+  "status": "FOOTPRINT",
+  "foot_type": "humanoid foot",
+  "toe_count": null,
+  "toe_note": "humanoid foot; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/strikechamp_unsuited_full/cells/strikechamp_unsuited_full_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 42,
+  "foot_native_size": [
+   9,
+   7
+  ],
+  "wide_bar_flag": false
+ },
+ "terradog": {
+  "status": "FOOTPRINT",
+  "foot_type": "paw",
+  "toe_count": null,
+  "toe_note": "paws visible; toe detail not resolvable",
+  "source_view": "walk_left_0",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/terradog/terradog_walk_left_0.png",
+  "confidence": "medium",
+  "foot_band_rows": 10,
+  "foot_component_px": 122,
+  "foot_native_size": [
+   20,
+   9
+  ],
+  "wide_bar_flag": false,
+  "split_note": null
+ },
+ "terrapod": {
+  "status": "FOOTPRINT",
+  "foot_type": "stumpy foot",
+  "toe_count": null,
+  "toe_note": "stumpy foot, side view; front view ground mass merged",
+  "source_view": "walk_left_0",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/walk-frames/terrapod/terrapod_walk_left_0.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 98,
+  "foot_native_size": [
+   19,
+   8
+  ],
+  "wide_bar_flag": false
+ },
+ "tiidebiite": {
+  "status": "FOOTPRINT",
+  "foot_type": "foot",
+  "toe_count": null,
+  "toe_note": "single foot clearly visible; other foot obscured",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/tiidebiite/cells/tiidebiite_cell_00.png",
+  "confidence": "medium-low",
+  "foot_band_rows": 8,
+  "foot_component_px": 34,
+  "foot_native_size": [
+   9,
+   6
+  ],
+  "wide_bar_flag": false
+ },
+ "toxitacle": {
+  "status": "FOOTPRINT",
+  "foot_type": "tentacle-tip print",
+  "toe_count": null,
+  "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/toxitacle/cells/toxitacle_cell_05.png",
+  "confidence": "medium",
+  "foot_band_rows": 8,
+  "foot_component_px": 18,
+  "foot_native_size": [
+   4,
+   7
+  ],
+  "wide_bar_flag": false,
+  "flag": null,
+  "derived_from_contact": true
+ },
+ "tyrage": {
+  "status": "FOOTPRINT",
+  "foot_type": "clawed foot",
+  "toe_count": null,
+  "toe_note": "claws visible; exact toe count not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/tyrage/cells/tyrage_cell_03.png",
+  "confidence": "medium",
+  "foot_band_rows": 6,
+  "foot_component_px": 22,
+  "foot_native_size": [
+   16,
+   4
+  ],
+  "wide_bar_flag": false
+ },
+ "wispkin": {
+  "status": "FOOTPRINT",
+  "foot_type": "smoke-wisp print",
+  "toe_count": null,
+  "toe_note": "Lowest-contact impression, not a foot; see flag.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/wispkin/cells/wispkin_cell_02.png",
+  "confidence": "low",
+  "foot_band_rows": 16,
+  "foot_component_px": 61,
+  "foot_native_size": [
+   15,
+   11
+  ],
+  "wide_bar_flag": false,
+  "flag": "LOW-CONFIDENCE: floating, no ground contact by canon; print = smoke-wisp impression",
+  "derived_from_contact": true
+ },
+ "yogiferno": {
+  "status": "FOOTPRINT",
+  "foot_type": "foot",
+  "toe_count": null,
+  "toe_note": "feet visible; toe detail not resolvable",
+  "source_view": "battle_front",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/yogiferno/cells/yogiferno_cell_00.png",
+  "confidence": "medium",
+  "foot_band_rows": 6,
+  "foot_component_px": 59,
+  "foot_native_size": [
+   16,
+   5
+  ],
+  "wide_bar_flag": false
+ },
+ "zephling": {
+  "status": "FOOTPRINT",
+  "foot_type": "cloud base",
+  "toe_count": null,
+  "toe_note": "Lowest-contact impression, not a foot; see flag.",
+  "source_view": "battle_front (lowest-contact band)",
+  "source_file": "/home/hatch/workspace/mochiichao-work/sprite-art/game-ready/zephling/cells/zephling_cell_00.png",
+  "confidence": "low-medium",
+  "foot_band_rows": 16,
+  "foot_component_px": 91,
+  "foot_native_size": [
+   26,
+   5
+  ],
+  "wide_bar_flag": true,
+  "flag": "LOW-CONFIDENCE: hoverer, cloud base impression only",
+  "derived_from_contact": true
+ },
+ "_meta": {
+  "date": "2026-10-26",
+  "total": 51,
+  "footprints": 51,
+  "no_footprint": 0,
+  "note": "SILHOUETTES ARE A SEPARATE SYSTEM: lane100/silhouettes/ (PR #175) is undiscovered-Dex art only and is never footprints. This manifest covers footprints only. The 37 original footprints are carried verbatim from FOOTPRINT-MANIFEST.json (untouched); the 14 new prints were ordered by Mars 2026-10-26 ~18:41 CDT and are derived from lowest body contact where no feet exist \u2014 no feet anatomy was invented.",
+  "original_manifest_untouched": true,
+  "original_contact_sheet_untouched": true
+ }
+}

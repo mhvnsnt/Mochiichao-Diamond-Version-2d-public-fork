@@ -85,6 +85,7 @@ export default function TitleScene({
   caption,
   startPrompt = false,
   exitKind = 'none',
+  hideBackground = false,
 }: {
   biome?: TitleBiomeId;
   figureUrl?: string;
@@ -118,6 +119,17 @@ export default function TitleScene({
    *  (startPrompt=true only) sets the internal exit to 'normal'
    *  90 frames after a press, so a press IS input-triggered there. */
   exitKind?: PlatinumExitKind;
+  /** Interchangeable start screens only (TitleStartScreen): when
+   *  true, skip the painted bgSprite layer AND the Pixi sky/ground/
+   *  tuft/shimmer fallback, so a video layer behind this canvas
+   *  shows through the transparent canvas. Drift, clouds, weather,
+   *  figure, foreground frame, card effects, and action bursts
+   *  all keep running. Default false: every existing caller renders
+   *  byte-identically in behaviour, and the locked default never
+   *  passes this prop. The fallback rectangles MUST be skipped too:
+   *  skipping only bgSprite would leave the sky/ground rectangles
+   *  covering the video. */
+  hideBackground?: boolean;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [startVisible, setStartVisible] = useState(true);
@@ -170,11 +182,41 @@ export default function TitleScene({
     const host = hostRef.current;
     if (!host) return;
     let cancelled = false;
+    // Pixi 8.22 destroy-before-init race (trap-fix round 3,
+    // 2026-10-27, proven by a real-browser console capture):
+    // Application.destroy() runs the ResizePlugin's static
+    // destroy, which calls this._cancelResize() — but that
+    // static is only assigned when the plugin is instantiated
+    // during app.init(). If the effect cleanup destroys the
+    // app while init() is still pending (the preset video
+    // loads and flips hideBackground, re-running this effect,
+    // before the first cold WebGL/renderer init finishes),
+    // destroy throws "this._cancelResize is not a function"
+    // inside React's commit phase, and the preset error
+    // boundary swaps in the fallback. Later mounts win the
+    // race (warm init), which is why live playtest showed the
+    // FIRST preset tested falling back and the other nine
+    // rendering. So: never destroy before init resolves.
+    // If cleanup runs first, the .then callback below destroys
+    // once init has completed; if init rejects, there is no
+    // renderer to tear down and the .catch logs it.
+    let initDone = false;
+    let destroyed = false;
+    const safeDestroy = () => {
+      if (destroyed) return;
+      destroyed = true;
+      try {
+        app.destroy(true);
+      } catch {
+        /* init never completed: nothing to tear down */
+      }
+    };
     const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const b = TITLE_BIOMES[biome];
     const app = new Application();
     app.init({ resizeTo: host, backgroundAlpha: 0, antialias: false, resolution: Math.min(2, window.devicePixelRatio || 1) }).then(async () => {
-      if (cancelled) { app.destroy(true); return; }
+      initDone = true;
+      if (cancelled) { safeDestroy(); return; }
       host.appendChild(app.canvas);
       const W = app.screen.width;
       const H = app.screen.height;
@@ -198,7 +240,7 @@ export default function TitleScene({
       let bgSprite: Sprite | null = null;
       let bgBaseScale = 1;
       let rippleSprite: Sprite | null = null;
-      if (b.backgroundImage) {
+      if (b.backgroundImage && !hideBackground) {
         try {
           const bgTex: Texture = await Assets.load(b.backgroundImage);
           const bg = new Sprite(bgTex);
@@ -270,7 +312,7 @@ export default function TitleScene({
       // Layer 1+2: sky + ground, Pixi-drawn, biome palette only.
       // Skipped when a painting is showing; kept as the fallback
       // for biomes whose batch has not landed yet.
-      if (!painted) {
+      if (!painted && !hideBackground) {
         const sky = new Graphics();
         sky.rect(0, 0, W, groundY).fill(b.sky);
         sky.rect(0, 0, W, Math.floor(groundY / 2)).fill(b.sky2);
@@ -280,14 +322,14 @@ export default function TitleScene({
         ground.rect(0, groundY, W, 2).fill(b.groundLine);
         scene.addChild(ground);
       }
-      if (b.tufts && !painted) {
+      if (b.tufts && !painted && !hideBackground) {
         const tufts = new Graphics();
         for (let x = 8; x < W; x += 34) {
           tufts.moveTo(x, groundY + 22).lineTo(x + 3, groundY + 8).lineTo(x + 6, groundY + 22).fill(b.groundLine);
         }
         scene.addChild(tufts);
       }
-      if (b.shimmer && !painted) {
+      if (b.shimmer && !painted && !hideBackground) {
         const shim = new Graphics();
         for (let x = 0; x < W; x += 44) shim.rect(x, groundY + 14, 22, 2).fill(0xffffff);
         shim.alpha = 0.5;
@@ -874,9 +916,18 @@ export default function TitleScene({
           if (w.g.y > H) { w.g.y = -4; w.g.x = Math.random() * W; }
         }
       });
+    }).catch((err) => {
+      // Trap-fix round 2: a failed Pixi init (no WebGL, missing
+      // texture) must never surface as an unhandled rejection
+      // next to the title. The canvas simply stays absent and the
+      // DOM layers above it (painted background, locked overlay,
+      // RESET) still render — a preset title degrades, it never
+      // goes black because of the scene layer.
+      // eslint-disable-next-line no-console
+      console.error("[TitleScene] Pixi init failed, scene skipped:", err);
     });
-    return () => { cancelled = true; app.destroy(true); };
-  }, [biome, figureUrl, figureCycleUrls, figureCycleMs, figureName, fireTrail]);
+    return () => { cancelled = true; if (initDone) safeDestroy(); };
+  }, [biome, figureUrl, figureCycleUrls, figureCycleMs, figureName, fireTrail, hideBackground]);
 
   return (
     <div className="w-full">

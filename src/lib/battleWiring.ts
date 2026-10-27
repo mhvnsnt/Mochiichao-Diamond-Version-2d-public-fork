@@ -73,6 +73,12 @@ export function buildLegacyMoveTable(): MoveTable {
   for (const [id, m] of Object.entries(MOVES_DB)) {
     moves[id] = legacyMoveToResolverMove(id, m);
   }
+  // PHASE 3 targets (combatPhase3.ts targetTable): EARTH_TREMOR's game
+  // text is "all adjacent foes", so its resolver target is allFoes.
+  // The resolver collapses allFoes to the foe in a 1v1, so singles
+  // behaviour is unchanged today and doubles-ready tomorrow. Every
+  // other game move targets the single foe.
+  if (moves['EARTH_TREMOR']) moves['EARTH_TREMOR'].target = 'allFoes';
   return { moves };
 }
 
