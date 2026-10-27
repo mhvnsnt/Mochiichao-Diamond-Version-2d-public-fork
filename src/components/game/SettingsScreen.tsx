@@ -21,6 +21,8 @@ import {
   titleStartScreenLabel, type TitleStartScreenId,
 } from '../../lib/titleStartScreens';
 import MusicMixerScreen from './MusicMixerScreen';
+import SoundCreatorScreen from './SoundCreatorScreen';
+import MusicCreatorScreen from './MusicCreatorScreen';
 import {
   MenuCustomSettings, MenuAnimationStyle, DEFAULT_MENU_CUSTOM, loadMenuCustom, persistMenuCustom,
   applyMenuCustom, customToLayoutRecord, resolveDayNightPalette,
@@ -70,7 +72,7 @@ import {
  * Default restores DEFAULT_SETTINGS + LOCKED_PRESET.
  */
 
-type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'MENU_CUSTOM' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR' | 'MUSIC_MIXER';
+type Screen = 'SETTINGS' | 'MENU_CREATOR' | 'MENU_CUSTOM' | 'UI_CREATOR' | 'LAYOUT_EDITOR' | 'CURSOR_CREATOR' | 'PANEL_FRAME_EDITOR' | 'FONT_SETTINGS' | 'INTRO_VIDEO_CREATOR' | 'START_SCREEN_CREATOR' | 'MUSIC_MIXER' | 'SOUND_CREATOR' | 'MUSIC_CREATOR';
 
 interface Row {
   label: string;
@@ -304,6 +306,8 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
     { label: 'TITLE SCREEN', value: titleStartScreenLabel(titleChoice), onLeft: () => cycleTitleChoice(-1), onRight: () => cycleTitleChoice(1), note: 'Interchangeable start screen for the TITLE phase only. Locked Default = the locked phi title, unchanged. A preset shows that preset\'s video + TitleScene + the locked logo/subtitle/press overlay, and presses the same way (M3 chirp, white fade 350ms, MAIN_MENU). Saved immediately on cycling. RESET TO LOCKED DEFAULT clears it.' },
     { label: 'RESET TITLE SCREEN', value: titleChoice ? 'RESET ►' : 'LOCKED', onLeft: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, onRight: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, onSelect: () => { setSelectedTitleStartScreenId(null); setTitleChoice(null); }, note: 'Clears ONLY the TITLE SCREEN pick, back to Locked Default. Other settings untouched. (Full RESET TO LOCKED DEFAULT lives in Menu Creator.)' },
     { label: 'MUSIC MIXER', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_MIXER'), onRight: () => setScreen('MUSIC_MIXER'), onSelect: () => setScreen('MUSIC_MIXER'), note: 'Full dedicated screen: FL-Studio-style mixer for the title v3 + vocal stems (default project loads on open, DELETE removes a stem, NEW clears, LOAD DEFAULT restores). Draggable mixer window (Mars 2026-10-26, explicitly asked). Game music pauses while mixing.' },
+    { label: 'SOUND CREATOR', value: 'OPEN ►', onLeft: () => setScreen('SOUND_CREATOR'), onRight: () => setScreen('SOUND_CREATOR'), onSelect: () => setScreen('SOUND_CREATOR'), note: 'Full dedicated screen under DigiCore Audio: make chirps/jingles, set boot / press-start / menu select / start-button sounds, mic Chatter (Chatot, DPPT), Ball Seals for send-out.' },
+    { label: 'MUSIC CREATOR', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_CREATOR'), onRight: () => setScreen('MUSIC_CREATOR'), onSelect: () => setScreen('MUSIC_CREATOR'), note: 'Full dedicated screen under DigiCore Audio: make soundtracks and background music, step sequencer, 8-bit synth + piano/guitar/drums/organ/bass + vocal takes.' },
     { label: 'CANCEL', value: 'SAVE + EXIT', onLeft: saveAndBack, onRight: saveAndBack, onSelect: saveAndBack, note: 'Saves all rows to the save + localStorage and returns to the main menu.' },
   ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices, titleChoice]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -533,7 +537,7 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   useEffect(() => { setCursor(0); }, [screen, menuPage]);
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR' || screen === 'MUSIC_MIXER') return; // creator screens own their keys (any-key-skips + B: BACK); the mixer owns its own keys (Esc / B: BACK)
+      if (screen === 'INTRO_VIDEO_CREATOR' || screen === 'START_SCREEN_CREATOR' || screen === 'MUSIC_MIXER' || screen === 'SOUND_CREATOR' || screen === 'MUSIC_CREATOR') return; // creator screens own their keys (any-key-skips + B: BACK); the mixer owns its own keys (Esc / B: BACK)
       if (e.key === 'ArrowUp') { e.preventDefault(); setCursor(c => (c - 1 + rows.length) % rows.length); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); setCursor(c => (c + 1) % rows.length); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); rows[safeCursor]?.onLeft(); }
@@ -606,6 +610,12 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   // 2026-10-26). B: BACK inside it returns to SETTINGS via onBack.
   if (screen === 'MUSIC_MIXER') {
     return <MusicMixerScreen onBack={() => setScreen('SETTINGS')} />;
+  }
+  if (screen === 'SOUND_CREATOR') {
+    return <SoundCreatorScreen onBack={() => setScreen('SETTINGS')} />;
+  }
+  if (screen === 'MUSIC_CREATOR') {
+    return <MusicCreatorScreen onBack={() => setScreen('SETTINGS')} />;
   }
 
   return (
