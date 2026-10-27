@@ -1,0 +1,51 @@
+{
+ "legs": {
+  "LEFT": {
+   "bbox": [
+    149,
+    178,
+    280,
+    349
+   ],
+   "shape_px": 1491,
+   "masked_fill_px": 1232,
+   "hole_px": 12,
+   "changed_px_in_shape": 1220,
+   "lum_mean": 167.7,
+   "lum_std": 66.6,
+   "sat_mean": 0.058,
+   "sampled_leg_median_rgb": [
+    204.0,
+    193.0,
+    191.0
+   ]
+  },
+  "RIGHT": {
+   "bbox": [
+    247,
+    278,
+    290,
+    349
+   ],
+   "shape_px": 1334,
+   "masked_fill_px": 1081,
+   "hole_px": 15,
+   "changed_px_in_shape": 1066,
+   "lum_mean": 177.0,
+   "lum_std": 59.3,
+   "sat_mean": 0.058,
+   "sampled_leg_median_rgb": [
+    202.0,
+    201.0,
+    203.0
+   ]
+  }
+ },
+ "guardrails": {
+  "changed_outside_leg_shapes": 27,
+  "removed_set_changed": 0,
+  "total_changed_vs_v3": 2313,
+  "v6_opaque_total": 70554,
+  "v3_opaque_total": 68241
+ }
+}
