@@ -22,12 +22,12 @@ describe('dialogue attribution region 1', () => {
     expect(new Set(REGION1_DIALOGUE_ATTRIBUTION.map((a) => a.speaker)).size).toBe(13);
   });
 
-  it('counts: exact 8, sign 1, divergent 2, missing 2', () => {
+  it('counts: exact 9, sign 1, divergent 2, missing 1', () => {
     const count = (s: string) => REGION1_DIALOGUE_ATTRIBUTION.filter((a) => a.status === s).length;
-    expect(count('exact')).toBe(8);
+    expect(count('exact')).toBe(9);
     expect(count('sign')).toBe(1);
     expect(count('divergent')).toBe(2);
-    expect(count('missing')).toBe(2);
+    expect(count('missing')).toBe(1);
   });
 
   it('exact entries really are byte-identical lines in that NPC dialog', () => {
