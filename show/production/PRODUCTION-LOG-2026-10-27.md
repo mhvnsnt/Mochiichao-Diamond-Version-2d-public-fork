@@ -388,3 +388,80 @@ at show/production/CANON-SIGNATURE-ATTACKS.md. Stale display-
 name references in game/show docs were swept and updated in
 the same PR; historical log entries before this one keep the
 old names as written (append-only history).
+
+## BIREFNET — MEASURED, SPLIT VERDICT vs WHITE-MATTE (2026-10-27)
+BiRefNet (catalogued as a matting candidate in
+show/production/tooling/avatar-stack/backends.json) was wired up
+locally and MEASURED on the show's own material — the first time
+it has been run on any of it. Local artifacts (frames, mattes,
+results.json, run_measure.py) are kept at
+~/workspace/mochiichao-show/birefnet-measure/; this entry and the
+backends.json update are the measurement landing in the repo
+(no test media in the repo).
+
+Weights + licence (licence honesty law): the weights used are
+the STANDALONE Hugging Face checkpoint ZhengPeng7/BiRefNet,
+loaded via transformers AutoModelForImageSegmentation
+(trust_remote_code) in a venv at ~/opt/venvs-birefnet, weights
+cached under HF_HOME=~/opt/hf-cache (tooling cache). Licence
+VERIFIED AT SOURCE 2026-10-27: the upstream repo's LICENSE file
+read via the GitHub API is the MIT License (Copyright (c)
+2024 ZhengPeng), and the GitHub licence API reports key=mit /
+spdx_id=MIT for ZhengPeng7/BiRefNet — open source, MIT, for
+code and these weights. rembg was NOT used: it was not
+installed, and its DEFAULT session weights (BRIA RMBG-2.0,
+CC-BY-NC non-commercial) were deliberately avoided and never
+downloaded. No BRIA weights were touched anywhere in this run.
+
+Method: 6 frames, ours only. (A) Dorowani avatar idle clip
+(~/workspace/avatars/, white field), frames 12/60/120 at
+720x720. (B) Wispkin Wan test 1 clip (rejected-tests/
+wispkin-wan-test-00001.mp4, NON-white beige field), frames
+0/24/48 at 960x2048. BiRefNet inference at 1024x1024, CPU,
+2 threads. The repo's wired white_matte.py matte_frame() was
+run on the same frames as the comparator. Scores per frame:
+alpha coverage (opaque >0.98 / clear <0.02 / soft band),
+corner-patch alpha, a belly patch on Dorowani (48x48 at
+0.50w/0.66h; white-matte's published clip scores are belly
+0.972, corners 0.0), a skull patch on Wispkin, edge quality
+inside a +-3px morphological band around the alpha>0.5
+silhouette (soft fraction in band; halo = fraction of band
+pixels whose magenta composite lands within distance 40 of
+the source field colour at alpha <0.95), and — Dorowani only,
+where the frame IS ground truth (FG over white) —
+recomposite-over-white mean abs diff on the 0-255 scale, the
+same definition as white-matte's published 1.08.
+
+Numbers (3-frame means):
+- Dorowani, BiRefNet: recomposite diff 1.79 (1.81/1.79/1.77),
+  belly 0.996, corners 0.000, opaque 0.380, clear 0.600,
+  band soft 0.600, halo 0.0004.
+- Dorowani, white-matte (same frames): recomposite diff 1.083
+  (1.11/1.08/1.06 — reproduces the published clip score 1.08),
+  belly 0.974 (published 0.972), corners 0.000, opaque 0.377,
+  clear 0.596, band soft 0.470, halo 0.0000.
+- Wispkin, BiRefNet: clear 0.975, opaque 0.023, corners 0.000,
+  skull-patch alpha 0.816 (0.886/0.787/0.775), band soft 0.743,
+  halo 0.026 (confounded here — skull bone colour is close to
+  the field colour; the magenta-composite visual check shows
+  a clean skull cut-out, no beige fringe ring).
+- Wispkin, white-matte (same frames): TOTAL FAILURE —
+  opaque 1.000, clear 0.000, corners 1.000, mean alpha 1.000.
+  Off a white field it declares the entire frame foreground.
+- Cost: BiRefNet ~78-90 s/frame (720x720 sources) and
+  ~103-115 s/frame (960x2048 sources) on this 2-vCPU VM.
+
+VERDICT (split, no hype): BiRefNet LOSES to white-matte on
+white-field avatar material (recomposite 1.79 vs 1.08 — its
+fuller belly, 0.996 vs 0.974, does not offset its softer edge
+band and the missing white un-premultiply), so white-matte
+stays the wired twin path there. On non-white-field generated
+frames BiRefNet wins by default — it is the only one of the
+two that works at all (clear 0.975 / corners 0.000 vs
+white-matte's 1.000-everywhere failure). Caveats recorded:
+BiRefNet drops the faint smoke wisps under the Wispkin skull
+(near-background smoke reads as background — soft-FX shots
+need an eye check before use), and at CPU speeds it is an
+offline/Kaggle-seat tool, not an interactive one. backends.json
+status for birefnet is now "measured" with these numbers in
+the entry; it is not wired into generate_bundle.py.
