@@ -32,8 +32,8 @@
  * because the code heart path spans only 90x88 of its 100 box and
  * its centroid sits above its bbox centre (see round2 trace).
  * Colours are exactly the 7 flat GIF values. Rendered and animated
- * by src/components/game/MainMenuBackground.tsx (perfect speed by
- * default; slow-rise remains an option only).
+ * by src/components/game/MainMenuBackground.tsx (slow-rise speed by
+ * default per Mars 2026-10-26 19:54 CDT; perfect remains an option).
  */
 export type MainMenuSymbol = { x: number; y: number; s: number; c: string; shape: string };
 
