@@ -593,3 +593,23 @@ gate packets in session; Wan backend status (motion proven /
 likeness unproven) is unchanged. Follow-up owed: reword the
 backends.json ip_adapter/controlnet lock entries at the next
 backends update so they cannot be read as usable Wan locks.
+
+## Addendum — BATTLE DOCTRINE (owner-locked 2026-10-27)
+Jamar's ruling on how battles work in both lanes. SHOW lane:
+Mochi fight with their own agency — a battle is a continuous
+living fight, not creatures standing idle waiting to be told
+each move; trainers sometimes command and direct, but the
+fight runs between commands and without them. GAME lane:
+battles stay command-driven like the Pokemon games — player
+commands are what affect health and outcome — but between
+commands the creatures visibly fight and move in an active
+living fight instead of idling; the between-command action
+is presentation only, non-scoring, and health does not move
+until a command resolves. Shared truth across both lanes:
+a battle is alive between its decisive beats. Landed at
+SHOW-BIBLE §5 Law 8 (show statement, + §9 open item 7) and
+docs/arena-battle-presentation-spec.md §9 (game statement +
+mechanical boundary). OPEN ITEM recorded in both places:
+the canon term for the human who commands in battle — game
+data uses "trainers", "keeper" is the Garden role; no term
+coined.

@@ -564,6 +564,47 @@ exist (and what cannot):
    Dorowani/Gabu, but it does need them before Arena can
    use the full roster.
 
+## 9. Battle doctrine — the living fight (owner-locked 2026-10-27)
+
+Jamar's ruling, two lanes, one shared truth: **a battle is
+alive between its decisive beats.**
+
+### 9.1 Game lane (this spec's lane)
+Battles stay command-driven, exactly like the Pokémon
+games: the player's commands are what affect health and
+outcome. What changes is what the player SEES between
+commands. The creatures do not idle — between commands they
+visibly fight and move in an active living fight (feinting,
+circling, trading blows), instead of standing in place
+waiting for the next order. This extends §1's finding —
+in the reference games, idle behaviour is part of the feel,
+not decoration — from idle motion to continuous combat
+motion.
+
+**Mechanical boundary (precise):** between-command action
+is PRESENTATION ONLY. It is non-scoring: it deals no
+damage, applies no status, consumes no PP, and decides
+nothing. Health, faint state, and battle outcome change
+ONLY when a command resolves, through the MOVE_ANIMATION /
+CHECK_FAINT flow of the step-2 state machine
+(docs/research-sweep/step2-battle-integration/). If a
+between-command clip and a command resolution ever
+disagree, the resolution wins and the clip is wrong —
+never the arithmetic.
+
+### 9.2 Show lane
+The same doctrine from the show's side (SHOW-BIBLE §5,
+Law 8): Mochi fight with their own agency. Trainers
+sometimes command and direct, but the fight runs between
+and without commands. The show has no command-resolution
+layer at all — agency is the default state; a command is
+an event inside the fight, not the fight's metronome.
+
+### 9.3 Open item — the human role's name
+The canon term for the human who commands in battle is
+OPEN. Game data uses "trainers"; "keeper" is the Garden
+role. No term is coined here — Jamar names it.
+
 ## Sources
 - Nintendo World Report, Pokémon Colosseum review:
   http://www.nintendoworldreport.com/review/4226/pokemon-colosseum-gamecube
