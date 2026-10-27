@@ -3,6 +3,7 @@ import { useGameStore } from '../../store/gameStore';
 import { DATA_CARD_COST, DATA_CARD_ID } from '../../lib/monster-tamer-systems';
 import { ITEM_ICONS } from '../../lib/uiArt';
 import { MenuHelpLine } from '../game/MenuList';
+import { sellPrice } from '../../lib/playableWiring';
 
 /**
  * Shop, v2 structure (shop.c, structure/rules only, no Pokemon code,
@@ -56,7 +57,7 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
   };
 
   const sellable = SHOP_ITEMS
-    .map(item => ({ ...item, count: inventory[item.id] || 0, sellPrice: Math.floor(item.cost / 2) }))
+    .map(item => ({ ...item, count: inventory[item.id] || 0, sellPrice: sellPrice(item.cost, 1) }))
     .filter(item => item.count > 0);
   const buySelected = SHOP_ITEMS[Math.min(selected, SHOP_ITEMS.length - 1)];
   const sellSelected = sellable[Math.min(selected, Math.max(0, sellable.length - 1))];
