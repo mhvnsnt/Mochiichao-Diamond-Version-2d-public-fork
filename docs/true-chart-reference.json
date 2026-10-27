@@ -1,0 +1,1273 @@
+{
+ "elements": [
+  "Water",
+  "Chrome",
+  "Earth",
+  "Bug",
+  "Umbral",
+  "Aero",
+  "Core",
+  "Strike",
+  "Deep",
+  "Flame",
+  "Mythic",
+  "Normal"
+ ],
+ "rows": [
+  "Water",
+  "Chrome",
+  "Earth",
+  "Bug",
+  "Umbral",
+  "Aero",
+  "Core",
+  "Strike",
+  "Deep",
+  "Flame",
+  "Mythic",
+  "Normal"
+ ],
+ "cols": [
+  "Water",
+  "Chrome",
+  "Earth",
+  "Bug",
+  "Umbral",
+  "Aero",
+  "Core",
+  "Strike",
+  "Deep",
+  "Flame",
+  "Mythic",
+  "Normal"
+ ],
+ "total_cells": 144,
+ "sources": {
+  "modern_18_chart": "Repo src/lib/constants.ts super/notVery/noEffect lists, as corrected in corrections_to_constants (4 cells). Modern chart = Gen 6+ chart: Fairy row/col verified against published Gen 6+ chart summaries (Fairy super Fighting/Dragon/Dark; not-very Fire/Poison/Steel; resists Fighting/Bug/Dark; immune Dragon; weak Poison/Steel).",
+  "firered_decomp": "fresh-start submodule pokefirered-leafgreen, src/battle_main.c gTypeEffectiveness[336], 112 triples parsed; HeartGold sTypeEffectiveness (pokeheartgold src/battle/overlay_12_0224E4FC.c, 112 triples) is identical to FireRed on all 17 shared types (0 diffs).",
+  "black2_decomp": "fresh-start submodule pokebw2, src/ov167/btl_calc.c GetTypeEffectiveness: type index 17 (placeholder) returns neutral; the effectiveness matrix itself is binary data (data_ov167_021d7500), not a readable source table, so Black 2 is cited as canonical-gen confirmation of the 17-type system, NOT as the parsed matrix. Black 2 predates Fairy, as do FireRed and HeartGold: no decomp on disk contains Fairy cells.",
+  "gen6_change_note": "Steel lost its Ghost and Dark resistances in Gen 6 (modern: Ghost vs Steel = 1, Dark vs Steel = 1; FireRed/HeartGold/Black 2 era: 0.5). Modern values win per this task (most recent games); this is why Umbral vs Chrome = 1.0 here, not 0.5.",
+  "aero_analogue": "Aero filled via FLYING analogue only: roster Wind creatures are typed Aero (unification-map.md section 2) and the Mars starting mapping recorded 2026-10-26 is Wind -> Flying. This mapping is PROPOSED, not locked, so every Aero cell carries status analogue-filled, not sourced.",
+  "prior_lane": "Main src/lib/battleTypeChart.ts (sha bb168160c85fec3e3db5127628e22d129171f4b8, 12 elements, 144 cells, 76 sourced / 24 conflict / 44 owed) is the base this fill supersedes in staging only; its conflict rule (disagreement -> neutral 1.0 flagged, never averaged) is retained, and its OWED Deep cells remain owed here.",
+  "modding_community_on_disk": "Searched on-disk modding sources (docs/modding-pulls-inventory.md, docs/pret-gen1-4-pull-summary.md, gen5plus PokeAPI extract, chao-modding-docs): none contains a type-effectiveness table or a Deep matchup. Modding-community fill = 0 cells directly; the only modern-chart cross-check beyond the repo is the published Gen 6+ chart summary used for Fairy and for the 4 corrections."
+ },
+ "corrections_to_constants": [
+  {
+   "atk": "ICE",
+   "def": "FIRE",
+   "constants_value": 1,
+   "corrected_value": 0.5
+  },
+  {
+   "atk": "ICE",
+   "def": "STEEL",
+   "constants_value": 1,
+   "corrected_value": 0.5
+  },
+  {
+   "atk": "BUG",
+   "def": "POISON",
+   "constants_value": 1,
+   "corrected_value": 0.5
+  },
+  {
+   "atk": "DRAGON",
+   "def": "STEEL",
+   "constants_value": 1,
+   "corrected_value": 0.5
+  }
+ ],
+ "counts": {
+  "sourced": 28,
+  "sourced-neutral": 49,
+  "conflict-neutral": 25,
+  "analogue-filled": 19,
+  "no-equivalent": 23,
+  "sourced_total": 77,
+  "backed_total": 96,
+  "flagged_total": 48
+ },
+ "cells": {
+  "Water vs Water": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "WATER vs WATER = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Chrome": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "WATER vs STEEL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Earth": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('WATER', 'GRASS', 0.5), ('WATER', 'GROUND', 2)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "WATER vs GRASS = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "WATER vs GROUND = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Bug": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "WATER vs BUG = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Umbral": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "WATER vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "WATER vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Aero": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "WATER vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Core": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "WATER vs ROCK = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Strike": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "WATER vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Water vs Flame": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "WATER vs FIRE = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Mythic": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('WATER', 'DRAGON', 0.5), ('WATER', 'PSYCHIC', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "WATER vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "WATER vs DRAGON = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Water vs Normal": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "WATER vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Water": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs WATER = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Chrome": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs STEEL = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Earth": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs GRASS = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "STEEL vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Bug": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs BUG = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Umbral": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "STEEL vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Aero": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "STEEL vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Core": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs ROCK = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Strike": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Chrome vs Flame": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs FIRE = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Mythic": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "STEEL vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Chrome vs Normal": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "STEEL vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Water": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('GRASS', 'WATER', 2), ('GROUND', 'WATER', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "GRASS vs WATER = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Chrome": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('GRASS', 'STEEL', 0.5), ('GROUND', 'STEEL', 2)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "GRASS vs STEEL = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs STEEL = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Earth": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('GRASS', 'GRASS', 0.5), ('GRASS', 'GROUND', 2), ('GROUND', 'GRASS', 0.5), ('GROUND', 'GROUND', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "GRASS vs GRASS = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GRASS vs GROUND = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs GRASS = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Bug": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "GRASS vs BUG = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs BUG = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Umbral": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "GRASS vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GRASS vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Aero": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('GRASS', 'FLYING', 0.5), ('GROUND', 'FLYING', 0)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "GRASS vs FLYING = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs FLYING = 0 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Core": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "GRASS vs ROCK = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs ROCK = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Strike": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "GRASS vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Earth vs Flame": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('GRASS', 'FIRE', 0.5), ('GROUND', 'FIRE', 2)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "GRASS vs FIRE = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs FIRE = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Mythic": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('GRASS', 'DRAGON', 0.5), ('GRASS', 'PSYCHIC', 1), ('GROUND', 'DRAGON', 1), ('GROUND', 'PSYCHIC', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "GRASS vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GRASS vs DRAGON = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Earth vs Normal": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "GRASS vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GROUND vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Water": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "BUG vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Chrome": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "BUG vs STEEL = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Earth": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('BUG', 'GRASS', 2), ('BUG', 'GROUND', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "BUG vs GRASS = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "BUG vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Bug": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "BUG vs BUG = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Umbral": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('BUG', 'DARK', 2), ('BUG', 'GHOST', 0.5)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "BUG vs DARK = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "BUG vs GHOST = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Aero": {
+   "value": 0.5,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "BUG vs FLYING = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Core": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "BUG vs ROCK = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Strike": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "BUG vs FIGHTING = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Bug vs Flame": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "BUG vs FIRE = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Mythic": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('BUG', 'DRAGON', 1), ('BUG', 'PSYCHIC', 2)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "BUG vs PSYCHIC = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "BUG vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Bug vs Normal": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "BUG vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Water": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "DARK vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Chrome": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "DARK vs STEEL = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs STEEL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Earth": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "DARK vs GRASS = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DARK vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs GRASS = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Bug": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "DARK vs BUG = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs BUG = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Umbral": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('DARK', 'DARK', 0.5), ('DARK', 'GHOST', 2), ('GHOST', 'DARK', 0.5), ('GHOST', 'GHOST', 2)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "DARK vs DARK = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DARK vs GHOST = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs DARK = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs GHOST = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Aero": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "DARK vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Core": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "DARK vs ROCK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs ROCK = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Strike": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('DARK', 'FIGHTING', 0.5), ('GHOST', 'FIGHTING', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "DARK vs FIGHTING = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Umbral vs Flame": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "DARK vs FIRE = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs FIRE = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Mythic": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('DARK', 'DRAGON', 1), ('DARK', 'PSYCHIC', 2), ('GHOST', 'DRAGON', 1), ('GHOST', 'PSYCHIC', 2)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "DARK vs PSYCHIC = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DARK vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs PSYCHIC = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Umbral vs Normal": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('DARK', 'NORMAL', 1), ('GHOST', 'NORMAL', 0)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "DARK vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "GHOST vs NORMAL = 0 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Water": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Chrome": {
+   "value": 0.5,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs STEEL = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Earth": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('FLYING', 'GRASS', 2), ('FLYING', 'GROUND', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "FLYING vs GRASS = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FLYING vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Bug": {
+   "value": 2,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs BUG = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Umbral": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FLYING vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Aero": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Core": {
+   "value": 0.5,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs ROCK = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Strike": {
+   "value": 2,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs FIGHTING = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Aero vs Flame": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs FIRE = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Mythic": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FLYING vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Aero vs Normal": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FLYING vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Water": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Chrome": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs STEEL = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Earth": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('ROCK', 'GRASS', 1), ('ROCK', 'GROUND', 0.5)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "ROCK vs GRASS = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "ROCK vs GROUND = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Bug": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs BUG = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Umbral": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "ROCK vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Aero": {
+   "value": 2,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "ROCK vs FLYING = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Core": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs ROCK = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Strike": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs FIGHTING = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Core vs Flame": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs FIRE = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Mythic": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "ROCK vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Core vs Normal": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "ROCK vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Water": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIGHTING vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Chrome": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIGHTING vs STEEL = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Earth": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIGHTING vs GRASS = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FIGHTING vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Bug": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIGHTING vs BUG = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Umbral": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('FIGHTING', 'DARK', 2), ('FIGHTING', 'GHOST', 0)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "FIGHTING vs DARK = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FIGHTING vs GHOST = 0 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Aero": {
+   "value": 0.5,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FIGHTING vs FLYING = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Core": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIGHTING vs ROCK = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Strike": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIGHTING vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Strike vs Flame": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIGHTING vs FIRE = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Mythic": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('FIGHTING', 'DRAGON', 1), ('FIGHTING', 'PSYCHIC', 0.5)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "FIGHTING vs PSYCHIC = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FIGHTING vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Strike vs Normal": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIGHTING vs NORMAL = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Deep vs Water": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Chrome": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Earth": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Bug": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Umbral": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Aero": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Core": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Strike": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Flame": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Mythic": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Deep vs Normal": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Flame vs Water": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIRE vs WATER = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Chrome": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIRE vs STEEL = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Earth": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('FIRE', 'GRASS', 2), ('FIRE', 'GROUND', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "FIRE vs GRASS = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FIRE vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Bug": {
+   "value": 2,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIRE vs BUG = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Umbral": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIRE vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FIRE vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Aero": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "FIRE vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Core": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIRE vs ROCK = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Strike": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIRE vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Flame vs Flame": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIRE vs FIRE = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Mythic": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('FIRE', 'DRAGON', 0.5), ('FIRE', 'PSYCHIC', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "FIRE vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "FIRE vs DRAGON = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Flame vs Normal": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "FIRE vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Water": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "PSYCHIC vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Chrome": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "PSYCHIC vs STEEL = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs STEEL = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Earth": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "PSYCHIC vs GRASS = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "PSYCHIC vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs GRASS = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Bug": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "PSYCHIC vs BUG = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs BUG = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Umbral": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('DRAGON', 'DARK', 1), ('DRAGON', 'GHOST', 1), ('PSYCHIC', 'DARK', 0), ('PSYCHIC', 'GHOST', 1)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "PSYCHIC vs DARK = 0 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "PSYCHIC vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs GHOST = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Aero": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "PSYCHIC vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Core": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "PSYCHIC vs ROCK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs ROCK = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Strike": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('DRAGON', 'FIGHTING', 1), ('PSYCHIC', 'FIGHTING', 2)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "PSYCHIC vs FIGHTING = 2 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Mythic vs Flame": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "PSYCHIC vs FIRE = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs FIRE = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Mythic": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('DRAGON', 'DRAGON', 2), ('DRAGON', 'PSYCHIC', 1), ('PSYCHIC', 'DRAGON', 1), ('PSYCHIC', 'PSYCHIC', 0.5)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "PSYCHIC vs PSYCHIC = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "PSYCHIC vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs DRAGON = 2 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Mythic vs Normal": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "PSYCHIC vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "DRAGON vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Water": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs WATER = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Chrome": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs STEEL = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Earth": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs GRASS = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "NORMAL vs GROUND = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Bug": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs BUG = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Umbral": {
+   "value": 1.0,
+   "status": "conflict-neutral",
+   "reason": "Legacy pairs disagree [('NORMAL', 'DARK', 1), ('NORMAL', 'GHOST', 0)]: two legacy types merge into one True element. Prior-lane rule ships neutral 1.0 flagged, not averaged; needs a Mars ruling to pick one source.",
+   "sources": [
+    "NORMAL vs DARK = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "NORMAL vs GHOST = 0 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Aero": {
+   "value": 1,
+   "status": "analogue-filled",
+   "reason": "Aero via FLYING analogue: Wind->Flying starting mapping (memory 2026-10-26) + Aero is the wind element; mapping proposed, not locked",
+   "sources": [
+    "NORMAL vs FLYING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Core": {
+   "value": 0.5,
+   "status": "sourced",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs ROCK = 0.5 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Strike": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs FIGHTING = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Deep": {
+   "value": 1.0,
+   "status": "no-equivalent",
+   "reason": "Deep has no legacy source type in any game on disk and no modding-community matchup on disk; prior lane battleTypeChart.ts OWED_CELLS lists every Deep cell as owed. Neutral 1.0 is a flagged placeholder, not a sourced value.",
+   "sources": []
+  },
+  "Normal vs Flame": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs FIRE = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Mythic": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs PSYCHIC = 1 (modern 18 chart: constants.ts as corrected, see corrections)",
+    "NORMAL vs DRAGON = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  },
+  "Normal vs Normal": {
+   "value": 1,
+   "status": "sourced-neutral",
+   "reason": "All legacy pairs agree",
+   "sources": [
+    "NORMAL vs NORMAL = 1 (modern 18 chart: constants.ts as corrected, see corrections)"
+   ]
+  }
+ }
+}

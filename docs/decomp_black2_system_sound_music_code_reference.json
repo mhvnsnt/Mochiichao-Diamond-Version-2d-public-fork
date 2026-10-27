@@ -1,0 +1,322 @@
+{
+ "system": "sound_music_code",
+ "extract_level": "count_only",
+ "source": "pokebw2/src at commit e522642 (read-only)",
+ "file_count": 20,
+ "total_lines": 7797,
+ "totals": {
+  "files": 20,
+  "lines": 7797,
+  "string_literals_stripped": 286,
+  "species_identifiers": 10,
+  "species_name_tokens": 6,
+  "place_name_tokens": 362,
+  "path_components": 0,
+  "creature_voice_identifiers": 5
+ },
+ "top_field_types": {},
+ "top_field_names": {},
+ "distinct_function_names": 0,
+ "distinct_struct_names": 0,
+ "files": [
+  {
+   "path_sanitized": "ov012/musical_dressup_sys.c",
+   "ext": ".c",
+   "lines": 97,
+   "string_literals_stripped": 11,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 9,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov012/musical_event.c",
+   "ext": ".c",
+   "lines": 1009,
+   "string_literals_stripped": 38,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 91,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov012/musical_program.c",
+   "ext": ".c",
+   "lines": 227,
+   "string_literals_stripped": 7,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 10,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov012/musical_stage_sys.c",
+   "ext": ".c",
+   "lines": 151,
+   "string_literals_stripped": 9,
+   "stripped": {
+    "species_identifiers": 4,
+    "species_name_tokens": 1,
+    "place_name_tokens": 12,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov012/scrcmd_musical.c",
+   "ext": ".c",
+   "lines": 1003,
+   "string_literals_stripped": 35,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 38,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov036/scrcmd_sound.c",
+   "ext": ".c",
+   "lines": 418,
+   "string_literals_stripped": 13,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 4,
+    "place_name_tokens": 15,
+    "path_components": 0,
+    "creature_voice_identifiers": 5
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov036/sound_obj.c",
+   "ext": ".c",
+   "lines": 139,
+   "string_literals_stripped": 12,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 18,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov209/musical_mcss.c",
+   "ext": ".c",
+   "lines": 773,
+   "string_literals_stripped": 22,
+   "stripped": {
+    "species_identifiers": 2,
+    "species_name_tokens": 0,
+    "place_name_tokens": 12,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov209/musical_shot_sys.c",
+   "ext": ".c",
+   "lines": 224,
+   "string_literals_stripped": 23,
+   "stripped": {
+    "species_identifiers": 4,
+    "species_name_tokens": 1,
+    "place_name_tokens": 4,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov210/musical_system.c",
+   "ext": ".c",
+   "lines": 146,
+   "string_literals_stripped": 12,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 31,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov269/br_musical_send_proc.c",
+   "ext": ".c",
+   "lines": 410,
+   "string_literals_stripped": 22,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 5,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov270/br_musical_look_proc.c",
+   "ext": ".c",
+   "lines": 835,
+   "string_literals_stripped": 23,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 6,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/bgm_info.c",
+   "ext": ".c",
+   "lines": 57,
+   "string_literals_stripped": 7,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/event_sound.c",
+   "ext": ".c",
+   "lines": 519,
+   "string_literals_stripped": 7,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 5,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/field_sound.c",
+   "ext": ".c",
+   "lines": 174,
+   "string_literals_stripped": 9,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 5,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/field_sound_system.c",
+   "ext": ".c",
+   "lines": 1059,
+   "string_literals_stripped": 12,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 5,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/musical_dist_save.c",
+   "ext": ".c",
+   "lines": 114,
+   "string_literals_stripped": 13,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 5,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/musical_savedata.c",
+   "ext": ".c",
+   "lines": 218,
+   "string_literals_stripped": 4,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 90,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/net_bgm_volume.c",
+   "ext": ".c",
+   "lines": 14,
+   "string_literals_stripped": 4,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/snd_bgm_stack.c",
+   "ext": ".c",
+   "lines": 210,
+   "string_literals_stripped": 3,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 1,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  }
+ ],
+ "summary_own_words": "COUNT-ONLY by task rule. Sequence/sound driver code files counted only. No sequence, bank or audio content is included in this batch.",
+ "held_out": "count_only_by_task_rule",
+ "owed_mappings_global": [
+  "nature modifiers",
+  "type-to-True-Elements mapping",
+  "map assignments",
+  "facility level rules",
+  "season-to-form mapping",
+  "weather durations and stat/accuracy effects",
+  "save block sizes, formats and checksums",
+  "battle damage/accuracy formula constants",
+  "shop stock lists and prices",
+  "box counts, box sizes and deposit/withdraw rules",
+  "party slot layout, cursor behaviour and switch rules",
+  "further split of the system-core remainder bucket by directory",
+  "camera positions, zoom values and follow rules",
+  "movement speed, grid size and encounter rates (field-encounters batch)"
+ ],
+ "extraction_method": "counts_only"
+}

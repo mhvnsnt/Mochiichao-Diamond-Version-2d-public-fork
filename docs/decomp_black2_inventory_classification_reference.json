@@ -1,0 +1,530 @@
+{
+ "by_extension_res": {
+  ".bin": {
+   "bytes": 4083962,
+   "files": 3286
+  },
+  ".csv": {
+   "bytes": 24827083,
+   "files": 2171
+  },
+  ".glb": {
+   "bytes": 144316504,
+   "files": 7396
+  },
+  ".json": {
+   "bytes": 30139333,
+   "files": 26185
+  },
+  ".lz11": {
+   "bytes": 4112006,
+   "files": 2914
+  },
+  ".nanr": {
+   "bytes": 965499,
+   "files": 668
+  },
+  ".ncer": {
+   "bytes": 1903586,
+   "files": 3582
+  },
+  ".nmar": {
+   "bytes": 644271,
+   "files": 2097
+  },
+  ".nmcr": {
+   "bytes": 677712,
+   "files": 3134
+  },
+  ".nsbca": {
+   "bytes": 2827860,
+   "files": 149
+  },
+  ".nsbma": {
+   "bytes": 67560,
+   "files": 77
+  },
+  ".nsbmd": {
+   "bytes": 5387420,
+   "files": 240
+  },
+  ".nsbta": {
+   "bytes": 588504,
+   "files": 87
+  },
+  ".nsbtp": {
+   "bytes": 5048,
+   "files": 12
+  },
+  ".nsbtx": {
+   "bytes": 172800,
+   "files": 31
+  },
+  ".nscr": {
+   "bytes": 2486636,
+   "files": 881
+  },
+  ".pal": {
+   "bytes": 4008270,
+   "files": 5256
+  },
+  ".png": {
+   "bytes": 29932392,
+   "files": 53544
+  },
+  ".s": {
+   "bytes": 20101635,
+   "files": 2607
+  },
+  ".txt": {
+   "bytes": 4638753,
+   "files": 1171
+  },
+  ".wav": {
+   "bytes": 86465816,
+   "files": 8712
+  }
+ },
+ "by_extension_src": {
+  ".c": {
+   "bytes": 24049056,
+   "files": 1221
+  },
+  ".h": {
+   "bytes": 50201,
+   "files": 3
+  }
+ },
+ "by_top_level_dir": [
+  {
+   "bytes_du": 22509,
+   "dir": "res/abilities",
+   "files": 166,
+   "forbidden_only": 0,
+   "usable_after_sift_swap": 166,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 199271768,
+   "dir": "res/field",
+   "files": 67322,
+   "forbidden_only": 53073,
+   "usable_after_sift_swap": 14249,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 19843124,
+   "dir": "res/graphics",
+   "files": 5122,
+   "forbidden_only": 5100,
+   "usable_after_sift_swap": 22,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 920476,
+   "dir": "res/items",
+   "files": 1665,
+   "forbidden_only": 1025,
+   "usable_after_sift_swap": 640,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 7728919,
+   "dir": "res/lighting",
+   "files": 211,
+   "forbidden_only": 0,
+   "usable_after_sift_swap": 0,
+   "usable_as_is": 211
+  },
+  {
+   "bytes_du": 484360,
+   "dir": "res/moves",
+   "files": 561,
+   "forbidden_only": 0,
+   "usable_after_sift_swap": 561,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 2109,
+   "dir": "res/natures",
+   "files": 26,
+   "forbidden_only": 0,
+   "usable_after_sift_swap": 0,
+   "usable_as_is": 26
+  },
+  {
+   "bytes_du": 28033422,
+   "dir": "res/pokemon",
+   "files": 23897,
+   "forbidden_only": 23185,
+   "usable_after_sift_swap": 712,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 100570599,
+   "dir": "res/sound",
+   "files": 13934,
+   "forbidden_only": 13934,
+   "usable_after_sift_swap": 0,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 4638753,
+   "dir": "res/text",
+   "files": 1171,
+   "forbidden_only": 1171,
+   "usable_after_sift_swap": 0,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 68128,
+   "dir": "res/town_map",
+   "files": 87,
+   "forbidden_only": 0,
+   "usable_after_sift_swap": 87,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 6766894,
+   "dir": "res/trainers",
+   "files": 10020,
+   "forbidden_only": 1661,
+   "usable_after_sift_swap": 8359,
+   "usable_as_is": 0
+  },
+  {
+   "bytes_du": 1589,
+   "dir": "res/types",
+   "files": 18,
+   "forbidden_only": 0,
+   "usable_after_sift_swap": 0,
+   "usable_as_is": 18
+  },
+  {
+   "bytes_du": 368352650,
+   "dir": "res/subtotal",
+   "files": 124200,
+   "forbidden_only": 99149,
+   "usable_after_sift_swap": 24796,
+   "usable_as_is": 255
+  },
+  {
+   "bytes_du": 24099257,
+   "dir": "src/",
+   "files": 1224,
+   "forbidden_only": 0,
+   "usable_after_sift_swap": 1224,
+   "usable_as_is": 0
+  }
+ ],
+ "classification": [
+  {
+   "bucket": "usable_as_is",
+   "class": "res/lighting numeric lighting tables",
+   "files": 211,
+   "strip": "none"
+  },
+  {
+   "bucket": "usable_as_is",
+   "class": "res/natures modifier records",
+   "files": 26,
+   "strip": "none"
+  },
+  {
+   "bucket": "usable_as_is",
+   "class": "res/types records",
+   "files": 18,
+   "strip": "none"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "res/abilities data records",
+   "files": 166,
+   "strip": "display/description strings; any species reference if present"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "res/field JSON/CSV/script data",
+   "files": 14249,
+   "strip": "town/location names; swap species references in encounter/map tables to Mochiichao roster; any dialogue reference"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "res/graphics JSON metadata only",
+   "files": 22,
+   "strip": "any species, character, logo, or dialogue reference"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "res/items data records",
+   "files": 640,
+   "strip": "display/description strings; any species reference if present"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "res/moves records",
+   "files": 561,
+   "strip": "display/description strings if present; any species reference if present (move names/mechanics explicitly usable per 2026-10-26 rule)"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "res/pokemon species data/form records and growth-rate table",
+   "files": 712,
+   "strip": "species names (replace with Mochiichao roster keys); cry references"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "res/town_map records",
+   "files": 87,
+   "strip": "town/location names (kept excluded, open point)"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "res/trainers records, class records, facility records, AI scripts",
+   "files": 8359,
+   "strip": "trainer personal names; swap party species references to Mochiichao roster; any dialogue reference if present"
+  },
+  {
+   "bucket": "usable_after_sift_swap",
+   "class": "src/ code",
+   "files": 1224,
+   "strip": "species names, character names, town/location names, logo references, cry references, dialogue strings"
+  },
+  {
+   "bucket": "forbidden_only",
+   "class": "res/field image/model assets",
+   "files": 53073,
+   "strip": "not applicable - count only, original field model/texture art"
+  },
+  {
+   "bucket": "forbidden_only",
+   "class": "res/graphics image/palette/animation/model assets",
+   "files": 5100,
+   "strip": "not applicable - count only, original UI/system art including logo-bearing screens"
+  },
+  {
+   "bucket": "forbidden_only",
+   "class": "res/items icon image/palette/animation assets",
+   "files": 1025,
+   "strip": "not applicable - count only, original icon art"
+  },
+  {
+   "bucket": "forbidden_only",
+   "class": "res/pokemon sprite/model/animation/palette/icon/footprint assets plus cry audio",
+   "files": 23185,
+   "strip": "not applicable - count only, species art and cries"
+  },
+  {
+   "bucket": "forbidden_only",
+   "class": "res/sound all music/audio/bank/sequence files",
+   "files": 13934,
+   "strip": "not applicable - count only, music/audio"
+  },
+  {
+   "bucket": "forbidden_only",
+   "class": "res/text script and system text files",
+   "files": 1171,
+   "strip": "not applicable - count only, dialogue text"
+  },
+  {
+   "bucket": "forbidden_only",
+   "class": "res/trainers sprite image/palette/animation assets",
+   "files": 1661,
+   "strip": "not applicable - count only, original character sprite art"
+  }
+ ],
+ "classification_splits_by_file": {
+  "res/field": {
+   "forbidden_image": 44702,
+   "forbidden_model": 7396,
+   "forbidden_model_container": 7,
+   "forbidden_palette": 968,
+   "siftable_csv": 2170,
+   "siftable_json": 10790,
+   "siftable_script": 1289
+  },
+  "res/graphics": {
+   "forbidden_other": 5100,
+   "siftable_json": 22
+  },
+  "res/items": {
+   "forbidden_animation_cell": 2,
+   "forbidden_image": 461,
+   "forbidden_palette": 562,
+   "siftable_json": 640
+  },
+  "res/lighting": {
+   "as_is_battle": 10,
+   "as_is_field": 200,
+   "as_is_schema": 1
+  },
+  "res/moves": {
+   "siftable_records": 560,
+   "siftable_schema": 1
+  },
+  "res/pokemon": {
+   "forbidden_cry_audio": 690,
+   "forbidden_other_art_animation": 22495,
+   "siftable_csv": 1,
+   "siftable_json": 711
+  },
+  "res/pokemon_species_data_note": {
+   "depth1_subdirs": 655,
+   "non_species_asset_subdirs": 3,
+   "top_level_data_records": 652
+  },
+  "res/sound": {
+   "forbidden_audio": 8022,
+   "forbidden_json": 4608,
+   "forbidden_script": 1304
+  },
+  "res/text": {
+   "forbidden_script_text": 676,
+   "forbidden_system_text": 495
+  },
+  "res/trainers": {
+   "forbidden_sprite_bundle": 1661,
+   "siftable_ai_script": 14,
+   "siftable_class_json": 237,
+   "siftable_facility_json": 7293,
+   "siftable_main_records_json": 815
+  }
+ },
+ "could_not_classify_cleanly": [
+  {
+   "class": "res/sound whole directory",
+   "files": 13934,
+   "files_counted_usable": 0,
+   "reason": "Music, music data, and sound-effect samples share directories/extensions; no file-class split separates them by count, so whole directory counted forbidden-only"
+  },
+  {
+   "class": "res/graphics art files",
+   "files": 5100,
+   "files_counted_usable": 0,
+   "reason": "Image files cannot be split into generic UI vs logo/species/character art by extension/filename class alone without inspecting images; only 22 JSON metadata files split out"
+  },
+  {
+   "class": "res/field image/model files",
+   "files": 53073,
+   "files_counted_usable": 0,
+   "reason": "Texture/model files cannot be split into reusable geometry vs original art by extension alone; only JSON/CSV/script data split out"
+  },
+  {
+   "class": "src/ code, as-is vs siftable",
+   "files": 1224,
+   "files_counted_as_is": 0,
+   "reason": "A file count cannot verify per-file absence of forbidden strings, so all code counted siftable, none as-is; a content-checked inventory could move passing files to as-is"
+  }
+ ],
+ "did_not_do": [
+  "no PR",
+  "no merge",
+  "no commit",
+  "no other batch folder touched",
+  "stage2-pr/ not touched"
+ ],
+ "method": "counted from disk (find / directory walks, du -sb); counts and class labels only, no art, audio, dialogue, code, or forbidden names reproduced",
+ "open_points": [
+  "Town/location names and species cries remain excluded (not lifted 2026-10-26 ~19:42); town_map 87 files are siftable not as-is, cry audio 690 files in res/pokemon are forbidden-only",
+  "This inventory covers the public copy only; no decision made about private-local reference use of forbidden-only files",
+  "Percentages are file-count (and file-byte) shares for res/ + src/ only, not a Mochiichao completeness measure"
+ ],
+ "reconciliation_prior_counts": {
+  "abilities": {
+   "disk": 166,
+   "match": true,
+   "prior": 166
+  },
+  "discrepancies": [],
+  "field": {
+   "disk": 67322,
+   "match": true,
+   "prior": 67322
+  },
+  "graphics": {
+   "disk": 5122,
+   "match": true,
+   "prior": 5122
+  },
+  "items": {
+   "disk": 1665,
+   "match": true,
+   "prior": 1665
+  },
+  "lighting": {
+   "disk": 211,
+   "match": true,
+   "prior": 211
+  },
+  "moves": {
+   "disk": 561,
+   "match": true,
+   "prior": 561
+  },
+  "natures": {
+   "disk": 26,
+   "match": true,
+   "prior": 26
+  },
+  "pokemon": {
+   "disk": 23897,
+   "match": true,
+   "prior": 23897
+  },
+  "sound": {
+   "disk": 13934,
+   "match": true,
+   "prior": 13934
+  },
+  "src_total": {
+   "disk": 1224,
+   "disk_c": 1221,
+   "disk_h": 3,
+   "match": true,
+   "prior": 1224,
+   "prior_c": 1221,
+   "prior_h": 3
+  },
+  "text": {
+   "disk": 1171,
+   "match": true,
+   "prior": 1171
+  },
+  "town_map": {
+   "disk": 87,
+   "match": true,
+   "prior": 87
+  },
+  "trainers": {
+   "disk": 10020,
+   "match": true,
+   "prior": 10020
+  },
+  "types": {
+   "disk": 18,
+   "match": true,
+   "prior": 18
+  }
+ },
+ "source": "pokebw2 at commit e522642f9ec496783642df075f05fcd07d3cbc1b, scope res/ + src/ only",
+ "totals": {
+  "bytes": 392451907,
+  "bytes_mebibytes": 374.27,
+  "bytes_megabytes_decimal": 392.45,
+  "files": 125424,
+  "forbidden_only_bytes": 315645422,
+  "forbidden_only_files": 99149,
+  "forbidden_only_pct_bytes": 80.43,
+  "forbidden_only_pct_count": 79.05,
+  "usable_after_sift_swap_bytes": 69073868,
+  "usable_after_sift_swap_files": 26020,
+  "usable_after_sift_swap_pct_count": 20.75,
+  "usable_as_is_bytes": 7732617,
+  "usable_as_is_files": 255,
+  "usable_as_is_pct_count": 0.2,
+  "usable_total_bytes": 76806485,
+  "usable_total_files": 26275,
+  "usable_total_pct_bytes": 19.57,
+  "usable_total_pct_count": 20.95
+ }
+}
