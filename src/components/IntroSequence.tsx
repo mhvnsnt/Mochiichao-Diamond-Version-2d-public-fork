@@ -581,7 +581,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               (Mars 2026-10-26 18:13 CDT: transform only, zero path edits,
               zero drawing, zero new artwork). The <svg><image
               preserveAspectRatio="none"> applies the calibrated imgBox
-              shape transform (225,599,823x258) so the file's VISIBLE
+              shape transform (224,599,825x264) so the file's VISIBLE
               path lands exactly on the locked box x250-950, y648-828,
               centre (600,738). A plain <img> cannot do this: Chrome
               applies meet inside <img> and letterboxes the viewBox
