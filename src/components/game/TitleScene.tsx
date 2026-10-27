@@ -182,11 +182,41 @@ export default function TitleScene({
     const host = hostRef.current;
     if (!host) return;
     let cancelled = false;
+    // Pixi 8.22 destroy-before-init race (trap-fix round 3,
+    // 2026-10-27, proven by a real-browser console capture):
+    // Application.destroy() runs the ResizePlugin's static
+    // destroy, which calls this._cancelResize() — but that
+    // static is only assigned when the plugin is instantiated
+    // during app.init(). If the effect cleanup destroys the
+    // app while init() is still pending (the preset video
+    // loads and flips hideBackground, re-running this effect,
+    // before the first cold WebGL/renderer init finishes),
+    // destroy throws "this._cancelResize is not a function"
+    // inside React's commit phase, and the preset error
+    // boundary swaps in the fallback. Later mounts win the
+    // race (warm init), which is why live playtest showed the
+    // FIRST preset tested falling back and the other nine
+    // rendering. So: never destroy before init resolves.
+    // If cleanup runs first, the .then callback below destroys
+    // once init has completed; if init rejects, there is no
+    // renderer to tear down and the .catch logs it.
+    let initDone = false;
+    let destroyed = false;
+    const safeDestroy = () => {
+      if (destroyed) return;
+      destroyed = true;
+      try {
+        app.destroy(true);
+      } catch {
+        /* init never completed: nothing to tear down */
+      }
+    };
     const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const b = TITLE_BIOMES[biome];
     const app = new Application();
     app.init({ resizeTo: host, backgroundAlpha: 0, antialias: false, resolution: Math.min(2, window.devicePixelRatio || 1) }).then(async () => {
-      if (cancelled) { app.destroy(true); return; }
+      initDone = true;
+      if (cancelled) { safeDestroy(); return; }
       host.appendChild(app.canvas);
       const W = app.screen.width;
       const H = app.screen.height;
@@ -896,7 +926,7 @@ export default function TitleScene({
       // eslint-disable-next-line no-console
       console.error("[TitleScene] Pixi init failed, scene skipped:", err);
     });
-    return () => { cancelled = true; app.destroy(true); };
+    return () => { cancelled = true; if (initDone) safeDestroy(); };
   }, [biome, figureUrl, figureCycleUrls, figureCycleMs, figureName, fireTrail, hideBackground]);
 
   return (
