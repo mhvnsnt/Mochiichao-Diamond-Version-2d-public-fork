@@ -1,0 +1,162 @@
+{
+  "source": "pokebw2/res/natures/*.json",
+  "sourceRepo": "fuddlesworth/pokebw2",
+  "sourceCommit": "e522642f9ec496783642df075f05fcd07d3cbc1b",
+  "note": "Source JSONs hold a name only (schema: 'what it does is the code's').",
+  "count": 25,
+  "constantCount": 25,
+  "unresolvedConstants": [],
+  "statModifiers": "NOT EXTRACTED - not present in res/*.json; not invented, not copied from src code here.",
+  "natures": [
+    {
+      "sourceFile": "adamant.json",
+      "sourceConstant": "NATURE_ADAMANT",
+      "index": 3,
+      "name": "Adamant"
+    },
+    {
+      "sourceFile": "bashful.json",
+      "sourceConstant": "NATURE_BASHFUL",
+      "index": 18,
+      "name": "Bashful"
+    },
+    {
+      "sourceFile": "bold.json",
+      "sourceConstant": "NATURE_BOLD",
+      "index": 5,
+      "name": "Bold"
+    },
+    {
+      "sourceFile": "brave.json",
+      "sourceConstant": "NATURE_BRAVE",
+      "index": 2,
+      "name": "Brave"
+    },
+    {
+      "sourceFile": "calm.json",
+      "sourceConstant": "NATURE_CALM",
+      "index": 20,
+      "name": "Calm"
+    },
+    {
+      "sourceFile": "careful.json",
+      "sourceConstant": "NATURE_CAREFUL",
+      "index": 23,
+      "name": "Careful"
+    },
+    {
+      "sourceFile": "docile.json",
+      "sourceConstant": "NATURE_DOCILE",
+      "index": 6,
+      "name": "Docile"
+    },
+    {
+      "sourceFile": "gentle.json",
+      "sourceConstant": "NATURE_GENTLE",
+      "index": 21,
+      "name": "Gentle"
+    },
+    {
+      "sourceFile": "hardy.json",
+      "sourceConstant": "NATURE_HARDY",
+      "index": 0,
+      "name": "Hardy"
+    },
+    {
+      "sourceFile": "hasty.json",
+      "sourceConstant": "NATURE_HASTY",
+      "index": 11,
+      "name": "Hasty"
+    },
+    {
+      "sourceFile": "impish.json",
+      "sourceConstant": "NATURE_IMPISH",
+      "index": 8,
+      "name": "Impish"
+    },
+    {
+      "sourceFile": "jolly.json",
+      "sourceConstant": "NATURE_JOLLY",
+      "index": 13,
+      "name": "Jolly"
+    },
+    {
+      "sourceFile": "lax.json",
+      "sourceConstant": "NATURE_LAX",
+      "index": 9,
+      "name": "Lax"
+    },
+    {
+      "sourceFile": "lonely.json",
+      "sourceConstant": "NATURE_LONELY",
+      "index": 1,
+      "name": "Lonely"
+    },
+    {
+      "sourceFile": "mild.json",
+      "sourceConstant": "NATURE_MILD",
+      "index": 16,
+      "name": "Mild"
+    },
+    {
+      "sourceFile": "modest.json",
+      "sourceConstant": "NATURE_MODEST",
+      "index": 15,
+      "name": "Modest"
+    },
+    {
+      "sourceFile": "naive.json",
+      "sourceConstant": "NATURE_NAIVE",
+      "index": 14,
+      "name": "Naive"
+    },
+    {
+      "sourceFile": "naughty.json",
+      "sourceConstant": "NATURE_NAUGHTY",
+      "index": 4,
+      "name": "Naughty"
+    },
+    {
+      "sourceFile": "quiet.json",
+      "sourceConstant": "NATURE_QUIET",
+      "index": 17,
+      "name": "Quiet"
+    },
+    {
+      "sourceFile": "quirky.json",
+      "sourceConstant": "NATURE_QUIRKY",
+      "index": 24,
+      "name": "Quirky"
+    },
+    {
+      "sourceFile": "rash.json",
+      "sourceConstant": "NATURE_RASH",
+      "index": 19,
+      "name": "Rash"
+    },
+    {
+      "sourceFile": "relaxed.json",
+      "sourceConstant": "NATURE_RELAXED",
+      "index": 7,
+      "name": "Relaxed"
+    },
+    {
+      "sourceFile": "sassy.json",
+      "sourceConstant": "NATURE_SASSY",
+      "index": 22,
+      "name": "Sassy"
+    },
+    {
+      "sourceFile": "serious.json",
+      "sourceConstant": "NATURE_SERIOUS",
+      "index": 12,
+      "name": "Serious"
+    },
+    {
+      "sourceFile": "timid.json",
+      "sourceConstant": "NATURE_TIMID",
+      "index": 10,
+      "name": "Timid"
+    }
+  ]
+}

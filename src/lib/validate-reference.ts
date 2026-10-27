@@ -15,6 +15,23 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { SPECIES_DB } from './species';
 import { MOVES_DB } from './moves';
+import {
+  BLACK2_ITEM_COUNT,
+  BLACK2_ABILITY_COUNT,
+  BLACK2_NATURE_COUNT,
+  BLACK2_TYPE_COUNT,
+  BLACK2_LIGHTING_SETS,
+  BLACK2_ZONE_COUNT,
+  BLACK2_ENCOUNTER_SET_COUNT,
+  BLACK2_FACILITY_COUNT,
+  BLACK2_KEPT_CLASS_COUNT,
+  BLACK2_DROPPED_CLASS_COUNT,
+  BLACK2_AI_STRATEGY_COUNT,
+  BLACK2_NATURE_MODIFIERS,
+  BLACK2_TYPE_EFFECTIVENESS_CHART,
+  BLACK2_ABILITY_LOGIC,
+  BLACK2_FACILITY_LEVEL_RANGE,
+} from './black2Systems';
 // NOTE: spriteSheets.ts imports PNGs (Vite-only), so this script reads the
 // sheet manifests from disk instead of importing that module.
 const SHEET_DEFS: Record<string, { speciesId: string; name: string }> = {
@@ -116,6 +133,44 @@ for (const f of srcFiles) {
     errors.push(`Game source imports reference data: ${path.relative(SRC, f)}`);
   }
 }
+
+// 5. Black 2 everything-else reference counts (stage2 call site).
+// These are reference-data counts only: the JSONs are parsed in §3,
+// the lookup module's constants must match them, and the four gaps
+// that were 0 in the source must still be null (not invented).
+const black2Expected: Record<string, number> = {
+  'decomp_black2_items.json': BLACK2_ITEM_COUNT,
+  'decomp_black2_abilities.json': BLACK2_ABILITY_COUNT,
+  'decomp_black2_natures.json': BLACK2_NATURE_COUNT,
+  'decomp_black2_types.json': BLACK2_TYPE_COUNT,
+  'decomp_black2_lighting.json': BLACK2_LIGHTING_SETS,
+  'decomp_black2_zones.json': BLACK2_ZONE_COUNT,
+  'decomp_black2_encounters.json': BLACK2_ENCOUNTER_SET_COUNT,
+  'decomp_black2_trainer_facilities.json': BLACK2_FACILITY_COUNT,
+  'decomp_black2_trainer_classes.json': BLACK2_KEPT_CLASS_COUNT,
+};
+for (const [file, expected] of Object.entries(black2Expected)) {
+  const p = path.join(GENERATED, file);
+  if (!fs.existsSync(p)) { warnings.push(`Black 2 reference missing: ${file} (expected count ${expected})`); continue; }
+  const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+  // Each JSON stores its count under a different key; lighting uses
+  // field/battle arrays, classes use keptGenericOrTitledClasses.
+  const actual = file === 'decomp_black2_lighting.json'
+    ? ((data.field?.length ?? 0) + (data.battle?.length ?? 0))
+    : file === 'decomp_black2_trainer_classes.json'
+      ? (data.keptGenericOrTitledClasses ?? -1)
+      : typeof data.count === 'number' ? data.count
+      : typeof data.facilityCount === 'number' ? data.facilityCount
+      : -1;
+  if (actual !== expected) errors.push(`Black 2 reference count mismatch: ${file} expected ${expected}, got ${actual}`);
+  else console.log(`  black2 OK: ${file} count ${expected}`);
+}
+if (BLACK2_DROPPED_CLASS_COUNT + BLACK2_KEPT_CLASS_COUNT !== 237) errors.push(`Black 2 classes: kept ${BLACK2_KEPT_CLASS_COUNT} + dropped ${BLACK2_DROPPED_CLASS_COUNT} != 237`);
+if (BLACK2_AI_STRATEGY_COUNT !== 14) errors.push(`Black 2 AI strategies: expected 14, got ${BLACK2_AI_STRATEGY_COUNT}`);
+if (BLACK2_NATURE_MODIFIERS !== null) errors.push('Black 2 nature modifiers must stay null (not invented)');
+if (BLACK2_TYPE_EFFECTIVENESS_CHART !== null) errors.push('Black 2 type chart must stay null (not invented)');
+if (BLACK2_ABILITY_LOGIC !== null) errors.push('Black 2 ability logic must stay null (not invented)');
+if (BLACK2_FACILITY_LEVEL_RANGE !== null) errors.push('Black 2 facility level range must stay null (not invented)');
 
 console.log(`\nWarnings (${warnings.length}):`);
 for (const w of [...new Set(warnings)].slice(0, 40)) console.log(`  WARN: ${w}`);

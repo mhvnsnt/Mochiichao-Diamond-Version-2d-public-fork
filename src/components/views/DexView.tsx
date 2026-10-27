@@ -5,6 +5,7 @@ import { getSheetDef } from '../../lib/spriteSheets';
 import { SPECIES_DB } from '../../lib/species';
 import CreaturePortrait from '../game/CreaturePortrait';
 import { MenuHelpLine } from '../game/MenuList';
+import Black2SystemsPanel from '../game/Black2SystemsPanel';
 
 /**
  * Mochiichao Dex (2026-10-26, FINISH-FIRST item 5) — the first dex
@@ -384,6 +385,9 @@ export default function DexView({ onBack }: { onBack: () => void }) {
           </div>
         </div>
       </div>
+
+      {/* Black 2 reference systems panel — display only, not playable content. */}
+      <Black2SystemsPanel />
 
       <div className="shrink-0 mt-4">
         <MenuHelpLine text={helpText} />
