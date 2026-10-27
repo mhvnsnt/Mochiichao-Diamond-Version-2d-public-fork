@@ -225,3 +225,14 @@ charge, Pokemon-style attack presentation). Registered in
 clip-index canon_names on the dorowani-avatar-stack-set entry
 (MP4 + alpha twin). Game-data move entry: none exists yet in
 src/data/core/moves.json; stats are owner-TBD, not invented.
+
+## CORRECTION 4 - licence wording (2026-10-27)
+PR #350's backends.json entries for MuseTalk / LivePortrait
+said their MIT licences were "verified via GitHub API". The
+API actually returned NOASSERTION / no detection for both
+repos. The LICENSE files were then read directly at source:
+both are MIT (MuseTalk (c) Tencent Music Entertainment;
+LivePortrait (c) Kuaishou VGIC). Substance unchanged; the
+verification-method wording is corrected in backends.json.
+Logged per the Licence Honesty Law: a wrong label is an error
+in either direction, including a wrong method claim.
