@@ -17,6 +17,7 @@ import { isConfirmKey } from "../lib/buttonMode";
 import { slotForNpc } from "../lib/humanSheets";
 import { personaPresentationForNpc } from "../lib/personaDialogue";
 import { playMusic } from "../lib/music";
+import { resolveTrainerRow, rowToMapMembers } from "../lib/trainer-teams-resolver";
 
 const TILE_SIZE = 40; // match PDF size because it renders better in viewports
 
@@ -93,11 +94,11 @@ export function hexTeamMember(playerSpeciesId: string): any | null {
  * with createMochii at the map level, so trainer, wild and player
  * creatures all use the same stat system and the same existing
  * species base stats — no new stats invented. Members whose id/name
- * do NOT match SPECIES_DB (e.g. Bug Catcher Rick's team now lists id
- * "016" named "Squirmite", which has no SPECIES_DB entry yet, so it
- * stays on map stats until a 016 code entry exists)
- * are left on their map stats unchanged and flagged in the PR body
- * as pre-existing map-data mismatches, not silently renamed.
+ * do NOT match SPECIES_DB are left on their map stats unchanged and
+ * flagged in the PR body as pre-existing map-data mismatches, not
+ * silently renamed. (The old example here -- Bug Catcher Rick's 016
+ * Squirmite "with no SPECIES_DB entry yet" -- is stale: 016 exists
+ * in species.ts since the #275 promotion, so Rick's team rebuilds.)
  */
 export function trainerBattleMon(m: any): any {
   const id = m.speciesId || m.id;
@@ -577,9 +578,19 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
     // Razorgater team in the map data, which contradicted the
     // player's own pick when the player chose Razorgater.
     const isHexBattle = npc.id === 'hex_battle_event' || npc.id === 'rival_hex' || npc.name === 'Hex';
+    // PR C (2026-10-27): the trainer table (265 rows) is the battle's
+    // team source when the NPC has a row. The row's members carry the
+    // species name, so trainerBattleMon rebuilds them with real
+    // createMochii stats/moves; a row whose species is missing (none
+    // today) falls back to the inline map team. Hex has no row and
+    // keeps the counter-pick branch above. Only two battles change
+    // vs the inline teams: Master Lin 039->040 and Miner Cleff +035
+    // Lv15 (see trainer-teams-resolver.ts header).
+    const trainerRow = isHexBattle ? null : resolveTrainerRow(npc.name, npc.battle.team, npc.battle.reward);
+    const rowMembers = trainerRow ? rowToMapMembers(trainerRow) : null;
     const battleTeam = (isHexBattle && playerMon?.speciesId)
       ? [hexTeamMember(playerMon.speciesId)].filter(Boolean)
-      : npc.battle.team.map((m: any) => trainerBattleMon(m));
+      : (rowMembers ?? npc.battle.team).map((m: any) => trainerBattleMon(m));
     const trainerName = isHexBattle ? rivalName : npc.name;
     pendingBattleEndRef.current = null;
     setBattleState({
@@ -596,7 +607,7 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
       log: [`${trainerName} wants to battle!`, `${trainerName} sent out ${battleTeam[0].name}!`],
       phase: "menu",
       canCatch: false,
-      reward: npc.battle.reward || 100,
+      reward: rowMembers && trainerRow ? trainerRow.reward : (npc.battle.reward || 100),
       isDojo: !!npc.isDojoBoss,
       badge: npc.battle.badge
     });
