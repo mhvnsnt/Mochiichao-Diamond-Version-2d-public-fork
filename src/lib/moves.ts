@@ -50,5 +50,7 @@ export const MOVES_DB: Record<string, Move> = {
   // ── BUG ───────────────────────────────────────────────────
   SWARM_STRIKE:   { name:"Swarm Strike",    type:"BUG",      cat:"Physical", bp:25,  acc:95,  pp:10, pri:0, effect:"MULTI_HIT",   effectChance:100, anim:"SWARM_STRIKE",   desc:"Swarm attacks 2–5 times in a row." },
   // ── POISON ────────────────────────────────────────────────
-  POISON_JAB:     { name:"Poison Jab",      type:"POISON",   cat:"Physical", bp:80,  acc:100, pp:20, pri:0, effect:"POISON",      effectChance:20,  anim:"VENOM_STRIKE",   desc:"Stabs with poison appendage. May poison." }
+  POISON_JAB:     { name:"Poison Jab",      type:"POISON",   cat:"Physical", bp:80,  acc:100, pp:20, pri:0, effect:"POISON",      effectChance:20,  anim:"VENOM_STRIKE",   desc:"Stabs with poison appendage. May poison." },
+  // ── MYTHIC ────────────────────────────────────────────────
+  ORIGIN_VERDICT: { name:"Origin Verdict",  type:"MYTHIC",   cat:"Special",  bp:100, acc:100, pp:10, pri:0, effect:"FORM_TYPE",   effectChance:0,   anim:"ORIGIN_VERDICT", desc:"Countless shots of prism light. Its light follows the form Mythar stands in." },
 };
