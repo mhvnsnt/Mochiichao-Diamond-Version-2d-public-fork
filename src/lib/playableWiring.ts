@@ -194,7 +194,7 @@ export const STORAGE_RULES = {
   depositBlockedWhenItWouldEmptyParty: true,
   boxNameMaxFireRed: 8,
   boxNameMaxLater: 20,
-  wallpapersFireRed: 17,
+  wallpapersFireRed: 16,
 };
 export type BoxCursorState = { perBox: Record<string, number> };
 export const TERMINAL_TOP_MENU: ReadonlyArray<string> = ["item-storage", "mailbox", "turn-off"];
