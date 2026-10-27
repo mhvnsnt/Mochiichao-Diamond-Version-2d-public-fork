@@ -35,3 +35,13 @@ deleted; a PR that deletes one is blocked until Mars approves it.
 
 ## PULL-EVERYTHING-THEN-SWAP RULE (Mars, 2026-10-25 23:48 CDT, standing)
 Pull everything in 100% — official, Pokemon, fan-made, mod, open source, anything pullable — then sift through it, and swap out the small amount of copyright / proprietary files really fast for Mochiichao originals, as soon as they are identified. Do not stop work to lecture about proprietary files, do not make Mars repeat this, and do not invent a do-not-pull list he did not make. The public repo ships the swapped, cleaned version. Full text: `docs/pull-and-swap-rule.md`.
+
+
+## DISC-TO-REPO RULE (Mars, 2026-10-27, standing forever until Mars changes it himself)
+Get everything on disc into the repos, 100%, pushed and merged cleanly — disc backs up when work sits on disc instead of being pushed.
+- Public repo (this repo) gets EVERYTHING that can go into our game: original Mochiichao work, art, docs, builders, code, checkpoints, logs.
+- Private mirror (mhvnsnt/Mochiichao-Diamond-Version-2d--mirror) gets ANYTHING proprietary to Pokemon, Sonic Adventure, or Sonic. Proprietary files NEVER go in the public repo. Full commercial game dumps / ROM files go in NO repo; a dump Mars uploads himself stays private and local only.
+- CONFIRM it is actually in the repo first: file present on the remote AND its PR merged, verified by API check (size + SHA match). A local commit or push receipt is NOT confirmation. Only then is disc cleanup allowed for that file.
+- NEVER delete our work. Cleanup means only files already verified in a repo; a file that exists only on disc is never deleted. Rebuildables (node_modules, dist output, clone .git objects duplicating a repo) are not "our work" — but any uncommitted change inside a worktree/clone IS, and must be pushed first.
+- Repo pushes stay PR-only, 0 file deletions unless the task says so, no force-push, no history rewrite; merge gate (empty D-filter + green CI/guard) before merge.
+- Report counts with percentages (in-repo / needs-Mars-input / still-owed). If a file's repo status is uncertain, KEEP IT and report it.
