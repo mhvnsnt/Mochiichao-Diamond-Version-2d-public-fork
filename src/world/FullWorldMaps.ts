@@ -40,7 +40,7 @@ export const SECTOR_0: any = {
     [1,1,1,1,0,0,0,0,0,0,3,3,3,0,0,3,3,3,0,0,3,3,0,0,0,0,0,1,1,1,1,1],
     [1,1,1,1,0,1,1,0,0,0,3,0,3,0,0,3,0,3,0,0,3,3,0,0,0,1,1,1,1,1,1,1],
     [1,1,1,1,4,4,5,4,0,0,3,0,3,0,0,3,0,3,0,0,0,0,0,0,4,4,5,4,1,1,1,1],
-    [1,1,1,1,4,4,4,4,0,0,3,3,3,0,0,3,3,3,0,0,0,0,0,0,4,4,4,4,1,1,1,1],
+    [1,1,1,1,4,4,3,4,0,0,3,3,3,0,0,3,3,3,0,0,0,0,0,0,4,4,3,4,1,1,1,1],
     [1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,1],
     [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
     [1,0,10,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,1],
@@ -98,7 +98,13 @@ export const SECTOR_0: any = {
     { x:15, y:27, to:"boot_bay", enterAt:{x:15, y:0}, dir:"down", hmNeeded:"Surf" },
   ],
   doors: [
-    { x:10, y:3, to:"aeon_lab", enterAt:{x:6, y:12}, label:"Prof. Aeon's Lab" }
+    { x:10, y:3, to:"aeon_lab", enterAt:{x:6, y:12}, label:"Prof. Aeon's Lab" },
+    // Truck/house maps: (6,7) and (26,7) were DOOR tiles with no door
+    // entry and no walkable approach. The y=8 tiles below them are
+    // now PATH, so the player can step (6,9)->(6,8)->(6,7) and
+    // (26,9)->(26,8)->(26,7) into the houses.
+    { x:6, y:7, to:"sector0_house_1f", enterAt:{x:6, y:10}, label:"Your House" },
+    { x:26, y:7, to:"sector0_rival_house", enterAt:{x:6, y:10}, label:"Hex's House" }
   ],
   events: [
     { id: "block_route_1", x:13, y:1, dialog:["Wait! It's dangerous to go into the tall grass without a partner!","Go see Prof. Aeon at his lab first!"], condition: "noStarter" },
@@ -685,6 +691,128 @@ export const DOJO_2: any = {
   exits: [{ x:5, y:15, to:"binary_woods", enterAt:{x:7, y:37}, dir:"down" }], doors: [], events: [], encounters: []
 };
 
+
+export const SECTOR0_TRUCK: any = {
+  name: "Moving Truck — Sector 0",
+  music: "sector0_theme",
+  weather: "clear",
+  interior: true,
+  width: 12, height: 10,
+  playerStart: { x:6, y:8 },
+  tiles: (() => {
+    return buildMap(12, 10, (x, y) => {
+      if (x===6&&y===9) return TILE.DOOR;
+      if (x===0||x===11||y===0||y===9) return TILE.WALL;
+      if (y>=1&&y<=3) return TILE.BUILDING; // stacked boxes
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    { id:"mover_1", x:3, y:5, sprite:"📦", name:"Mover", facing:"down", dialog:["Careful with that one — it is the clock. A new home needs a correct time."] },
+    { id:"mover_2", x:8, y:5, sprite:"📦", name:"Mover", facing:"down", dialog:["Last box out, then we are done. Your room is upstairs."] },
+  ],
+  signs: [
+    { x:6, y:2, text:"MOVING BOXES\\nMom's things, your things, and one very important clock." },
+  ],
+  exits: [],
+  doors: [
+    { x:6, y:9, to:"sector0", enterAt:{x:15, y:10}, label:"Step off the truck" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const SECTOR0_HOUSE_1F: any = {
+  name: "Your House — 1F",
+  music: "sector0_theme",
+  weather: "clear",
+  interior: true,
+  width: 13, height: 12,
+  playerStart: { x:6, y:10 },
+  tiles: (() => {
+    return buildMap(13, 12, (x, y) => {
+      if (x===6&&y===11) return TILE.DOOR;
+      if (x===6&&y===1) return TILE.STAIRS_UP;
+      if (x===6&&y===2) return TILE.PATH; // stair approach, else the stair is unreachable
+      if (x===0||x===12||y===0||y===11) return TILE.WALL;
+      if (y>=1&&y<=2) return TILE.BUILDING; // kitchen counter / table
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    { id:"mom_house", x:5, y:8, sprite:"👩", name:"Your Mom", facing:"down", isHeal: true, dialog:["There you are! The truck beat us here.","Come inside. Your room is upstairs. The boxes can wait. Go set the clock first — a new home needs a correct time.","Good. Now go say hello next door. Hex's family just moved in too. You two will need each other out there.","Wait. Before you run off — here. Sprint Boots. Hold B and you can run. A trainer who cannot run will always be late."] },
+  ],
+  signs: [
+    { x:10, y:2, text:"KITCHEN\\nMom's cooking smells like a new start." },
+  ],
+  exits: [
+    { x:6, y:1, to:"sector0_house_2f", enterAt:{x:6, y:10}, dir:"up" }
+  ],
+  doors: [
+    { x:6, y:11, to:"sector0", enterAt:{x:6, y:9}, label:"Boot Harbor" }
+  ],
+  events: [],
+  encounters: []
+};
+
+export const SECTOR0_HOUSE_2F: any = {
+  name: "Your House — 2F",
+  music: "sector0_theme",
+  weather: "clear",
+  interior: true,
+  width: 13, height: 12,
+  playerStart: { x:6, y:10 },
+  tiles: (() => {
+    return buildMap(13, 12, (x, y) => {
+      if (x===6&&y===11) return TILE.STAIRS_DOWN;
+      if (x===0||x===12||y===0||y===11) return TILE.WALL;
+      if (x>=2&&x<=4&&y>=2&&y<=3) return TILE.BUILDING; // PC desk
+      if (x>=8&&x<=10&&y>=2&&y<=3) return TILE.BUILDING; // bed
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [],
+  signs: [
+    { x:3, y:2, text:"PC\\nYour PC. Items and Mochiichao storage live here." },
+    { x:6, y:5, text:"CLOCK\\nSet the clock. A new home needs a correct time." },
+    { x:9, y:2, text:"POSTER\\nA poster of a legendary Mochiichao. One day." },
+  ],
+  exits: [
+    { x:6, y:11, to:"sector0_house_1f", enterAt:{x:6, y:2}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const SECTOR0_RIVAL_HOUSE: any = {
+  name: "Hex's House",
+  music: "sector0_theme",
+  weather: "clear",
+  interior: true,
+  width: 13, height: 12,
+  playerStart: { x:6, y:10 },
+  tiles: (() => {
+    return buildMap(13, 12, (x, y) => {
+      if (x===6&&y===11) return TILE.DOOR;
+      if (x===0||x===12||y===0||y===11) return TILE.WALL;
+      if (y>=1&&y<=2) return TILE.BUILDING;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    { id:"hex_mom", x:5, y:8, sprite:"👩", name:"Hex's Mom", facing:"down", dialog:["Hex just moved in too. You two will need each other out there.","Go say hello — he is already talking about his starter."] },
+    { id:"rival_hex_home", x:8, y:5, sprite:"😤", name:"Hex", facing:"down", dialog:["You again? I already picked my starter. Razorgater, obviously.","Don't think I'll go easy on you just because we grew up here.","Next time we meet, we BATTLE. Count on it."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:6, y:11, to:"sector0", enterAt:{x:26, y:9}, label:"Boot Harbor" }
+  ],
+  events: [],
+  encounters: []
+};
+
 export const FULL_WORLD: Record<string, any> = {
   aeon_lab: AEON_LAB,
   sector0: SECTOR_0,
@@ -701,5 +829,9 @@ export const FULL_WORLD: Record<string, any> = {
   mauveville_arena: MAUVEVILLE_ARENA,
   boot_bay: BOOT_BAY,
   luigi_mansion: LUIGI_MANSION,
-  dojo_2: DOJO_2
+  dojo_2: DOJO_2,
+  sector0_truck: SECTOR0_TRUCK,
+  sector0_house_1f: SECTOR0_HOUSE_1F,
+  sector0_house_2f: SECTOR0_HOUSE_2F,
+  sector0_rival_house: SECTOR0_RIVAL_HOUSE
 };
