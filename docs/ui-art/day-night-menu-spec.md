@@ -15,6 +15,35 @@ nothing on screen changes because of this spec.
   guessed here.
 - Locked default: EXEMPT, always. See "What never changes".
 
+## Wiring status (stacked wiring PR, base = this spec branch)
+
+- WIRED HERE (1 new module + line replacements only, 0 files deleted):
+  `src/lib/dayNightMenuVariants.ts` resolves the variant once per
+  menu render from the SAME Settings storage the DAY/NIGHT rows
+  already write (no new row, no new storage key — the selection
+  control is the existing Settings rows). `applyMenuCustom()` now
+  also sets `--menu-daynight-panel` and `--menu-daynight-muted` on
+  `:root` (those two were missing before, so no menu could read
+  the full palette). In-game effect: PauseMenu carries the
+  resolved vars + a scaled tint overlay; DialogueBox's frame
+  accent is the resolved accent (its Batch A panel background is
+  NOT overridden). SettingsScreen keeps its own equivalent tint
+  implementation and is not refactored here.
+- NOT WIRED HERE (still owed, not guessed): bag / shop / battle /
+  save-slots panel + accent recolours — their panels are
+  skin/CSS-defined, so they wait for the skins work (PR #151)
+  rather than being repainted by guesswork here. Main-menu
+  preset-only application waits for preset selection (#157 /
+  #199 branches), which are not on this branch. Roster/party +
+  PC rows wait for their skin presets, as in the Status section.
+  Locked default title + v32 main menu remain EXEMPT, always.
+- Tint strength: the SPEC PROPOSAL above is implemented in the
+  new module as specified (alpha scaling only, 0% = no overlay,
+  palettes still change). Default DAY frame border note: the
+  dialogue frame border goes from the old 60%-alpha teal to the
+  solid DAY accent (same hue, per the spec palette) — layout,
+  labels, margins, fonts, and cursors are unchanged.
+
 ## Sources, in order (Pokemon-first rule)
 
 1. Locked default title + main menu — `docs/locked-default-title-menu.md`

@@ -5,6 +5,7 @@ import CreaturePortrait from './CreaturePortrait';
 import { UiPanel } from './UiArt';
 import { UI_ART } from '../../lib/uiArt';
 import { MenuList, MenuHelpLine } from './MenuList';
+import { getDayNightMenuVariant, dayNightMenuVarStyle } from '../../lib/dayNightMenuVariants';
 
 /** In-game pause menu (X / Esc / Menu button). Real game buttons, no brackets. */
 export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle, onNavigate }: {
@@ -19,6 +20,15 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
   const saveSlot = useGameStore(s => s.saveSlot);
   const [saved, setSaved] = React.useState(false);
   const [selected, setSelected] = React.useState(0);
+  // Day/night variants wiring (spec, stacked on PR #153): the
+  // resolved variant is read ONCE per pause render from the same
+  // Settings storage the DAY/NIGHT rows write. The vars ride on
+  // the panel so any var-reading child picks them up, and the
+  // scaled tint overlay is the visible variant on this menu.
+  // Panel background, labels, margins, fonts, and cursor glyphs
+  // are untouched here — the pause panel's background is the
+  // Y2K skin class, which the skins work (PR #151) owns.
+  const dnVariant = getDayNightMenuVariant();
 
   // Framed window OVER the world (overlay dims the world, the window is
   // centred, the world stays visible around it — not a blank
@@ -62,7 +72,8 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
 
   return (
     <div className="absolute inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-      <UiPanel slot={UI_ART.pause_menu_panel} className="pause-y2k-panel relative w-full max-w-sm p-6 flex flex-col gap-3 max-h-[92dvh] overflow-y-auto">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ background: dnVariant.tint }} />
+      <UiPanel slot={UI_ART.pause_menu_panel} className="pause-y2k-panel relative w-full max-w-sm p-6 flex flex-col gap-3 max-h-[92dvh] overflow-y-auto" style={dayNightMenuVarStyle(dnVariant)}>
         <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 left-3 text-pink-300 text-lg">✦</span>
         <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 right-3 text-yellow-300 text-lg">♥</span>
         <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 left-3 text-cyan-200 text-base">★</span>
