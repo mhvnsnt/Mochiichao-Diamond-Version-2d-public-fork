@@ -1,0 +1,115 @@
+{
+  "atlas": "hacker-grunt-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      14,
+      559
+    ],
+    [
+      574,
+      1102
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        192,
+        449
+      ],
+      [
+        669,
+        1016
+      ],
+      [
+        1261,
+        1509
+      ],
+      [
+        1763,
+        2029
+      ]
+    ],
+    [
+      [
+        222,
+        459
+      ],
+      [
+        695,
+        976
+      ],
+      [
+        1252,
+        1489
+      ],
+      [
+        1763,
+        2031
+      ]
+    ]
+  ],
+  "world": "0:0,0:2,1:0,1:2",
+  "steps": "0:1,0:3,1:1,1:3",
+  "walk": "media-generation-hacker-grunt-walk-frames-v1-20-0-6bf08830-4062-4e43-a520-8ab95427873a.webp",
+  "battle": "media-generation-hacker-grunt-battle-front-v1-2-0-886456c6-c9b0-4be6-a8fb-e06c67220727.webp",
+  "portrait": "media-generation-hacker-grunt-portrait-v1-2026-0-e96614c1-1e24-4d8e-aeb3-7d13a39e1c11.webp"
+}
