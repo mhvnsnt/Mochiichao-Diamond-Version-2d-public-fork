@@ -323,3 +323,32 @@ Remaining known local-only material is scratch by verdict
 (composite-test frame intermediates and strips, superseded
 still-plate composite variants, rejected avatar options) —
 not production, and it stays off the repo.
+
+## CHARACTER SHEETS - PILOT SIX CLIP BUNDLES (2026-10-27)
+Character-sheet clip bundles for all six pilot species landed
+under show/production/character-sheets/ (branch
+feature/character-sheets-1): for each species, every animation
+its TextRig rig carries (idle / signature animation /
+expression animation, rig names verbatim), each as a
+white-field MP4 + a transparent VP9-alpha WebM twin
+(alpha_mode=1), a transparent poster PNG, a manifest.json
+(ffprobe-measured spec + sha256, motion verification) and the
+idle's likeness-gate packet. Motion source: the TextRig DEFORM
+rigs over the canon cutouts (likeness by construction),
+rendered with a transparent stage at 30 fps on a 512x512 sheet
+canvas; motion verified per animation by frame checksums +
+mesh vertex-buffer checksums (all animations deform; held
+poses - head tilts, the Water Orb charge hold - show fewer
+distinct states by design). Gate (full-body mode, shipped
+thresholds) recommendations on the idles: mochii PASS
+(0.5814/0.9126/26.76), gabu PASS (0.6543/0.9676/24.32),
+kittember FAIL (0.4985/0.7520/53.45 - mid-loop pose phase vs
+the rest-pose cutout; recorded as measured), sproutle PASS
+(0.7711/0.9721/15.92), dorowani PASS (0.5122/0.9186/29.03),
+wispkin PASS (0.6895/0.8253/20.64). All bundles
+quality_status PENDING_GATE, promotion PENDING_OWNER - the
+packets recommend, the owner promotes. Naming: rig animation
+names kept exactly; signatures described neutrally (canon
+attack naming layers in separately) - Dorowani's
+water_orb_charge is his canon Water Orb attack animation, his
+alone. Sproutle rendered from the shadow-free cutout.
