@@ -44,6 +44,14 @@ Contradiction with canon = reject before GPU time is spent.
   Building on a regressed version throws away built work and is
   an error unless the exception + reason are written beside the
   use. Check the registry before building on any piece.
+  REFINEMENT (owner, same day): currency is per piece AND per
+  use - the newest version is the explicit default for its scene
+  unless the owner says otherwise; an upgrade lands as a new
+  file and does NOT erase the previous version, which may keep
+  assigned scenes/uses in the same environment (assignments are
+  written in the registry at upgrade time). The always-wrong
+  move is quietly falling back to the oldest base version (the
+  still plate) when newer living versions exist.
 - LICENCE/PRICING HONESTY (owner law, 2026-10-27): classify every
   tool by what the SOFTWARE actually is, verified at the source
   before the label is written. Never put a fake paywall on

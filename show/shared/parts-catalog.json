@@ -108,16 +108,24 @@
     {
      "version": "v1-still",
      "file": "show production source: accepted Garden Gate still plate (2048x1152 webp, scene-01 generation)",
-     "status": "SUPERSEDED as a standalone background - it is the base layer the living version is built on. Do not composite onto the still directly (Current-Version Law)."
+     "status": "SUPERSEDED as a standalone background - it is the base layer the living version is built on. Do not composite onto the still directly (Current-Version Law).",
+     "assigned_uses": [
+      "base layer under v2-living only"
+     ]
     },
     {
      "version": "v2-living",
      "file": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
      "status": "CURRENT - the background piece that gets used. Living World layers over the v1 plate: CL-1 cloud-shadow drift, foreground leaf-drift particles, pollen motes, synthesised wind bed (BREEZE).",
-     "upgrade_path": "continues per show/production/LIVING-WORLD.md: gate swing (needs the gate as a separated layer), grass-sway masks, background population crossings (SKY class bird-type Mochi), perch/water life. When a v3 lands it is marked CURRENT here and this version becomes SUPERSEDED."
+     "upgrade_path": "continues per show/production/LIVING-WORLD.md: gate swing (needs the gate as a separated layer), grass-sway masks, background population crossings (SKY class bird-type Mochi), perch/water life. When a v3 lands it is marked CURRENT here and this version becomes SUPERSEDED.",
+     "assigned_uses": [
+      "EP01 Scene 1 (Gate, morning) - current default",
+      "Dorowani Gate composites (idle, Water Orb) - current default"
+     ]
     }
    ],
-   "status": "current"
+   "status": "current",
+   "rule": "Current-Version Law (owner): current_version is the explicit default for the Gate scene unless the owner says otherwise. Upgrades land as NEW versions in this list; a previous living version keeps whatever scenes/uses the owner assigns it (recorded here at upgrade time) - it is not erased. v1-still is the base layer only and is NEVER the scene background while a living version exists."
   }
  ]
 }
