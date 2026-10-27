@@ -1,0 +1,176 @@
+{
+ "orb_centre": [
+  237.076385002798,
+  123.17067711247901
+ ],
+ "params": {
+  "B2": {
+   "R": 80,
+   "peak": 0.75,
+   "sigma": 6.0,
+   "core": [
+    255,
+    245,
+    230
+   ],
+   "out": "kittember-bubbles-clean-glow-v2-20261026.png"
+  },
+  "C2": {
+   "R": 115,
+   "peak": 0.95,
+   "sigma": 10.0,
+   "core": [
+    255,
+    252,
+    246
+   ],
+   "out": "kittember-bubbles-clean-glow-strong-v2-20261026.png"
+  }
+ },
+ "results": {
+  "B2": {
+   "tag": "B2",
+   "changed_opaque_px": 0,
+   "near_white_base": 71,
+   "near_white_out": 71,
+   "new_white_px": 0,
+   "core_white_px_intended": 0,
+   "new_white_outside_disc": 0,
+   "glow_alpha_corners_TL_TR_BL_BR": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "glow_alpha_max_whisker_side_x_lt_180": 0,
+   "glow_alpha_max_below_feet_y_gt_200": 0,
+   "glow_alpha_max_below_feather_band_y_gt_215": 0,
+   "visible_ring_mean_min_channel": 199.6,
+   "edge_profiles_glow_alpha": {
+    "right": [
+     80,
+     118,
+     63,
+     null,
+     null,
+     null,
+     null
+    ],
+    "down-right": [
+     80,
+     117,
+     64,
+     20,
+     null,
+     null,
+     null
+    ],
+    "down": [
+     80,
+     58,
+     31,
+     10,
+     1,
+     0,
+     0
+    ],
+    "left": [
+     80,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "angular_profile_alpha_at_0.5R_deg0_to_180": [
+    63,
+    61,
+    62,
+    64,
+    61,
+    54,
+    31,
+    8,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "C2": {
+   "tag": "C2",
+   "changed_opaque_px": 0,
+   "near_white_base": 71,
+   "near_white_out": 71,
+   "new_white_px": 0,
+   "core_white_px_intended": 0,
+   "new_white_outside_disc": 0,
+   "glow_alpha_corners_TL_TR_BL_BR": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "glow_alpha_max_whisker_side_x_lt_180": 0,
+   "glow_alpha_max_below_feet_y_gt_200": 13,
+   "glow_alpha_max_below_feather_band_y_gt_215": 0,
+   "visible_ring_mean_min_channel": 213.1,
+   "edge_profiles_glow_alpha": {
+    "right": [
+     100,
+     148,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "down-right": [
+     100,
+     145,
+     80,
+     null,
+     null,
+     null,
+     null
+    ],
+    "down": [
+     100,
+     73,
+     38,
+     0,
+     0,
+     0,
+     0
+    ],
+    "left": [
+     100,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "angular_profile_alpha_at_0.5R_deg0_to_180": [
+    null,
+    null,
+    null,
+    80,
+    77,
+    66,
+    38,
+    10,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ }
+}
