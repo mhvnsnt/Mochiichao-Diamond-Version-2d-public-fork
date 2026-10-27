@@ -15,3 +15,12 @@ No Pokemon tileset art is shipped here. Pokemon decomp tilesets were used
 only for structure (16x16 tiles, metatiles, layers), never for art.
 
 - tile_0126.png — blue brick wall (step 2, used for BUILDING)
+
+Step 3 — OpenGameArt CC0 (Demetrius, "16x16 tileset: water, grass and
+sand", https://opengameart.org/content/16x16-tileset-water-grass-and-sand):
+- voda-water.png — water tile, sheet grid (0,0)
+- voda-grass.png — grass tile, sheet grid (4,1)
+- voda-sand.png — sand tile, sheet grid (4,4)
+Also downloaded, NOT shipped: Eldiran "16x16 Shoreline Wave Animation
+Tiles" (cc0waveanimtiles16x16.png, CC0) — it is a wave overlay with a
+magenta placeholder area, not a ready water tile, so it was not mapped.
