@@ -1,0 +1,614 @@
+{
+ "creature": "krakenox",
+ "tag": "canonhand20261026",
+ "bucket": "resolved",
+ "anchor_canon": "tentacle tips as hands",
+ "anchor_method": "tip anchors measured per frame from that frame's own silhouette extremes (wings: lateral extremes; tentacles: middle-band lateral extremes), shifted inward (5px pair / 8px single) so fists render whole; raw-extreme fallback, else base copy + flag. Never guessed.",
+ "method": "Layer 2 hand overlays only on staged back sets; 0 generations; back-set files untouched; Mode A impact-only (attack f3, hurt f0); cast glow element-neutral; no claw-swipe from behind; HANDS ONLY, no face overlays.",
+ "source_back_dir": "krakenox",
+ "timing_mode": "impact-only-mode-A",
+ "clawed_physical": false,
+ "shadow_note": "idle00 bottom rows 56-63: 0 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+ "shadow_stripped_px": 0,
+ "sets": {
+  "atk_heavy_kraken_crash_finisher": {
+   "kind": "attack",
+   "family": "heavy",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "grab",
+    "grab",
+    "punch",
+    "grab",
+    "grab",
+    "folded"
+   ],
+   "files": [
+    "krakenox-canonhand20261026-atk_heavy_kraken_crash_finisher-cell-00.png",
+    "krakenox-canonhand20261026-atk_heavy_kraken_crash_finisher-cell-01.png",
+    "krakenox-canonhand20261026-atk_heavy_kraken_crash_finisher-cell-02.png",
+    "krakenox-canonhand20261026-atk_heavy_kraken_crash_finisher-cell-03.png",
+    "krakenox-canonhand20261026-atk_heavy_kraken_crash_finisher-cell-04.png",
+    "krakenox-canonhand20261026-atk_heavy_kraken_crash_finisher-cell-05.png"
+   ],
+   "durations_ms": [
+    220,
+    160,
+    140,
+    120,
+    100,
+    420
+   ],
+   "total_ms": 1160,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "grab",
+     "source": "krakenox-back-20261026-atk_heavy_kraken_crash_finisher-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "grab",
+     "source": "krakenox-back-20261026-atk_heavy_kraken_crash_finisher-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "krakenox-back-20261026-atk_heavy_kraken_crash_finisher-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "grab",
+     "source": "krakenox-back-20261026-atk_heavy_kraken_crash_finisher-cell-03.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      14,
+      36,
+      56,
+      45
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-tentacle-bbox-(13, 22, 58, 48)"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "grab",
+     "source": "krakenox-back-20261026-atk_heavy_kraken_crash_finisher-cell-04.png",
+     "applied": false
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-atk_heavy_kraken_crash_finisher-cell-05.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_physical_tentacle_lash": {
+   "kind": "attack",
+   "family": "physical",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "guard",
+    "punch",
+    "punch",
+    "folded"
+   ],
+   "files": [
+    "krakenox-canonhand20261026-atk_physical_tentacle_lash-cell-00.png",
+    "krakenox-canonhand20261026-atk_physical_tentacle_lash-cell-01.png",
+    "krakenox-canonhand20261026-atk_physical_tentacle_lash-cell-02.png",
+    "krakenox-canonhand20261026-atk_physical_tentacle_lash-cell-03.png",
+    "krakenox-canonhand20261026-atk_physical_tentacle_lash-cell-04.png"
+   ],
+   "durations_ms": [
+    180,
+    120,
+    100,
+    90,
+    300
+   ],
+   "total_ms": 790,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "guard",
+     "source": "krakenox-back-20261026-atk_physical_tentacle_lash-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "guard",
+     "source": "krakenox-back-20261026-atk_physical_tentacle_lash-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "krakenox-back-20261026-atk_physical_tentacle_lash-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "punch",
+     "source": "krakenox-back-20261026-atk_physical_tentacle_lash-cell-03.png",
+     "applied": true,
+     "changed_px": 112,
+     "diff_bbox": [
+      44,
+      35,
+      59,
+      45
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-tentacle-bbox-(19, 20, 63, 47)"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-atk_physical_tentacle_lash-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_signature_abyss_surge": {
+   "kind": "attack",
+   "family": "signature",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "brace",
+    "brace",
+    "brace",
+    "brace",
+    "brace",
+    "folded"
+   ],
+   "files": [
+    "krakenox-canonhand20261026-atk_signature_abyss_surge-cell-00.png",
+    "krakenox-canonhand20261026-atk_signature_abyss_surge-cell-01.png",
+    "krakenox-canonhand20261026-atk_signature_abyss_surge-cell-02.png",
+    "krakenox-canonhand20261026-atk_signature_abyss_surge-cell-03.png",
+    "krakenox-canonhand20261026-atk_signature_abyss_surge-cell-04.png",
+    "krakenox-canonhand20261026-atk_signature_abyss_surge-cell-05.png"
+   ],
+   "durations_ms": [
+    200,
+    220,
+    100,
+    140,
+    120,
+    300
+   ],
+   "total_ms": 1080,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "brace",
+     "source": "krakenox-back-20261026-atk_signature_abyss_surge-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "brace",
+     "source": "krakenox-back-20261026-atk_signature_abyss_surge-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "brace",
+     "source": "krakenox-back-20261026-atk_signature_abyss_surge-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "brace",
+     "source": "krakenox-back-20261026-atk_signature_abyss_surge-cell-03.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      17,
+      31,
+      55,
+      40
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-tentacle-bbox-(16, 13, 57, 45)"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "brace",
+     "source": "krakenox-back-20261026-atk_signature_abyss_surge-cell-04.png",
+     "applied": false
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-atk_signature_abyss_surge-cell-05.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_special_ink_jet": {
+   "kind": "attack",
+   "family": "special",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "cast",
+    "cast",
+    "cast",
+    "cast",
+    "folded"
+   ],
+   "files": [
+    "krakenox-canonhand20261026-atk_special_ink_jet-cell-00.png",
+    "krakenox-canonhand20261026-atk_special_ink_jet-cell-01.png",
+    "krakenox-canonhand20261026-atk_special_ink_jet-cell-02.png",
+    "krakenox-canonhand20261026-atk_special_ink_jet-cell-03.png",
+    "krakenox-canonhand20261026-atk_special_ink_jet-cell-04.png"
+   ],
+   "durations_ms": [
+    200,
+    140,
+    110,
+    110,
+    300
+   ],
+   "total_ms": 860,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "cast",
+     "source": "krakenox-back-20261026-atk_special_ink_jet-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "cast",
+     "source": "krakenox-back-20261026-atk_special_ink_jet-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "cast",
+     "source": "krakenox-back-20261026-atk_special_ink_jet-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "cast",
+     "source": "krakenox-back-20261026-atk_special_ink_jet-cell-03.png",
+     "applied": true,
+     "changed_px": 129,
+     "diff_bbox": [
+      40,
+      28,
+      52,
+      40
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-tentacle-bbox-(20, 10, 55, 43)"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-atk_special_ink_jet-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_heavy_knockback": {
+   "kind": "hurt",
+   "family": "knockback",
+   "roles": [
+    "impact",
+    "recoil",
+    "stagger",
+    "recover"
+   ],
+   "hand_states": [
+    "flail",
+    "flail",
+    "droop",
+    "folded"
+   ],
+   "files": [
+    "krakenox-canonhand20261026-hurt_heavy_knockback-cell-00.png",
+    "krakenox-canonhand20261026-hurt_heavy_knockback-cell-01.png",
+    "krakenox-canonhand20261026-hurt_heavy_knockback-cell-02.png",
+    "krakenox-canonhand20261026-hurt_heavy_knockback-cell-03.png"
+   ],
+   "durations_ms": [
+    80,
+    140,
+    180,
+    300
+   ],
+   "total_ms": 700,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "flail",
+     "source": "krakenox-back-20261026-hurt_heavy_knockback-cell-00.png",
+     "applied": true,
+     "changed_px": 118,
+     "diff_bbox": [
+      23,
+      16,
+      38,
+      27
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-tentacle-bbox-(12, 10, 49, 43)"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "flail",
+     "source": "krakenox-back-20261026-hurt_heavy_knockback-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "hand_state": "droop",
+     "source": "krakenox-back-20261026-hurt_heavy_knockback-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-hurt_heavy_knockback-cell-03.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_light_flinch": {
+   "kind": "hurt",
+   "family": "flinch",
+   "roles": [
+    "impact",
+    "recoil",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "folded",
+    "folded"
+   ],
+   "files": [
+    "krakenox-canonhand20261026-hurt_light_flinch-cell-00.png",
+    "krakenox-canonhand20261026-hurt_light_flinch-cell-01.png",
+    "krakenox-canonhand20261026-hurt_light_flinch-cell-02.png"
+   ],
+   "durations_ms": [
+    120,
+    180,
+    220
+   ],
+   "total_ms": 520,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "guard",
+     "source": "krakenox-back-20261026-hurt_light_flinch-cell-00.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      14,
+      28,
+      46,
+      38
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-tentacle-bbox-(13, 9, 48, 43)"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-hurt_light_flinch-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-hurt_light_flinch-cell-02.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_near_faint_stagger": {
+   "kind": "hurt",
+   "family": "stagger",
+   "roles": [
+    "impact",
+    "recoil",
+    "stagger",
+    "recover"
+   ],
+   "hand_states": [
+    "droop",
+    "droop",
+    "droop",
+    "folded"
+   ],
+   "files": [
+    "krakenox-canonhand20261026-hurt_near_faint_stagger-cell-00.png",
+    "krakenox-canonhand20261026-hurt_near_faint_stagger-cell-01.png",
+    "krakenox-canonhand20261026-hurt_near_faint_stagger-cell-02.png",
+    "krakenox-canonhand20261026-hurt_near_faint_stagger-cell-03.png"
+   ],
+   "durations_ms": [
+    260,
+    260,
+    260,
+    400
+   ],
+   "total_ms": 1180,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "droop",
+     "source": "krakenox-back-20261026-hurt_near_faint_stagger-cell-00.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      12,
+      29,
+      44,
+      39
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-tentacle-bbox-(11, 9, 46, 44)"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "droop",
+     "source": "krakenox-back-20261026-hurt_near_faint_stagger-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "hand_state": "droop",
+     "source": "krakenox-back-20261026-hurt_near_faint_stagger-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-hurt_near_faint_stagger-cell-03.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_status_wobble": {
+   "kind": "hurt",
+   "family": "wobble",
+   "roles": [
+    "impact",
+    "recoil",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "flail",
+    "folded"
+   ],
+   "files": [
+    "krakenox-canonhand20261026-hurt_status_wobble-cell-00.png",
+    "krakenox-canonhand20261026-hurt_status_wobble-cell-01.png",
+    "krakenox-canonhand20261026-hurt_status_wobble-cell-02.png"
+   ],
+   "durations_ms": [
+    220,
+    220,
+    300
+   ],
+   "total_ms": 740,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "guard",
+     "source": "krakenox-back-20261026-hurt_status_wobble-cell-00.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      15,
+      27,
+      48,
+      40
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-tentacle-bbox-(14, 10, 50, 44)"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "flail",
+     "source": "krakenox-back-20261026-hurt_status_wobble-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "krakenox-back-20261026-hurt_status_wobble-cell-02.png",
+     "applied": false
+    }
+   ]
+  }
+ },
+ "gifs": {
+  "attack": {
+   "gif": "krakenox-canonhand20261026-attacks.gif",
+   "frames": 22
+  },
+  "hurt": {
+   "gif": "krakenox-canonhand20261026-hurts.gif",
+   "frames": 14
+  }
+ },
+ "flags": [],
+ "counts": {
+  "hand_frames": 8,
+  "copy_frames": 28,
+  "flagged_frames": 0,
+  "cells": 36
+ },
+ "gate_g1_copy_identical": true,
+ "gate_g1_failures": []
+}
