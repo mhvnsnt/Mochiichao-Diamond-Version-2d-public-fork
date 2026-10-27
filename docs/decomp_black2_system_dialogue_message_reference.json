@@ -1,0 +1,350 @@
+{
+ "system": "dialogue_message",
+ "extract_level": "count_only",
+ "source": "pokebw2/src at commit e522642 (read-only)",
+ "file_count": 22,
+ "total_lines": 13867,
+ "totals": {
+  "files": 22,
+  "lines": 13867,
+  "string_literals_stripped": 509,
+  "species_identifiers": 2,
+  "species_name_tokens": 0,
+  "place_name_tokens": 122,
+  "path_components": 0,
+  "creature_voice_identifiers": 0
+ },
+ "top_field_types": {},
+ "top_field_names": {},
+ "distinct_function_names": 0,
+ "distinct_struct_names": 0,
+ "files": [
+  {
+   "path_sanitized": "gfl/msgdata.c",
+   "ext": ".c",
+   "lines": 266,
+   "string_literals_stripped": 11,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov034/union_msg.c",
+   "ext": ".c",
+   "lines": 908,
+   "string_literals_stripped": 22,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 50,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov036/field_msgbg.c",
+   "ext": ".c",
+   "lines": 2430,
+   "string_literals_stripped": 42,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 8,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov036/scrcmd_msg.c",
+   "ext": ".c",
+   "lines": 959,
+   "string_literals_stripped": 34,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 28,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov036/talkmsgwin.c",
+   "ext": ".c",
+   "lines": 1448,
+   "string_literals_stripped": 17,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 8,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov139/msgsearch.c",
+   "ext": ".c",
+   "lines": 90,
+   "string_literals_stripped": 8,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov139/print_msg.c",
+   "ext": ".c",
+   "lines": 61,
+   "string_literals_stripped": 9,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov165/plist_message.c",
+   "ext": ".c",
+   "lines": 275,
+   "string_literals_stripped": 19,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov172/pdc_msg.c",
+   "ext": ".c",
+   "lines": 364,
+   "string_literals_stripped": 25,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 1,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov181/mb_util_msg.c",
+   "ext": ".c",
+   "lines": 481,
+   "string_literals_stripped": 25,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 3,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov190/wifilogin_message.c",
+   "ext": ".c",
+   "lines": 382,
+   "string_literals_stripped": 25,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 1,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov194/pokemontrade_message.c",
+   "ext": ".c",
+   "lines": 917,
+   "string_literals_stripped": 43,
+   "stripped": {
+    "species_identifiers": 2,
+    "species_name_tokens": 0,
+    "place_name_tokens": 4,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov195/gtsnego_message.c",
+   "ext": ".c",
+   "lines": 804,
+   "string_literals_stripped": 27,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 4,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov199/gsync_message.c",
+   "ext": ".c",
+   "lines": 303,
+   "string_literals_stripped": 25,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov199/pdwacc_message.c",
+   "ext": ".c",
+   "lines": 317,
+   "string_literals_stripped": 25,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov257/ctvt_talk.c",
+   "ext": ".c",
+   "lines": 1597,
+   "string_literals_stripped": 35,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 8,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov259/local_tvt_message.c",
+   "ext": ".c",
+   "lines": 420,
+   "string_literals_stripped": 30,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 3,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov294/intro_msg.c",
+   "ext": ".c",
+   "lines": 286,
+   "string_literals_stripped": 26,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov295/battle_lose_message.c",
+   "ext": ".c",
+   "lines": 193,
+   "string_literals_stripped": 24,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 2,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "ov318/marine_tube_board_message.c",
+   "ext": ".c",
+   "lines": 96,
+   "string_literals_stripped": 14,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 2,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/app_printsys_common.c",
+   "ext": ".c",
+   "lines": 108,
+   "string_literals_stripped": 9,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  },
+  {
+   "path_sanitized": "system/printsys.c",
+   "ext": ".c",
+   "lines": 1162,
+   "string_literals_stripped": 14,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "count_only"
+  }
+ ],
+ "summary_own_words": "COUNT-ONLY by task rule. Message background/window rendering system in the field. No message text, dialogue, script content or identifier lists are included in this batch.",
+ "held_out": "count_only_by_task_rule",
+ "owed_mappings_global": [
+  "nature modifiers",
+  "type-to-True-Elements mapping",
+  "map assignments",
+  "facility level rules",
+  "season-to-form mapping",
+  "weather durations and stat/accuracy effects",
+  "save block sizes, formats and checksums",
+  "battle damage/accuracy formula constants",
+  "shop stock lists and prices",
+  "box counts, box sizes and deposit/withdraw rules",
+  "party slot layout, cursor behaviour and switch rules",
+  "further split of the system-core remainder bucket by directory",
+  "camera positions, zoom values and follow rules",
+  "movement speed, grid size and encounter rates (field-encounters batch)"
+ ],
+ "extraction_method": "counts_only"
+}
