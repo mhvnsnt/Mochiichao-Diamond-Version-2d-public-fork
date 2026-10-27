@@ -22,7 +22,7 @@ pip installs FAIL there without the redirect; learned live).
 | git-lfs 3.5.1 | media versioning when media repo lands | here | INSTALLED ~/opt/bin/git-lfs |
 | Blender 4.5 LTS | scriptable camera / GP | owner machine | SPECIFIED (FULLSTACK-WIRING) |
 | Natron 2.5 | node composite (OCIO) | owner machine fallback | SPECIFIED (maintenance-mode appliance) |
-| ComfyUI + Wan 2.2 | generative passes (triple-lock) | **Kaggle GPU (wired 2026-10-27)** | ENDPOINT SETTLED: Kaggle signed in (Google, acct 'Mars FMMG'); T4 x2 (2x Tesla T4, 29GB) live; 22h03m of 30h weekly GPU quota remaining at wiring; TPU v5e-8 also offered. Same pattern as the owner's video-fix-tools Viggle-on-Kaggle. Notebook build = next wiring step. |
+| ComfyUI + Wan 2.2 | generative passes (triple-lock) | **Kaggle GPU (wired 2026-10-27)** | ENDPOINT PROVEN LIVE 2026-10-27: notebook imported + Run All on Kaggle — 2x Tesla T4 verified, ComfyUI v0.43.0 up, Wan 2.2 set staged (ti2v 5B fp16 + umt5 fp8 + vae, ~18GB), triple-lock nodes cloned, headless API answered 200. Quota after run ~21h56m of 30h. Notebook: kaggle.com/code/marsfmmg/mochiichao-comfyui-wan. Same pattern as the owner's video-fix-tools Viggle-on-Kaggle. Notebook build = next wiring step. |
 | Chatterbox / Kokoro | human TTS / scratch voices | here (CPU scratch) / GPU | SPECIFIED (voice-pipe is owner's own) |
 | EbSynth | — | — | DEMOTED (browser freemium; see FULLSTACK-WIRING §0) |
 
