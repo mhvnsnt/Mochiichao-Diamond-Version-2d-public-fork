@@ -1,0 +1,115 @@
+{
+ "creature": "tiidebiite",
+ "roster_id": "002",
+ "variant": null,
+ "movement_class": "small_bouncy",
+ "idle_class": "small_bouncy",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 400,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/tiidebiite/cells/tiidebiite_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/tiidebiite/cells/tiidebiite_cell_05.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "game-ready/tiidebiite/cells/tiidebiite_cell_06.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_1"
+    }
+   ],
+   "loop": [
+    "game-ready/tiidebiite/cells/tiidebiite_cell_02.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_05.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_02.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_06.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/tiidebiite/cells/tiidebiite_cell_04.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/tiidebiite/cells/tiidebiite_cell_11.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/tiidebiite/cells/tiidebiite_cell_12.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_1"
+    }
+   ],
+   "loop": [
+    "game-ready/tiidebiite/cells/tiidebiite_cell_04.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_11.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_04.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_12.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/tiidebiite/cells/tiidebiite_cell_03.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "game-ready/tiidebiite/cells/tiidebiite_cell_08.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_0"
+    },
+    {
+     "file": "game-ready/tiidebiite/cells/tiidebiite_cell_09.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_1"
+    }
+   ],
+   "loop": [
+    "game-ready/tiidebiite/cells/tiidebiite_cell_03.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_08.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_03.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_09.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/tiidebiite/tiidebiite_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "game-ready/tiidebiite/cells/tiidebiite_cell_08mir.png",
+     "provenance": "locked_walk_mirror",
+     "source_role": "walk_side_mirror"
+    },
+    {
+     "file": "game-ready/tiidebiite/cells/tiidebiite_cell_09mir.png",
+     "provenance": "locked_walk_mirror",
+     "source_role": "walk_side_mirror"
+    }
+   ],
+   "loop": [
+    "walk/tiidebiite/tiidebiite_walk_right_stand.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_08mir.png",
+    "walk/tiidebiite/tiidebiite_walk_right_stand.png",
+    "game-ready/tiidebiite/cells/tiidebiite_cell_09mir.png"
+   ]
+  }
+ }
+}
