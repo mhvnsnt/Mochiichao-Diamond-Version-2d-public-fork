@@ -412,7 +412,10 @@ export const CAVE_OF_ECHOES: any = {
     { id:"trainer_caverunner_pike", x:19, y:10, sprite:"🏃", name:"Cave Runner Pike", facing:"down", dialog:["I run these tunnels every day."], battle:{ team:[{id:"013",name:"Pupbble",hp:45,maxHp:45,atk:60,def:50,spd:50,moves:["Tackle","Quick Attack"],type:"Earth",level:16},{id:"036",name:"Cragarm",hp:65,maxHp:65,atk:105,def:130,spd:30,moves:["Tackle","Quick Attack"],type:"Steel",level:17}], reward:380, badge:null } },
   ],
   exits: [
-    { x:5, y:0, to:"binary_woods", enterAt:{x:27, y:38}, dir:"up" }
+    { x:5, y:0, to:"binary_woods", enterAt:{x:27, y:38}, dir:"up" },
+    // Phase A: STAIRS_DOWN tile at (11,27) was a dead end — no exit.
+    // It now leads to Neon City at its STAIRS_DOWN tile (18,35).
+    { x:11, y:27, to:"neon_city", enterAt:{x:18, y:35}, dir:"down" }
   ],
   doors: [],
   events: [],
@@ -467,6 +470,10 @@ export const NEON_CITY: any = {
   exits: [
     ...buildVertExits(0, 15, 25, "scrap_junkyard", 32, "left"),
     ...buildVertExits(35, 15, 25, "coral_approach", 1, "right"),
+    // Phase A return: WorldEngine checks exits before the solid-tile
+    // return, so this border tile (18,37) fires even though it renders
+    // as BUILDING. It returns to the Cave STAIRS_DOWN tile (11,27).
+    { x:18, y:37, to:"cave_of_echoes", enterAt:{x:11, y:27}, dir:"down" }
   ],
   doors: [
     { x:18, y:6, to:"mauveville_arena", enterAt:{x:8, y:18}, label:"Mauveville Arena", condition:"ciphers>=10" }
