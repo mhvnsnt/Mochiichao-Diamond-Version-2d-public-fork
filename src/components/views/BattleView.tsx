@@ -41,6 +41,7 @@ import {
 } from '../../lib/hudCustom';
 import { isConfirmKey, shoulderKey } from '../../lib/buttonMode';
 import { useMenuSkin, menuSkinVars, menuSkinPanelShadow } from '../../lib/menuSkins';
+import { useMenuLayout } from '../../lib/menuLayoutLive';
 
 type BattleState = 'START' | 'PLAYER_TURN' | 'ANIMATING' | 'ENEMY_TURN' | 'CAUGHT' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'SWITCH_CHOICE' | 'EVOLUTION';
 
@@ -104,6 +105,15 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   // the message panel keeps its dialogue-box.svg art when set (see
   // menuSkins.css note), so the strip + healthboxes carry the skin.
   const skin = useMenuSkin('battle');
+  // Menu-layout live wiring: the move-button container follows the
+  // chosen catalogue arrangement. gen1/gen2 corner-panel-2x2 anchors
+  // the panel to the right; gen4/gen5 bottom-screen-touch-2x2 uses
+  // taller touch buttons; grid-2x2 keeps the current grid. The HUD
+  // move-layout setting (GRID_2X2/LIST/ROW_4) still decides the
+  // button arrangement inside the container — this layer only adds
+  // the catalogue panel form. Moves, catch, flee and fusion actions
+  // are unchanged.
+  const battleMenuLayout = useMenuLayout('battle');
   const [lastDamage, setLastDamage] = useState<{ amount: number; target: 'enemy' | 'player'; nonce: number } | null>(null);
   useEffect(() => {
     if (!lastDamage) return;
@@ -618,7 +628,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
                 </div>
               </div>
             )}
-            <div className={moveButtonContainerClass(settings.hudMoveLayout as MoveButtonLayout)}>
+            <div className={moveButtonContainerClass(settings.hudMoveLayout as MoveButtonLayout)} data-menu-layout={battleMenuLayout.entryId} style={battleMenuLayout.arrangement === 'corner-panel-2x2' ? { maxWidth: 340, marginLeft: 'auto' } : undefined}>
               {playerActive.moves.slice(0, 4).map((mId, i) => {
                 const mv = MOVES_DB[mId];
                 const color = mv ? TYPES[mv.type]?.color : '#888888';
@@ -629,7 +639,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
                     onClick={() => handlePlayerMove(mId)}
                     onMouseEnter={() => setSelectedMove(i)}
                     onFocus={() => setSelectedMove(i)}
-                    className={`game-button text-left px-3 py-2 disabled:opacity-50 ${i === selectedMove ? (skin ? 'skin-selected' : 'ring-2 ring-yellow-300') : ''}`}
+                    className={`game-button text-left px-3 py-2 disabled:opacity-50${battleMenuLayout.arrangement === 'bottom-screen-touch-2x2' ? ' min-h-[56px]' : ''} ${i === selectedMove ? (skin ? 'skin-selected' : 'ring-2 ring-yellow-300') : ''}`}
                     style={{ borderColor: color }}
                   >
                     <span className="font-bold text-white block truncate">{mv ? mv.name : '-'}</span>
