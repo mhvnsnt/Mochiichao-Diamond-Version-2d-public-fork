@@ -1,0 +1,1176 @@
+{
+  "source": "pokebw2/res/abilities/*.json",
+  "sourceRepo": "fuddlesworth/pokebw2",
+  "sourceCommit": "e522642f9ec496783642df075f05fcd07d3cbc1b",
+  "note": "Source JSONs hold name + description only; the ability's effect is battle code, not data here. Descriptions kept after a scan for Oak/Professor/Gym/Elite/Champion (0 hits); they are generic system text, not dialogue. Placeholder none.json (name '--') is kept and flagged below.",
+  "count": 165,
+  "constantCount": 165,
+  "placeholderEntries": [
+    {
+      "sourceFile": "none.json",
+      "sourceConstant": "ABILITY_NONE",
+      "index": 0,
+      "name": "--",
+      "description": " -"
+    }
+  ],
+  "unresolvedConstants": [],
+  "effectLogic": "NOT EXTRACTED - lives in pokebw2 src battle code; not invented, not copied here.",
+  "abilities": [
+    {
+      "sourceFile": "adaptability.json",
+      "sourceConstant": "ABILITY_ADAPTABILITY",
+      "index": 91,
+      "name": "Adaptability",
+      "description": "Powers up moves of the\nsame type."
+    },
+    {
+      "sourceFile": "aftermath.json",
+      "sourceConstant": "ABILITY_AFTERMATH",
+      "index": 106,
+      "name": "Aftermath",
+      "description": "Damages the attacker\nlanding the finishing hit."
+    },
+    {
+      "sourceFile": "air_lock.json",
+      "sourceConstant": "ABILITY_AIR_LOCK",
+      "index": 76,
+      "name": "Air Lock",
+      "description": "Eliminates the effects of\nweather."
+    },
+    {
+      "sourceFile": "analytic.json",
+      "sourceConstant": "ABILITY_ANALYTIC",
+      "index": 148,
+      "name": "Analytic",
+      "description": "Boosts move power when\nthe Pok\u00e9mon moves last."
+    },
+    {
+      "sourceFile": "anger_point.json",
+      "sourceConstant": "ABILITY_ANGER_POINT",
+      "index": 83,
+      "name": "Anger Point",
+      "description": "Maxes Attack after\ntaking a critical hit."
+    },
+    {
+      "sourceFile": "anticipation.json",
+      "sourceConstant": "ABILITY_ANTICIPATION",
+      "index": 107,
+      "name": "Anticipation",
+      "description": "Senses a foe's\ndangerous moves."
+    },
+    {
+      "sourceFile": "arena_trap.json",
+      "sourceConstant": "ABILITY_ARENA_TRAP",
+      "index": 71,
+      "name": "Arena Trap",
+      "description": "Prevents the foe from\nfleeing."
+    },
+    {
+      "sourceFile": "bad_dreams.json",
+      "sourceConstant": "ABILITY_BAD_DREAMS",
+      "index": 123,
+      "name": "Bad Dreams",
+      "description": "Reduces a sleeping\nfoe's HP."
+    },
+    {
+      "sourceFile": "battle_armor.json",
+      "sourceConstant": "ABILITY_BATTLE_ARMOR",
+      "index": 4,
+      "name": "Battle Armor",
+      "description": "The Pok\u00e9mon is protected\nagainst critical hits."
+    },
+    {
+      "sourceFile": "big_pecks.json",
+      "sourceConstant": "ABILITY_BIG_PECKS",
+      "index": 145,
+      "name": "Big Pecks",
+      "description": "Protects the Pok\u00e9mon from\nDefense-lowering attacks."
+    },
+    {
+      "sourceFile": "blaze.json",
+      "sourceConstant": "ABILITY_BLAZE",
+      "index": 66,
+      "name": "Blaze",
+      "description": "Powers up Fire-type\nmoves in a pinch."
+    },
+    {
+      "sourceFile": "chlorophyll.json",
+      "sourceConstant": "ABILITY_CHLOROPHYLL",
+      "index": 34,
+      "name": "Chlorophyll",
+      "description": "Boosts the Pok\u00e9mon's\nSpeed in sunshine."
+    },
+    {
+      "sourceFile": "clear_body.json",
+      "sourceConstant": "ABILITY_CLEAR_BODY",
+      "index": 29,
+      "name": "Clear Body",
+      "description": "Prevents other Pok\u00e9mon\nfrom lowering its stats."
+    },
+    {
+      "sourceFile": "cloud_nine.json",
+      "sourceConstant": "ABILITY_CLOUD_NINE",
+      "index": 13,
+      "name": "Cloud Nine",
+      "description": "Eliminates the effects of\nweather."
+    },
+    {
+      "sourceFile": "color_change.json",
+      "sourceConstant": "ABILITY_COLOR_CHANGE",
+      "index": 16,
+      "name": "Color Change",
+      "description": "Changes the Pok\u00e9mon's\ntype to the foe's move."
+    },
+    {
+      "sourceFile": "compoundeyes.json",
+      "sourceConstant": "ABILITY_COMPOUNDEYES",
+      "index": 14,
+      "name": "Compoundeyes",
+      "description": "The Pok\u00e9mon's accuracy\nis boosted."
+    },
+    {
+      "sourceFile": "contrary.json",
+      "sourceConstant": "ABILITY_CONTRARY",
+      "index": 126,
+      "name": "Contrary",
+      "description": "Makes stat changes have\nan opposite effect."
+    },
+    {
+      "sourceFile": "cursed_body.json",
+      "sourceConstant": "ABILITY_CURSED_BODY",
+      "index": 130,
+      "name": "Cursed Body",
+      "description": "May disable a move used\non the Pok\u00e9mon."
+    },
+    {
+      "sourceFile": "cute_charm.json",
+      "sourceConstant": "ABILITY_CUTE_CHARM",
+      "index": 56,
+      "name": "Cute Charm",
+      "description": "Contact with the Pok\u00e9mon\nmay cause infatuation."
+    },
+    {
+      "sourceFile": "damp.json",
+      "sourceConstant": "ABILITY_DAMP",
+      "index": 6,
+      "name": "Damp",
+      "description": "Prevents the use of\nself-destructing moves."
+    },
+    {
+      "sourceFile": "defeatist.json",
+      "sourceConstant": "ABILITY_DEFEATIST",
+      "index": 129,
+      "name": "Defeatist",
+      "description": "Lowers stats when HP\nbecomes half or less."
+    },
+    {
+      "sourceFile": "defiant.json",
+      "sourceConstant": "ABILITY_DEFIANT",
+      "index": 128,
+      "name": "Defiant",
+      "description": "When its stats are lowered\nits Attack increases."
+    },
+    {
+      "sourceFile": "download.json",
+      "sourceConstant": "ABILITY_DOWNLOAD",
+      "index": 88,
+      "name": "Download",
+      "description": "Adjusts power according\nto a foe's defenses."
+    },
+    {
+      "sourceFile": "drizzle.json",
+      "sourceConstant": "ABILITY_DRIZZLE",
+      "index": 2,
+      "name": "Drizzle",
+      "description": "The Pok\u00e9mon makes it rain\nif it appears in battle."
+    },
+    {
+      "sourceFile": "drought.json",
+      "sourceConstant": "ABILITY_DROUGHT",
+      "index": 70,
+      "name": "Drought",
+      "description": "Turns the sunlight harsh\nif it is in battle."
+    },
+    {
+      "sourceFile": "dry_skin.json",
+      "sourceConstant": "ABILITY_DRY_SKIN",
+      "index": 87,
+      "name": "Dry Skin",
+      "description": "Reduces HP if it is hot.\nWater restores HP."
+    },
+    {
+      "sourceFile": "early_bird.json",
+      "sourceConstant": "ABILITY_EARLY_BIRD",
+      "index": 48,
+      "name": "Early Bird",
+      "description": "The Pok\u00e9mon awakens\nquickly from sleep."
+    },
+    {
+      "sourceFile": "effect_spore.json",
+      "sourceConstant": "ABILITY_EFFECT_SPORE",
+      "index": 27,
+      "name": "Effect Spore",
+      "description": "Contact may poison or\ncause paralysis or sleep."
+    },
+    {
+      "sourceFile": "filter.json",
+      "sourceConstant": "ABILITY_FILTER",
+      "index": 111,
+      "name": "Filter",
+      "description": "Reduces damage from\nsupereffective attacks."
+    },
+    {
+      "sourceFile": "flame_body.json",
+      "sourceConstant": "ABILITY_FLAME_BODY",
+      "index": 49,
+      "name": "Flame Body",
+      "description": "Contact with the Pok\u00e9mon\nmay burn the attacker."
+    },
+    {
+      "sourceFile": "flare_boost.json",
+      "sourceConstant": "ABILITY_FLARE_BOOST",
+      "index": 138,
+      "name": "Flare Boost",
+      "description": "Powers up special attacks\nwhen burned."
+    },
+    {
+      "sourceFile": "flash_fire.json",
+      "sourceConstant": "ABILITY_FLASH_FIRE",
+      "index": 18,
+      "name": "Flash Fire",
+      "description": "It powers up Fire-type\nmoves if it's hit by one."
+    },
+    {
+      "sourceFile": "flower_gift.json",
+      "sourceConstant": "ABILITY_FLOWER_GIFT",
+      "index": 122,
+      "name": "Flower Gift",
+      "description": "Powers up party Pok\u00e9mon\nwhen it is sunny."
+    },
+    {
+      "sourceFile": "forecast.json",
+      "sourceConstant": "ABILITY_FORECAST",
+      "index": 59,
+      "name": "Forecast",
+      "description": "Castform transforms with\nthe weather."
+    },
+    {
+      "sourceFile": "forewarn.json",
+      "sourceConstant": "ABILITY_FOREWARN",
+      "index": 108,
+      "name": "Forewarn",
+      "description": "Determines what moves\na foe has."
+    },
+    {
+      "sourceFile": "friend_guard.json",
+      "sourceConstant": "ABILITY_FRIEND_GUARD",
+      "index": 132,
+      "name": "Friend Guard",
+      "description": "Reduces damage done\nto allies."
+    },
+    {
+      "sourceFile": "frisk.json",
+      "sourceConstant": "ABILITY_FRISK",
+      "index": 119,
+      "name": "Frisk",
+      "description": "The Pok\u00e9mon can check\na foe's held item."
+    },
+    {
+      "sourceFile": "gluttony.json",
+      "sourceConstant": "ABILITY_GLUTTONY",
+      "index": 82,
+      "name": "Gluttony",
+      "description": "Encourages the early use\nof a held Berry."
+    },
+    {
+      "sourceFile": "guts.json",
+      "sourceConstant": "ABILITY_GUTS",
+      "index": 62,
+      "name": "Guts",
+      "description": "Boosts Attack if there is\na status problem."
+    },
+    {
+      "sourceFile": "harvest.json",
+      "sourceConstant": "ABILITY_HARVEST",
+      "index": 139,
+      "name": "Harvest",
+      "description": "May create another\nBerry after one is used."
+    },
+    {
+      "sourceFile": "healer.json",
+      "sourceConstant": "ABILITY_HEALER",
+      "index": 131,
+      "name": "Healer",
+      "description": "May heal an ally's status\nconditions."
+    },
+    {
+      "sourceFile": "heatproof.json",
+      "sourceConstant": "ABILITY_HEATPROOF",
+      "index": 85,
+      "name": "Heatproof",
+      "description": "Weakens the power of\nFire-type moves."
+    },
+    {
+      "sourceFile": "heavy_metal.json",
+      "sourceConstant": "ABILITY_HEAVY_METAL",
+      "index": 134,
+      "name": "Heavy Metal",
+      "description": "Doubles the Pok\u00e9mon's\nweight."
+    },
+    {
+      "sourceFile": "honey_gather.json",
+      "sourceConstant": "ABILITY_HONEY_GATHER",
+      "index": 118,
+      "name": "Honey Gather",
+      "description": "The Pok\u00e9mon may gather\nHoney from somewhere."
+    },
+    {
+      "sourceFile": "huge_power.json",
+      "sourceConstant": "ABILITY_HUGE_POWER",
+      "index": 37,
+      "name": "Huge Power",
+      "description": "Raises the Pok\u00e9mon's\nAttack stat."
+    },
+    {
+      "sourceFile": "hustle.json",
+      "sourceConstant": "ABILITY_HUSTLE",
+      "index": 55,
+      "name": "Hustle",
+      "description": "Boosts the Attack stat,\nbut lowers accuracy."
+    },
+    {
+      "sourceFile": "hydration.json",
+      "sourceConstant": "ABILITY_HYDRATION",
+      "index": 93,
+      "name": "Hydration",
+      "description": "Heals status problems if\nit is raining."
+    },
+    {
+      "sourceFile": "hyper_cutter.json",
+      "sourceConstant": "ABILITY_HYPER_CUTTER",
+      "index": 52,
+      "name": "Hyper Cutter",
+      "description": "Prevents other Pok\u00e9mon\nfrom lowering Attack stat."
+    },
+    {
+      "sourceFile": "ice_body.json",
+      "sourceConstant": "ABILITY_ICE_BODY",
+      "index": 115,
+      "name": "Ice Body",
+      "description": "The Pok\u00e9mon gradually\nregains HP in a hailstorm."
+    },
+    {
+      "sourceFile": "illuminate.json",
+      "sourceConstant": "ABILITY_ILLUMINATE",
+      "index": 35,
+      "name": "Illuminate",
+      "description": "Raises the likelihood of\nmeeting wild Pok\u00e9mon."
+    },
+    {
+      "sourceFile": "illusion.json",
+      "sourceConstant": "ABILITY_ILLUSION",
+      "index": 149,
+      "name": "Illusion",
+      "description": "Comes out disguised as\nthe Pok\u00e9mon in back."
+    },
+    {
+      "sourceFile": "immunity.json",
+      "sourceConstant": "ABILITY_IMMUNITY",
+      "index": 17,
+      "name": "Immunity",
+      "description": "Prevents the Pok\u00e9mon\nfrom getting poisoned."
+    },
+    {
+      "sourceFile": "imposter.json",
+      "sourceConstant": "ABILITY_IMPOSTER",
+      "index": 150,
+      "name": "Imposter",
+      "description": "It transforms itself into\nthe Pok\u00e9mon it is facing."
+    },
+    {
+      "sourceFile": "infiltrator.json",
+      "sourceConstant": "ABILITY_INFILTRATOR",
+      "index": 151,
+      "name": "Infiltrator",
+      "description": "Passes through the foe's\nbarrier and strikes."
+    },
+    {
+      "sourceFile": "inner_focus.json",
+      "sourceConstant": "ABILITY_INNER_FOCUS",
+      "index": 39,
+      "name": "Inner Focus",
+      "description": "The Pok\u00e9mon is protected\nfrom flinching."
+    },
+    {
+      "sourceFile": "insomnia.json",
+      "sourceConstant": "ABILITY_INSOMNIA",
+      "index": 15,
+      "name": "Insomnia",
+      "description": "Prevents the Pok\u00e9mon\nfrom falling asleep."
+    },
+    {
+      "sourceFile": "intimidate.json",
+      "sourceConstant": "ABILITY_INTIMIDATE",
+      "index": 22,
+      "name": "Intimidate",
+      "description": "Lowers the foe's\nAttack stat."
+    },
+    {
+      "sourceFile": "iron_barbs.json",
+      "sourceConstant": "ABILITY_IRON_BARBS",
+      "index": 160,
+      "name": "Iron Barbs",
+      "description": "Inflicts damage to the\nPok\u00e9mon on contact."
+    },
+    {
+      "sourceFile": "iron_fist.json",
+      "sourceConstant": "ABILITY_IRON_FIST",
+      "index": 89,
+      "name": "Iron Fist",
+      "description": "Boosts the power of\npunching moves."
+    },
+    {
+      "sourceFile": "justified.json",
+      "sourceConstant": "ABILITY_JUSTIFIED",
+      "index": 154,
+      "name": "Justified",
+      "description": "Raises Attack when hit by\na Dark-type move."
+    },
+    {
+      "sourceFile": "keen_eye.json",
+      "sourceConstant": "ABILITY_KEEN_EYE",
+      "index": 51,
+      "name": "Keen Eye",
+      "description": "Prevents other Pok\u00e9mon\nfrom lowering accuracy."
+    },
+    {
+      "sourceFile": "klutz.json",
+      "sourceConstant": "ABILITY_KLUTZ",
+      "index": 103,
+      "name": "Klutz",
+      "description": "The Pok\u00e9mon can't use\nany held items."
+    },
+    {
+      "sourceFile": "leaf_guard.json",
+      "sourceConstant": "ABILITY_LEAF_GUARD",
+      "index": 102,
+      "name": "Leaf Guard",
+      "description": "Prevents problems with\nstatus in sunny weather."
+    },
+    {
+      "sourceFile": "levitate.json",
+      "sourceConstant": "ABILITY_LEVITATE",
+      "index": 26,
+      "name": "Levitate",
+      "description": "Gives full immunity to all\nGround-type moves."
+    },
+    {
+      "sourceFile": "light_metal.json",
+      "sourceConstant": "ABILITY_LIGHT_METAL",
+      "index": 135,
+      "name": "Light Metal",
+      "description": "Halves the Pok\u00e9mon's\nweight."
+    },
+    {
+      "sourceFile": "lightningrod.json",
+      "sourceConstant": "ABILITY_LIGHTNINGROD",
+      "index": 31,
+      "name": "Lightningrod",
+      "description": "Draws in all Electric-type\nmoves to up Sp. Attack."
+    },
+    {
+      "sourceFile": "limber.json",
+      "sourceConstant": "ABILITY_LIMBER",
+      "index": 7,
+      "name": "Limber",
+      "description": "The Pok\u00e9mon is protected\nfrom paralysis."
+    },
+    {
+      "sourceFile": "liquid_ooze.json",
+      "sourceConstant": "ABILITY_LIQUID_OOZE",
+      "index": 64,
+      "name": "Liquid Ooze",
+      "description": "Damages attackers\nusing any draining move."
+    },
+    {
+      "sourceFile": "magic_bounce.json",
+      "sourceConstant": "ABILITY_MAGIC_BOUNCE",
+      "index": 156,
+      "name": "Magic Bounce",
+      "description": "Reflects status-\nchanging moves."
+    },
+    {
+      "sourceFile": "magic_guard.json",
+      "sourceConstant": "ABILITY_MAGIC_GUARD",
+      "index": 98,
+      "name": "Magic Guard",
+      "description": "The Pok\u00e9mon only takes\ndamage from attacks."
+    },
+    {
+      "sourceFile": "magma_armor.json",
+      "sourceConstant": "ABILITY_MAGMA_ARMOR",
+      "index": 40,
+      "name": "Magma Armor",
+      "description": "Prevents the Pok\u00e9mon\nfrom becoming frozen."
+    },
+    {
+      "sourceFile": "magnet_pull.json",
+      "sourceConstant": "ABILITY_MAGNET_PULL",
+      "index": 42,
+      "name": "Magnet Pull",
+      "description": "Prevents Steel-type\nPok\u00e9mon from escaping."
+    },
+    {
+      "sourceFile": "marvel_scale.json",
+      "sourceConstant": "ABILITY_MARVEL_SCALE",
+      "index": 63,
+      "name": "Marvel Scale",
+      "description": "Ups Defense if there is\na status problem."
+    },
+    {
+      "sourceFile": "minus.json",
+      "sourceConstant": "ABILITY_MINUS",
+      "index": 58,
+      "name": "Minus",
+      "description": "Ups Sp. Atk if another\nPok\u00e9mon has Plus or Minus."
+    },
+    {
+      "sourceFile": "mold_breaker.json",
+      "sourceConstant": "ABILITY_MOLD_BREAKER",
+      "index": 104,
+      "name": "Mold Breaker",
+      "description": "Moves can be used\nregardless of Abilities."
+    },
+    {
+      "sourceFile": "moody.json",
+      "sourceConstant": "ABILITY_MOODY",
+      "index": 141,
+      "name": "Moody",
+      "description": "Raises one stat and\nlowers another."
+    },
+    {
+      "sourceFile": "motor_drive.json",
+      "sourceConstant": "ABILITY_MOTOR_DRIVE",
+      "index": 78,
+      "name": "Motor Drive",
+      "description": "Raises Speed if hit by an\nElectric-type move."
+    },
+    {
+      "sourceFile": "moxie.json",
+      "sourceConstant": "ABILITY_MOXIE",
+      "index": 153,
+      "name": "Moxie",
+      "description": "Boosts Attack after\nknocking out any Pok\u00e9mon."
+    },
+    {
+      "sourceFile": "multiscale.json",
+      "sourceConstant": "ABILITY_MULTISCALE",
+      "index": 136,
+      "name": "Multiscale",
+      "description": "Reduces damage when HP\nis full."
+    },
+    {
+      "sourceFile": "multitype.json",
+      "sourceConstant": "ABILITY_MULTITYPE",
+      "index": 121,
+      "name": "Multitype",
+      "description": "Changes type to match\nthe held Plate."
+    },
+    {
+      "sourceFile": "mummy.json",
+      "sourceConstant": "ABILITY_MUMMY",
+      "index": 152,
+      "name": "Mummy",
+      "description": "Contact with this Pok\u00e9mon\nspreads this Ability."
+    },
+    {
+      "sourceFile": "natural_cure.json",
+      "sourceConstant": "ABILITY_NATURAL_CURE",
+      "index": 30,
+      "name": "Natural Cure",
+      "description": "All status problems heal\nwhen it switches out."
+    },
+    {
+      "sourceFile": "no_guard.json",
+      "sourceConstant": "ABILITY_NO_GUARD",
+      "index": 99,
+      "name": "No Guard",
+      "description": "Ensures attacks by or\nagainst the Pok\u00e9mon land."
+    },
+    {
+      "sourceFile": "none.json",
+      "sourceConstant": "ABILITY_NONE",
+      "index": 0,
+      "name": "--",
+      "description": " -"
+    },
+    {
+      "sourceFile": "normalize.json",
+      "sourceConstant": "ABILITY_NORMALIZE",
+      "index": 96,
+      "name": "Normalize",
+      "description": "All the Pok\u00e9mon's moves\nbecome the Normal type."
+    },
+    {
+      "sourceFile": "oblivious.json",
+      "sourceConstant": "ABILITY_OBLIVIOUS",
+      "index": 12,
+      "name": "Oblivious",
+      "description": "Prevents it from\nbecoming infatuated."
+    },
+    {
+      "sourceFile": "overcoat.json",
+      "sourceConstant": "ABILITY_OVERCOAT",
+      "index": 142,
+      "name": "Overcoat",
+      "description": "Protects the Pok\u00e9mon from\ndamage from weather."
+    },
+    {
+      "sourceFile": "overgrow.json",
+      "sourceConstant": "ABILITY_OVERGROW",
+      "index": 65,
+      "name": "Overgrow",
+      "description": "Powers up Grass-type\nmoves in a pinch."
+    },
+    {
+      "sourceFile": "own_tempo.json",
+      "sourceConstant": "ABILITY_OWN_TEMPO",
+      "index": 20,
+      "name": "Own Tempo",
+      "description": "Prevents the Pok\u00e9mon\nfrom becoming confused."
+    },
+    {
+      "sourceFile": "pickpocket.json",
+      "sourceConstant": "ABILITY_PICKPOCKET",
+      "index": 124,
+      "name": "Pickpocket",
+      "description": "Steals an item when hit\nby another Pok\u00e9mon."
+    },
+    {
+      "sourceFile": "pickup.json",
+      "sourceConstant": "ABILITY_PICKUP",
+      "index": 53,
+      "name": "Pickup",
+      "description": "The Pok\u00e9mon may\npick up items."
+    },
+    {
+      "sourceFile": "plus.json",
+      "sourceConstant": "ABILITY_PLUS",
+      "index": 57,
+      "name": "Plus",
+      "description": "Ups Sp. Atk if another\nPok\u00e9mon has Plus or Minus."
+    },
+    {
+      "sourceFile": "poison_heal.json",
+      "sourceConstant": "ABILITY_POISON_HEAL",
+      "index": 90,
+      "name": "Poison Heal",
+      "description": "Restores HP if the\nPok\u00e9mon is poisoned."
+    },
+    {
+      "sourceFile": "poison_point.json",
+      "sourceConstant": "ABILITY_POISON_POINT",
+      "index": 38,
+      "name": "Poison Point",
+      "description": "Contact with the Pok\u00e9mon\nmay poison the attacker."
+    },
+    {
+      "sourceFile": "poison_touch.json",
+      "sourceConstant": "ABILITY_POISON_TOUCH",
+      "index": 143,
+      "name": "Poison Touch",
+      "description": "May poison targets when a\nPok\u00e9mon makes contact."
+    },
+    {
+      "sourceFile": "prankster.json",
+      "sourceConstant": "ABILITY_PRANKSTER",
+      "index": 158,
+      "name": "Prankster",
+      "description": "Gives priority to a\nstatus move."
+    },
+    {
+      "sourceFile": "pressure.json",
+      "sourceConstant": "ABILITY_PRESSURE",
+      "index": 46,
+      "name": "Pressure",
+      "description": "The Pok\u00e9mon raises the\nfoe's PP usage."
+    },
+    {
+      "sourceFile": "pure_power.json",
+      "sourceConstant": "ABILITY_PURE_POWER",
+      "index": 74,
+      "name": "Pure Power",
+      "description": "Raises the Pok\u00e9mon's\nAttack stat."
+    },
+    {
+      "sourceFile": "quick_feet.json",
+      "sourceConstant": "ABILITY_QUICK_FEET",
+      "index": 95,
+      "name": "Quick Feet",
+      "description": "Boosts Speed if there is\na status problem."
+    },
+    {
+      "sourceFile": "rain_dish.json",
+      "sourceConstant": "ABILITY_RAIN_DISH",
+      "index": 44,
+      "name": "Rain Dish",
+      "description": "The Pok\u00e9mon gradually\nregains HP in rain."
+    },
+    {
+      "sourceFile": "rattled.json",
+      "sourceConstant": "ABILITY_RATTLED",
+      "index": 155,
+      "name": "Rattled",
+      "description": "Some move types scare\nit and boost its Speed."
+    },
+    {
+      "sourceFile": "reckless.json",
+      "sourceConstant": "ABILITY_RECKLESS",
+      "index": 120,
+      "name": "Reckless",
+      "description": "Powers up moves that\nhave recoil damage."
+    },
+    {
+      "sourceFile": "regenerator.json",
+      "sourceConstant": "ABILITY_REGENERATOR",
+      "index": 144,
+      "name": "Regenerator",
+      "description": "Restores a little HP when\nwithdrawn from battle."
+    },
+    {
+      "sourceFile": "rivalry.json",
+      "sourceConstant": "ABILITY_RIVALRY",
+      "index": 79,
+      "name": "Rivalry",
+      "description": "Deals more damage to a\nPok\u00e9mon of same gender."
+    },
+    {
+      "sourceFile": "rock_head.json",
+      "sourceConstant": "ABILITY_ROCK_HEAD",
+      "index": 69,
+      "name": "Rock Head",
+      "description": "Protects the Pok\u00e9mon\nfrom recoil damage."
+    },
+    {
+      "sourceFile": "rough_skin.json",
+      "sourceConstant": "ABILITY_ROUGH_SKIN",
+      "index": 24,
+      "name": "Rough Skin",
+      "description": "Inflicts damage to the\nattacker on contact."
+    },
+    {
+      "sourceFile": "run_away.json",
+      "sourceConstant": "ABILITY_RUN_AWAY",
+      "index": 50,
+      "name": "Run Away",
+      "description": "Enables a sure getaway\nfrom wild Pok\u00e9mon."
+    },
+    {
+      "sourceFile": "sand_force.json",
+      "sourceConstant": "ABILITY_SAND_FORCE",
+      "index": 159,
+      "name": "Sand Force",
+      "description": "Boosts certain moves'\npower in a sandstorm."
+    },
+    {
+      "sourceFile": "sand_rush.json",
+      "sourceConstant": "ABILITY_SAND_RUSH",
+      "index": 146,
+      "name": "Sand Rush",
+      "description": "Boosts the Pok\u00e9mon's\nSpeed in a sandstorm."
+    },
+    {
+      "sourceFile": "sand_stream.json",
+      "sourceConstant": "ABILITY_SAND_STREAM",
+      "index": 45,
+      "name": "Sand Stream",
+      "description": "The Pok\u00e9mon summons a\nsandstorm in battle."
+    },
+    {
+      "sourceFile": "sand_veil.json",
+      "sourceConstant": "ABILITY_SAND_VEIL",
+      "index": 8,
+      "name": "Sand Veil",
+      "description": "Boosts the Pok\u00e9mon's\nevasion in a sandstorm."
+    },
+    {
+      "sourceFile": "sap_sipper.json",
+      "sourceConstant": "ABILITY_SAP_SIPPER",
+      "index": 157,
+      "name": "Sap Sipper",
+      "description": "Boosts Attack when hit by\na Grass-type move."
+    },
+    {
+      "sourceFile": "scrappy.json",
+      "sourceConstant": "ABILITY_SCRAPPY",
+      "index": 113,
+      "name": "Scrappy",
+      "description": "Enables moves to hit\nGhost-type Pok\u00e9mon."
+    },
+    {
+      "sourceFile": "serene_grace.json",
+      "sourceConstant": "ABILITY_SERENE_GRACE",
+      "index": 32,
+      "name": "Serene Grace",
+      "description": "Boosts the likelihood of\nadded effects appearing."
+    },
+    {
+      "sourceFile": "shadow_tag.json",
+      "sourceConstant": "ABILITY_SHADOW_TAG",
+      "index": 23,
+      "name": "Shadow Tag",
+      "description": "Prevents the foe from\nescaping."
+    },
+    {
+      "sourceFile": "shed_skin.json",
+      "sourceConstant": "ABILITY_SHED_SKIN",
+      "index": 61,
+      "name": "Shed Skin",
+      "description": "The Pok\u00e9mon may heal its\nown status problems."
+    },
+    {
+      "sourceFile": "sheer_force.json",
+      "sourceConstant": "ABILITY_SHEER_FORCE",
+      "index": 125,
+      "name": "Sheer Force",
+      "description": "Removes added effects to\nincrease move damage."
+    },
+    {
+      "sourceFile": "shell_armor.json",
+      "sourceConstant": "ABILITY_SHELL_ARMOR",
+      "index": 75,
+      "name": "Shell Armor",
+      "description": "The Pok\u00e9mon is protected\nagainst critical hits."
+    },
+    {
+      "sourceFile": "shield_dust.json",
+      "sourceConstant": "ABILITY_SHIELD_DUST",
+      "index": 19,
+      "name": "Shield Dust",
+      "description": "Blocks the added effects\nof attacks taken."
+    },
+    {
+      "sourceFile": "simple.json",
+      "sourceConstant": "ABILITY_SIMPLE",
+      "index": 86,
+      "name": "Simple",
+      "description": "The Pok\u00e9mon is prone to\nwild stat changes."
+    },
+    {
+      "sourceFile": "skill_link.json",
+      "sourceConstant": "ABILITY_SKILL_LINK",
+      "index": 92,
+      "name": "Skill Link",
+      "description": "Increases the frequency\nof multi-strike moves."
+    },
+    {
+      "sourceFile": "slow_start.json",
+      "sourceConstant": "ABILITY_SLOW_START",
+      "index": 112,
+      "name": "Slow Start",
+      "description": "Temporarily halves\nAttack and Speed."
+    },
+    {
+      "sourceFile": "sniper.json",
+      "sourceConstant": "ABILITY_SNIPER",
+      "index": 97,
+      "name": "Sniper",
+      "description": "Powers up moves if they\nbecome critical hits."
+    },
+    {
+      "sourceFile": "snow_cloak.json",
+      "sourceConstant": "ABILITY_SNOW_CLOAK",
+      "index": 81,
+      "name": "Snow Cloak",
+      "description": "Raises evasion in a\nhailstorm."
+    },
+    {
+      "sourceFile": "snow_warning.json",
+      "sourceConstant": "ABILITY_SNOW_WARNING",
+      "index": 117,
+      "name": "Snow Warning",
+      "description": "The Pok\u00e9mon summons a\nhailstorm in battle."
+    },
+    {
+      "sourceFile": "solar_power.json",
+      "sourceConstant": "ABILITY_SOLAR_POWER",
+      "index": 94,
+      "name": "Solar Power",
+      "description": "In sunshine, Sp. Atk is\nboosted but HP decreases."
+    },
+    {
+      "sourceFile": "solid_rock.json",
+      "sourceConstant": "ABILITY_SOLID_ROCK",
+      "index": 116,
+      "name": "Solid Rock",
+      "description": "Reduces damage from\nsupereffective attacks."
+    },
+    {
+      "sourceFile": "soundproof.json",
+      "sourceConstant": "ABILITY_SOUNDPROOF",
+      "index": 43,
+      "name": "Soundproof",
+      "description": "Gives full immunity to all\nsound-based moves."
+    },
+    {
+      "sourceFile": "speed_boost.json",
+      "sourceConstant": "ABILITY_SPEED_BOOST",
+      "index": 3,
+      "name": "Speed Boost",
+      "description": "Its Speed stat is\ngradually boosted."
+    },
+    {
+      "sourceFile": "stall.json",
+      "sourceConstant": "ABILITY_STALL",
+      "index": 100,
+      "name": "Stall",
+      "description": "The Pok\u00e9mon moves after\nall other Pok\u00e9mon do."
+    },
+    {
+      "sourceFile": "static.json",
+      "sourceConstant": "ABILITY_STATIC",
+      "index": 9,
+      "name": "Static",
+      "description": "Contact with the Pok\u00e9mon\nmay cause paralysis."
+    },
+    {
+      "sourceFile": "steadfast.json",
+      "sourceConstant": "ABILITY_STEADFAST",
+      "index": 80,
+      "name": "Steadfast",
+      "description": "Raises Speed each time\nthe Pok\u00e9mon flinches."
+    },
+    {
+      "sourceFile": "stench.json",
+      "sourceConstant": "ABILITY_STENCH",
+      "index": 1,
+      "name": "Stench",
+      "description": "The stench may cause\nthe target to flinch."
+    },
+    {
+      "sourceFile": "sticky_hold.json",
+      "sourceConstant": "ABILITY_STICKY_HOLD",
+      "index": 60,
+      "name": "Sticky Hold",
+      "description": "Protects the Pok\u00e9mon\nfrom item theft."
+    },
+    {
+      "sourceFile": "storm_drain.json",
+      "sourceConstant": "ABILITY_STORM_DRAIN",
+      "index": 114,
+      "name": "Storm Drain",
+      "description": "Draws in all Water-type\nmoves to up Sp. Attack."
+    },
+    {
+      "sourceFile": "sturdy.json",
+      "sourceConstant": "ABILITY_STURDY",
+      "index": 5,
+      "name": "Sturdy",
+      "description": "It cannot be knocked\nout with one hit."
+    },
+    {
+      "sourceFile": "suction_cups.json",
+      "sourceConstant": "ABILITY_SUCTION_CUPS",
+      "index": 21,
+      "name": "Suction Cups",
+      "description": "Negates all moves that\nforce switching out."
+    },
+    {
+      "sourceFile": "super_luck.json",
+      "sourceConstant": "ABILITY_SUPER_LUCK",
+      "index": 105,
+      "name": "Super Luck",
+      "description": "Heightens the critical-\nhit ratios of moves."
+    },
+    {
+      "sourceFile": "swarm.json",
+      "sourceConstant": "ABILITY_SWARM",
+      "index": 68,
+      "name": "Swarm",
+      "description": "Powers up Bug-type\nmoves in a pinch."
+    },
+    {
+      "sourceFile": "swift_swim.json",
+      "sourceConstant": "ABILITY_SWIFT_SWIM",
+      "index": 33,
+      "name": "Swift Swim",
+      "description": "Boosts the Pok\u00e9mon's\nSpeed in rain."
+    },
+    {
+      "sourceFile": "synchronize.json",
+      "sourceConstant": "ABILITY_SYNCHRONIZE",
+      "index": 28,
+      "name": "Synchronize",
+      "description": "Passes a burn, poison,\nor paralysis to the foe."
+    },
+    {
+      "sourceFile": "tangled_feet.json",
+      "sourceConstant": "ABILITY_TANGLED_FEET",
+      "index": 77,
+      "name": "Tangled Feet",
+      "description": "Raises evasion if the\nPok\u00e9mon is confused."
+    },
+    {
+      "sourceFile": "technician.json",
+      "sourceConstant": "ABILITY_TECHNICIAN",
+      "index": 101,
+      "name": "Technician",
+      "description": "Powers up the Pok\u00e9mon's\nweaker moves."
+    },
+    {
+      "sourceFile": "telepathy.json",
+      "sourceConstant": "ABILITY_TELEPATHY",
+      "index": 140,
+      "name": "Telepathy",
+      "description": "Anticipates an ally's\nattack and dodges it."
+    },
+    {
+      "sourceFile": "teravolt.json",
+      "sourceConstant": "ABILITY_TERAVOLT",
+      "index": 164,
+      "name": "Teravolt",
+      "description": "Moves can be used\nregardless of Abilities."
+    },
+    {
+      "sourceFile": "thick_fat.json",
+      "sourceConstant": "ABILITY_THICK_FAT",
+      "index": 47,
+      "name": "Thick Fat",
+      "description": "Ups resistance to Fire-\nand Ice-type moves."
+    },
+    {
+      "sourceFile": "tinted_lens.json",
+      "sourceConstant": "ABILITY_TINTED_LENS",
+      "index": 110,
+      "name": "Tinted Lens",
+      "description": "Powers up \u201cnot very\neffective\" moves."
+    },
+    {
+      "sourceFile": "torrent.json",
+      "sourceConstant": "ABILITY_TORRENT",
+      "index": 67,
+      "name": "Torrent",
+      "description": "Powers up Water-type\nmoves in a pinch."
+    },
+    {
+      "sourceFile": "toxic_boost.json",
+      "sourceConstant": "ABILITY_TOXIC_BOOST",
+      "index": 137,
+      "name": "Toxic Boost",
+      "description": "Powers up physical\nattacks when poisoned."
+    },
+    {
+      "sourceFile": "trace.json",
+      "sourceConstant": "ABILITY_TRACE",
+      "index": 36,
+      "name": "Trace",
+      "description": "The Pok\u00e9mon copies a\nfoe's Ability."
+    },
+    {
+      "sourceFile": "truant.json",
+      "sourceConstant": "ABILITY_TRUANT",
+      "index": 54,
+      "name": "Truant",
+      "description": "Pok\u00e9mon can't attack\non consecutive turns."
+    },
+    {
+      "sourceFile": "turboblaze.json",
+      "sourceConstant": "ABILITY_TURBOBLAZE",
+      "index": 163,
+      "name": "Turboblaze",
+      "description": "Moves can be used\nregardless of Abilities."
+    },
+    {
+      "sourceFile": "unaware.json",
+      "sourceConstant": "ABILITY_UNAWARE",
+      "index": 109,
+      "name": "Unaware",
+      "description": "Ignores any stat changes\nin the Pok\u00e9mon."
+    },
+    {
+      "sourceFile": "unburden.json",
+      "sourceConstant": "ABILITY_UNBURDEN",
+      "index": 84,
+      "name": "Unburden",
+      "description": "Raises Speed if a held\nitem is used."
+    },
+    {
+      "sourceFile": "unnerve.json",
+      "sourceConstant": "ABILITY_UNNERVE",
+      "index": 127,
+      "name": "Unnerve",
+      "description": "Makes the foe nervous and\nunable to eat Berries."
+    },
+    {
+      "sourceFile": "victory_star.json",
+      "sourceConstant": "ABILITY_VICTORY_STAR",
+      "index": 162,
+      "name": "Victory Star",
+      "description": "Boosts the accuracy of its\nallies and itself."
+    },
+    {
+      "sourceFile": "vital_spirit.json",
+      "sourceConstant": "ABILITY_VITAL_SPIRIT",
+      "index": 72,
+      "name": "Vital Spirit",
+      "description": "Prevents the Pok\u00e9mon\nfrom falling asleep."
+    },
+    {
+      "sourceFile": "volt_absorb.json",
+      "sourceConstant": "ABILITY_VOLT_ABSORB",
+      "index": 10,
+      "name": "Volt Absorb",
+      "description": "Restores HP if hit by an\nElectric-type move."
+    },
+    {
+      "sourceFile": "water_absorb.json",
+      "sourceConstant": "ABILITY_WATER_ABSORB",
+      "index": 11,
+      "name": "Water Absorb",
+      "description": "Restores HP if hit by a\nWater-type move."
+    },
+    {
+      "sourceFile": "water_veil.json",
+      "sourceConstant": "ABILITY_WATER_VEIL",
+      "index": 41,
+      "name": "Water Veil",
+      "description": "Prevents the Pok\u00e9mon\nfrom getting a burn."
+    },
+    {
+      "sourceFile": "weak_armor.json",
+      "sourceConstant": "ABILITY_WEAK_ARMOR",
+      "index": 133,
+      "name": "Weak Armor",
+      "description": "Physical attacks lower\nDefense and raise Speed."
+    },
+    {
+      "sourceFile": "white_smoke.json",
+      "sourceConstant": "ABILITY_WHITE_SMOKE",
+      "index": 73,
+      "name": "White Smoke",
+      "description": "Prevents other Pok\u00e9mon\nfrom lowering its stats."
+    },
+    {
+      "sourceFile": "wonder_guard.json",
+      "sourceConstant": "ABILITY_WONDER_GUARD",
+      "index": 25,
+      "name": "Wonder Guard",
+      "description": "Only supereffective\nmoves will hit."
+    },
+    {
+      "sourceFile": "wonder_skin.json",
+      "sourceConstant": "ABILITY_WONDER_SKIN",
+      "index": 147,
+      "name": "Wonder Skin",
+      "description": "Makes status-changing\nmoves more likely to miss."
+    },
+    {
+      "sourceFile": "zen_mode.json",
+      "sourceConstant": "ABILITY_ZEN_MODE",
+      "index": 161,
+      "name": "Zen Mode",
+      "description": "Changes the Pok\u00e9mon's\nshape when HP is halved."
+    }
+  ]
+}
