@@ -93,6 +93,46 @@ import adminMireilleAtlas from '../assets/human-characters/in-game-sheets/admin-
 import adminSorenAtlas from '../assets/human-characters/in-game-sheets/admin-soren-atlas-64x64-2026-10-26.png';
 import adminTamsenAtlas from '../assets/human-characters/in-game-sheets/admin-tamsen-redesign-atlas-64x64-2026-10-26.png';
 import adminVossAtlas from '../assets/human-characters/in-game-sheets/admin-voss-atlas-64x64-2026-10-26.png';
+// 432-FINISH DRAFT (2026-10-27, DRAFT ONLY — not merged, not live):
+// the 16 atlases below are STAGED ONLY at draft time. Verified
+// 2026-10-27 via the GitHub Contents API against main b79529fc:
+// all 16 atlas PNGs + manifests return 404 on main (Ferry was not
+// the only one missing — the task's "manifests read from main" line
+// does NOT hold for these 15 either; every manifest here was read
+// from the staged files in human-characters/in-game-sheets/).
+// Each import below ASSUMES the parallel art-ship PR lands the
+// staged file at this exact standard destination, unchanged
+// filename. Until that PR merges, this draft does NOT build —
+// do not merge this file before the art-ship PR. Every staged
+// manifest lists cells 0-13 only (256x256, 14 cells): world 0-3,
+// walk idle 4-7, walk step 8-11, battle 12, portrait 13. That is
+// the PR #100 ROWS_WALK layout (distinct back step 9), NOT the
+// core100 partial layout (no back step) and NOT a 16-cell core100
+// atlas: cell 14 does NOT exist in any of these 16 manifests, so
+// no cell 14 is wired here. If the art-ship PR rebuilds them as
+// 16-cell atlases (old 0-13 preserved, 14 = battle back, 15 =
+// blank), the 0-13 wiring below is unchanged; the cell-14 back
+// still needs a battle-back consumer (see below). Battle-back
+// webps are deliberately NOT imported here: HumanSlot has a
+// single battleCell, which holds the front (12), and no
+// battle-back consumer exists yet — backs stay QUEUED for
+// character-select, exactly as in PR #265.
+import announcerAtlas from '../assets/human-characters/in-game-sheets/announcer-atlas-64x64.png';
+import castagnoliAtlas from '../assets/human-characters/in-game-sheets/castagnoli-atlas-64x64.png';
+import championMytharAtlas from '../assets/human-characters/in-game-sheets/champion-mythar-atlas-64x64.png';
+import cowboyAtlas from '../assets/human-characters/in-game-sheets/cowboy-atlas-64x64.png';
+import flameTeeAtlas from '../assets/human-characters/in-game-sheets/flame-tee-atlas-64x64.png';
+import gardenRaceOfficialAtlas from '../assets/human-characters/in-game-sheets/garden-race-official-atlas-64x64.png';
+import hackerGruntAtlas from '../assets/human-characters/in-game-sheets/hacker-grunt-atlas-64x64.png';
+import hoshinoAtlas from '../assets/human-characters/in-game-sheets/hoshino-atlas-64x64.png';
+import junkyardAtlas from '../assets/human-characters/in-game-sheets/junkyard-atlas-64x64.png';
+import labAssistantAtlas from '../assets/human-characters/in-game-sheets/lab-assistant-atlas-64x64.png';
+import linAtlas from '../assets/human-characters/in-game-sheets/lin-atlas-64x64.png';
+import logoTeeAtlas from '../assets/human-characters/in-game-sheets/logo-tee-atlas-64x64.png';
+import pcClerkAtlas from '../assets/human-characters/in-game-sheets/pc-clerk-atlas-64x64.png';
+import racingAtlas from '../assets/human-characters/in-game-sheets/racing-atlas-64x64.png';
+import terraAtlas from '../assets/human-characters/in-game-sheets/terra-atlas-64x64.png';
+import ferryCaptainAtlas from '../assets/human-characters/in-game-sheets/ferry-captain-atlas-64x64.png';
 
 
 export type HumanView = 'front' | 'back' | 'left' | 'right';
@@ -298,7 +338,14 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   market_staff: slot('market_staff', 'Market Staff', 'garden-staff', '#ffab91'),
   race_staff: slot('race_staff', 'Race Staff', 'garden-staff', '#90caf9'),
   sparring_staff: slot('sparring_staff', 'Sparring Staff', 'garden-staff', '#ce93d8'),
-  hacker: slot('hacker', 'Hacker Grunt', 'antagonist', '#ef5350'),
+  // Hacker Grunt (staged atlas, 432-finish draft): standard ROWS
+  // walk, battle front 12, portrait 13. The existing slotForNpc
+  // hacker/grunt route already points here, so Binary Woods'
+  // hacker_grunt2 ("Hacker Grunt") now renders this art — same
+  // routing logic as PR #265, only the slot stops being null.
+  // Battle back QUEUED (on main:
+  // battle-backs-2026-10-26/hacker-grunt-battle-back-2026-10-26.webp).
+  hacker: atlasSlot('hacker', 'Hacker Grunt', 'antagonist', hackerGruntAtlas, '#ef5350'),
   // Syndicate Grunt (PR #100 atlas): routed by slotForNpc below
   // (id includes 'syndicate'). No syndicate-id NPC exists in the
   // maps today, so this art shows once one does — the slot mapping
@@ -316,8 +363,19 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // (id or name includes 'krix') — junk_boss 'Junk Warlord Krix' in
   // FullWorldMaps now routes here (wiring PR name check).
   krix: atlasSlot('krix', 'Junk Warlord Krix', 'antagonist', krixAtlas, '#ff7043'),
-  castagnoli: slot('castagnoli', 'Luigi Castagnoli', 'antagonist', '#5c6bc0'),
-  mythar: slot('mythar', 'Champion Mythar', 'champion', '#ffd54f'),
+  // Castagnoli (staged atlas, 432-finish draft): ROSE default only
+  // (v5 rose, the current regular default per his step-8 record).
+  // The v4 staff variant is dramatic-only and is NOT in this atlas
+  // and NOT wired here. Standard ROWS walk, battle front 12,
+  // portrait 13. Battle back QUEUED (on main:
+  // battle-backs-2026-10-26/castagnoli-battle-back-2026-10-26.webp).
+  castagnoli: atlasSlot('castagnoli', 'Luigi Castagnoli', 'antagonist', castagnoliAtlas, '#5c6bc0'),
+  // Champion Mythar, HUMAN sheet (staged atlas, 432-finish draft):
+  // distinct from creature #331 — no creature routing is touched
+  // here; this slot is the human champion only. Standard ROWS
+  // walk, battle front 12, portrait 13. Battle back QUEUED (on
+  // main: battle-backs-2026-10-26/champion-mythar-battle-back-2026-10-26.webp).
+  mythar: atlasSlot('mythar', 'Champion Mythar', 'champion', championMytharAtlas, '#ffd54f'),
   // Player variants B/C/D (core100 atlases, wired in the human wiring
   // PR as slots only): playerSlot() still returns boy/girl only — there
   // is NO A/B/C/D picker UI yet, so these slots render only once a
@@ -378,6 +436,54 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // consumer exists for her today.
   admin_tamsen: { slotId: 'admin_tamsen', label: 'Tamsen', role: 'admin', sheetUrl: adminTamsenAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, battleCell: 8, portraitCell: 9, sheetCols: 4, sheetRows: 4, color: '#ef9a9a' },
   admin_voss: atlasSlot('admin_voss', 'Voss', 'admin', adminVossAtlas, '#a1887f'),
+  // 432-FINISH BATCH (draft 2026-10-27, staged atlases — see the
+  // import comment above for the assumed-landing flag): every slot
+  // below is atlasSlot (standard ROWS_WALK: idle 4-7, step 8-11,
+  // distinct back step 9 — verified per staged manifest, not the
+  // CORE100_PARTIAL_WALK layout), battle front 12, portrait 13,
+  // 4x4 grid. Colours are placeholder silhouette colours only,
+  // not canon. Battle back for each is QUEUED for
+  // character-select (single battleCell holds the front only):
+  // the 15 core backs below are already on main as webps under
+  // src/assets/human-characters/in-game-sheets/battle-backs-2026-10-26/;
+  // Ferry's back is staged only (see ferry_captain).
+  // Announcer (Arena Announcer, non-battle secondary — her battle
+  // step was counted via front only in step 8; back exists anyway
+  // in the battle-backs batch and is queued like the rest).
+  announcer: atlasSlot('announcer', 'Arena Announcer', 'npc', announcerAtlas, '#f06292'),
+  // Cowboy Farmer Kid (fought front-facing per step 8).
+  cowboy: atlasSlot('cowboy', 'Cowboy Farmer Kid', 'trainer', cowboyAtlas, '#a1887f'),
+  // Flame Tee (non-battle townsperson).
+  flame_tee: atlasSlot('flame_tee', 'Flame Tee', 'npc', flameTeeAtlas, '#ff7043'),
+  // Garden Race Official (distinct from the null race_staff slot:
+  // race_staff is GardenView staff, this is the named official).
+  garden_race_official: atlasSlot('garden_race_official', 'Garden Race Official', 'garden-staff', gardenRaceOfficialAtlas, '#66bb6a'),
+  // Hoshino (fought front-facing per step 8).
+  hoshino: atlasSlot('hoshino', 'Hoshino', 'trainer', hoshinoAtlas, '#7986cb'),
+  // Junkyard (non-battle townsperson).
+  junkyard: atlasSlot('junkyard', 'Junkyard', 'npc', junkyardAtlas, '#8d6e63'),
+  // Lab Assistant (non-battle secondary).
+  lab_assistant: atlasSlot('lab_assistant', 'Lab Assistant', 'npc', labAssistantAtlas, '#4db6ac'),
+  // Lin (dojo leader, fought front-facing per step 8 — see the
+  // slotForNpc note: her specific route beats isDojoBoss, like
+  // Tetsu in PR #265, because this is her own atlas).
+  lin: atlasSlot('lin', 'Lin', 'dojo', linAtlas, '#ef5350'),
+  // Logo Tee (non-battle townsperson).
+  logo_tee: atlasSlot('logo_tee', 'Logo Tee', 'npc', logoTeeAtlas, '#ffee58'),
+  // PC Clerk (non-battle secondary).
+  pc_clerk: atlasSlot('pc_clerk', 'PC Clerk', 'npc', pcClerkAtlas, '#90caf9'),
+  // Racing (non-battle townsperson; 'racing' does NOT match
+  // 'garden race official' or race_staff — race vs racing).
+  racing: atlasSlot('racing', 'Racing', 'npc', racingAtlas, '#ffca28'),
+  // Terra (fought front-facing per step 8).
+  terra: atlasSlot('terra', 'Terra', 'trainer', terraAtlas, '#a5d6a7'),
+  // Ferry Captain (staged atlas, ASSUMED LANDING — see import
+  // comment: 404 on main at draft time, like the other 15; his
+  // step-8 b-file counts 8/8, Mars eye-check still owed, and his
+  // battle back is STAGED ONLY (media-generation-ferry-captain-
+  // battle-back-v1 webp in in-game-sheets/), not on main — so
+  // unlike the 15 above, his queued back has no main path yet).
+  ferry_captain: atlasSlot('ferry_captain', 'Ferry Captain', 'npc', ferryCaptainAtlas, '#80deea'),
   trainer_generic: slot('trainer_generic', 'Trainer', 'trainer', '#9e9e9e'),
   townspeople: slot('townspeople', 'Townspeople', 'npc', '#bcaaa4'),
 };
@@ -434,6 +540,30 @@ export function slotForNpc(npc: any): HumanSlot {
   if (id.includes('soren') || name === 'soren') return HUMAN_SLOTS.admin_soren;
   if (id.includes('tamsen') || name === 'tamsen') return HUMAN_SLOTS.admin_tamsen;
   if (id.includes('voss') || name === 'voss') return HUMAN_SLOTS.admin_voss;
+  // 432-finish routes (draft 2026-10-27, same "shows once an NPC
+  // exists" pattern as the dojo/admin routes above — no NPC is
+  // invented here, and no existing route is changed). Short stems
+  // use delimited matches only (lin, like umi/gin above): a bare
+  // 'lin' substring would false-positive. Lin's route sits here,
+  // before isDojoBoss below, because Lin is a dojo leader WITH
+  // her own atlas (Tetsu precedent) — the null dojo_trainer slot
+  // is not put on her. boat_captain 'Capt. Neri' is still NOT
+  // routed to ferry_captain, and dockhand_juno is still NOT
+  // routed to lark (see the existing note above); the ferry
+  // route below matches ferry_captain / 'ferry captain' only.
+  if (id.includes('announcer') || name.includes('announcer')) return HUMAN_SLOTS.announcer;
+  if (id.includes('cowboy') || name.includes('cowboy')) return HUMAN_SLOTS.cowboy;
+  if (id.includes('flame_tee') || name.includes('flame tee')) return HUMAN_SLOTS.flame_tee;
+  if (id.includes('garden_race_official') || name.includes('garden race official')) return HUMAN_SLOTS.garden_race_official;
+  if (id.includes('hoshino') || name.includes('hoshino')) return HUMAN_SLOTS.hoshino;
+  if (id.includes('junkyard') || name.includes('junkyard')) return HUMAN_SLOTS.junkyard;
+  if (id.includes('lab_assistant') || name.includes('lab assistant')) return HUMAN_SLOTS.lab_assistant;
+  if (id.includes('_lin') || id.startsWith('lin_') || id === 'lin' || name === 'lin' || name === 'master lin') return HUMAN_SLOTS.lin;
+  if (id.includes('logo_tee') || name.includes('logo tee')) return HUMAN_SLOTS.logo_tee;
+  if (id.includes('pc_clerk') || name.includes('pc clerk')) return HUMAN_SLOTS.pc_clerk;
+  if (id.includes('racing') || name === 'racing') return HUMAN_SLOTS.racing;
+  if (id.includes('terra') || name === 'terra') return HUMAN_SLOTS.terra;
+  if (id.includes('ferry_captain') || name.includes('ferry captain')) return HUMAN_SLOTS.ferry_captain;
   if (id.includes('syndicate')) return HUMAN_SLOTS.syndicate;
   if (id.includes('liberation')) return HUMAN_SLOTS.liberation;
   if (npc?.isShop) return HUMAN_SLOTS.shopkeeper;
