@@ -476,13 +476,15 @@ export const NEON_CITY: any = {
   exits: [
     ...buildVertExits(0, 15, 25, "scrap_junkyard", 32, "left"),
     ...buildVertExits(35, 15, 25, "coral_approach", 1, "right"),
+    { x:18, y:0, to:"route_2", enterAt:{x:14, y:38}, dir:"up" },
     // Phase A return: WorldEngine checks exits before the solid-tile
     // return, so this border tile (18,37) fires even though it renders
     // as BUILDING. It returns to the Cave STAIRS_DOWN tile (11,27).
     { x:18, y:37, to:"cave_of_echoes", enterAt:{x:11, y:27}, dir:"down" }
   ],
   doors: [
-    { x:18, y:6, to:"mauveville_arena", enterAt:{x:8, y:18}, label:"Mauveville Arena", condition:"ciphers>=10" }
+    { x:18, y:6, to:"mauveville_arena", enterAt:{x:8, y:18}, label:"Mauveville Arena", condition:"ciphers>=10" },
+    { x:13, y:18, to:"dojo_3", enterAt:{x:7, y:16}, label:"Dojo 3 — Chrome Gate" }
   ],
   events: [],
   encounters: []
@@ -813,6 +815,102 @@ export const SECTOR0_RIVAL_HOUSE: any = {
   encounters: []
 };
 
+export const ROUTE_2: any = {
+  name: "Route 2.0 — Harbour Road",
+  music: "route1_theme",
+  weather: "clear",
+  width: 28, height: 40,
+  playerStart: { x:14, y:39 },
+  tiles: (() => {
+    return buildMap(28, 40, (x, y) => {
+      if (x===0||x===27||y===0||y===39) return TILE.WALL;
+      if (x>=12&&x<=16) return TILE.PATH;
+      if (y>=18&&y<=20) return TILE.PATH;
+      return TILE.TALL_GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"route2_walker", x:14, y:20, sprite:"🚶", name:"Road Walker", facing:"down", dialog:["Stoneport is north. The harbour road is long — bring a partner."] },
+  ],
+  signs: [
+    { x:14, y:10, text:"ROUTE 2.0\\nNorth to Stoneport City. South to Neon City." },
+  ],
+  exits: [
+    { x:14, y:0, to:"stoneport_city", enterAt:{x:14, y:29}, dir:"up" },
+    { x:14, y:39, to:"neon_city", enterAt:{x:18, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: [] // wild pool owed: 022 name not verified in live species data, not invented here
+};
+
+export const STONEPORT_CITY: any = {
+  name: "Stoneport City",
+  music: "fields_theme",
+  weather: "clear",
+  width: 30, height: 30,
+  playerStart: { x:14, y:29 },
+  tiles: (() => {
+    return buildMap(30, 30, (x, y) => {
+      if (x===0||x===29||y===0||y===29) return TILE.WALL;
+      if (x>=2&&x<=6&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=10&&x<=16&&y>=2&&y<=6) return TILE.BUILDING;
+      if (x>=20&&x<=26&&y>=2&&y<=6) return TILE.BUILDING;
+      if (y===15) return TILE.PATH;
+      if (x===14) return TILE.PATH;
+      if (y>=25) return TILE.DOCK;
+      return TILE.GRASS;
+    });
+  })(),
+  npcs: [
+    { id:"dockhand_juno", x:14, y:20, sprite:"⚓", name:"Dockhand Juno", facing:"down", dialog:["The docks run on time here. Stoneport ships out to everywhere the Mainframe touches."] },
+    { id:"harbour_guard", x:14, y:10, sprite:"🧑", name:"Harbour Guard", facing:"down", dialog:["Neon City's dojo is Chrome — hard, bright, and it does not bend."] },
+    { id:"healer_stoneport", x:7, y:10, sprite:"👩‍⚕️", name:"Nurse Faye", facing:"down", isHeal: true, dialog:["Welcome to the Stoneport MochiiPlex. Your team is tired? Rest here. It is free, and it is always free."] },
+  ],
+  signs: [
+    { x:14, y:14, text:"STONEPORT CITY\\nHarbour, docks, and the road south to Neon City." },
+  ],
+  exits: [
+    { x:14, y:29, to:"route_2", enterAt:{x:14, y:1}, dir:"down" }
+  ],
+  doors: [],
+  events: [],
+  encounters: []
+};
+
+export const DOJO_3: any = {
+  name: "Dojo 3 — Chrome Gate",
+  music: "dojo_theme",
+  weather: "clear",
+  interior: true,
+  width: 16, height: 18,
+  playerStart: { x:7, y:16 },
+  tiles: (() => {
+    return buildMap(16, 18, (x, y) => {
+      if (x===7&&y===17) return TILE.DOOR;
+      if (x===0||x===15||y===0||y===17) return TILE.WALL;
+      return TILE.PATH;
+    });
+  })(),
+  npcs: [
+    { id:"dojo3_acolyte_volt", x:3, y:10, sprite:"🥋", name:"Acolyte Volt", facing:"down", dialog:["Chrome does not bend. It holds."] },
+    { id:"dojo3_acolyte_alloy", x:11, y:10, sprite:"🥋", name:"Acolyte Alloy", facing:"down", dialog:["The Neon Fragment is earned, not given."] },
+    // Leader battle is NOT wired here: trainer file R1-041 gives
+    // species + levels (005 Lv23, 033 Lv23, 034 Lv24) but no stats,
+    // and inventing a boss team here would clash with the trainer
+    // wiring batch. The leader is present, dialogued, and the
+    // battle is owed by that batch — not silently invented.
+    { id:"dojo3_leader", x:7, y:2, sprite:"🥋", name:"Dojo Leader", facing:"down", dialog:["Chrome is the Mainframe's spine. Bright, hard, unbent.","Beat my acolytes, then come back and show me you hold."] },
+  ],
+  signs: [],
+  exits: [],
+  doors: [
+    { x:7, y:17, to:"neon_city", enterAt:{x:13, y:19}, label:"Neon City" }
+  ],
+  events: [],
+  encounters: []
+};
+
 export const FULL_WORLD: Record<string, any> = {
   aeon_lab: AEON_LAB,
   sector0: SECTOR_0,
@@ -833,5 +931,8 @@ export const FULL_WORLD: Record<string, any> = {
   sector0_truck: SECTOR0_TRUCK,
   sector0_house_1f: SECTOR0_HOUSE_1F,
   sector0_house_2f: SECTOR0_HOUSE_2F,
-  sector0_rival_house: SECTOR0_RIVAL_HOUSE
+  sector0_rival_house: SECTOR0_RIVAL_HOUSE,
+  route_2: ROUTE_2,
+  stoneport_city: STONEPORT_CITY,
+  dojo_3: DOJO_3
 };
