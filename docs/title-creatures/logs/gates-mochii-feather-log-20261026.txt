@@ -1,0 +1,25 @@
+=== LINT ===
+
+> react-example@0.0.0 lint
+> tsc --noEmit
+
+LINT_EXIT:0
+=== BUILD ===
+dist/assets/WebGLRenderer-DRo3i43H.js                                                                              73.81 kB │ gzip:  20.22 kB
+dist/assets/index-NWvLU7On.js                                                                                   1,968.34 kB │ gzip: 426.94 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3m 23s
+=== VALIDATE ===
+  WARN: Species 039 (Shellguard): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 039 (Shellguard): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Species 040 (Dreadtoise): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 040 (Dreadtoise): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Sheet Dorowani (147): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+  WARN: Sheet Gabu (148): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+
+validate:reference PASSED (warnings are open decisions, not failures).
+ALL_GATES_DONE
