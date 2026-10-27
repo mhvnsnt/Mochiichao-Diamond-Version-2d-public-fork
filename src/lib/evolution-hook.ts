@@ -1,5 +1,6 @@
-// Mid-fight evolution hook -- SHAPE ONLY, NOT WIRED LIVE (staged slice).
-// Do NOT report this as playable. BattleView does not call it yet.
+// Mid-fight evolution hook -- WIRED LIVE 2026-10-27 (wiring lane, PR B).
+// BattleView calls it after a level-up in battle (see finishTurnQueue:
+// buildMidFightPrompt + the EVOLUTION state, SAFE chains only).
 // Mirrors the Pokemon shape from the decomp evolution tables:
 //   FireRed evolution.h: LEVEL / ITEM / TRADE / TRADE_ITEM / FRIENDSHIP /
 //     FRIENDSHIP_DAY / FRIENDSHIP_NIGHT / LEVEL_ATK_* / BEAUTY (+ rarer)
@@ -95,8 +96,9 @@ export const MID_FIGHT_SHOWCASE: { speciesId: string; targetId: string; fromName
 };
 
 // WIRING CHECKLIST (NEED TO MAKE, not done here):
-// 1. BattleView: after a level-up in battle, call buildMidFightPrompt and
-//    show it before the next turn; on cancel, keep the old species/level.
+// 1. BattleView: DONE 2026-10-27 (wiring lane) -- after a level-up in
+//    battle, buildMidFightPrompt shows before the victory tail; on
+//    cancel, the old species/level is kept.
 // 2. Party/level-up code: same prompt out of battle.
 // 3. If a species would learn a move on evolving, the move-learn prompt
 //    runs AFTER the evolution prompt resolves, not before.
@@ -104,11 +106,11 @@ export const MID_FIGHT_SHOWCASE: { speciesId: string; targetId: string; fromName
 
 // ---------------------------------------------------------------------------
 // ROSTER-WINS SAFE CHAINS (decision batch, Mars 2026-10-26 ~14:15 CDT).
-// Data + pure resolver only. BattleView does NOT call this yet for any
-// species below: 013/014/015 have no species.ts code entry, and 040
-// Dreadtoise enters code only with this same decision batch, so the
-// BattleView hook-up is a later wiring batch with its own gate. Reporting
-// this file as "wired" would be false; it is data-ready, 0% BattleView-wired.
+// Data + pure resolver only. BattleView calls this now (2026-10-27,
+// wiring lane): 013/014/015 and 038/039/040 are all in species.ts
+// (roster-wins, PR #205 + #275), and the BattleView hook-up landed
+// with the wiring batch. Out-of-battle level-ups (party/daycare) still
+// do not call it -- checklist item 2 stays open.
 // ---------------------------------------------------------------------------
 
 export interface SafeEvolutionChain {

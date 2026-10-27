@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useGameStore } from '../../store/gameStore';
 import { MochiiInstance } from '../../lib/types';
-import { createMochii, gainExp } from '../../lib/engine';
+import { createMochii, evolveInstance, gainExp } from '../../lib/engine';
 import { SPECIES_DB } from '../../lib/species';
+import {
+  buildMidFightPrompt,
+  getSafeEvolutionRule,
+  safeEvolutionReady,
+  type MidFightEvolutionPrompt,
+} from '../../lib/evolution-hook';
 import { MOVES_DB } from '../../lib/moves';
 import { TYPES } from '../../lib/constants';
 import {
@@ -36,7 +42,7 @@ import {
 import { isConfirmKey, shoulderKey } from '../../lib/buttonMode';
 import { useMenuSkin, menuSkinVars, menuSkinPanelShadow } from '../../lib/menuSkins';
 
-type BattleState = 'START' | 'PLAYER_TURN' | 'ANIMATING' | 'ENEMY_TURN' | 'CAUGHT' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'SWITCH_CHOICE';
+type BattleState = 'START' | 'PLAYER_TURN' | 'ANIMATING' | 'ENEMY_TURN' | 'CAUGHT' | 'VICTORY' | 'DEFEAT' | 'FLED' | 'SWITCH_CHOICE' | 'EVOLUTION';
 
 /**
  * Battle, mod layer: the turn-based logic from the previous BattleView is
@@ -63,6 +69,10 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
   const [bState, setBState] = useState<BattleState>('START');
   const [log, setLog] = useState<string[]>([]);
   const [attack, setAttack] = useState<BattleAttack | null>(null);
+  // Mid-fight evolution prompt (evolution-hook.ts): set when a level-up
+  // meets a safe-chain rule; the victory tail waits behind it until the
+  // player confirms or cancels. Null the rest of the time.
+  const [evolutionPrompt, setEvolutionPrompt] = useState<MidFightEvolutionPrompt | null>(null);
   // Selected move (hover/focus, not a turn action): its PP + TYPE stay
   // visible in a dedicated line, as in the decomp move-menu windows.
   const [selectedMove, setSelectedMove] = useState(0);
@@ -209,6 +219,17 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
     battleHpRef.current.player = m.hp;
   };
 
+  // Victory tail (shared by the plain win and the evolution prompt):
+  // the 50-credit reward, the VICTORY state, and the 3s auto-leave.
+  // The evolution prompt resolves through this, so a level-up win never
+  // leaves before the player answers the prompt.
+  const finishVictory = () => {
+    gainWallet(50);
+    pushLog('You found 50 Credits.');
+    setBState('VICTORY');
+    setTimeout(onLeave, 3000);
+  };
+
   // End of a resolver turn: sync HP + carried state, then exactly one of
   // victory / switch-or-defeat / next player turn. Foe faint wins over
   // player faint (the resolver's outcome priority): if the foe fainted,
@@ -239,11 +260,44 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
         const { leveledUp, newLevel } = gainExp(active, expGained);
         if (leveledUp) pushLog(`${active.nickname} grew to Level ${newLevel}!`);
         updatePartyMember(activeIdx, active);
+        // Mid-fight evolution (evolution-hook.ts, SAFE chains only):
+        // a level-up that meets a safe-chain rule pauses the victory
+        // tail behind a cancellable prompt. Confirm evolves the active
+        // member in place (nickname, stats, moves recomputed at the
+        // current level, HP proportion kept); cancel keeps the old
+        // species and level. Either way the victory tail runs after.
+        // A multi-level jump past two rules evolves once, to the
+        // immediate target; the next rule fires on the next level-up.
+        if (leveledUp) {
+          const rule = getSafeEvolutionRule(active.speciesId);
+          if (rule && safeEvolutionReady(active.speciesId, newLevel)) {
+            const target = SPECIES_DB[rule.targetId];
+            const fromName = active.nickname;
+            const prompt = buildMidFightPrompt(
+              { kind: 'levelUpInBattle', speciesId: active.speciesId, newLevel, rule },
+              fromName,
+              target ? target.name : rule.targetId,
+              () => {
+                if (evolveInstance(active, rule.targetId)) {
+                  updatePartyMember(activeIdx, active);
+                  pushLog(`${fromName} evolved into ${active.nickname}!`);
+                }
+                setEvolutionPrompt(null);
+                finishVictory();
+              },
+              () => {
+                pushLog(`${active.nickname} stopped evolving.`);
+                setEvolutionPrompt(null);
+                finishVictory();
+              },
+            );
+            setEvolutionPrompt(prompt);
+            setBState('EVOLUTION');
+            return;
+          }
+        }
       }
-      gainWallet(50);
-      pushLog('You found 50 Credits.');
-      setBState('VICTORY');
-      setTimeout(onLeave, 3000);
+      finishVictory();
       return;
     }
     if (q.finalPlayerHp <= 0) {
@@ -552,6 +606,18 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
                 </div>
               );
             })()}
+            {evolutionPrompt && bState === 'EVOLUTION' && (
+              <div className="game-panel p-3 mb-2">
+                <div className="text-white font-bold">{evolutionPrompt.promptTitle}</div>
+                <div className="text-sm text-slate-200">{evolutionPrompt.promptBody}</div>
+                <div className="flex gap-2 mt-2">
+                  <button onClick={evolutionPrompt.onConfirm} className="game-button px-3 py-2 text-sm font-bold min-h-[48px]">{evolutionPrompt.confirmLabel}</button>
+                  {evolutionPrompt.canCancel && (
+                    <button onClick={evolutionPrompt.onCancel} className="game-button px-3 py-2 text-sm min-h-[48px]">{evolutionPrompt.cancelLabel}</button>
+                  )}
+                </div>
+              </div>
+            )}
             <div className={moveButtonContainerClass(settings.hudMoveLayout as MoveButtonLayout)}>
               {playerActive.moves.slice(0, 4).map((mId, i) => {
                 const mv = MOVES_DB[mId];
