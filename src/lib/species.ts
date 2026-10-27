@@ -516,4 +516,35 @@ export const SPECIES_DB: Record<string, SpeciesData> = {
     learnset: [...BASIC_MOVES],
     apiSearchTags: ["divine celestial creator", "glowing ethereal legendary", "almighty mythical origin god"],
   },
+  "147": {
+    id: "147",
+    name: "Dorowani",
+    types: ["WATER"],
+    // Filled from Pokemon code by Mars's fill-from-source rule, not
+    // from a Mochiichao source (none exists): Black 2 first-stage
+    // starter pattern, total 308, Oshawott-style water lead (SpA 63).
+    // Water type is verified from sprite-art notes (water spray,
+    // water title biome). No ability field = no ability (null).
+    baseStats: { hp: 55, atk: 55, def: 45, spa: 63, spd: 45, spe: 45 },
+    catchRate: 45, baseExpYield: 62, growthRate: "Medium Slow",
+    description: "A blue water creature with long arms and red fins, built for swimming.",
+    learnset: [...BASIC_MOVES],
+    apiSearchTags: ["blue water creature", "red fins", "long arms"],
+  },
+  "148": {
+    id: "148",
+    name: "Gabu",
+    // Type filled as NORMAL by default: no source assigns Gabu an
+    // element yet (not in global_roster, not in any Pokemon game).
+    // NORMAL is the absence-of-type default, not a canon claim —
+    // replace it the moment Mars assigns Gabu an element.
+    // Stats: Black 2 first-stage starter pattern, total 308,
+    // Tepig-style HP/Atk lead (fits the wide-mouth physical look).
+    types: ["NORMAL"],
+    baseStats: { hp: 65, atk: 63, def: 45, spa: 45, spd: 45, spe: 45 },
+    catchRate: 45, baseExpYield: 62, growthRate: "Medium Slow",
+    description: "A teal, spiky creature with a wide mouth and a tan belly, built for charging in.",
+    learnset: [...BASIC_MOVES],
+    apiSearchTags: ["teal spiky creature", "tan belly", "wide mouth"],
+  },
 };
