@@ -147,3 +147,21 @@ are PR #206's, unchanged here. The logo asset is untouched.
   locked v32 doc/picture, locked title, logo PNG, animation
   default (still "perfect"), cloud, arcs, symbols, panel
   positions/fills/sizes. NOT merged, NOT published to Pages.
+
+## ADDENDUM — base moved after cut (2026-10-27)
+
+This PR was cut from main 359dbe1d. Main has since moved to
+977bbb35 (PR #321). Against new main this PR is mergeable=false /
+dirty, and the stacking notes above are stale in exactly these
+ways: PR #261 has MERGED (so new main already has logoHearts with
+the pink heart still at LEFT (230, 640.5), the slow-rise default
+and the cloud retune), and the menu-editor lane has merged (so new
+main renders hearts three ways: background logoEmblems, background
+logoHearts, and IntroSequence menuCfg.emblems from menuEditor.ts
+defaults, layer order emblems 3 < logo 4). A clean re-cut against
+new main needs the editor lane's call on the editor default pink
+position (menuEditor.ts, not edited by this lane) and a dedupe of
+the three heart systems. This branch is NOT rebased, force-pushed
+or amended to chase main; the re-cut decision is owed by
+Mars/parent. The renders and measurements in this trace remain
+valid for judging the design as cut.
