@@ -54,10 +54,46 @@ import liberationAtlas from '../assets/human-characters/in-game-sheets/liberatio
 import dojoStudentAtlas from '../assets/human-characters/in-game-sheets/dojo-student-atlas-64x64.png';
 import gardenKeeperAtlas from '../assets/human-characters/in-game-sheets/garden-keeper-atlas-64x64.png';
 import techTinkererAtlas from '../assets/human-characters/in-game-sheets/tech-tinkerer-atlas-64x64.png';
-import momBlackAtlas from '../assets/human-characters/in-game-sheets/mom-black-atlas-64x64.png';
-import momEastAsianAtlas from '../assets/human-characters/in-game-sheets/mom-east-asian-atlas-64x64.png';
-import momLatinaAtlas from '../assets/human-characters/in-game-sheets/mom-latina-atlas-64x64.png';
-import momWhiteAtlas from '../assets/human-characters/in-game-sheets/mom-white-atlas-64x64.png';
+import momBlackAtlas from '../assets/human-characters/in-game-sheets/mom-black-atlas-core100-2026-10-26.png';
+import momEastAsianAtlas from '../assets/human-characters/in-game-sheets/mom-east-asian-atlas-core100-2026-10-26.png';
+import momLatinaAtlas from '../assets/human-characters/in-game-sheets/mom-latina-atlas-core100-2026-10-26.png';
+import momWhiteAtlas from '../assets/human-characters/in-game-sheets/mom-white-atlas-core100-2026-10-26.png';
+// Human wiring PR (2026-10-26, art on main via PR #234 core/dojo closing
+// delta + PR #238 Tamsen redesign): core100 atlases for the new core
+// slots, undated 14-cell atlases for dojo/elite, dated atlases for
+// admin. Every manifest below was read from main before import: world
+// cells 0-3, walk idle 4-7, walk step 8-11, battle 12, portrait 13 —
+// EXCEPT Tamsen (non-standard, see her slot) and the core100 partial-
+// walk atlases (Hex/Aeon/Mochiko/Player B/Player C, see
+// CORE100_PARTIAL_WALK). Old undated atlases for the PR #100 slots are
+// left untouched on main; their slots keep the verified PR #100 imports.
+import playerBAtlas from '../assets/human-characters/in-game-sheets/player-b-atlas-core100-2026-10-26.png';
+import playerCAtlas from '../assets/human-characters/in-game-sheets/player-c-atlas-core100-2026-10-26.png';
+import playerDAtlas from '../assets/human-characters/in-game-sheets/player-d-atlas-core100-2026-10-26.png';
+import hexAtlas from '../assets/human-characters/in-game-sheets/hex-atlas-core100-2026-10-26.png';
+import aeonAtlas from '../assets/human-characters/in-game-sheets/aeon-atlas-core100-2026-10-26.png';
+import mochikoAtlas from '../assets/human-characters/in-game-sheets/mochiko-atlas-core100-2026-10-26.png';
+import larkAtlas from '../assets/human-characters/in-game-sheets/lark-atlas-core100-2026-10-26.png';
+import ginAtlas from '../assets/human-characters/in-game-sheets/gin-atlas-64x64.png';
+import homuraAtlas from '../assets/human-characters/in-game-sheets/homura-atlas-64x64.png';
+import honoAtlas from '../assets/human-characters/in-game-sheets/hono-atlas-64x64.png';
+import kenjiAtlas from '../assets/human-characters/in-game-sheets/kenji-atlas-64x64.png';
+import phantomAtlas from '../assets/human-characters/in-game-sheets/phantom-atlas-64x64.png';
+import shizukuAtlas from '../assets/human-characters/in-game-sheets/shizuku-atlas-64x64.png';
+import tetsuAtlas from '../assets/human-characters/in-game-sheets/tetsu-atlas-64x64.png';
+import umiAtlas from '../assets/human-characters/in-game-sheets/umi-atlas-64x64.png';
+import yoruAtlas from '../assets/human-characters/in-game-sheets/yoru-atlas-64x64.png';
+import adminAldousAtlas from '../assets/human-characters/in-game-sheets/admin-aldous-atlas-64x64-2026-10-26.png';
+import adminCassianAtlas from '../assets/human-characters/in-game-sheets/admin-cassian-atlas-64x64-2026-10-26.png';
+import adminCorvinAtlas from '../assets/human-characters/in-game-sheets/admin-corvin-atlas-64x64-2026-10-26.png';
+import adminFerrenAtlas from '../assets/human-characters/in-game-sheets/admin-ferren-atlas-64x64-2026-10-26.png';
+import adminIlsaAtlas from '../assets/human-characters/in-game-sheets/admin-ilsa-atlas-64x64-2026-10-26.png';
+import adminMarlowAtlas from '../assets/human-characters/in-game-sheets/admin-marlow-atlas-64x64-2026-10-26.png';
+import adminMireilleAtlas from '../assets/human-characters/in-game-sheets/admin-mireille-atlas-64x64-2026-10-26.png';
+import adminSorenAtlas from '../assets/human-characters/in-game-sheets/admin-soren-atlas-64x64-2026-10-26.png';
+import adminTamsenAtlas from '../assets/human-characters/in-game-sheets/admin-tamsen-redesign-atlas-64x64-2026-10-26.png';
+import adminVossAtlas from '../assets/human-characters/in-game-sheets/admin-voss-atlas-64x64-2026-10-26.png';
+
 
 export type HumanView = 'front' | 'back' | 'left' | 'right';
 
@@ -95,6 +131,19 @@ export const ROWS_WALK: HumanWalkFrames = {
 export const PAIRS_WALK: HumanWalkFrames = {
   idle: { front: 4, back: 6, left: 8, right: 10 },
   step: { front: 5, back: 7, left: 9, right: 11 },
+};
+
+/** Core100 partial-walk layout (Hex, Aeon, Mochiko, Player B, Player C
+ *  core100 manifests, read from main): idle 4-7 as usual, but the step
+ *  row is front_step 8, left_step 9, left_step2 10, right_step 11 —
+ *  there is NO distinct back_step cell (cell 9 is a left step, cell 10
+ *  a second left step). Back step therefore reuses back idle (5):
+ *  back walk shows no step change, rather than showing a left step
+ *  as a back step (which ROWS_WALK would do). Flagged, not invented:
+ *  a true back step is an art-lane item, not a wiring guess. */
+export const CORE100_PARTIAL_WALK: HumanWalkFrames = {
+  idle: { front: 4, back: 5, left: 6, right: 7 },
+  step: { front: 8, back: 5, left: 9, right: 11 },
 };
 
 export interface HumanSlot {
@@ -149,6 +198,13 @@ function atlasSlot(slotId: string, label: string, role: string, sheetUrl: string
   return { slotId, label, role, sheetUrl, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: ROWS_WALK, battleCell: 12, portraitCell: 13, sheetCols: 4, sheetRows: 4, color };
 }
 
+/** Atlas slot with the core100 partial-walk layout (see
+ *  CORE100_PARTIAL_WALK). Row-0 world, battle 12 and portrait 13 are
+ *  the same as atlasSlot; only the walk step row differs. */
+function partialAtlasSlot(slotId: string, label: string, role: string, sheetUrl: string, color: string): HumanSlot {
+  return { slotId, label, role, sheetUrl, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: CORE100_PARTIAL_WALK, battleCell: 12, portraitCell: 13, sheetCols: 4, sheetRows: 4, color };
+}
+
 /** Grid (col, row) of a 4x4 atlas cell index, for HumanPortrait's
  *  `cell` prop. Cell 12 -> (0, 3), cell 13 -> (1, 3). */
 export function cellPos(cell: number): { col: number; row: number } {
@@ -156,8 +212,10 @@ export function cellPos(cell: number): { col: number; row: number } {
 }
 
 /**
- * Mom variant sheets (PR #100: mom-black, mom-east-asian, mom-latina,
- * mom-white). Mom is VARIABLE by player pick, NOT fixed canon, and the
+ * Mom variant sheets (human wiring PR: switched from the PR #100
+ * undated atlases to the core100 dated atlases — same 0-13 cell layout
+ * per the core100 manifests, cell 14 = battle back; the undated files
+ * stay on main untouched). Mom is VARIABLE by player pick, NOT fixed canon, and the
  * game has no variant-selection mechanism today — so the four variants
  * are bundled here as loadable data and the mom slot itself keeps
  * sheetUrl null (silhouette) until a selection UI exists. Picking one
@@ -192,9 +250,18 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // portrait or Mars decides otherwise. This is a flagged decision,
   // not a silent swap and not a hand-fix: the atlas is untouched.
   player_girl: { slotId: 'player_girl', label: 'Player (girl)', role: 'player', sheetUrl: playerAAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: PAIRS_WALK, battleCell: 12, sheetCols: 4, sheetRows: 4, color: '#f48fb1' },
-  hex: slot('hex', 'Hex (rival)', 'rival', '#b388ff'),
-  prof_aeon: slot('prof_aeon', 'Prof. Aeon', 'professor', '#e0e0e0'),
-  mochiko: slot('mochiko', 'Assistant Mochiko', 'assistant', '#80cbc4'),
+  // Hex (core100 atlas, wired in the human wiring PR): battle 12 is
+  // her battle_back_fullsize cell, portrait 13, partial walk (see
+  // CORE100_PARTIAL_WALK — no distinct back step).
+  hex: partialAtlasSlot('hex', 'Hex (rival)', 'rival', hexAtlas, '#b388ff'),
+  // Prof. Aeon (core100 atlas, wired in the human wiring PR): battle
+  // 12 is his battle_front_fullsize cell, portrait 13, partial walk.
+  // His battle back is cell 14, queued for character-select.
+  prof_aeon: partialAtlasSlot('prof_aeon', 'Prof. Aeon', 'professor', aeonAtlas, '#e0e0e0'),
+  // Assistant Mochiko (core100 atlas, wired in the human wiring PR):
+  // battle 12 is her battle_front_fullsize cell, portrait 13, partial
+  // walk. Her battle back is cell 14, queued for character-select.
+  mochiko: partialAtlasSlot('mochiko', 'Assistant Mochiko', 'assistant', mochikoAtlas, '#80cbc4'),
   mom: { ...slot('mom', 'Mom', 'family', '#ffcc80'), variantSheets: MOM_VARIANT_SHEETS },
   dojo_trainer: slot('dojo_trainer', 'Dojo Trainer', 'trainer', '#ef9a9a'),
   // Dojo Student (PR #100 atlas): routed by slotForNpc below to the
@@ -204,10 +271,11 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // null — student art is NOT put on the bosses, whose own sheets are
   // still owed.
   dojo_student: atlasSlot('dojo_student', 'Dojo Student', 'trainer', dojoStudentAtlas, '#ef9a9a'),
-  // Garden Keeper (PR #100 atlas, battle front v2): slot defined and
-  // bundled, but NOT routed yet — no Garden NPC routes through
-  // slotForNpc today and GardenView does not use it. Garden staff
-  // routing is still owed. FLAG, preserved honestly: her manifest's
+  // Garden Keeper (PR #100 atlas, battle front v2): exact-key route
+  // added by the wiring PR (garden_keeper id / 'garden keeper' name) —
+  // but no Garden NPC exists in the maps today and GardenView does not
+  // use humanSheets, so the art still shows only once a Garden NPC is
+  // added to map data. FLAG, preserved honestly: her manifest's
   // front step reuses the front idle cell (steps "0:0,0:3,1:1,1:3"),
   // pixel-verified 2026-10-26: her front step cell (8) is
   // pixel-identical to her front idle cell (4) and to her world
@@ -217,11 +285,11 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   // steps are distinct. This only matters when a Garden NPC is
   // routed here; row-0 world cells consumed today are unaffected.
   garden_keeper: atlasSlot('garden_keeper', 'Garden Keeper', 'garden-staff', gardenKeeperAtlas, '#a5d6a7'),
-  // Tech Tinkerer (PR #100 atlas): slot defined and bundled, but NOT
-  // routed yet — no tech NPC routes through slotForNpc today (the
-  // Sector 0 "Technology Enthusiast", id fat_guy, is NOT evidenced
-  // as the Tech Tinkerer, so it is NOT routed here). Tech NPC routing
-  // is still owed.
+  // Tech Tinkerer (PR #100 atlas): exact-key route added by the wiring
+  // PR (tech_tinkerer id / 'tech tinkerer' name) — but no Tech NPC
+  // exists in the maps today (the Sector 0 "Technology Enthusiast",
+  // id fat_guy, is NOT evidenced as the Tech Tinkerer, so it is NOT
+  // routed here). The art shows once a Tech NPC is added to map data.
   tech_tinkerer: atlasSlot('tech_tinkerer', 'Tech Tinkerer', 'trainer', techTinkererAtlas, '#90caf9'),
   // Shopkeeper (PR #100 atlas, portrait v2 cel): routed by slotForNpc
   // below — shop_1 "Clerk" isShop in Silicon Town MochiiPlex.
@@ -245,11 +313,71 @@ export const HUMAN_SLOTS: Record<string, HumanSlot> = {
   liberation: atlasSlot('liberation', 'Liberation Front Member', 'antagonist', liberationAtlas, '#66bb6a'),
   // Junk Warlord Krix (PR #100 atlas, walk v2 — dreadlocks + gold
   // tooth are canon going forward): routed by slotForNpc below
-  // (id includes 'krix'). No krix-id NPC exists in the maps today,
-  // so this art shows once one does.
+  // (id or name includes 'krix') — junk_boss 'Junk Warlord Krix' in
+  // FullWorldMaps now routes here (wiring PR name check).
   krix: atlasSlot('krix', 'Junk Warlord Krix', 'antagonist', krixAtlas, '#ff7043'),
   castagnoli: slot('castagnoli', 'Luigi Castagnoli', 'antagonist', '#5c6bc0'),
   mythar: slot('mythar', 'Champion Mythar', 'champion', '#ffd54f'),
+  // Player variants B/C/D (core100 atlases, wired in the human wiring
+  // PR as slots only): playerSlot() still returns boy/girl only — there
+  // is NO A/B/C/D picker UI yet, so these slots render only once a
+  // picker routes to them. That picker is a separate owed item; it is
+  // NOT claimed here. B/C use the partial walk (no distinct back
+  // step); D uses the pairs walk (its manifest is pairs, like Player A).
+  // Battle 12 on B/C/D is the battle_back_fullsize cell; battle front
+  // is cell 14, queued for the opponent consumer.
+  player_b: partialAtlasSlot('player_b', 'Player B', 'player', playerBAtlas, '#81d4fa'),
+  player_c: partialAtlasSlot('player_c', 'Player C', 'player', playerCAtlas, '#f48fb1'),
+  player_d: { slotId: 'player_d', label: 'Player D', role: 'player', sheetUrl: playerDAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, walk: PAIRS_WALK, battleCell: 12, portraitCell: 13, sheetCols: 4, sheetRows: 4, color: '#ffe082' },
+  // Lark (core100 atlas, wired in the human wiring PR): Harbor City
+  // ferry-dock dispatcher, the unnamed 35th core character — never a
+  // rename of anyone. No Lark-id NPC exists in the maps today, so this
+  // slot shows once a Lark NPC is added to map data (map-data lane,
+  // not invented here). Battle 12 is battle_front_fullsize; her back
+  // is cell 14, queued.
+  lark: atlasSlot('lark', 'Lark', 'npc', larkAtlas, '#80deea'),
+  // Dojo leaders 3-7 + Elite 1-4 (undated 14-cell atlases, wired in the
+  // human wiring PR, standard ROWS walk, battle_front 12, portrait 13).
+  // Their battle backs are the #245 webps, QUEUED for character-select
+  // (not wired as player backs here — BattleView's player figure only
+  // ever renders playerSlot(), and none of these is a player today).
+  // Tetsu is the only one with a map NPC today (dojo3_leader, routed
+  // below); the rest show once their NPCs exist in map data.
+  tetsu: atlasSlot('tetsu', 'Tetsu', 'dojo', tetsuAtlas, '#90a4ae'),
+  kenji: atlasSlot('kenji', 'Kenji', 'dojo', kenjiAtlas, '#ef9a9a'),
+  phantom: atlasSlot('phantom', 'Phantom', 'dojo', phantomAtlas, '#b39ddb'),
+  shizuku: atlasSlot('shizuku', 'Shizuku', 'dojo', shizukuAtlas, '#80cbc4'),
+  homura: atlasSlot('homura', 'Homura', 'dojo', homuraAtlas, '#ffab91'),
+  umi: atlasSlot('umi', 'Umi', 'elite', umiAtlas, '#81d4fa'),
+  gin: atlasSlot('gin', 'Gin', 'elite', ginAtlas, '#b0bec5'),
+  hono: atlasSlot('hono', 'Hono', 'elite', honoAtlas, '#ffcc80'),
+  yoru: atlasSlot('yoru', 'Yoru', 'elite', yoruAtlas, '#ce93d8'),
+  // Admins (dated atlases, wired in the human wiring PR, standard ROWS
+  // walk, battle 12 = battle_front source per each manifest, portrait
+  // 13). Their battle backs are separate media-generation webps on
+  // main, QUEUED for character-select, not wired here. No admin NPC
+  // exists in the maps today; these slots show once their NPCs do.
+  admin_aldous: atlasSlot('admin_aldous', 'Aldous', 'admin', adminAldousAtlas, '#bcaaa4'),
+  admin_cassian: atlasSlot('admin_cassian', 'Cassian', 'admin', adminCassianAtlas, '#a5d6a7'),
+  admin_corvin: atlasSlot('admin_corvin', 'Corvin', 'admin', adminCorvinAtlas, '#90caf9'),
+  admin_ferren: atlasSlot('admin_ferren', 'Ferren', 'admin', adminFerrenAtlas, '#ffab91'),
+  admin_ilsa: atlasSlot('admin_ilsa', 'Ilsa', 'admin', adminIlsaAtlas, '#f48fb1'),
+  admin_marlow: atlasSlot('admin_marlow', 'Marlow', 'admin', adminMarlowAtlas, '#ffe082'),
+  admin_mireille: atlasSlot('admin_mireille', 'Mireille', 'admin', adminMireilleAtlas, '#ce93d8'),
+  admin_soren: atlasSlot('admin_soren', 'Soren', 'admin', adminSorenAtlas, '#81d4fa'),
+  // Tamsen redesign (NON-STANDARD atlas — do NOT use atlasSlot here):
+  // her manifest (read from main) is world 0-3, walk stride steps 4-7
+  // (no per-direction idle/step bands), battle_front 8, portrait 9,
+  // battle_back 10, model 11, blanks 12-15. A standard atlasSlot would
+  // render BLANK battle (12) and portrait (13) cells. So: no walk
+  // (stride steps are undifferentiated — mapping them to directions
+  // would be a guess), battleCell 8 = the front (the opponent-side
+  // figure, matching the NPC atlasSlot precedent), portraitCell 9.
+  // Her battle_back (10) is QUEUED for character-select: a single
+  // battleCell cannot hold both front and back, and no player-back
+  // consumer exists for her today.
+  admin_tamsen: { slotId: 'admin_tamsen', label: 'Tamsen', role: 'admin', sheetUrl: adminTamsenAtlas, frames: { front: 0, back: 64, left: 128, right: 192 }, battleCell: 8, portraitCell: 9, sheetCols: 4, sheetRows: 4, color: '#ef9a9a' },
+  admin_voss: atlasSlot('admin_voss', 'Voss', 'admin', adminVossAtlas, '#a1887f'),
   trainer_generic: slot('trainer_generic', 'Trainer', 'trainer', '#9e9e9e'),
   townspeople: slot('townspeople', 'Townspeople', 'npc', '#bcaaa4'),
 };
@@ -266,10 +394,46 @@ export function slotForNpc(npc: any): HumanSlot {
   if (id.includes('aeon') || name.includes('aeon')) return HUMAN_SLOTS.prof_aeon;
   if (id.includes('mochiko')) return HUMAN_SLOTS.mochiko;
   if (id.includes('hex') || name === 'hex') return HUMAN_SLOTS.hex;
-  if (id.includes('krix')) return HUMAN_SLOTS.krix;
+  if (id.includes('krix') || name.includes('krix')) return HUMAN_SLOTS.krix; // junk_boss is named 'Junk Warlord Krix' with no krix id — name check added by the wiring PR
   if (id.includes('castagnoli') || name.includes('castagnoli')) return HUMAN_SLOTS.castagnoli;
   if (id.includes('mythar') || name.includes('mythar')) return HUMAN_SLOTS.mythar;
   if (id.includes('hacker') || id.includes('grunt')) return HUMAN_SLOTS.hacker;
+  // Human wiring PR exact-key routes (432 batch): these run before the
+  // substring fallbacks below. Short stems (gin, umi) use delimited
+  // matches only — a bare 'gin' substring would false-positive on
+  // words like 'engineer'. No route is invented for an NPC that does
+  // not exist: garden_keeper / tech_tinkerer branches match only a
+  // garden_keeper / tech_tinkerer id or name — no Garden or Tech NPC
+  // exists in the maps today, and the Sector 0 'Technology
+  // Enthusiast' (fat_guy) is NOT evidenced as the Tech Tinkerer, so it
+  // is deliberately NOT routed here. Likewise boat_captain 'Capt.
+  // Neri' is NOT the Ferry Captain and dockhand_juno is NOT Lark, so
+  // neither is routed to a 432 character. Player B/C/D get NO
+  // slotForNpc route: they are player variants, and only a picker UI
+  // (separate owed item) may route to them.
+  if (id.includes('garden_keeper') || name.includes('garden keeper')) return HUMAN_SLOTS.garden_keeper;
+  if (id.includes('tech_tinkerer') || name.includes('tech tinkerer')) return HUMAN_SLOTS.tech_tinkerer;
+  if (id === 'dojo3_leader') return HUMAN_SLOTS.tetsu; // Dojo 3 Chrome / Neon Fragment leader (dialogue: 'Chrome is the Mainframe's spine', acolytes: Neon Fragment) — Tetsu's step-8 record is Dojo 3, Chrome, Neon City, Neon Fragment.
+  if (id.includes('tetsu') || name === 'tetsu') return HUMAN_SLOTS.tetsu;
+  if (id.includes('kenji') || name === 'kenji') return HUMAN_SLOTS.kenji;
+  if (id.includes('phantom') || name === 'phantom') return HUMAN_SLOTS.phantom;
+  if (id.includes('shizuku') || name === 'shizuku') return HUMAN_SLOTS.shizuku;
+  if (id.includes('homura') || name === 'homura') return HUMAN_SLOTS.homura;
+  if (id.includes('hono') || name === 'hono') return HUMAN_SLOTS.hono;
+  if (id.includes('yoru') || name === 'yoru') return HUMAN_SLOTS.yoru;
+  if (id.includes('_umi') || id.startsWith('umi_') || id === 'umi' || name === 'umi') return HUMAN_SLOTS.umi;
+  if (id.includes('_gin') || id.startsWith('gin_') || id === 'gin' || name === 'gin') return HUMAN_SLOTS.gin;
+  if (id.includes('lark') || name === 'lark') return HUMAN_SLOTS.lark;
+  if (id.includes('aldous') || name === 'aldous') return HUMAN_SLOTS.admin_aldous;
+  if (id.includes('cassian') || name === 'cassian') return HUMAN_SLOTS.admin_cassian;
+  if (id.includes('corvin') || name === 'corvin') return HUMAN_SLOTS.admin_corvin;
+  if (id.includes('ferren') || name === 'ferren') return HUMAN_SLOTS.admin_ferren;
+  if (id.includes('ilsa') || name === 'ilsa') return HUMAN_SLOTS.admin_ilsa;
+  if (id.includes('marlow') || name === 'marlow') return HUMAN_SLOTS.admin_marlow;
+  if (id.includes('mireille') || name === 'mireille') return HUMAN_SLOTS.admin_mireille;
+  if (id.includes('soren') || name === 'soren') return HUMAN_SLOTS.admin_soren;
+  if (id.includes('tamsen') || name === 'tamsen') return HUMAN_SLOTS.admin_tamsen;
+  if (id.includes('voss') || name === 'voss') return HUMAN_SLOTS.admin_voss;
   if (id.includes('syndicate')) return HUMAN_SLOTS.syndicate;
   if (id.includes('liberation')) return HUMAN_SLOTS.liberation;
   if (npc?.isShop) return HUMAN_SLOTS.shopkeeper;
