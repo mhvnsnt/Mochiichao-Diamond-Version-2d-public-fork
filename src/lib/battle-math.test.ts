@@ -13,7 +13,11 @@ import {
   ACCURACY_STAGE_RATIOS,
   CRIT_CHANCE_DENOMINATORS,
   accuracyThreshold,
+  accuracyThresholdBlack2,
+  actionOrderKey,
   applyStage,
+  checkOHKOHit,
+  escapeChance,
   calculateDamage,
   changeStage,
   checkCanAct,
@@ -24,11 +28,14 @@ import {
   effectiveSpeed,
   endTurnStatusDamage,
   heldItemAttack,
+  isGuaranteedHit,
   leftoversHeal,
+  orderActions,
   orderPair,
   recoilDamage,
   rollAccuracy,
   rollCrit,
+  rollEscape,
   rollMultiHitCount,
   rollQuickClaw,
   rollSecondaryEffect,
@@ -426,5 +433,105 @@ describe("move effects, multi-hit, recoil, held items", () => {
     expect(weatherPowerRatio("rain", "FIRE")).toEqual([5, 10]);
     expect(weatherPowerRatio("sun", "FIRE")).toEqual([15, 10]);
     expect(weatherPowerRatio("none", "WATER")).toEqual([1, 1]);
+  });
+});
+
+describe("black2 extraction: speed cap + trick room", () => {
+  it("caps at 10000, then inverts under trick room (cap first, so 20000 -> 0)", () => {
+    expect(effectiveSpeed(battler({ speed: 20000 }))).toBe(10000);
+    expect(effectiveSpeed(battler({ speed: 100 }), { trickRoom: true })).toBe(9900);
+    expect(effectiveSpeed(battler({ speed: 20000 }), { trickRoom: true })).toBe(0);
+    expect(effectiveSpeed(battler({ speed: 100, status: "paralysis" }), { trickRoom: true })).toBe(9975);
+  });
+});
+
+describe("black2 extraction: full action-order key", () => {
+  it("kind beats priority: an item (kind 2, pri 0) acts before a fight move (kind 0, pri 5)", () => {
+    const ordered = orderActions([
+      { id: "fight", priority: 5, effSpeed: 999, kind: 0 as const },
+      { id: "item", priority: 0, effSpeed: 1, kind: 2 as const },
+    ]);
+    expect(ordered[0].id).toBe("item");
+    expect(actionOrderKey({ id: "x", priority: 0, effSpeed: 100 })).toBe(
+      (0 << 22) | (7 << 16) | (1 << 13) | 100,
+    );
+  });
+
+  it("special priority sits between priority and speed: default 1 beats stall 0 at equal priority+speed", () => {
+    const ordered = orderActions([
+      { id: "stall", priority: 0, effSpeed: 100, specialPriority: 0 },
+      { id: "normal", priority: 0, effSpeed: 100, specialPriority: 1 },
+    ]);
+    expect(ordered[0].id).toBe("normal");
+  });
+
+  it("exact key ties shuffle with rng (2-group Fisher-Yates: 0.25 swaps, 0.75 keeps) and keep input order without rng", () => {
+    const pair = [
+      { id: "a", priority: 0, effSpeed: 100 },
+      { id: "b", priority: 0, effSpeed: 100 },
+    ];
+    expect(orderActions(pair, rngFromSequence([0.25]))[0].id).toBe("b");
+    expect(orderActions(pair, rngFromSequence([0.75]))[0].id).toBe("a");
+    expect(orderActions(pair)[0].id).toBe("a");
+  });
+});
+
+describe("black2 extraction: accuracy cap + foresight rules", () => {
+  it("black2 caps the stage-adjusted threshold at 100: acc 80 at +1 acc -> 100 (uncapped fn gives 106)", () => {
+    const att = battler({ stages: { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, acc: 1, eva: 0 } });
+    expect(accuracyThresholdBlack2(move({ accuracy: 80 }), att, battler())).toBe(100);
+    expect(accuracyThreshold(move({ accuracy: 80 }), att, battler())).toBe(106);
+  });
+
+  it("black2 foresight neutralizes only positive evasion; firered ignores evasion entirely", () => {
+    // Defender evasion -2 (lowered): black2 still benefits the attacker
+    // (net +2 -> 166 uncapped), firered foresight gives exactly 100.
+    const lowEva = battler({ stages: { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, acc: 0, eva: -2 } });
+    expect(
+      accuracyThreshold(move({ accuracy: 100 }), battler(), lowEva, { foresight: true, foresightRule: "black2" }),
+    ).toBe(166);
+    expect(
+      accuracyThreshold(move({ accuracy: 100 }), battler(), lowEva, { foresight: true, foresightRule: "firered" }),
+    ).toBe(100);
+    // Defender evasion +6: both rules give 100.
+    const highEva = battler({ stages: { atk: 0, def: 0, spa: 0, spd: 0, spe: 0, acc: 0, eva: 6 } });
+    expect(
+      accuracyThreshold(move({ accuracy: 100 }), battler(), highEva, { foresight: true, foresightRule: "black2" }),
+    ).toBe(100);
+  });
+
+  it("guaranteed hit: any of no-guard / lock-on / always-hit condition / always-hit move", () => {
+    expect(isGuaranteedHit({})).toBe(false);
+    expect(isGuaranteedHit({ noGuard: true })).toBe(true);
+    expect(isGuaranteedHit({ lockOn: true })).toBe(true);
+    expect(isGuaranteedHit({ alwaysHitCondition: true })).toBe(true);
+    expect(isGuaranteedHit({ alwaysHitMove: true })).toBe(true);
+    expect(isGuaranteedHit({ noGuard: false, lockOn: true })).toBe(true);
+  });
+});
+
+describe("black2 extraction: ohko + escape + always-crit", () => {
+  it("ohko: lower level never lands; chance = accuracy + level lead; guaranteed bypasses", () => {
+    expect(checkOHKOHit(40, 50, 30, rngFromSequence([0]))).toBe(false);
+    // L50 vs L40, acc 30 -> chance 40: roll 39 hits, roll 40 misses.
+    expect(checkOHKOHit(50, 40, 30, rngFromSequence([0.39]))).toBe(true);
+    expect(checkOHKOHit(50, 40, 30, rngFromSequence([0.4]))).toBe(false);
+    expect(checkOHKOHit(40, 50, 30, rngFromSequence([0.99]), { guaranteed: true })).toBe(true);
+  });
+
+  it("escape: faster always escapes; 100 vs 200 -> chance 64/256, +30 per failed attempt", () => {
+    expect(escapeChance(100, 200, 0)).toBe(64);
+    expect(escapeChance(100, 200, 2)).toBe(124);
+    expect(rollEscape(201, 200)).toBe(true);
+    // roll floor(0.24*256)=61 < 64 escapes; floor(0.25*256)=64 does not.
+    expect(rollEscape(100, 200, 0, rngFromSequence([0.24]))).toBe(true);
+    expect(rollEscape(100, 200, 0, rngFromSequence([0.25]))).toBe(false);
+    // One failed attempt: chance 94; roll floor(0.36*256)=92 escapes.
+    expect(rollEscape(100, 200, 1, rngFromSequence([0.36]))).toBe(true);
+  });
+
+  it("always-crit bypasses the roll", () => {
+    expect(rollCrit(0, rngFromSequence([0.99]), { alwaysCrit: true })).toBe(true);
+    expect(rollCrit(0, rngFromSequence([0.99]))).toBe(false);
   });
 });
