@@ -41,6 +41,12 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
   const useItem = useGameStore(s => s.useItem);
   const gainWallet = useGameStore(s => s.gainWallet);
   const [mode, setMode] = useState<'menu' | 'buy' | 'sell'>('menu');
+  // Selection changes on click / keyboard focus ONLY. Hover selection
+  // was removed after the 2026-10-27 live playtest: moving the mouse
+  // down to the Buy button crossed intervening rows, and the last
+  // row's hover fired first, so Buy confirmed Data Card instead of
+  // the selected Revive Core / Mend Patch. No price, order, or
+  // confirm behaviour changes.
   const [selected, setSelected] = useState(0);
   const [confirm, setConfirm] = useState<{ kind: 'buy' | 'sell'; id: string; name: string; price: number } | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -133,7 +139,6 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
               <button
                 key={item.id}
                 onClick={() => setSelected(i)}
-                onMouseEnter={() => setSelected(i)}
                 onFocus={() => setSelected(i)}
                 className={`game-panel p-3 flex items-center gap-3 text-left min-h-[48px] ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}
               >
@@ -175,7 +180,6 @@ export default function ShopView({ onBack }: { onBack: () => void }) {
                   <button
                     key={item.id}
                     onClick={() => setSelected(i)}
-                    onMouseEnter={() => setSelected(i)}
                     onFocus={() => setSelected(i)}
                     className={`game-panel p-3 flex items-center gap-3 text-left min-h-[48px] ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}
                   >
