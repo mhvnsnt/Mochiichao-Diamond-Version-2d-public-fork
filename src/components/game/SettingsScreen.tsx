@@ -16,8 +16,10 @@ import {
 } from '../../lib/menuSkins';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
+import TitleScene from './TitleScene';
 import {
   TITLE_START_SCREEN_CYCLE, getSelectedTitleStartScreenId, setSelectedTitleStartScreenId,
+  resolveTitleStartScreen,
   titleStartScreenLabel, type TitleStartScreenId,
 } from '../../lib/titleStartScreens';
 import MusicMixerScreen from './MusicMixerScreen';
@@ -617,6 +619,11 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
   if (screen === 'MUSIC_CREATOR') {
     return <MusicCreatorScreen onBack={() => setScreen('SETTINGS')} />;
   }
+  // Title-screen preset preview: the picked start screen as a TitleScene strip,
+  // built the same way TitleStartScreen builds it (biome/figure/creature).
+  // Locked Default has no strip — the locked phi title is not a TitleScene.
+  const titlePresetPreviewDef = titleChoice ? resolveTitleStartScreen(titleChoice) : null;
+  const titlePresetPreviewProps = titlePresetPreviewDef ? { biome: titlePresetPreviewDef.biome, figureUrl: titlePresetPreviewDef.figureUrl, figureName: titlePresetPreviewDef.creature, startPrompt: false, caption: ' ' } : null;
 
   return (
     <div className="game-screen bg-[#050810] flex flex-col items-center relative overflow-hidden p-4" style={{ background: renderBackground, justifyContent: anchorJustify, paddingTop: custom.safeArea ? 'max(1rem, env(safe-area-inset-top))' : '1rem', paddingBottom: custom.safeArea ? 'max(1rem, env(safe-area-inset-bottom))' : '1rem' }}>
@@ -663,6 +670,14 @@ export default function SettingsScreen({ onBack }: { onBack: () => void }) {
             </button>
           ))}
         </StdWindow>
+
+        {screen === 'SETTINGS' && titlePresetPreviewProps && (
+          <StdWindow style={panelStyle} className="px-3 py-2">
+            <div className="font-bold mb-1">Title preset preview — {titlePresetPreviewDef?.label}</div>
+            <TitleScene {...titlePresetPreviewProps} />
+            <div className="text-xs text-slate-400 mt-1">Preview only: the TITLE phase shows this scene full-screen when the preset is picked. PRESS ANY KEY still goes to MAIN MENU after the 350ms white fade.</div>
+          </StdWindow>
+        )}
 
         {screen === 'MENU_CUSTOM' && (
           <StdWindow style={{ ...panelStyle, borderRadius: DIALOGUE_BOX_RADIUS[custom.dialogueBoxStyle] }} className="px-3 py-2">

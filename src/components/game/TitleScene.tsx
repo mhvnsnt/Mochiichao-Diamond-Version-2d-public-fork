@@ -85,6 +85,7 @@ export default function TitleScene({
   caption,
   startPrompt = false,
   exitKind = 'none',
+  fullHeight = false,
   hideBackground = false,
 }: {
   biome?: TitleBiomeId;
@@ -119,6 +120,10 @@ export default function TitleScene({
    *  (startPrompt=true only) sets the internal exit to 'normal'
    *  90 frames after a press, so a press IS input-triggered there. */
   exitKind?: PlatinumExitKind;
+  /** Full-viewport host (the in-game TITLE phase only). Default
+   *  false keeps the 180px preview strip every other caller uses
+   *  (creator previews, Settings preview) exactly as before. */
+  fullHeight?: boolean;
   /** Interchangeable start screens only (TitleStartScreen): when
    *  true, skip the painted bgSprite layer AND the Pixi sky/ground/
    *  tuft/shimmer fallback, so a video layer behind this canvas
@@ -931,7 +936,7 @@ export default function TitleScene({
 
   return (
     <div className="w-full">
-      <div ref={hostRef} className="w-full h-[180px] relative overflow-hidden rounded" />
+      <div ref={hostRef} className={fullHeight ? 'w-full h-[100dvh] relative overflow-hidden' : 'w-full h-[180px] relative overflow-hidden rounded'} />
       {startPrompt && (
         <div className="text-center text-xs font-bold tracking-widest" style={{ visibility: startVisible ? 'visible' : 'hidden' }}>
           PRESS ANY KEY
