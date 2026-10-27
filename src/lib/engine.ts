@@ -84,3 +84,36 @@ export function gainExp(instance: MochiiInstance, amount: number) {
 
   return { leveledUp, newLevel };
 }
+
+/**
+ * Evolve a live instance into a target species, in place (2026-10-27,
+ * wiring lane -- the BattleView mid-fight hook). The caller owns the
+ * rule check (evolution-hook safeEvolutionReady); this only performs
+ * the swap. Nickname follows the new species when it still equals the
+ * old species name; a player-set nickname is kept. Stats are
+ * recalculated from the target's base stats at the current level
+ * (same IV/EV as createMochii/gainExp), HP keeps its proportion,
+ * and moves come from the target's learnset exactly like createMochii.
+ * Returns false when the target species does not exist (no-op).
+ */
+export function evolveInstance(instance: MochiiInstance, targetId: string): boolean {
+  const target = SPECIES_DB[targetId];
+  if (!target) return false;
+  const from = SPECIES_DB[instance.speciesId];
+
+  const hpPct = instance.maxHp > 0 ? instance.hp / instance.maxHp : 1;
+  if (from && instance.nickname === from.name) instance.nickname = target.name;
+  instance.speciesId = targetId;
+  instance.maxHp = calculateStat(target.baseStats.hp, 15, 0, instance.level, true);
+  instance.hp = Math.max(1, Math.round(instance.maxHp * hpPct));
+  instance.stats.atk = calculateStat(target.baseStats.atk, 15, 0, instance.level, false);
+  instance.stats.def = calculateStat(target.baseStats.def, 15, 0, instance.level, false);
+  instance.stats.spa = calculateStat(target.baseStats.spa, 15, 0, instance.level, false);
+  instance.stats.spd = calculateStat(target.baseStats.spd, 15, 0, instance.level, false);
+  instance.stats.spe = calculateStat(target.baseStats.spe, 15, 0, instance.level, false);
+
+  const available = target.learnset.filter(l => l.level <= instance.level).map(l => l.moveId);
+  instance.moves = available.slice(-4);
+  instance.pp = instance.moves.map(m => MOVES_DB[m]?.pp || 10);
+  return true;
+}
