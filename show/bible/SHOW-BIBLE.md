@@ -83,6 +83,20 @@ tracked in the season grid.
    filled, gags are mechanisms, silence is a tool, line economy.
 6. **Animation law:** FIRST-START.md §3 — only frame-verified
    real performance counts as animation. No slideshows, ever.
+7. **LIKENESS LAW (Jamar, 2026-10-27 — learned from the avatar):**
+   every character is built from the character's ACTUAL image
+   already in this repo — the way the owner's avatar was built
+   from the picture he sent, candidates generated off that exact
+   image. NEVER invent a likeness from a text description.
+   Generative work takes the repo art file as its image source
+   and must preserve the likeness and the art style of that
+   source. **Likeness gate:** before any generated character
+   asset is used or shipped, frames are checked against the
+   character's model sheet — same character, same style, or it
+   is rejected and does not enter the repo. (Rejected under this
+   law, 2026-10-27: the glossy-3D gen-pilot2 batch — Mochii/Gabu/
+   Kittember/Sproutle/Wispkin clips that drifted off-model. They
+   were never pushed to this repo.)
 
 ## 6. THE EPISODE ENGINE
 Pokémon showcase × 6-beat garden formula (mystery-heart):
