@@ -1,7 +1,8 @@
 # EPISODE 1 — "THE GARDEN HAS A GHOST" — SHOOTING SCRIPT v2
 
-**Status: DRAFT for owner review. Supersedes EP01-script-v1.fountain
-(story unchanged; format + laws corrected).**
+**Status: LOCKED by owner 2026-10-27. This is the script of record.
+EP01-script-v1.fountain was DELETED by owner direction the same day
+so there is no version confusion.**
 
 - Series: Mochiichao — Episode: 01 — Title approved by owner 2026-10-27
 - Format: shooting script in the owner's house format — rules,
