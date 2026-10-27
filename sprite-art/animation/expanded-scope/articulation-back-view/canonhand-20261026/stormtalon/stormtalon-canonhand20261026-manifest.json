@@ -1,0 +1,614 @@
+{
+ "creature": "stormtalon",
+ "tag": "canonhand20261026",
+ "bucket": "resolved",
+ "anchor_canon": "wings/talons as hands",
+ "anchor_method": "tip anchors measured per frame from that frame's own silhouette extremes (wings: lateral extremes; tentacles: middle-band lateral extremes), shifted inward (5px pair / 8px single) so fists render whole; raw-extreme fallback, else base copy + flag. Never guessed.",
+ "method": "Layer 2 hand overlays only on staged back sets; 0 generations; back-set files untouched; Mode A impact-only (attack f3, hurt f0); cast glow element-neutral; no claw-swipe from behind; HANDS ONLY, no face overlays.",
+ "source_back_dir": "trueback-sets-20261026/stormtalon",
+ "timing_mode": "impact-only-mode-A",
+ "clawed_physical": false,
+ "shadow_note": "idle00 bottom rows 56-63: 152 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+ "shadow_stripped_px": 0,
+ "sets": {
+  "atk_heavy_tempest_crash_finisher": {
+   "kind": "attack",
+   "family": "heavy",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "grab",
+    "grab",
+    "punch",
+    "grab",
+    "grab",
+    "folded"
+   ],
+   "files": [
+    "stormtalon-canonhand20261026-atk_heavy_tempest_crash_finisher-cell-00.png",
+    "stormtalon-canonhand20261026-atk_heavy_tempest_crash_finisher-cell-01.png",
+    "stormtalon-canonhand20261026-atk_heavy_tempest_crash_finisher-cell-02.png",
+    "stormtalon-canonhand20261026-atk_heavy_tempest_crash_finisher-cell-03.png",
+    "stormtalon-canonhand20261026-atk_heavy_tempest_crash_finisher-cell-04.png",
+    "stormtalon-canonhand20261026-atk_heavy_tempest_crash_finisher-cell-05.png"
+   ],
+   "durations_ms": [
+    220,
+    160,
+    140,
+    120,
+    100,
+    420
+   ],
+   "total_ms": 1160,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "grab",
+     "source": "stormtalon-trueback-20261026-atk_heavy_tempest_crash_finisher-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "grab",
+     "source": "stormtalon-trueback-20261026-atk_heavy_tempest_crash_finisher-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "stormtalon-trueback-20261026-atk_heavy_tempest_crash_finisher-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "grab",
+     "source": "stormtalon-trueback-20261026-atk_heavy_tempest_crash_finisher-cell-03.png",
+     "applied": true,
+     "changed_px": 89,
+     "diff_bbox": [
+      1,
+      19,
+      62,
+      27
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-wing-bbox-(0, 21, 64, 61)"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "grab",
+     "source": "stormtalon-trueback-20261026-atk_heavy_tempest_crash_finisher-cell-04.png",
+     "applied": false
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-atk_heavy_tempest_crash_finisher-cell-05.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_physical_talon_strike": {
+   "kind": "attack",
+   "family": "physical",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "guard",
+    "punch",
+    "punch",
+    "folded"
+   ],
+   "files": [
+    "stormtalon-canonhand20261026-atk_physical_talon_strike-cell-00.png",
+    "stormtalon-canonhand20261026-atk_physical_talon_strike-cell-01.png",
+    "stormtalon-canonhand20261026-atk_physical_talon_strike-cell-02.png",
+    "stormtalon-canonhand20261026-atk_physical_talon_strike-cell-03.png",
+    "stormtalon-canonhand20261026-atk_physical_talon_strike-cell-04.png"
+   ],
+   "durations_ms": [
+    180,
+    120,
+    100,
+    90,
+    300
+   ],
+   "total_ms": 790,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "guard",
+     "source": "stormtalon-trueback-20261026-atk_physical_talon_strike-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "guard",
+     "source": "stormtalon-trueback-20261026-atk_physical_talon_strike-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "stormtalon-trueback-20261026-atk_physical_talon_strike-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "punch",
+     "source": "stormtalon-trueback-20261026-atk_physical_talon_strike-cell-03.png",
+     "applied": true,
+     "changed_px": 107,
+     "diff_bbox": [
+      45,
+      18,
+      60,
+      28
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-wing-bbox-(0, 19, 64, 61)"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-atk_physical_talon_strike-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_signature_thunder_barrage": {
+   "kind": "attack",
+   "family": "signature",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "brace",
+    "brace",
+    "brace",
+    "brace",
+    "brace",
+    "folded"
+   ],
+   "files": [
+    "stormtalon-canonhand20261026-atk_signature_thunder_barrage-cell-00.png",
+    "stormtalon-canonhand20261026-atk_signature_thunder_barrage-cell-01.png",
+    "stormtalon-canonhand20261026-atk_signature_thunder_barrage-cell-02.png",
+    "stormtalon-canonhand20261026-atk_signature_thunder_barrage-cell-03.png",
+    "stormtalon-canonhand20261026-atk_signature_thunder_barrage-cell-04.png",
+    "stormtalon-canonhand20261026-atk_signature_thunder_barrage-cell-05.png"
+   ],
+   "durations_ms": [
+    200,
+    220,
+    100,
+    140,
+    120,
+    300
+   ],
+   "total_ms": 1080,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "brace",
+     "source": "stormtalon-trueback-20261026-atk_signature_thunder_barrage-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "brace",
+     "source": "stormtalon-trueback-20261026-atk_signature_thunder_barrage-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "brace",
+     "source": "stormtalon-trueback-20261026-atk_signature_thunder_barrage-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "brace",
+     "source": "stormtalon-trueback-20261026-atk_signature_thunder_barrage-cell-03.png",
+     "applied": true,
+     "changed_px": 100,
+     "diff_bbox": [
+      1,
+      10,
+      62,
+      18
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-wing-bbox-(0, 12, 64, 61)"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "brace",
+     "source": "stormtalon-trueback-20261026-atk_signature_thunder_barrage-cell-04.png",
+     "applied": false
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-atk_signature_thunder_barrage-cell-05.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_special_lightning_jet": {
+   "kind": "attack",
+   "family": "special",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "cast",
+    "cast",
+    "cast",
+    "cast",
+    "folded"
+   ],
+   "files": [
+    "stormtalon-canonhand20261026-atk_special_lightning_jet-cell-00.png",
+    "stormtalon-canonhand20261026-atk_special_lightning_jet-cell-01.png",
+    "stormtalon-canonhand20261026-atk_special_lightning_jet-cell-02.png",
+    "stormtalon-canonhand20261026-atk_special_lightning_jet-cell-03.png",
+    "stormtalon-canonhand20261026-atk_special_lightning_jet-cell-04.png"
+   ],
+   "durations_ms": [
+    200,
+    140,
+    110,
+    110,
+    300
+   ],
+   "total_ms": 860,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "cast",
+     "source": "stormtalon-trueback-20261026-atk_special_lightning_jet-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "cast",
+     "source": "stormtalon-trueback-20261026-atk_special_lightning_jet-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "cast",
+     "source": "stormtalon-trueback-20261026-atk_special_lightning_jet-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "cast",
+     "source": "stormtalon-trueback-20261026-atk_special_lightning_jet-cell-03.png",
+     "applied": true,
+     "changed_px": 45,
+     "diff_bbox": [
+      57,
+      5,
+      63,
+      13
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-wing-bbox-(6, 7, 64, 61)"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-atk_special_lightning_jet-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_heavy_knockback": {
+   "kind": "hurt",
+   "family": "knockback",
+   "roles": [
+    "impact",
+    "recoil",
+    "stagger",
+    "recover"
+   ],
+   "hand_states": [
+    "flail",
+    "flail",
+    "droop",
+    "folded"
+   ],
+   "files": [
+    "stormtalon-canonhand20261026-hurt_heavy_knockback-cell-00.png",
+    "stormtalon-canonhand20261026-hurt_heavy_knockback-cell-01.png",
+    "stormtalon-canonhand20261026-hurt_heavy_knockback-cell-02.png",
+    "stormtalon-canonhand20261026-hurt_heavy_knockback-cell-03.png"
+   ],
+   "durations_ms": [
+    80,
+    140,
+    180,
+    300
+   ],
+   "total_ms": 700,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "flail",
+     "source": "stormtalon-trueback-20261026-hurt_heavy_knockback-cell-00.png",
+     "applied": true,
+     "changed_px": 120,
+     "diff_bbox": [
+      1,
+      5,
+      62,
+      14
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-wing-bbox-(0, 7, 64, 61)"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "flail",
+     "source": "stormtalon-trueback-20261026-hurt_heavy_knockback-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "hand_state": "droop",
+     "source": "stormtalon-trueback-20261026-hurt_heavy_knockback-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-hurt_heavy_knockback-cell-03.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_light_flinch": {
+   "kind": "hurt",
+   "family": "flinch",
+   "roles": [
+    "impact",
+    "recoil",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "folded",
+    "folded"
+   ],
+   "files": [
+    "stormtalon-canonhand20261026-hurt_light_flinch-cell-00.png",
+    "stormtalon-canonhand20261026-hurt_light_flinch-cell-01.png",
+    "stormtalon-canonhand20261026-hurt_light_flinch-cell-02.png"
+   ],
+   "durations_ms": [
+    120,
+    180,
+    220
+   ],
+   "total_ms": 520,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "guard",
+     "source": "stormtalon-trueback-20261026-hurt_light_flinch-cell-00.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      1,
+      8,
+      62,
+      19
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-wing-bbox-(0, 5, 64, 61)"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-hurt_light_flinch-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-hurt_light_flinch-cell-02.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_near_faint_stagger": {
+   "kind": "hurt",
+   "family": "stagger",
+   "roles": [
+    "impact",
+    "recoil",
+    "stagger",
+    "recover"
+   ],
+   "hand_states": [
+    "droop",
+    "droop",
+    "droop",
+    "folded"
+   ],
+   "files": [
+    "stormtalon-canonhand20261026-hurt_near_faint_stagger-cell-00.png",
+    "stormtalon-canonhand20261026-hurt_near_faint_stagger-cell-01.png",
+    "stormtalon-canonhand20261026-hurt_near_faint_stagger-cell-02.png",
+    "stormtalon-canonhand20261026-hurt_near_faint_stagger-cell-03.png"
+   ],
+   "durations_ms": [
+    260,
+    260,
+    260,
+    400
+   ],
+   "total_ms": 1180,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "droop",
+     "source": "stormtalon-trueback-20261026-hurt_near_faint_stagger-cell-00.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      3,
+      42,
+      56,
+      56
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-wing-bbox-(0, 5, 59, 62)"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "droop",
+     "source": "stormtalon-trueback-20261026-hurt_near_faint_stagger-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "stagger",
+     "hand_state": "droop",
+     "source": "stormtalon-trueback-20261026-hurt_near_faint_stagger-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-hurt_near_faint_stagger-cell-03.png",
+     "applied": false
+    }
+   ]
+  },
+  "hurt_status_wobble": {
+   "kind": "hurt",
+   "family": "wobble",
+   "roles": [
+    "impact",
+    "recoil",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "flail",
+    "folded"
+   ],
+   "files": [
+    "stormtalon-canonhand20261026-hurt_status_wobble-cell-00.png",
+    "stormtalon-canonhand20261026-hurt_status_wobble-cell-01.png",
+    "stormtalon-canonhand20261026-hurt_status_wobble-cell-02.png"
+   ],
+   "durations_ms": [
+    220,
+    220,
+    300
+   ],
+   "total_ms": 740,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "impact",
+     "hand_state": "guard",
+     "source": "stormtalon-trueback-20261026-hurt_status_wobble-cell-00.png",
+     "applied": true,
+     "changed_px": 106,
+     "diff_bbox": [
+      1,
+      11,
+      58,
+      53
+     ],
+     "anchors": "tip-anchors-from-own-silhouette-wing-bbox-(0, 4, 60, 63)"
+    },
+    {
+     "frame": 1,
+     "role": "recoil",
+     "hand_state": "flail",
+     "source": "stormtalon-trueback-20261026-hurt_status_wobble-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "stormtalon-trueback-20261026-hurt_status_wobble-cell-02.png",
+     "applied": false
+    }
+   ]
+  }
+ },
+ "gifs": {
+  "attack": {
+   "gif": "stormtalon-canonhand20261026-attacks.gif",
+   "frames": 22
+  },
+  "hurt": {
+   "gif": "stormtalon-canonhand20261026-hurts.gif",
+   "frames": 14
+  }
+ },
+ "flags": [],
+ "counts": {
+  "hand_frames": 8,
+  "copy_frames": 28,
+  "flagged_frames": 0,
+  "cells": 36
+ },
+ "gate_g1_copy_identical": true,
+ "gate_g1_failures": []
+}
