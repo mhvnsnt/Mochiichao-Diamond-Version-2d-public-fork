@@ -13,3 +13,5 @@ actual tile image (not guessed from a sheet index):
 
 No Pokemon tileset art is shipped here. Pokemon decomp tilesets were used
 only for structure (16x16 tiles, metatiles, layers), never for art.
+
+- tile_0126.png — blue brick wall (step 2, used for BUILDING)
