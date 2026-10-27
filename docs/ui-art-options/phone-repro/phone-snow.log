@@ -1,0 +1,49 @@
+mode: phone reduced-motion emulated: false
+matchMedia reduced-motion: false
+[locked step 0] "INTRO MOVIE — SCENE 1 / 4 · ANY KEY SKIPS\nM HEAVENSENT STUDIOS\n\nStudio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.\n\nGAP: studio scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 1] "INTRO MOVIE — SCENE 2 / 4 · ANY KEY SKIPS\nWORLD CLOSE-UP\n\nScene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 2] "INTRO MOVIE — SCENE 3 / 4 · ANY KEY SKIPS\nWORLD PAN + CREATURE CLOSE-UPS\n\nScene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 3] "INTRO MOVIE — SCENE 4 / 4 · ANY KEY SKIPS\nCREATURE FIGHT BEAT\n\nScene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.\n\nGAP: intro scene art — original art needed.\n\nTO TITLE ►\nAny key or tap steps to the next scene."
+[locked step 4] "✦ DIAMOND VERSION ✦\nPRESS ANY KEY\n▼ PRESS ANY KEY ▼"
+--- TITLE locked (phone) ---
+✦ DIAMOND VERSION ✦
+PRESS ANY KEY
+▼ PRESS ANY KEY ▼
+--- geometry locked ---
+{"innerW":390,"innerH":844,"scrollW":390,"scrollH":844,"bodyScrollW":390,"pressKey":{"x":0,"y":472,"w":390,"h":21},"resetBtn":null,"fallbackNote":false,"videos":[],"canvases":[],"imgCount":2,"largestImg":{"x":49,"y":238,"w":293,"h":172}}
+setting preset via localStorage (same key Settings writes): title-snow-yogiferno
+set-ok
+[preset step 0] "INTRO MOVIE — SCENE 1 / 4 · ANY KEY SKIPS\nM HEAVENSENT STUDIOS\n\nStudio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.\n\nGAP: studio scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 1] "INTRO MOVIE — SCENE 2 / 4 · ANY KEY SKIPS\nWORLD CLOSE-UP\n\nScene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 2] "INTRO MOVIE — SCENE 3 / 4 · ANY KEY SKIPS\nWORLD PAN + CREATURE CLOSE-UPS\n\nScene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 3] "INTRO MOVIE — SCENE 4 / 4 · ANY KEY SKIPS\nCREATURE FIGHT BEAT\n\nScene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.\n\nGAP: intro scene art — original art needed.\n\nTO TITLE ►\nAny key or tap steps to the next scene."
+[preset step 4] "✦ DIAMOND VERSION ✦\nPRESS ANY KEY\nRESET TITLE ✕ (R)"
+--- TITLE preset title-snow-yogiferno (phone) ---
+✦ DIAMOND VERSION ✦
+PRESS ANY KEY
+RESET TITLE ✕ (R)
+--- geometry preset ---
+{"innerW":390,"innerH":844,"scrollW":390,"scrollH":844,"bodyScrollW":390,"pressKey":{"x":0,"y":472,"w":390,"h":21},"resetBtn":{"x":147,"y":12,"w":231,"h":34},"fallbackNote":false,"videos":[{"rect":{"x":0,"y":0,"w":390,"h":844},"readyState":4,"error":null,"paused":false}],"canvases":[{"x":0,"y":660,"w":780,"h":360}],"imgCount":3,"largestImg":{"x":0,"y":0,"w":390,"h":844}}
+canvas clip: {"x":0,"y":660,"width":780,"height":360,"scale":1}
+canvas screenshots saved for diff
+--- after Enter (menu check) ---
+► NEW GAME
+SETTINGS
+◄ BACK TO TITLE (B)
+--- console messages ---
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[log.warning] []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[log.warning] [.WebGL-0xe5402973600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0xe5402973600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0xe5402973600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0xe5402973600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+--- exceptions ---

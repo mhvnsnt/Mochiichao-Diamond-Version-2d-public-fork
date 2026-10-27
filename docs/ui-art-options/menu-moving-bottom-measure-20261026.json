@@ -1,0 +1,1562 @@
+[
+ {
+  "frame": "frame-000.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3383,
+  "px_1200_1500": 11211
+ },
+ {
+  "frame": "frame-001.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2713,
+  "px_1200_1500": 10066
+ },
+ {
+  "frame": "frame-002.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2894,
+  "px_1200_1500": 9075
+ },
+ {
+  "frame": "frame-003.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2505,
+  "px_1200_1500": 8161
+ },
+ {
+  "frame": "frame-004.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3333,
+  "px_1200_1500": 8786
+ },
+ {
+  "frame": "frame-005.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3370,
+  "px_1200_1500": 9166
+ },
+ {
+  "frame": "frame-006.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3489,
+  "px_1200_1500": 9654
+ },
+ {
+  "frame": "frame-007.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3917,
+  "px_1200_1500": 10576
+ },
+ {
+  "frame": "frame-008.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3751,
+  "px_1200_1500": 11543
+ },
+ {
+  "frame": "frame-009.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3640,
+  "px_1200_1500": 11835
+ },
+ {
+  "frame": "frame-010.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3631,
+  "px_1200_1500": 11723
+ },
+ {
+  "frame": "frame-011.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2459,
+  "px_1200_1500": 10266
+ },
+ {
+  "frame": "frame-012.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2845,
+  "px_1200_1500": 9462
+ },
+ {
+  "frame": "frame-013.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2564,
+  "px_1200_1500": 8186
+ },
+ {
+  "frame": "frame-014.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3094,
+  "px_1200_1500": 8698
+ },
+ {
+  "frame": "frame-015.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2597,
+  "px_1200_1500": 8671
+ },
+ {
+  "frame": "frame-016.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2989,
+  "px_1200_1500": 8901
+ },
+ {
+  "frame": "frame-017.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3990,
+  "px_1200_1500": 10468
+ },
+ {
+  "frame": "frame-018.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3856,
+  "px_1200_1500": 11090
+ },
+ {
+  "frame": "frame-019.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3580,
+  "px_1200_1500": 11717
+ },
+ {
+  "frame": "frame-020.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3568,
+  "px_1200_1500": 11439
+ },
+ {
+  "frame": "frame-021.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2651,
+  "px_1200_1500": 9696
+ },
+ {
+  "frame": "frame-022.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2823,
+  "px_1200_1500": 9336
+ },
+ {
+  "frame": "frame-023.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2564,
+  "px_1200_1500": 8184
+ },
+ {
+  "frame": "frame-024.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2962,
+  "px_1200_1500": 8622
+ },
+ {
+  "frame": "frame-025.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3288,
+  "px_1200_1500": 9076
+ },
+ {
+  "frame": "frame-026.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3459,
+  "px_1200_1500": 9714
+ },
+ {
+  "frame": "frame-027.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4162,
+  "px_1200_1500": 11297
+ },
+ {
+  "frame": "frame-028.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3529,
+  "px_1200_1500": 11575
+ },
+ {
+  "frame": "frame-029.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3786,
+  "px_1200_1500": 11877
+ },
+ {
+  "frame": "frame-030.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2692,
+  "px_1200_1500": 10607
+ },
+ {
+  "frame": "frame-031.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2928,
+  "px_1200_1500": 9579
+ },
+ {
+  "frame": "frame-032.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2785,
+  "px_1200_1500": 8358
+ },
+ {
+  "frame": "frame-033.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3059,
+  "px_1200_1500": 8744
+ },
+ {
+  "frame": "frame-034.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3396,
+  "px_1200_1500": 9255
+ },
+ {
+  "frame": "frame-035.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3450,
+  "px_1200_1500": 9723
+ },
+ {
+  "frame": "frame-036.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3968,
+  "px_1200_1500": 11140
+ },
+ {
+  "frame": "frame-037.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3590,
+  "px_1200_1500": 11784
+ },
+ {
+  "frame": "frame-038.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3300,
+  "px_1200_1500": 11035
+ },
+ {
+  "frame": "frame-039.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2736,
+  "px_1200_1500": 10025
+ },
+ {
+  "frame": "frame-040.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2721,
+  "px_1200_1500": 9496
+ },
+ {
+  "frame": "frame-041.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2803,
+  "px_1200_1500": 8502
+ },
+ {
+  "frame": "frame-042.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2630,
+  "px_1200_1500": 8356
+ },
+ {
+  "frame": "frame-043.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3407,
+  "px_1200_1500": 8835
+ },
+ {
+  "frame": "frame-044.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2987,
+  "px_1200_1500": 8940
+ },
+ {
+  "frame": "frame-045.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3918,
+  "px_1200_1500": 10157
+ },
+ {
+  "frame": "frame-046.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4189,
+  "px_1200_1500": 11013
+ },
+ {
+  "frame": "frame-047.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3668,
+  "px_1200_1500": 11471
+ },
+ {
+  "frame": "frame-048.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3699,
+  "px_1200_1500": 11775
+ },
+ {
+  "frame": "frame-049.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3660,
+  "px_1200_1500": 11604
+ },
+ {
+  "frame": "frame-050.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2628,
+  "px_1200_1500": 10502
+ },
+ {
+  "frame": "frame-051.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2849,
+  "px_1200_1500": 10099
+ },
+ {
+  "frame": "frame-052.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2746,
+  "px_1200_1500": 9347
+ },
+ {
+  "frame": "frame-053.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2287,
+  "px_1200_1500": 8095
+ },
+ {
+  "frame": "frame-054.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3407,
+  "px_1200_1500": 8835
+ },
+ {
+  "frame": "frame-055.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2955,
+  "px_1200_1500": 9016
+ },
+ {
+  "frame": "frame-056.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4171,
+  "px_1200_1500": 10718
+ },
+ {
+  "frame": "frame-057.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4055,
+  "px_1200_1500": 11165
+ },
+ {
+  "frame": "frame-058.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3612,
+  "px_1200_1500": 11856
+ },
+ {
+  "frame": "frame-059.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3752,
+  "px_1200_1500": 11797
+ },
+ {
+  "frame": "frame-060.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2766,
+  "px_1200_1500": 10109
+ },
+ {
+  "frame": "frame-061.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2672,
+  "px_1200_1500": 9221
+ },
+ {
+  "frame": "frame-062.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2625,
+  "px_1200_1500": 8221
+ },
+ {
+  "frame": "frame-063.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3020,
+  "px_1200_1500": 8634
+ },
+ {
+  "frame": "frame-064.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2735,
+  "px_1200_1500": 8769
+ },
+ {
+  "frame": "frame-065.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3503,
+  "px_1200_1500": 9258
+ },
+ {
+  "frame": "frame-066.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4287,
+  "px_1200_1500": 10957
+ },
+ {
+  "frame": "frame-067.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3761,
+  "px_1200_1500": 11522
+ },
+ {
+  "frame": "frame-068.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3783,
+  "px_1200_1500": 11850
+ },
+ {
+  "frame": "frame-069.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2628,
+  "px_1200_1500": 10504
+ },
+ {
+  "frame": "frame-070.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2782,
+  "px_1200_1500": 9549
+ },
+ {
+  "frame": "frame-071.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2762,
+  "px_1200_1500": 8304
+ },
+ {
+  "frame": "frame-072.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3048,
+  "px_1200_1500": 8690
+ },
+ {
+  "frame": "frame-073.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2588,
+  "px_1200_1500": 8649
+ },
+ {
+  "frame": "frame-074.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3358,
+  "px_1200_1500": 9095
+ },
+ {
+  "frame": "frame-075.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4288,
+  "px_1200_1500": 10951
+ },
+ {
+  "frame": "frame-076.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3817,
+  "px_1200_1500": 11424
+ },
+ {
+  "frame": "frame-077.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3594,
+  "px_1200_1500": 11637
+ },
+ {
+  "frame": "frame-078.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3748,
+  "px_1200_1500": 11922
+ },
+ {
+  "frame": "frame-079.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2638,
+  "px_1200_1500": 9640
+ },
+ {
+  "frame": "frame-080.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2942,
+  "px_1200_1500": 8994
+ },
+ {
+  "frame": "frame-081.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2970,
+  "px_1200_1500": 8690
+ },
+ {
+  "frame": "frame-082.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3379,
+  "px_1200_1500": 9278
+ },
+ {
+  "frame": "frame-083.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3372,
+  "px_1200_1500": 9636
+ },
+ {
+  "frame": "frame-084.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4164,
+  "px_1200_1500": 11041
+ },
+ {
+  "frame": "frame-085.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3650,
+  "px_1200_1500": 11611
+ },
+ {
+  "frame": "frame-086.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3876,
+  "px_1200_1500": 11949
+ },
+ {
+  "frame": "frame-087.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2779,
+  "px_1200_1500": 10697
+ },
+ {
+  "frame": "frame-088.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2728,
+  "px_1200_1500": 9507
+ },
+ {
+  "frame": "frame-089.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2783,
+  "px_1200_1500": 8366
+ },
+ {
+  "frame": "frame-090.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2954,
+  "px_1200_1500": 8634
+ },
+ {
+  "frame": "frame-091.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3118,
+  "px_1200_1500": 8939
+ },
+ {
+  "frame": "frame-092.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3364,
+  "px_1200_1500": 9613
+ },
+ {
+  "frame": "frame-093.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4214,
+  "px_1200_1500": 11223
+ },
+ {
+  "frame": "frame-094.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3527,
+  "px_1200_1500": 11579
+ },
+ {
+  "frame": "frame-095.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2955,
+  "px_1200_1500": 10843
+ },
+ {
+  "frame": "frame-096.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2594,
+  "px_1200_1500": 9598
+ },
+ {
+  "frame": "frame-097.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2888,
+  "px_1200_1500": 8905
+ },
+ {
+  "frame": "frame-098.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2565,
+  "px_1200_1500": 8176
+ },
+ {
+  "frame": "frame-099.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3458,
+  "px_1200_1500": 8948
+ },
+ {
+  "frame": "frame-100.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2925,
+  "px_1200_1500": 8986
+ },
+ {
+  "frame": "frame-101.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3960,
+  "px_1200_1500": 10282
+ },
+ {
+  "frame": "frame-102.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4129,
+  "px_1200_1500": 10880
+ },
+ {
+  "frame": "frame-103.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3467,
+  "px_1200_1500": 11315
+ },
+ {
+  "frame": "frame-104.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3795,
+  "px_1200_1500": 11870
+ },
+ {
+  "frame": "frame-105.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2955,
+  "px_1200_1500": 10838
+ },
+ {
+  "frame": "frame-106.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2629,
+  "px_1200_1500": 9512
+ },
+ {
+  "frame": "frame-107.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2634,
+  "px_1200_1500": 8224
+ },
+ {
+  "frame": "frame-108.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2761,
+  "px_1200_1500": 8529
+ },
+ {
+  "frame": "frame-109.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2586,
+  "px_1200_1500": 8643
+ },
+ {
+  "frame": "frame-110.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3503,
+  "px_1200_1500": 9248
+ },
+ {
+  "frame": "frame-111.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3933,
+  "px_1200_1500": 10587
+ },
+ {
+  "frame": "frame-112.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3673,
+  "px_1200_1500": 11473
+ },
+ {
+  "frame": "frame-113.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3645,
+  "px_1200_1500": 11804
+ },
+ {
+  "frame": "frame-114.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2948,
+  "px_1200_1500": 10824
+ },
+ {
+  "frame": "frame-115.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2733,
+  "px_1200_1500": 9750
+ },
+ {
+  "frame": "frame-116.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2781,
+  "px_1200_1500": 9043
+ },
+ {
+  "frame": "frame-117.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3095,
+  "px_1200_1500": 8763
+ },
+ {
+  "frame": "frame-118.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3400,
+  "px_1200_1500": 9224
+ },
+ {
+  "frame": "frame-119.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3740,
+  "px_1200_1500": 9808
+ },
+ {
+  "frame": "frame-120.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3966,
+  "px_1200_1500": 10562
+ },
+ {
+  "frame": "frame-121.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3633,
+  "px_1200_1500": 11352
+ },
+ {
+  "frame": "frame-122.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3859,
+  "px_1200_1500": 11913
+ },
+ {
+  "frame": "frame-123.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3165,
+  "px_1200_1500": 10903
+ },
+ {
+  "frame": "frame-124.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2609,
+  "px_1200_1500": 9535
+ },
+ {
+  "frame": "frame-125.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2833,
+  "px_1200_1500": 8519
+ },
+ {
+  "frame": "frame-126.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2603,
+  "px_1200_1500": 8280
+ },
+ {
+  "frame": "frame-127.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3232,
+  "px_1200_1500": 8716
+ },
+ {
+  "frame": "frame-128.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3837,
+  "px_1200_1500": 9708
+ },
+ {
+  "frame": "frame-129.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3958,
+  "px_1200_1500": 10530
+ },
+ {
+  "frame": "frame-130.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3525,
+  "px_1200_1500": 11473
+ },
+ {
+  "frame": "frame-131.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3891,
+  "px_1200_1500": 12101
+ },
+ {
+  "frame": "frame-132.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2370,
+  "px_1200_1500": 10117
+ },
+ {
+  "frame": "frame-133.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2792,
+  "px_1200_1500": 9350
+ },
+ {
+  "frame": "frame-134.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2840,
+  "px_1200_1500": 8396
+ },
+ {
+  "frame": "frame-135.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2896,
+  "px_1200_1500": 8548
+ },
+ {
+  "frame": "frame-136.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2528,
+  "px_1200_1500": 8527
+ },
+ {
+  "frame": "frame-137.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3272,
+  "px_1200_1500": 9087
+ },
+ {
+  "frame": "frame-138.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3923,
+  "px_1200_1500": 10334
+ },
+ {
+  "frame": "frame-139.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3735,
+  "px_1200_1500": 11147
+ },
+ {
+  "frame": "frame-140.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3641,
+  "px_1200_1500": 11804
+ },
+ {
+  "frame": "frame-141.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3616,
+  "px_1200_1500": 11761
+ },
+ {
+  "frame": "frame-142.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2367,
+  "px_1200_1500": 10026
+ },
+ {
+  "frame": "frame-143.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2650,
+  "px_1200_1500": 9602
+ },
+ {
+  "frame": "frame-144.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2875,
+  "px_1200_1500": 9248
+ },
+ {
+  "frame": "frame-145.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2446,
+  "px_1200_1500": 8235
+ },
+ {
+  "frame": "frame-146.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3451,
+  "px_1200_1500": 8953
+ },
+ {
+  "frame": "frame-147.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2966,
+  "px_1200_1500": 9005
+ },
+ {
+  "frame": "frame-148.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4306,
+  "px_1200_1500": 10961
+ },
+ {
+  "frame": "frame-149.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3659,
+  "px_1200_1500": 11182
+ },
+ {
+  "frame": "frame-150.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3568,
+  "px_1200_1500": 11718
+ },
+ {
+  "frame": "frame-151.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2946,
+  "px_1200_1500": 10822
+ },
+ {
+  "frame": "frame-152.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2691,
+  "px_1200_1500": 9685
+ },
+ {
+  "frame": "frame-153.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2800,
+  "px_1200_1500": 8412
+ },
+ {
+  "frame": "frame-154.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3010,
+  "px_1200_1500": 8661
+ },
+ {
+  "frame": "frame-155.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2590,
+  "px_1200_1500": 8669
+ },
+ {
+  "frame": "frame-156.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3477,
+  "px_1200_1500": 9643
+ },
+ {
+  "frame": "frame-157.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4165,
+  "px_1200_1500": 11104
+ },
+ {
+  "frame": "frame-158.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3390,
+  "px_1200_1500": 11277
+ },
+ {
+  "frame": "frame-159.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3782,
+  "px_1200_1500": 11883
+ },
+ {
+  "frame": "frame-160.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2851,
+  "px_1200_1500": 10722
+ },
+ {
+  "frame": "frame-161.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2620,
+  "px_1200_1500": 9568
+ },
+ {
+  "frame": "frame-162.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2771,
+  "px_1200_1500": 8326
+ },
+ {
+  "frame": "frame-163.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2970,
+  "px_1200_1500": 8701
+ },
+ {
+  "frame": "frame-164.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2528,
+  "px_1200_1500": 8525
+ },
+ {
+  "frame": "frame-165.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3837,
+  "px_1200_1500": 9703
+ },
+ {
+  "frame": "frame-166.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4041,
+  "px_1200_1500": 10637
+ },
+ {
+  "frame": "frame-167.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3765,
+  "px_1200_1500": 11501
+ },
+ {
+  "frame": "frame-168.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3865,
+  "px_1200_1500": 11932
+ },
+ {
+  "frame": "frame-169.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2451,
+  "px_1200_1500": 10147
+ },
+ {
+  "frame": "frame-170.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2655,
+  "px_1200_1500": 9426
+ },
+ {
+  "frame": "frame-171.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2802,
+  "px_1200_1500": 8521
+ },
+ {
+  "frame": "frame-172.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2254,
+  "px_1200_1500": 8071
+ },
+ {
+  "frame": "frame-173.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3339,
+  "px_1200_1500": 8795
+ },
+ {
+  "frame": "frame-174.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3760,
+  "px_1200_1500": 9545
+ },
+ {
+  "frame": "frame-175.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4189,
+  "px_1200_1500": 11051
+ },
+ {
+  "frame": "frame-176.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3691,
+  "px_1200_1500": 11501
+ },
+ {
+  "frame": "frame-177.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3646,
+  "px_1200_1500": 11815
+ },
+ {
+  "frame": "frame-178.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3053,
+  "px_1200_1500": 10886
+ },
+ {
+  "frame": "frame-179.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2643,
+  "px_1200_1500": 9620
+ },
+ {
+  "frame": "frame-180.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2743,
+  "px_1200_1500": 8325
+ },
+ {
+  "frame": "frame-181.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2981,
+  "px_1200_1500": 8636
+ },
+ {
+  "frame": "frame-182.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2952,
+  "px_1200_1500": 9005
+ },
+ {
+  "frame": "frame-183.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 4046,
+  "px_1200_1500": 10670
+ },
+ {
+  "frame": "frame-184.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3814,
+  "px_1200_1500": 11441
+ },
+ {
+  "frame": "frame-185.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3609,
+  "px_1200_1500": 11801
+ },
+ {
+  "frame": "frame-186.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3060,
+  "px_1200_1500": 10894
+ },
+ {
+  "frame": "frame-187.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2655,
+  "px_1200_1500": 9664
+ },
+ {
+  "frame": "frame-188.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2824,
+  "px_1200_1500": 8660
+ },
+ {
+  "frame": "frame-189.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2763,
+  "px_1200_1500": 8515
+ },
+ {
+  "frame": "frame-190.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3150,
+  "px_1200_1500": 9075
+ },
+ {
+  "frame": "frame-191.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3446,
+  "px_1200_1500": 9697
+ },
+ {
+  "frame": "frame-192.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3760,
+  "px_1200_1500": 11544
+ },
+ {
+  "frame": "frame-193.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 3752,
+  "px_1200_1500": 11886
+ },
+ {
+  "frame": "frame-194.png",
+  "lowest_phone": 665,
+  "lowest_full": 1498.5,
+  "gap_full": 1.5,
+  "px_bottom100": 2701,
+  "px_1200_1500": 10619
+ }
+]

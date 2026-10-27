@@ -1,0 +1,4 @@
+{
+ "png": "/home/hatch/workspace/mochiichao-work/ui-art/perfect-menu-render-cloudswap-seeded-20261026.png",
+ "log": "boot :: undefined\nclick0 (no scene btn) :: undefined\ntitle0 :: undefined\ntitle1 :: undefined\ntitle2 :: undefined\ntitle3 :: undefined\ntitle4 :: undefined\nmenu :: undefined\nMEAS {\"buttons\":{\"\u25ba CONTINUE\":[98,434,195,36],\"NEW GAME\":[98,477,195,23],\"SETTINGS\":[98,506,195,23],\"\u25c4 BACK TO TITLE (B)\":[98,535,195,23]},\"imgs\":[{\"box\":[49,237,293,178],\"src\":\"file:///home/hatch/workspace/mochiichao-work/cloud-swap-tree/dist/assets/mochiic\",\"alt\":\"MOCHIICHAO\"},{\"box\":[81,387,228,58],\"src\":\"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%\",\"alt\":\"\"},{\"box\":[55,432,36,36],\"src\":\"file:///home/hatch/workspace/mochiichao-work/cloud-swap-tree/dist/assets/mochii-\",\"alt\":\"Mochii\"}],\"svgGroups\":285}\n"
+}
