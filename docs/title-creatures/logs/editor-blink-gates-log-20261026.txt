@@ -1,0 +1,34 @@
+=== lint ===
+LINT_EXIT=2
+src/components/views/GardenView.tsx(192,208): error TS2353: Object literal may only specify known properties, and 'raceWins' does not exist in type 'GardenCreature'.
+src/components/views/GardenView.tsx(193,208): error TS2353: Object literal may only specify known properties, and 'sparWins' does not exist in type 'GardenCreature'.
+src/components/views/GardenView.tsx(203,55): error TS2353: Object literal may only specify known properties, and 'egg' does not exist in type 'GardenCreature'.
+src/lib/wiring/dialogue-ink.ts(10,23): error TS2307: Cannot find module 'inkjs' or its corresponding type declarations.
+src/lib/wiring/pathfinding.ts(19,8): error TS2339: Property 'setIterationsPerCalculation' does not exist on type 'EasyStarInstance'.
+src/lib/wiring/save-store.ts(9,43): error TS2307: Cannot find module 'idb' or its corresponding type declarations.
+src/lib/wiring/tone-jingles.ts(10,23): error TS2307: Cannot find module 'tone' or its corresponding type declarations.
+tests/e2e/smoke.spec.ts(1,30): error TS2307: Cannot find module '@playwright/test' or its corresponding type declarations.
+=== build ===
+BUILD_EXIT=0
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3m 2s
+=== validate ===
+VAL_EXIT=1
+  WARN: Sheet Dorowani (147): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+  WARN: Sheet Gabu (148): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+
+ERRORS (4):
+  ERROR: Sheet Dorowani: frame side x=256 outside 192-wide sheet
+  ERROR: Sheet Dorowani: sheet PNG missing
+  ERROR: Sheet Gabu: frame back x=192 outside 192-wide sheet
+  ERROR: Sheet Gabu: sheet PNG missing
+=== stash comparison (pristine main, edit stashed out) ===
+PRISTINE_LINT_EXIT=2, 8 errors; lint logs edited vs pristine: IDENTICAL (diff empty).
+PRISTINE_VAL_EXIT=1, same 4 Dorowani/Gabu sheet-PNG errors.
+Conclusion: all lint/validate failures pre-existing, 0 in StartScreenCreator.tsx.
+Edit restored after stash pop: 1 file, +13/-10, hash 2af2267649714a816b9e21931fd83c0b2b2eb9ed.
+=== live main re-check (after gates) ===
+Live main moved 5939230a8 -> 9207cd7062 (PR #250, world lane) BUT StartScreenCreator blob UNCHANGED at 8cfac9998c393198a5800366d8666a792b6b5186: edit still applies cleanly, no re-base needed.
