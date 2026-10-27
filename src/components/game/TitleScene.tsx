@@ -886,6 +886,15 @@ export default function TitleScene({
           if (w.g.y > H) { w.g.y = -4; w.g.x = Math.random() * W; }
         }
       });
+    }).catch((err) => {
+      // Trap-fix round 2: a failed Pixi init (no WebGL, missing
+      // texture) must never surface as an unhandled rejection
+      // next to the title. The canvas simply stays absent and the
+      // DOM layers above it (painted background, locked overlay,
+      // RESET) still render — a preset title degrades, it never
+      // goes black because of the scene layer.
+      // eslint-disable-next-line no-console
+      console.error("[TitleScene] Pixi init failed, scene skipped:", err);
     });
     return () => { cancelled = true; app.destroy(true); };
   }, [biome, figureUrl, figureCycleUrls, figureCycleMs, figureName, fireTrail, hideBackground]);
