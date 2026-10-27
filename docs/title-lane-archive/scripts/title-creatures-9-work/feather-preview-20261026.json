@@ -1,0 +1,82 @@
+[
+ {
+  "source": "/home/hatch/workspace/mochiichao-work/title-creatures-9/repo/src/assets/title/mochii-walk-cutout.png",
+  "output": "/home/hatch/workspace/mochiichao-work/title-creatures-9/work/mochii-feather-preview-20261026.png",
+  "size": [
+   380,
+   380
+  ],
+  "opaque_before": 78949,
+  "transparent_before": 65451,
+  "intermediate_before": 0,
+  "boundary_pixels_feathered": 2047,
+  "intermediate_after": 2047,
+  "intermediate_value": 128,
+  "ramp_width_px": 1,
+  "nonzero_alpha_after": 78949,
+  "bbox_before": [
+   13,
+   12,
+   363,
+   328
+  ],
+  "bbox_after": [
+   13,
+   12,
+   363,
+   328
+  ],
+  "alpha_mass_before": 20131995,
+  "alpha_mass_after": 19872026,
+  "interior_byte_identical": true,
+  "rgb_unchanged_everywhere": true,
+  "thin_boundary_pixels_neigh_le2": 20,
+  "creature": "Mochii",
+  "before_path": "/home/hatch/workspace/mochiichao-work/title-creatures-9/repo/src/assets/title/mochii-walk-cutout.png",
+  "after_path": "/home/hatch/workspace/mochiichao-work/title-creatures-9/work/mochii-feather-preview-20261026.png",
+  "zoom_centre": [
+   23,
+   170
+  ]
+ },
+ {
+  "source": "/home/hatch/workspace/mochiichao-work/title-creatures-9/work/yogiferno-white-speck-clean-v3-20261026.png",
+  "output": "/home/hatch/workspace/mochiichao-work/title-creatures-9/work/yogiferno-feather-preview-20261026.png",
+  "size": [
+   145,
+   190
+  ],
+  "opaque_before": 13459,
+  "transparent_before": 14091,
+  "intermediate_before": 0,
+  "boundary_pixels_feathered": 1055,
+  "intermediate_after": 1055,
+  "intermediate_value": 128,
+  "ramp_width_px": 1,
+  "nonzero_alpha_after": 13459,
+  "bbox_before": [
+   18,
+   0,
+   144,
+   189
+  ],
+  "bbox_after": [
+   18,
+   0,
+   144,
+   189
+  ],
+  "alpha_mass_before": 3432045,
+  "alpha_mass_after": 3298060,
+  "interior_byte_identical": true,
+  "rgb_unchanged_everywhere": true,
+  "thin_boundary_pixels_neigh_le2": 4,
+  "creature": "Yogiferno",
+  "before_path": "/home/hatch/workspace/mochiichao-work/title-creatures-9/work/yogiferno-white-speck-clean-v3-20261026.png",
+  "after_path": "/home/hatch/workspace/mochiichao-work/title-creatures-9/work/yogiferno-feather-preview-20261026.png",
+  "zoom_centre": [
+   61,
+   94
+  ]
+ }
+]
