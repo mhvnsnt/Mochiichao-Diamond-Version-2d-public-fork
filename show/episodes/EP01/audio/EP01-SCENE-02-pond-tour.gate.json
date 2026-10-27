@@ -1,0 +1,37 @@
+{
+  "scene": "EP01-SCENE-02-pond-tour",
+  "cuts": [
+    "06",
+    "07",
+    "08",
+    "09"
+  ],
+  "bed_file": "EP01-SCENE-02-pond-tour.wav",
+  "target": {
+    "integrated_lufs": -14.0,
+    "true_peak_dbtp": -1.0
+  },
+  "measured": {
+    "input_i": "-13.98",
+    "input_tp": "-1.00"
+  },
+  "gates": {
+    "loudness_within_1LU": true,
+    "true_peak_ok": true
+  },
+  "underscore": "title stems: melody (-10dB) + organ (-13dB), per cue sheet beats 1-2 stems build",
+  "events": [
+    {
+      "at_s": 4.0,
+      "role": "Mochii cry (cut 06, berry stacking)"
+    },
+    {
+      "at_s": 26.0,
+      "role": "Kittember cry (cut 09, tail flame flickers at empty air)"
+    }
+  ],
+  "flags": [
+    "Cold-spot shimmer SFX = GAP (cue sheet) - not in bed; source at mix from TRIPPEDD OpenGameArt index",
+    "No animatic yet: Pond BG selection/build pending (parts-catalog) - picture not faked"
+  ]
+}
