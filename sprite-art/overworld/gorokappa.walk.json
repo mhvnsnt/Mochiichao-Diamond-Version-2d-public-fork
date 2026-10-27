@@ -1,0 +1,122 @@
+{
+ "creature": "gorokappa",
+ "roster_id": "034",
+ "variant": null,
+ "movement_class": "heavy_slow",
+ "idle_class": "heavy_slow",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 800,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/gorokappa/cells/gorokappa_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/gorokappa/cells/gorokappa_cell_17.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "game-ready/gorokappa/cells/gorokappa_cell_18.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_1"
+    }
+   ],
+   "loop": [
+    "game-ready/gorokappa/cells/gorokappa_cell_02.png",
+    "game-ready/gorokappa/cells/gorokappa_cell_17.png",
+    "game-ready/gorokappa/cells/gorokappa_cell_02.png",
+    "game-ready/gorokappa/cells/gorokappa_cell_18.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/gorokappa/cells/gorokappa_cell_01.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/gorokappa/cells/gorokappa_cell_12.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/gorokappa/cells/gorokappa_cell_13.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_1"
+    }
+   ],
+   "loop": [
+    "game-ready/gorokappa/cells/gorokappa_cell_01.png",
+    "game-ready/gorokappa/cells/gorokappa_cell_12.png",
+    "game-ready/gorokappa/cells/gorokappa_cell_01.png",
+    "game-ready/gorokappa/cells/gorokappa_cell_13.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/gorokappa/cells/gorokappa_cell_11.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "game-ready/gorokappa/cells/gorokappa_cell_16.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_0"
+    },
+    {
+     "file": "walk/gorokappa/gorokappa_walk_left_transform_step1.png",
+     "provenance": "transform_heavy_slow",
+     "source_role": "overworld_side",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/gorokappa/cells/gorokappa_cell_11.png",
+    "game-ready/gorokappa/cells/gorokappa_cell_16.png",
+    "game-ready/gorokappa/cells/gorokappa_cell_11.png",
+    "walk/gorokappa/gorokappa_walk_left_transform_step1.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/gorokappa/gorokappa_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "walk/gorokappa/gorokappa_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "walk_side_0",
+     "mirrored_from": "game-ready/gorokappa/cells/gorokappa_cell_16.png"
+    },
+    {
+     "file": "walk/gorokappa/gorokappa_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "overworld_side",
+     "mirrored_from": "walk/gorokappa/gorokappa_walk_left_transform_step1.png"
+    }
+   ],
+   "loop": [
+    "walk/gorokappa/gorokappa_walk_right_stand.png",
+    "walk/gorokappa/gorokappa_walk_right_mirror_1.png",
+    "walk/gorokappa/gorokappa_walk_right_stand.png",
+    "walk/gorokappa/gorokappa_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}
