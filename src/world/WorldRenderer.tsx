@@ -40,7 +40,7 @@ export function renderTile({ tile, vx, vy, viewH, TILE_SIZE, isPlayer, npc, isNi
     bg = "#2d6a1a";
     extraStyle = { borderBottom:"3px solid #8b6a30" };
   }
-  if (tile === TILE.BUILDING) {
+  if (tile === TILE.BUILDING && !tileImage) {
     bg = "#6a4a2a";
     extraStyle = {
       background:"linear-gradient(180deg,#7a5a3a 0%,#5a3a1a 100%)",
