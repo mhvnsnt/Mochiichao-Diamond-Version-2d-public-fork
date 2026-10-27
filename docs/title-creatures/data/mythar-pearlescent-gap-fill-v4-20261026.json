@@ -1,0 +1,232 @@
+{
+  "shipped_md5": "474b1583464fe377fb32098781b37bcf",
+  "removed_total": 1871,
+  "v3_opaque": 83601,
+  "v4_opaque": 85472,
+  "shipped_opaque": 85472,
+  "diffusion_iterations": 13,
+  "gaps": [
+    {
+      "id": 1,
+      "n": 67,
+      "bbox": [
+        346,
+        207,
+        352,
+        222
+      ],
+      "adj_fur_px": 149,
+      "adj_mean": [
+        242.4,
+        235.4,
+        222.9
+      ],
+      "adj_median": [
+        245,
+        239,
+        228
+      ],
+      "adj_spread": [
+        13.6,
+        13.8,
+        17.2
+      ],
+      "fill_mean": [
+        247.3,
+        243.7,
+        240.1
+      ],
+      "fill_median": [
+        247,
+        244,
+        239
+      ]
+    },
+    {
+      "id": 2,
+      "n": 65,
+      "bbox": [
+        77,
+        208,
+        83,
+        226
+      ],
+      "adj_fur_px": 178,
+      "adj_mean": [
+        243.6,
+        237.7,
+        225.0
+      ],
+      "adj_median": [
+        245,
+        240,
+        229
+      ],
+      "adj_spread": [
+        9.1,
+        9.6,
+        14.4
+      ],
+      "fill_mean": [
+        246.5,
+        243.7,
+        238.7
+      ],
+      "fill_median": [
+        246,
+        243,
+        238
+      ]
+    },
+    {
+      "id": 3,
+      "n": 95,
+      "bbox": [
+        104,
+        213,
+        112,
+        232
+      ],
+      "adj_fur_px": 166,
+      "adj_mean": [
+        244.1,
+        238.1,
+        225.8
+      ],
+      "adj_median": [
+        246,
+        241,
+        230
+      ],
+      "adj_spread": [
+        9.9,
+        10.5,
+        14.1
+      ],
+      "fill_mean": [
+        248.2,
+        244.9,
+        238.7
+      ],
+      "fill_median": [
+        248,
+        245,
+        238
+      ]
+    },
+    {
+      "id": 4,
+      "n": 690,
+      "bbox": [
+        272,
+        213,
+        306,
+        252
+      ],
+      "adj_fur_px": 243,
+      "adj_mean": [
+        239.2,
+        234.7,
+        224.3
+      ],
+      "adj_median": [
+        244,
+        239,
+        229
+      ],
+      "adj_spread": [
+        15.7,
+        15.2,
+        18.6
+      ],
+      "fill_mean": [
+        247.6,
+        245.1,
+        241.7
+      ],
+      "fill_median": [
+        247,
+        244,
+        242
+      ]
+    },
+    {
+      "id": 5,
+      "n": 706,
+      "bbox": [
+        122,
+        214,
+        155,
+        253
+      ],
+      "adj_fur_px": 165,
+      "adj_mean": [
+        232.6,
+        227.5,
+        216.2
+      ],
+      "adj_median": [
+        243,
+        235,
+        217
+      ],
+      "adj_spread": [
+        22.6,
+        21.3,
+        22.2
+      ],
+      "fill_mean": [
+        245.0,
+        241.9,
+        236.8
+      ],
+      "fill_median": [
+        245,
+        242,
+        240
+      ]
+    },
+    {
+      "id": 6,
+      "n": 246,
+      "bbox": [
+        310,
+        217,
+        327,
+        238
+      ],
+      "adj_fur_px": 225,
+      "adj_mean": [
+        242.4,
+        237.8,
+        226.6
+      ],
+      "adj_median": [
+        244,
+        240,
+        231
+      ],
+      "adj_spread": [
+        8.6,
+        9.0,
+        12.9
+      ],
+      "fill_mean": [
+        243.7,
+        241.4,
+        237.7
+      ],
+      "fill_median": [
+        244,
+        241,
+        238
+      ]
+    },
+    {
+      "id": 7,
+      "n": 2,
+      "note": "tiny, merged into nearest gap for fill reporting"
+    }
+  ],
+  "method": "iterative nearest-pale-fur diffusion; known colours = pale-fur pixels only (mean>165, spread<55, blue>110); each removed pixel takes mean of already-known 4-neighbours layer by layer; alpha 255 on filled pixels"
+}
