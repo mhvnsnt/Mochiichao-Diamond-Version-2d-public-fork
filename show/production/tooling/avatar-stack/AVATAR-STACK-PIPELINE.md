@@ -260,3 +260,28 @@ python3 likeness_gate.py \
   --clip <clip>.mp4 --species wispkin \
   --out gate-packet-wispkin.json
 ```
+
+## HUMAN DIALOGUE & LIP-SYNC SEAT (owner correction, 2026-10-27)
+
+The voice law scopes to CREATURES (pure cries and sounds only).
+The HUMAN cast - Mochiko, Hex, Aeon - speaks words, and talking
+is a real production seat. An earlier adjudication wrongly
+dismissed lip-sync tooling wholesale by misapplying the
+creature law to the whole cast; the owner corrected that
+2026-10-27 and this section is the correction on record.
+
+WIRED PATH (2D, installed today): Chatterbox renders the human
+voice (prosody design sheets) -> Rhubarb Lip Sync 1.13.0
+(installed, ~/opt/tools) extracts phoneme/viseme timings from
+the rendered line -> Preston Blair mouth charts (donor
+animation playbook) drive mouth shapes in Tahoma2D / Blender.
+
+GENERATIVE CANDIDATES (catalogued in backends.json, NOT wired,
+NOT measured on this show's stylized 2D humans): MuseTalk
+(audio-driven lip-sync, MIT code) and LivePortrait
+(expression/pose driving, MIT code but InsightFace dependency
+is non-commercial-research - flagged, never hidden).
+First engagement test: when the first human line is rendered,
+run Rhubarb on it and a MuseTalk comparison pass on Kaggle;
+measure, then decide the seat. Creatures are never lip-sync
+targets.
