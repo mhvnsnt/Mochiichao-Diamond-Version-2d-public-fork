@@ -30,22 +30,25 @@ Game's locked opening (region1-truck-start.ink): arrival by truck
 at Sector 0 / Boot Harbor -> Hex is the next-door neighbour and
 rival -> Aeon cornered by a wild creature: "Quick — take one from
 my bag and drive it off!" -> FIVE starters (Mochii, Razorgater,
-Tyrage, Kittember, Sproutle) -> Aeon gives the partner + the CODEX
+Tyrage, Kittember, Sproutle) -> Aeon gives the partner + the MOCHIIOTECA
 -> Route 1.0. Mochiko = ASSISTANT Mochiko (aeon_lab.json); she
 opens the Mochi Garden at R1-BEAT3 ("The Mochi Garden is open
 now...") — EP01's keeper framing is that beat, anticipated.
 EP02 v1 (three starters, ceremony) is SUPERSEDED by this canon:
 revision directive = rebuild EP02 on the game's opening beats,
-five starters, the rescue-choosing, Codex handover; the POV
+five starters, the rescue-choosing, Mochiioteca handover; the POV
 switch to Mochii stands (owner design).
 
-## The device
-The keeper device = THE CODEX (name + function canon: "It
-records every Mochiichao you meet"; upgrades r3/national exist).
-Physical design still undesigned in canon — EP01 cut 12's abstract
-light+icons treatment stands, now under its canon name. (Canon
-also floats "Mochiidex"/"mochiioteca" — unreconciled in the game
-itself; show uses Codex.)
+## The device — RENAMED BY OWNER RULING (2026-10-27)
+The keeper device = THE MOCHIIOTECA, the world's Pokedex
+equivalent (function canon: "It records every Mochiichao you
+meet"; progression upgrades exist in the story flags). Owner
+ruling settles the three-name drift found in canon (Codex /
+Mochiidex / mochiioteca): MOCHIIOTECA is the name — it was
+already in the canon (MochiiMindService) and is restored
+everywhere the device is named, game and show. Physical design
+still undesigned in canon — EP01 cut 12's abstract light+icons
+treatment stands, now under its true name.
 
 ## Season spine (Region 1 = Mainframe)
 arrival -> 8 dojos (badges = FRAGMENTS; masters Lin/Falk/Tetsu/
