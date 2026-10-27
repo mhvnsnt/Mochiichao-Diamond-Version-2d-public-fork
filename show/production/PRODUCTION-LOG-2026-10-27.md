@@ -92,3 +92,20 @@ Owner delegated writing the first five episodes outright ("let me see what you d
 - EP05 "Leave the Light On" (PROPOSED) — night episode; Wispkin leads; the lantern; the Forest acknowledges with one turned leaf; its nature stays a deliberate open item.
 All four: creatures cries-only, exactly 2 subtitles each, in-repo audio only on cue sheets, titles PROPOSED pending owner approval.
 Owner rulings recorded this date: NAMING LAW (Mochii stays Mochii; Mochiko is the separate human character — never a nickname); VOICES = real voice-clone weights via his Wizard Gang method (Chatterbox + per-character reference audio + tuned params), not plain TTS; STAGING RULE (GitHub for what fits, TeraBox for what's too big, ration into repos in batches, never re-download).
+
+## Addendum — Owner canon rename rulings (2026-10-27, later)
+Three naming rulings, whole-canon scope, applied game + show:
+1. BINARY WOODS -> THE DARK FOREST. One place, one name, in the
+   canon, the whole repo, the whole game. Its contents (mist,
+   wild Kittember, Aero Dojo + Cave of Echoes doors, NPCs, the
+   humming beat line) carry under the new name; the EP01
+   stinger's dread is this same Forest's depths.
+2. LIGHT-PULSE -> ILLUMINATE. The world's Flash-equivalent is
+   named Illuminate; "Light-Pulse" is retired everywhere.
+3. CODEX -> MOCHIIOTECA. The world's Pokedex equivalent takes
+   the name canon already held (MochiiMindService); settles the
+   Codex/Mochiidex/mochiioteca drift.
+Game-repo application: display-name strings renamed on a
+dedicated branch off main; internal file/id keys (e.g.
+binary_woods.json, story-flag ids) unchanged so wiring cannot
+break. Show-side: SEASON-CANON-MAP carries all three rulings.
