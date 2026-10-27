@@ -190,9 +190,17 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
             <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase" style={{ fontFamily: 'var(--small-font, "Trebuchet MS", sans-serif)' }}>{speakerName}</div>
           )}
           {/* Dialogue text uses the DIALOGUE FONT placement
-              (--dialogue-font, default 01 Digitall); the speaker
-              name above uses the MAIN FONT via the body stack. */}
-          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)', fontSize: 'var(--menu-text-size, 16px)', lineHeight: 'var(--menu-line-height, 1.625)', color: skin ? skin.text.label : 'var(--menu-text-color, #ffffff)', textShadow: 'var(--menu-text-shadow, none)' }}>
+              (--dialogue-font, readable default Pokemon Base since
+              Mars 2026-10-26); the speaker name above uses the
+              MAIN FONT via the body stack. Text layers, Pokemon
+              style (fg/bg/shadow): white fg on the dark box (bg),
+              shadow offset — the DS message font is 11 wide x 16
+              tall with a shadow palette entry. Effective shadow:
+              the Settings TEXT SHADOW toggle, default ON since
+              Mars 2026-10-26, gives '0 2px 0 rgba(0,0,0,0.6)' via
+              applyMenuCustom; the 1px fallback below only fires
+              when --menu-text-shadow is unset. */}
+          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)', fontSize: 'var(--menu-text-size, 16px)', lineHeight: 'var(--menu-line-height, 1.625)', color: skin ? skin.text.label : 'var(--menu-text-color, #ffffff)', textShadow: 'var(--menu-text-shadow, 1px 1px 0 rgba(0,0,0,0.7))' }}>
             {page.slice(0, shown)}
           </div>
           {!isLast && typingDone && (

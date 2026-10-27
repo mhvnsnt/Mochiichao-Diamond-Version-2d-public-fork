@@ -1,0 +1,21 @@
+{
+  "$schema": "battle-state-machine-v1",
+  "about": "Authored schema for this lane only. Battle flow as an explicit state machine so an animation can never run while the logic is in the wrong phase (e.g. a faint cannot be skipped because damage was calculated late). No third-party code staged; the statechart pattern is the generic technique also used by XState (MIT, see xstate-tool-note).",
+  "initial": "MENU",
+  "states": {
+    "MENU": {"on": {"CHOOSE_MOVE": "TURN_PREPARATION", "CHOOSE_ITEM": "TURN_PREPARATION", "FLEE": "BATTLE_OVER"}},
+    "TURN_PREPARATION": {"on": {"ORDER_RESOLVED": "IN_TURN"}},
+    "IN_TURN": {"on": {"MOVE_ANIMATION": "MOVE_ANIMATION", "ALL_ACTED": "CHECK_FAINT"}},
+    "MOVE_ANIMATION": {"on": {"ANIMATION_END": "IN_TURN", "ANIMATION_END_LAST": "CHECK_FAINT"}},
+    "CHECK_FAINT": {"on": {"FAINT_SEQUENCE_DONE": "IN_TURN", "NO_FAINT": "MENU", "PARTY_WIPED": "BATTLE_OVER"}},
+    "BATTLE_OVER": {"type": "final"}
+  },
+  "rules": [
+    "MOVE_ANIMATION is the only state that plays attack/hurt clips; MENU never animates a strike.",
+    "CHECK_FAINT runs after every exchange, before the next MENU — damage arithmetic and fainting are never reordered past an animation.",
+    "A deferred-transition queue holds the next state when an event arrives mid-animation; it never jumps straight to it (same next-state-queue idea as the public battle-controller write-ups found this pass).",
+    "The battle timeline schema (step2, existing) supplies the event list inside MOVE_ANIMATION; this machine supplies the phase around it.",
+    "Skip / 2x playback compresses durations inside MOVE_ANIMATION only; it never skips CHECK_FAINT or BATTLE_OVER."
+  ],
+  "wiring_target": {"owning_step_agent": "Step 2 (battle integration)", "target_module": "battle view / battle controller: replace ad-hoc phase booleans with this machine; treatments module keeps owning durations"}
+}

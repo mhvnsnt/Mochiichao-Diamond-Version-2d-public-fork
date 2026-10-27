@@ -17,6 +17,7 @@ import {
   PLATINUM_EXIT_FADE_DELAY, PLATINUM_EXIT_FADE_FRAMES, RUBY_PHASE1_COUNTER_START,
   type PlatinumExitKind, type RubyShineState, type SubpixelParticle,
 } from '../../lib/titleAnimations';
+import { playTitleCry, titleCryUrl, TITLE_CRY_WAIT_MS } from '../../lib/titleCryGate';
 
 /**
  * TitleScene — the shared title/start scene system (Mars, 2026-10-25).
@@ -65,10 +66,19 @@ import {
  * no audio is shipped). All 10/10 title creatures now have
  * clean cutouts: Yogiferno (PR #33) + the other 9 in this
  * batch, wired via TitleCreatureFigure. No art is invented here.
+ *
+ * Title cry gate (title 10 only, Mars-confirmed 2026-10-26): where
+ * startPrompt is true, a press plays the current figure's cry
+ * (titleCryGate.ts, species-indexed, SFX bus, centre pan, normal
+ * priority, no music ducking), waits 90 frames (1.5s), then drives
+ * the Platinum 'normal' white fade. No other creature is in the
+ * table; unknown figures get no cry and no exit.
  */
 export default function TitleScene({
   biome = 'snow',
   figureUrl,
+  figureCycleUrls,
+  figureCycleMs = 500,
   figureAlt = 'Title figure',
   figureName,
   fireTrail = false,
@@ -76,9 +86,20 @@ export default function TitleScene({
   startPrompt = false,
   exitKind = 'none',
   fullHeight = false,
+  hideBackground = false,
 }: {
   biome?: TitleBiomeId;
   figureUrl?: string;
+  /** Optional frame cycle for one figure (Kittember glow only,
+   *  2026-10-26 wiring): textures are swapped on the SAME sprite
+   *  in the ticker, so the scene is never recreated per frame.
+   *  Unset = the old single-figure path, unchanged. All frames
+   *  must share the figure's size, so scale/shadow stay valid. */
+  figureCycleUrls?: string[];
+  /** Milliseconds per cycle frame (Kittember: 500). Converted to
+   *  frames at 60fps in the ticker, matching this file's other
+   *  frame-counted systems. */
+  figureCycleMs?: number;
   figureAlt?: string;
   /** Title-pool creature name, when the figure is one: drives its
    *  per-creature action (hop / bob / roar / shield / orbit) and
@@ -90,34 +111,117 @@ export default function TitleScene({
   /** HeartGold start flash prompt (0 show / 30 hide / 45 cycle).
    *  Default false: IntroSequence keeps its own press-blink wiring
    *  (PR #28) untouched; set true only where TitleScene itself
-   *  should own the prompt. */
+   *  should own the prompt. Where true, the title cry gate also
+   *  owns the press: cry -> 90-frame wait -> white fade. */
   startPrompt?: boolean;
   /** Platinum exit driver: 'normal' (white out/in) or 'clearSave'
    *  (black out). 'none' (default) leaves the scene running.
-   *  IntroSequence does NOT set this yet — that hookup is a later
-   *  batch, so no exit is claimed as input-triggered here. */
+   *  IntroSequence does NOT set this yet. The title cry gate
+   *  (startPrompt=true only) sets the internal exit to 'normal'
+   *  90 frames after a press, so a press IS input-triggered there. */
   exitKind?: PlatinumExitKind;
   /** Full-viewport host (the in-game TITLE phase only). Default
    *  false keeps the 180px preview strip every other caller uses
    *  (creator previews, Settings preview) exactly as before. */
   fullHeight?: boolean;
+  /** Interchangeable start screens only (TitleStartScreen): when
+   *  true, skip the painted bgSprite layer AND the Pixi sky/ground/
+   *  tuft/shimmer fallback, so a video layer behind this canvas
+   *  shows through the transparent canvas. Drift, clouds, weather,
+   *  figure, foreground frame, card effects, and action bursts
+   *  all keep running. Default false: every existing caller renders
+   *  byte-identically in behaviour, and the locked default never
+   *  passes this prop. The fallback rectangles MUST be skipped too:
+   *  skipping only bgSprite would leave the sky/ground rectangles
+   *  covering the video. */
+  hideBackground?: boolean;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [startVisible, setStartVisible] = useState(true);
+  // Title cry gate state: the internal exit the gate sets 90 frames
+  // after a press. An explicit exitKind prop always wins; otherwise
+  // the gate's exit drives the Platinum exit driver below.
+  const [cryExitKind, setCryExitKind] = useState<PlatinumExitKind>('none');
+  const cryGateFiredRef = useRef(false);
+  const cryGateTimerRef = useRef<number | null>(null);
   const exitKindRef = useRef<PlatinumExitKind>(exitKind);
-  useEffect(() => { exitKindRef.current = exitKind; }, [exitKind]);
+  const effectiveExitKind: PlatinumExitKind = exitKind !== 'none' ? exitKind : cryExitKind;
+  useEffect(() => { exitKindRef.current = effectiveExitKind; }, [effectiveExitKind]);
   const startPromptRef = useRef<boolean>(startPrompt);
   useEffect(() => { startPromptRef.current = startPrompt; }, [startPrompt]);
+
+  // Title cry gate (title 10 only): press -> PlayCry for the current
+  // title creature -> 90-frame (1.5s) wait -> white fade. Active ONLY
+  // where TitleScene itself owns the prompt (startPrompt=true);
+  // callers without startPrompt (IntroSequence, TitleCreatureFigure,
+  // YogifernoTitleWalk) are untouched, and a figure outside the
+  // title 10 table gets no cry and no exit — the scene keeps running
+  // exactly as before. The press also stops the start-flash prompt:
+  // a consumed press must not keep flashing through the wait.
+  // prefers-reduced-motion: the cry still plays on press, but the
+  // white fade itself is ticker-driven, so a static scene stays
+  // static there (existing reduced-motion behaviour, unchanged).
+  useEffect(() => {
+    if (!startPrompt) return;
+    const onPress = () => {
+      if (cryGateFiredRef.current) return;
+      if (!titleCryUrl(figureName)) return;
+      cryGateFiredRef.current = true;
+      startPromptRef.current = false;
+      setStartVisible(false);
+      void playTitleCry(figureName);
+      cryGateTimerRef.current = window.setTimeout(() => {
+        setCryExitKind('normal');
+      }, TITLE_CRY_WAIT_MS);
+    };
+    window.addEventListener('keydown', onPress);
+    window.addEventListener('pointerdown', onPress);
+    return () => {
+      window.removeEventListener('keydown', onPress);
+      window.removeEventListener('pointerdown', onPress);
+      if (cryGateTimerRef.current !== null) window.clearTimeout(cryGateTimerRef.current);
+    };
+  }, [startPrompt, figureName]);
 
   useEffect(() => {
     const host = hostRef.current;
     if (!host) return;
     let cancelled = false;
+    // Pixi 8.22 destroy-before-init race (trap-fix round 3,
+    // 2026-10-27, proven by a real-browser console capture):
+    // Application.destroy() runs the ResizePlugin's static
+    // destroy, which calls this._cancelResize() — but that
+    // static is only assigned when the plugin is instantiated
+    // during app.init(). If the effect cleanup destroys the
+    // app while init() is still pending (the preset video
+    // loads and flips hideBackground, re-running this effect,
+    // before the first cold WebGL/renderer init finishes),
+    // destroy throws "this._cancelResize is not a function"
+    // inside React's commit phase, and the preset error
+    // boundary swaps in the fallback. Later mounts win the
+    // race (warm init), which is why live playtest showed the
+    // FIRST preset tested falling back and the other nine
+    // rendering. So: never destroy before init resolves.
+    // If cleanup runs first, the .then callback below destroys
+    // once init has completed; if init rejects, there is no
+    // renderer to tear down and the .catch logs it.
+    let initDone = false;
+    let destroyed = false;
+    const safeDestroy = () => {
+      if (destroyed) return;
+      destroyed = true;
+      try {
+        app.destroy(true);
+      } catch {
+        /* init never completed: nothing to tear down */
+      }
+    };
     const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const b = TITLE_BIOMES[biome];
     const app = new Application();
     app.init({ resizeTo: host, backgroundAlpha: 0, antialias: false, resolution: Math.min(2, window.devicePixelRatio || 1) }).then(async () => {
-      if (cancelled) { app.destroy(true); return; }
+      initDone = true;
+      if (cancelled) { safeDestroy(); return; }
       host.appendChild(app.canvas);
       const W = app.screen.width;
       const H = app.screen.height;
@@ -139,8 +243,9 @@ export default function TitleScene({
       // to the Pixi sky/ground rectangles below — never a blank.
       let painted = false;
       let bgSprite: Sprite | null = null;
+      let bgBaseScale = 1;
       let rippleSprite: Sprite | null = null;
-      if (b.backgroundImage) {
+      if (b.backgroundImage && !hideBackground) {
         try {
           const bgTex: Texture = await Assets.load(b.backgroundImage);
           const bg = new Sprite(bgTex);
@@ -151,6 +256,12 @@ export default function TitleScene({
           // position drifts, so the cover never shrinks below full.
           const scale = Math.max(W / bgTex.width, H / bgTex.height) * 1.06;
           bg.scale.set(scale);
+          // FireRed intro Scene 1 background zoom (pull-in 1c):
+          // stored base scale for the 60-frame background-only
+          // zoom-in in the ticker below. This scales bgSprite only;
+          // the Black 2 scene camera above is untouched, so the two
+          // never fight.
+          bgBaseScale = scale;
           bg.anchor.set(0.5, 0.5);
           bg.x = W / 2; bg.y = H / 2;
           scene.addChild(bg);
@@ -206,7 +317,7 @@ export default function TitleScene({
       // Layer 1+2: sky + ground, Pixi-drawn, biome palette only.
       // Skipped when a painting is showing; kept as the fallback
       // for biomes whose batch has not landed yet.
-      if (!painted) {
+      if (!painted && !hideBackground) {
         const sky = new Graphics();
         sky.rect(0, 0, W, groundY).fill(b.sky);
         sky.rect(0, 0, W, Math.floor(groundY / 2)).fill(b.sky2);
@@ -216,14 +327,14 @@ export default function TitleScene({
         ground.rect(0, groundY, W, 2).fill(b.groundLine);
         scene.addChild(ground);
       }
-      if (b.tufts && !painted) {
+      if (b.tufts && !painted && !hideBackground) {
         const tufts = new Graphics();
         for (let x = 8; x < W; x += 34) {
           tufts.moveTo(x, groundY + 22).lineTo(x + 3, groundY + 8).lineTo(x + 6, groundY + 22).fill(b.groundLine);
         }
         scene.addChild(tufts);
       }
-      if (b.shimmer && !painted) {
+      if (b.shimmer && !painted && !hideBackground) {
         const shim = new Graphics();
         for (let x = 0; x < W; x += 44) shim.rect(x, groundY + 14, 22, 2).fill(0xffffff);
         shim.alpha = 0.5;
@@ -308,6 +419,22 @@ export default function TitleScene({
         } catch {
           figure = null; // figure missing: scene still renders, caption labels the gap
           shadow = null;
+        }
+      }
+      // Figure frame cycle (Kittember glow only): preload every
+      // frame now; the ticker swaps figure.texture, never the
+      // sprite, so position/scale/shadow/action all keep running.
+      // Any load failure disables cycling and leaves the base
+      // figure (cycle[0]) in place — a missing glow frame must
+      // never blank the figure or shift the cycle out of order.
+      let cycleTextures: Texture[] = [];
+      let lastCycleIndex = 0;
+      if (figure && figureCycleUrls && figureCycleUrls.length > 1) {
+        try {
+          const loaded = await Promise.all(figureCycleUrls.map((u) => Assets.load(u)));
+          if (loaded.length === figureCycleUrls.length) cycleTextures = loaded;
+        } catch {
+          cycleTextures = [];
         }
       }
 
@@ -573,6 +700,18 @@ export default function TitleScene({
           const m = TITLE_BIOME_MOTION[biome];
           bgSprite.x = W / 2 + Math.sin(t * m.speed) * m.ampX;
           bgSprite.y = H / 2 + Math.sin(t * m.speed * 0.7) * m.ampY;
+          // FireRed intro Scene 1 background zoom (pull-in 1c):
+          // background-only zoom-in over the first 60 frames,
+          // settling at the stored cover scale. 0.97 x 1.06 overscan
+          // = 1.028 > 1.0 cover, so the zoom can never reveal an
+          // edge. Skipped under prefers-reduced-motion: that path
+          // returns before this ticker is added, so the painting
+          // stays static there.
+          if (frameInt < 60) {
+            bgSprite.scale.set(bgBaseScale * (0.97 + 0.03 * frameInt / 60));
+          } else {
+            bgSprite.scale.set(bgBaseScale);
+          }
         }
         // Water displacement map scrolls slowly; wrapMode repeat
         // means the 256px loop never shows a seam.
@@ -593,6 +732,20 @@ export default function TitleScene({
           st.g.x = st.x;
         }
         if (figure) {
+          // Figure frame cycle (Kittember glow only, 500ms/frame
+          // = 30 frames at 60fps): swap texture only, on the same
+          // sprite; the ghost follows so the blur never shows a
+          // stale glow step. Reduced-motion scenes never reach
+          // this ticker, so they stay on cycle[0] (glow off).
+          if (cycleTextures.length > 1) {
+            const framesPerStep = Math.max(1, Math.round((figureCycleMs / 1000) * 60));
+            const idx = Math.floor(frameInt / framesPerStep) % cycleTextures.length;
+            if (idx !== lastCycleIndex) {
+              lastCycleIndex = idx;
+              figure.texture = cycleTextures[idx];
+              if (ghost) ghost.texture = cycleTextures[idx];
+            }
+          }
           // Black 2 motion blur: ghost holds the last position.
           if (ghost) {
             ghost.visible = true;
@@ -768,9 +921,18 @@ export default function TitleScene({
           if (w.g.y > H) { w.g.y = -4; w.g.x = Math.random() * W; }
         }
       });
+    }).catch((err) => {
+      // Trap-fix round 2: a failed Pixi init (no WebGL, missing
+      // texture) must never surface as an unhandled rejection
+      // next to the title. The canvas simply stays absent and the
+      // DOM layers above it (painted background, locked overlay,
+      // RESET) still render — a preset title degrades, it never
+      // goes black because of the scene layer.
+      // eslint-disable-next-line no-console
+      console.error("[TitleScene] Pixi init failed, scene skipped:", err);
     });
-    return () => { cancelled = true; app.destroy(true); };
-  }, [biome, figureUrl, figureName, fireTrail]);
+    return () => { cancelled = true; if (initDone) safeDestroy(); };
+  }, [biome, figureUrl, figureCycleUrls, figureCycleMs, figureName, fireTrail, hideBackground]);
 
   return (
     <div className="w-full">

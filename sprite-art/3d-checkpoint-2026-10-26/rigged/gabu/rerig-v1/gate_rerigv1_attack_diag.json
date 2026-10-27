@@ -1,0 +1,6157 @@
+{
+ "file": "/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/gabu-rerig-v1.glb",
+ "clips": {
+  "attack": {
+   "clip": "attack",
+   "frames": 30,
+   "rest_vs_authored_maxdiff": 2.06268,
+   "model_height_m": 2.749,
+   "edge_min_m": 0.0137,
+   "edges_checked": 14937,
+   "edge_p999": 8.046,
+   "edge_max": 76.196,
+   "per_frame": [
+    {
+     "t": 0.0417,
+     "p999": 5.736,
+     "max": 21.35,
+     "minY": -0.001
+    },
+    {
+     "t": 0.0833,
+     "p999": 4.626,
+     "max": 15.034,
+     "minY": -0.004
+    },
+    {
+     "t": 0.125,
+     "p999": 2.867,
+     "max": 5.883,
+     "minY": -0.0087
+    },
+    {
+     "t": 0.1667,
+     "p999": 2.347,
+     "max": 4.856,
+     "minY": -0.0149
+    },
+    {
+     "t": 0.2083,
+     "p999": 2.715,
+     "max": 15.764,
+     "minY": -0.0224
+    },
+    {
+     "t": 0.25,
+     "p999": 3.832,
+     "max": 25.347,
+     "minY": -0.0308
+    },
+    {
+     "t": 0.2917,
+     "p999": 4.969,
+     "max": 32.14,
+     "minY": -0.0401
+    },
+    {
+     "t": 0.3333,
+     "p999": 5.353,
+     "max": 34.753,
+     "minY": -0.05
+    },
+    {
+     "t": 0.375,
+     "p999": 4.263,
+     "max": 27.939,
+     "minY": -0.0602
+    },
+    {
+     "t": 0.4167,
+     "p999": 2.197,
+     "max": 10.034,
+     "minY": -0.0702
+    },
+    {
+     "t": 0.4583,
+     "p999": 4.424,
+     "max": 14.276,
+     "minY": -0.0796
+    },
+    {
+     "t": 0.5,
+     "p999": 8.87,
+     "max": 39.16,
+     "minY": -0.0877
+    },
+    {
+     "t": 0.5417,
+     "p999": 13.102,
+     "max": 59.295,
+     "minY": -0.0942
+    },
+    {
+     "t": 0.5833,
+     "p999": 16.241,
+     "max": 71.866,
+     "minY": -0.0985
+    },
+    {
+     "t": 0.625,
+     "p999": 17.4,
+     "max": 76.196,
+     "minY": -0.1
+    },
+    {
+     "t": 0.6667,
+     "p999": 16.819,
+     "max": 74.186,
+     "minY": -0.0979
+    },
+    {
+     "t": 0.7083,
+     "p999": 15.204,
+     "max": 68.678,
+     "minY": -0.0923
+    },
+    {
+     "t": 0.75,
+     "p999": 13.361,
+     "max": 60.42,
+     "minY": -0.084
+    },
+    {
+     "t": 0.7917,
+     "p999": 11.189,
+     "max": 50.49,
+     "minY": -0.0738
+    },
+    {
+     "t": 0.8333,
+     "p999": 9.223,
+     "max": 40.469,
+     "minY": -0.0625
+    },
+    {
+     "t": 0.875,
+     "p999": 7.726,
+     "max": 32.308,
+     "minY": -0.0509
+    },
+    {
+     "t": 0.9167,
+     "p999": 6.959,
+     "max": 28.064,
+     "minY": -0.04
+    },
+    {
+     "t": 0.9583,
+     "p999": 6.69,
+     "max": 26.634,
+     "minY": -0.0304
+    },
+    {
+     "t": 1.0,
+     "p999": 6.523,
+     "max": 25.553,
+     "minY": -0.0221
+    },
+    {
+     "t": 1.0417,
+     "p999": 6.398,
+     "max": 24.777,
+     "minY": -0.0152
+    },
+    {
+     "t": 1.0833,
+     "p999": 6.292,
+     "max": 24.255,
+     "minY": -0.0096
+    },
+    {
+     "t": 1.125,
+     "p999": 6.228,
+     "max": 23.938,
+     "minY": -0.0054
+    },
+    {
+     "t": 1.1667,
+     "p999": 6.195,
+     "max": 23.775,
+     "minY": -0.0024
+    },
+    {
+     "t": 1.2083,
+     "p999": 6.183,
+     "max": 23.715,
+     "minY": -0.0006
+    },
+    {
+     "t": 1.25,
+     "p999": 6.181,
+     "max": 23.706,
+     "minY": -0.0
+    }
+   ],
+   "spikes": [
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3575,
+     "disp_m": 0.2164,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.35,
+      1.26,
+      0.439
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3576,
+     "disp_m": 0.2165,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.35,
+      1.262,
+      0.44
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.695,
+      0.305
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3577,
+     "disp_m": 0.2166,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.351,
+      1.262,
+      0.438
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.683,
+      0.317
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3578,
+     "disp_m": 0.2167,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.351,
+      1.263,
+      0.438
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.694,
+      0.306
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3579,
+     "disp_m": 0.2163,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.35,
+      1.26,
+      0.438
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.681,
+      0.319
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3580,
+     "disp_m": 0.2165,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.351,
+      1.262,
+      0.436
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.665,
+      0.335
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3581,
+     "disp_m": 0.2164,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.351,
+      1.26,
+      0.436
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.669,
+      0.331
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3585,
+     "disp_m": 0.2163,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.351,
+      1.26,
+      0.434
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.663,
+      0.337
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3921,
+     "disp_m": 0.2165,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.349,
+      1.263,
+      0.441
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.697,
+      0.303
+     ]
+    },
+    {
+     "frame": 10,
+     "time": 0.4583,
+     "vertex": 3923,
+     "disp_m": 0.2166,
+     "frame_median_m": 0.02704,
+     "pos_rest": [
+      -1.35,
+      1.264,
+      0.44
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.697,
+      0.303
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 0,
+     "disp_m": 0.2377,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.373,
+      1.184,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.689,
+      0.311
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 1,
+     "disp_m": 0.2377,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.373,
+      1.185,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 2,
+     "disp_m": 0.2378,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.677,
+      0.323
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 3,
+     "disp_m": 0.2376,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.679,
+      0.321
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 4,
+     "disp_m": 0.2378,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.668,
+      0.332
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 5,
+     "disp_m": 0.2375,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 6,
+     "disp_m": 0.2378,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.681,
+      0.319
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 7,
+     "disp_m": 0.2378,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.67,
+      0.33
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 8,
+     "disp_m": 0.2378,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.373,
+      1.189,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.68,
+      0.32
+     ]
+    },
+    {
+     "frame": 11,
+     "time": 0.5,
+     "vertex": 9,
+     "disp_m": 0.2378,
+     "frame_median_m": 0.02862,
+     "pos_rest": [
+      -1.373,
+      1.187,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.691,
+      0.309
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 0,
+     "disp_m": 0.2186,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.373,
+      1.184,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.689,
+      0.311
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 1,
+     "disp_m": 0.2186,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.373,
+      1.185,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 2,
+     "disp_m": 0.2187,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.677,
+      0.323
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 3,
+     "disp_m": 0.2185,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.679,
+      0.321
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 4,
+     "disp_m": 0.2187,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.668,
+      0.332
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 5,
+     "disp_m": 0.2184,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 6,
+     "disp_m": 0.2187,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.681,
+      0.319
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 7,
+     "disp_m": 0.2187,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.67,
+      0.33
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 8,
+     "disp_m": 0.2187,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.373,
+      1.189,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.68,
+      0.32
+     ]
+    },
+    {
+     "frame": 12,
+     "time": 0.5417,
+     "vertex": 9,
+     "disp_m": 0.2187,
+     "frame_median_m": 0.02601,
+     "pos_rest": [
+      -1.373,
+      1.187,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.691,
+      0.309
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 0,
+     "disp_m": 0.158,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.373,
+      1.184,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.689,
+      0.311
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 1,
+     "disp_m": 0.1581,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.373,
+      1.185,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 2,
+     "disp_m": 0.1581,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.677,
+      0.323
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 3,
+     "disp_m": 0.158,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.679,
+      0.321
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 4,
+     "disp_m": 0.1581,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.668,
+      0.332
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 5,
+     "disp_m": 0.1579,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 6,
+     "disp_m": 0.1581,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.681,
+      0.319
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 7,
+     "disp_m": 0.1581,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.67,
+      0.33
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 8,
+     "disp_m": 0.1581,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.373,
+      1.189,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.68,
+      0.32
+     ]
+    },
+    {
+     "frame": 13,
+     "time": 0.5833,
+     "vertex": 9,
+     "disp_m": 0.1581,
+     "frame_median_m": 0.01895,
+     "pos_rest": [
+      -1.373,
+      1.187,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.691,
+      0.309
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 0,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.373,
+      1.184,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.689,
+      0.311
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 1,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.373,
+      1.185,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 2,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.677,
+      0.323
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 3,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.679,
+      0.321
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 4,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.668,
+      0.332
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 5,
+     "disp_m": 0.1009,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 6,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.681,
+      0.319
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 7,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.67,
+      0.33
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 8,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.373,
+      1.189,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.68,
+      0.32
+     ]
+    },
+    {
+     "frame": 17,
+     "time": 0.75,
+     "vertex": 9,
+     "disp_m": 0.101,
+     "frame_median_m": 0.00834,
+     "pos_rest": [
+      -1.373,
+      1.187,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.691,
+      0.309
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 0,
+     "disp_m": 0.1123,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.373,
+      1.184,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.689,
+      0.311
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 1,
+     "disp_m": 0.1123,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.373,
+      1.185,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 2,
+     "disp_m": 0.1124,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.677,
+      0.323
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 3,
+     "disp_m": 0.1123,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.679,
+      0.321
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 4,
+     "disp_m": 0.1124,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.668,
+      0.332
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 5,
+     "disp_m": 0.1123,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 6,
+     "disp_m": 0.1124,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.681,
+      0.319
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 7,
+     "disp_m": 0.1124,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.67,
+      0.33
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 8,
+     "disp_m": 0.1124,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.373,
+      1.189,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.68,
+      0.32
+     ]
+    },
+    {
+     "frame": 18,
+     "time": 0.7917,
+     "vertex": 9,
+     "disp_m": 0.1124,
+     "frame_median_m": 0.01023,
+     "pos_rest": [
+      -1.373,
+      1.187,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.691,
+      0.309
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 0,
+     "disp_m": 0.1065,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.373,
+      1.184,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.689,
+      0.311
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 1,
+     "disp_m": 0.1065,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.373,
+      1.185,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 2,
+     "disp_m": 0.1066,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.677,
+      0.323
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 3,
+     "disp_m": 0.1065,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.679,
+      0.321
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 4,
+     "disp_m": 0.1066,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.374,
+      1.185,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.668,
+      0.332
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 5,
+     "disp_m": 0.1065,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.373,
+      1.183,
+      0.389
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.693,
+      0.307
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 6,
+     "disp_m": 0.1066,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.681,
+      0.319
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 7,
+     "disp_m": 0.1066,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.374,
+      1.187,
+      0.385
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.67,
+      0.33
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 8,
+     "disp_m": 0.1066,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.373,
+      1.189,
+      0.387
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.68,
+      0.32
+     ]
+    },
+    {
+     "frame": 19,
+     "time": 0.8333,
+     "vertex": 9,
+     "disp_m": 0.1066,
+     "frame_median_m": 0.01169,
+     "pos_rest": [
+      -1.373,
+      1.187,
+      0.388
+     ],
+     "joints": [
+      "RightHand",
+      "RightForeArm"
+     ],
+     "weights": [
+      0.691,
+      0.309
+     ]
+    }
+   ],
+   "spike_count_capped": 70,
+   "max_disp_m": 0.2401,
+   "minY_per_frame": [
+    -0.0010452817659825087,
+    -0.004029511008411646,
+    -0.008726654574275017,
+    -0.014910945668816566,
+    -0.022356687113642693,
+    -0.030837485566735268,
+    -0.04012740030884743,
+    -0.05000044032931328,
+    -0.060182541608810425,
+    -0.07020807266235352,
+    -0.07956299185752869,
+    -0.08773356676101685,
+    -0.09420589357614517,
+    -0.09846615791320801,
+    -0.10000044107437134,
+    -0.09794502705335617,
+    -0.09233266115188599,
+    -0.08399447798728943,
+    -0.07376127690076828,
+    -0.06246394291520119,
+    -0.05093330517411232,
+    -0.04000041261315346,
+    -0.030351968482136726,
+    -0.022098537534475327,
+    -0.015206903219223022,
+    -0.009643220342695713,
+    -0.0053743161261081696,
+    -0.0023663619067519903,
+    -0.0005863081896677613,
+    -3.908688768206048e-07
+   ],
+   "bone_flags": [
+    {
+     "bone": "Root->Hips",
+     "rest_m": 0.82,
+     "var": 0.122,
+     "rest_dev": 0.0549
+    }
+   ],
+   "diag": {
+    "frame": 14,
+    "time": 0.625,
+    "edges": [
+     {
+      "ratio": 76.196,
+      "rest_len": 0.0147,
+      "a": {
+       "v": 563544,
+       "rest": [
+        -0.04,
+        0.882,
+        1.033
+       ],
+       "def": [
+        -0.586,
+        0.653,
+        0.576
+       ],
+       "joints": [
+        "LeftArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 563547,
+       "rest": [
+        -0.026,
+        0.881,
+        1.034
+       ],
+       "def": [
+        0.535,
+        0.643,
+        0.616
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 33.391,
+      "rest_len": 0.0162,
+      "a": {
+       "v": 562639,
+       "rest": [
+        -0.193,
+        0.976,
+        0.93
+       ],
+       "def": [
+        -0.193,
+        0.86,
+        0.97
+       ],
+       "joints": [
+        "Hips",
+        "Head"
+       ],
+       "weights": [
+        0.252,
+        0.748
+       ]
+      },
+      "b": {
+       "v": 562640,
+       "rest": [
+        -0.184,
+        0.968,
+        0.94
+       ],
+       "def": [
+        -0.534,
+        0.793,
+        0.554
+       ],
+       "joints": [
+        "Hips",
+        "LeftArm"
+       ],
+       "weights": [
+        0.235,
+        0.765
+       ]
+      }
+     },
+     {
+      "ratio": 28.375,
+      "rest_len": 0.019,
+      "a": {
+       "v": 562637,
+       "rest": [
+        -0.195,
+        0.979,
+        0.93
+       ],
+       "def": [
+        -0.195,
+        0.863,
+        0.969
+       ],
+       "joints": [
+        "Hips",
+        "Head"
+       ],
+       "weights": [
+        0.258,
+        0.742
+       ]
+      },
+      "b": {
+       "v": 562640,
+       "rest": [
+        -0.184,
+        0.968,
+        0.94
+       ],
+       "def": [
+        -0.534,
+        0.793,
+        0.554
+       ],
+       "joints": [
+        "Hips",
+        "LeftArm"
+       ],
+       "weights": [
+        0.235,
+        0.765
+       ]
+      }
+     },
+     {
+      "ratio": 27.701,
+      "rest_len": 0.0138,
+      "a": {
+       "v": 43833,
+       "rest": [
+        -0.949,
+        1.28,
+        0.36
+       ],
+       "def": [
+        -0.512,
+        1.027,
+        0.731
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightHand"
+       ],
+       "weights": [
+        0.617,
+        0.383
+       ]
+      },
+      "b": {
+       "v": 46479,
+       "rest": [
+        -0.935,
+        1.282,
+        0.36
+       ],
+       "def": [
+        -0.806,
+        1.121,
+        0.504
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.701,
+        0.299
+       ]
+      }
+     },
+     {
+      "ratio": 27.592,
+      "rest_len": 0.0143,
+      "a": {
+       "v": 1504892,
+       "rest": [
+        0.921,
+        1.282,
+        0.342
+       ],
+       "def": [
+        0.921,
+        1.151,
+        0.385
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1569599,
+       "rest": [
+        0.935,
+        1.28,
+        0.343
+       ],
+       "def": [
+        0.624,
+        1.064,
+        0.629
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.744,
+        0.256
+       ]
+      }
+     },
+     {
+      "ratio": 26.596,
+      "rest_len": 0.0154,
+      "a": {
+       "v": 1505268,
+       "rest": [
+        0.922,
+        1.28,
+        0.399
+       ],
+       "def": [
+        0.576,
+        1.059,
+        0.664
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.757,
+        0.243
+       ]
+      },
+      "b": {
+       "v": 1505278,
+       "rest": [
+        0.906,
+        1.282,
+        0.397
+       ],
+       "def": [
+        0.906,
+        1.149,
+        0.441
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.703,
+        0.297
+       ]
+      }
+     },
+     {
+      "ratio": 22.44,
+      "rest_len": 0.0174,
+      "a": {
+       "v": 43882,
+       "rest": [
+        -0.957,
+        1.278,
+        0.375
+       ],
+       "def": [
+        -0.505,
+        1.022,
+        0.745
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightHand"
+       ],
+       "weights": [
+        0.617,
+        0.383
+       ]
+      },
+      "b": {
+       "v": 43891,
+       "rest": [
+        -0.939,
+        1.281,
+        0.374
+       ],
+       "def": [
+        -0.806,
+        1.12,
+        0.518
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.701,
+        0.299
+       ]
+      }
+     },
+     {
+      "ratio": 22.193,
+      "rest_len": 0.0181,
+      "a": {
+       "v": 1505307,
+       "rest": [
+        0.893,
+        1.283,
+        0.404
+       ],
+       "def": [
+        0.893,
+        1.149,
+        0.447
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1505314,
+       "rest": [
+        0.91,
+        1.28,
+        0.406
+       ],
+       "def": [
+        0.566,
+        1.06,
+        0.661
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.751,
+        0.249
+       ]
+      }
+     },
+     {
+      "ratio": 21.74,
+      "rest_len": 0.0157,
+      "a": {
+       "v": 44048,
+       "rest": [
+        -0.951,
+        1.279,
+        0.379
+       ],
+       "def": [
+        -0.67,
+        1.074,
+        0.625
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.62,
+        0.38
+       ]
+      },
+      "b": {
+       "v": 44051,
+       "rest": [
+        -0.935,
+        1.281,
+        0.381
+       ],
+       "def": [
+        -0.935,
+        1.148,
+        0.424
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 19.809,
+      "rest_len": 0.0145,
+      "a": {
+       "v": 1106730,
+       "rest": [
+        0.335,
+        1.282,
+        0.445
+       ],
+       "def": [
+        0.335,
+        1.147,
+        0.488
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1106737,
+       "rest": [
+        0.321,
+        1.28,
+        0.445
+       ],
+       "def": [
+        0.061,
+        1.093,
+        0.423
+       ],
+       "joints": [
+        "LeftArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 19.809,
+      "rest_len": 0.0145,
+      "a": {
+       "v": 1106728,
+       "rest": [
+        0.335,
+        1.282,
+        0.445
+       ],
+       "def": [
+        0.335,
+        1.147,
+        0.488
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1106736,
+       "rest": [
+        0.321,
+        1.28,
+        0.445
+       ],
+       "def": [
+        0.061,
+        1.093,
+        0.423
+       ],
+       "joints": [
+        "LeftArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 18.89,
+      "rest_len": 0.014,
+      "a": {
+       "v": 31028,
+       "rest": [
+        -0.904,
+        1.281,
+        0.325
+       ],
+       "def": [
+        -0.787,
+        1.123,
+        0.467
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 31032,
+       "rest": [
+        -0.918,
+        1.278,
+        0.323
+       ],
+       "def": [
+        -0.591,
+        1.056,
+        0.632
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.828,
+        0.172
+       ]
+      }
+     },
+     {
+      "ratio": 18.536,
+      "rest_len": 0.0147,
+      "a": {
+       "v": 31029,
+       "rest": [
+        -0.909,
+        1.281,
+        0.33
+       ],
+       "def": [
+        -0.79,
+        1.123,
+        0.472
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 31425,
+       "rest": [
+        -0.923,
+        1.28,
+        0.331
+       ],
+       "def": [
+        -0.587,
+        1.055,
+        0.642
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.832,
+        0.168
+       ]
+      }
+     },
+     {
+      "ratio": 17.734,
+      "rest_len": 0.0159,
+      "a": {
+       "v": 1106693,
+       "rest": [
+        0.312,
+        1.282,
+        0.439
+       ],
+       "def": [
+        0.312,
+        1.146,
+        0.482
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1106754,
+       "rest": [
+        0.297,
+        1.28,
+        0.438
+       ],
+       "def": [
+        0.046,
+        1.096,
+        0.403
+       ],
+       "joints": [
+        "LeftArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 17.493,
+      "rest_len": 0.0139,
+      "a": {
+       "v": 75340,
+       "rest": [
+        -0.708,
+        0.837,
+        0.046
+       ],
+       "def": [
+        -0.708,
+        0.737,
+        0.046
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 75342,
+       "rest": [
+        -0.709,
+        0.85,
+        0.049
+       ],
+       "def": [
+        -0.61,
+        0.687,
+        0.262
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 17.393,
+      "rest_len": 0.0153,
+      "a": {
+       "v": 31028,
+       "rest": [
+        -0.904,
+        1.281,
+        0.325
+       ],
+       "def": [
+        -0.787,
+        1.123,
+        0.467
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 31035,
+       "rest": [
+        -0.919,
+        1.279,
+        0.325
+       ],
+       "def": [
+        -0.591,
+        1.056,
+        0.634
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.827,
+        0.173
+       ]
+      }
+     },
+     {
+      "ratio": 16.998,
+      "rest_len": 0.0141,
+      "a": {
+       "v": 1505314,
+       "rest": [
+        0.91,
+        1.28,
+        0.406
+       ],
+       "def": [
+        0.566,
+        1.06,
+        0.661
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.751,
+        0.249
+       ]
+      },
+      "b": {
+       "v": 1505315,
+       "rest": [
+        0.896,
+        1.282,
+        0.406
+       ],
+       "def": [
+        0.761,
+        1.121,
+        0.536
+       ],
+       "joints": [
+        "Head",
+        "LeftForeArm"
+       ],
+       "weights": [
+        0.702,
+        0.298
+       ]
+      }
+     },
+     {
+      "ratio": 16.781,
+      "rest_len": 0.0159,
+      "a": {
+       "v": 31030,
+       "rest": [
+        -0.902,
+        1.28,
+        0.322
+       ],
+       "def": [
+        -0.786,
+        1.123,
+        0.464
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.701,
+        0.299
+       ]
+      },
+      "b": {
+       "v": 31032,
+       "rest": [
+        -0.918,
+        1.278,
+        0.323
+       ],
+       "def": [
+        -0.591,
+        1.056,
+        0.632
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.828,
+        0.172
+       ]
+      }
+     },
+     {
+      "ratio": 16.668,
+      "rest_len": 0.0138,
+      "a": {
+       "v": 75714,
+       "rest": [
+        -0.691,
+        0.836,
+        0.001
+       ],
+       "def": [
+        -0.691,
+        0.736,
+        0.001
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 75743,
+       "rest": [
+        -0.692,
+        0.849,
+        0.004
+       ],
+       "def": [
+        -0.624,
+        0.696,
+        0.217
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 15.767,
+      "rest_len": 0.0145,
+      "a": {
+       "v": 1502052,
+       "rest": [
+        0.676,
+        0.872,
+        -0.012
+       ],
+       "def": [
+        0.676,
+        0.772,
+        -0.012
+       ],
+       "joints": [
+        "LeftUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 1502054,
+       "rest": [
+        0.677,
+        0.886,
+        -0.008
+       ],
+       "def": [
+        0.62,
+        0.736,
+        0.206
+       ],
+       "joints": [
+        "LeftArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 15.629,
+      "rest_len": 0.0147,
+      "a": {
+       "v": 1502052,
+       "rest": [
+        0.676,
+        0.872,
+        -0.012
+       ],
+       "def": [
+        0.676,
+        0.772,
+        -0.012
+       ],
+       "joints": [
+        "LeftUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 1502056,
+       "rest": [
+        0.678,
+        0.886,
+        -0.006
+       ],
+       "def": [
+        0.62,
+        0.735,
+        0.208
+       ],
+       "joints": [
+        "LeftArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 15.56,
+      "rest_len": 0.0139,
+      "a": {
+       "v": 43878,
+       "rest": [
+        -0.962,
+        1.278,
+        0.373
+       ],
+       "def": [
+        -0.509,
+        1.021,
+        0.749
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightHand"
+       ],
+       "weights": [
+        0.615,
+        0.385
+       ]
+      },
+      "b": {
+       "v": 43884,
+       "rest": [
+        -0.948,
+        1.28,
+        0.372
+       ],
+       "def": [
+        -0.672,
+        1.076,
+        0.618
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.618,
+        0.382
+       ]
+      }
+     },
+     {
+      "ratio": 15.013,
+      "rest_len": 0.0139,
+      "a": {
+       "v": 1106726,
+       "rest": [
+        0.339,
+        1.282,
+        0.446
+       ],
+       "def": [
+        0.259,
+        1.14,
+        0.48
+       ],
+       "joints": [
+        "Head",
+        "LeftArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1106731,
+       "rest": [
+        0.325,
+        1.28,
+        0.447
+       ],
+       "def": [
+        0.063,
+        1.091,
+        0.427
+       ],
+       "joints": [
+        "LeftArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 14.952,
+      "rest_len": 0.0163,
+      "a": {
+       "v": 1372677,
+       "rest": [
+        0.506,
+        1.342,
+        0.478
+       ],
+       "def": [
+        0.151,
+        1.146,
+        0.468
+       ],
+       "joints": [
+        "LeftForeArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 1372681,
+       "rest": [
+        0.491,
+        1.34,
+        0.483
+       ],
+       "def": [
+        0.385,
+        1.196,
+        0.512
+       ],
+       "joints": [
+        "Head",
+        "LeftForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 14.952,
+      "rest_len": 0.0163,
+      "a": {
+       "v": 1372678,
+       "rest": [
+        0.506,
+        1.342,
+        0.478
+       ],
+       "def": [
+        0.151,
+        1.146,
+        0.468
+       ],
+       "joints": [
+        "LeftForeArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 1372682,
+       "rest": [
+        0.491,
+        1.34,
+        0.483
+       ],
+       "def": [
+        0.385,
+        1.196,
+        0.512
+       ],
+       "joints": [
+        "Head",
+        "LeftForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 14.524,
+      "rest_len": 0.0147,
+      "a": {
+       "v": 43863,
+       "rest": [
+        -0.957,
+        1.278,
+        0.369
+       ],
+       "def": [
+        -0.51,
+        1.023,
+        0.743
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightHand"
+       ],
+       "weights": [
+        0.614,
+        0.386
+       ]
+      },
+      "b": {
+       "v": 43887,
+       "rest": [
+        -0.943,
+        1.281,
+        0.369
+       ],
+       "def": [
+        -0.67,
+        1.078,
+        0.613
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.617,
+        0.383
+       ]
+      }
+     },
+     {
+      "ratio": 14.273,
+      "rest_len": 0.0153,
+      "a": {
+       "v": 74647,
+       "rest": [
+        -0.673,
+        0.84,
+        -0.026
+       ],
+       "def": [
+        -0.628,
+        0.694,
+        0.18
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 74669,
+       "rest": [
+        -0.672,
+        0.825,
+        -0.031
+       ],
+       "def": [
+        -0.672,
+        0.725,
+        -0.031
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 14.233,
+      "rest_len": 0.0151,
+      "a": {
+       "v": 43881,
+       "rest": [
+        -0.965,
+        1.277,
+        0.378
+       ],
+       "def": [
+        -0.508,
+        1.019,
+        0.754
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightHand"
+       ],
+       "weights": [
+        0.615,
+        0.385
+       ]
+      },
+      "b": {
+       "v": 44048,
+       "rest": [
+        -0.951,
+        1.279,
+        0.379
+       ],
+       "def": [
+        -0.67,
+        1.074,
+        0.625
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.62,
+        0.38
+       ]
+      }
+     },
+     {
+      "ratio": 14.097,
+      "rest_len": 0.0156,
+      "a": {
+       "v": 74632,
+       "rest": [
+        -0.675,
+        0.843,
+        -0.023
+       ],
+       "def": [
+        -0.628,
+        0.696,
+        0.185
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 74645,
+       "rest": [
+        -0.674,
+        0.828,
+        -0.027
+       ],
+       "def": [
+        -0.674,
+        0.728,
+        -0.027
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 14.05,
+      "rest_len": 0.0164,
+      "a": {
+       "v": 75701,
+       "rest": [
+        -0.693,
+        0.828,
+        0.003
+       ],
+       "def": [
+        -0.693,
+        0.728,
+        0.003
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 75707,
+       "rest": [
+        -0.694,
+        0.844,
+        0.007
+       ],
+       "def": [
+        -0.624,
+        0.69,
+        0.219
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 13.954,
+      "rest_len": 0.0155,
+      "a": {
+       "v": 74677,
+       "rest": [
+        -0.669,
+        0.819,
+        -0.037
+       ],
+       "def": [
+        -0.669,
+        0.719,
+        -0.037
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 74680,
+       "rest": [
+        -0.671,
+        0.833,
+        -0.03
+       ],
+       "def": [
+        -0.629,
+        0.688,
+        0.175
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 13.888,
+      "rest_len": 0.0168,
+      "a": {
+       "v": 75711,
+       "rest": [
+        -0.693,
+        0.851,
+        0.007
+       ],
+       "def": [
+        -0.623,
+        0.697,
+        0.22
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 75714,
+       "rest": [
+        -0.691,
+        0.836,
+        0.001
+       ],
+       "def": [
+        -0.691,
+        0.736,
+        0.001
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 13.547,
+      "rest_len": 0.0214,
+      "a": {
+       "v": 1106694,
+       "rest": [
+        0.325,
+        1.282,
+        0.442
+       ],
+       "def": [
+        0.325,
+        1.147,
+        0.485
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1106742,
+       "rest": [
+        0.304,
+        1.28,
+        0.44
+       ],
+       "def": [
+        0.05,
+        1.095,
+        0.409
+       ],
+       "joints": [
+        "LeftArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 13.31,
+      "rest_len": 0.0165,
+      "a": {
+       "v": 74618,
+       "rest": [
+        -0.677,
+        0.845,
+        -0.02
+       ],
+       "def": [
+        -0.627,
+        0.698,
+        0.189
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 74640,
+       "rest": [
+        -0.677,
+        0.829,
+        -0.023
+       ],
+       "def": [
+        -0.677,
+        0.729,
+        -0.023
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 13.31,
+      "rest_len": 0.0165,
+      "a": {
+       "v": 74619,
+       "rest": [
+        -0.677,
+        0.845,
+        -0.02
+       ],
+       "def": [
+        -0.627,
+        0.698,
+        0.189
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 74642,
+       "rest": [
+        -0.677,
+        0.829,
+        -0.023
+       ],
+       "def": [
+        -0.677,
+        0.729,
+        -0.023
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 12.945,
+      "rest_len": 0.0179,
+      "a": {
+       "v": 75710,
+       "rest": [
+        -0.692,
+        0.834,
+        0.003
+       ],
+       "def": [
+        -0.692,
+        0.734,
+        0.003
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 75711,
+       "rest": [
+        -0.693,
+        0.851,
+        0.007
+       ],
+       "def": [
+        -0.623,
+        0.697,
+        0.22
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 11.96,
+      "rest_len": 0.014,
+      "a": {
+       "v": 217504,
+       "rest": [
+        -0.388,
+        1.086,
+        -0.466
+       ],
+       "def": [
+        -0.539,
+        1.016,
+        -0.367
+       ],
+       "joints": [
+        "Hips",
+        "RightArm"
+       ],
+       "weights": [
+        0.471,
+        0.529
+       ]
+      },
+      "b": {
+       "v": 217536,
+       "rest": [
+        -0.388,
+        1.1,
+        -0.464
+       ],
+       "def": [
+        -0.673,
+        1.056,
+        -0.275
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 10.418,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 67706,
+       "rest": [
+        -0.628,
+        1.28,
+        0.251
+       ],
+       "def": [
+        -0.566,
+        1.136,
+        0.35
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 67713,
+       "rest": [
+        -0.643,
+        1.279,
+        0.251
+       ],
+       "def": [
+        -0.457,
+        1.091,
+        0.449
+       ],
+       "joints": [
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.887,
+        0.113
+       ]
+      }
+     },
+     {
+      "ratio": 10.418,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 67707,
+       "rest": [
+        -0.628,
+        1.28,
+        0.251
+       ],
+       "def": [
+        -0.566,
+        1.136,
+        0.35
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 67714,
+       "rest": [
+        -0.643,
+        1.279,
+        0.251
+       ],
+       "def": [
+        -0.457,
+        1.091,
+        0.449
+       ],
+       "joints": [
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.887,
+        0.113
+       ]
+      }
+     },
+     {
+      "ratio": 10.409,
+      "rest_len": 0.0151,
+      "a": {
+       "v": 1505147,
+       "rest": [
+        0.927,
+        1.282,
+        0.372
+       ],
+       "def": [
+        0.927,
+        1.15,
+        0.416
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.701,
+        0.299
+       ]
+      },
+      "b": {
+       "v": 1505148,
+       "rest": [
+        0.942,
+        1.28,
+        0.373
+       ],
+       "def": [
+        0.811,
+        1.119,
+        0.517
+       ],
+       "joints": [
+        "Head",
+        "LeftForeArm"
+       ],
+       "weights": [
+        0.705,
+        0.295
+       ]
+      }
+     },
+     {
+      "ratio": 10.323,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 60081,
+       "rest": [
+        -0.643,
+        1.278,
+        0.25
+       ],
+       "def": [
+        -0.458,
+        1.09,
+        0.447
+       ],
+       "joints": [
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.887,
+        0.113
+       ]
+      },
+      "b": {
+       "v": 67708,
+       "rest": [
+        -0.628,
+        1.28,
+        0.251
+       ],
+       "def": [
+        -0.566,
+        1.136,
+        0.35
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 10.323,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 60082,
+       "rest": [
+        -0.643,
+        1.278,
+        0.25
+       ],
+       "def": [
+        -0.458,
+        1.09,
+        0.447
+       ],
+       "joints": [
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.887,
+        0.113
+       ]
+      },
+      "b": {
+       "v": 67707,
+       "rest": [
+        -0.628,
+        1.28,
+        0.251
+       ],
+       "def": [
+        -0.566,
+        1.136,
+        0.35
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 10.095,
+      "rest_len": 0.0146,
+      "a": {
+       "v": 31427,
+       "rest": [
+        -0.913,
+        1.282,
+        0.333
+       ],
+       "def": [
+        -0.792,
+        1.123,
+        0.476
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 31430,
+       "rest": [
+        -0.898,
+        1.284,
+        0.335
+       ],
+       "def": [
+        -0.898,
+        1.153,
+        0.379
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 9.903,
+      "rest_len": 0.0147,
+      "a": {
+       "v": 31025,
+       "rest": [
+        -0.89,
+        1.283,
+        0.325
+       ],
+       "def": [
+        -0.89,
+        1.152,
+        0.369
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 31028,
+       "rest": [
+        -0.904,
+        1.281,
+        0.325
+       ],
+       "def": [
+        -0.787,
+        1.123,
+        0.467
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 9.104,
+      "rest_len": 0.0163,
+      "a": {
+       "v": 31024,
+       "rest": [
+        -0.897,
+        1.283,
+        0.331
+       ],
+       "def": [
+        -0.897,
+        1.153,
+        0.375
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 31427,
+       "rest": [
+        -0.913,
+        1.282,
+        0.333
+       ],
+       "def": [
+        -0.792,
+        1.123,
+        0.476
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 9.08,
+      "rest_len": 0.0142,
+      "a": {
+       "v": 1575059,
+       "rest": [
+        0.966,
+        1.276,
+        0.366
+       ],
+       "def": [
+        0.543,
+        1.02,
+        0.747
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.744,
+        0.256
+       ]
+      },
+      "b": {
+       "v": 1575060,
+       "rest": [
+        0.952,
+        1.279,
+        0.364
+       ],
+       "def": [
+        0.623,
+        1.058,
+        0.654
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.745,
+        0.255
+       ]
+      }
+     },
+     {
+      "ratio": 8.977,
+      "rest_len": 0.014,
+      "a": {
+       "v": 1504936,
+       "rest": [
+        0.95,
+        1.278,
+        0.342
+       ],
+       "def": [
+        0.551,
+        1.027,
+        0.721
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.742,
+        0.258
+       ]
+      },
+      "b": {
+       "v": 1569607,
+       "rest": [
+        0.936,
+        1.28,
+        0.34
+       ],
+       "def": [
+        0.627,
+        1.064,
+        0.627
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.743,
+        0.257
+       ]
+      }
+     },
+     {
+      "ratio": 8.876,
+      "rest_len": 0.0143,
+      "a": {
+       "v": 1505001,
+       "rest": [
+        0.968,
+        1.276,
+        0.359
+       ],
+       "def": [
+        0.55,
+        1.02,
+        0.744
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.743,
+        0.257
+       ]
+      },
+      "b": {
+       "v": 1575063,
+       "rest": [
+        0.954,
+        1.278,
+        0.36
+       ],
+       "def": [
+        0.628,
+        1.058,
+        0.652
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.744,
+        0.256
+       ]
+      }
+     },
+     {
+      "ratio": 8.549,
+      "rest_len": 0.0144,
+      "a": {
+       "v": 1505096,
+       "rest": [
+        0.943,
+        1.28,
+        0.367
+       ],
+       "def": [
+        0.612,
+        1.06,
+        0.653
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.753,
+        0.247
+       ]
+      },
+      "b": {
+       "v": 1575055,
+       "rest": [
+        0.957,
+        1.278,
+        0.368
+       ],
+       "def": [
+        0.536,
+        1.022,
+        0.743
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.746,
+        0.254
+       ]
+      }
+     },
+     {
+      "ratio": 8.527,
+      "rest_len": 0.0138,
+      "a": {
+       "v": 307956,
+       "rest": [
+        -0.397,
+        0.942,
+        -0.482
+       ],
+       "def": [
+        -0.449,
+        0.842,
+        -0.378
+       ],
+       "joints": [
+        "Tail"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 358644,
+       "rest": [
+        -0.396,
+        0.929,
+        -0.483
+       ],
+       "def": [
+        -0.396,
+        0.829,
+        -0.483
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 8.375,
+      "rest_len": 0.0141,
+      "a": {
+       "v": 358779,
+       "rest": [
+        -0.393,
+        0.915,
+        -0.497
+       ],
+       "def": [
+        -0.448,
+        0.815,
+        -0.394
+       ],
+       "joints": [
+        "Tail"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 358781,
+       "rest": [
+        -0.393,
+        0.901,
+        -0.497
+       ],
+       "def": [
+        -0.393,
+        0.801,
+        -0.497
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 8.237,
+      "rest_len": 0.0191,
+      "a": {
+       "v": 60036,
+       "rest": [
+        -0.664,
+        1.279,
+        0.253
+       ],
+       "def": [
+        -0.475,
+        1.089,
+        0.46
+       ],
+       "joints": [
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.878,
+        0.122
+       ]
+      },
+      "b": {
+       "v": 67717,
+       "rest": [
+        -0.645,
+        1.28,
+        0.253
+       ],
+       "def": [
+        -0.582,
+        1.136,
+        0.355
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 8.22,
+      "rest_len": 0.018,
+      "a": {
+       "v": 31470,
+       "rest": [
+        -0.929,
+        1.281,
+        0.347
+       ],
+       "def": [
+        -0.806,
+        1.123,
+        0.49
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.707,
+        0.293
+       ]
+      },
+      "b": {
+       "v": 31477,
+       "rest": [
+        -0.911,
+        1.284,
+        0.346
+       ],
+       "def": [
+        -0.911,
+        1.152,
+        0.39
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.702,
+        0.298
+       ]
+      }
+     },
+     {
+      "ratio": 8.015,
+      "rest_len": 0.0186,
+      "a": {
+       "v": 31437,
+       "rest": [
+        -0.925,
+        1.281,
+        0.339
+       ],
+       "def": [
+        -0.802,
+        1.122,
+        0.484
+       ],
+       "joints": [
+        "Head",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 31442,
+       "rest": [
+        -0.907,
+        1.283,
+        0.339
+       ],
+       "def": [
+        -0.907,
+        1.152,
+        0.383
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 7.831,
+      "rest_len": 0.0159,
+      "a": {
+       "v": 101844,
+       "rest": [
+        -0.627,
+        1.281,
+        0.454
+       ],
+       "def": [
+        -0.528,
+        1.127,
+        0.539
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 101847,
+       "rest": [
+        -0.643,
+        1.282,
+        0.451
+       ],
+       "def": [
+        -0.643,
+        1.146,
+        0.495
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 7.468,
+      "rest_len": 0.016,
+      "a": {
+       "v": 358747,
+       "rest": [
+        -0.39,
+        0.941,
+        -0.505
+       ],
+       "def": [
+        -0.447,
+        0.841,
+        -0.402
+       ],
+       "joints": [
+        "Tail"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 358794,
+       "rest": [
+        -0.391,
+        0.925,
+        -0.506
+       ],
+       "def": [
+        -0.391,
+        0.825,
+        -0.506
+       ],
+       "joints": [
+        "RightUpLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 7.444,
+      "rest_len": 0.0172,
+      "a": {
+       "v": 1505001,
+       "rest": [
+        0.968,
+        1.276,
+        0.359
+       ],
+       "def": [
+        0.55,
+        1.02,
+        0.744
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.743,
+        0.257
+       ]
+      },
+      "b": {
+       "v": 1505022,
+       "rest": [
+        0.951,
+        1.279,
+        0.358
+       ],
+       "def": [
+        0.626,
+        1.059,
+        0.649
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.745,
+        0.255
+       ]
+      }
+     },
+     {
+      "ratio": 7.098,
+      "rest_len": 0.017,
+      "a": {
+       "v": 1471071,
+       "rest": [
+        0.828,
+        1.28,
+        0.29
+       ],
+       "def": [
+        0.728,
+        1.128,
+        0.418
+       ],
+       "joints": [
+        "Head",
+        "LeftForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1471305,
+       "rest": [
+        0.811,
+        1.282,
+        0.29
+       ],
+       "def": [
+        0.811,
+        1.153,
+        0.333
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 7.088,
+      "rest_len": 0.018,
+      "a": {
+       "v": 1505000,
+       "rest": [
+        0.967,
+        1.276,
+        0.356
+       ],
+       "def": [
+        0.551,
+        1.02,
+        0.742
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.743,
+        0.257
+       ]
+      },
+      "b": {
+       "v": 1505002,
+       "rest": [
+        0.949,
+        1.279,
+        0.355
+       ],
+       "def": [
+        0.626,
+        1.06,
+        0.647
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.745,
+        0.255
+       ]
+      }
+     },
+     {
+      "ratio": 6.985,
+      "rest_len": 0.0154,
+      "a": {
+       "v": 1509194,
+       "rest": [
+        0.643,
+        1.281,
+        0.453
+       ],
+       "def": [
+        0.643,
+        1.145,
+        0.497
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1509197,
+       "rest": [
+        0.659,
+        1.28,
+        0.453
+       ],
+       "def": [
+        0.54,
+        1.13,
+        0.522
+       ],
+       "joints": [
+        "Head",
+        "LeftForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 6.938,
+      "rest_len": 0.0156,
+      "a": {
+       "v": 1439760,
+       "rest": [
+        0.685,
+        1.278,
+        0.254
+       ],
+       "def": [
+        0.447,
+        1.079,
+        0.474
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.637,
+        0.363
+       ]
+      },
+      "b": {
+       "v": 1439778,
+       "rest": [
+        0.669,
+        1.28,
+        0.255
+       ],
+       "def": [
+        0.517,
+        1.112,
+        0.398
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.631,
+        0.369
+       ]
+      }
+     },
+     {
+      "ratio": 6.859,
+      "rest_len": 0.019,
+      "a": {
+       "v": 1505001,
+       "rest": [
+        0.968,
+        1.276,
+        0.359
+       ],
+       "def": [
+        0.55,
+        1.02,
+        0.744
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.743,
+        0.257
+       ]
+      },
+      "b": {
+       "v": 1505002,
+       "rest": [
+        0.949,
+        1.279,
+        0.355
+       ],
+       "def": [
+        0.626,
+        1.06,
+        0.647
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.745,
+        0.255
+       ]
+      }
+     },
+     {
+      "ratio": 6.788,
+      "rest_len": 0.014,
+      "a": {
+       "v": 996988,
+       "rest": [
+        0.243,
+        0.401,
+        -0.541
+       ],
+       "def": [
+        0.228,
+        0.301,
+        -0.55
+       ],
+       "joints": [
+        "LeftFoot",
+        "Tail"
+       ],
+       "weights": [
+        0.823,
+        0.177
+       ]
+      },
+      "b": {
+       "v": 1061911,
+       "rest": [
+        0.25,
+        0.399,
+        -0.553
+       ],
+       "def": [
+        0.158,
+        0.299,
+        -0.613
+       ],
+       "joints": [
+        "Tail",
+        "TailMid"
+       ],
+       "weights": [
+        0.757,
+        0.243
+       ]
+      }
+     },
+     {
+      "ratio": 6.593,
+      "rest_len": 0.014,
+      "a": {
+       "v": 213938,
+       "rest": [
+        -0.321,
+        1.282,
+        0.442
+       ],
+       "def": [
+        -0.321,
+        1.146,
+        0.485
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 213940,
+       "rest": [
+        -0.307,
+        1.28,
+        0.44
+       ],
+       "def": [
+        -0.231,
+        1.139,
+        0.469
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 6.383,
+      "rest_len": 0.018,
+      "a": {
+       "v": 1554401,
+       "rest": [
+        0.837,
+        1.277,
+        0.285
+       ],
+       "def": [
+        0.522,
+        1.051,
+        0.602
+       ],
+       "joints": [
+        "LeftForeArm",
+        "LeftArm"
+       ],
+       "weights": [
+        0.718,
+        0.282
+       ]
+      },
+      "b": {
+       "v": 1554416,
+       "rest": [
+        0.819,
+        1.278,
+        0.283
+       ],
+       "def": [
+        0.587,
+        1.085,
+        0.514
+       ],
+       "joints": [
+        "LeftForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.716,
+        0.284
+       ]
+      }
+     },
+     {
+      "ratio": 5.836,
+      "rest_len": 0.0149,
+      "a": {
+       "v": 233369,
+       "rest": [
+        -0.459,
+        1.421,
+        -0.01
+       ],
+       "def": [
+        -0.449,
+        1.287,
+        0.184
+       ],
+       "joints": [
+        "RightArm"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 233370,
+       "rest": [
+        -0.462,
+        1.419,
+        0.004
+       ],
+       "def": [
+        -0.457,
+        1.293,
+        0.098
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.706,
+        0.294
+       ]
+      }
+     },
+     {
+      "ratio": 5.782,
+      "rest_len": 0.0172,
+      "a": {
+       "v": 60019,
+       "rest": [
+        -0.662,
+        1.281,
+        0.255
+       ],
+       "def": [
+        -0.662,
+        1.153,
+        0.299
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 67717,
+       "rest": [
+        -0.645,
+        1.28,
+        0.253
+       ],
+       "def": [
+        -0.582,
+        1.136,
+        0.355
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 5.66,
+      "rest_len": 0.0143,
+      "a": {
+       "v": 279267,
+       "rest": [
+        -0.348,
+        1.228,
+        -0.433
+       ],
+       "def": [
+        -0.348,
+        1.153,
+        -0.433
+       ],
+       "joints": [
+        "Spine",
+        "Root"
+       ],
+       "weights": [
+        0.756,
+        0.244
+       ]
+      },
+      "b": {
+       "v": 279270,
+       "rest": [
+        -0.345,
+        1.24,
+        -0.425
+       ],
+       "def": [
+        -0.345,
+        1.23,
+        -0.408
+       ],
+       "joints": [
+        "Chest",
+        "Root"
+       ],
+       "weights": [
+        0.78,
+        0.22
+       ]
+      }
+     },
+     {
+      "ratio": 5.649,
+      "rest_len": 0.0153,
+      "a": {
+       "v": 212270,
+       "rest": [
+        -0.541,
+        1.28,
+        0.466
+       ],
+       "def": [
+        -0.445,
+        1.129,
+        0.534
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 212274,
+       "rest": [
+        -0.526,
+        1.282,
+        0.465
+       ],
+       "def": [
+        -0.526,
+        1.146,
+        0.509
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 5.492,
+      "rest_len": 0.0142,
+      "a": {
+       "v": 67717,
+       "rest": [
+        -0.645,
+        1.28,
+        0.253
+       ],
+       "def": [
+        -0.582,
+        1.136,
+        0.355
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 67722,
+       "rest": [
+        -0.631,
+        1.282,
+        0.254
+       ],
+       "def": [
+        -0.631,
+        1.154,
+        0.298
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 5.453,
+      "rest_len": 0.0156,
+      "a": {
+       "v": 31435,
+       "rest": [
+        -0.931,
+        1.279,
+        0.335
+       ],
+       "def": [
+        -0.591,
+        1.053,
+        0.649
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.831,
+        0.169
+       ]
+      },
+      "b": {
+       "v": 31444,
+       "rest": [
+        -0.946,
+        1.277,
+        0.337
+       ],
+       "def": [
+        -0.544,
+        1.027,
+        0.715
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm"
+       ],
+       "weights": [
+        0.828,
+        0.172
+       ]
+      }
+     },
+     {
+      "ratio": 5.326,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 31016,
+       "rest": [
+        -0.893,
+        1.28,
+        0.315
+       ],
+       "def": [
+        -0.579,
+        1.061,
+        0.61
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.829,
+        0.171
+       ]
+      },
+      "b": {
+       "v": 31036,
+       "rest": [
+        -0.907,
+        1.278,
+        0.315
+       ],
+       "def": [
+        -0.537,
+        1.037,
+        0.672
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm"
+       ],
+       "weights": [
+        0.826,
+        0.174
+       ]
+      }
+     },
+     {
+      "ratio": 5.145,
+      "rest_len": 0.0177,
+      "a": {
+       "v": 562653,
+       "rest": [
+        -0.187,
+        0.969,
+        0.934
+       ],
+       "def": [
+        -0.187,
+        0.852,
+        0.974
+       ],
+       "joints": [
+        "Hips",
+        "Head"
+       ],
+       "weights": [
+        0.237,
+        0.763
+       ]
+      },
+      "b": {
+       "v": 562659,
+       "rest": [
+        -0.177,
+        0.959,
+        0.945
+       ],
+       "def": [
+        -0.177,
+        0.937,
+        0.945
+       ],
+       "joints": [
+        "Hips",
+        "Root"
+       ],
+       "weights": [
+        0.218,
+        0.782
+       ]
+      }
+     },
+     {
+      "ratio": 5.061,
+      "rest_len": 0.0164,
+      "a": {
+       "v": 31435,
+       "rest": [
+        -0.931,
+        1.279,
+        0.335
+       ],
+       "def": [
+        -0.591,
+        1.053,
+        0.649
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.831,
+        0.169
+       ]
+      },
+      "b": {
+       "v": 31439,
+       "rest": [
+        -0.947,
+        1.277,
+        0.335
+       ],
+       "def": [
+        -0.547,
+        1.027,
+        0.714
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm"
+       ],
+       "weights": [
+        0.828,
+        0.172
+       ]
+      }
+     },
+     {
+      "ratio": 4.966,
+      "rest_len": 0.0139,
+      "a": {
+       "v": 891250,
+       "rest": [
+        0.102,
+        0.323,
+        -0.542
+       ],
+       "def": [
+        0.086,
+        0.223,
+        -0.545
+       ],
+       "joints": [
+        "LeftFoot",
+        "Tail"
+       ],
+       "weights": [
+        0.804,
+        0.196
+       ]
+      },
+      "b": {
+       "v": 891263,
+       "rest": [
+        0.109,
+        0.322,
+        -0.554
+       ],
+       "def": [
+        0.023,
+        0.222,
+        -0.574
+       ],
+       "joints": [
+        "Tail",
+        "TailMid"
+       ],
+       "weights": [
+        0.779,
+        0.221
+       ]
+      }
+     },
+     {
+      "ratio": 4.83,
+      "rest_len": 0.0156,
+      "a": {
+       "v": 1439787,
+       "rest": [
+        0.64,
+        1.282,
+        0.255
+       ],
+       "def": [
+        0.64,
+        1.154,
+        0.299
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1439789,
+       "rest": [
+        0.656,
+        1.28,
+        0.255
+       ],
+       "def": [
+        0.585,
+        1.138,
+        0.347
+       ],
+       "joints": [
+        "Head",
+        "LeftForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 4.819,
+      "rest_len": 0.0144,
+      "a": {
+       "v": 891307,
+       "rest": [
+        0.111,
+        0.329,
+        -0.554
+       ],
+       "def": [
+        0.024,
+        0.229,
+        -0.574
+       ],
+       "joints": [
+        "Tail",
+        "TailMid"
+       ],
+       "weights": [
+        0.778,
+        0.222
+       ]
+      },
+      "b": {
+       "v": 891309,
+       "rest": [
+        0.103,
+        0.331,
+        -0.542
+       ],
+       "def": [
+        0.087,
+        0.231,
+        -0.545
+       ],
+       "joints": [
+        "LeftFoot",
+        "Tail"
+       ],
+       "weights": [
+        0.805,
+        0.195
+       ]
+      }
+     },
+     {
+      "ratio": 4.736,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 55125,
+       "rest": [
+        -0.796,
+        1.279,
+        0.278
+       ],
+       "def": [
+        -0.54,
+        1.078,
+        0.522
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.824,
+        0.176
+       ]
+      },
+      "b": {
+       "v": 55128,
+       "rest": [
+        -0.811,
+        1.278,
+        0.28
+       ],
+       "def": [
+        -0.503,
+        1.057,
+        0.578
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm"
+       ],
+       "weights": [
+        0.823,
+        0.177
+       ]
+      }
+     },
+     {
+      "ratio": 4.693,
+      "rest_len": 0.0156,
+      "a": {
+       "v": 67705,
+       "rest": [
+        -0.613,
+        1.282,
+        0.252
+       ],
+       "def": [
+        -0.613,
+        1.155,
+        0.296
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 67709,
+       "rest": [
+        -0.628,
+        1.28,
+        0.251
+       ],
+       "def": [
+        -0.566,
+        1.136,
+        0.35
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 4.693,
+      "rest_len": 0.0156,
+      "a": {
+       "v": 67704,
+       "rest": [
+        -0.613,
+        1.282,
+        0.252
+       ],
+       "def": [
+        -0.613,
+        1.155,
+        0.296
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 67708,
+       "rest": [
+        -0.628,
+        1.28,
+        0.251
+       ],
+       "def": [
+        -0.566,
+        1.136,
+        0.35
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 4.675,
+      "rest_len": 0.0177,
+      "a": {
+       "v": 31438,
+       "rest": [
+        -0.934,
+        1.279,
+        0.339
+       ],
+       "def": [
+        -0.588,
+        1.052,
+        0.655
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.835,
+        0.165
+       ]
+      },
+      "b": {
+       "v": 31446,
+       "rest": [
+        -0.952,
+        1.277,
+        0.34
+       ],
+       "def": [
+        -0.546,
+        1.026,
+        0.721
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm"
+       ],
+       "weights": [
+        0.83,
+        0.17
+       ]
+      }
+     },
+     {
+      "ratio": 4.592,
+      "rest_len": 0.018,
+      "a": {
+       "v": 31448,
+       "rest": [
+        -0.943,
+        1.279,
+        0.342
+       ],
+       "def": [
+        -0.591,
+        1.049,
+        0.663
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.838,
+        0.162
+       ]
+      },
+      "b": {
+       "v": 31458,
+       "rest": [
+        -0.961,
+        1.276,
+        0.342
+       ],
+       "def": [
+        -0.549,
+        1.023,
+        0.729
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm"
+       ],
+       "weights": [
+        0.833,
+        0.167
+       ]
+      }
+     },
+     {
+      "ratio": 4.481,
+      "rest_len": 0.0138,
+      "a": {
+       "v": 101838,
+       "rest": [
+        -0.634,
+        1.278,
+        0.457
+       ],
+       "def": [
+        -0.295,
+        1.05,
+        0.614
+       ],
+       "joints": [
+        "RightArm",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.917,
+        0.083
+       ]
+      },
+      "b": {
+       "v": 101840,
+       "rest": [
+        -0.648,
+        1.279,
+        0.456
+       ],
+       "def": [
+        -0.356,
+        1.062,
+        0.612
+       ],
+       "joints": [
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.869,
+        0.131
+       ]
+      }
+     },
+     {
+      "ratio": 4.318,
+      "rest_len": 0.0185,
+      "a": {
+       "v": 1439758,
+       "rest": [
+        0.681,
+        1.28,
+        0.257
+       ],
+       "def": [
+        0.607,
+        1.136,
+        0.355
+       ],
+       "joints": [
+        "Head",
+        "LeftForeArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 1439774,
+       "rest": [
+        0.663,
+        1.281,
+        0.257
+       ],
+       "def": [
+        0.663,
+        1.154,
+        0.301
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 3.796,
+      "rest_len": 0.0198,
+      "a": {
+       "v": 67717,
+       "rest": [
+        -0.645,
+        1.28,
+        0.253
+       ],
+       "def": [
+        -0.582,
+        1.136,
+        0.355
+       ],
+       "joints": [
+        "Head",
+        "RightArm"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      },
+      "b": {
+       "v": 67718,
+       "rest": [
+        -0.626,
+        1.282,
+        0.253
+       ],
+       "def": [
+        -0.626,
+        1.154,
+        0.297
+       ],
+       "joints": [
+        "Head",
+        "Neck"
+       ],
+       "weights": [
+        0.7,
+        0.3
+       ]
+      }
+     },
+     {
+      "ratio": 3.244,
+      "rest_len": 0.0169,
+      "a": {
+       "v": 217386,
+       "rest": [
+        -0.396,
+        0.992,
+        -0.479
+       ],
+       "def": [
+        -0.396,
+        0.964,
+        -0.479
+       ],
+       "joints": [
+        "Hips",
+        "Root"
+       ],
+       "weights": [
+        0.285,
+        0.715
+       ]
+      },
+      "b": {
+       "v": 217421,
+       "rest": [
+        -0.397,
+        1.009,
+        -0.478
+       ],
+       "def": [
+        -0.397,
+        0.909,
+        -0.478
+       ],
+       "joints": [
+        "Hips",
+        "RightUpLeg"
+       ],
+       "weights": [
+        0.318,
+        0.682
+       ]
+      }
+     },
+     {
+      "ratio": 3.244,
+      "rest_len": 0.0169,
+      "a": {
+       "v": 217385,
+       "rest": [
+        -0.396,
+        0.992,
+        -0.479
+       ],
+       "def": [
+        -0.396,
+        0.964,
+        -0.479
+       ],
+       "joints": [
+        "Hips",
+        "Root"
+       ],
+       "weights": [
+        0.285,
+        0.715
+       ]
+      },
+      "b": {
+       "v": 217420,
+       "rest": [
+        -0.397,
+        1.009,
+        -0.478
+       ],
+       "def": [
+        -0.397,
+        0.909,
+        -0.478
+       ],
+       "joints": [
+        "Hips",
+        "RightUpLeg"
+       ],
+       "weights": [
+        0.318,
+        0.682
+       ]
+      }
+     },
+     {
+      "ratio": 2.875,
+      "rest_len": 0.0143,
+      "a": {
+       "v": 31461,
+       "rest": [
+        -0.968,
+        1.275,
+        0.346
+       ],
+       "def": [
+        -0.549,
+        1.021,
+        0.736
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm",
+        "RightHand"
+       ],
+       "weights": [
+        0.808,
+        0.151,
+        0.041
+       ]
+      },
+      "b": {
+       "v": 31466,
+       "rest": [
+        -0.954,
+        1.278,
+        0.347
+       ],
+       "def": [
+        -0.569,
+        1.035,
+        0.703
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.794,
+        0.134,
+        0.072
+       ]
+      }
+     },
+     {
+      "ratio": 2.702,
+      "rest_len": 0.0145,
+      "a": {
+       "v": 996465,
+       "rest": [
+        0.247,
+        0.432,
+        -0.517
+       ],
+       "def": [
+        0.219,
+        0.332,
+        -0.535
+       ],
+       "joints": [
+        "LeftFoot",
+        "Tail"
+       ],
+       "weights": [
+        0.649,
+        0.351
+       ]
+      },
+      "b": {
+       "v": 996466,
+       "rest": [
+        0.25,
+        0.446,
+        -0.516
+       ],
+       "def": [
+        0.25,
+        0.346,
+        -0.516
+       ],
+       "joints": [
+        "LeftFoot",
+        "LeftLeg"
+       ],
+       "weights": [
+        0.508,
+        0.492
+       ]
+      }
+     },
+     {
+      "ratio": 2.454,
+      "rest_len": 0.0141,
+      "a": {
+       "v": 1325908,
+       "rest": [
+        0.441,
+        0.244,
+        -0.921
+       ],
+       "def": [
+        0.194,
+        0.144,
+        -1.042
+       ],
+       "joints": [
+        "TailMid",
+        "Tail"
+       ],
+       "weights": [
+        0.707,
+        0.293
+       ]
+      },
+      "b": {
+       "v": 1325909,
+       "rest": [
+        0.451,
+        0.246,
+        -0.93
+       ],
+       "def": [
+        0.173,
+        0.146,
+        -1.069
+       ],
+       "joints": [
+        "TailMid"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 2.388,
+      "rest_len": 0.0145,
+      "a": {
+       "v": 1325909,
+       "rest": [
+        0.451,
+        0.246,
+        -0.93
+       ],
+       "def": [
+        0.173,
+        0.146,
+        -1.069
+       ],
+       "joints": [
+        "TailMid"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 1325910,
+       "rest": [
+        0.441,
+        0.246,
+        -0.921
+       ],
+       "def": [
+        0.194,
+        0.146,
+        -1.042
+       ],
+       "joints": [
+        "TailMid",
+        "Tail"
+       ],
+       "weights": [
+        0.707,
+        0.293
+       ]
+      }
+     },
+     {
+      "ratio": 2.355,
+      "rest_len": 0.0149,
+      "a": {
+       "v": 996468,
+       "rest": [
+        0.249,
+        0.433,
+        -0.519
+       ],
+       "def": [
+        0.225,
+        0.333,
+        -0.534
+       ],
+       "joints": [
+        "LeftFoot",
+        "Tail"
+       ],
+       "weights": [
+        0.702,
+        0.298
+       ]
+      },
+      "b": {
+       "v": 996469,
+       "rest": [
+        0.252,
+        0.447,
+        -0.517
+       ],
+       "def": [
+        0.252,
+        0.347,
+        -0.517
+       ],
+       "joints": [
+        "LeftFoot",
+        "LeftLeg"
+       ],
+       "weights": [
+        0.569,
+        0.431
+       ]
+      }
+     },
+     {
+      "ratio": 2.347,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 1325906,
+       "rest": [
+        0.452,
+        0.243,
+        -0.931
+       ],
+       "def": [
+        0.173,
+        0.143,
+        -1.07
+       ],
+       "joints": [
+        "TailMid"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 1325907,
+       "rest": [
+        0.441,
+        0.244,
+        -0.921
+       ],
+       "def": [
+        0.194,
+        0.144,
+        -1.042
+       ],
+       "joints": [
+        "TailMid",
+        "Tail"
+       ],
+       "weights": [
+        0.707,
+        0.293
+       ]
+      }
+     },
+     {
+      "ratio": 2.347,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 1325905,
+       "rest": [
+        0.452,
+        0.243,
+        -0.931
+       ],
+       "def": [
+        0.173,
+        0.143,
+        -1.07
+       ],
+       "joints": [
+        "TailMid"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 1325908,
+       "rest": [
+        0.441,
+        0.244,
+        -0.921
+       ],
+       "def": [
+        0.194,
+        0.144,
+        -1.042
+       ],
+       "joints": [
+        "TailMid",
+        "Tail"
+       ],
+       "weights": [
+        0.707,
+        0.293
+       ]
+      }
+     },
+     {
+      "ratio": 2.304,
+      "rest_len": 0.0138,
+      "a": {
+       "v": 1053909,
+       "rest": [
+        0.23,
+        0.432,
+        -0.5
+       ],
+       "def": [
+        0.212,
+        0.332,
+        -0.519
+       ],
+       "joints": [
+        "LeftLeg",
+        "TailTip"
+       ],
+       "weights": [
+        0.787,
+        0.213
+       ]
+      },
+      "b": {
+       "v": 1053911,
+       "rest": [
+        0.234,
+        0.445,
+        -0.5
+       ],
+       "def": [
+        0.234,
+        0.345,
+        -0.5
+       ],
+       "joints": [
+        "LeftLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 2.304,
+      "rest_len": 0.0138,
+      "a": {
+       "v": 1053910,
+       "rest": [
+        0.23,
+        0.432,
+        -0.5
+       ],
+       "def": [
+        0.212,
+        0.332,
+        -0.519
+       ],
+       "joints": [
+        "LeftLeg",
+        "TailTip"
+       ],
+       "weights": [
+        0.787,
+        0.213
+       ]
+      },
+      "b": {
+       "v": 1053912,
+       "rest": [
+        0.234,
+        0.445,
+        -0.5
+       ],
+       "def": [
+        0.234,
+        0.345,
+        -0.5
+       ],
+       "joints": [
+        "LeftLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      }
+     },
+     {
+      "ratio": 2.279,
+      "rest_len": 0.0173,
+      "a": {
+       "v": 31466,
+       "rest": [
+        -0.954,
+        1.278,
+        0.347
+       ],
+       "def": [
+        -0.569,
+        1.035,
+        0.703
+       ],
+       "joints": [
+        "RightForeArm",
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.794,
+        0.134,
+        0.072
+       ]
+      },
+      "b": {
+       "v": 31469,
+       "rest": [
+        -0.937,
+        1.28,
+        0.344
+       ],
+       "def": [
+        -0.577,
+        1.049,
+        0.667
+       ],
+       "joints": [
+        "RightForeArm",
+        "Head"
+       ],
+       "weights": [
+        0.857,
+        0.143
+       ]
+      }
+     },
+     {
+      "ratio": 2.25,
+      "rest_len": 0.0148,
+      "a": {
+       "v": 1053926,
+       "rest": [
+        0.24,
+        0.449,
+        -0.505
+       ],
+       "def": [
+        0.24,
+        0.349,
+        -0.505
+       ],
+       "joints": [
+        "LeftLeg"
+       ],
+       "weights": [
+        1.0
+       ]
+      },
+      "b": {
+       "v": 1053927,
+       "rest": [
+        0.237,
+        0.434,
+        -0.507
+       ],
+       "def": [
+        0.218,
+        0.334,
+        -0.526
+       ],
+       "joints": [
+        "LeftLeg",
+        "TailTip"
+       ],
+       "weights": [
+        0.787,
+        0.213
+       ]
+      }
+     },
+     {
+      "ratio": 2.021,
+      "rest_len": 0.014,
+      "a": {
+       "v": 60077,
+       "rest": [
+        -0.657,
+        1.276,
+        0.249
+       ],
+       "def": [
+        -0.444,
+        1.079,
+        0.469
+       ],
+       "joints": [
+        "RightArm",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.883,
+        0.117
+       ]
+      },
+      "b": {
+       "v": 60079,
+       "rest": [
+        -0.643,
+        1.278,
+        0.25
+       ],
+       "def": [
+        -0.458,
+        1.09,
+        0.447
+       ],
+       "joints": [
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.887,
+        0.113
+       ]
+      }
+     },
+     {
+      "ratio": 2.021,
+      "rest_len": 0.014,
+      "a": {
+       "v": 60076,
+       "rest": [
+        -0.657,
+        1.276,
+        0.249
+       ],
+       "def": [
+        -0.444,
+        1.079,
+        0.469
+       ],
+       "joints": [
+        "RightArm",
+        "RightForeArm"
+       ],
+       "weights": [
+        0.883,
+        0.117
+       ]
+      },
+      "b": {
+       "v": 60078,
+       "rest": [
+        -0.643,
+        1.278,
+        0.25
+       ],
+       "def": [
+        -0.458,
+        1.09,
+        0.447
+       ],
+       "joints": [
+        "RightArm",
+        "Head"
+       ],
+       "weights": [
+        0.887,
+        0.113
+       ]
+      }
+     }
+    ]
+   }
+  }
+ }
+}

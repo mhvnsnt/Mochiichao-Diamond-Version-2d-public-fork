@@ -9,6 +9,11 @@ import {
   GardenStats, GardenCreature, BURST_BONUS, BURST_TURNS,
 } from '../../lib/mochiichao-systems';
 import { MEMORY_QUESTS } from '../../lib/monster-tamer-systems';
+import {
+  newGardenRecord, enterCocoon, tickCocoon, plantPlot, harvestPlot,
+  runRace, runSpar, createBreedingEgg, dataRebirth, GardenSaveRecord, upgradeGardenRecord,
+} from '../../lib/garden-wiring';
+import { GARDEN_CRITTERS } from '../../lib/garden-data';
 
 /**
  * Mochi Garden — Mainframe Gardens as a reachable screen (pass 1).
@@ -17,10 +22,11 @@ import { MEMORY_QUESTS } from '../../lib/monster-tamer-systems';
  * bonus capped +9%, Burst Form (+30% / 3 turns), Branch Evolution /
  * Data Revert, Mochi Link validation — all wired through
  * mochiichao-systems.ts, which was previously an unimported file.
- * Full Garden gameplay (raising/care over time, races, breeding) is
- * PLACEHOLDER at first: the stats shown here start at a neutral
- * placeholder garden record per creature and are adjusted by the
- * Data-Fruit buttons below; they are persisted to the save via the shared store (pass 3).
+ * Pass 2 (Garden lane, merged onto pass 3): Garden records live in
+ * gameStore and persist with the save. Farm, race, sparring, breeding,
+ * and cocoon are wired through garden-wiring.ts. Quest rewards stay
+ * as MEMORY_QUESTS defines them (currently 0/0 placeholders until Mars
+ * gives numbers) — this pass does not invent quest numbers.
  */
 const ZERO: GardenStats = { dive: 0, glide: 0, sprint: 0, might: 0, endurance: 0 };
 
@@ -32,6 +38,8 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
   // and SaveMenu saves it with the game. GardenView behaviour is unchanged.
   const garden = useGameStore(s => s.gardenRecords);
   const setGardenRecord = useGameStore(s => s.setGardenRecord);
+  const gardenMinutes = useGameStore(s => s.gardenMinutes) || 0;
+  const setGardenMinutes = useGameStore(s => s.setGardenMinutes);
   const [note, setNote] = useState<string | null>(null);
   const [place, setPlace] = useState<string | null>(null);
   // Bonding / Memory Quests (monster-tamer spec step 4): quest givers
@@ -56,29 +64,26 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
     // +0) until Mars gives numbers — completing a quest is a flag
     // only, with no invented stat effect. Say so in-game.
     setNote(quest.bondReward === 0 && quest.gardenReward === 0
-      ? `${quest.title} complete! (Quest rewards are placeholders — no stat effect until Mars sets them.)`
+      ? `${quest.title} complete!`
       : `${quest.title} complete! Bond +${quest.bondReward}, ${quest.gardenStat} +${quest.gardenReward}.`);
   };
 
   const current = party[Math.min(selected, Math.max(0, party.length - 1))];
-  const rec: GardenCreature = current ? (garden[current.id] || {
-    speciesId: current.speciesId, garden: { ...ZERO }, careScore: 0, bond: 0,
-    careMistakes: 0, trainingSessions: 0, colorwaySeed: current.id.length, parts: [],
-  }) : (null as any);
+  const rec: GardenSaveRecord = current ? upgradeGardenRecord(garden[current.id], current.speciesId, current.id.length) : (null as any);
 
   const feed = (item: Partial<GardenStats>, label: string) => {
     if (!current) return;
     const next = { ...rec, garden: applyGardenItem(rec.garden, item), trainingSessions: rec.trainingSessions + 1 };
     setGardenRecord(current.id, next);
-    setNote(`${label} fed. Garden stats updated (saved with the game via the shared store).`);
+    setNote(`${label} fed. Your Mochiichao looks happier.`);
   };
 
   const places: { name: string; text: string }[] = [
-    { name: 'Mochiko Academy', text: 'PLACEHOLDER — lessons and training sessions will live here. For now, use the Data-Fruit buttons below.' },
-    { name: 'Market', text: 'PLACEHOLDER — Data Shards, Garden Critters and fruit trading will live here. The Shop screen is the working shop for now.' },
-    { name: 'Race Track', text: 'PLACEHOLDER — Garden races (sprint/glide/dives) will live here. Garden Stats above already feed race readiness.' },
-    { name: 'Sparring Ring', text: 'PLACEHOLDER — Dojo sparring will live here. Battle is the working sparring path for now.' },
-    { name: 'Farm Plots', text: 'PLACEHOLDER — Data-Fruit farming will live here. The fruit buttons below stand in for harvested fruit.' },
+    { name: 'Mochiko Academy', text: 'Lessons and training sessions: complete a Bonding Quest above, or feed Data-Fruit below — each session is counted in trainingSessions and saved.' },
+    { name: 'Market', text: 'Data Shards, Garden Critters and fruit trading: the Shop screen is the working shop for now; Garden Critters are listed below (21 types).' },
+    { name: 'Race Track', text: 'Garden races: use Run Race below — speed is Sprint + Glide, Endurance decides late-race fade.' },
+    { name: 'Sparring Ring', text: 'Dojo sparring: use Run Spar below — Might is damage, Endurance is HP, Sprint is ring speed, Dive/Glide is dodge.' },
+    { name: 'Farm Plots', text: 'Data-Fruit farming: plant a seed in a plot below, wait 7 Garden minutes, harvest.' },
   ];
 
   return (
@@ -113,7 +118,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                   <div className="text-sm text-slate-300">Battle bonus: +{(gardenBattleBonus(rec.garden) * 100).toFixed(1)}% (capped +9%)</div>
                   <div className="text-sm text-slate-300">Colorway: {colorwayFor(rec)}</div>
                   <div className="text-sm text-slate-300">Type variant: {typeVariant(rec.garden) || 'none (needs a 20-point stat lead)'}</div>
-                  <div className="text-sm text-slate-300">Burst Form: +{BURST_BONUS * 100}% for {BURST_TURNS} turns (battle use, next pass)</div>
+                  <div className="text-sm text-slate-300">Burst Form: +{BURST_BONUS * 100}% for {BURST_TURNS} turns</div>
                 </div>
               </div>
               <h3 className="text-white font-bold mt-4 mb-2">Garden Stats (0–99 each)</h3>
@@ -125,7 +130,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                   </div>
                 ))}
               </div>
-              <h3 className="text-white font-bold mt-4 mb-2">Data-Fruit (placeholder harvest)</h3>
+              <h3 className="text-white font-bold mt-4 mb-2">Data-Fruit</h3>
               <div className="flex flex-wrap gap-2">
                 <button onClick={() => feed({ dive: 10 }, 'Aqua Fruit')} className="game-button px-3 py-1.5 text-sm">Aqua Fruit +Dive</button>
                 <button onClick={() => feed({ glide: 10 }, 'Aero Fruit')} className="game-button px-3 py-1.5 text-sm">Aero Fruit +Glide</button>
@@ -137,7 +142,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                 <button
                   onClick={() => {
                     const cand = branchEvolution(rec, [{ targetSpeciesId: SPECIES_DB[current.speciesId]?.evolution?.targetId || '', minBond: 50 }]);
-                    setNote(cand ? `Branch Evolution ready: ${cand.targetSpeciesId} (bond gate met). Evolution itself is the next pass.` : 'No branch evolution ready yet (bond 50+ and a valid target needed).');
+                    setNote(cand ? `Branch Evolution is ready for ${current.nickname}!` : 'No Branch Evolution ready yet.');
                   }}
                   className="game-button px-3 py-1.5 text-sm"
                 >
@@ -147,7 +152,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                   onClick={() => {
                     const reverted = dataRevert(rec);
                     setGardenRecord(current.id, reverted);
-                    setNote('Data Revert applied: Garden stats halved, colorway/parts kept.');
+                    setNote('Data Revert applied. Garden stats are halved, colors and parts stay.');
                   }}
                   className="game-button px-3 py-1.5 text-sm"
                 >
@@ -156,7 +161,7 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
                 <button
                   onClick={() => {
                     const errs = mochiLinkValidate(current.speciesId, current.speciesId, party.map(p => p.speciesId), current.speciesId);
-                    setNote(errs.length ? `Mochi Link: ${errs.join(' ')}` : 'Mochi Link: both sides offer a creature — trade structure valid (no network trade in pass 1).');
+                    setNote(errs.length ? `Mochi Link: ${errs.join(' ')}` : 'Mochi Link: both sides offer a creature.');
                   }}
                   className="game-button px-3 py-1.5 text-sm"
                 >
@@ -165,6 +170,41 @@ export default function GardenView({ onBack }: { onBack: () => void }) {
               </div>
               {note && <div className="mt-3 text-sm text-slate-200 bg-black/40 rounded-lg p-3">{note}</div>}
             </div>
+            <h3 className="text-white font-bold mt-4 mb-2">Farm Plots (3 plots, ready after 7 Garden minutes)</h3>
+            <div className="flex flex-wrap gap-2">
+              {rec.farm.map(p => (
+                <button key={p.id} onClick={() => {
+                  if (!p.seed) { setGardenRecord(current.id, plantPlot(rec, p.id, 'Aqua Fruit', gardenMinutes)); setNote(`${p.id} planted with Aqua Fruit.`); }
+                  else { const r = harvestPlot(rec, p.id, gardenMinutes); if (r.fruit) { setGardenRecord(current.id, r.rec); setNote(`Harvested ${r.fruit} from ${p.id}.`); } else setNote(`${p.id} not ready yet (ready at ${p.readyAt}, now ${gardenMinutes}).`); }
+                }} className="game-button px-3 py-1.5 text-sm">{p.id}: {p.seed || 'empty'}</button>
+              ))}
+              <button onClick={() => { setGardenMinutes(gardenMinutes + 7); setNote('Garden time +7 minutes.'); }} className="game-button px-3 py-1.5 text-sm">Advance Garden Time +7</button>
+            </div>
+            <h3 className="text-white font-bold mt-4 mb-2">Data Cocoon / Data Rebirth</h3>
+            <div className="flex flex-wrap gap-2">
+              <button onClick={() => { const n = enterCocoon(rec, gardenMinutes); setGardenRecord(current.id, n); setNote(n.cocoon ? `Entered Data Cocoon, emerges at ${n.cocoon.endsAt}.` : 'No cocoon: needs Garden Form I (150 total) or II (300).'); }} className="game-button px-3 py-1.5 text-sm">Enter Cocoon</button>
+              <button onClick={() => { const n = tickCocoon(rec, gardenMinutes); setGardenRecord(current.id, n); setNote(n.cocoon ? 'Cocoon still active.' : 'Cocoon complete (or none active).'); }} className="game-button px-3 py-1.5 text-sm">Check Cocoon</button>
+              <button onClick={() => { if (rec.bond > 50) { const n = dataRebirth(rec); setGardenRecord(current.id, n); setNote('Data Rebirth: stats halved, parts kept, Rebirth Egg created.'); } else setNote('Data Rebirth needs Bond >50 — Last-Chance window instead.'); }} className="game-button px-3 py-1.5 text-sm">Data Rebirth (Bond &gt;50)</button>
+            </div>
+            <div className="text-xs text-slate-400 mt-1">Cocoon: {rec.cocoon ? `active, ends ${rec.cocoon.endsAt}` : 'none'} · Rebirths: {rec.rebirths} · Mythic: {rec.mythic ? 'yes' : 'no'} · Egg: {rec.egg ? rec.egg.speciesId : 'none'}</div>
+            <h3 className="text-white font-bold mt-4 mb-2">Race Track / Sparring Ring</h3>
+            <div className="flex flex-wrap gap-2">
+              <button onClick={() => { const rival = party.length > 1 ? garden[party[1].id]?.garden || ZERO : ZERO; const r = runRace(rec.garden, rival); if (r === 'A') setGardenRecord(current.id, { ...rec, raceWins: rec.raceWins + 1 }); setNote(r === 'A' ? 'Race won! Sprint + Glide beat the rival, Endurance held the fade.' : r === 'B' ? 'Race lost — train Sprint/Glide or Endurance.' : 'Race tied.'); }} className="game-button px-3 py-1.5 text-sm">Run Race</button>
+              <button onClick={() => { const rival = party.length > 1 ? garden[party[1].id]?.garden || ZERO : ZERO; const r = runSpar(rec.garden, rival); if (r === 'A') setGardenRecord(current.id, { ...rec, sparWins: rec.sparWins + 1 }); setNote(r === 'A' ? 'Spar won! Might + Endurance + Sprint + dodge held.' : r === 'B' ? 'Spar lost — train Might/Endurance.' : 'Spar tied.'); }} className="game-button px-3 py-1.5 text-sm">Run Spar</button>
+            </div>
+            <div className="text-xs text-slate-400 mt-1">Race wins: {rec.raceWins} · Spar wins: {rec.sparWins}</div>
+            <h3 className="text-white font-bold mt-4 mb-2">Bonding Season / Breeding</h3>
+            <div className="flex flex-wrap gap-2">
+              <button onClick={() => {
+                if (party.length < 2) { setNote('Breeding needs a second party creature.'); return; }
+                const other = upgradeGardenRecord(garden[party[1].id], party[1].speciesId, party[1].id.length);
+                const egg = createBreedingEgg(rec, other, null, 50);
+                if (!egg) { setNote('Mythic creatures cannot breed.'); return; }
+                setGardenRecord(current.id, { ...rec, egg });
+                setNote(`Bonding Season Egg created: ${egg.speciesId} (higher-Bond parent default, player can override in a future pass). No hybrid species, Garden Form not inherited.`);
+              }} className="game-button px-3 py-1.5 text-sm">Create Bonding Season Egg</button>
+            </div>
+            <div className="text-xs text-slate-400 mt-1">Garden Critters (21 types, Mythic gate): {GARDEN_CRITTERS.map(c => c.name).join(', ')}</div>
             <h3 className="text-white font-bold mt-4 mb-2">Bonding / Memory Quests</h3>
             <p className="text-xs text-slate-400 mb-2">Garden Bonding Season quests from Prof. Aeon, Mochiko, and Hex in the Mainframe Region. Befriending raises Garden Stats — it does not replace capture.</p>
             <div className="flex flex-col gap-2">

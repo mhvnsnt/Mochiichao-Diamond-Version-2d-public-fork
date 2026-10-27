@@ -1,3 +1,18 @@
+# Mochiichao main music theme (Mars, 2026-10-26 — standing)
+
+The main music theme for the whole game is: **hip hop + hyperpop + digicore,
+with rock and metal mixed in sometimes, and anime soundtrack type music.**
+This is the genre identity every track branches from — title, intro, main menu,
+and every future track Mars directs. Digicore here means the hyperpop
+microgenre: an exaggerated take on popular music drawing on electronic, hip hop,
+and dance (the NTS digicore guide lists Deko's PHANTASY STAR ONLINE ft. Yameii
+alongside Jane Remover, 100 gecs, Glaive, ericdoa, and midwxst). Anime
+soundtrack means the anime-opening feel: big hooks, bright pitched-up vocals,
+dreamy space, dramatic builds. Rock/metal is a spice, not the base — it comes
+in on tracks where Mars asks for it (like the heavy distorted guitar already
+in the official title/intro v3), never as a replacement for the hip-hop /
+hyperpop / digicore core.
+
 # Mochiichao Music Themes — reusable theme registry
 
 Mars, 2026-10-25: save the themes we made, because we are going to make

@@ -1,0 +1,714 @@
+{
+ "creature": "reaperdile",
+ "view": "back",
+ "tag": "trueback-sets-20261026",
+ "date": "2026-10-26",
+ "staging_only": true,
+ "no_pr": true,
+ "method": "Batch-1 compose pipeline verbatim at 256px, post-rework direction tables (chromejaww manifest): attacks RIGHT, hurts LEFT. No face overlays (true backs, no faces). Body sets only \u2014 back-view hand pass is a separate running job, NOT included.",
+ "source_pixel_cell": "animation/expanded-scope/trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png",
+ "direction": "right",
+ "face": {
+  "face_visible_in_back_cell": false,
+  "back_overlay_action": "none \u2014 true back, no face visible"
+ },
+ "direction_check": {
+  "attack_impacts_centroid_right": "10/10",
+  "hurt_primaries_centroid_left": "4/4"
+ },
+ "sets": {
+  "atk_physical_shadow_lunge": {
+   "kind": "attack",
+   "family": "physical",
+   "cell_count": 5,
+   "total_ms": 790,
+   "timing_diff_ms": 0,
+   "files": [
+    "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-00.png",
+    "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-01.png",
+    "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-02.png",
+    "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-03.png",
+    "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-04.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-00.png",
+     "duration_ms": 180,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.15,
+      "sy": 0.82,
+      "dy": 4
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-01.png",
+     "duration_ms": 120,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.92,
+      "sy": 1.08,
+      "rot": 4,
+      "dx": 8
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-02.png",
+     "duration_ms": 100,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.18,
+      "sy": 0.88,
+      "dx": 30
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-03.png",
+     "duration_ms": 90,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.25,
+      "sy": 0.75,
+      "dx": 38
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_physical_shadow_lunge-cell-04.png",
+     "duration_ms": 300,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {},
+     "gate": {
+      "identity_byte_identical_to_source": true
+     }
+    }
+   ]
+  },
+  "atk_special_umbral_bolt": {
+   "kind": "attack",
+   "family": "special",
+   "cell_count": 5,
+   "total_ms": 860,
+   "timing_diff_ms": 0,
+   "files": [
+    "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-00.png",
+    "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-01.png",
+    "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-02.png",
+    "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-03.png",
+    "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-04.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-00.png",
+     "duration_ms": 200,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.95,
+      "sy": 1.05
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-01.png",
+     "duration_ms": 140,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.9,
+      "sy": 1.12,
+      "rot": 3,
+      "dx": 10
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-02.png",
+     "duration_ms": 110,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.05,
+      "sy": 0.95,
+      "dx": 24
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-03.png",
+     "duration_ms": 110,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.95,
+      "sy": 1.0,
+      "dx": 24
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_special_umbral_bolt-cell-04.png",
+     "duration_ms": 300,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {},
+     "gate": {
+      "identity_byte_identical_to_source": true
+     }
+    }
+   ]
+  },
+  "atk_signature_reaper_sweep": {
+   "kind": "attack",
+   "family": "signature",
+   "cell_count": 6,
+   "total_ms": 1080,
+   "timing_diff_ms": 0,
+   "files": [
+    "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-00.png",
+    "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-01.png",
+    "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-02.png",
+    "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-03.png",
+    "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-04.png",
+    "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-05.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-00.png",
+     "duration_ms": 200,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.0,
+      "sy": 1.0
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-01.png",
+     "duration_ms": 220,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.88,
+      "sy": 1.15,
+      "dy": -2
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-02.png",
+     "duration_ms": 100,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.1,
+      "sy": 0.92,
+      "dx": 20
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-03.png",
+     "duration_ms": 140,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.15,
+      "sy": 0.9,
+      "dx": 20
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-04.png",
+     "duration_ms": 120,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.05,
+      "sy": 0.95,
+      "dx": 10
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_signature_reaper_sweep-cell-05.png",
+     "duration_ms": 300,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {},
+     "gate": {
+      "identity_byte_identical_to_source": true
+     }
+    }
+   ]
+  },
+  "atk_heavy_doom_crash_finisher": {
+   "kind": "attack",
+   "family": "heavy",
+   "cell_count": 6,
+   "total_ms": 1160,
+   "timing_diff_ms": 0,
+   "files": [
+    "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-00.png",
+    "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-01.png",
+    "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-02.png",
+    "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-03.png",
+    "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-04.png",
+    "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-05.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-00.png",
+     "duration_ms": 220,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.2,
+      "sy": 0.78,
+      "dy": 6
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-01.png",
+     "duration_ms": 160,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.85,
+      "sy": 1.2,
+      "dy": -6
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-02.png",
+     "duration_ms": 140,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.15,
+      "sy": 0.95,
+      "dx": 10
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-03.png",
+     "duration_ms": 120,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.3,
+      "sy": 0.72,
+      "dx": 16
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-04.png",
+     "duration_ms": 100,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.1,
+      "sy": 0.85,
+      "dx": 8
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-atk_heavy_doom_crash_finisher-cell-05.png",
+     "duration_ms": 420,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.98,
+      "sy": 0.98
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    }
+   ]
+  },
+  "hurt_light_flinch": {
+   "kind": "hurt",
+   "family": "hurt_light_flinch",
+   "cell_count": 3,
+   "total_ms": 520,
+   "timing_diff_ms": 0,
+   "files": [
+    "reaperdile-trueback-20261026-hurt_light_flinch-cell-00.png",
+    "reaperdile-trueback-20261026-hurt_light_flinch-cell-01.png",
+    "reaperdile-trueback-20261026-hurt_light_flinch-cell-02.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-hurt_light_flinch-cell-00.png",
+     "duration_ms": 120,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.95,
+      "sy": 1.02,
+      "rot": -3,
+      "dx": -8
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_light_flinch-cell-01.png",
+     "duration_ms": 180,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.9,
+      "sy": 1.05,
+      "rot": -5,
+      "dx": -14
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_light_flinch-cell-02.png",
+     "duration_ms": 220,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {},
+     "gate": {
+      "identity_byte_identical_to_source": true
+     }
+    }
+   ]
+  },
+  "hurt_heavy_knockback": {
+   "kind": "hurt",
+   "family": "hurt_heavy_knockback",
+   "cell_count": 4,
+   "total_ms": 700,
+   "timing_diff_ms": 0,
+   "files": [
+    "reaperdile-trueback-20261026-hurt_heavy_knockback-cell-00.png",
+    "reaperdile-trueback-20261026-hurt_heavy_knockback-cell-01.png",
+    "reaperdile-trueback-20261026-hurt_heavy_knockback-cell-02.png",
+    "reaperdile-trueback-20261026-hurt_heavy_knockback-cell-03.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-hurt_heavy_knockback-cell-00.png",
+     "duration_ms": 80,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "flash": 0.55,
+      "dx": -4
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_heavy_knockback-cell-01.png",
+     "duration_ms": 140,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.92,
+      "sy": 1.05,
+      "rot": -10,
+      "dx": -30
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_heavy_knockback-cell-02.png",
+     "duration_ms": 180,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.1,
+      "sy": 0.85,
+      "dx": -38
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_heavy_knockback-cell-03.png",
+     "duration_ms": 300,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {},
+     "gate": {
+      "identity_byte_identical_to_source": true
+     }
+    }
+   ]
+  },
+  "hurt_status_wobble": {
+   "kind": "hurt",
+   "family": "hurt_status_wobble",
+   "cell_count": 3,
+   "total_ms": 740,
+   "timing_diff_ms": 0,
+   "files": [
+    "reaperdile-trueback-20261026-hurt_status_wobble-cell-00.png",
+    "reaperdile-trueback-20261026-hurt_status_wobble-cell-01.png",
+    "reaperdile-trueback-20261026-hurt_status_wobble-cell-02.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-hurt_status_wobble-cell-00.png",
+     "duration_ms": 220,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "rot": 8,
+      "dx": -6
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_status_wobble-cell-01.png",
+     "duration_ms": 220,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "rot": -8,
+      "dx": 6
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_status_wobble-cell-02.png",
+     "duration_ms": 300,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "tint": [
+       120,
+       220,
+       120,
+       255
+      ]
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    }
+   ]
+  },
+  "hurt_near_faint_stagger": {
+   "kind": "hurt",
+   "family": "hurt_near_faint_stagger",
+   "cell_count": 4,
+   "total_ms": 1180,
+   "timing_diff_ms": 0,
+   "files": [
+    "reaperdile-trueback-20261026-hurt_near_faint_stagger-cell-00.png",
+    "reaperdile-trueback-20261026-hurt_near_faint_stagger-cell-01.png",
+    "reaperdile-trueback-20261026-hurt_near_faint_stagger-cell-02.png",
+    "reaperdile-trueback-20261026-hurt_near_faint_stagger-cell-03.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-hurt_near_faint_stagger-cell-00.png",
+     "duration_ms": 260,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.95,
+      "sy": 1.0,
+      "rot": 6,
+      "dx": -6
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_near_faint_stagger-cell-01.png",
+     "duration_ms": 260,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.05,
+      "sy": 0.88,
+      "rot": -4,
+      "darken": 0.82,
+      "dy": 4
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_near_faint_stagger-cell-02.png",
+     "duration_ms": 260,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 0.98,
+      "sy": 0.92,
+      "rot": 4,
+      "darken": 0.82
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    },
+    {
+     "file": "reaperdile-trueback-20261026-hurt_near_faint_stagger-cell-03.png",
+     "duration_ms": 400,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "sx": 1.05,
+      "sy": 0.9,
+      "darken": 0.88
+     },
+     "gate": {
+      "identity_byte_identical_to_source": false,
+      "rederived_from_source_with_recorded_transform": true,
+      "no_overlay_pixels": true
+     }
+    }
+   ]
+  },
+  "back_idle": {
+   "kind": "idle",
+   "cell_count": 4,
+   "total_ms": 2400,
+   "front_idle_total_ms": 2400,
+   "timing_diff_ms": 0,
+   "front_idle_source": "animation/idle/reaperdile/reaperdile.idle.timing-20261026.json",
+   "files": [
+    "reaperdile-trueback-20261026-back-idle-cell-00.png",
+    "reaperdile-trueback-20261026-back-idle-cell-01.png",
+    "reaperdile-trueback-20261026-back-idle-cell-02.png",
+    "reaperdile-trueback-20261026-back-idle-cell-03.png"
+   ],
+   "cells": [
+    {
+     "file": "reaperdile-trueback-20261026-back-idle-cell-00.png",
+     "duration_ms": 700,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {},
+     "note": "gentle bob from pixel true-back cell"
+    },
+    {
+     "file": "reaperdile-trueback-20261026-back-idle-cell-01.png",
+     "duration_ms": 500,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "dy": -12
+     },
+     "note": "gentle bob from pixel true-back cell"
+    },
+    {
+     "file": "reaperdile-trueback-20261026-back-idle-cell-02.png",
+     "duration_ms": 700,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {},
+     "note": "gentle bob from pixel true-back cell"
+    },
+    {
+     "file": "reaperdile-trueback-20261026-back-idle-cell-03.png",
+     "duration_ms": 500,
+     "source": "trueback-pixel-20261026/cells/reaperdile-back-pixel-shadowfree-20261026.png (Step 1 pixel true-back cell)",
+     "transform_back": {
+      "dy": 8
+     },
+     "note": "gentle bob from pixel true-back cell"
+    }
+   ]
+  }
+ },
+ "gifs": {
+  "attacks": "reaperdile-trueback-attacks-20261026.gif",
+  "hurts": "reaperdile-trueback-hurts-20261026.gif",
+  "back_idle": "reaperdile-trueback-idle-20261026.gif"
+ }
+}

@@ -1,0 +1,117 @@
+{
+  "source": "pokebw2/res/types/*.json",
+  "sourceRepo": "fuddlesworth/pokebw2",
+  "sourceCommit": "e522642f9ec496783642df075f05fcd07d3cbc1b",
+  "note": "Source JSONs hold a name only. TYPE_NULL (index 17, typeless move) has no JSON file and is recorded as a constant only.",
+  "count": 17,
+  "constantCount": 18,
+  "constantsWithoutJson": [
+    "TYPE_NULL"
+  ],
+  "unresolvedConstants": [],
+  "effectivenessChart": "NOT EXTRACTED - not present in res/*.json; not invented, not copied from src code here.",
+  "types": [
+    {
+      "sourceFile": "bug.json",
+      "sourceConstant": "TYPE_BUG",
+      "index": 6,
+      "name": "Bug"
+    },
+    {
+      "sourceFile": "dark.json",
+      "sourceConstant": "TYPE_DARK",
+      "index": 16,
+      "name": "Dark"
+    },
+    {
+      "sourceFile": "dragon.json",
+      "sourceConstant": "TYPE_DRAGON",
+      "index": 15,
+      "name": "Dragon"
+    },
+    {
+      "sourceFile": "electric.json",
+      "sourceConstant": "TYPE_ELECTRIC",
+      "index": 12,
+      "name": "Electric"
+    },
+    {
+      "sourceFile": "fighting.json",
+      "sourceConstant": "TYPE_FIGHTING",
+      "index": 1,
+      "name": "Fighting"
+    },
+    {
+      "sourceFile": "fire.json",
+      "sourceConstant": "TYPE_FIRE",
+      "index": 9,
+      "name": "Fire"
+    },
+    {
+      "sourceFile": "flying.json",
+      "sourceConstant": "TYPE_FLYING",
+      "index": 2,
+      "name": "Flying"
+    },
+    {
+      "sourceFile": "ghost.json",
+      "sourceConstant": "TYPE_GHOST",
+      "index": 7,
+      "name": "Ghost"
+    },
+    {
+      "sourceFile": "grass.json",
+      "sourceConstant": "TYPE_GRASS",
+      "index": 11,
+      "name": "Grass"
+    },
+    {
+      "sourceFile": "ground.json",
+      "sourceConstant": "TYPE_GROUND",
+      "index": 4,
+      "name": "Ground"
+    },
+    {
+      "sourceFile": "ice.json",
+      "sourceConstant": "TYPE_ICE",
+      "index": 14,
+      "name": "Ice"
+    },
+    {
+      "sourceFile": "normal.json",
+      "sourceConstant": "TYPE_NORMAL",
+      "index": 0,
+      "name": "Normal"
+    },
+    {
+      "sourceFile": "poison.json",
+      "sourceConstant": "TYPE_POISON",
+      "index": 3,
+      "name": "Poison"
+    },
+    {
+      "sourceFile": "psychic.json",
+      "sourceConstant": "TYPE_PSYCHIC",
+      "index": 13,
+      "name": "Psychic"
+    },
+    {
+      "sourceFile": "rock.json",
+      "sourceConstant": "TYPE_ROCK",
+      "index": 5,
+      "name": "Rock"
+    },
+    {
+      "sourceFile": "steel.json",
+      "sourceConstant": "TYPE_STEEL",
+      "index": 8,
+      "name": "Steel"
+    },
+    {
+      "sourceFile": "water.json",
+      "sourceConstant": "TYPE_WATER",
+      "index": 10,
+      "name": "Water"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+ "creature": "reaperdile",
+ "roster_id": "006",
+ "status": "done",
+ "method": "generated sheet, quarter-split (or stated grid), border-connected white-bg flood removal (scipy label), interior whites kept, flat bottom shadow-ellipse strip where present, fit to 64x64 RGBA",
+ "frames": [
+  {
+   "file": "reaperdile_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "reaperdile_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "reaperdile_walk_up_0_clean.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "reaperdile_walk_up_1_clean.png",
+   "role": "walk_up_1"
+  },
+  {
+   "file": "reaperdile_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "reaperdile_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "reaperdile_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "reaperdile_walk_right_1.png",
+   "role": "walk_right_1"
+  }
+ ],
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "movement_note": "Silver armored biped, teal accents, horned head; back armored, faceless. Reference-driven likeness from locked battle_front cell.",
+ "raw_sheet": "media-generation-reaperdile-walk-v1-0-4f44183d-67c2-4bcc-82a6-8bed985a52ea.webp",
+ "spot_check": "spot_check.py Gate A: up_0 87px + up_1 91px trapped-white between feet cut to _clean files; originals retained",
+ "eye_check": "Enlarged + 64px montage PASS. Silver armored biped, teal accents; back armored faceless; sides big-stride walk poses. Reference-driven likeness from locked battle_front cell."
+}

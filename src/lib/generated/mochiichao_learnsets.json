@@ -1,0 +1,2689 @@
+{
+  "meta": {
+    "rosterCount": 47,
+    "levelSource": "species.ts BASIC_MOVES pattern (Lv1 TACKLE, Lv5 QUICK_ATTACK) + roster-element theme moves",
+    "tmCatalogueCount": 20,
+    "hmNote": "HM shape present, assignments 0/47 -- no field system exists in Mochiichao code yet; see SOURCE-MAP.md PROPOSED HM mapping (not data).",
+    "eggRule": "Egg moves only on base-form species (17 lines); evolved species [] by design; single-stage 041/331 [] (no breeding line in roster).",
+    "note": "IDs/names follow global_roster.json (roster-wins, Mars 2026-10-26: 003 AquariiOS, 005 Chromejaww, 039 Shellguard, 040 Dreadtoise). Former drift resolved; see docs/roster-wins-corrections-2026-10-26.md."
+  },
+  "tmCatalogue": {
+    "TM01": "GUARD_WALL",
+    "TM02": "SWIFT_STRIKE",
+    "TM03": "COLD_STARE",
+    "TM04": "WAR_CRY",
+    "TM05": "HEAD_RAM",
+    "TM06": "VENOM_STING",
+    "TM07": "DUST_SLAP",
+    "TM08": "WIND_GUST",
+    "TM09": "CLAW_SWIPE",
+    "TM10": "MIND_JAB",
+    "TM11": "WEB_SHOT",
+    "TM12": "STONE_TOSS",
+    "TM13": "STATIC_JOLT",
+    "TM14": "EMBER_FLICK",
+    "TM15": "LEAF_WHIP",
+    "TM16": "BUBBLE_BURST",
+    "TM17": "CHOP_STRIKE",
+    "TM18": "GHOST_TOUCH",
+    "TM19": "FROST_JAB",
+    "TM20": "GLIMMER_BURST"
+  },
+  "hmCatalogue": {},
+  "species": {
+    "001": {
+      "id": "001",
+      "name": "Mochii",
+      "elements": [
+        "Aqua"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "AQUA_SHOT"
+        },
+        {
+          "level": 13,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 18,
+          "moveId": "BUBBLE_BURST"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM08",
+        "TM09",
+        "TM16"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "COLD_STARE"
+      ],
+      "egg": [
+        "WHIRL_TRAP",
+        "CHILL_WIND",
+        "MIND_JAB"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "002": {
+      "id": "002",
+      "name": "Tiidebiite",
+      "elements": [
+        "Aqua",
+        "Mythic"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "AQUA_SHOT"
+        },
+        {
+          "level": 13,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 18,
+          "moveId": "AQUA_JET"
+        },
+        {
+          "level": 24,
+          "moveId": "BUBBLE_BURST"
+        },
+        {
+          "level": 32,
+          "moveId": "SURGE_RIDE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM08",
+        "TM09",
+        "TM16",
+        "TM17"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "COLD_STARE",
+        "INNER_FOCUS"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "003": {
+      "id": "003",
+      "name": "AquariiOS",
+      "elements": [
+        "Aqua",
+        "Mythic"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "AQUA_SHOT"
+        },
+        {
+          "level": 13,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 18,
+          "moveId": "AQUA_JET"
+        },
+        {
+          "level": 24,
+          "moveId": "BUBBLE_BURST"
+        },
+        {
+          "level": 36,
+          "moveId": "MIND_BLAST"
+        },
+        {
+          "level": 45,
+          "moveId": "HYDRO_SURGE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM08",
+        "TM09",
+        "TM10",
+        "TM16",
+        "TM17"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "COLD_STARE",
+        "INNER_FOCUS",
+        "MIND_SHIELD"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "004": {
+      "id": "004",
+      "name": "Razorgater",
+      "elements": [
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 13,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 18,
+          "moveId": "STEEL_TAIL"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM09",
+        "TM12",
+        "TM16"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM"
+      ],
+      "egg": [
+        "CHROME_WING",
+        "DRAGON_SURGE",
+        "UMBRAL_PULSE"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "005": {
+      "id": "005",
+      "name": "Chromejaww",
+      "elements": [
+        "Chrome",
+        "Strike"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 13,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 18,
+          "moveId": "STEEL_TAIL"
+        },
+        {
+          "level": 22,
+          "moveId": "CRUNCH"
+        },
+        {
+          "level": 28,
+          "moveId": "UMBRAL_PULSE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM09",
+        "TM12",
+        "TM16",
+        "TM18"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM",
+        "SHADOW_AMBUSH"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "006": {
+      "id": "006",
+      "name": "Reaperdile",
+      "elements": [
+        "Chrome",
+        "Strike"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 13,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 18,
+          "moveId": "STEEL_TAIL"
+        },
+        {
+          "level": 22,
+          "moveId": "CRUNCH"
+        },
+        {
+          "level": 30,
+          "moveId": "FLASH_CANNON_MOVE"
+        },
+        {
+          "level": 38,
+          "moveId": "IRON_BARRAGE"
+        },
+        {
+          "level": 46,
+          "moveId": "DRAGON_SURGE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM09",
+        "TM10",
+        "TM12",
+        "TM16",
+        "TM18"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM",
+        "SHADOW_AMBUSH",
+        "ANCIENT_SURGE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "007": {
+      "id": "007",
+      "name": "Tyrage",
+      "elements": [
+        "Core"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 13,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 18,
+          "moveId": "STONE_TOSS"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM"
+      ],
+      "egg": [
+        "ANCIENT_SURGE",
+        "STONE_BURST",
+        "CURSE_GAZE"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "008": {
+      "id": "008",
+      "name": "Duneclaw",
+      "elements": [
+        "Core",
+        "Umbral"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 13,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 18,
+          "moveId": "STONE_TOSS"
+        },
+        {
+          "level": 24,
+          "moveId": "MUD_PELLET"
+        },
+        {
+          "level": 30,
+          "moveId": "STONE_SLIDE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12",
+        "TM18"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM",
+        "ANCIENT_SURGE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "009": {
+      "id": "009",
+      "name": "Oblivirex",
+      "elements": [
+        "Core",
+        "Umbral"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 13,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 18,
+          "moveId": "STONE_TOSS"
+        },
+        {
+          "level": 24,
+          "moveId": "MUD_PELLET"
+        },
+        {
+          "level": 30,
+          "moveId": "STONE_SLIDE"
+        },
+        {
+          "level": 38,
+          "moveId": "EARTH_TREMOR"
+        },
+        {
+          "level": 46,
+          "moveId": "UMBRAL_ORB"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12",
+        "TM18",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM",
+        "ANCIENT_SURGE",
+        "CURSE_GAZE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "010": {
+      "id": "010",
+      "name": "Kittember",
+      "elements": [
+        "Beast",
+        "Flame"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "EMBER_TOSS"
+        },
+        {
+          "level": 12,
+          "moveId": "EMBER_FLICK"
+        },
+        {
+          "level": 16,
+          "moveId": "CINDER_WHEEL"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM04",
+        "TM09",
+        "TM14",
+        "TM15"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "HEAD_RAM"
+      ],
+      "egg": [
+        "GHOST_FLAME",
+        "RAGE_STORM",
+        "SWIFT_STRIKE"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "011": {
+      "id": "011",
+      "name": "Pyropaw",
+      "elements": [
+        "Beast",
+        "Flame"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "EMBER_TOSS"
+        },
+        {
+          "level": 12,
+          "moveId": "EMBER_FLICK"
+        },
+        {
+          "level": 16,
+          "moveId": "CINDER_WHEEL"
+        },
+        {
+          "level": 22,
+          "moveId": "FIRE_STREAM"
+        },
+        {
+          "level": 30,
+          "moveId": "HEAT_SURGE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM04",
+        "TM09",
+        "TM14",
+        "TM15",
+        "TM17"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "HEAD_RAM",
+        "GHOST_FLAME"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "012": {
+      "id": "012",
+      "name": "Manticlaw",
+      "elements": [
+        "Beast",
+        "Flame"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "EMBER_TOSS"
+        },
+        {
+          "level": 12,
+          "moveId": "EMBER_FLICK"
+        },
+        {
+          "level": 16,
+          "moveId": "CINDER_WHEEL"
+        },
+        {
+          "level": 22,
+          "moveId": "FIRE_STREAM"
+        },
+        {
+          "level": 30,
+          "moveId": "HEAT_SURGE"
+        },
+        {
+          "level": 38,
+          "moveId": "INFERNO_WAVE"
+        },
+        {
+          "level": 46,
+          "moveId": "RAGE_STORM"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM04",
+        "TM09",
+        "TM14",
+        "TM15",
+        "TM17",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "HEAD_RAM",
+        "GHOST_FLAME",
+        "RAGE_STORM"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "013": {
+      "id": "013",
+      "name": "Pupbble",
+      "elements": [
+        "Beast",
+        "Earth"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 12,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 16,
+          "moveId": "BONE_TOSS"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "HEAD_RAM"
+      ],
+      "egg": [
+        "STONE_SLIDE",
+        "EARTH_TREMOR",
+        "WAR_CRY"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "014": {
+      "id": "014",
+      "name": "Terradog",
+      "elements": [
+        "Beast",
+        "Earth"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 12,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 16,
+          "moveId": "BONE_TOSS"
+        },
+        {
+          "level": 22,
+          "moveId": "MUD_PELLET"
+        },
+        {
+          "level": 28,
+          "moveId": "EARTH_POWER"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12",
+        "TM17"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "HEAD_RAM",
+        "STONE_SLIDE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "015": {
+      "id": "015",
+      "name": "Quakehound",
+      "elements": [
+        "Beast",
+        "Earth"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 12,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 16,
+          "moveId": "BONE_TOSS"
+        },
+        {
+          "level": 22,
+          "moveId": "MUD_PELLET"
+        },
+        {
+          "level": 28,
+          "moveId": "EARTH_POWER"
+        },
+        {
+          "level": 36,
+          "moveId": "EARTH_TREMOR"
+        },
+        {
+          "level": 44,
+          "moveId": "STONE_SLIDE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12",
+        "TM17",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "WAR_CRY",
+        "HEAD_RAM",
+        "STONE_SLIDE",
+        "ANCIENT_SURGE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "016": {
+      "id": "016",
+      "name": "Squirmite",
+      "elements": [
+        "Bug",
+        "Silk"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 7,
+          "moveId": "WEB_SHOT"
+        },
+        {
+          "level": 10,
+          "moveId": "LEAF_WHIP"
+        },
+        {
+          "level": 14,
+          "moveId": "TWIN_STING"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM11",
+        "TM15",
+        "TM16"
+      ],
+      "hm": [],
+      "tutor": [
+        "SPORE_CLOUD",
+        "STUN_POLLEN"
+      ],
+      "egg": [
+        "SPORE_CLOUD",
+        "DRAIN_BITE",
+        "SIGNAL_FLASH"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "017": {
+      "id": "017",
+      "name": "Cocoonode",
+      "elements": [
+        "Bug",
+        "Silk"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 7,
+          "moveId": "WEB_SHOT"
+        },
+        {
+          "level": 10,
+          "moveId": "LEAF_WHIP"
+        },
+        {
+          "level": 14,
+          "moveId": "TWIN_STING"
+        },
+        {
+          "level": 18,
+          "moveId": "IRON_FORTRESS"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM11",
+        "TM15",
+        "TM16",
+        "TM19"
+      ],
+      "hm": [],
+      "tutor": [
+        "SPORE_CLOUD",
+        "STUN_POLLEN",
+        "IRON_FORTRESS"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "018": {
+      "id": "018",
+      "name": "Mothrix",
+      "elements": [
+        "Bug",
+        "Silk"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 7,
+          "moveId": "WEB_SHOT"
+        },
+        {
+          "level": 10,
+          "moveId": "LEAF_WHIP"
+        },
+        {
+          "level": 14,
+          "moveId": "TWIN_STING"
+        },
+        {
+          "level": 18,
+          "moveId": "IRON_FORTRESS"
+        },
+        {
+          "level": 26,
+          "moveId": "SIGNAL_FLASH"
+        },
+        {
+          "level": 34,
+          "moveId": "PETAL_BARRAGE"
+        },
+        {
+          "level": 42,
+          "moveId": "LEAF_EDGE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM11",
+        "TM15",
+        "TM16",
+        "TM19",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "SPORE_CLOUD",
+        "STUN_POLLEN",
+        "DRAIN_BITE",
+        "SOLAR_BLAST"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "019": {
+      "id": "019",
+      "name": "Zephling",
+      "elements": [
+        "Aero",
+        "Wind"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "GUST_WAVE"
+        },
+        {
+          "level": 12,
+          "moveId": "WIND_GUST"
+        },
+        {
+          "level": 16,
+          "moveId": "BEAK_JAB"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM08",
+        "TM09",
+        "TM13",
+        "TM16"
+      ],
+      "hm": [],
+      "tutor": [
+        "SWIFT_STRIKE",
+        "WAR_CRY"
+      ],
+      "egg": [
+        "TRUE_WING",
+        "SKY_DIVE",
+        "SWIFT_STRIKE"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "020": {
+      "id": "020",
+      "name": "Aerobeak",
+      "elements": [
+        "Aero",
+        "Wind"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "GUST_WAVE"
+        },
+        {
+          "level": 12,
+          "moveId": "WIND_GUST"
+        },
+        {
+          "level": 16,
+          "moveId": "BEAK_JAB"
+        },
+        {
+          "level": 22,
+          "moveId": "DRILL_BEAK"
+        },
+        {
+          "level": 30,
+          "moveId": "WING_ASSAULT"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM08",
+        "TM09",
+        "TM13",
+        "TM16",
+        "TM17"
+      ],
+      "hm": [],
+      "tutor": [
+        "SWIFT_STRIKE",
+        "WAR_CRY",
+        "TRUE_WING"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "021": {
+      "id": "021",
+      "name": "Stormtalon",
+      "elements": [
+        "Aero",
+        "Wind"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "GUST_WAVE"
+        },
+        {
+          "level": 12,
+          "moveId": "WIND_GUST"
+        },
+        {
+          "level": 16,
+          "moveId": "BEAK_JAB"
+        },
+        {
+          "level": 22,
+          "moveId": "DRILL_BEAK"
+        },
+        {
+          "level": 30,
+          "moveId": "WING_ASSAULT"
+        },
+        {
+          "level": 38,
+          "moveId": "TRUE_WING"
+        },
+        {
+          "level": 46,
+          "moveId": "SKY_DIVE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM08",
+        "TM09",
+        "TM13",
+        "TM16",
+        "TM17",
+        "TM19"
+      ],
+      "hm": [],
+      "tutor": [
+        "SWIFT_STRIKE",
+        "WAR_CRY",
+        "TRUE_WING",
+        "SKY_DIVE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "022": {
+      "id": "022",
+      "name": "Finblade",
+      "elements": [
+        "Aqua",
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 14,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 22,
+          "moveId": "STEEL_TAIL"
+        },
+        {
+          "level": 28,
+          "moveId": "BUBBLE_BURST"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM09",
+        "TM12",
+        "TM16"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "CHROME_WING"
+      ],
+      "egg": [
+        "CRAB_SNAP",
+        "TIDE_SPOUT",
+        "IRON_CLAW"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "023": {
+      "id": "023",
+      "name": "Megalochrome",
+      "elements": [
+        "Aqua",
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 14,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 22,
+          "moveId": "STEEL_TAIL"
+        },
+        {
+          "level": 28,
+          "moveId": "BUBBLE_BURST"
+        },
+        {
+          "level": 36,
+          "moveId": "IRON_BARRAGE"
+        },
+        {
+          "level": 44,
+          "moveId": "SURGE_RIDE"
+        },
+        {
+          "level": 52,
+          "moveId": "CHROME_WING"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM09",
+        "TM12",
+        "TM16",
+        "TM18",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "CHROME_WING",
+        "STEEL_TAIL"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "024": {
+      "id": "024",
+      "name": "Floatcalf",
+      "elements": [
+        "Aqua",
+        "Neon"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 14,
+          "moveId": "STATIC_JOLT"
+        },
+        {
+          "level": 22,
+          "moveId": "BUBBLE_BURST"
+        },
+        {
+          "level": 30,
+          "moveId": "STATIC_WAVE"
+        },
+        {
+          "level": 38,
+          "moveId": "SURGE_RIDE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM08",
+        "TM13",
+        "TM16",
+        "TM19"
+      ],
+      "hm": [],
+      "tutor": [
+        "CHARGE_UP",
+        "CHILL_WIND"
+      ],
+      "egg": [
+        "STORM_CALL",
+        "CHILL_WIND",
+        "GLIMMER_BURST"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "025": {
+      "id": "025",
+      "name": "Astroleviathan",
+      "elements": [
+        "Aqua",
+        "Neon"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 14,
+          "moveId": "STATIC_JOLT"
+        },
+        {
+          "level": 22,
+          "moveId": "BUBBLE_BURST"
+        },
+        {
+          "level": 30,
+          "moveId": "STATIC_WAVE"
+        },
+        {
+          "level": 38,
+          "moveId": "SURGE_RIDE"
+        },
+        {
+          "level": 48,
+          "moveId": "HYDRO_SURGE"
+        },
+        {
+          "level": 56,
+          "moveId": "STORM_CALL"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM08",
+        "TM13",
+        "TM16",
+        "TM19",
+        "TM20",
+        "TM10"
+      ],
+      "hm": [],
+      "tutor": [
+        "CHARGE_UP",
+        "CHILL_WIND",
+        "MIND_SHIELD"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "026": {
+      "id": "026",
+      "name": "Inklet",
+      "elements": [
+        "Aqua",
+        "Umbral"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 12,
+          "moveId": "VENOM_STING"
+        },
+        {
+          "level": 18,
+          "moveId": "GHOST_TOUCH"
+        },
+        {
+          "level": 22,
+          "moveId": "SMOG_CLOUD"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM06",
+        "TM16",
+        "TM18",
+        "TM09"
+      ],
+      "hm": [],
+      "tutor": [
+        "TOXIN_CLOUD",
+        "CURSE_GAZE"
+      ],
+      "egg": [
+        "TOXIN_CLOUD",
+        "DREAM_BITE",
+        "PHANTOM_FIST"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "027": {
+      "id": "027",
+      "name": "Toxitacle",
+      "elements": [
+        "Aqua",
+        "Umbral"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 12,
+          "moveId": "VENOM_STING"
+        },
+        {
+          "level": 18,
+          "moveId": "GHOST_TOUCH"
+        },
+        {
+          "level": 22,
+          "moveId": "SMOG_CLOUD"
+        },
+        {
+          "level": 28,
+          "moveId": "SLUDGE_TOSS"
+        },
+        {
+          "level": 36,
+          "moveId": "UMBRAL_ORB"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM06",
+        "TM16",
+        "TM18",
+        "TM09",
+        "TM10"
+      ],
+      "hm": [],
+      "tutor": [
+        "TOXIN_CLOUD",
+        "CURSE_GAZE",
+        "PHANTOM_FIST"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "028": {
+      "id": "028",
+      "name": "Krakenox",
+      "elements": [
+        "Aqua",
+        "Umbral"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 8,
+          "moveId": "TIDE_SHOT"
+        },
+        {
+          "level": 12,
+          "moveId": "VENOM_STING"
+        },
+        {
+          "level": 18,
+          "moveId": "GHOST_TOUCH"
+        },
+        {
+          "level": 22,
+          "moveId": "SMOG_CLOUD"
+        },
+        {
+          "level": 28,
+          "moveId": "SLUDGE_TOSS"
+        },
+        {
+          "level": 36,
+          "moveId": "UMBRAL_ORB"
+        },
+        {
+          "level": 44,
+          "moveId": "UMBRAL_PULSE"
+        },
+        {
+          "level": 52,
+          "moveId": "HYDRO_SURGE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM06",
+        "TM16",
+        "TM18",
+        "TM09",
+        "TM10",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "TOXIN_CLOUD",
+        "CURSE_GAZE",
+        "PHANTOM_FIST",
+        "DREAM_BITE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "029": {
+      "id": "029",
+      "name": "Punchkid",
+      "elements": [
+        "Core",
+        "Strike"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "POWER_STRIKE"
+        },
+        {
+          "level": 16,
+          "moveId": "CHOP_STRIKE"
+        },
+        {
+          "level": 20,
+          "moveId": "TWIN_KICK"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM09",
+        "TM17",
+        "TM07"
+      ],
+      "hm": [],
+      "tutor": [
+        "INNER_FOCUS",
+        "HEAD_RAM"
+      ],
+      "egg": [
+        "SKY_KICK",
+        "INNER_FOCUS",
+        "STONE_SLIDE"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "030": {
+      "id": "030",
+      "name": "Strikechamp",
+      "elements": [
+        "Core",
+        "Strike"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "POWER_STRIKE"
+        },
+        {
+          "level": 16,
+          "moveId": "CHOP_STRIKE"
+        },
+        {
+          "level": 20,
+          "moveId": "TWIN_KICK"
+        },
+        {
+          "level": 26,
+          "moveId": "BRICK_SMASH"
+        },
+        {
+          "level": 32,
+          "moveId": "SKY_KICK"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM09",
+        "TM17",
+        "TM07",
+        "TM12"
+      ],
+      "hm": [],
+      "tutor": [
+        "INNER_FOCUS",
+        "HEAD_RAM",
+        "STONE_SLIDE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "031": {
+      "id": "031",
+      "name": "Kickmaster",
+      "elements": [
+        "Core",
+        "Strike"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "POWER_STRIKE"
+        },
+        {
+          "level": 16,
+          "moveId": "CHOP_STRIKE"
+        },
+        {
+          "level": 20,
+          "moveId": "TWIN_KICK"
+        },
+        {
+          "level": 26,
+          "moveId": "BRICK_SMASH"
+        },
+        {
+          "level": 32,
+          "moveId": "SKY_KICK"
+        },
+        {
+          "level": 40,
+          "moveId": "INNER_FOCUS"
+        },
+        {
+          "level": 48,
+          "moveId": "RAGE_STORM"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM09",
+        "TM17",
+        "TM07",
+        "TM12",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "INNER_FOCUS",
+        "HEAD_RAM",
+        "STONE_SLIDE",
+        "RAGE_STORM"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "032": {
+      "id": "032",
+      "name": "Gearkid",
+      "elements": [
+        "Chrome",
+        "Core"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 16,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 22,
+          "moveId": "IRON_CLAW"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM"
+      ],
+      "egg": [
+        "CHROME_WING",
+        "ANCIENT_SURGE",
+        "EARTH_TREMOR"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "033": {
+      "id": "033",
+      "name": "Mechapion",
+      "elements": [
+        "Chrome",
+        "Core"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 16,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 22,
+          "moveId": "IRON_CLAW"
+        },
+        {
+          "level": 30,
+          "moveId": "STEEL_TAIL"
+        },
+        {
+          "level": 38,
+          "moveId": "IRON_FORTRESS"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12",
+        "TM19"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM",
+        "CHROME_WING"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "034": {
+      "id": "034",
+      "name": "Gorokappa",
+      "elements": [
+        "Chrome",
+        "Core"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 16,
+          "moveId": "DUST_SLAP"
+        },
+        {
+          "level": 22,
+          "moveId": "IRON_CLAW"
+        },
+        {
+          "level": 30,
+          "moveId": "STEEL_TAIL"
+        },
+        {
+          "level": 38,
+          "moveId": "IRON_FORTRESS"
+        },
+        {
+          "level": 46,
+          "moveId": "IRON_BARRAGE"
+        },
+        {
+          "level": 54,
+          "moveId": "EARTH_TREMOR"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12",
+        "TM19",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM",
+        "CHROME_WING",
+        "ANCIENT_SURGE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "035": {
+      "id": "035",
+      "name": "Pebblefist",
+      "elements": [
+        "Core",
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 16,
+          "moveId": "STONE_TOSS"
+        },
+        {
+          "level": 22,
+          "moveId": "IRON_CLAW"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM"
+      ],
+      "egg": [
+        "STONE_BURST",
+        "IRON_FORTRESS",
+        "ANCIENT_SURGE"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "036": {
+      "id": "036",
+      "name": "Cragarm",
+      "elements": [
+        "Core",
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 16,
+          "moveId": "STONE_TOSS"
+        },
+        {
+          "level": 22,
+          "moveId": "IRON_CLAW"
+        },
+        {
+          "level": 30,
+          "moveId": "STONE_SLIDE"
+        },
+        {
+          "level": 38,
+          "moveId": "STEEL_TAIL"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12",
+        "TM18"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM",
+        "ANCIENT_SURGE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "037": {
+      "id": "037",
+      "name": "Terrapod",
+      "elements": [
+        "Core",
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "MUD_BLAST"
+        },
+        {
+          "level": 16,
+          "moveId": "STONE_TOSS"
+        },
+        {
+          "level": 22,
+          "moveId": "IRON_CLAW"
+        },
+        {
+          "level": 30,
+          "moveId": "STONE_SLIDE"
+        },
+        {
+          "level": 38,
+          "moveId": "STEEL_TAIL"
+        },
+        {
+          "level": 46,
+          "moveId": "EARTH_TREMOR"
+        },
+        {
+          "level": 54,
+          "moveId": "IRON_BARRAGE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM05",
+        "TM07",
+        "TM09",
+        "TM12",
+        "TM18",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "IRON_FORTRESS",
+        "HEAD_RAM",
+        "ANCIENT_SURGE",
+        "STONE_BURST"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "038": {
+      "id": "038",
+      "name": "Sproutle",
+      "elements": [
+        "Flora",
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 6,
+          "moveId": "VINE_LASH"
+        },
+        {
+          "level": 12,
+          "moveId": "LEAF_WHIP"
+        },
+        {
+          "level": 18,
+          "moveId": "RAZOR_LEAF"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM09",
+        "TM15",
+        "TM16"
+      ],
+      "hm": [],
+      "tutor": [
+        "DRAIN_BITE",
+        "SPORE_CLOUD"
+      ],
+      "egg": [
+        "SOLAR_BLAST",
+        "DRAIN_BITE",
+        "IRON_FORTRESS"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "039": {
+      "id": "039",
+      "name": "Shellguard",
+      "elements": [
+        "Flora",
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 6,
+          "moveId": "VINE_LASH"
+        },
+        {
+          "level": 12,
+          "moveId": "LEAF_WHIP"
+        },
+        {
+          "level": 18,
+          "moveId": "RAZOR_LEAF"
+        },
+        {
+          "level": 24,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 30,
+          "moveId": "IRON_FORTRESS"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM09",
+        "TM15",
+        "TM16",
+        "TM19"
+      ],
+      "hm": [],
+      "tutor": [
+        "DRAIN_BITE",
+        "SPORE_CLOUD",
+        "IRON_FORTRESS"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "040": {
+      "id": "040",
+      "name": "Dreadtoise",
+      "elements": [
+        "Flora",
+        "Chrome"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 6,
+          "moveId": "VINE_LASH"
+        },
+        {
+          "level": 12,
+          "moveId": "LEAF_WHIP"
+        },
+        {
+          "level": 18,
+          "moveId": "RAZOR_LEAF"
+        },
+        {
+          "level": 24,
+          "moveId": "METAL_STRIKE"
+        },
+        {
+          "level": 30,
+          "moveId": "IRON_FORTRESS"
+        },
+        {
+          "level": 38,
+          "moveId": "PETAL_BARRAGE"
+        },
+        {
+          "level": 46,
+          "moveId": "LEAF_EDGE"
+        },
+        {
+          "level": 54,
+          "moveId": "FLASH_CANNON_MOVE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM09",
+        "TM15",
+        "TM16",
+        "TM19",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "DRAIN_BITE",
+        "SPORE_CLOUD",
+        "IRON_FORTRESS",
+        "SOLAR_BLAST"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "041": {
+      "id": "041",
+      "name": "Pixilite",
+      "elements": [
+        "Flora"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "LEAF_WHIP"
+        },
+        {
+          "level": 16,
+          "moveId": "GLIMMER_BURST"
+        },
+        {
+          "level": 22,
+          "moveId": "PIXIE_KISS"
+        },
+        {
+          "level": 30,
+          "moveId": "SOLAR_BLAST"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM15",
+        "TM20",
+        "TM10"
+      ],
+      "hm": [],
+      "tutor": [
+        "FAIRY_LIGHT",
+        "DRAIN_BITE"
+      ],
+      "egg": [],
+      "eggNote": "single-stage, no breeding line in roster"
+    },
+    "042": {
+      "id": "042",
+      "name": "Wispkin",
+      "elements": [
+        "Umbral"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "GHOST_TOUCH"
+        },
+        {
+          "level": 16,
+          "moveId": "CURSE_GAZE"
+        },
+        {
+          "level": 24,
+          "moveId": "UMBRAL_ORB"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM18",
+        "TM09",
+        "TM10"
+      ],
+      "hm": [],
+      "tutor": [
+        "CURSE_GAZE",
+        "DREAM_BITE"
+      ],
+      "egg": [
+        "DREAM_BITE",
+        "PHANTOM_FIST",
+        "MIND_SHIELD"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "043": {
+      "id": "043",
+      "name": "Duskfiend",
+      "elements": [
+        "Umbral"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "GHOST_TOUCH"
+        },
+        {
+          "level": 16,
+          "moveId": "CURSE_GAZE"
+        },
+        {
+          "level": 24,
+          "moveId": "UMBRAL_ORB"
+        },
+        {
+          "level": 32,
+          "moveId": "PHANTOM_FIST"
+        },
+        {
+          "level": 40,
+          "moveId": "SHADOW_PULSE"
+        },
+        {
+          "level": 48,
+          "moveId": "UMBRAL_PULSE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM18",
+        "TM09",
+        "TM10",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "CURSE_GAZE",
+        "DREAM_BITE",
+        "MIND_SHIELD"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "044": {
+      "id": "044",
+      "name": "Ashemit",
+      "elements": [
+        "Flame",
+        "Mythic"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "EMBER_TOSS"
+        },
+        {
+          "level": 16,
+          "moveId": "EMBER_FLICK"
+        },
+        {
+          "level": 22,
+          "moveId": "MIND_JAB"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM04",
+        "TM10",
+        "TM14",
+        "TM09"
+      ],
+      "hm": [],
+      "tutor": [
+        "INNER_FOCUS",
+        "MIND_SHIELD"
+      ],
+      "egg": [
+        "DRAKE_BREATH",
+        "GHOST_FLAME",
+        "INNER_FOCUS"
+      ],
+      "eggNote": "base form: egg moves listed"
+    },
+    "045": {
+      "id": "045",
+      "name": "Pyromonk",
+      "elements": [
+        "Flame",
+        "Mythic"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "EMBER_TOSS"
+        },
+        {
+          "level": 16,
+          "moveId": "EMBER_FLICK"
+        },
+        {
+          "level": 22,
+          "moveId": "MIND_JAB"
+        },
+        {
+          "level": 30,
+          "moveId": "FIRE_STREAM"
+        },
+        {
+          "level": 38,
+          "moveId": "MIND_BLAST"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM04",
+        "TM10",
+        "TM14",
+        "TM09",
+        "TM17"
+      ],
+      "hm": [],
+      "tutor": [
+        "INNER_FOCUS",
+        "MIND_SHIELD",
+        "GHOST_FLAME"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "046": {
+      "id": "046",
+      "name": "Yogiferno",
+      "elements": [
+        "Flame",
+        "Mythic"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 10,
+          "moveId": "EMBER_TOSS"
+        },
+        {
+          "level": 16,
+          "moveId": "EMBER_FLICK"
+        },
+        {
+          "level": 22,
+          "moveId": "MIND_JAB"
+        },
+        {
+          "level": 30,
+          "moveId": "FIRE_STREAM"
+        },
+        {
+          "level": 38,
+          "moveId": "MIND_BLAST"
+        },
+        {
+          "level": 46,
+          "moveId": "INFERNO_WAVE"
+        },
+        {
+          "level": 54,
+          "moveId": "DRAKE_BREATH"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM04",
+        "TM10",
+        "TM14",
+        "TM09",
+        "TM17",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "INNER_FOCUS",
+        "MIND_SHIELD",
+        "GHOST_FLAME",
+        "DRAGON_SURGE"
+      ],
+      "egg": [],
+      "eggNote": "evolved form: egg moves live on its base form, [] by design"
+    },
+    "331": {
+      "id": "331",
+      "name": "Mythar",
+      "elements": [
+        "Mythic"
+      ],
+      "level": [
+        {
+          "level": 1,
+          "moveId": "TACKLE"
+        },
+        {
+          "level": 5,
+          "moveId": "QUICK_ATTACK"
+        },
+        {
+          "level": 12,
+          "moveId": "MIND_JAB"
+        },
+        {
+          "level": 20,
+          "moveId": "MIND_BEAM"
+        },
+        {
+          "level": 30,
+          "moveId": "UMBRAL_ORB"
+        },
+        {
+          "level": 40,
+          "moveId": "DRAGON_SURGE"
+        },
+        {
+          "level": 50,
+          "moveId": "GLIMMER_BURST"
+        },
+        {
+          "level": 60,
+          "moveId": "FUTURE_STRIKE"
+        }
+      ],
+      "tm": [
+        "TM01",
+        "TM02",
+        "TM03",
+        "TM09",
+        "TM10",
+        "TM17",
+        "TM18",
+        "TM20"
+      ],
+      "hm": [],
+      "tutor": [
+        "MIND_SHIELD",
+        "INNER_FOCUS",
+        "IRON_FORTRESS",
+        "ANCIENT_SURGE"
+      ],
+      "egg": [],
+      "eggNote": "single-stage, no breeding line in roster"
+    }
+  }
+}

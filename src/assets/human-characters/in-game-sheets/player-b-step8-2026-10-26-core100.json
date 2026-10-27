@@ -1,0 +1,31 @@
+{
+ "character": "Player B",
+ "slug": "player-b",
+ "step8_file": "player-b-step8-2026-10-26-core100.json",
+ "date": "2026-10-26",
+ "run": "core100 \u2014 finish core step-8 to 100% on files, staged only",
+ "held_count_before_this_run": "6/8",
+ "steps_closed_this_run_counted": [
+  "battle front full-size (battle-pack opposite view)",
+  "new atlas + manifest (16 cells, cell 14 = new front)"
+ ],
+ "steps_also_delivered_uncounted_packaging": [
+  "world-views sheet (no standalone world sheet existed \u2014 real gap, uncounted)"
+ ],
+ "counted_total": 2,
+ "final_count": "8/8",
+ "skin_tone": "light",
+ "new_sheet_files": [
+  "media-generation-player-b-battle-front-fullsize-0-db8786dd-6689-4712-8bdb-b1200ad69217.webp",
+  "media-generation-player-b-world-views-core100-0-24c20e95-4261-4649-b8da-0f348b851c19.webp"
+ ],
+ "atlas": "player-b-atlas-core100-2026-10-26.png",
+ "atlas_manifest": "player-b-atlas-core100-2026-10-26-manifest-core100-2026-10-26.json",
+ "world_order_actually_rendered": "front, back, left, right",
+ "eye_check_flags": [
+  "World trousers read dark navy rather than black (minor, recorded not re-rendered).",
+  "Tech backpack with two glowing cubes present \u2014 KEPT lock, consistent with the locked battle back."
+ ],
+ "method_note": "Worker plan (NOT held-file-named): held step-8 files name only aggregate gaps for most characters, so this run closed each character's recount-owed count with the listed steps. Counted vs packaging is kept separate so the 45-step arithmetic is auditable. Worker eye-check is draft only; Mars eye-check still owed on every new sheet.",
+ "status": "STAGED ONLY \u2014 not PR'd, not wired, not live. Old atlas, old manifest, and held step-8 JSON untouched."
+}

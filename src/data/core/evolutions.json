@@ -1,0 +1,230 @@
+{
+  "$schema": "./schemas/evolutions.schema.json",
+  "version": "1.0.0",
+  "source": "Evolution requirements from the 47 roster (roster evolution_reqs). All 29 are level evolutions; no item/friendship/time/trade evolutions exist in the roster, so none are invented here.",
+  "evolutions": [
+    {
+      "fromId": "001",
+      "toId": "002",
+      "method": "level",
+      "param": 16,
+      "conditions": []
+    },
+    {
+      "fromId": "002",
+      "toId": "003",
+      "method": "level",
+      "param": 36,
+      "conditions": []
+    },
+    {
+      "fromId": "004",
+      "toId": "005",
+      "method": "level",
+      "param": 18,
+      "conditions": []
+    },
+    {
+      "fromId": "005",
+      "toId": "006",
+      "method": "level",
+      "param": 30,
+      "conditions": []
+    },
+    {
+      "fromId": "007",
+      "toId": "008",
+      "method": "level",
+      "param": 16,
+      "conditions": []
+    },
+    {
+      "fromId": "008",
+      "toId": "009",
+      "method": "level",
+      "param": 34,
+      "conditions": []
+    },
+    {
+      "fromId": "010",
+      "toId": "011",
+      "method": "level",
+      "param": 14,
+      "conditions": []
+    },
+    {
+      "fromId": "011",
+      "toId": "012",
+      "method": "level",
+      "param": 34,
+      "conditions": []
+    },
+    {
+      "fromId": "013",
+      "toId": "014",
+      "method": "level",
+      "param": 16,
+      "conditions": []
+    },
+    {
+      "fromId": "014",
+      "toId": "015",
+      "method": "level",
+      "param": 32,
+      "conditions": []
+    },
+    {
+      "fromId": "016",
+      "toId": "017",
+      "method": "level",
+      "param": 7,
+      "conditions": []
+    },
+    {
+      "fromId": "017",
+      "toId": "018",
+      "method": "level",
+      "param": 10,
+      "conditions": []
+    },
+    {
+      "fromId": "019",
+      "toId": "020",
+      "method": "level",
+      "param": 16,
+      "conditions": []
+    },
+    {
+      "fromId": "020",
+      "toId": "021",
+      "method": "level",
+      "param": 34,
+      "conditions": []
+    },
+    {
+      "fromId": "022",
+      "toId": "023",
+      "method": "level",
+      "param": 30,
+      "conditions": []
+    },
+    {
+      "fromId": "024",
+      "toId": "025",
+      "method": "level",
+      "param": 38,
+      "conditions": []
+    },
+    {
+      "fromId": "026",
+      "toId": "027",
+      "method": "level",
+      "param": 22,
+      "conditions": []
+    },
+    {
+      "fromId": "027",
+      "toId": "028",
+      "method": "level",
+      "param": 40,
+      "conditions": []
+    },
+    {
+      "fromId": "029",
+      "toId": "030",
+      "method": "level",
+      "param": 20,
+      "conditions": []
+    },
+    {
+      "fromId": "030",
+      "toId": "031",
+      "method": "level",
+      "param": 35,
+      "conditions": []
+    },
+    {
+      "fromId": "032",
+      "toId": "033",
+      "method": "level",
+      "param": 24,
+      "conditions": []
+    },
+    {
+      "fromId": "033",
+      "toId": "034",
+      "method": "level",
+      "param": 42,
+      "conditions": []
+    },
+    {
+      "fromId": "035",
+      "toId": "036",
+      "method": "level",
+      "param": 25,
+      "conditions": []
+    },
+    {
+      "fromId": "036",
+      "toId": "037",
+      "method": "level",
+      "param": 40,
+      "conditions": []
+    },
+    {
+      "fromId": "038",
+      "toId": "039",
+      "method": "level",
+      "param": 18,
+      "conditions": []
+    },
+    {
+      "fromId": "039",
+      "toId": "040",
+      "method": "level",
+      "param": 32,
+      "conditions": []
+    },
+    {
+      "fromId": "042",
+      "toId": "043",
+      "method": "level",
+      "param": 28,
+      "conditions": []
+    },
+    {
+      "fromId": "044",
+      "toId": "045",
+      "method": "level",
+      "param": 25,
+      "conditions": []
+    },
+    {
+      "fromId": "045",
+      "toId": "046",
+      "method": "level",
+      "param": 40,
+      "conditions": []
+    }
+  ],
+  "terminalSpecies": [
+    "003",
+    "006",
+    "009",
+    "012",
+    "015",
+    "018",
+    "021",
+    "023",
+    "025",
+    "028",
+    "031",
+    "034",
+    "037",
+    "040",
+    "041",
+    "043",
+    "046",
+    "047"
+  ]
+}

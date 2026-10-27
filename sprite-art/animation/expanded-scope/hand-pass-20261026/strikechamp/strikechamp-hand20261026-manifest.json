@@ -1,0 +1,359 @@
+{
+ "creature": "strikechamp",
+ "tag": "hand20261026",
+ "method": "Layer 2 hand overlays only on approved/staged face finals; 0 generations; base finals untouched",
+ "source_final": "v2rework PR #174",
+ "timing_mode": "impact",
+ "clawed_physical": false,
+ "paw_note": false,
+ "sets": {
+  "atk_physical_champ_punch": {
+   "kind": "attack",
+   "family": "physical",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "guard",
+    "punch",
+    "punch",
+    "folded"
+   ],
+   "files": [
+    "strikechamp-hand20261026-atk_physical_champ_punch-cell-00.png",
+    "strikechamp-hand20261026-atk_physical_champ_punch-cell-01.png",
+    "strikechamp-hand20261026-atk_physical_champ_punch-cell-02.png",
+    "strikechamp-hand20261026-atk_physical_champ_punch-cell-03.png",
+    "strikechamp-hand20261026-atk_physical_champ_punch-cell-04.png"
+   ],
+   "durations_ms": [
+    180,
+    120,
+    100,
+    90,
+    300
+   ],
+   "total_ms": 790,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "guard",
+     "source": "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "guard",
+     "source": "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "punch",
+     "source": "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-03.png",
+     "applied": true,
+     "changed_px": 105,
+     "diff_bbox": [
+      49,
+      31,
+      63,
+      41
+     ],
+     "anchors": "derived-from-silhouette-bbox-(1, 10, 64, 58)"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "strikechamp-artic-v2rework-20261026-atk_physical_champ_punch-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_special_power_shot": {
+   "kind": "attack",
+   "family": "special",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "cast",
+    "cast",
+    "cast",
+    "cast",
+    "folded"
+   ],
+   "files": [
+    "strikechamp-hand20261026-atk_special_power_shot-cell-00.png",
+    "strikechamp-hand20261026-atk_special_power_shot-cell-01.png",
+    "strikechamp-hand20261026-atk_special_power_shot-cell-02.png",
+    "strikechamp-hand20261026-atk_special_power_shot-cell-03.png",
+    "strikechamp-hand20261026-atk_special_power_shot-cell-04.png"
+   ],
+   "durations_ms": [
+    200,
+    140,
+    110,
+    110,
+    300
+   ],
+   "total_ms": 860,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "cast",
+     "source": "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "cast",
+     "source": "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "cast",
+     "source": "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "cast",
+     "source": "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-03.png",
+     "applied": true,
+     "changed_px": 129,
+     "diff_bbox": [
+      38,
+      18,
+      50,
+      30
+     ],
+     "anchors": "derived-from-silhouette-bbox-(0, 0, 64, 57)"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "strikechamp-artic-v2rework-20261026-atk_special_power_shot-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_signature_champ_barrage": {
+   "kind": "attack",
+   "family": "signature",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "brace",
+    "brace",
+    "brace",
+    "brace",
+    "brace",
+    "folded"
+   ],
+   "files": [
+    "strikechamp-hand20261026-atk_signature_champ_barrage-cell-00.png",
+    "strikechamp-hand20261026-atk_signature_champ_barrage-cell-01.png",
+    "strikechamp-hand20261026-atk_signature_champ_barrage-cell-02.png",
+    "strikechamp-hand20261026-atk_signature_champ_barrage-cell-03.png",
+    "strikechamp-hand20261026-atk_signature_champ_barrage-cell-04.png",
+    "strikechamp-hand20261026-atk_signature_champ_barrage-cell-05.png"
+   ],
+   "durations_ms": [
+    200,
+    220,
+    100,
+    140,
+    120,
+    300
+   ],
+   "total_ms": 1080,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "brace",
+     "source": "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "brace",
+     "source": "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "brace",
+     "source": "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "brace",
+     "source": "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-03.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      6,
+      24,
+      58,
+      32
+     ],
+     "anchors": "derived-from-silhouette-bbox-(0, 0, 64, 57)"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "brace",
+     "source": "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-04.png",
+     "applied": false
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "strikechamp-artic-v2rework-20261026-atk_signature_champ_barrage-cell-05.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_heavy_knockout_finisher": {
+   "kind": "attack",
+   "family": "heavy",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "grab",
+    "grab",
+    "punch",
+    "grab",
+    "grab",
+    "folded"
+   ],
+   "files": [
+    "strikechamp-hand20261026-atk_heavy_knockout_finisher-cell-00.png",
+    "strikechamp-hand20261026-atk_heavy_knockout_finisher-cell-01.png",
+    "strikechamp-hand20261026-atk_heavy_knockout_finisher-cell-02.png",
+    "strikechamp-hand20261026-atk_heavy_knockout_finisher-cell-03.png",
+    "strikechamp-hand20261026-atk_heavy_knockout_finisher-cell-04.png",
+    "strikechamp-hand20261026-atk_heavy_knockout_finisher-cell-05.png"
+   ],
+   "durations_ms": [
+    220,
+    160,
+    140,
+    120,
+    100,
+    420
+   ],
+   "total_ms": 1160,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "grab",
+     "source": "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "grab",
+     "source": "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "grab",
+     "source": "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-03.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      20,
+      43,
+      44,
+      51
+     ],
+     "anchors": "derived-from-silhouette-bbox-(0, 12, 64, 64)"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "grab",
+     "source": "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-04.png",
+     "applied": false
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-05.png",
+     "applied": false
+    }
+   ]
+  }
+ },
+ "gifs": {
+  "attack": {
+   "gif": "strikechamp-attacks-hand20261026.gif",
+   "frames": 22
+  }
+ },
+ "flags": [],
+ "counts": {
+  "hand_frames": 4,
+  "copy_frames": 18,
+  "flagged_frames": 0,
+  "cells": 22
+ },
+ "gate_g1_copy_identical": true
+}

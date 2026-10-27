@@ -18,7 +18,7 @@
  "frame_count": 17,
  "draft": false,
  "draft_note": "",
- "notes": "",
+ "notes": "RE-LOCK 2026-10-26: role labels corrected only (see relock_2026_10_26); atlas PNG untouched, 0px changed.",
  "role_unconfirmed": [],
  "frames": [
   {
@@ -111,7 +111,7 @@
   },
   {
    "cell": 8,
-   "role": "walk_back_0",
+   "role": "walk_side",
    "file": "duskfiend_cell_08.png",
    "game_ready": true,
    "source_cell": 8,
@@ -144,7 +144,7 @@
   },
   {
    "cell": 11,
-   "role": "walk_side_2",
+   "role": "walk_back",
    "file": "duskfiend_cell_11.png",
    "game_ready": true,
    "source_cell": 11,
@@ -155,7 +155,7 @@
   },
   {
    "cell": 12,
-   "role": "walk_side_1",
+   "role": "walk_back",
    "file": "duskfiend_cell_12.png",
    "game_ready": true,
    "source_cell": 12,
@@ -166,7 +166,7 @@
   },
   {
    "cell": 13,
-   "role": "walk_side_0",
+   "role": "walk_back",
    "file": "duskfiend_cell_13.png",
    "game_ready": true,
    "source_cell": 13,
@@ -177,7 +177,7 @@
   },
   {
    "cell": 14,
-   "role": "walk_back_4",
+   "role": "walk_side",
    "file": "duskfiend_cell_14.png",
    "game_ready": true,
    "source_cell": 14,
@@ -199,7 +199,7 @@
   },
   {
    "cell": 16,
-   "role": "walk_back_2",
+   "role": "walk_side",
    "file": "duskfiend_cell_16.png",
    "game_ready": true,
    "source_cell": 16,
@@ -241,5 +241,43 @@
   245,
   245,
   245
- ]
+ ],
+ "relock_2026_10_26": {
+  "date": "2026-10-26",
+  "base_head": "023e038713312d7933adb574d0d05a00befe8932",
+  "change": "role_labels_only",
+  "cells": [
+   {
+    "cell": 8,
+    "old_role": "walk_back_0",
+    "new_role": "walk_side"
+   },
+   {
+    "cell": 16,
+    "old_role": "walk_back_2",
+    "new_role": "walk_side"
+   },
+   {
+    "cell": 12,
+    "old_role": "walk_side_1",
+    "new_role": "walk_back"
+   },
+   {
+    "cell": 13,
+    "old_role": "walk_side_0",
+    "new_role": "walk_back"
+   },
+   {
+    "cell": 11,
+    "old_role": "walk_side_2",
+    "new_role": "walk_back"
+   },
+   {
+    "cell": 14,
+    "old_role": "walk_back_4",
+    "new_role": "walk_side"
+   }
+  ],
+  "notes": "Unmapped cells NOT relabelled (open scope question, see LOCK-UPDATE note)."
+ }
 }

@@ -1,0 +1,106 @@
+{
+ "mochii": [
+  "articulation-v3-impact/mochii",
+  "mochii-retime20261026-atk_physical_body_slam-cell-00.png"
+ ],
+ "dreadtoise": [
+  "articulation-v3-impact/dreadtoise",
+  "dreadtoise-retime20261026-hurt_light_flinch-cell-00.png"
+ ],
+ "aquariios": [
+  "articulation-pipev2/aquariios",
+  "aquariios-artic-pipev2-20261026-atk_heavy_maelstrom_finisher-cell-00.png"
+ ],
+ "reaperdile": [
+  "articulation-pipev2/reaperdile",
+  "reaperdile-artic-pipev2-20261026-atk_heavy_doom_crash_finisher-cell-00.png"
+ ],
+ "ashemit": [
+  "articulation-v2-rework-v3/batch-c/ashemit",
+  "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-00.png"
+ ],
+ "floatcalf": [
+  "articulation-v2-rework-v3/batch-c/floatcalf",
+  "floatcalf-artic-pipev3q-20261026-atk_heavy_cloud_crash_finisher-cell-00.png"
+ ],
+ "gabu": [
+  "articulation-v2-rework-v3/batch-c/gabu",
+  "gabu-artic-pipev3q-20261026-atk_heavy_timber_finisher-cell-00.png"
+ ],
+ "kittember": [
+  "articulation-v2-rework-v3/batch-a/kittember",
+  "kittember-artic-pipev3q-20261026-atk_heavy_blaze_crash_finisher-cell-00.png"
+ ],
+ "mythar": [
+  "articulation-v2-rework-v3/batch-c/mythar",
+  "mythar-artic-pipev3q-20261026-atk_heavy_nova_crash_finisher-cell-00.png"
+ ],
+ "punchkid": [
+  "articulation-v2-rework-v3/batch-e/punchkid",
+  "punchkid-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-00.png"
+ ],
+ "sproutle": [
+  "articulation-v2-rework-v3/batch-a/sproutle",
+  "sproutle-artic-pipev3q-20261026-atk_heavy_overgrowth_finisher-cell-00.png"
+ ],
+ "strikechamp_unsuited": [
+  "articulation-v2-rework-v3/batch-d/strikechamp_unsuited",
+  "strikechamp_unsuited-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-00.png"
+ ],
+ "strikechamp_unsuited_full": [
+  "articulation-v2-rework-v3/batch-d/strikechamp_unsuited_full",
+  "strikechamp_unsuited_full-artic-pipev3q-20261026-atk_heavy_knockout_finisher-cell-00.png"
+ ],
+ "tiidebiite": [
+  "articulation-v2-rework-v3/batch-a/tiidebiite",
+  "tiidebiite-artic-pipev3q-20261026-atk_heavy_tsunami_finisher-cell-00.png"
+ ],
+ "tyrage": [
+  "articulation-v2-rework-v3/batch-a/tyrage",
+  "tyrage-artic-pipev3q-20261026-atk_heavy_cataclysm_finisher-cell-00.png"
+ ],
+ "inklet": [
+  "articulation-v2-rework/batch-c/inklet",
+  "inklet-artic-v2rework-20261026-atk_heavy_ink_crash_finisher-cell-00.png"
+ ],
+ "krakenox": [
+  "articulation-v2-rework/batch-c/krakenox",
+  "krakenox-artic-v2rework-20261026-atk_heavy_kraken_crash_finisher-cell-00.png"
+ ],
+ "pebblefist": [
+  "articulation-v2-rework/batch-c/pebblefist",
+  "pebblefist-artic-v2rework-20261026-atk_heavy_avalanche_finisher-cell-00.png"
+ ],
+ "pyromonk": [
+  "articulation-v2-rework/batch-e/pyromonk",
+  "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-00.png"
+ ],
+ "squirmite": [
+  "articulation-v2-rework/batch-d/squirmite",
+  "squirmite-artic-v2rework-20261026-atk_heavy_overrun_finisher-cell-00.png"
+ ],
+ "stormtalon": [
+  "articulation-v2-rework/batch-d/stormtalon",
+  "stormtalon-artic-v2rework-20261026-atk_heavy_thunder_crash_finisher-cell-00.png"
+ ],
+ "strikechamp": [
+  "articulation-v2-rework/batch-d/strikechamp",
+  "strikechamp-artic-v2rework-20261026-atk_heavy_knockout_finisher-cell-00.png"
+ ],
+ "terradog": [
+  "articulation-v2-rework/batch-d/terradog",
+  "terradog-artic-v2rework-20261026-atk_heavy_quake_finisher-cell-00.png"
+ ],
+ "toxitacle": [
+  "articulation-v2-rework/batch-d/toxitacle",
+  "toxitacle-artic-v2rework-20261026-atk_heavy_toxic_crash_finisher-cell-00.png"
+ ],
+ "yogiferno": [
+  "articulation-v2-rework/batch-d/yogiferno",
+  "yogiferno-artic-v2rework-20261026-atk_heavy_blaze_finisher-cell-00.png"
+ ],
+ "zephling": [
+  "articulation-v2-rework/batch-d/zephling",
+  "zephling-artic-v2rework-20261026-atk_heavy_tempest_finisher-cell-00.png"
+ ]
+}

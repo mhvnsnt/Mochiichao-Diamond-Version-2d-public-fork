@@ -1,0 +1,127 @@
+{
+ "creature": "pupbble",
+ "roster_id": "013",
+ "variant": null,
+ "movement_class": "small_bouncy",
+ "idle_class": "small_bouncy",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 400,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/pupbble/cells/pupbble_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/pupbble/cells/pupbble_cell_15.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "game-ready/pupbble/cells/pupbble_cell_17.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_1"
+    }
+   ],
+   "loop": [
+    "game-ready/pupbble/cells/pupbble_cell_02.png",
+    "game-ready/pupbble/cells/pupbble_cell_15.png",
+    "game-ready/pupbble/cells/pupbble_cell_02.png",
+    "game-ready/pupbble/cells/pupbble_cell_17.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/pupbble/cells/pupbble_cell_03.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/pupbble/cells/pupbble_cell_16.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/pupbble/cells/pupbble_cell_18.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_1"
+    }
+   ],
+   "loop": [
+    "game-ready/pupbble/cells/pupbble_cell_03.png",
+    "game-ready/pupbble/cells/pupbble_cell_16.png",
+    "game-ready/pupbble/cells/pupbble_cell_03.png",
+    "game-ready/pupbble/cells/pupbble_cell_18.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/pupbble/cells/pupbble_cell_12.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "walk/pupbble/pupbble_walk_left_transform_step1.png",
+     "provenance": "transform_small_bouncy",
+     "source_role": "overworld_side",
+     "transform": {
+      "dx": 0,
+      "dy": -3,
+      "scale": 1.0
+     }
+    },
+    {
+     "file": "walk/pupbble/pupbble_walk_left_transform_step2.png",
+     "provenance": "transform_small_bouncy",
+     "source_role": "overworld_side",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/pupbble/cells/pupbble_cell_12.png",
+    "walk/pupbble/pupbble_walk_left_transform_step1.png",
+    "game-ready/pupbble/cells/pupbble_cell_12.png",
+    "walk/pupbble/pupbble_walk_left_transform_step2.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/pupbble/pupbble_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "overworld_side"
+   },
+   "steps": [
+    {
+     "file": "walk/pupbble/pupbble_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "overworld_side",
+     "mirrored_from": "walk/pupbble/pupbble_walk_left_transform_step1.png"
+    },
+    {
+     "file": "walk/pupbble/pupbble_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "overworld_side",
+     "mirrored_from": "walk/pupbble/pupbble_walk_left_transform_step2.png"
+    }
+   ],
+   "loop": [
+    "walk/pupbble/pupbble_walk_right_stand.png",
+    "walk/pupbble/pupbble_walk_right_mirror_1.png",
+    "walk/pupbble/pupbble_walk_right_stand.png",
+    "walk/pupbble/pupbble_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}

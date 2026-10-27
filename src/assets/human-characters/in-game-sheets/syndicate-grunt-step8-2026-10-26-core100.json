@@ -1,0 +1,30 @@
+{
+ "character": "Syndicate Grunt",
+ "slug": "syndicate-grunt",
+ "step8_file": "syndicate-grunt-step8-2026-10-26-core100.json",
+ "date": "2026-10-26",
+ "run": "core100 \u2014 finish core step-8 to 100% on files, staged only",
+ "held_count_before_this_run": "6/8",
+ "steps_closed_this_run_counted": [
+  "world-views sheet",
+  "new atlas + manifest (16 cells, cell 14 = battle back fullsize v1, pre-existing file newly placed in the atlas)"
+ ],
+ "steps_also_delivered_uncounted_packaging": [
+  "new step-8 JSON"
+ ],
+ "counted_total": 2,
+ "final_count": "8/8",
+ "skin_tone": "warm medium tan",
+ "new_sheet_files": [
+  "media-generation-syndicate-grunt-world-views-co-0-80efd17c-aeb9-416d-81d2-454955426ab0.webp"
+ ],
+ "atlas": "syndicate-grunt-atlas-core100-2026-10-26.png",
+ "atlas_manifest": "syndicate-grunt-atlas-core100-2026-10-26-manifest-core100-2026-10-26.json",
+ "world_order_actually_rendered": "front, left, back, right (NOT requested order \u2014 manifest maps actual order)",
+ "eye_check_flags": [
+  "World sheet is chibi-proportioned (large head), matching its chibi reference front, unlike the tall proportions of most other new world sheets.",
+  "Atlas note: battle-back file already existed on disk while the held count still listed a back as owed \u2014 same inventory discrepancy as Krix."
+ ],
+ "method_note": "Worker plan (NOT held-file-named): held step-8 files name only aggregate gaps for most characters, so this run closed each character's recount-owed count with the listed steps. Counted vs packaging is kept separate so the 45-step arithmetic is auditable. Worker eye-check is draft only; Mars eye-check still owed on every new sheet.",
+ "status": "STAGED ONLY \u2014 not PR'd, not wired, not live. Old atlas, old manifest, and held step-8 JSON untouched."
+}

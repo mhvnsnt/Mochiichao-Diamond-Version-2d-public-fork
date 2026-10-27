@@ -1,0 +1,535 @@
+{
+  "meta": {
+    "source": "global_roster.json evolution_reqs, verbatim levels/targets (tolerant parse; Pebblefist HP not involved)",
+    "methodCoverage": "LEVEL only in roster data. Decomp method shapes (ITEM/FRIENDSHIP/TRADE/time/location/branch) are supported by evolution-hook.ts types but have 0 roster instances -- shape only, NOT data.",
+    "midFightNote": "Mid-fight evolution is HOOK SHAPE ONLY in this slice: trigger + cancel prompt defined in evolution-hook.ts, NOT wired into BattleView. Do not report as live.",
+    "excluded": "Dorowani (#147) / Gabu (#148) are not in the 47-roster and have no evolution entry here."
+  },
+  "species": {
+    "001": {
+      "id": "001",
+      "name": "Mochii",
+      "evolution": {
+        "targetId": "002",
+        "targetName": "Tiidebiite",
+        "method": "LEVEL",
+        "level": 16,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "002": {
+      "id": "002",
+      "name": "Tiidebiite",
+      "evolution": {
+        "targetId": "003",
+        "targetName": "AquariiOS",
+        "method": "LEVEL",
+        "level": 36,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "003": {
+      "id": "003",
+      "name": "AquariiOS",
+      "evolution": null
+    },
+    "004": {
+      "id": "004",
+      "name": "Razorgater",
+      "evolution": {
+        "targetId": "005",
+        "targetName": "Chromejaww",
+        "method": "LEVEL",
+        "level": 18,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "005": {
+      "id": "005",
+      "name": "Chromejaww",
+      "evolution": {
+        "targetId": "006",
+        "targetName": "Reaperdile",
+        "method": "LEVEL",
+        "level": 30,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "006": {
+      "id": "006",
+      "name": "Reaperdile",
+      "evolution": null
+    },
+    "007": {
+      "id": "007",
+      "name": "Tyrage",
+      "evolution": {
+        "targetId": "008",
+        "targetName": "Duneclaw",
+        "method": "LEVEL",
+        "level": 16,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "008": {
+      "id": "008",
+      "name": "Duneclaw",
+      "evolution": {
+        "targetId": "009",
+        "targetName": "Oblivirex",
+        "method": "LEVEL",
+        "level": 34,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "009": {
+      "id": "009",
+      "name": "Oblivirex",
+      "evolution": null
+    },
+    "010": {
+      "id": "010",
+      "name": "Kittember",
+      "evolution": {
+        "targetId": "011",
+        "targetName": "Pyropaw",
+        "method": "LEVEL",
+        "level": 14,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "011": {
+      "id": "011",
+      "name": "Pyropaw",
+      "evolution": {
+        "targetId": "012",
+        "targetName": "Manticlaw",
+        "method": "LEVEL",
+        "level": 34,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "012": {
+      "id": "012",
+      "name": "Manticlaw",
+      "evolution": null
+    },
+    "013": {
+      "id": "013",
+      "name": "Pupbble",
+      "evolution": {
+        "targetId": "014",
+        "targetName": "Terradog",
+        "method": "LEVEL",
+        "level": 16,
+        "midFight": {
+          "eligible": true,
+          "showcase": true,
+          "showcaseNote": "Cowboy Kid Pupbble -> Terradog mid-fight showcase (locked in parity report); cancellable, see evolution-hook.ts"
+        }
+      }
+    },
+    "014": {
+      "id": "014",
+      "name": "Terradog",
+      "evolution": {
+        "targetId": "015",
+        "targetName": "Quakehound",
+        "method": "LEVEL",
+        "level": 32,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "015": {
+      "id": "015",
+      "name": "Quakehound",
+      "evolution": null
+    },
+    "016": {
+      "id": "016",
+      "name": "Squirmite",
+      "evolution": {
+        "targetId": "017",
+        "targetName": "Cocoonode",
+        "method": "LEVEL",
+        "level": 7,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "017": {
+      "id": "017",
+      "name": "Cocoonode",
+      "evolution": {
+        "targetId": "018",
+        "targetName": "Mothrix",
+        "method": "LEVEL",
+        "level": 10,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "018": {
+      "id": "018",
+      "name": "Mothrix",
+      "evolution": null
+    },
+    "019": {
+      "id": "019",
+      "name": "Zephling",
+      "evolution": {
+        "targetId": "020",
+        "targetName": "Aerobeak",
+        "method": "LEVEL",
+        "level": 16,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "020": {
+      "id": "020",
+      "name": "Aerobeak",
+      "evolution": {
+        "targetId": "021",
+        "targetName": "Stormtalon",
+        "method": "LEVEL",
+        "level": 34,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "021": {
+      "id": "021",
+      "name": "Stormtalon",
+      "evolution": null
+    },
+    "022": {
+      "id": "022",
+      "name": "Finblade",
+      "evolution": {
+        "targetId": "023",
+        "targetName": "Megalochrome",
+        "method": "LEVEL",
+        "level": 30,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "023": {
+      "id": "023",
+      "name": "Megalochrome",
+      "evolution": null
+    },
+    "024": {
+      "id": "024",
+      "name": "Floatcalf",
+      "evolution": {
+        "targetId": "025",
+        "targetName": "Astroleviathan",
+        "method": "LEVEL",
+        "level": 38,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "025": {
+      "id": "025",
+      "name": "Astroleviathan",
+      "evolution": null
+    },
+    "026": {
+      "id": "026",
+      "name": "Inklet",
+      "evolution": {
+        "targetId": "027",
+        "targetName": "Toxitacle",
+        "method": "LEVEL",
+        "level": 22,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "027": {
+      "id": "027",
+      "name": "Toxitacle",
+      "evolution": {
+        "targetId": "028",
+        "targetName": "Krakenox",
+        "method": "LEVEL",
+        "level": 40,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "028": {
+      "id": "028",
+      "name": "Krakenox",
+      "evolution": null
+    },
+    "029": {
+      "id": "029",
+      "name": "Punchkid",
+      "evolution": {
+        "targetId": "030",
+        "targetName": "Strikechamp",
+        "method": "LEVEL",
+        "level": 20,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "030": {
+      "id": "030",
+      "name": "Strikechamp",
+      "evolution": {
+        "targetId": "031",
+        "targetName": "Kickmaster",
+        "method": "LEVEL",
+        "level": 35,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "031": {
+      "id": "031",
+      "name": "Kickmaster",
+      "evolution": null
+    },
+    "032": {
+      "id": "032",
+      "name": "Gearkid",
+      "evolution": {
+        "targetId": "033",
+        "targetName": "Mechapion",
+        "method": "LEVEL",
+        "level": 24,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "033": {
+      "id": "033",
+      "name": "Mechapion",
+      "evolution": {
+        "targetId": "034",
+        "targetName": "Gorokappa",
+        "method": "LEVEL",
+        "level": 42,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "034": {
+      "id": "034",
+      "name": "Gorokappa",
+      "evolution": null
+    },
+    "035": {
+      "id": "035",
+      "name": "Pebblefist",
+      "evolution": {
+        "targetId": "036",
+        "targetName": "Cragarm",
+        "method": "LEVEL",
+        "level": 25,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "036": {
+      "id": "036",
+      "name": "Cragarm",
+      "evolution": {
+        "targetId": "037",
+        "targetName": "Terrapod",
+        "method": "LEVEL",
+        "level": 40,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "037": {
+      "id": "037",
+      "name": "Terrapod",
+      "evolution": null
+    },
+    "038": {
+      "id": "038",
+      "name": "Sproutle",
+      "evolution": {
+        "targetId": "039",
+        "targetName": "Shellguard",
+        "method": "LEVEL",
+        "level": 18,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "039": {
+      "id": "039",
+      "name": "Shellguard",
+      "evolution": {
+        "targetId": "040",
+        "targetName": "Dreadtoise",
+        "method": "LEVEL",
+        "level": 32,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "040": {
+      "id": "040",
+      "name": "Dreadtoise",
+      "evolution": null
+    },
+    "041": {
+      "id": "041",
+      "name": "Pixilite",
+      "evolution": null
+    },
+    "042": {
+      "id": "042",
+      "name": "Wispkin",
+      "evolution": {
+        "targetId": "043",
+        "targetName": "Duskfiend",
+        "method": "LEVEL",
+        "level": 28,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "043": {
+      "id": "043",
+      "name": "Duskfiend",
+      "evolution": null
+    },
+    "044": {
+      "id": "044",
+      "name": "Ashemit",
+      "evolution": {
+        "targetId": "045",
+        "targetName": "Pyromonk",
+        "method": "LEVEL",
+        "level": 25,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "045": {
+      "id": "045",
+      "name": "Pyromonk",
+      "evolution": {
+        "targetId": "046",
+        "targetName": "Yogiferno",
+        "method": "LEVEL",
+        "level": 40,
+        "midFight": {
+          "eligible": true,
+          "showcase": false,
+          "showcaseNote": null
+        }
+      }
+    },
+    "046": {
+      "id": "046",
+      "name": "Yogiferno",
+      "evolution": null
+    },
+    "331": {
+      "id": "331",
+      "name": "Mythar",
+      "evolution": null
+    }
+  }
+}

@@ -1,0 +1,359 @@
+{
+ "creature": "ashemit",
+ "tag": "hand20261026",
+ "method": "Layer 2 hand overlays only on approved/staged face finals; 0 generations; base finals untouched",
+ "source_final": "v3q PR #173",
+ "timing_mode": "impact",
+ "clawed_physical": false,
+ "paw_note": false,
+ "sets": {
+  "atk_physical_ash_charge": {
+   "kind": "attack",
+   "family": "physical",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "guard",
+    "guard",
+    "punch",
+    "punch",
+    "folded"
+   ],
+   "files": [
+    "ashemit-hand20261026-atk_physical_ash_charge-cell-00.png",
+    "ashemit-hand20261026-atk_physical_ash_charge-cell-01.png",
+    "ashemit-hand20261026-atk_physical_ash_charge-cell-02.png",
+    "ashemit-hand20261026-atk_physical_ash_charge-cell-03.png",
+    "ashemit-hand20261026-atk_physical_ash_charge-cell-04.png"
+   ],
+   "durations_ms": [
+    180,
+    120,
+    100,
+    90,
+    550
+   ],
+   "total_ms": 1040,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "guard",
+     "source": "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "guard",
+     "source": "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "punch",
+     "source": "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-03.png",
+     "applied": true,
+     "changed_px": 106,
+     "diff_bbox": [
+      49,
+      32,
+      63,
+      42
+     ],
+     "anchors": "derived-from-silhouette-bbox-(0, 9, 64, 60)"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "ashemit-artic-pipev3q-20261026-atk_physical_ash_charge-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_special_ember_spray": {
+   "kind": "attack",
+   "family": "special",
+   "roles": [
+    "windup",
+    "lean",
+    "strike",
+    "impact",
+    "recover"
+   ],
+   "hand_states": [
+    "cast",
+    "cast",
+    "cast",
+    "cast",
+    "folded"
+   ],
+   "files": [
+    "ashemit-hand20261026-atk_special_ember_spray-cell-00.png",
+    "ashemit-hand20261026-atk_special_ember_spray-cell-01.png",
+    "ashemit-hand20261026-atk_special_ember_spray-cell-02.png",
+    "ashemit-hand20261026-atk_special_ember_spray-cell-03.png",
+    "ashemit-hand20261026-atk_special_ember_spray-cell-04.png"
+   ],
+   "durations_ms": [
+    200,
+    140,
+    110,
+    110,
+    550
+   ],
+   "total_ms": 1110,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "cast",
+     "source": "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "lean",
+     "hand_state": "cast",
+     "source": "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "cast",
+     "source": "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "cast",
+     "source": "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-03.png",
+     "applied": true,
+     "changed_px": 127,
+     "diff_bbox": [
+      38,
+      19,
+      50,
+      31
+     ],
+     "anchors": "derived-from-silhouette-bbox-(0, 0, 64, 59)"
+    },
+    {
+     "frame": 4,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "ashemit-artic-pipev3q-20261026-atk_special_ember_spray-cell-04.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_signature_flame_tail_sweep": {
+   "kind": "attack",
+   "family": "signature",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "brace",
+    "brace",
+    "brace",
+    "brace",
+    "brace",
+    "folded"
+   ],
+   "files": [
+    "ashemit-hand20261026-atk_signature_flame_tail_sweep-cell-00.png",
+    "ashemit-hand20261026-atk_signature_flame_tail_sweep-cell-01.png",
+    "ashemit-hand20261026-atk_signature_flame_tail_sweep-cell-02.png",
+    "ashemit-hand20261026-atk_signature_flame_tail_sweep-cell-03.png",
+    "ashemit-hand20261026-atk_signature_flame_tail_sweep-cell-04.png",
+    "ashemit-hand20261026-atk_signature_flame_tail_sweep-cell-05.png"
+   ],
+   "durations_ms": [
+    200,
+    220,
+    100,
+    140,
+    120,
+    550
+   ],
+   "total_ms": 1330,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "brace",
+     "source": "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "brace",
+     "source": "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "brace",
+     "source": "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "brace",
+     "source": "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-03.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      6,
+      26,
+      58,
+      34
+     ],
+     "anchors": "derived-from-silhouette-bbox-(0, 0, 64, 59)"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "brace",
+     "source": "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-04.png",
+     "applied": false
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "ashemit-artic-pipev3q-20261026-atk_signature_flame_tail_sweep-cell-05.png",
+     "applied": false
+    }
+   ]
+  },
+  "atk_heavy_inferno_crash_finisher": {
+   "kind": "attack",
+   "family": "heavy",
+   "roles": [
+    "windup",
+    "charge",
+    "strike",
+    "impact",
+    "hold",
+    "recover"
+   ],
+   "hand_states": [
+    "grab",
+    "grab",
+    "punch",
+    "grab",
+    "grab",
+    "folded"
+   ],
+   "files": [
+    "ashemit-hand20261026-atk_heavy_inferno_crash_finisher-cell-00.png",
+    "ashemit-hand20261026-atk_heavy_inferno_crash_finisher-cell-01.png",
+    "ashemit-hand20261026-atk_heavy_inferno_crash_finisher-cell-02.png",
+    "ashemit-hand20261026-atk_heavy_inferno_crash_finisher-cell-03.png",
+    "ashemit-hand20261026-atk_heavy_inferno_crash_finisher-cell-04.png",
+    "ashemit-hand20261026-atk_heavy_inferno_crash_finisher-cell-05.png"
+   ],
+   "durations_ms": [
+    220,
+    160,
+    140,
+    120,
+    100,
+    670
+   ],
+   "total_ms": 1410,
+   "frames": [
+    {
+     "frame": 0,
+     "role": "windup",
+     "hand_state": "grab",
+     "source": "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-00.png",
+     "applied": false
+    },
+    {
+     "frame": 1,
+     "role": "charge",
+     "hand_state": "grab",
+     "source": "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-01.png",
+     "applied": false
+    },
+    {
+     "frame": 2,
+     "role": "strike",
+     "hand_state": "punch",
+     "source": "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-02.png",
+     "applied": false
+    },
+    {
+     "frame": 3,
+     "role": "impact",
+     "hand_state": "grab",
+     "source": "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-03.png",
+     "applied": true,
+     "changed_px": 122,
+     "diff_bbox": [
+      20,
+      43,
+      44,
+      51
+     ],
+     "anchors": "derived-from-silhouette-bbox-(0, 11, 64, 64)"
+    },
+    {
+     "frame": 4,
+     "role": "hold",
+     "hand_state": "grab",
+     "source": "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-04.png",
+     "applied": false
+    },
+    {
+     "frame": 5,
+     "role": "recover",
+     "hand_state": "folded",
+     "source": "ashemit-artic-pipev3q-20261026-atk_heavy_inferno_crash_finisher-cell-05.png",
+     "applied": false
+    }
+   ]
+  }
+ },
+ "gifs": {
+  "attack": {
+   "gif": "ashemit-attacks-hand20261026.gif",
+   "frames": 22
+  }
+ },
+ "flags": [],
+ "counts": {
+  "hand_frames": 4,
+  "copy_frames": 18,
+  "flagged_frames": 0,
+  "cells": 22
+ },
+ "gate_g1_copy_identical": true
+}
