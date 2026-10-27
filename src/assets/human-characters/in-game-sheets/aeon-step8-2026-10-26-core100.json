@@ -1,0 +1,30 @@
+{
+ "character": "Aeon",
+ "slug": "aeon",
+ "step8_file": "aeon-step8-2026-10-26-core100.json",
+ "date": "2026-10-26",
+ "run": "core100 \u2014 finish core step-8 to 100% on files, staged only",
+ "held_count_before_this_run": "7/8",
+ "steps_closed_this_run_counted": [
+  "world-views sheet"
+ ],
+ "steps_also_delivered_uncounted_packaging": [
+  "new atlas + manifest (16 cells, cell 14 = battle back fullsize v1, pre-existing file newly placed in the atlas)",
+  "new step-8 JSON"
+ ],
+ "counted_total": 1,
+ "final_count": "8/8",
+ "skin_tone": "dark brown",
+ "new_sheet_files": [
+  "media-generation-aeon-world-views-core100-0-cdc3124b-41af-4ac9-9d94-cb4be864c49b.webp"
+ ],
+ "atlas": "aeon-atlas-core100-2026-10-26.png",
+ "atlas_manifest": "aeon-atlas-core100-2026-10-26-manifest-core100-2026-10-26.json",
+ "world_order_actually_rendered": "front, back, left, right",
+ "eye_check_flags": [
+  "Data tablet appears in the front view only.",
+  "v2 Black primary / v1 pale variant kept \u2014 neither deleted (Mars correction 2026-10-25)."
+ ],
+ "method_note": "Worker plan (NOT held-file-named): held step-8 files name only aggregate gaps for most characters, so this run closed each character's recount-owed count with the listed steps. Counted vs packaging is kept separate so the 45-step arithmetic is auditable. Worker eye-check is draft only; Mars eye-check still owed on every new sheet.",
+ "status": "STAGED ONLY \u2014 not PR'd, not wired, not live. Old atlas, old manifest, and held step-8 JSON untouched."
+}
