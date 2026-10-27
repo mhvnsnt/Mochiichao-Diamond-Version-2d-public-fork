@@ -1,0 +1,62 @@
+{
+  "legs": {
+    "LEFT": {
+      "bbox": [
+        149,
+        178,
+        280,
+        349
+      ],
+      "shape_px": 1491,
+      "partial_alpha_px": 1220,
+      "restore_px": 0,
+      "hole_px": 12,
+      "changed_px": 1232,
+      "pale_leg_median_rgb": [
+        224.0,
+        219.0,
+        210.0
+      ],
+      "pale_leg_count": 957,
+      "hole_fill_mean_rgb": [
+        246.79166666666666,
+        243.06944444444446,
+        236.29166666666666
+      ]
+    },
+    "RIGHT": {
+      "bbox": [
+        247,
+        278,
+        290,
+        349
+      ],
+      "shape_px": 1334,
+      "partial_alpha_px": 1066,
+      "restore_px": 0,
+      "hole_px": 15,
+      "changed_px": 1081,
+      "pale_leg_median_rgb": [
+        222.0,
+        221.0,
+        218.0
+      ],
+      "pale_leg_count": 862,
+      "hole_fill_mean_rgb": [
+        252.45,
+        246.3361111111111,
+        237.125
+      ]
+    }
+  },
+  "guardrails": {
+    "changed_total": 2313,
+    "changed_outside_leg_shapes": 0,
+    "removed_set_changed": 0,
+    "gold_pixels_changed": 0,
+    "v5_opaque": 83628,
+    "v3_opaque": 83601,
+    "shipped_opaque": 85472
+  },
+  "total_changed": 2313
+}
