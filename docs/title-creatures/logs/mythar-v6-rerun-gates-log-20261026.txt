@@ -1,0 +1,23 @@
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 270 packages in 3m
+
+50 packages are looking for funding
+  run `npm fund` for details
+=== LINT ===
+LINT_EXIT=2
+src/components/views/GardenView.tsx(192,208): error TS2353: Object literal may only specify known properties, and 'raceWins' does not exist in type 'GardenCreature'.
+src/components/views/GardenView.tsx(193,208): error TS2353: Object literal may only specify known properties, and 'sparWins' does not exist in type 'GardenCreature'.
+src/components/views/GardenView.tsx(203,55): error TS2353: Object literal may only specify known properties, and 'egg' does not exist in type 'GardenCreature'.
+=== BUILD ===
+BUILD_EXIT=0
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3m 43s
+=== VALIDATE ===
+VAL_EXIT=1
+ERRORS (4):
+  ERROR: Sheet Dorowani: frame side x=256 outside 192-wide sheet
+  ERROR: Sheet Dorowani: sheet PNG missing
+  ERROR: Sheet Gabu: frame back x=192 outside 192-wide sheet
+  ERROR: Sheet Gabu: sheet PNG missing
