@@ -1,6 +1,9 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { LOCKED_V32_MENU } from "../../lib/lockedV32Menu";
 import { MAIN_MENU_SYMBOLS } from "../../lib/mainMenuSymbols";
+import {
+  type MenuEditorConfig, getActiveMenuConfig, transformSymbols,
+} from "../../lib/menuEditor";
 
 /**
  * MainMenuBackground — the CLEAN layered main-menu background (L0).
@@ -22,8 +25,8 @@ import { MAIN_MENU_SYMBOLS } from "../../lib/mainMenuSymbols";
  *     matched GIF (round 2, 2026-10-26) — see
  *     src/lib/mainMenuSymbols.ts. 285 symbols; history's field is
  *     300, shortfall 15 = 5.0%, named there, NOT filled with
- *     generated guesses (the PR #170 generated fill is what Mars
- *     rejected 2026-10-26 12:38 CDT).
+ *     generated guesses (the PR #170 generated fill is what
+ *     Mars rejected).
  *
  * Animation — PERFECT by default (matched GIF, Mars PERFECT
  * 2026-10-25 17:12 CDT; see perfect-menu-trace-2026-10-26.md):
@@ -34,26 +37,30 @@ import { MAIN_MENU_SYMBOLS } from "../../lib/mainMenuSymbols";
  * 1.0 at y905+), clamped never above y620. No rotation.
  * The PR #163 speed (vy 8-14 px/s, sway 3->8px, rotate +/-4deg,
  * period 4-6s) is saved as the "slow-rise" option in
- * lockedV32Menu.animationSpeeds and is selected by setting
- * background.animationSpeed to "slow-rise"; it is never the
- * default. Symbols are pointer-events none, behind logo/panels.
+ * lockedV32Menu.animationSpeeds and is selected by the editor's
+ * RISE SPEED row; it is never the default. Symbols are
+ * pointer-events none, behind logo/panels.
  * prefers-reduced-motion freezes to static base positions.
+ *
+ * Menu Editor wiring (2026-10-26): this background reads the
+ * ACTIVE menu config — the working preset when one was saved,
+ * else the locked default exactly. The editor preview passes its
+ * unsaved draft as `config`, so the preview animates the draft
+ * live. Arcs, symbols, fade, speed, sway/bob, field span, count,
+ * and layer visibility/order all come from that config; nothing
+ * about the locked menu lives only in JSX literals any more.
+ * The old localStorage animation-speed key stopgap is retired:
+ * the editor owns speed now, and the key no longer overrides it.
  */
 type MenuSymbol = { x: number; y: number; s: number; c: string; shape: string };
-const SYMBOLS = MAIN_MENU_SYMBOLS as MenuSymbol[];
-const BG = LOCKED_V32_MENU.background;
 
 const GOLDEN_ANGLE = 2.399963; // 137.508 degrees, radians
-const GONE_Y = BG.fade.gone;
-const MID_Y = BG.fade.mid;
-const FULL_Y = BG.fade.full;
-const BOTTOM_Y = LOCKED_V32_MENU.canvas.h;
-const SPAN = BOTTOM_Y - GONE_Y; // 880
 
-function fadeAt(y: number): number {
-  if (y >= FULL_Y) return 1;
-  if (y >= MID_Y) return 0.35 + 0.65 * ((y - MID_Y) / (FULL_Y - MID_Y));
-  return 0.35 * ((y - GONE_Y) / (MID_Y - GONE_Y));
+function fadeAt(fade: MenuEditorConfig["fade"], y: number): number {
+  if (y >= fade.full) return 1;
+  if (y >= fade.mid) return 0.35 + 0.65 * ((y - fade.mid) / (fade.full - fade.mid));
+  if (y <= fade.gone) return 0;
+  return 0.35 * ((y - fade.gone) / (fade.mid - fade.gone));
 }
 
 function shapePath(sym: MenuSymbol): ReactNode {
@@ -80,38 +87,34 @@ function shapePath(sym: MenuSymbol): ReactNode {
   );
 }
 
-const ARC_COLORS = BG.arcs.colors;
-const ARC_RX = BG.arcs.rx;
-
-export default function MainMenuBackground() {
+export default function MainMenuBackground({ config }: { config?: MenuEditorConfig }) {
   const refs = useRef<(SVGGElement | null)[]>([]);
-
-  // Speed selector. The default is BG.animationSpeed from the locked
-  // menu data ("perfect"). A stored override (key
-  // "mochiichao-menu-animation-speed", written by a future Menu
-  // Creator / Settings row — nothing writes it today) may select
-  // "slow-rise" at runtime. The localStorage read is load-bearing
-  // for shipping, not decoration: with a compile-time-known literal
-  // the bundler dropped the slow-rise branch and data entirely
-  // (second build 2026-10-26: slow-rise 0 occurrences). Because the
-  // value cannot be known at build time, BOTH branches ship.
-  function resolveSpeedId(): "perfect" | "slow-rise" {
-    try {
-      const stored = window.localStorage.getItem("mochiichao-menu-animation-speed");
-      if (stored === "slow-rise" || stored === "perfect") return stored;
-    } catch {
-      /* storage unavailable: fall through to the data default */
-    }
-    return BG.animationSpeed;
-  }
+  const cfg = config ?? getActiveMenuConfig();
+  const syms = transformSymbols(
+    MAIN_MENU_SYMBOLS as MenuSymbol[],
+    cfg.symbols.fieldLeft, cfg.symbols.fieldRight, cfg.symbols.count,
+  ) as MenuSymbol[];
+  const fade = cfg.fade;
+  const arcs = cfg.arcs;
+  const GONE_Y = fade.gone;
+  const BOTTOM_Y = LOCKED_V32_MENU.canvas.h;
+  const SPAN = BOTTOM_Y - GONE_Y;
+  const animKey = [
+    cfg.symbols.speed, cfg.symbols.swayPx, cfg.symbols.swayCycles,
+    cfg.symbols.bobPx, cfg.symbols.bobCycles, cfg.symbols.fieldLeft,
+    cfg.symbols.fieldRight, cfg.symbols.count, fade.gone, fade.mid, fade.full,
+  ].join("|");
+  const arcsVisible = cfg.layers.arcs.visible;
+  const symbolsVisible = cfg.layers.symbols.visible;
+  const symbolsBelowArcs = cfg.layers.symbols.order < cfg.layers.arcs.order;
 
   useEffect(() => {
     const reduced =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const speedId = resolveSpeedId();
+    const speedId = cfg.symbols.speed;
     const place = (t: number) => {
-      SYMBOLS.forEach((sym, i) => {
+      syms.forEach((sym, i) => {
         const el = refs.current[i];
         if (!el) return;
         const phase = i * GOLDEN_ANGLE;
@@ -123,15 +126,15 @@ export default function MainMenuBackground() {
           x = sym.x;
           rot = 0;
         } else if (speedId === "perfect") {
-          const sp = BG.animationSpeeds.perfect;
-          const ang = (2 * Math.PI * sp.cyclesPerLoop * t) / sp.loopSec + phase;
-          y = GONE_Y + (((sym.y - GONE_Y - t * sp.risePxPerSec) % SPAN) + SPAN) % SPAN;
-          y = Math.max(GONE_Y, y + Math.sin(ang) * sp.bobPx);
-          x = sym.x + Math.sin(ang) * sp.swayPx;
+          const ang = (2 * Math.PI * cfg.symbols.swayCycles * t) / 5.6 + phase;
+          const bobAng = (2 * Math.PI * cfg.symbols.bobCycles * t) / 5.6 + phase;
+          y = GONE_Y + (((sym.y - GONE_Y - t * 157.14) % SPAN) + SPAN) % SPAN;
+          y = Math.max(GONE_Y, y + Math.sin(bobAng) * cfg.symbols.bobPx);
+          x = sym.x + Math.sin(ang) * cfg.symbols.swayPx;
           rot = 0;
         } else {
           // slow-rise: exact PR #163 behaviour, option only.
-          const sp = BG.animationSpeeds["slow-rise"];
+          const sp = LOCKED_V32_MENU.background.animationSpeeds["slow-rise"];
           const period = sp.periodSec[i % sp.periodSec.length];
           const vy = sp.riseVyMin + (i % (sp.riseVyMax - sp.riseVyMin + 1));
           y = GONE_Y + (((sym.y - GONE_Y - t * vy) % SPAN) + SPAN) % SPAN;
@@ -140,7 +143,7 @@ export default function MainMenuBackground() {
           rot = Math.sin((2 * Math.PI * t) / period + phase) * sp.rotateDeg;
         }
         el.setAttribute("transform", `translate(${x.toFixed(2)},${y.toFixed(2)}) rotate(${rot.toFixed(2)})`);
-        el.setAttribute("opacity", fadeAt(y).toFixed(3));
+        el.setAttribute("opacity", fadeAt(fade, y).toFixed(3));
       });
     };
     place(0);
@@ -157,33 +160,44 @@ export default function MainMenuBackground() {
     };
     raf = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(raf);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [animKey]);
+
+  const arcsGroup = arcsVisible ? (
+    <g>
+      {arcs.radii.map((rx, i) => (
+        <ellipse key={i} cx={arcs.cx} cy={arcs.cy} rx={rx} ry={rx} fill="none" stroke={arcs.colors[i % arcs.colors.length]} strokeWidth={arcs.stroke} opacity={0.9} />
+      ))}
+      {arcs.orbitRx.map((rx, i) => (
+        <ellipse key={`o${i}`} cx={arcs.cx} cy={arcs.cy} rx={rx} ry={arcs.orbitRy[i] ?? rx} fill="none" stroke={arcs.orbitColors[i % arcs.orbitColors.length]} strokeWidth={arcs.stroke} opacity={0.9} />
+      ))}
+    </g>
+  ) : null;
+  const symbolsGroup = symbolsVisible ? (
+    <g>
+      {syms.map((sym, i) => (
+        <g
+          key={i}
+          ref={(el) => {
+            refs.current[i] = el;
+          }}
+          transform={`translate(${sym.x},${sym.y})`}
+          opacity={fadeAt(fade, sym.y)}
+        >
+          {shapePath(sym)}
+        </g>
+      ))}
+    </g>
+  ) : null;
 
   return (
     <div
       className="absolute"
-      style={{ left: 0, top: 0, width: LOCKED_V32_MENU.canvas.w, height: LOCKED_V32_MENU.canvas.h, background: BG.paper, overflow: "hidden", pointerEvents: "none" }}
+      style={{ left: 0, top: 0, width: LOCKED_V32_MENU.canvas.w, height: LOCKED_V32_MENU.canvas.h, background: fade.paper, overflow: "hidden", pointerEvents: "none" }}
       aria-hidden="true"
     >
       <svg width={LOCKED_V32_MENU.canvas.w} height={LOCKED_V32_MENU.canvas.h}>
-        {ARC_RX.map((rx, i) => (
-          <ellipse key={i} cx={BG.arcs.centre.x} cy={BG.arcs.centre.y} rx={rx} ry={rx * BG.arcs.ryRatio} fill="none" stroke={ARC_COLORS[i]} strokeWidth={BG.arcs.strokeWidth} opacity={0.9} />
-        ))}
-        {BG.arcs.orbits.map((o, i) => (
-          <ellipse key={`o${i}`} cx={BG.arcs.centre.x} cy={BG.arcs.centre.y} rx={o.rx} ry={o.ry} fill="none" stroke={o.color} strokeWidth={BG.arcs.strokeWidth} opacity={0.9} transform={`rotate(${o.rotate} ${BG.arcs.centre.x} ${BG.arcs.centre.y})`} />
-        ))}
-        {SYMBOLS.map((sym, i) => (
-          <g
-            key={i}
-            ref={(el) => {
-              refs.current[i] = el;
-            }}
-            transform={`translate(${sym.x},${sym.y})`}
-            opacity={fadeAt(sym.y)}
-          >
-            {shapePath(sym)}
-          </g>
-        ))}
+        {symbolsBelowArcs ? (<>{symbolsGroup}{arcsGroup}</>) : (<>{arcsGroup}{symbolsGroup}</>)}
       </svg>
     </div>
   );
