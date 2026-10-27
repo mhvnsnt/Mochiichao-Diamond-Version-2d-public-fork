@@ -1,0 +1,911 @@
+{
+  "Mochii": {
+    "file": "mochii-walk-cutout.png",
+    "size": [
+      380,
+      380
+    ],
+    "crossings": {
+      "feathered": 0,
+      "hard": 2040,
+      "soft-design": 0,
+      "other": 0,
+      "skipped_edge_touch": 0
+    },
+    "decisive": 2040,
+    "feathered_fraction_of_decisive": 0.0,
+    "median_ramp_width_px": 0.0,
+    "feather_present": "NO",
+    "intermediate_alpha_pixels_1_254": 0,
+    "example_windows": [
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    ]
+  },
+  "Razorgater": {
+    "file": "razorgater-walk-cutout.png",
+    "size": [
+      265,
+      266
+    ],
+    "crossings": {
+      "feathered": 995,
+      "hard": 0,
+      "soft-design": 686,
+      "other": 0,
+      "skipped_edge_touch": 73
+    },
+    "decisive": 995,
+    "feathered_fraction_of_decisive": 1.0,
+    "median_ramp_width_px": 5.0,
+    "feather_present": "YES",
+    "intermediate_alpha_pixels_1_254": 45798,
+    "example_windows": [
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          0,
+          5,
+          28,
+          87,
+          170,
+          226,
+          242,
+          218,
+          147,
+          62
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          1,
+          7,
+          34,
+          100,
+          183,
+          232,
+          244,
+          222,
+          154,
+          68
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          1,
+          8,
+          40,
+          112,
+          194,
+          236,
+          245,
+          224,
+          160,
+          73
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          94,
+          31,
+          9,
+          22,
+          77,
+          164,
+          226,
+          244,
+          237,
+          202,
+          123
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          1,
+          10,
+          48,
+          123,
+          202,
+          237,
+          244,
+          226,
+          164,
+          77
+        ]
+      }
+    ]
+  },
+  "Tyrage": {
+    "file": "tyrage-walk-cutout.png",
+    "size": [
+      327,
+      305
+    ],
+    "crossings": {
+      "feathered": 1205,
+      "hard": 0,
+      "soft-design": 916,
+      "other": 0,
+      "skipped_edge_touch": 71
+    },
+    "decisive": 1205,
+    "feathered_fraction_of_decisive": 1.0,
+    "median_ramp_width_px": 4.0,
+    "feather_present": "YES",
+    "intermediate_alpha_pixels_1_254": 57949,
+    "example_windows": [
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          6,
+          18,
+          41,
+          83,
+          134,
+          177,
+          206,
+          225,
+          240
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          2,
+          7,
+          19,
+          39,
+          74,
+          122,
+          172,
+          209,
+          232,
+          244
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          6,
+          16,
+          39,
+          82,
+          139,
+          191,
+          223,
+          239,
+          246
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          3,
+          9,
+          23,
+          47,
+          82,
+          128,
+          177,
+          215,
+          236,
+          247
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          6,
+          15,
+          38,
+          80,
+          137,
+          191,
+          227,
+          243,
+          250
+        ]
+      }
+    ]
+  },
+  "Sproutle": {
+    "file": "sproutle-walk-cutout.png",
+    "size": [
+      259,
+      333
+    ],
+    "crossings": {
+      "feathered": 1000,
+      "hard": 0,
+      "soft-design": 574,
+      "other": 0,
+      "skipped_edge_touch": 80
+    },
+    "decisive": 1000,
+    "feathered_fraction_of_decisive": 1.0,
+    "median_ramp_width_px": 5.0,
+    "feather_present": "YES",
+    "intermediate_alpha_pixels_1_254": 58023,
+    "example_windows": [
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          3,
+          8,
+          19,
+          41,
+          76,
+          120,
+          167,
+          205,
+          229,
+          242
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          1,
+          4,
+          10,
+          26,
+          54,
+          94,
+          142,
+          185,
+          219,
+          239,
+          248
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          5,
+          15,
+          33,
+          66,
+          112,
+          160,
+          202,
+          228,
+          244
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          3,
+          7,
+          18,
+          42,
+          80,
+          129,
+          177,
+          214,
+          236,
+          246
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          1,
+          3,
+          10,
+          23,
+          51,
+          94,
+          145,
+          191,
+          223,
+          242,
+          250
+        ]
+      }
+    ]
+  },
+  "Dorowani": {
+    "file": "dorowani-walk-cutout.png",
+    "size": [
+      263,
+      398
+    ],
+    "crossings": {
+      "feathered": 1662,
+      "hard": 0,
+      "soft-design": 431,
+      "other": 0,
+      "skipped_edge_touch": 213
+    },
+    "decisive": 1662,
+    "feathered_fraction_of_decisive": 1.0,
+    "median_ramp_width_px": 4.0,
+    "feather_present": "YES",
+    "intermediate_alpha_pixels_1_254": 10397,
+    "example_windows": [
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          10,
+          43,
+          116,
+          201,
+          245,
+          254,
+          255,
+          254,
+          245
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          1,
+          10,
+          43,
+          116,
+          201,
+          245,
+          254,
+          255,
+          254,
+          245
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          9,
+          35,
+          91,
+          168,
+          226,
+          250,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          1,
+          9,
+          35,
+          91,
+          168,
+          226,
+          250,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          9,
+          35,
+          91,
+          163,
+          220,
+          246,
+          254,
+          255,
+          255
+        ]
+      }
+    ]
+  },
+  "Gabu": {
+    "file": "gabu-walk-cutout.png",
+    "size": [
+      292,
+      295
+    ],
+    "crossings": {
+      "feathered": 1404,
+      "hard": 0,
+      "soft-design": 279,
+      "other": 0,
+      "skipped_edge_touch": 179
+    },
+    "decisive": 1404,
+    "feathered_fraction_of_decisive": 1.0,
+    "median_ramp_width_px": 4.0,
+    "feather_present": "YES",
+    "intermediate_alpha_pixels_1_254": 7817,
+    "example_windows": [
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          1,
+          14,
+          71,
+          172,
+          235,
+          251,
+          252,
+          245,
+          219
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          1,
+          9,
+          35,
+          91,
+          163,
+          219,
+          245,
+          252,
+          251,
+          235
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          1,
+          11,
+          57,
+          148,
+          221,
+          249,
+          253,
+          249,
+          221
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          0,
+          1,
+          11,
+          57,
+          148,
+          221,
+          249,
+          253,
+          249,
+          221
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          9,
+          35,
+          91,
+          163,
+          219,
+          245,
+          252,
+          251,
+          235
+        ]
+      }
+    ]
+  },
+  "Wispkin": {
+    "file": "wispkin-walk-cutout.png",
+    "size": [
+      288,
+      609
+    ],
+    "crossings": {
+      "feathered": 2040,
+      "hard": 0,
+      "soft-design": 497,
+      "other": 0,
+      "skipped_edge_touch": 71
+    },
+    "decisive": 2040,
+    "feathered_fraction_of_decisive": 1.0,
+    "median_ramp_width_px": 4.0,
+    "feather_present": "YES",
+    "intermediate_alpha_pixels_1_254": 10859,
+    "example_windows": [
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          1,
+          13,
+          59,
+          133,
+          188,
+          225,
+          245,
+          252,
+          245
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          14,
+          5,
+          4,
+          15,
+          63,
+          148,
+          216,
+          245,
+          252,
+          245,
+          225
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          5,
+          32,
+          102,
+          187,
+          234,
+          249,
+          253,
+          255,
+          253
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          2,
+          15,
+          64,
+          152,
+          222,
+          249,
+          254,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          1,
+          9,
+          38,
+          106,
+          192,
+          241,
+          254,
+          255,
+          255,
+          255
+        ]
+      }
+    ]
+  },
+  "Mythar": {
+    "file": "mythar-walk-cutout.png",
+    "size": [
+      434,
+      350
+    ],
+    "crossings": {
+      "feathered": 2329,
+      "hard": 0,
+      "soft-design": 692,
+      "other": 0,
+      "skipped_edge_touch": 127
+    },
+    "decisive": 2329,
+    "feathered_fraction_of_decisive": 1.0,
+    "median_ramp_width_px": 4.0,
+    "feather_present": "YES",
+    "intermediate_alpha_pixels_1_254": 15360,
+    "example_windows": [
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          0,
+          5,
+          29,
+          87,
+          162,
+          215,
+          235,
+          240,
+          240,
+          240
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          0,
+          0,
+          1,
+          11,
+          57,
+          144,
+          215,
+          245,
+          252,
+          254,
+          254
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          4,
+          0,
+          1,
+          14,
+          71,
+          172,
+          236,
+          253,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          9,
+          1,
+          1,
+          15,
+          74,
+          178,
+          239,
+          254,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-right",
+        "window_outside_to_in": [
+          9,
+          1,
+          1,
+          14,
+          71,
+          172,
+          236,
+          253,
+          255,
+          255,
+          255
+        ]
+      }
+    ]
+  },
+  "Yogiferno": {
+    "file": "yogiferno-walk-cutout.png",
+    "size": [
+      145,
+      190
+    ],
+    "crossings": {
+      "feathered": 0,
+      "hard": 1037,
+      "soft-design": 0,
+      "other": 0,
+      "skipped_edge_touch": 189
+    },
+    "decisive": 1037,
+    "feathered_fraction_of_decisive": 0.0,
+    "median_ramp_width_px": 0.0,
+    "feather_present": "NO",
+    "intermediate_alpha_pixels_1_254": 0,
+    "example_windows": [
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "side": "row-left",
+        "window_outside_to_in": [
+          0,
+          0,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      }
+    ]
+  }
+}
