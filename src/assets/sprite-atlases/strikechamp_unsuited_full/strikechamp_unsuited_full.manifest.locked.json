@@ -53,7 +53,7 @@
   },
   {
    "cell": 3,
-   "role": "overworld_front",
+   "role": "overworld_back",
    "file": "strikechamp_unsuited_full_cell_03.png",
    "game_ready": true,
    "eye_status": "eye_confirmed",
@@ -63,7 +63,7 @@
   },
   {
    "cell": 4,
-   "role": "overworld_back",
+   "role": "overworld_front",
    "file": "strikechamp_unsuited_full_cell_04.png",
    "game_ready": true,
    "eye_status": "eye_confirmed",

@@ -263,7 +263,7 @@
     "id": "035",
     "name": "Pebblefist",
     "elements": ["Core", "Chrome"],
-    "base_stats": { "hp": 4-5, "atk": 80, "def": 100, "spa": 30, "spd": 30, "spe": 20 },
+    "base_stats": { "hp": 40, "atk": 80, "def": 100, "spa": 30, "spd": 30, "spe": 20 },
     "evolution_reqs": { "targetId": "036", "level": 25 },
     "api_search_tags": ["rock fists", "stone hands golem", "gravel puncher"]
   },

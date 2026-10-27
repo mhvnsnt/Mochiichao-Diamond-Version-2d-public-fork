@@ -1,0 +1,1881 @@
+{
+ "title": "Dojo/elite verification 2026-10-26 (staged only, NOT PR'd, NOT wired, NOT live)",
+ "method": "Verified FROM DISK, not from step-8 claims: every source file opened (PIL dimensions/format), non-zero bytes checked, atlas opened cell-by-cell (64px, 14 cells, hashes), manifest source filenames checked against disk, and a 5-panel montage per character eye-checked against the locked look in dojo-elite-step8-2026-10-26.json.",
+ "stale_claim_note": "The combined dojo-elite-step8-2026-10-26.json still carries old steps dicts (1=DRAFT, 2-5/8=OWED, 6=N/A, 7=STAGED) and counts 2/8 per character; the per-character step8 files have NO steps key at all. Both are superseded by this disk verification. Neither file was edited in this run (no Mars-seen file overwritten).",
+ "walk_ruling": "Walk ruling CLOSED 2026-10-26 17:40: stride-phase / front-facing walk files accepted as-is. Atlas step cells 8-11 are therefore counted as the walk step, even though their manifest names (walk_front_step etc.) do NOT describe true per-direction steps. No per-direction/side-view walk re-render is owed for these 8 characters (Tetsu's walk sheet is the exception with a second band).",
+ "dialogue_note": "Dialogue was NOT written or re-asked in this run, per task.",
+ "generation_note": "NO files were generated, re-rendered, or replaced in this run: 0 missing, 0 corrupt, 0 wrong-character files found. The only new files are this JSON, the report, and the 9 dated show montages in human-lane-100/.",
+ "totals": {
+  "dojo_elite": "72/72 = 100% on files",
+  "per_character": "9 x 8/8",
+  "mars_confirmed_subset": "Hono + Yoru = 16/72 Mars-confirmed (blanket 17:40); other 7 characters = 56/72 file-complete, Mars eye-check still owed"
+ },
+ "characters": [
+  {
+   "name": "tetsu",
+   "slot": "Dojo 3",
+   "theme": "Chrome",
+   "location": "Neon City",
+   "locked_look": "steel-grey riveted jacket, dark trousers, steel-grey boots, iron pendant, belt pouch; light skin, short black hair, grey eyes, lean build",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-dojo-leaders-model-sheet-2026-10-26-a.webp",
+     "panel": "grid_a, left panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); no per-character step8 file - see note"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-tetsu-world-views-v-0-d22ee2d3-1e1e-450e-9ba9-47e89b6d6d96.webp",
+     "present": true,
+     "bytes": 247826,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-tetsu-walk-frames-v-0-74065972-07fb-4785-b599-08e35d9ead3b.webp",
+     "present": true,
+     "bytes": 217892,
+     "dimensions": "2240x1120",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-tetsu-battle-front-0-afe0c43b-9127-4ad2-afe6-4f39f52b3e19.webp",
+     "present": true,
+     "bytes": 172240,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-tetsu-portrait-v1-2-0-66c95bbf-e68a-4f28-8e85-d21c5d25a837.webp",
+     "present": true,
+     "bytes": 207496,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "tetsu-atlas-64x64.png",
+     "present": true,
+     "bytes": 111626,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "tetsu-atlas-manifest.json",
+      "present": true,
+      "bytes": 2236
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "7612c577",
+      "db6c2c67",
+      "e933c8b8",
+      "9d8a319c",
+      "dd7ca10c",
+      "c76afa9b",
+      "bebf05a3",
+      "913eefb0",
+      "1047ac24",
+      "278291cc",
+      "fc1dcc26",
+      "e075c7f4",
+      "8216c8d0",
+      "0cd11de4"
+     ],
+     "unique_cells_0_13": 14,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "No per-character tetsu-step8-2026-10-26.json on disk (see data note - data step is the combined JSON entry, not a missing art file).",
+    "Atlas idle cells 4-7 are NOT duplicates of world cells 0-3 (all 14 cell hashes unique) - Tetsu's walk sheet carries a second band, so idle comes from walk, unlike the other 8.",
+    "Walk accepted as-is under the 17:40 walk ruling; no per-direction re-render owed."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "still owed (this report is the eye-check presentation; no lock claimed)"
+  },
+  {
+   "name": "kenji",
+   "slot": "Dojo 4",
+   "theme": "Strike",
+   "location": "Market City",
+   "locked_look": "red/black sleeveless training jacket over dark undershirt, hand wraps, dark trousers, cloth sash; medium tan skin, dark brown tied-back hair, brown eyes, muscular build",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-dojo-leaders-model-sheet-2026-10-26-a.webp",
+     "panel": "grid_a, middle panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); plus kenji-step8-2026-10-26.json"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-kenji-world-views-v-0-4c734446-a14a-49de-9fd9-86a97ed6e505.webp",
+     "present": true,
+     "bytes": 140698,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-kenji-walk-frames-v-0-a5d16e82-7545-4b87-b5c2-4a9a3f3519a2.webp",
+     "present": true,
+     "bytes": 192308,
+     "dimensions": "2736x912",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-kenji-battle-front-0-7c347737-ff1f-4f28-92cd-9b737c5e48d5.webp",
+     "present": true,
+     "bytes": 247290,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-kenji-portrait-v1-2-0-7653328d-4d95-4b75-9294-d0c661d9e99d.webp",
+     "present": true,
+     "bytes": 253530,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "kenji-atlas-64x64.png",
+     "present": true,
+     "bytes": 106379,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "kenji-atlas-manifest.json",
+      "present": true,
+      "bytes": 2436
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "89fe56f2",
+      "5d536a56",
+      "5d9277ed",
+      "59ed6ad9",
+      "89fe56f2",
+      "5d536a56",
+      "5d9277ed",
+      "59ed6ad9",
+      "eb215a39",
+      "d1c130ca",
+      "fa04198c",
+      "ce2087b3",
+      "1eef848e",
+      "53bae2f8"
+     ],
+     "unique_cells_0_13": 10,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "WALK SINGLE-DIRECTION (covered by 17:40 walk ruling): all 4 walk frames face image-right in stride order; atlas step cells 8-11 are stride phases, NOT true front/back/left/right steps.",
+    "PORTRAIT ADDED SCARF: black scarf/drape across the chest, not in the attribute block and not in world/battle sheets (sash at waist there). Flagged, NOT replaced - Mars decides keep vs re-render.",
+    "BATTLE HAIR: topknot/spiky crown reads slightly different from world sheet's tied-back ponytail; same colour and tie."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "still owed (this report is the eye-check presentation; no lock claimed)"
+  },
+  {
+   "name": "phantom",
+   "slot": "Dojo 5",
+   "theme": "Umbral",
+   "location": "Central City",
+   "locked_look": "red Japanese oni mask with gold horns (LOCKED look), black/deep-purple samurai armour plates over dark robe, purple sash, dark hakama, black sandals, sheathed sword",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-dojo-leaders-model-sheet-2026-10-26-a.webp",
+     "panel": "grid_a, right panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); plus phantom-step8-2026-10-26.json"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-phantom-world-views-0-0eb31866-568e-4ede-8936-69e44f83ff8f.webp",
+     "present": true,
+     "bytes": 202440,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-phantom-walk-frames-0-6350bc69-8272-46be-9665-213897d121b7.webp",
+     "present": true,
+     "bytes": 315524,
+     "dimensions": "2736x912",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-phantom-battle-fron-0-0d138036-417a-4c66-8144-5aaa6ef1a9bd.webp",
+     "present": true,
+     "bytes": 419430,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-phantom-portrait-v1-0-cd069abc-ce11-4a5c-b37c-03d8ee4cb596.webp",
+     "present": true,
+     "bytes": 305036,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "phantom-atlas-64x64.png",
+     "present": true,
+     "bytes": 119485,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "phantom-atlas-manifest.json",
+      "present": true,
+      "bytes": 2863
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "58bbc1dc",
+      "5662161a",
+      "5d8a2b47",
+      "7acffc13",
+      "58bbc1dc",
+      "5662161a",
+      "5d8a2b47",
+      "7acffc13",
+      "76f6c7fd",
+      "465f6725",
+      "01d90057",
+      "1bffbc62",
+      "26f5d2c8",
+      "dbb67c54"
+     ],
+     "unique_cells_0_13": 10,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "WALK SINGLE-DIRECTION (covered by 17:40 walk ruling): stride phases, not per-direction steps.",
+    "PORTRAIT DARK BACKGROUND: near-black background, not the plain light background of the other sheets; atlas portrait cell carries it. Flagged, NOT replaced.",
+    "GOLD TRIM DRIFT: walk and battle armour carry heavier gold trim than the world sheet's plainer plates. Same colours and mask."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "still owed (this report is the eye-check presentation; no lock claimed)"
+  },
+  {
+   "name": "shizuku",
+   "slot": "Dojo 6",
+   "theme": "Water",
+   "location": "Harbor City",
+   "locked_look": "teal/white wave-print jacket over white top, teal shorts, teal/white sandals, wave pendant, wristband; light-medium skin, long dark blue-black high side ponytail, teal eyes",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-dojo-leaders-model-sheet-2026-10-26-b.webp",
+     "panel": "grid_b, left panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); plus shizuku-step8-2026-10-26.json"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-shizuku-world-views-0-d44f532b-63b3-4196-bf9e-3a7ec06e4d1d.webp",
+     "present": true,
+     "bytes": 240176,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-shizuku-walk-frames-0-df540bfc-10f3-4ffe-b959-f0bff9f40ff7.webp",
+     "present": true,
+     "bytes": 308038,
+     "dimensions": "2736x912",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-shizuku-battle-fron-0-863f65db-de28-4c32-a0df-074ed4a3781c.webp",
+     "present": true,
+     "bytes": 283154,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-shizuku-portrait-v1-0-5ff434b8-d5e3-4f5f-93ec-ce864bbb8962.webp",
+     "present": true,
+     "bytes": 352780,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "shizuku-atlas-64x64.png",
+     "present": true,
+     "bytes": 111836,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "shizuku-atlas-manifest.json",
+      "present": true,
+      "bytes": 2496
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "5619e75d",
+      "0cb1cbf5",
+      "27ef49ca",
+      "9f93f488",
+      "5619e75d",
+      "0cb1cbf5",
+      "27ef49ca",
+      "9f93f488",
+      "7a59fbe5",
+      "acf2072b",
+      "9f583f60",
+      "53261bc9",
+      "e6118136",
+      "3c23cd56"
+     ],
+     "unique_cells_0_13": 10,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "WALK SINGLE-DIRECTION (covered by 17:40 walk ruling): stride phases, not per-direction steps.",
+    "PROPORTION MISMATCH: world-sheet figures read shorter/younger than walk/battle/portrait figures, which are taller. Atlas mixes both sets as generated. Flagged, NOT replaced.",
+    "PORTRAIT ADDED BOW: large teal bow tying the ponytail, not specified in the attribute block.",
+    "BATTLE FOOTWEAR: chunky white/teal trainers rather than the world sheet's sandals."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "still owed (this report is the eye-check presentation; no lock claimed)"
+  },
+  {
+   "name": "homura",
+   "slot": "Dojo 7",
+   "theme": "Flame",
+   "location": "Ember Island",
+   "locked_look": "orange/black coat with orange/purple flame print over dark shirt, dark trousers with red trim, black boots with orange soles, flame pendant, fingerless gloves; medium brown skin, spiky black hair with red tips, amber eyes",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-dojo-leaders-model-sheet-2026-10-26-b.webp",
+     "panel": "grid_b, right panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); plus homura-step8-2026-10-26.json"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-homura-world-views-0-a062f7a2-e5ed-4154-ab55-b35c77ccfbd5.webp",
+     "present": true,
+     "bytes": 262604,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-homura-walk-frames-0-8aca61b7-6f0a-4609-b29c-3036cc352d04.webp",
+     "present": true,
+     "bytes": 281036,
+     "dimensions": "2736x912",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-homura-battle-front-0-9f2077f0-cd8c-4d0e-802a-78e288d28543.webp",
+     "present": true,
+     "bytes": 308896,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-homura-portrait-v1-0-a4afedc7-b8b9-442d-94cc-8517ebb73c6b.webp",
+     "present": true,
+     "bytes": 331194,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "homura-atlas-64x64.png",
+     "present": true,
+     "bytes": 108854,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "homura-atlas-manifest.json",
+      "present": true,
+      "bytes": 2338
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "fb7156e0",
+      "9eeec41c",
+      "91f66e99",
+      "c575bc2d",
+      "fb7156e0",
+      "9eeec41c",
+      "91f66e99",
+      "c575bc2d",
+      "e0093b6d",
+      "a05c6272",
+      "4c9148f9",
+      "8320a83f",
+      "e335a2ef",
+      "d8a61bc7"
+     ],
+     "unique_cells_0_13": 10,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "WALK SINGLE-DIRECTION (covered by 17:40 walk ruling): stride phases, not per-direction steps; walk coat adds a hood not on the world sheet's coat.",
+    "BATTLE HAIR DRIFT: battle hair much redder and spikier than the world sheet's black hair with red tips. Flagged, NOT replaced.",
+    "PORTRAIT ADDED SCAR: small vertical scar/mark on the cheek under one eye, not present in any other sheet."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "still owed (this report is the eye-check presentation; no lock claimed)"
+  },
+  {
+   "name": "umi",
+   "slot": "Elite 1",
+   "theme": "Water",
+   "location": "Mainframe Plateau",
+   "locked_look": "deep blue coat with silver wave pattern over navy dress, dark leggings, navy boots, silver wave pendant, sash belt; medium skin, short black bob, deep teal eyes",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-elite-four-model-sheet-2026-10-26-a.webp",
+     "panel": "grid_c, left panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); plus umi-step8-2026-10-26.json"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-umi-world-views-v1-0-fd95b179-93cc-4a20-81d9-3013ef1a515d.webp",
+     "present": true,
+     "bytes": 148614,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-umi-walk-frames-v1-0-931f4e07-c96c-4980-91d0-c89e4631d497.webp",
+     "present": true,
+     "bytes": 225126,
+     "dimensions": "2736x912",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-umi-battle-front-v1-0-ad7d8fff-bb28-4a3c-bbb8-107b22b5b6e1.webp",
+     "present": true,
+     "bytes": 246652,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-umi-portrait-v1-202-0-ddcacfc1-4e5e-4542-9a3b-d30dd491b2a8.webp",
+     "present": true,
+     "bytes": 221136,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "umi-atlas-64x64.png",
+     "present": true,
+     "bytes": 107447,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "umi-atlas-manifest.json",
+      "present": true,
+      "bytes": 2539
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "7647e201",
+      "097c9489",
+      "77292081",
+      "d7016c7d",
+      "7647e201",
+      "097c9489",
+      "77292081",
+      "d7016c7d",
+      "1719280f",
+      "81629f17",
+      "9a06a798",
+      "04152ee0",
+      "f3409e1c",
+      "940c56ba"
+     ],
+     "unique_cells_0_13": 10,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "WALK FRONT-FACING (covered by 17:40 walk ruling): all 4 walk frames face the viewer (front 3/4) while striding; atlas step cells 8-11 are front-facing strides, NOT side steps and NOT per-direction steps.",
+    "COAT LENGTH DRIFT: walk and battle coats read shorter (capelet/short coat) than the world sheet's long coat. Flagged, NOT replaced.",
+    "PORTRAIT PENDANT: silver CRESCENT, not the wave pendant of the world/battle sheets."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "still owed (this report is the eye-check presentation; no lock claimed)"
+  },
+  {
+   "name": "gin",
+   "slot": "Elite 2",
+   "theme": "Chrome",
+   "location": "Mainframe Plateau",
+   "locked_look": "silver/charcoal suit jacket with chrome panels over grey shirt, dark trousers, polished silver-grey boots, chrome chain, black gloves; pale skin, silver-grey slicked hair, grey eyes",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-elite-four-model-sheet-2026-10-26-a.webp",
+     "panel": "grid_c, right panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); plus gin-step8-2026-10-26.json"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-gin-world-views-v1-0-c6e9ff0f-fa22-4f18-a2a8-a841ce79fbbd.webp",
+     "present": true,
+     "bytes": 274408,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-gin-walk-frames-v1-0-ef1ba28f-8743-4fda-a264-d006e8134e7f.webp",
+     "present": true,
+     "bytes": 179540,
+     "dimensions": "2736x912",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-gin-battle-front-v1-0-19c8904d-8d46-4b61-a260-c013b9111f23.webp",
+     "present": true,
+     "bytes": 199498,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-gin-portrait-v1-202-0-a52df23d-8f98-4be7-8015-bdd85e4e9308.webp",
+     "present": true,
+     "bytes": 309582,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "gin-atlas-64x64.png",
+     "present": true,
+     "bytes": 108051,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "gin-atlas-manifest.json",
+      "present": true,
+      "bytes": 2273
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "f562f8eb",
+      "c46d1979",
+      "b305b11c",
+      "b56734cc",
+      "f562f8eb",
+      "c46d1979",
+      "b305b11c",
+      "b56734cc",
+      "ae6742ba",
+      "b9692e03",
+      "ab948b8d",
+      "9ef5d7d7",
+      "66ee51d4",
+      "e882da51"
+     ],
+     "unique_cells_0_13": 10,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "WALK SINGLE-DIRECTION (covered by 17:40 walk ruling): stride phases, not per-direction steps.",
+    "SIDE-VIEW CHAIN: side views show the chrome chain draped down the back, not just as a necklace at the neck.",
+    "BATTLE BOOTS: tall knee-high chrome boots; world sheet's boots are ankle boots. Flagged, NOT replaced."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "still owed (this report is the eye-check presentation; no lock claimed)"
+  },
+  {
+   "name": "hono",
+   "slot": "Elite 3",
+   "theme": "Flame",
+   "location": "Mainframe Plateau",
+   "locked_look": "crimson/black coat with orange/gold flame print over dark top, dark skirt over leggings, black boots with red soles, gold hoops, flame pendant; warm brown skin, curly dark hair with red streaks, brown eyes",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-elite-four-model-sheet-2026-10-26-b.webp",
+     "panel": "grid_d, left panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); plus hono-step8-2026-10-26.json"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-hono-world-views-v1-0-c9ed6638-772b-430b-bc51-502284b7510e.webp",
+     "present": true,
+     "bytes": 177850,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-hono-walk-frames-v1-0-5a18b799-0c59-42b3-9c62-3dfcf474f18c.webp",
+     "present": true,
+     "bytes": 309228,
+     "dimensions": "2240x1120",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-hono-battle-front-v-0-d1f0cd5e-524e-4c31-a542-2e2bd9f32f04.webp",
+     "present": true,
+     "bytes": 275384,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-hono-portrait-v1-20-0-bd89689f-ed89-463b-9bfe-ea33eef10404.webp",
+     "present": true,
+     "bytes": 344870,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "hono-atlas-64x64.png",
+     "present": true,
+     "bytes": 112413,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "hono-atlas-manifest.json",
+      "present": true,
+      "bytes": 2353
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "0f2707fd",
+      "68579715",
+      "51d4b154",
+      "55d24120",
+      "0f2707fd",
+      "68579715",
+      "51d4b154",
+      "55d24120",
+      "910b0ce6",
+      "d5bbeb4a",
+      "4c2112cd",
+      "6ddbd5a4",
+      "cd5c2f7c",
+      "5ef05425"
+     ],
+     "unique_cells_0_13": 10,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "WALK FRONT-FACING (covered by 17:40 walk ruling): front-facing strides, NOT side/per-direction steps.",
+    "WALK CUT METHOD: column run detection merged all 4 walk frames into one run (coats/hair bridge gaps in projection); steps cut by equal quarters + per-quarter trim instead. Recorded in manifest.",
+    "PORTRAIT CHAIN: pendant hangs on a gold chain; world sheet's pendant hangs on a dark cord. Minor drift, flagged.",
+    "MARS STATUS: blanket-confirmed 17:40 (sheets + atlas as shown)."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "blanket-confirmed 2026-10-26 17:40"
+  },
+  {
+   "name": "yoru",
+   "slot": "Elite 4",
+   "theme": "Umbral",
+   "location": "Mainframe Plateau",
+   "locked_look": "black/deep-purple coat with silver crescent pattern over dark shirt, dark trousers, black boots, silver crescent pendant, dark sash, wristband; dark brown skin, short black hair, dark eyes",
+   "count": "8/8",
+   "steps": {
+    "1_model_draft": {
+     "status": "present",
+     "file": "media-generation-elite-four-model-sheet-2026-10-26-b.webp",
+     "panel": "grid_d, right panel"
+    },
+    "2_data": {
+     "status": "present",
+     "file": "dojo-elite-step8-2026-10-26/dojo-elite-step8-2026-10-26.json (combined entry: slot/badge/team/theme/location/look); plus yoru-step8-2026-10-26.json"
+    },
+    "3_world": {
+     "file": "media-generation-dojo-elite-yoru-world-views-v1-0-e828586c-08bd-4b58-bc9b-8b37c2439e5d.webp",
+     "present": true,
+     "bytes": 121164,
+     "dimensions": "1920x1280",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "4_walk": {
+     "file": "media-generation-dojo-elite-yoru-walk-frames-v1-0-ead1be42-7fd1-4fab-af81-e87d78d91696.webp",
+     "present": true,
+     "bytes": 153598,
+     "dimensions": "2736x912",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "5_battle_front": {
+     "file": "media-generation-dojo-elite-yoru-battle-front-v-0-aacc446b-9725-4667-9b37-26913fa5af7c.webp",
+     "present": true,
+     "bytes": 219468,
+     "dimensions": "1120x2240",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "6_portrait": {
+     "file": "media-generation-dojo-elite-yoru-portrait-v1-20-0-666bf433-5cee-4183-a483-ad65f872b7db.webp",
+     "present": true,
+     "bytes": 185448,
+     "dimensions": "1600x1600",
+     "format": "WEBP",
+     "mode": "RGB"
+    },
+    "7_atlas": {
+     "file": "yoru-atlas-64x64.png",
+     "present": true,
+     "bytes": 106144,
+     "dimensions": "256x256",
+     "format": "PNG",
+     "mode": "RGBA",
+     "manifest": {
+      "file": "yoru-atlas-manifest.json",
+      "present": true,
+      "bytes": 2420
+     },
+     "cells": [
+      {
+       "index": 0,
+       "name": "world_front",
+       "x": 0,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 1,
+       "name": "world_back",
+       "x": 64,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 2,
+       "name": "world_left",
+       "x": 128,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 3,
+       "name": "world_right",
+       "x": 192,
+       "y": 0,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 4,
+       "name": "walk_front_idle",
+       "x": 0,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 5,
+       "name": "walk_back_idle",
+       "x": 64,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 6,
+       "name": "walk_left_idle",
+       "x": 128,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 7,
+       "name": "walk_right_idle",
+       "x": 192,
+       "y": 64,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 8,
+       "name": "walk_front_step",
+       "x": 0,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 9,
+       "name": "walk_back_step",
+       "x": 64,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 10,
+       "name": "walk_left_step",
+       "x": 128,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 11,
+       "name": "walk_right_step",
+       "x": 192,
+       "y": 128,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 12,
+       "name": "battle_front",
+       "x": 0,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      },
+      {
+       "index": 13,
+       "name": "portrait",
+       "x": 64,
+       "y": 192,
+       "w": 64,
+       "h": 64
+      }
+     ],
+     "cell_hashes_0_13": [
+      "3a83af68",
+      "4a7517a2",
+      "cb1f9f08",
+      "e46c5e59",
+      "3a83af68",
+      "4a7517a2",
+      "cb1f9f08",
+      "e46c5e59",
+      "1903d902",
+      "48e7e6c6",
+      "99f659e9",
+      "3a99b48c",
+      "2ac2f2dd",
+      "c3b40ad4"
+     ],
+     "unique_cells_0_13": 10,
+     "slots_14_15": "unused, black/transparent (expected, 14 cells in a 4x4 grid)"
+    },
+    "8_special": {
+     "status": "N/A",
+     "note": "No special variant for any of the 9, per step-8 count file."
+    }
+   },
+   "flags_carried_forward": [
+    "WALK SINGLE-DIRECTION (covered by 17:40 walk ruling): right-facing strides, NOT per-direction steps.",
+    "WALK PATTERN DRIFT: walk coat's crescent pattern much sparser (small crescents on purple lining only) than the world sheet's all-over crescents.",
+    "BATTLE SLEEVES: battle coat sleeves wider/kimono-style than the world sheet's narrower sleeves.",
+    "MARS STATUS: blanket-confirmed 17:40 (sheets + atlas as shown)."
+   ],
+   "visual_verdict": "MATCHES locked look at montage eye-check (this run); drift flags above are off-reference details carried forward, NOT missing/corrupt/wrong-character files, and were NOT silently replaced.",
+   "mars_eye_check": "blanket-confirmed 2026-10-26 17:40"
+  }
+ ]
+}

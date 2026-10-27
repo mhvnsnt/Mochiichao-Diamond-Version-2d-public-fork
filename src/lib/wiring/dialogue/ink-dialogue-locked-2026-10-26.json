@@ -1,0 +1,3905 @@
+{
+  "format": "Ink/inkjs pattern, hand-shaped JSON (NOT ink compiler output, NOT copied Pokemon lines). Shape: story -> knots -> stitches -> lines / choices. Matches pokemon-parity-fill/world-dialogue/dialogue-system.md: a stitch ends with exit:true or a choice list; a choice has text, optional condition, optional setFlags, and either target {knot, stitch} or exit:true. Runtime mapping: battle events trigger stitches intro / about_to_win / defeat / after directly; the main stitch is a preview/navigation stitch for the staged file only, not the battle flow. Badge flags are set on the after stitch of dojo knots only, once, on defeat. Elites never set a badge flag.",
+  "status": "LOCKED 2026-10-26 ~16:56 CDT for the knots listed in locked_knots; existing 21 knots carried verbatim from ink-dialogue.json (their prior DRAFT status is superseded for dojo/elite lines by the 16:56 lock of the show-sheet lines, per HUMAN-LANE-LOCKS-2026-10-26-1656.md). STAGED ONLY, NOT IN REPO, NOT WIRED, NOT LIVE. The stale 'iwao' knot is retained for history and marked superseded; use 'iwao_revised' for both Iwao fights.",
+  "entries": [
+    "cowboy_bob_kid",
+    "dojo_1_lin",
+    "dojo_2_falk",
+    "dojo_3_tetsu",
+    "dojo_4_kenji",
+    "dojo_5_phantom",
+    "dojo_6_shizuku",
+    "dojo_7_homura",
+    "dojo_8_luigi_met",
+    "dojo_8_luigi_new",
+    "elite_1_umi",
+    "elite_2_gin",
+    "elite_3_hono",
+    "elite_4_yoru",
+    "ferry_merv",
+    "greeting_generic",
+    "hoshino",
+    "iwao",
+    "jax",
+    "nurse_faye_heal",
+    "shop_generic",
+    "admin_voss",
+    "admin_ferren",
+    "admin_marlow",
+    "admin_tamsin",
+    "admin_corvin",
+    "admin_ilsa",
+    "admin_aldous",
+    "admin_mireille",
+    "admin_cassian",
+    "admin_soren",
+    "nurse_faye_battle",
+    "iwao_revised",
+    "rep_wisteria",
+    "rep_tessa",
+    "rep_saffron",
+    "rep_voss_cartographer"
+  ],
+  "locked_knots": [
+    "admin_voss",
+    "admin_ferren",
+    "admin_marlow",
+    "admin_tamsin",
+    "admin_corvin",
+    "admin_ilsa",
+    "admin_aldous",
+    "admin_mireille",
+    "admin_cassian",
+    "admin_soren",
+    "nurse_faye_battle",
+    "iwao_revised",
+    "rep_wisteria",
+    "rep_tessa",
+    "rep_saffron",
+    "rep_voss_cartographer"
+  ],
+  "superseded_knots": [
+    "iwao"
+  ],
+  "flags": [
+    "dojo_1_defeated",
+    "dojo_2_defeated",
+    "dojo_3_defeated",
+    "dojo_4_defeated",
+    "dojo_5_defeated",
+    "dojo_6_defeated",
+    "dojo_7_defeated",
+    "dojo_8_defeated",
+    "iwao_chrome_fragment",
+    "iwao_core_fragment"
+  ],
+  "openSlotsNotDrafted": [
+    "Champion after Elite: conflict unresolved in the base file; R1 Mythar vs R5 Grand Champion are kept as staged separate fights (see TEAMS-MYTHAR-PICK-2026-10-26.md), not an Ink knot here.",
+    "Admin mid_battle trigger is first creature down in the source, NOT the dojo about-to-win trigger; carried verbatim and flagged, wiring decision preserved from the draft."
+  ],
+  "notes": [
+    "Admin lines verbatim from ink-dialogue-draft-admins-faye-2026-10-26.json / show-sheet-admins-2026-10-26.md, including the flagged Mireille em dash and the single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat. Those flags are NOT silently fixed; only Mars himself changes a locked line.",
+    "Faye battle lines verbatim from show-sheet-nurse-faye-battle-2026-10-26.md (9 lines). Heal knot nurse_faye_heal is unchanged and is not duplicated.",
+    "Iwao revised lines are the revision drafts now locked per the never-ask dialogue rule; framing adapted from the locked old Iwao lines, stone/mould voice kept. Fragment lines: Goldenrod Chrome Fragment, Rustboro Core Fragment.",
+    "Representation lines are new (no prior dialogue existed), written in Mars's voice under the never-ask rule, first names only: Wisteria, Tessa, Saffron, and cartographer Voss (nameplate 'Voss'; admin nameplate 'Admin Voss').",
+    "No badge flag is set by any admin, Faye battle, or representation knot."
+  ],
+  "knots": {
+    "dojo_1_lin": {
+      "character": "Master Lin",
+      "kind": "dojo",
+      "theme": "Core",
+      "town": "Silicon Town",
+      "note": "INTRO: in-code lines from FullWorldMaps.ts line 297, carried forward unchanged. aboutToWin/defeat/after are NEW show-first drafts.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Master Lin",
+              "text": "You've come far, young trainer."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_1_lin",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_1_lin",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_1_lin",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_1_lin",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Master Lin",
+              "text": "You've come far, young trainer."
+            },
+            {
+              "speaker": "Master Lin",
+              "text": "Let us begin."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Master Lin",
+              "text": "Your footing is slipping. A core that cracks cannot hold."
+            },
+            {
+              "speaker": "Master Lin",
+              "text": "One more push... and the core settles this bout."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Master Lin",
+              "text": "Well fought. You held your core when it counted."
+            },
+            {
+              "speaker": "Master Lin",
+              "text": "A strong foundation, tested fairly. You earned this."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Master Lin",
+              "text": "Take the Core Fragment. Hold it steady, and build on it."
+            },
+            {
+              "speaker": "Master Lin",
+              "text": "The next dojo rides the wind. Go light, go fast, and do not lose your footing."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_1_defeated"
+          ]
+        }
+      }
+    },
+    "dojo_2_falk": {
+      "character": "Master Falk",
+      "kind": "dojo",
+      "theme": "Aero",
+      "town": "Wind Dojo",
+      "note": "APPROVED 2026-10-26 ~12:01 CDT, all lines verbatim from MASTER-FALK-DIALOGUE-DRAFT-2026-10-26.md. Not redrafted.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Master Falk",
+              "text": "Hey, hey, welcome up here. I'm Master Falk, and I'm high as a kite today, so you better keep up."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_2_falk",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_2_falk",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_2_falk",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_2_falk",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Master Falk",
+              "text": "Hey, hey, welcome up here. I'm Master Falk, and I'm high as a kite today, so you better keep up."
+            },
+            {
+              "speaker": "Master Falk",
+              "text": "You made it to my Dojo? Good. I live free like a bird up here, no cage, no chain, just wind."
+            },
+            {
+              "speaker": "Master Falk",
+              "text": "The winds favor the swift! So show me you're swift, or get blown right back down."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Master Falk",
+              "text": "Oh, you're drifting now. I'm about to fly him out, straight off this mountain."
+            },
+            {
+              "speaker": "Master Falk",
+              "text": "Feel that? That's the wind picking you up. I'm about to fly him out."
+            },
+            {
+              "speaker": "Master Falk",
+              "text": "Free like a bird, and you? You're just a feather in a storm."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Master Falk",
+              "text": "Ha! Okay, okay, you clipped my wings. I'm high as a kite, but you flew higher."
+            },
+            {
+              "speaker": "Master Falk",
+              "text": "Free like a bird, and today that bird is you. Take the wind with you."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Master Falk",
+              "text": "Here's your Wind Fragment. Hold it tight, or the wind will take it."
+            },
+            {
+              "speaker": "Master Falk",
+              "text": "Next Dojo's down the road, not up in the clouds. Don't get too comfortable on the ground, though. Stay free, stay fast."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_2_defeated"
+          ]
+        }
+      }
+    },
+    "dojo_3_tetsu": {
+      "character": "Tetsu",
+      "kind": "dojo",
+      "theme": "Chrome",
+      "town": "Neon City",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon until Mars approves.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Tetsu",
+              "text": "Welcome to Neon City. I am Tetsu, and this dojo runs like good steel: steady, tested, and true."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_3_tetsu",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_3_tetsu",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_3_tetsu",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_3_tetsu",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Tetsu",
+              "text": "Welcome to Neon City. I am Tetsu, and this dojo runs like good steel: steady, tested, and true."
+            },
+            {
+              "speaker": "Tetsu",
+              "text": "Chrome is not about shine. It is about holding your shape when everything presses down on you."
+            },
+            {
+              "speaker": "Tetsu",
+              "text": "Show me a team that holds together under pressure, and I will show you respect. Let us begin."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Tetsu",
+              "text": "There it is. The pressure is building, and your line is starting to bend."
+            },
+            {
+              "speaker": "Tetsu",
+              "text": "Steel does not rush. It waits... and then it holds. You are running out of room."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Tetsu",
+              "text": "Well struck. My steel bent today, and it bent clean."
+            },
+            {
+              "speaker": "Tetsu",
+              "text": "You kept your shape when it counted. That is the whole lesson."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Tetsu",
+              "text": "Take the Neon Fragment. Keep it polished, and keep it honest."
+            },
+            {
+              "speaker": "Tetsu",
+              "text": "Market City is your next stop. The Strike dojo there hits harder than it looks, so go ready."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_3_defeated"
+          ]
+        }
+      }
+    },
+    "dojo_4_kenji": {
+      "character": "Kenji",
+      "kind": "dojo",
+      "theme": "Strike",
+      "town": "Market City",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Kenji",
+              "text": "Welcome to Market City. I am Kenji, and here we train the way traders work: every move must earn its place."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_4_kenji",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_4_kenji",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_4_kenji",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_4_kenji",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Kenji",
+              "text": "Welcome to Market City. I am Kenji, and here we train the way traders work: every move must earn its place."
+            },
+            {
+              "speaker": "Kenji",
+              "text": "Strike is discipline. No wasted motion, no wild swings, just the right hit at the right moment."
+            },
+            {
+              "speaker": "Kenji",
+              "text": "Bow, breathe, and show me your form. Then we fight."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Kenji",
+              "text": "Your guard is slipping. One clean opening is all a trained fighter needs."
+            },
+            {
+              "speaker": "Kenji",
+              "text": "See? The bout turns on a single breath... and yours just ran short."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Kenji",
+              "text": "A clean loss. You read my rhythm and broke it fairly."
+            },
+            {
+              "speaker": "Kenji",
+              "text": "Good. A fighter who learns from a win like that is already stronger."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Kenji",
+              "text": "The Strike Fragment is yours. Carry it the way you carry a win: lightly, and with respect."
+            },
+            {
+              "speaker": "Kenji",
+              "text": "Central City waits next, and its dojo keeps to the shadows. Walk in with your eyes open."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_4_defeated"
+          ]
+        }
+      }
+    },
+    "dojo_5_phantom": {
+      "character": "PHANTOM",
+      "kind": "dojo",
+      "theme": "Umbral",
+      "town": "Central City",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon. Name PHANTOM locked 2026-10-26; superseded name never used.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "PHANTOM",
+              "text": "You have come to Central City, to a dojo where the lights stay low. I am Phantom."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_5_phantom",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_5_phantom",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_5_phantom",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_5_phantom",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "PHANTOM",
+              "text": "You have come to Central City, to a dojo where the lights stay low. I am Phantom."
+            },
+            {
+              "speaker": "PHANTOM",
+              "text": "Behind this mask is a samurai of the night. I do not fight for show. I fight for honor, in shadow."
+            },
+            {
+              "speaker": "PHANTOM",
+              "text": "The Umbral way is patience. Strike from stillness, vanish, and strike again. Face me if you dare."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "PHANTOM",
+              "text": "The shadows are closing in now. Your team is down to its last light."
+            },
+            {
+              "speaker": "PHANTOM",
+              "text": "One more step in the dark... and the night claims this bout."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "PHANTOM",
+              "text": "The mask does not fall, but the samurai bows. You fought well in the dark."
+            },
+            {
+              "speaker": "PHANTOM",
+              "text": "You did not fear the shadows. You walked straight through them."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "PHANTOM",
+              "text": "Take the Umbral Fragment. Wear its lesson well: stillness is a weapon too."
+            },
+            {
+              "speaker": "PHANTOM",
+              "text": "Harbor City is next. Its dojo rides the tide, and the tide does not wait for anyone."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_5_defeated"
+          ]
+        }
+      }
+    },
+    "dojo_6_shizuku": {
+      "character": "Shizuku",
+      "kind": "dojo",
+      "theme": "Water",
+      "town": "Harbor City",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Shizuku",
+              "text": "Welcome to Harbor City. I am Shizuku, and the harbor is my dojo."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_6_shizuku",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_6_shizuku",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_6_shizuku",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_6_shizuku",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Shizuku",
+              "text": "Welcome to Harbor City. I am Shizuku, and the harbor is my dojo."
+            },
+            {
+              "speaker": "Shizuku",
+              "text": "Water wins by never stopping. A wave does not argue with a wall. It just keeps coming."
+            },
+            {
+              "speaker": "Shizuku",
+              "text": "I train my team the way the tide trains the shore: steady, sure, and impossible to ignore. Ready?"
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Shizuku",
+              "text": "Feel that? The tide is turning, and it is turning my way."
+            },
+            {
+              "speaker": "Shizuku",
+              "text": "One more wave... and your team is washed out to sea."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Shizuku",
+              "text": "Ha! All right, the harbor yields today. You surfed that bout beautifully."
+            },
+            {
+              "speaker": "Shizuku",
+              "text": "You rode every wave I sent and never wiped out. That takes real nerve."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Shizuku",
+              "text": "Here, the Water Fragment. Keep it close, and let it remind you to keep moving."
+            },
+            {
+              "speaker": "Shizuku",
+              "text": "Ember Island is your next crossing. Its dojo burns bright, so bring your cool head with you."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_6_defeated"
+          ]
+        }
+      }
+    },
+    "dojo_7_homura": {
+      "character": "Homura",
+      "kind": "dojo",
+      "theme": "Flame",
+      "town": "Ember Island",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Homura",
+              "text": "Welcome to Ember Island! I am Homura, and this dojo burns from the heart out."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_7_homura",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_7_homura",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_7_homura",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_7_homura",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Homura",
+              "text": "Welcome to Ember Island! I am Homura, and this dojo burns from the heart out."
+            },
+            {
+              "speaker": "Homura",
+              "text": "Flame is passion with discipline. A wild fire burns out fast. A tended fire burns all night."
+            },
+            {
+              "speaker": "Homura",
+              "text": "My team burns bright and true, and we do not dim for anyone. Show me your spark!"
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Homura",
+              "text": "There it goes, your team is flickering! One more push and the flame takes this bout."
+            },
+            {
+              "speaker": "Homura",
+              "text": "Feel the heat rising... This is where a fire either catches or goes out."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Homura",
+              "text": "Whew! You blew right through my best fire and came out shining."
+            },
+            {
+              "speaker": "Homura",
+              "text": "A loss like that just feeds the flame. You earned this one, truly."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Homura",
+              "text": "Take the Flame Fragment, and keep its fire banked, not blazing wild."
+            },
+            {
+              "speaker": "Homura",
+              "text": "One dojo stands between you and the Plateau road, in Silicon Town. Go, and burn bright."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_7_defeated"
+          ]
+        }
+      }
+    },
+    "dojo_8_luigi_met": {
+      "character": "Luigi Castagnoli (met before)",
+      "kind": "dojo",
+      "theme": "Mythic",
+      "town": "Silicon Town",
+      "note": "NEW show-first draft. Branch A only: met-before, tricked-you, lied-about-retirement, comeback. Dojo 8 team itself is still a Mars decision (island team vs lane Final Fragment team); no team is named in these lines.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "So. You found me again. I told you I used to run this show, and you believed me... because that was the lie."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_8_luigi_met",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_8_luigi_met",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_8_luigi_met",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_8_luigi_met",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "So. You found me again. I told you I used to run this show, and you believed me... because that was the lie."
+            },
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "I never retired. I stepped back, I watched, and I waited for a challenger worth coming back for."
+            },
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "This time I am not holding back. Welcome to my dojo, challenger."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "You are down to your last one, and I am just getting warm. That is what a comeback looks like."
+            },
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "I waited this long for a fight... I am not letting it slip now."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "A comeback, beaten by a challenger who earned it. Fair. Clean. I can live with that."
+            },
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "You did not just beat a dojo. You beat the boss who came out of retirement to stop you."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "Take the Final Fragment. It opens the Victory Route, and the road past it."
+            },
+            {
+              "speaker": "Luigi Castagnoli (met before)",
+              "text": "Go. The Plateau is waiting, and it will not wait politely."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_8_defeated"
+          ]
+        }
+      }
+    },
+    "dojo_8_luigi_new": {
+      "character": "Luigi Castagnoli (first meeting)",
+      "kind": "dojo",
+      "theme": "Mythic",
+      "town": "Silicon Town",
+      "note": "NEW show-first draft. Branch B only: first meeting, boss introduction, no tricked-you line, per locked canon. Team decision still open, same as branch A.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "Welcome to Silicon Town, and to my dojo. I am Luigi Castagnoli, and I run this place."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "dojo_8_luigi_new",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "dojo_8_luigi_new",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "dojo_8_luigi_new",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "dojo_8_luigi_new",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "Welcome to Silicon Town, and to my dojo. I am Luigi Castagnoli, and I run this place."
+            },
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "I built my name on an island, and I built this dojo to be the last wall before the Plateau."
+            },
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "Eight dojos brought you here. This one decides whether you go further. Let us fight."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "Down to your last one already. A last wall does not bend for just anyone."
+            },
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "One more push... and this dojo holds."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "Well fought. A last wall, passed clean. I respect that, challenger."
+            },
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "You earned your way past me. Not many can say that."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "Take the Final Fragment. It opens the Victory Route, and the road past it."
+            },
+            {
+              "speaker": "Luigi Castagnoli (first meeting)",
+              "text": "Go. The Plateau is waiting, and it will not wait politely."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "dojo_8_defeated"
+          ]
+        }
+      }
+    },
+    "elite_1_umi": {
+      "character": "Umi",
+      "kind": "elite",
+      "theme": "Water",
+      "town": "Plateau",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Umi",
+              "text": "So you made it through all eight dojos. I am Umi, first seat of the Elite Four."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "elite_1_umi",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "elite_1_umi",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "elite_1_umi",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "elite_1_umi",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Umi",
+              "text": "So you made it through all eight dojos. I am Umi, first seat of the Elite Four."
+            },
+            {
+              "speaker": "Umi",
+              "text": "The Plateau does not forgive a shaky team. Water tests everything: patience, depth, and nerve."
+            },
+            {
+              "speaker": "Umi",
+              "text": "Swim or sink, challenger. Let us see which one you are."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Umi",
+              "text": "The deep water is pulling you under now. Your last stand is showing."
+            },
+            {
+              "speaker": "Umi",
+              "text": "One more pull of the current... and this seat holds."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Umi",
+              "text": "Clean swimming. You held your breath and your nerve all the way through."
+            },
+            {
+              "speaker": "Umi",
+              "text": "First seat, first lesson passed. The water lets you through."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Umi",
+              "text": "Go on to the second seat. Its steel is colder than any sea I know."
+            },
+            {
+              "speaker": "Umi",
+              "text": "Rest nothing on this win. Each seat hits harder than the last."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "elite_2_gin": {
+      "character": "Gin",
+      "kind": "elite",
+      "theme": "Chrome",
+      "town": "Plateau",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Gin",
+              "text": "I am Gin, second seat. You beat the water, so now you face the metal beneath it."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "elite_2_gin",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "elite_2_gin",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "elite_2_gin",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "elite_2_gin",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Gin",
+              "text": "I am Gin, second seat. You beat the water, so now you face the metal beneath it."
+            },
+            {
+              "speaker": "Gin",
+              "text": "Chrome at this level is not a wall. It is a machine: every part moving, every part exact."
+            },
+            {
+              "speaker": "Gin",
+              "text": "Bring a team with no loose bolts, challenger. I accept nothing less."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Gin",
+              "text": "Your machine is rattling apart. I can hear every loose bolt from here."
+            },
+            {
+              "speaker": "Gin",
+              "text": "Precision wins this bout... and your precision is gone."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Gin",
+              "text": "A flawless dismantling. You found the one joint that mattered and struck it true."
+            },
+            {
+              "speaker": "Gin",
+              "text": "Second seat, passed. Your team runs tighter than I judged."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Gin",
+              "text": "Third seat burns. Go, and do not let its fire rush you into mistakes."
+            },
+            {
+              "speaker": "Gin",
+              "text": "You have earned the next door. Walk through it steady."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "elite_3_hono": {
+      "character": "Hono",
+      "kind": "elite",
+      "theme": "Flame",
+      "town": "Plateau",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Hono",
+              "text": "I am Hono, third seat, and I keep the fire of the Plateau."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "elite_3_hono",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "elite_3_hono",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "elite_3_hono",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "elite_3_hono",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Hono",
+              "text": "I am Hono, third seat, and I keep the fire of the Plateau."
+            },
+            {
+              "speaker": "Hono",
+              "text": "By now you have felt every kind of heat. Mine is the kind that tests the heart, not just the team."
+            },
+            {
+              "speaker": "Hono",
+              "text": "Burn steady, challenger, or burn out. There is no middle flame here."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Hono",
+              "text": "Your fire is guttering. I can see it in every move you make."
+            },
+            {
+              "speaker": "Hono",
+              "text": "One last gust... and the Plateau fire takes this bout."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Hono",
+              "text": "What a blaze you fought with! My fire bowed to a brighter one today."
+            },
+            {
+              "speaker": "Hono",
+              "text": "Third seat, passed with honor. You carry real heat now."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Hono",
+              "text": "One seat remains, and it keeps to the night. Go ready, and go quiet."
+            },
+            {
+              "speaker": "Hono",
+              "text": "The last door is the darkest. Trust the team that brought you here."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "elite_4_yoru": {
+      "character": "Yoru",
+      "kind": "elite",
+      "theme": "Umbral",
+      "town": "Plateau",
+      "note": "Staged draft from dialogue-drafts.json, carried forward unchanged. NOT locked canon. No champion named, conflict unresolved.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Yoru",
+              "text": "I am Yoru, fourth seat, last door before the Plateau road."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "elite_4_yoru",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "elite_4_yoru",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "elite_4_yoru",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "elite_4_yoru",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Yoru",
+              "text": "I am Yoru, fourth seat, last door before the Plateau road."
+            },
+            {
+              "speaker": "Yoru",
+              "text": "Umbral at this height is not a trick. It is the night itself: patient, silent, and everywhere at once."
+            },
+            {
+              "speaker": "Yoru",
+              "text": "If your team still stands after my night, then you are ready for what lies beyond. Face me."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Yoru",
+              "text": "Night is falling on your team now. The last light is going out."
+            },
+            {
+              "speaker": "Yoru",
+              "text": "One more shadow... and the night closes this bout."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Yoru",
+              "text": "The night lifts. You walked through every shadow I cast and never lost your way."
+            },
+            {
+              "speaker": "Yoru",
+              "text": "Fourth seat, passed. You have earned the road ahead, truly."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Yoru",
+              "text": "The Plateau road opens to you. Walk it with the team that earned it."
+            },
+            {
+              "speaker": "Yoru",
+              "text": "What waits beyond this road is yours to discover. I will say no more than that."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "iwao": {
+      "character": "Iwao",
+      "kind": "side",
+      "theme": "Core",
+      "town": "Placement open",
+      "note": "NEW show-first draft, CONDITIONAL: Iwao placement is open (Mars decision). No dojo slot, no badge, no town is claimed. If Mars places him in a dojo, the after-lines need a fragment line added; if he is a side trainer, they stand as written.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "I am Iwao. I work stone the way a mould works clay: slow, sure, and once."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "iwao",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "iwao",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "iwao",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "iwao",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "I am Iwao. I work stone the way a mould works clay: slow, sure, and once."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "A rock does not hurry. It holds. My team holds the same way."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Show me a team that can move a mountain without breaking it. Then we fight."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "Your team is wearing down against the stone now. One more crack... and the mould holds."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Feel that weight? That is the mountain settling."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "Stone can be moved. You just proved it, clean and fair."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "A mould breaks only when the shape inside is stronger. Yours was."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "You earned more than a win today. You earned a shape that holds."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Take that shape with you. Wherever I stand next, you will know it when you see it."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "jax": {
+      "character": "Jax",
+      "kind": "antagonist",
+      "theme": "Umbral/Chrome",
+      "town": "Pop-up",
+      "note": "NEW show-first draft. Fight teams are in JAX-FIGHT-TEAMS-PROPOSAL-2026-10-26.md (first/mid/last, proposal only). Decoy reveal timing and any leader name are NOT written into these lines; that reveal is Mars-only.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Jax",
+              "text": "Well, well, well! Look who walked right into my show! I am Jax, and this is my stage!"
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "jax",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "jax",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "jax",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "jax",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Jax",
+              "text": "Well, well, well! Look who walked right into my show! I am Jax, and this is my stage!"
+            },
+            {
+              "speaker": "Jax",
+              "text": "You thought the Syndicate was all shadows and locked doors? No, no, no... we put on a show first. Then we win."
+            },
+            {
+              "speaker": "Jax",
+              "text": "I will even give you a head start. Not because I am kind. Because it makes the ending funnier."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Jax",
+              "text": "Oh, this is the good part! You are down to your last one, and the crowd... well, the crowd is me, and I am loving this."
+            },
+            {
+              "speaker": "Jax",
+              "text": "Do not mistake the jokes for weakness. I have been winning while you were laughing."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Jax",
+              "text": "Ha! All right, all right, you got me! The show goes on, challenger, just... not today."
+            },
+            {
+              "speaker": "Jax",
+              "text": "You beat the act. Remember that word. The act. There is always another act."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Jax",
+              "text": "Take your win. Enjoy it. I will be back with a bigger stage and a sharper team."
+            },
+            {
+              "speaker": "Jax",
+              "text": "And next time, I will not be funny first. I will be funny after."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "cowboy_bob_kid": {
+      "character": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+      "kind": "side",
+      "theme": "Farm",
+      "town": "Farm town",
+      "note": "NEW show-first draft. Name switch is IN the defeat lines: Bob before defeat, Kid after, per locked canon. Party per COWBOY-PARTY-REVISED-2026-10-26.md (Pupbble to Terradog mid-fight, plus Floatcalf, Sproutle, Quakehound, Dreadtoise, AquariiOS). No party species is named in dialogue; the allusion line never states the dark backstory outright.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "Howdy, partner! Name's Cowboy Farmer Bob, thirty years old, finest farmer this side of anywhere!"
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "cowboy_bob_kid",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "cowboy_bob_kid",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "cowboy_bob_kid",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "cowboy_bob_kid",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "Howdy, partner! Name's Cowboy Farmer Bob, thirty years old, finest farmer this side of anywhere!"
+            },
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "This farm? All mine. Worked for it, every bit of it. Every creature here, every fence post, every coin."
+            },
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "You want to test a real farmer? Then let us fight, and do not go easy on account of my baby face."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "Look at you, running low! A farmer knows when the harvest is ready... and yours is ready to fall."
+            },
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "My team works this field every day. You are just visiting."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "Well... shoot. All right, you beat me fair. Bob... well, folks call me Kid, too. Just Kid is fine."
+            },
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "You fought like you belonged here. That counts for a lot on this farm."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "Take your win, and take a look around. This farm was already here when I found it, and I kept it standing."
+            },
+            {
+              "speaker": "Cowboy Farmer Bob / Cowboy Farmer Kid",
+              "text": "I am still the farmer here, Kid or Bob or whatever you call me. Come back any time, and bring a strong team."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "ferry_merv": {
+      "character": "Ferry Captain Merv",
+      "kind": "side",
+      "theme": "Water",
+      "town": "Ferry routes",
+      "note": "NEW show-first draft. Display rule locked 2026-10-26 ~11:55 CDT: Ferry Captain before defeat, Ferry Captain Merv after. The name Merv appears ONLY in the after lines.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "Well, blow me down! A challenger on my ferry route! I am the Ferry Captain, and this sea answers to me."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "ferry_merv",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "ferry_merv",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "ferry_merv",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "ferry_merv",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "Well, blow me down! A challenger on my ferry route! I am the Ferry Captain, and this sea answers to me."
+            },
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "I pop up where I please, like a wave you did not see coming. The ferry runs on my schedule, and so does this fight."
+            },
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "Board, or battle, challenger. Either way, you are on my water now."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "The tide is with me now! Your last one is taking on water, and my crew... well, my crew is my team, and they are not bailing you out."
+            },
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "One more wave... and this crossing ends with me."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "Ha! A fine crossing, and a finer fight! You sailed right through me!"
+            },
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "All right, challenger, you earned the truth along with the win."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "My name is Merv. Ferry Captain Merv. Remember it, because from here on, my ferry is your ferry too."
+            },
+            {
+              "speaker": "Ferry Captain Merv",
+              "text": "Need a crossing? Find me on the water. I pop up where I am needed, and today, I was needed here."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "hoshino": {
+      "character": "Hoshino",
+      "kind": "side",
+      "theme": "Star field",
+      "town": "Stage",
+      "note": "NEW show-first draft. Party is locked canon (see CANON-HUMAN-CHARACTERS.md HOSHINO section); no party species is named in dialogue, only the headliner image, so a party change never breaks a line. Mythar ownership rule respected: Hoshino is one of only two Mythar owners in the game.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Hoshino",
+              "text": "Ladies and gentlemen, challengers and dreamers, welcome to my stage! I am Hoshino, and the stars came out for you tonight!"
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "hoshino",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "hoshino",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "hoshino",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "hoshino",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Hoshino",
+              "text": "Ladies and gentlemen, challengers and dreamers, welcome to my stage! I am Hoshino, and the stars came out for you tonight!"
+            },
+            {
+              "speaker": "Hoshino",
+              "text": "My show is a star field: every act shines, every act has its moment, and the headliner... well, the headliner is worth the wait."
+            },
+            {
+              "speaker": "Hoshino",
+              "text": "Sit back? No, no. Stand up, challenger. This is a show you fight in, not one you watch."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Hoshino",
+              "text": "The lights are dimming on your side now, friend! One more act... and the curtain falls on this bout."
+            },
+            {
+              "speaker": "Hoshino",
+              "text": "A star does not flicker out quietly. It goes out bright, and it takes the stage with it."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Hoshino",
+              "text": "Bravo! Bravo! You stole the show, challenger, and I mean that as the highest praise I know!"
+            },
+            {
+              "speaker": "Hoshino",
+              "text": "A star field bows to a brighter star tonight. Take your bow. You earned it."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Hoshino",
+              "text": "The encore is yours. Keep shining, challenger, and when the road gets dark, look up."
+            },
+            {
+              "speaker": "Hoshino",
+              "text": "My stage is always here, and so is my team. Come back for the next show any time."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "nurse_faye_heal": {
+      "character": "Nurse Faye",
+      "kind": "generic",
+      "theme": "nurse_faye_heal",
+      "town": "whole game",
+      "note": "Generic lines, whole game. No battle slots.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Welcome in. I am Faye, and this bench is yours for as long as you need it."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Nurse Faye, greeting (same nurse, every location)",
+              "target": {
+                "knot": "nurse_faye_heal",
+                "stitch": "set_0"
+              }
+            },
+            {
+              "text": "Nurse Faye, heal offer",
+              "target": {
+                "knot": "nurse_faye_heal",
+                "stitch": "set_1"
+              }
+            },
+            {
+              "text": "Nurse Faye, healed",
+              "target": {
+                "knot": "nurse_faye_heal",
+                "stitch": "set_2"
+              }
+            },
+            {
+              "text": "Nurse Faye, repeat visit",
+              "target": {
+                "knot": "nurse_faye_heal",
+                "stitch": "set_3"
+              }
+            },
+            {
+              "text": "Generic rest bench (no named nurse on site)",
+              "target": {
+                "knot": "nurse_faye_heal",
+                "stitch": "set_4"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "set_0": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Welcome in. I am Faye, and this bench is yours for as long as you need it."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Tired team? Sit down. I have seen every road in this region, and every road ends at a rest like this one."
+            }
+          ],
+          "exit": true
+        },
+        "set_1": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Let me look after your whole team. It will not take long, and it will not cost you a thing."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Rest now, and I will call you when they are bright-eyed again."
+            }
+          ],
+          "exit": true
+        },
+        "set_2": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "There. Bright-eyed and steady again, every one of them."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "All done! Take care out there, and come back whenever the road wears you down."
+            }
+          ],
+          "exit": true
+        },
+        "set_3": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Back again? Good. A trainer who rests is a trainer who lasts."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Same bench, same Faye, same welcome. Sit down whenever you need it."
+            }
+          ],
+          "exit": true
+        },
+        "set_4": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Sit a while. The bench hums low when it works. That hum means your team is mending."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "There. Steady again. Come back whenever the road wears you down."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "shop_generic": {
+      "character": "Shopkeeper",
+      "kind": "generic",
+      "theme": "shop_generic",
+      "town": "whole game",
+      "note": "Generic lines, whole game. No battle slots.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Shopkeeper",
+              "text": "Welcome in, traveler! Look around, take your time, and ask me anything."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Shopkeeper, greeting",
+              "target": {
+                "knot": "shop_generic",
+                "stitch": "set_0"
+              }
+            },
+            {
+              "text": "Shopkeeper, Capture Capsules (price TBD, do not invent a number)",
+              "target": {
+                "knot": "shop_generic",
+                "stitch": "set_1"
+              }
+            },
+            {
+              "text": "Shopkeeper, Luigi Cubes",
+              "target": {
+                "knot": "shop_generic",
+                "stitch": "set_2"
+              }
+            },
+            {
+              "text": "Shopkeeper, after purchase",
+              "target": {
+                "knot": "shop_generic",
+                "stitch": "set_3"
+              }
+            },
+            {
+              "text": "Shopkeeper, cannot afford (capsules, by design usually unaffordable at the first store)",
+              "target": {
+                "knot": "shop_generic",
+                "stitch": "set_4"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "set_0": {
+          "lines": [
+            {
+              "speaker": "Shopkeeper",
+              "text": "Welcome in, traveler! Look around, take your time, and ask me anything."
+            },
+            {
+              "speaker": "Shopkeeper",
+              "text": "Fresh stock today, and honest prices. What does your team need?"
+            }
+          ],
+          "exit": true
+        },
+        "set_1": {
+          "lines": [
+            {
+              "speaker": "Shopkeeper",
+              "text": "Hey, we got capture capsules here, but they cost more than a Luigi Cube. A Luigi Cube is 250 CR, and a capsule is dearer than that."
+            },
+            {
+              "speaker": "Shopkeeper",
+              "text": "They are worth it, if your team is ready for them. If not today, they will still be here when you are."
+            }
+          ],
+          "exit": true
+        },
+        "set_2": {
+          "lines": [
+            {
+              "speaker": "Shopkeeper",
+              "text": "Luigi Cubes, 250 CR each. The lab sends every new trainer out with five, and we keep the rest stocked here."
+            },
+            {
+              "speaker": "Shopkeeper",
+              "text": "Five to start, more when you need them. No trainer ever ran out of chances in my shop."
+            }
+          ],
+          "exit": true
+        },
+        "set_3": {
+          "lines": [
+            {
+              "speaker": "Shopkeeper",
+              "text": "Good choice. That will serve your team well."
+            },
+            {
+              "speaker": "Shopkeeper",
+              "text": "Come back any time. A stocked trainer is a safe trainer."
+            }
+          ],
+          "exit": true
+        },
+        "set_4": {
+          "lines": [
+            {
+              "speaker": "Shopkeeper",
+              "text": "Not quite enough for a capsule yet. That is normal this early. Fight a little, save a little, and come back."
+            },
+            {
+              "speaker": "Shopkeeper",
+              "text": "The capsules are not going anywhere. Your team will be ready for them soon enough."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "greeting_generic": {
+      "character": "Townspeople",
+      "kind": "generic",
+      "theme": "greeting_generic",
+      "town": "whole game",
+      "note": "Generic lines, whole game. No battle slots.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Townspeople",
+              "text": "Morning, traveler! The road is kind today, if you walk it with a partner at your side."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Townspeople, greeting",
+              "target": {
+                "knot": "greeting_generic",
+                "stitch": "set_0"
+              }
+            },
+            {
+              "text": "Townspeople, dojo pointer",
+              "target": {
+                "knot": "greeting_generic",
+                "stitch": "set_1"
+              }
+            },
+            {
+              "text": "Harbor guide",
+              "target": {
+                "knot": "greeting_generic",
+                "stitch": "set_2"
+              }
+            },
+            {
+              "text": "Market trader",
+              "target": {
+                "knot": "greeting_generic",
+                "stitch": "set_3"
+              }
+            },
+            {
+              "text": "Dojo acolyte, gate",
+              "target": {
+                "knot": "greeting_generic",
+                "stitch": "set_4"
+              }
+            },
+            {
+              "text": "Victory gatekeeper",
+              "target": {
+                "knot": "greeting_generic",
+                "stitch": "set_5"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "set_0": {
+          "lines": [
+            {
+              "speaker": "Townspeople",
+              "text": "Morning, traveler! The road is kind today, if you walk it with a partner at your side."
+            },
+            {
+              "speaker": "Townspeople",
+              "text": "Stay a while. Every town has a story, and every story starts with someone saying hello."
+            }
+          ],
+          "exit": true
+        },
+        "set_1": {
+          "lines": [
+            {
+              "speaker": "Townspeople",
+              "text": "The dojo is up the road, past the market. You will know it when you hear the training."
+            },
+            {
+              "speaker": "Townspeople",
+              "text": "Beat the dojo, earn the Fragment, and the next road opens. That is how it has always worked here."
+            }
+          ],
+          "exit": true
+        },
+        "set_2": {
+          "lines": [
+            {
+              "speaker": "Townspeople",
+              "text": "Morning, traveler. The data-tides have been restless since the harbor lights flickered last night."
+            },
+            {
+              "speaker": "Townspeople",
+              "text": "If your partner is worn out, the rest bench by the lantern row will put them right."
+            }
+          ],
+          "exit": true
+        },
+        "set_3": {
+          "lines": [
+            {
+              "speaker": "Townspeople",
+              "text": "Step right up! Fresh goods, fair trades, and no tricks. A trader who tricks once never trades twice."
+            },
+            {
+              "speaker": "Townspeople",
+              "text": "Take a look. If it is not right for your team, I will say so myself."
+            }
+          ],
+          "exit": true
+        },
+        "set_4": {
+          "lines": [
+            {
+              "speaker": "Townspeople",
+              "text": "This gate opens for trainers who already carry a Dojo Fragment. Yours is not on this road yet."
+            },
+            {
+              "speaker": "Townspeople",
+              "text": "A Fragment, true and steady, and the gate is open to you. Walk in with respect."
+            }
+          ],
+          "exit": true
+        },
+        "set_5": {
+          "lines": [
+            {
+              "speaker": "Townspeople",
+              "text": "Past this stone arch is the Victory Route. It does not ask for strength alone. It asks for proof of the whole journey."
+            },
+            {
+              "speaker": "Townspeople",
+              "text": "Eight Dojo Fragments, each earned in its own hall. Count yours before you ask to pass."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_voss": {
+      "character": "Admin Voss",
+      "kind": "admin",
+      "theme": "Archivist, Umbral records",
+      "town": "Region 1, Pale Town Tower",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "You are not in the catalogue yet. Stand still and I will fix that."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_voss",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_voss",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_voss",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_voss",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "You are not in the catalogue yet. Stand still and I will fix that."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "Noted. Your team deviates from the expected pattern. Interesting."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "File this under 'unexpected'. The tower is yours. The copies are not."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Admin Voss",
+              "text": "I keep the originals. You will find that matters, later."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_ferren": {
+      "character": "Ferren",
+      "kind": "admin",
+      "theme": "Warden, Chrome machinery",
+      "town": "Region 1, Central City HQ top",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Do you know how long it takes to lock down a tower properly? And you just walk in."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_ferren",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_ferren",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_ferren",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_ferren",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Do you know how long it takes to lock down a tower properly? And you just walk in."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Fine. We do this the loud way. Everything in this building is louder than you think."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Take the tower. It was never the point. The point is what it connects to."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Ferren",
+              "text": "Tell whoever sent you: the locks were the easy part."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_marlow": {
+      "character": "Marlow",
+      "kind": "admin",
+      "theme": "Smuggler, water/earth routes",
+      "town": "Region 2, Mahogany Hideout",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "Everything in this building is going somewhere. You, I think, are going to be a delay."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_marlow",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_marlow",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_marlow",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_marlow",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "Everything in this building is going somewhere. You, I think, are going to be a delay."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "I could have sold you a way out. I still could. The price just went up."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "Take the ledger. It is last month's. The current one left on last night's boat."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Marlow",
+              "text": "You will see my boats again. You just will not see me on them."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_tamsin": {
+      "character": "Tamsin",
+      "kind": "admin",
+      "theme": "Signal hijacker, neon/silk",
+      "town": "Region 2, Goldenrod Radio Tower",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "Good, you are here. The city should hear this part too."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_tamsin",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_tamsin",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_tamsin",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_tamsin",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "Good, you are here. The city should hear this part too."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "You are interrupting a broadcast. Do you know how rude that is, technically?"
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "Cut the feed. …Fine. Cut it. They heard enough."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Tamsin",
+              "text": "A signal does not die because you switch it off. It waits."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_corvin": {
+      "character": "Corvin",
+      "kind": "admin",
+      "theme": "Frontier fixer, heavy generalist",
+      "town": "Region 3, Lilycove Hideout",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "You are the loose end. I am here to tie it."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_corvin",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_corvin",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_corvin",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_corvin",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "You are the loose end. I am here to tie it."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "You are harder to tie than expected. Noted."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "Then you are not a loose end. You are a problem for someone above me. That is worse for you."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Corvin",
+              "text": "I will report exactly what happened. I do not embellish."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_ilsa": {
+      "character": "Ilsa",
+      "kind": "admin",
+      "theme": "Power engineer, industrial",
+      "town": "Region 3, Mauville",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "Do not touch anything. Half of this floor is holding the other half up."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_ilsa",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_ilsa",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_ilsa",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_ilsa",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "Do not touch anything. Half of this floor is holding the other half up."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "You are overloading the floor. Stop. You are going to break something that works."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "Fine. Take the floor. But you cannot unbuild what I built. Someone will switch it back on."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Ilsa",
+              "text": "The machines do not care who runs them. Remember that when you are the one running them."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_aldous": {
+      "character": "Aldous",
+      "kind": "admin",
+      "theme": "Institute public face, specimens",
+      "town": "Region 4, Jubilife City",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "We welcome scrutiny. We always have. …No cameras now. Good. Then we can be honest."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_aldous",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_aldous",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_aldous",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_aldous",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "We welcome scrutiny. We always have. …No cameras now. Good. Then we can be honest."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "You have no idea what scrutiny costs. I do. I pay it every day."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "Print whatever you like. The institute will still be here tomorrow. That is what an institute is."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Aldous",
+              "text": "You have won a room. The building is still standing."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_mireille": {
+      "character": "Mireille",
+      "kind": "admin",
+      "theme": "Rift sampler, heavy specimens",
+      "town": "Region 4, Veilstone warehouses",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Oh, good, a fresh sample. I mean — a visitor. A visitor who fights. Even better."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_mireille",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_mireille",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_mireille",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_mireille",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Oh, good, a fresh sample. I mean — a visitor. A visitor who fights. Even better."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Fascinating. Your team holds together under pressure. Mine was not built to. Mine was built to survive."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Take the warehouse. The cracks are still there. They do not close because you won a fight."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Mireille",
+              "text": "Come back when you have seen the Rift properly. Then you will understand why I do this."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_cassian": {
+      "character": "Cassian",
+      "kind": "admin",
+      "theme": "Coordinator, whole network",
+      "town": "Central/roving, Rift gate",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "You are behind schedule. Everyone in this network is behind schedule, lately. You most of all."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_cassian",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_cassian",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_cassian",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_cassian",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "You are behind schedule. Everyone in this network is behind schedule, lately. You most of all."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "This was not on the schedule. I will have to revise the schedule."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "…The network will hold without me. It held before me. But it will not hold as neatly. That is something, I suppose."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Cassian",
+              "text": "Above me there are two people. One of them is a joke you have already met. The other is not a joke. Ask yourself which one you have actually been fighting."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "admin_soren": {
+      "character": "Soren",
+      "kind": "admin",
+      "theme": "Rift hunter, Rift pursuit",
+      "town": "Central/roving, Rift gate",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "You tracked me here. Good. Most people track the Rift and lose it. You tracked me and found it."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "admin_soren",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the mid-battle lines.",
+              "target": {
+                "knot": "admin_soren",
+                "stitch": "mid_battle"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "admin_soren",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "admin_soren",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "You tracked me here. Good. Most people track the Rift and lose it. You tracked me and found it."
+            }
+          ],
+          "exit": true
+        },
+        "mid_battle": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "The Rift does not fight fair. Neither do I. That is the only honest thing about this work."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "Take the gate. Behind it there is no more network. There is a joke, and then there is the man who told it."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Soren",
+              "text": "If you go through the Rift, do not expect it to make sense. It never has. Not for me either."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "nurse_faye_battle": {
+      "character": "Nurse Faye",
+      "kind": "battle",
+      "theme": "Heal/battle",
+      "town": "Every location (same nurse)",
+      "note": "LOCKED 2026-10-26 ~16:56 CDT per Mars verdicts in HUMAN-LANE-LOCKS-2026-10-26-1656.md. Lines verbatim from the staged draft; flagged verbatim issues (Mireille em dash; single-character ellipsis in Tamsin defeat, Aldous intro, Cassian defeat) are carried forward flagged, NOT silently fixed.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "You look rested enough to want a real test. I am Faye, and yes, I keep a team of my own."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the full introduction.",
+              "target": {
+                "knot": "nurse_faye_battle",
+                "stitch": "intro"
+              }
+            },
+            {
+              "text": "Hear the about-to-win lines.",
+              "target": {
+                "knot": "nurse_faye_battle",
+                "stitch": "about_to_win"
+              }
+            },
+            {
+              "text": "Hear the defeat lines.",
+              "target": {
+                "knot": "nurse_faye_battle",
+                "stitch": "defeat"
+              }
+            },
+            {
+              "text": "Hear the after lines.",
+              "target": {
+                "knot": "nurse_faye_battle",
+                "stitch": "after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "intro": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "You look rested enough to want a real test. I am Faye, and yes, I keep a team of my own."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "This is only if you want it. No challenge, no pressure, and the bench stays open either way."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Ready when you are. My team is small, but they train on this bench road every day."
+            }
+          ],
+          "exit": true
+        },
+        "about_to_win": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "You are down to your last one... and my team still has fight left in them."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Steady now. One more push from my side, and this friendly bout is mine."
+            }
+          ],
+          "exit": true
+        },
+        "defeat": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Well fought! You beat the nurse's team, fair and clean."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "That was a joy to watch. You earned this win, truly."
+            }
+          ],
+          "exit": true
+        },
+        "after": {
+          "lines": [
+            {
+              "speaker": "Nurse Faye",
+              "text": "Win or lose, the bench is still yours. Let me look after your whole team now, free as always."
+            },
+            {
+              "speaker": "Nurse Faye",
+              "text": "Rest here whenever you need it. Healing is never the prize for beating me... it is just what I do."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "iwao_revised": {
+      "character": "Iwao",
+      "kind": "side",
+      "theme": "Earth + Chrome",
+      "town": "First: Region 2, Goldenrod, Dojo 3, Chrome. Return: Region 3, Rustboro, Dojo 1, Core.",
+      "note": "LOCKED revision 2026-10-26 ~16:56 CDT under the standing never-ask dialogue rule: Muse writes the revision in Mars's voice from the locked old Iwao lines, adapting framing only and keeping his stone/mould voice. The stale side-trainer knot 'iwao' in ink-dialogue.json is SUPERSEDED by this knot and must not be used for either fight. Fragment lines: Goldenrod Chrome Fragment (first fight), Rustboro Core Fragment (return fight).",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "I am Iwao. I work stone the way a mould works clay: slow, sure, and once."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the first-fight introduction.",
+              "target": {
+                "knot": "iwao_revised",
+                "stitch": "first_intro"
+              }
+            },
+            {
+              "text": "Hear the first-fight about-to-win lines.",
+              "target": {
+                "knot": "iwao_revised",
+                "stitch": "first_about_to_win"
+              }
+            },
+            {
+              "text": "Hear the first-fight defeat lines.",
+              "target": {
+                "knot": "iwao_revised",
+                "stitch": "first_defeat"
+              }
+            },
+            {
+              "text": "Hear the first-fight after lines.",
+              "target": {
+                "knot": "iwao_revised",
+                "stitch": "first_after"
+              }
+            },
+            {
+              "text": "Hear the return-fight introduction.",
+              "target": {
+                "knot": "iwao_revised",
+                "stitch": "return_intro"
+              }
+            },
+            {
+              "text": "Hear the return-fight about-to-win lines.",
+              "target": {
+                "knot": "iwao_revised",
+                "stitch": "return_about_to_win"
+              }
+            },
+            {
+              "text": "Hear the return-fight defeat lines.",
+              "target": {
+                "knot": "iwao_revised",
+                "stitch": "return_defeat"
+              }
+            },
+            {
+              "text": "Hear the return-fight after lines.",
+              "target": {
+                "knot": "iwao_revised",
+                "stitch": "return_after"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "first_intro": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "I am Iwao. I work stone the way a mould works clay: slow, sure, and once."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Chrome is stone that learned to hold a shine. It does not hurry. It holds."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Show me a team that can move a mountain without breaking it. Then we fight, here in Goldenrod."
+            }
+          ],
+          "exit": true
+        },
+        "first_about_to_win": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "Your team is wearing down against the chrome now. One more crack... and the mould holds."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Feel that weight? That is the mountain settling, polished and true."
+            }
+          ],
+          "exit": true
+        },
+        "first_defeat": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "Stone can be moved. You just proved it, clean and fair."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "A mould breaks only when the shape inside is stronger. Yours was."
+            }
+          ],
+          "exit": true
+        },
+        "first_after": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "You earned more than a win today. You earned a shape that holds."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Take the Goldenrod Chrome Fragment, and take that shape with you."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "iwao_chrome_fragment"
+          ]
+        },
+        "return_intro": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "I am Iwao. I work stone the way a mould works clay: slow, sure, and once."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Core is stone at its plainest. No shine to hide behind. It holds, or it breaks."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "You found me again in Rustboro. Show me a team that can move a mountain without breaking it. Then we fight."
+            }
+          ],
+          "exit": true
+        },
+        "return_about_to_win": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "Your team is wearing down against the stone now. One more crack... and the mould holds."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Feel that weight? That is the mountain settling, back where it started."
+            }
+          ],
+          "exit": true
+        },
+        "return_defeat": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "Stone can be moved. You just proved it, clean and fair."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "A mould breaks only when the shape inside is stronger. Yours was."
+            }
+          ],
+          "exit": true
+        },
+        "return_after": {
+          "lines": [
+            {
+              "speaker": "Iwao",
+              "text": "You earned more than a win today. You earned a shape that holds."
+            },
+            {
+              "speaker": "Iwao",
+              "text": "Take the Rustboro Core Fragment. You have seen me stand in two places now, and you moved the mountain both times."
+            }
+          ],
+          "exit": true,
+          "setFlags": [
+            "iwao_core_fragment"
+          ]
+        }
+      }
+    },
+    "rep_wisteria": {
+      "character": "Wisteria",
+      "kind": "representation",
+      "theme": "Information broker / travelling performer",
+      "town": "Silicon Town market row",
+      "note": "LOCKED first name 2026-10-26 ~16:56 CDT (first names only). Lines are NEW, written by Muse in Mars's voice under the standing never-ask dialogue rule, because no prior dialogue existed for this character; they are locked as written in this file. No diagnosis, label, or explanation of any trait appears in any line. Generic background track: the character exists, works, and talks; no quest about the relationship or identity.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Wisteria",
+              "text": "Good day, traveller. The market row hears things before the town does."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the greeting.",
+              "target": {
+                "knot": "rep_wisteria",
+                "stitch": "greeting"
+              }
+            },
+            {
+              "text": "Hear the offer.",
+              "target": {
+                "knot": "rep_wisteria",
+                "stitch": "offer"
+              }
+            },
+            {
+              "text": "Hear the farewell.",
+              "target": {
+                "knot": "rep_wisteria",
+                "stitch": "farewell"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "greeting": {
+          "lines": [
+            {
+              "speaker": "Wisteria",
+              "text": "Good day, traveller. The market row hears things before the town does."
+            },
+            {
+              "speaker": "Wisteria",
+              "text": "If you need a road, a rumour, or a quiet word, you have found the right stall."
+            }
+          ],
+          "exit": true
+        },
+        "offer": {
+          "lines": [
+            {
+              "speaker": "Wisteria",
+              "text": "Information has a price, same as bread. Fair coin, fair word, and no questions after."
+            }
+          ],
+          "exit": true
+        },
+        "farewell": {
+          "lines": [
+            {
+              "speaker": "Wisteria",
+              "text": "Walk careful out there. The next story you hear may already be about you."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "rep_tessa": {
+      "character": "Tessa",
+      "kind": "representation",
+      "theme": "Mechanic, supply stall",
+      "town": "Silicon Town, Tessa & Saffron's Supply",
+      "note": "LOCKED first name 2026-10-26 ~16:56 CDT (first names only). Lines are NEW, written by Muse in Mars's voice under the standing never-ask dialogue rule, because no prior dialogue existed for this character; they are locked as written in this file. No diagnosis, label, or explanation of any trait appears in any line. Generic background track: the character exists, works, and talks; no quest about the relationship or identity.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Tessa",
+              "text": "Welcome to the stall. If it is broken, I can fix it. If it is not broken, Saffron can feed you while you decide."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the greeting.",
+              "target": {
+                "knot": "rep_tessa",
+                "stitch": "greeting"
+              }
+            },
+            {
+              "text": "Hear the offer.",
+              "target": {
+                "knot": "rep_tessa",
+                "stitch": "offer"
+              }
+            },
+            {
+              "text": "Hear the farewell.",
+              "target": {
+                "knot": "rep_tessa",
+                "stitch": "farewell"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "greeting": {
+          "lines": [
+            {
+              "speaker": "Tessa",
+              "text": "Welcome to the stall. If it is broken, I can fix it. If it is not broken, Saffron can feed you while you decide."
+            },
+            {
+              "speaker": "Tessa",
+              "text": "Wrenches on the left, spares on the right, and no, you cannot borrow my good hammer."
+            }
+          ],
+          "exit": true
+        },
+        "offer": {
+          "lines": [
+            {
+              "speaker": "Tessa",
+              "text": "That part will hold. Bring it back if it does not, and I will make it right."
+            }
+          ],
+          "exit": true
+        },
+        "farewell": {
+          "lines": [
+            {
+              "speaker": "Tessa",
+              "text": "Keep your team fed and your gear tight. Both will carry you further than either one alone."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "rep_saffron": {
+      "character": "Saffron",
+      "kind": "representation",
+      "theme": "Cook, supply stall",
+      "town": "Silicon Town, Tessa & Saffron's Supply",
+      "note": "LOCKED first name 2026-10-26 ~16:56 CDT (first names only). Lines are NEW, written by Muse in Mars's voice under the standing never-ask dialogue rule, because no prior dialogue existed for this character; they are locked as written in this file. No diagnosis, label, or explanation of any trait appears in any line. Generic background track: the character exists, works, and talks; no quest about the relationship or identity.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Saffron",
+              "text": "Come in, come in. The pot is on, and there is always room at this stall."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the greeting.",
+              "target": {
+                "knot": "rep_saffron",
+                "stitch": "greeting"
+              }
+            },
+            {
+              "text": "Hear the offer.",
+              "target": {
+                "knot": "rep_saffron",
+                "stitch": "offer"
+              }
+            },
+            {
+              "text": "Hear the farewell.",
+              "target": {
+                "knot": "rep_saffron",
+                "stitch": "farewell"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "greeting": {
+          "lines": [
+            {
+              "speaker": "Saffron",
+              "text": "Come in, come in. The pot is on, and there is always room at this stall."
+            },
+            {
+              "speaker": "Saffron",
+              "text": "Tessa keeps the machines running. I keep the people running. Both jobs matter."
+            }
+          ],
+          "exit": true
+        },
+        "offer": {
+          "lines": [
+            {
+              "speaker": "Saffron",
+              "text": "Eat first, travel second. A hungry team makes hungry decisions."
+            }
+          ],
+          "exit": true
+        },
+        "farewell": {
+          "lines": [
+            {
+              "speaker": "Saffron",
+              "text": "Safe road to you. Come back when the pot is on again, which is most days."
+            }
+          ],
+          "exit": true
+        }
+      }
+    },
+    "rep_voss_cartographer": {
+      "character": "Voss",
+      "kind": "representation",
+      "theme": "Travelling cartographer, route guide",
+      "town": "Region 1 route rest stop",
+      "note": "LOCKED first name 2026-10-26 ~16:56 CDT (first names only). Lines are NEW, written by Muse in Mars's voice under the standing never-ask dialogue rule, because no prior dialogue existed for this character; they are locked as written in this file. No diagnosis, label, or explanation of any trait appears in any line. Generic background track: the character exists, works, and talks; no quest about the relationship or identity.",
+      "stitches": {
+        "main": {
+          "lines": [
+            {
+              "speaker": "Voss",
+              "text": "I am Voss. I draw maps, not files. If you are lost, my map is a better friend than my memory."
+            }
+          ],
+          "choices": [
+            {
+              "text": "Hear the greeting.",
+              "target": {
+                "knot": "rep_voss_cartographer",
+                "stitch": "greeting"
+              }
+            },
+            {
+              "text": "Hear the offer.",
+              "target": {
+                "knot": "rep_voss_cartographer",
+                "stitch": "offer"
+              }
+            },
+            {
+              "text": "Hear the farewell.",
+              "target": {
+                "knot": "rep_voss_cartographer",
+                "stitch": "farewell"
+              }
+            },
+            {
+              "text": "Leave.",
+              "exit": true
+            }
+          ]
+        },
+        "greeting": {
+          "lines": [
+            {
+              "speaker": "Voss",
+              "text": "I am Voss. I draw maps, not files. If you are lost, my map is a better friend than my memory."
+            },
+            {
+              "speaker": "Voss",
+              "text": "This rest stop sits on a shortcut most travellers walk straight past. I marked it, so you will not."
+            }
+          ],
+          "exit": true
+        },
+        "offer": {
+          "lines": [
+            {
+              "speaker": "Voss",
+              "text": "Take the marked shortcut. It saves a day, and it keeps you off the rough road."
+            }
+          ],
+          "exit": true
+        },
+        "farewell": {
+          "lines": [
+            {
+              "speaker": "Voss",
+              "text": "Keep the map dry and the road under your feet. I will be here when the route changes again."
+            }
+          ],
+          "exit": true
+        }
+      }
+    }
+  }
+}

@@ -21,27 +21,35 @@ import {
  *     radii/colours measured from the v32 picture in round 2,
  *     2026-10-26 — the old ellipses were wrong; see
  *     lockedV32Menu.ts arcs comment for the measurements)
- *   - confetti symbols as SEPARATE shapes, MEASURED from the
- *     matched GIF (round 2, 2026-10-26) — see
- *     src/lib/mainMenuSymbols.ts. 285 symbols; history's field is
- *     300, shortfall 15 = 5.0%, named there, NOT filled with
- *     generated guesses (the PR #170 generated fill is what
- *     Mars rejected).
+ *   - confetti symbols as SEPARATE shapes, by the FORMULA v2
+ *     (2026-10-26) — see src/lib/mainMenuSymbols.ts. 300 symbols
+ *     by the research phi-lattice (golden angle 137.508 deg,
+ *     radius sqrt(n)*phi, centre 61.8%/38.2% of the bottom zone,
+ *     +/-12.5% golden-ratio-fraction jitter, Fibonacci sizes).
+ *     The round-2 MEASURED set (285) is SUPERSEDED — DO NOT USE.
+ *   - small logo-zone emblems (lockedV32Menu.background.logoEmblems),
+ *     measured from the locked v32 picture, rendered static AFTER
+ *     the symbol field so they stay solid over the faded field.
  *
- * Animation — PERFECT by default (matched GIF, Mars PERFECT
- * 2026-10-25 17:12 CDT; see perfect-menu-trace-2026-10-26.md):
- * 285 measured symbols rise at 157.14 px/s (11px/frame at 70ms, 80 frames x
- * 70ms = 5.6s loop), modulo zone 620-1500, sway sin*6px, bob
- * sin*4px on top of rise, 2 cycles per loop, phase by golden
- * angle, fade by the locked phi fade (0 at y620, 0.35 at y729,
- * 1.0 at y905+), clamped never above y620. No rotation.
- * The PR #163 speed (vy 8-14 px/s, sway 3->8px, rotate +/-4deg,
- * period 4-6s) is saved as the "slow-rise" option in
- * lockedV32Menu.animationSpeeds and is selected by the editor's
- * RISE SPEED row; it is never the default. Symbols are
+ * Animation — SLOW-RISE by default (Mars 2026-10-26 19:54 CDT: the
+ * rising emblems moved too fast; use the slow speed locked earlier
+ * today). 300 formula symbols rise at vy 8-14 px/s (PR #163 speed),
+ * modulo zone 620-1500, sway 3->8px growing toward the bottom,
+ * rotate +/-4deg, period 4-6s, phase by golden angle, fade by the
+ * locked phi fade (0 at y620, 0.35 at y729, 1.0 at y905+), clamped
+ * never above y620. The matched-GIF PERFECT speed (157.14 px/s,
+ * 11px/frame at 70ms, 80 frames x 70ms = 5.6s loop, sway sin*6px, bob
+ * sin*4px, 2 cycles per loop, Mars PERFECT 2026-10-25 17:12 CDT)
+ * is kept as the option, selected by setting
+ * background.animationSpeed to "perfect". Symbols are
  * pointer-events none, behind logo/panels.
  * prefers-reduced-motion freezes to static base positions.
- *
+ * Logo hearts (blue + pink, Mars 2026-10-26 19:54 CDT) are static
+ * decorations rendered last in this SVG — above arcs + symbols,
+ * below logo/cloud/panels — at full opacity, never animated, never
+ * faded (see lockedV32Menu.background.logoHearts for the measured
+ * placements).
+
  * Menu Editor wiring (2026-10-26): this background reads the
  * ACTIVE menu config — the working preset when one was saved,
  * else the locked default exactly. The editor preview passes its
@@ -133,7 +141,7 @@ export default function MainMenuBackground({ config }: { config?: MenuEditorConf
           x = sym.x + Math.sin(ang) * cfg.symbols.swayPx;
           rot = 0;
         } else {
-          // slow-rise: exact PR #163 behaviour, option only.
+          // slow-rise: exact PR #163 behaviour, now the default.
           const sp = LOCKED_V32_MENU.background.animationSpeeds["slow-rise"];
           const period = sp.periodSec[i % sp.periodSec.length];
           const vy = sp.riseVyMin + (i % (sp.riseVyMax - sp.riseVyMin + 1));

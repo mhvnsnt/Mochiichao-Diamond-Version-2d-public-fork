@@ -1,0 +1,120 @@
+{
+ "creature": "duskfiend",
+ "roster_id": "043",
+ "variant": null,
+ "movement_class": "grounded_standard",
+ "idle_class": "grounded_standard",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 480,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/duskfiend/cells/duskfiend_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/duskfiend/cells/duskfiend_cell_07.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "game-ready/duskfiend/cells/duskfiend_cell_05.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_1"
+    }
+   ],
+   "loop": [
+    "game-ready/duskfiend/cells/duskfiend_cell_02.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_07.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_02.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_05.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/duskfiend/cells/duskfiend_cell_04.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "game-ready/duskfiend/cells/duskfiend_cell_08.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_0"
+    },
+    {
+     "file": "game-ready/duskfiend/cells/duskfiend_cell_16.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_back_2"
+    }
+   ],
+   "loop": [
+    "game-ready/duskfiend/cells/duskfiend_cell_04.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_08.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_04.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_16.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/duskfiend/cells/duskfiend_cell_13.png",
+    "provenance": "locked_stand",
+    "source_role": "walk_side_0"
+   },
+   "steps": [
+    {
+     "file": "game-ready/duskfiend/cells/duskfiend_cell_12.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_side_1"
+    },
+    {
+     "file": "walk/duskfiend/duskfiend_walk_left_transform_step1.png",
+     "provenance": "transform_grounded_standard",
+     "source_role": "walk_side_0",
+     "transform": {
+      "dx": 0,
+      "dy": -2,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/duskfiend/cells/duskfiend_cell_13.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_12.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_13.png",
+    "walk/duskfiend/duskfiend_walk_left_transform_step1.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/duskfiend/duskfiend_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "walk_side_0"
+   },
+   "steps": [
+    {
+     "file": "game-ready/duskfiend/cells/duskfiend_cell_11mir.png",
+     "provenance": "locked_walk_mirror",
+     "source_role": "walk_side_mirror"
+    },
+    {
+     "file": "game-ready/duskfiend/cells/duskfiend_cell_12mir.png",
+     "provenance": "locked_walk_mirror",
+     "source_role": "walk_side_mirror"
+    }
+   ],
+   "loop": [
+    "walk/duskfiend/duskfiend_walk_right_stand.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_11mir.png",
+    "walk/duskfiend/duskfiend_walk_right_stand.png",
+    "game-ready/duskfiend/cells/duskfiend_cell_12mir.png"
+   ]
+  }
+ }
+}

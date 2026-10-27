@@ -238,7 +238,7 @@ export function dexLookById(id: string): DexLook {
   return DEX_LOOKS.find((l) => l.id === id) || DEX_LOOKS[0];
 }
 
-/** Symbol field span actually shipped (measured set, 285 symbols). */
+/** Symbol field span actually shipped (formula set, 300 symbols). */
 export function symbolFieldSpan(): { left: number; right: number } {
   let left = Infinity;
   let right = -Infinity;
@@ -269,7 +269,7 @@ export function lockedMenuEditorConfig(): MenuEditorConfig {
   const panels = {} as Record<PanelKey, PanelCfg>;
   for (const p of L.panels) {
     panels[p.key] = {
-      label: p.key === "BACK TO TITLE" ? "◄ BACK TO TITLE (B)" : p.key,
+      label: p.key === "BACK TO TITLE" ? "BACK TO TITLE (B)" : p.key,
       x: p.x, y: p.y, w: p.w, h: p.h, fill: p.fill, labelSize: p.labelSize,
     };
   }
@@ -302,7 +302,7 @@ export function lockedMenuEditorConfig(): MenuEditorConfig {
     },
     continueSublabel: "Player • Roster • Dojos • CR • Last: Core Fragment",
     symbols: {
-      speed: "perfect",
+      speed: "slow-rise",
       swayPx: 6, swayCycles: 2, bobPx: 4, bobCycles: 2,
       fieldLeft: span.left, fieldRight: span.right,
       count: (MAIN_MENU_SYMBOLS as unknown[]).length,

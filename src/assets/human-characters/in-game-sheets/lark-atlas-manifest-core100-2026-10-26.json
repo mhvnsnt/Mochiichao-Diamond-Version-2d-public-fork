@@ -1,0 +1,83 @@
+{
+ "character": "lark",
+ "atlas": "lark-atlas-core100-2026-10-26.png",
+ "atlas_size": [
+  256,
+  256
+ ],
+ "cell_size": 64,
+ "cells": [
+  {
+   "index": 0,
+   "name": "world_front"
+  },
+  {
+   "index": 1,
+   "name": "world_back"
+  },
+  {
+   "index": 2,
+   "name": "world_left"
+  },
+  {
+   "index": 3,
+   "name": "world_right"
+  },
+  {
+   "index": 4,
+   "name": "walk_front_idle"
+  },
+  {
+   "index": 5,
+   "name": "walk_back_idle"
+  },
+  {
+   "index": 6,
+   "name": "walk_left_idle"
+  },
+  {
+   "index": 7,
+   "name": "walk_right_idle"
+  },
+  {
+   "index": 8,
+   "name": "walk_front_step"
+  },
+  {
+   "index": 9,
+   "name": "walk_back_step"
+  },
+  {
+   "index": 10,
+   "name": "walk_left_step"
+  },
+  {
+   "index": 11,
+   "name": "walk_right_step"
+  },
+  {
+   "index": 12,
+   "name": "battle_front_fullsize"
+  },
+  {
+   "index": 13,
+   "name": "portrait"
+  },
+  {
+   "index": 14,
+   "name": "battle_back_fullsize"
+  },
+  {
+   "index": 15,
+   "name": "blank"
+  }
+ ],
+ "method": "run-detection only (lane method). World-sheet column runs left-to-right = front, back, left, right. Walk steps = bottom band of the walk sheet (4 runs, front/back/left/right); walk-sheet top band NOT used for the atlas because it rendered 6 figures (duplicate front + extra left) \u2014 idle cells instead reuse the world cells, as the lane method does. Cell 14 = battle back, cell 15 = blank.",
+ "world_source": "media-generation-lark-world-views-core100-0-13dac2fa-485b-40ef-a6d5-8ba246c63612.webp (runs left-to-right = front, back, left, right)",
+ "walk_source": "media-generation-lark-walk-frames-core100-0-c8072c40-907b-448c-a26b-afa9a05db20d.webp (bottom band only)",
+ "battle_cell_12_source": "media-generation-lark-battle-front-fullsize-cor-0-d71281a9-07ce-48a3-beab-fb776d6147d7.webp",
+ "battle_cell_14_source": "media-generation-lark-battle-back-fullsize-core-0-404b8662-1ecb-4834-90e3-b4d17146488c.webp",
+ "portrait_source": "media-generation-lark-portrait-core100-0-b6cd1e34-52e2-4543-92c1-4f773291d030.webp",
+ "model_source": "media-generation-lark-model-sheet-core100-0-12510a68-0407-4df6-9a28-1f787527dd8c.webp",
+ "note": "Lark is the locked 35th character (Harbor City ferry-dock dispatcher, tide-board keeper) \u2014 NOT a rename, NOT Merv, NOT any existing character. Fresh character; no old atlas existed."
+}

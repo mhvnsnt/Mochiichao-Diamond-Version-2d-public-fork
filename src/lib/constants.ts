@@ -19,6 +19,7 @@ export const TYPES: Record<ElementType, { name: string; color: string }> = {
   DARK:     { name:"Dark",     color:"#705848" },
   STEEL:    { name:"Steel",    color:"#B8B8D0" },
   FAIRY:    { name:"Fairy",    color:"#EE99AC" },
+  MYTHIC:   { name:"Mythic",   color:"#FFD54F" },
 };
 
 function effectiveness(atkType: ElementType, defType: ElementType): number {

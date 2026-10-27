@@ -24,7 +24,7 @@ export function renderTile({ tile, vx, vy, viewH, TILE_SIZE, isPlayer, npc, isNi
     };
   }
 
-  if (tile === TILE.WATER) {
+  if (tile === TILE.WATER && !tileImage) {
     bg = "#1a5aae";
     extraStyle = { backgroundImage:"repeating-linear-gradient(135deg,#1a5aae,#2272cc 5px,#1a5aae 10px)", animation:"waterflow 2.5s linear infinite" };
   }

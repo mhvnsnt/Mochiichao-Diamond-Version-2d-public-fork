@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import LockedStage from './LockedStage';
 import TitleScene from './TitleScene';
 import { PINNED_SUBTITLE_FONT } from '../../lib/fonts';
+import { TITLE_BIOMES } from '../../lib/titleBiomes';
 import heavensentLogo from '../../assets/ui/m-heavensent-studios-logo.png';
 import mochiichaoLogo from '../../assets/ui/mochiichao-main-logo.png';
 import {
   loadTitleStartVideo,
+  setSelectedTitleStartScreenId,
   type TitleStartScreenPreset,
 } from '../../lib/titleStartScreens';
 
@@ -24,6 +26,10 @@ import {
  * here is a silent divergence from the locked title, not a fix.
  *
  * Layer order (bottom -> top):
+ *  -1. painted background image — the SAME preset's painted
+ *      background, always rendered. It guarantees the screen is
+ *      never black: if the video fails to load AND the Pixi canvas
+ *      fails, the painting is still there behind everything.
  *   0. video (when it loads) — autoplay, loop, muted, playsInline,
  *      object-cover, full host. Only the selected preset's video
  *      chunk is lazy-loaded (titleStartScreens.ts loaders).
@@ -37,6 +43,10 @@ import {
  *   2. locked overlay — LockedStage + the verbatim logo/subtitle/
  *      press/studio elements above. It sits above the scene so the
  *      title identity is identical on every preset.
+ *   3. reset control — a small RESET button (preset titles only).
+ *      It is NOT part of the locked overlay copy: the locked
+ *      default has no reset control, and this one exists only so
+ *      a preset title can never trap the game.
  *
  * TitleScene's own host is a 180px strip (its locked shape, kept
  * here): the strip is anchored to the bottom of the host, below
@@ -46,24 +56,63 @@ import {
  * caption is suppressed with a single-space caption (TitleScene
  * only falls back to its long description when caption is falsy):
  * a technical paragraph has no place on a title screen.
- * startPrompt stays false — the press prompt is the locked
- * overlay's PRESS ANY KEY, owned by IntroSequence's existing
- * advance path (any key/click -> M3 chirp -> white fade 350ms ->
- * MAIN_MENU); TitleScene's own startPrompt/cry gate is NOT armed
- * here, so there is no double prompt and no double chirp.
+ *
+ * Press behaviour (preset titles ONLY — the locked default keeps
+ * IntroSequence's existing any-key/click handler, untouched):
+ * this component owns its own press path via the onAdvance prop
+ * (IntroSequence's advanceIntro: M3 chirp, white fade 350ms,
+ * MAIN_MENU). Its window keydown listener is registered in this
+ * child's effect, which runs before the parent's effect, and it
+ * calls stopImmediatePropagation after advancing once, so the
+ * parent handler never double-fires (no double chirp, no double
+ * fade). Its outer-div onMouseDown stops propagation for the
+ * same reason. If the parent handler were ever absent, the preset
+ * title still advances — a preset title must never be a dead end.
+ * TitleScene's own startPrompt/cry gate is NOT armed here, so
+ * there is no double prompt and no double chirp.
  * fireTrail and figureCycleUrls are NOT passed (the task's prop
  * list is biome/figure/figureName/startPrompt): Yogiferno's fire
  * still bursts from its per-creature action, and Kittember's glow
  * cycle is a separate, later wiring decision, not silently added.
+ *
+ * Recovery (preset titles ONLY — the locked default's keys are
+ * unchanged): pressing R, or tapping the RESET button, clears
+ * the stored preset and calls onReset, so the parent re-renders
+ * the locked default title. R is safe here because this handler
+ * runs only while a preset title is mounted; on the locked
+ * default this component is not mounted and R is just another
+ * press key, exactly as before.
  *
  * State machine (titleStartScreens.ts): this component renders
  * the RUN state. INIT/FADEIN are the video load + TitleScene
  * mount; PROCEED/FADEOUT are IntroSequence's existing white fade,
  * not a second fade owned here.
  */
-export default function TitleStartScreen({ preset }: { preset: TitleStartScreenPreset }) {
+
+export default function TitleStartScreen({
+  preset,
+  onAdvance,
+  onReset,
+}: {
+  preset: TitleStartScreenPreset;
+  /** Re-render token from the parent (bumped on reset). Read by
+   *  the caller; the component does not need its value — the
+   *  parent's state bump is what re-renders the locked branch. */
+  resetNonce?: number;
+  /** Preset-title press path (IntroSequence advanceIntro). */
+  onAdvance?: () => void;
+  /** Called after the stored preset is cleared, so the parent
+   *  re-renders the locked default title. */
+  onReset?: () => void;
+}) {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [videoFailed, setVideoFailed] = useState(false);
+  // The key handler below registers once per preset and therefore
+  // captures the first render's advanceIntro closure (titleFading
+  // false). Without this guard, a second keypress inside the 350 ms
+  // fade would re-fire the press sound. The click path uses fresh
+  // render closures and is guarded by titleFading state instead.
+  const advanceGuardRef = React.useRef(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -77,9 +126,67 @@ export default function TitleStartScreen({ preset }: { preset: TitleStartScreenP
     return () => { cancelled = true; };
   }, [preset]);
 
+  const doReset = () => {
+    setSelectedTitleStartScreenId(null);
+    onReset?.();
+  };
+
+  // Preset-title keys: R resets to the locked default; any other
+  // key advances (via onAdvance). stopImmediatePropagation keeps
+  // the parent TITLE handler from double-firing on the same key.
+  // Registered in this child's effect, which runs before the
+  // parent's effect on mount, so this listener is earlier in the
+  // window's listener list.
+  useEffect(() => {
+    if (!onAdvance && !onReset) return;
+    advanceGuardRef.current = false;
+    const handler = (e: KeyboardEvent) => {
+      // Never hijack browser shortcuts (Ctrl+R refresh, etc.).
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key.toLowerCase() === 'r') {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        doReset();
+        return;
+      }
+      if (onAdvance && !advanceGuardRef.current) {
+        advanceGuardRef.current = true;
+        e.stopImmediatePropagation();
+        onAdvance();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+    // doReset/onAdvance are stable parent callbacks in practice;
+    // re-registering on preset change is enough (preset is the
+    // only prop that changes what this title is).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preset]);
+
   const showVideo = videoUrl !== null && !videoFailed;
+  const paintedBg = TITLE_BIOMES[preset.biome]?.backgroundImage ?? null;
   return (
-    <div className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer">
+    <div
+      className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer"
+      onMouseDown={(e) => {
+        // Clicks advance via onAdvance only; stopping propagation
+        // keeps the parent window-mousedown handler from firing
+        // a second advance (no double chirp). The RESET button
+        // below stops its own mousedown, so it never reaches here.
+        e.stopPropagation();
+        onAdvance?.();
+      }}
+    >
+      {/* Layer -1: painted fallback — never black, even if the
+          video and the Pixi canvas both fail. */}
+      {paintedBg && (
+        <img
+          src={paintedBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      )}
       {/* Layer 0: video background. */}
       {showVideo && (
         <video
@@ -130,12 +237,7 @@ export default function TitleStartScreen({ preset }: { preset: TitleStartScreenP
           >
             ✦ DIAMOND VERSION ✦
           </div>
-          <div
-            className="absolute text-center text-white font-bold"
-            style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink-first 1s steps(1) 1, press-blink 1s steps(1) 1s infinite' }}
-          >
-            PRESS ANY KEY
-          </div>
+          {/* PRESS ANY KEY text removed 2026-10-27 per Mars: preset title screens already say PRESS START (video); key/click advance unchanged. */}
           <img
             src={heavensentLogo}
             alt="M Heavensent Studios"
@@ -144,6 +246,21 @@ export default function TitleStartScreen({ preset }: { preset: TitleStartScreenP
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
         </LockedStage>
+      </div>
+      {/* Layer 3: preset-only recovery. Not part of the locked
+          overlay copy. Tapping it clears the preset and returns
+          to the locked default title without advancing to the
+          menu; pressing R does the same. */}
+      <div className="absolute right-3 top-3 z-30">
+        <button
+          type="button"
+          aria-label="Reset title screen to locked default"
+          onMouseDown={(e) => { e.stopPropagation(); }}
+          onClick={(e) => { e.stopPropagation(); doReset(); }}
+          className="px-3 py-2 rounded-full bg-black/70 text-white text-xs font-bold tracking-widest border border-white/40"
+        >
+          RESET TITLE ✕ (R)
+        </button>
       </div>
     </div>
   );
