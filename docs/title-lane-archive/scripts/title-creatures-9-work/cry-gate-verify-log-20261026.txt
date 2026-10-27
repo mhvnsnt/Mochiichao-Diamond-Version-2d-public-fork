@@ -1,0 +1,14 @@
+PR 227: state=closed, merged=True, merge_sha=b398463ff0811195cfb2bf4e6df74c1db438336c (expected b398463ff0811195cfb2bf4e6df74c1db438336c)
+  file: src/components/game/TitleScene.tsx status=modified +54/-4 sha=4026e548235d74f925de74995505fb69080a161b
+  file: src/lib/titleCryGate.ts status=added +85/-0 sha=fecaf85a7e84179fee100f208002ede2b3d3c575
+main HEAD now: 65570289999a3e2f56b5bfc5e19ae345e18bbdce
+main titleCryGate.ts: HTTP 200, sha=fecaf85a7e84179fee100f208002ede2b3d3c575 (branch upload fecaf85a7e84179fee100f208002ede2b3d3c575)
+main TitleScene.tsx: HTTP 200, sha=49d27f7470f8e17c1af7a3fbcec706485d099edb (branch upload 4026e548235d74f925de74995505fb69080a161b)
+  content gate import playTitleCry: True
+  content gate state cryExitKind: True
+  content gate listener startPrompt: True
+  content gate wait TITLE_CRY_WAIT_MS: True
+  content Kittember cycle figureCycleUrls: True
+  content bg zoom bgBaseScale: True
+  main TitleScene lines: 900
+VERIFY DONE

@@ -1,0 +1,38 @@
+
+> react-example@0.0.0 build
+> vite build --outDir /home/hatch/workspace/mochiichao-work/title-creatures-9/cry-gate/dist
+
+vite v6.4.2 building for production...
+
+(!) outDir /home/hatch/workspace/mochiichao-work/title-creatures-9/cry-gate/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 152 modules transformed.
+✗ Build failed in 12.38s
+error during build:
+Could not resolve "../assets/title/videos/yogiferno-title-anim-final.mp4" from "src/lib/titleStartScreens.ts"
+file: /tmp/blink-gate-20261027/src/lib/titleStartScreens.ts
+    at getRollupError (file:///home/hatch/workspace/presskey-work/node_modules/rollup/dist/es/shared/parseAst.js:406:41)
+    at error (file:///home/hatch/workspace/presskey-work/node_modules/rollup/dist/es/shared/parseAst.js:402:42)
+    at ModuleLoader.handleInvalidResolvedId (file:///home/hatch/workspace/presskey-work/node_modules/rollup/dist/es/shared/node-entry.js:22126:24)
+    at ModuleLoader.resolveDynamicImport (file:///home/hatch/workspace/presskey-work/node_modules/rollup/dist/es/shared/node-entry.js:22186:58)
+    at async file:///home/hatch/workspace/presskey-work/node_modules/rollup/dist/es/shared/node-entry.js:22070:32
+
+> react-example@0.0.0 build
+> vite build --outDir /home/hatch/workspace/mochiichao-work/title-creatures-9/cry-gate/dist
+
+vite v6.4.2 building for production...
+
+(!) outDir /home/hatch/workspace/mochiichao-work/title-creatures-9/cry-gate/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+
+=== STOP 2026-10-27 (fresh worker, anti-clobber abort; NO upload, NO branch, NO PR, NO merge) ===
+Live main moved during this task: 60b5e62d (first check, blob 8cfac999 MATCH) -> gate-tree HEAD 359dbe1d (blob 5aec5764) -> live API HEAD 47404ea0 (blob 5aec5764, same).
+Upload script exit 2: ABORT, live blob 5aec5764d6c302470d7dd57b783a58c864449acb != expected base 8cfac9998c393198a5800366d8666a792b6b5186; refusing to overwrite.
+New base saved as work/StartScreenCreator-base-359dbe1d-20261027.tsx (413 lines, md5 7a4bd1ef2994c70bf9b65057e2e5cfe6) vs old base 254 lines: diff +164/-5 only.
+Blink lines in new base are UNCHANGED old 30/15 (header, tick 500/250, slot comment, CreatorRow label) - the other lane added ~159 net lines elsewhere (incl. useRef import).
+A blind upload of the staged 257-line file would delete those ~159 lines. Staged blink edit needs a rebase onto the new base + fresh gates before any upload; that rebase was NOT done (task says STOP and report).
+Earlier build PASS (edited tree at 60b5e62d, 2m52s, BUILD_EXIT=0, completed node_modules) is STALE: its log was lost in the /var/tmp wipe and main has since moved + changed this file. It does not gate an upload against current main.

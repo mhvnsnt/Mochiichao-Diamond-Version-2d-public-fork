@@ -1,0 +1,170 @@
+LINT exit=0
+
+> react-example@0.0.0 build
+> vite build
+
+vite v6.4.2 building for production...
+transforming...
+✓ 1287 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                      1.08 kB │ gzip:   0.58 kB
+dist/assets/yagiza-D6d9Cl_X.woff                                     5.10 kB
+dist/assets/gabu_sheet-COMmm9m-.png                                 13.31 kB
+dist/assets/dorowani_sheet-kLLpBIf0.png                             13.52 kB
+dist/assets/yagiza-B4lZD0hS.ttf                                     19.54 kB
+dist/assets/orbitron-variable-DbOLnAFv.ttf                          38.58 kB
+dist/assets/yogiferno-walk-cutout-BbRHKhbL.png                      40.28 kB
+dist/assets/01-digitall-DzaQozxN.ttf                                48.83 kB
+dist/assets/turret-road-regular-CngolciV.ttf                        51.68 kB
+dist/assets/titan-one-regular-xv9-ylzg.ttf                          55.71 kB
+dist/assets/dangrek-regular-BwBUhrsk.ttf                            62.46 kB
+dist/assets/michroma-regular-1RB_5SuF.ttf                           64.34 kB
+dist/assets/audiowide-regular-CT1qxLfl.ttf                          69.92 kB
+dist/assets/player-a-atlas-64x64-Citygx0q.png                       74.54 kB
+dist/assets/sniglet-regular-DDnC1S5A.ttf                            75.21 kB
+dist/assets/mom-east-asian-atlas-64x64-Yt92dM5v.png                 94.17 kB
+dist/assets/liberation-front-atlas-64x64-DvZsnPKp.png               99.04 kB
+dist/assets/syndicate-grunt-atlas-64x64-BXJ29W0o.png               100.57 kB
+dist/assets/dojo-student-atlas-64x64-BuLTMmDH.png                  106.04 kB
+dist/assets/mom-white-atlas-64x64-NPRZ8O9K.png                     106.54 kB
+dist/assets/garden-keeper-atlas-64x64-BQcSOKyZ.png                 108.09 kB
+dist/assets/mom-latina-atlas-64x64-BGB00KGz.png                    109.86 kB
+dist/assets/shopkeeper-atlas-64x64-Bh4X4juy.png                    111.77 kB
+dist/assets/tech-tinkerer-atlas-64x64-CJhE-CXy.png                 111.97 kB
+dist/assets/press-start-2p-regular-2BZhbCiP.ttf                    118.20 kB
+dist/assets/mom-black-atlas-64x64-3lAMqwCp.png                     118.88 kB
+dist/assets/bungee-regular-BbhcPAtb.ttf                            119.00 kB
+dist/assets/krix-atlas-64x64-CpZlOC9K.png                          120.16 kB
+dist/assets/coiny-regular-DRC8nWmT.ttf                             156.52 kB
+dist/assets/fredoka-variable-uBsOTgB9.ttf                          159.18 kB
+dist/assets/gabu-threequarter-left-cut-Bli8Aj7I.png                218.14 kB
+dist/assets/rubik-bubbles-regular-0wAgw-Ij.ttf                     219.56 kB
+dist/assets/dorowani-player-threequarter-right-cut-D7k7inLT.png    255.23 kB
+dist/assets/title-bg-stone-v2-BadUmzoZ.png                         268.62 kB
+dist/assets/title-bg-forest-v2-TGf-UmnM.png                        290.12 kB
+dist/assets/exo2-variable-COdEkTv1.ttf                             303.94 kB
+dist/assets/title-bg-lantern-v2-Ch-BRoue.png                       310.86 kB
+dist/assets/title-bg-night-v2-BGY6oyN5.png                         359.74 kB
+dist/assets/title-bg-snow-v2-L1itlabG.png                          366.38 kB
+dist/assets/rajdhani-regular-B5cuMOFH.ttf                          377.86 kB
+dist/assets/title-bg-rain-v2-B-6Tbv0w.png                          381.27 kB
+dist/assets/title-bg-sand-v2-DgYq68Fd.png                          406.78 kB
+dist/assets/title-bg-water-v2-Ax42i_XE.png                         434.19 kB
+dist/assets/title-bg-grass-v2-BcFN1hgd.png                         453.06 kB
+dist/assets/title-bg-mythar-v2-FZKv2oOQ.png                        675.39 kB
+dist/assets/m-heavensent-studios-logo-b2ZtfZzQ.png                 881.11 kB
+dist/assets/index-C4E_Z-Mg.css                                      59.22 kB │ gzip:  10.88 kB
+dist/assets/Filter-BzC4Z8XW.js                                       0.90 kB │ gzip:   0.48 kB
+dist/assets/getTexelRangeRects-TwnHLM3S.js                          11.42 kB │ gzip:   3.01 kB
+dist/assets/BitmapFont-wdc03zKf.js                                  13.06 kB │ gzip:   4.77 kB
+dist/assets/webworkerAll--0N7Bguk.js                                15.19 kB │ gzip:   4.76 kB
+dist/assets/CanvasRenderer-BILwDtBM.js                              18.44 kB │ gzip:   6.18 kB
+dist/assets/browserAll-IXdD9XUP.js                                  44.14 kB │ gzip:  11.48 kB
+dist/assets/RenderTargetSystem-uMnF_2e5.js                          53.93 kB │ gzip:  14.82 kB
+dist/assets/WebGPURenderer-BKp0pHLg.js                              56.40 kB │ gzip:  16.15 kB
+dist/assets/WebGLRenderer-C7Cpi6s6.js                               73.82 kB │ gzip:  20.23 kB
+dist/assets/index-BNUFWEjg.js                                    1,291.66 kB │ gzip: 369.62 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 21.26s
+BUILD exit=0
+
+> react-example@0.0.0 validate:reference
+> tsx src/lib/validate-reference.ts
+
+Canonical species: 12 (001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 038, 039)
+Canonical moves: 36
+  reference OK: lib/generated/battleMoveTable.json (6 top-level entries)
+  reference OK: lib/generated/battleSpriteRegistry.json (4 top-level entries)
+  reference OK: lib/generated/decomp_black2_evolutions.json (6 top-level entries)
+  reference OK: lib/generated/decomp_black2_learnsets.json (9 top-level entries)
+  reference OK: lib/generated/decomp_black2_moves.json (4 top-level entries)
+  reference OK: lib/generated/decomp_black2_species.json (8 top-level entries)
+  reference OK: lib/generated/decomp_black2_trainers.json (7 top-level entries)
+  reference OK: lib/generated/decomp_crystal_egg_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_crystal_encounters.json (8 top-level entries)
+  reference OK: lib/generated/decomp_crystal_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_crystal_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_crystal_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_crystal_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_crystal_tmhm_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_crystal_trainers.json (7 top-level entries)
+  reference OK: lib/generated/decomp_diamond_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_diamond_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_diamond_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_diamond_species.json (6 top-level entries)
+  reference OK: lib/generated/decomp_diamond_tmhm_learnsets.json (9 top-level entries)
+  reference OK: lib/generated/decomp_diamond_trainers.json (8 top-level entries)
+  reference OK: lib/generated/decomp_emerald_egg_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_emerald_encounters.json (9 top-level entries)
+  reference OK: lib/generated/decomp_emerald_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_emerald_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_emerald_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_emerald_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_emerald_tmhm_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_emerald_trainers.json (6 top-level entries)
+  reference OK: lib/generated/decomp_emerald_tutor_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_firered_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_firered_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_firered_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_firered_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_firered_tmhm_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_firered_tutor_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_heartgold_evolutions.json (5 top-level entries)
+  reference OK: lib/generated/decomp_heartgold_species.json (7 top-level entries)
+  reference OK: lib/generated/decomp_heartgold_trainers.json (6 top-level entries)
+  reference OK: lib/generated/decomp_ruby_egg_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_ruby_encounters.json (9 top-level entries)
+  reference OK: lib/generated/decomp_ruby_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_ruby_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_ruby_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_ruby_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_ruby_tmhm_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_ruby_trainers.json (6 top-level entries)
+  reference OK: lib/generated/decomp_ruby_tutor_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_yellow_egg_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_yellow_encounters.json (6 top-level entries)
+  reference OK: lib/generated/decomp_yellow_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_yellow_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_yellow_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_yellow_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_yellow_tmhm_learnsets.json (5 top-level entries)
+  reference OK: lib/generated/decomp_yellow_trainers.json (8 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_evolutions.json (380 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_learnsets.json (532 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_moves.json (871 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_species.json (532 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_summary.json (15 top-level entries)
+Reference JSON files parsed: 61/61
+
+Warnings (22):
+  WARN: Species 001 (Mochii): type WATER is not one of the 12 True Elements (open unification decision)
+  WARN: Species 002 (Tiidebiite): type WATER is not one of the 12 True Elements (open unification decision)
+  WARN: Species 002 (Tiidebiite): type FIGHTING is not one of the 12 True Elements (open unification decision)
+  WARN: Species 003 (Aquari-OS): type WATER is not one of the 12 True Elements (open unification decision)
+  WARN: Species 003 (Aquari-OS): type PSYCHIC is not one of the 12 True Elements (open unification decision)
+  WARN: Species 004 (Razorgater): type WATER is not one of the 12 True Elements (open unification decision)
+  WARN: Species 004 (Razorgater): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Species 005 (Chromedile): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Species 005 (Chromedile): type DARK is not one of the 12 True Elements (open unification decision)
+  WARN: Species 006 (Reaperdile): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Species 006 (Reaperdile): type DRAGON is not one of the 12 True Elements (open unification decision)
+  WARN: Species 007 (Tyrage): type GROUND is not one of the 12 True Elements (open unification decision)
+  WARN: Species 008 (Duneclaw): type GROUND is not one of the 12 True Elements (open unification decision)
+  WARN: Species 008 (Duneclaw): type ROCK is not one of the 12 True Elements (open unification decision)
+  WARN: Species 009 (Oblivirex): type GROUND is not one of the 12 True Elements (open unification decision)
+  WARN: Species 009 (Oblivirex): type GHOST is not one of the 12 True Elements (open unification decision)
+  WARN: Species 010 (Kittember): type FIRE is not one of the 12 True Elements (open unification decision)
+  WARN: Species 038 (Sproutle): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 039 (Dreadtoise): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 039 (Dreadtoise): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Sheet Dorowani (147): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+  WARN: Sheet Gabu (148): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+
+validate:reference PASSED (warnings are open decisions, not failures).
+VALIDATE exit=0
+GATES DONE
