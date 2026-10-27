@@ -1,0 +1,191 @@
+{
+ "tag": "canonhand20261026",
+ "staging_only": true,
+ "no_pr": true,
+ "no_lock": true,
+ "method_note": "Canon-anchor hand pass for the 7 Mars-confirmed anchor creatures only (2026-10-26 ~18:44 CDT). Wings/talons as hands (aerobeak, stormtalon, zephling); tentacle tips as hands (astroleviathan, inklet, krakenox, toxitacle). Kittember/pebblefist/terrapod NOT built (confirmed no-hands; terrapod has feet but no hands). Anchors = silhouette-extreme tips per frame; Mode A impact-only; cast glow element-neutral; no claw-swipe; HANDS ONLY, no face overlays; 0 shadow pixels added.",
+ "not_built": {
+  "kittember": "confirmed no-hands",
+  "pebblefist": "confirmed no-hands",
+  "terrapod": "confirmed no-hands (has feet; rocks float apart, not hands)"
+ },
+ "resolved": {
+  "aerobeak": {
+   "anchor_canon": "wings/talons as hands",
+   "sets": [
+    "atk_heavy_sky_crash_finisher",
+    "atk_physical_beak_lunge",
+    "atk_signature_tempest_dive",
+    "atk_special_storm_bolt",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true,
+   "shadow_note": "idle00 bottom rows 56-63: 0 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+   "show_sheet": "aerobeak-canonhand20261026-show-sheet.png",
+   "srcdir": "aerobeak"
+  },
+  "stormtalon": {
+   "anchor_canon": "wings/talons as hands",
+   "sets": [
+    "atk_heavy_tempest_crash_finisher",
+    "atk_physical_talon_strike",
+    "atk_signature_thunder_barrage",
+    "atk_special_lightning_jet",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true,
+   "shadow_note": "idle00 bottom rows 56-63: 152 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+   "show_sheet": "stormtalon-canonhand20261026-show-sheet.png",
+   "srcdir": "trueback-sets-20261026/stormtalon"
+  },
+  "zephling": {
+   "anchor_canon": "wings/talons as hands",
+   "sets": [
+    "atk_heavy_cyclone_finisher",
+    "atk_physical_wind_rush",
+    "atk_signature_tempest_burst",
+    "atk_special_gale_jet",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true,
+   "shadow_note": "idle00 bottom rows 56-63: 89 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+   "show_sheet": "zephling-canonhand20261026-show-sheet.png",
+   "srcdir": "zephling"
+  },
+  "astroleviathan": {
+   "anchor_canon": "tentacle tips as hands",
+   "sets": [
+    "atk_heavy_starfall_finisher",
+    "atk_physical_serpent_ram",
+    "atk_signature_cosmic_barrage",
+    "atk_special_star_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true,
+   "shadow_note": "idle00 bottom rows 56-63: 0 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+   "show_sheet": "astroleviathan-canonhand20261026-show-sheet.png",
+   "srcdir": "astroleviathan"
+  },
+  "inklet": {
+   "anchor_canon": "tentacle tips as hands",
+   "sets": [
+    "atk_heavy_ink_crash_finisher",
+    "atk_physical_ink_lash",
+    "atk_signature_abyss_barrage",
+    "atk_special_ink_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true,
+   "shadow_note": "idle00 bottom rows 56-63: 82 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+   "show_sheet": "inklet-canonhand20261026-show-sheet.png",
+   "srcdir": "inklet"
+  },
+  "krakenox": {
+   "anchor_canon": "tentacle tips as hands",
+   "sets": [
+    "atk_heavy_kraken_crash_finisher",
+    "atk_physical_tentacle_lash",
+    "atk_signature_abyss_surge",
+    "atk_special_ink_jet",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true,
+   "shadow_note": "idle00 bottom rows 56-63: 0 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+   "show_sheet": "krakenox-canonhand20261026-show-sheet.png",
+   "srcdir": "krakenox"
+  },
+  "toxitacle": {
+   "anchor_canon": "tentacle tips as hands",
+   "sets": [
+    "atk_heavy_toxic_crash_finisher",
+    "atk_physical_tentacle_lash",
+    "atk_signature_venom_barrage",
+    "atk_special_toxin_jet",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 8,
+    "copy_frames": 28,
+    "flagged_frames": 0,
+    "cells": 36
+   },
+   "flags": [],
+   "g1": true,
+   "shadow_note": "idle00 bottom rows 56-63: 0 desaturated-grey opaque px; no ground ellipse stripped here (hand pass adds 0 shadow px).",
+   "show_sheet": "toxitacle-canonhand20261026-show-sheet.png",
+   "srcdir": "toxitacle"
+  }
+ },
+ "combined_show_sheet": "combined/canonhand20261026-combined-show-sheet.png",
+ "totals": {
+  "creatures": 7,
+  "resolved": 7,
+  "cells": 252,
+  "hand_frames": 56,
+  "flagged_frames": 0,
+  "gifs": 14
+ }
+}
