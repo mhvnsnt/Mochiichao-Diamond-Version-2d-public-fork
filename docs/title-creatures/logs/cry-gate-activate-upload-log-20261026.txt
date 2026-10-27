@@ -1,0 +1,9 @@
+live main: f7f93ae7bd2cf62046c42181950eb9f7da55122f
+main src/lib/titleCryGate.ts: fecaf85a7e84179fee100f208002ede2b3d3c575 (expected fecaf85a7e84179fee100f208002ede2b3d3c575)
+main src/components/game/TitleCreatureFigure.tsx: 04c192e858ef85a2f3ed82560f6260a966cd3d85 (expected 04c192e858ef85a2f3ed82560f6260a966cd3d85)
+main src/components/game/YogifernoTitleWalk.tsx: 71fa43c75cd1807a5a4488f2e76f80f858113a07 (expected 71fa43c75cd1807a5a4488f2e76f80f858113a07)
+branch feature/title-cry-activate-rotation-20261026 -> f7f93ae7bd2cf62046c42181950eb9f7da55122f
+UPLOADED src/lib/titleCryGate.ts -> 9321d1d73f588242d15d0fba2b5383b58ff1a5f1
+UPLOADED src/components/game/TitleCreatureFigure.tsx -> 0eb9f52e52275ae780a367c5d68f1e5a99499c1c
+UPLOADED src/components/game/YogifernoTitleWalk.tsx -> 7da292144c93474eb2259669a12c4d0e90c6635a
+ALL 3 FILES UPLOADED
