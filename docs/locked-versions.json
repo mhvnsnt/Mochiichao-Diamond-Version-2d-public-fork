@@ -10,5 +10,29 @@
         {"version": "take-1/2/3", "status": "earlier failed checkpoints"}
       ]
     }
+  ],
+  "checkpoints":   [
+    {
+      "checkpoint": "cloud-fixed3",
+      "file": "docs/ui-art-options/cloud-fixed3-checkpoint-20261026-2015.md",
+      "log": "docs/ui-art-options/CHECKPOINT-LOG.md",
+      "status": "CURRENT-restorable, NOT perfect",
+      "ordered": "Mars 2026-10-26 19:54 CDT (lock in what you got, restorable at any point)",
+      "code": "PR #233, branch feature/cloud-shape-fix-20261026, head fd2516c47b07127ce6d970fce2236db1ee159107",
+      "cloud_imgBox": {
+        "x": 225,
+        "y": 599,
+        "w": 823,
+        "h": 258
+      },
+      "cloud_file": "src/assets/ui/puffy-cloud.svg, byte-untouched; traced mochiichao-main-cloud-v32.svg BANNED / DO NOT USE",
+      "measured": "fixed3 interior 258-942 (684 wide) x 653-811, centre (600,732); target 257-942 (685) x 655-815, centre (599.5,735)",
+      "pending_on_top": [
+        "emblem slow-rise speed",
+        "emblem field widened both sides",
+        "logo blue+pink hearts at exact placements/layer",
+        "forward cloud fix to TARGET exactly (Mars 19:57 CDT bar)"
+      ]
+    }
   ]
 }
