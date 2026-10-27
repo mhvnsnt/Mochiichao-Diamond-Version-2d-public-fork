@@ -2,10 +2,9 @@
   "comment": "MCP servers wired for the Mochiichao episode pipeline. Paths are this build machine's layout (~/opt); on the owner's machine, point the same entries at the local installs. Status verified 2026-10-27.",
   "mcpServers": {
     "textrig": {
-      "command": "/home/hatch/opt/tools/textrig/pipeline/.venv/bin/python",
-      "args": ["-m", "textrig_mcp"],
-      "cwd": "/home/hatch/opt/tools/textrig",
-      "status": "installing (venv + u2net weights + headless chromium via ./install.sh, inspected before run)",
+      "command": "/home/hatch/opt/tools/textrig/mcp/serve.sh",
+      "args": [],
+      "status": "INSTALLED + SMOKE-TESTED 2026-10-27: MCP initialize handshake answered (server textrig v1.30.0, tools capability live). Install notes: /tmp was too small for pip (TMPDIR redirected to home volume); pnpm blocked esbuild build scripts - approved via pnpm approve-builds esbuild; headless Chromium (playwright) installed for the renderer.",
       "role": "flat PNG -> DragonBones rig + keyframed animation (generative-art bridge)"
     },
     "opentoonz-mcp": {
@@ -16,7 +15,9 @@
     },
     "rigby2d": {
       "command": "node",
-      "args": ["(rigby2d checkout)/mcp-server"],
+      "args": [
+        "(rigby2d checkout)/mcp-server"
+      ],
       "cwd": "/home/hatch/opt/tools/rigby2d",
       "status": "cloned (Apache-2.0); editor is browser/desktop - MCP entry per repo docs/mcp.md, confirm server path at first run",
       "role": "layered-PSD AutoRig, pose library (PRESENT poses), film workspace, skeleton JSON/.skel export"

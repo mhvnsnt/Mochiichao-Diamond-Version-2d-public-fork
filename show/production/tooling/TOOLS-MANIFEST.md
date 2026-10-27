@@ -15,7 +15,7 @@ pip installs FAIL there without the redirect; learned live).
 | scene_audio_bed.py | per-scene audio beds + loudness gate | here | WIRED |
 | sfx_pull.py | Freesound CC0 pulls closing SFX gaps | here | WIRED — needs owner's free Freesound API key to pull |
 | Rigby2D (Apache-2.0) | layered rigs, pose library, film workspace | here (editor) + owner | CLONED ~/opt/tools/rigby2d; MCP entry in tooling/mcp/mcp-servers.json |
-| TextRig MCP (MIT) | flat PNG → DragonBones rigs | here | INSTALLING (./install.sh inspected, then run; venv + u2net + chromium) |
+| TextRig MCP (MIT) | flat PNG → DragonBones rigs | here | INSTALLED + SMOKE-TESTED (MCP handshake OK, server v1.30.0; entry = mcp/serve.sh) |
 | OpenToonz MCP (0.1.0a) | episode shots/.tnz scenes | here (server) + owner (OpenToonz) | INSTALLED in ~/opt/venvs-mcp; starts clean |
 | OpenToonz 1.8 / Tahoma2D 1.6 | puppet production + shots | owner machine | WIRED as standard (rig standard doc); GUI-coupled |
 | Rhubarb 1.13.0 | lip-sync timing (humans only by law) | here | INSTALLED ~/opt/bin/rhubarb, runs |
