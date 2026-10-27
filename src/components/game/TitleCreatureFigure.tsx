@@ -110,6 +110,11 @@ export default function TitleCreatureFigure({ name }: { name: string }) {
       figureCycleMs={500}
       figureAlt={`${name} title figure`}
       figureName={name}
+      // Title card owns the prompt: a press plays this creature's
+      // own cry variant (titleCryGate rotation), waits 90 frames,
+      // then drives the white fade. Raw TitleScene renders without
+      // startPrompt stay prompt-less; only this card wrapper opts in.
+      startPrompt
       caption={`${name} — clean cutout (${fig.size}, transparent) on its ${primaryCardForCreature(name) ?? 'snow'} card + Pixi sine sway + ${name} action burst. No fire trail; Wispkin smoke and Mythar halo are in their cutouts.${fig.cycle ? ' Kittember glow cycle: off -> glow -> stronger -> glow -> off, 500ms/frame.' : ''}`}
     />
   );
