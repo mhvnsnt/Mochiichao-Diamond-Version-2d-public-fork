@@ -1,0 +1,345 @@
+{
+ "date": "2026-10-26",
+ "status": "STAGED ONLY, show-first, NO PR, NO lock, NO overwrite of locked atlases/manifests",
+ "method": "Razorgater method: pixel-identical copies of each creature's OWN walk-frames left pair; NOT newly drawn poses, NOT another creature's cells. No generation performed, so the likeness-generation rule was not triggered.",
+ "cells_built": 14,
+ "cells_target": 14,
+ "creatures": {
+  "cocoonode": {
+   "creature": "cocoonode",
+   "roster_id": "017",
+   "date": "2026-10-26",
+   "status": "STAGED ONLY, show-first, no PR, no lock",
+   "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+   "cells": [
+    {
+     "cell": 11,
+     "role": "overworld_side",
+     "file": "cocoonode_walk_side_0_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/cocoonode/cocoonode_walk_left_0.png",
+     "source_md5": "6b44afcffad2b66434a53e3e28ab74b2",
+     "cell_md5": "6b44afcffad2b66434a53e3e28ab74b2",
+     "pixel_identical": true,
+     "bbox": [
+      3,
+      1,
+      60,
+      63
+     ]
+    },
+    {
+     "cell": 12,
+     "role": "overworld_side_2",
+     "file": "cocoonode_walk_side_1_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/cocoonode/cocoonode_walk_left_1.png",
+     "source_md5": "78bc155022819be169a2d34560831fa8",
+     "cell_md5": "78bc155022819be169a2d34560831fa8",
+     "pixel_identical": true,
+     "bbox": [
+      2,
+      0,
+      61,
+      64
+     ]
+    }
+   ],
+   "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+   "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+   "shadow_check": "Crystal point tapers rows 56-63 (15->0 px); no detached shadow ellipse. No baked shadow.",
+   "pose_caveat": "walk.json: faceless crystal; sides reuse the front cell with a 6% scale pulse (1.00 vs 1.06), no leg walk. Promoted as-is, not a newly drawn profile.",
+   "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+   "gif": "cocoonode-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+   "before_after": "cocoonode-walk-before-after-20261026.png"
+  },
+  "inklet": {
+   "creature": "inklet",
+   "roster_id": "026",
+   "date": "2026-10-26",
+   "status": "STAGED ONLY, show-first, no PR, no lock",
+   "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+   "cells": [
+    {
+     "cell": 11,
+     "role": "overworld_side",
+     "file": "inklet_walk_side_0_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/inklet/inklet_walk_left_0.png",
+     "source_md5": "0f8cda174d8e6492d07bad604c9f4b5b",
+     "cell_md5": "0f8cda174d8e6492d07bad604c9f4b5b",
+     "pixel_identical": true,
+     "bbox": [
+      9,
+      0,
+      54,
+      64
+     ]
+    },
+    {
+     "cell": 12,
+     "role": "overworld_side_2",
+     "file": "inklet_walk_side_1_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/inklet/inklet_walk_left_1.png",
+     "source_md5": "fcfb20fc99b5a1455b3247a96e20d6e0",
+     "cell_md5": "fcfb20fc99b5a1455b3247a96e20d6e0",
+     "pixel_identical": true,
+     "bbox": [
+      10,
+      0,
+      54,
+      64
+     ]
+    }
+   ],
+   "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+   "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+   "shadow_check": "Jar base occupies rows 56-63 (jar body itself, same base as the down frame); no separate shadow ellipse beneath the jar. No baked shadow.",
+   "pose_caveat": "walk.json: jar identical in all directions; direction reads only from the octopus inside (face/profile). Left pair shows the profile octopus.",
+   "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+   "gif": "inklet-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+   "before_after": "inklet-walk-before-after-20261026.png"
+  },
+  "oblivirex": {
+   "creature": "oblivirex",
+   "roster_id": "009",
+   "date": "2026-10-26",
+   "status": "STAGED ONLY, show-first, no PR, no lock",
+   "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+   "cells": [
+    {
+     "cell": 14,
+     "role": "overworld_side",
+     "file": "oblivirex_walk_side_0_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/oblivirex/oblivirex_walk_left_0.png",
+     "source_md5": "094be9f92d44dd48db6d3c74086219c5",
+     "cell_md5": "094be9f92d44dd48db6d3c74086219c5",
+     "pixel_identical": true,
+     "bbox": [
+      0,
+      8,
+      64,
+      56
+     ]
+    },
+    {
+     "cell": 15,
+     "role": "overworld_side_2",
+     "file": "oblivirex_walk_side_1_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/oblivirex/oblivirex_walk_left_1.png",
+     "source_md5": "83ab8b09ab8602d8feaa567783d3dcc1",
+     "cell_md5": "83ab8b09ab8602d8feaa567783d3dcc1",
+     "pixel_identical": true,
+     "bbox": [
+      0,
+      7,
+      64,
+      56
+     ]
+    }
+   ],
+   "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+   "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+   "shadow_check": "Body bbox ends y56; ZERO pixels in rows 56-63. No baked shadow. walk.json style_note also states no baked shadow in shipped cells.",
+   "pose_caveat": "walk.json movement: heavy_slow. Left pair is a genuine quadruped side profile (original 8-panel sheet).",
+   "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+   "gif": "oblivirex-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+   "before_after": "oblivirex-walk-before-after-20261026.png"
+  },
+  "pixilite": {
+   "creature": "pixilite",
+   "roster_id": "041",
+   "date": "2026-10-26",
+   "status": "STAGED ONLY, show-first, no PR, no lock",
+   "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+   "cells": [
+    {
+     "cell": 12,
+     "role": "overworld_side",
+     "file": "pixilite_walk_side_0_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/pixilite/pixilite_walk_left_0.png",
+     "source_md5": "f09e4d467ff9164bda8f501fe3bcd01d",
+     "cell_md5": "f09e4d467ff9164bda8f501fe3bcd01d",
+     "pixel_identical": true,
+     "bbox": [
+      18,
+      6,
+      52,
+      64
+     ]
+    },
+    {
+     "cell": 13,
+     "role": "overworld_side_2",
+     "file": "pixilite_walk_side_1_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/pixilite/pixilite_walk_left_1.png",
+     "source_md5": "83a393093400225bf97e065f655be1a2",
+     "cell_md5": "83a393093400225bf97e065f655be1a2",
+     "pixel_identical": true,
+     "bbox": [
+      13,
+      0,
+      51,
+      64
+     ]
+    }
+   ],
+   "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+   "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+   "shadow_check": "Bottom rows are feet/body (rows 56-59 ~28-31 px, tapering to 12 at row 63); no detached shadow ellipse. No baked shadow.",
+   "pose_caveat": "walk.json: faceless by design; side reads via single leaf arm + splayed feet. Left pair promoted as-is.",
+   "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+   "gif": "pixilite-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+   "before_after": "pixilite-walk-before-after-20261026.png"
+  },
+  "pyropaw": {
+   "creature": "pyropaw",
+   "roster_id": "011",
+   "date": "2026-10-26",
+   "status": "STAGED ONLY, show-first, no PR, no lock",
+   "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+   "cells": [
+    {
+     "cell": 15,
+     "role": "overworld_side",
+     "file": "pyropaw_walk_side_0_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/pyropaw/pyropaw_walk_left_0.png",
+     "source_md5": "0736c62767c133bf994ad0d63d157e0f",
+     "cell_md5": "0736c62767c133bf994ad0d63d157e0f",
+     "pixel_identical": true,
+     "bbox": [
+      0,
+      0,
+      63,
+      64
+     ]
+    },
+    {
+     "cell": 16,
+     "role": "overworld_side_2",
+     "file": "pyropaw_walk_side_1_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/pyropaw/pyropaw_walk_left_1.png",
+     "source_md5": "f16a339c4b6588238a8f8a46047162f0",
+     "cell_md5": "f16a339c4b6588238a8f8a46047162f0",
+     "pixel_identical": true,
+     "bbox": [
+      2,
+      0,
+      61,
+      64
+     ]
+    }
+   ],
+   "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+   "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+   "shadow_check": "Bottom rows are legs/paws (rows 56-63 ~36->11 px); no detached shadow ellipse. No baked shadow.",
+   "pose_caveat": "walk.json: side phase pairs clearly alternate quadruped trot. Left pair is a genuine side trot (original 8-panel sheet).",
+   "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+   "gif": "pyropaw-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+   "before_after": "pyropaw-walk-before-after-20261026.png"
+  },
+  "shellguard": {
+   "creature": "shellguard",
+   "roster_id": "039",
+   "date": "2026-10-26",
+   "status": "STAGED ONLY, show-first, no PR, no lock",
+   "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+   "cells": [
+    {
+     "cell": 13,
+     "role": "overworld_side",
+     "file": "shellguard_walk_side_0_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/shellguard/shellguard_walk_left_0.png",
+     "source_md5": "0bab2ccac8456c0b0c631d3cc10806fe",
+     "cell_md5": "0bab2ccac8456c0b0c631d3cc10806fe",
+     "pixel_identical": true,
+     "bbox": [
+      0,
+      2,
+      64,
+      62
+     ]
+    },
+    {
+     "cell": 14,
+     "role": "overworld_side_2",
+     "file": "shellguard_walk_side_1_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/shellguard/shellguard_walk_left_1.png",
+     "source_md5": "34455ef0a6f9b1b564d0fc0ed59bacc8",
+     "cell_md5": "34455ef0a6f9b1b564d0fc0ed59bacc8",
+     "pixel_identical": true,
+     "bbox": [
+      0,
+      2,
+      64,
+      62
+     ]
+    }
+   ],
+   "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+   "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+   "shadow_check": "Body bbox ends y62; rows 62-63 ZERO; rows 56-61 are legs/feet (21->8 px taper). No baked shadow. walk.json style_note also states no baked shadow in shipped cells.",
+   "pose_caveat": "walk.json movement: grounded_standard; all 4 directions with alternating legs. NOTE: locked manifest frame_count=13 but frames list has 14 entries (last cell id 'icon_derived'); staged cells 13/14 follow the highest numeric cell (12), NOT the frame_count field. A future lock amendment must reconcile that pre-existing discrepancy.",
+   "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+   "gif": "shellguard-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+   "before_after": "shellguard-walk-before-after-20261026.png"
+  },
+  "wispkin": {
+   "creature": "wispkin",
+   "roster_id": "042",
+   "date": "2026-10-26",
+   "status": "STAGED ONLY, show-first, no PR, no lock",
+   "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+   "cells": [
+    {
+     "cell": 10,
+     "role": "overworld_side",
+     "file": "wispkin_walk_side_0_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/wispkin/wispkin_walk_left_0.png",
+     "source_md5": "2edd83e4e49cd808c5e3301118e90983",
+     "cell_md5": "2edd83e4e49cd808c5e3301118e90983",
+     "pixel_identical": true,
+     "bbox": [
+      6,
+      1,
+      52,
+      61
+     ]
+    },
+    {
+     "cell": 11,
+     "role": "overworld_side_2",
+     "file": "wispkin_walk_side_1_20261026.png",
+     "size": "64x64 RGBA",
+     "source": "walk-frames/wispkin/wispkin_walk_left_1.png",
+     "source_md5": "d3105dc328dd29ecc08564e4d111bc20",
+     "cell_md5": "d3105dc328dd29ecc08564e4d111bc20",
+     "pixel_identical": true,
+     "bbox": [
+      6,
+      0,
+      52,
+      58
+     ]
+    }
+   ],
+   "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+   "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+   "shadow_check": "Bottom rows are the wisp's own smoke trail (body effect, 7->0 px); hover creature, no ground shadow; rows 62-63 zero. No baked shadow.",
+   "pose_caveat": "walk.json: hover bob (0 vs -3px); sides are tilt variants of the front cell (no locked side cell exists). Promoted as-is, not a newly drawn profile.",
+   "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+   "gif": "wispkin-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+   "before_after": "wispkin-walk-before-after-20261026.png"
+  }
+ }
+}
