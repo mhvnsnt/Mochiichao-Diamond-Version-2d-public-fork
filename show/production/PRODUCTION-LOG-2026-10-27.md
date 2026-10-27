@@ -154,3 +154,20 @@ PASSED_TRIPLE_LOCK without generating or gating anything, and
 its state claimed locks active that no executed graph has yet
 contained. Also landed: Wispkin body direction (owner) at
 show/production/rigs/builds/wispkin/BODY-SPEC-OWNER-DIRECTION.md.
+
+## CORRECTION 3 - Correction 2's MP4 replacement never reached main (2026-10-27)
+Forensics, plainly: Correction 2's replacement commit (17dfc9d)
+was based on branch head edbd3af. Before its follow-up ran, the
+branch head had advanced to the wiring commit 5cd3665, and the
+deletion commit (9f3c652) stacked on THAT tree instead -
+orphaning 17dfc9d. The twins/composite deletions landed; the
+real-MP4 replacement and the poster/clip-index/log corrections
+did not. The post-merge verification then listed filenames only
+and wrongly reported the bundle as the real set. REDONE on
+branch feature/dorowani-real-avatar-set-1: the 4 MP4s + poster
+are byte-identical copies of the live avatar files (md5s in the
+clip-index entry), verified this time by downloading every file
+back from main after merge and comparing md5. Standing rule,
+hardened: bundle verification is hash-level or it did not happen.
+Transparent twins return via Robust Video Matting (RVM,
+ResNet50) run on the REAL clips, frame-verified before shipping.
