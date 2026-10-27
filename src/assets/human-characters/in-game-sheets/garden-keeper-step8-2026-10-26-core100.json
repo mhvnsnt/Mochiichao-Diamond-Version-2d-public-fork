@@ -1,0 +1,29 @@
+{
+ "character": "Garden Keeper",
+ "slug": "garden-keeper",
+ "step8_file": "garden-keeper-step8-2026-10-26-core100.json",
+ "date": "2026-10-26",
+ "run": "core100 \u2014 finish core step-8 to 100% on files, staged only",
+ "held_count_before_this_run": "7/8",
+ "steps_closed_this_run_counted": [
+  "battle back full-size"
+ ],
+ "steps_also_delivered_uncounted_packaging": [
+  "new atlas + manifest (16 cells, cell 14 = new back)",
+  "new step-8 JSON"
+ ],
+ "counted_total": 1,
+ "final_count": "8/8",
+ "skin_tone": "medium-brown",
+ "new_sheet_files": [
+  "media-generation-garden-keeper-battle-back-full-0-18f7ce10-09f8-4833-b06e-097bcfaaf4ad.webp"
+ ],
+ "atlas": "garden-keeper-atlas-core100-2026-10-26.png",
+ "atlas_manifest": "garden-keeper-atlas-core100-2026-10-26-manifest-core100-2026-10-26.json",
+ "world_order_actually_rendered": "n/a \u2014 no new world sheet this run; old world cells copied verbatim",
+ "eye_check_flags": [
+  "True back: no face visible. Long grey-streaked braid lock honoured."
+ ],
+ "method_note": "Worker plan (NOT held-file-named): held step-8 files name only aggregate gaps for most characters, so this run closed each character's recount-owed count with the listed steps. Counted vs packaging is kept separate so the 45-step arithmetic is auditable. Worker eye-check is draft only; Mars eye-check still owed on every new sheet.",
+ "status": "STAGED ONLY \u2014 not PR'd, not wired, not live. Old atlas, old manifest, and held step-8 JSON untouched."
+}

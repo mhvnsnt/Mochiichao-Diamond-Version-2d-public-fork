@@ -1,0 +1,30 @@
+{
+ "character": "Player D",
+ "slug": "player-d",
+ "step8_file": "player-d-step8-2026-10-26-core100.json",
+ "date": "2026-10-26",
+ "run": "core100 \u2014 finish core step-8 to 100% on files, staged only",
+ "held_count_before_this_run": "5/8",
+ "steps_closed_this_run_counted": [
+  "battle front full-size (battle-pack opposite view)",
+  "world-views sheet",
+  "new atlas + manifest (16 cells, cell 14 = new front)"
+ ],
+ "steps_also_delivered_uncounted_packaging": [],
+ "counted_total": 3,
+ "final_count": "8/8",
+ "skin_tone": "light",
+ "new_sheet_files": [
+  "media-generation-player-d-battle-front-fullsize-0-87d08028-4a34-4e03-a830-e85b4b17513f.webp",
+  "media-generation-player-d-world-views-core100-0-8736cb89-f684-4b17-bc45-0558ca9fa806.webp"
+ ],
+ "atlas": "player-d-atlas-core100-2026-10-26.png",
+ "atlas_manifest": "player-d-atlas-core100-2026-10-26-manifest-core100-2026-10-26.json",
+ "world_order_actually_rendered": "front, back, left, right",
+ "eye_check_flags": [
+  "Battle front is taller/slimmer than the chibi world sheet \u2014 consistent with the full-size battle default, recorded not re-rendered.",
+  "World figures are chibi-short, matching the world default chibi."
+ ],
+ "method_note": "Worker plan (NOT held-file-named): held step-8 files name only aggregate gaps for most characters, so this run closed each character's recount-owed count with the listed steps. Counted vs packaging is kept separate so the 45-step arithmetic is auditable. Worker eye-check is draft only; Mars eye-check still owed on every new sheet.",
+ "status": "STAGED ONLY \u2014 not PR'd, not wired, not live. Old atlas, old manifest, and held step-8 JSON untouched."
+}

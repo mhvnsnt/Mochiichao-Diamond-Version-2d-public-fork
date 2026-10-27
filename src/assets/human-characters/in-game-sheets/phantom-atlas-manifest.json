@@ -1,0 +1,128 @@
+{
+  "atlas": "phantom-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_front"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world_bands": [
+    [
+      19,
+      639
+    ],
+    [
+      645,
+      1264
+    ]
+  ],
+  "world_runs": [
+    [
+      [
+        476,
+        867
+      ],
+      [
+        1046,
+        1436
+      ]
+    ],
+    [
+      [
+        591,
+        890
+      ],
+      [
+        1027,
+        1325
+      ]
+    ]
+  ],
+  "world_order_note": "CORRECTED 2026-10-26: World sheet on disk is 2x2: top-left=front, top-right=back, bottom-left=faces image-left, bottom-right=faces image-right. Atlas maps left=bottom-left, right=bottom-right. (First cut had left/right swapped; this file is the corrected atlas, same dated filename, not yet shown to Mars.)",
+  "walk_bands": [
+    [
+      41,
+      889
+    ]
+  ],
+  "walk_runs": [
+    [
+      [
+        95,
+        607
+      ],
+      [
+        758,
+        1188
+      ],
+      [
+        1344,
+        1938
+      ],
+      [
+        2011,
+        2607
+      ]
+    ]
+  ],
+  "walk_flag": "WALK SHEET IS SINGLE-DIRECTION: all 4 walk frames face image-right, in stride order. Atlas step cells 8-11 are those 4 stride phases in order, NOT true front/back/left/right steps.",
+  "portrait_flag": "Portrait source has a DARK (near-black) background, not the plain light background of the other sheets; the atlas portrait cell carries that dark background.",
+  "world_sheet": "media-generation-dojo-elite-phantom-world-views-0-0eb31866-568e-4ede-8936-69e44f83ff8f.webp",
+  "walk": "media-generation-dojo-elite-phantom-walk-frames-0-6350bc69-8272-46be-9665-213897d121b7.webp",
+  "battle": "media-generation-dojo-elite-phantom-battle-fron-0-0d138036-417a-4c66-8144-5aaa6ef1a9bd.webp",
+  "portrait": "media-generation-dojo-elite-phantom-portrait-v1-0-cd069abc-ce11-4a5c-b37c-03d8ee4cb596.webp",
+  "world_order_correction": "First cut mapped left=bottom-right/right=bottom-left (Kenji's layout); Phantom's bottom figures face the opposite way, so mapping was swapped and the atlas rebuilt before any Mars showing."
+}

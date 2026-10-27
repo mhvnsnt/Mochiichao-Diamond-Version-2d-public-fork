@@ -1,0 +1,127 @@
+{
+  "atlas": "umi-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_front"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world_bands": [
+    [
+      18,
+      651
+    ],
+    [
+      658,
+      1263
+    ]
+  ],
+  "world_runs": [
+    [
+      [
+        543,
+        793
+      ],
+      [
+        1124,
+        1372
+      ]
+    ],
+    [
+      [
+        594,
+        773
+      ],
+      [
+        1145,
+        1323
+      ]
+    ]
+  ],
+  "world_order_note": "World sheet on disk is 2x2: top-left=front, top-right=back, bottom-left=faces image-left, bottom-right=faces image-right. Atlas maps left=bottom-left, right=bottom-right.",
+  "walk_bands": [
+    [
+      33,
+      878
+    ]
+  ],
+  "walk_runs": [
+    [
+      [
+        233,
+        601
+      ],
+      [
+        833,
+        1239
+      ],
+      [
+        1465,
+        1890
+      ],
+      [
+        2074,
+        2503
+      ]
+    ]
+  ],
+  "walk_flag": "WALK SHEET IS FRONT-FACING, NOT SIDE-FACING: all 4 walk frames face the viewer (front 3/4) while striding, in stride order. Atlas step cells 8-11 are those 4 front-facing strides, NOT side steps and NOT per-direction steps. A side-view walk re-render is owed if Mars wants true side steps.",
+  "coat_flag": "Walk and battle coats read shorter (capelet/short coat) than the world sheet's long coat.",
+  "world_sheet": "media-generation-dojo-elite-umi-world-views-v1-0-fd95b179-93cc-4a20-81d9-3013ef1a515d.webp",
+  "walk": "media-generation-dojo-elite-umi-walk-frames-v1-0-931f4e07-c96c-4980-91d0-c89e4631d497.webp",
+  "battle": "media-generation-dojo-elite-umi-battle-front-v1-0-ad7d8fff-bb28-4a3c-bbb8-107b22b5b6e1.webp",
+  "portrait": "media-generation-dojo-elite-umi-portrait-v1-202-0-ddcacfc1-4e5e-4542-9a3b-d30dd491b2a8.webp"
+}

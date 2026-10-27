@@ -1,0 +1,68 @@
+{
+  "atlas": "admin-soren-atlas-64x64-2026-10-26.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world": "media-generation-admin-soren-world-v1-2026-10-26-c15b6872.webp",
+  "walk": "media-generation-admin-soren-walk-v1-2026-10-26-fda95608.webp",
+  "battle": "media-generation-admin-soren-battle-front-v1-2026-10-26-99c97e49.webp",
+  "portrait": "media-generation-admin-soren-portrait-v1-2026-10-26-f48dc880.webp",
+  "world_note": "World row order visually verified this run: front, back, left, right \u2014 atlas cells already in that order, no remap.",
+  "walk_note": "Walk frames are three-quarter front walking poses, not side-view; atlas step cells 8-11 are those stride phases, NOT true front/back/left/right steps."
+}

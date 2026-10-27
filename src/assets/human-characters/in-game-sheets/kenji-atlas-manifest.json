@@ -1,0 +1,130 @@
+{
+  "atlas": "kenji-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_front"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world_bands": [
+    [
+      23,
+      634
+    ],
+    [
+      644,
+      1259
+    ]
+  ],
+  "world_runs": [
+    [
+      [
+        534,
+        819
+      ],
+      [
+        1100,
+        1384
+      ]
+    ],
+    [
+      [
+        535,
+        689
+      ],
+      [
+        1226,
+        1373
+      ]
+    ]
+  ],
+  "world_order_note": "World sheet on disk is 2x2: top-left=front, top-right=back, bottom-left=faces image-right, bottom-right=faces image-left. Atlas maps left=bottom-right, right=bottom-left.",
+  "walk_bands": [
+    [
+      33,
+      883
+    ],
+    [
+      911,
+      911
+    ]
+  ],
+  "walk_runs": [
+    [
+      [
+        122,
+        585
+      ],
+      [
+        801,
+        1241
+      ],
+      [
+        1483,
+        1956
+      ],
+      [
+        2167,
+        2639
+      ]
+    ]
+  ],
+  "walk_flag": "WALK SHEET IS SINGLE-DIRECTION: all 4 walk frames face image-right, in stride order. Atlas step cells 8-11 are those 4 stride phases in order, NOT true front/back/left/right steps. A 4-direction walk re-render is owed if Mars wants true per-direction steps.",
+  "world_sheet": "media-generation-dojo-elite-kenji-world-views-v-0-4c734446-a14a-49de-9fd9-86a97ed6e505.webp",
+  "walk": "media-generation-dojo-elite-kenji-walk-frames-v-0-a5d16e82-7545-4b87-b5c2-4a9a3f3519a2.webp",
+  "battle": "media-generation-dojo-elite-kenji-battle-front-0-7c347737-ff1f-4f28-92cd-9b737c5e48d5.webp",
+  "portrait": "media-generation-dojo-elite-kenji-portrait-v1-2-0-7653328d-4d95-4b75-9294-d0c661d9e99d.webp"
+}

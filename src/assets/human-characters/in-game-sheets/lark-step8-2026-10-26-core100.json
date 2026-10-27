@@ -1,0 +1,44 @@
+{
+ "character": "Lark",
+ "slug": "lark",
+ "step8_file": "lark-step8-2026-10-26-core100.json",
+ "date": "2026-10-26",
+ "run": "core100 \u2014 finish core step-8 to 100% on files, staged only",
+ "held_count_before_this_run": "0/8",
+ "steps_closed_this_run_counted": [
+  "model sheet",
+  "world-views sheet",
+  "walk frames",
+  "battle front full-size",
+  "battle back full-size",
+  "portrait",
+  "data (this JSON)",
+  "atlas + manifest (16 cells)"
+ ],
+ "steps_also_delivered_uncounted_packaging": [],
+ "counted_total": 8,
+ "final_count": "8/8",
+ "skin_tone": "deep brown",
+ "new_sheet_files": [
+  "media-generation-lark-model-sheet-core100-0-12510a68-0407-4df6-9a28-1f787527dd8c.webp",
+  "media-generation-lark-world-views-core100-0-13dac2fa-485b-40ef-a6d5-8ba246c63612.webp",
+  "media-generation-lark-walk-frames-core100-0-c8072c40-907b-448c-a26b-afa9a05db20d.webp",
+  "media-generation-lark-battle-front-fullsize-cor-0-d71281a9-07ce-48a3-beab-fb776d6147d7.webp",
+  "media-generation-lark-battle-back-fullsize-core-0-404b8662-1ecb-4834-90e3-b4d17146488c.webp",
+  "media-generation-lark-portrait-core100-0-b6cd1e34-52e2-4543-92c1-4f773291d030.webp"
+ ],
+ "atlas": "lark-atlas-core100-2026-10-26.png",
+ "atlas_manifest": "lark-atlas-core100-2026-10-26-manifest-core100-2026-10-26.json",
+ "world_order_actually_rendered": "front, back, left, right",
+ "eye_check_flags": [
+  "LOCKED IDENTITY: Lark is the 35th character, Harbor City ferry-dock dispatcher, tide-board keeper. Lark had NO prior name and NO prior identity \u2014 only the unnamed 35th character gap slot (0/8). NOT a rename, NOT Merv (Ferry Captain), NOT a shopkeeper, NOT a second cartographer. Lark works the dock; Merv works the boat. No file, atlas, or dialogue merges them.",
+  "Chest tide-mark renders as a wave EMBLEM in all sheets, not lettered MAINFRAME \u2014 prompts said 'small embroidered wave tide-mark' with 'no text' to avoid garbled generator lettering. The MAINFRAME brand is in the brief; the art carries the wave emblem only.",
+  "Model-sheet coat has a HOOD (generator-added, not in the brief); world/battle sheets show a collar instead \u2014 coat collar inconsistent across sheets, recorded not re-rendered.",
+  "World back view mirrors the wave mark onto the back of the coat; back-view whistle hangs on the back.",
+  "Walk sheet top band rendered 6 figures (duplicate front + extra left), not 4 \u2014 atlas uses the bottom band only (4 steps: front, back, left, right) and world cells for idle, per the lane method. Walk-sheet top band is NOT used for the atlas.",
+  "Battle back: true back, no face visible; whistle lanyard loops to the belt at the back; slate under the arm shows chalk grid marks.",
+  "No baked shadow in any Lark sheet. No name was used in any Lark prompt (no reference image exists for Lark); attributes only, in brief order."
+ ],
+ "method_note": "Worker plan (NOT held-file-named): held step-8 files name only aggregate gaps for most characters, so this run closed each character's recount-owed count with the listed steps. Counted vs packaging is kept separate so the 45-step arithmetic is auditable. Worker eye-check is draft only; Mars eye-check still owed on every new sheet.",
+ "status": "STAGED ONLY \u2014 not PR'd, not wired, not live. Old atlas, old manifest, and held step-8 JSON untouched."
+}

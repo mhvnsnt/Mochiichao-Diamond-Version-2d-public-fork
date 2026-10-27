@@ -1,0 +1,68 @@
+{
+  "atlas": "admin-ferren-atlas-64x64-2026-10-26.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world": "media-generation-admin-ferren-world-v1-2026-10-0-947bfbb2-db10-4e37-b1c5-a4773c3ec2d0.webp",
+  "walk": "media-generation-admin-ferren-walk-v1-2026-10-2-0-23806a14-8a98-49ff-9304-65b29d3f41d5.webp",
+  "battle": "media-generation-admin-ferren-battle-front-v1-2-0-96e706d5-1e57-4e1a-a312-6d4d6c03699f.webp",
+  "portrait": "media-generation-admin-ferren-portrait-v1-2026-0-7cf23024-aee4-4a75-9144-e5b40db47ebe.webp",
+  "world_note": "Voss row order observed front,left,back,right remapped to front,back,left,right; Ferren 2x2 grid front,back,left,right",
+  "walk_note": "walk frames are side-view step frames; Voss all four face right (verified visually)"
+}

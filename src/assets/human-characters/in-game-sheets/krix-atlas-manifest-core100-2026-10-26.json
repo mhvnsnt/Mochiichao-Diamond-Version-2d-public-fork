@@ -1,0 +1,82 @@
+{
+ "character": "krix",
+ "atlas": "krix-atlas-core100-2026-10-26.png",
+ "atlas_size": [
+  256,
+  256
+ ],
+ "cell_size": 64,
+ "cells": [
+  {
+   "index": 0,
+   "name": "world_front"
+  },
+  {
+   "index": 1,
+   "name": "world_back"
+  },
+  {
+   "index": 2,
+   "name": "world_left"
+  },
+  {
+   "index": 3,
+   "name": "world_right"
+  },
+  {
+   "index": 4,
+   "name": "walk_front_idle"
+  },
+  {
+   "index": 5,
+   "name": "walk_back_idle"
+  },
+  {
+   "index": 6,
+   "name": "walk_left_idle"
+  },
+  {
+   "index": 7,
+   "name": "walk_right_idle"
+  },
+  {
+   "index": 8,
+   "name": "walk_front_step"
+  },
+  {
+   "index": 9,
+   "name": "walk_back_step"
+  },
+  {
+   "index": 10,
+   "name": "walk_left_step"
+  },
+  {
+   "index": 11,
+   "name": "walk_right_step"
+  },
+  {
+   "index": 12,
+   "name": "battle_back_fullsize"
+  },
+  {
+   "index": 13,
+   "name": "portrait"
+  },
+  {
+   "index": 14,
+   "name": "battle_front_fullsize"
+  },
+  {
+   "index": 15,
+   "name": "blank"
+  }
+ ],
+ "method": "run-detection only (lane method): world-sheet column runs + single-figure bbox crops, resized to 64x64. Old 0-13 mapping preserved; cell 14 = battle opposite view; cell 15 = blank.",
+ "world_source": "media-generation-krix-world-views-core100-0-3a03baab-6449-4bd0-b9d1-60d41cfda8d3.webp (runs left-to-right = world_front, world_back, world_left, world_right)",
+ "battle_cell_12_source": "old atlas cell 12 (view as in old atlas)",
+ "battle_cell_14_source": "media-generation-krix-battle-front-fullsize-v1-0-923add8a-9769-4e05-9dfa-f321edd0e231.webp",
+ "old_atlas": "krix-atlas-64x64.png",
+ "old_manifest": "krix-atlas-manifest.json",
+ "note": "New dated atlas; old atlas untouched. Cell 12/14 views were identified from the old atlas cell-12 contact sheet (front vs back read visually) before cutting."
+}

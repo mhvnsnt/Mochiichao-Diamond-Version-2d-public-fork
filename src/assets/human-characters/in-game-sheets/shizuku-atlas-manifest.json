@@ -1,0 +1,127 @@
+{
+  "atlas": "shizuku-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_front"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world_bands": [
+    [
+      13,
+      636
+    ],
+    [
+      650,
+      1267
+    ]
+  ],
+  "world_runs": [
+    [
+      [
+        297,
+        755
+      ],
+      [
+        1175,
+        1612
+      ]
+    ],
+    [
+      [
+        289,
+        755
+      ],
+      [
+        1108,
+        1449
+      ]
+    ]
+  ],
+  "world_order_note": "World sheet on disk is 2x2: top-left=front, top-right=back, bottom-left=faces image-left, bottom-right=faces image-right. Atlas maps left=bottom-left, right=bottom-right.",
+  "walk_bands": [
+    [
+      26,
+      886
+    ]
+  ],
+  "walk_runs": [
+    [
+      [
+        73,
+        632
+      ],
+      [
+        724,
+        1336
+      ],
+      [
+        1418,
+        1968
+      ],
+      [
+        2057,
+        2641
+      ]
+    ]
+  ],
+  "walk_flag": "WALK SHEET IS SINGLE-DIRECTION: all 4 walk frames face image-right, in stride order. Atlas step cells 8-11 are those 4 stride phases in order, NOT true front/back/left/right steps.",
+  "proportion_flag": "World-sheet figures read shorter/younger than the walk/battle/portrait figures, which are taller. Atlas mixes both proportion sets as generated.",
+  "world_sheet": "media-generation-dojo-elite-shizuku-world-views-0-d44f532b-63b3-4196-bf9e-3a7ec06e4d1d.webp",
+  "walk": "media-generation-dojo-elite-shizuku-walk-frames-0-df540bfc-10f3-4ffe-b959-f0bff9f40ff7.webp",
+  "battle": "media-generation-dojo-elite-shizuku-battle-fron-0-863f65db-de28-4c32-a0df-074ed4a3781c.webp",
+  "portrait": "media-generation-dojo-elite-shizuku-portrait-v1-0-5ff434b8-d5e3-4f5f-93ec-ce864bbb8962.webp"
+}
