@@ -1,0 +1,17 @@
+{
+  "$schema": "balance-table-v1",
+  "about": "Authored schema for this lane only. One row per move, computed from the lane's own move/species data. No third-party data staged.",
+  "row": {
+    "move_id": "lane move id (from lane move DB, never another game's id)",
+    "power": "number",
+    "attacks_per_second": "number (animation + cooldown derived)",
+    "crit_chance": "0-1",
+    "crit_multiplier": "number",
+    "expected_damage": "power * (1 + crit_chance * (crit_multiplier - 1))",
+    "dps": "expected_damage * attacks_per_second",
+    "ttk_vs_standard_targets": {"low_hp": "seconds", "mid_hp": "seconds", "high_hp": "seconds"},
+    "category_flag": "null | 'dps_outlier_40pct_plus' | 'ttk_outlier'"
+  },
+  "rules": ["Every row filled before a balance PR.", "One variable changed at a time, with a changelog line.", "Outlier flags are review prompts, not auto-nerfs — a human (Step 5 agent + parent) decides."],
+  "wiring_target": {"owning_step_agent": "Step 5 (playtest + balance)", "target_module": "playtest harness + balance report, checked by Step 6 before lock"}
+}
