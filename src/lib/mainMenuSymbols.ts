@@ -58,6 +58,13 @@
  *   Bands: faint (620-729) 42 / strong (729-905) 52 / below (905+) 206;
  *   bottom 100px band (1400-1500) 42 symbols vs uniform 34 -- the
  *   field fills to the bottom, it does not float high (v28/v29 fix).
+ * Sizes are full-scale (1200x1500 canvas). Hearts carry the code
+ * geometry correction: s = measured / 0.89 and y shifted +0.103*s,
+ * because the code heart path spans only 90x88 of its 100 box and
+ * its centroid sits above its bbox centre (see round2 trace).
+ * Colours are exactly the 7 flat GIF values. Rendered and animated
+ * by src/components/game/MainMenuBackground.tsx (slow-rise speed by
+ * default per Mars 2026-10-26 19:54 CDT; perfect remains an option).
  */
 export type MainMenuSymbol = { x: number; y: number; s: number; c: string; shape: string };
 
