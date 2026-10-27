@@ -115,6 +115,11 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   const [phase, setPhase] = useState<"BOOT" | "INTRO" | "TITLE" | "MAIN_MENU" | "SETTINGS" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("BOOT");
   const [showPrompt, setShowPrompt] = useState(false);
   const [titleFading, setTitleFading] = useState(false);
+  // Preset-title nonce: bumping it re-renders the TITLE branch so
+  // a preset reset (localStorage cleared by TitleStartScreen) is
+  // picked up immediately as the locked default. Locked default
+  // code below does not read this state.
+  const [titlePresetNonce, setTitlePresetNonce] = useState(0);
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
   // v3 main menu: window selection, overwrite confirm.
@@ -368,7 +373,12 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     if (selectedPreset) {
       return (
         <div className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer">
-          <TitleStartScreen preset={selectedPreset} />
+          <TitleStartScreen
+            preset={selectedPreset}
+            resetNonce={titlePresetNonce}
+            onAdvance={advanceIntro}
+            onReset={() => setTitlePresetNonce((n) => n + 1)}
+          />
           {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
         </div>
       );

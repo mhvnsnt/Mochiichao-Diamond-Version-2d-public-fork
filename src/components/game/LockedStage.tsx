@@ -40,7 +40,19 @@ export default function LockedStage({
   children: ReactNode;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
-  const [hostSize, setHostSize] = useState<{ w: number; h: number } | null>(null);
+  // First-paint fallback (preset-trap fix): if measurement has not
+  // run yet, start from the viewport size instead of null, so the
+  // stage never paints at scale 0. The useLayoutEffect below
+  // measures the real host before first paint in normal cases and
+  // overwrites this guess; the guess only ever paints when
+  // measurement cannot see a sized host at all. Measured values
+  // always win afterwards — the locked title/menu geometry is
+  // unchanged once measured.
+  const [hostSize, setHostSize] = useState<{ w: number; h: number } | null>(() =>
+    typeof window !== 'undefined' && window.innerWidth > 0 && window.innerHeight > 0
+      ? { w: window.innerWidth, h: window.innerHeight }
+      : null,
+  );
   useLayoutEffect(() => {
     const host = hostRef.current;
     if (!host) return;
