@@ -1,0 +1,115 @@
+{
+  "atlas": "ferry-captain-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      22,
+      555
+    ],
+    [
+      576,
+      1098
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        129,
+        442
+      ],
+      [
+        683,
+        999
+      ],
+      [
+        1248,
+        1554
+      ],
+      [
+        1798,
+        2103
+      ]
+    ],
+    [
+      [
+        167,
+        426
+      ],
+      [
+        710,
+        978
+      ],
+      [
+        1259,
+        1517
+      ],
+      [
+        1813,
+        2087
+      ]
+    ]
+  ],
+  "world": "0:0,0:2,1:0,1:2",
+  "steps": "0:1,0:3,1:1,1:3",
+  "walk": "media-generation-ferry-captain-walk-frames-v1-2-0-83556323-76ff-4119-8662-92f89d9f98cb.webp",
+  "battle": "media-generation-ferry-captain-battle-front-v1-0-e0386a19-4539-4241-8059-999b45e8597f.webp",
+  "portrait": "media-generation-ferry-captain-portrait-v1-0-8331a266-e930-4743-9f1f-5d1a19805645.webp"
+}

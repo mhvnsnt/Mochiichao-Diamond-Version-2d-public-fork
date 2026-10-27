@@ -1,0 +1,115 @@
+{
+  "atlas": "champion-mythar-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      9,
+      556
+    ],
+    [
+      573,
+      1100
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        186,
+        503
+      ],
+      [
+        650,
+        1014
+      ],
+      [
+        1254,
+        1522
+      ],
+      [
+        1733,
+        2027
+      ]
+    ],
+    [
+      [
+        177,
+        550
+      ],
+      [
+        698,
+        1081
+      ],
+      [
+        1190,
+        1561
+      ],
+      [
+        1680,
+        2064
+      ]
+    ]
+  ],
+  "world": "0:0,0:2,1:0,1:2",
+  "steps": "0:1,0:3,1:1,1:3",
+  "walk": "media-generation-champion-mythar-walk-frames-v1-0-7f868f26-69bb-47aa-a06a-00626282426a.webp",
+  "battle": "media-generation-champion-mythar-battle-front-v-0-fa8d1d17-d9bd-4122-8941-549560961d11.webp",
+  "portrait": "media-generation-champion-mythar-portrait-v1-20-0-3342eae0-8b17-4c8e-a200-53001aef19a0.webp"
+}
