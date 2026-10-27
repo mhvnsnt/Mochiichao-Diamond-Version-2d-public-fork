@@ -1,0 +1,15 @@
+LINT:
+
+> react-example@0.0.0 lint
+> tsc --noEmit
+
+LINT exit=0
+BUILD:
+dist/assets/WebGLRenderer-Bzs6jHH2.js                               73.81 kB │ gzip:  20.22 kB
+dist/assets/index-jHaYWTvW.js                                    1,261.28 kB │ gzip: 359.06 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2m 10s
