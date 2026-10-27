@@ -1,0 +1,273 @@
+{
+ "stormtalon": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/media-generation-truebackb-stormtalon-20261026-0-f8dde49d-ae07-466d-bc25-65a0bf1922fa.webp",
+  "bg_median": [
+   47.0,
+   47.0,
+   47.0
+  ],
+  "source_bbox": [
+   25,
+   204,
+   1574,
+   1404
+  ],
+  "fitted_size": [
+   62,
+   48
+  ],
+  "file": "stormtalon-back-pixel-20261026.png",
+  "opaque_px": 1512,
+  "bbox_64": [
+   1,
+   16,
+   63,
+   64
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": 0
+ },
+ "duskfiend": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/media-generation-truebackb-duskfiend-20261026-0-3750a2e5-dccb-4ac6-afa2-b4c9ab13214d.webp",
+  "bg_median": [
+   47.0,
+   47.0,
+   47.0
+  ],
+  "source_bbox": [
+   54,
+   73,
+   1546,
+   1525
+  ],
+  "fitted_size": [
+   62,
+   60
+  ],
+  "file": "duskfiend-back-pixel-20261026.png",
+  "opaque_px": 1744,
+  "bbox_64": [
+   1,
+   4,
+   63,
+   64
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": 4
+ },
+ "finblade": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/media-generation-truebackb-finblade-20261026-0-6a36c531-5f02-467a-a9fc-037afc31747a.webp",
+  "bg_median": [
+   47.0,
+   47.0,
+   47.0
+  ],
+  "source_bbox": [
+   156,
+   288,
+   1469,
+   1343
+  ],
+  "fitted_size": [
+   62,
+   50
+  ],
+  "file": "finblade-back-pixel-20261026.png",
+  "opaque_px": 968,
+  "bbox_64": [
+   1,
+   14,
+   63,
+   64
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": 1
+ },
+ "mechapion": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/media-generation-truebackb-mechapion-20261026-0-9f331043-2faa-4ccf-a68f-ebdcabeb208d.webp",
+  "bg_median": [
+   47.0,
+   47.0,
+   47.0
+  ],
+  "source_bbox": [
+   155,
+   58,
+   1432,
+   1550
+  ],
+  "fitted_size": [
+   53,
+   62
+  ],
+  "file": "mechapion-back-pixel-20261026.png",
+  "opaque_px": 1754,
+  "bbox_64": [
+   5,
+   2,
+   58,
+   64
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": 0
+ },
+ "wispkin": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/truebackC-wispkin-20261026.webp",
+  "bg_median": [
+   45.0,
+   45.0,
+   45.0
+  ],
+  "source_bbox": [
+   477,
+   39,
+   1122,
+   1526
+  ],
+  "fitted_size": [
+   27,
+   62
+  ],
+  "file": "wispkin-back-pixel-20261026.png",
+  "opaque_px": 627,
+  "bbox_64": [
+   18,
+   3,
+   45,
+   61
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": 3
+ },
+ "shellguard": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/truebackC-shellguard-20261026.webp",
+  "bg_median": [
+   47.0,
+   47.0,
+   47.0
+  ],
+  "source_bbox": [
+   110,
+   158,
+   1489,
+   1426
+  ],
+  "fitted_size": [
+   62,
+   57
+  ],
+  "file": "shellguard-back-pixel-20261026.png",
+  "opaque_px": 1810,
+  "bbox_64": [
+   1,
+   7,
+   63,
+   64
+  ],
+  "palette_colors": 63,
+  "singleton_specks_dropped": 0
+ },
+ "razorgater": {
+  "source": "animation/expanded-scope/trueback-20261026/retry/media-generation-razorgater-trueback-retry-2026-0-b1f32a30-4c5e-4a6e-8daa-c005ce106288.webp",
+  "bg_median": [
+   33.0,
+   33.0,
+   33.0
+  ],
+  "source_bbox": [
+   203,
+   103,
+   1396,
+   1515
+  ],
+  "fitted_size": [
+   52,
+   62
+  ],
+  "file": "razorgater-back-pixel-20261026.png",
+  "opaque_px": 1966,
+  "bbox_64": [
+   6,
+   2,
+   58,
+   64
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": 0
+ },
+ "reaperdile": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/media-generation-truebacka-reaperdile-20261026-0-6d5db02b-c68a-4620-8ec8-e96b5acae73c.webp",
+  "bg_median": [
+   47.0,
+   47.0,
+   47.0
+  ],
+  "source_bbox": [
+   88,
+   144,
+   1513,
+   1485
+  ],
+  "fitted_size": "see cell",
+  "file": "reaperdile-back-pixel-20261026.png",
+  "opaque_px": 1789,
+  "bbox_64": [
+   1,
+   7,
+   63,
+   64
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": "n/a (first partial run)"
+ },
+ "chromejaww": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/media-generation-truebacka-chromejaww-20261026-0-391858d7-415b-44e2-a591-f4606464d370.webp",
+  "bg_median": [
+   45.0,
+   45.0,
+   45.0
+  ],
+  "source_bbox": [
+   99,
+   103,
+   1490,
+   1551
+  ],
+  "fitted_size": "see cell",
+  "file": "chromejaww-back-pixel-20261026.png",
+  "opaque_px": 2220,
+  "bbox_64": [
+   2,
+   2,
+   62,
+   64
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": "n/a (first partial run)"
+ },
+ "strikechamp": {
+  "source": "animation/expanded-scope/trueback-20261026/gen/media-generation-truebacka-strikechamp-20261026-0-ef4681ed-627e-4eb0-b582-cfdda85c1951.webp",
+  "bg_median": [
+   47.0,
+   47.0,
+   47.0
+  ],
+  "source_bbox": [
+   90,
+   70,
+   1510,
+   1501
+  ],
+  "fitted_size": "see cell",
+  "file": "strikechamp-back-pixel-20261026.png",
+  "opaque_px": 2085,
+  "bbox_64": [
+   1,
+   2,
+   63,
+   64
+  ],
+  "palette_colors": 64,
+  "singleton_specks_dropped": "n/a (first partial run)"
+ }
+}
