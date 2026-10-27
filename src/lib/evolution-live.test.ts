@@ -21,8 +21,8 @@ import {
   safeEvolutionReady,
   MID_FIGHT_SHOWCASE,
 } from "./evolution-hook";
-import { SPECIES_DB } from "./species";
 import { MOVES_DB } from "./moves";
+import { getSpeciesLearnset } from "./learnsets-loader";
 
 describe("evolution live: safe-chain readiness", () => {
   it("Pupbble 013 evolves at 16, not 15; Terradog 014 at 32; Sproutle chain 18/32", () => {
@@ -63,8 +63,7 @@ describe("evolution live: evolveInstance", () => {
     expect(inst.level).toBe(16);
     expect(inst.maxHp).toBeGreaterThan(0);
     expect(Math.abs(inst.hp / inst.maxHp - hpBefore)).toBeLessThan(0.05);
-    const target = SPECIES_DB["014"];
-    const expectedMoves = target.learnset
+    const expectedMoves = getSpeciesLearnset("014")
       .filter((l) => l.level <= 16)
       .map((l) => l.moveId)
       .slice(-4);
