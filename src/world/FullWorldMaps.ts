@@ -131,7 +131,7 @@ export const AEON_LAB: any = {
     });
   })(),
   npcs: [
-    { id:"prof_aeon", x:6, y:4, sprite:"🔬", name:"Prof. Aeon", facing:"down", movement:"wander", wanderRadius:1, dialog:["Welcome! I'm glad you could make it.","These five Mochiichao are ready for a partner.","Go ahead, pick one!","This is the Codex. It records every Mochiichao you meet. Keep it safe.","And these are Capture Cubes. Throw one at a wild Mochiichao, and if it stays, it travels with you. That is the whole job, really."] },
+    { id:"prof_aeon", x:6, y:4, sprite:"🔬", name:"Prof. Aeon", facing:"down", movement:"wander", wanderRadius:1, dialog:["Welcome! I'm glad you could make it.","These five Mochiichao are ready for a partner.","Go ahead, pick one!","This is the Mochiioteca. It records every Mochiichao you meet. Keep it safe.","And these are Capture Cubes. Throw one at a wild Mochiichao, and if it stays, it travels with you. That is the whole job, really."] },
     { id:"asst_mochiko", x:9, y:4, sprite:"👩‍🔬", name:"Assistant Mochiko", facing:"down", movement:"wander", wanderRadius:1, dialog:["I'm Professor Aeon's assistant, Mochiko!","He's been waiting for you to choose your first partner."] },
     // v4: in-lab Hex is dialogue-only. The FIRST battle is the
     // lab-exit event (hex_battle_event, dynamic team, rival name),
