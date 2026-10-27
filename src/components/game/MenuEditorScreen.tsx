@@ -135,7 +135,7 @@ function MenuStagePreview({ cfg, onOpenPanels }: { cfg: MenuEditorConfig; onOpen
           <div className="absolute" style={{ left: 0, top: 0, width: 1200, height: 1500, zIndex: zOf("emblems"), pointerEvents: "none" }}>
             <svg width={1200} height={1500}>
               {cfg.emblems.filter((e) => e.visible).map((e) => (
-                <g key={e.id} transform={`translate(${e.x},${e.y})`}>{emblemShape(e.kind, e.color, e.w, e.h)}</g>
+                <g key={e.id} transform={`translate(${e.x - e.w / 2},${e.y - e.h / 2})`}>{emblemShape(e.kind, e.color, e.w, e.h)}</g>
               ))}
             </svg>
           </div>
@@ -316,7 +316,7 @@ export default function MenuEditorScreen({ onBack, onViewTitle }: { onBack: () =
         ];
       case "EMBLEMS":
         return draft.emblems.flatMap((e) => [
-          { label: `${e.id.toUpperCase()} X`, value: String(e.x), ...nudge(e.x, (v) => setDraft((d) => ({ ...d, emblems: d.emblems.map((x) => (x.id === e.id ? { ...x, x: v } : x)) })), 5, 0, 1200) },
+          { label: `${e.id.toUpperCase()} X`, value: String(e.x), ...nudge(e.x, (v) => setDraft((d) => ({ ...d, emblems: d.emblems.map((x) => (x.id === e.id ? { ...x, x: v } : x)) })), 5, 0, 1200), note: "X/Y are the emblem's CENTRE (v32 picture placements are centres; hearts corrected to PR #261's measured centres, blue (169,421.5) pink (230,640.5))." },
           { label: `${e.id.toUpperCase()} Y`, value: String(e.y), ...nudge(e.y, (v) => setDraft((d) => ({ ...d, emblems: d.emblems.map((x) => (x.id === e.id ? { ...x, y: v } : x)) })), 5, 0, 1500) },
           { label: `${e.id.toUpperCase()} W`, value: String(e.w), ...nudge(e.w, (v) => setDraft((d) => ({ ...d, emblems: d.emblems.map((x) => (x.id === e.id ? { ...x, w: v } : x)) })), 1, 5, 200) },
           { label: `${e.id.toUpperCase()} H`, value: String(e.h), ...nudge(e.h, (v) => setDraft((d) => ({ ...d, emblems: d.emblems.map((x) => (x.id === e.id ? { ...x, h: v } : x)) })), 1, 5, 200) },
