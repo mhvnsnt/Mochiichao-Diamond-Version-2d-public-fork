@@ -203,3 +203,15 @@ PROOF-gate-v4-living.mp4 = the real Dorowani idle twin over the
 living background (wind bed carried) - the composite proof of
 record; v3 is marked SUPERSEDED in clip-index. Verified: f60 vs
 f140 sky-region diff 3.76 (background alive inside the composite).
+
+## GATE PAIRINGS per owner direction (2026-10-27)
+Shipped: COMPOSITE-PROOF-gate-making_something-living.mp4 +
+COMPOSITE-PROOF-gate-milestone-living-reframed.mp4 (both on the
+CURRENT living background, wind bed carried; milestone reframed
+smaller/lower so the falling star reads against open sky).
+Owner direction recorded in clip-index: idle + making_something
+pair with the Gate; working pairs with an interior/room piece
+(to be marked current when built/selected); milestone's future
+upgrade is a night-context living background. The three variant
+showings on the v1 still plate were a repeat of the regression
+the Current-Version Law was set for - owned in the log.
