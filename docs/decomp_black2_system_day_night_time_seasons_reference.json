@@ -1,0 +1,251 @@
+{
+ "system": "day_night_time_seasons",
+ "extract_level": "sanitized_summary",
+ "source": "pokebw2/src at commit e522642 (read-only)",
+ "file_count": 6,
+ "total_lines": 577,
+ "totals": {
+  "files": 6,
+  "lines": 577,
+  "string_literals_stripped": 55,
+  "species_identifiers": 2,
+  "species_name_tokens": 2,
+  "place_name_tokens": 9,
+  "path_components": 0,
+  "functions": 47,
+  "functions_stripped": 0,
+  "structs": 1,
+  "anonymous_typedef_structs": 1,
+  "structs_stripped": 0,
+  "numeric_defines_kept": 3,
+  "defines_stripped": 0,
+  "creature_voice_identifiers": 0
+ },
+ "top_field_types": {
+  "u8": 4,
+  "BOOL": 1
+ },
+ "top_field_names": {
+  "clearColor": 1,
+  "wait": 1,
+  "interval": 1,
+  "frame": 1,
+  "active": 1
+ },
+ "distinct_function_names": 47,
+ "distinct_struct_names": 1,
+ "files": [
+  {
+   "path_sanitized": "ov012/ev_time.c",
+   "ext": ".c",
+   "lines": 151,
+   "string_literals_stripped": 20,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 6,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "sanitized_summary",
+   "function_count": 13,
+   "functions_stripped": 0,
+   "struct_count": 0,
+   "anonymous_typedef_structs": 0,
+   "structs_stripped": 0,
+   "numeric_defines_kept": 0,
+   "defines_stripped": 0,
+   "function_names_sample": [
+    "EvTime_Update",
+    "GameData_GetDay",
+    "GameData_GetDayPeriod",
+    "GameData_GetMonth",
+    "calcPokerusDecay",
+    "checkForMidnight",
+    "getAddressAdventureTimeBlk",
+    "getCurrentDayOfWeek",
+    "getCurrentHour",
+    "getCurrentMinute",
+    "midnight",
+    "minutesPassed",
+    "setCurrentSeconds"
+   ],
+   "struct_names_sample": []
+  },
+  {
+   "path_sanitized": "ov012/season_form.c",
+   "ext": ".c",
+   "lines": 63,
+   "string_literals_stripped": 6,
+   "stripped": {
+    "species_identifiers": 2,
+    "species_name_tokens": 2,
+    "place_name_tokens": 1,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "sanitized_summary",
+   "function_count": 1,
+   "functions_stripped": 0,
+   "struct_count": 0,
+   "anonymous_typedef_structs": 0,
+   "structs_stripped": 0,
+   "numeric_defines_kept": 0,
+   "defines_stripped": 0,
+   "function_names_sample": [
+    "TransformVsPokePartyBySeason"
+   ],
+   "struct_names_sample": []
+  },
+  {
+   "path_sanitized": "system/playtime.c",
+   "ext": ".c",
+   "lines": 112,
+   "string_literals_stripped": 7,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "sanitized_summary",
+   "function_count": 15,
+   "functions_stripped": 0,
+   "struct_count": 0,
+   "anonymous_typedef_structs": 0,
+   "structs_stripped": 0,
+   "numeric_defines_kept": 0,
+   "defines_stripped": 0,
+   "function_names_sample": [
+    "PlayTime_Copy",
+    "PlayTime_GetHours",
+    "PlayTime_GetLastSaved",
+    "PlayTime_GetLastSavedDay",
+    "PlayTime_GetLastSavedHour",
+    "PlayTime_GetLastSavedMinute",
+    "PlayTime_GetLastSavedMonth",
+    "PlayTime_GetLastSavedYear",
+    "PlayTime_GetMinutes",
+    "PlayTime_GetSeconds",
+    "PlayTime_Init",
+    "PlayTime_SetLastSaved",
+    "PlayTime_SetLastSavedToNow",
+    "setupPlaytimeCounters",
+    "updateGameTime"
+   ],
+   "struct_names_sample": []
+  },
+  {
+   "path_sanitized": "system/playtime_ctrl.c",
+   "ext": ".c",
+   "lines": 54,
+   "string_literals_stripped": 4,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "sanitized_summary",
+   "function_count": 3,
+   "functions_stripped": 0,
+   "struct_count": 0,
+   "anonymous_typedef_structs": 1,
+   "structs_stripped": 0,
+   "numeric_defines_kept": 0,
+   "defines_stripped": 0,
+   "function_names_sample": [
+    "GameSystemTimer_Disable",
+    "GameSystemTimer_Start",
+    "GameSystemTimer_Update"
+   ],
+   "struct_names_sample": []
+  },
+  {
+   "path_sanitized": "system/season.c",
+   "ext": ".c",
+   "lines": 48,
+   "string_literals_stripped": 6,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 2,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "sanitized_summary",
+   "function_count": 6,
+   "functions_stripped": 0,
+   "struct_count": 0,
+   "anonymous_typedef_structs": 0,
+   "structs_stripped": 0,
+   "numeric_defines_kept": 0,
+   "defines_stripped": 0,
+   "function_names_sample": [
+    "GameData_GetSeasons",
+    "GameSystem_GetSeason",
+    "Season_GetNext",
+    "Season_GetPrevious",
+    "Season_GetRealTime",
+    "Season_Set"
+   ],
+   "struct_names_sample": []
+  },
+  {
+   "path_sanitized": "system/time_icon.c",
+   "ext": ".c",
+   "lines": 149,
+   "string_literals_stripped": 12,
+   "stripped": {
+    "species_identifiers": 0,
+    "species_name_tokens": 0,
+    "place_name_tokens": 0,
+    "path_components": 0,
+    "creature_voice_identifiers": 0
+   },
+   "extract_level": "sanitized_summary",
+   "function_count": 9,
+   "functions_stripped": 0,
+   "struct_count": 1,
+   "anonymous_typedef_structs": 0,
+   "structs_stripped": 0,
+   "numeric_defines_kept": 3,
+   "defines_stripped": 0,
+   "function_names_sample": [
+    "WaitIcon_Alloc",
+    "WaitIcon_Create",
+    "WaitIcon_CreateTCBEx",
+    "WaitIcon_Free",
+    "WaitIcon_Init",
+    "WaitIcon_Main",
+    "WaitIcon_Start",
+    "WaitIcon_TCBExFunc",
+    "WaitIcon_TCBFunc"
+   ],
+   "struct_names_sample": [
+    "WaitIcon"
+   ]
+  }
+ ],
+ "summary_own_words": "Season system, season banner event, a form-by-season file, play-time tracker and controller, time icon and event-time file. Season length, day-length and time-of-day thresholds are owed; the season-to-form mapping is owed and not decided here.",
+ "held_out": "none_additional",
+ "owed_mappings_global": [
+  "nature modifiers",
+  "type-to-True-Elements mapping",
+  "map assignments",
+  "facility level rules",
+  "season-to-form mapping",
+  "weather durations and stat/accuracy effects",
+  "save block sizes, formats and checksums",
+  "battle damage/accuracy formula constants",
+  "shop stock lists and prices",
+  "box counts, box sizes and deposit/withdraw rules",
+  "party slot layout, cursor behaviour and switch rules",
+  "further split of the system-core remainder bucket by directory",
+  "camera positions, zoom values and follow rules",
+  "movement speed, grid size and encounter rates (field-encounters batch)"
+ ],
+ "extraction_method": "aggregate_only: line/function/struct counts, sanitized identifier samples, field-type/field-name aggregates; zero verbatim source lines, zero string literals, zero define values"
+}
