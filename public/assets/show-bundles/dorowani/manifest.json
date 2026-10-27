@@ -1,0 +1,56 @@
+{
+  "character": "dorowani",
+  "status": "ok",
+  "pipeline": "tools/avatar-pipeline (Mochiichao recreation of the Muse avatar pipeline spec \u2014 see SPEC.json)",
+  "image_available": true,
+  "image_path": "dorowani.webp",
+  "transparent_image_path": "dorowani.transparent.png",
+  "video_available": true,
+  "variants": [
+    "connecting",
+    "idle",
+    "making_something",
+    "milestone_level_up",
+    "waiting_for_subagents",
+    "working"
+  ],
+  "video_variants": {
+    "connecting": "dorowani-idle.mp4",
+    "idle": "dorowani-idle.mp4",
+    "making_something": "dorowani-making_something.mp4",
+    "milestone_level_up": "dorowani-milestone_level_up.mp4",
+    "waiting_for_subagents": "dorowani-working.mp4",
+    "working": "dorowani-working.mp4"
+  },
+  "transparent_video_variants": {
+    "connecting": "dorowani-idle.transparent.webm",
+    "idle": "dorowani-idle.transparent.webm",
+    "making_something": "dorowani-making_something.transparent.webm",
+    "milestone_level_up": "dorowani-milestone_level_up.transparent.webm",
+    "waiting_for_subagents": "dorowani-working.transparent.webm",
+    "working": "dorowani-working.transparent.webm"
+  },
+  "spec": {
+    "video": {
+      "width": 720,
+      "height": 720,
+      "fps": 24,
+      "seconds": 8,
+      "codec": "h264",
+      "background": "white"
+    },
+    "transparent_video": {
+      "codec": "vp9",
+      "alpha": true,
+      "container": "webm",
+      "note": "MP4/H.264 cannot store alpha; the WebM twin carries the transparent background."
+    },
+    "poster": {
+      "width": 1600,
+      "height": 1600,
+      "format": "webp"
+    }
+  },
+  "source_image": "avatar-1793115909210772522-0.webp",
+  "deletions": "NONE \u2014 new files only"
+}

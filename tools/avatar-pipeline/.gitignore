@@ -1,0 +1,5 @@
+# Pipeline outputs are generated assets — regenerate with batch.py.
+# A checked-in example bundle belongs under public/assets/ instead
+# (see README, "Shipping an example").
+output/
+__pycache__/
