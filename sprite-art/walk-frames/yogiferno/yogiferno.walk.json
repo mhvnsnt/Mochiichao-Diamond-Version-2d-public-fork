@@ -1,0 +1,85 @@
+{
+ "creature": "yogiferno",
+ "roster_id": "046",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "frames": [
+  {
+   "file": "yogiferno_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "yogiferno_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "yogiferno_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "yogiferno_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "yogiferno_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "yogiferno_walk_right_1.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "yogiferno_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "yogiferno_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/yogiferno/yogiferno.manifest.locked.json",
+ "source_cells": {
+  "yogiferno_walk_down_0.png": {
+   "locked_cell": "yogiferno_cell_00.png",
+   "transform": "copy"
+  },
+  "yogiferno_walk_down_1.png": {
+   "locked_cell": "yogiferno_cell_11.png",
+   "transform": "copy"
+  },
+  "yogiferno_walk_up_0.png": {
+   "locked_cell": "yogiferno_cell_02.png",
+   "transform": "copy"
+  },
+  "yogiferno_walk_up_1.png": {
+   "locked_cell": "yogiferno_cell_03.png",
+   "transform": "copy"
+  },
+  "yogiferno_walk_left_0.png": {
+   "locked_cell": "yogiferno_cell_06.png",
+   "transform": "copy"
+  },
+  "yogiferno_walk_left_1.png": {
+   "locked_cell": "yogiferno_cell_07.png",
+   "transform": "copy"
+  },
+  "yogiferno_walk_right_0.png": {
+   "locked_cell": "yogiferno_cell_06.png",
+   "transform": "mirror"
+  },
+  "yogiferno_walk_right_1.png": {
+   "locked_cell": "yogiferno_cell_07.png",
+   "transform": "mirror"
+  }
+ },
+ "method": "locked-cell transforms only (copy / horizontal mirror / 2px-up bob variant), 64x64 RGBA, new filenames only; no generation in this batch; no file shown to Mars overwritten",
+ "movement_note": "Down = battle_front 00 + front view 11 (mislabeled walk_back_8 in locked manifest). Up = walk_back 02/03; sides = 06/07 + mirrors.",
+ "walk_gate_note": "STAGING ONLY. Mars's walk-gate pick (QA-PASS locked-sheet walk art vs walk-frames dirs/PNGs) is still PENDING as of 2026-10-26. This dir prepares the walk-frames option; it does not decide the gate. No PR merged, no game src touched.",
+ "eye_check": "Final 8-frame montage PASS (2026-10-26): down fronts, up backs, left sides, right mirrors correct.",
+ "staged": "2026-10-26 lane-finish segment 4 (walk frames only)"
+}

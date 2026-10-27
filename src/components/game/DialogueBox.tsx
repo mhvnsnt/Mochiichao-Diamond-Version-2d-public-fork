@@ -6,7 +6,10 @@ import { TEXT_SPEED_MS } from '../../lib/gameSettings';
 import { messageWindowStyle } from '../../lib/hudCustom';
 import type { MessageWindowStyle } from '../../lib/hudCustom';
 import { isConfirmKey } from '../../lib/buttonMode';
+import { getDayNightMenuVariant } from '../../lib/dayNightMenuVariants';
 import { useMenuSkin, menuSkinVars, menuSkinPanelShadow } from '../../lib/menuSkins';
+import type { DialoguePresentationMode } from '../../lib/personaDialogue';
+import { PERSONA_LETTERBOX_PX } from '../../lib/personaDialogue';
 import type { HumanSlot } from '../../lib/humanSheets';
 import { cellPos } from '../../lib/humanSheets';
 
@@ -35,6 +38,16 @@ import { cellPos } from '../../lib/humanSheets';
  * - Keyboard: Enter / Space advance (same as click / A button via
  *   registerAdvance). The caller must NOT also advance on those keys
  *   while this box is mounted, or a press would advance twice.
+ *
+ * Persona presentation (Tier 1, presentation only — see
+ * src/lib/personaDialogue.ts): when the caller explicitly passes
+ * presentationMode="persona", the box renders letterbox-style top /
+ * bottom bars, a larger speaker portrait, and a gold accent emphasis
+ * under the speaker name — framing only. Text, paging, typewriter,
+ * choice behaviour, skins, and fonts are unchanged, and the default
+ * path (presentationMode omitted or "default") renders exactly as
+ * before. The bars live inside this component, so when the scene
+ * ends and the box unmounts, the framing reverts with it.
  */
 export function chunkDialogueLines(lines: string[]): string[] {
   const pages: string[] = [];
@@ -54,16 +67,26 @@ export function chunkDialogueLines(lines: string[]): string[] {
   return pages.length > 0 ? pages : ['...'];
 }
 
-export default function DialogueBox({ lines, speakerName, speakerSlot, choice, onComplete, onChoice, registerAdvance }: {
+export default function DialogueBox({ lines, speakerName, speakerSlot, choice, presentationMode = 'default', onComplete, onChoice, registerAdvance }: {
   lines: string[];
   speakerName?: string;
   speakerSlot?: HumanSlot | null;
   /** When set, YES/NO buttons appear on the last page instead of advancing. */
   choice?: boolean;
+  /**
+   * Presentation framing. 'default' (the default) = the existing look,
+   * untouched. 'persona' = Tier 1 persona-style framing (letterbox
+   * bars, larger portrait, name emphasis) — presentation only, and
+   * only a caller that explicitly selects it may pass it. Callers
+   * must NOT pass 'persona' for speakers outside the Tier 1 list in
+   * src/lib/personaDialogue.ts.
+   */
+  presentationMode?: DialoguePresentationMode;
   onComplete: () => void;
   onChoice?: (yes: boolean) => void;
   registerAdvance?: (fn: (() => void) | null) => void;
 }) {
+  const isPersona = presentationMode === 'persona';
   const pages = useMemo(() => chunkDialogueLines(lines), [lines]);
   const [pageIdx, setPageIdx] = useState(0);
   // v5.1: reset paging when the dialogue CONTENT changes. Before
@@ -94,6 +117,14 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
   // 14px). Dialogue font/logo rules are untouched.
   const skin = useMenuSkin('dialogue');
   const msgStyle = messageWindowStyle(hudSettings.hudMessageStyle as MessageWindowStyle, hudSettings.panelOpacity || 100);
+  // Day/night variants wiring (spec, stacked on PR #153): the
+  // dialogue row changes panel / accent / text / tint, with NO
+  // sky gradient over the world. The panel background itself is
+  // the Batch A message-window style above and is NOT overridden
+  // here — only the frame accent is wired, via StdWindow's accent
+  // prop (border colour only). No label, margin, font, or cursor
+  // change; the box sits over game art, which is never repainted.
+  const dnVariant = getDayNightMenuVariant();
   const page = pages[Math.min(pageIdx, pages.length - 1)];
   const typingDone = shown >= page.length;
   const isLast = pageIdx >= pages.length - 1;
@@ -159,12 +190,29 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
   // box. The wrapper is unpositioned, so the box's absolute
   // placement resolves exactly as before.
   return (
+    <>
+    {/* Tier 1 persona framing: letterbox-style bars over the world
+        canvas, under the box (z 40 < box z 50), pointer-transparent
+        so taps / controls pass through. Rendered ONLY when the scene
+        explicitly selected persona mode; the default path renders no
+        bars at all. */}
+    {isPersona && (
+      <>
+        <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, top: 0, height: PERSONA_LETTERBOX_PX, background: '#000000', zIndex: 40, pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: PERSONA_LETTERBOX_PX, background: '#000000', zIndex: 40, pointerEvents: 'none' }} />
+      </>
+    )}
     <div data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
     <StdWindow
+      accent={dnVariant.vars['--menu-daynight-accent']}
       style={{
         position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
         padding: '16px', cursor: 'pointer',
-        bottom: 'max(1rem, env(safe-area-inset-bottom))',
+        // Persona framing sits the box above the bottom letterbox
+        // bar; the default bottom is unchanged.
+        bottom: isPersona
+          ? `max(calc(${PERSONA_LETTERBOX_PX}px + 1rem), calc(${PERSONA_LETTERBOX_PX}px + env(safe-area-inset-bottom)))`
+          : 'max(1rem, env(safe-area-inset-bottom))',
         ...msgStyle,
         // Batch B radius row wins on DialogueBox only (its dedicated
         // row claims DialogueBox radius via this var); Batch A style
@@ -182,12 +230,18 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
       <div className="flex gap-3 items-start">
         {speakerSlot && (
           <div className="shrink-0">
-            <HumanPortrait slot={speakerSlot} view="front" size={56} cell={speakerSlot.portraitCell != null ? cellPos(speakerSlot.portraitCell) : undefined} />
+            <HumanPortrait slot={speakerSlot} view="front" size={isPersona ? 96 : 56} cell={speakerSlot.portraitCell != null ? cellPos(speakerSlot.portraitCell) : undefined} />
           </div>
         )}
         <div className="flex-1 min-w-0">
           {speakerName && (
-            <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase" style={{ fontFamily: 'var(--small-font, "Trebuchet MS", sans-serif)' }}>{speakerName}</div>
+            <div className="text-teal-300 text-xs font-bold tracking-widest mb-2 uppercase" style={{ fontFamily: 'var(--small-font, "Trebuchet MS", sans-serif)', letterSpacing: isPersona ? '0.18em' : undefined }}>{speakerName}</div>
+          )}
+          {/* Persona emphasis: a gold accent rule under the speaker
+              name (StdWindow palette gold #fbbf24, repo's own accent).
+              Name text itself is unchanged; no nameplate work here. */}
+          {isPersona && speakerName && (
+            <div aria-hidden="true" style={{ width: 48, height: 3, background: '#fbbf24', marginTop: -4, marginBottom: 8 }} />
           )}
           {/* Dialogue text uses the DIALOGUE FONT placement
               (--dialogue-font, readable default Pokemon Base since
@@ -219,5 +273,6 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, o
       </div>
     </StdWindow>
     </div>
+    </>
   );
 }

@@ -55,6 +55,12 @@ export default class PresetTitleErrorBoundary extends React.Component<
 > {
   state: PresetTitleErrorBoundaryState = { hasError: false };
 
+  // Type-only: the repo ships no @types/react, so tsc cannot see the
+  // inherited `props` member from React.Component (TS2339, lines 70-71).
+  // `declare` adds the type without emitting anything (useDefineForClassFields
+  // is false), so runtime behaviour is byte-identical.
+  declare props: PresetTitleErrorBoundaryProps;
+
   static getDerivedStateFromError(): PresetTitleErrorBoundaryState {
     return { hasError: true };
   }

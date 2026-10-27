@@ -67,7 +67,7 @@ export const LEGACY_TYPE_CHART: TypeChart = (() => {
   return chart;
 })();
 
-/** All 36 moves.ts moves converted through the resolver's legacy adapter. */
+/** All MOVES_DB moves (37 live + 84 batch 2 = 121) converted through the resolver's legacy adapter. */
 export function buildLegacyMoveTable(): MoveTable {
   const moves: MoveTable['moves'] = {};
   for (const [id, m] of Object.entries(MOVES_DB)) {

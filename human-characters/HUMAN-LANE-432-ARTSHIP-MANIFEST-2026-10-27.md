@@ -1,0 +1,138 @@
+# Human 432 art-ship manifest — 2026-10-27
+
+Ships the staged Human Characters 432 remainder to main, additions only, 0 deletions.
+Base at branch creation: main b79529fc. Branch: feature/human432-artship-20261027.
+
+## Counts (with the recount discrepancy stated plainly)
+
+- Art on main before this PR: 319/432 = 73.8% (38 atlas characters x 8 = 304 wired slots + 15 cleaned battle backs).
+- This PR adds 16 new atlases (15 back-only core characters + Ferry Captain), taking atlas characters 38 -> 54, i.e. art on main 319/432 -> 432/432 = 100% under the established atlas convention.
+- Files in this PR: 115 (99 Tier A segment files + 16 Tier B step-1 model sheets).
+- Step-count note: the brief's claimed 113 staged steps matches neither consistent convention. Segment-delta = 112 steps (99 Tier A files); strict file-absence = 128 steps (112 + 16 model sheets). Shipping Tier A + Tier B removes the ambiguity: every file absent from main for these 16 characters is now on the branch.
+- Wiring is NOT in this PR. Wiring follows in a separate PR on src/lib/humanSheets.ts (PR #265 pattern). Nothing here is wired or live until that PR merges and Pages is rebuilt (Pages publish is separately held).
+
+## Flags carried, not hidden
+
+- Ferry Captain: only the 8/8 b-file step-8 JSON ships (ferry-captain-step8-2026-10-26b.json); the 4/8 partial is superseded and does NOT ship. Ferry has no cleaned battle-back webp; its raw back ships under its own media-generation basename.
+- Garden Race Official: atlas cell named walk_back_step actually shows a right-side step (no true back-step frame exists); ships as-is.
+- Castagnoli: rose-default only; the staff battle-front special is a separate dramatic-only file, not the default and not an atlas cell.
+- Old Tamsin files: DO NOT USE / superseded, none shipped; only the Tamsen redesign (already on main) is current.
+- The 15 back-only step-8 JSONs record eye-check as 'PASS as draft' with Mars eye-check still owed; Ferry 8/8 is recorded as locked 2026-10-26 17:34 CDT. This PR ships Mars-confirmed lane art per the 2026-10-27 lane order; it does not re-adjudicate that JSON wording.
+
+## Files shipped (115)
+
+- src/assets/human-characters/in-game-sheets/announcer-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/announcer-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/announcer-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-announcer-battle-front-v1-2026-0-cf45f93d-fd3e-49cd-be86-5174f183bb44.webp
+- src/assets/human-characters/in-game-sheets/media-generation-announcer-portrait-v1-2026-10-0-37dae204-521a-453d-a70d-ece41e0a01d6.webp
+- src/assets/human-characters/in-game-sheets/media-generation-announcer-walk-frames-v1-2026-0-43646007-f666-4337-baba-d267aea49505.webp
+- src/assets/human-characters/in-game-sheets/castagnoli-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/castagnoli-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/castagnoli-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-castagnoli-battle-front-staff-0-22536097-c9d4-4578-9518-2a315ed411dc.webp
+- src/assets/human-characters/in-game-sheets/media-generation-castagnoli-battle-front-v1-202-0-f3b64f5e-f209-4cd6-85ed-acec398d3040.webp
+- src/assets/human-characters/in-game-sheets/media-generation-castagnoli-portrait-v1-2026-10-0-2ece7c9d-9941-4fa7-a813-7612d8c979a4.webp
+- src/assets/human-characters/in-game-sheets/media-generation-castagnoli-walk-frames-v1-2026-0-784bc9c5-d8e7-4629-8183-4a82ce93b8b2.webp
+- src/assets/human-characters/in-game-sheets/champion-mythar-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/champion-mythar-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/champion-mythar-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-champion-mythar-battle-front-v-0-fa8d1d17-d9bd-4122-8941-549560961d11.webp
+- src/assets/human-characters/in-game-sheets/media-generation-champion-mythar-portrait-v1-20-0-3342eae0-8b17-4c8e-a200-53001aef19a0.webp
+- src/assets/human-characters/in-game-sheets/media-generation-champion-mythar-walk-frames-v1-0-7f868f26-69bb-47aa-a06a-00626282426a.webp
+- src/assets/human-characters/in-game-sheets/cowboy-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/cowboy-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/cowboy-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-cowboy-battle-front-v1-2026-10-0-2c6780d0-6838-48a2-a1db-2a2b44977138.webp
+- src/assets/human-characters/in-game-sheets/media-generation-cowboy-portrait-v1-2026-10-26-0-1f8e288b-8559-4d4a-a803-be5be4413ceb.webp
+- src/assets/human-characters/in-game-sheets/media-generation-cowboy-walk-frames-v1-2026-10-0-211ca64c-c627-4c14-a133-fa581bc73e0e.webp
+- src/assets/human-characters/in-game-sheets/flame-tee-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/flame-tee-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/flame-tee-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-flame-tee-battle-front-v1-2026-0-e81e8ec6-fa81-41ff-9314-6b6120cc3883.webp
+- src/assets/human-characters/in-game-sheets/media-generation-flame-tee-portrait-v1-2026-10-0-79345c51-334f-42e3-bd5f-414141bdd5e2.webp
+- src/assets/human-characters/in-game-sheets/media-generation-flame-tee-walk-frames-v1-2026-0-0ad65411-f12b-4b15-98ee-968dc09a1def.webp
+- src/assets/human-characters/in-game-sheets/garden-race-official-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/garden-race-official-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/garden-race-official-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-garden-race-official-battle-fr-0-dd92f13c-03c7-4c3d-8178-31b96a769738.webp
+- src/assets/human-characters/in-game-sheets/media-generation-garden-race-official-portrait-0-19e814be-8899-4ac2-ac8d-3196f837aaa3.webp
+- src/assets/human-characters/in-game-sheets/media-generation-garden-race-official-walk-fram-0-19b76f01-fb74-43b9-b485-459cd4d9e2a0.webp
+- src/assets/human-characters/in-game-sheets/hacker-grunt-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/hacker-grunt-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/hacker-grunt-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-hacker-grunt-battle-front-v1-2-0-886456c6-c9b0-4be6-a8fb-e06c67220727.webp
+- src/assets/human-characters/in-game-sheets/media-generation-hacker-grunt-portrait-v1-2026-0-e96614c1-1e24-4d8e-aeb3-7d13a39e1c11.webp
+- src/assets/human-characters/in-game-sheets/media-generation-hacker-grunt-walk-frames-v1-20-0-6bf08830-4062-4e43-a520-8ab95427873a.webp
+- src/assets/human-characters/in-game-sheets/hoshino-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/hoshino-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/hoshino-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-hoshino-battle-front-v1-2026-1-0-d2b5ac0c-9a14-44d2-9e2d-6baf2f3d362e.webp
+- src/assets/human-characters/in-game-sheets/media-generation-hoshino-portrait-v1-2026-10-26-0-23d0d0c5-365e-4e10-95a1-072a339b1e30.webp
+- src/assets/human-characters/in-game-sheets/media-generation-hoshino-walk-frames-v1-2026-10-0-b366b527-70fc-4be8-ba49-a82550b9b935.webp
+- src/assets/human-characters/in-game-sheets/junkyard-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/junkyard-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/junkyard-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-junkyard-battle-front-v1-2026-0-66e9481a-d3d0-4f1a-9ec2-f559073c0c2a.webp
+- src/assets/human-characters/in-game-sheets/media-generation-junkyard-portrait-v1-2026-10-2-0-3b0e3f3c-af8e-499e-a73a-640497b36967.webp
+- src/assets/human-characters/in-game-sheets/media-generation-junkyard-walk-frames-v1-2026-1-0-8eeaba09-c0bb-428a-84ce-c466db7237a1.webp
+- src/assets/human-characters/in-game-sheets/lab-assistant-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/lab-assistant-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/lab-assistant-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-lab-assistant-battle-front-v1-0-98fdca8f-6318-4c13-83ee-db7101da8a2b.webp
+- src/assets/human-characters/in-game-sheets/media-generation-lab-assistant-portrait-v1-2026-0-35966e39-d1b9-49ab-a093-cee5a308405f.webp
+- src/assets/human-characters/in-game-sheets/media-generation-lab-assistant-walk-frames-v1-2-0-beaded29-e3a8-487d-bad7-614b88df3d20.webp
+- src/assets/human-characters/in-game-sheets/lin-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/lin-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/lin-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-lin-battle-front-v1-2026-10-26-0-8440ef88-4061-4756-989e-348e112733b7.webp
+- src/assets/human-characters/in-game-sheets/media-generation-lin-portrait-v1-2026-10-26-0-560340e2-d97f-4f9b-aa6e-b445ebb01241.webp
+- src/assets/human-characters/in-game-sheets/media-generation-lin-walk-frames-v1-2026-10-26-0-50583379-6a6e-47a1-8716-cc4f7a957ea8.webp
+- src/assets/human-characters/in-game-sheets/logo-tee-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/logo-tee-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/logo-tee-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-logo-tee-battle-front-v1-2026-0-9125b71c-3974-4ca2-a585-dc4fd5f659a2.webp
+- src/assets/human-characters/in-game-sheets/media-generation-logo-tee-portrait-v1-2026-10-2-0-34486cb4-aa52-49b1-a268-239b1702afd6.webp
+- src/assets/human-characters/in-game-sheets/media-generation-logo-tee-walk-frames-v1-2026-1-0-df5ebbc3-3e1f-4f3c-af9d-b56fc7b0127f.webp
+- src/assets/human-characters/in-game-sheets/media-generation-pc-clerk-battle-front-v1-2026-0-3784b13b-ee36-41e3-abbe-f7266ca57312.webp
+- src/assets/human-characters/in-game-sheets/media-generation-pc-clerk-portrait-v1-2026-10-2-0-4e741f6b-590b-4ed0-8f06-e9a8360f3068.webp
+- src/assets/human-characters/in-game-sheets/media-generation-pc-clerk-walk-frames-v1-2026-1-0-916fc8a7-ebc8-454f-bbab-5c606dec3908.webp
+- src/assets/human-characters/in-game-sheets/pc-clerk-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/pc-clerk-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/pc-clerk-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-racing-battle-front-v1-2026-10-0-41054b49-37e7-4467-af6a-6bce177eeacd.webp
+- src/assets/human-characters/in-game-sheets/media-generation-racing-portrait-v1-2026-10-26-0-547691b8-c89c-4227-990f-3f8025b9e398.webp
+- src/assets/human-characters/in-game-sheets/media-generation-racing-walk-frames-v1-2026-10-0-53c8d4e4-00d2-4c9c-964b-b41c32251872.webp
+- src/assets/human-characters/in-game-sheets/racing-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/racing-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/racing-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/media-generation-terra-battle-front-v1-2026-10-0-0fc43ccb-8791-47f3-b776-fabe23f7b7cd.webp
+- src/assets/human-characters/in-game-sheets/media-generation-terra-portrait-v1-2026-10-26-0-fb673e8c-419f-4f9e-ac0b-ef9e9d34a8cb.webp
+- src/assets/human-characters/in-game-sheets/media-generation-terra-walk-frames-v1-2026-10-2-0-8fbc5ab4-9d56-4b27-8f9b-a2d34429253a.webp
+- src/assets/human-characters/in-game-sheets/terra-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/terra-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/terra-step8-2026-10-26.json
+- src/assets/human-characters/in-game-sheets/ferry-captain-atlas-64x64.png
+- src/assets/human-characters/in-game-sheets/ferry-captain-atlas-manifest.json
+- src/assets/human-characters/in-game-sheets/ferry-captain-step8-2026-10-26b.json
+- src/assets/human-characters/in-game-sheets/media-generation-ferry-captain-battle-back-v1-0-f5850078-fdbb-4ec4-bddd-969b8647a6a7.webp
+- src/assets/human-characters/in-game-sheets/media-generation-ferry-captain-battle-front-v1-0-e0386a19-4539-4241-8059-999b45e8597f.webp
+- src/assets/human-characters/in-game-sheets/media-generation-ferry-captain-portrait-v1-0-8331a266-e930-4743-9f1f-5d1a19805645.webp
+- src/assets/human-characters/in-game-sheets/media-generation-ferry-captain-walk-frames-v1-2-0-83556323-76ff-4119-8662-92f89d9f98cb.webp
+- src/assets/human-characters/in-game-sheets/media-generation-ferry-captain-world-views-v1-2-0-2e911a23-6c02-46e6-931e-1a7632169c15.webp
+- src/assets/human-characters/in-game-sheets/media-generation-npc-arena-announcer-v1-0-50ca636b-3b18-4d42-a1ec-d6453755548a.webp
+- src/assets/human-characters/in-game-sheets/media-generation-media-generation-castagnoli-v5-0-11ebd7b8-c2f3-4f77-b612-951ed3151d85.webp
+- src/assets/human-characters/in-game-sheets/media-generation-antagonist-champion-mythar-v1-0-1a44cf2c-5848-43a2-9463-bc1f4303c6fa.webp
+- src/assets/human-characters/in-game-sheets/media-generation-clothing-diverse-cowboy-flanne-0-d2b1fcef-59d3-4935-850e-7a8e20e8cc95.webp
+- src/assets/human-characters/in-game-sheets/media-generation-townsperson-flame-tee-v1-0-e2f169eb-6838-44d1-9f88-7daca7e65650.webp
+- src/assets/human-characters/in-game-sheets/media-generation-npc-garden-race-official-v2-di-0-4a0aaa55-120d-4fac-a889-7fcf900b391b.webp
+- src/assets/human-characters/in-game-sheets/media-generation-antagonist-hacker-grunt-v1-0-fa8bcb7c-c50c-4be5-aa8a-569fdccada8a.webp
+- src/assets/human-characters/in-game-sheets/media-generation-character-fat-elvis-pompadour-0-baf7b84f-9f3c-4d3c-a87e-efceb2be7ad8.webp
+- src/assets/human-characters/in-game-sheets/media-generation-townsperson-junkyard-v1-0-4bab525b-c5a2-4c4f-be1a-d9984f3498b6.webp
+- src/assets/human-characters/in-game-sheets/media-generation-fashion-deconstructed-white-v1-0-b793712c-5700-4da1-b94a-e0121b0a609f.webp
+- src/assets/human-characters/in-game-sheets/media-generation-canon-master-lin-v2-layered-0-09db850c-3c9f-4b32-9639-c46a1a7efa75.webp
+- src/assets/human-characters/in-game-sheets/media-generation-townsperson-logo-tee-v1-0-2fde7fd3-fe5e-4056-882e-9203f9233bc6.webp
+- src/assets/human-characters/in-game-sheets/media-generation-npc-pc-clerk-v1-0-58b996fa-2efe-4748-9d83-6e88ae53b3e4.webp
+- src/assets/human-characters/in-game-sheets/media-generation-townsperson-racing-stripes-v2-0-a9512a54-4da8-442b-8313-140a0a09c630.webp
+- src/assets/human-characters/in-game-sheets/media-generation-canon-master-terra-waist-warp-A-TEST.webp
+- src/assets/human-characters/in-game-sheets/media-generation-npc-ferry-captain-v1-0-5973361d-6fd3-4645-958b-48ebf3bd4545.webp

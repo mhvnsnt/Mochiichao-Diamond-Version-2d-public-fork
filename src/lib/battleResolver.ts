@@ -602,6 +602,17 @@ export function legacyEffectToResolverEffect(
     case "DEF_DOWN1": return { kind: "stat", stat: "def", stages: -1, chance };
     case "ACC_DOWN1": return { kind: "stat", stat: "acc", stages: -1, chance };
     case "SPE_DOWN1": return { kind: "stat", stat: "spe", stages: -1, chance };
+    // Batch 2 (2026-10-27, wiring lane): the catalogue's stat-stage
+    // tokens dispatch through the existing "stat" kind. Positive stages
+    // apply to the actor (self-buffs and on-hit self-raises), negative
+    // stages to the target -- the resolver's existing convention.
+    case "ATK_UP1": return { kind: "stat", stat: "atk", stages: 1, chance };
+    case "ATK_DOWN1": return { kind: "stat", stat: "atk", stages: -1, chance };
+    case "ATK_DOWN2": return { kind: "stat", stat: "atk", stages: -2, chance };
+    case "DEF_UP1": return { kind: "stat", stat: "def", stages: 1, chance };
+    case "DEF_UP2": return { kind: "stat", stat: "def", stages: 2, chance };
+    case "SPDEF_UP1": return { kind: "stat", stat: "spd", stages: 1, chance };
+    case "SPDEF_UP2": return { kind: "stat", stat: "spd", stages: 2, chance };
     case "RECOIL_25": return { kind: "recoil", recoilFraction: 0.25, chance: 1 };
     case "MULTI_HIT": return { kind: "multiHit", chance: 1 };
     case "HIGH_CRIT": return { kind: "highCrit", chance: 1 };

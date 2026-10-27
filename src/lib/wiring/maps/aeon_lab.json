@@ -1,0 +1,30 @@
+{
+  "id": "aeon_lab",
+  "name": "Aeon's Lab",
+  "width": 13,
+  "height": 14,
+  "playerStart": [6, 12],
+  "music": "sector0_theme",
+  "weather": "clear",
+  "tiles": [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1],
+    [1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1],
+    [1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1],
+    [1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1]
+  ],
+  "exits": [],
+  "doors": [{"x": 6, "y": 13, "to": "sector0", "enterAt": [10, 4], "label": "Boot Harbor"}],
+  "npcs": [{"id": "prof_aeon", "x": 6, "y": 4, "name": "Prof. Aeon", "role": "npc"}, {"id": "asst_mochiko", "x": 9, "y": 4, "name": "Assistant Mochiko", "role": "npc"}, {"id": "hex_lab_battle", "x": 4, "y": 8, "name": "Hex", "role": "npc"}, {"id": "starter_mochii", "x": 2, "y": 6, "name": "Mochii Ball", "role": "choice"}, {"id": "starter_razorgater", "x": 4, "y": 6, "name": "Razorgater Ball", "role": "choice"}, {"id": "starter_tyrage", "x": 6, "y": 6, "name": "Tyrage Ball", "role": "choice"}, {"id": "starter_kittember", "x": 8, "y": 6, "name": "Kittember Ball", "role": "choice"}, {"id": "starter_sproutle", "x": 10, "y": 6, "name": "Sproutle Ball", "role": "choice"}, {"id": "dorowani_display", "x": 3, "y": 10, "name": "Dorowani", "role": "npc"}, {"id": "gabu_display", "x": 9, "y": 10, "name": "Gabu", "role": "npc"}],
+  "signs": [],
+  "noWild": true
+}

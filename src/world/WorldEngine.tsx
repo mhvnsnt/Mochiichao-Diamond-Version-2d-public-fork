@@ -15,6 +15,7 @@ import { createMochii } from '../lib/engine';
 import DialogueBox from "../components/game/DialogueBox";
 import { isConfirmKey } from "../lib/buttonMode";
 import { slotForNpc } from "../lib/humanSheets";
+import { personaPresentationForNpc } from "../lib/personaDialogue";
 import { playMusic } from "../lib/music";
 
 const TILE_SIZE = 40; // match PDF size because it renders better in viewports
@@ -1662,6 +1663,12 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
           lines={dialog.lines || []}
           speakerName={dialog.npc?.name}
           speakerSlot={dialog.npc ? slotForNpc(dialog.npc) : null}
+          // Tier 1 persona framing, scene-selected: ONLY Luigi
+          // Castagnoli's dialogue gets it (personaDialogue.ts).
+          // Every other speaker passes 'default' — the locked default
+          // dialogue look is unchanged. Mysterious Figure has no
+          // repo scene yet, so it selects nothing here; see that file.
+          presentationMode={personaPresentationForNpc(dialog.npc) ? 'persona' : 'default'}
           choice={!!dialog.isChoice}
           onComplete={finishDialog}
           onChoice={handleChoice}

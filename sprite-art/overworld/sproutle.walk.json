@@ -1,0 +1,139 @@
+{
+ "creature": "sproutle",
+ "roster_id": "038",
+ "variant": null,
+ "movement_class": "small_bouncy",
+ "idle_class": "small_bouncy",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 400,
+ "side_gap": true,
+ "side_note": "No distinct side cell in the locked manifest; left/right stands reuse the front stand until distinct side art lands. Steps still animate.",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "game-ready/sproutle/cells/sproutle_cell_18.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_0"
+    },
+    {
+     "file": "game-ready/sproutle/cells/sproutle_cell_19.png",
+     "provenance": "locked_walk",
+     "source_role": "walk_front_1"
+    }
+   ],
+   "loop": [
+    "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "game-ready/sproutle/cells/sproutle_cell_18.png",
+    "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "game-ready/sproutle/cells/sproutle_cell_19.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/sproutle/cells/sproutle_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "walk/sproutle/sproutle_walk_up_transform_step1.png",
+     "provenance": "transform_small_bouncy",
+     "source_role": "overworld_back",
+     "transform": {
+      "dx": 0,
+      "dy": -3,
+      "scale": 1.0
+     }
+    },
+    {
+     "file": "walk/sproutle/sproutle_walk_up_transform_step2.png",
+     "provenance": "transform_small_bouncy",
+     "source_role": "overworld_back",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/sproutle/cells/sproutle_cell_02.png",
+    "walk/sproutle/sproutle_walk_up_transform_step1.png",
+    "game-ready/sproutle/cells/sproutle_cell_02.png",
+    "walk/sproutle/sproutle_walk_up_transform_step2.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "provenance": "side_placeholder_front_reuse",
+    "source_role": "overworld_front",
+    "side_gap": true
+   },
+   "steps": [
+    {
+     "file": "walk/sproutle/sproutle_walk_left_transform_step1.png",
+     "provenance": "transform_small_bouncy",
+     "source_role": "overworld_front",
+     "transform": {
+      "dx": 0,
+      "dy": -3,
+      "scale": 1.0
+     }
+    },
+    {
+     "file": "walk/sproutle/sproutle_walk_left_transform_step2.png",
+     "provenance": "transform_small_bouncy",
+     "source_role": "overworld_front",
+     "transform": {
+      "dx": 0,
+      "dy": -1,
+      "scale": 1.0
+     }
+    }
+   ],
+   "loop": [
+    "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "walk/sproutle/sproutle_walk_left_transform_step1.png",
+    "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "walk/sproutle/sproutle_walk_left_transform_step2.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "provenance": "side_placeholder_front_reuse",
+    "source_role": "overworld_front",
+    "side_gap": true
+   },
+   "steps": [
+    {
+     "file": "walk/sproutle/sproutle_walk_right_mirror_1.png",
+     "provenance": "mirror",
+     "source_role": "overworld_front",
+     "mirrored_from": "walk/sproutle/sproutle_walk_left_transform_step1.png"
+    },
+    {
+     "file": "walk/sproutle/sproutle_walk_right_mirror_2.png",
+     "provenance": "mirror",
+     "source_role": "overworld_front",
+     "mirrored_from": "walk/sproutle/sproutle_walk_left_transform_step2.png"
+    }
+   ],
+   "loop": [
+    "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "walk/sproutle/sproutle_walk_right_mirror_1.png",
+    "game-ready/sproutle/cells/sproutle_cell_04.png",
+    "walk/sproutle/sproutle_walk_right_mirror_2.png"
+   ]
+  }
+ }
+}

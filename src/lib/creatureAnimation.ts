@@ -52,7 +52,7 @@
  *   prop + registry are the wiring; the dex surface is owed.
  * - move scripts (563 union scripts, 12 shared subroutines, PR #168
  *   source): game-path copy at src/lib/generated/moveScripts.json.
- *   getMoveScript() is the accessor; 10/36 game moves.ts moves match a
+ *   getMoveScript() is the accessor; 10/121 game moves.ts moves match a
  *   script by id exactly. Pixi's existing lunge/projectile/status phases
  *   ARE the Layer-1 templates those scripts describe (sub_Lunge,
  *   sub_Projectile, sub_Impact, ...); per-move step sequencing beyond
