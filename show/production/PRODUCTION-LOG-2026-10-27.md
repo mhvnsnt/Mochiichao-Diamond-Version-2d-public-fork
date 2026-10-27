@@ -171,3 +171,20 @@ back from main after merge and comparing md5. Standing rule,
 hardened: bundle verification is hash-level or it did not happen.
 Transparent twins return via Robust Video Matting (RVM,
 ResNet50) run on the REAL clips, frame-verified before shipping.
+
+## TWINS LANDED - transparent WebMs re-derived from the REAL clips (2026-10-27)
+Method, honestly: Robust Video Matting (RVM ResNet50 + MobileNetV3,
+pulled into ~/opt/tools/rvm) was tried first and MEASURED A FAILURE
+on this material - trained on human video, its alpha collapses on
+the flat cartoon body (belly alpha 0.000; coverage 0.208 -> 0.024
+across 60 frames). The shipped twins use white-field matting
+(white_matte.py, now in show/production/tooling/avatar-stack/):
+distance-from-white alpha + enclosed-region rescue (belly
+highlight, jaw, teeth) + speckle floor + white un-premultiply.
+Measured: belly 0.972 / jaw 0.963 / corners 0.0; recomposite over
+white reproduces the source at mean abs diff 1.08; background
+flicker <= 0.004 per clip. COMPOSITE-PROOF-gate-v3.mp4 = the real
+idle twin over the accepted Garden Gate plate, frame-verified
+(frame 60 vs 140: performed pose change, plate clean around the
+character). The bundle is now complete and every video in it
+derives from the owner's live avatar clips.
