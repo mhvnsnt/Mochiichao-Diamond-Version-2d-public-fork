@@ -1,0 +1,85 @@
+{
+ "creature": "mechapion",
+ "roster_id": "033",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "frames": [
+  {
+   "file": "mechapion_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "mechapion_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "mechapion_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "mechapion_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "mechapion_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "mechapion_walk_right_1.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "mechapion_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "mechapion_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/mechapion/mechapion.manifest.locked.json",
+ "source_cells": {
+  "mechapion_walk_down_0.png": {
+   "locked_cell": "mechapion_cell_16.png",
+   "transform": "copy"
+  },
+  "mechapion_walk_down_1.png": {
+   "locked_cell": "mechapion_cell_17.png",
+   "transform": "copy"
+  },
+  "mechapion_walk_up_0.png": {
+   "locked_cell": "mechapion_cell_02.png",
+   "transform": "copy"
+  },
+  "mechapion_walk_up_1.png": {
+   "locked_cell": "mechapion_cell_05.png",
+   "transform": "copy"
+  },
+  "mechapion_walk_left_0.png": {
+   "locked_cell": "mechapion_cell_12.png",
+   "transform": "copy"
+  },
+  "mechapion_walk_left_1.png": {
+   "locked_cell": "mechapion_cell_13.png",
+   "transform": "copy"
+  },
+  "mechapion_walk_right_0.png": {
+   "locked_cell": "mechapion_cell_12.png",
+   "transform": "mirror"
+  },
+  "mechapion_walk_right_1.png": {
+   "locked_cell": "mechapion_cell_13.png",
+   "transform": "mirror"
+  }
+ },
+ "method": "locked-cell transforms only (copy / horizontal mirror / 2px-up bob variant), 64x64 RGBA, new filenames only; no generation in this batch; no file shown to Mars overwritten",
+ "movement_note": "Locked walk_front labels include side views (eye-checked): sides = 12/13 + mirrors. Down = front walks 16/17; up = overworld backs 02/05. Mechapion battle_back role still owed elsewhere (known lane gap, not this task).",
+ "walk_gate_note": "STAGING ONLY. Mars's walk-gate pick (QA-PASS locked-sheet walk art vs walk-frames dirs/PNGs) is still PENDING as of 2026-10-26. This dir prepares the walk-frames option; it does not decide the gate. No PR merged, no game src touched.",
+ "eye_check": "Final 8-frame montage PASS (2026-10-26) with caveat: up_1 is a 3/4 rear view, not a pure back (only two rear-ish locked cells exist).",
+ "staged": "2026-10-26 lane-finish segment 4 (walk frames only)"
+}
