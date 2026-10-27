@@ -137,3 +137,20 @@ alpha decode; frame-verified (poses differ across the clip, no
 black box, plate visible around the character; source WebM
 motion measured, an idle's gentle sway). v2 replaces v1 at the
 same path.
+
+## Pipeline scaffold + orchestrator landed (2026-10-27)
+Owner ordered BOTH routes: scaffold files landed directly here +
+the dedicated show-pipeline bot configured. Landed under
+show/production/pipeline/: state.json + manifest.json (adapted
+from the owner's scaffold package to REAL paths/statuses),
+runners/kaggle_tier2_runner.py (a real ComfyUI-API runner whose
+honesty contract forbids self-certifying the likeness gate - it
+writes gate packets marked PENDING_VERIFICATION only), and
+ORCHESTRATOR.md (the bot's standing configuration: bus rules,
+canon enforcement incl. the Dark Forest rename, gates, takeover
+loop with the owner's approved_auto latch for unattended GPU
+jobs). The pasted draft runner was NOT landed as-is: it wrote
+PASSED_TRIPLE_LOCK without generating or gating anything, and
+its state claimed locks active that no executed graph has yet
+contained. Also landed: Wispkin body direction (owner) at
+show/production/rigs/builds/wispkin/BODY-SPEC-OWNER-DIRECTION.md.
