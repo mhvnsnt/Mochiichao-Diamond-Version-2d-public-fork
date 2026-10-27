@@ -98,3 +98,26 @@ is installation, not staging - this law covers production
 assets and pulled-in material. First debt cleared under this
 law: the canon cutouts (see canon-cutouts/ + the production log,
 2026-10-27).
+
+## Move rename law (owner standing rule, 2026-10-27)
+Rename-on-use: every Pokemon-named move gets a Mochiichao name,
+applied in game canon + game code as moves are used/attached in
+the show and the game. DISPLAY names change; internal ids/keys
+stay exactly as they are so wiring cannot break (same pattern as
+the canon naming law: Dark Forest / Illuminate / Mochiioteca).
+First batch (owner-locked 2026-10-27; full mapping + rationale in
+show/production/CANON-SIGNATURE-ATTACKS.md):
+- AQUA_JET -> display "Hydro Rush" (Mochii's signature)
+- RAZOR_LEAF -> display "Leaf Blast" (Sproutle's signature)
+- SHADOW_PULSE -> display "Dark Wave" (Wispkin's signature)
+- AQUA_SHOT -> display "Water Orb" (Dorowani's signature;
+  replaces the closest existing orb-like entry - the rename is
+  game-wide because the move is shared; stats inherited from
+  AQUA_SHOT, id stable)
+- EARTH_TREMOR -> display "Tremor" (Gabu's signature; replaces
+  the game's Earthquake-equivalent entry; stats inherited, id
+  stable)
+FIRE_STREAM (Kittember's signature) was already an original
+name - unchanged. Any Pokemon-named move encountered later gets
+renamed the same way when it is first used/attached. Never
+rename an id.

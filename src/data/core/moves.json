@@ -5,7 +5,7 @@
   "moves": [
     {
       "id": "AQUA_SHOT",
-      "name": "Aqua Shot",
+      "name": "Water Orb",
       "type": "WATER",
       "category": "Special",
       "power": 40,
@@ -56,7 +56,7 @@
     },
     {
       "id": "AQUA_JET",
-      "name": "Aqua Jet",
+      "name": "Hydro Rush",
       "type": "WATER",
       "category": "Physical",
       "power": 40,
@@ -192,7 +192,7 @@
     },
     {
       "id": "RAZOR_LEAF",
-      "name": "Razor Leaf",
+      "name": "Leaf Blast",
       "type": "GRASS",
       "category": "Physical",
       "power": 55,
@@ -343,7 +343,7 @@
     },
     {
       "id": "EARTH_TREMOR",
-      "name": "Earth Tremor",
+      "name": "Tremor",
       "type": "GROUND",
       "category": "Physical",
       "power": 100,
@@ -426,7 +426,7 @@
     },
     {
       "id": "SHADOW_PULSE",
-      "name": "Shadow Pulse",
+      "name": "Dark Wave",
       "type": "GHOST",
       "category": "Special",
       "power": 80,
