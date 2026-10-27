@@ -1,0 +1,920 @@
+{
+  "source": "pokebw2/res/trainers/classes/*.json",
+  "sourceRepo": "fuddlesworth/pokebw2",
+  "sourceCommit": "e522642f9ec496783642df075f05fcd07d3cbc1b",
+  "note": "Class files hold only a display name and an article form; there are no numeric prize/money/effect fields in them, so none are invented here. PR redaction: 30 class constants whose constant itself named a person were replaced with WITHHELD constants (display name kept, lookup by original constant no longer resolves by design).",
+  "totalClassFiles": 237,
+  "keptGenericOrTitledClasses": 151,
+  "droppedNamedPersonClasses_articleEqualsName": 68,
+  "droppedNamedPersonClasses_missingArticle": 1,
+  "droppedBossSlots_bossTrainerPrefix": 17,
+  "droppedTotal": 86,
+  "classes": [
+    {
+      "sourceStem": "ace_trainer_f",
+      "classConstant": "TRAINER_CLASS_ACE_TRAINER_F",
+      "name": "Ace Trainer",
+      "nameWithArticle": "an Ace Trainer"
+    },
+    {
+      "sourceStem": "ace_trainer_m",
+      "classConstant": "TRAINER_CLASS_ACE_TRAINER_M",
+      "name": "Ace Trainer",
+      "nameWithArticle": "an Ace Trainer"
+    },
+    {
+      "sourceStem": "alien",
+      "classConstant": "TRAINER_CLASS_ALIEN",
+      "name": "Alien",
+      "nameWithArticle": "an Alien"
+    },
+    {
+      "sourceStem": "artist",
+      "classConstant": "TRAINER_CLASS_ARTIST",
+      "name": "Artist",
+      "nameWithArticle": "an Artist"
+    },
+    {
+      "sourceStem": "backers_f",
+      "classConstant": "TRAINER_CLASS_BACKERS_F",
+      "name": "Backers",
+      "nameWithArticle": "a Backer"
+    },
+    {
+      "sourceStem": "backers_m",
+      "classConstant": "TRAINER_CLASS_BACKERS_M",
+      "name": "Backers",
+      "nameWithArticle": "a Backer"
+    },
+    {
+      "sourceStem": "backpacker_f",
+      "classConstant": "TRAINER_CLASS_BACKPACKER_F",
+      "name": "Backpacker",
+      "nameWithArticle": "a Backpacker"
+    },
+    {
+      "sourceStem": "backpacker_m",
+      "classConstant": "TRAINER_CLASS_BACKPACKER_M",
+      "name": "Backpacker",
+      "nameWithArticle": "a Backpacker"
+    },
+    {
+      "sourceStem": "baker",
+      "classConstant": "TRAINER_CLASS_BAKER",
+      "name": "Baker",
+      "nameWithArticle": "a Baker"
+    },
+    {
+      "sourceStem": "battle_girl",
+      "classConstant": "TRAINER_CLASS_BATTLE_GIRL",
+      "name": "Battle Girl",
+      "nameWithArticle": "a Battle Girl"
+    },
+    {
+      "sourceStem": "beauty",
+      "classConstant": "TRAINER_CLASS_BEAUTY",
+      "name": "Beauty",
+      "nameWithArticle": "a Beauty"
+    },
+    {
+      "sourceStem": "biker",
+      "classConstant": "TRAINER_CLASS_BIKER",
+      "name": "Biker",
+      "nameWithArticle": "a Biker"
+    },
+    {
+      "sourceStem": "black_belt",
+      "classConstant": "TRAINER_CLASS_BLACK_BELT",
+      "name": "Black Belt",
+      "nameWithArticle": "a Black Belt"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_013",
+      "name": "Brycen Jet",
+      "nameWithArticle": "a Brycen Jet"
+    },
+    {
+      "sourceStem": "champion",
+      "classConstant": "TRAINER_CLASS_CHAMPION",
+      "name": "Champion",
+      "nameWithArticle": "a Champion"
+    },
+    {
+      "sourceStem": "clerk_f",
+      "classConstant": "TRAINER_CLASS_CLERK_F",
+      "name": "Clerk \u246e",
+      "nameWithArticle": "a Clerk \u246e"
+    },
+    {
+      "sourceStem": "clerk_m_66",
+      "classConstant": "TRAINER_CLASS_CLERK_M_66",
+      "name": "Clerk \u246d",
+      "nameWithArticle": "a Clerk \u246d"
+    },
+    {
+      "sourceStem": "clerk_m_67",
+      "classConstant": "TRAINER_CLASS_CLERK_M_67",
+      "name": "Clerk \u246d",
+      "nameWithArticle": "a Clerk \u246d"
+    },
+    {
+      "sourceStem": "cursed_gent",
+      "classConstant": "TRAINER_CLASS_CURSED_GENT",
+      "name": "Cursed Gent",
+      "nameWithArticle": "the Cursed Gent"
+    },
+    {
+      "sourceStem": "cursed_kid",
+      "classConstant": "TRAINER_CLASS_CURSED_KID",
+      "name": "Cursed Kid",
+      "nameWithArticle": "the Cursed Kid"
+    },
+    {
+      "sourceStem": "cursed_man",
+      "classConstant": "TRAINER_CLASS_CURSED_MAN",
+      "name": "Cursed Man",
+      "nameWithArticle": "the Cursed Man"
+    },
+    {
+      "sourceStem": "cyclist_f",
+      "classConstant": "TRAINER_CLASS_CYCLIST_F",
+      "name": "Cyclist",
+      "nameWithArticle": "a Cyclist"
+    },
+    {
+      "sourceStem": "cyclist_m",
+      "classConstant": "TRAINER_CLASS_CYCLIST_M",
+      "name": "Cyclist",
+      "nameWithArticle": "a Cyclist"
+    },
+    {
+      "sourceStem": "dancer",
+      "classConstant": "TRAINER_CLASS_DANCER",
+      "name": "Dancer",
+      "nameWithArticle": "a Dancer"
+    },
+    {
+      "sourceStem": "depot_agent",
+      "classConstant": "TRAINER_CLASS_DEPOT_AGENT",
+      "name": "Depot Agent",
+      "nameWithArticle": "a Depot Agent"
+    },
+    {
+      "sourceStem": "divine_maid",
+      "classConstant": "TRAINER_CLASS_DIVINE_MAID",
+      "name": "Divine Maid",
+      "nameWithArticle": "the Divine Maid"
+    },
+    {
+      "sourceStem": "doctor",
+      "classConstant": "TRAINER_CLASS_DOCTOR",
+      "name": "Doctor",
+      "nameWithArticle": "a Doctor"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_027",
+      "name": "Elite Four",
+      "nameWithArticle": "an Elite Four"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_028",
+      "name": "Elite Four",
+      "nameWithArticle": "an Elite Four"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_029",
+      "name": "Elite Four",
+      "nameWithArticle": "an Elite Four"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_030",
+      "name": "Elite Four",
+      "nameWithArticle": "an Elite Four"
+    },
+    {
+      "sourceStem": "fisherman",
+      "classConstant": "TRAINER_CLASS_FISHERMAN",
+      "name": "Fisherman",
+      "nameWithArticle": "a Fisherman"
+    },
+    {
+      "sourceStem": "future_being",
+      "classConstant": "TRAINER_CLASS_FUTURE_BEING",
+      "name": "Future Being",
+      "nameWithArticle": "a Future Being"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_033",
+      "name": "GAME FREAK",
+      "nameWithArticle": "a GAME FREAK"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_034",
+      "name": "GAME FREAK",
+      "nameWithArticle": "a GAME FREAK"
+    },
+    {
+      "sourceStem": "gentleman",
+      "classConstant": "TRAINER_CLASS_GENTLEMAN",
+      "name": "Gentleman",
+      "nameWithArticle": "a Gentleman"
+    },
+    {
+      "sourceStem": "girl",
+      "classConstant": "TRAINER_CLASS_GIRL",
+      "name": "Girl",
+      "nameWithArticle": "a Girl"
+    },
+    {
+      "sourceStem": "girl_in_suit_224",
+      "classConstant": "TRAINER_CLASS_GIRL_IN_SUIT_224",
+      "name": "Girl in Suit",
+      "nameWithArticle": "a Mannequin \u246e"
+    },
+    {
+      "sourceStem": "girl_in_suit_226",
+      "classConstant": "TRAINER_CLASS_GIRL_IN_SUIT_226",
+      "name": "Girl in Suit",
+      "nameWithArticle": "a Mannequin \u246e"
+    },
+    {
+      "sourceStem": "guitarist",
+      "classConstant": "TRAINER_CLASS_GUITARIST",
+      "name": "Guitarist",
+      "nameWithArticle": "a Guitarist"
+    },
+    {
+      "sourceStem": "guy",
+      "classConstant": "TRAINER_CLASS_GUY",
+      "name": "Guy",
+      "nameWithArticle": "a Guy"
+    },
+    {
+      "sourceStem": "guy_in_suit_223",
+      "classConstant": "TRAINER_CLASS_GUY_IN_SUIT_223",
+      "name": "Guy in Suit",
+      "nameWithArticle": "a Mannequin \u246d"
+    },
+    {
+      "sourceStem": "guy_in_suit_225",
+      "classConstant": "TRAINER_CLASS_GUY_IN_SUIT_225",
+      "name": "Guy in Suit",
+      "nameWithArticle": "a Mannequin \u246d"
+    },
+    {
+      "sourceStem": "harlequin_233",
+      "classConstant": "TRAINER_CLASS_HARLEQUIN_233",
+      "name": "Harlequin",
+      "nameWithArticle": "a Harlequin"
+    },
+    {
+      "sourceStem": "harlequin_32",
+      "classConstant": "TRAINER_CLASS_HARLEQUIN_32",
+      "name": "Harlequin",
+      "nameWithArticle": "a Harlequin"
+    },
+    {
+      "sourceStem": "hero",
+      "classConstant": "TRAINER_CLASS_HERO",
+      "name": "Hero",
+      "nameWithArticle": "a Hero"
+    },
+    {
+      "sourceStem": "heroine",
+      "classConstant": "TRAINER_CLASS_HEROINE",
+      "name": "Heroine",
+      "nameWithArticle": "a Heroine"
+    },
+    {
+      "sourceStem": "hiker",
+      "classConstant": "TRAINER_CLASS_HIKER",
+      "name": "Hiker",
+      "nameWithArticle": "a Hiker"
+    },
+    {
+      "sourceStem": "hooligans",
+      "classConstant": "TRAINER_CLASS_HOOLIGANS",
+      "name": "Hooligans",
+      "nameWithArticle": "the Hooligans"
+    },
+    {
+      "sourceStem": "hoopster",
+      "classConstant": "TRAINER_CLASS_HOOPSTER",
+      "name": "Hoopster",
+      "nameWithArticle": "a Hoopster"
+    },
+    {
+      "sourceStem": "infielder",
+      "classConstant": "TRAINER_CLASS_INFIELDER",
+      "name": "Infielder",
+      "nameWithArticle": "an Infielder"
+    },
+    {
+      "sourceStem": "janitor",
+      "classConstant": "TRAINER_CLASS_JANITOR",
+      "name": "Janitor",
+      "nameWithArticle": "a Janitor"
+    },
+    {
+      "sourceStem": "lady",
+      "classConstant": "TRAINER_CLASS_LADY",
+      "name": "Lady",
+      "nameWithArticle": "a Lady"
+    },
+    {
+      "sourceStem": "lass",
+      "classConstant": "TRAINER_CLASS_LASS",
+      "name": "Lass",
+      "nameWithArticle": "a Lass"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_054",
+      "name": "Leader",
+      "nameWithArticle": "a Leader"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_055",
+      "name": "Leader",
+      "nameWithArticle": "a Leader"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_056",
+      "name": "Leader",
+      "nameWithArticle": "a Leader"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_057",
+      "name": "Leader",
+      "nameWithArticle": "a Leader"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_058",
+      "name": "Leader",
+      "nameWithArticle": "a Leader"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_059",
+      "name": "Leader",
+      "nameWithArticle": "a Leader"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_060",
+      "name": "Leader",
+      "nameWithArticle": "a Leader"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_061",
+      "name": "Leader",
+      "nameWithArticle": "a Leader"
+    },
+    {
+      "sourceStem": "linebacker",
+      "classConstant": "TRAINER_CLASS_LINEBACKER",
+      "name": "Linebacker",
+      "nameWithArticle": "a Linebacker"
+    },
+    {
+      "sourceStem": "maid",
+      "classConstant": "TRAINER_CLASS_MAID",
+      "name": "Maid",
+      "nameWithArticle": "a Maid"
+    },
+    {
+      "sourceStem": "masked_man",
+      "classConstant": "TRAINER_CLASS_MASKED_MAN",
+      "name": "Masked Man",
+      "nameWithArticle": "the Masked Man"
+    },
+    {
+      "sourceStem": "mechacombo",
+      "classConstant": "TRAINER_CLASS_MECHACOMBO",
+      "name": "Mechacombo",
+      "nameWithArticle": "a Mechacombo"
+    },
+    {
+      "sourceStem": "motorcyclist",
+      "classConstant": "TRAINER_CLASS_MOTORCYCLIST",
+      "name": "Motorcyclist",
+      "nameWithArticle": "a Motorcyclist"
+    },
+    {
+      "sourceStem": "musician",
+      "classConstant": "TRAINER_CLASS_MUSICIAN",
+      "name": "Musician",
+      "nameWithArticle": "a Musician"
+    },
+    {
+      "sourceStem": "ninja_f",
+      "classConstant": "TRAINER_CLASS_NINJA_F",
+      "name": "Ninja",
+      "nameWithArticle": "a Ninja"
+    },
+    {
+      "sourceStem": "ninja_m",
+      "classConstant": "TRAINER_CLASS_NINJA_M",
+      "name": "Ninja",
+      "nameWithArticle": "a Ninja"
+    },
+    {
+      "sourceStem": "nurse",
+      "classConstant": "TRAINER_CLASS_NURSE",
+      "name": "Nurse",
+      "nameWithArticle": "a Nurse"
+    },
+    {
+      "sourceStem": "nursery_aide",
+      "classConstant": "TRAINER_CLASS_NURSERY_AIDE",
+      "name": "Nursery Aide",
+      "nameWithArticle": "a Nursery Aide"
+    },
+    {
+      "sourceStem": "old_statue",
+      "classConstant": "TRAINER_CLASS_OLD_STATUE",
+      "name": "Old Statue",
+      "nameWithArticle": "the Old Statue"
+    },
+    {
+      "sourceStem": "parasol_lady",
+      "classConstant": "TRAINER_CLASS_PARASOL_LADY",
+      "name": "Parasol Lady",
+      "nameWithArticle": "a Parasol Lady"
+    },
+    {
+      "sourceStem": "pilot",
+      "classConstant": "TRAINER_CLASS_PILOT",
+      "name": "Pilot",
+      "nameWithArticle": "a Pilot"
+    },
+    {
+      "sourceStem": "pkmn_breeder_f",
+      "classConstant": "TRAINER_CLASS_PKMN_BREEDER_F",
+      "name": "\u2486\u2487 Breeder",
+      "nameWithArticle": "a \u2486\u2487 Breeder"
+    },
+    {
+      "sourceStem": "pkmn_breeder_m",
+      "classConstant": "TRAINER_CLASS_PKMN_BREEDER_M",
+      "name": "\u2486\u2487 Breeder",
+      "nameWithArticle": "a \u2486\u2487 Breeder"
+    },
+    {
+      "sourceStem": "pkmn_ranger_f",
+      "classConstant": "TRAINER_CLASS_PKMN_RANGER_F",
+      "name": "\u2486\u2487 Ranger",
+      "nameWithArticle": "a \u2486\u2487 Ranger"
+    },
+    {
+      "sourceStem": "pkmn_ranger_m",
+      "classConstant": "TRAINER_CLASS_PKMN_RANGER_M",
+      "name": "\u2486\u2487 Ranger",
+      "nameWithArticle": "a \u2486\u2487 Ranger"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_079",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_080",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_081",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_082",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_083",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_084",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_085",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_086",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_087",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_107",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_107",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_109",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_109",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_111",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_111",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_181",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_181",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_183",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_183",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_185",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_185",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_198",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_198",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_229",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_229",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_f_230",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_F_230",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_104",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_104",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_105",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_105",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_106",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_106",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_108",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_108",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_110",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_110",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_180",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_180",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_182",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_182",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_184",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_184",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_m_228",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_M_228",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_106",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_107",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "pkmn_trainer_rival",
+      "classConstant": "TRAINER_CLASS_PKMN_TRAINER_RIVAL",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_109",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_110",
+      "name": "\u2486\u2487 Trainer",
+      "nameWithArticle": "a \u2486\u2487 Trainer"
+    },
+    {
+      "sourceStem": "plush_toy",
+      "classConstant": "TRAINER_CLASS_PLUSH_TOY",
+      "name": "Plush Toy",
+      "nameWithArticle": "a Plush Toy"
+    },
+    {
+      "sourceStem": "pokefan_f",
+      "classConstant": "TRAINER_CLASS_POKEFAN_F",
+      "name": "Pok\u00e9fan",
+      "nameWithArticle": "a Pok\u00e9fan"
+    },
+    {
+      "sourceStem": "pokefan_m",
+      "classConstant": "TRAINER_CLASS_POKEFAN_M",
+      "name": "Pok\u00e9fan",
+      "nameWithArticle": "a Pok\u00e9fan"
+    },
+    {
+      "sourceStem": "policeman",
+      "classConstant": "TRAINER_CLASS_POLICEMAN",
+      "name": "Policeman",
+      "nameWithArticle": "a Policeman"
+    },
+    {
+      "sourceStem": "preschooler_f",
+      "classConstant": "TRAINER_CLASS_PRESCHOOLER_F",
+      "name": "Preschooler",
+      "nameWithArticle": "a Preschooler"
+    },
+    {
+      "sourceStem": "preschooler_m",
+      "classConstant": "TRAINER_CLASS_PRESCHOOLER_M",
+      "name": "Preschooler",
+      "nameWithArticle": "a Preschooler"
+    },
+    {
+      "sourceStem": "prince",
+      "classConstant": "TRAINER_CLASS_PRINCE",
+      "name": "Prince",
+      "nameWithArticle": "a Prince"
+    },
+    {
+      "sourceStem": "princess",
+      "classConstant": "TRAINER_CLASS_PRINCESS",
+      "name": "Princess",
+      "nameWithArticle": "a Princess"
+    },
+    {
+      "sourceStem": "psychic_f",
+      "classConstant": "TRAINER_CLASS_PSYCHIC_F",
+      "name": "Psychic",
+      "nameWithArticle": "a Psychic"
+    },
+    {
+      "sourceStem": "psychic_m",
+      "classConstant": "TRAINER_CLASS_PSYCHIC_M",
+      "name": "Psychic",
+      "nameWithArticle": "a Psychic"
+    },
+    {
+      "sourceStem": "red_fog",
+      "classConstant": "TRAINER_CLASS_RED_FOG",
+      "name": "Red Fog",
+      "nameWithArticle": "the Red Fog"
+    },
+    {
+      "sourceStem": "rich_boy",
+      "classConstant": "TRAINER_CLASS_RICH_BOY",
+      "name": "Rich Boy",
+      "nameWithArticle": "a Rich Boy"
+    },
+    {
+      "sourceStem": "roughneck",
+      "classConstant": "TRAINER_CLASS_ROUGHNECK",
+      "name": "Roughneck",
+      "nameWithArticle": "a Roughneck"
+    },
+    {
+      "sourceStem": "school_kid_f",
+      "classConstant": "TRAINER_CLASS_SCHOOL_KID_F",
+      "name": "School Kid",
+      "nameWithArticle": "a School Kid"
+    },
+    {
+      "sourceStem": "school_kid_m",
+      "classConstant": "TRAINER_CLASS_SCHOOL_KID_M",
+      "name": "School Kid",
+      "nameWithArticle": "a School Kid"
+    },
+    {
+      "sourceStem": "scientist_f_206",
+      "classConstant": "TRAINER_CLASS_SCIENTIST_F_206",
+      "name": "Scientist",
+      "nameWithArticle": "a Scientist"
+    },
+    {
+      "sourceStem": "scientist_f_46",
+      "classConstant": "TRAINER_CLASS_SCIENTIST_F_46",
+      "name": "Scientist",
+      "nameWithArticle": "a Scientist"
+    },
+    {
+      "sourceStem": "scientist_m_205",
+      "classConstant": "TRAINER_CLASS_SCIENTIST_M_205",
+      "name": "Scientist",
+      "nameWithArticle": "a Scientist"
+    },
+    {
+      "sourceStem": "scientist_m_52",
+      "classConstant": "TRAINER_CLASS_SCIENTIST_M_52",
+      "name": "Scientist",
+      "nameWithArticle": "a Scientist"
+    },
+    {
+      "sourceStem": "smasher",
+      "classConstant": "TRAINER_CLASS_SMASHER",
+      "name": "Smasher",
+      "nameWithArticle": "a Smasher"
+    },
+    {
+      "sourceStem": "socialite",
+      "classConstant": "TRAINER_CLASS_SOCIALITE",
+      "name": "Socialite",
+      "nameWithArticle": "a Socialite"
+    },
+    {
+      "sourceStem": "striker",
+      "classConstant": "TRAINER_CLASS_STRIKER",
+      "name": "Striker",
+      "nameWithArticle": "a Striker"
+    },
+    {
+      "sourceStem": "subway_boss_102",
+      "classConstant": "TRAINER_CLASS_SUBWAY_BOSS_102",
+      "name": "Subway Boss",
+      "nameWithArticle": "a Subway Boss"
+    },
+    {
+      "sourceStem": "subway_boss_88",
+      "classConstant": "TRAINER_CLASS_SUBWAY_BOSS_88",
+      "name": "Subway Boss",
+      "nameWithArticle": "a Subway Boss"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_135",
+      "name": "Subway Boss",
+      "nameWithArticle": "a Subway Boss"
+    },
+    {
+      "sourceStem": "withheld",
+      "classConstant": "TRAINER_CLASS_WITHHELD_136",
+      "name": "Subway Boss",
+      "nameWithArticle": "a Subway Boss"
+    },
+    {
+      "sourceStem": "swimmer_f",
+      "classConstant": "TRAINER_CLASS_SWIMMER_F",
+      "name": "Swimmer \u246e",
+      "nameWithArticle": "a Swimmer \u246e"
+    },
+    {
+      "sourceStem": "swimmer_m",
+      "classConstant": "TRAINER_CLASS_SWIMMER_M",
+      "name": "Swimmer \u246d",
+      "nameWithArticle": "a Swimmer \u246d"
+    },
+    {
+      "sourceStem": "twins",
+      "classConstant": "TRAINER_CLASS_TWINS",
+      "name": "Twins",
+      "nameWithArticle": "a Twin"
+    },
+    {
+      "sourceStem": "udf_trooper_f",
+      "classConstant": "TRAINER_CLASS_UDF_TROOPER_F",
+      "name": "UDF Trooper",
+      "nameWithArticle": "a UDF Trooper"
+    },
+    {
+      "sourceStem": "udf_trooper_m",
+      "classConstant": "TRAINER_CLASS_UDF_TROOPER_M",
+      "name": "UDF Trooper",
+      "nameWithArticle": "a UDF Trooper"
+    },
+    {
+      "sourceStem": "ufo",
+      "classConstant": "TRAINER_CLASS_UFO",
+      "name": "UFO",
+      "nameWithArticle": "a UFO"
+    },
+    {
+      "sourceStem": "veteran_f",
+      "classConstant": "TRAINER_CLASS_VETERAN_F",
+      "name": "Veteran",
+      "nameWithArticle": "a Veteran"
+    },
+    {
+      "sourceStem": "veteran_m",
+      "classConstant": "TRAINER_CLASS_VETERAN_M",
+      "name": "Veteran",
+      "nameWithArticle": "a Veteran"
+    },
+    {
+      "sourceStem": "waiter",
+      "classConstant": "TRAINER_CLASS_WAITER",
+      "name": "Waiter",
+      "nameWithArticle": "a Waiter"
+    },
+    {
+      "sourceStem": "waitress",
+      "classConstant": "TRAINER_CLASS_WAITRESS",
+      "name": "Waitress",
+      "nameWithArticle": "a Waitress"
+    },
+    {
+      "sourceStem": "witch",
+      "classConstant": "TRAINER_CLASS_WITCH",
+      "name": "Witch",
+      "nameWithArticle": "a Witch"
+    },
+    {
+      "sourceStem": "worker_26",
+      "classConstant": "TRAINER_CLASS_WORKER_26",
+      "name": "Worker",
+      "nameWithArticle": "a Worker"
+    },
+    {
+      "sourceStem": "worker_44",
+      "classConstant": "TRAINER_CLASS_WORKER_44",
+      "name": "Worker",
+      "nameWithArticle": "a Worker"
+    },
+    {
+      "sourceStem": "youngster",
+      "classConstant": "TRAINER_CLASS_YOUNGSTER",
+      "name": "Youngster",
+      "nameWithArticle": "a Youngster"
+    }
+  ]
+}

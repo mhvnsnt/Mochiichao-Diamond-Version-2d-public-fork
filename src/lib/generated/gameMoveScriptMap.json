@@ -1,0 +1,729 @@
+{
+  "version": "phase1-2026-10-26",
+  "source": "src/lib/generated/moveScripts.json (Layer 1 union scripts, PR #168) + src/lib/moves.ts (36 game moves)",
+  "method": "Match requires same script type (particle) AND same script category (motion class) AND same timing family (single-hit damage / damage_with_status status puff / multi_hit beats / two_turn charge). Within damage family, the script effect string is decomp provenance, not an executed step: damage-family steps are projectile/lunge + impact only, so an effect-name difference with no step difference does not block a match and is noted per entry. For damage_with_status games the status puff must match the game secondary status. Power proximity breaks ties; decomp accuracy (decomp_black2_moves.json) breaks ties where noted. No game move data, category, effect, or learnset was changed or invented; this file routes game move ids to existing scripts only. Exact-id game moves (10) are NOT listed here: they resolve directly from moveScripts.json and take precedence in getMoveScript(). IRON_BARRAGE correction 2026-10-26 (Mars decision): effect NONE -> MULTI_HIT in src/lib/moves.ts (description 'Fires 2-5 iron shards' unchanged); IRON_BARRAGE now maps to GEAR_GRIND below, so the matched total is 36/36.",
+  "qualityDefs": {
+    "exact": "Type, category, timing family, and mapped effect all match, and power is equal (name-normalization entries included).",
+    "fit": "Type, category, and timing family match and power is within 15, but the script effect string differs in provenance only (no step difference), or a name-normalized script is within 5 power."
+  },
+  "exactIdMatches": [
+    "AQUA_JET",
+    "RAZOR_LEAF",
+    "WILD_CHARGE",
+    "EARTH_POWER",
+    "BULLDOZE",
+    "CRUNCH",
+    "TACKLE",
+    "QUICK_ATTACK",
+    "DRAGON_CLAW",
+    "POISON_JAB"
+  ],
+  "mapping": {
+    "AQUA_SHOT": "WATER_GUN",
+    "AQUA_CANNON": "SURF",
+    "HYDRO_SURGE": "HYDRO_PUMP",
+    "EMBER_TOSS": "EMBER",
+    "FIRE_STREAM": "FLAMETHROWER",
+    "INFERNO_WAVE": "FIRE_BLAST",
+    "FIRE_PUNCH_MOVE": "FIRE_PUNCH",
+    "PETAL_BARRAGE": "ENERGY_BALL",
+    "SOLAR_BLAST": "SOLAR_BEAM",
+    "VINE_LASH": "VINE_WHIP",
+    "SPARK_SHOT": "THUNDER_SHOCK",
+    "THUNDER_BOLT": "THUNDERBOLT",
+    "METAL_STRIKE": "METAL_CLAW",
+    "FLASH_CANNON_MOVE": "FLASH_CANNON",
+    "EARTH_TREMOR": "EARTHQUAKE",
+    "MUD_BLAST": "BULLDOZE",
+    "SHADOW_PULSE": "SHADOW_BALL",
+    "DARK_PULSE_MOVE": "DARK_PULSE",
+    "NIGHT_SLASH_MOVE": "NIGHT_SLASH",
+    "GUST_WAVE": "GUST",
+    "WING_ASSAULT": "DRILL_PECK",
+    "BODY_SLAM_MOVE": "BODY_SLAM",
+    "MIND_BLAST": "PSYCHIC",
+    "POWER_STRIKE": "SKY_UPPERCUT",
+    "SWARM_STRIKE": "TWINEEDLE",
+    "IRON_BARRAGE": "GEAR_GRIND"
+  },
+  "entries": {
+    "AQUA_SHOT": {
+      "script": "WATER_GUN",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 40, plain HIT, special_projectile. Game 'small ball of water' = Water Gun presentation.",
+      "game": {
+        "name": "Aqua Shot",
+        "type": "WATER",
+        "cat": "Special",
+        "bp": 40,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "WATER",
+        "category": "Special",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "AQUA_CANNON": {
+      "script": "SURF",
+      "quality": "fit",
+      "basis": "Same type/category, family damage, power 90 vs 95 (delta 5), accuracy 100 matches decomp SURF accuracy 100 (MUDDY_WATER is 85). Script effect DOUBLE_DAMAGE_DIVE is provenance only: damage-family steps are projectile+impact with no extra beat.",
+      "game": {
+        "name": "Aqua Cannon",
+        "type": "WATER",
+        "cat": "Special",
+        "bp": 90,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "WATER",
+        "category": "Special",
+        "power": 95,
+        "effect": "BATTLE_EFFECT_DOUBLE_DAMAGE_DIVE",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "HYDRO_SURGE": {
+      "script": "HYDRO_PUMP",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 120, exact accuracy 80 (decomp), plain HIT, special_projectile with power>=120 camera shake appropriate to a 120-power move.",
+      "game": {
+        "name": "Hydro Surge",
+        "type": "WATER",
+        "cat": "Special",
+        "bp": 120,
+        "acc": 80,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "WATER",
+        "category": "Special",
+        "power": 120,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "EMBER_TOSS": {
+      "script": "EMBER",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 40, BURN_HIT with burn status puff matching game BURN 10%.",
+      "game": {
+        "name": "Ember Toss",
+        "type": "FIRE",
+        "cat": "Special",
+        "bp": 40,
+        "acc": 100,
+        "effect": "BURN",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "FIRE",
+        "category": "Special",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_BURN_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "FIRE_STREAM": {
+      "script": "FLAMETHROWER",
+      "quality": "fit",
+      "basis": "Same type/category, BURN_HIT with burn puff, power 90 vs 95 (delta 5); closest burn script to 90 (HEAT_WAVE 100, LAVA_PLUME 80).",
+      "game": {
+        "name": "Fire Stream",
+        "type": "FIRE",
+        "cat": "Special",
+        "bp": 90,
+        "acc": 100,
+        "effect": "BURN",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "FIRE",
+        "category": "Special",
+        "power": 95,
+        "effect": "BATTLE_EFFECT_BURN_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "INFERNO_WAVE": {
+      "script": "FIRE_BLAST",
+      "quality": "fit",
+      "basis": "Same type/category, BURN_HIT with burn puff, accuracy 85 matches game accuracy 85 exactly (HEAT_WAVE is 90). Power 110 vs 120 (delta 10); note: script adds power>=120 camera shake to a 110-power game move.",
+      "game": {
+        "name": "Inferno Wave",
+        "type": "FIRE",
+        "cat": "Special",
+        "bp": 110,
+        "acc": 85,
+        "effect": "BURN",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "FIRE",
+        "category": "Special",
+        "power": 120,
+        "effect": "BATTLE_EFFECT_BURN_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "FIRE_PUNCH_MOVE": {
+      "script": "FIRE_PUNCH",
+      "quality": "exact",
+      "basis": "Name normalization (game key carries a _MOVE suffix; display name is 'Fire Punch'). Same type/category, exact power 75, BURN_HIT, physical_contact lunge.",
+      "game": {
+        "name": "Fire Punch",
+        "type": "FIRE",
+        "cat": "Physical",
+        "bp": 75,
+        "acc": 100,
+        "effect": "BURN",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "FIRE",
+        "category": "Physical",
+        "power": 75,
+        "effect": "BATTLE_EFFECT_BURN_HIT",
+        "template": "physical_contact",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "PETAL_BARRAGE": {
+      "script": "ENERGY_BALL",
+      "quality": "fit",
+      "basis": "Same type/category, family damage, exact power 80, special_projectile (all Grass Special projectiles use the seed particle in Layer 1). Script effect LOWER_SP_DEF_HIT is provenance only: damage-family steps have no stat beat, so no effect is misrepresented.",
+      "game": {
+        "name": "Petal Barrage",
+        "type": "GRASS",
+        "cat": "Special",
+        "bp": 80,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "GRASS",
+        "category": "Special",
+        "power": 80,
+        "effect": "BATTLE_EFFECT_LOWER_SP_DEF_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "black2"
+        ]
+      }
+    },
+    "SOLAR_BLAST": {
+      "script": "SOLAR_BEAM",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 120, two_turn family: charge/unleash timing matches game CHARGE_TURN. Solar Blast = Solar Beam presentation.",
+      "game": {
+        "name": "Solar Blast",
+        "type": "GRASS",
+        "cat": "Special",
+        "bp": 120,
+        "acc": 100,
+        "effect": "CHARGE_TURN",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "GRASS",
+        "category": "Special",
+        "power": 120,
+        "effect": "BATTLE_EFFECT_SKIP_CHARGE_TURN_IN_SUN",
+        "template": "two_turn",
+        "family": "two_turn",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "VINE_LASH": {
+      "script": "VINE_WHIP",
+      "quality": "fit",
+      "basis": "Same type/category, plain HIT, physical_contact lunge. Closest plain-HIT Grass Physical script (power 45 vs 35, delta 10); NEEDLE_ARM adds flinch, BULLET_SEED is multi-hit, SEED_BOMB is 80.",
+      "game": {
+        "name": "Vine Lash",
+        "type": "GRASS",
+        "cat": "Physical",
+        "bp": 45,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "GRASS",
+        "category": "Physical",
+        "power": 35,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "SPARK_SHOT": {
+      "script": "THUNDER_SHOCK",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 40, PARALYZE_HIT with paralysis puff matching game PARALYSIS 10%, spark projectile.",
+      "game": {
+        "name": "Spark Shot",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "bp": 40,
+        "acc": 100,
+        "effect": "PARALYSIS",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "ELECTRIC",
+        "category": "Special",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_PARALYZE_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "THUNDER_BOLT": {
+      "script": "THUNDERBOLT",
+      "quality": "fit",
+      "basis": "Name normalization (game key THUNDER_BOLT, display name 'Thunderbolt'). Same type/category, PARALYZE_HIT with paralysis puff, power 90 vs 95 (delta 5).",
+      "game": {
+        "name": "Thunderbolt",
+        "type": "ELECTRIC",
+        "cat": "Special",
+        "bp": 90,
+        "acc": 100,
+        "effect": "PARALYSIS",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "ELECTRIC",
+        "category": "Special",
+        "power": 95,
+        "effect": "BATTLE_EFFECT_PARALYZE_HIT",
+        "template": "special_projectile",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "METAL_STRIKE": {
+      "script": "METAL_CLAW",
+      "quality": "fit",
+      "basis": "Same type/category, family damage, exact power 50, physical_contact lunge. Script effect RAISE_ATTACK_HIT is provenance only (no beat in damage-family steps). GEAR_GRIND at 50 is multi_hit timing, which contradicts the game's single basic attack, so it was rejected.",
+      "game": {
+        "name": "Metal Strike",
+        "type": "STEEL",
+        "cat": "Physical",
+        "bp": 50,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "STEEL",
+        "category": "Physical",
+        "power": 50,
+        "effect": "BATTLE_EFFECT_RAISE_ATTACK_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "FLASH_CANNON_MOVE": {
+      "script": "FLASH_CANNON",
+      "quality": "exact",
+      "basis": "Name normalization (game key carries a _MOVE suffix; display name is 'Flash Cannon'). Same type/category, exact power 80, LOWER_SP_DEF_HIT matching game SPDEF_DOWN1 10%, special_projectile.",
+      "game": {
+        "name": "Flash Cannon",
+        "type": "STEEL",
+        "cat": "Special",
+        "bp": 80,
+        "acc": 100,
+        "effect": "SPDEF_DOWN1",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "STEEL",
+        "category": "Special",
+        "power": 80,
+        "effect": "BATTLE_EFFECT_LOWER_SP_DEF_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "black2"
+        ]
+      }
+    },
+    "EARTH_TREMOR": {
+      "script": "EARTHQUAKE",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 100, family damage, physical ground-impact steps with no lunge (correct for a ground shake). Script effect DOUBLE_DAMAGE_DIG is provenance only. Note: Layer 1 scripts are single-target presentations, so the game's 'all adjacent foes' spread is not modelled by any script; this routes the shake/impact presentation only.",
+      "game": {
+        "name": "Earth Tremor",
+        "type": "GROUND",
+        "cat": "Physical",
+        "bp": 100,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "GROUND",
+        "category": "Physical",
+        "power": 100,
+        "effect": "BATTLE_EFFECT_DOUBLE_DAMAGE_DIG",
+        "template": "physical",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "MUD_BLAST": {
+      "script": "BULLDOZE",
+      "quality": "fit",
+      "basis": "Same type/category, family damage, ground-impact steps with no lunge, power 55 vs 60 (delta 5, closest single-hit Ground Physical script). No Ground Physical script carries an accuracy-down effect (MUD_SLAP/MUD_BOMB are Special category, so category bars them); accuracy-down has no Layer-1 beat in any damage-family script, so the ground-impact presentation misrepresents nothing.",
+      "game": {
+        "name": "Mud Blast",
+        "type": "GROUND",
+        "cat": "Physical",
+        "bp": 55,
+        "acc": 95,
+        "effect": "ACC_DOWN1",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "GROUND",
+        "category": "Physical",
+        "power": 60,
+        "effect": "BATTLE_EFFECT_LOWER_SPEED_HIT",
+        "template": "physical",
+        "family": "damage",
+        "sources": [
+          "black2"
+        ]
+      }
+    },
+    "SHADOW_PULSE": {
+      "script": "SHADOW_BALL",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 80, family damage, ghost-particle projectile. No Ghost Special script carries a flinch effect; flinch in Layer 1 is a setarg flag only (see DARK_PULSE), not a visual beat, so no presentation is lost or invented. Script effect LOWER_SP_DEF_HIT is provenance only.",
+      "game": {
+        "name": "Shadow Pulse",
+        "type": "GHOST",
+        "cat": "Special",
+        "bp": 80,
+        "acc": 100,
+        "effect": "FLINCH",
+        "effectChance": 20
+      },
+      "scriptData": {
+        "type": "GHOST",
+        "category": "Special",
+        "power": 80,
+        "effect": "BATTLE_EFFECT_LOWER_SP_DEF_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "DARK_PULSE_MOVE": {
+      "script": "DARK_PULSE",
+      "quality": "exact",
+      "basis": "Name normalization (game key carries a _MOVE suffix; display name is 'Dark Pulse'). Same type/category, exact power 80, FLINCH_HIT matching game FLINCH 20%, special_projectile.",
+      "game": {
+        "name": "Dark Pulse",
+        "type": "DARK",
+        "cat": "Special",
+        "bp": 80,
+        "acc": 100,
+        "effect": "FLINCH",
+        "effectChance": 20
+      },
+      "scriptData": {
+        "type": "DARK",
+        "category": "Special",
+        "power": 80,
+        "effect": "BATTLE_EFFECT_FLINCH_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "black2"
+        ]
+      }
+    },
+    "NIGHT_SLASH_MOVE": {
+      "script": "NIGHT_SLASH",
+      "quality": "exact",
+      "basis": "Name normalization (game key carries a _MOVE suffix; display name is 'Night Slash'). Same type/category, exact power 70, HIGH_CRITICAL matching game HIGH_CRIT, physical.",
+      "game": {
+        "name": "Night Slash",
+        "type": "DARK",
+        "cat": "Physical",
+        "bp": 70,
+        "acc": 100,
+        "effect": "HIGH_CRIT",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "DARK",
+        "category": "Physical",
+        "power": 70,
+        "effect": "BATTLE_EFFECT_HIGH_CRITICAL",
+        "template": "physical",
+        "family": "damage",
+        "sources": [
+          "black2"
+        ]
+      }
+    },
+    "GUST_WAVE": {
+      "script": "GUST",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 40, family damage, gust-particle projectile. Script effect DOUBLE_DAMAGE_FLY_OR_BOUNCE is provenance only (no extra beat).",
+      "game": {
+        "name": "Gust Wave",
+        "type": "FLYING",
+        "cat": "Special",
+        "bp": 40,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FLYING",
+        "category": "Special",
+        "power": 40,
+        "effect": "BATTLE_EFFECT_DOUBLE_DAMAGE_FLY_OR_BOUNCE",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "WING_ASSAULT": {
+      "script": "DRILL_PECK",
+      "quality": "fit",
+      "basis": "Same type/category, plain HIT, physical_contact lunge, power 85 vs 80 (delta 5, closest plain-HIT Flying Physical script; WING_ATTACK is 60, BOUNCE/FLY are two_turn timing).",
+      "game": {
+        "name": "Wing Assault",
+        "type": "FLYING",
+        "cat": "Physical",
+        "bp": 85,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FLYING",
+        "category": "Physical",
+        "power": 80,
+        "effect": "BATTLE_EFFECT_HIT",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "BODY_SLAM_MOVE": {
+      "script": "BODY_SLAM",
+      "quality": "exact",
+      "basis": "Name normalization (game key carries a _MOVE suffix; display name is 'Body Slam'). Same type/category, exact power 85, PARALYZE_HIT matching game PARALYSIS 30%, physical_contact lunge.",
+      "game": {
+        "name": "Body Slam",
+        "type": "NORMAL",
+        "cat": "Physical",
+        "bp": 85,
+        "acc": 100,
+        "effect": "PARALYSIS",
+        "effectChance": 30
+      },
+      "scriptData": {
+        "type": "NORMAL",
+        "category": "Physical",
+        "power": 85,
+        "effect": "BATTLE_EFFECT_PARALYZE_HIT",
+        "template": "physical_contact",
+        "family": "damage_with_status",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "MIND_BLAST": {
+      "script": "PSYCHIC",
+      "quality": "exact",
+      "basis": "Same type/category, exact power 90, LOWER_SP_DEF_HIT matching game SPDEF_DOWN1 10%, special_projectile.",
+      "game": {
+        "name": "Mind Blast",
+        "type": "PSYCHIC",
+        "cat": "Special",
+        "bp": 90,
+        "acc": 100,
+        "effect": "SPDEF_DOWN1",
+        "effectChance": 10
+      },
+      "scriptData": {
+        "type": "PSYCHIC",
+        "category": "Special",
+        "power": 90,
+        "effect": "BATTLE_EFFECT_LOWER_SP_DEF_HIT",
+        "template": "special_projectile",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "POWER_STRIKE": {
+      "script": "SKY_UPPERCUT",
+      "quality": "fit",
+      "basis": "Same type/category, exact power 85, family damage, physical_contact lunge. Script effect HIT_FLY is provenance only (no extra beat); SUBMISSION adds recoil the game move does not have, BRICK_BREAK is screen-removal.",
+      "game": {
+        "name": "Power Strike",
+        "type": "FIGHTING",
+        "cat": "Physical",
+        "bp": 85,
+        "acc": 100,
+        "effect": "NONE",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "FIGHTING",
+        "category": "Physical",
+        "power": 85,
+        "effect": "BATTLE_EFFECT_HIT_FLY",
+        "template": "physical_contact",
+        "family": "damage",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "SWARM_STRIKE": {
+      "script": "TWINEEDLE",
+      "quality": "fit",
+      "basis": "Same type/category, multi_hit family with multi-hit beat steps matching game MULTI_HIT 2-5 timing, exact power 25. Script effect POISON_MULTI_HIT is provenance only: multi_hit steps contain no poison/status beat. PIN_MISSILE is the plain-MULTI_HIT alternative at power 14 (delta 11) and accuracy 85 vs game 95; TWINEEDLE accuracy 100 is closer.",
+      "game": {
+        "name": "Swarm Strike",
+        "type": "BUG",
+        "cat": "Physical",
+        "bp": 25,
+        "acc": 95,
+        "effect": "MULTI_HIT",
+        "effectChance": 100
+      },
+      "scriptData": {
+        "type": "BUG",
+        "category": "Physical",
+        "power": 25,
+        "effect": "BATTLE_EFFECT_POISON_MULTI_HIT",
+        "template": "multi_hit",
+        "family": "multi_hit",
+        "sources": [
+          "firered",
+          "black2"
+        ]
+      }
+    },
+    "IRON_BARRAGE": {
+      "script": "GEAR_GRIND",
+      "quality": "fit",
+      "basis": "Same type/category, multi_hit family with multi-hit beat steps matching game MULTI_HIT 2-5 timing (description 'Fires 2-5 iron shards'). Power 35 vs 50 (delta 15, the fit bound). Script effect HIT_TWICE is provenance only: multi_hit steps are repeated beats with no extra status beat. Mars decision 2026-10-26 resolved the effect/description conflict in favour of multi-hit (effect -> MULTI_HIT); METAL_CLAW (single-hit) no longer matches the corrected effect.",
+      "game": {
+        "name": "Iron Barrage",
+        "type": "STEEL",
+        "cat": "Physical",
+        "bp": 35,
+        "acc": 100,
+        "effect": "MULTI_HIT",
+        "effectChance": 0
+      },
+      "scriptData": {
+        "type": "STEEL",
+        "category": "Physical",
+        "power": 50,
+        "effect": "BATTLE_EFFECT_HIT_TWICE",
+        "template": "multi_hit",
+        "family": "multi_hit",
+        "sources": [
+          "black2"
+        ]
+      }
+    }
+  },
+  "unmatched": {},
+  "counts": {
+    "gameMoves": 36,
+    "exactId": 10,
+    "mappedHere": 26,
+    "totalMatched": 36,
+    "unmatched": 0
+  }
+}

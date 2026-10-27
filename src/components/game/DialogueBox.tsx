@@ -6,6 +6,7 @@ import { TEXT_SPEED_MS } from '../../lib/gameSettings';
 import { messageWindowStyle } from '../../lib/hudCustom';
 import type { MessageWindowStyle } from '../../lib/hudCustom';
 import { isConfirmKey } from '../../lib/buttonMode';
+import { getDayNightMenuVariant } from '../../lib/dayNightMenuVariants';
 import { useMenuSkin, menuSkinVars, menuSkinPanelShadow } from '../../lib/menuSkins';
 import type { DialoguePresentationMode } from '../../lib/personaDialogue';
 import { PERSONA_LETTERBOX_PX } from '../../lib/personaDialogue';
@@ -116,6 +117,14 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, p
   // 14px). Dialogue font/logo rules are untouched.
   const skin = useMenuSkin('dialogue');
   const msgStyle = messageWindowStyle(hudSettings.hudMessageStyle as MessageWindowStyle, hudSettings.panelOpacity || 100);
+  // Day/night variants wiring (spec, stacked on PR #153): the
+  // dialogue row changes panel / accent / text / tint, with NO
+  // sky gradient over the world. The panel background itself is
+  // the Batch A message-window style above and is NOT overridden
+  // here — only the frame accent is wired, via StdWindow's accent
+  // prop (border colour only). No label, margin, font, or cursor
+  // change; the box sits over game art, which is never repainted.
+  const dnVariant = getDayNightMenuVariant();
   const page = pages[Math.min(pageIdx, pages.length - 1)];
   const typingDone = shown >= page.length;
   const isLast = pageIdx >= pages.length - 1;
@@ -195,6 +204,7 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, p
     )}
     <div data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
     <StdWindow
+      accent={dnVariant.vars['--menu-daynight-accent']}
       style={{
         position: 'absolute', left: '0.75rem', right: '0.75rem', zIndex: 50,
         padding: '16px', cursor: 'pointer',
@@ -234,9 +244,17 @@ export default function DialogueBox({ lines, speakerName, speakerSlot, choice, p
             <div aria-hidden="true" style={{ width: 48, height: 3, background: '#fbbf24', marginTop: -4, marginBottom: 8 }} />
           )}
           {/* Dialogue text uses the DIALOGUE FONT placement
-              (--dialogue-font, default 01 Digitall); the speaker
-              name above uses the MAIN FONT via the body stack. */}
-          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)', fontSize: 'var(--menu-text-size, 16px)', lineHeight: 'var(--menu-line-height, 1.625)', color: skin ? skin.text.label : 'var(--menu-text-color, #ffffff)', textShadow: 'var(--menu-text-shadow, none)' }}>
+              (--dialogue-font, readable default Pokemon Base since
+              Mars 2026-10-26); the speaker name above uses the
+              MAIN FONT via the body stack. Text layers, Pokemon
+              style (fg/bg/shadow): white fg on the dark box (bg),
+              shadow offset — the DS message font is 11 wide x 16
+              tall with a shadow palette entry. Effective shadow:
+              the Settings TEXT SHADOW toggle, default ON since
+              Mars 2026-10-26, gives '0 2px 0 rgba(0,0,0,0.6)' via
+              applyMenuCustom; the 1px fallback below only fires
+              when --menu-text-shadow is unset. */}
+          <div className="text-white text-base leading-relaxed min-h-[3rem] whitespace-pre-wrap" style={{ fontFamily: 'var(--dialogue-font, "Trebuchet MS", "Segoe UI", system-ui, sans-serif)', fontSize: 'var(--menu-text-size, 16px)', lineHeight: 'var(--menu-line-height, 1.625)', color: skin ? skin.text.label : 'var(--menu-text-color, #ffffff)', textShadow: 'var(--menu-text-shadow, 1px 1px 0 rgba(0,0,0,0.7))' }}>
             {page.slice(0, shown)}
           </div>
           {!isLast && typingDone && (

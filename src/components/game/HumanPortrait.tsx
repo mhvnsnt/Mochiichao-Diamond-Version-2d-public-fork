@@ -58,7 +58,6 @@ export default function HumanPortrait({ slot, view = 'front', size = 96, showNam
         </div>
       )}
       {showName && <div className="text-center font-bold text-white leading-tight" style={{ fontSize: Math.max(11, size * 0.16) }}>{slot.label}</div>}
-      {!slot.sheetUrl && <div className="text-center text-[10px] uppercase tracking-wider text-slate-400">Art in progress</div>}
     </div>
   );
 }

@@ -1,0 +1,506 @@
+{
+ "tag": "artic-v2rework-20261026",
+ "method": "PIPELINE-V2 eyes only; MOUTH HELD for V3 contour-fit (no mouth drawn)",
+ "creatures": {
+  "punchkid": {
+   "sets": {
+    "atk_physical_jab_rush": {
+     "kind": "attack",
+     "family": "physical",
+     "files": [
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_physical_jab_rush-cell-00.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_physical_jab_rush-cell-01.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_physical_jab_rush-cell-02.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_physical_jab_rush-cell-03.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_physical_jab_rush-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base"
+      },
+      {
+       "frame": 1,
+       "action": "base"
+      },
+      {
+       "frame": 2,
+       "action": "base"
+      },
+      {
+       "frame": 3,
+       "action": "eyesonly-v2-widened",
+       "prop_eyes": [
+        [
+         33.9,
+         22.5
+        ],
+        [
+         48.0,
+         22.2
+        ]
+       ],
+       "sx": 1.25,
+       "sy": 0.75,
+       "eye_state": "widened",
+       "feature_counts": [
+        14,
+        14
+       ],
+       "mouth": "HELD-V3-not-drawn",
+       "diff_bbox": [
+        30,
+        52,
+        20,
+        25,
+        66
+       ],
+       "diff_inside_base_silhouette": true
+      },
+      {
+       "frame": 4,
+       "action": "base"
+      }
+     ]
+    },
+    "atk_special_power_shot": {
+     "kind": "attack",
+     "family": "special",
+     "files": [
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_special_power_shot-cell-00.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_special_power_shot-cell-01.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_special_power_shot-cell-02.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_special_power_shot-cell-03.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_special_power_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base"
+      },
+      {
+       "frame": 1,
+       "action": "base"
+      },
+      {
+       "frame": 2,
+       "action": "base"
+      },
+      {
+       "frame": 3,
+       "action": "eyesonly-v2-glance",
+       "prop_eyes": [
+        [
+         20.2,
+         10.7
+        ],
+        [
+         30.9,
+         10.2
+        ]
+       ],
+       "sx": 0.95,
+       "sy": 1.0,
+       "eye_state": "glance",
+       "feature_counts": [
+        16,
+        16
+       ],
+       "mouth": "HELD-V3-not-drawn",
+       "diff_bbox": [
+        20,
+        33,
+        7,
+        14,
+        34
+       ],
+       "diff_inside_base_silhouette": true
+      },
+      {
+       "frame": 4,
+       "action": "base"
+      }
+     ]
+    },
+    "atk_signature_combo_barrage": {
+     "kind": "attack",
+     "family": "signature",
+     "files": [
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_signature_combo_barrage-cell-00.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_signature_combo_barrage-cell-01.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_signature_combo_barrage-cell-02.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_signature_combo_barrage-cell-03.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_signature_combo_barrage-cell-04.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_signature_combo_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base"
+      },
+      {
+       "frame": 1,
+       "action": "base"
+      },
+      {
+       "frame": 2,
+       "action": "base"
+      },
+      {
+       "frame": 3,
+       "action": "eyesonly-v2-widened",
+       "prop_eyes": [
+        [
+         20.0,
+         15.4
+        ],
+        [
+         33.0,
+         15.0
+        ]
+       ],
+       "sx": 1.15,
+       "sy": 0.9,
+       "eye_state": "widened",
+       "feature_counts": [
+        16,
+        15
+       ],
+       "mouth": "HELD-V3-not-drawn",
+       "diff_bbox": [
+        17,
+        36,
+        12,
+        18,
+        74
+       ],
+       "diff_inside_base_silhouette": true
+      },
+      {
+       "frame": 4,
+       "action": "base"
+      },
+      {
+       "frame": 5,
+       "action": "base"
+      }
+     ]
+    },
+    "atk_heavy_knockout_finisher": {
+     "kind": "attack",
+     "family": "heavy",
+     "files": [
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_heavy_knockout_finisher-cell-00.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_heavy_knockout_finisher-cell-01.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_heavy_knockout_finisher-cell-02.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_heavy_knockout_finisher-cell-03.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_heavy_knockout_finisher-cell-04.png",
+      "punchkid-artic-v2rework-20261026-eyesonly-atk_heavy_knockout_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base"
+      },
+      {
+       "frame": 1,
+       "action": "base"
+      },
+      {
+       "frame": 2,
+       "action": "base"
+      },
+      {
+       "frame": 3,
+       "action": "eyesonly-v2-widened",
+       "prop_eyes": [
+        [
+         28.1,
+         23.9
+        ],
+        [
+         42.8,
+         23.6
+        ]
+       ],
+       "sx": 1.3,
+       "sy": 0.72,
+       "eye_state": "widened",
+       "feature_counts": [
+        14,
+        12
+       ],
+       "mouth": "HELD-V3-not-drawn",
+       "diff_bbox": [
+        24,
+        47,
+        22,
+        26,
+        66
+       ],
+       "diff_inside_base_silhouette": true
+      },
+      {
+       "frame": 4,
+       "action": "base"
+      },
+      {
+       "frame": 5,
+       "action": "base"
+      }
+     ]
+    }
+   }
+  },
+  "pyromonk": {
+   "sets": {
+    "atk_physical_flame_fist": {
+     "kind": "attack",
+     "family": "physical",
+     "files": [
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-00.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-01.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-02.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-03.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_physical_flame_fist-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base"
+      },
+      {
+       "frame": 1,
+       "action": "base"
+      },
+      {
+       "frame": 2,
+       "action": "base"
+      },
+      {
+       "frame": 3,
+       "action": "eyesonly-v2-widened",
+       "prop_eyes": [
+        [
+         33.4,
+         19.8
+        ],
+        [
+         41.1,
+         19.2
+        ]
+       ],
+       "sx": 1.25,
+       "sy": 0.75,
+       "eye_state": "widened",
+       "feature_counts": [
+        2,
+        2
+       ],
+       "mouth": "HELD-V3-not-drawn",
+       "diff_bbox": [
+        31,
+        43,
+        17,
+        22,
+        42
+       ],
+       "diff_inside_base_silhouette": true
+      },
+      {
+       "frame": 4,
+       "action": "base"
+      }
+     ]
+    },
+    "atk_special_flame_shot": {
+     "kind": "attack",
+     "family": "special",
+     "files": [
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-00.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-01.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-02.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-03.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_special_flame_shot-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base"
+      },
+      {
+       "frame": 1,
+       "action": "base"
+      },
+      {
+       "frame": 2,
+       "action": "base"
+      },
+      {
+       "frame": 3,
+       "action": "eyesonly-v2-glance",
+       "prop_eyes": [
+        [
+         19.8,
+         7.0
+        ],
+        [
+         25.7,
+         6.2
+        ]
+       ],
+       "sx": 0.95,
+       "sy": 1.0,
+       "eye_state": "glance",
+       "feature_counts": [
+        2,
+        3
+       ],
+       "mouth": "HELD-V3-not-drawn",
+       "diff_bbox": [
+        20,
+        28,
+        5,
+        8,
+        10
+       ],
+       "diff_inside_base_silhouette": true
+      },
+      {
+       "frame": 4,
+       "action": "base"
+      }
+     ]
+    },
+    "atk_signature_inferno_barrage": {
+     "kind": "attack",
+     "family": "signature",
+     "files": [
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-00.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-01.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-02.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-03.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-04.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_signature_inferno_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base"
+      },
+      {
+       "frame": 1,
+       "action": "base"
+      },
+      {
+       "frame": 2,
+       "action": "base"
+      },
+      {
+       "frame": 3,
+       "action": "eyesonly-v2-widened",
+       "prop_eyes": [
+        [
+         19.5,
+         12.1
+        ],
+        [
+         26.7,
+         11.4
+        ]
+       ],
+       "sx": 1.15,
+       "sy": 0.9,
+       "eye_state": "widened",
+       "feature_counts": [
+        3,
+        1
+       ],
+       "mouth": "HELD-V3-not-drawn",
+       "diff_bbox": [
+        18,
+        29,
+        9,
+        14,
+        42
+       ],
+       "diff_inside_base_silhouette": true
+      },
+      {
+       "frame": 4,
+       "action": "base"
+      },
+      {
+       "frame": 5,
+       "action": "base"
+      }
+     ]
+    },
+    "atk_heavy_blaze_crash_finisher": {
+     "kind": "attack",
+     "family": "heavy",
+     "files": [
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-00.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-01.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-02.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-03.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-04.png",
+      "pyromonk-artic-v2rework-20261026-eyesonly-atk_heavy_blaze_crash_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "base"
+      },
+      {
+       "frame": 1,
+       "action": "base"
+      },
+      {
+       "frame": 2,
+       "action": "base"
+      },
+      {
+       "frame": 3,
+       "action": "eyesonly-v2-widened",
+       "prop_eyes": [
+        [
+         27.5,
+         21.3
+        ],
+        [
+         35.6,
+         20.7
+        ]
+       ],
+       "sx": 1.3,
+       "sy": 0.72,
+       "eye_state": "widened",
+       "feature_counts": [
+        3,
+        1
+       ],
+       "mouth": "HELD-V3-not-drawn",
+       "diff_bbox": [
+        25,
+        39,
+        20,
+        22,
+        34
+       ],
+       "diff_inside_base_silhouette": true
+      },
+      {
+       "frame": 4,
+       "action": "base"
+      },
+      {
+       "frame": 5,
+       "action": "base"
+      }
+     ]
+    }
+   }
+  }
+ }
+}

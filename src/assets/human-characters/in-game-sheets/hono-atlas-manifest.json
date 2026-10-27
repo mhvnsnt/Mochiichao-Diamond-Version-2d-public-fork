@@ -1,0 +1,107 @@
+{
+  "atlas": "hono-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_front"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world_bands": [
+    [
+      20,
+      637
+    ],
+    [
+      658,
+      1258
+    ]
+  ],
+  "world_runs": [
+    [
+      [
+        447,
+        786
+      ],
+      [
+        1117,
+        1453
+      ]
+    ],
+    [
+      [
+        430,
+        708
+      ],
+      [
+        1196,
+        1473
+      ]
+    ]
+  ],
+  "world_order_note": "World sheet on disk is 2x2: top-left=front, top-right=back, bottom-left=faces image-right, bottom-right=faces image-left. Atlas maps left=bottom-right, right=bottom-left.",
+  "walk_bands": [
+    [
+      70,
+      1063
+    ]
+  ],
+  "walk_runs": "MERGED single run (27,2208) by column projection; steps cut by equal quarters + per-quarter trim instead.",
+  "walk_flag": "WALK SHEET IS FRONT-FACING, NOT SIDE-FACING: all 4 walk frames face the viewer (front 3/4) while striding, in stride order. Atlas step cells 8-11 are those 4 front-facing strides, NOT side steps and NOT per-direction steps. A side-view walk re-render is owed if Mars wants true side steps.",
+  "world_sheet": "media-generation-dojo-elite-hono-world-views-v1-0-c9ed6638-772b-430b-bc51-502284b7510e.webp",
+  "walk": "media-generation-dojo-elite-hono-walk-frames-v1-0-5a18b799-0c59-42b3-9c62-3dfcf474f18c.webp",
+  "battle": "media-generation-dojo-elite-hono-battle-front-v-0-d1f0cd5e-524e-4c31-a542-2e2bd9f32f04.webp",
+  "portrait": "media-generation-dojo-elite-hono-portrait-v1-20-0-bd89689f-ed89-463b-9bfe-ea33eef10404.webp"
+}

@@ -1,0 +1,43 @@
+{
+ "razorgater": {
+  "proposal": "triangle",
+  "confidence": "high",
+  "evidence": {
+   "frames": 4,
+   "median_top": 12.5,
+   "median_mid": 7.7,
+   "median_bot": 7.6,
+   "bot_top": 0.612,
+   "mid_top": 0.616,
+   "top_widest_frames": 4
+  }
+ },
+ "tyrage": {
+  "proposal": "unknown",
+  "confidence": "low",
+  "evidence": {
+   "frames": 4,
+   "median_top": 6.4,
+   "median_mid": 3.5,
+   "median_bot": 3.0,
+   "bot_top": 0.477,
+   "mid_top": 0.547,
+   "top_widest_frames": 3
+  }
+ },
+ "sproutle": {
+  "proposal": "unknown",
+  "confidence": "low",
+  "evidence": "not all impact frames high-confidence"
+ },
+ "kittember": {
+  "proposal": "unknown",
+  "confidence": "low",
+  "evidence": "not all impact frames high-confidence"
+ },
+ "tiidebiite": {
+  "proposal": "unknown",
+  "confidence": "low",
+  "evidence": "not all impact frames high-confidence"
+ }
+}

@@ -1,7 +1,8 @@
 import { create } from 'zustand';
 import { MochiiInstance } from '../lib/types';
 import { createMochii } from '../lib/engine';
-import type { GardenCreature } from '../lib/mochiichao-systems';
+import type { GardenSaveRecord } from '../lib/garden-wiring';
+import type { DaycareEgg } from '../lib/creatureDaycare';
 import type { GuardianAssignment } from '../lib/monster-tamer-systems';
 import { GameSettings, DEFAULT_SETTINGS, loadStoredSettings, persistSettings } from '../lib/gameSettings';
 import { setAutosaveHold, getAutosaveHold } from '../lib/saveSystem';
@@ -36,10 +37,28 @@ interface GameState {
   // read the +9% Garden bonus and a Guardian assignment vanished on
   // leaving the screen. Both now live in the shared store, so SaveMenu
   // (which serializes the whole state) saves and loads them with the game.
-  gardenRecords: Record<string, GardenCreature>;
-  setGardenRecord: (creatureId: string, record: GardenCreature) => void;
+  gardenRecords: Record<string, GardenSaveRecord>;
+  setGardenRecord: (creatureId: string, record: GardenSaveRecord) => void;
   guardian: GuardianAssignment | null;
   setGuardian: (guardian: GuardianAssignment | null) => void;
+  // Preserved from Chao Garden PR #225 (live main): Garden minutes.
+  gardenMinutes: number;
+  setGardenMinutes: (minutes: number) => void;
+  // Creature Mode Pass 7 — Daycare steps: persisted tile steps taken
+  // in Creature Mode while a Guardian is assigned (deposited).
+  // FireRed daycare.c: steps accumulate for deposited creatures
+  // while the player walks; EXP and cost are computed on retrieve,
+  // never guessed mid-walk. SaveMenu serializes the whole store,
+  // so these steps persist with saves like gardenRecords/guardian.
+  daycareSteps: number;
+  setDaycareSteps: (steps: number) => void;
+  // Creature Mode Pass 8 — second deposit slot (Partner) + egg.
+  // Partner is the same GuardianAssignment shape as guardian;
+  // egg is null until a 256-step egg roll passes (see creatureDaycare).
+  daycarePartner: GuardianAssignment | null;
+  setDaycarePartner: (partner: GuardianAssignment | null) => void;
+  daycareEgg: DaycareEgg | null;
+  setDaycareEgg: (egg: DaycareEgg | null) => void;
 
   // Overworld state
   currentMap: string;
@@ -103,6 +122,14 @@ export const useGameStore = create<GameState>((set, get) => ({
   setGardenRecord: (creatureId, record) => set(s => ({ gardenRecords: { ...s.gardenRecords, [creatureId]: record } })),
   guardian: null,
   setGuardian: (guardian) => set({ guardian }),
+  gardenMinutes: 0,
+  setGardenMinutes: (minutes) => set({ gardenMinutes: minutes }),
+  daycareSteps: 0,
+  setDaycareSteps: (steps) => set({ daycareSteps: steps }),
+  daycarePartner: null,
+  setDaycarePartner: (partner) => set({ daycarePartner: partner }),
+  daycareEgg: null,
+  setDaycareEgg: (egg) => set({ daycareEgg: egg }),
   currentMap: 'sector0',
   playerPos: { x: 21, y: 14 },
   settings: loadStoredSettings(),

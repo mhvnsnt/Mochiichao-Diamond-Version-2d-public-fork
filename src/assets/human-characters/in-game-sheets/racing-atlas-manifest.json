@@ -1,0 +1,127 @@
+{
+  "atlas": "racing-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      39,
+      566
+    ],
+    [
+      585,
+      1089
+    ],
+    [
+      1117,
+      1627
+    ],
+    [
+      1651,
+      2189
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        227,
+        454
+      ],
+      [
+        627,
+        904
+      ]
+    ],
+    [
+      [
+        230,
+        448
+      ],
+      [
+        646,
+        918
+      ]
+    ],
+    [
+      [
+        252,
+        429
+      ],
+      [
+        644,
+        887
+      ]
+    ],
+    [
+      [
+        239,
+        421
+      ],
+      [
+        662,
+        915
+      ]
+    ]
+  ],
+  "world": "0:0,1:0,2:0,3:0",
+  "steps": "0:1,1:1,2:1,3:1",
+  "walk": "media-generation-racing-walk-frames-v1-2026-10-0-53c8d4e4-00d2-4c9c-964b-b41c32251872.webp",
+  "battle": "media-generation-racing-battle-front-v1-2026-10-0-41054b49-37e7-4467-af6a-6bce177eeacd.webp",
+  "portrait": "media-generation-racing-portrait-v1-2026-10-26-0-547691b8-c89c-4227-990f-3f8025b9e398.webp"
+}

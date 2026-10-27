@@ -1,0 +1,63 @@
+15:34:38 | INFO: Data are loaded, start creating Blender stuff
+15:34:38 | INFO: Blender create Mesh node Mesh_0
+15:36:04 | INFO: glTF import finished in 85.10s
+RIG: GabuRig actions: ['attack_GabuRig', 'faint_GabuRig', 'hit_GabuRig', 'idle_GabuRig', 'ready_GabuRig', 'walk_GabuRig']
+CLIP idle: gate_idx 44 -> blender frame 45 (nkeys 60)
+EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/idle_front.png'
+Time: 01:14.30 (Saving: 00:03.27)
+
+RENDERED idle_front blender_frame 45
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/idle_side.png'
+Time: 01:08.11 (Saving: 00:00.57)
+
+RENDERED idle_side blender_frame 45
+CLIP ready: gate_idx 14 -> blender frame 15 (nkeys 30)
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/ready_front.png'
+Time: 00:41.75 (Saving: 00:00.62)
+
+RENDERED ready_front blender_frame 15
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/ready_side.png'
+Time: 00:49.06 (Saving: 00:01.19)
+
+RENDERED ready_side blender_frame 15
+CLIP walk: gate_idx 22 -> blender frame 23 (nkeys 30)
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/walk_front.png'
+Time: 01:14.11 (Saving: 00:00.91)
+
+RENDERED walk_front blender_frame 23
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/walk_side.png'
+Time: 00:52.43 (Saving: 00:01.02)
+
+RENDERED walk_side blender_frame 23
+CLIP attack: gate_idx 14 -> blender frame 15 (nkeys 30)
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/attack_front.png'
+Time: 00:31.73 (Saving: 00:00.23)
+
+RENDERED attack_front blender_frame 15
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/attack_side.png'
+Time: 00:25.31 (Saving: 00:00.58)
+
+RENDERED attack_side blender_frame 15
+CLIP hit: gate_idx 3 -> blender frame 4 (nkeys 15)
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/hit_front.png'
+Time: 00:25.18 (Saving: 00:00.24)
+
+RENDERED hit_front blender_frame 4
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/hit_side.png'
+Time: 00:25.43 (Saving: 00:00.22)
+
+RENDERED hit_side blender_frame 4
+CLIP faint: gate_idx 44 -> blender frame 45 (nkeys 45)
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/faint_front.png'
+Time: 00:31.78 (Saving: 00:00.30)
+
+RENDERED faint_front blender_frame 45
+Saved: '/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/previews-iter5/faint_side.png'
+Time: 00:23.93 (Saving: 00:00.20)
+
+RENDERED faint_side blender_frame 45
+PREVIEWS_V2_DONE
+
+Blender quit

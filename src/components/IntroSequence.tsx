@@ -7,7 +7,8 @@ import DialogueBox from "./game/DialogueBox";
 import SettingsScreen from "./game/SettingsScreen";
 import { frameAccent } from "../lib/gameSettings";
 import { isConfirmKey, shoulderKey } from "../lib/buttonMode";
-import { PINNED_SUBTITLE_FONT } from "../lib/fonts";
+import { fontById } from "../lib/fonts";
+import { getActiveMenuConfig, subtitleFontStack } from "../lib/menuEditor";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
 import TitleCreatureFigure from "./game/TitleCreatureFigure";
@@ -17,10 +18,16 @@ import { playerSlot, HUMAN_SLOTS } from "../lib/humanSheets";
 import { playBootSound, playPressStartSound } from "../lib/bootAudio";
 import heavensentLogo from "../assets/ui/m-heavensent-studios-logo.png";
 import mochiichaoLogo from "../assets/ui/mochiichao-main-logo.png";
+import mochiichaoMenuLogo from "../assets/ui/mochiichao-main-logo-v32-orbitfix-20261026.png";
 import MainMenuBackground from "./game/MainMenuBackground";
 import puffyCloud from "../assets/ui/puffy-cloud.svg";
 import mochiiCutout from "../assets/title/mochii-walk-cutout.png";
 import { playMusic, stopMusic } from "../lib/music";
+import { playUiMove, playUiConfirm, playUiBack } from "../lib/audioRouting";
+import TitleStartScreen from "./game/TitleStartScreen";
+import PresetTitleErrorBoundary from "./game/PresetTitleErrorBoundary";
+import { TITLE_BIOMES } from "../lib/titleBiomes";
+import { getSelectedTitleStartScreenId, resolveTitleStartScreen, setSelectedTitleStartScreenId } from "../lib/titleStartScreens";
 
 /**
  * NamePad — the on-screen letter keyboard shared by NAME_ENTRY and
@@ -111,6 +118,16 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
   const [phase, setPhase] = useState<"BOOT" | "INTRO" | "TITLE" | "MAIN_MENU" | "SETTINGS" | "SAVE_SLOTS" | "PROF_INTRO_1" | "GENDER_SELECT" | "NAME_ENTRY" | "RIVAL_NAME" | "PROF_INTRO_2">("BOOT");
   const [showPrompt, setShowPrompt] = useState(false);
   const [titleFading, setTitleFading] = useState(false);
+  // Preset-title nonce: bumping it re-renders the TITLE branch so
+  // a preset reset (localStorage cleared by TitleStartScreen) is
+  // picked up immediately as the locked default. Locked default
+  // code below does not read this state.
+  const [titlePresetNonce, setTitlePresetNonce] = useState(0);
+  // Preset-title pick, read at render time (the TITLE branch below
+  // used to read it inline; hoisted so the parent-level R recovery
+  // effect below can see the same pick). null = locked default.
+  // The map object is stable per id, so this does not churn effects.
+  const titlePreset = resolveTitleStartScreen(getSelectedTitleStartScreenId());
   const [selectedSlot, setSelectedSlot] = useState<number>(1);
   const [slots, setSlots] = useState<any[]>([]);
   // v3 main menu: window selection, overwrite confirm.
@@ -221,19 +238,20 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         }
         return;
       }
-      if (e.key === 'ArrowUp') { e.preventDefault(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
-      else if (e.key === 'ArrowDown') { e.preventDefault(); setMainSelected(s => (s + 1) % itemCount); }
-      else if (shoulderKey(e, settings.buttonMode) === 'L') { e.preventDefault(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
-      else if (shoulderKey(e, settings.buttonMode) === 'R') { e.preventDefault(); setMainSelected(s => (s + 1) % itemCount); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); playUiMove(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); playUiMove(); setMainSelected(s => (s + 1) % itemCount); }
+      else if (shoulderKey(e, settings.buttonMode) === 'L') { e.preventDefault(); playUiMove(); setMainSelected(s => (s - 1 + itemCount) % itemCount); }
+      else if (shoulderKey(e, settings.buttonMode) === 'R') { e.preventDefault(); playUiMove(); setMainSelected(s => (s + 1) % itemCount); }
       else if (isConfirmKey(e, settings.buttonMode)) {
         e.preventDefault();
+        playUiConfirm();
         const keys = hasSaves ? ['CONTINUE', 'NEW GAME', 'SETTINGS'] : ['NEW GAME', 'SETTINGS'];
         const key = keys[Math.min(mainSelected, keys.length - 1)];
         if (key === 'CONTINUE') { setSaveSlotsMode('CONTINUE'); setPhase("SAVE_SLOTS"); }
         else if (key === 'NEW GAME') { setSaveSlotsMode('NEW_GAME'); if (hasSaves) setShowOverwriteConfirm(true); else setPhase("SAVE_SLOTS"); }
         else if (key === 'SETTINGS') setPhase("SETTINGS");
       }
-      else if (e.key === 'Escape' || e.key.toLowerCase() === 'b') setPhase("TITLE");
+      else if (e.key === 'Escape' || e.key.toLowerCase() === 'b') { playUiBack(); setPhase("TITLE"); }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
@@ -277,6 +295,35 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     return undefined;
   }, [phase]);
 
+  // Preset-title R recovery, PARENT level (trap-fix round 2):
+  // TitleStartScreen owns its own R handler, but if the preset
+  // subtree fails to mount (or its effect never runs), that handler
+  // is dead too — which is exactly the live trap on the verified
+  // PR #270 build (R dead, RESET button invisible, screen black).
+  // This listener lives in IntroSequence, outside the preset
+  // subtree, so R works even when the preset component fails.
+  // Declared BEFORE the any-key handler below: effects register
+  // in declaration order, so R is intercepted here first and the
+  // any-key handler never turns an R press into MAIN_MENU.
+  // Preset titles only: with no pick (locked default) no listener
+  // is registered and R stays an ordinary press key, as before.
+  // Skipped while titleFading so an R during the 350ms menu fade
+  // does not fight the fade.
+  useEffect(() => {
+    if (phase !== "TITLE" || !titlePreset || titleFading) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key.toLowerCase() === "r") {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setSelectedTitleStartScreenId(null);
+        setTitlePresetNonce((n) => n + 1);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [phase, titlePreset, titleFading]);
+
   useEffect(() => {
     if (phase === "BOOT" || phase === "INTRO" || phase === "TITLE") {
       const handler = () => advanceIntro();
@@ -287,7 +334,17 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
         window.removeEventListener("mousedown", handler);
       };
     }
-  }, [phase, titleFading]);
+    // Trap-fix round 3 (2026-10-27): introScene MUST be a dep.
+    // Without it the registered handler closes over a stale
+    // introScene (it never re-registers while phase stays
+    // INTRO), so keyboard stepping can push introScene past
+    // the last scene: scenes[introScene] is undefined and
+    // .title throws during render, blanking the whole app
+    // (no boundary sits above IntroSequence). Proven by a
+    // real-browser capture: rapid Enter presses through the
+    // intro produced exactly that TypeError; button clicks
+    // (fresh render closure) did not.
+  }, [phase, titleFading, introScene]);
 
   if (phase === "BOOT") {
     return (
@@ -324,7 +381,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       { title: 'WORLD PAN + CREATURE CLOSE-UPS', body: 'Scene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.', gap: 'GAP: intro scene art — original art needed.' },
       { title: 'CREATURE FIGHT BEAT', body: 'Scene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.', gap: 'GAP: intro scene art — original art needed.' },
     ];
-    const scene = scenes[introScene];
+    // Belt-and-braces with the dep fix above: no stale state
+    // may ever index past the scene list and blank the app.
+    const scene = scenes[Math.min(Math.max(introScene, 0), scenes.length - 1)];
     return (
       <div className="game-screen bg-black flex flex-col items-center justify-center cursor-pointer selection:bg-none p-4">
         <div className="w-full max-w-md text-center">
@@ -341,16 +400,131 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
           >
             {introScene < 3 ? 'NEXT SCENE ►' : 'TO TITLE ►'}
           </button>
-          <div className="text-gray-500 text-xs mt-4">Intro music wired — official intro track. Any key or tap steps to the next scene.</div>
+          <div className="text-gray-500 text-xs mt-4">Any key or tap steps to the next scene.</div>
         </div>
       </div>
     );
   }
 
   if (phase === "TITLE") {
+    // Interchangeable start screens (opt-in only): when the player
+    // picked a preset in Settings, the TITLE phase renders that
+    // preset (TitleStartScreen) instead of the locked phi stage
+    // below. Press behaviour is NOT redefined here: the existing
+    // any-key/click handler above still plays the M3 chirp,
+    // white-fades 350ms, then MAIN_MENU, and titleFading renders
+    // the same white overlay below. With no pick (null), this
+    // branch is skipped and the locked default below renders
+    // exactly as before — the default title code is untouched,
+    // not moved behind a flag. The pick is read at render time,
+    // so a Settings change applies on the next TITLE visit.
+    if (titlePreset) {
+      // Trap-fix round 2: the preset subtree is wrapped in an error
+      // boundary ABOVE it, and the fallback is rendered by THIS
+      // branch — not by the possibly-failing component. If anything
+      // in TitleStartScreen/TitleScene throws during render or
+      // commit, the player still sees the preset's painted
+      // background + locked overlay + a working RESET, instead of
+      // a black screen. Any key still advances (the existing TITLE
+      // handler below); R resets (the parent-level listener above).
+      const presetPaintedBg = TITLE_BIOMES[titlePreset.biome]?.backgroundImage ?? null;
+      const clearPreset = () => {
+        setSelectedTitleStartScreenId(null);
+        setTitlePresetNonce((n) => n + 1);
+      };
+      return (
+        <div className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer">
+          <PresetTitleErrorBoundary
+            fallback={
+              <div
+                className="game-screen bg-[#050810] relative overflow-hidden cursor-pointer"
+                onMouseDown={(e) => {
+                  e.stopPropagation();
+                  advanceIntro();
+                }}
+              >
+                {presetPaintedBg && (
+                  <img
+                    src={presetPaintedBg}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
+                <div className="absolute inset-0 z-20 pointer-events-none">
+                  <LockedStage>
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <div
+                        className="absolute top-0 bottom-0 bg-white/20"
+                        style={{ width: 96, animation: 'title-shine 2.4s ease-in-out 2' }}
+                      />
+                    </div>
+                    <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink-first { 0%, 100% { opacity: 1; } } @keyframes press-blink { 0%, 49% { opacity: 0; } 50%, 100% { opacity: 1; } }`}</style>
+                    <img
+                      src={mochiichaoLogo}
+                      alt="MOCHIICHAO"
+                      className="absolute object-contain"
+                      style={{ left: 150, top: 185, width: 900, animation: 'title-slide-up 0.6s ease-out' }}
+                    />
+                    <div
+                      className="absolute flex items-center justify-center text-teal-300 font-bold drop-shadow-lg"
+                      style={{ left: 322, top: 698, width: 556, height: 74, fontSize: 44, letterSpacing: 4, animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: PINNED_SUBTITLE_FONT }}
+                    >
+                      ✦ DIAMOND VERSION ✦
+                    </div>
+                    {/* PRESS ANY KEY text removed 2026-10-27 per Mars: title screens already say PRESS START; key/click advance unchanged. */}
+                    <img
+                      src={heavensentLogo}
+                      alt="M Heavensent Studios"
+                      className="absolute object-contain"
+                      style={{ left: 322, top: 944, width: 556, height: 556 }}
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                    />
+                  </LockedStage>
+                </div>
+                <div className="absolute right-3 top-3 z-30">
+                  <button
+                    type="button"
+                    aria-label="Reset title screen to locked default"
+                    onMouseDown={(e) => { e.stopPropagation(); }}
+                    onClick={(e) => { e.stopPropagation(); clearPreset(); }}
+                    className="px-3 py-2 rounded-full bg-black/70 text-white text-xs font-bold tracking-widest border border-white/40"
+                  >
+                    RESET TITLE ✕ (R)
+                  </button>
+                </div>
+                <div className="absolute bottom-3 inset-x-0 z-30 text-center text-white/70 text-xs tracking-widest">
+                  Preset failed to load — showing fallback. Press R for the locked default title.
+                </div>
+              </div>
+            }
+          >
+            <TitleStartScreen
+              preset={titlePreset}
+              resetNonce={titlePresetNonce}
+              onAdvance={advanceIntro}
+              onReset={() => setTitlePresetNonce((n) => n + 1)}
+            />
+          </PresetTitleErrorBoundary>
+          {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
+        </div>
+      );
+    }
+    // Menu Editor wiring (2026-10-26): the title slots below read
+    // the ACTIVE menu config — the working preset when one was
+    // saved, else the locked phi spec exactly. Title logo stays
+    // the uploaded PNG in its phi slot, never font text. The
+    // subtitle font reads the editor's subtitle row, whose DEFAULT
+    // is the pinned v32 stack (subtitleFontStack returns the pinned
+    // stack for 'pinned'); only Mars changing it in the editor
+    // changes it.
+    const titleCfg = getActiveMenuConfig().title;
+    const subFont = subtitleFontStack(getActiveMenuConfig());
     // Restored locked title (phi spec, 1200x1500 stage): logo PNG in
-    // its phi slot, DIAMOND VERSION banner, PRESS ANY KEY at the
-    // bottom phi line, Heavensent logo in the copyright slot. The
+    // its phi slot, DIAMOND VERSION banner, Heavensent logo in the
+    // copyright slot. PRESS ANY KEY text was removed 2026-10-27 per
+    // Mars (title screens already say PRESS START); key/click advance
+    // is unchanged. The
     // logo is NEVER font text — the image below is Mars's uploaded
     // logo (black-space-only crop, transparent key; original file
     // untouched in ui-art). StartScreenPlayer is a creator preset
@@ -382,7 +556,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               style={{ width: 96, animation: 'title-shine 2.4s ease-in-out 2' }}
             />
           </div>
-          <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink { 0%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }`}</style>
+          <style>{`@keyframes title-shine { from { left: -10%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } to { left: 110%; opacity: 0; } } @keyframes title-slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes press-blink-first { 0%, 100% { opacity: 1; } } @keyframes press-blink { 0%, 49% { opacity: 0; } 50%, 100% { opacity: 1; } }`}</style>
 
           {/* Logo slot: 900 wide, centre (600, 450). Crop aspect
               764x450 -> 530 tall, so top = 450 - 265 = 185. */}
@@ -390,7 +564,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             src={mochiichaoLogo}
             alt="MOCHIICHAO"
             className="absolute object-contain"
-            style={{ left: 150, top: 185, width: 900, animation: 'title-slide-up 0.6s ease-out' }}
+            style={{ left: titleCfg.logoX, top: titleCfg.logoY, width: titleCfg.logoW, animation: 'title-slide-up 0.6s ease-out' }}
           />
           {/* DIAMOND VERSION banner: width 900/phi = 556, height 74,
               centre (600, 735). Subtitle font is PINNED (Mars font
@@ -398,39 +572,30 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               touches it, in TITLE or MAIN_MENU. */}
           <div
             className="absolute flex items-center justify-center text-teal-300 font-bold drop-shadow-lg"
-            style={{ left: 322, top: 698, width: 556, height: 74, fontSize: 44, letterSpacing: 4, animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: PINNED_SUBTITLE_FONT }}
+            style={{ left: titleCfg.subX, top: titleCfg.subY, width: titleCfg.subW, height: titleCfg.subH, fontSize: 44, letterSpacing: 4, animation: 'title-slide-up 0.6s ease-out 0.4s both', fontFamily: subFont }}
           >
-            ✦ DIAMOND VERSION ✦
+            {titleCfg.subText}
           </div>
-          {/* PRESS ANY KEY: bottom phi line y=927, blink 30 on /
-              15 off (HeartGold 45-frame cycle, CSS steps). */}
-          <div
-            className="absolute text-center text-white font-bold"
-            style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink 0.75s steps(1) infinite' }}
-          >
-            PRESS ANY KEY
-          </div>
+          {/* PRESS ANY KEY text removed 2026-10-27 per Mars: title screens already say PRESS START; key/click advance unchanged. The old bottom phi line (y=927, FireRed blink tempo 60 first then 30/30) carried this prompt. */}
           {/* Heavensent copyright slot: width 556, centre
               (600, 1222), top 944, bottom 1500. */}
           <img
             src={heavensentLogo}
             alt="M Heavensent Studios"
             className="absolute object-contain"
-            style={{ left: 322, top: 944, width: 556, height: 556 }}
+            style={{ left: titleCfg.hsX, top: titleCfg.hsY, width: titleCfg.hsW, height: titleCfg.hsW, display: titleCfg.hsVisible ? undefined : "none" }}
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
         </LockedStage>
 
         {titleFading && <div className="absolute inset-0 bg-white z-50 transition-opacity duration-300" />}
-        <div className={`absolute bottom-4 left-0 right-0 text-center text-gray-600 text-[10px] tracking-widest z-10 transition-opacity duration-300 ${showPrompt ? 'opacity-100' : 'opacity-0'}`}>
-          ▼ PRESS ANY KEY ▼
-        </div>
+        {/* Tiny PRESS ANY KEY hint removed 2026-10-27 per Mars (same order: no PRESS ANY KEY text on main title screens); key/click advance unchanged. */}
       </div>
     );
   }
 
   if (phase === "SETTINGS") {
-    return <SettingsScreen onBack={() => setPhase("MAIN_MENU")} />;
+    return <SettingsScreen onBack={() => setPhase("MAIN_MENU")} onViewTitle={() => setPhase("TITLE")} />;
   }
 
   if (phase === "MAIN_MENU") {
@@ -461,7 +626,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     // below renders the v32 spec (logo/cloud/panels at spec
     // coordinates) through LockedStage. CONTINUE is tall (stats
     // inside), NEW GAME short below it, SETTINGS below that.
-    // Selected panel = gold frame + cursor. No Mystery Gift
+    // Selected panel = cursor glyph only (no gold frame, no drop
+    // shadow -- see the proof note below). No Mystery Gift
     // equivalent, no version footer, no fake patch number.
     const mainItems = [
       ...(hasSaves ? [{ key: 'CONTINUE', tall: true }] : []),
@@ -471,6 +637,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     const safeMain = Math.min(mainSelected, mainItems.length - 1);
 
     const activateMain = (key: string) => {
+      playUiConfirm();
       if (key === 'CONTINUE' && hasSaves) { setSaveSlotsMode('CONTINUE'); setPhase("SAVE_SLOTS"); }
       else if (key === 'NEW GAME') {
         // Overwrite confirm BEFORE starting over, when a save exists.
@@ -495,16 +662,67 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
     // menu text a font row touches); the logo is the image, never
     // font text. Selection, activation, saveSlotsMode, and the
     // overwrite dialog below are unchanged.
-    const panelByKey = (key: string) => LOCKED_V32_MENU.panels.find(p => p.key === key)!;
-    const v32PanelStyle = (panel: typeof LOCKED_V32_MENU.panels[number], selected: boolean): React.CSSProperties => ({
+    // Menu Editor wiring (2026-10-26): the menu below reads the
+    // ACTIVE menu config — the working preset when one was saved,
+    // else locked v32 exactly. The locked data stays the default;
+    // editing never overwrites it. Panel labels, fills, geometry
+    // and fonts come from the config, so the editor's PANELS /
+    // TEXT / FONTS panels change the real menu. Cloud-frame
+    // note: open PR #233 changes the cloud element below to
+    // <svg><image> + imgBox — whoever merges second rebases that
+    // one element to read its frame from menuCfg.cloud.
+    const menuCfg = getActiveMenuConfig();
+    // Panel lookup merges locked measurements the editor does not model
+    // (labelMargin, labelLetterSpacing) under the editor's editable
+    // fields (label, x/y/w/h, fill, labelSize), so main's exact
+    // typography survives while labels stay editable.
+    const panelByKey = (key: string) => {
+      const locked = LOCKED_V32_MENU.panels.find((p) => p.key === key) ?? LOCKED_V32_MENU.panels[0];
+      const edited = menuCfg.panels[key as keyof typeof menuCfg.panels];
+      return { ...locked, ...edited };
+    };
+    // Perfect-menu panel style (2026-10-26 rebuild, trace
+    // perfect-menu-trace-2026-10-26.md, checked against Mars's
+    // verification proof menu-perfect-verification-proof-20261026.gif):
+    // FLAT picture fills (no gradients), 3px black border always
+    // (the proof has no gold selection frame and no drop shadow —
+    // selection is the cursor glyph), picture label font (upright
+    // bold sans, NOT the slanted Yagiza that var(--menu-font) gives
+    // by default). The MENU FONT Settings row is untouched; only
+    // the LOCKED default panels use the picture label style.
+    const v32PanelStyle = (panel: { x: number; y: number; w: number; h: number; fill: string; labelSize: number; labelMargin: number; labelLetterSpacing: number }, _selected: boolean): React.CSSProperties => ({
       position: 'absolute', left: panel.x, top: panel.y, width: panel.w, height: panel.h,
-      background: `linear-gradient(180deg, ${panel.gradientTop}, ${panel.gradientBottom})`,
-      border: selected ? `${LOCKED_V32_MENU.panelStyle.selectedBorderWidth}px solid ${LOCKED_V32_MENU.panelStyle.selectedBorderColor}` : `${LOCKED_V32_MENU.panelStyle.borderWidth}px solid #000`,
-      borderRadius: LOCKED_V32_MENU.panelStyle.borderRadius, display: 'flex', flexDirection: 'column',
-      alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
-      fontFamily: 'var(--menu-font, "Trebuchet MS", sans-serif)',
-      boxShadow: selected ? '0 0 0 4px rgba(251, 191, 36, 0.55), 0 6px 24px rgba(0,0,0,0.35)' : '0 6px 24px rgba(0,0,0,0.25)',
+      background: panel.fill,
+      border: `${menuCfg.panelStyle.borderWidth}px solid #000`,
+      borderRadius: menuCfg.panelStyle.borderRadius,
+      display: menuCfg.layers.panels.visible ? 'flex' : 'none', flexDirection: 'column',
+      alignItems: 'flex-start', justifyContent: 'center', cursor: 'pointer',
+      paddingLeft: panel.labelMargin - LOCKED_V32_MENU.panelStyle.borderWidth, textAlign: 'left' as const,
+      fontFamily: menuCfg.panelStyle.panelFont === 'locked' ? LOCKED_V32_MENU.panelLabel.fontFamily : fontById(menuCfg.panelStyle.panelFont).family,
+      fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight,
+      fontStyle: LOCKED_V32_MENU.panelLabel.fontStyle,
+      zIndex: menuCfg.layers.panels.order,
     });
+    // Proof pixels: CONTINUE + SETTINGS labels carry a white outline
+    // halo; NEW GAME / BACK TO TITLE are plain black. The CONTINUE
+    // sublabel in the proof also carries the thin white halo (see
+    // the enlarged proof crop) — "plain sublabel" in Mars's 11:17
+    // note is read as plain clean font, not no-halo, because the
+    // proof file itself shows the halo. Halo method: 8-way
+    // text-shadow, NOT WebkitTextStroke — stroke paints OVER the
+    // fill and washed SETTINGS out at phone scale (shot1, 2026-10-26:
+    // SETTINGS nearly unreadable while plain NEW GAME stayed solid
+    // black). Shadow is painted BEHIND the fill, so the black core
+    // stays solid at every scale and the white fringe still reads
+    // as the proof's halo. labelStrokePx/sublabelStrokePx from the
+    // locked data are the halo radii.
+    const halo = (r: number): string =>
+      [`${r}px 0 0 #fff`, `-${r}px 0 0 #fff`, `0 ${r}px 0 #fff`, `0 -${r}px 0 #fff`,
+       `${r}px ${r}px 0 #fff`, `-${r}px -${r}px 0 #fff`, `${r}px -${r}px 0 #fff`, `-${r}px ${r}px 0 #fff`].join(', ');
+    const labelStroke = (key: string): React.CSSProperties =>
+      (LOCKED_V32_MENU.panelLabel.strokeLabels as readonly string[]).includes(key)
+        ? { textShadow: halo(LOCKED_V32_MENU.panelLabel.labelStrokePx) }
+        : {};
     return (
       <div className="game-screen bg-[#050810] relative overflow-hidden" role="menu" aria-label="Main menu">
         <LockedStage
@@ -528,30 +746,104 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               change, only the translate offset moves. Panels and logo
               stay static (tappable/readable). prefers-reduced-motion
               freezes to static (MainMenuBackground freezes too). */}
-          <style>{`@keyframes menu-bob-cloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.cloud.bobAmp}px); } } @keyframes menu-bob-mochii { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${LOCKED_V32_MENU.mochii.bobAmp}px); } } .menu-bob-cloud { animation: menu-bob-cloud ${LOCKED_V32_MENU.cloud.bobPeriod}s ease-in-out infinite; } .menu-bob-mochii { animation: menu-bob-mochii ${LOCKED_V32_MENU.mochii.bobPeriod}s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .menu-bob-cloud, .menu-bob-mochii { animation: none; } }`}</style>
+          <style>{`@keyframes menu-bob-cloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${menuCfg.cloud.bobAmp}px); } } @keyframes menu-bob-mochii { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-${menuCfg.mochii.bobAmp}px); } } .menu-bob-cloud { animation: menu-bob-cloud ${menuCfg.cloud.bobPeriod}s ease-in-out infinite; } .menu-bob-mochii { animation: menu-bob-mochii ${menuCfg.mochii.bobPeriod}s ease-in-out infinite; } @media (prefers-reduced-motion: reduce) { .menu-bob-cloud, .menu-bob-mochii { animation: none; } }`}</style>
           {/* Logo slot from locked data: y180, width 900 (150-1050).
-              Crop aspect 764x450 -> 530 tall, centre ~445 (spec
-              ~454, spec height is approximate "~548"). */}
+              Menu asset (orbitfix, 2026-10-26, 900x548, centre 454):
+              upload letters with thick black outline + thick black
+              orbit ring, built from the v32 picture's own geometry.
+              Section-O orbit fix (2026-10-26): ring re-fitted from
+              clean strips (left/right/top, star boxes excluded) to
+              centre (619,472), a=425, b=186, stroke 30 -- the round-2
+              ring (618,500,440,200) scored 0.48 on those pixels
+              (top 0.25) vs 0.98 for the corrected ring. Version-lock
+              settlement: the corrected ring ships as a NEW dated file
+              (mochiichao-main-logo-v32-orbitfix-20261026.png); the
+              round-2 v32-matched asset stays in the repo untouched.
+              The TITLE slot above keeps the original keyed upload
+              (thin white orbit reads on the dark title background);
+              the pale keyed upload is NOT used here -- it vanished
+              on the white menu and Mars rejected it 2026-10-26. */}
           <img
-            src={mochiichaoLogo}
+            src={mochiichaoMenuLogo}
             alt="MOCHIICHAO"
             className="absolute object-contain"
-            style={{ left: LOCKED_V32_MENU.logo.x, top: LOCKED_V32_MENU.logo.y, width: LOCKED_V32_MENU.logo.w }}
+            style={{ left: menuCfg.logo.x, top: menuCfg.logo.y, width: menuCfg.logo.w, zIndex: menuCfg.layers.logo.order, display: menuCfg.layers.logo.visible ? undefined : 'none' }}
           />
-          {/* Cloud (real SVG) from locked data: centre (600,738), 700x180. */}
-          <img
-            src={puffyCloud}
-            alt=""
-            className="absolute object-contain menu-bob-cloud"
-            style={{ left: LOCKED_V32_MENU.cloud.x, top: LOCKED_V32_MENU.cloud.y, width: LOCKED_V32_MENU.cloud.w, height: LOCKED_V32_MENU.cloud.h, pointerEvents: 'none' }}
-          />
-          {/* Mochii mascot cue from locked data: x170, y~790, width 110. */}
+          {/* Fixed orbit side sparkles (section O, 2026-10-26): black
+              4-point stars present at the SAME positions in all three
+              targets (v32 picture, matched GIF frame 0, proof) -- left
+              (118-162, 512-556), right (1034-1086, 508-560) -- but
+              absent from the menu: both sit outside the 900-wide logo
+              asset box, and no element drew them. Shape is the game's
+              own star path (fill 0.327 vs target stars ~0.30). Static
+              like the logo (no bob); above the symbol layer, so
+              rising symbols pass behind them. */}
+          <svg
+            aria-hidden="true"
+            className="absolute"
+            style={{ left: 118, top: 512, width: 45, height: 45, pointerEvents: 'none' }}
+            viewBox="-22.5 -22.5 45 45"
+          >
+            <path d="M 0 -22.5 Q 5.4 -5.4 22.5 0 Q 5.4 5.4 0 22.5 Q -5.4 5.4 -22.5 0 Q -5.4 -5.4 0 -22.5 Z" fill="#000000" />
+          </svg>
+          <svg
+            aria-hidden="true"
+            className="absolute"
+            style={{ left: 1034, top: 508, width: 53, height: 53, pointerEvents: 'none' }}
+            viewBox="-26.5 -26.5 53 53"
+          >
+            <path d="M 0 -26.5 Q 6.36 -6.36 26.5 0 Q 6.36 6.36 0 26.5 Q -6.36 6.36 -26.5 0 Q -6.36 -6.36 0 -26.5 Z" fill="#000000" />
+          </svg>
+          {/* Cloud: ORIGINAL puffy-cloud.svg only, SHAPED by transform
+              (Mars 2026-10-26 18:13 CDT: transform only, zero path edits,
+              zero drawing, zero new artwork). The <svg><image
+              preserveAspectRatio="none"> applies the calibrated imgBox
+              shape transform (224,599,825x264) so the file's VISIBLE
+              path lands exactly on the locked box x250-950, y648-828,
+              centre (600,738). A plain <img> cannot do this: Chrome
+              applies meet inside <img> and letterboxes the viewBox
+              (measured: imgBox alone landed 378-844 wide); the
+              <svg><image> rendering is itself calibrated (see
+              lockedV32Menu.ts cloud comment for the measured factors).
+              BANNED / DO NOT USE: mochiichao-main-cloud-v32.svg
+              (the #184 trace) — deleted from main by Mars's order
+              2026-10-26; it is NOT the cloud file and must never be
+              rendered again. File untouched. */}
+          <svg
+            className={menuCfg.cloud.bobOn ? "absolute menu-bob-cloud" : "absolute"}
+            style={{ left: menuCfg.cloud.frameX, top: menuCfg.cloud.frameY, width: menuCfg.cloud.frameW, height: menuCfg.cloud.frameH, pointerEvents: 'none', overflow: 'visible', zIndex: menuCfg.layers.cloud.order, display: menuCfg.layers.cloud.visible ? undefined : 'none' }}
+            viewBox={`0 0 ${menuCfg.cloud.frameW} ${menuCfg.cloud.frameH}`}
+            aria-hidden="true"
+          >
+            <image href={puffyCloud} x={0} y={0} width={menuCfg.cloud.frameW} height={menuCfg.cloud.frameH} preserveAspectRatio="none" />
+          </svg>
+          {/* Mochii mascot cue from the active menu config. */}
           <img
             src={mochiiCutout}
             alt="Mochii"
-            className="absolute object-contain menu-bob-mochii"
-            style={{ left: LOCKED_V32_MENU.mochii.x, top: LOCKED_V32_MENU.mochii.y, width: LOCKED_V32_MENU.mochii.w, height: LOCKED_V32_MENU.mochii.h, pointerEvents: 'none' }}
+            className={menuCfg.mochii.bobOn ? "absolute object-contain menu-bob-mochii" : "absolute object-contain"}
+            style={{ left: menuCfg.mochii.x, top: menuCfg.mochii.y, width: menuCfg.mochii.w, height: menuCfg.mochii.h, pointerEvents: 'none', zIndex: menuCfg.layers.mochii.order, display: menuCfg.layers.mochii.visible ? undefined : 'none' }}
           />
+          {/* Logo emblems from the active menu config (editor EMBLEMS
+              panel): hearts + stars + circle at v32 picture
+              placements, on the emblems layer. Not rendered on main
+              before this PR (only open PR #214 adds them); the
+              editor owns their positions/visibility now, and the
+              hearts job's exact-layer call lands as a config value,
+              not a second rendering path. */}
+          <div className="absolute inset-0" style={{ zIndex: menuCfg.layers.emblems.order, display: menuCfg.layers.emblems.visible ? undefined : 'none', pointerEvents: 'none' }}>
+            <svg width={1200} height={1500}>
+              {menuCfg.emblems.filter((e) => e.visible).map((e) => (
+                <g key={e.id} transform={`translate(${e.x - e.w / 2},${e.y - e.h / 2})`}>
+                  {e.kind === 'circle'
+                    ? <circle cx={e.w / 2} cy={e.h / 2} r={Math.min(e.w, e.h) / 2} fill={e.color} />
+                    : e.kind === 'star'
+                      ? <path d={`M ${e.w / 2} 0 Q ${e.w / 2 + e.w * 0.12} ${e.h / 2 - e.h * 0.12} ${e.w} ${e.h / 2} Q ${e.w / 2 + e.w * 0.12} ${e.h / 2 + e.h * 0.12} ${e.w / 2} ${e.h} Q ${e.w / 2 - e.w * 0.12} ${e.h / 2 + e.h * 0.12} 0 ${e.h / 2} Q ${e.w / 2 - e.w * 0.12} ${e.h / 2 - e.h * 0.12} ${e.w / 2} 0 Z`} fill={e.color} />
+                      : <path d="M50 88 C20 60 5 40 5 25 C5 10 20 0 32 8 C40 13 50 25 50 32 C50 25 60 13 68 8 C80 0 95 10 95 25 C95 40 80 60 50 88 Z" fill={e.color} transform={`scale(${e.w / 100},${e.h / 100})`} />}
+                </g>
+              ))}
+            </svg>
+          </div>
           {mainItems.map((item, i) => {
             const isSelected = i === safeMain;
             if (item.key === 'CONTINUE') {
@@ -563,16 +855,16 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   onFocus={() => setMainSelected(i)}
                   style={v32PanelStyle(panelByKey('CONTINUE'), isSelected)}
                 >
-                  <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize }}>
-                    <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE
+                  <div className="text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('CONTINUE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke('CONTINUE') }}>
+                    <span style={{ color: settings.cursorColor, marginRight: isSelected ? 7 : 0 }}>{isSelected ? cursorGlyph : ''}</span>{panelByKey('CONTINUE').label}
                   </div>
                   {latestData ? (
                     <>
-                      <div className="text-black" style={{ fontSize: 19 }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
-                      <div className="text-black" style={{ fontSize: 17 }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
+                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
+                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
                     </>
                   ) : (
-                    <div className="text-black" style={{ fontSize: 19 }}>Player • Roster • Dojos • CR • Last: Core Fragment</div>
+                    <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>{menuCfg.continueSublabel}</div>
                   )}
                 </button>
               );
@@ -586,21 +878,18 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                 onFocus={() => setMainSelected(i)}
                 style={v32PanelStyle(panel, isSelected)}
               >
-                <div className="font-bold tracking-widest text-black" style={{ fontSize: panel.labelSize }}>
-                  <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
+                <div className="text-black" style={{ fontSize: panel.labelSize, lineHeight: 1.15, letterSpacing: `${panel.labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke(item.key) }}>
+                  <span style={{ color: settings.cursorColor, marginRight: isSelected ? 7 : 0 }}>{isSelected ? cursorGlyph : ''}</span>{panel.label}
                 </div>
               </button>
             );
           })}
           <button
-            onClick={() => setPhase("TITLE")}
+            onClick={() => { playUiBack(); setPhase("TITLE"); }}
             style={v32PanelStyle(panelByKey('BACK TO TITLE'), false)}
           >
-            <div className="font-bold tracking-widest text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize }}>◄ BACK TO TITLE (B)</div>
+            <div className="text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('BACK TO TITLE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%' }}>{panelByKey('BACK TO TITLE').label}</div>
           </button>
-          <div className="absolute text-center text-slate-700" style={{ left: 0, top: 1210, width: 1200, fontSize: 20 }}>
-            {safeMain === 0 && hasSaves ? 'Continue your saved adventure.' : safeMain === 0 ? 'Start a new adventure.' : mainItems[safeMain]?.key === 'NEW GAME' ? 'Start a new adventure. Existing saves are kept until you save over a slot.' : 'Settings — text speed, battle scene/style, sound, button mode, frame, font.'}
-          </div>
         </LockedStage>
 
         {showOverwriteConfirm && (
@@ -774,7 +1063,6 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               <div className="text-gray-400 group-hover:text-pink-400 font-bold tracking-widest mt-2">GIRL</div>
             </button>
           </div>
-          <div className="text-slate-400 text-sm mt-8">Choose GIRL to play as Player A (teal/chrome jacket).</div>
         </StdWindow>
       </div>
     );

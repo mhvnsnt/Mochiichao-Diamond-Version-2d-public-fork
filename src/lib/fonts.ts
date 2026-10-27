@@ -57,6 +57,18 @@ export interface FontOption {
 }
 
 export const FONT_OPTIONS: FontOption[] = [
+  // 0. Pokemon Base group (Mars readability order, 2026-10-26): the
+  // readable base text for main menu + dialogue boxes, DEFAULT for
+  // those two rows. Characteristics from the decomp files, NOT a
+  // Nintendo font file: HeartGold message font max 11 wide x 16
+  // tall, FireRed fg/bg/shadow 3-layer rendering (text.h
+  // TextPrinterTemplate), bold weight for panel labels. The family
+  // is the game's earlier system-sans default stack — the same
+  // stack as PINNED_SUBTITLE_FONT below — which is also what the
+  // 2026-10-26 verification proof's panel labels render in (clean
+  // bold sans, plain sublabel). Mars's chosen fonts stay below
+  // and stay available for every row, including these two.
+  { id: 'pokemon-base', label: 'Pokemon Base (Default)', family: 'Trebuchet MS', status: 'slot', note: 'Pokemon Base: readable base text, DEFAULT for MENU + DIALOGUE. DS message metrics 11x16, fg/bg/shadow layers, bold panel labels. Web-safe system-sans match (same stack as the game default + pinned subtitle); never a Nintendo font file.' },
   // 1-3. Mars's picks, on top.
   { id: 'yagiza', label: 'Yagiza', family: 'Yagiza', status: 'shipped', note: 'Shipped: yagiza.woff (5,100 bytes) + yagiza.ttf (19,544 bytes) in src/assets/fonts/.' },
   { id: '01-digitall', label: '01 Digitall', family: '01 Digitall', status: 'shipped', note: 'Shipped: 01-digitall.ttf (48,832 bytes) in src/assets/fonts/.' },

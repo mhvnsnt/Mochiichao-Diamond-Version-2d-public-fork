@@ -137,10 +137,11 @@ export const HEART_GOLD_FLASH_CYCLE = 45;
 export const HEART_GOLD_INITIAL_DELAY = 30;
 
 /** [HG] Visible for frames 0..29 of each 45-frame cycle, after the
- *  30-frame initial delay. This is the same 30-on / 15-off shape
- *  the existing IntroSequence press-blink already uses (0.75s CSS
- *  blink, 66% on) — that wiring is NOT replaced, only documented
- *  here as the same system. */
+ *  30-frame initial delay. IntroSequence press-blink previously
+ *  used this same 30-on / 15-off shape; since the FireRed
+ *  60-first / 30-30 tempo change it no longer matches this flash.
+ *  This flash wiring itself is NOT changed, only documented here
+ *  as its own system, separate from the press-blink tempo. */
 export function heartGoldStartFlashVisible(frame: number, enabled: boolean): boolean {
   if (!enabled) return false;
   if (frame < HEART_GOLD_INITIAL_DELAY) return false;

@@ -1,0 +1,31 @@
+{
+ "src": "/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/v2-fixed/gabu-v2-fixed.glb",
+ "out": "/home/hatch/workspace/mochiichao-work/sprites-bake/rigged/gabu/rerig-v1/gabu-rerig-v1.glb",
+ "rules": {
+  "arm_purified": 255448,
+  "head_purified": 474587,
+  "leg_purified": 512817,
+  "shoulder_reassigned": 29490,
+  "shell_or_torsofront_gradient": 124274,
+  "tail_purified": 188064,
+  "torso_purified": 14577
+ },
+ "tan_verts": 516227,
+ "shoulder_delta": {
+  "LeftShoulder": 0.3,
+  "RightShoulder": -0.3
+ },
+ "new_arm_local": {
+  "LeftArm": [
+   0.033330067659421904,
+   -0.13386199074397043,
+   -0.09523693161694283
+  ],
+  "RightArm": [
+   -0.033330067659421904,
+   -0.13386199074397043,
+   -0.09523693161694283
+  ]
+ },
+ "chan_accessors_edited": 24
+}

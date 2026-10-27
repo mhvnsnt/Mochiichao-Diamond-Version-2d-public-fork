@@ -28,13 +28,21 @@
  *   applying the same math; Pixi playback from a saved preset is a
  *   LATER batch (labelled GAP in the screen), not claimed here.
  * - FFmpeg (LGPL/GPL, desktop, NOT in web build) / MediaRecorder:
- *   Phase 2 video export only — GAP here, not claimed.
+ *   Phase 2 video export is LIVE since Creator Phase 2
+ *   (src/lib/introVideoExport.ts, MediaRecorder web route, WebM,
+ *   silent — the music slot is name-only, so no audio track).
+ *   FFmpeg stays an install note only, for WebM->MP4 conversion
+ *   or for adding an audio track once original final music exists.
+ * - Open-source components: a scene may pick components from
+ *   src/lib/openSourceAssets.ts (87/87 listing); picks are stored
+ *   in openSourceComponentIds, shown in the creator preview, and
+ *   drawn into the exported video where the kind fits (panel
+ *   behind the text block, particle/icon as particle sprites).
  * - Keyframe interpolation + easing curves (academic standard):
  *   linear + ease-in-out-cubic, applied per keyframed field.
  *
  * What this batch is NOT (GAP, labelled in the UI, never faked):
  * - Playback of a saved preset as the game's intro (later batch).
- * - Video file export (Phase 2).
  * - Painted backgrounds: the 'painted' background choice is a GAP
  *   label until the Title Backgrounds lane delivers painted art.
  * - Creature cutouts for 9/10 rotation-pool creatures: only
@@ -54,6 +62,7 @@
 import { TITLE_BIOMES, TITLE_BIOME_LIST, type TitleBiomeId } from './titleBiomes';
 import { TITLE_ROTATION_POOL } from './titleRotation';
 import { FONT_OPTIONS } from './fonts';
+import { OPEN_SOURCE_ASSETS } from './openSourceAssets';
 
 /* ------------------------------------------------------------------ */
 /* Constants                                                           */
@@ -175,6 +184,13 @@ export interface IntroVideoScene {
   duration: number;
   transition: IntroVideoTransition;
   keyframes: IntroVideoKeyframe[];
+  /**
+   * Open-source component ids picked from src/lib/openSourceAssets.ts
+   * (87/87 listing). Optional for old presets (treated as []).
+   * Panel assets draw behind the text block in the exported video,
+   * particle/icon assets draw as the particle sprites.
+   */
+  openSourceComponentIds?: string[];
 }
 
 export interface IntroVideoPreset {
@@ -229,6 +245,7 @@ export function defaultIntroVideoScene(name: string): IntroVideoScene {
     duration: 6,
     transition: 'fade-black',
     keyframes: [],
+    openSourceComponentIds: [],
   };
 }
 
@@ -407,6 +424,16 @@ export function validateIntroVideoPreset(preset: unknown): string[] {
     for (const k of s.keyframes || []) {
       if (typeof k.time !== 'number' || k.time < 0 || k.time > s.duration) {
         errors.push(`${label}: keyframe '${k.id}' time out of scene range.`);
+      }
+    }
+    if (s.openSourceComponentIds !== undefined) {
+      if (!Array.isArray(s.openSourceComponentIds)) {
+        errors.push(`${label}: openSourceComponentIds must be an array.`);
+      } else {
+        const known = new Set(OPEN_SOURCE_ASSETS.map(a => a.id));
+        for (const id of s.openSourceComponentIds) {
+          if (!known.has(id)) errors.push(`${label}: unknown open-source component '${id}'.`);
+        }
       }
     }
   });

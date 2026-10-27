@@ -1,0 +1,120 @@
+{
+  "atlas": "homura-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle_front"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world_bands": [
+    [
+      20,
+      1260
+    ]
+  ],
+  "world_runs": [
+    [
+      [
+        187,
+        452
+      ],
+      [
+        520,
+        912
+      ],
+      [
+        997,
+        1414
+      ],
+      [
+        1478,
+        1719
+      ]
+    ]
+  ],
+  "world_order_note": "World sheet on disk is a SINGLE ROW of 4, left to right: faces image-left, back, front, faces image-right. Atlas maps front=row run 2, back=run 1, left=run 0, right=run 3.",
+  "walk_bands": [
+    [
+      11,
+      893
+    ]
+  ],
+  "walk_runs": [
+    [
+      [
+        60,
+        730
+      ],
+      [
+        790,
+        1301
+      ],
+      [
+        1414,
+        2070
+      ],
+      [
+        2090,
+        2684
+      ]
+    ]
+  ],
+  "walk_flag": "WALK SHEET IS SINGLE-DIRECTION: all 4 walk frames face image-right, in stride order. Atlas step cells 8-11 are those 4 stride phases in order, NOT true front/back/left/right steps. Walk also adds a hood not present on the world sheet's coat.",
+  "world_sheet": "media-generation-dojo-elite-homura-world-views-0-a062f7a2-e5ed-4154-ab55-b35c77ccfbd5.webp",
+  "walk": "media-generation-dojo-elite-homura-walk-frames-0-8aca61b7-6f0a-4609-b29c-3036cc352d04.webp",
+  "battle": "media-generation-dojo-elite-homura-battle-front-0-9f2077f0-cd8c-4d0e-802a-78e288d28543.webp",
+  "portrait": "media-generation-dojo-elite-homura-portrait-v1-0-a4afedc7-b8b9-442d-94cc-8517ebb73c6b.webp"
+}

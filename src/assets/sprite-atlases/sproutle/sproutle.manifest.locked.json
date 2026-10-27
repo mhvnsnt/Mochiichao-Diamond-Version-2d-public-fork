@@ -18,7 +18,7 @@
  "frame_count": 23,
  "draft": false,
  "draft_note": "",
- "notes": "",
+ "notes": "RE-LOCK 2026-10-26: corrected locked tile(s) promoted from documented corrected sources (see relock_2026_10_26); no other tiles changed.",
  "role_unconfirmed": [],
  "frames": [
   {
@@ -302,5 +302,79 @@
   250,
   240,
   232
- ]
+ ],
+ "relock_2026_10_26": {
+  "date": "2026-10-26",
+  "base_head": "023e038713312d7933adb574d0d05a00befe8932",
+  "change": "pixel_tiles",
+  "cells": [
+   {
+    "cell": 1,
+    "role": "battle_back",
+    "atlas": [
+     64,
+     0
+    ],
+    "source": "mochiichao-work/sprite-art/stage-show-sproutle-fix/sproutle_cell_01_spotfree.png",
+    "diff_px": 13,
+    "direction": "locked-opaque -> transparent"
+   },
+   {
+    "cell": 2,
+    "role": "overworld_back",
+    "atlas": [
+     128,
+     0
+    ],
+    "source": "mochiichao-work/sprite-art/stage-show-sproutle-fix/sproutle_cell_02_spotfree.png",
+    "diff_px": 9,
+    "direction": "locked-opaque -> transparent"
+   },
+   {
+    "cell": 3,
+    "role": "overworld_back_2",
+    "atlas": [
+     192,
+     0
+    ],
+    "source": "mochiichao-work/sprite-art/stage-show-sproutle-fix/sproutle_cell_03_spotfree.png",
+    "diff_px": 5,
+    "direction": "locked-opaque -> transparent"
+   },
+   {
+    "cell": 6,
+    "role": "overworld_front_3",
+    "atlas": [
+     0,
+     64
+    ],
+    "source": "mochiichao-work/sprite-art/stage-show-sproutle-fix/sproutle_cell_06_spotfree.png",
+    "diff_px": 10,
+    "direction": "locked-opaque -> transparent"
+   },
+   {
+    "cell": 16,
+    "role": "overworld_front_13",
+    "atlas": [
+     256,
+     128
+    ],
+    "source": "mochiichao-work/sprite-art/stage-show-sproutle-fix/sproutle_cell_16_spotfree.png",
+    "diff_px": 9,
+    "direction": "locked-opaque -> transparent"
+   },
+   {
+    "cell": 19,
+    "role": "walk_front_1",
+    "atlas": [
+     64,
+     192
+    ],
+    "source": "mochiichao-work/sprite-art/stage-show-sproutle-fix/sproutle_cell_19_spotfree.png",
+    "diff_px": 15,
+    "direction": "locked-opaque -> transparent"
+   }
+  ],
+  "notes": "Atlas PNG tiles spliced at exact manifest coords, cell 64. All other tiles byte-identical to base."
+ }
 }

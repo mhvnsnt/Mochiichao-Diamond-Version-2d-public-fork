@@ -179,17 +179,17 @@ export default function BagView({ onBack }: { onBack: () => void }) {
                       setMendSelect(true);
                       return;
                     }
-                    if (useItem(current.id)) setMessage(`Used ${current.name}. Count only — no item effect is wired through the bag in this build yet.`);
+                    if (useItem(current.id)) setMessage(`Used ${current.name}.`);
                   }}
                   className="game-button px-3 py-2 text-sm min-h-[48px]"
                 >
                   Use
                 </button>
-                <button className="game-button px-3 py-2 text-sm min-h-[48px] opacity-60" disabled title="No trade or held-item system exists to give to yet.">Give</button>
+                <button className="game-button px-3 py-2 text-sm min-h-[48px] opacity-60" disabled>Give</button>
                 <button onClick={() => setConfirmToss(true)} className="game-button px-3 py-2 text-sm min-h-[48px]">Toss</button>
                 <button onClick={onBack} className="game-button px-3 py-2 text-sm min-h-[48px]">Quit</button>
               </div>
-              <p className="text-xs text-slate-400 mt-2">Mend Patch restores 50 HP to a party member you choose. Other items' Use changes the count only in this build. Give is not available: there is no trade or held-item system yet.</p>
+              <p className="text-xs text-slate-400 mt-2">Mend Patch restores 50 HP to a party member you choose.</p>
             </div>
           )}
           <MenuHelpLine text={current ? `${current.name} — ${current.desc}` : 'Select an item.'} />

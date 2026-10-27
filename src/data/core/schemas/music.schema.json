@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./music.schema.json",
+  "title": "music (SCHEMA ONLY \u2014 track contents are owned by the music worker, not this core)",
+  "description": "Plan \u00a75 shape: gapless OGG loops with intro + loopStart/loopEnd, driven by Howler.js (playback) + Tone.js/Web Audio (stems, bar-aligned switching). Track ids referenced by maps.json (musicId) and battle/title scenes must match this schema. No track audio is shipped by this core.",
+  "type": "object",
+  "properties": {
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string"
+          },
+          "intro": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "loopStart": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "loopEnd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "stems": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "variants": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "string"
+              },
+              "night": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "file"
+        ]
+      }
+    }
+  },
+  "required": [
+    "tracks"
+  ]
+}

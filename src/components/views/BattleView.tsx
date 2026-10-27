@@ -294,7 +294,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
       const dmg = ev.damage ?? 0;
       pendingRef.current = { damage: dmg, text: ev.text, attacker, moveId: ev.moveId, damageFraction: dmg / targetMax, isCrit: !!ev.isCrit };
       setBState('ANIMATING');
-      setAttack({ nonce: Date.now(), attacker, category: mv?.cat || 'Physical', color: mv ? TYPES[mv.type]?.color || '#ffffff' : '#ffffff', damageFraction: dmg / targetMax, isCrit: !!ev.isCrit });
+      setAttack({ nonce: Date.now(), attacker, category: mv?.cat || 'Physical', color: mv ? TYPES[mv.type]?.color || '#ffffff' : '#ffffff', damageFraction: dmg / targetMax, isCrit: !!ev.isCrit, moveId: ev.moveId });
       return;
     }
     queueTimerRef.current = window.setTimeout(advanceTurnQueue, 650);
@@ -592,7 +592,7 @@ export default function BattleView({ enemyId, onLeave }: { enemyId: string | nul
                 <CreaturePortrait speciesId={fusionPartner.speciesId} view="front" size={40} />
                 <div className="flex-1 min-w-0">
                   <div className="text-white font-bold text-xs truncate">{fusedAttacker.nickname}</div>
-                  <div className="text-[11px] text-slate-300">Fusion form (placeholder sheets) · ATK {fusedAttacker.stats.atk} · lasts this battle</div>
+                  <div className="text-[11px] text-slate-300">Fusion form · ATK {fusedAttacker.stats.atk} · lasts this battle</div>
                 </div>
                 <button onClick={() => { pushLog(`Data Revert split ${playerActive.nickname} and ${fusionPartner.nickname} back!`); setFusedPartnerIdx(null); }} className="game-button px-2 py-1 text-xs shrink-0">Split (Data Revert)</button>
               </div>

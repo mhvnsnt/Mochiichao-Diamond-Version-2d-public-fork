@@ -1,0 +1,115 @@
+{
+ "creature": "kickmaster",
+ "roster_id": "031",
+ "variant": null,
+ "movement_class": "grounded_standard",
+ "idle_class": "grounded_standard",
+ "cell_size": 64,
+ "source_locked_manifest": "atlas-from-2d-sheet-v1-locked-v1",
+ "format": "Gen-4-style: 4 directions, each [stand, step1, stand, step2]",
+ "cycle_ms": 480,
+ "side_gap": false,
+ "side_note": "",
+ "directions": {
+  "down": {
+   "stand": {
+    "file": "game-ready/kickmaster/cells/kickmaster_cell_03.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_front"
+   },
+   "steps": [
+    {
+     "file": "walk-frames/kickmaster/kickmaster_walk_down_0.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_down_0"
+    },
+    {
+     "file": "walk-frames/kickmaster/kickmaster_walk_down_1.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_down_1"
+    }
+   ],
+   "loop": [
+    "game-ready/kickmaster/cells/kickmaster_cell_03.png",
+    "walk-frames/kickmaster/kickmaster_walk_down_0.png",
+    "game-ready/kickmaster/cells/kickmaster_cell_03.png",
+    "walk-frames/kickmaster/kickmaster_walk_down_1.png"
+   ]
+  },
+  "up": {
+   "stand": {
+    "file": "game-ready/kickmaster/cells/kickmaster_cell_02.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_back"
+   },
+   "steps": [
+    {
+     "file": "walk-frames/kickmaster/kickmaster_walk_up_0.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_up_0"
+    },
+    {
+     "file": "walk-frames/kickmaster/kickmaster_walk_up_1.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_up_1"
+    }
+   ],
+   "loop": [
+    "game-ready/kickmaster/cells/kickmaster_cell_02.png",
+    "walk-frames/kickmaster/kickmaster_walk_up_0.png",
+    "game-ready/kickmaster/cells/kickmaster_cell_02.png",
+    "walk-frames/kickmaster/kickmaster_walk_up_1.png"
+   ]
+  },
+  "left": {
+   "stand": {
+    "file": "game-ready/kickmaster/cells/kickmaster_cell_04.png",
+    "provenance": "locked_stand",
+    "source_role": "overworld_side_2"
+   },
+   "steps": [
+    {
+     "file": "walk-frames/kickmaster/kickmaster_walk_left_0.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_left_0"
+    },
+    {
+     "file": "walk-frames/kickmaster/kickmaster_walk_left_1.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_left_1"
+    }
+   ],
+   "loop": [
+    "game-ready/kickmaster/cells/kickmaster_cell_04.png",
+    "walk-frames/kickmaster/kickmaster_walk_left_0.png",
+    "game-ready/kickmaster/cells/kickmaster_cell_04.png",
+    "walk-frames/kickmaster/kickmaster_walk_left_1.png"
+   ]
+  },
+  "right": {
+   "stand": {
+    "file": "walk/kickmaster/kickmaster_walk_right_stand.png",
+    "provenance": "mirror",
+    "source_role": "overworld_side_2"
+   },
+   "steps": [
+    {
+     "file": "walk-frames/kickmaster/kickmaster_walk_right_0.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_right_0"
+    },
+    {
+     "file": "walk-frames/kickmaster/kickmaster_walk_right_1.png",
+     "provenance": "walk_frames_batch",
+     "source_role": "walk_right_1"
+    }
+   ],
+   "loop": [
+    "walk/kickmaster/kickmaster_walk_right_stand.png",
+    "walk-frames/kickmaster/kickmaster_walk_right_0.png",
+    "walk/kickmaster/kickmaster_walk_right_stand.png",
+    "walk-frames/kickmaster/kickmaster_walk_right_1.png"
+   ]
+  }
+ }
+}

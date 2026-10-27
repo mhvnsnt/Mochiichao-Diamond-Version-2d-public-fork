@@ -1,0 +1,430 @@
+{
+ "tag": "artic-pipev3-20261026",
+ "method": "V3 contour-fit mouth on V2 eyes-only frames",
+ "creatures": {
+  "kittember": {
+   "sets": {
+    "atk_physical_ember_pounce": {
+     "family": "physical",
+     "expression": "open-bite",
+     "files": [
+      "kittember-artic-pipev3-20261026-atk_physical_ember_pounce-cell-00.png",
+      "kittember-artic-pipev3-20261026-atk_physical_ember_pounce-cell-01.png",
+      "kittember-artic-pipev3-20261026-atk_physical_ember_pounce-cell-02.png",
+      "kittember-artic-pipev3-20261026-atk_physical_ember_pounce-cell-03.png",
+      "kittember-artic-pipev3-20261026-atk_physical_ember_pounce-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 1,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 2,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 3,
+       "action": "v3-mouth-open-bite",
+       "gate": {
+        "changed": 164,
+        "bbox": [
+         19,
+         27,
+         22,
+         11
+        ],
+        "fill_ratio": 0.678,
+        "inside_mask_bbox": true,
+        "off_silhouette": false
+       }
+      },
+      {
+       "frame": 4,
+       "action": "copy-v2eyes",
+       "gate": {}
+      }
+     ]
+    },
+    "atk_special_ember_spray": {
+     "family": "special",
+     "expression": "grin",
+     "files": [
+      "kittember-artic-pipev3-20261026-atk_special_ember_spray-cell-00.png",
+      "kittember-artic-pipev3-20261026-atk_special_ember_spray-cell-01.png",
+      "kittember-artic-pipev3-20261026-atk_special_ember_spray-cell-02.png",
+      "kittember-artic-pipev3-20261026-atk_special_ember_spray-cell-03.png",
+      "kittember-artic-pipev3-20261026-atk_special_ember_spray-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 1,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 2,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 3,
+       "action": "v3-mouth-grin",
+       "gate": {
+        "changed": 88,
+        "bbox": [
+         10,
+         19,
+         15,
+         9
+        ],
+        "fill_ratio": 0.652,
+        "inside_mask_bbox": true,
+        "off_silhouette": false
+       }
+      },
+      {
+       "frame": 4,
+       "action": "copy-v2eyes",
+       "gate": {}
+      }
+     ]
+    },
+    "atk_signature_inferno_pounce": {
+     "family": "signature",
+     "expression": "open-bite",
+     "files": [
+      "kittember-artic-pipev3-20261026-atk_signature_inferno_pounce-cell-00.png",
+      "kittember-artic-pipev3-20261026-atk_signature_inferno_pounce-cell-01.png",
+      "kittember-artic-pipev3-20261026-atk_signature_inferno_pounce-cell-02.png",
+      "kittember-artic-pipev3-20261026-atk_signature_inferno_pounce-cell-03.png",
+      "kittember-artic-pipev3-20261026-atk_signature_inferno_pounce-cell-04.png",
+      "kittember-artic-pipev3-20261026-atk_signature_inferno_pounce-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 1,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 2,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 3,
+       "action": "v3-mouth-open-bite",
+       "gate": {
+        "changed": 172,
+        "bbox": [
+         7,
+         21,
+         20,
+         13
+        ],
+        "fill_ratio": 0.662,
+        "inside_mask_bbox": true,
+        "off_silhouette": false
+       }
+      },
+      {
+       "frame": 4,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 5,
+       "action": "copy-v2eyes",
+       "gate": {}
+      }
+     ]
+    },
+    "atk_heavy_blaze_crash_finisher": {
+     "family": "heavy",
+     "expression": "grimace",
+     "files": [
+      "kittember-artic-pipev3-20261026-atk_heavy_blaze_crash_finisher-cell-00.png",
+      "kittember-artic-pipev3-20261026-atk_heavy_blaze_crash_finisher-cell-01.png",
+      "kittember-artic-pipev3-20261026-atk_heavy_blaze_crash_finisher-cell-02.png",
+      "kittember-artic-pipev3-20261026-atk_heavy_blaze_crash_finisher-cell-03.png",
+      "kittember-artic-pipev3-20261026-atk_heavy_blaze_crash_finisher-cell-04.png",
+      "kittember-artic-pipev3-20261026-atk_heavy_blaze_crash_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 1,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 2,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 3,
+       "action": "v3-mouth-grimace",
+       "gate": {
+        "changed": 95,
+        "bbox": [
+         14,
+         30,
+         19,
+         8
+        ],
+        "fill_ratio": 0.625,
+        "inside_mask_bbox": true,
+        "off_silhouette": false
+       }
+      },
+      {
+       "frame": 4,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 5,
+       "action": "copy-v2eyes",
+       "gate": {}
+      }
+     ]
+    }
+   }
+  },
+  "tiidebiite": {
+   "sets": {
+    "atk_physical_tide_ram": {
+     "family": "physical",
+     "expression": "open-bite",
+     "files": [
+      "tiidebiite-artic-pipev3-20261026-atk_physical_tide_ram-cell-00.png",
+      "tiidebiite-artic-pipev3-20261026-atk_physical_tide_ram-cell-01.png",
+      "tiidebiite-artic-pipev3-20261026-atk_physical_tide_ram-cell-02.png",
+      "tiidebiite-artic-pipev3-20261026-atk_physical_tide_ram-cell-03.png",
+      "tiidebiite-artic-pipev3-20261026-atk_physical_tide_ram-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 1,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 2,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 3,
+       "action": "v3-mouth-open-bite",
+       "gate": {
+        "changed": 199,
+        "bbox": [
+         25,
+         22,
+         21,
+         13
+        ],
+        "fill_ratio": 0.729,
+        "inside_mask_bbox": true,
+        "off_silhouette": false
+       }
+      },
+      {
+       "frame": 4,
+       "action": "copy-v2eyes",
+       "gate": {}
+      }
+     ]
+    },
+    "atk_special_tide_jet": {
+     "family": "special",
+     "expression": "grin",
+     "files": [
+      "tiidebiite-artic-pipev3-20261026-atk_special_tide_jet-cell-00.png",
+      "tiidebiite-artic-pipev3-20261026-atk_special_tide_jet-cell-01.png",
+      "tiidebiite-artic-pipev3-20261026-atk_special_tide_jet-cell-02.png",
+      "tiidebiite-artic-pipev3-20261026-atk_special_tide_jet-cell-03.png",
+      "tiidebiite-artic-pipev3-20261026-atk_special_tide_jet-cell-04.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 1,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 2,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 3,
+       "action": "v3-mouth-grin",
+       "gate": {
+        "changed": 119,
+        "bbox": [
+         14,
+         13,
+         16,
+         10
+        ],
+        "fill_ratio": 0.744,
+        "inside_mask_bbox": true,
+        "off_silhouette": false
+       }
+      },
+      {
+       "frame": 4,
+       "action": "copy-v2eyes",
+       "gate": {}
+      }
+     ]
+    },
+    "atk_signature_surge_barrage": {
+     "family": "signature",
+     "expression": "open-bite",
+     "files": [
+      "tiidebiite-artic-pipev3-20261026-atk_signature_surge_barrage-cell-00.png",
+      "tiidebiite-artic-pipev3-20261026-atk_signature_surge_barrage-cell-01.png",
+      "tiidebiite-artic-pipev3-20261026-atk_signature_surge_barrage-cell-02.png",
+      "tiidebiite-artic-pipev3-20261026-atk_signature_surge_barrage-cell-03.png",
+      "tiidebiite-artic-pipev3-20261026-atk_signature_surge_barrage-cell-04.png",
+      "tiidebiite-artic-pipev3-20261026-atk_signature_surge_barrage-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 1,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 2,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 3,
+       "action": "v3-mouth-open-bite",
+       "gate": {
+        "changed": 207,
+        "bbox": [
+         12,
+         16,
+         20,
+         14
+        ],
+        "fill_ratio": 0.739,
+        "inside_mask_bbox": true,
+        "off_silhouette": false
+       }
+      },
+      {
+       "frame": 4,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 5,
+       "action": "copy-v2eyes",
+       "gate": {}
+      }
+     ]
+    },
+    "atk_heavy_tsunami_finisher": {
+     "family": "heavy",
+     "expression": "grimace",
+     "files": [
+      "tiidebiite-artic-pipev3-20261026-atk_heavy_tsunami_finisher-cell-00.png",
+      "tiidebiite-artic-pipev3-20261026-atk_heavy_tsunami_finisher-cell-01.png",
+      "tiidebiite-artic-pipev3-20261026-atk_heavy_tsunami_finisher-cell-02.png",
+      "tiidebiite-artic-pipev3-20261026-atk_heavy_tsunami_finisher-cell-03.png",
+      "tiidebiite-artic-pipev3-20261026-atk_heavy_tsunami_finisher-cell-04.png",
+      "tiidebiite-artic-pipev3-20261026-atk_heavy_tsunami_finisher-cell-05.png"
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 1,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 2,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 3,
+       "action": "v3-mouth-grimace",
+       "gate": {
+        "changed": 129,
+        "bbox": [
+         20,
+         25,
+         19,
+         9
+        ],
+        "fill_ratio": 0.754,
+        "inside_mask_bbox": true,
+        "off_silhouette": false
+       }
+      },
+      {
+       "frame": 4,
+       "action": "copy-v2eyes",
+       "gate": {}
+      },
+      {
+       "frame": 5,
+       "action": "copy-v2eyes",
+       "gate": {}
+      }
+     ]
+    }
+   }
+  }
+ }
+}

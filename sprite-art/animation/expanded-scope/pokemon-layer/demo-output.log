@@ -1,0 +1,121 @@
+=== POKEMON LAYER DEMO ===
+Interpreter: FireRed 48-command model + Black 2 families, 60 fps.
+Scripts: 563 union moves (firered=354 black2=560, fallback=109).
+
+--- Check 1: generic hurt + faint ---
+hurtTreatment(power=120): xPx=10 (120/12=10, clamp 1-16), shakes=6, frames=12
+PASS  hurt amplitude power/12  -- 120/12=10
+PASS  hurt amplitude clamped to 16  -- 300/12=25 -> 16
+PASS  hurt fixed 3px without power/damage  -- Pound default
+PASS  faint slide y+=5/frame  -- frame 5 -> y=25
+PASS  flinch = flag + skip, NO pose  -- STATUS2_FLINCHED
+PASS  status table: 9 entries, unknown -> null  -- 9 conditions; Sleep found; unknown null, not guessed
+PASS  stat-change up x2  -- 16 frames
+General_MonHit event log:
+  f  0 (   0ms) createsprite gBasicHitSplatSpriteTemplate on target live=1
+  f  0 (   0ms) createvisualtask ShakeMon on target xPx=3 shakes=6 durFrames=12
+  f 12 ( 200ms) particles_released count=1
+  f 12 ( 200ms) waitforvisualfinish waitedFrames=12 -> frame 12
+  f 12 ( 200ms) end
+PASS  General_MonHit runs, ends, syncs  -- frames=12
+PASS  FaintSlide runs, ends  -- SE_FAINT + slide
+
+--- Check 2: sample scripts end-to-end ---
+physical POUND (template=physical_contact, family=damage, fallback=false):
+  f  0 (   0ms) script_start POUND
+  f  0 (   0ms) createsprite gHorizontalLungeSpriteTemplate on attacker live=1
+  f  6 ( 100ms) delay frames=6 -> frame 6
+  f  6 ( 100ms) playsewithpan SE_M_DOUBLE_SLAP pan=target
+  f  6 ( 100ms) createsprite gBasicHitSplatSpriteTemplate on target live=2
+  f  6 ( 100ms) createvisualtask ShakeMon on target xPx=3 shakes=6 durFrames=12
+  f 18 ( 300ms) particles_released count=2
+  f 18 ( 300ms) waitforvisualfinish waitedFrames=12 -> frame 18
+  f 18 ( 300ms) end
+PASS  physical POUND runs end-to-end  -- frames=18 maxLive=2
+PASS  physical POUND particle budget  -- maxLive=2 <= 16
+special EMBER (template=special_projectile, family=damage_with_status, fallback=false):
+  f  0 (   0ms) script_start EMBER
+  f  0 (   0ms) createsprite gemberSpriteTemplate on attacker live=1
+  f  0 (   0ms) panse SE_M_PROJECTILE attacker->target frames=8
+  f 16 ( 267ms) delay frames=8 -> frame 16
+  f 16 ( 267ms) playsewithpan SE_M_DOUBLE_SLAP pan=target
+  f 16 ( 267ms) createsprite gBasicHitSplatSpriteTemplate on target live=2
+  f 16 ( 267ms) createvisualtask ShakeMon on target xPx=3 shakes=6 durFrames=12
+  f 28 ( 467ms) particles_released count=2
+  f 28 ( 467ms) waitforvisualfinish waitedFrames=12 -> frame 28
+  f 28 ( 467ms) createsprite gStatusPuffSpriteTemplate on target live=1
+  f 28 ( 467ms) playsewithpan SE_M_STATUS pan=target
+  f 40 ( 667ms) delay frames=12 -> frame 40
+  f 40 ( 667ms) particles_released count=1
+  f 40 ( 667ms) waitforvisualfinish waitedFrames=0 -> frame 40
+  f 40 ( 667ms) end
+PASS  special EMBER runs end-to-end  -- frames=40 maxLive=2
+PASS  special EMBER particle budget  -- maxLive=2 <= 16
+status SWORDS_DANCE (template=stat_change, family=stat_change, fallback=false):
+  f  0 (   0ms) script_start SWORDS_DANCE
+  f  0 (   0ms) createvisualtask StatsChange on target xPx=3 shakes=6 durFrames=16
+  f  0 (   0ms) createvisualtask BlendBattleAnimPal on target xPx=3 shakes=6 durFrames=16
+  f  0 (   0ms) playsewithpan SE_M_STAT_CHANGE pan=target
+  f 16 ( 267ms) waitforvisualfinish waitedFrames=16 -> frame 16
+  f 16 ( 267ms) end
+PASS  status SWORDS_DANCE runs end-to-end  -- frames=16 maxLive=0
+PASS  status SWORDS_DANCE particle budget  -- maxLive=0 <= 16
+multi-hit DOUBLE_SLAP (template=multi_hit, family=multi_hit, fallback=false):
+  f  0 (   0ms) script_start DOUBLE_SLAP
+  f  0 (   0ms) createsprite gHorizontalLungeSpriteTemplate on attacker live=1
+  f  6 ( 100ms) delay frames=6 -> frame 6
+  f  6 ( 100ms) createsprite gBasicHitSplatSpriteTemplate on target live=2
+  f  6 ( 100ms) createvisualtask ShakeMon on target xPx=1 shakes=6 durFrames=12
+  f 18 ( 300ms) particles_released count=2
+  f 18 ( 300ms) waitforvisualfinish waitedFrames=12 -> frame 18
+  f 18 ( 300ms) createsprite gBasicHitSplatSpriteTemplate on target live=1
+  f 18 ( 300ms) createvisualtask ShakeMon on target xPx=1 shakes=6 durFrames=12
+  f 30 ( 500ms) particles_released count=1
+  f 30 ( 500ms) waitforvisualfinish waitedFrames=12 -> frame 30
+  f 30 ( 500ms) createsprite gBasicHitSplatSpriteTemplate on target live=1
+  f 30 ( 500ms) createvisualtask ShakeMon on target xPx=1 shakes=6 durFrames=12
+  f 42 ( 700ms) particles_released count=1
+  f 42 ( 700ms) waitforvisualfinish waitedFrames=12 -> frame 42
+  f 42 ( 700ms) end
+PASS  multi-hit DOUBLE_SLAP runs end-to-end  -- frames=42 maxLive=2
+PASS  multi-hit DOUBLE_SLAP particle budget  -- maxLive=2 <= 16
+
+--- Check 3: per-creature wins where present, generic fills where absent ---
+POUND: aquariios -> per-creature (v2); astroleviathan -> generic (generic)
+PASS  POUND aquariios per-creature wins  -- tier=v2
+PASS  POUND astroleviathan generic fills  -- generic script returned for fill
+EMBER: aquariios -> per-creature (v2); astroleviathan -> generic (generic)
+PASS  EMBER aquariios per-creature wins  -- tier=v2
+PASS  EMBER astroleviathan generic fills  -- generic script returned for fill
+SWORDS_DANCE: aquariios -> per-creature (v2); astroleviathan -> generic (generic)
+PASS  SWORDS_DANCE aquariios per-creature wins  -- tier=v2
+PASS  SWORDS_DANCE astroleviathan generic fills  -- generic script returned for fill
+DOUBLE_SLAP: aquariios -> per-creature (v2); astroleviathan -> generic (generic)
+PASS  DOUBLE_SLAP aquariios per-creature wins  -- tier=v2
+PASS  DOUBLE_SLAP astroleviathan generic fills  -- generic script returned for fill
+Coverage summary: roster=51 generic=51 base=51 v2=23 v3Final=2
+PASS  generic covers 51/51  -- 51/51
+PASS  v2/v3 pose counts from disk  -- v2=23 v3Final=2
+
+--- Check 4: particle budget stress (20 spawns, no sync between) ---
+stress: spawns=16 dropped=4 maxLive=16
+PASS  budget never exceeds 16 live  -- maxLive=16
+PASS  excess spawns dropped + logged  -- 16 spawned, 4 dropped
+
+--- Check 5: waitforvisualfinish sync ---
+  f  0 (   0ms) createvisualtask ShakeMon on target xPx=3 shakes=6 durFrames=12
+  f  2 (  33ms) delay frames=2 -> frame 2
+  f 12 ( 200ms) waitforvisualfinish waitedFrames=10 -> frame 12
+  f 12 ( 200ms) playsewithpan SE_M_DOUBLE_SLAP pan=target
+  f 12 ( 200ms) end
+PASS  sync advances clock to latest task end (12)  -- waitforvisualfinish at frame 12
+PASS  next beat starts at/after sync  -- next beat frame 12
+
+--- Check 6: full sweep, all scripts ---
+sweep: runs=572 (incl. 18 two-turn variant runs), errors=0, maxLive overall=2
+PASS  all scripts run without error  -- 572 runs
+PASS  sweep particle budget  -- maxLive=2
+
+=== SUMMARY: 33/33 checks passed, 0 failed ===
+Subroutines in library: sub_GeneralMonHit, sub_HitSplat, sub_ShakeTarget, sub_Lunge, sub_Projectile, sub_StatusPuff, sub_StatFlash, sub_MultiHitBeat, sub_FaintSlide, sub_Impact, sub_DrainOrb, sub_ChargeUp
+Hitstop note: 90 ms hitstop is a Mochiichao addition in ../treatments/battleTreatments.js, NOT in these Pokemon-faithful scripts.

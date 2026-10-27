@@ -1,0 +1,90 @@
+{
+ "tag": "pickAhand20261026",
+ "staging_only": true,
+ "no_pr": true,
+ "no_lock": true,
+ "method_note": "Pick-A hand pass for strikechamp + shellguard only, on trueback-sets-pickA-20261026 bases. Anchors derived per frame from each true-back frame's own silhouette; Mode A impact-only (attack f3, hurt f0); cast glow element-neutral; no claw-swipe from behind; HANDS ONLY, no face overlays; no baked shadows added; no shadow pixels stripped (see shadow_flags). Mechapion built from the TRUE back \u2014 no fallback labelling anywhere.",
+ "source_back_dir": "articulation-back-view/trueback-sets-pickA-20261026",
+ "old_pass_superseded_note": "The trueback-hand-pass-20261026 strikechamp + shellguard sets are SUPERSEDED-HELD (built on generated bases); this pick-A pass replaces them. Held dirs left intact.",
+ "resolved": {
+  "strikechamp": {
+   "mode": "impact-only-mode-A",
+   "sets": [
+    "atk_heavy_knockout_finisher",
+    "atk_physical_champ_punch",
+    "atk_signature_champ_barrage",
+    "atk_special_power_shot",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 6,
+    "copy_frames": 28,
+    "flagged_frames": 2,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_heavy_knockback",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    },
+    {
+     "set": "hurt_near_faint_stagger",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true,
+   "shadow_flag": "None found in pick-A idle00: bottom rows y56-60 are multicolour body/feet pixels (22-23 distinct colours per row), feet end y60, rows 61-63 transparent. No flat grey ground ellipse.",
+   "show_sheet": "strikechamp-pickAhand20261026-show-sheet.png"
+  },
+  "shellguard": {
+   "mode": "impact-only-mode-A",
+   "sets": [
+    "atk_heavy_fortress_crash_finisher",
+    "atk_physical_shell_ram",
+    "atk_signature_shield_barrage",
+    "atk_special_aqua_jet",
+    "hurt_heavy_knockback",
+    "hurt_light_flinch",
+    "hurt_near_faint_stagger",
+    "hurt_status_wobble"
+   ],
+   "counts": {
+    "hand_frames": 7,
+    "copy_frames": 28,
+    "flagged_frames": 1,
+    "cells": 36
+   },
+   "flags": [
+    {
+     "set": "hurt_heavy_knockback",
+     "frame": 0,
+     "reason": "anchor-outside-silhouette"
+    }
+   ],
+   "g1": true,
+   "shadow_flag": "None found in pick-A idle00: bottom rows y56-57 are multicolour body/feet pixels (20-27 distinct colours per row), rows 58-63 transparent. No flat grey ground ellipse.",
+   "show_sheet": "shellguard-pickAhand20261026-show-sheet.png"
+  }
+ },
+ "excluded": {},
+ "shadow_flags": {
+  "strikechamp": "None found in pick-A idle00: bottom rows y56-60 are multicolour body/feet pixels (22-23 distinct colours per row), feet end y60, rows 61-63 transparent. No flat grey ground ellipse.",
+  "shellguard": "None found in pick-A idle00: bottom rows y56-57 are multicolour body/feet pixels (20-27 distinct colours per row), rows 58-63 transparent. No flat grey ground ellipse."
+ },
+ "combined_show_sheet": "combined/pickAhand20261026-combined-show-sheet.png",
+ "shadow_evidence_sheet": null,
+ "totals": {
+  "creatures": 2,
+  "resolved": 2,
+  "excluded": 0,
+  "cells": 72,
+  "hand_frames": 13,
+  "flagged_frames": 3,
+  "gifs": 4
+ }
+}

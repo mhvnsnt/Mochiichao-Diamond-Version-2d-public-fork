@@ -5,6 +5,7 @@ import { SPECIES_DB } from '../../lib/species';
 import { DATA_CARD_ID } from '../../lib/monster-tamer-systems';
 import { MenuHelpLine } from '../game/MenuList';
 import { useMenuSkin, menuSkinVars } from '../../lib/menuSkins';
+import { STORAGE_RULES } from '../../lib/playableWiring';
 
 /**
  * PC storage, v2 structure (pokemon_storage_system_menu.c, structure/
@@ -18,7 +19,7 @@ import { useMenuSkin, menuSkinVars } from '../../lib/menuSkins';
  * data themselves are the existing store lists — no new storage
  * system, no new save field.
  */
-const BOX_SIZE = 30;
+const BOX_SIZE = STORAGE_RULES.slotsPerBox;
 
 // Preserved cursor per box (module scope, like Roster's preserved
 // cursor): a cursor, not game state, so it is not a store/save field.
@@ -49,7 +50,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
   const selectSlot = (i: number) => { boxCursor[safeBox] = i; setSelected(i); };
 
   const moveToParty = (id: string) => {
-    if (party.length >= 6) return;
+    if (party.length >= STORAGE_RULES.partyMax) return;
     const m = pc.find(x => x.id === id);
     if (!m) return;
     useGameStore.setState(s => ({ pc: s.pc.filter(x => x.id !== id), party: [...s.party, m] }));
@@ -117,7 +118,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
               {cardStored[selectedCreature.id] && <div className="text-xs text-teal-300 mt-1">Stored on Data Card — swappable at the PC</div>}
               <div className="flex flex-wrap gap-2 mt-3">
                 <button
-                  disabled={party.length >= 6}
+                  disabled={party.length >= STORAGE_RULES.partyMax}
                   onClick={() => setConfirm({ kind: 'withdraw', id: selectedCreature.id, name: selectedCreature.nickname })}
                   className="game-button px-3 py-2 text-xs min-h-[48px]"
                 >

@@ -3,6 +3,10 @@ import { useGameStore } from "../store/gameStore";
 import { getSaves, saveGame, SaveEntry, loadGame } from "../lib/saveSystem";
 import { useMenuSkin, menuSkinVars } from "../lib/menuSkins";
 
+// Save rows show a place name, never tile coordinates (Pokemon save screens
+// show location + time). Sector ids map to their place names here.
+const MAP_DISPLAY_NAMES: Record<string, string> = { sector0: "Boot Harbor" };
+
 interface SaveMenuProps {
   onClose: () => void;
 }
@@ -83,7 +87,7 @@ export default function SaveMenu({ onClose }: SaveMenuProps) {
                          <span className="text-yellow-400 font-bold">{save.label}</span>
                       </div>
                       <div className="text-gray-400 text-xs">
-                        {new Date(save.timestamp).toLocaleString()} • Px: {save.data.playerPos.x}, Py: {save.data.playerPos.y}
+                        {new Date(save.timestamp).toLocaleString()} • {MAP_DISPLAY_NAMES[save.data.currentMap] || save.data.currentMap || save.label}
                       </div>
                     </div>
                     <button 

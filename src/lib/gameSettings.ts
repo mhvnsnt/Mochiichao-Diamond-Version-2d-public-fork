@@ -44,15 +44,19 @@ export interface GameSettings {
   frame: number;
   /** Font ids from src/lib/fonts.ts, six independent placements
    *  (Mars font correction, 2026-10-25 18:22/18:30 CDT, overrides
-   *  the 2-row version): MAIN = titles/menus/headings/UI labels
-   *  (true starting default Yagiza); MENU = menu selection row text
-   *  (separate row, also Yagiza); DIALOGUE = dialogue boxes/NPC
-   *  talk/body text (01 Digitall); SMALL = small text, Pokemon
-   *  FONT_SMALL slot (01 Digitall); BOLD = bold headings/action
-   *  buttons, FONT_BOLD slot (Yagiza); BATTLE = battle log/HUD
+   *  the 2-row version; Mars readability order, 2026-10-26):
+   *  MAIN = titles/menus/headings/UI labels (Yagiza);
+   *  MENU = menu selection row text (Pokemon Base, readable
+   *  default — was Yagiza); DIALOGUE = dialogue boxes/NPC
+   *  talk/body text (Pokemon Base, readable default — was
+   *  01 Digitall); SMALL = small text, Pokemon FONT_SMALL slot
+   *  (01 Digitall); BOLD = bold headings/action buttons,
+   *  FONT_BOLD slot (Yagiza); BATTLE = battle log/HUD
    *  (01 Digitall). Every row cycles the full font list
-   *  independently. DIAMOND VERSION subtitle font is PINNED (see
-   *  PINNED_SUBTITLE_FONT in fonts.ts) — no font row touches it.
+   *  independently, so both groups (Pokemon Base/slots + Mars's
+   *  chosen fonts) are available on every row. DIAMOND VERSION
+   *  subtitle font is PINNED (see PINNED_SUBTITLE_FONT in
+   *  fonts.ts) — no font row touches it.
    *  Never a Pokemon font file. */
   mainFont: string;
   menuFont: string;
@@ -100,8 +104,8 @@ export const DEFAULT_SETTINGS: GameSettings = {
   buttonMode: 'NORMAL',
   frame: 1,
   mainFont: 'yagiza',
-  menuFont: 'yagiza',
-  dialogueFont: '01-digitall',
+  menuFont: 'pokemon-base',
+  dialogueFont: 'pokemon-base',
   smallFont: '01-digitall',
   boldFont: 'yagiza',
   battleFont: '01-digitall',

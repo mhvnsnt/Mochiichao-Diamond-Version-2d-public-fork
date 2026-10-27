@@ -16,6 +16,7 @@ import DialogueBox from "../components/game/DialogueBox";
 import { isConfirmKey } from "../lib/buttonMode";
 import { slotForNpc } from "../lib/humanSheets";
 import { personaPresentationForNpc } from "../lib/personaDialogue";
+import { playMusic } from "../lib/music";
 
 const TILE_SIZE = 40; // match PDF size because it renders better in viewports
 
@@ -92,8 +93,9 @@ export function hexTeamMember(playerSpeciesId: string): any | null {
  * with createMochii at the map level, so trainer, wild and player
  * creatures all use the same stat system and the same existing
  * species base stats — no new stats invented. Members whose id/name
- * do NOT match SPECIES_DB (e.g. Bug Catcher Rick's team lists id
- * "004" named "Squirmite", while SPECIES_DB "004" is Razorgater)
+ * do NOT match SPECIES_DB (e.g. Bug Catcher Rick's team now lists id
+ * "016" named "Squirmite", which has no SPECIES_DB entry yet, so it
+ * stays on map stats until a 016 code entry exists)
  * are left on their map stats unchanged and flagged in the PR body
  * as pre-existing map-data mismatches, not silently renamed.
  */
@@ -197,6 +199,17 @@ export default function WorldEngine({ setView, setBattleEnemy }: { setView?: any
   const buttonMode = useGameStore(s => s.settings.buttonMode);
 
   const [screen, setScreen] = useState("overworld"); 
+
+  // Wiring Batch 2 (2026-10-26): world / battle music follows the live
+  // screen. battle -> battle track, overworld -> world track. Other
+  // screens (dialogue, menus, save) leave the current track alone, so
+  // music keeps playing under pause/menus. With no world/battle file
+  // on main yet, both entries are null-src silence (see music.ts) —
+  // the calls land now so the tracks start the day files land.
+  useEffect(() => {
+    if (screen === "battle") playMusic("battle");
+    else if (screen === "overworld") playMusic("world");
+  }, [screen]);
 
   const [playerDir, setPlayerDir] = useState("down");
   const [playerName, setPlayerName] = useState("Netrunner");
