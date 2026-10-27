@@ -1,0 +1,115 @@
+{
+  "atlas": "junkyard-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      24,
+      557
+    ],
+    [
+      582,
+      1096
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        232,
+        486
+      ],
+      [
+        701,
+        1022
+      ],
+      [
+        1248,
+        1500
+      ],
+      [
+        1727,
+        2009
+      ]
+    ],
+    [
+      [
+        253,
+        488
+      ],
+      [
+        715,
+        988
+      ],
+      [
+        1241,
+        1475
+      ],
+      [
+        1732,
+        2001
+      ]
+    ]
+  ],
+  "world": "0:0,0:2,1:0,1:2",
+  "steps": "0:1,0:3,1:1,1:3",
+  "walk": "media-generation-junkyard-walk-frames-v1-2026-1-0-8eeaba09-c0bb-428a-84ce-c466db7237a1.webp",
+  "battle": "media-generation-junkyard-battle-front-v1-2026-0-66e9481a-d3d0-4f1a-9ec2-f559073c0c2a.webp",
+  "portrait": "media-generation-junkyard-portrait-v1-2026-10-2-0-3b0e3f3c-af8e-499e-a73a-640497b36967.webp"
+}
