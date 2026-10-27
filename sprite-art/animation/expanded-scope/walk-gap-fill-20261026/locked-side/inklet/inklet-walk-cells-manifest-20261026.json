@@ -1,0 +1,48 @@
+{
+ "creature": "inklet",
+ "roster_id": "026",
+ "date": "2026-10-26",
+ "status": "STAGED ONLY, show-first, no PR, no lock",
+ "fills": "Locked-manifest side gap: 0 walk_side/overworld_side roles before; 2 new cells now staged",
+ "cells": [
+  {
+   "cell": 11,
+   "role": "overworld_side",
+   "file": "inklet_walk_side_0_20261026.png",
+   "size": "64x64 RGBA",
+   "source": "walk-frames/inklet/inklet_walk_left_0.png",
+   "source_md5": "0f8cda174d8e6492d07bad604c9f4b5b",
+   "cell_md5": "0f8cda174d8e6492d07bad604c9f4b5b",
+   "pixel_identical": true,
+   "bbox": [
+    9,
+    0,
+    54,
+    64
+   ]
+  },
+  {
+   "cell": 12,
+   "role": "overworld_side_2",
+   "file": "inklet_walk_side_1_20261026.png",
+   "size": "64x64 RGBA",
+   "source": "walk-frames/inklet/inklet_walk_left_1.png",
+   "source_md5": "fcfb20fc99b5a1455b3247a96e20d6e0",
+   "cell_md5": "fcfb20fc99b5a1455b3247a96e20d6e0",
+   "pixel_identical": true,
+   "bbox": [
+    10,
+    0,
+    54,
+    64
+   ]
+  }
+ ],
+ "format_note": "Matches locked sheet format: 64x64 RGBA cells, roles overworld_side / overworld_side_2 (same convention as dorowani, ashemit, finblade). Does NOT modify the locked atlas or locked manifest -- new dated files + this manifest only.",
+ "provenance_honest": "Promoted from the creature's own existing side-stride frames, NOT newly drawn poses. If Mars wants newly drawn side poses instead, that is a follow-up order.",
+ "shadow_check": "Jar base occupies rows 56-63 (jar body itself, same base as the down frame); no separate shadow ellipse beneath the jar. No baked shadow.",
+ "pose_caveat": "walk.json: jar identical in all directions; direction reads only from the octopus inside (face/profile). Left pair shows the profile octopus.",
+ "palette_note": "0 new colours vs the creature's own walk-frames source (pixel-identical copy, md5-verified). Colours not present in the locked cells dir are the walk-frames palette itself, not invented here; see combined report for per-creature counts.",
+ "gif": "inklet-walk-cycle-20261026.gif (2 frames at 3x, 300ms/frame -- preview timing only, not a game timing claim)",
+ "before_after": "inklet-walk-before-after-20261026.png"
+}
