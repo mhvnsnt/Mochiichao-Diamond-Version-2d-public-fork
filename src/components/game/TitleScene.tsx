@@ -85,6 +85,7 @@ export default function TitleScene({
   caption,
   startPrompt = false,
   exitKind = 'none',
+  hideBackground = false,
 }: {
   biome?: TitleBiomeId;
   figureUrl?: string;
@@ -118,6 +119,17 @@ export default function TitleScene({
    *  (startPrompt=true only) sets the internal exit to 'normal'
    *  90 frames after a press, so a press IS input-triggered there. */
   exitKind?: PlatinumExitKind;
+  /** Interchangeable start screens only (TitleStartScreen): when
+   *  true, skip the painted bgSprite layer AND the Pixi sky/ground/
+   *  tuft/shimmer fallback, so a video layer behind this canvas
+   *  shows through the transparent canvas. Drift, clouds, weather,
+   *  figure, foreground frame, card effects, and action bursts
+   *  all keep running. Default false: every existing caller renders
+   *  byte-identically in behaviour, and the locked default never
+   *  passes this prop. The fallback rectangles MUST be skipped too:
+   *  skipping only bgSprite would leave the sky/ground rectangles
+   *  covering the video. */
+  hideBackground?: boolean;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [startVisible, setStartVisible] = useState(true);
@@ -198,7 +210,7 @@ export default function TitleScene({
       let bgSprite: Sprite | null = null;
       let bgBaseScale = 1;
       let rippleSprite: Sprite | null = null;
-      if (b.backgroundImage) {
+      if (b.backgroundImage && !hideBackground) {
         try {
           const bgTex: Texture = await Assets.load(b.backgroundImage);
           const bg = new Sprite(bgTex);
@@ -270,7 +282,7 @@ export default function TitleScene({
       // Layer 1+2: sky + ground, Pixi-drawn, biome palette only.
       // Skipped when a painting is showing; kept as the fallback
       // for biomes whose batch has not landed yet.
-      if (!painted) {
+      if (!painted && !hideBackground) {
         const sky = new Graphics();
         sky.rect(0, 0, W, groundY).fill(b.sky);
         sky.rect(0, 0, W, Math.floor(groundY / 2)).fill(b.sky2);
@@ -280,14 +292,14 @@ export default function TitleScene({
         ground.rect(0, groundY, W, 2).fill(b.groundLine);
         scene.addChild(ground);
       }
-      if (b.tufts && !painted) {
+      if (b.tufts && !painted && !hideBackground) {
         const tufts = new Graphics();
         for (let x = 8; x < W; x += 34) {
           tufts.moveTo(x, groundY + 22).lineTo(x + 3, groundY + 8).lineTo(x + 6, groundY + 22).fill(b.groundLine);
         }
         scene.addChild(tufts);
       }
-      if (b.shimmer && !painted) {
+      if (b.shimmer && !painted && !hideBackground) {
         const shim = new Graphics();
         for (let x = 0; x < W; x += 44) shim.rect(x, groundY + 14, 22, 2).fill(0xffffff);
         shim.alpha = 0.5;
@@ -876,7 +888,7 @@ export default function TitleScene({
       });
     });
     return () => { cancelled = true; app.destroy(true); };
-  }, [biome, figureUrl, figureCycleUrls, figureCycleMs, figureName, fireTrail]);
+  }, [biome, figureUrl, figureCycleUrls, figureCycleMs, figureName, fireTrail, hideBackground]);
 
   return (
     <div className="w-full">
