@@ -388,3 +388,43 @@ at show/production/CANON-SIGNATURE-ATTACKS.md. Stale display-
 name references in game/show docs were swept and updated in
 the same PR; historical log entries before this one keep the
 old names as written (append-only history).
+
+## GAMEDATA ISLAND RENAME (2026-10-27)
+Owner order (2026-10-27): the src/world prototype island is
+renamed NOW, not left as debt. Scope: src/world/GameData.ts and
+src/world/FullWorldMaps.ts ONLY - the two files share one
+Pokemon-named move vocabulary (GameData's move dictionary, keyed
+by move name, plus team moves lists and hmNeeded/hmReward
+field-move keys in FullWorldMaps); the island is not wired to the
+live move table. Dictionary keys and every internal reference
+were renamed together; verified zero occurrences of any old name
+remain in either file, and both files parse clean under tsc
+(only the expected unresolved ./WorldConstants import).
+LOCKED canon names applied verbatim (identity/stats-matched to
+PR #363): Aqua Jet -> Hydro Rush, Earthquake -> Tremor,
+Aqua Shot -> Water Orb (FullWorldMaps team list; the island
+dictionary holds no Aqua Shot key), Vine Whip -> Vine Lash,
+Gust -> Gust Wave. OWNER-LOCKED names given 2026-10-27:
+Water Gun -> Aqua Blast, Hydro Pump -> Water Jet (picked over
+Water Stream), Surf -> Wave (RARE class - HM03 origin, Rare-wins
+precedence). DRAFT near-synonyms applied, OWNER APPROVAL
+PENDING (not locked canon; full table at
+show/production/GAMEDATA-ISLAND-RENAME.md): Bubble -> Foam
+Burst, Tail Whip -> Tail Flick, Metal Claw -> Chrome Claw
+(island stats 50/95 match source Metal Claw, not live
+Metal Strike 50/100 - distinct move, drafted), Leer -> Stare
+Down, Scratch -> Swipe, Growl -> Rumble, Pound -> Thump,
+String Shot -> Silk Shot, Shadow Sneak -> Shade Step,
+Metal Sound -> Chrome Screech, Iron Defense -> Chrome Guard,
+Shell Smash -> Shell Burst, Rock Slide -> Rockfall,
+Dragon Tail -> Drake Tail, Ice Beam -> Frost Beam,
+Bug Bite -> Mite Bite, Slam -> Wallop, Strength -> Might
+(hmReward; RARE class, HM04 origin), Cut -> Slice (hmReward;
+RARE class, HM01 origin). Unchanged: Tackle / Quick Attack /
+Crunch (canon verbatim in the live 36) and the island-original
+names (Ink Splash, Jab, Crush, Water Surge, Dark Tide,
+Reap Claw, Mythic Pulse, Data Rend, Quantum Strike,
+Aura Burst). NOT touched: sprite-art/arena-combat/moveData.js
+and sprite-art/playtest/playtest-step5.js (remaining prototype
+islands, listed in the mapping doc), moves.json, moves.ts,
+decomp_* datasets, history docs.
