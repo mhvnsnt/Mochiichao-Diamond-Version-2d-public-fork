@@ -1,0 +1,306 @@
+== aerobeak-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 229364
+== aquariios-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 282284
+== ashemit-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 229364
+== astroleviathan-cry-v2.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 335204
+== astroleviathan-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 335204
+== chromejaww-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 264644
+== cocoonode-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 229364
+== cragarm-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 299924
+== dorowani-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 264644
+== dreadtoise-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 317564
+== duneclaw-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 264644
+== duskfiend-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 299924
+== finblade-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== floatcalf-cry-v2.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== floatcalf-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== gabu-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724
+== gearkid-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724
+== gorokappa-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 317564
+== inklet-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 229364
+== kickmaster-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== kittember-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 229364
+== krakenox-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 335204
+== manticlaw-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 299924
+== mechapion-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 264644
+== megalochrome-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 317564
+== mochii-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724
+== mothrix-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 264644
+== mythar-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 352844
+== oblivirex-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 335204
+== pebblefist-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== pixilite-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724
+== punchkid-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724
+== pupbble-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724
+== pyromonk-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 264644
+== pyropaw-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 229364
+== quakehound-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 317564
+== razorgater-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 264644
+== reaperdile-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 317564
+== shellguard-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== sproutle-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724
+== squirmite-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724
+== stormtalon-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 299924
+== strikechamp-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== terradog-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== terrapod-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 335204
+== tiidebiite-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== toxitacle-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 264644
+== tyrage-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 247000
+== wispkin-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 317564
+== yogiferno-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 317564
+== zephling-cry.wav
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+Content-Type: audio/wav
+x-content-type-options: nosniff
+Content-Length: 211724

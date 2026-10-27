@@ -1,0 +1,6 @@
+live main: a931294b3e0a6fab5f208d2554fa3aab19aa9daa (expected a931294b3e0a6fab5f208d2554fa3aab19aa9daa)
+main TitleScene sha: ec54579a1594993cff7c70002c2c8399fa4b7d52 (expected ec54579a1594993cff7c70002c2c8399fa4b7d52)
+branch feature/title-cry-gate-10-20261026 -> a931294b3e0a6fab5f208d2554fa3aab19aa9daa
+UPLOADED src/lib/titleCryGate.ts -> fecaf85a7e84179fee100f208002ede2b3d3c575
+UPLOADED src/components/game/TitleScene.tsx -> 4026e548235d74f925de74995505fb69080a161b
+ALL 2 FILES UPLOADED

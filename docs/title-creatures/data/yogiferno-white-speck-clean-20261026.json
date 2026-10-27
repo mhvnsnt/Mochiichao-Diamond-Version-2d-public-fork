@@ -1,0 +1,767 @@
+{
+ "source": "/home/hatch/workspace/mochiichao-work/title-creatures-9/repo/src/assets/title/yogiferno-walk-cutout.png",
+ "size": [
+  145,
+  190
+ ],
+ "main_px": 14410,
+ "speck_components": 50,
+ "speck_px_total": 113,
+ "removed_px": 113,
+ "speck_px_left_untouched": 0,
+ "changed_px": 113,
+ "main_changed": 0,
+ "nonspeck_changed": 0,
+ "components": [
+  {
+   "comp": 1,
+   "size": 19,
+   "x_min": 13,
+   "x_max": 17,
+   "y_min": 172,
+   "y_max": 181,
+   "nearwhite_gt235": 19,
+   "min_channel": 240,
+   "mean_rgb": [
+    243.8,
+    244.2,
+    241.4
+   ]
+  },
+  {
+   "comp": 2,
+   "size": 10,
+   "x_min": 13,
+   "x_max": 14,
+   "y_min": 164,
+   "y_max": 169,
+   "nearwhite_gt235": 10,
+   "min_channel": 240,
+   "mean_rgb": [
+    245.1,
+    245.2,
+    241.3
+   ]
+  },
+  {
+   "comp": 3,
+   "size": 6,
+   "x_min": 133,
+   "x_max": 137,
+   "y_min": 127,
+   "y_max": 129,
+   "nearwhite_gt235": 6,
+   "min_channel": 239,
+   "mean_rgb": [
+    245.0,
+    243.3,
+    241.3
+   ]
+  },
+  {
+   "comp": 4,
+   "size": 5,
+   "x_min": 132,
+   "x_max": 133,
+   "y_min": 29,
+   "y_max": 32,
+   "nearwhite_gt235": 5,
+   "min_channel": 237,
+   "mean_rgb": [
+    241.0,
+    242.6,
+    241.4
+   ]
+  },
+  {
+   "comp": 5,
+   "size": 4,
+   "x_min": 46,
+   "x_max": 47,
+   "y_min": 120,
+   "y_max": 121,
+   "nearwhite_gt235": 4,
+   "min_channel": 241,
+   "mean_rgb": [
+    241.5,
+    241.5,
+    241.5
+   ]
+  },
+  {
+   "comp": 6,
+   "size": 3,
+   "x_min": 144,
+   "x_max": 144,
+   "y_min": 6,
+   "y_max": 8,
+   "nearwhite_gt235": 3,
+   "min_channel": 240,
+   "mean_rgb": [
+    243.3,
+    244.0,
+    241.0
+   ]
+  },
+  {
+   "comp": 7,
+   "size": 3,
+   "x_min": 61,
+   "x_max": 61,
+   "y_min": 42,
+   "y_max": 44,
+   "nearwhite_gt235": 3,
+   "min_channel": 241,
+   "mean_rgb": [
+    244.7,
+    241.7,
+    246.0
+   ]
+  },
+  {
+   "comp": 8,
+   "size": 3,
+   "x_min": 128,
+   "x_max": 128,
+   "y_min": 88,
+   "y_max": 90,
+   "nearwhite_gt235": 3,
+   "min_channel": 242,
+   "mean_rgb": [
+    246.0,
+    244.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 9,
+   "size": 3,
+   "x_min": 139,
+   "x_max": 140,
+   "y_min": 125,
+   "y_max": 126,
+   "nearwhite_gt235": 3,
+   "min_channel": 242,
+   "mean_rgb": [
+    244.3,
+    245.3,
+    242.0
+   ]
+  },
+  {
+   "comp": 10,
+   "size": 3,
+   "x_min": 123,
+   "x_max": 124,
+   "y_min": 135,
+   "y_max": 137,
+   "nearwhite_gt235": 3,
+   "min_channel": 242,
+   "mean_rgb": [
+    247.0,
+    246.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 11,
+   "size": 3,
+   "x_min": 29,
+   "x_max": 30,
+   "y_min": 152,
+   "y_max": 153,
+   "nearwhite_gt235": 3,
+   "min_channel": 241,
+   "mean_rgb": [
+    244.3,
+    244.7,
+    241.7
+   ]
+  },
+  {
+   "comp": 12,
+   "size": 3,
+   "x_min": 26,
+   "x_max": 27,
+   "y_min": 153,
+   "y_max": 154,
+   "nearwhite_gt235": 3,
+   "min_channel": 241,
+   "mean_rgb": [
+    242.7,
+    243.3,
+    241.3
+   ]
+  },
+  {
+   "comp": 13,
+   "size": 2,
+   "x_min": 70,
+   "x_max": 71,
+   "y_min": 34,
+   "y_max": 35,
+   "nearwhite_gt235": 2,
+   "min_channel": 241,
+   "mean_rgb": [
+    244.0,
+    244.5,
+    241.5
+   ]
+  },
+  {
+   "comp": 14,
+   "size": 2,
+   "x_min": 134,
+   "x_max": 135,
+   "y_min": 34,
+   "y_max": 34,
+   "nearwhite_gt235": 2,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 15,
+   "size": 2,
+   "x_min": 67,
+   "x_max": 67,
+   "y_min": 39,
+   "y_max": 40,
+   "nearwhite_gt235": 2,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 16,
+   "size": 2,
+   "x_min": 54,
+   "x_max": 54,
+   "y_min": 66,
+   "y_max": 67,
+   "nearwhite_gt235": 2,
+   "min_channel": 241,
+   "mean_rgb": [
+    241.5,
+    246.0,
+    249.5
+   ]
+  },
+  {
+   "comp": 17,
+   "size": 2,
+   "x_min": 126,
+   "x_max": 127,
+   "y_min": 85,
+   "y_max": 85,
+   "nearwhite_gt235": 2,
+   "min_channel": 241,
+   "mean_rgb": [
+    244.0,
+    244.5,
+    241.5
+   ]
+  },
+  {
+   "comp": 18,
+   "size": 2,
+   "x_min": 132,
+   "x_max": 132,
+   "y_min": 94,
+   "y_max": 95,
+   "nearwhite_gt235": 2,
+   "min_channel": 239,
+   "mean_rgb": [
+    244.0,
+    242.0,
+    240.0
+   ]
+  },
+  {
+   "comp": 19,
+   "size": 2,
+   "x_min": 142,
+   "x_max": 143,
+   "y_min": 126,
+   "y_max": 126,
+   "nearwhite_gt235": 2,
+   "min_channel": 240,
+   "mean_rgb": [
+    240.5,
+    240.5,
+    240.5
+   ]
+  },
+  {
+   "comp": 20,
+   "size": 2,
+   "x_min": 29,
+   "x_max": 30,
+   "y_min": 150,
+   "y_max": 150,
+   "nearwhite_gt235": 2,
+   "min_channel": 241,
+   "mean_rgb": [
+    244.0,
+    244.5,
+    241.5
+   ]
+  },
+  {
+   "comp": 21,
+   "size": 2,
+   "x_min": 144,
+   "x_max": 144,
+   "y_min": 171,
+   "y_max": 172,
+   "nearwhite_gt235": 2,
+   "min_channel": 242,
+   "mean_rgb": [
+    244.0,
+    243.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 22,
+   "size": 2,
+   "x_min": 94,
+   "x_max": 94,
+   "y_min": 186,
+   "y_max": 187,
+   "nearwhite_gt235": 2,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 23,
+   "size": 1,
+   "x_min": 130,
+   "x_max": 130,
+   "y_min": 26,
+   "y_max": 26,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 24,
+   "size": 1,
+   "x_min": 138,
+   "x_max": 138,
+   "y_min": 37,
+   "y_max": 37,
+   "nearwhite_gt235": 1,
+   "min_channel": 240,
+   "mean_rgb": [
+    240.0,
+    240.0,
+    240.0
+   ]
+  },
+  {
+   "comp": 25,
+   "size": 1,
+   "x_min": 70,
+   "x_max": 70,
+   "y_min": 38,
+   "y_max": 38,
+   "nearwhite_gt235": 1,
+   "min_channel": 241,
+   "mean_rgb": [
+    243.0,
+    244.0,
+    241.0
+   ]
+  },
+  {
+   "comp": 26,
+   "size": 1,
+   "x_min": 139,
+   "x_max": 139,
+   "y_min": 39,
+   "y_max": 39,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 27,
+   "size": 1,
+   "x_min": 64,
+   "x_max": 64,
+   "y_min": 41,
+   "y_max": 41,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 28,
+   "size": 1,
+   "x_min": 58,
+   "x_max": 58,
+   "y_min": 58,
+   "y_max": 58,
+   "nearwhite_gt235": 1,
+   "min_channel": 241,
+   "mean_rgb": [
+    241.0,
+    243.0,
+    244.0
+   ]
+  },
+  {
+   "comp": 29,
+   "size": 1,
+   "x_min": 53,
+   "x_max": 53,
+   "y_min": 70,
+   "y_max": 70,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    246.0,
+    244.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 30,
+   "size": 1,
+   "x_min": 132,
+   "x_max": 132,
+   "y_min": 79,
+   "y_max": 79,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 31,
+   "size": 1,
+   "x_min": 124,
+   "x_max": 124,
+   "y_min": 89,
+   "y_max": 89,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    247.0,
+    242.0,
+    243.0
+   ]
+  },
+  {
+   "comp": 32,
+   "size": 1,
+   "x_min": 142,
+   "x_max": 142,
+   "y_min": 98,
+   "y_max": 98,
+   "nearwhite_gt235": 1,
+   "min_channel": 241,
+   "mean_rgb": [
+    241.0,
+    243.0,
+    244.0
+   ]
+  },
+  {
+   "comp": 33,
+   "size": 1,
+   "x_min": 144,
+   "x_max": 144,
+   "y_min": 98,
+   "y_max": 98,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    244.0,
+    245.0
+   ]
+  },
+  {
+   "comp": 34,
+   "size": 1,
+   "x_min": 46,
+   "x_max": 46,
+   "y_min": 114,
+   "y_max": 114,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 35,
+   "size": 1,
+   "x_min": 144,
+   "x_max": 144,
+   "y_min": 124,
+   "y_max": 124,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 36,
+   "size": 1,
+   "x_min": 124,
+   "x_max": 124,
+   "y_min": 125,
+   "y_max": 125,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    244.0
+   ]
+  },
+  {
+   "comp": 37,
+   "size": 1,
+   "x_min": 46,
+   "x_max": 46,
+   "y_min": 129,
+   "y_max": 129,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 38,
+   "size": 1,
+   "x_min": 50,
+   "x_max": 50,
+   "y_min": 129,
+   "y_max": 129,
+   "nearwhite_gt235": 1,
+   "min_channel": 241,
+   "mean_rgb": [
+    241.0,
+    241.0,
+    241.0
+   ]
+  },
+  {
+   "comp": 39,
+   "size": 1,
+   "x_min": 45,
+   "x_max": 45,
+   "y_min": 139,
+   "y_max": 139,
+   "nearwhite_gt235": 1,
+   "min_channel": 241,
+   "mean_rgb": [
+    241.0,
+    241.0,
+    241.0
+   ]
+  },
+  {
+   "comp": 40,
+   "size": 1,
+   "x_min": 18,
+   "x_max": 18,
+   "y_min": 158,
+   "y_max": 158,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 41,
+   "size": 1,
+   "x_min": 21,
+   "x_max": 21,
+   "y_min": 158,
+   "y_max": 158,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    245.0,
+    245.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 42,
+   "size": 1,
+   "x_min": 80,
+   "x_max": 80,
+   "y_min": 161,
+   "y_max": 161,
+   "nearwhite_gt235": 1,
+   "min_channel": 241,
+   "mean_rgb": [
+    243.0,
+    244.0,
+    241.0
+   ]
+  },
+  {
+   "comp": 43,
+   "size": 1,
+   "x_min": 80,
+   "x_max": 80,
+   "y_min": 165,
+   "y_max": 165,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 44,
+   "size": 1,
+   "x_min": 132,
+   "x_max": 132,
+   "y_min": 169,
+   "y_max": 169,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 45,
+   "size": 1,
+   "x_min": 140,
+   "x_max": 140,
+   "y_min": 172,
+   "y_max": 172,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    242.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 46,
+   "size": 1,
+   "x_min": 16,
+   "x_max": 16,
+   "y_min": 173,
+   "y_max": 173,
+   "nearwhite_gt235": 1,
+   "min_channel": 241,
+   "mean_rgb": [
+    241.0,
+    241.0,
+    241.0
+   ]
+  },
+  {
+   "comp": 47,
+   "size": 1,
+   "x_min": 17,
+   "x_max": 17,
+   "y_min": 175,
+   "y_max": 175,
+   "nearwhite_gt235": 1,
+   "min_channel": 241,
+   "mean_rgb": [
+    241.0,
+    241.0,
+    243.0
+   ]
+  },
+  {
+   "comp": 48,
+   "size": 1,
+   "x_min": 16,
+   "x_max": 16,
+   "y_min": 181,
+   "y_max": 181,
+   "nearwhite_gt235": 1,
+   "min_channel": 239,
+   "mean_rgb": [
+    241.0,
+    241.0,
+    239.0
+   ]
+  },
+  {
+   "comp": 49,
+   "size": 1,
+   "x_min": 17,
+   "x_max": 17,
+   "y_min": 184,
+   "y_max": 184,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    245.0,
+    245.0,
+    242.0
+   ]
+  },
+  {
+   "comp": 50,
+   "size": 1,
+   "x_min": 52,
+   "x_max": 52,
+   "y_min": 189,
+   "y_max": 189,
+   "nearwhite_gt235": 1,
+   "min_channel": 242,
+   "mean_rgb": [
+    242.0,
+    244.0,
+    243.0
+   ]
+  }
+ ]
+}

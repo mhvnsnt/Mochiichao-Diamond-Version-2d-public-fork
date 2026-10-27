@@ -1,0 +1,76 @@
+
+added 2 packages in 21s
+
+40 packages are looking for funding
+  run `npm fund` for details
+INSTALL exit=0
+
+> react-example@0.0.0 build
+> vite build
+
+vite v6.4.2 building for production...
+transforming...
+✓ 877 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                      1.08 kB │ gzip:   0.58 kB
+dist/assets/yagiza-D6d9Cl_X.woff                                     5.10 kB
+dist/assets/gabu_sheet-COMmm9m-.png                                 13.31 kB
+dist/assets/dorowani_sheet-kLLpBIf0.png                             13.52 kB
+dist/assets/yagiza-B4lZD0hS.ttf                                     19.54 kB
+dist/assets/orbitron-variable-DbOLnAFv.ttf                          38.58 kB
+dist/assets/yogiferno-walk-cutout-BbRHKhbL.png                      40.28 kB
+dist/assets/01-digitall-DzaQozxN.ttf                                48.83 kB
+dist/assets/turret-road-regular-CngolciV.ttf                        51.68 kB
+dist/assets/titan-one-regular-xv9-ylzg.ttf                          55.71 kB
+dist/assets/kittember-walk-cutout-Bt49ZrRh.png                      57.58 kB
+dist/assets/dangrek-regular-BwBUhrsk.ttf                            62.46 kB
+dist/assets/michroma-regular-1RB_5SuF.ttf                           64.34 kB
+dist/assets/audiowide-regular-CT1qxLfl.ttf                          69.92 kB
+dist/assets/player-a-atlas-64x64-Citygx0q.png                       74.54 kB
+dist/assets/sniglet-regular-DDnC1S5A.ttf                            75.21 kB
+dist/assets/gabu-walk-cutout-id5XfjLO.png                          103.95 kB
+dist/assets/tyrage-walk-cutout-DozfJ2Ik.png                        104.28 kB
+dist/assets/sproutle-walk-cutout-wUctk_2k.png                      106.80 kB
+dist/assets/razorgater-walk-cutout-Bn06gIpu.png                    107.53 kB
+dist/assets/press-start-2p-regular-2BZhbCiP.ttf                    118.20 kB
+dist/assets/bungee-regular-BbhcPAtb.ttf                            119.00 kB
+dist/assets/dorowani-walk-cutout-Zp7k6g9i.png                      123.42 kB
+dist/assets/wispkin-walk-cutout-CeVGwBbI.png                       129.11 kB
+dist/assets/mochii-walk-cutout-42RJw9rn.png                        131.01 kB
+dist/assets/coiny-regular-DRC8nWmT.ttf                             156.52 kB
+dist/assets/fredoka-variable-uBsOTgB9.ttf                          159.18 kB
+dist/assets/gabu-threequarter-left-cut-Bli8Aj7I.png                218.14 kB
+dist/assets/rubik-bubbles-regular-0wAgw-Ij.ttf                     219.56 kB
+dist/assets/mythar-walk-cutout-drz1MCsr.png                        238.24 kB
+dist/assets/dorowani-player-threequarter-right-cut-D7k7inLT.png    255.23 kB
+dist/assets/title-bg-stone-v2-BadUmzoZ.png                         268.62 kB
+dist/assets/title-bg-forest-v2-TGf-UmnM.png                        290.12 kB
+dist/assets/exo2-variable-COdEkTv1.ttf                             303.94 kB
+dist/assets/title-bg-night-v2-BGY6oyN5.png                         359.74 kB
+dist/assets/title-bg-snow-v2-L1itlabG.png                          366.38 kB
+dist/assets/rajdhani-regular-B5cuMOFH.ttf                          377.86 kB
+dist/assets/title-bg-rain-v2-B-6Tbv0w.png                          381.27 kB
+dist/assets/title-bg-sand-v2-DgYq68Fd.png                          406.78 kB
+dist/assets/title-bg-water-v2-Ax42i_XE.png                         434.19 kB
+dist/assets/title-bg-grass-v2-BcFN1hgd.png                         453.06 kB
+dist/assets/m-heavensent-studios-logo-b2ZtfZzQ.png                 881.11 kB
+dist/assets/index-B_-5TTqk.css                                      57.17 kB │ gzip:  10.56 kB
+dist/assets/Filter-RU0ylot_.js                                       0.90 kB │ gzip:   0.48 kB
+dist/assets/getTexelRangeRects-DOK6Giv3.js                          11.42 kB │ gzip:   3.00 kB
+dist/assets/BitmapFont-ChfzcaPI.js                                  13.06 kB │ gzip:   4.77 kB
+dist/assets/webworkerAll-BNFeSSon.js                                15.19 kB │ gzip:   4.76 kB
+dist/assets/CanvasRenderer-ovbvHkuk.js                              18.44 kB │ gzip:   6.18 kB
+dist/assets/browserAll-BD1D5htc.js                                  44.14 kB │ gzip:  11.47 kB
+dist/assets/RenderTargetSystem-CWTFwqNu.js                          53.93 kB │ gzip:  14.82 kB
+dist/assets/WebGPURenderer-8MQkmPII.js                              56.40 kB │ gzip:  16.14 kB
+dist/assets/WebGLRenderer-cUm6_MJf.js                               73.82 kB │ gzip:  20.23 kB
+dist/assets/index-BZGAI0-q.js                                    1,133.46 kB │ gzip: 316.83 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2m 19s
+BUILD2 exit=0
+GATES2 DONE

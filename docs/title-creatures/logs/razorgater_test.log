@@ -1,0 +1,6 @@
+crop (330, 360) from sheet (2000, 1200)
+importing rembg...
+u2netp done (330, 360) bbox=(35, 44, 300, 310)
+grabcut done fg_px=49322
+ALL DONE
+exit=0
