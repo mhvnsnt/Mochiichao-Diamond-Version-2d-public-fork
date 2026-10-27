@@ -326,8 +326,8 @@ export function lockedMenuEditorConfig(): MenuEditorConfig {
     // picture-vs-proof call on it is still open, and OFF is one
     // toggle in the editor.
     emblems: [
-      { id: "heart-blue", kind: "heart", x: 169, y: 405, w: 63, h: 51, color: "#8cd2ff", visible: true },
-      { id: "heart-pink", kind: "heart", x: 230, y: 637, w: 53, h: 37, color: "#ff96c8", visible: true },
+      { id: "heart-blue", kind: "heart", x: 169, y: 421.5, w: 63, h: 50, color: "#8cd2ff", visible: true },
+      { id: "heart-pink", kind: "heart", x: 230, y: 640.5, w: 53, h: 40, color: "#ff96c8", visible: true },
       { id: "star-top", kind: "star", x: 600, y: 194, w: 41, h: 41, color: "#000000", visible: true },
       { id: "star-left", kind: "star", x: 139, y: 533, w: 45, h: 45, color: "#000000", visible: true },
       { id: "star-right", kind: "star", x: 1059, y: 533, w: 53, h: 53, color: "#000000", visible: true },
