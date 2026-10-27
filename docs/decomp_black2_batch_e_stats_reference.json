@@ -1,0 +1,132 @@
+{
+ "areas": {
+  "source_files": 410,
+  "data_files": 409,
+  "extracted": 409,
+  "skipped_schema": 1,
+  "dropped_fields": [
+   "prop_bundle string values (410-file set: string values dropped, int values kept)",
+   "texture_set string values",
+   "$schema"
+  ]
+ },
+ "matrices": {
+  "source_files": 417,
+  "data_files": 416,
+  "extracted": 416,
+  "skipped_schema": 1,
+  "distinct_model_constants_mapped": 969,
+  "dropped_fields": [
+   "maps cell string values (replaced by anonymous model indices)",
+   "$schema"
+  ]
+ },
+ "scripts": {
+  "source_files": 1289,
+  "data_files": 1289,
+  "extracted": 1289,
+  "skipped_schema": 0,
+  "dropped_comment_lines": 6795,
+  "dropped_include_lines": 1784,
+  "stripped_trailing_comments": 0,
+  "stripped_tokens": 9807,
+  "ref_replacements": 462,
+  "flag_work_ref_replacements": 209,
+  "opcode_segment_scrubs": 568,
+  "distinct_named_flag_consts": 59,
+  "distinct_named_work_consts": 2,
+  "total_source_lines": 180661,
+  "kept_lines": 150342,
+  "dropped_fields": [
+   "all dialogue comment text",
+   "include paths",
+   "text-reference identifiers",
+   "audio constants",
+   "name-bearing constants (mapped to anonymous refs)"
+  ]
+ },
+ "events": {
+  "source_files": 617,
+  "data_files": 615,
+  "extracted": 615,
+  "skipped_schema": 1,
+  "order_list_values_dropped_count": 616,
+  "named_model_codes_mapped": 90,
+  "dropped_fields": [
+   "order.json values (count only kept)",
+   "$schema",
+   "zone string values (mapped to anonymous refs)",
+   "named NPC model codes (mapped to anonymous refs)"
+  ]
+ },
+ "actors": {
+  "source_files": 2952,
+  "data_files": 1008,
+  "extracted": 1008,
+  "skipped_schema": 1,
+  "skipped_art_png": 968,
+  "skipped_art_pal": 968,
+  "skipped_model_nsbmd": 7,
+  "dropped_fields": [
+   "$schema",
+   "all sprite/model bytes"
+  ]
+ },
+ "props": {
+  "source_files": 21321,
+  "data_files": 6331,
+  "extracted": 6331,
+  "skipped_schema": 1,
+  "skipped_model_glb": 6331,
+  "skipped_art_png": 8658,
+  "positions_summarized_records": 7,
+  "dropped_fields": [
+   "$schema",
+   "glb_sha256 (art fingerprint)",
+   "full position arrays (bbox summary kept)",
+   "all model/texture bytes"
+  ]
+ },
+ "trades": {
+  "source_files": 32,
+  "data_files": 31,
+  "extracted": 31,
+  "skipped_schema": 1,
+  "dropped_fields": [
+   "nickname",
+   "trainer_name",
+   "$schema"
+  ],
+  "dropped_name_strings": 62
+ },
+ "places": {
+  "source_files": 155,
+  "data_files": 154,
+  "extracted": 154,
+  "skipped_schema": 1,
+  "dropped_fields": [
+   "name (the only content field; excluded in full)"
+  ],
+  "note": "Structure-only: no content field survives; counts + field presence only."
+ },
+ "maps": {
+  "source_files": 39377,
+  "model_dirs": 1065,
+  "extracted_model_dirs": 1065,
+  "data_json_files": 1066,
+  "terrain_csv_files": 2170,
+  "files_with_extracted_content": 3235,
+  "skipped_schema": 1,
+  "skipped_art_png": 35076,
+  "skipped_model_glb": 1065,
+  "dropped_fields": [
+   "texture_set string values",
+   "$schema",
+   "all texture/model bytes"
+  ]
+ },
+ "_totals": {
+  "batch_e_content_files": 13488,
+  "batch_e_source_files": 66570
+ }
+}
