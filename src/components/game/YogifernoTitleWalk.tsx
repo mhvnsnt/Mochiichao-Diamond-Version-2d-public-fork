@@ -23,6 +23,11 @@ export default function YogifernoTitleWalk({ variant, biome }: { variant: 'walk'
       figureUrl={yogifernoWalkCutout}
       figureAlt="Yogiferno walking"
       figureName="Yogiferno"
+      // Title card owns the prompt: a press plays Yogiferno's own
+      // cry variant (titleCryGate rotation), waits 90 frames, then
+      // drives the white fade. Raw TitleScene renders without
+      // startPrompt stay prompt-less; only this card wrapper opts in.
+      startPrompt
       fireTrail
       caption={`Yogiferno walk — clean cutout (145x190, transparent) + Pixi particles + sine sway, ${resolvedBiome} biome. Fire halo is in the cutout.`}
     />
