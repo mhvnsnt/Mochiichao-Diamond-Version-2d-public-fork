@@ -1,4 +1,16 @@
 import { Move } from "./types";
+import { MOCHIICHAO_MOVES_NEW } from "./generated/mochiichao_moves_catalogue";
+
+// Batch 2 (roster-wins, landed on main via PR #205 as staged data):
+// 84 catalogue moves merged live 2026-10-27 (wiring lane). Names are
+// Mochiichao originals — validated zero key overlap and zero name
+// overlap with the 37 live moves. The cast is a type-level narrowing
+// only: every entry's fields were validated against the Move interface
+// by validate.py at ingest and by moves-batch2.test.ts here (ranges,
+// categories, types, effectChance). The generated catalogue file is
+// left untouched so its provenance stays clean.
+const MOVES_BATCH2: Record<string, Move> =
+  MOCHIICHAO_MOVES_NEW as Record<string, Move>;
 
 export const MOVES_DB: Record<string, Move> = {
   // ── WATER ─────────────────────────────────────────────────
@@ -53,4 +65,6 @@ export const MOVES_DB: Record<string, Move> = {
   POISON_JAB:     { name:"Poison Jab",      type:"POISON",   cat:"Physical", bp:80,  acc:100, pp:20, pri:0, effect:"POISON",      effectChance:20,  anim:"VENOM_STRIKE",   desc:"Stabs with poison appendage. May poison." },
   // ── MYTHIC ────────────────────────────────────────────────
   ORIGIN_VERDICT: { name:"Origin Verdict",  type:"MYTHIC",   cat:"Special",  bp:100, acc:100, pp:10, pri:0, effect:"FORM_TYPE",   effectChance:0,   anim:"ORIGIN_VERDICT", desc:"Countless shots of prism light. Its light follows the form Mythar stands in." },
+  // ── BATCH 2 (roster-wins catalogue, PR #205 data, wired live 2026-10-27) ──
+  ...MOVES_BATCH2,
 };

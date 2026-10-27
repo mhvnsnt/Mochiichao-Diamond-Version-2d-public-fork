@@ -13,18 +13,21 @@
  *
  * The seven systems, in Pokemon's order, with their live status:
  *   (1) Move schema — FireRed shape (effect/power/type/accuracy/PP/
- *       secondary-chance/target/priority/flags) for the 36 game moves
+ *       secondary-chance/target/priority/flags) for the 121 game moves
  *       in moves.ts, plus the 563-key union script table in
  *       moveScripts.json. gameMoveSchema() routes a game move to its
- *       union script through gameMoveScriptMap.json (36/36 on main:
- *       10 exact-id + 26 mapped, 0 unmatched — verified against live
- *       main 2026-10-26, not from a local clone).
+ *       union script through gameMoveScriptMap.json (86/121 on main:
+ *       10 exact-id + 76 mapped, 35 named-unrouted — verified against live
+ *       main 2026-10-27, not from a local clone).
  *   (2) Effect dispatch — resolver effect kinds (none/status/stat/
  *       recoil/multiHit/highCrit/chargeTurn/flinch), applied by
  *       resolveTurn in pipeline order (can-act -> charge -> accuracy
  *       -> damage -> secondary -> recoil -> faint -> end-turn ticks).
- *       All 13 distinct effect strings in moves.ts map to a kind;
- *       none falls through to "none" by accident (see test).
+ *       20 of the 28 distinct effect strings in moves.ts map to a live
+ *       kind; the other 8 (ALL_UP1, CONFUSE, DRAIN, FORM_TYPE, FREEZE,
+ *       PROTECT, SLEEP, TRAP) have no resolver kind -- FORM_TYPE is
+ *       realized in mytharPick.ts instead, the other 7 are named as
+ *       pending in the test, never silent (see test).
  *   (3) Turn order — priority first, then effective Speed (stage-
  *       adjusted, paralysis quarters), then a coin flip on an exact
  *       tie (battle-math orderPair, via resolver orderActions).
@@ -166,7 +169,7 @@ const SCRIPT_MAP = gameMoveScriptMap as unknown as {
   counts: { gameMoves: number; exactId: number; mappedHere: number; totalMatched: number; unmatched: number };
 };
 
-/** The 36 game moves, each with its singles target (35 foe + EARTH_TREMOR allFoes). */
+/** The 121 game moves, each with its singles target (120 foe + EARTH_TREMOR allFoes). */
 export function gameMoveTarget(moveId: string): ResolverMove["target"] {
   return moveId === "EARTH_TREMOR" ? "allFoes" : "foe";
 }
@@ -196,14 +199,14 @@ export function gameMoveSchema(moveId: string): GameMoveSchema | null {
   };
 }
 
-/** All 36 game-move schemas, in moves.ts order. */
+/** All 121 game-move schemas, in moves.ts order. */
 export function allGameMoveSchemas(): GameMoveSchema[] {
   return Object.keys(MOVES_DB)
     .map((id) => gameMoveSchema(id))
     .filter((s): s is GameMoveSchema => s !== null);
 }
 
-/** Script-map counts, straight from the live-main file (36/36, 0 unmatched). */
+/** Script-map counts, straight from the live-main file (86/121, 35 named-unrouted). */
 export function scriptMapCounts(): { gameMoves: number; exactId: number; mappedHere: number; totalMatched: number; unmatched: number } {
   return { ...SCRIPT_MAP.counts };
 }
