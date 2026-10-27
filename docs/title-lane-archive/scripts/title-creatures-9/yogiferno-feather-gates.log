@@ -1,0 +1,32 @@
+=== LINT ===
+
+> react-example@0.0.0 lint
+> tsc --noEmit
+
+LINT_EXIT:0
+=== BUILD ===
+dist/assets/CanvasRenderer-gaKVcP7h.js                                                                             18.44 kB │ gzip:   6.17 kB
+dist/assets/browserAll-B3l4s8fo.js                                                                                 44.14 kB │ gzip:  11.47 kB
+dist/assets/RenderTargetSystem-CKPKFhBX.js                                                                         53.92 kB │ gzip:  14.82 kB
+dist/assets/WebGPURenderer-CM16QnMQ.js                                                                             56.38 kB │ gzip:  16.14 kB
+dist/assets/WebGLRenderer-YEvToEYf.js                                                                              73.81 kB │ gzip:  20.22 kB
+dist/assets/index-DyIpIgK5.js                                                                                   1,970.04 kB │ gzip: 427.51 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3m 35s
+=== VALIDATE ===
+  WARN: Species 009 (Oblivirex): type GROUND is not one of the 12 True Elements (open unification decision)
+  WARN: Species 009 (Oblivirex): type GHOST is not one of the 12 True Elements (open unification decision)
+  WARN: Species 010 (Kittember): type FIRE is not one of the 12 True Elements (open unification decision)
+  WARN: Species 038 (Sproutle): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 039 (Shellguard): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 039 (Shellguard): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Species 040 (Dreadtoise): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 040 (Dreadtoise): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Sheet Dorowani (147): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+  WARN: Sheet Gabu (148): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+
+validate:reference PASSED (warnings are open decisions, not failures).

@@ -1,0 +1,59 @@
+navigating: file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/index.html
+[locked] title reached at step 3
+--- LOCKED probe ---
+{"innerText":"✦ DIAMOND VERSION ✦","hasPressAnyKeyText":false,"hasPressStartText":false,"exactPressAnyKeyElements":[],"fallbackNote":false,"resetBtn":false,"videos":[],"imgAlts":["MOCHIICHAO","M Heavensent Studios"]}
+locked screenshot: true
+setting snow preset via localStorage...
+set: set-ok:title-snow-yogiferno
+key after reload: title-snow-yogiferno
+[snow] title reached at step 3
+--- SNOW probe ---
+{"innerText":"✦ DIAMOND VERSION ✦\nRESET TITLE ✕ (R)","hasPressAnyKeyText":false,"hasPressStartText":false,"exactPressAnyKeyElements":[],"fallbackNote":false,"resetBtn":true,"videos":[{"readyState":4,"error":null,"paused":true,"src":"yogiferno-title-anim-final-ujoB_BFk.mp4"}],"imgAlts":["MOCHIICHAO","M Heavensent Studios"]}
+snow screenshot: true
+--- after Enter on snow title ---
+✦ DIAMOND VERSION ✦
+RESET TITLE ✕ (R)
+--- console messages ---
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[log.warning] []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[log.warning] [.WebGL-0x294037cd800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0x294037cd800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0x294037cd800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[log.warning] [.WebGL-0x294037cd800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+--- exceptions ---
+before: ► NEW GAME
+SETTINGS
+◄ BACK TO TITLE (B)
+after click: ► NEW GAME
+SETTINGS
+◄ BACK TO TITLE (B)
+after Enter: SELECT A SAVE FILE
+Empty slots start fresh. Occupied slots ask before starting over — nothing is erased until you save over a slot.
+SLOT 1
+--- EMPTY ---
+NEW GAME ►
+SLOT 2
+--- EMPTY ---
+NEW GAME ►
+SLOT 3
+--- EMPTY ---
+NEW GAME ►
+◄ BACK
+after Space: SELECT A SAVE FILE
+Empty slots start fresh. Occupied slots ask before starting over — nothing is erased until you save over a slot.
+SLOT 1
+--- EMPTY ---
+NEW GAME ►
+SLOT 2
+--- EMPTY ---
+NEW GAME ►
+SLOT 3
+--- EMPTY ---
+NEW GAME ►
+◄ BACK
+screenshot: true

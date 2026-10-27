@@ -1,0 +1,86 @@
+[locked step 0] "INTRO MOVIE — SCENE 1 / 4 · ANY KEY SKIPS\nM HEAVENSENT STUDIOS\n\nStudio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.\n\nGAP: studio scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 1] "INTRO MOVIE — SCENE 2 / 4 · ANY KEY SKIPS\nWORLD CLOSE-UP\n\nScene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 2] "INTRO MOVIE — SCENE 3 / 4 · ANY KEY SKIPS\nWORLD PAN + CREATURE CLOSE-UPS\n\nScene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[locked step 3] "INTRO MOVIE — SCENE 4 / 4 · ANY KEY SKIPS\nCREATURE FIGHT BEAT\n\nScene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.\n\nGAP: intro scene art — original art needed.\n\nTO TITLE ►\nAny key or tap steps to the next scene."
+[locked step 4] "✦ DIAMOND VERSION ✦\nPRESS ANY KEY\n▼ PRESS ANY KEY ▼"
+--- TITLE (locked, before preset) ---
+✦ DIAMOND VERSION ✦
+PRESS ANY KEY
+▼ PRESS ANY KEY ▼
+--- localStorage before ---
+null
+[preset step 0] "INTRO MOVIE — SCENE 1 / 4 · ANY KEY SKIPS\nM HEAVENSENT STUDIOS\n\nStudio scene — star, sparkles, reveal, presents beat. Mochiichao wording only.\n\nGAP: studio scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 1] "INTRO MOVIE — SCENE 2 / 4 · ANY KEY SKIPS\nWORLD CLOSE-UP\n\nScene 1 — brief close-up of the Mochiichao world (grass/world close-up beat).\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 2] "INTRO MOVIE — SCENE 3 / 4 · ANY KEY SKIPS\nWORLD PAN + CREATURE CLOSE-UPS\n\nScene 2 — panning wide world shot, then close-ups of Mochii and partner creatures.\n\nGAP: intro scene art — original art needed.\n\nNEXT SCENE ►\nAny key or tap steps to the next scene."
+[preset step 3] "INTRO MOVIE — SCENE 4 / 4 · ANY KEY SKIPS\nCREATURE FIGHT BEAT\n\nScene 3 — a creature fight beat: entrance, attack, recoil. No Pokemon art, music, or dialogue is used here.\n\nGAP: intro scene art — original art needed.\n\nTO TITLE ►\nAny key or tap steps to the next scene."
+[preset step 4] "✦ DIAMOND VERSION ✦\nPRESS ANY KEY\nRESET TITLE ✕ (R)\nPreset failed to load — showing fallback. Press R for the locked default title."
+--- TITLE (preset title-grass-sproutle) ---
+✦ DIAMOND VERSION ✦
+PRESS ANY KEY
+RESET TITLE ✕ (R)
+Preset failed to load — showing fallback. Press R for the locked default title.
+--- DOM probes ---
+fallback note present: true
+RESET TITLE button present: true
+video elements: 0
+video src: []
+video readyState: []
+video error: []
+canvas elements: 0
+img count: 3
+--- console messages ---
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[log.error] Failed to load resource: net::ERR_TUNNEL_CONNECTION_FAILED
+[console.warning] API key should be set when using the Gemini API.
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[log.warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio
+[console.error] TypeError: this._cancelResize is not a function
+    at d0.destroy (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:32794)
+    at file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:34211
+    at Array.forEach (<anonymous>)
+    at d0.destroy (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:34189)
+    at file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:507:556041
+    at Mn (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:93703)
+    at sT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:111068)
+    at cc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:110978)
+    at sT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:111280)
+    at cc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:110978)
+[console.error] [PresetTitle] preset title failed, showing fallback: TypeError: this._cancelResize is not a function
+    at d0.destroy (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:32794)
+    at file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:34211
+    at Array.forEach (<anonymous>)
+    at d0.destroy (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:34189)
+    at file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:507:556041
+    at Mn (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:93703)
+    at sT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:111068)
+    at cc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:110978)
+    at sT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:111280)
+    at cc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:110978)
+[console.error] TypeError: this._cancelResize is not a function
+    at d0.destroy (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:32794)
+    at file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:34211
+    at Array.forEach (<anonymous>)
+    at d0.destroy (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:34189)
+    at file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:507:556041
+    at Mn (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:93703)
+    at oT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:111684)
+    at cc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:110916)
+    at sT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:111280)
+    at cc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:110978)
+[console.error] [PresetTitle] preset title failed, showing fallback: TypeError: this._cancelResize is not a function
+    at d0.destroy (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:32794)
+    at file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:34211
+    at Array.forEach (<anonymous>)
+    at d0.destroy (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:82:34189)
+    at file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:507:556041
+    at Mn (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:93703)
+    at oT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:111684)
+    at cc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:110916)
+    at sT (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:111280)
+    at cc (file:///home/hatch/workspace/mochiichao-work/pages-build/main-clone-preset/dist/assets/index-C7BzI7eS.js:49:110978)
+[log.warning] []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+--- exceptions ---

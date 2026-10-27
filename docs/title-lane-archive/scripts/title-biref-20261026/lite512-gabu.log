@@ -1,0 +1,21 @@
+loading BiRefNet-general-lite @512 for crops/gabu-crop.png ...
+session ready, running inference ...
+Traceback (most recent call last):
+  File "/home/hatch/workspace/mochiichao-work/title-biref-20261026/run_biref_lite512.py", line 56, in <module>
+    main()
+  File "/home/hatch/workspace/mochiichao-work/title-biref-20261026/run_biref_lite512.py", line 49, in main
+    out = remove(fh.read(), session=session)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/mochiichao-work/biref-venv/lib/python3.12/site-packages/rembg/bg.py", line 326, in remove
+    masks = session.predict(img, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/mochiichao-work/title-biref-20261026/run_biref_lite512.py", line 28, in predict
+    ort_outs = self.inner_session.run(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/mochiichao-work/biref-venv/lib/python3.12/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py", line 395, in run
+    return self._sess.run(output_names, input_feed, run_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+onnxruntime.capi.onnxruntime_pybind11_state.InvalidArgument: [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Got invalid dimensions for input: input_image for the following indices
+ index: 2 Got: 512 Expected: 1024
+ index: 3 Got: 512 Expected: 1024
+ Please fix either the inputs/outputs or the model.

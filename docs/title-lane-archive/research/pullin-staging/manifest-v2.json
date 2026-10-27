@@ -1,0 +1,512 @@
+{
+  "files": [
+    {
+      "path": "build_poses_v2.py",
+      "bytes": 11779,
+      "sha256": "3d1b98625a19f2f38a41284223e85b993236da34392475afb024119d8a89c696",
+      "kind": "py"
+    },
+    {
+      "path": "build_videos_v2.py",
+      "bytes": 13682,
+      "sha256": "da64453f5bfcbe23b803fbb8bf729717ef2a22e0aafcb617b3fa61005867cbd2",
+      "kind": "py"
+    },
+    {
+      "path": "dorowani-title-anim-v2.mp4",
+      "bytes": 382889,
+      "sha256": "f0a48d3bea0c8e254e33d8b63b812496d3bc64a2f5d7947df0eebea6454c6ee2",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "fix2_poses_v2.py",
+      "bytes": 5504,
+      "sha256": "4a3a0443bef03202f421697e61b2caff92bcae4398ed2427a5734844ed6c79be",
+      "kind": "py"
+    },
+    {
+      "path": "fix3_poses_v2.py",
+      "bytes": 4291,
+      "sha256": "95b030e978368b256e7a20828a72567818dd87db69838def064529b830fa80ca",
+      "kind": "py"
+    },
+    {
+      "path": "fix_poses_v2.py",
+      "bytes": 6591,
+      "sha256": "ffdaddbedecb981f05c1d7f5529e56e359ed5a8580760b450d62a7edc3f25a71",
+      "kind": "py"
+    },
+    {
+      "path": "frames/dorowani-pose-stand.png",
+      "bytes": 123418,
+      "sha256": "a255fbb00af9c0eda45fb28aee1251302968d88f4b89f19f84b173f93b536cbf",
+      "kind": "png",
+      "width": 263,
+      "height": 398,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/dorowani-pose-swim-apart.png",
+      "bytes": 125165,
+      "sha256": "26690edf8362dc2acac2bca9c5f3d95dc282a59a20a62d58c5d0da3d7029c884",
+      "kind": "png",
+      "width": 263,
+      "height": 398,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/dorowani-pose-swim-together.png",
+      "bytes": 127042,
+      "sha256": "a90f696ef7f41f03aa7e158636f94c49b495c5f3c59f4323e4f2a33dfdce521c",
+      "kind": "png",
+      "width": 263,
+      "height": 398,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/gabu-pose-arms-up.png",
+      "bytes": 106161,
+      "sha256": "23c6f3fad7f70c234fb9b22039e3b89424517fef7d06a87b399ae046d7244237",
+      "kind": "png",
+      "width": 292,
+      "height": 295,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/gabu-pose-crouch.png",
+      "bytes": 87090,
+      "sha256": "00623710363f028c2e97de8efacd1b000c9419fefb7771811f7cfc643a291aea",
+      "kind": "png",
+      "width": 292,
+      "height": 295,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/gabu-pose-leaf-throw.png",
+      "bytes": 103856,
+      "sha256": "fd77f69edf97c6b84a99ad2c75c2b0d97b36fe5b555bf3eb252ae39f8a51b4e4",
+      "kind": "png",
+      "width": 292,
+      "height": 295,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/gabu-pose-stand.png",
+      "bytes": 103945,
+      "sha256": "6d10d6f9f8985668af7f56355f76a5c7f76cec7d67c46941d51c864007db29ad",
+      "kind": "png",
+      "width": 292,
+      "height": 295,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/kittember-pose-sit-look.png",
+      "bytes": 45649,
+      "sha256": "894c45949b42586494ab8e69e903810207fac0851ef8c7fc72aa8c0ca42fd2be",
+      "kind": "png",
+      "width": 287,
+      "height": 304,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/kittember-pose-tail-down.png",
+      "bytes": 52154,
+      "sha256": "bb87dd22e6e815df814a487518061a23636f3a3fb3bba45c8fb45ef61205e197",
+      "kind": "png",
+      "width": 287,
+      "height": 304,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/kittember-pose-tail-up.png",
+      "bytes": 50749,
+      "sha256": "f66c969238d6efa41fbcccd42244157b8799fc7f89c4c0b29a0e03d2406ba75c",
+      "kind": "png",
+      "width": 287,
+      "height": 304,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/kittember-pose-walk-a.png",
+      "bytes": 57577,
+      "sha256": "f5b3e39f8752534bafcf7de4d9cb5babab9b3899a10cf92c45f8e5aff6f39430",
+      "kind": "png",
+      "width": 287,
+      "height": 304,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/kittember-pose-walk-b.png",
+      "bytes": 46551,
+      "sha256": "c0d60452b8ed9290251c00ab962a66dd2f9f462b16857796326d2f3f64dd636b",
+      "kind": "png",
+      "width": 287,
+      "height": 304,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mochii-pose-round.png",
+      "bytes": 131013,
+      "sha256": "f0f9e208b4bead779cd0b7e2e0a077eb5f6fb88e32397b6a81ff05423976d134",
+      "kind": "png",
+      "width": 380,
+      "height": 380,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mochii-pose-splash-flat.png",
+      "bytes": 105180,
+      "sha256": "ac5a0243eb86ab7756c198c05de389d58d9ce9795e2a54d2fb90d138f201a51d",
+      "kind": "png",
+      "width": 380,
+      "height": 380,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mochii-pose-squash-wide.png",
+      "bytes": 116410,
+      "sha256": "dc73258299873e5c3bb8960770470976851d09317d90f96dcbbd8f49b515cf02",
+      "kind": "png",
+      "width": 380,
+      "height": 380,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mochii-pose-stretch-tall.png",
+      "bytes": 112490,
+      "sha256": "77c803cfaa7af50a40943e45d600fabc49983e637f6fc2f2c7924c02a01d3a75",
+      "kind": "png",
+      "width": 380,
+      "height": 380,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mochii-pose-tilt.png",
+      "bytes": 142696,
+      "sha256": "9524baba68487f8f5acda4326cc1321f02507d3406958c365093579792a20ca5",
+      "kind": "png",
+      "width": 380,
+      "height": 380,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mythar-pose-wings-down.png",
+      "bytes": 247708,
+      "sha256": "d21592b84c9c76bab5fafd4cc5d66aba15aa3d3621a21a532d31ac1f6bc48b24",
+      "kind": "png",
+      "width": 434,
+      "height": 350,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mythar-pose-wings-fold.png",
+      "bytes": 196274,
+      "sha256": "ec9e249e92f19bbfa11b8fe07398346ce0bb758e3f9d32b335780a8fe315f178",
+      "kind": "png",
+      "width": 434,
+      "height": 350,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mythar-pose-wings-neutral.png",
+      "bytes": 238243,
+      "sha256": "29548890888de3036e286f38828e3e4de77605a370e9fc6824aff8e932813b7c",
+      "kind": "png",
+      "width": 434,
+      "height": 350,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/mythar-pose-wings-up.png",
+      "bytes": 242651,
+      "sha256": "6dedc541682815c1809faf3aaa5596875d9ac0c3a33e9eb55e8de4cf69307606",
+      "kind": "png",
+      "width": 434,
+      "height": 350,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/razorgater-pose-mouth-closed.png",
+      "bytes": 111128,
+      "sha256": "04add61241c3ab13467c6d0246696a75d51184fc0bc4a8eaf257c06f1c3b382c",
+      "kind": "png",
+      "width": 265,
+      "height": 266,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/razorgater-pose-mouth-half.png",
+      "bytes": 112556,
+      "sha256": "1f7b29fa93437563f2e89f1c003437b0ebde9f90874b57ab9ac113cb81a00314",
+      "kind": "png",
+      "width": 265,
+      "height": 266,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/razorgater-pose-mouth-open.png",
+      "bytes": 110249,
+      "sha256": "b66ae6ff6ad8edfcffdc9162ab3c05b0491796f3f84573491a35c07ba14f5f95",
+      "kind": "png",
+      "width": 265,
+      "height": 266,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/sproutle-pose-stand.png",
+      "bytes": 106804,
+      "sha256": "6d135977958a8d7168370b3dd728a1f487a55ac632e6f332f1ebd5d2b5f9e805",
+      "kind": "png",
+      "width": 259,
+      "height": 333,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/sproutle-pose-step.png",
+      "bytes": 105786,
+      "sha256": "86fbf1f8c33901cc8c8b7848e2567d68fffacbfa3fca1feae97051dab27ca9d7",
+      "kind": "png",
+      "width": 259,
+      "height": 333,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/sproutle-pose-wave.png",
+      "bytes": 108350,
+      "sha256": "544a8578973a4b35ceb9ec6e488210dd187b4f53d9e6650962b7a835d669c2c6",
+      "kind": "png",
+      "width": 259,
+      "height": 333,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/tyrage-pose-impact.png",
+      "bytes": 92977,
+      "sha256": "3a73b146bfb74183a2c66d23e2360d37b6e6a622b5039ac2a230ab96341d740d",
+      "kind": "png",
+      "width": 327,
+      "height": 305,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/tyrage-pose-roar-up.png",
+      "bytes": 90288,
+      "sha256": "96aacf39ce2d8bb3a14050d3d6693b6f2a94bf3de0833ee694e50a8266106c2b",
+      "kind": "png",
+      "width": 327,
+      "height": 305,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/tyrage-pose-stand.png",
+      "bytes": 104278,
+      "sha256": "11e66689dcc6bf9b22349d8e467db059ba836564f91044e5aba2a1e7ed1b739b",
+      "kind": "png",
+      "width": 327,
+      "height": 305,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/tyrage-pose-stomp-up.png",
+      "bytes": 96628,
+      "sha256": "45752aa3fa19259c532c9d544afdab6edd051140d13a533e5468f7034c5e458b",
+      "kind": "png",
+      "width": 327,
+      "height": 305,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/wispkin-pose-hands-face.png",
+      "bytes": 129111,
+      "sha256": "b9de2318eb399094ad57fb6e21a388b05601a67425f18f49ff6a5b6408da0523",
+      "kind": "png",
+      "width": 288,
+      "height": 609,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/wispkin-pose-hands-peel.png",
+      "bytes": 112015,
+      "sha256": "be6c5cdb52132726a6f5a8fdef6395d05a15135481f7882d25db20b54e8d10e6",
+      "kind": "png",
+      "width": 288,
+      "height": 609,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/wispkin-pose-hands-press.png",
+      "bytes": 109317,
+      "sha256": "922990a57e6f044ee606eada800f6645e9df55c19bcf33f3ceb942db123ba54d",
+      "kind": "png",
+      "width": 288,
+      "height": 609,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/wispkin-pose-smoke-puff.png",
+      "bytes": 116166,
+      "sha256": "a762083e9de556c44e2409f9facf7eb666ceb55672019adfe92d31517be5c6b2",
+      "kind": "png",
+      "width": 288,
+      "height": 609,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/wispkin-pose-tilt-left.png",
+      "bytes": 136705,
+      "sha256": "cf6d2ab75a94c5e8afce3b0dec48034eb457574240128743020df1cbb1a7bdb0",
+      "kind": "png",
+      "width": 288,
+      "height": 609,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/wispkin-pose-tilt-right.png",
+      "bytes": 137252,
+      "sha256": "3b9fc63901642d3d755151a0858f993e3093d2f7795ff65be0dcf3201d0b8db7",
+      "kind": "png",
+      "width": 288,
+      "height": 609,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/yogiferno-pose-lean.png",
+      "bytes": 43817,
+      "sha256": "86b21db567311c48397a4be006dab96835c9f952dbf3852f66c12c5e81716aef",
+      "kind": "png",
+      "width": 145,
+      "height": 190,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/yogiferno-pose-pass.png",
+      "bytes": 37583,
+      "sha256": "de1f98a8dbf4b83733f2f71d856e0f053056f8ac77011b03794b95ab984693af",
+      "kind": "png",
+      "width": 145,
+      "height": 190,
+      "mode": "RGBA"
+    },
+    {
+      "path": "frames/yogiferno-pose-step-a.png",
+      "bytes": 40283,
+      "sha256": "a77e2122f185c8047843083baf22f6fbccbf50725239e8160082fcf622deedbf",
+      "kind": "png",
+      "width": 145,
+      "height": 190,
+      "mode": "RGBA"
+    },
+    {
+      "path": "gabu-title-anim-v2.mp4",
+      "bytes": 439245,
+      "sha256": "50692ff0038380b834445866fc959876b298e55e6b5a88a1c0206b6acaeeef14",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "kittember-title-anim-v2.mp4",
+      "bytes": 513935,
+      "sha256": "7e97d72e1afadf23e0da19250c293927b3a8c479015c7fbf1695fa738e79b80f",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "mochii-title-anim-v2.mp4",
+      "bytes": 607238,
+      "sha256": "09787fbdfade8c63e479f27db9097376d9b5088b2746beaca856eeab745f8585",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "mythar-title-anim-v2.mp4",
+      "bytes": 887335,
+      "sha256": "62120ed71ac802457e26c416a59f88ff3cf79018065542a56ead71dd30724ce0",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "razorgater-title-anim-v2.mp4",
+      "bytes": 285943,
+      "sha256": "e8f9f95cb17412e9a8316bf84f2b6ff792397004af79ed12749bab659686a414",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "repair_gaps_v2.py",
+      "bytes": 2767,
+      "sha256": "cb2ab04ef8c2e99c5d55c337bcbaf92d1b390805f5636308bed97140d6f9bb8f",
+      "kind": "py"
+    },
+    {
+      "path": "sproutle-title-anim-v2.mp4",
+      "bytes": 350652,
+      "sha256": "aa051603aed19c43c28a31b92e03747fab68938dec0214e3ca0d8bf0002943d1",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "tyrage-title-anim-v2.mp4",
+      "bytes": 502381,
+      "sha256": "492b17cfc999bd4640c6125c3b5d8aa6b0413842842eeba322c7a056470d1c8a",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "wispkin-title-anim-v2.mp4",
+      "bytes": 342088,
+      "sha256": "83cd4322a82f9aa2533f998b89c3c6f756246fef30d40ab2866c74ad30fdb0ae",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    },
+    {
+      "path": "yogiferno-title-anim-v2.mp4",
+      "bytes": 464687,
+      "sha256": "5223fdbd33418ebd3140b8556ce574d5fe4331b685f60cd66b2e6f56d976c655",
+      "kind": "mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "frames": "180",
+      "duration": "6.000000"
+    }
+  ],
+  "count": 56,
+  "total_bytes": 9284322
+}
