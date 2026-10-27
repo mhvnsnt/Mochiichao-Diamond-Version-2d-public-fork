@@ -215,3 +215,13 @@ pair with the Gate; working pairs with an interior/room piece
 upgrade is a night-context living background. The three variant
 showings on the v1 still plate were a repeat of the regression
 the Current-Version Law was set for - owned in the log.
+
+## CANON - WATER ORB (2026-10-27)
+Owner canon decision: the Dorowani making_something avatar
+animation is the WATER ORB attack animation in the Mochiichao
+game + show universe - he forms a water orb in his hands like
+he is going to throw/blast it (Rasengan / Kamehameha-class orb
+charge, Pokemon-style attack presentation). Registered in
+clip-index canon_names on the dorowani-avatar-stack-set entry
+(MP4 + alpha twin). Game-data move entry: none exists yet in
+src/data/core/moves.json; stats are owner-TBD, not invented.
