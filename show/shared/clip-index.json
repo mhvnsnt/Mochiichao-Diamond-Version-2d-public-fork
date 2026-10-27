@@ -58,6 +58,16 @@
         "marketing:placeholder_only"
       ],
       "quality_status": "rejected_placeholder_do_not_ship"
+    },
+    {
+      "id": "dorowani-avatar-stack-set",
+      "character": "dorowani",
+      "source": "Muse avatar full stack (the owner's chosen Doro set - NOT the rejected glossy batch)",
+      "files": "show/assets/animations/dorowani-avatar-stack/ (4 MP4 + 4 transparent WebM twins + poster webp + transparent png)",
+      "spec": "720x720, 8s, 24fps; WebM twins carry alpha (background already removed)",
+      "quality_status": "production_owner_chosen",
+      "show_use": "Dorowani's animation source for the show (EP04 featured); composite via alpha overlay onto plates - proof: COMPOSITE-PROOF-gate.mp4 in the same folder (Gate plate, 8s, verified)",
+      "note": "Owner directive 2026-10-27: the avatar set goes into the show as animations. MP4-only sources needing background removal route through video matting (RVM-class) on the Kaggle GPU; alpha twins need none."
     }
   ]
 }
