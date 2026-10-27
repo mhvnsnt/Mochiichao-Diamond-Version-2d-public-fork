@@ -36,7 +36,7 @@ a shape in this lane. Every attack manifest carries `move_data`:
   40/100/30 Physical (priority), Scratch 40/100/35 Physical, Ember
   40/100/25 Special, Water Gun 40/100/25 Special.
 - Mochiichao canon: fresh-start/src/lib/moves.ts MOVES_DB (36 moves, e.g.
-  Aqua Shot 40/100/25, Aqua Cannon 90/100/15, Hydro Surge 120/80/5).
+  Water Orb 40/100/25, Aqua Cannon 90/100/15, Hydro Surge 120/80/5).
 - Rule: Step 2 selects the creature's actual move from MOVES_DB; these
   lunge frames play under it, and Step 4 adds the move's real elemental
   VFX by move name. Move power/accuracy/priority change damage and turn

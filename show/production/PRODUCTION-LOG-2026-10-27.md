@@ -324,6 +324,237 @@ Remaining known local-only material is scratch by verdict
 still-plate composite variants, rejected avatar options) —
 not production, and it stays off the repo.
 
+## CHARACTER SHEETS - PILOT SIX CLIP BUNDLES (2026-10-27)
+Character-sheet clip bundles for all six pilot species landed
+under show/production/character-sheets/ (branch
+feature/character-sheets-1): for each species, every animation
+its TextRig rig carries (idle / signature animation /
+expression animation, rig names verbatim), each as a
+white-field MP4 + a transparent VP9-alpha WebM twin
+(alpha_mode=1), a transparent poster PNG, a manifest.json
+(ffprobe-measured spec + sha256, motion verification) and the
+idle's likeness-gate packet. Motion source: the TextRig DEFORM
+rigs over the canon cutouts (likeness by construction),
+rendered with a transparent stage at 30 fps on a 512x512 sheet
+canvas; motion verified per animation by frame checksums +
+mesh vertex-buffer checksums (all animations deform; held
+poses - head tilts, the Water Orb charge hold - show fewer
+distinct states by design). Gate (full-body mode, shipped
+thresholds) recommendations on the idles: mochii PASS
+(0.5814/0.9126/26.76), gabu PASS (0.6543/0.9676/24.32),
+kittember FAIL (0.4985/0.7520/53.45 - mid-loop pose phase vs
+the rest-pose cutout; recorded as measured), sproutle PASS
+(0.7711/0.9721/15.92), dorowani PASS (0.5122/0.9186/29.03),
+wispkin PASS (0.6895/0.8253/20.64). All bundles
+quality_status PENDING_GATE, promotion PENDING_OWNER - the
+packets recommend, the owner promotes. Naming: rig animation
+names kept exactly; signatures described neutrally (canon
+attack naming layers in separately) - Dorowani's
+water_orb_charge is his canon Water Orb attack animation, his
+alone. Sproutle rendered from the shadow-free cutout.
+
+## MOVE RENAME BATCH 1 (2026-10-27)
+Owner MOVE RENAME LAW (Jamar, 2026-10-27, standing): rename-on-
+use - every Pokemon-named move gets a Mochiichao name in game
+canon + game code as moves are used/attached in the show and
+the game. Display names change; internal ids/keys stay exactly
+as they are so wiring cannot break.
+Batch 1 landed in src/data/core/moves.json and its source
+src/lib/moves.ts (display "name" values only - ids, stats,
+effects, anims and descriptions untouched; verified diff = the
+five name lines in each file; the two stay in sync):
+- AQUA_JET: "Aqua Jet" -> "Hydro Rush" (Mochii's signature;
+  AQUA_JET is learned by Mochii alone, 1 of 47)
+- RAZOR_LEAF: "Razor Leaf" -> "Leaf Blast" (Sproutle's
+  signature; learned by Sproutle alone)
+- SHADOW_PULSE: "Shadow Pulse" -> "Dark Wave" (Wispkin's
+  signature; Umbral family move, learnset provisional-flagged
+  in the data)
+- AQUA_SHOT: "Aqua Shot" -> "Water Orb" (Dorowani's
+  signature). Owner resolution: Water Orb REPLACES the closest
+  existing orb-like entry (its desc is literally "a small ball
+  of water hurled at the foe") instead of waiting on a new
+  entry - this SUPERSEDES the earlier "Water Orb has no
+  moves.json entry / stats owner-TBD" state (PR #345 record).
+  Stats inherited from AQUA_SHOT (WATER Special 40/100/25);
+  nothing invented. NOTE: AQUA_SHOT is shared (11 learners), so
+  per rename-on-use in game code the rename is game-wide.
+- EARTH_TREMOR: "Earth Tremor" -> "Tremor" (Gabu's signature;
+  replaces the game's Earthquake-equivalent - no EARTHQUAKE id
+  exists. Stats inherited: GROUND Physical 100/100/10.)
+Kittember's FIRE_STREAM was already an original Mochiichao
+name - unchanged. Canon mapping + owner decision record landed
+at show/production/CANON-SIGNATURE-ATTACKS.md. Stale display-
+name references in game/show docs were swept and updated in
+the same PR; historical log entries before this one keep the
+old names as written (append-only history).
+
+## BIREFNET — MEASURED, SPLIT VERDICT vs WHITE-MATTE (2026-10-27)
+BiRefNet (catalogued as a matting candidate in
+show/production/tooling/avatar-stack/backends.json) was wired up
+locally and MEASURED on the show's own material — the first time
+it has been run on any of it. Local artifacts (frames, mattes,
+results.json, run_measure.py) are kept at
+~/workspace/mochiichao-show/birefnet-measure/; this entry and the
+backends.json update are the measurement landing in the repo
+(no test media in the repo).
+
+Weights + licence (licence honesty law): the weights used are
+the STANDALONE Hugging Face checkpoint ZhengPeng7/BiRefNet,
+loaded via transformers AutoModelForImageSegmentation
+(trust_remote_code) in a venv at ~/opt/venvs-birefnet, weights
+cached under HF_HOME=~/opt/hf-cache (tooling cache). Licence
+VERIFIED AT SOURCE 2026-10-27: the upstream repo's LICENSE file
+read via the GitHub API is the MIT License (Copyright (c)
+2024 ZhengPeng), and the GitHub licence API reports key=mit /
+spdx_id=MIT for ZhengPeng7/BiRefNet — open source, MIT, for
+code and these weights. rembg was NOT used: it was not
+installed, and its DEFAULT session weights (BRIA RMBG-2.0,
+CC-BY-NC non-commercial) were deliberately avoided and never
+downloaded. No BRIA weights were touched anywhere in this run.
+
+Method: 6 frames, ours only. (A) Dorowani avatar idle clip
+(~/workspace/avatars/, white field), frames 12/60/120 at
+720x720. (B) Wispkin Wan test 1 clip (rejected-tests/
+wispkin-wan-test-00001.mp4, NON-white beige field), frames
+0/24/48 at 960x2048. BiRefNet inference at 1024x1024, CPU,
+2 threads. The repo's wired white_matte.py matte_frame() was
+run on the same frames as the comparator. Scores per frame:
+alpha coverage (opaque >0.98 / clear <0.02 / soft band),
+corner-patch alpha, a belly patch on Dorowani (48x48 at
+0.50w/0.66h; white-matte's published clip scores are belly
+0.972, corners 0.0), a skull patch on Wispkin, edge quality
+inside a +-3px morphological band around the alpha>0.5
+silhouette (soft fraction in band; halo = fraction of band
+pixels whose magenta composite lands within distance 40 of
+the source field colour at alpha <0.95), and — Dorowani only,
+where the frame IS ground truth (FG over white) —
+recomposite-over-white mean abs diff on the 0-255 scale, the
+same definition as white-matte's published 1.08.
+
+Numbers (3-frame means):
+- Dorowani, BiRefNet: recomposite diff 1.79 (1.81/1.79/1.77),
+  belly 0.996, corners 0.000, opaque 0.380, clear 0.600,
+  band soft 0.600, halo 0.0004.
+- Dorowani, white-matte (same frames): recomposite diff 1.083
+  (1.11/1.08/1.06 — reproduces the published clip score 1.08),
+  belly 0.974 (published 0.972), corners 0.000, opaque 0.377,
+  clear 0.596, band soft 0.470, halo 0.0000.
+- Wispkin, BiRefNet: clear 0.975, opaque 0.023, corners 0.000,
+  skull-patch alpha 0.816 (0.886/0.787/0.775), band soft 0.743,
+  halo 0.026 (confounded here — skull bone colour is close to
+  the field colour; the magenta-composite visual check shows
+  a clean skull cut-out, no beige fringe ring).
+- Wispkin, white-matte (same frames): TOTAL FAILURE —
+  opaque 1.000, clear 0.000, corners 1.000, mean alpha 1.000.
+  Off a white field it declares the entire frame foreground.
+- Cost: BiRefNet ~78-90 s/frame (720x720 sources) and
+  ~103-115 s/frame (960x2048 sources) on this 2-vCPU VM.
+
+VERDICT (split, no hype): BiRefNet LOSES to white-matte on
+white-field avatar material (recomposite 1.79 vs 1.08 — its
+fuller belly, 0.996 vs 0.974, does not offset its softer edge
+band and the missing white un-premultiply), so white-matte
+stays the wired twin path there. On non-white-field generated
+frames BiRefNet wins by default — it is the only one of the
+two that works at all (clear 0.975 / corners 0.000 vs
+white-matte's 1.000-everywhere failure). Caveats recorded:
+BiRefNet drops the faint smoke wisps under the Wispkin skull
+(near-background smoke reads as background — soft-FX shots
+need an eye check before use), and at CPU speeds it is an
+offline/Kaggle-seat tool, not an interactive one. backends.json
+status for birefnet is now "measured" with these numbers in
+the entry; it is not wired into generate_bundle.py.
+
+---
+
+## 2026-10-27 — FULL MACHINE-SET IMPORT PROGRAMME, PHASE 1: MASTER REGISTRY LANDED
+
+Owner programme (2026-10-27): import the complete multi-generation TM/HM move sets and their move
+animations — from the games and modern public communities, wherever publicly available — into the
+game, universe, and canon, as the reference library from which show moves and show move-animations
+are built.
+
+CANON NAMING (owner-locked): the TM-equivalent class is GENERAL MOVES; the HM-equivalent class is
+RARE MOVES. Acquisition stays Pokemon-like: General Moves are obtained by searching and fighting
+through the world; Rare Moves are the scarce class and may also arrive pre-known on a creature or
+through alternate acquisition routes (owner's comparison: how Pokemon GO hands them out).
+
+CLASS RULE (owner-locked): RARE WINS — a move that was an HM in any generation is a Rare Move even
+where later generations list it as a TM (Rock Smash, Flash; Gen-9 TM listings of Fly/Surf/Waterfall
+stay Rare). TM-only = General. Never-machine moves carry no machine class. Per-generation history is
+preserved in every registry row.
+
+TWO-LANE CANON (owner-locked): the SHOW handles moves the way the Pokemon anime does — moves are
+skill, learned through training/practice/observation/tutors; Rare Moves arrive known or are innate
+capability; machine discs are not routine on screen (an Origins-style physical machine is at most a
+rare story object). The GAME handles moves the way the Pokemon games do — the General Moves / Rare
+Moves machine system, found and fought through the world. Each lane follows its own medium's canon.
+
+WHAT LANDED (show/production/moves-registry/):
+- machine-registry.json — 352 unique moves that have ever been a TM/HM in Generations 1-9:
+  341 General Moves + 11 Rare Moves (Cut, Defog, Dive, Flash, Fly, Rock Climb, Rock Smash, Strength,
+  Surf, Waterfall, Whirlpool); rare-wins precedence applied to 7 dual-history rows. Built from 2,372
+  fetched PokeAPI machine records (BSD-3-Clause) reconciled with the in-repo tables (gen5plus,
+  Black 2 decomp); stats provenance recorded per row. 13 rows map onto our playable 36.
+- INDEX.md — computed counts, doctrine (anatomy-variance: a move's animation depends on the
+  performer's anatomy — shape, size, build, mythical/legendary class; one performance is never the
+  universal animation; every registry row carries the variance field), reconciliation, Show Bible
+  hook (incl. the anime move-count convention — no enforced four-move limit — and the two Rare Move
+  precedents: field capability as body+job, and prestige techniques gated like Z-Moves / examined
+  Terastallization), and the honest gaps list (BDSP records partial in source; Legends Z-A numbering
+  PokeAPI-only for now; TRs counted — 100 — and excluded by scope).
+- ANIMATION-SOURCE-CATALOGUE.md — public animation sources surveyed with licences verified at
+  source. Verdicts: metadata is pullable (PokeAPI pulled this phase; Showdown server tables MIT,
+  next phase); all animation choreography/appearance sources (pret decompilations,
+  fuddlesworth/pokebw2, Showdown client AGPL-3.0, Spriters Resource, Bulbagarden Archives) are
+  community-extracted reference — REFERENCE-ONLY. No animation assets were pulled.
+- RENAME-WORKSHEET-BATCH-1.md — 40 drafted near-synonym names under the synonym-rename rule
+  (coolest near-synonym, meaning preserved), DRAFT — OWNER APPROVAL PENDING. No game files changed.
+
+RECONCILIATION (computed): owner's B2/W2 list — 101/101 slots match the fetched data exactly (and
+the in-repo Black 2 item table holds exactly 101 TM/HM items). Owner's SV+DLC list — 227/229 slots
+match; 2 discrepancies: TM106 is Drill Run (not Acrobatics) and TM116 is Stealth Rock (not Energy
+Ball) — which explains the list's two internal duplicates (Acrobatics x2, Energy Ball x2; TM014
+Acrobatics and TM119 Energy Ball are correct as listed). Registry follows the games' data;
+discrepancies logged in INDEX.md, not silently corrected.
+
+## EPISODE BUILDER - episode_build.py (2026-10-27)
+One-command episode assembler landed at
+show/production/tooling/build-manifest/episode_build.py, chaining
+the tools already wired in that folder: it renders every cut via
+composite_shot.py, concatenates the cuts in episode-spec order,
+attaches/mixes the scene audio beds at their scene offsets (an
+existing bed WAV per scene, or a "build" instruction in the shape
+scene_audio_bed.py implements), finishes with the house two-pass
+loudnorm (-14 LUFS / -1 dBTP, measured at the target, encoded-file
+peak verification with pull-down retries - the composite_shot.py
+approach), invokes episode_gate.py, and emits a build report JSON
+(per-cut status, final measured loudness, gate results, flags).
+Failure law: a failed cut halts the build with the named error
+EPISODE_BUILD_CUT_FAILED and a non-zero exit - no cut is skipped
+or substituted, and no partial output is left behind. An example
+spec (EP01-SCENE-01-mini-episode.json, same folder) mirrors the
+local test build.
+LOCAL TEST (media stays local, never in the PR): EP01 Scene 1
+mini-master, ~37s, built in ~/workspace/mochiichao-show/
+episode-build-test/. Honest equivalent, stated plainly: no
+per-cut shot specs exist for locked cuts 02-05, so all five cuts
+used the proven gate-proof-shot.json setup (living Gate
+background EP01-CUT01-composite-life-proof-v1.mp4 + Dorowani idle
+transparent twin at x=422, y=266, scale 0.6, shot audio null) at
+each cut's locked storyboard duration (8/6/5/8/10s), with the
+gated Scene 1 bed WAV (EP01-SCENE-01-gate-morning.wav) as the
+scene bed. Measured on the finished file (ffprobe + independent
+loudnorm analysis, not the plan): duration 37.000s, integrated
+-14.20 LUFS, true peak -1.00 dBTP, finish gates PASS
+(duration / loudness within 1 LU / true peak), episode_gate.py
+invoked (exit 0; all five EP01 audio gates PASS; HALT cut 12 and
+the ambient GAP flag reported by the gate as designed). The
+failure path was also tested: a spec pointing at a missing
+background halts with EPISODE_BUILD_CUT_FAILED, exit 1, no output
+file, and a HALTED build report.
+
 ## Addendum — Kaggle consistency kit staged (2026-10-27)
 Workstream: making the next Kaggle session for Wan test 2
 (notebook mochiichao-comfyui-wan, ComfyUI + Wan 2.2 TI2V-5B,

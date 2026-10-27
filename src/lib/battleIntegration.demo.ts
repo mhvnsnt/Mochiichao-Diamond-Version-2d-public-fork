@@ -76,8 +76,8 @@ check(tackle.name === 'Tackle' && tackle.kind === 'melee' && tackle.weight === '
 check(thunderbolt.name === 'Thunderbolt' && thunderbolt.kind === 'projectile' && thunderbolt.weight === 'heavy', 'Thunderbolt: projectile, heavy (power 95)');
 check(swordsDance.name === 'Swords Dance' && swordsDance.kind === 'status', 'Swords Dance: status kind');
 check(doubleSlap.multiHit === true, 'DoubleSlap: multi-hit flagged from its real decomp effect');
-const gameAqua = classifyMoveRecord({ name: 'Aqua Shot', cat: 'Special', bp: 40, effect: 'NONE' });
-check(gameAqua.kind === 'projectile' && gameAqua.weight === 'light', 'game Aqua Shot (moves.ts shape): projectile, light');
+const gameAqua = classifyMoveRecord({ name: 'Water Orb', cat: 'Special', bp: 40, effect: 'NONE' });
+check(gameAqua.kind === 'projectile' && gameAqua.weight === 'light', 'game Water Orb (moves.ts shape): projectile, light');
 const gameSwarm = moveAnimFromTable(moveTable, 'SWARM_STRIKE')!;
 check(gameSwarm.multiHit === true && gameSwarm.name === 'Swarm Strike', 'game Swarm Strike: multi-hit, real name kept');
 
