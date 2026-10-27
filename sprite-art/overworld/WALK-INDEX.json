@@ -1,0 +1,1277 @@
+[
+ {
+  "creature": "aerobeak",
+  "roster_id": "020",
+  "movement_class": "hover_swim",
+  "side_gap": true,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "up": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "left": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "aquariios",
+  "roster_id": "003",
+  "movement_class": "hover_swim",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "ashemit",
+  "roster_id": "044",
+  "movement_class": "seated",
+  "side_gap": false,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_seated",
+    "transform_seated"
+   ],
+   "up": [
+    "transform_seated",
+    "transform_seated"
+   ],
+   "left": [
+    "transform_seated",
+    "transform_seated"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "astroleviathan",
+  "roster_id": "025",
+  "movement_class": "hover_swim",
+  "side_gap": false,
+  "distinct_locked_steps": 3,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "transform_hover_swim"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "chromejaww",
+  "roster_id": "005",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 6,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "cocoonode",
+  "roster_id": "017",
+  "movement_class": "static_crystal",
+  "side_gap": true,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_static_crystal",
+    "transform_static_crystal"
+   ],
+   "up": [
+    "transform_static_crystal",
+    "transform_static_crystal"
+   ],
+   "left": [
+    "transform_static_crystal",
+    "transform_static_crystal"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "cragarm",
+  "roster_id": "036",
+  "movement_class": "heavy_slow",
+  "side_gap": true,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "transform_heavy_slow",
+    "transform_heavy_slow"
+   ],
+   "left": [
+    "transform_heavy_slow",
+    "transform_heavy_slow"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "dorowani",
+  "roster_id": "147",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "dreadtoise",
+  "roster_id": "040",
+  "movement_class": "heavy_slow",
+  "side_gap": false,
+  "distinct_locked_steps": 5,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "locked_walk",
+    "transform_heavy_slow"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "duneclaw",
+  "roster_id": "008",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "duskfiend",
+  "roster_id": "043",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 7,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "locked_walk",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "locked_walk_mirror",
+    "locked_walk_mirror"
+   ]
+  }
+ },
+ {
+  "creature": "finblade",
+  "roster_id": "022",
+  "movement_class": "hover_swim",
+  "side_gap": false,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "up": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "left": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "floatcalf",
+  "roster_id": "024",
+  "movement_class": "float_hover",
+  "side_gap": true,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_float_hover",
+    "transform_float_hover"
+   ],
+   "up": [
+    "transform_float_hover",
+    "transform_float_hover"
+   ],
+   "left": [
+    "transform_float_hover",
+    "transform_float_hover"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "gabu",
+  "roster_id": "148",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "gearkid",
+  "roster_id": "032",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "gorokappa",
+  "roster_id": "034",
+  "movement_class": "heavy_slow",
+  "side_gap": false,
+  "distinct_locked_steps": 5,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "locked_walk",
+    "transform_heavy_slow"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "inklet",
+  "roster_id": "026",
+  "movement_class": "small_bouncy",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "kickmaster",
+  "roster_id": "031",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "kittember",
+  "roster_id": "010",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "krakenox",
+  "roster_id": "028",
+  "movement_class": "heavy_slow",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "manticlaw",
+  "roster_id": "012",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "left": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "mechapion",
+  "roster_id": "033",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "left": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "megalochrome",
+  "roster_id": "023",
+  "movement_class": "hover_swim",
+  "side_gap": true,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "up": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "left": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "mochii",
+  "roster_id": "001",
+  "movement_class": "small_bouncy",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "mothrix",
+  "roster_id": "018",
+  "movement_class": "hover_swim",
+  "side_gap": false,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "up": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "left": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "mythar",
+  "roster_id": "331",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 3,
+  "steps_provenance": {
+   "down": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "locked_walk",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "oblivirex",
+  "roster_id": "009",
+  "movement_class": "heavy_slow",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "pebblefist",
+  "roster_id": "035",
+  "movement_class": "heavy_slow",
+  "side_gap": false,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "transform_heavy_slow"
+   ],
+   "up": [
+    "transform_heavy_slow",
+    "transform_heavy_slow"
+   ],
+   "left": [
+    "locked_walk",
+    "transform_heavy_slow"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "pixilite",
+  "roster_id": "041",
+  "movement_class": "small_bouncy",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "punchkid",
+  "roster_id": "029",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "pupbble",
+  "roster_id": "013",
+  "movement_class": "small_bouncy",
+  "side_gap": false,
+  "distinct_locked_steps": 4,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "transform_small_bouncy",
+    "transform_small_bouncy"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "pyromonk",
+  "roster_id": "045",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 3,
+  "steps_provenance": {
+   "down": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "locked_walk",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "pyropaw",
+  "roster_id": "011",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "quakehound",
+  "roster_id": "015",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "razorgater",
+  "roster_id": "004",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "reaperdile",
+  "roster_id": "006",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "shellguard",
+  "roster_id": "039",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "up": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "left": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ],
+   "right": [
+    "walk_frames_batch",
+    "walk_frames_batch"
+   ]
+  }
+ },
+ {
+  "creature": "sproutle",
+  "roster_id": "038",
+  "movement_class": "small_bouncy",
+  "side_gap": true,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "transform_small_bouncy",
+    "transform_small_bouncy"
+   ],
+   "left": [
+    "transform_small_bouncy",
+    "transform_small_bouncy"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "squirmite",
+  "roster_id": "016",
+  "movement_class": "crawl",
+  "side_gap": false,
+  "distinct_locked_steps": 4,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "transform_crawl"
+   ],
+   "up": [
+    "locked_walk",
+    "transform_crawl"
+   ],
+   "left": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "stormtalon",
+  "roster_id": "021",
+  "movement_class": "hover_swim",
+  "side_gap": false,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "up": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "left": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "strikechamp",
+  "roster_id": "030",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 4,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "strikechamp_unsuited",
+  "roster_id": "030",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "strikechamp_unsuited_full",
+  "roster_id": "030",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "right": [
+    "locked_walk_mirror",
+    "locked_walk_mirror"
+   ]
+  }
+ },
+ {
+  "creature": "terradog",
+  "roster_id": "014",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "left": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "terrapod",
+  "roster_id": "037",
+  "movement_class": "grounded_standard",
+  "side_gap": false,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "up": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "left": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "tiidebiite",
+  "roster_id": "002",
+  "movement_class": "small_bouncy",
+  "side_gap": false,
+  "distinct_locked_steps": 8,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "right": [
+    "locked_walk_mirror",
+    "locked_walk_mirror"
+   ]
+  }
+ },
+ {
+  "creature": "toxitacle",
+  "roster_id": "027",
+  "movement_class": "hover_swim",
+  "side_gap": false,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "up": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "left": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "tyrage",
+  "roster_id": "007",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "wispkin",
+  "roster_id": "042",
+  "movement_class": "float_hover",
+  "side_gap": true,
+  "distinct_locked_steps": 0,
+  "steps_provenance": {
+   "down": [
+    "transform_float_hover",
+    "transform_float_hover"
+   ],
+   "up": [
+    "transform_float_hover",
+    "transform_float_hover"
+   ],
+   "left": [
+    "transform_float_hover",
+    "transform_float_hover"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "yogiferno",
+  "roster_id": "046",
+  "movement_class": "grounded_standard",
+  "side_gap": true,
+  "distinct_locked_steps": 2,
+  "steps_provenance": {
+   "down": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "up": [
+    "locked_walk",
+    "locked_walk"
+   ],
+   "left": [
+    "transform_grounded_standard",
+    "transform_grounded_standard"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ },
+ {
+  "creature": "zephling",
+  "roster_id": "019",
+  "movement_class": "hover_swim",
+  "side_gap": false,
+  "distinct_locked_steps": 1,
+  "steps_provenance": {
+   "down": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "up": [
+    "transform_hover_swim",
+    "transform_hover_swim"
+   ],
+   "left": [
+    "locked_walk",
+    "transform_hover_swim"
+   ],
+   "right": [
+    "mirror",
+    "mirror"
+   ]
+  }
+ }
+]
