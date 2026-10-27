@@ -32,6 +32,18 @@ import {
   BLACK2_ABILITY_LOGIC,
   BLACK2_FACILITY_LEVEL_RANGE,
 } from './black2Systems';
+import {
+  STAT_STAGE_RATIOS,
+  ACCURACY_STAGE_RATIOS,
+  CRIT_STAGE_DENOMINATORS,
+  BAG_POCKETS_PER_GENERATION,
+  STORAGE_RULES,
+} from './playableWiring';
+import {
+  OPPONENT_MOVE_ROWS,
+  OPPONENT_COUNTS,
+  OPPONENT_VECTORS as OPPONENT_DIRECTION_VECTORS,
+} from './opponentDirection';
 // NOTE: spriteSheets.ts imports PNGs (Vite-only), so this script reads the
 // sheet manifests from disk instead of importing that module.
 const SHEET_DEFS: Record<string, { speciesId: string; name: string }> = {
@@ -171,6 +183,25 @@ if (BLACK2_NATURE_MODIFIERS !== null) errors.push('Black 2 nature modifiers must
 if (BLACK2_TYPE_EFFECTIVENESS_CHART !== null) errors.push('Black 2 type chart must stay null (not invented)');
 if (BLACK2_ABILITY_LOGIC !== null) errors.push('Black 2 ability logic must stay null (not invented)');
 if (BLACK2_FACILITY_LEVEL_RANGE !== null) errors.push('Black 2 facility level range must stay null (not invented)');
+
+
+// 6. Playable-wiring library checks (call-site pass, not stage2-display).
+// Library presence only for most rows: in-game call sites are Shop sell
+// price, PC storage rules, and the battle-canvas direction sign. Blocked
+// rows (26) stay un-invented: no canonical bag pocket, no True chart,
+// no map/roster assignment, no facility level rule is asserted here.
+if (STAT_STAGE_RATIOS.length !== 13) errors.push(`Playable wiring: stat stages expected 13, got ${STAT_STAGE_RATIOS.length}`);
+if (ACCURACY_STAGE_RATIOS.length !== 13) errors.push(`Playable wiring: accuracy stages expected 13, got ${ACCURACY_STAGE_RATIOS.length}`);
+if (CRIT_STAGE_DENOMINATORS.length !== 5) errors.push(`Playable wiring: crit stages expected 5, got ${CRIT_STAGE_DENOMINATORS.length}`);
+if (STORAGE_RULES.slotsPerBox !== 30 || STORAGE_RULES.partyMax !== 6) errors.push('Playable wiring: storage rules expected 30 slots / 6 party');
+if (Object.keys(BAG_POCKETS_PER_GENERATION).length !== 3) errors.push('Playable wiring: bag pockets expected 3 generations, no canonical choice');
+if (OPPONENT_COUNTS.moves_total !== 560) errors.push(`Opponent direction: moves expected 560, got ${OPPONENT_COUNTS.moves_total}`);
+if (OPPONENT_COUNTS.moves_opponent_travel_confirmed !== 442) errors.push(`Opponent direction: confirmed vectors expected 442, got ${OPPONENT_COUNTS.moves_opponent_travel_confirmed}`);
+if (OPPONENT_COUNTS.moves_confirmed_origin_body_part !== 0) errors.push('Opponent direction: body-part origins must stay 0 (not invented)');
+if (OPPONENT_MOVE_ROWS.length !== 560) errors.push(`Opponent direction: move rows expected 560, got ${OPPONENT_MOVE_ROWS.length}`);
+if (OPPONENT_MOVE_ROWS.some((r: any) => r.origin_label !== 'unconfirmed')) errors.push('Opponent direction: every move origin must stay unconfirmed');
+if (Math.sign(OPPONENT_DIRECTION_VECTORS.single.dx) !== -1) errors.push('Opponent direction: single vector must travel left (dx < 0)');
+else console.log('  playable OK: stat/accuracy/crit tables, storage rules, opponent 560/442/0');
 
 console.log(`\nWarnings (${warnings.length}):`);
 for (const w of [...new Set(warnings)].slice(0, 40)) console.log(`  WARN: ${w}`);
