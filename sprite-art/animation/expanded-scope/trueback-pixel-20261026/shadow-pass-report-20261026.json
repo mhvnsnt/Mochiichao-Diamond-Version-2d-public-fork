@@ -1,0 +1,44 @@
+{
+ "reaperdile": {
+  "method_final": "v3: full-res bottom-60-row neutral-mid strip cut + 64px unsupported-pixel filter (v1 flat-run and v2 platform-run attempts superseded BEFORE any showing; final cells rebuilt from smooth sources with v3 only)",
+  "strip_cut_fullres_px": 11630,
+  "support_filter_px_64": 8,
+  "file": "reaperdile-back-pixel-shadowfree-20261026.png",
+  "opaque_px_final": 1767,
+  "bbox_64": [
+   1,
+   7,
+   63,
+   64
+  ],
+  "residual_honest": "Distinct shadow shape (ellipse/bar/blob) removed; a faint <=1px gray contact line remains under the feet. Removing further would clip feet bottoms (smear shares feet columns). Mars judges on the final sheet; NOT claimed zero-shadow."
+ },
+ "chromejaww": {
+  "method_final": "v3: full-res bottom-60-row neutral-mid strip cut + 64px unsupported-pixel filter (v1 flat-run and v2 platform-run attempts superseded BEFORE any showing; final cells rebuilt from smooth sources with v3 only)",
+  "strip_cut_fullres_px": 34715,
+  "support_filter_px_64": 1,
+  "file": "chromejaww-back-pixel-shadowfree-20261026.png",
+  "opaque_px_final": 2140,
+  "bbox_64": [
+   2,
+   2,
+   62,
+   64
+  ],
+  "residual_honest": "Distinct shadow shape (ellipse/bar/blob) removed; a faint <=1px gray contact line remains under the feet. Removing further would clip feet bottoms (smear shares feet columns). Mars judges on the final sheet; NOT claimed zero-shadow."
+ },
+ "razorgater": {
+  "method_final": "v3: full-res bottom-60-row neutral-mid strip cut + 64px unsupported-pixel filter (v1 flat-run and v2 platform-run attempts superseded BEFORE any showing; final cells rebuilt from smooth sources with v3 only)",
+  "strip_cut_fullres_px": 19050,
+  "support_filter_px_64": 0,
+  "file": "razorgater-back-pixel-shadowfree-20261026.png",
+  "opaque_px_final": 1919,
+  "bbox_64": [
+   6,
+   2,
+   58,
+   64
+  ],
+  "residual_honest": "Distinct shadow shape (ellipse/bar/blob) removed; a faint <=1px gray contact line remains under the feet. Removing further would clip feet bottoms (smear shares feet columns). Mars judges on the final sheet; NOT claimed zero-shadow."
+ }
+}
