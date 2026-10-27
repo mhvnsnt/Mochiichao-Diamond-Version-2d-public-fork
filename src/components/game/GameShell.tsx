@@ -5,6 +5,7 @@ import CreaturePortrait from './CreaturePortrait';
 import { UiPanel } from './UiArt';
 import { UI_ART } from '../../lib/uiArt';
 import { MenuList, MenuHelpLine } from './MenuList';
+import { useMenuLayout } from '../../lib/menuLayoutLive';
 import { getActiveMenuConfig } from '../../lib/menuEditor';
 import { getDayNightMenuVariant, dayNightMenuVarStyle } from '../../lib/dayNightMenuVariants';
 
@@ -51,6 +52,17 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
   // (Bag .. Cheat Console) still appear only when onNavigate
   // is provided, exactly as before.
   const pauseCfg = getActiveMenuConfig().pause;
+  // Menu-layout live wiring: the pause menu's placement follows the
+  // chosen catalogue entry (gen2 = right edge, gen4 = bottom sheet,
+  // others centred — the catalogue's own placements, not invented
+  // positions). Row spacing + help bar come from editor overrides;
+  // items, actions, order and the existing menu-editor config are
+  // untouched. Family-only entries keep current spacing.
+  const pauseMenuLayout = useMenuLayout('pause');
+  const pausePlacementStyle: React.CSSProperties =
+    pauseMenuLayout.entryId === 'gen2.pause' ? { justifyContent: 'flex-end', paddingRight: '1rem' }
+    : pauseMenuLayout.entryId === 'gen4.pause' ? { alignItems: 'flex-end', paddingBottom: '1rem' }
+    : {};
   const base: Record<string, { label: string; help: string; action: () => void }> = {
     team: { label: 'Team', help: 'View and manage your team.', action: onRoster },
     shop: { label: 'Shop', help: 'Buy and sell items at the shop.', action: onShop },
@@ -88,9 +100,9 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
   const safeSelected = Math.min(selected, items.length - 1);
 
   return (
-    <div className="absolute inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div className="absolute inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4" style={pausePlacementStyle}>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ background: dnVariant.tint }} />
-      <UiPanel slot={UI_ART.pause_menu_panel} className="pause-y2k-panel relative w-full max-w-sm p-6 flex flex-col gap-3 max-h-[92dvh] overflow-y-auto" style={{ ...dayNightMenuVarStyle(dnVariant), maxWidth: pauseCfg.panelMaxW, gap: pauseCfg.gap }}>
+      <UiPanel slot={UI_ART.pause_menu_panel} className="pause-y2k-panel relative w-full max-w-sm p-6 flex flex-col gap-3 max-h-[92dvh] overflow-y-auto" data-menu-layout={pauseMenuLayout.entryId} style={{ ...dayNightMenuVarStyle(dnVariant), maxWidth: pauseCfg.panelMaxW, gap: pauseCfg.gap }}>
         {pauseCfg.sparkles && (<>
           <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 left-3 text-pink-300 text-lg">✦</span>
           <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 right-3 text-yellow-300 text-lg">♥</span>
@@ -98,8 +110,8 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
           <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 right-3 text-pink-300 text-base">✦</span>
         </>)}
         <h2 className="game-title text-2xl text-center mb-2">{pauseCfg.title}</h2>
-        <MenuList items={items} selected={safeSelected} onSelect={setSelected} />
-        <MenuHelpLine text={items[safeSelected]?.help || ''} />
+        <MenuList items={items} selected={safeSelected} onSelect={setSelected} gapPx={pauseMenuLayout.overrides.rowSpacing} />
+        {pauseMenuLayout.overrides.helpBar !== false && <MenuHelpLine text={items[safeSelected]?.help || ''} />}
       </UiPanel>
     </div>
   );
