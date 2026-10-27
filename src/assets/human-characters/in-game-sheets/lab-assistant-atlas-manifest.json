@@ -1,0 +1,127 @@
+{
+  "atlas": "lab-assistant-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      28,
+      503
+    ],
+    [
+      507,
+      943
+    ],
+    [
+      949,
+      1400
+    ],
+    [
+      1407,
+      1885
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        247,
+        486
+      ],
+      [
+        754,
+        1032
+      ]
+    ],
+    [
+      [
+        256,
+        481
+      ],
+      [
+        763,
+        1014
+      ]
+    ],
+    [
+      [
+        278,
+        472
+      ],
+      [
+        781,
+        999
+      ]
+    ],
+    [
+      [
+        265,
+        462
+      ],
+      [
+        789,
+        1013
+      ]
+    ]
+  ],
+  "world": "0:0,1:0,2:0,3:0",
+  "steps": "0:1,1:1,2:1,3:1",
+  "walk": "media-generation-lab-assistant-walk-frames-v1-2-0-beaded29-e3a8-487d-bad7-614b88df3d20.webp",
+  "battle": "media-generation-lab-assistant-battle-front-v1-0-98fdca8f-6318-4c13-83ee-db7101da8a2b.webp",
+  "portrait": "media-generation-lab-assistant-portrait-v1-2026-0-35966e39-d1b9-49ab-a093-cee5a308405f.webp"
+}
