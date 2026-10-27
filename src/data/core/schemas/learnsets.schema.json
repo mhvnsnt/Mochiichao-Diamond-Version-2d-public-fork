@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./learnsets.schema.json",
+  "title": "learnsets",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "learnsets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "speciesId": {
+            "type": "string"
+          },
+          "levelUp": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "tm": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "egg": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tutor": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "speciesId",
+          "levelUp",
+          "tm",
+          "egg",
+          "tutor"
+        ]
+      }
+    }
+  },
+  "required": [
+    "learnsets"
+  ],
+  "additionalProperties": true
+}

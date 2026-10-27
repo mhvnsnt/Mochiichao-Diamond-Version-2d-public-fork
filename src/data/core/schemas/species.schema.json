@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./species.schema.json",
+  "title": "species",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "species": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[0-9]{3}$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "baseStats": {
+            "type": "object",
+            "properties": {
+              "hp": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 255
+              },
+              "atk": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 255
+              },
+              "def": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 255
+              },
+              "spa": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 255
+              },
+              "spd": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 255
+              },
+              "spe": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "maximum": 255
+              }
+            },
+            "required": [
+              "hp",
+              "atk",
+              "def",
+              "spa",
+              "spd",
+              "spe"
+            ]
+          },
+          "hpStatus": {
+            "type": "string"
+          },
+          "abilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hiddenAbility": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "eggGroups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "catchRate": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "expYield": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "growthRate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "dexText": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provenance": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "types",
+          "baseStats"
+        ]
+      }
+    }
+  },
+  "required": [
+    "species"
+  ],
+  "additionalProperties": true
+}

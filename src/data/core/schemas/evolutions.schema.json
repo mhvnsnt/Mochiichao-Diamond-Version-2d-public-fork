@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./evolutions.schema.json",
+  "title": "evolutions",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "evolutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fromId": {
+            "type": "string"
+          },
+          "toId": {
+            "type": "string"
+          },
+          "method": {
+            "enum": [
+              "level",
+              "item",
+              "friendship",
+              "time",
+              "trade"
+            ]
+          },
+          "param": {},
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "fromId",
+          "toId",
+          "method"
+        ]
+      }
+    },
+    "terminalSpecies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "evolutions"
+  ],
+  "additionalProperties": true
+}

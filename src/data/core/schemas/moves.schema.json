@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./moves.schema.json",
+  "title": "moves",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "moves": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "Physical",
+              "Special",
+              "Status"
+            ]
+          },
+          "power": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "accuracy": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "pp": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "effect": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "target": {
+            "type": "string"
+          },
+          "flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "anim": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "type",
+          "category",
+          "power",
+          "accuracy",
+          "pp",
+          "priority",
+          "effect"
+        ]
+      }
+    }
+  },
+  "required": [
+    "moves"
+  ],
+  "additionalProperties": true
+}
