@@ -3,8 +3,11 @@
 Format: ~6 minutes · Cast: Mochiko (human lead), pilot six ·
 Locations (3, all from parts-catalog): Garden Gate, Garden Pond,
 Garden Green (battle-bg-garden) · Featured species: **Wispkin**
-Show convention: creatures speak short, simple lines in their own
-voices (cry-based voice entries); Mochiko is the audience anchor.
+Show convention (Jamar, 2026-10-27): creatures do NOT talk in words -
+they vocalize, Pokemon-like (their cries; whether they say their own
+names is UNDECIDED - open question, do not lock in). Only humans
+(Mochiko) speak word-dialogue. Meaning comes from performance,
+context and Mochiko's reactions.
 
 **6-beat engine (mystery formula, garden-sized):**
 1. **Arrival (0:00–1:00)** — Mochiko's first morning as garden
