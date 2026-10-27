@@ -16,6 +16,10 @@ import {
 } from '../../lib/menuSkins';
 import IntroVideoCreatorScreen from './IntroVideoCreatorScreen';
 import StartScreenCreator from './StartScreenCreator';
+import {
+  TITLE_START_SCREEN_CYCLE, getSelectedTitleStartScreenId, setSelectedTitleStartScreenId,
+  titleStartScreenLabel, type TitleStartScreenId,
+} from '../../lib/titleStartScreens';
 import MusicMixerScreen from './MusicMixerScreen';
 import MenuEditorScreen from './MenuEditorScreen';
 import {
@@ -188,6 +192,19 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
   const skinLabel = (menu: MenuSkinMenu) =>
     MENU_SKIN_FLAVOURS.find(f => f.flavour === skinChoices[menu])?.label || 'Default';
 
+  // Interchangeable title start screens: one row, same LEFT/RIGHT
+  // cycle pattern as the skin rows. Locked Default = the locked phi
+  // title, unchanged; a preset replaces the TITLE phase scene only.
+  // Saved immediately on cycling (like skins), independent of
+  // SAVE + EXIT — but RESET TO LOCKED DEFAULT below clears it, so
+  // a reset always restores the locked default title.
+  const [titleChoice, setTitleChoice] = useState<TitleStartScreenId | null>(() => getSelectedTitleStartScreenId());
+  const cycleTitleChoice = (dir: 1 | -1) => {
+    const next = cycle(TITLE_START_SCREEN_CYCLE, titleChoice, dir);
+    setSelectedTitleStartScreenId(next);
+    setTitleChoice(next);
+  };
+
   // SETTINGS menu frame: per-menu override wins over the global
   // FRAME row when set (0 = follow global), per hudCustom.
   const accent = menuFrameAccent('SETTINGS', draft);
@@ -238,6 +255,10 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
     setDraft(d);
     setPreset(p);
     setCustom(c);
+    // RESET TO LOCKED DEFAULT also clears the title-screen pick:
+    // a reset always restores the locked default title.
+    setSelectedTitleStartScreenId(null);
+    setTitleChoice(null);
     saveAll(d, p, c);
     setSavedMsg('Reset to Locked Default (v32).');
   };
@@ -281,9 +302,10 @@ export default function SettingsScreen({ onBack, onViewTitle }: { onBack: () => 
       onRight: () => cycleSkin(m.menu, 1),
       note: `Per-menu Y2K skin preset (${m.presetFile}): Default / Pastel Day / Chrome Midnight / Bubblegum Pop. Applies live to ${m.label}; main menu and logo are never skinned.`,
     })),
+    { label: 'TITLE SCREEN', value: titleStartScreenLabel(titleChoice), onLeft: () => cycleTitleChoice(-1), onRight: () => cycleTitleChoice(1), note: 'Interchangeable start screen for the TITLE phase only. Locked Default = the locked phi title, unchanged. A preset shows that preset\'s video + TitleScene + the locked logo/subtitle/press overlay, and presses the same way (M3 chirp, white fade 350ms, MAIN_MENU). Saved immediately on cycling. RESET TO LOCKED DEFAULT clears it.' },
     { label: 'MUSIC MIXER', value: 'OPEN ►', onLeft: () => setScreen('MUSIC_MIXER'), onRight: () => setScreen('MUSIC_MIXER'), onSelect: () => setScreen('MUSIC_MIXER'), note: 'Full dedicated screen: FL-Studio-style mixer for the title v3 + vocal stems (default project loads on open, DELETE removes a stem, NEW clears, LOAD DEFAULT restores). Draggable mixer window (Mars 2026-10-26, explicitly asked). Game music pauses while mixing.' },
     { label: 'CANCEL', value: 'SAVE + EXIT', onLeft: saveAndBack, onRight: saveAndBack, onSelect: saveAndBack, note: 'Saves all rows to the save + localStorage and returns to the main menu.' },
-  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices]); // eslint-disable-line react-hooks/exhaustive-deps
+  ], [draft, mainFontOpt, menuFontOpt, dialogueFontOpt, preset, skinChoices, titleChoice]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const menuCreatorRows: Row[] = useMemo(() => {
     const pages: Record<number, Row[]> = {
