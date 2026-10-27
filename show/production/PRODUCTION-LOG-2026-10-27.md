@@ -324,6 +324,148 @@ Remaining known local-only material is scratch by verdict
 still-plate composite variants, rejected avatar options) —
 not production, and it stays off the repo.
 
+## CHARACTER SHEETS - PILOT SIX CLIP BUNDLES (2026-10-27)
+Character-sheet clip bundles for all six pilot species landed
+under show/production/character-sheets/ (branch
+feature/character-sheets-1): for each species, every animation
+its TextRig rig carries (idle / signature animation /
+expression animation, rig names verbatim), each as a
+white-field MP4 + a transparent VP9-alpha WebM twin
+(alpha_mode=1), a transparent poster PNG, a manifest.json
+(ffprobe-measured spec + sha256, motion verification) and the
+idle's likeness-gate packet. Motion source: the TextRig DEFORM
+rigs over the canon cutouts (likeness by construction),
+rendered with a transparent stage at 30 fps on a 512x512 sheet
+canvas; motion verified per animation by frame checksums +
+mesh vertex-buffer checksums (all animations deform; held
+poses - head tilts, the Water Orb charge hold - show fewer
+distinct states by design). Gate (full-body mode, shipped
+thresholds) recommendations on the idles: mochii PASS
+(0.5814/0.9126/26.76), gabu PASS (0.6543/0.9676/24.32),
+kittember FAIL (0.4985/0.7520/53.45 - mid-loop pose phase vs
+the rest-pose cutout; recorded as measured), sproutle PASS
+(0.7711/0.9721/15.92), dorowani PASS (0.5122/0.9186/29.03),
+wispkin PASS (0.6895/0.8253/20.64). All bundles
+quality_status PENDING_GATE, promotion PENDING_OWNER - the
+packets recommend, the owner promotes. Naming: rig animation
+names kept exactly; signatures described neutrally (canon
+attack naming layers in separately) - Dorowani's
+water_orb_charge is his canon Water Orb attack animation, his
+alone. Sproutle rendered from the shadow-free cutout.
+
+## MOVE RENAME BATCH 1 (2026-10-27)
+Owner MOVE RENAME LAW (Jamar, 2026-10-27, standing): rename-on-
+use - every Pokemon-named move gets a Mochiichao name in game
+canon + game code as moves are used/attached in the show and
+the game. Display names change; internal ids/keys stay exactly
+as they are so wiring cannot break.
+Batch 1 landed in src/data/core/moves.json and its source
+src/lib/moves.ts (display "name" values only - ids, stats,
+effects, anims and descriptions untouched; verified diff = the
+five name lines in each file; the two stay in sync):
+- AQUA_JET: "Aqua Jet" -> "Hydro Rush" (Mochii's signature;
+  AQUA_JET is learned by Mochii alone, 1 of 47)
+- RAZOR_LEAF: "Razor Leaf" -> "Leaf Blast" (Sproutle's
+  signature; learned by Sproutle alone)
+- SHADOW_PULSE: "Shadow Pulse" -> "Dark Wave" (Wispkin's
+  signature; Umbral family move, learnset provisional-flagged
+  in the data)
+- AQUA_SHOT: "Aqua Shot" -> "Water Orb" (Dorowani's
+  signature). Owner resolution: Water Orb REPLACES the closest
+  existing orb-like entry (its desc is literally "a small ball
+  of water hurled at the foe") instead of waiting on a new
+  entry - this SUPERSEDES the earlier "Water Orb has no
+  moves.json entry / stats owner-TBD" state (PR #345 record).
+  Stats inherited from AQUA_SHOT (WATER Special 40/100/25);
+  nothing invented. NOTE: AQUA_SHOT is shared (11 learners), so
+  per rename-on-use in game code the rename is game-wide.
+- EARTH_TREMOR: "Earth Tremor" -> "Tremor" (Gabu's signature;
+  replaces the game's Earthquake-equivalent - no EARTHQUAKE id
+  exists. Stats inherited: GROUND Physical 100/100/10.)
+Kittember's FIRE_STREAM was already an original Mochiichao
+name - unchanged. Canon mapping + owner decision record landed
+at show/production/CANON-SIGNATURE-ATTACKS.md. Stale display-
+name references in game/show docs were swept and updated in
+the same PR; historical log entries before this one keep the
+old names as written (append-only history).
+
+## BIREFNET — MEASURED, SPLIT VERDICT vs WHITE-MATTE (2026-10-27)
+BiRefNet (catalogued as a matting candidate in
+show/production/tooling/avatar-stack/backends.json) was wired up
+locally and MEASURED on the show's own material — the first time
+it has been run on any of it. Local artifacts (frames, mattes,
+results.json, run_measure.py) are kept at
+~/workspace/mochiichao-show/birefnet-measure/; this entry and the
+backends.json update are the measurement landing in the repo
+(no test media in the repo).
+
+Weights + licence (licence honesty law): the weights used are
+the STANDALONE Hugging Face checkpoint ZhengPeng7/BiRefNet,
+loaded via transformers AutoModelForImageSegmentation
+(trust_remote_code) in a venv at ~/opt/venvs-birefnet, weights
+cached under HF_HOME=~/opt/hf-cache (tooling cache). Licence
+VERIFIED AT SOURCE 2026-10-27: the upstream repo's LICENSE file
+read via the GitHub API is the MIT License (Copyright (c)
+2024 ZhengPeng), and the GitHub licence API reports key=mit /
+spdx_id=MIT for ZhengPeng7/BiRefNet — open source, MIT, for
+code and these weights. rembg was NOT used: it was not
+installed, and its DEFAULT session weights (BRIA RMBG-2.0,
+CC-BY-NC non-commercial) were deliberately avoided and never
+downloaded. No BRIA weights were touched anywhere in this run.
+
+Method: 6 frames, ours only. (A) Dorowani avatar idle clip
+(~/workspace/avatars/, white field), frames 12/60/120 at
+720x720. (B) Wispkin Wan test 1 clip (rejected-tests/
+wispkin-wan-test-00001.mp4, NON-white beige field), frames
+0/24/48 at 960x2048. BiRefNet inference at 1024x1024, CPU,
+2 threads. The repo's wired white_matte.py matte_frame() was
+run on the same frames as the comparator. Scores per frame:
+alpha coverage (opaque >0.98 / clear <0.02 / soft band),
+corner-patch alpha, a belly patch on Dorowani (48x48 at
+0.50w/0.66h; white-matte's published clip scores are belly
+0.972, corners 0.0), a skull patch on Wispkin, edge quality
+inside a +-3px morphological band around the alpha>0.5
+silhouette (soft fraction in band; halo = fraction of band
+pixels whose magenta composite lands within distance 40 of
+the source field colour at alpha <0.95), and — Dorowani only,
+where the frame IS ground truth (FG over white) —
+recomposite-over-white mean abs diff on the 0-255 scale, the
+same definition as white-matte's published 1.08.
+
+Numbers (3-frame means):
+- Dorowani, BiRefNet: recomposite diff 1.79 (1.81/1.79/1.77),
+  belly 0.996, corners 0.000, opaque 0.380, clear 0.600,
+  band soft 0.600, halo 0.0004.
+- Dorowani, white-matte (same frames): recomposite diff 1.083
+  (1.11/1.08/1.06 — reproduces the published clip score 1.08),
+  belly 0.974 (published 0.972), corners 0.000, opaque 0.377,
+  clear 0.596, band soft 0.470, halo 0.0000.
+- Wispkin, BiRefNet: clear 0.975, opaque 0.023, corners 0.000,
+  skull-patch alpha 0.816 (0.886/0.787/0.775), band soft 0.743,
+  halo 0.026 (confounded here — skull bone colour is close to
+  the field colour; the magenta-composite visual check shows
+  a clean skull cut-out, no beige fringe ring).
+- Wispkin, white-matte (same frames): TOTAL FAILURE —
+  opaque 1.000, clear 0.000, corners 1.000, mean alpha 1.000.
+  Off a white field it declares the entire frame foreground.
+- Cost: BiRefNet ~78-90 s/frame (720x720 sources) and
+  ~103-115 s/frame (960x2048 sources) on this 2-vCPU VM.
+
+VERDICT (split, no hype): BiRefNet LOSES to white-matte on
+white-field avatar material (recomposite 1.79 vs 1.08 — its
+fuller belly, 0.996 vs 0.974, does not offset its softer edge
+band and the missing white un-premultiply), so white-matte
+stays the wired twin path there. On non-white-field generated
+frames BiRefNet wins by default — it is the only one of the
+two that works at all (clear 0.975 / corners 0.000 vs
+white-matte's 1.000-everywhere failure). Caveats recorded:
+BiRefNet drops the faint smoke wisps under the Wispkin skull
+(near-background smoke reads as background — soft-FX shots
+need an eye check before use), and at CPU speeds it is an
+offline/Kaggle-seat tool, not an interactive one. backends.json
+status for birefnet is now "measured" with these numbers in
+the entry; it is not wired into generate_bundle.py.
+
 ## EPISODE BUILDER - episode_build.py (2026-10-27)
 One-command episode assembler landed at
 show/production/tooling/build-manifest/episode_build.py, chaining
