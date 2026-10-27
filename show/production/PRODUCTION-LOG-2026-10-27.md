@@ -389,74 +389,235 @@ name references in game/show docs were swept and updated in
 the same PR; historical log entries before this one keep the
 old names as written (append-only history).
 
-## GAMEDATA ISLAND RENAME (2026-10-27)
-Owner order (2026-10-27): the src/world prototype island is
-renamed NOW, not left as debt. Scope: src/world/GameData.ts and
-src/world/FullWorldMaps.ts ONLY - the two files share one
-Pokemon-named move vocabulary (GameData's move dictionary, keyed
-by move name, plus team moves lists and hmNeeded/hmReward
-field-move keys in FullWorldMaps); the island is not wired to the
-live move table. Dictionary keys and every internal reference
-were renamed together; verified zero occurrences of any old name
-remain in either file, and both files parse clean under tsc
-(only the expected unresolved ./WorldConstants import).
-LOCKED canon names applied verbatim (identity/stats-matched to
-PR #363): Aqua Jet -> Hydro Rush, Earthquake -> Tremor,
-Aqua Shot -> Water Orb (FullWorldMaps team list; the island
-dictionary holds no Aqua Shot key), Vine Whip -> Vine Lash,
-Gust -> Gust Wave. OWNER-LOCKED names given 2026-10-27:
-Water Gun -> Aqua Blast, Hydro Pump -> Water Jet (picked over
-Water Stream), Surf -> Wave (RARE class - HM03 origin, Rare-wins
-precedence). DRAFT near-synonyms applied, OWNER APPROVAL
-PENDING (not locked canon; full table at
-show/production/GAMEDATA-ISLAND-RENAME.md): Bubble -> Foam
-Burst, Tail Whip -> Tail Flick, Metal Claw -> Chrome Claw
-(island stats 50/95 match source Metal Claw, not live
-Metal Strike 50/100 - distinct move, drafted), Leer -> Stare
-Down, Scratch -> Swipe, Growl -> Rumble, Pound -> Thump,
-String Shot -> Silk Shot, Shadow Sneak -> Shade Step,
-Metal Sound -> Chrome Screech, Iron Defense -> Chrome Guard,
-Shell Smash -> Shell Burst, Rock Slide -> Rockfall,
-Dragon Tail -> Drake Tail, Ice Beam -> Frost Beam,
-Bug Bite -> Mite Bite, Slam -> Wallop, Strength -> Might
-(hmReward; RARE class, HM04 origin), Cut -> Slice (hmReward;
-RARE class, HM01 origin). Unchanged: Tackle / Quick Attack /
-Crunch (canon verbatim in the live 36) and the island-original
-names (Ink Splash, Jab, Crush, Water Surge, Dark Tide,
-Reap Claw, Mythic Pulse, Data Rend, Quantum Strike,
-Aura Burst). NOT touched: sprite-art/arena-combat/moveData.js
-and sprite-art/playtest/playtest-step5.js (remaining prototype
-islands, listed in the mapping doc), moves.json, moves.ts,
-decomp_* datasets, history docs.
+## BIREFNET — MEASURED, SPLIT VERDICT vs WHITE-MATTE (2026-10-27)
+BiRefNet (catalogued as a matting candidate in
+show/production/tooling/avatar-stack/backends.json) was wired up
+locally and MEASURED on the show's own material — the first time
+it has been run on any of it. Local artifacts (frames, mattes,
+results.json, run_measure.py) are kept at
+~/workspace/mochiichao-show/birefnet-measure/; this entry and the
+backends.json update are the measurement landing in the repo
+(no test media in the repo).
 
-## GAMEDATA ISLAND RENAME - OWNER NAMES LOCKED (2026-10-27)
+Weights + licence (licence honesty law): the weights used are
+the STANDALONE Hugging Face checkpoint ZhengPeng7/BiRefNet,
+loaded via transformers AutoModelForImageSegmentation
+(trust_remote_code) in a venv at ~/opt/venvs-birefnet, weights
+cached under HF_HOME=~/opt/hf-cache (tooling cache). Licence
+VERIFIED AT SOURCE 2026-10-27: the upstream repo's LICENSE file
+read via the GitHub API is the MIT License (Copyright (c)
+2024 ZhengPeng), and the GitHub licence API reports key=mit /
+spdx_id=MIT for ZhengPeng7/BiRefNet — open source, MIT, for
+code and these weights. rembg was NOT used: it was not
+installed, and its DEFAULT session weights (BRIA RMBG-2.0,
+CC-BY-NC non-commercial) were deliberately avoided and never
+downloaded. No BRIA weights were touched anywhere in this run.
 
-Follow-up to the GAMEDATA ISLAND RENAME entry above (same PR #364,
-second commit). The owner took the draft table through his own
-dictation pass and locked most names in his own words. OWNER-LOCKED
-now applied in src/world/GameData.ts + src/world/FullWorldMaps.ts:
-Bubble -> Foam Burst (owner's final word; an initial "Bubbles" was
-superseded the same day), Tail Whip -> Tail Flick (draft
-confirmed), Metal Claw -> Chrome Claw (draft confirmed), Leer ->
-Stare Down (draft confirmed), Scratch -> Claw, Pound -> Punch,
-String Shot -> Web Blast, Shadow Sneak -> Night Stealth, Metal
-Sound -> Chrome Screech (draft confirmed), Iron Defense -> Chrome
-Guard (draft confirmed), Shell Smash -> Shell Burst (draft
-confirmed), Rock Slide -> Avalanche (owner chose Avalanche AFTER
-the flag that it is itself a Pokemon move name; locked with the
-collision recorded, per his call), Dragon Tail -> Draco Tail,
-Ice Beam -> Frost Blast, Bug Bite -> Mosquito Bite, Slam -> Scoop
-Slam, Strength -> Mighty Push (hmReward; RARE class, HM04 origin),
-Cut -> Slice (draft confirmed; RARE, HM01 origin - the "Chop Down"
-question is closed). Owner-locked with NO occurrence in the island
-code (recorded in the mapping doc only): Ember -> Small Flame (the
-move does not appear in either file; "Ember Island" is a place
-name), Fly -> Ascend (RARE, HM02 origin; the move does not appear -
-only the type string "Flying"). OWNER DECISION PENDING (code keeps
-current values): Growl (Rumble unconfirmed - owner delegated the
-synonym), and Gust / Quick Attack / Crunch / Tackle (owner leaned
-Wind Blast / Swift Movement / Munch / unsettled, but all four are
-live-table names - pending his call on whether the rename reaches
-src/data/core/moves.json too). Full record:
-show/production/GAMEDATA-ISLAND-RENAME.md. moves.json and moves.ts
-NOT touched.
+Method: 6 frames, ours only. (A) Dorowani avatar idle clip
+(~/workspace/avatars/, white field), frames 12/60/120 at
+720x720. (B) Wispkin Wan test 1 clip (rejected-tests/
+wispkin-wan-test-00001.mp4, NON-white beige field), frames
+0/24/48 at 960x2048. BiRefNet inference at 1024x1024, CPU,
+2 threads. The repo's wired white_matte.py matte_frame() was
+run on the same frames as the comparator. Scores per frame:
+alpha coverage (opaque >0.98 / clear <0.02 / soft band),
+corner-patch alpha, a belly patch on Dorowani (48x48 at
+0.50w/0.66h; white-matte's published clip scores are belly
+0.972, corners 0.0), a skull patch on Wispkin, edge quality
+inside a +-3px morphological band around the alpha>0.5
+silhouette (soft fraction in band; halo = fraction of band
+pixels whose magenta composite lands within distance 40 of
+the source field colour at alpha <0.95), and — Dorowani only,
+where the frame IS ground truth (FG over white) —
+recomposite-over-white mean abs diff on the 0-255 scale, the
+same definition as white-matte's published 1.08.
+
+Numbers (3-frame means):
+- Dorowani, BiRefNet: recomposite diff 1.79 (1.81/1.79/1.77),
+  belly 0.996, corners 0.000, opaque 0.380, clear 0.600,
+  band soft 0.600, halo 0.0004.
+- Dorowani, white-matte (same frames): recomposite diff 1.083
+  (1.11/1.08/1.06 — reproduces the published clip score 1.08),
+  belly 0.974 (published 0.972), corners 0.000, opaque 0.377,
+  clear 0.596, band soft 0.470, halo 0.0000.
+- Wispkin, BiRefNet: clear 0.975, opaque 0.023, corners 0.000,
+  skull-patch alpha 0.816 (0.886/0.787/0.775), band soft 0.743,
+  halo 0.026 (confounded here — skull bone colour is close to
+  the field colour; the magenta-composite visual check shows
+  a clean skull cut-out, no beige fringe ring).
+- Wispkin, white-matte (same frames): TOTAL FAILURE —
+  opaque 1.000, clear 0.000, corners 1.000, mean alpha 1.000.
+  Off a white field it declares the entire frame foreground.
+- Cost: BiRefNet ~78-90 s/frame (720x720 sources) and
+  ~103-115 s/frame (960x2048 sources) on this 2-vCPU VM.
+
+VERDICT (split, no hype): BiRefNet LOSES to white-matte on
+white-field avatar material (recomposite 1.79 vs 1.08 — its
+fuller belly, 0.996 vs 0.974, does not offset its softer edge
+band and the missing white un-premultiply), so white-matte
+stays the wired twin path there. On non-white-field generated
+frames BiRefNet wins by default — it is the only one of the
+two that works at all (clear 0.975 / corners 0.000 vs
+white-matte's 1.000-everywhere failure). Caveats recorded:
+BiRefNet drops the faint smoke wisps under the Wispkin skull
+(near-background smoke reads as background — soft-FX shots
+need an eye check before use), and at CPU speeds it is an
+offline/Kaggle-seat tool, not an interactive one. backends.json
+status for birefnet is now "measured" with these numbers in
+the entry; it is not wired into generate_bundle.py.
+
+---
+
+## 2026-10-27 — FULL MACHINE-SET IMPORT PROGRAMME, PHASE 1: MASTER REGISTRY LANDED
+
+Owner programme (2026-10-27): import the complete multi-generation TM/HM move sets and their move
+animations — from the games and modern public communities, wherever publicly available — into the
+game, universe, and canon, as the reference library from which show moves and show move-animations
+are built.
+
+CANON NAMING (owner-locked): the TM-equivalent class is GENERAL MOVES; the HM-equivalent class is
+RARE MOVES. Acquisition stays Pokemon-like: General Moves are obtained by searching and fighting
+through the world; Rare Moves are the scarce class and may also arrive pre-known on a creature or
+through alternate acquisition routes (owner's comparison: how Pokemon GO hands them out).
+
+CLASS RULE (owner-locked): RARE WINS — a move that was an HM in any generation is a Rare Move even
+where later generations list it as a TM (Rock Smash, Flash; Gen-9 TM listings of Fly/Surf/Waterfall
+stay Rare). TM-only = General. Never-machine moves carry no machine class. Per-generation history is
+preserved in every registry row.
+
+TWO-LANE CANON (owner-locked): the SHOW handles moves the way the Pokemon anime does — moves are
+skill, learned through training/practice/observation/tutors; Rare Moves arrive known or are innate
+capability; machine discs are not routine on screen (an Origins-style physical machine is at most a
+rare story object). The GAME handles moves the way the Pokemon games do — the General Moves / Rare
+Moves machine system, found and fought through the world. Each lane follows its own medium's canon.
+
+WHAT LANDED (show/production/moves-registry/):
+- machine-registry.json — 352 unique moves that have ever been a TM/HM in Generations 1-9:
+  341 General Moves + 11 Rare Moves (Cut, Defog, Dive, Flash, Fly, Rock Climb, Rock Smash, Strength,
+  Surf, Waterfall, Whirlpool); rare-wins precedence applied to 7 dual-history rows. Built from 2,372
+  fetched PokeAPI machine records (BSD-3-Clause) reconciled with the in-repo tables (gen5plus,
+  Black 2 decomp); stats provenance recorded per row. 13 rows map onto our playable 36.
+- INDEX.md — computed counts, doctrine (anatomy-variance: a move's animation depends on the
+  performer's anatomy — shape, size, build, mythical/legendary class; one performance is never the
+  universal animation; every registry row carries the variance field), reconciliation, Show Bible
+  hook (incl. the anime move-count convention — no enforced four-move limit — and the two Rare Move
+  precedents: field capability as body+job, and prestige techniques gated like Z-Moves / examined
+  Terastallization), and the honest gaps list (BDSP records partial in source; Legends Z-A numbering
+  PokeAPI-only for now; TRs counted — 100 — and excluded by scope).
+- ANIMATION-SOURCE-CATALOGUE.md — public animation sources surveyed with licences verified at
+  source. Verdicts: metadata is pullable (PokeAPI pulled this phase; Showdown server tables MIT,
+  next phase); all animation choreography/appearance sources (pret decompilations,
+  fuddlesworth/pokebw2, Showdown client AGPL-3.0, Spriters Resource, Bulbagarden Archives) are
+  community-extracted reference — REFERENCE-ONLY. No animation assets were pulled.
+- RENAME-WORKSHEET-BATCH-1.md — 40 drafted near-synonym names under the synonym-rename rule
+  (coolest near-synonym, meaning preserved), DRAFT — OWNER APPROVAL PENDING. No game files changed.
+
+RECONCILIATION (computed): owner's B2/W2 list — 101/101 slots match the fetched data exactly (and
+the in-repo Black 2 item table holds exactly 101 TM/HM items). Owner's SV+DLC list — 227/229 slots
+match; 2 discrepancies: TM106 is Drill Run (not Acrobatics) and TM116 is Stealth Rock (not Energy
+Ball) — which explains the list's two internal duplicates (Acrobatics x2, Energy Ball x2; TM014
+Acrobatics and TM119 Energy Ball are correct as listed). Registry follows the games' data;
+discrepancies logged in INDEX.md, not silently corrected.
+
+## EPISODE BUILDER - episode_build.py (2026-10-27)
+One-command episode assembler landed at
+show/production/tooling/build-manifest/episode_build.py, chaining
+the tools already wired in that folder: it renders every cut via
+composite_shot.py, concatenates the cuts in episode-spec order,
+attaches/mixes the scene audio beds at their scene offsets (an
+existing bed WAV per scene, or a "build" instruction in the shape
+scene_audio_bed.py implements), finishes with the house two-pass
+loudnorm (-14 LUFS / -1 dBTP, measured at the target, encoded-file
+peak verification with pull-down retries - the composite_shot.py
+approach), invokes episode_gate.py, and emits a build report JSON
+(per-cut status, final measured loudness, gate results, flags).
+Failure law: a failed cut halts the build with the named error
+EPISODE_BUILD_CUT_FAILED and a non-zero exit - no cut is skipped
+or substituted, and no partial output is left behind. An example
+spec (EP01-SCENE-01-mini-episode.json, same folder) mirrors the
+local test build.
+LOCAL TEST (media stays local, never in the PR): EP01 Scene 1
+mini-master, ~37s, built in ~/workspace/mochiichao-show/
+episode-build-test/. Honest equivalent, stated plainly: no
+per-cut shot specs exist for locked cuts 02-05, so all five cuts
+used the proven gate-proof-shot.json setup (living Gate
+background EP01-CUT01-composite-life-proof-v1.mp4 + Dorowani idle
+transparent twin at x=422, y=266, scale 0.6, shot audio null) at
+each cut's locked storyboard duration (8/6/5/8/10s), with the
+gated Scene 1 bed WAV (EP01-SCENE-01-gate-morning.wav) as the
+scene bed. Measured on the finished file (ffprobe + independent
+loudnorm analysis, not the plan): duration 37.000s, integrated
+-14.20 LUFS, true peak -1.00 dBTP, finish gates PASS
+(duration / loudness within 1 LU / true peak), episode_gate.py
+invoked (exit 0; all five EP01 audio gates PASS; HALT cut 12 and
+the ambient GAP flag reported by the gate as designed). The
+failure path was also tested: a spec pointing at a missing
+background halts with EPISODE_BUILD_CUT_FAILED, exit 1, no output
+file, and a HALTED build report.
+
+## Addendum — Kaggle consistency kit staged (2026-10-27)
+Workstream: making the next Kaggle session for Wan test 2
+(notebook mochiichao-comfyui-wan, ComfyUI + Wan 2.2 TI2V-5B,
+2x Tesla T4) one-attach-and-run. Kit landed under
+show/production/tooling/avatar-stack/ (fetch_consistency_
+models.py, wan21_vace_first_last_frame.json, build_sparse_flf_
+control.py, train_character_lora.py, CHARACTER-LORA-PLAN.md,
+KAGGLE-KIT.md). Scripts/docs in the repo; weights stage to two
+named PRIVATE Kaggle Datasets (mochiichao-wan22-consistency-kit
+for models, mochiichao-character-loras for trained LoRAs) —
+nothing weight-sized in git, nothing left session-local.
+RESEARCH CORRECTION recorded the same day, superseding the
+kit's first draft AND the standing "lock stack" framing: deep
+research confirmed NO IP-Adapter and NO ControlNet exists for
+Wan 2.2 — those tools belong to the still-image/keyframe stage
+only (the kit fetches IP-Adapter only under --stills-stage,
+into STILLS_ONLY folders). Wan-native conditioning equivalents
+are VACE, Phantom, Wan-Animate-14B, S2V-14B and first/last-
+frame control — all Apache-2.0, all 14B-class = T4-marginal,
+documented not wired. The kit's working eval is VACE-1.3B
+(Wan 2.1 family, Apache-2.0, 480p per its card) including the
+sparse-keyframe FLF workflow; TI2V-5B has no FLF mode of its
+own. LoRA correction alongside: per-character IMAGE LoRA is
+the T4-feasible consistency path (musubi-tuner, ~12 GB image
+training; ai-toolkit MIT verified alternate) — VIDEO LoRA at
+recommended settings (24 GB+) is NOT T4-feasible and is a
+headline honest gap, not a plan. Also staged as commercial-
+clean post/music components, licences verified at source
+2026-10-27: ACE-Step 1.5 XL Turbo (MIT, music layer),
+RIFE via ComfyUI-VFI (MIT, interpolation; staged from the
+node's own auto-download — no direct URL was verified, so
+none was invented), RealESRGAN_x4plus_anime_6B (BSD-3-Clause,
+17.9 MB, upscale). Nothing in the kit has been run yet: the
+VACE eval, FLF pair and first image LoRA still have to earn
+gate packets in session; Wan backend status (motion proven /
+likeness unproven) is unchanged. Follow-up owed: reword the
+backends.json ip_adapter/controlnet lock entries at the next
+backends update so they cannot be read as usable Wan locks.
+
+## GAMEDATA ISLAND RENAME — OWNER DICTATION COMPLETED (2026-10-27)
+
+Final pass on PR #364 (src/world/GameData.ts + src/world/FullWorldMaps.ts).
+The owner's dictation for the island is now COMPLETE. The four names
+that were pending resolve as: Gust -> Wind Blast (supersedes the
+interim Gust Wave live-canon application in the island), Growl ->
+Rumble (Doro's delegated pick under the owner's "find a synonym"
+instruction, confirmed), Quick Attack -> Swift Movement, Crunch ->
+Munch. The owner resolved the live-table collisions as RENAME
+EVERYWHERE (live table + island + show), so these are canon names,
+not island-only variants; stats and move data never change, only
+display names. Rock Slide -> Rockfall: the owner chose Rockfall in
+the final pass; Avalanche — picked in an earlier round after the
+collision flag (Avalanche is itself a Pokemon move name) — is
+REJECTED and appears in the record only as the rejected option.
+Tackle stays Tackle in the island code for now: status delegated,
+to be named in the full rename pass. Every other island name stands
+as OWNER-LOCKED; the full final table is the mapping record at
+show/production/GAMEDATA-ISLAND-RENAME.md. Verified: scan of both
+code files for every old Pokemon name in the table (exact quoted
+strings) — zero occurrences, Tackle excepted by the delegation; both
+files fetched back from the branch byte-identical to the verified
+edits. NOTE on this log: the branch log had diverged from main, so
+it was rebuilt onto main's current log content and this entry
+appended; the two interim island entries from earlier commits of
+this PR are superseded by this entry, and the mapping doc keeps the
+full per-round history.
