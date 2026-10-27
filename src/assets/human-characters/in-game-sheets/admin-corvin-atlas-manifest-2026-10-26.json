@@ -1,0 +1,68 @@
+{
+  "atlas": "admin-corvin-atlas-64x64-2026-10-26.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "world": "media-generation-admin-corvin-world-v1-2026-10-26-2e45a341.webp",
+  "walk": "media-generation-admin-corvin-walk-v1-2026-10-26-1847f2d2.webp",
+  "battle": "media-generation-admin-corvin-battle-front-v1-2026-10-26-8fecce7c.webp",
+  "portrait": "media-generation-admin-corvin-portrait-v1-2026-10-26-8b9aad67.webp",
+  "world_note": "World row order visually verified this run: front, back, left, right \u2014 atlas cells already in that order, no remap.",
+  "walk_note": "Walk frames are side-view stride phases, all facing image-right; atlas step cells 8-11 are those stride phases, NOT true front/back/left/right steps."
+}
