@@ -39,6 +39,16 @@ export type LockedV32Panel = {
   // in PR #163 were invented by the restoration, not locked.
   fill: string;
   labelSize: number;
+  // Measured left margin of the label text from the panel's left
+  // edge (full 1200x1500 scale), from the three targets 2026-10-26:
+  // CONTINUE cursor 27, NEW GAME 33, SETTINGS 29, BACK 33.
+  labelMargin: number;
+  // Per-panel letter-spacing (em) derived 2026-10-26, NOT guessed:
+  // (targetWidth - measuredWidth) / (gaps * fontSize), measured by
+  // Range rects on the pass-1 render (fontSize from cap heights):
+  // CONTINUE (208-183)/(7*35)=+0.10, NEW GAME (171-146)/(7*26)=+0.14,
+  // SETTINGS (158-175)/(7*35)=-0.07, BACK (285-287)/(16*31)=0.00.
+  labelLetterSpacing: number;
 };
 
 export type MenuAnimationSpeed =
@@ -136,10 +146,10 @@ export const LOCKED_V32_MENU = {
   cloud: { x: 250, y: 648, w: 700, h: 180, centre: { x: 600, y: 738 }, bobAmp: 6, bobPeriod: 5, imgBox: { x: 225, y: 599, w: 823, h: 258 } },
   mochii: { x: 170, y: 790, w: 110, h: 110, bobAmp: 8, bobPeriod: 4.5 },
   panels: [
-    { key: "CONTINUE", x: 300, y: 788, w: 600, h: 110, fill: "#ff96c8", labelSize: 34 },
-    { key: "NEW GAME", x: 300, y: 918, w: 600, h: 70, fill: "#ffe696", labelSize: 32 },
-    { key: "SETTINGS", x: 300, y: 1008, w: 600, h: 70, fill: "#8cd2ff", labelSize: 32 },
-    { key: "BACK TO TITLE", x: 300, y: 1098, w: 600, h: 70, fill: "#a0e6b4", labelSize: 32 },
+    { key: "CONTINUE", x: 300, y: 788, w: 600, h: 110, fill: "#ff96c8", labelSize: 35, labelMargin: 27, labelLetterSpacing: 0.10 },
+    { key: "NEW GAME", x: 300, y: 918, w: 600, h: 70, fill: "#ffe696", labelSize: 26, labelMargin: 33, labelLetterSpacing: 0.14 },
+    { key: "SETTINGS", x: 300, y: 1008, w: 600, h: 70, fill: "#8cd2ff", labelSize: 35, labelMargin: 29, labelLetterSpacing: -0.07 },
+    { key: "BACK TO TITLE", x: 300, y: 1098, w: 600, h: 70, fill: "#a0e6b4", labelSize: 31, labelMargin: 33, labelLetterSpacing: 0 },
   ] as LockedV32Panel[],
   // Picture panel labels: upright bold sans, NOT the slanted Yagiza
   // that var(--menu-font) gives by default. CONTINUE/SETTINGS (and
@@ -155,6 +165,12 @@ export const LOCKED_V32_MENU = {
     strokeLabels: ["CONTINUE", "SETTINGS"] as const,
     labelStrokePx: 2,
     sublabelStrokePx: 1,
+    // Sublabel size from the targets' sublabel cap height 22-23
+    // (proof + matched + v32 agree): 26 stage px. CONTINUE sublabel
+    // margin from panel left edge: 30 (targets agree).
+    sublabelSize: 26,
+    sublabelMargin: 30,
+    sublabelLineHeight: 1.15,
   },
   panelStyle: { borderRadius: 28, borderWidth: 3 },
   background: {

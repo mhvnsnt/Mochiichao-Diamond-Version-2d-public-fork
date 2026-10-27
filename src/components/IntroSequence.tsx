@@ -665,7 +665,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       background: panel.fill,
       border: `${LOCKED_V32_MENU.panelStyle.borderWidth}px solid #000`,
       borderRadius: LOCKED_V32_MENU.panelStyle.borderRadius, display: 'flex', flexDirection: 'column',
-      alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
+      alignItems: 'flex-start', justifyContent: 'center', cursor: 'pointer',
+      paddingLeft: panel.labelMargin - LOCKED_V32_MENU.panelStyle.borderWidth, textAlign: 'left' as const,
       fontFamily: LOCKED_V32_MENU.panelLabel.fontFamily,
       fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight,
       fontStyle: LOCKED_V32_MENU.panelLabel.fontStyle,
@@ -769,16 +770,16 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   onFocus={() => setMainSelected(i)}
                   style={v32PanelStyle(panelByKey('CONTINUE'), isSelected)}
                 >
-                  <div className="tracking-widest text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, ...labelStroke('CONTINUE') }}>
-                    <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>CONTINUE
+                  <div className="text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('CONTINUE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke('CONTINUE') }}>
+                    <span style={{ color: settings.cursorColor, marginRight: isSelected ? 7 : 0 }}>{isSelected ? cursorGlyph : ''}</span>CONTINUE
                   </div>
                   {latestData ? (
                     <>
-                      <div className="text-black" style={{ fontSize: 19, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
-                      <div className="text-black" style={{ fontSize: 17, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
+                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
+                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
                     </>
                   ) : (
-                    <div className="text-black" style={{ fontSize: 19, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player • Roster • Dojos • CR • Last: Core Fragment</div>
+                    <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player • Roster • Dojos • CR • Last: Core Fragment</div>
                   )}
                 </button>
               );
@@ -792,8 +793,8 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                 onFocus={() => setMainSelected(i)}
                 style={v32PanelStyle(panel, isSelected)}
               >
-                <div className="tracking-widest text-black" style={{ fontSize: panel.labelSize, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, ...labelStroke(item.key) }}>
-                  <span style={{ color: settings.cursorColor }}>{isSelected ? `${cursorGlyph} ` : ''}</span>{item.key}
+                <div className="text-black" style={{ fontSize: panel.labelSize, lineHeight: 1.15, letterSpacing: `${panel.labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke(item.key) }}>
+                  <span style={{ color: settings.cursorColor, marginRight: isSelected ? 7 : 0 }}>{isSelected ? cursorGlyph : ''}</span>{item.key}
                 </div>
               </button>
             );
@@ -802,7 +803,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             onClick={() => { playUiBack(); setPhase("TITLE"); }}
             style={v32PanelStyle(panelByKey('BACK TO TITLE'), false)}
           >
-            <div className="tracking-widest text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight }}>◄ BACK TO TITLE (B)</div>
+            <div className="text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('BACK TO TITLE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%' }}>BACK TO TITLE (B)</div>
           </button>
         </LockedStage>
 
