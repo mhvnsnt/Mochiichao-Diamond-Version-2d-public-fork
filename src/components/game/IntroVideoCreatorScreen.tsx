@@ -28,7 +28,11 @@
  *   default). This screen's preview is DOM/CSS applying the same
  *   camera + keyframe math; Pixi playback from a preset is the
  *   preset option, not the default.
- * - Video file export (Phase 2: FFmpeg desktop / MediaRecorder).
+ * - Video file export is LIVE since Creator Phase 2: EXPORT VIDEO
+ *   below switches this full screen to export mode (MediaRecorder
+ *   web route, WebM, silent — the music slot is name-only, so no
+ *   audio track; FFmpeg stays a desktop install note for WebM->MP4
+ *   or for adding audio later). See src/lib/introVideoExport.ts.
  * - Painted backgrounds and 9/10 creature cutouts (see
  *   introVideoCreator.ts GAP notes). No Pokemon sprites, dialogue,
  *   music, cries or art anywhere in this screen.
@@ -52,6 +56,17 @@ import {
 } from '../../lib/introVideoCreator';
 import { FONT_OPTIONS, PINNED_SUBTITLE_FONT } from '../../lib/fonts';
 import { getIntroPlayer, setIntroPlayer } from '../../lib/titlePlayerPreference';
+import { OpenSourceAssetPicker } from './OpenSourceAssetPicker';
+import {
+  INTRO_EXPORT_WIDTH, INTRO_EXPORT_HEIGHT,
+  drawIntroFrame, startCanvasRecording, pickExportMimeType,
+  exportFileExtension, loadComponentImages,
+  type CanvasRecording, type ExportFrameImages,
+} from '../../lib/introVideoExport';
+import {
+  openSourceAssetsByIds, openSourceAssetUrl, openSourceAttribution,
+} from '../../lib/openSourceAssets';
+import yogifernoWalkCutout from '../../assets/title/yogiferno-walk-cutout.png';
 
 function clonePreset(p: IntroVideoPreset): IntroVideoPreset {
   return JSON.parse(JSON.stringify(p)) as IntroVideoPreset;
@@ -79,6 +94,16 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
   const [importText, setImportText] = useState('');
   const rafRef = useRef<number>(0);
   const lastTickRef = useRef<number>(0);
+  // --- Video export mode (full screen, not a popup) ---------------
+  const [exportMode, setExportMode] = useState(false);
+  const [exportProgress, setExportProgress] = useState(0);
+  const [exportStatus, setExportStatus] = useState('');
+  const [exportUrl, setExportUrl] = useState<string | null>(null);
+  const [exportMime, setExportMime] = useState<string | null>(null);
+  const [exportBlob, setExportBlob] = useState<Blob | null>(null);
+  const [recording, setRecording] = useState(false);
+  const exportCanvasRef = useRef<HTMLCanvasElement | null>(null);
+  const recordingRef = useRef<CanvasRecording | null>(null);
 
   const scene: IntroVideoScene | undefined = preset.scenes[sceneIndex];
   const sceneCount = preset.scenes.length;
@@ -107,8 +132,11 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
   }, [playing, scene?.id, scene?.duration]);
 
   // --- Any-key-skips in preview + B: BACK ---------------------------
+  // In export mode keys do nothing (export has its own buttons) so
+  // a stray key cannot exit the creator mid-recording.
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      if (exportMode) return;
       if (isEditableTarget(e)) return;
       if (playing) {
         e.preventDefault();
@@ -123,7 +151,7 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [playing, onBack]);
+  }, [playing, onBack, exportMode]);
 
   useEffect(() => { setPlayhead(0); setPlaying(false); setSkippedMsg(''); }, [sceneIndex]);
 
@@ -264,6 +292,125 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
     setSceneIndex(0);
     setMsg(`Imported preset "${parsed.name}" (${parsed.scenes.length} scene(s)). Save it to keep it.`);
   };
+
+  // --- Video export (MediaRecorder, full-screen export mode) ------
+  const toggleComponent = (id: string) => {
+    if (!scene) return;
+    const cur = scene.openSourceComponentIds || [];
+    patchScene({
+      openSourceComponentIds: cur.includes(id) ? cur.filter(c => c !== id) : [...cur, id],
+    });
+  };
+
+  const loadYogifernoImage = (): Promise<HTMLImageElement | null> => new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = yogifernoWalkCutout;
+  });
+
+  const startExport = async () => {
+    const canvas = exportCanvasRef.current;
+    if (!canvas) {
+      setExportStatus('Export canvas is not ready — try again.');
+      return;
+    }
+    const snapshot: IntroVideoPreset = { ...clonePreset(preset), name: presetName.trim() || preset.name };
+    const mime = pickExportMimeType();
+    if (!mime) {
+      setExportStatus('Video export is not supported in this browser (no MediaRecorder mime type).');
+      return;
+    }
+    setExportStatus('Loading cutout + picked components…');
+    setExportUrl(null);
+    setExportBlob(null);
+    setExportProgress(0);
+    const allIds = [...new Set(snapshot.scenes.flatMap(s => s.openSourceComponentIds || []))];
+    const images: ExportFrameImages = {
+      yogiferno: await loadYogifernoImage(),
+      components: await loadComponentImages(allIds),
+    };
+    const duration = totalDuration(snapshot);
+    try {
+      const rec = startCanvasRecording(
+        canvas, duration,
+        (ctx, elapsed) => drawIntroFrame(ctx, snapshot, elapsed, images),
+        (elapsed, total) => setExportProgress(total > 0 ? elapsed / total : 0),
+      );
+      recordingRef.current = rec;
+      setExportMime(rec.mimeType);
+      setRecording(true);
+      setExportStatus(`Recording… ${duration.toFixed(1)}s total, ${rec.mimeType}. Keep this screen open until it finishes.`);
+      const blob = await rec.done;
+      setRecording(false);
+      setExportBlob(blob);
+      setExportUrl(URL.createObjectURL(blob));
+      setExportStatus(`Done — ${duration.toFixed(1)}s video ready (${rec.mimeType}, ${(blob.size / 1024).toFixed(0)} KB, silent — music slot is name-only). Press DOWNLOAD VIDEO.`);
+    } catch (err) {
+      setRecording(false);
+      if (err instanceof Error && err.message === 'cancelled') {
+        setExportStatus('Recording cancelled.');
+      } else {
+        setExportStatus(`Export failed: ${err instanceof Error ? err.message : 'unknown error'}`);
+      }
+    }
+  };
+
+  const cancelExport = () => {
+    recordingRef.current?.cancel();
+    recordingRef.current = null;
+  };
+
+  const downloadExport = () => {
+    if (!exportBlob) return;
+    const ext = exportMime ? exportFileExtension(exportMime) : 'webm';
+    const url = URL.createObjectURL(exportBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${(presetName.trim() || preset.name || 'intro-preset').replace(/[^a-z0-9]+/gi, '-').toLowerCase()}.${ext}`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  if (exportMode) {
+    const duration = totalDuration(preset);
+    return (
+      <div className="game-screen bg-[#050810] flex flex-col items-center relative overflow-hidden p-4">
+        <div className="relative z-10 w-full max-w-5xl flex flex-col gap-3 max-h-full overflow-y-auto">
+          <StdWindow style={{ borderRadius: 12, borderWidth: 2, borderColor: '#ffffff', boxShadow: '0 0 0 2px #22d3ee55, 0 6px 24px rgba(0,0,0,0.45)' }} className="p-4 text-center">
+            <div className="text-white text-xl font-black tracking-widest">EXPORT INTRO VIDEO</div>
+            <div className="text-cyan-200 text-xs mt-1">
+              Full screen, not a popup · MediaRecorder web route · {INTRO_EXPORT_WIDTH}x{INTRO_EXPORT_HEIGHT} · {duration.toFixed(1)}s total · {preset.scenes.length} scene(s)
+            </div>
+            <div className="text-slate-300 text-xs mt-1">
+              The canvas below IS the video being recorded (canvas-2D render of the same timeline data as Pixi playback).
+              Silent: the music slot is a name only and ships empty, so no audio track is recorded. Painted backgrounds render
+              the slate fallback + GAP label; only Yogiferno has a clean cutout, other creatures render GAP labels — never fake art.
+              Need MP4 or an audio track later? Desktop FFmpeg install note only: ffmpeg -i intro-export.webm intro-export.mp4.
+            </div>
+          </StdWindow>
+          <StdWindow style={{ borderRadius: 12, borderWidth: 2, borderColor: '#ffffff', boxShadow: '0 0 0 2px #22d3ee55, 0 6px 24px rgba(0,0,0,0.45)' }} className="p-3">
+            <canvas ref={exportCanvasRef} width={INTRO_EXPORT_WIDTH} height={INTRO_EXPORT_HEIGHT}
+              className="w-full rounded border border-white/30 bg-black" />
+            <div className="flex flex-wrap gap-2 mt-3">
+              <button onClick={startExport} disabled={recording} className="game-button px-3 py-2 font-bold min-h-[44px] text-sm">● RECORD VIDEO ({duration.toFixed(1)}s)</button>
+              {recording && <button onClick={cancelExport} className="game-button px-3 py-2 font-bold min-h-[44px] text-sm">CANCEL RECORDING</button>}
+              {exportBlob && <button onClick={downloadExport} className="game-button px-3 py-2 font-bold min-h-[44px] text-sm">DOWNLOAD VIDEO ↓</button>}
+              <button onClick={() => { if (!recording) setExportMode(false); }} disabled={recording} className="game-button px-3 py-2 font-bold min-h-[44px] text-sm">BACK TO EDITOR</button>
+            </div>
+            <div className="mt-2">
+              <div className="w-full h-3 bg-white/10 rounded overflow-hidden">
+                <div className="h-full bg-yellow-300" style={{ width: `${Math.round(exportProgress * 100)}%` }} />
+              </div>
+              <div className="text-white text-xs mt-1">{Math.round(exportProgress * 100)}% · {exportStatus || 'Press RECORD VIDEO to record this preset.'}</div>
+              {exportMime && <div className="text-slate-400 text-xs">Format: {exportMime} ({exportFileExtension(exportMime)}).</div>}
+            </div>
+          </StdWindow>
+          <button onClick={() => { if (!recording) setExportMode(false); }} disabled={recording} className="game-button px-4 py-3 font-bold min-h-[48px]">BACK TO EDITOR</button>
+        </div>
+      </div>
+    );
+  }
 
   if (!scene) {
     return (
@@ -503,9 +650,35 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
           </div>
         </StdWindow>
 
+        {/* Open-source components — current scene */}
+        <StdWindow style={panel} className="p-3">
+          <OpenSourceAssetPicker
+            title={`OPEN-SOURCE COMPONENTS — SCENE ${sceneIndex + 1} (${scene.name})`}
+            selectedIds={scene.openSourceComponentIds || []}
+            onToggle={toggleComponent}
+          />
+          <div className="text-slate-400 text-xs mt-2">
+            Picked components are stored on this scene, shown here, and drawn into the exported video where the kind fits
+            (panel behind the text block, particle/icon as particle sprites). Other kinds are stored on the preset and shown
+            in this picker; they do not change the video frame. Attribution travels with the pick:
+            {openSourceAssetsByIds(scene.openSourceComponentIds || []).map(a => (
+              <span key={a.id} className="block text-slate-300">· {a.id} — {openSourceAttribution(a)}</span>
+            ))}
+            {(scene.openSourceComponentIds || []).length === 0 && <span className="block">No components picked for this scene yet.</span>}
+          </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {openSourceAssetsByIds(scene.openSourceComponentIds || []).map(a => {
+              const url = openSourceAssetUrl(a);
+              return url && /\.(png|svg)$/i.test(a.file) ? (
+                <img key={a.id} src={url} alt={a.id} title={`${a.id} — ${openSourceAttribution(a)}`} className="h-10 w-auto max-w-[120px] object-contain bg-black/30 rounded border border-white/20" />
+              ) : null;
+            })}
+          </div>
+        </StdWindow>
+
         {/* Presets */}
         <StdWindow style={panel} className="p-3">
-          <div className="text-white font-bold tracking-widest text-sm mb-2">SAVE AS PRESET · LOAD PRESET · EXPORT JSON</div>
+          <div className="text-white font-bold tracking-widest text-sm mb-2">SAVE AS PRESET · LOAD PRESET · EXPORT JSON · EXPORT VIDEO</div>
           <div className="flex flex-wrap gap-2 items-center mb-2">
             <span className="text-xs text-slate-300">INTRO PLAYER:</span>
             <button onClick={() => { setIntroPlayer('classic'); setIntroPlayerState('classic'); }} className={`${btn} ${introPlayer === 'classic' ? 'ring-2 ring-yellow-300' : ''}`}>Classic 4 scenes (default)</button>
@@ -519,6 +692,7 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
             </div>
             <button onClick={saveAsPreset} className={btn}>SAVE AS PRESET</button>
             <button onClick={exportJson} className={btn}>EXPORT JSON ↓</button>
+            <button onClick={() => setExportMode(true)} className={btn}>EXPORT VIDEO ►</button>
             <button onClick={resetLocked} className={btn}>RESET TO LOCKED DEFAULT</button>
           </div>
           <div className="flex flex-wrap gap-2 items-end mt-3">
@@ -536,8 +710,9 @@ export default function IntroVideoCreatorScreen({ onBack }: { onBack: () => void
           </div>
           {msg && <div className="text-teal-300 text-sm mt-2 font-bold">{msg}</div>}
           <div className="text-slate-400 text-xs mt-2">
-            GAP, not in this batch: video file export (Phase 2: FFmpeg desktop / MediaRecorder),
-            Blender project export (.blend, desktop only). Blender concepts are translated to this JSON — the Blender binary is NOT shipped;
+            Video export is LIVE (Creator Phase 2, MediaRecorder web route, WebM, silent — music slot is name-only, so no audio
+            track; FFmpeg desktop install note only for WebM-&gt;MP4 or adding audio later). Still GAP, not claimed: Blender project
+            export (.blend, desktop only). Blender concepts are translated to this JSON — the Blender binary is NOT shipped;
             install note only (GPL desktop tool, blender.org). No Pokemon sprites, dialogue, music, cries or art in this screen.
           </div>
         </StdWindow>
