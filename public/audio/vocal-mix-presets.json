@@ -1,194 +1,201 @@
 {
-  "note": "Vocal-chain presets, checkpoint rule: every version is its own file, never overwritten. Rebuild a version from its preset + the named lead file + the named build script.",
-  "presets": {
-    "v11": {
-      "lead": "vocal-autotune-v2.wav (pitch x2.0, formant x1.4, D major, glide 55ms)",
-      "lead_pitch_hz": 290,
-      "vocal_bus": 6.0,
-      "title_bus": 1.0,
-      "delay": "none (chorus only)",
-      "bus": "limiter only",
-      "rms": 0.242
-    },
-    "v12": {
-      "lead": "vocal-autotune-v3.wav (pitch x2.41, formant x1.4, D major, glide 55ms)",
-      "lead_pitch_hz": 334,
-      "vocal_bus": 6.0,
-      "title_bus": 1.0,
-      "delay": "chorus + echo 140/240ms",
-      "bus": "limiter only",
-      "rms": 0.238
-    },
-    "v13": {
-      "lead": "vocal-autotune-v3.wav (pitch x2.41, formant x1.4, D major, glide 55ms)",
-      "lead_pitch_hz": 334,
-      "vocal_bus": 6.0,
-      "title_bus": 1.0,
-      "delay": "dotted-eighth 321.4ms + 642ms tap, wet 0.25, chorus (dreamy, tempo-synced at 140 BPM)",
-      "reverb_echo_wet": 0.25,
-      "god_particle_style_bus": "EQ + compressor 0.15/3:1/10ms/120ms/makeup 4dB + saturation bits=12 mix=0.3 + limiter 0.89, Amount equivalent 100% (Jaycen default)",
-      "rms": 0.284,
-      "peak": 0.707,
-      "build_script": "build_vocal_mix_v13.sh"
-    },
-    "v14": {
-      "lead": "vocal-autotune-v4.wav (pitch x2.58, formant x1.4, D major, glide 55ms)",
-      "lead_pitch_hz": 368,
-      "vocal_bus": 4.0,
-      "title_bus": 1.0,
-      "eq1_vocal": "HP120, -4@250, +6@3k, +5@5k, +3@8k, deesser 0.6@7kHz, comp 0.10/4:1",
-      "eq2_bus": "-2@100 shelf, -3@400, +2@10k shelf (different curve from EQ1)",
-      "limiter": "alimiter 0.89, light bus comp 0.20/2:1 makeup 2dB, NO bus crusher",
-      "delay": "dotted-eighth 321.4ms + 642ms tap wet 0.25",
-      "overdub": "low autotune-v2 (290Hz) + Pancake-style auto-pan 0.4Hz LFO + heavenly chorus (chorus 0.5/25|35ms), vol 0.35",
-      "fade_in_s": 4,
-      "rms": 0.235,
-      "peak": 0.707,
-      "build_script": "build_vocal_mix_v14.sh"
-    },
-    "v15": {
-      "lead": "vocal-autotune-v5.wav (pitch x2.73, formant x1.4, D major, glide 55ms)",
-      "lead_pitch_hz": 394,
-      "lead_max_per_sec_hz": 580,
-      "dropouts_pct": 2.4,
-      "eq1_vocal": "HP120, -4@250, +6@3k, +6@5k, +5@8k, +4@12k air shelf, deesser 0.6@7kHz",
-      "eq2_bus": "-2@100 shelf, -3@400, +2@10k shelf",
-      "ott_style": "parallel heavily-compressed copy (0.05/10:1, makeup 3dB) mixed at 0.15 depth \u2014 Xfer OTT lead-vocal depth 7-20%, 15% typical, de-esser after (kept)",
-      "octave_up_layer": "rubberband pitch 2.0 on warped-norm phrases, vol 0.25",
-      "overdub": "low autotune-v2 (290Hz) + Pancake auto-pan 0.4Hz + heavenly chorus, vol 0.35",
-      "delay": "dotted-eighth 321.4ms + 642ms tap wet 0.25",
-      "vocal_bus": 4.0,
-      "title_bus": 1.0,
-      "limiter": "0.89",
-      "tail_cut": "vocal bus fade-out at 39.81s (last phrase end), 0.5s \u2014 delay ring 39.8-40.3s RMS 0.190 -> 0.145, title loop untouched",
-      "fade_in_s": 4,
-      "rms": 0.235,
-      "peak": 0.707,
-      "build_script": "build_vocal_mix_v15.sh"
-    },
-    "v16": {
-      "lead": "vocal-autotune-v6.wav (pitch x2.73, formant x1.5, breath x0.5, D major, glide 20ms = humanize LESS)",
-      "lead_pitch_hz": 377,
-      "dropouts_pct": 2.5,
-      "chain": "v15 chain (EQ1 highs + air, OTT 0.15, octave-up, pancake overdub, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
-      "pedalboard_master_test": "REJECTED for this loop: comp master lifted tail 0.145->0.198, limiter-only master went to peak 0.0dBFS / LUFS -8.2 / tail 0.229 \u2014 shipped version is the ffmpeg render, NOT pedalboard-mastered",
-      "rms": 0.235,
-      "peak": 0.707,
-      "build_script": "build_vocal_mix_v16.sh"
-    },
-    "v17": {
-      "base": "v16 chain (lead v6 377Hz glide 20ms formant 1.5, OTT, octave-up, pancake overdub, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
-      "third_layer": "V15 main lead vocal-autotune-v5.wav (pitch x2.73, formant 1.4, D major, glide 55ms) with EXACT V15 EQ1 (HP120, -4@250, +6@3k, +6@5k, +5@8k, +4@12k air, deesser 0.6, comp 0.10/4:1, vol 3.0) then volume 1.5 = +50% louder than V15, mixed through wet chorus+delay as the loudest single layer",
-      "complimentary_mix": "main v6 lead = body (centre, dry), third v5 layer = brightest + loudest (wet, chorus+delay), octave-up = sparkle, pancake overdub = width, title carved -8@3k \u2014 industry layering: lead + louder brighter double + harmony + wide overdub",
-      "measured": {
-        "rms": 0.232,
-        "peak": 0.707,
-        "lufs": -9.8,
-        "vocal_band_1_8khz_share": 0.135,
-        "v16_vocal_band": 0.084,
-        "tail_39.8_40.3s": 0.147,
-        "fade_in": "sec0 0.033 -> sec4 0.201"
-      },
-      "note": "Overall RMS flat vs v16 (0.232 vs 0.233) but vocal-band share +61% and LUFS +0.5dB \u2014 third layer cuts through without blowing up overall level; peak still safe under limiter.",
-      "build_script": "build_vocal_mix_v17.sh"
-    },
-    "v18": {
-      "base": "v17 chain (main v6, third v7, OTT, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
-      "formant_answer": "WORLD spectral-envelope warp: envelope frequency axis resampled by 1/formant_ratio, so formant peaks move up by that ratio while F0 is multiplied separately \u2014 pitch and formant are independent knobs. First separated in v11 (pitch 2.0, formant 1.4); v16 pushed formant to 1.5 + breath 0.5.",
-      "all_layers_formant_1.5": {
-        "main_lead": "vocal-autotune-v6 (pitch 2.73, formant 1.5, 377Hz)",
-        "third_layer": "vocal-autotune-v7 NEW (pitch 2.73, formant 1.5, glide 55ms V15-style, breath 0.5, 394Hz, dropouts 2.7%)",
-        "harmony": "vocal-harm-v6 NEW \u2014 v6 lead pitched +5 semitones with rubberband formant=preserved, so formants stay 1.5 instead of shifting with pitch (old: rubberband 1.335 on raw vocal, formants male 1.0, 271Hz -> new 446Hz)",
-        "octave_up": "vocal-oct-v6 NEW \u2014 v6 lead pitched x2.0 with formant=preserved, formants stay 1.5 instead of x2.0 chipmunk (old 406Hz -> new 501Hz)",
-        "overdub_low": "vocal-overdub-v6 NEW \u2014 v6 lead pitched x0.77 with formant=preserved + pancake 0.4Hz, low pitch kept (302Hz) with formants at 1.5 (old: autotune-v2 formant 1.4, 290Hz)"
-      },
-      "measured": {
-        "rms": 0.232,
-        "peak": 0.707,
-        "lufs": -9.8,
-        "vocal_band_1_8khz": 0.139,
-        "v17_vocal_band": 0.135,
-        "tail_39.8_40.3s": 0.148
-      },
-      "honest_note": "Overall meters barely moved vs v17 (RMS/LUFS same) because main+third already dominated the vocal band; the v18 change is timbral \u2014 formant character is now consistent across every layer through the whole song, not just the leads.",
-      "build_script": "build_vocal_mix_v18.sh"
-    }
+ "note": "Vocal-chain presets, checkpoint rule: every version is its own file, never overwritten. Rebuild a version from its preset + the named lead file + the named build script.",
+ "presets": {
+  "v11": {
+   "lead": "vocal-autotune-v2.wav (pitch x2.0, formant x1.4, D major, glide 55ms)",
+   "lead_pitch_hz": 290,
+   "vocal_bus": 6.0,
+   "title_bus": 1.0,
+   "delay": "none (chorus only)",
+   "bus": "limiter only",
+   "rms": 0.242
   },
-  "delay_math_140bpm": {
-    "quarter_ms": 428.6,
-    "dotted_eighth_ms": 321.4,
-    "eighth_ms": 214.3,
-    "sixteenth_ms": 107.1,
-    "formula": "ms = 60000 / BPM * note_beats"
+  "v12": {
+   "lead": "vocal-autotune-v3.wav (pitch x2.41, formant x1.4, D major, glide 55ms)",
+   "lead_pitch_hz": 334,
+   "vocal_bus": 6.0,
+   "title_bus": 1.0,
+   "delay": "chorus + echo 140/240ms",
+   "bus": "limiter only",
+   "rms": 0.238
   },
-  "god_particle_research": {
-    "plugin": "Cradle The God Particle (Jaycen Joshua)",
-    "amount_default_pct": 100,
-    "amount_range_pct": "0-200",
-    "functions": [
-      "EQ",
-      "multiband compression low/mid/high",
-      "saturation/excitation",
-      "stereo widening",
-      "adaptive limiter"
-    ],
-    "method": "mix INTO it from the start, hit input targets (green brackets)",
-    "our_build": "open-source ffmpeg equivalent of those functions, NOT the paid plugin itself"
+  "v13": {
+   "lead": "vocal-autotune-v3.wav (pitch x2.41, formant x1.4, D major, glide 55ms)",
+   "lead_pitch_hz": 334,
+   "vocal_bus": 6.0,
+   "title_bus": 1.0,
+   "delay": "dotted-eighth 321.4ms + 642ms tap, wet 0.25, chorus (dreamy, tempo-synced at 140 BPM)",
+   "reverb_echo_wet": 0.25,
+   "god_particle_style_bus": "EQ + compressor 0.15/3:1/10ms/120ms/makeup 4dB + saturation bits=12 mix=0.3 + limiter 0.89, Amount equivalent 100% (Jaycen default)",
+   "rms": 0.284,
+   "peak": 0.707,
+   "build_script": "build_vocal_mix_v13.sh"
   },
-  "reverse_engineer_tool": "reverse_engineer.py \u2014 given any reference song, measures RMS/peak/crest, band power, vocal pitch median, stereo width, and outputs a suggested preset JSON in presets/reverse-<label>.json",
-  "neptune_deep_reverse": {
-    "top_notes_per_second": [
-      "F4 (349Hz) x31",
-      "F#4 (370Hz) x25",
-      "G4 (392Hz) x21",
-      "C#4 x20"
-    ],
-    "sections_30s": [
-      {
-        "s": "0-30",
-        "rms": 0.152,
-        "pitch_hz": 374,
-        "bass": 0.92
-      },
-      {
-        "s": "30-60",
-        "rms": 0.189,
-        "pitch_hz": 350,
-        "bass": 0.78
-      },
-      {
-        "s": "60-90",
-        "rms": 0.189,
-        "pitch_hz": 350,
-        "bass": 0.77
-      },
-      {
-        "s": "90-120",
-        "rms": 0.193,
-        "pitch_hz": 356,
-        "bass": 0.79
-      },
-      {
-        "s": "120-135",
-        "rms": 0.093,
-        "pitch_hz": 394,
-        "bass": 0.7,
-        "vocalband": 0.229
-      }
-    ],
-    "conclusion": "vocal lives F4-G4 (349-392Hz), AVANNA top G4; v14 lead 368Hz sits inside it; outro section is vocal-forward (vocalband 0.229 vs 0.05 elsewhere)"
+  "v14": {
+   "lead": "vocal-autotune-v4.wav (pitch x2.58, formant x1.4, D major, glide 55ms)",
+   "lead_pitch_hz": 368,
+   "vocal_bus": 4.0,
+   "title_bus": 1.0,
+   "eq1_vocal": "HP120, -4@250, +6@3k, +5@5k, +3@8k, deesser 0.6@7kHz, comp 0.10/4:1",
+   "eq2_bus": "-2@100 shelf, -3@400, +2@10k shelf (different curve from EQ1)",
+   "limiter": "alimiter 0.89, light bus comp 0.20/2:1 makeup 2dB, NO bus crusher",
+   "delay": "dotted-eighth 321.4ms + 642ms tap wet 0.25",
+   "overdub": "low autotune-v2 (290Hz) + Pancake-style auto-pan 0.4Hz LFO + heavenly chorus (chorus 0.5/25|35ms), vol 0.35",
+   "fade_in_s": 4,
+   "rms": 0.235,
+   "peak": 0.707,
+   "build_script": "build_vocal_mix_v14.sh"
   },
-  "genre_research": {
-    "genre": "hyperpop, specifically digicore \u2014 loosely-defined exaggerated pop drawing on electronic, hip hop, dance; NTS digicore guide lists Deko PHANTASY STAR ONLINE ft Yameii alongside Jane Remover, 100 gecs, Glaive, ericdoa, midwxst, SEBii",
-    "yameii": "virtual musician/digital rapper conceived by Osean + Deko, Vocaloid-based (AVANNA), anime/metaverse presentation",
-    "rulebook_break": "AVANNA recommended top is G4 (392Hz) but neptune outro hits 394Hz median and D5 per-second notes \u2014 v15 lead median 394Hz deliberately sits at/above that ceiling, matching the reference, not the spec sheet",
-    "free_plugins_researched": {
-      "OTT (Xfer, free)": "multiband upward/downward compression; lead vocal depth 7-20%, 15% typical, de-esser after \u2014 our open-source equivalent wired in v15",
-      "Valhalla Supermassive (free)": "huge evolving delay/reverb, 18 modes \u2014 dreamy space; our equivalent is the 321ms tempo delay + chorus + echo taps",
-      "Graillon 3 Free / MAutoPitch (free)": "pitch correction + formant shift \u2014 our equivalent is the pyworld autotune/formant scripts",
-      "TDR Nova (free)": "dynamic EQ \u2014 our equivalent is the dual-EQ chain (EQ1 vocal, EQ2 bus)",
-      "Vital / Surge XT (free, open)": "synths for future game tracks, not used on this vocal mix",
-      "note": "VST binaries themselves are NOT redistributed in the public repo (licences); their FUNCTIONS are built open-source in ffmpeg/python and documented in tools/music-production/free-plugins-and-genre-research.md"
-    }
+  "v15": {
+   "lead": "vocal-autotune-v5.wav (pitch x2.73, formant x1.4, D major, glide 55ms)",
+   "lead_pitch_hz": 394,
+   "lead_max_per_sec_hz": 580,
+   "dropouts_pct": 2.4,
+   "eq1_vocal": "HP120, -4@250, +6@3k, +6@5k, +5@8k, +4@12k air shelf, deesser 0.6@7kHz",
+   "eq2_bus": "-2@100 shelf, -3@400, +2@10k shelf",
+   "ott_style": "parallel heavily-compressed copy (0.05/10:1, makeup 3dB) mixed at 0.15 depth \u2014 Xfer OTT lead-vocal depth 7-20%, 15% typical, de-esser after (kept)",
+   "octave_up_layer": "rubberband pitch 2.0 on warped-norm phrases, vol 0.25",
+   "overdub": "low autotune-v2 (290Hz) + Pancake auto-pan 0.4Hz + heavenly chorus, vol 0.35",
+   "delay": "dotted-eighth 321.4ms + 642ms tap wet 0.25",
+   "vocal_bus": 4.0,
+   "title_bus": 1.0,
+   "limiter": "0.89",
+   "tail_cut": "vocal bus fade-out at 39.81s (last phrase end), 0.5s \u2014 delay ring 39.8-40.3s RMS 0.190 -> 0.145, title loop untouched",
+   "fade_in_s": 4,
+   "rms": 0.235,
+   "peak": 0.707,
+   "build_script": "build_vocal_mix_v15.sh"
+  },
+  "v16": {
+   "lead": "vocal-autotune-v6.wav (pitch x2.73, formant x1.5, breath x0.5, D major, glide 20ms = humanize LESS)",
+   "lead_pitch_hz": 377,
+   "dropouts_pct": 2.5,
+   "chain": "v15 chain (EQ1 highs + air, OTT 0.15, octave-up, pancake overdub, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
+   "pedalboard_master_test": "REJECTED for this loop: comp master lifted tail 0.145->0.198, limiter-only master went to peak 0.0dBFS / LUFS -8.2 / tail 0.229 \u2014 shipped version is the ffmpeg render, NOT pedalboard-mastered",
+   "rms": 0.235,
+   "peak": 0.707,
+   "build_script": "build_vocal_mix_v16.sh"
+  },
+  "v17": {
+   "base": "v16 chain (lead v6 377Hz glide 20ms formant 1.5, OTT, octave-up, pancake overdub, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
+   "third_layer": "V15 main lead vocal-autotune-v5.wav (pitch x2.73, formant 1.4, D major, glide 55ms) with EXACT V15 EQ1 (HP120, -4@250, +6@3k, +6@5k, +5@8k, +4@12k air, deesser 0.6, comp 0.10/4:1, vol 3.0) then volume 1.5 = +50% louder than V15, mixed through wet chorus+delay as the loudest single layer",
+   "complimentary_mix": "main v6 lead = body (centre, dry), third v5 layer = brightest + loudest (wet, chorus+delay), octave-up = sparkle, pancake overdub = width, title carved -8@3k \u2014 industry layering: lead + louder brighter double + harmony + wide overdub",
+   "measured": {
+    "rms": 0.232,
+    "peak": 0.707,
+    "lufs": -9.8,
+    "vocal_band_1_8khz_share": 0.135,
+    "v16_vocal_band": 0.084,
+    "tail_39.8_40.3s": 0.147,
+    "fade_in": "sec0 0.033 -> sec4 0.201"
+   },
+   "note": "Overall RMS flat vs v16 (0.232 vs 0.233) but vocal-band share +61% and LUFS +0.5dB \u2014 third layer cuts through without blowing up overall level; peak still safe under limiter.",
+   "build_script": "build_vocal_mix_v17.sh"
+  },
+  "v18": {
+   "base": "v17 chain (main v6, third v7, OTT, delay 321ms, EQ2, limiter 0.89, fade-in 4s, tail cut 39.81s)",
+   "formant_answer": "WORLD spectral-envelope warp: envelope frequency axis resampled by 1/formant_ratio, so formant peaks move up by that ratio while F0 is multiplied separately \u2014 pitch and formant are independent knobs. First separated in v11 (pitch 2.0, formant 1.4); v16 pushed formant to 1.5 + breath 0.5.",
+   "all_layers_formant_1.5": {
+    "main_lead": "vocal-autotune-v6 (pitch 2.73, formant 1.5, 377Hz)",
+    "third_layer": "vocal-autotune-v7 NEW (pitch 2.73, formant 1.5, glide 55ms V15-style, breath 0.5, 394Hz, dropouts 2.7%)",
+    "harmony": "vocal-harm-v6 NEW \u2014 v6 lead pitched +5 semitones with rubberband formant=preserved, so formants stay 1.5 instead of shifting with pitch (old: rubberband 1.335 on raw vocal, formants male 1.0, 271Hz -> new 446Hz)",
+    "octave_up": "vocal-oct-v6 NEW \u2014 v6 lead pitched x2.0 with formant=preserved, formants stay 1.5 instead of x2.0 chipmunk (old 406Hz -> new 501Hz)",
+    "overdub_low": "vocal-overdub-v6 NEW \u2014 v6 lead pitched x0.77 with formant=preserved + pancake 0.4Hz, low pitch kept (302Hz) with formants at 1.5 (old: autotune-v2 formant 1.4, 290Hz)"
+   },
+   "measured": {
+    "rms": 0.232,
+    "peak": 0.707,
+    "lufs": -9.8,
+    "vocal_band_1_8khz": 0.139,
+    "v17_vocal_band": 0.135,
+    "tail_39.8_40.3s": 0.148
+   },
+   "honest_note": "Overall meters barely moved vs v17 (RMS/LUFS same) because main+third already dominated the vocal band; the v18 change is timbral \u2014 formant character is now consistent across every layer through the whole song, not just the leads.",
+   "build_script": "build_vocal_mix_v18.sh"
   }
+ },
+ "delay_math_140bpm": {
+  "quarter_ms": 428.6,
+  "dotted_eighth_ms": 321.4,
+  "eighth_ms": 214.3,
+  "sixteenth_ms": 107.1,
+  "formula": "ms = 60000 / BPM * note_beats"
+ },
+ "god_particle_research": {
+  "plugin": "Cradle The God Particle (Jaycen Joshua)",
+  "amount_default_pct": 100,
+  "amount_range_pct": "0-200",
+  "functions": [
+   "EQ",
+   "multiband compression low/mid/high",
+   "saturation/excitation",
+   "stereo widening",
+   "adaptive limiter"
+  ],
+  "method": "mix INTO it from the start, hit input targets (green brackets)",
+  "our_build": "open-source ffmpeg equivalent of those functions, NOT the paid plugin itself"
+ },
+ "reverse_engineer_tool": "reverse_engineer.py \u2014 given any reference song, measures RMS/peak/crest, band power, vocal pitch median, stereo width, and outputs a suggested preset JSON in presets/reverse-<label>.json",
+ "neptune_deep_reverse": {
+  "top_notes_per_second": [
+   "F4 (349Hz) x31",
+   "F#4 (370Hz) x25",
+   "G4 (392Hz) x21",
+   "C#4 x20"
+  ],
+  "sections_30s": [
+   {
+    "s": "0-30",
+    "rms": 0.152,
+    "pitch_hz": 374,
+    "bass": 0.92
+   },
+   {
+    "s": "30-60",
+    "rms": 0.189,
+    "pitch_hz": 350,
+    "bass": 0.78
+   },
+   {
+    "s": "60-90",
+    "rms": 0.189,
+    "pitch_hz": 350,
+    "bass": 0.77
+   },
+   {
+    "s": "90-120",
+    "rms": 0.193,
+    "pitch_hz": 356,
+    "bass": 0.79
+   },
+   {
+    "s": "120-135",
+    "rms": 0.093,
+    "pitch_hz": 394,
+    "bass": 0.7,
+    "vocalband": 0.229
+   }
+  ],
+  "conclusion": "vocal lives F4-G4 (349-392Hz), AVANNA top G4; v14 lead 368Hz sits inside it; outro section is vocal-forward (vocalband 0.229 vs 0.05 elsewhere)"
+ },
+ "genre_research": {
+  "genre": "hyperpop, specifically digicore \u2014 loosely-defined exaggerated pop drawing on electronic, hip hop, dance; NTS digicore guide lists Deko PHANTASY STAR ONLINE ft Yameii alongside Jane Remover, 100 gecs, Glaive, ericdoa, midwxst, SEBii",
+  "yameii": "virtual musician/digital rapper conceived by Osean + Deko, Vocaloid-based (AVANNA), anime/metaverse presentation",
+  "rulebook_break": "AVANNA recommended top is G4 (392Hz) but neptune outro hits 394Hz median and D5 per-second notes \u2014 v15 lead median 394Hz deliberately sits at/above that ceiling, matching the reference, not the spec sheet",
+  "free_plugins_researched": {
+   "OTT (Xfer, free)": "multiband upward/downward compression; lead vocal depth 7-20%, 15% typical, de-esser after \u2014 our open-source equivalent wired in v15",
+   "Valhalla Supermassive (free)": "huge evolving delay/reverb, 18 modes \u2014 dreamy space; our equivalent is the 321ms tempo delay + chorus + echo taps",
+   "Graillon 3 Free / MAutoPitch (free)": "pitch correction + formant shift \u2014 our equivalent is the pyworld autotune/formant scripts",
+   "TDR Nova (free)": "dynamic EQ \u2014 our equivalent is the dual-EQ chain (EQ1 vocal, EQ2 bus)",
+   "Vital / Surge XT (free, open)": "synths for future game tracks, not used on this vocal mix",
+   "note": "VST binaries themselves are NOT redistributed in the public repo (licences); their FUNCTIONS are built open-source in ffmpeg/python and documented in tools/music-production/free-plugins-and-genre-research.md"
+  }
+ },
+ "v19": {
+  "lead": "rubberband_autotune_v1 (note-segment autotune D major, pitch x2.8, formants x1.4, NO WORLD)",
+  "layers": "all derived from v19 lead (harm +5, oct x2, overdub x0.77 + pancake 0.4Hz, third = lead x1.5)",
+  "lead_eq": "HP150, -5@300, +6@3k/+6@5k/+6@8k/+4@12k, deesser 0.6, comp 0.10/4:1",
+  "mix": "vocal bus 4.5, title 1.00, title carve -8@3k, sidechain ratio 2, limiter 0.89, fade-in 4s, tail cut 39.81s",
+  "measured": "lead pitch median 412Hz, mix mean -11.8dB, peak -3.0dBFS, 41.143s"
+ }
 }
