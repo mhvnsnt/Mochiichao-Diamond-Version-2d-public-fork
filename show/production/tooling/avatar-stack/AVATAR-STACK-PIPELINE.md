@@ -81,6 +81,10 @@ verdict is recorded in `show/shared/clip-index.json`. If a measurement
 cannot be computed, the verdict is `FAIL_CANNOT_MEASURE` — never a
 default pass. Every packet records the sha256 of both the clip and the
 cutout it was scored against, so the reference is never ambiguous.
+Packets (schema v2) also carry a `measurements_v2_normalized`
+diagnostic block from the calibration-v2 normalized path — reported
+alongside the v1 numbers, never (yet) the verdict; see "Calibration
+v2" under Measured facts.
 
 ### 5. Ship
 The bundle lands in the repo (bundle folder + registration in
@@ -167,6 +171,67 @@ Readings, honestly:
   the kind of call the packet system exists to support: the packet
   reports, a human (or a calibrated scorer) promotes. Nobody retunes
   the constants quietly to make a favourite clip pass.
+
+**Calibration v2 — framing-normalized path (2026-10-27).** The v1
+constants above stand as measured v1 observations — in particular the
+identity-level separation the gate already achieves: real Dorowani
+idle IoU **0.7702** vs the glossy reject's **0.6377**. Calibration v2
+adds a second, normalized measurement path to `likeness_gate.py`
+(packets now schema v2, both paths reported). Method: bbox-crop both
+the clip frame and the reference using the gate's existing mask logic
+(white-distance foreground for the frame, alpha for the cutout —
+never a naive grayscale threshold, which on white-field material
+marks the whole frame as foreground), then aspect-preserving
+letterbox/pad to a common square canvas (never warped to a fixed
+non-square size — aspect distortion corrupts IoU), the mask
+resampled NEAREST so silhouette edges stay hard, and IoU / SSIM /
+masked MAD computed with the exact v1 definitions on the normalized
+pair. Measured results (mid frame; the refactored code's v1 path
+reproduces the published v1 numbers exactly):
+
+| subject | reference | path | SSIM | IoU | RGB MAD | vs shipped thresholds |
+|---|---|---|---|---|---|---|
+| Dorowani idle (owner-chosen) | canon cutout | v1 | 0.3099 | 0.7702 | 61.281 | FAIL |
+| Dorowani idle (owner-chosen) | canon cutout | v2 | 0.3340 | 0.7679 | 61.687 | FAIL |
+| Glossy Gabu (rejected batch) | canon cutout | v1 | 0.3568 | 0.6377 | 88.942 | FAIL |
+| Glossy Gabu (rejected batch) | canon cutout | v2 | 0.3891 | 0.6371 | 88.988 | FAIL |
+| Control: idle vs cutout from its own frame 96 | own frame | v1 | 0.9997 | 1.0000 | 0.028 | PASS |
+| Control: idle vs cutout from its own frame 96 | own frame | v2 | 0.9997 | 1.0000 | 0.024 | PASS |
+
+Readings, honestly:
+
+- **The control survives v2** (0.9997 / 1.0000 / 0.024) — the
+  normalized path did not break the instrument.
+- **V2 barely moves the real set** (SSIM +0.024; IoU −0.002; MAD
+  +0.4). That is itself the finding: v1's bbox alignment already
+  removed scale and translation, so the letterbox normalization only
+  strips second-order artefacts (canvas margin, bilinear mask
+  erosion). The dominant penalty was never scale/translation — the
+  reframed clip shows a *different body region* (zoomed upper body,
+  different internal proportions, different pose) than the full-body
+  cutout, and no bounding-box normalization can reconcile content
+  that isn't in the frame. **The owner-chosen set still FAILS the
+  shipped thresholds on the v2 path.** Nothing was tuned to change
+  that.
+- **Separation survives normalization**: IoU gap real-vs-glossy
+  ≈ 0.13 (0.7679 vs 0.6371), MAD gap ≈ 27 (61.7 vs 89.0). And SSIM
+  is *still inverted* on this pair (glossy 0.3891 > real 0.3340) —
+  on v2 numbers as on v1, SSIM cannot discriminate these two clips
+  at any threshold: whatever admits the real clip admits the glossy
+  one.
+- **What threshold the v2 data would support** (stated, NOT adopted —
+  threshold changes are an owner/scorer decision): on the measured
+  v2 points, a separating gate exists only on IoU and MAD — e.g.
+  IoU ≥ 0.70 and MAD ≤ 75 both sit between the real and rejected
+  measurements with margin — while SSIM would have to be dropped,
+  re-weighted, or replaced (e.g. by pose-matched reference frames or
+  multi-frame scoring) for a v2-based verdict to mean anything. This
+  rests on n=1 per class (one owner-chosen clip, one reject), so it
+  is indicative, not calibrated.
+- Until that decision is recorded, **the packet verdict remains the
+  v1 path** against the shipped thresholds (SSIM ≥ 0.50, IoU ≥ 0.55,
+  MAD ≤ 40.0); the v2 block rides along as diagnostics, and
+  `promotion_status` is unchanged.
 
 ## Files in this folder
 
