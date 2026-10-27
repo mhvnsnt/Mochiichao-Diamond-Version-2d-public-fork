@@ -9,7 +9,7 @@
  "frames": [
   {
    "frame": 0,
-   "file": "dorowani_hurt_cell_00.png",
+   "file": "dorowani_hurt_fixed_lightblue-20261026-use-these-new-edit-20261027.png",
    "role": "hurt",
    "duration_ms": 500,
    "display": "shown during recoil + first half of recover, then crossfade to standing"
