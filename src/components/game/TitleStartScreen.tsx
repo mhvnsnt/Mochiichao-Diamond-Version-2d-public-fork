@@ -237,12 +237,7 @@ export default function TitleStartScreen({
           >
             ✦ DIAMOND VERSION ✦
           </div>
-          <div
-            className="absolute text-center text-white font-bold"
-            style={{ left: 0, top: 905, width: 1200, fontSize: 44, letterSpacing: 6, animation: 'press-blink-first 1s steps(1) 1, press-blink 1s steps(1) 1s infinite' }}
-          >
-            PRESS ANY KEY
-          </div>
+          {/* PRESS ANY KEY text removed 2026-10-27 per Mars: preset title screens already say PRESS START (video); key/click advance unchanged. */}
           <img
             src={heavensentLogo}
             alt="M Heavensent Studios"
