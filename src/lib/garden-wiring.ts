@@ -12,6 +12,7 @@ import {
   GardenStats, GardenCreature, clamp, applyGardenItem, gardenForm,
   dominantStat, typeVariant,
 } from './mochiichao-systems';
+import { GARDEN_CRITTERS } from './garden-data';
 
 export interface FarmPlot {
   id: string;
@@ -151,6 +152,50 @@ export function createBreedingEgg(
     stepsRemaining: 100,
   };
 }
+/**
+ * Bonding Season gate (manifest §2: Bond >50 gates breeding).
+ * Pure predicate only — it does not change createBreedingEgg and does
+ * not decide species choice (HELD, Mars decides). Threshold 50 is
+ * manifest-stated, not invented here.
+ */
+export function canBreed(parentA: GardenSaveRecord, parentB: GardenSaveRecord): boolean {
+  return !parentA.mythic && !parentB.mythic && parentA.bond > 50 && parentB.bond > 50;
+}
+
+/**
+ * Egg steps (daycare hatch-task structure, manifest §2/§8): the egg's
+ * steps counter counts down as the creature walks/plays, and at 0 the
+ * egg hatches. No new numbers: the 100-step start is pass 2's existing
+ * value, 0 is the hatch threshold. hatching clears the egg and returns
+ * its species; the caller builds the new record with newGardenRecord
+ * + inheritedGardenStats (both already on main).
+ */
+export function tickEggSteps(rec: GardenSaveRecord, steps: number): GardenSaveRecord {
+  if (!rec.egg) return rec;
+  return { ...rec, egg: { ...rec.egg, stepsRemaining: Math.max(0, rec.egg.stepsRemaining - steps) } };
+}
+export function hatchEgg(rec: GardenSaveRecord): { rec: GardenSaveRecord; hatchedSpeciesId: string | null } {
+  if (!rec.egg || rec.egg.stepsRemaining > 0) return { rec, hatchedSpeciesId: null };
+  return { rec: { ...rec, egg: null }, hatchedSpeciesId: rec.egg.speciesId };
+}
+
+/**
+ * Garden Critter application (manifest §3: critters raise a stat and add
+ * a part). Stat, part slot, and critter id all come from GARDEN_CRITTERS
+ * in garden-data.ts. The stat gain is a required caller parameter —
+ * no Mars-approved critter gain value exists yet, so none is invented
+ * here. Unknown critter id: record returned unchanged.
+ */
+export function applyCritter(rec: GardenSaveRecord, critterId: string, statGain: number): GardenSaveRecord {
+  const critter = GARDEN_CRITTERS.find(c => c.id === critterId);
+  if (!critter) return rec;
+  const garden = applyGardenItem(rec.garden, { [critter.stat]: statGain });
+  const parts = rec.parts.includes(critter.part) ? rec.parts : [...rec.parts, critter.part];
+  const collected = (rec.collectedCritters ?? []).includes(critterId)
+    ? rec.collectedCritters : [...(rec.collectedCritters ?? []), critterId];
+  return { ...rec, garden, parts, collectedCritters: collected };
+}
+
 export function inheritedGardenStats(a: GardenStats, b: GardenStats, seed70: number): GardenStats {
   const pick = (x: number, y: number): number => {
     const hi = Math.max(x, y);
