@@ -1,0 +1,115 @@
+{
+  "atlas": "terra-atlas-64x64.png",
+  "cell_size": 64,
+  "cells": [
+    {
+      "index": 0,
+      "name": "world_front"
+    },
+    {
+      "index": 1,
+      "name": "world_back"
+    },
+    {
+      "index": 2,
+      "name": "world_left"
+    },
+    {
+      "index": 3,
+      "name": "world_right"
+    },
+    {
+      "index": 4,
+      "name": "walk_front_idle"
+    },
+    {
+      "index": 5,
+      "name": "walk_back_idle"
+    },
+    {
+      "index": 6,
+      "name": "walk_left_idle"
+    },
+    {
+      "index": 7,
+      "name": "walk_right_idle"
+    },
+    {
+      "index": 8,
+      "name": "walk_front_step"
+    },
+    {
+      "index": 9,
+      "name": "walk_back_step"
+    },
+    {
+      "index": 10,
+      "name": "walk_left_step"
+    },
+    {
+      "index": 11,
+      "name": "walk_right_step"
+    },
+    {
+      "index": 12,
+      "name": "battle"
+    },
+    {
+      "index": 13,
+      "name": "portrait"
+    }
+  ],
+  "bands": [
+    [
+      13,
+      557
+    ],
+    [
+      570,
+      1106
+    ]
+  ],
+  "runs_per_band": [
+    [
+      [
+        174,
+        503
+      ],
+      [
+        684,
+        1014
+      ],
+      [
+        1210,
+        1540
+      ],
+      [
+        1716,
+        2046
+      ]
+    ],
+    [
+      [
+        184,
+        508
+      ],
+      [
+        696,
+        1021
+      ],
+      [
+        1203,
+        1505
+      ],
+      [
+        1711,
+        2020
+      ]
+    ]
+  ],
+  "world": "0:0,0:2,1:0,1:2",
+  "steps": "0:1,0:3,1:1,1:3",
+  "walk": "media-generation-terra-walk-frames-v1-2026-10-2-0-8fbc5ab4-9d56-4b27-8f9b-a2d34429253a.webp",
+  "battle": "media-generation-terra-battle-front-v1-2026-10-0-0fc43ccb-8791-47f3-b776-fabe23f7b7cd.webp",
+  "portrait": "media-generation-terra-portrait-v1-2026-10-26-0-fb673e8c-419f-4f9e-ac0b-ef9e9d34a8cb.webp"
+}
