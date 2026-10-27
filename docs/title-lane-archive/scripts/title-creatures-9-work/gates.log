@@ -1,0 +1,129 @@
+
+> react-example@0.0.0 lint
+> tsc --noEmit
+
+src/lib/battleTreatments.ts(77,3): error TS2322: Type 'Readonly<{ severity: SeverityLabel; flash: "red" | "white"; direction: 1 | -1; totalMs: number; phases: readonly (Readonly<{ phase: "windup"; startMs: 0; endMs: 250; cameraPush: number; }> | Readonly<...> | Readonly<...> | Readonly<...>)[]; shake: Readonly<...>; particles: Particle[]; camera: Readonly<...>; }>' is not assignable to type 'HitTimeline'.
+  Types of property 'phases' are incompatible.
+    The type 'readonly (Readonly<{ phase: "windup"; startMs: 0; endMs: 250; cameraPush: number; }> | Readonly<{ phase: "impact_hold"; startMs: 250; endMs: number; flash: "red" | "white"; flashMs: 100; }> | Readonly<...> | Readonly<...>)[]' is 'readonly' and cannot be assigned to the mutable type 'HitPhase[]'.
+src/lib/battleTreatments.ts(166,3): error TS4104: The type 'readonly Particle[]' is 'readonly' and cannot be assigned to the mutable type 'Particle[]'.
+LINT exit=2
+
+> react-example@0.0.0 build
+> vite build
+
+vite v6.4.2 building for production...
+transforming...
+✓ 126 modules transformed.
+✗ Build failed in 28.13s
+error during build:
+[vite]: Rollup failed to resolve import "easystarjs" from "/home/hatch/workspace/mochiichao-work/title-creatures-9/repo/src/lib/creaturePathfinding.ts".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`
+    at viteLog (file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/vite/dist/node/chunks/dep-Dq2t6Dq0.js:46399:15)
+    at file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/vite/dist/node/chunks/dep-Dq2t6Dq0.js:46457:18
+    at onwarn (file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/@vitejs/plugin-react/dist/index.js:76:7)
+    at file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/vite/dist/node/chunks/dep-Dq2t6Dq0.js:46455:7
+    at onRollupLog (file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/vite/dist/node/chunks/dep-Dq2t6Dq0.js:46447:5)
+    at onLog (file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/vite/dist/node/chunks/dep-Dq2t6Dq0.js:46097:7)
+    at file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/rollup/dist/es/shared/node-entry.js:21389:32
+    at Object.logger [as onLog] (file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/rollup/dist/es/shared/node-entry.js:23384:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/rollup/dist/es/shared/node-entry.js:22128:26)
+    at file:///home/hatch/workspace/mochiichao-work/title-creatures-9/repo/node_modules/rollup/dist/es/shared/node-entry.js:22086:26
+BUILD exit=1
+
+> react-example@0.0.0 validate:reference
+> tsx src/lib/validate-reference.ts
+
+Canonical species: 12 (001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 038, 039)
+Canonical moves: 36
+  reference OK: lib/generated/battleMoveTable.json (6 top-level entries)
+  reference OK: lib/generated/battleSpriteRegistry.json (4 top-level entries)
+  reference OK: lib/generated/decomp_black2_evolutions.json (6 top-level entries)
+  reference OK: lib/generated/decomp_black2_learnsets.json (9 top-level entries)
+  reference OK: lib/generated/decomp_black2_moves.json (4 top-level entries)
+  reference OK: lib/generated/decomp_black2_species.json (8 top-level entries)
+  reference OK: lib/generated/decomp_black2_trainers.json (7 top-level entries)
+  reference OK: lib/generated/decomp_crystal_egg_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_crystal_encounters.json (8 top-level entries)
+  reference OK: lib/generated/decomp_crystal_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_crystal_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_crystal_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_crystal_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_crystal_tmhm_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_crystal_trainers.json (7 top-level entries)
+  reference OK: lib/generated/decomp_diamond_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_diamond_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_diamond_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_diamond_species.json (6 top-level entries)
+  reference OK: lib/generated/decomp_diamond_tmhm_learnsets.json (9 top-level entries)
+  reference OK: lib/generated/decomp_diamond_trainers.json (8 top-level entries)
+  reference OK: lib/generated/decomp_emerald_egg_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_emerald_encounters.json (9 top-level entries)
+  reference OK: lib/generated/decomp_emerald_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_emerald_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_emerald_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_emerald_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_emerald_tmhm_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_emerald_trainers.json (6 top-level entries)
+  reference OK: lib/generated/decomp_emerald_tutor_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_firered_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_firered_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_firered_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_firered_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_firered_tmhm_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_firered_tutor_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_heartgold_evolutions.json (5 top-level entries)
+  reference OK: lib/generated/decomp_heartgold_species.json (7 top-level entries)
+  reference OK: lib/generated/decomp_heartgold_trainers.json (6 top-level entries)
+  reference OK: lib/generated/decomp_ruby_egg_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_ruby_encounters.json (9 top-level entries)
+  reference OK: lib/generated/decomp_ruby_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_ruby_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_ruby_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_ruby_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_ruby_tmhm_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_ruby_trainers.json (6 top-level entries)
+  reference OK: lib/generated/decomp_ruby_tutor_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_yellow_egg_learnsets.json (6 top-level entries)
+  reference OK: lib/generated/decomp_yellow_encounters.json (6 top-level entries)
+  reference OK: lib/generated/decomp_yellow_evolutions.json (7 top-level entries)
+  reference OK: lib/generated/decomp_yellow_learnsets.json (7 top-level entries)
+  reference OK: lib/generated/decomp_yellow_moves.json (5 top-level entries)
+  reference OK: lib/generated/decomp_yellow_species.json (5 top-level entries)
+  reference OK: lib/generated/decomp_yellow_tmhm_learnsets.json (5 top-level entries)
+  reference OK: lib/generated/decomp_yellow_trainers.json (8 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_evolutions.json (380 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_learnsets.json (532 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_moves.json (871 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_species.json (532 top-level entries)
+  reference OK: lib/generated/gen5plus/gen5plus_summary.json (15 top-level entries)
+Reference JSON files parsed: 61/61
+
+Warnings (22):
+  WARN: Species 001 (Mochii): type WATER is not one of the 12 True Elements (open unification decision)
+  WARN: Species 002 (Tiidebiite): type WATER is not one of the 12 True Elements (open unification decision)
+  WARN: Species 002 (Tiidebiite): type FIGHTING is not one of the 12 True Elements (open unification decision)
+  WARN: Species 003 (Aquari-OS): type WATER is not one of the 12 True Elements (open unification decision)
+  WARN: Species 003 (Aquari-OS): type PSYCHIC is not one of the 12 True Elements (open unification decision)
+  WARN: Species 004 (Razorgater): type WATER is not one of the 12 True Elements (open unification decision)
+  WARN: Species 004 (Razorgater): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Species 005 (Chromedile): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Species 005 (Chromedile): type DARK is not one of the 12 True Elements (open unification decision)
+  WARN: Species 006 (Reaperdile): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Species 006 (Reaperdile): type DRAGON is not one of the 12 True Elements (open unification decision)
+  WARN: Species 007 (Tyrage): type GROUND is not one of the 12 True Elements (open unification decision)
+  WARN: Species 008 (Duneclaw): type GROUND is not one of the 12 True Elements (open unification decision)
+  WARN: Species 008 (Duneclaw): type ROCK is not one of the 12 True Elements (open unification decision)
+  WARN: Species 009 (Oblivirex): type GROUND is not one of the 12 True Elements (open unification decision)
+  WARN: Species 009 (Oblivirex): type GHOST is not one of the 12 True Elements (open unification decision)
+  WARN: Species 010 (Kittember): type FIRE is not one of the 12 True Elements (open unification decision)
+  WARN: Species 038 (Sproutle): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 039 (Dreadtoise): type GRASS is not one of the 12 True Elements (open unification decision)
+  WARN: Species 039 (Dreadtoise): type STEEL is not one of the 12 True Elements (open unification decision)
+  WARN: Sheet Dorowani (147): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+  WARN: Sheet Gabu (148): art is original, but no species.ts entry yet — stats/types not set, not choosable in the lab (intentional, not an error)
+
+validate:reference PASSED (warnings are open decisions, not failures).
+VALIDATE exit=0
+GATES DONE
