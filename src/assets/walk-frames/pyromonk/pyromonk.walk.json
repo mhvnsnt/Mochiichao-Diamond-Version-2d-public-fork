@@ -1,0 +1,85 @@
+{
+ "creature": "pyromonk",
+ "roster_id": "045",
+ "status": "staged",
+ "directions": {
+  "down": 2,
+  "up": 2,
+  "left": 2,
+  "right": 2
+ },
+ "frames": [
+  {
+   "file": "pyromonk_walk_down_0.png",
+   "role": "walk_down_0"
+  },
+  {
+   "file": "pyromonk_walk_down_1.png",
+   "role": "walk_down_1"
+  },
+  {
+   "file": "pyromonk_walk_left_0.png",
+   "role": "walk_left_0"
+  },
+  {
+   "file": "pyromonk_walk_left_1.png",
+   "role": "walk_left_1"
+  },
+  {
+   "file": "pyromonk_walk_right_0.png",
+   "role": "walk_right_0"
+  },
+  {
+   "file": "pyromonk_walk_right_1.png",
+   "role": "walk_right_1"
+  },
+  {
+   "file": "pyromonk_walk_up_0.png",
+   "role": "walk_up_0"
+  },
+  {
+   "file": "pyromonk_walk_up_1.png",
+   "role": "walk_up_1"
+  }
+ ],
+ "source_locked_manifest": "game-ready/pyromonk/pyromonk.manifest.locked.json",
+ "source_cells": {
+  "pyromonk_walk_up_0.png": {
+   "locked_cell": "pyromonk_cell_00.png",
+   "transform": "copy"
+  },
+  "pyromonk_walk_up_1.png": {
+   "locked_cell": "pyromonk_cell_02.png",
+   "transform": "copy"
+  },
+  "pyromonk_walk_left_0.png": {
+   "locked_cell": "pyromonk_cell_25.png",
+   "transform": "mirror"
+  },
+  "pyromonk_walk_left_1.png": {
+   "locked_cell": "pyromonk_cell_26.png",
+   "transform": "mirror"
+  },
+  "pyromonk_walk_right_0.png": {
+   "locked_cell": "pyromonk_cell_25.png",
+   "transform": "copy"
+  },
+  "pyromonk_walk_right_1.png": {
+   "locked_cell": "pyromonk_cell_26.png",
+   "transform": "copy"
+  },
+  "pyromonk_walk_down_0.png": {
+   "locked_cell": "pyromonk_cell_01.png",
+   "transform": "copy"
+  },
+  "pyromonk_walk_down_1.png": {
+   "locked_cell": "pyromonk_cell_04.png",
+   "transform": "copy"
+  }
+ },
+ "method": "locked-cell transforms only (copy / horizontal mirror / 2px-up bob variant), 64x64 RGBA, new filenames only; no generation in this batch; no file shown to Mars overwritten",
+ "movement_note": "LOCK-LABEL CORRECTION (eye-checked 2026-10-26): locked walk_back cells 05/06 are fronts, and walk_side_2/4 (28/27) are upside-down tumble poses, not walk sides. Corrected: down = overworld_front 01 + battle_front 04, up = true backs 00 (battle_back) + 02 (overworld_back), sides = right-facing action sides 25/26, left = mirrors. Tumble cells NOT used.",
+ "walk_gate_note": "STAGING ONLY. Mars's walk-gate pick (QA-PASS locked-sheet walk art vs walk-frames dirs/PNGs) is still PENDING as of 2026-10-26. This dir prepares the walk-frames option; it does not decide the gate. No PR merged, no game src touched.",
+ "eye_check": "Final 8-frame montage PASS after lock-label correction (2026-10-26) with caveat: side pair are flame punch/kick action poses \u2014 the only true locked side views; tumble cells not used.",
+ "staged": "2026-10-26 lane-finish segment 4 (walk frames only)"
+}
