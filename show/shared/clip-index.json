@@ -63,11 +63,11 @@
    "id": "dorowani-avatar-stack-set",
    "character": "dorowani",
    "source": "Muse avatar full stack (the owner's chosen Doro set - NOT the rejected glossy batch)",
-   "files": "show/assets/animations/dorowani-avatar-stack/ (4 MP4 + 4 transparent WebM twins + poster webp + transparent png)",
+   "files": "show/assets/animations/dorowani-avatar-stack/ (4 MP4 + poster webp + transparent png; transparent WebM twins are being re-derived from these REAL clips via Robust Video Matting - see CORRECTION 3 in the production log)",
    "spec": "720x720, 8s, 24fps; WebM twins carry alpha (background already removed)",
    "quality_status": "production_owner_chosen",
-   "show_use": "Dorowani's animation source for the show (EP04 featured); composite via alpha overlay onto plates - proof: COMPOSITE-PROOF-gate.mp4 in the same folder (Gate plate, 8s, verified)",
-   "note": "Owner directive 2026-10-27: the avatar set goes into the show as animations. MP4-only sources needing background removal route through video matting (RVM-class) on the Kaggle GPU; alpha twins need none."
+   "show_use": "Dorowani's animation source for the show (EP04 featured); composites go through the alpha twins once re-derived and frame-verified (the earlier COMPOSITE-PROOF was built from the wrong render and was deleted; a new proof is rebuilt from the real clips only)",
+   "note": "CORRECTION 3 (2026-10-27): the MP4s previously on main under these names were the WRONG re-render (idle md5 9deab318...). The 4 MP4s now here are byte-identical to the owner's live avatar clips - idle 7c68c109b0d3f74a718febd19741e1b8, working e81522040074d301028b59ad4bc322c8, making_something 09ace1f3054b9422e3637554928969ec, milestone_level_up edb01f952d417893d4bbf6ccba1df6de - verified by downloading every file back from main and comparing md5. The first correction commit (17dfc9d) was orphaned when the branch head moved mid-flight; the twins/composite deletions (9f3c652) did land. See production log CORRECTION 3."
   },
   {
    "id": "kaggle-wan-test-wispkin-00001",
