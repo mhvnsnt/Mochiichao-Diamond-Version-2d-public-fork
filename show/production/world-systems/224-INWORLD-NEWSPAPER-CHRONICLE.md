@@ -120,3 +120,9 @@ ruling; none founded) · the #31 collectable proposal
   no deed has been printed. The yield is a public
   memory that can be wrong in print and right in the
   record — and knows the difference.
+
+---
+
+**Landing citation — List 33 (2026-10-27).**
+
+#319 individual recognition (`world-systems/319-INDIVIDUAL-RECOGNITION.md`) reads fame from this file's printed record together with #93's town data — fame lives in the world's public layer, exactly here, and no fame field is added to any individual record. The chronicle is #224 (not #95, the SFX variation engine): the correction registered in List 33's STAGING is carried here. Which individuals the chronicle has written about stays authored content in this file's seat.

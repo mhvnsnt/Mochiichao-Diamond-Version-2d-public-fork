@@ -156,3 +156,9 @@ problem, flagged for #197, not solved here) · whether
 `mark_seen` may ever fire for a species before its
 lock (ruled by construction: no slot exists to mark —
 stated, not slotted).
+
+---
+
+**Landing notes — List 33 (2026-10-27), citing STAGING steps 1 and 8.**
+
+(1) Reciprocal citations: #319 individual recognition (`world-systems/319-INDIVIDUAL-RECOGNITION.md`) extends this file's discovery read — recognition is a read over a Ranger's own meeting history, fame a fact in the world's public layer, never a stat and never a field on an individual record. #325 record portrait fidelity (`species-data/325-RECORD-PORTRAIT-FIDELITY.md`) lands beside this file and is gated by this file's tiers. (2) **Silhouette fence (step 8, citing #325):** silhouette assets resolve from SPECIES records only, never from individual records — individual truth is shown only at the tier that earned it.

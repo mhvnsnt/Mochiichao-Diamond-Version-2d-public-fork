@@ -122,3 +122,6 @@ class list and record shape land complete.
   carried, not instanced).
 - Contents: part records per species are owed by the
   sheet pass; zero are fabricated here.
+
+
+**AMENDMENT — List 33 #317 (applied at its landing, 2026-10-27):** the closed class list above gains an eighth class: `face-cover` — a grown shield worn on the face (317-FACE-SHIELDS.md). The class never comes off and there is no unmasked state; its law is #317's, kept beside the helm law above. The fragment's `closedList` and `instancedInCanon` carry the class as of this landing — Verdilance's species standard instances it. This amendment was owed from List 33's staging (step 2) and could only land once this file existed in the repo (List 27, PR #452).

@@ -107,3 +107,9 @@ temperament {
   block lives, and what it may and may not feed.
 
 **Citation (List 25 #237, landing 2026-10-27):** the idle-quirk read (237-INDIVIDUAL-IDLE-QUIRKS.md) mirrors this file's temperament read — same seed, same derivation family, no second roll anywhere. The quirk vocabulary's CONTENTS land only from the sheet-distillation pass; the mechanism is complete, the word list is content.
+
+---
+
+**Landing citation — List 33 (2026-10-27), citing STAGING step 4.**
+
+#322 generated variation (`species-data/322-GENERATED-VARIATION.md`) seats its derivation beside this file's one-seed reads, in this file's idiom: wild individuals vary visibly (marking placement, proportion, part finish — never palette, per the Lustre Law), derived from #80's one seed, with the snapshot proposed into #80's record shape. The echo weighting from #324 (deviation inheritance) lands as a parent-context parameter in #322's derivation record, in #322's home.

@@ -111,3 +111,9 @@ spec borrows #41's *staging*, not its class.
   the movement rule, the persistence rule, and the staging
   discipline are the yield — plus one flagged join (area/node
   id alignment) for landing to verify rather than assume.
+
+---
+
+**Landing citation — List 33 (2026-10-27).**
+
+#323 standout encounters (`world-systems/323-STANDOUT-ENCOUNTERS.md`) rides this file's persistence records: a standout is a pre-existing persistent individual met in the wild, presented as an encounter-presentation read — #323 instances no standout in any spawn table, area, or rate, and founds no rate of its own. Roaming is #114 (not #113, swarm events): the correction registered in List 33's STAGING is carried here.

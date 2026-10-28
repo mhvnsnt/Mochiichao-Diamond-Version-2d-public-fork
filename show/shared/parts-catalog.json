@@ -1725,6 +1725,73 @@
      "extends": "four dialect constants annexed into #131's register rows with slots EMPTY (contents written at casting); #131's moveId tension note carried verbatim, unresolved"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list33-systems",
+   "type": "systems-index",
+   "about": "List 33 teardown systems (items 317-326), landed 2026-10-27 \u2014 the masks & standouts list: the grown face-cover class, the register of ruled exceptions, and the road from a record to the cast; open slots are story/canon facts and authored content only.",
+   "items": [
+    {
+     "n": 317,
+     "name": "Face shields & mask anatomy",
+     "home": "show/production/world-systems/317-FACE-SHIELDS.md",
+     "extends": "founds the face-cover part class in #259's idiom \u2014 the amendment INTO #259's file is applied at this landing (closed list now eight classes); the class never comes off and there is no unmasked state"
+    },
+    {
+     "n": 318,
+     "name": "Ruled deviation register",
+     "home": "show/production/species-data/318-RULED-DEVIATION-REGISTER.md",
+     "extends": "a compiled view over #80's RULED records, storing nothing; two founding entries verified in #80's live registry, the maskless Verdilance's record owed by the cast-records lane"
+    },
+    {
+     "n": 319,
+     "name": "Individual recognition",
+     "home": "show/production/world-systems/319-INDIVIDUAL-RECOGNITION.md",
+     "extends": "recognition derived over #80 + #114 history reads; fame read from #224's printed record + #93 town data \u2014 no fame field on any individual record"
+    },
+    {
+     "n": 320,
+     "name": "Face expression staging",
+     "home": "show/production/320-FACE-EXPRESSION.md",
+     "extends": "board-review criteria landed beside #53's pipeline: expression rides anatomy carriers per #317 form; the plate never flexes; a review gate, not engine behaviour"
+    },
+    {
+     "n": 321,
+     "name": "Covered-face story law",
+     "home": "show/production/321-COVERED-FACE-STORY.md",
+     "extends": "forbidden-structure list landed as an arc-review checklist item in #82's home; the shield is the face \u2014 what it means stays episode writing"
+    },
+    {
+     "n": 322,
+     "name": "Generated individual variation",
+     "home": "show/production/species-data/322-GENERATED-VARIATION.md",
+     "extends": "derivation seated beside #108 over #80's seed; snapshot PROPOSED into #80's record shape; four fences incl. no palette anywhere in the table shape (Lustre Law)"
+    },
+    {
+     "n": 323,
+     "name": "Standout encounters",
+     "home": "show/production/world-systems/323-STANDOUT-ENCOUNTERS.md",
+     "extends": "encounter-presentation read over #114's persistence records; no standout instanced in any table and no rate founded; the maskless Verdilance stays show-only in game data"
+    },
+    {
+     "n": 324,
+     "name": "Deviation inheritance",
+     "home": "show/production/species-data/324-DEVIATION-INHERITANCE.md",
+     "extends": "#80's inheritance rule restated and extended: ruled deviations never inherit (hatch negative test landed in #80); generated variation echoes bounded through #322's derivation"
+    },
+    {
+     "n": 325,
+     "name": "Record portrait fidelity",
+     "home": "show/production/species-data/325-RECORD-PORTRAIT-FIDELITY.md",
+     "extends": "#196's MUST REPRODUCE generalised by citation in #196's home (rule text unchanged); silhouette fence landed beside #207 \u2014 silhouettes resolve from species records only"
+    },
+    {
+     "n": 326,
+     "name": "Record to cast pipeline",
+     "home": "show/production/326-RECORD-TO-CAST.md",
+     "extends": "four-seat pipeline extending #82's cast machinery; casting never back-writes the species sheet; #318's register is the casting's source of truth"
+    }
+   ]
   }
  ]
 }
