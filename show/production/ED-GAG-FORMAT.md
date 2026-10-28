@@ -64,6 +64,9 @@ instance (§4) uses no smuggle: the episode's own cast only.
 
 ### EP01 — "The Garden Has a Ghost" — instance 1 (2026-10-27)
 
+- **Owner-given name: "Outro Credit Gag Number One"** — named by
+  the owner on approving the instance (2026-10-27).
+
 - **Slot:** the ED chibi credits-bit slot, window **56–70 s** of
   the 75 s ED (per EP01-V3-staging.json). Built length 14.000 s,
   filling the window.
@@ -88,7 +91,23 @@ instance (§4) uses no smuggle: the episode's own cast only.
   Workspace home: `~/workspace/ep01-ed-gag/` (build notes there);
   staged for TeraBox with the EP01 set (`EP01-MANIFEST.txt` in
   the TeraBox upload set).
-- **Status: REGISTERED UPGRADE CANDIDATE.** The shipped EP01
+- **v2 — the animation upgrade (owner-ordered 2026-10-27):**
+  `EP01-ED-GAG-v2.mp4` (1280×720, 24 fps, 14.000 s, sha256
+  503cd42e885948260a2b64088955d83dc95f2e5488f105404e8bba7ae05041fa)
+  and `EP01-ED-GAG-v2-canvas.transparent.webm` (the alpha walk
+  canvas it was composited from, sha256
+  5435a5cfcbe67397f815ae5a3d2b309d1cdf3e74cdcee85ec934007481dd5bd1).
+  Same instance, cast, lineup, dressing, and slot as v1; the
+  motion is rebuilt as authored stepped frame animation — pose
+  charts rendered from the rigs, each drawing held 3 frames
+  (8 poses/second) — per the studied limited-animation method.
+  Build record: `BUILD-NOTES-v2.md` in the workspace home above.
+- **Status: OWNER-APPROVED — v2 is the CANDIDATE CURRENT
+  version.** The owner approved the instance on viewing v1
+  (2026-10-27) and named it "Outro Credit Gag Number One"; v1
+  stands as the first produced version. The owner-ordered
+  animation upgrade, v2, is built and is the candidate current
+  version pending the owner's viewing of it. The shipped EP01
   master is unchanged — it still carries the slot's empty
   placeholder frame. This instance swaps in only on the owner's
   order (Current-Version Law).
