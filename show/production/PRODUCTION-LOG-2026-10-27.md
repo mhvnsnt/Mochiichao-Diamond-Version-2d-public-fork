@@ -1583,3 +1583,30 @@ generated character animation; v1.2's drawn route remains
 CURRENT for drawn proofs (per-use currency stated in both
 blocks); the likeness gate and timing standard apply
 unchanged to both routes.
+
+## V8 WALK PROOF STAGED (2026-10-28)
+
+Mochiko's profile model sheet, derived from her canon
+front art, and the walk cycle built from that sheet are
+staged at show/production/animation-method/v8-walk-proof/
+(19 files: the profile sheet + turnaround comparison +
+SHEET-NOTES, both clips, contact sheet + likeness
+comparison, all 8 poses + the blink variant, GATES.md,
+BUILD-NOTES.md, measures8.json; every file hash-verified
+by sha256 read-back after landing).
+
+Doro's delivered judgment: PASS as a character product,
+with named partials - the hair crown reads flatter and
+more angular than canon, the hands are plain, and the
+far arm is occluded at the two passing poses. The
+20-point defect audit stands at 18/20 closed; items 8
+(far arm) and 13 (leg separation) are partial.
+
+Timing: 10.0 new drawings per second on the retimed
+clip. Likeness against the profile sheet (same view, no
+front/profile confound): SSIM median 0.3714, colour
+histogram L1 median 0.1232.
+
+Gate 8 (the owner's eye) verdict is PENDING. The profile
+sheet is a derived design subject to the owner's ruling;
+nothing in this landing marks it canon.
