@@ -1043,3 +1043,7 @@ Full-wiring follow-up for the species-systems teardown (PR #398): the cry schema
 ## WIRING - RIG-AND-MOUTH CROSS-REFERENCES (2026-10-27)
 
 Full-wiring follow-up for the rig-and-mouth teardown (PR #402): the three cross-reference edits its STAGING.md assigned to a side-lane PR are now landed - rigs/README.md links the teardown (RIG-TEARDOWN-open-movies.md) + templates/ as the rig system's source and body-plan starting points; TOOLING-INDEX.md registers mochiichao-mouth-data/v1 + the Rhubarb converter under lip-sync (humans); MATERIALS-INDEX.md's Blair row now carries its machine-readable form (mouth-data). Nothing else in those files changed. Landed by the lock-everything wave.
+
+## HUMAN CHARACTER DESIGN LANE CHARTERED (2026-10-27)
+
+Human character design lane chartered (owner-directed, low priority; production PARKED behind Season 1 / EP01 by owner order - charter package only, nothing in it is production art). Landed at show/production/human-design-lane/: LANE.md (charter), SOURCES.md (repo audit), CAST-QUEUE.md (season-ordered queue). Headline counts: 18 fresh designs queued + 1 blocked on the owner; 52 transplant builds + 1 flag-deferred; 59 Layer-2 names held. Falk = #1 fresh-design gap, blocked on owner look-basics + team confirmation. Tamsen redesign noted, spelling T-A-M-S-E-N. The queue records canon and proposals at their existing tiers; landing promotes nothing. Landed by the lock-everything wave.
