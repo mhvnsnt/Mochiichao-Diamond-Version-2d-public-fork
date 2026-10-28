@@ -1392,6 +1392,73 @@
    ]
   },
   {
+   "id": "mochiichao-list28-systems",
+   "type": "systems-index",
+   "about": "List 28 teardown systems (items 267-276), landed 2026-10-27 \u2014 the owner's stealing, morale, and reputation design, wired into both lanes: release returns the same individual to the wild, theft is a real system behind a confirmation prompt, and standing is derived from witnessed deeds over a fifty-step ladder. Band names, wanted names, and deed values are drafted data, renamable; the anti-hero's name remains the owner's open slot.",
+   "items": [
+    {
+     "n": 267,
+     "name": "Released Mochi return to the wild",
+     "home": "src/data/core/docs/267-RELEASED-RETURN.md",
+     "extends": "revises #106's release model and #211's game-side refusal in their own files; the pool lives in #146's world state"
+    },
+    {
+     "n": 268,
+     "name": "The snag system \u2014 stealing as a mechanic",
+     "home": "show/production/battle/268-SNAG-SYSTEM.md",
+     "extends": "capture's dark twin beside #38; carries the owner's steal-confirmation prompt (free decline; the rescue-shaped prompt); deeds feed #269"
+    },
+    {
+     "n": 269,
+     "name": "Morale \u2014 the deed ledger",
+     "home": "src/data/core/docs/269-MORALE-HONOR.md",
+     "extends": "the append-only ledger seats in #98's family beside #230's findings; morale is a derivation, never a stored field"
+    },
+    {
+     "n": 270,
+     "name": "Reputation \u2014 fame and infamy per group",
+     "home": "src/data/core/docs/270-REPUTATION.md",
+     "extends": "supersedes #201 in its own file (classes stand as a view, mapping table appended); tallies count witnessed deeds only"
+    },
+    {
+     "n": 271,
+     "name": "The fifty-step spectrum",
+     "home": "src/data/core/docs/271-FIFTY-STEP-SPECTRUM.md",
+     "extends": "one ladder read by #269/#270/#276; band names are drafted data, renamable wholesale"
+    },
+    {
+     "n": 272,
+     "name": "Witnesses and wanted",
+     "home": "show/production/world-systems/272-WITNESSES-WANTED.md",
+     "extends": "witness sets from #93/#145 schedules; landed reports feed #230's findings as a grounds source"
+    },
+    {
+     "n": 273,
+     "name": "Stolen Mochi \u2014 keeping states",
+     "home": "show/production/battle/273-STOLEN-MOCHI.md",
+     "extends": "keepingState/trueKeeper proposed into #80's record; obedience reads under #180's law; recovery via #268/#272/#210"
+    },
+    {
+     "n": 274,
+     "name": "Underworld fences",
+     "home": "show/production/world-systems/274-UNDERWORLD-FENCES.md",
+     "extends": "fence seats in #169's hideouts, face is #99's Syndicate; laundering refused by shape \u2014 no clean-record operation exists"
+    },
+    {
+     "n": 275,
+     "name": "Redemption \u2014 the long climb",
+     "home": "src/data/core/docs/275-REDEMPTION.md",
+     "extends": "a reading discipline over #269's table, #270's tallies, and #230/#272 closures; no redeemed state anywhere in data"
+    },
+    {
+     "n": 276,
+     "name": "Show mirror \u2014 morale and reputation on screen",
+     "home": "show/production/276-SHOW-MORALE-REPUTATION.md",
+     "extends": "the show lane for the whole list: #82 arc sheets, #136 grammar, #201's classes as a staging view; the List 29 pointer is a pointer only"
+    }
+   ]
+  },
+  {
    "id": "mochiichao-list29-systems",
    "type": "systems-index",
    "about": "List 29 teardown systems (items 277-286), landed 2026-10-27 \u2014 the future-structure list: parts, the thief anti-hero route, and part transitions, built on List 28's moral engine (reconciled at landing); its only open slots are story/canon facts, headed by the anti-hero's name, which is the owner's entire.",
