@@ -1,0 +1,44 @@
+{
+  "schema": "mochiichao-show/likeness-gate-packet/v1",
+  "tool": "likeness_gate.py",
+  "created_utc": "2026-10-28T02:20:48.662872+00:00",
+  "species": "wispkin",
+  "thresholds": {
+    "ssim_min": 0.5,
+    "silhouette_iou_min": 0.55,
+    "rgb_mad_255_max": 40.0
+  },
+  "promotion_status": "PENDING_OWNER_OR_SCORER_RECORD",
+  "note": "Verdict is a packet RECOMMENDATION measured from the actual pixels. Promotion is a separate step: recording in show/shared/clip-index.json (orchestrator law).",
+  "clip": "bundles/wispkin-expanded/wispkin/wispkin-dark_wave.mp4",
+  "clip_sha256": "6e962f523cfe878c84b211fd88c717c47b148e601be244b8af70de1385df6dee",
+  "clip_spec": {
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192
+  },
+  "frame_index": 96,
+  "cutout": "/home/hatch/workspace/mochiichao-show/canon-cutouts/wispkin.png",
+  "cutout_sha256": "b9de2318eb399094ad57fb6e21a388b05601a67425f18f49ff6a5b6408da0523",
+  "alignment": {
+    "canvas": 512,
+    "fit_box": 448,
+    "frame_scale": 1.2584,
+    "cutout_scale": 0.7393,
+    "method": "foreground-bbox fit, centred; scale+translation only"
+  },
+  "union_pixels": 78314,
+  "measurements": {
+    "ssim_union": 0.1983,
+    "silhouette_iou": 0.5247,
+    "rgb_mad_255": 97.433,
+    "rgb_mad_norm": 0.3821
+  },
+  "checks": {
+    "ssim": false,
+    "silhouette_iou": false,
+    "rgb_mad": false
+  },
+  "verdict": "FAIL"
+}
