@@ -1063,3 +1063,7 @@ produced and are recorded missing in the manifest, not fabricated.
 Canon record: `docs/human-characters/FALK-CANON-RECORD-2026-10-27.md`;
 model sheet (casual outfit) lands with it in this PR; the full
 completion set is staged in the design-lane workspace.
+
+## EP02 REVISION — SHOOTING SCRIPT v2 (2026-10-27)
+- EP02 rebuilt on the locked game opening (region1-truck-start.ink) per the season canon reconciliation: truck arrival at Boot Harbor, Hex = next-door neighbour/rival, Aeon cornered, FIVE starters, rescue-choosing, Mochiioteca handover, Mochiko as Aeon's assistant (aeon_lab.json).
+- POV switch at cut 14 unchanged (owner design); intertitles exactly 2 (cuts 16/26); v1's three-candidate Garden ceremony superseded in part. REVISION-NOTE-v2 records every change with its canon source; TBD-LIST-v2 holds 10 open items + the EP03 downstream note. v1 file retained, untouched, pending an owner retirement order (additions only in this PR).
