@@ -36,3 +36,57 @@ behind them; anything else is named as a gap with its blocker.
    can commission from the existing cast work.
 5. **TeraBox masters** for the new weights (Qwen cache, LoRA dataset)
    ride the main lane's browser staging session — not an owner step.
+
+---
+
+## CORRECTIVE PASS — failure log entry, 2026-10-28 (owner's corrective-autonomy law)
+
+**The failure, with evidence.** The single-character Dorowani Water Orb
+proof (`dorowani_waterorb_proof_00001_.mp4`, 352,574 B, sha256
+`6d958f4cdf3c334296b61523782e29d1ec9e47b01ec557c5c926f6c4827cbd4a`) was
+delivered as a FAIL whose causes were already knowable before the run:
+frame 1 is already the wrong character — an elongated 3D-style creature
+with the shell worn like a hat. Frame-0 gate vs the canon cutout:
+**SSIM 0.2938 (min 0.50), silhouette IoU 0.5902, RGB MAD 100.29
+(max 40)**. Fed input was logged: `start.png` sha256
+`aa124c9adc8caacd22628d06f4d1373e16e02e41bfb650028c014a58af0c5720`.
+Fail class: **reference-never-anchored** (distinct from drift). The
+two-character scene kernel completed on Kaggle but its outputs were
+never harvested (API 429 at 09:52 / 10:07 / 10:23 UTC, three attempts,
+two rounds), so the scene was reported without its clip existing
+locally. The locked VACE workflow and the Turbo fixes were wired but
+had never been run.
+
+**Root causes (from the artifacts and the wrapper source, not labels):**
+the run graph fed an unlocked plain I2V path; the wrapper's T5 loader
+rejects the staged scaled-fp8 UMT5 unconditionally, forcing a silent
+native fallback; the wrapper renamed the LoRA input `lora_args` ->
+`lora`, so a Turbo LoRA fed under the old key can be silently ignored;
+and no step in the pipeline forced a frame-1 verdict to travel with a
+clip before the clip could be reported.
+
+**Countermeasures wired in this pass (so this class cannot recur
+silently):**
+1. `parity/preflight.py` — runs BEFORE any GPU time and ABORTS the run
+   when: the fed reference image is missing/unreadable or its sha256 is
+   not logged or mismatched; a VACE workflow lacks an engaged
+   `reference_image`/`ref_images` graph connection (or, native, the
+   `TrimVideoLatent.trim_amount` wire from `trim_latent`); any stale
+   `lora_args` key exists, a LoRA strength is <= 0, or a LoRA selector
+   output is not consumed by a model loader's `lora` input; a wrapper
+   T5 node is fed a scaled-fp8 file by name, or a supplied T5 file's
+   safetensors header actually contains a `scaled_fp8` key.
+   14 unit tests (`parity/test_preflight.py`) cover every abort class
+   plus both corrected workflows passing.
+2. `parity/frame1_gate.py` — automatic frame-1 gate on every output.
+   It decodes the actual frames, compares frame 1 against the FED
+   reference and (when a species is given) the canon cutout, samples
+   mid/last frames, and writes a packet labelling the clip `pass`,
+   `reference-never-anchored`, `drift`, or `fail-cannot-measure`.
+   A clip without this packet is not reportable. Verified both ways
+   locally: the failed proof above reproduces SSIM 0.2938 at frame 0
+   and is labelled `reference-never-anchored`; a control clip made
+   from the reference itself passes.
+3. The locked run and scene harvest in this pass run under these two
+   gates; their packets are recorded with the run (see
+   `parity/CORRECTIVE-RUN-2026-10-28.md` when the run lands).
