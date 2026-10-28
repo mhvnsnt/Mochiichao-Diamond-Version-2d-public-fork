@@ -95,3 +95,14 @@ this note, THIS NOTE is current.
      outputs remain unharvested — Kaggle API 429 on three attempts
      across two rounds (09:52 / 10:07 / 10:23 UTC). Full parity
      table: `parity/PARITY-REPORT.md`.
+
+## Corrective pass addendum — 2026-10-28
+
+The proof failure logged in `parity/PARITY-REPORT.md` (frame-1
+reference-never-anchored, SSIM 0.2938 / RGB MAD 100.29) is now fenced
+by code, not by care: `parity/preflight.py` aborts runs before GPU
+time on unlogged/mismatched reference hashes, disengaged VACE
+reference connections, stale `lora_args` keys / unmerged LoRAs, and
+scaled-fp8 T5 files fed to the wrapper loader; `parity/frame1_gate.py`
+attaches a labelled frame-1 verdict packet to every output. Backend
+status remains **WIRED UNPROVEN** until a gated run passes.

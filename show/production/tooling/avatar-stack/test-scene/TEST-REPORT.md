@@ -177,3 +177,31 @@ Dated entry appended per instruction; §§1–7 above are unchanged history.
   `scene-run-report.json`), scene likeness, composite over the CURRENT
   living Gate plate, and the seg3-extended length claim. Full exact
   errors, timestamps, and resume commands: `HARVEST-STATUS.md`.
+
+---
+
+## 9. Addendum — corrective pass, 2026-10-28 (harvest landed; scene graded)
+
+- **Harvest:** attempt started 2026-10-28T12:52:25Z. All 4 segment MP4s
+  downloaded in full (hashes/specs in `parity/CORRECTIVE-RUN-2026-10-28.md`
+  §2). The listing call then returned 429 before the JSON reports; per the
+  standing rule all Kaggle calls stopped for the attempt. `scene-run-report.json`
+  is still unretrieved — the RIFE outcome remains unknown and unclaimed.
+- **Grading (new `frame1_gate.py` packets, attached in this folder):**
+  Wispkin seg1 frame 0 vs canon SSIM 0.3714 / IoU 0.3642 / MAD 106.96 →
+  FAIL, reference-never-anchored. Dorowani seg1 frame 0: SSIM 0.4005 /
+  IoU 0.4491 / MAD 85.96 → FAIL, reference-never-anchored. Visual read
+  agrees (redrawn variants from frame 1; Dorowani track also carries a
+  baked grey ground shadow in the generated footage).
+- **Composite:** `TEST-SCENE.mp4` built over the CURRENT Gate v2-living
+  plate (md5 re-verified `d2f1bf1d709d3a0e9d9d0f58dccc6c31`): 1280×720,
+  24 fps, 243 frames, 10.125 s, 1,077,159 B, sha256
+  `7f2d29cf0d23c2482003a5553246a3b6075c10aa256188d6e9ffc3e70ad429f2`.
+  It is graded evidence for the unlocked path, not a pass.
+- **Length:** 10.125 s per character (beats 8 s; 12–16 s target still
+  open — seg-3 unrun, blocked by the same Kaggle stop).
+- **§7 verdict updates:** "Two characters in one scene, composited over
+  CURRENT living Gate" → DONE as a build, FAIL on character correctness.
+  All other pending rows unchanged. Locked run: packaged and
+  preflight-passing (`parity/locked_run_kernel.py`), push held only by
+  the provider rate limit recorded above.
