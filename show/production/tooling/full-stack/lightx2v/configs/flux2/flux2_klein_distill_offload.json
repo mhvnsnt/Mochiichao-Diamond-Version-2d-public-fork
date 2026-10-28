@@ -1,0 +1,13 @@
+{
+    "model_cls": "flux2",
+    "model_variant": "klein",
+    "task": "t2i",
+    "infer_steps": 4,
+    "sample_guide_scale": 1.0,
+    "feature_caching": "None",
+    "enable_cfg": false,
+    "tokenizer_max_length": 512,
+    "rope_type": "flashinfer_rope",
+    "cpu_offload": true,
+    "offload_granularity": "model"
+}

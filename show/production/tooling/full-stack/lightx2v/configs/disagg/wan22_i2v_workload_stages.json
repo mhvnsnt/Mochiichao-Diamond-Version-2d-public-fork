@@ -1,0 +1,16 @@
+[
+  {
+    "name": "warmup",
+    "duration_s": 120,
+    "user_count": 1,
+    "spawn_rate": 0.1,
+    "wait_time_s": 0.0
+  },
+  {
+    "name": "change",
+    "duration_s": 1000,
+    "user_count": 1,
+    "spawn_rate": 0.1,
+    "wait_time_s": 0.0
+  }
+]
