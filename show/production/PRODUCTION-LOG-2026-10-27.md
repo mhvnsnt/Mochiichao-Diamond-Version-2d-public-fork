@@ -988,6 +988,10 @@ Species-data-system package landed at show/production/species-data-system/ (the 
 
 Recorded in the production log and in show/production/SEASON-CANON-MAP.md (rulings entry, same PR): (1) Falk's team LOCKED = Zephling / Aerobeak / Stormtalon (doc conflict resolved for the locked reading). (2) Representation names LOCKED: Wisteria Vale (short forms Wisteria / Vale), Tessa Bolt, Saffron Potts (short form Saffron). (3) The vitiligo cartographer IS Admin Voss - same person. (4) Phantom: canon Phantom is based on Western Heart's Phantom - basis, not collision. (5) The Airship Lord's name = MAXXIMUS. (6) Dorowani eye canon already logged in PR #391; Kittember's tail-tip flame ruling (flame attached to the tail tip, never a separate floating orb) restated in the same record.
 
+## TEARDOWN LANDED - SPECIES-SYSTEMS (List items 1-3) (2026-10-27)
+
+Species-systems teardown landed: MOCHIIOTECA-FORMATS.md, CRY-SYNTH.md, SILHOUETTE-DISCOVERY.md, species-sheet-schema-patch-cry.md, cry-schema-fragment.json, README.md at show/production/species-systems/; tools (cry_synth.py, discovery_assets.py, pilot_six_cries.json) at show/production/tooling/species-systems/. The auto-footprint in discovery_assets.py is labelled in-file as a CONTACT-PATCH PROXY and lands labelled exactly so. Test-output cry WAVs are NOT landed (they land at public/audio/cries/ on owner lock only); test-output discovery strips stay workspace-only evidence. The species.json cry-block data entry the package calls for is data-lane work in its own PR rhythm, not part of this landing. Landed by the lock-everything wave.
+
 ## KITTEMBER CANON-PASS REGENERATION - TWO CANDIDATE BUNDLES (2026-10-27)
 
 - Owner order: PR #389's Kittember bundle was scored off-canon (black quadruped, pink ears, invented white chest patch, flame-plume tail) and a canon-pass regeneration was ordered against the canon cutout of record (kittember.png, sha256 f5b3e39f8752534bafcf7de4d9cb5babab9b3899a10cf92c45f8e5aff6f39430).
