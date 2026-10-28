@@ -1021,3 +1021,9 @@ World-systems teardown landed per its STAGING.md: six docs at show/production/wo
 - Gate (recommendations only, shipped thresholds SSIM>=0.50 / IoU>=0.55 / MAD<=40.0): TAIL middle frame 96: SSIM 0.3725 / IoU 0.5464 / MAD 99.619 - FAIL; frame 12: SSIM 0.3751 / IoU 0.5114 / MAD 102.347 - FAIL. MOUTH middle frame 96: SSIM 0.3884 / IoU 0.5357 / MAD 97.306 - FAIL; frame 12: SSIM 0.4284 / IoU 0.5751 / MAD 86.501 - FAIL. Both bundles stay PENDING_GATE; promotion is a recorded owner/scorer verdict only.
 - #389's kittember-fire_stream bundle is superseded as a candidate by NEITHER of these - the scorer decides. (The #389 bundle's own status ruling is handled in a separate PR on branch feature/kittember-389-status-1.)
 - Motion evidence: mean frame-diffs (128px greyscale, all 192 frames) TAIL 4.67, MOUTH 1.48 (mouth motion concentrated at the blast).
+
+## KITTEMBER #389 BUNDLE - OWNER STATUS RULING: UNUSED DRAFT (SPECIAL CASE) (2026-10-27)
+
+- Owner ruling 2026-10-27: the generated Kittember in PR #389's bundle (`public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream/`) is a special-case individual held as an UNUSED DRAFT - the owner prefers the canon design; it is kept, not used, not deleted.
+- Applied in this PR: that bundle's `manifest.json` quality_status set to `unused_draft_special_case` with the ruling recorded as its status_note, and its `show/shared/clip-index.json` entry (id `gen-retry-2026-10-27-kittember-fire_stream`) set to the same status with the ruling appended to its note. Nothing else changed; no files deleted.
+- The canon-pass candidate bundles (tail + mouth) are in the companion PR on branch feature/kittember-canonpass-1.
