@@ -209,5 +209,181 @@ Either way the ruling is written down the same day, in the seats named
 in §5. Unruled does not mean unrecorded.
 
 **(d) Is the contradiction between canon sources themselves?**
-→ **Box 1, can
-...[truncated 10073 chars]
+→ **Box 1, canon inconsistency.** The newest owner ruling wins. No
+ruling yet → the conflict is written down where it lives (a conflict
+note in the doc/data that carries it, like conflict C4 in the
+DESIGN-BRIEF), put on the owner-decisions list, and left open — never
+silently resolved by an edit.
+
+---
+
+## 3. LOCKED-CONSISTENCY ZONES — never varies
+
+These are not preferences. A deviation here is Box 2 by definition.
+
+- **Canon names and the naming laws.** Display names are the owner's
+  locks (The Dark Forest, Illuminate, the Mochiioteca); display names
+  change only by owner ruling, internal ids/keys never change, so
+  wiring cannot break. A ruling made in one lane applies in both lanes
+  — game and show, same terms. *(Naming law:
+  `show/production/pipeline/ORCHESTRATOR.md`; SHOW-BIBLE Law 10;
+  `show/production/moves-registry/MOCHIICHAO-NAME-MAP.md`.)*
+- **Per-species signature moves.** One species, one signature, mapped
+  individually — never shared, never templated across species.
+  *(Locked table: `show/production/CANON-SIGNATURE-ATTACKS.md` —
+  Mochii Hydro Rush, Kittember Fire Stream, Sproutle Leaf Blast,
+  Wispkin Dark Wave, Dorowani Water Orb, Gabu Tremor.)*
+- **The Mochiichao render style itself.** Same character, same style,
+  or the work is rejected and does not enter the repo. Design influence
+  may vary by region (§4); the render style never does.
+  *(SHOW-BIBLE Law 7, the Likeness Law; colour discipline: the Lustre
+  Law, `show/bible/COLOR-SYSTEM.md` §(b) — colourways are per-species,
+  never per-individual.)*
+- **No baked shadows.** Character art never carries a baked-in
+  ground/contact shadow; shadows are added at composite time so they
+  match the scene. Source art that arrives shadowed is cleaned, the
+  clean version becomes the current one, and the shadowed version is
+  marked not usable. *(Standing rule; enforced in every pack's
+  `do_not_change`; the cleaned Sproutle cutout is the worked case.)*
+- **Per-individual traits, once ruled.** A RULED deviation is part of
+  the character: reproduce it exactly, in every generation of that
+  individual — and it persists across that individual's own evolution,
+  while never being inherited by offspring. *(#80 deviation rules;
+  #324 for the inheritance fence.)*
+- **Species anchors.** The features that make a species read as itself:
+  Wispkin's cracked white skull mask, held in both hands in front of
+  the body, body dissolving to smoke; Kittember's tail-tip orb, flame
+  attached to the tail tip, never a separate floating orb; Dorowani's
+  red fin cheeks (not orange), red eyes, light belly, dorsal fin, and
+  the tan shell on his back — a shell, never a hat. *(Each pack's
+  `do_not_change`; the Kittember tail-tip ruling, production log
+  2026-10-27.)*
+- **The Mainframe secret law.** The Secret is a production-layer truth,
+  never an in-world fact: no inhabitant knows it, ordinary world speech
+  never names it, and in-world artifacts must not betray it.
+  *(SHOW-BIBLE Law 9.)*
+- **"Forever and always."** Reserved for threshold moments of trust and
+  bond — a Ranger leaning in to another Ranger, or to their own
+  Mochiichao, right before a battle or a perilous crossing. Spoken by
+  different characters in different stories; never one character's
+  catchphrase, never spent on an ordinary scene. *(Owner law; this doc
+  is its first seat in the repo.)*
+- **Two-lane consistency itself.** A canon change that lands in only
+  one lane is an unfinished change. *(SHOW-BIBLE Law 10.)*
+
+## 4. VARIATION-ALLOWED ZONES — variation is expected here
+
+Variation in these zones is the world working as designed. It does not
+need a ruling, and policing it would be the error.
+
+- **Per-individual traits inside a species.** Same-species individuals
+  are mostly alike with real deviations — that is the Individual
+  Variation Doctrine. Underneath the visible layer, #80's variance
+  (bounded stat variance, size class, temperament read) makes every
+  individual numerically its own. Visible deviations follow the boxes:
+  ruled → Box 3; unruled → Box 4 until the owner rules. *(#80.)*
+- **Species-level colourways (lustre).** A species may carry a designed
+  variant colourway — deeper, paler, metallic — set at design time for
+  the species. It never varies per individual. *(Lustre Law,
+  `show/bible/COLOR-SYSTEM.md` §(b).)*
+- **Move-performance anatomy variance.** A move is performed by the
+  body performing it: performer shape, size, and class — including
+  mythical/legendary anatomy — change the performance, and the variance
+  is logged per move/species in the registry. One creature's
+  performance of a move is never the universal animation.
+  *(`show/production/battle/MOVE-ANIM-SCRIPT-FORMAT.md`.)*
+- **Design-influence regional flavour.** The design influence shifts by
+  region (R1 Pokémon-base, R2 Digimon-lean, R3 Monster Rancher-lean,
+  R4 a mix plus originals). The render style on top of it never varies
+  (§3). *(Owner style law, 2026-10-27.)*
+- **Chibi proportion variants — as a device only.** Characters are
+  full-size by default; chibi versions exist for in-between/eyecatch
+  cards, B-roll/transitions, intro/outro/credits bits, and brief
+  dramatic-comedic snap moments, inside the per-episode caps. Chibi
+  models are proportion variants of the canon likenesses — same
+  character, never a separate likeness. *(`show/production/CHIBI-CARD-SYSTEM.md`.)*
+- **Background individuals.** Unnamed members of a species differ from
+  the named cast and from each other — generated variation is their
+  normal state. Only a **named** individual the owner rules enters the
+  register; the variation generator may not mint register-class
+  deviations (no absence-of-part, no posture-class changes) on its own.
+  *(#318's fence; #80.)*
+
+---
+
+## 5. THE REGISTER — how a ruling becomes enforceable
+
+There is **one** register. This framework does not create a second one;
+it describes the flow that already exists, so every ruling travels it
+the same way:
+
+1. **The owner rules** — in chat, in a verdict, in a correction. His
+   words are the ruling; a summary of them is how rulings drift (#318).
+2. **The ruling lands in the individual's own record first** — a
+   `deviations[]` entry in the #80 individual record: trait, species
+   pattern, individual value, `status: RULED`, `ruled_by`, `ruled_on`,
+   the consistency order ("MUST REPRODUCE in every generation of this
+   individual"), and `source` pointing at where the ruling lives.
+   PROPOSED entries are discussion only; generators never read them.
+3. **The register re-compiles.** `RULED-DEVIATION-REGISTRY.json` is the
+   cross-individual index over those RULED entries — an index, not a
+   second store (#318). It exists so a casting director, portrait
+   artist, or encounter designer can see every exception in one place
+   and none is forgotten, "fixed," or handed to a second individual.
+   Intake is owner rulings only.
+4. **The generation-facing copy lands in the character's pack** —
+   `pack.json` under `reference-packs/`: the ruling in `owner_rulings`,
+   its hard edges in `do_not_change`, its wording in
+   `prompt_negative_additions` / `variant_traits` where a prompt needs
+   it. The Dorowani pack (eye-whites, 2026-10-28) and the Wispkin pack
+   (horns, 2026-10-28) are the worked examples. This is the copy the
+   generators and gates actually read.
+5. **The production log indexes it** — a dated entry in
+   `show/production/PRODUCTION-LOG-2026-10-27.md` (and its successors),
+   so the ruling is findable by date and the governing text is named.
+6. **The gates enforce it.** Frame-1 and likeness gates
+   (`show/production/tooling/avatar-stack/` — `parity/frame1_gate.py`,
+   `likeness_gate.py`) and the pre-delivery gate
+   (`show/production/tooling/proof-gate/delivery_gate.py`, per
+   `show/production/WORKING-RULES.md`) check output against the packs
+   and the canon references. A gate that meets a deviation it cannot
+   sort by §2 stops and names it — it never passes it silently.
+
+**Rejections travel the same road.** A rejected deviation is recorded
+with its status on the artifact itself (bundle manifest + clip-index
+`unused_draft_special_case`, and a register note that it is a draft,
+not a story individual) — so it stays findable, stays unused, and is
+never re-proposed as new.
+
+**What never happens:** a ruling that lives only in a chat message; a
+register entry created by a generator; a pack edited to match a clip
+instead of the clip regenerated to match the pack. The record leads;
+the output follows.
+
+## 6. THE ANTI-SLOP DOCTRINE
+
+The owner is fighting AI slop — and learning to work with it when it
+happens, when it's mostly close. That is why the variant rulings keep
+happening, and they are policy, not accidents: when a generation lands
+mostly right, the deviation can be absorbed into canon as a ruled
+per-individual variant — slop becomes cast diversity, the thing real
+species have anyway — instead of burning attempts chasing
+pixel-perfection. The eye-whites and the horns both entered canon
+exactly this way.
+
+The price of absorption is the lock. Once a deviation is ruled, it is
+**fixed for that individual**: it never flickers, grows, shrinks, or
+vanishes, in a frame, a scene, or a season — and it never spreads to
+another individual on its own. Variation that has been ruled is canon
+and is policed like canon. **After a ruling, inconsistency is the
+defect.** That is the whole bargain: generous at the ruling, absolute
+after it.
+
+---
+
+*Drafted 2026-10-28. Seats this framework reads from: #80, #318, #324,
+the reference packs, the production log, SHOW-BIBLE Laws 7/9/10,
+COLOR-SYSTEM §(b), ORCHESTRATOR.md, WORKING-RULES.md,
+CANON-SIGNATURE-ATTACKS.md, CHIBI-CARD-SYSTEM.md,
+MOVE-ANIM-SCRIPT-FORMAT.md, DESIGN-BRIEF-canon-world.md §9. Owner lock
+pending.*
