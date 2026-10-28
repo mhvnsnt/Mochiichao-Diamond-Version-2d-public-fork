@@ -1,4 +1,16 @@
-# Rename Worksheet — Batch 1 (DRAFT — OWNER APPROVAL PENDING)
+# Rename Worksheet — Batch 1 (SUPERSEDED — 2026-10-27)
+
+> **SUPERSEDED by the full rename pass.** Every registry row now carries its
+> Mochiichao name in `machine-registry.json`, with the complete readable mapping
+> in `MOCHIICHAO-NAME-MAP.md` (this folder). The drafts below are kept as the
+> historical record of batch 1 only — several were adopted, several were replaced
+> by the owner's own picks (Cut, Fly, Surf, Strength, Ice Beam) or by the full
+> pass. Do not draft from this worksheet; use the name map.
+>
+> **Owner correction (2026-10-27, after the full pass):** Dragon Claw is
+> owner-locked as **Draconian Talon**, superseding this worksheet's draft
+> "Draco Talon" (row 7, kept below as the historical draft record). The
+> registry and the name map carry the locked name.
 
 **Status:** Draft proposals only. **Nothing in this worksheet is locked, final, or applied to any game file.** Every drafted name below is a proposal for the owner (Jamar) to approve, change, or reject. Internal game ids / keys never change under this program — only display names would change, and only after owner approval.
 
