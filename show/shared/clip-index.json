@@ -94,6 +94,162 @@
    ],
    "quality_status": "current_background_piece",
    "note": "CURRENT version of the Garden Gate background piece (registered in parts-catalog as garden-gate-background, current_version v2-living). Supersedes the v1 still plate as the standalone background; the still remains the base layer. Ambient layers: CL-1 cloud-shadow drift, leaf drift, pollen; gate swing / grass sway / population crossings are the continuing upgrade path (LIVING-WORLD.md)."
+  },
+  {
+   "id": "gen-retry-2026-10-27-dorowani-idle",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/dorowani-idle/",
+   "character": "dorowani",
+   "variant": "idle",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.4162,
+    "silhouette_iou": 0.8846,
+    "rgb_mad_255": 41.355,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "note": "Probe clip of the retry. In the accepted avatar set's own measurement band on the discriminating metrics (IoU 0.885 vs its 0.884 pose-matched; MAD 41.4 vs its 44.9-61.7). Does NOT supersede the production avatar idle in public/assets/show-bundles/dorowani/ — a second candidate for the same variant slot; registry changes only on a recorded scorer verdict. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+  },
+  {
+   "id": "gen-retry-2026-10-27-dorowani-water_orb",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/dorowani-water_orb/",
+   "character": "dorowani",
+   "variant": "water_orb",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.255,
+    "silhouette_iou": 0.6689,
+    "rgb_mad_255": 76.432,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "note": "WATER ORB, Dorowani's signature attack (canon). Gate frame 96 is the orb-charge FX peak; neutral frame 12: SSIM 0.352 / IoU 0.665 / MAD 70.7. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+  },
+  {
+   "id": "gen-retry-2026-10-27-gabu-tremor",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/gabu-tremor/",
+   "character": "gabu",
+   "variant": "tremor",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.2843,
+    "silhouette_iou": 0.6129,
+    "rgb_mad_255": 87.099,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "note": "TREMOR, Gabu's signature. No back cannons — not the rejected batch's failure mode. Neutral frame 12: SSIM 0.318 / IoU 0.832 / MAD 70.5. Dust/ground-crack FX at the feet in stomp frames. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+  },
+  {
+   "id": "gen-retry-2026-10-27-kittember-fire_stream",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream/",
+   "character": "kittember",
+   "variant": "fire_stream",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.3272,
+    "silhouette_iou": 0.5021,
+    "rgb_mad_255": 96.272,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch — fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+  },
+  {
+   "id": "gen-retry-2026-10-27-sproutle-leaf_blast",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/sproutle-leaf_blast/",
+   "character": "sproutle",
+   "variant": "leaf_blast",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.3754,
+    "silhouette_iou": 0.6743,
+    "rgb_mad_255": 91.426,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "note": "LEAF BLAST, Sproutle's signature. No baked shadow (canon cutout is the cleaned CURRENT sproutle.png). Frame 12: SSIM 0.377 / IoU 0.650 / MAD 84.8. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+  },
+  {
+   "id": "gen-retry-2026-10-27-wispkin-dark_wave",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/wispkin-dark_wave/",
+   "character": "wispkin",
+   "variant": "dark_wave",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.1743,
+    "silhouette_iou": 0.5726,
+    "rgb_mad_255": 105.186,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "note": "DARK WAVE, Wispkin's signature, from the REFERENCE OF RECORD cutout: mask held by both hands, smoke bottom honoured at neutral frames. Gate frame 96 is the pulse peak (character engulfed by its own effect); frame 12: SSIM 0.159 / IoU 0.630 / MAD 96.3. Scorer note: FX includes glowing rune-like glyph graphics at the pulse edge. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
   }
  ]
 }
