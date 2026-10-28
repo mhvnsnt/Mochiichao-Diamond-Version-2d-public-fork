@@ -86,3 +86,9 @@ audio lane, not settled) · per-species chorus behaviour
 for species whose profile (#152) is `colony` (a colony
 species' chorus may be denser — the profile says; the
 interaction is specified, the values are not).
+
+---
+
+**Landing citation — List 32 (2026-10-27).**
+
+#313 ghost spectacle (`battle/313-GHOST-SPECTACLE.md`) reads this file's vocal floor as one of its staging seats (presence before form; closeness, not size, is that family's climax). The citation is reciprocal with #313's spec; no vocal rule in this file changes.

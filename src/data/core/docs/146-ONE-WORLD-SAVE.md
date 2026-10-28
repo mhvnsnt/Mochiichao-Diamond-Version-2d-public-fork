@@ -86,3 +86,9 @@ one of the derived).
   it is labelled as such, never as engine wiring.
 
 **Registration (List 23 #223, landing 2026-10-27):** world-visiting sessions register beside this file's visit records. The zero-write audit is the wiring, as with this file's own audit: every proposed guest-write is refused with a derivation, and the net stored change to a host save is ZERO. (Addendum: guest-seeing writes no dex entries; session cap of four.)
+
+---
+
+**Landing note — List 32 (2026-10-27), citing STAGING step 7.**
+
+#315 (`world-systems/315-EXPLORATION-SPECTACLE.md`) reads first arrival as an EDGE of this file's visit-record derivation: first arrival at a place = the edge of that Ranger+place visit record. Introduction staging fires off that derived edge, exactly once. A stored `introduced` flag anywhere is a landing defect under #315 — none is added here or in #315's landing. Introduction compositions themselves are authored data in the places' own records (#7/#137 family), not in this file.

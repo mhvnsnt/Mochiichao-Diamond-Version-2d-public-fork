@@ -95,3 +95,9 @@ instances no scenes.
   vocabulary and the engine-side cue executor are flagged
   UNVERIFIED TARGETS in STAGING.md — no engine code exists
   in the audited sources for a cue to execute on yet.
+
+---
+
+**Landing checklist — List 32 (2026-10-27), citing STAGING step 9.**
+
+When show staging (this file and #82) is wired to the List 32 spectacle grammars, the staging review carries three named defect classes as checklist items: **inflation** (#307 — spectacle spent above its declared class), **jump-scare** (#313 — the ghost family's named defect), and **template / crossed dialect** (#316 — a signature performed in another character's dialect, or in no one's). These bind as review checks until tooling exists; no checker is claimed by this note.

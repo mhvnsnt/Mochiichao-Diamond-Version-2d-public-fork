@@ -83,3 +83,9 @@ spec is the derivation rule, not a report.
 
 
 **Landing note — List 27 #258 (2026-10-27):** grown-weapon growth records (258-GROWN-WEAPON-GROWTH.md) are read by this ledger — which weapon shape a stage performs with. The records' ids never resolve in #31's item layer (the non-join fence, structural in the record shape).
+
+---
+
+**Landing note — List 32 (2026-10-27), citing STAGING step 2.**
+
+#307's spectacle declarations (in the #9 header block, `battle/MOVE-ANIM-SCRIPT-FORMAT.md`) are read by this coverage package as a DERIVED spectacle view — performance → class → seat check — regenerated like every other output of this package. It is a report, not stored state. The seed performances themselves live in #131's locked register (`src/data/core/docs/131-SIGNATURE-MOVES.md`), not in this ledger; this package reads the register through the coverage derivation.

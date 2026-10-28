@@ -108,3 +108,9 @@ as landed rows.
 
 
 **Landing note — List 27 #261 (2026-10-27):** plates read the scene's `pollen_state` (proposed by #261 into #61's scene record) when present; #261 instances no pollen record at landing.
+
+---
+
+**Landing proposals — List 32 (2026-10-27), citing STAGING step 5.**
+
+(a) **Altitude read (citing #312).** An altitude read on aerial battle plates is PROPOSED into this file's plate data by `battle/312-AERIAL-SPECTACLE.md` — background data on aerial plates, so vertical staging can keep the drop in frame. It is a proposal recorded here, not an existing field: plates written without it are conforming until this file's own pass adopts it. (b) Reciprocal citations: #309 (wet-plate aftermath), #310 (plate marks), #311 (plates as the earth family's stage) and #313 (plates corrupted, none founded) all read this file's plates; their specs land beside this note in `battle/`.

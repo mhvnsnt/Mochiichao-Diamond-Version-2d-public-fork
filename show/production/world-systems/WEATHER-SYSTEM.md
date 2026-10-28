@@ -95,3 +95,6 @@ are owed with those locations' living plates — not extrapolated here.
 
 
 **PROPOSAL from List 27 #261 (registered at its landing, 2026-10-27):** a `pollen_state` field on this system's scene record — the pollen/scent layer's read of a scene (261-POLLEN-SCENT.md), sourced from #7's weather kinds × #257/#259 bloom and parts facts × this system's wind × #19's time states, and consumed by #128's plates and scene headers. Proposal discipline: the field exists only as carried here; #261 instances no pollen record at landing.
+
+
+**Landing note — List 32 (2026-10-27):** the spectacle grammars read this file's weather kinds as staging facts — #308's lightning reads #252's battle seats over this system's weather; #313's cold spots are localised bed states proposed into #215. List 32 adds no weather kind.

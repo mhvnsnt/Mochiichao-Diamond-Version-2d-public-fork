@@ -79,3 +79,9 @@ rules seed the slot exactly as encounters do.
 - **Empty by named cause:** the FROST exemption list
   (H3) and the absent sun row (no such state exists).
   Both are vocabulary facts, not unfinished mechanics.
+
+---
+
+**Landing citations — List 32 (2026-10-27).**
+
+This file's weather seats are read, arithmetic untouched, by two List 32 family grammars: #308 (`battle/308-LIGHTNING-SPECTACLE.md`) reads the `RAIN`/`STORM` seats for the lightning family's staging, and #309 (`battle/309-WATER-SPECTACLE.md`) declares its storm crossover seats against the same vocabulary. Neither founds a weather state and neither changes a number in this file.

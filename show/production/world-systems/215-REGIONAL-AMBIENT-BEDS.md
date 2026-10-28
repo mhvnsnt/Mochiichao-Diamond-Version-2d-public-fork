@@ -125,3 +125,9 @@ depths bed (a measured production value — set when
 the depths bed is first mixed, under #75's
 tolerances) · weather-layer stem set per region
 (waits on #142's climates for Regions 2–5).
+
+---
+
+**Landing proposal — List 32 (2026-10-27), citing STAGING step 5.**
+
+**Cold spot as a localised bed state (citing #313).** `battle/313-GHOST-SPECTACLE.md` PROPOSES the cold spot into this file's bed vocabulary: a localised state of a region bed, the first beat of a haunting (presence before form). It is a proposal recorded here, not an existing field: beds written without it are conforming until this file's own pass adopts it, and no landing may describe it as an existing field before then. Reciprocal reads: #308 (bed ducking under thunder), #310 (post-impact hole), #312 (wind beds), #314 and #315 (bed swells) cite this file's beds.
