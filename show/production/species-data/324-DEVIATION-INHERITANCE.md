@@ -93,3 +93,6 @@ and owner's pages, not a slot in this system.)
   species reasserts) cover every inheritance
   question the register and the generator raise,
   each anchored in a verified earlier text.
+
+
+**Reconciliation — List 35 #342 (recorded at List 35's landing, 2026-10-27):** this file's anatomy reasserts at evolution; #342's generational lean (342-VARIATION-ACROSS-GENERATIONS.md) writes NOTHING to any record — it is a hatch-read derivation input only.

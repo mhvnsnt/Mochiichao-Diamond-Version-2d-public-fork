@@ -109,3 +109,5 @@ pass), not decisions.
   canon's growth facts.
 - Contents: zero individuals staged; the class
   vocabulary's final wording is presentation data.
+
+**Landing citations — List 35 (2026-10-27).** #337's drift read (`src/data/core/docs/337-RAISED-VARIATION.md`) lands beside this file's stage read, in the same derivation family. #339 (`show/production/world-systems/339-BOND-SHAPED-VARIATION.md`) seats its end-of-life future read beside this file's read with its outcome-class slot EMPTY and labelled as the owner's canon slot it is — no outcome class, cocoon event, or end-of-life scene is instanced by List 35.

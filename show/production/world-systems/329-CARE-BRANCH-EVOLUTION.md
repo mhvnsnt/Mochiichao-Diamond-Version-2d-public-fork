@@ -107,3 +107,6 @@ condition values (sheet data, authored with the
 line) · A9 pair-merge representation (**OWNER
 DECISION** — #103's flag, carried verbatim, third
 package running).
+
+
+**Reconciliation — List 35 #337 (recorded at List 35's landing, 2026-10-27):** #337's drift is NOT this file's input, and this file's care-shaped branches are NOT drift outputs. The two systems meet only at the individual they both describe.

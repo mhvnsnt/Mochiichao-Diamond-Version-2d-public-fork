@@ -52,3 +52,5 @@ sheet + gate report in one PR, per house hygiene).
 Contents: audio chapter is measured canon of this production;
 picture-master resolution and any broadcast-target rows are OPEN
 until a first master / a real partner exists.
+
+**Landing addition — List 35 #345 (2026-10-27; STAGING step 9):** the season-delivery checklist in this file gains the #345 licence-honesty audit line at the finish step: method credited as method; no borrowed audio. The audit is specified in `show/production/345-SOUNDTRACK-CONSTRUCTION.md`. No OST file tree is founded by List 35 — a song is a version inside its subject's #344 theme record.

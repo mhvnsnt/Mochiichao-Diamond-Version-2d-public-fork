@@ -164,3 +164,6 @@ by #152/#196/#202. STAGING carries the steps.
   tables are balance data. The yield is depth with
   a conscience: the Garden can now be *played*,
   and battle stays honest.
+
+
+**PROPOSAL — List 35 #337/#341 (registered at List 35's landing, 2026-10-27):** the settlement extension. #337's drift read (337-RAISED-VARIATION.md) and #341's stat-shaped emphasis (341-STAT-SHAPED-EMPHASIS.md) settle via THIS file's raising mechanism — no second settlement mechanism is founded in #337's file. The extension inherits this file's fences as they stand: raising writes CARE axes only, and no care write may carry a battle-stat argument (this file's settled line, machine-checked at List 30's landing against the care-profile schema). Proposal discipline: the extension takes effect only as carried here.

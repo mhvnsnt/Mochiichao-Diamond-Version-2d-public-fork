@@ -118,3 +118,5 @@ resolve identical battles under identical commands
 
 
 **Landing note — List 28 #273 (2026-10-27):** the stolen keeping states (273-STOLEN-MOCHI.md) are this file's bond-effects family's dark sibling: obedience reads for a stolen individual run under this file's law, with keeping state proposed into #80's record and bond values read from #39, not re-stored.
+
+**Landing citations — List 35 (2026-10-27).** #338 (`src/data/core/docs/338-RAISING-INPUTS.md`) reads this file's bond family as one of its eight closed fact families. #339 (`show/production/world-systems/339-BOND-SHAPED-VARIATION.md`) builds bond's visible marks under this file's declaration law — marks are its cues made continuous; battle rows remain this file's alone. Both cite this home; neither adds a row to this file's table.
