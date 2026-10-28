@@ -1476,9 +1476,9 @@
         "wispkin-float_idle.transparent.webm",
         "kittember-tail_flame_wave.transparent.webm"
       ],
-      "staging_notes": "ED (slot furniture): garden-wide night settle, credits card fades in/out, small cast idles at frame bottom. Chibi credits-bit slot present near the end as an EMPTY marked placeholder frame (56-70s) - PENDING OWNER, no gag invented.",
+      "staging_notes": "ED (slot furniture): garden-wide night settle, credits card fades in/out, small cast idles at frame bottom. Chibi credits-bit slot present near the end as an EMPTY marked placeholder frame (56-70s) in the shipped master. FORMAT DEFINED by owner 2026-10-27: the gag is 'the chibi walk' (show/production/ED-GAG-FORMAT.md). EP01 instance 1 (EP01-ED-GAG-v1, 14s) is BUILT and registered as an upgrade candidate - NOT swapped into the shipped master; swap only on the owner's order (Current-Version Law).",
       "flags": [
-        "PENDING OWNER: chibi credits-bit gag slot (placeholder frame only, no gag built)"
+        "FORMAT DEFINED (owner, 2026-10-27): chibi credits-bit gag = 'the chibi walk' (show/production/ED-GAG-FORMAT.md); EP01 instance 1 built (EP01-ED-GAG-v1) as a registered upgrade candidate; shipped master still carries the placeholder frame."
       ],
       "staged_last_mochiko_dependent": false
     },
@@ -1527,7 +1527,7 @@
     "story": "100% FULL-SIZE - no chibi in story picture, transitions, or snaps (caps zero for EP01)",
     "op_title": "No chibi - full-size/graphic as briefed",
     "prev": "PREVIEW CARD is EP01's designated chibi home: PREV rebuilt CHIBI-FRAMED per CHIBI-CARD-SYSTEM \u00a76/\u00a77 - flat brand-blue graphic field, footage window with full-size teasers, chibi cast row as furniture (proportion variants derived from canon-pixel clips; every character already appeared full-size in the episode). Furniture text limited to NEXT TIME.",
-    "ed": "One chibi credits bit PERMITTED but gag needs owner approval: ED built with the slot present as a clearly marked EMPTY placeholder frame (window 56-70s, 'CHIBI CREDITS BIT / PENDING OWNER'), NO gag invented. Status: PENDING OWNER.",
+    "ed": "One chibi credits bit PERMITTED: ED built with the slot present as a clearly marked EMPTY placeholder frame (window 56-70s, 'CHIBI CREDITS BIT / PENDING OWNER'), NO gag invented at build time. Status: FORMAT DEFINED (owner, 2026-10-27) - the gag format is 'the chibi walk' (show/production/ED-GAG-FORMAT.md); EP01 instance 1 (EP01-ED-GAG-v1, 14.000s, fills the 56-70s window) is built and registered as an upgrade candidate; the shipped master is unchanged until the owner orders the swap-in.",
     "eyecatch_061": "Stands AS SCRIPTED (graphic Mochiioteca check-in); no chibi variant built - a chibi replacement furnishing may only be built on owner approval.",
     "stinger": "Never chibi - satisfied (Forest still, no layers but the scripted leaf)."
   }

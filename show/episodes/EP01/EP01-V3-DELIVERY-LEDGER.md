@@ -100,3 +100,16 @@ repo cries + cry-synth renders from species specs; see BEDS.md per-render table)
 - Stems: 20 scene beds, 48kHz WAV (same manifest; 363MB total)
 - In-repo with this ledger: build report JSON, render LEDGER, BEDS.md,
   staging.json, episode spec JSON, this ledger.
+
+## Annotation (2026-10-27) — ED chibi credits-bit: format defined, instance 1 built
+
+The laws-applied entry above records the ED chibi credits-bit slot as
+PENDING OWNER; that was the as-shipped state, and the wording above stands
+as the delivery record. The slot's state is now converted by annotation:
+the owner defined the gag format on 2026-10-27 — "the chibi walk",
+recorded in show/production/ED-GAG-FORMAT.md. EP01 instance 1
+(EP01-ED-GAG-v1, 14.000s, built for this slot's 56-70s window; Mochiko
+leading Mochii, Kittember, Sproutle and Wispkin — the episode's own cast)
+is built and registered as an upgrade candidate. The shipped master is
+NOT changed: it still carries the empty placeholder frame, and the
+instance swaps in only on the owner's order (Current-Version Law).
