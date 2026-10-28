@@ -1,0 +1,19 @@
+{
+  "context": "Owner re-separation ruling 2026-10-27: Aqua Shot (AQUA_SHOT), Water Orb, and Aqua Blast are three different moves. PR #363 merged Water Orb onto AQUA_SHOT's display name on paper; the corrective split gives Water Orb its own entry. Aqua Shot keeps its own entry/name/data (WATER Special 40/100/25).",
+  "entry": {
+    "accuracy": null,
+    "accuracy_note": "null = never misses (Aura Sphere trait, owner-combined)",
+    "category": "Special",
+    "description": "The user forms a swirling orb of water in its hands and hurls it at the foe. This move never misses, and may also lower the target's Sp. Def.",
+    "display_name": "Water Orb",
+    "effect": "20% chance to lower the target's Sp. Def by one stage (Shadow Ball secondary, owner-combined)",
+    "id": "WATER_ORB",
+    "power": 80,
+    "pp": 15,
+    "signature_of": "Dorowani (exclusive — signature attacks are per-species canon)",
+    "type": "Water"
+  },
+  "general_rule_recorded": "Owner rule (2026-10-27): any move missing stats gets them filled from its Pokemon analogue's code stats — derived from the analogue, kept distinct from other Mochi moves' blocks, never invented.",
+  "status": "OWNER'S FINAL SYNTHESIS 2026-10-27 — land exactly this: Shadow Ball's block (80 power / 15 PP / 20% Sp.Def-drop secondary) combined with Aura Sphere's never-miss. Supersedes both single-basis records (pure Aura Sphere draft; tentative Shadow Ball note). Ready for the corrective split at landing.",
+  "_status": "SUPERSEDED at landing (2026-10-27): the owner-approved WATER_ORB spec is the COMBINED synthesis (Water/Special, 80 power, never misses, 15 PP, 20% Sp.Def drop) landed in src/data/core/moves.json. Both single-basis drafts (Shadow Ball-only, Aura Sphere-only) are superseded; this file is preserved as drafting history."
+}

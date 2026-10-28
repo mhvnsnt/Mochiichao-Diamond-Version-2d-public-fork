@@ -1,11 +1,11 @@
 {
   "$schema": "./schemas/moves.schema.json",
   "version": "1.0.0",
-  "source": "Converted from src/lib/moves.ts on main (36 moves, ids/names/values verbatim; effect strings converted to data objects per the Quickest plan \u00a71b shape). Move names that coincide with generic battle-game terms are carried verbatim from moves.ts; renaming any of them is a Mars decision, not made here, because learnset and animation keys reference these ids.",
+  "source": "Converted from src/lib/moves.ts on main (36 moves, ids/names/values verbatim; effect strings converted to data objects per the Quickest plan §1b shape). Move names that coincide with generic battle-game terms are carried verbatim from moves.ts; renaming any of them is a Mars decision, not made here, because learnset and animation keys reference these ids.",
   "moves": [
     {
       "id": "AQUA_SHOT",
-      "name": "Water Orb",
+      "name": "Aqua Shot",
       "type": "WATER",
       "category": "Special",
       "power": 40,
@@ -317,7 +317,7 @@
       "target": "single",
       "flags": [],
       "anim": "IRON_BARRAGE",
-      "desc": "Fires 2\u20135 iron shards."
+      "desc": "Fires 2–5 iron shards."
     },
     {
       "id": "FLASH_CANNON_MOVE",
@@ -667,7 +667,7 @@
       "target": "single",
       "flags": [],
       "anim": "SWARM_STRIKE",
-      "desc": "Swarm attacks 2\u20135 times in a row."
+      "desc": "Swarm attacks 2–5 times in a row."
     },
     {
       "id": "POISON_JAB",
@@ -689,6 +689,30 @@
       "flags": [],
       "anim": "VENOM_STRIKE",
       "desc": "Stabs with poison appendage. May poison."
+    },
+    {
+      "id": "WATER_ORB",
+      "name": "Water Orb",
+      "type": "WATER",
+      "category": "Special",
+      "power": 80,
+      "accuracy": null,
+      "pp": 15,
+      "priority": 0,
+      "effect": {
+        "kind": "damage",
+        "secondary": {
+          "stat": "spd",
+          "stages": -1,
+          "chance": 0.2
+        }
+      },
+      "target": "single",
+      "flags": [
+        "never_miss"
+      ],
+      "anim": "WATER_ORB",
+      "desc": "Dorowani forms an orb of water in both hands and hurls it. It never misses, and may lower the target's Sp. Def."
     }
   ]
 }
