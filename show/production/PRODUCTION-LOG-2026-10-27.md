@@ -1043,3 +1043,7 @@ Full-wiring follow-up for the species-systems teardown (PR #398): the cry schema
 ## WIRING - RIG-AND-MOUTH CROSS-REFERENCES (2026-10-27)
 
 Full-wiring follow-up for the rig-and-mouth teardown (PR #402): the three cross-reference edits its STAGING.md assigned to a side-lane PR are now landed - rigs/README.md links the teardown (RIG-TEARDOWN-open-movies.md) + templates/ as the rig system's source and body-plan starting points; TOOLING-INDEX.md registers mochiichao-mouth-data/v1 + the Rhubarb converter under lip-sync (humans); MATERIALS-INDEX.md's Blair row now carries its machine-readable form (mouth-data). Nothing else in those files changed. Landed by the lock-everything wave.
+
+## EP02 REVISION — SHOOTING SCRIPT v2 (2026-10-27)
+- EP02 rebuilt on the locked game opening (region1-truck-start.ink) per the season canon reconciliation: truck arrival at Boot Harbor, Hex = next-door neighbour/rival, Aeon cornered, FIVE starters, rescue-choosing, Mochiioteca handover, Mochiko as Aeon's assistant (aeon_lab.json).
+- POV switch at cut 14 unchanged (owner design); intertitles exactly 2 (cuts 16/26); v1's three-candidate Garden ceremony superseded in part. REVISION-NOTE-v2 records every change with its canon source; TBD-LIST-v2 holds 10 open items + the EP03 downstream note. v1 file retained, untouched, pending an owner retirement order (additions only in this PR).
