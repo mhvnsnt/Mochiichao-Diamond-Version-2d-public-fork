@@ -955,3 +955,11 @@ Owner-directed seventh lock, filling the one gap the six-lock wave's Kairos corr
 ## HUMAN RIGS LANDED — Mochiko / Hex / Aeon (2026-10-27)
 
 The show's first human rigs are in the repo at show/production/rigs/builds/<name>/: TextRig whole-image DEFORM sets (DragonBones ske/tex + RIG-NOTES) built from the canon cutouts (no redraw), each with its talking set (Preston Blair mouth swaps wired for Rhubarb viseme cues + TALKING-SET.md + mouth-swap-spec.json), build-inputs for reproducibility, and the shared TALKING-SEAT-SPEC at show/production/rigs/. Registry updates in the same PR: show/shared/cast.json gains the three humans (rig paths + Chatterbox voice entries — Mochiko 0.45/0.5, Hex 0.3/0.6, Aeon 0.4/0.55; reference casting AWAITING OWNER) and CAST-RIG-SPECS.md gains the three human specs (humanoid track). These v1 builds are CURRENT for the three characters (no prior human rig exists). parts-catalog.json carries no rig entries for any cast member (creature precedent), so no entry was added there. Gate before episode use: ROM battery is the v2 pass. Landed by the lock-everything wave.
+
+## CHIBI CARD SYSTEM LANDED (2026-10-27)
+
+CHIBI-CARD-SYSTEM.md landed at show/production/ (spec-only: 85-90% full-size band, caps table, never-change anchors ink #101010 / accent red #a03436; EP01 slots in its section 7, pointer added to the EP01 change note). Its section 8 Bible law (draft Law 11) is DRAFT - FOR OWNER LOCK and did NOT land in the Bible; the Bible is untouched until the owner locks the wording. No card art in this landing. Landed by the lock-everything wave.
+
+## CANON RECORD - DOROWANI EYES + INDIVIDUAL VARIATION (owner ruling, 2026-10-27)
+
+DOROWANI EYE CANON: the Dorowani species' eyes are red + black, no sclera whites. The avatar/show individual Dorowani (Doro) HAS eye-whites - owner ruling: KEEP him; the whites are his personal deviation and stay consistent for this individual in every future generation. Other Dorowanis follow the species pattern (some individuals may carry black around the eyes instead, etc.). General doctrine: same-species individuals are mostly alike with real deviations - a deviation on a named individual is character, not an error, once the owner rules it so. Also recorded in show/shared/clip-index.json canon_notes.dorowani_eyes.

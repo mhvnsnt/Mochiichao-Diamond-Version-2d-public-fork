@@ -114,3 +114,7 @@ local-first against the local verbatim copy of the locked v2.
    deletions in the log diff before opening the PR).
 4. Open the PR with this change note as the body. **DO NOT MERGE**
    — owner/scorer review first, per standing discipline.
+
+---
+
+Post-landing pointer (2026-10-27): EP01 chibi slots are assigned in `show/production/CHIBI-CARD-SYSTEM.md` §7 (preview card designated; eyecatch variant owner-gated; story/transition/snap = 0). The system document's §8 Bible law is DRAFT, pending owner lock; the Bible is untouched by that landing.

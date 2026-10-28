@@ -2,6 +2,9 @@
  "schema": "mochiichao-show/clip-index/v1",
  "updated": "2026-10-27",
  "note": "Every finished clip and where it is used, both directions (show + game). quality_status is honest by design: clips marked rejected_placeholder were procedural stills composites rejected by Jamar on 2026-10-27 and must NOT ship; they stay indexed so nothing quietly reuses them.",
+ "canon_notes": {
+  "dorowani_eyes": "DOROWANI EYE CANON (owner ruling, 2026-10-27): the Dorowani SPECIES' eyes are red + black with NO sclera whites. The avatar/show individual Dorowani (Doro) HAS eye-whites - a kept special-case individual deviation (owner: do not scrap; keep consistent for this individual in every future generation). Other Dorowanis follow the species pattern; same-species individual variation is canon doctrine."
+ },
  "clips": [
   {
    "id": "title-videos-10",
