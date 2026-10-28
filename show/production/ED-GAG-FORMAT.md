@@ -102,12 +102,39 @@ instance (§4) uses no smuggle: the episode's own cast only.
   charts rendered from the rigs, each drawing held 3 frames
   (8 poses/second) — per the studied limited-animation method.
   Build record: `BUILD-NOTES-v2.md` in the workspace home above.
-- **Status: OWNER-APPROVED — v2 is the CANDIDATE CURRENT
+- **v3 — the leg-phase fix (owner-flagged 2026-10-27):**
+  `EP01-ED-GAG-v3.mp4` (1280×720, 24 fps, 14.000 s, sha256
+  5919bd7b035b3bfc360296b888dc9ad12fc277dda57060274a21ae5a6bd6b035)
+  and `EP01-ED-GAG-v3-canvas.transparent.webm` (sha256
+  663976c8eb72eff888236ee8842a4596caa3565e92cfa2527f4e95e56e6faf37).
+  Same instance, cast, lineup, beats, dressing, slot, and on-3s
+  timing as v2; the only change is Mochiko's walk cycle. The owner
+  flagged that one leg cycled backwards — her left leg, on the
+  viewer's right. Diagnosis and fix are measured, not asserted
+  (build record: `BUILD-NOTES-v3.md` in the workspace home above):
+  forward kinematics over the v2 rig data showed her left leg
+  contacting at pose 3, snapping 201 units backward at pose 4,
+  then sweeping forward while planted through poses 5–7 — the
+  second half-cycle had been built by mirroring, which reverses a
+  limb's sweep on an unflipped front-facing rig. v3 rebuilds
+  poses 4–7 by role-swap (limbs exchange roles keeping their
+  rotational sense; body tilts keep the mirrored alternation).
+  Verified: both legs pass a monotonic phase check (stance sweeps
+  back only, swing sweeps forward only), legs in opposite phase,
+  the 201-unit snap is gone (largest step now 125, the natural
+  swing stride), and the stepped timing is unchanged (224/335
+  frame pairs held, 66.9% — v2's exact figure). Marked pose
+  strips with her left shoe ringed red are in the build record's
+  workspace (`work/v3/strips/`).
+- **Status: OWNER-APPROVED — v3 is the CANDIDATE CURRENT
   version.** The owner approved the instance on viewing v1
   (2026-10-27) and named it "Outro Credit Gag Number One"; v1
-  stands as the first produced version. The owner-ordered
-  animation upgrade, v2, is built and is the candidate current
-  version pending the owner's viewing of it. The shipped EP01
+  stands as the first produced version. v2 (the owner-ordered
+  animation upgrade) is SUPERSEDED AS CANDIDATE by v3 — reason:
+  a leg-phase defect the owner spotted on viewing v2 (her left
+  leg cycling backwards through poses 4–7), fixed and verified
+  in v3 as recorded above. v3 is the candidate current version
+  pending the owner's viewing of it. The shipped EP01
   master is unchanged — it still carries the slot's empty
   placeholder frame. This instance swaps in only on the owner's
   order (Current-Version Law).
