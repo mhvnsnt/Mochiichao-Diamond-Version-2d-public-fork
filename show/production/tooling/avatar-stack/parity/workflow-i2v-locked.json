@@ -1,0 +1,175 @@
+{
+ "1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "wan2.1_vace_1.3B_fp16.safetensors",
+   "weight_dtype": "default"
+  },
+  "_meta": {
+   "title": "VACE 1.3B full model (STAGED, Comfy-Org native format)"
+  }
+ },
+ "2": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+   "type": "wan",
+   "device": "default"
+  },
+  "_meta": {
+   "title": "UMT5 scaled - native CLIPLoader accepts it (wrapper loader does not)"
+  }
+ },
+ "3": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "wan_2.1_vae.safetensors"
+  }
+ },
+ "4": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "clip": [
+    "2",
+    0
+   ],
+   "text": "Animate THIS EXACT character image, preserving its design and flat 2D cartoon style precisely. The character is a blue bipedal creature with red fin-like cheeks, red eyes, a light cream belly, a tall blue dorsal fin and a tan shell on its back. It plants its feet firmly, raises both arms up in front of its chest and charges a glowing blue Water Orb between its hands, the orb of water swirling and growing larger as the creature concentrates. Do not change the character design, do not add anything, no 3D rendering, no new characters. Locked-off camera, plain solid white background."
+  }
+ },
+ "5": {
+  "class_type": "CLIPTextEncode",
+  "inputs": {
+   "clip": [
+    "2",
+    0
+   ],
+   "text": "3d render, cgi, pixar, photorealistic, realistic, blurry, distorted, deformed, morphing, changing design, extra characters, extra limbs, text, watermark, logo, camera movement, zoom, background change, colored background"
+  }
+ },
+ "6": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "dorowani_start_tight.png"
+  },
+  "_meta": {
+   "title": "Tight-framed start/reference frame: prep_start_frame.py output, character >=85% of frame height, white field. Notebook stages the job's start image under this exact name."
+  }
+ },
+ "7": {
+  "class_type": "WanVaceToVideo",
+  "inputs": {
+   "positive": [
+    "4",
+    0
+   ],
+   "negative": [
+    "5",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ],
+   "width": 480,
+   "height": 768,
+   "length": 49,
+   "batch_size": 1,
+   "strength": 1.0,
+   "reference_image": [
+    "6",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "THE LOCK: reference_image is VAE-encoded, prepended to the VACE control latents with a zero (locked) mask; conditioning carries vace_frames/vace_mask/vace_strength. control_video/control_masks deliberately omitted (reference-only mode, grey reactive field)."
+  }
+ },
+ "8": {
+  "class_type": "ModelSamplingSD3",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "shift": 8.0
+  }
+ },
+ "9": {
+  "class_type": "KSampler",
+  "inputs": {
+   "model": [
+    "8",
+    0
+   ],
+   "seed": 2002,
+   "steps": 30,
+   "cfg": 5.0,
+   "sampler_name": "uni_pc",
+   "scheduler": "simple",
+   "positive": [
+    "7",
+    0
+   ],
+   "negative": [
+    "7",
+    1
+   ],
+   "latent_image": [
+    "7",
+    2
+   ],
+   "denoise": 1.0
+  }
+ },
+ "10": {
+  "class_type": "TrimVideoLatent",
+  "inputs": {
+   "samples": [
+    "9",
+    0
+   ],
+   "trim_amount": [
+    "7",
+    3
+   ]
+  },
+  "_meta": {
+   "title": "Removes the prepended reference latent frame(s) using WanVaceToVideo's own trim_latent output - the wire the earlier FLF graph left unconnected."
+  }
+ },
+ "11": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "10",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ]
+  }
+ },
+ "12": {
+  "class_type": "CreateVideo",
+  "inputs": {
+   "images": [
+    "11",
+    0
+   ],
+   "fps": 16.0
+  }
+ },
+ "13": {
+  "class_type": "SaveVideo",
+  "inputs": {
+   "video": [
+    "12",
+    0
+   ],
+   "filename_prefix": "locked_i2v_dorowani",
+   "format": "auto",
+   "codec": "auto"
+  }
+ }
+}
