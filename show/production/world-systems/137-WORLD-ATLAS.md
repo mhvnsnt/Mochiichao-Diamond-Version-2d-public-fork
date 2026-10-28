@@ -111,3 +111,5 @@ evidence, it does not fork it).
   OPEN, owned by each region's own build.
 
 **Consumer citation (List 17 #163, landing 2026-10-27):** mythical-habitat sealing behaviour is decided in 163-MYTHICAL-HABITAT-SEALING.md (show/production/world-systems/), not in this document.
+
+**View-layer note (List 20 #191, landing 2026-10-27):** the player journal overlays this atlas as a VIEW — annotations render over the atlas derivation; the derivation itself is not edited by the journal.

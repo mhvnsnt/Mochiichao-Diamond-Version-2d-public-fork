@@ -1,0 +1,32 @@
+{
+ "_about": "Portrait & photo studio services (List 20 #196). The studio is an occasion layer over #60's shutter — the record never changes, the sitting does. Portraits show the individual (#80), never the species template. The fragment instances no studio or sitting.",
+ "format": "mochiichao/photo-studio/v1",
+ "portraitRule": "Pipeline check (List 20 #196, step 11): for studio sittings, subject rendering must read #80's RULED deviations (show/production/species-data/RULED-DEVIATION-REGISTRY.json) — a sitting whose portrait pipeline reads species templates instead FAILS the check. The print item shape (material, non-stackable, shutter reference) is proposed into #31's layer as a non-instanced record shape; zero studios, sittings, or prints exist.",
+ "print": {
+  "category": "material (#31 closed vocabulary — the made-thing class)",
+  "holding": "a #190 holding like any item; the #190 soft-lock audit ignores prints (no story needs one)",
+  "itemRecord": "proposed shape in #31's layer — zero rows instanced; item data is the data lane's",
+  "references": "its #60 shutter record",
+  "stackable": false
+ },
+ "sitting": {
+  "beat": null,
+  "produces": "#60 shutter records verbatim, place = the studio interior; they land in #60's album beside the subjects' dex records",
+  "sittingId": null,
+  "studioId": null,
+  "subjects": [
+   "#80 individual ids — never species ids"
+  ]
+ },
+ "studio": {
+  "interior": "a #119 interior record",
+  "keepers": "#93 schedules, as centres",
+  "place": "a service place record in #132's family",
+  "price": "#118 posture — a slot on #20's economy, null until ruled",
+  "services": [
+   "sitting",
+   "print (where authored)"
+  ]
+ },
+ "writes": "sittings, shutter records, print holdings — and NO dex states: studio subjects are kept individuals; #60's field discovery tie has no studio analogue"
+}

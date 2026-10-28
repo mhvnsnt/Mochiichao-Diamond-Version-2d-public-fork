@@ -115,3 +115,5 @@ and who heads them are canon content — **OPEN**, not assigned here.
   slot; no slot is opened here.
 
 **PROPOSAL from List 19 #186 (registered at its landing, 2026-10-27):** a facility `ladder` slot in this file's table (186-FACILITY-LADDER.md; generation reads #94 verbatim). The run-record shape joins the run-history store this file's RECORD derivations read, under #96's absent = default rule. No facility, band row, or head is created by the proposal.
+
+**Reconciliation (List 20 landing link check, 2026-10-27):** facility spectating seats here for both #186's ladder (List 19) and #188's spectator mode (List 20) — #186 did not exist when #188 was drafted, so #188 seated on this file directly; the two agree: one seat, this home.

@@ -97,3 +97,5 @@ roster layer's own.
   the staffing fiction are OPEN. The spec's load-bearing
   content is the Garden boundary — the rest is a service
   record shape the world build can instance town by town.
+
+**Seat reconciliation (List 20 #193, landing 2026-10-27):** daycare custody seats in #77's Garden housing. Centres under this file store NOBODY — no centre build may seat custody here.

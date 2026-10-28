@@ -62,3 +62,5 @@ Contents: none canon; format + naming discipline are the yield.
 **Consumer citation (List 17 #163, landing 2026-10-27):** mythical-habitat sealing behaviour is decided in 163-MYTHICAL-HABITAT-SEALING.md (show/production/world-systems/), not in this document.
 
 **PROPOSAL from List 17 #164 (registered at its landing, 2026-10-27):** a `mission_board` display generator in this file's broadcast/display vocabulary (164-MISSION-BOARD.md). Proposal until this home accepts it.
+
+**PROPOSAL from List 20 #191 (registered at its landing, 2026-10-27):** a `journal_share` generator in this file's vocabulary, for sharing player-journal pages. Proposal until this home accepts it.

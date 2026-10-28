@@ -59,5 +59,8 @@
    },
    "validation": "#109 validator runs per entrant; clauses inherited verbatim from #109's closed vocabulary (species-clause, item-clause, machine-moves, mythical-class under its #41 dependency)"
   }
+ },
+ "spectatorTiming": {
+  "proposedBy": "List 20 #188 — the live/delayed spectating slot, proposed into this ruleset record at its landing; values OPEN. Until accepted here, spectating timing is spec-level. The spectator projection is built from #10's displayed queue only — no second data path."
  }
 }

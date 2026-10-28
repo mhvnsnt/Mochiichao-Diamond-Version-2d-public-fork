@@ -78,3 +78,5 @@ fiction the system can't back).
   Region 1's name. The weights that exist today are
   exactly the #61/#67 tables; this package authors no new
   weather content and no region's climate character.
+
+**Validation note (List 20 #194, landing 2026-10-27):** the depths forecast rule — the Dark Forest depths' weather kind is NONE, always; no forecast projects anything there.
