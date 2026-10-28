@@ -222,3 +222,5 @@ a contradiction with an earlier package):**
    resolve.
 
 **OWNER RULING — flag RESOLVED (2026-10-27, applied at the List 18 landing):** the show MAY depict trades — as stories, side stories, and backstory (characters talk about how they got their Mochi in a trade, and how they evolved). #68's "the show lane never trades" is the SYSTEM rule only (the show never runs the trading mechanic); #168's show mirror STANDS as legitimate. A depicted trade turns on the Mochi's own wishes — creature agency stays at the centre. The earlier either/or flag is removed as resolved-by-ruling.
+
+**Annotation (List 23 landing, 2026-10-27):** this record's #68-vs-#168 flag is RESOLVED by owner ruling (the show may depict trades as stories; the system rule stands) — annotated, not rewritten. #218 (218-SHOW-TRADE-STORY-GRAMMAR.md) states the grammar.

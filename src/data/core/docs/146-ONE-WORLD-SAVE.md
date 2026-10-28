@@ -84,3 +84,5 @@ one of the derived).
   TARGET carried into STAGING: this package's claim is
   about the architecture the specs jointly describe, and
   it is labelled as such, never as engine wiring.
+
+**Registration (List 23 #223, landing 2026-10-27):** world-visiting sessions register beside this file's visit records. The zero-write audit is the wiring, as with this file's own audit: every proposed guest-write is refused with a derivation, and the net stored change to a host save is ZERO. (Addendum: guest-seeing writes no dex entries; session cap of four.)

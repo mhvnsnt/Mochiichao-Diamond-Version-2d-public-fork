@@ -1034,6 +1034,73 @@
      "extends": "ceremony slot PROPOSED into #126's home"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list23-systems",
+   "type": "systems-index",
+   "about": "List 23 teardown systems (items 217-226) + GAP-FILL-ADDENDUM, landed 2026-10-27. Mechanical slots filled Pokemon-style by the addendum; story/canon slots stay the owner's.",
+   "items": [
+    {
+     "n": 217,
+     "name": "Gift & adoption transfers",
+     "home": "src/data/core/docs/217-GIFT-AND-ADOPTION-TRANSFERS.md",
+     "extends": "stamps PROPOSED into #68; channels filled by the addendum (in-person, overflow to storage, no expiry)"
+    },
+    {
+     "n": 218,
+     "name": "Show trade story grammar",
+     "home": "show/production/218-SHOW-TRADE-STORY-GRAMMAR.md",
+     "extends": "states the grammar for the resolved #68/#168 ruling"
+    },
+    {
+     "n": 219,
+     "name": "Surprise exchange system",
+     "home": "src/data/core/docs/219-SURPRISE-EXCHANGE.md",
+     "extends": "one pool validator; matching filled by the addendum; whether it ships stays the owner's call"
+    },
+    {
+     "n": 220,
+     "name": "Shelter & stray system",
+     "home": "show/production/world-systems/220-SHELTER-AND-STRAY.md",
+     "extends": "custody seat PROPOSED into #106; seeking filled by the addendum (seven in-game days, then adoption opens)"
+    },
+    {
+     "n": 221,
+     "name": "Ranger mentorship",
+     "home": "show/production/world-systems/221-RANGER-MENTORSHIP.md",
+     "extends": "record seats beside #93's family; agency limit demonstrated (nothing consumable as command authority)"
+    },
+    {
+     "n": 222,
+     "name": "Regional starter programmes",
+     "home": "src/data/core/docs/222-REGIONAL-STARTER-PROGRAMMES.md",
+     "extends": "Region 1's record landed in src/data/core/starter-programmes.json; Regions 2-5 null; ceremony kept as flashback, not the programme"
+    },
+    {
+     "n": 223,
+     "name": "World visiting",
+     "home": "show/production/world-systems/223-WORLD-VISITING.md",
+     "extends": "session registered beside #146; net stored change to a host save: zero"
+    },
+    {
+     "n": 224,
+     "name": "In-world newspaper & chronicle",
+     "home": "show/production/world-systems/224-INWORLD-NEWSPAPER-CHRONICLE.md",
+     "extends": "editions in their own store, separate from record stores; daily cadence (addendum); reputation read PROPOSED to #201"
+    },
+    {
+     "n": 225,
+     "name": "Memorial sites",
+     "home": "show/production/world-systems/225-MEMORIAL-SITES.md",
+     "extends": "class lands EMPTY \u2014 who is memorialised is the owner's canon call, entire"
+    },
+    {
+     "n": 226,
+     "name": "Migration spectacles",
+     "home": "show/production/world-systems/226-MIGRATION-SPECTACLES.md",
+     "extends": "records keyed to #144 pairs, witnessPoints null; transit register PROPOSED to #152"
+    }
+   ]
   }
  ]
 }

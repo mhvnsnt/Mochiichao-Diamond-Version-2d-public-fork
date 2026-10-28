@@ -106,3 +106,5 @@ residence: #58/#65. Eggs: #77. Honours carried in-record:
   rule exists in canon, and none is invented here.
 
 **PROPOSAL from List 20 #193 (registered at its landing, 2026-10-27):** an additive, nullable custody marker on this file's location record for daycare custody. Until accepted here, custody reads as Garden residence plus #193's service record, and no report may call the sub-seat wired.
+
+**PROPOSAL from List 23 #220 (registered at its landing, 2026-10-27):** a shelter custody seat — a place an individual can be WITHOUT a keeper change — proposed into this file's location model. Until accepted here, shelter custody is spec-level. The non-write audit stands beside #132's: an intake changes no keeper seat and writes no care axis, and a reunion completes with NO transfer stamp at all (the keeper never changed).

@@ -82,3 +82,5 @@ question for the link check) · profile fields for
 anatomies with no field presence (pure swimmers'
 `idleLoops` in Garden contexts — the Garden's water
 handling is #28's question first).
+
+**PROPOSAL from List 23 #226 (registered at its landing, 2026-10-27):** a transit register for migration spectacles, proposed into this profile system's home (226-MIGRATION-SPECTACLES.md). Spectacle records key by migrationId to #144's pairs with witnessPoints null; the record exposes no encounter table, rate, or rarity field to any consumer (negative test, in the spec).

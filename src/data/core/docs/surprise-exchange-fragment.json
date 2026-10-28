@@ -1,0 +1,25 @@
+{
+ "_about": "Surprise exchange fragment (List 23 #219) — blind matching over #68's escrow protocol and #168's record semantics. Blindness is a property of the matching only; the received individual's full history arrives legible. Fairness is pool construction: committed real records only, no generated stock (#94 never mints trade stock).",
+ "commit": {
+  "escrow": "#68 escrow-by-reference; record escrow-locked as in a directed trade (no moves, no release)",
+  "knowledge_state": "the sender knows their own commit and nothing of the return; the commit record has NO field naming, filtering, or preferencing the return — a wishlist would make it a directed trade, and the shape refuses to express one",
+  "retraction": "free before matching; irreversible once matched (abort pre-match = escrow lifts, nothing changed)"
+ },
+ "completion": "both transfers complete simultaneously under #168 semantics; history stamp {met_via: surprise (proposed into #68's vocabulary in its home), from, to, beat}; receiver sets location on commit (#106 kinds)",
+ "format": "mochiichao/surprise-exchange/v1",
+ "open_register": [
+  "matching/pairing rule (order, timing, regional reach)",
+  "one world pool vs per-region pools (#146 anti-fork discipline argues one; not decided here)",
+  "commit costs, if any (#20 economy decision — asserted neither way; a gift is never purchasable per #217)",
+  "whether surprise exchange exists as a live feature (inherited #68 design-only state)"
+ ],
+ "pool": "contains ONLY committed #80 individuals escrowed by real keepers; small, slow, or empty are honest states shown plainly; padding is impossible by construction",
+ "validation_refusals": [
+  "story_locked individuals (#68/#106 — can never be escrowed)",
+  "signature individuals (any record carrying a #131 signature designation)",
+  "egg/unhatched states (#68 exclusion)",
+  "species_untradeable species (values inherited OPEN from #68)"
+ ],
+ "poolValidator": "ONE check list (List 23 #219 step 4): a pool commit is refused if it violates #68's locks, carries a #131 signature designation, or names a #106 story_locked individual. One implementation, read by any pool interface — the validator does not wait on matching rules.",
+ "landingFill": "Filled by the package's GAP-FILL-ADDENDUM (Pokemon-base rule): matching is random from ONE world pool; a match completes on the second commit; there is no fairness balancing; the exchange is free. Whether surprise exchange ships at all stays the owner's call."
+}
