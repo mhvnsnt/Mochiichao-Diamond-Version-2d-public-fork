@@ -1047,3 +1047,19 @@ Full-wiring follow-up for the rig-and-mouth teardown (PR #402): the three cross-
 ## HUMAN CHARACTER DESIGN LANE CHARTERED (2026-10-27)
 
 Human character design lane chartered (owner-directed, low priority; production PARKED behind Season 1 / EP01 by owner order - charter package only, nothing in it is production art). Landed at show/production/human-design-lane/: LANE.md (charter), SOURCES.md (repo audit), CAST-QUEUE.md (season-ordered queue). Headline counts: 18 fresh designs queued + 1 blocked on the owner; 52 transplant builds + 1 flag-deferred; 59 Layer-2 names held. Falk = #1 fresh-design gap, blocked on owner look-basics + team confirmation. Tamsen redesign noted, spelling T-A-M-S-E-N. The queue records canon and proposals at their existing tiers; landing promotes nothing. Landed by the lock-everything wave.
+
+## FALK — DESIGN LOCKED + WARDROBE RULING (2026-10-27)
+
+Owner verdict on the Human Character Design Lane's Wave-1 candidates:
+the design is **confirmed as-is** (a considered cream-to-red jacket
+swap was rejected by the owner; colours unchanged). **Wardrobe
+ruling:** the three candidates are the same man in three canon
+outfits — A (flight jacket) = **CASUAL**, B (falconry glove + vest) =
+**FIELD**, C (calling pose, deep teal jacket + long scarf) = **DOJO**
+outfit. None is superseded; all three are kept with those scene
+roles. Completion set built under the 8-step standard: **7/8 steps
+complete, step 3 (walk) partial** — down/up step frames were not
+produced and are recorded missing in the manifest, not fabricated.
+Canon record: `docs/human-characters/FALK-CANON-RECORD-2026-10-27.md`;
+model sheet (casual outfit) lands with it in this PR; the full
+completion set is staged in the design-lane workspace.
