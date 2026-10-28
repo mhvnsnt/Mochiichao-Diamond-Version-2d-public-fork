@@ -1101,6 +1101,73 @@
      "extends": "records keyed to #144 pairs, witnessPoints null; transit register PROPOSED to #152"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list24-systems",
+   "type": "systems-index",
+   "about": "List 24 teardown systems (items 227-236), landed 2026-10-27. #236's finish order was filled Pokemon-style at landing (owner direction), recorded in both its files.",
+   "items": [
+    {
+     "n": 227,
+     "name": "Provenance storytelling (show)",
+     "home": "show/production/227-PROVENANCE-STORYTELLING.md",
+     "extends": "tale classes must map to stamps on the individual's record (the record-check is the wiring); no tale content created"
+    },
+    {
+     "n": 228,
+     "name": "Evolution sequence presentation",
+     "home": "show/production/battle/228-EVOLUTION-SEQUENCE.md",
+     "extends": "REVEAL-timed writes + cancelled-writes-nothing cited into #80 and #199"
+    },
+    {
+     "n": 229,
+     "name": "Regional cry dialects",
+     "home": "show/production/species-data/229-REGIONAL-CRY-DIALECTS.md",
+     "extends": "colour-transform seat in the cry pipeline; ZERO dialect records (species-data work)"
+    },
+    {
+     "n": 230,
+     "name": "Licence discipline",
+     "home": "show/production/world-systems/230-LICENCE-DISCIPLINE.md",
+     "extends": "finding shape beside #98; threshold table EMPTY; no Ranger gains a finding"
+    },
+    {
+     "n": 231,
+     "name": "Wild territory events",
+     "home": "show/production/species-data/231-WILD-TERRITORY-EVENTS.md",
+     "extends": "the no-join is wired: no tally join, no spawn write, no depths derivation"
+    },
+    {
+     "n": 232,
+     "name": "Working Mochi professions",
+     "home": "show/production/world-systems/232-WORKING-PROFESSIONS.md",
+     "extends": "honour occasion PROPOSED to #104; zero profession records"
+    },
+    {
+     "n": 233,
+     "name": "Interregional Ranger exchange",
+     "home": "show/production/world-systems/233-INTERREGIONAL-EXCHANGE.md",
+     "extends": "cited into #145; three non-readers registered (#143/#98/#207)"
+    },
+    {
+     "n": 234,
+     "name": "Performance troupes (show)",
+     "home": "show/production/234-PERFORMANCE-TROUPES.md",
+     "extends": "casting slots EMPTY (owner casting); fence sentence PROPOSED to #167"
+    },
+    {
+     "n": 235,
+     "name": "Inscription & lore fragments",
+     "home": "show/production/world-systems/235-INSCRIPTIONS.md",
+     "extends": "shape registered in #154 + #225 as references only; ZERO inscription text \u2014 lore words are content-lane writing"
+    },
+    {
+     "n": 236,
+     "name": "Mochi sports & racing",
+     "home": "show/production/world-systems/236-MOCHI-SPORTS.md",
+     "extends": "finish order FILLED Pokemon-style at landing (Speed per movement-class leg), recorded in the file; validation fence in both homes"
+    }
+   ]
   }
  ]
 }

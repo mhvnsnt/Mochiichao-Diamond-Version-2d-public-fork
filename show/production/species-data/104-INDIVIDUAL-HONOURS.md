@@ -96,3 +96,5 @@ a release tombstone may carry the honour *count*, see #106),
 **PROPOSALS from List 18 (registered at its landing, 2026-10-27):** three catalogue occasions are proposed into this catalogue — contest ribbons (#167), rematch honours (#173), and arcade stamps (#176). The catalogue is the owner's slot; until it accepts them here, all three systems' honours references are spec-level and no stamp is instanced.
 
 **PROPOSAL from List 22 #210 (registered at its landing, 2026-10-27):** a duel honour occasion for this catalogue (210-FIELD-DUELS.md). Proposal until this home accepts it.
+
+**PROPOSAL from List 24 #232 (registered at its landing, 2026-10-27):** a long-service stamp occasion for working Mochi (232-WORKING-PROFESSIONS.md). Until accepted here, professions carry no honour link.

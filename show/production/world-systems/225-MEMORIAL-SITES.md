@@ -111,3 +111,5 @@ recorded — #163) · tender roles and succession.
   package that invented someone's memorial would be
   inventing someone's death. The shape waits for
   canon to finish a story first.
+
+**Registration (List 24 #235, landing 2026-10-27):** inscription records (shape: 235-INSCRIPTIONS.md + inscription-fragment.json) seat on these site records as REFERENCES only — the record carries no text field anywhere; the words themselves are content-lane writing, and zero inscriptions exist.

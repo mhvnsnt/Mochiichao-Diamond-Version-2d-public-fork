@@ -81,3 +81,5 @@ anywhere (records are authored text, owner-gated like
 all canon writing) · any site's relationship to the
 Dark Forest (a canon question — the Forest is old, and
 this spec does not presume it is a ruin).
+
+**Registration (List 24 #235, landing 2026-10-27):** inscription records (shape: 235-INSCRIPTIONS.md + inscription-fragment.json) seat on these site records as REFERENCES only — the record carries no text field anywhere; the words themselves are content-lane writing, and zero inscriptions exist.
