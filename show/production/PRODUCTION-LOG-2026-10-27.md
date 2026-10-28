@@ -888,3 +888,7 @@ The adaptation-source library (show/production/adaptation-library/, 23 files) is
 ## VOICE-WEIGHTS MANIFEST LANDED (2026-10-27)
 
 show/production/tooling/VOICE-WEIGHTS-MANIFEST.md is in the repo: the byte-exact record of the voice-seat weights (Chatterbox set 3,191,966,992 B, MIT; Kokoro set 330,355,132 B, Apache-2.0; grand total 3,522,322,124 B). The weights themselves are too large for git and live in their staged homes per the staging law (manifest names every location + the owner's two remaining steps: the Kaggle dataset upload and the TeraBox copy). Casting reference slots remain EMPTY - awaiting owner casting. Landed by the lock-everything wave.
+
+## REGION 4 KIT — source map + mecha register (owner-directed 2026-10-27)
+
+Holdings verdict (Bakugan repo placeholder; five franchises not held), Bakugan deep-use map from public structure, R4 flavor law, region-building source map R2-R5 + AIRSHIP-AND-MILITARY design doc (owner's airship sentence discharged: the Lord, the Order, the flagship; names TBD, six forks listed for the owner). Landed by the lock-everything wave.
