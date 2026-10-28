@@ -995,3 +995,7 @@ Species-systems teardown landed: MOCHIIOTECA-FORMATS.md, CRY-SYNTH.md, SILHOUETT
 ## TEARDOWN LANDED - VOICE-KIT (2026-10-27)
 
 Voice-kit teardown landed at show/production/tooling/voice-kit/ per its WIRING.md section 3 (kit files preserving structure; VOICE-KIT.md at docs/; WIRING.md + TERABOX-MANIFEST.md at kit root; the Actions workflow at .github/workflows/voice-render-mochiichao.yml, the only place GitHub runs workflows). TERABOX-MANIFEST rides as PREPARED-NOT-STAGED - no weights land in the repo. One line added to TOOLING-INDEX.md and a pointer line in VOICE-DESIGN.md chain step 3. The one remaining manual step is the owner's: casting Mochiko's reference audio (the renderer refuses a CASTING_TBD slot by design). Landed by the lock-everything wave.
+
+## TEARDOWN LANDED - RIG-AND-MOUTH SYSTEMS (2026-10-27)
+
+Rig-and-mouth teardown landed per its STAGING.md: RIG-TEARDOWN.md at show/production/rigs/RIG-TEARDOWN-open-movies.md; biped/quadruped rig templates at show/production/rigs/templates/; MOUTH-DATA-FORMAT.md + rhubarb_to_mouthdata.py + examples/ at show/production/tooling/mouth-data/; STAGING.md at show/production/rigs/RIG-TEARDOWN-STAGING.md. The package's documentation of the VM Rhubarb binary fault + reinstall path lands as-is. Its cross-reference edits (rigs/README, TOOLING-INDEX, MATERIALS-INDEX) are marked side-lane PR in its STAGING and are NOT in this landing. Landed by the lock-everything wave.
