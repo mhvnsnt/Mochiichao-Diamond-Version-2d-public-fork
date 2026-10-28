@@ -116,3 +116,7 @@ Manual rules beyond Rule 12 (none in game — Rule 12 is the
 owner's show writing), first-lustre placement, Wispkin's habitat
 (night-keeper = show-side owner canon), episode titles (none in
 game — titles ground in canon places/beats instead).
+
+---
+
+Season map EP06–EP10 drafted (2026-10-27): see `show/production/SEASON-MAP-EP06-EP10.md` + `show/production/SEASON-ARC-NOTE-EP01-EP10.md` (titles PROPOSED; direction-stage documents, canon content of this map unchanged).
