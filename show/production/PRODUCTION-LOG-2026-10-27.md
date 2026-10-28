@@ -884,3 +884,7 @@ The dialogue template library (show/production/dialogue-template-library/) is in
 ## ADAPTATION LIBRARY LANDED (2026-10-27)
 
 The adaptation-source library (show/production/adaptation-library/, 23 files) is in the repo: source catalogue (owner's repos first, public transcript structure notes second), 48 templates (14 episode shapes, 12 scene templates, 15 gag mechanisms, 7 reference slots), 6 pilot adaptations slotted into EP02-EP05 beats with subtitle accounting, and the DO-NOT-ADAPT list (22 flagged groups). Construction-kit filter applied throughout: donor structure and craft only - no donor characters, names, logos, or iconic lines carried. Landed by the lock-everything wave.
+
+## VOICE-WEIGHTS MANIFEST LANDED (2026-10-27)
+
+show/production/tooling/VOICE-WEIGHTS-MANIFEST.md is in the repo: the byte-exact record of the voice-seat weights (Chatterbox set 3,191,966,992 B, MIT; Kokoro set 330,355,132 B, Apache-2.0; grand total 3,522,322,124 B). The weights themselves are too large for git and live in their staged homes per the staging law (manifest names every location + the owner's two remaining steps: the Kaggle dataset upload and the TeraBox copy). Casting reference slots remain EMPTY - awaiting owner casting. Landed by the lock-everything wave.
