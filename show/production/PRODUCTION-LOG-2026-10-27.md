@@ -904,3 +904,7 @@ show/production/transplant-roster/TRANSPLANT-ROSTER.md is in the repo (verbatim)
 ## EP01 SCRIPT v3 LANDED (2026-10-27)
 
 show/episodes/EP01/EP01-SHOOTING-SCRIPT-v3.md is in the repo with MANUAL-RULES-DRAFT.md and V3-CHANGE-NOTE.md: the full 24-minute pilot (107 cuts / 1,260s story) expanded around the locked v2 spine after the owner answered the beat map's five questions (cameos Jack-style, five intertitles, scripts independent of casting, draft Manual rules permitted, frost = Wispkin's round-trace with the close-up colour-shift device). Pre-landing verification per the change note's recipe: main's v2 is byte-identical to the local copy v3 was built from (sha256 cd75f06085a7311c), and all six LOCKED-SPINE blocks were re-diffed character-for-character against main's v2 - verbatim. v2 untouched. Rule 3 ('Feed the helper first...') rides as DRAFT-RULE pending the owner's lock. Landed by the lock-everything wave.
+
+## BIG-WEIGHTS STAGING TABLE LANDED (2026-10-27)
+
+show/production/tooling/BIG-WEIGHTS-STAGING-TABLE.md is in the repo: the byte-exact staging record for 56,978,422,938 B of production weights (Wan 2.2 consistency kit, ACE-Step 1.5, voice sets, stragglers audit incl. the RIFE gap), each with licence bucket, current homes, durable home, and the one remaining action + whose it is. The Wan bundle is prepared for Route A (in-notebook assembly) once the owner places the Kaggle token; ACE-Step's pull runs unattended and self-verifies. Table only - no weight bytes in git. Landed by the lock-everything wave.
