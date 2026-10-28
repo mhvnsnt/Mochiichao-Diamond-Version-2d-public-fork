@@ -153,3 +153,5 @@ Legend: ● present · ◐ partial · ○ missing. Sources per cell are in
 | 148 | Gabu | ○ | ○ | ● | ● | ◐ | ● | ◐ | ◐ |
 
 Dorowani (147) and Gabu (148) carry dex-registry numbers; they have no core id (Conflict 1). Mythar is core 047 / dex 331 (Conflict 2).
+
+**Coverage read (List 18 #171, landing 2026-10-27, beside item 4):** eggGroups are assigned for 0/47 species; 0 breeding pairs are evaluable today. The FORMAT lands (171-BREEDING-COMPATIBILITY.md); assignments are species-data work under its V1-V5 checks — none was invented at landing, and the Dorowani/Gabu core-record gap closes first for those two species.

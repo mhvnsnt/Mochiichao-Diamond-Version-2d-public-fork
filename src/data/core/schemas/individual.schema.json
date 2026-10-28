@@ -145,6 +145,13 @@
         null
       ],
       "description": "#106 storage: ONE field on the roster record — storage is a view over the roster, not a second database; the three kinds make double-placement impossible. Release is a tombstone fact in save history and never reverts #14's kept state."
+    },
+    "keeperHistory": {
+      "type": "array",
+      "description": "#168 keeper history (seat chosen at the List 18 landing: the individual record, where #80's model lives — ONE home; #68's protocol doc cross-references this field). Each entry records a transfer of care under 168-RANGER-TRADING.md; escrow state is part of the transfer record, and while a record is escrowed no release and no location move may be written for it (escrow-lock).",
+      "items": {
+        "type": "object"
+      }
     }
   },
   "required": [

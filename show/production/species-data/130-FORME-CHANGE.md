@@ -112,3 +112,5 @@ default rule, flagged in STAGING.
   decisions. The spec's work is the axis separation and
   the record shape, so a forme, when ruled, is data and
   not a special case in code.
+
+**Criterion kind added by List 18 #175 (landing 2026-10-27, cited here — this file is the kind's only home):** `weather` — a forme criterion over #61's weather kinds, filtered by #142's climate layer (175-WEATHER-FORMES.md). NONE-EXCLUSION (schema-level rule): the weather kind NONE is excluded from the criterion input set; a criterion naming NONE is a schema error and fails validation. No family gains the kind at landing; Strikechamp's pairing stays OPEN.

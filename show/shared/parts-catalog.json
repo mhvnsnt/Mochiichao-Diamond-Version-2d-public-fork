@@ -699,6 +699,73 @@
      "extends": "src/data/core/wild-drop-tables.json registered with ZERO rows + validation trio"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list18-systems",
+   "type": "systems-index",
+   "about": "List 18 teardown systems (items 167-176), landed 2026-10-27. The #68/#168 trading flag is RESOLVED by owner ruling (depiction allowed as story; the system rule stands).",
+   "items": [
+    {
+     "n": 167,
+     "name": "Performance contests",
+     "home": "show/production/world-systems/167-PERFORMANCE-CONTESTS.md",
+     "extends": "#78 format; honours occasions PROPOSED to #104"
+    },
+    {
+     "n": 168,
+     "name": "Ranger-to-Ranger trading",
+     "home": "src/data/core/docs/168-RANGER-TRADING.md",
+     "extends": "keeperHistory seated on the individual record; #68 cross-refs it; show depiction ruled legitimate"
+    },
+    {
+     "n": 169,
+     "name": "Ranger hideouts",
+     "home": "show/production/world-systems/169-RANGER-HIDEOUTS.md",
+     "extends": "#106 location vocabulary verified unchanged (no hideout kind)"
+    },
+    {
+     "n": 170,
+     "name": "Safari capture zones",
+     "home": "show/production/world-systems/170-SAFARI-ZONES.md",
+     "extends": "encounterMode 'safari' completes the #110+#170 patch; useContext.safari in the item schema"
+    },
+    {
+     "n": 171,
+     "name": "Breeding compatibility system",
+     "home": "show/production/species-data/171-BREEDING-COMPATIBILITY.md",
+     "extends": "cited as validator from #77; eggGroups 0/47 \u2014 format only"
+    },
+    {
+     "n": 172,
+     "name": "In-world broadcast media",
+     "home": "show/production/world-systems/172-BROADCAST-MEDIA.md",
+     "extends": "forecasts only as labelled projections (#142 law) \u2014 clarification recorded"
+    },
+    {
+     "n": 173,
+     "name": "Rematch system",
+     "home": "show/production/battle/173-REMATCH-SYSTEM.md",
+     "extends": "#87 owns the record shape; honours PROPOSED to #104"
+    },
+    {
+     "n": 174,
+     "name": "Agriculture & cultivation",
+     "home": "src/data/core/docs/174-AGRICULTURE-CULTIVATION.md",
+     "extends": "#79 owns plot mechanics \u2014 this layer instances none"
+    },
+    {
+     "n": 175,
+     "name": "Weather-triggered formes",
+     "home": "show/production/battle/175-WEATHER-FORMES.md",
+     "extends": "weather criterion kind + NONE-exclusion landed in #130's file only"
+    },
+    {
+     "n": 176,
+     "name": "Town arcade & minigames",
+     "home": "show/production/world-systems/176-TOWN-ARCADE.md",
+     "extends": "stamp occasions PROPOSED to #104"
+    }
+   ]
   }
  ]
 }
