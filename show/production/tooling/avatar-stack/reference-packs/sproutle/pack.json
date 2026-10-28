@@ -1,0 +1,45 @@
+{
+  "pack_format": "mochiichao-reference-pack/v1",
+  "character_id": "sproutle",
+  "display_name": "Sproutle",
+  "species_role": "Pilot cast",
+  "signature_move_display": "Leaf Blast",
+  "palette_notes": "Greens dominant (#60c0a0 / #80c0a0 families). Measured from the CLEANED canon cutout, 2026-10-28.",
+  "do_not_change": [
+    "Use ONLY the cleaned cutout (sproutle.png). The v1 file with the baked grey ground ellipse is marked NOT USABLE under the no-baked-shadows rule",
+    "No baked-in ground shadow in any reference or output"
+  ],
+  "voice_note": "Creatures speak in cries/sounds only - no word dialogue (canon rule).",
+  "views": {
+    "front": {
+      "file": "front.png",
+      "status": "CANON",
+      "source": "~/workspace/mochiichao-show/canon-cutouts/sproutle.png (canon cutout of record)",
+      "md5": "44068950bda8d0b427af1209565ab2e9"
+    },
+    "three_quarter": {
+      "status": "GAP",
+      "note": "No canon 3/4 view exists. Must be produced as an owner-visible sheet step - never silently generated and labelled canon."
+    },
+    "side": {
+      "status": "GAP",
+      "note": "No canon side/profile view exists (same open gate as the Mochiko profile-sheet question). Owner-visible sheet step required."
+    },
+    "back": {
+      "status": "GAP",
+      "note": "No canon back view exists. Owner-visible sheet step required."
+    },
+    "expressions": {
+      "status": "GAP",
+      "note": "No canon expression sheet exists. Owner-visible sheet step required."
+    }
+  },
+  "platform_mapping": {
+    "kling_elements": "front.png uploads as the Element frontal image; 3 supplementary angle slots stay EMPTY until the GAP views are produced (Kling accepts 2-4 images per Element)",
+    "higgsfield_elements": "front.png usable as an @Element reference in Seedance/Cinema Studio today; Soul ID training needs 20+ images - NOT possible from canon today (GAP)",
+    "seedance_references": "front.png counts as 1 of up to 30 image references",
+    "google_flow_ingredients": "front.png usable as 1 of up to 3 Ingredients reference images; also fits Flow Characters",
+    "wan_vace": "front.png is the VACE reference image for the locked workflow (parity/workflow-i2v-locked.json)",
+    "wan_lora": "Training sets exist for wispkin + dorowani only (lora/ in avatar-stack); mochii/gabu/kittember/sproutle = GAP"
+  }
+}
