@@ -1,0 +1,2436 @@
+{
+ "generated": "2026-10-27",
+ "scope": "Gen 1 working roster = 49 species: 47 in src/data/core/species.json + Dorowani + Gabu (present in every asset/dex layer, absent from species.json). Strikechamp forms (strikechamp_unsuited, strikechamp_unsuited_full) are FORM variants of Strikechamp with their own footprint/silhouette/idle assets \u2014 tracked as forms, not species.",
+ "repo": "mhvnsnt/Mochiichao-Diamond-Version-2d-fresh-start @ main (read via PAT, 2026-10-27)",
+ "elements": [
+  "bio_short",
+  "bio_long",
+  "footprint",
+  "silhouette",
+  "discovery",
+  "cry",
+  "type_description",
+  "body_data"
+ ],
+ "species": [
+  {
+   "name": "Mochii",
+   "slug": "mochii",
+   "core_id": "001",
+   "dex_id": "001",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/mochii_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='blob base'; source_view='battle_front (lowest-contact band)'; confidence='medium-low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/mochii_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: pond-route-01/surf L3-5; pond-route-01/fish L3-5."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/mochii-cry.wav (+ mochii-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua']; design tags=['blue water slime', 'cute bouncy ball', 'bloop']."
+    },
+    "body_data": {
+     "status": "partial",
+     "source": "show/shared/cast.json:body_plan",
+     "note": "body_plan='compact_round' recorded for pilot cast. Height/weight/category recorded NOWHERE in the repo \u2014 TBD for every species."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Tiidebiite",
+   "slug": "tiidebiite",
+   "core_id": "002",
+   "dex_id": "002",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/tiidebiite_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='foot'; source_view='battle_front'; confidence='medium-low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/tiidebiite_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/tiidebiite-cry.wav (+ tiidebiite-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Mythic']; design tags=['water warrior', 'blue martial artist', 'swirling water fists']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "AquariiOS",
+   "slug": "aquariios",
+   "core_id": "003",
+   "dex_id": "003",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/aquariios_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='fin contact'; source_view='battle_front (lowest-contact band)'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/aquariios_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/aquariios-cry.wav (+ aquariios-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Mythic']; design tags=['fluid intelligence', 'floating aqua brain', 'mythical water guardian']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Razorgater",
+   "slug": "razorgater",
+   "core_id": "004",
+   "dex_id": "004",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/razorgater_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='clawed reptile foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/razorgater_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/razorgater-cry.wav (+ razorgater-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Chrome']; design tags=['small metallic crocodile', 'chrome jaws', 'silver lizard']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Chromejaww",
+   "slug": "chromejaww",
+   "core_id": "005",
+   "dex_id": "005",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/chromejaww_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='small foot'; source_view='battle_front'; confidence='medium-low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/chromejaww_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/chromejaww-cry.wav (+ chromejaww-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Chrome', 'Strike']; design tags=['bipedal chrome crocodile', 'sharp steel teeth', 'fierce metal reptile']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Reaperdile",
+   "slug": "reaperdile",
+   "core_id": "006",
+   "dex_id": "006",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/reaperdile_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='clawed foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/reaperdile_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/reaperdile-cry.wav (+ reaperdile-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Chrome', 'Strike']; design tags=['huge walking tank crocodile', 'steel armor blades', 'metal monster destruction']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Tyrage",
+   "slug": "tyrage",
+   "core_id": "007",
+   "dex_id": "007",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/tyrage_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='clawed foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/tyrage_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/tyrage-cry.wav (+ tyrage-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core']; design tags=['tiny earth dinosaur', 'rocky ground dino', 'mud lizard']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Duneclaw",
+   "slug": "duneclaw",
+   "core_id": "008",
+   "dex_id": "008",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/duneclaw_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='clawed foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/duneclaw_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/duneclaw-cry.wav (+ duneclaw-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core', 'Umbral']; design tags=['desert dinosaur', 'bone mask dinosaur', 'dark earth beast']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Oblivirex",
+   "slug": "oblivirex",
+   "core_id": "009",
+   "dex_id": "009",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/oblivirex_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='clawed paw'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/oblivirex_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/oblivirex-cry.wav (+ oblivirex-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core', 'Umbral']; design tags=['fossilized dark code tyrannosaurus rex', 'black bone trex', 'shadow earth monster']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Kittember",
+   "slug": "kittember",
+   "core_id": "010",
+   "dex_id": "010",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/kittember_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='round base impression'; source_view='battle_front (ground-contact dome)'; confidence='low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/kittember_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: meadow-route-01/grass L3-5."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/kittember-cry.wav (+ kittember-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Beast', 'Flame']; design tags=['fiery red kitten', 'flame paws', 'cute fire cat']."
+    },
+    "body_data": {
+     "status": "partial",
+     "source": "show/shared/cast.json:body_plan",
+     "note": "body_plan='small_feline' recorded for pilot cast. Height/weight/category recorded NOWHERE in the repo \u2014 TBD for every species."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Pyropaw",
+   "slug": "pyropaw",
+   "core_id": "011",
+   "dex_id": "011",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/pyropaw_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='paw'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/pyropaw_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/pyropaw-cry.wav (+ pyropaw-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Beast', 'Flame']; design tags=['fiery tiger cub', 'flame stripes', 'fire beast cat']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Manticlaw",
+   "slug": "manticlaw",
+   "core_id": "012",
+   "dex_id": "012",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/manticlaw_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='large clawed paw'; source_view='walk_left_0'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/manticlaw_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/manticlaw-cry.wav (+ manticlaw-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Beast', 'Flame']; design tags=['huge fire manticore', 'blazing mane beast', 'flaming wings cat']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Pupbble",
+   "slug": "pupbble",
+   "core_id": "013",
+   "dex_id": "013",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/pupbble_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/pupbble_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: meadow-route-01/grass L2-4."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/pupbble-cry.wav (+ pupbble-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Beast', 'Earth']; design tags=['small rock puppy', 'stone dog', 'pebble puppy']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Terradog",
+   "slug": "terradog",
+   "core_id": "014",
+   "dex_id": "014",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/terradog_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='paw'; source_view='walk_left_0'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/terradog_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/terradog-cry.wav (+ terradog-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Beast', 'Earth']; design tags=['earth hound', 'rock armor dog', 'ground terrier']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Quakehound",
+   "slug": "quakehound",
+   "core_id": "015",
+   "dex_id": "015",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/quakehound_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='paw'; source_view='walk_left_0'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/quakehound_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/quakehound-cry.wav (+ quakehound-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Beast', 'Earth']; design tags=['massive earthquake mastiff', 'stone spikes dog', 'heavy rock beast']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Squirmite",
+   "slug": "squirmite",
+   "core_id": "016",
+   "dex_id": "016",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/squirmite_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='grub base'; source_view='battle_front (lowest-contact band)'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/squirmite_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: meadow-route-01/grass L2-3."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/squirmite-cry.wav (+ squirmite-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Bug', 'Silk']; design tags=['small white silkworm', 'cute squirming bug', 'caterpillar']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Cocoonode",
+   "slug": "cocoonode",
+   "core_id": "017",
+   "dex_id": "017",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/cocoonode_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='cocoon base'; source_view='battle_front (lowest-contact band)'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/cocoonode_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/cocoonode-cry.wav (+ cocoonode-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Bug', 'Silk']; design tags=['green silk cocoon', 'digital node cocoon', 'chrysalis']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Mothrix",
+   "slug": "mothrix",
+   "core_id": "018",
+   "dex_id": "018",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/mothrix_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='insect legs'; source_view='battle_front'; confidence='low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/mothrix_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/mothrix-cry.wav (+ mothrix-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Bug', 'Silk']; design tags=['beautiful matrix moth', 'glowing neon wings bug', 'digital silk moth']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Zephling",
+   "slug": "zephling",
+   "core_id": "019",
+   "dex_id": "019",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/zephling_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='cloud base'; source_view='battle_front (lowest-contact band)'; confidence='low-medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/zephling_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: meadow-route-01/grass L2-4."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/zephling-cry.wav (+ zephling-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aero', 'Wind']; design tags=['tiny wind bird', 'breezy sparrow', 'flying chick']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Aerobeak",
+   "slug": "aerobeak",
+   "core_id": "020",
+   "dex_id": "020",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/aerobeak_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='talon'; source_view='walk_down_0'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/aerobeak_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/aerobeak-cry.wav (+ aerobeak-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aero', 'Wind']; design tags=['sleek wind falcon', 'aerodynamic bird', 'flying raptor']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Stormtalon",
+   "slug": "stormtalon",
+   "core_id": "021",
+   "dex_id": "021",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/stormtalon_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='talon'; source_view='walk_down_0'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/stormtalon_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/stormtalon-cry.wav (+ stormtalon-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aero', 'Wind']; design tags=['massive storm eagle', 'lightning talons', 'hurricane bird']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Finblade",
+   "slug": "finblade",
+   "core_id": "022",
+   "dex_id": "022",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/finblade_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='fin contact'; source_view='battle_front (lowest-contact band)'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/finblade_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: pond-route-01/surf L4-6; pond-route-01/fish L4-6."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/finblade-cry.wav (+ finblade-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Chrome']; design tags=['sharp swordfish', 'chrome fin shark', 'metal fish']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Megalochrome",
+   "slug": "megalochrome",
+   "core_id": "023",
+   "dex_id": "023",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/megalochrome_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='orbit-ring arc'; source_view='battle_front (lowest-contact band)'; confidence='low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/megalochrome_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/megalochrome-cry.wav (+ megalochrome-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Chrome']; design tags=['giant chrome megalodon', 'steel shark monster', 'metallic torpedo fish']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Floatcalf",
+   "slug": "floatcalf",
+   "core_id": "024",
+   "dex_id": "024",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/floatcalf_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='dome base'; source_view='battle_front (lowest-contact band)'; confidence='low-medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/floatcalf_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: pond-route-01/surf L5-7."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/floatcalf-cry.wav (+ floatcalf-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule). Also has a v2 take."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Neon']; design tags=['cute floating calf whale', 'glowing neon spots whale', 'bubble aqua mammal']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Astroleviathan",
+   "slug": "astroleviathan",
+   "core_id": "025",
+   "dex_id": "025",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/astroleviathan_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='tail-fluke print'; source_view='battle_front (lowest-contact band)'; confidence='medium-low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/astroleviathan_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/astroleviathan-cry.wav (+ astroleviathan-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule). Also has a v2 take."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Neon']; design tags=['massive cosmic whale', 'glowing neon galactic leviathan', 'space ocean whale']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Inklet",
+   "slug": "inklet",
+   "core_id": "026",
+   "dex_id": "026",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/inklet_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='tentacle-tip spread'; source_view='battle_front (lowest-contact band)'; confidence='low-medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/inklet_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: pond-route-01/surf L3-5; pond-route-01/fish L3-5."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/inklet-cry.wav (+ inklet-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Umbral']; design tags=['small dark squid', 'shadow ink octopus', 'black water blob']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Toxitacle",
+   "slug": "toxitacle",
+   "core_id": "027",
+   "dex_id": "027",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/toxitacle_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='tentacle-tip print'; source_view='battle_front (lowest-contact band)'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/toxitacle_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/toxitacle-cry.wav (+ toxitacle-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Umbral']; design tags=['poisonous dark octopus', 'venomous tentacles', 'purple toxic squid']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Krakenox",
+   "slug": "krakenox",
+   "core_id": "028",
+   "dex_id": "028",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/krakenox_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='tentacle mass base'; source_view='battle_front (lowest-contact band)'; confidence='medium-low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/krakenox_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/krakenox-cry.wav (+ krakenox-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Aqua', 'Umbral']; design tags=['giant shadow kraken', 'abyssal nightmare octopus', 'dark sea monster']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Punchkid",
+   "slug": "punchkid",
+   "core_id": "029",
+   "dex_id": "029",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/punchkid_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='humanoid foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/punchkid_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: cave-route-01/cave L5-7."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/punchkid-cry.wav (+ punchkid-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core', 'Strike']; design tags=['tiny fighting kid', 'boxing gloves fighter', 'martial arts child']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Strikechamp",
+   "slug": "strikechamp",
+   "core_id": "030",
+   "dex_id": "030",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/strikechamp_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='humanoid foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/strikechamp_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/strikechamp-cry.wav (+ strikechamp-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core', 'Strike']; design tags=['champion boxer', 'muscular martial artist', 'fighting master']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Kickmaster",
+   "slug": "kickmaster",
+   "core_id": "031",
+   "dex_id": "031",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/kickmaster_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='humanoid foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/kickmaster_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/kickmaster-cry.wav (+ kickmaster-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core', 'Strike']; design tags=['champion kickboxer', 'deadly kicking martial arts', 'karate master']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Gearkid",
+   "slug": "gearkid",
+   "core_id": "032",
+   "dex_id": "032",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/gearkid_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='mechanical foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/gearkid_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: cave-route-01/cave L5-8."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/gearkid-cry.wav (+ gearkid-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Chrome', 'Core']; design tags=['small gear robot', 'steel cog child', 'clockwork kid']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Mechapion",
+   "slug": "mechapion",
+   "core_id": "033",
+   "dex_id": "033",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/mechapion_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='mechanical foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/mechapion_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/mechapion-cry.wav (+ mechapion-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Chrome', 'Core']; design tags=['heavy mechanic robot', 'steel armored machine', 'piston arms automaton']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Gorokappa",
+   "slug": "gorokappa",
+   "core_id": "034",
+   "dex_id": "034",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/gorokappa_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='mechanical foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/gorokappa_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/gorokappa-cry.wav (+ gorokappa-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Chrome', 'Core']; design tags=['massive mecha gorilla', 'steel steam ape', 'giant mechanical kaiju']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Pebblefist",
+   "slug": "pebblefist",
+   "core_id": "035",
+   "dex_id": "035",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/pebblefist_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='short rock foot'; source_view='walk_left_0'; confidence='low-medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/pebblefist_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: cave-route-01/cave L6-9."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/pebblefist-cry.wav (+ pebblefist-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core', 'Chrome']; design tags=['rock fists', 'stone hands golem', 'gravel puncher']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Cragarm",
+   "slug": "cragarm",
+   "core_id": "036",
+   "dex_id": "036",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/cragarm_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='rock foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/cragarm_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/cragarm-cry.wav (+ cragarm-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core', 'Chrome']; design tags=['boulder arms golem', 'craggy stone giant', 'rock monster']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Terrapod",
+   "slug": "terrapod",
+   "core_id": "037",
+   "dex_id": "037",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/terrapod_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='stumpy foot'; source_view='walk_left_0'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/terrapod_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/terrapod-cry.wav (+ terrapod-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Core', 'Chrome']; design tags=['colossal mountain golem', 'earthquake fists giant', 'impenetrable stone titan']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Sproutle",
+   "slug": "sproutle",
+   "core_id": "038",
+   "dex_id": "038",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/sproutle_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='small foot'; source_view='battle_front'; confidence='medium-low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/sproutle_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: meadow-route-01/grass L2-4."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/sproutle-cry.wav (+ sproutle-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Flora', 'Chrome']; design tags=['grassy plant turtle', 'sprout shell tortoise', 'chrome leaf reptile']."
+    },
+    "body_data": {
+     "status": "partial",
+     "source": "show/shared/cast.json:body_plan",
+     "note": "body_plan='small_plant_biped' recorded for pilot cast. Height/weight/category recorded NOWHERE in the repo \u2014 TBD for every species."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Shellguard",
+   "slug": "shellguard",
+   "core_id": "039",
+   "dex_id": "039",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/shellguard_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/shellguard_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/shellguard-cry.wav (+ shellguard-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Flora', 'Chrome']; design tags=['armored bush turtle', 'steel shell tortoise', 'grove defense turtle']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Dreadtoise",
+   "slug": "dreadtoise",
+   "core_id": "040",
+   "dex_id": "040",
+   "elements": {
+    "bio_short": {
+     "status": "present",
+     "source": "src/data/core/species.json:dexText",
+     "note": "Single-line dex entry from species.ts via data core PR #98."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/dreadtoise_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/dreadtoise_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/dreadtoise-cry.wav (+ dreadtoise-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Flora', 'Chrome']; design tags=['massive dreadnought tortoise', 'steel forest titan shell', 'chrome tree turtle']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Pixilite",
+   "slug": "pixilite",
+   "core_id": "041",
+   "dex_id": "041",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/pixilite_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='small foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/pixilite_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat seeded in encounters.json: cave-route-01/cave L6-8."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/pixilite-cry.wav (+ pixilite-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Flora']; design tags=['tiny digital flower sprite', 'floating pixel fairy', 'glowing neon leaf']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Wispkin",
+   "slug": "wispkin",
+   "core_id": "042",
+   "dex_id": "042",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/wispkin_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='smoke-wisp print'; source_view='battle_front (lowest-contact band)'; confidence='low' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/wispkin_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/wispkin-cry.wav (+ wispkin-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Umbral']; design tags=['floating dark wisp', 'shadowy soul ghost', 'spooky little spirit']."
+    },
+    "body_data": {
+     "status": "partial",
+     "source": "show/shared/cast.json:body_plan",
+     "note": "body_plan='ghost_float' recorded for pilot cast. Height/weight/category recorded NOWHERE in the repo \u2014 TBD for every species."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Duskfiend",
+   "slug": "duskfiend",
+   "core_id": "043",
+   "dex_id": "043",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/duskfiend_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='wisp hem'; source_view='battle_front (lowest-contact band)'; confidence='low-medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/duskfiend_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/duskfiend-cry.wav (+ duskfiend-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Umbral']; design tags=['terrifying dusk phantom', 'tall shadow fiend', 'creepy grim ghost']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Ashemit",
+   "slug": "ashemit",
+   "core_id": "044",
+   "dex_id": "044",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/ashemit_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='paw'; source_view='battle_front (grey-paw isolation)'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/ashemit_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/ashemit-cry.wav (+ ashemit-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Flame', 'Mythic']; design tags=['little ash demon', 'spark hermit', 'smoldering mythical child']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Pyromonk",
+   "slug": "pyromonk",
+   "core_id": "045",
+   "dex_id": "045",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/pyromonk_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='humanoid foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/pyromonk_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/pyromonk-cry.wav (+ pyromonk-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Flame', 'Mythic']; design tags=['fire martial monk', 'burning staff ascetic', 'flame meditating fighter']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Yogiferno",
+   "slug": "yogiferno",
+   "core_id": "046",
+   "dex_id": "046",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/yogiferno_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/yogiferno_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/yogiferno-cry.wav (+ yogiferno-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Flame', 'Mythic']; design tags=['enlightened inferno deity', 'floating lava god', 'flaming aura mythical master']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Mythar",
+   "slug": "mythar",
+   "core_id": "047",
+   "dex_id": "331",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/mythar_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/mythar_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/mythar-cry.wav (+ mythar-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "present",
+     "source": "src/data/core/species.json:types + src/lib/global_roster.json:elements/api_search_tags",
+     "note": "types=['Mythic']; design tags=['divine celestial creator', 'glowing ethereal legendary', 'almighty mythical origin god']."
+    },
+    "body_data": {
+     "status": "missing",
+     "note": "No height/weight/category/body_plan recorded in any audited source. Footprint anatomy exists under the footprint element; it is not body data."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Dorowani",
+   "slug": "dorowani",
+   "core_id": null,
+   "dex_id": "147",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/dorowani_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='foot'; source_view='walk_left_0'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/dorowani_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/dorowani-cry.wav (+ dorowani-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "partial",
+     "source": "show canon only (see gap-fills/dorowani-gabu-core-records.json)",
+     "note": "No core/roster record exists. Element is signature-derived in the gap fill (Dorowani: Aqua via Water Orb canon; Gabu: Earth via Tremor canon) \u2014 owner confirmation owed. No design tags in roster."
+    },
+    "body_data": {
+     "status": "partial",
+     "source": "show/shared/cast.json:body_plan",
+     "note": "body_plan='bipedal_amphibian' recorded for pilot cast. Height/weight/category recorded NOWHERE in the repo \u2014 TBD for every species."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  },
+  {
+   "name": "Gabu",
+   "slug": "gabu",
+   "core_id": null,
+   "dex_id": "148",
+   "elements": {
+    "bio_short": {
+     "status": "missing",
+     "note": "dexText is null in species.json (owed, not invented \u2014 data core README)."
+    },
+    "bio_long": {
+     "status": "missing",
+     "note": "No long-form species bio exists in any audited source (core, roster, show bible/production docs). Brainstorm paragraphs in NEW-SPECIES-IDEAS.md cover unconfirmed concepts only, not canon species."
+    },
+    "footprint": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/footprints-real/gabu_footprint.png + FOOTPRINT-MANIFEST-51-20261026.json",
+     "note": "foot_type='small foot'; source_view='battle_front'; confidence='medium' (PR #237, confirmed set)."
+    },
+    "silhouette": {
+     "status": "present",
+     "source": "sprite-art/animation/expanded-scope/lane100/silhouettes/gabu_silhouette.png + SILHOUETTE-MANIFEST.json",
+     "note": "16x16 mode-1 discovery silhouette derived from locked battle_front (PR #175); wired in DexView (PR #228)."
+    },
+    "discovery": {
+     "status": "partial",
+     "source": "src/lib/generated/dexEntryMedia-20261026.json + src/components/views/DexView.tsx + src/data/core/encounters.json",
+     "note": "Discovery states + media wired: unseen/seen/caught presentation via DexView (PR #228) and dexEntryMedia rules (footprint caught-only; cry on seen/caught, PR #243). Habitat/encounter data NOT seeded \u2014 encounters.json is a 3-map seed (13 species); full region tables owed (data core README)."
+    },
+    "cry": {
+     "status": "present",
+     "source": "public/audio/cries/gabu-cry.wav (+ gabu-cry-r1.wav)",
+     "note": "V1 is the dex default; R1 alternate take shipped (PR #193 + dexEntryMedia cry_rule)."
+    },
+    "type_description": {
+     "status": "partial",
+     "source": "show canon only (see gap-fills/dorowani-gabu-core-records.json)",
+     "note": "No core/roster record exists. Element is signature-derived in the gap fill (Dorowani: Aqua via Water Orb canon; Gabu: Earth via Tremor canon) \u2014 owner confirmation owed. No design tags in roster."
+    },
+    "body_data": {
+     "status": "partial",
+     "source": "show/shared/cast.json:body_plan",
+     "note": "body_plan='bulky_bruiser' recorded for pilot cast. Height/weight/category recorded NOWHERE in the repo \u2014 TBD for every species."
+    }
+   },
+   "design_assets_present": [
+    "idle",
+    "garden-poses"
+   ]
+  }
+ ]
+}

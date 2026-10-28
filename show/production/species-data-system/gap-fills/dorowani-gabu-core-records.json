@@ -1,0 +1,61 @@
+{
+ "$schema_note": "Records in the exact src/data/core/species.json record shape (see src/data/core/schemas/species.schema.json), for the two Gen-1 species that exist in every asset/dex layer but have NO record in species.json. Ids are the dex-registry ids (src/lib/generated/dexEntryMedia-20261026.json). Fields the repo canonically gives are filled; everything else follows the data core's own owed-field conventions (null / empty + provenance), never invented. OWNER DECISIONS OWED: base stats, dexText, catch/exp/growth, and confirmation of the signature-derived types.",
+ "records": [
+  {
+   "id": "147",
+   "name": "Dorowani",
+   "types": [
+    "Aqua"
+   ],
+   "baseStats": {
+    "hp": null,
+    "atk": null,
+    "def": null,
+    "spa": null,
+    "spd": null,
+    "spe": null
+   },
+   "hpStatus": "pending-decision: no canon base stats for this species exist in any repo source (absent from species.json and global_roster.json); null here, never guessed \u2014 same convention as Pebblefist HP in the data core",
+   "abilities": [],
+   "hiddenAbility": null,
+   "eggGroups": [],
+   "catchRate": null,
+   "expYield": null,
+   "growthRate": null,
+   "dexText": null,
+   "provenance": "gap-fill 2026-10-27: assembled from dex registry (id 147) + show canon; types DERIVED from owner canon signature Water Orb (PR #345) and bipedal-amphibian body plan (show/shared/cast.json) \u2014 owner confirmation owed",
+   "notes": [
+    "Exists in: dex registry 147, footprints (PR #237), silhouettes (PR #175), cries (PR #193), idle/garden/title assets, pilot cast, show bundles. Absent from species.json + global_roster.json \u2014 this record is the gap fill for that absence.",
+    "Signature move: Water Orb (owner canon, Dorowani's alone). Cry law: pure cries only."
+   ]
+  },
+  {
+   "id": "148",
+   "name": "Gabu",
+   "types": [
+    "Earth"
+   ],
+   "baseStats": {
+    "hp": null,
+    "atk": null,
+    "def": null,
+    "spa": null,
+    "spd": null,
+    "spe": null
+   },
+   "hpStatus": "pending-decision: no canon base stats for this species exist in any repo source (absent from species.json and global_roster.json); null here, never guessed \u2014 same convention as Pebblefist HP in the data core",
+   "abilities": [],
+   "hiddenAbility": null,
+   "eggGroups": [],
+   "catchRate": null,
+   "expYield": null,
+   "growthRate": null,
+   "dexText": null,
+   "provenance": "gap-fill 2026-10-27: assembled from dex registry (id 148) + show canon; types DERIVED from owner canon signature Tremor, the game's earthquake-equivalent move (EARTH_TREMOR) \u2014 owner confirmation owed",
+   "notes": [
+    "Exists in: dex registry 148, footprints (PR #237), silhouettes (PR #175), cries (PR #193), idle/garden/title assets, pilot cast. Absent from species.json + global_roster.json \u2014 this record is the gap fill for that absence.",
+    "Signature move: Tremor (owner-locked name). Cry law: pure cries only."
+   ]
+  }
+ ]
+}
