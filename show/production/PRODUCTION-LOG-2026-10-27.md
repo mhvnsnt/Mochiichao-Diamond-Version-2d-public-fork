@@ -732,3 +732,31 @@ Dragon Tail island name, is a different move and is unchanged.)
 machine move). Divergence recorded, not hidden: the island doc's
 Rock Slide -> Avalanche stands as its own record; the registry
 follows his later Rockfall call.
+
+## REGISTRY COMPLETION AUDIT + RARE FIELD-EFFECTS SHEET (2026-10-27)
+
+Data-quality audit of the master machine registry (352 rows, rename-pass
+state: 17 owner-locked / 335 delegated after the owner's Draconian Talon
+lock, applied to the rename packet pre-push and recorded in the audit doc):
+every row re-derived field-by-field from the source table its stats_source
+declares (in-repo gen5plus / Black 2 / Diamond / Crystal tables). RESULT:
+352/352 named, 352/352 classed (341 General / 11 Rare), 352/352 provenance
+tags, 1,572/1,572 non-null stat values match their declared source, ZERO
+transcription gaps, ZERO values invented or interpolated. All 188 null stat
+fields are source-faithful (91 Status moves with no power in the source
+model; 21 variable/fixed-damage moves; 76 no-accuracy-check moves incl. 10
+sure-hit attacks; Roar/Whirlwind null is the Gen 6+ always-hit change).
+stats_status MISSING list: EMPTY — no row lacks a stat that exists in any
+in-repo source. Documented, not changed: the 10 Black-2-sourced rows carry
+Gen 5 values (Draco Meteor 140) and literal decomp sentinels (Metronome
+0/101); Soft Boiled is the one PokeAPI-fetch-provenance row; 10 rows lack
+pokeapi_move_id (no in-repo source carries the ids; not filled from memory).
+No registry values were altered by the audit.
+Also landed: RARE-FIELD-EFFECTS.md — DRAFT, OWNER REVIEW: for all 11 Rare
+Moves, the source-games field function with registry machine history, a
+draft game-lane gate rule built on the owner's search-and-fight /
+pre-known / alternate-route acquisition model (extensions flagged), and
+the show-lane handling per the anime study (capability as body + job,
+obstacles as puzzles, never a hard gate) with one scene example each.
+Owner lock/amend list at the foot of the sheet (obstacle sets, two soft
+gates, boulder reset behaviour, Wave pairings, acquisition placement).
