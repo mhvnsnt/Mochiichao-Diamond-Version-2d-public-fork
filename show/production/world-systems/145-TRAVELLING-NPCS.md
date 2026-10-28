@@ -90,3 +90,5 @@ vocabulary).
   for the content lane, not as an assignment.
 
 **Citation (List 24 #233, landing 2026-10-27):** interregional exchange records cite into this file's traveller rows (233-INTERREGIONAL-EXCHANGE.md). Registered non-readers, so no future pass wires the programme anywhere it does not belong: #143's league machinery does not read exchange records, #98's licence standing does not read them, and #207's discovery presentation does not read them.
+
+**Landing citations — List 29 (2026-10-27).** #282 (`show/production/282-SECTOR-ENSEMBLE-ROTATION.md`) plans viewpoint over this file's one-record travellers as part of its simulation floor. #281 (`show/production/281-DOUBLE-LIFE.md`) names travellers as one of its four closed bridging classes: one record holding meetings from both of the anti-hero lead's worlds.

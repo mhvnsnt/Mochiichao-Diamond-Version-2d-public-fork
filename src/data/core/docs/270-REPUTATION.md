@@ -163,3 +163,6 @@ are filled in full.
 - Contents: zero groups instanced (the world data
   pass owns them); zero deed-credit rows authored
   beyond the classes named.
+
+
+**PROPOSALS from List 29 (registered at their landing, 2026-10-27):** (a) #280's betrayal classification: a theft from a friend is priced in this file's derivation as a *betrayal*, not a theft — the victim's groups hear it as a betrayal (280-FALSE-FRIENDSHIP.md). #280's trust read (a derivation over #93/#12/#164/#104 facts — no deceive verb is founded anywhere) supplies the friendship fact the classification keys on. (b) #281's `collision` event class: the event where a double life's two true readings meet in one witness's hands (281-DOUBLE-LIFE.md), proposed into this file's per-group track handling — the tracks hold two true readings at once; a collision is a fact about witnesses, not a concealment failure, and #281 founds no concealment system. Proposal discipline: both take effect only as carried here; List 29 instances neither — whose friendships he builds and burns, and which collisions his story suffers, are story/canon, the owner's and the writers'.

@@ -111,3 +111,5 @@ filled.
 
 
 **Landing note — List 28 #276 (2026-10-27):** the show lane for the stealing/morale/reputation list lands in 276-SHOW-MORALE-REPUTATION.md: principals' personal bands are carried on this file's arc sheets, a group's standing is staged before the character enters, and unseen deeds are staged as conscience. #276 also records the List 29 forward pointer (items 277–286, the anti-hero arc's structure systems) — a pointer only; nothing of List 29 is built here. The anti-hero's name is the owner's open slot and appears nowhere in the landing.
+
+**Landing proposals — List 29 (2026-10-27), cited to that package, proposals until a plan uses them.** Four arc-plan record additions are proposed into this file's format: (a) `mode` on beats featuring the dual-self lead (#279, `279-DUAL-SELF-PORTRAYAL.md`); (b) `audience-knows` on the thief's beats (#280, `280-FALSE-FRIENDSHIP.md`); (c) `viewpoint` (character + sector) on arcs/episode blocks (#282, `282-SECTOR-ENSEMBLE-ROTATION.md`); (d) a tone line on this file's conservation checklist (#285, `285-PART-TONE-SHIFTS.md`). Until a plan carries them, no plan is required to carry them (List 29 STAGING step 4).

@@ -134,3 +134,6 @@ tuned at landing). No mechanic is parked.
   and number).
 - Contents: zero reports, zero wanted Rangers — the
   world has not yet had a crime.
+
+
+**PROPOSALS from List 29 (registered at their landing, 2026-10-27):** (a) #280's betrayal classification, witness side: when a theft-from-a-friend is witnessed, the report carries the betrayal classification into #270's derivation (280-FALSE-FRIENDSHIP.md) — the classification rides the report; it does not change what a witness is. (b) #281's `collision` event class, witness side: a collision is staged from this file's witness facts and the bridging classes (#145's travellers among them), never from a hidden counter (281-DOUBLE-LIFE.md). Proposal discipline: both take effect only as carried here.
