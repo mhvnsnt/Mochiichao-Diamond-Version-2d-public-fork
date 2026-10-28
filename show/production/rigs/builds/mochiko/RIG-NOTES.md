@@ -40,3 +40,39 @@ the CANON pixels themselves — no redraw, no drift by construction.
 No baked shadow: source sheet is flat-lit on a uniform field; alpha
 row audit under the feet found no shadow band (opaque px go to 0
 below the soles).
+
+## HAIR-GAP FIX — CURRENT VERSION (2026-10-28)
+
+Owner-spotted while watching her animation: white spaces between
+Mochiko's hair and her head. Cause, measured on the shipped texture:
+the canon sheet's light field colour (#E8E8E8, fully opaque) survived
+keying inside three pockets the border-key could not reach because
+art encloses them — the two fields flanking the neck between the
+twin-tails and the jaw/collar (12,819 px at x381–516/y399–562 and
+15,729 px at x608–756/y399–677) and a small wedge between the right
+tail's strands at x752–767/y685–722 (243 px). The TextRig mesh
+deforms those pixels with the head/twintail bones, so in motion the
+pale slabs ride beside her neck — the owner's white gaps.
+
+Fix: the 29,299 pocket pixels (field cores + their anti-aliased rims,
+flood-grown from the pocket cores through pixels brighter than the
+dark outlines, stopping at skin/hair/outline colours) were set to
+transparent RGBA(0,0,0,0), the texture's own transparent convention.
+Pixel-diff verification: changes confined to x381–766 / y398–722;
+zero pixels changed anywhere else; eyes, jar highlights, and shoe
+soles (the other legitimate bright art) byte-identical.
+
+CURRENT texture: `mochiko.png` / `mochiko_tex.png` in this folder,
+MD5 `3e142dff199de4c70cca9aa22c01bc11` — this is the version every
+later use takes. It SUPERSEDES the gapped texture MD5
+`e3eeb13ec3771fd43529fa45aba66b6f` (kept for audit at
+`~/workspace/ep01-ed-gag/work/mochiko-hair-fix/mochiko-GAPPED-superseded.png`).
+The identical fixed bytes were written to the still-to-build
+original and to the TextRig out/ copies (mochiko_tex.png,
+gag2/gag3/gag4mochiko_tex.png) so the ending-gag rig renders the
+fixed art. Skeleton, mesh, weights, and animations are unchanged —
+the deform now carries transparency where the field slabs were.
+Full evidence (BEFORE/AFTER zooms, diff overlay, method):
+`~/workspace/ep01-ed-gag/work/mochiko-hair-fix/FIX-NOTE.md`.
+The pre-existing "faint light edge on the hair silhouette" note
+above is a separate outer-edge keying residue and is unchanged.
