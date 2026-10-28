@@ -62,7 +62,7 @@ the perspective switches at the choosing (see §0.4).**
 | Character | Sound | Notes |
 |---|---|---|
 | MOCHIKO | Human voice — CASTING TBD (§6) | Apparent protagonist until cut 14; capsule backpack, v2 design |
-| PROF. AEON | Human voice — CASTING TBD (§6) | First appearance. The game's professor figure; presents the starters; grey afro + beard, round glasses, lab coat over teal tech suit, data tablet |
+| PROF. AEON | Human voice — CASTING TBD (§6) | First appearance. The game's professor figure; presents the starters; grey afro + beard, round glasses, lab coat over teal tech suit, tablet |
 | HEX | Human voice — CASTING TBD (§6) | First appearance, button only (cuts 27–28). Black hair, purple streak, amber eyes, black/purple high-collar jacket |
 | MOCHII | Cry file: mochii-cry.wav (performed variants TBD) | Species 001. The actual protagonist — from cut 14 |
 | RAZORGATER | Cry file: razorgater-cry.wav | Starter candidate, line 004. Presented with full ceremony; not chosen |
@@ -83,7 +83,7 @@ eyes). Gate sign: GARDEN KEEPER.
 **ACTION:** Mochiko arrives dressed for an occasion — twin
 tails tied neat, capsule backpack squared like a ceremony. She
 practises standing still. It does not take. PROF. AEON is
-already there, data tablet under one arm, watching the garden
+already there, tablet under one arm, watching the garden
 the way other people watch weather. He does not hurry her.
 **DIALOGUE:** AEON: "You're early. The garden likes early." /
 MOCHIKO: "Is it — do I just — stand somewhere?" / AEON: "You
@@ -235,7 +235,7 @@ EP04's dojo sparring. EP03 comes first.)
 1. Mochiko voice casting/recording plan (carried from EP01).
 2. Prof. Aeon voice casting.
 3. Hex voice casting.
-4. Keeper device design (bible §9.5) — Aeon's data tablet is a
+4. Keeper device design (bible §9.5) — Aeon's tablet is a
    separate prop from the keeper device; neither design is
    invented here.
 5. What the choosing is called in-world, if it has a name.

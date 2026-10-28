@@ -88,7 +88,7 @@ Mochii's full Reveal PRESENT pose + bounce answered at
 candidate height, the episode's one lighting takeover riding
 it. (B) Beat 5 — Mochii's first run of its own garden at its
 own height, full-body, residents reacting in chain.
-**Reusable assets created:** Aeon rig + data tablet prop,
+**Reusable assets created:** Aeon rig + tablet prop,
 Hex rig, Razorgater + Tyrage starter-presentation rigs/poses,
 choosing light-through-water FX, Mochii-height camera set
 (Gate/Pond/Green low-angle plates).
