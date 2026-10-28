@@ -1,3 +1,12 @@
+> # ATTENTION — ALL AGENTS: THIS REPO HAS MOVED (2026-10-28)
+>
+> This is the old public fork, kept for reference only. **All work now happens in
+> the private repo `mhvnsnt/Mochiichao-Diamond-Version-2d-fresh-start`.**
+> Do not land new work here — it will diverge and be lost. If you have unmerged
+> work here, re-land it there. Full notice: [MOVED-TO-PRIVATE-REPO.md](MOVED-TO-PRIVATE-REPO.md)
+
+---
+
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
