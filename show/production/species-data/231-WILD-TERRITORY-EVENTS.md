@@ -94,3 +94,6 @@ PROFILES in the list16 home.
   to fill; per-area staging taste is presentation
   work, and any future *scripted* set-piece dispute
   is authored content, not this system.
+
+
+**Landing note — List 27 #265 (2026-10-27):** wild-duel staging (265-WILD-DUEL-ETIQUETTE.md) is consumed by #209's initiation and read alongside this file's territory events; #265 changes no rates.

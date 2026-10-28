@@ -123,3 +123,6 @@ the owed-animation accounting) · whether any area
 should ever ambush during story beats (#12's facts
 would gate it — the gate shape is the story lane's,
 not asserted here).
+
+
+**Landing note — List 27 #265 (2026-10-27):** this system's initiation read now also reads #152's `challengeStyle` (proposed by #265 into #152's annex and carried there): a `formal` species' initiation renders the wild-duel three beats (265-WILD-DUEL-ETIQUETTE.md). A staging switch, not new arithmetic — encounter tables and rates are untouched.

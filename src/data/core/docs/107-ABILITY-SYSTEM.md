@@ -110,3 +110,6 @@ describe the game lane's resolution only.
   vocabulary, and hook discipline are the yield; every ability
   name, assignment, parameter, and the hidden-slot rule are
   OPEN.
+
+
+**PROPOSAL from List 27 #260 (registered at its landing, 2026-10-27):** an `anatomyBasis` field on ability records — the body part an ability's contact behaviour rests on, cited from #259's parts vocabulary (260-CONTACT-DEFENCE-ANATOMY.md). Fairness check (a data check, riding the first PR that wires ability data): where `anatomyBasis` is carried, the cited part must exist in the species' #259 record with `stageFirst` no later than the ability's first active stage. Zero abilities are instanced at this landing. Proposal discipline: the field exists only as carried here.

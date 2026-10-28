@@ -57,3 +57,6 @@ cycle's *names* are this spec's proposal (flagged PROPOSED in the
 fragment), its transition rules and the frost schedule are OPEN.
 
 **Phase vocabulary — reconciled (List 12 landing, 2026-10-27):** the canonical data vocabulary is `morning | day | dusk | night` (spawn-table schema + landed instances); this doc's `dawn` is the same phase as the data layer's `morning` (1:1 synonym, recorded in world-state-fragment.json's _reconciliation — the one reconciliation home).
+
+
+**Landing note — List 27 (2026-10-27):** #257's bloom derivation, #261's pollen layer, and #262's sunlight accrual all read this file's time states as an input; List 27 adds no time state.

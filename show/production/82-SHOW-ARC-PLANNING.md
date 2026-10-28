@@ -105,3 +105,6 @@ filled.
   transplant programme's landings are canon beats when they
   happen; an arc may feature a transplant only after their canon
   introduction) — stated as a rule proposal, owner to confirm.
+
+
+**Landing note — List 27 #266 (2026-10-27):** the flower-symbolism grammar (266-FLOWER-SYMBOLISM.md) lands beside this file and #50's colour scripts as production reference only — it wires no data, field, or check, and all symbolism assignments remain episode writing.

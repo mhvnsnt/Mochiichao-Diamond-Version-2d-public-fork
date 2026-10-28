@@ -102,3 +102,6 @@ section; care facts ride the individual records.
   The spec's real yield is the three-homes separation —
   camp exists so the road has a care grammar that neither
   replaces the Garden nor counterfeits the centre.
+
+
+**Landing note — List 27 (2026-10-27):** #262's sunlight rest and #263's rooting rest read through this file's rest verb; List 27 founds no new rest verb.

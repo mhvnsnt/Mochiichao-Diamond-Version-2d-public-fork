@@ -104,3 +104,6 @@ read from the same field, no copy). Save impact: none new.
   package does not own.
 
 **Annex (List 20 #192, landing 2026-10-27):** water traversal and dive modes annex into THIS traversal format (192-WATER-TRAVERSAL-AND-DIVE.md) — there is no second traversal format. The `dive` gate kind is proposed to the #11 edge / #59 lock vocabularies in their owners' files, and the `dive` method is proposed into #7's spawn schema at this landing. Zero dive points, dive areas, and water routes are instanced; #66's isle contents are untouched.
+
+
+**Landing note — List 27 (2026-10-27):** this file's `RIDDEN` proposal (above) is now seated in #58's state machine (GARDEN-FOLLOWER-SYSTEM.md), in the same pass that seated List 27 #263's `ROOTED` — List 13's register entry for RIDDEN is reconciled by that seating.
