@@ -76,3 +76,6 @@ into Mochiichao-native material by re-skinning, so neither is copied
 or converted. What transfers is the *technique* — conventions,
 hierarchy, symbol systems — and that transfer is exactly what this
 layer is.
+
+## Teardown source + body-plan templates
+The rig system's teardown source is [RIG-TEARDOWN-open-movies.md](RIG-TEARDOWN-open-movies.md) (open-movie rig teardowns; staging record: RIG-TEARDOWN-STAGING.md). Body-plan starting points live in [templates/](templates/): `biped-rig-spec.md` / `biped.rig.json` and `quadruped-rig-spec.md` / `quadruped.rig.json` — start new rigs from these templates, not from a blank page.

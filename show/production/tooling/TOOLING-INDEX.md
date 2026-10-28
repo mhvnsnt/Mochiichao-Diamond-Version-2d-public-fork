@@ -91,6 +91,7 @@ The largest working toolset he owns. The show-relevant core:
 |---|---|---|
 | Fla puppet-rig conventions (naming, hierarchy, symbols) | animation-techniques-archive study notes | `show/production/rigs/README.md` standard |
 | Preston Blair 10-viseme mouth system | ANIMATION-PLAYBOOK.md | rig specs + playbook adoption |
+| mochiichao-mouth-data/v1 format + Rhubarb converter (lip-sync, humans) | `show/production/tooling/mouth-data/` (MOUTH-DATA-FORMAT.md, rhubarb_to_mouthdata.py, examples/) | carried — machine-readable mouth data for the human talking seat |
 | HB limited-animation method (2s/3s, holds, cel levels) | mystery-coast-ghosted/docs/research | PIPELINE.md in this folder |
 | Dialogue-first production pipeline | mystery-coast PIPELINE.md + TOOLING-2026.md | PIPELINE.md in this folder |
 | Scooby 6-beat episode formula | mystery-coast research | beat-sheet template (TEMPLATES.md) |
