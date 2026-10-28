@@ -39,3 +39,8 @@ Footprints 49/49 · silhouettes 49/49 · cries 49/49 (V1+R1) · discovery
 states + dex media wiring 49/49 · types + design tags 47/47 · base stats
 47/47 (except Pebblefist HP, D2) · evolutions for the 47 · idle sets 49/49 ·
 garden poses 49/49 (+1 form).
+
+## Owed fields — egg system (#77, registered 2026-10-27)
+
+- `hatchCycles` — owed field on the species core record (shape defined by `src/data/core/schemas/egg-system.schema.json`, beside the existing `eggGroups` gap). No values exist yet; do not backfill.
+- `hatchPresentation` — owed field, same registration and status.
