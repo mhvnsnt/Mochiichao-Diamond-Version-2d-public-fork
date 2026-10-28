@@ -50,3 +50,7 @@ schema-level absences are the *written natural-history block* (bio_long,
 temperament, diet, social, category) and the *measured body block* (height,
 weight) — both registered TBD, both owner/lane writing-and-decision work,
 not data that can be harvested from the repo.
+
+## Wiring — cry schema patch of record (2026-10-27)
+
+The `cry` element's internals are defined by the species-systems schema patch: `show/production/species-systems/species-sheet-schema-patch-cry.md` (machine-readable form: `show/production/species-systems/cry-schema-fragment.json`; renderer: `show/production/tooling/species-systems/cry_synth.py`). Applied 2026-10-27: the cry property is in `src/data/core/schemas/species.schema.json`, draft cry blocks are on the pilot records that exist in `src/data/core/species.json`, and the intake template (`new-species-record-template.json`) carries the `cry_block` internals.
