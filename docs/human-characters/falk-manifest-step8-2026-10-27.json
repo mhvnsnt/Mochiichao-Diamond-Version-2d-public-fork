@@ -1,0 +1,211 @@
+{
+  "character": "Falk",
+  "step": "8-atlas-manifest",
+  "atlas": "falk-atlas-64x64-COMPLETE-2026-10-27.png",
+  "atlas_supersedes": "falk-atlas-64x64-2026-10-27.png (partial version: one EMPTY cell, walk_down_step / walk_up_step missing; kept on file, superseded 2026-10-27 by the complete atlas)",
+  "atlas_size_px": [
+    256,
+    256
+  ],
+  "cell_px": 64,
+  "grid": [
+    4,
+    4
+  ],
+  "cells": [
+    {
+      "row": 0,
+      "col": 0,
+      "view": "world_front",
+      "outfit": "casual",
+      "source": "falk-world-views-fblr-2026-10-27.webp"
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "view": "world_back",
+      "outfit": "casual",
+      "source": "falk-world-views-fblr-2026-10-27.webp"
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "view": "world_left",
+      "outfit": "casual",
+      "source": "falk-world-views-fblr-2026-10-27.webp"
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "view": "world_right",
+      "outfit": "casual",
+      "source": "falk-world-views-fblr-2026-10-27.webp"
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "view": "walk_down_idle",
+      "outfit": "casual",
+      "source": "falk-walk-sheet-2026-10-27.webp"
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "view": "walk_up_idle",
+      "outfit": "casual",
+      "source": "falk-walk-sheet-2026-10-27.webp"
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "view": "walk_left_idle",
+      "outfit": "casual",
+      "source": "falk-walk-sheet-2026-10-27.webp"
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "view": "walk_right_idle",
+      "outfit": "casual",
+      "source": "falk-walk-sheet-2026-10-27.webp"
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "view": "walk_down_step",
+      "outfit": "casual",
+      "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp",
+      "frame_file": "falk-walk-down-step-2026-10-27.png",
+      "note": "Produced 2026-10-27 to close the recorded gap (see gap_closure). Cell order revised: the step row now mirrors the idle row (down/up/left/right)."
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "view": "walk_up_step",
+      "outfit": "casual",
+      "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp",
+      "frame_file": "falk-walk-up-step-2026-10-27.png",
+      "note": "Produced 2026-10-27 to close the recorded gap (see gap_closure)."
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "view": "walk_left_step",
+      "outfit": "casual",
+      "source": "falk-walk-sheet-2026-10-27.webp",
+      "note": "Cell moved from row 2 col 0 in the 2026-10-27 layout revision; pixel content unchanged."
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "view": "walk_right_step",
+      "outfit": "casual",
+      "source": "falk-walk-sheet-2026-10-27.webp",
+      "note": "Cell moved from row 2 col 1 in the 2026-10-27 layout revision; pixel content unchanged."
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "view": "battle_front_dojo",
+      "outfit": "dojo",
+      "source": "falk-battle-front-dojo-2026-10-27.webp"
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "view": "battle_front_casual",
+      "outfit": "casual",
+      "source": "falk-battle-front-casual-variant-2026-10-27.webp"
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "view": "portrait",
+      "outfit": "casual",
+      "source": "falk-portrait-2026-10-27.png"
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "view": "dojo_presentation",
+      "outfit": "dojo",
+      "source": "falk-outfit-dojo-c-calling-pose.webp"
+    }
+  ],
+  "missing": [],
+  "gap_closure": {
+    "closed": "2026-10-27",
+    "by_owner_order": "Owner ruled the missing frames necessary (2026-10-27); produced the same day.",
+    "was_missing": [
+      "walk_down_step",
+      "walk_up_step"
+    ],
+    "history": "At the 2026-10-27 design lock the walk generation had produced the four direction idles and left/right strides only; walk_down_step / walk_up_step did not exist, the partial atlas carried one EMPTY cell (row 2, col 3) for both, and the gap was recorded here as missing, not fabricated. Both frames were then generated (text-only prompts, no character name, casual outfit, no baked shadows; generation originals kept as media-generation-falk-walk-down-step-gen-* / media-generation-falk-walk-up-step-gen-*), pixel-normalised to the walk sheet's sprite scale, and added as a fifth row in falk-walk-sheet-COMPLETE-2026-10-27.webp (original sheet region pixel-identical). The complete atlas fills all 16 cells; the step row was re-ordered to mirror the idle row (down/up/left/right), moving walk_left_step / walk_right_step cells without changing their pixels. walk_right_step2 remains in the source walk sheet but is no longer atlased - the 16-cell atlas has no room for a duplicate-direction frame once all four directional steps are present.",
+    "identity_check": "PASS - eye-checked against the locked model sheet and the walk sheet idles at production scale: same face (simple sprite face, dark vertical eyes), warm medium-tan skin, tall swept-up golden-blond spiky hair, goggles on forehead (front frame) / goggle strap across the back of the head (back frame), teal scarf knot, cream-and-teal casual flight jacket, belt pouch, slate trousers, brown boots; mid-stride poses read clearly (down: one boot planted, one trailing; up: trailing boot sole showing). Recorded nuance: the new frames' proportions run slightly less chibi than the sheet idles (head share ~40% vs ~49%) - same character, not a different person; flagged here per the drift rule, not a canon change."
+  },
+  "notes": [
+    "Outfit per cell follows the owner wardrobe ruling 2026-10-27 (casual/field/dojo). Field outfit has a plate on file but no atlas cells this pass.",
+    "battle_front_casual carries flagged drift vs the locked sheet (teeth grin, long scarf, pouch on right hip): kept as a supplementary variant, NOT the primary battle sprite; primary is battle_front_dojo.",
+    "World-views sheet hair reads slightly more vertical than the model sheet; within the locked silhouette family - recorded, not a canon change.",
+    "No baked shadows in any source art; atlas cells carry no ground shadow."
+  ],
+  "form_split": {
+    "ruled": "2026-10-27",
+    "ruling": "Owner reviewed the completed walk sheet and ruled its first figures are the CHIBI form. The forms are separated and completed: the atlas set is now THREE atlases. The mixed atlas above (falk-atlas-64x64-COMPLETE-2026-10-27.png) is retained unchanged as the historical mixed set; the two new atlases below are form-pure.",
+    "measurement_method": "Every placed cell was classified BY EYE against the locked model sheet (full-size) and the pixel walk idles (chibi), backed by a measured head share = (top of figure to neck/scarf line) / figure height. Two scans were used: (a) scarf-row scan - first row where the bright teal scarf/collar colour reaches >=4% of figure width (valid for all back views, the pixel sprites, and the earlier illustrated art); (b) hair/skin row-width scan - head bottom = first sustained row where hair+skin width falls below 22% of its maximum (used for the new chibi illustrations and the dojo plate, whose large blue irises trip the teal scan). Where both scans are valid they agree within ~2 points (world front 27.5/29.0; side steps 25.0/26.3). battle_front_casual was measured by located points on the source plate (hair top y12, chin y245, boot bottom y991 on a 1000 scale = 23.8%). Measured form bands: FULL-SIZE 18-28%, CHIBI 39-56% - no overlap.",
+    "classification_of_existing_material": "The COMPLETE walk sheet's pixel rows measure CHIBI (idles 39.0-44.5% head share) - the owner's ruling confirmed by measurement. Its closing-row anime down/up step frames measure FULL-SIZE-leaning (28.4% / 26.7%) and are placed in the full-size set. The world views, model sheet, battle fronts, portrait and dojo plate are FULL-SIZE.",
+    "fullsize_walk_sheet": {
+      "file": "falk-walk-sheet-FULLSIZE-2026-10-27.webp",
+      "layout": "4 columns (down/up/left/right) x 2 rows, mirroring the existing sheet's layout. Idle row: the world views (full-size). Step row: walk_down_step + walk_up_step (the gap-closure anime frames), walk_left_step + walk_right_step (new generations, falk-walk-left-step-FULLSIZE-2026-10-27.png / falk-walk-right-step-FULLSIZE-2026-10-27.png). All figures full-size proportions; every cell filled.",
+      "extra_source": "falk-walk-cycle-FULLSIZE-2026-10-27.webp - new full-size walk-cycle generation (front/back/left/right). Its front and back figures are mid-stride poses and its side figures are standing idles; the atlas labels them as what they are (walk_down_stride / walk_up_stride / walk_left_idle / walk_right_idle)."
+    },
+    "fullsize_atlas": {
+      "file": "falk-atlas-64x64-FULLSIZE-2026-10-27.png",
+      "form": "full-size only",
+      "cells_filled": "16/16",
+      "cells": [
+        {"row": 0, "col": 0, "view": "world_front", "outfit": "casual", "head_share_pct": 27.5, "source": "falk-world-views-fblr-2026-10-27.webp"},
+        {"row": 0, "col": 1, "view": "world_back", "outfit": "casual", "head_share_pct": 25.7, "source": "falk-world-views-fblr-2026-10-27.webp"},
+        {"row": 0, "col": 2, "view": "world_left", "outfit": "casual", "head_share_pct": 26.3, "source": "falk-world-views-fblr-2026-10-27.webp"},
+        {"row": 0, "col": 3, "view": "world_right", "outfit": "casual", "head_share_pct": 26.3, "source": "falk-world-views-fblr-2026-10-27.webp"},
+        {"row": 1, "col": 0, "view": "walk_down_stride", "outfit": "casual", "head_share_pct": 21.6, "source": "falk-walk-cycle-FULLSIZE-2026-10-27.webp", "note": "Front figure of the generated full-size cycle is a mid-stride pose, not a standing idle - labelled as the stride frame it is."},
+        {"row": 1, "col": 1, "view": "walk_up_stride", "outfit": "casual", "head_share_pct": 19.9, "source": "falk-walk-cycle-FULLSIZE-2026-10-27.webp", "note": "Back figure of the generated full-size cycle is a mid-stride pose - labelled as the stride frame it is."},
+        {"row": 1, "col": 2, "view": "walk_left_idle", "outfit": "casual", "head_share_pct": 20.5, "source": "falk-walk-cycle-FULLSIZE-2026-10-27.webp"},
+        {"row": 1, "col": 3, "view": "walk_right_idle", "outfit": "casual", "head_share_pct": 20.5, "source": "falk-walk-cycle-FULLSIZE-2026-10-27.webp"},
+        {"row": 2, "col": 0, "view": "walk_down_step", "outfit": "casual", "head_share_pct": 28.4, "source": "falk-walk-down-step-2026-10-27.png", "note": "The gap-closure anime frame - the same frame that sits in the mixed atlas; full-size-leaning by measurement."},
+        {"row": 2, "col": 1, "view": "walk_up_step", "outfit": "casual", "head_share_pct": 26.7, "source": "falk-walk-up-step-2026-10-27.png", "note": "The gap-closure anime frame - the same frame that sits in the mixed atlas; full-size-leaning by measurement."},
+        {"row": 2, "col": 2, "view": "walk_left_step", "outfit": "casual", "head_share_pct": 25.0, "source": "falk-walk-left-step-FULLSIZE-2026-10-27.png", "note": "New generation 2026-10-27 (form split): full-size left-facing mid-stride profile, identity-checked against the locked model sheet - PASS."},
+        {"row": 2, "col": 3, "view": "walk_right_step", "outfit": "casual", "head_share_pct": 25.0, "source": "falk-walk-right-step-FULLSIZE-2026-10-27.png", "note": "New generation 2026-10-27 (form split): full-size right-facing mid-stride profile, identity-checked against the locked model sheet - PASS."},
+        {"row": 3, "col": 0, "view": "battle_front_dojo", "outfit": "dojo", "head_share_pct": 20.7, "source": "falk-battle-front-dojo-2026-10-27.webp"},
+        {"row": 3, "col": 1, "view": "battle_front_casual", "outfit": "casual", "head_share_pct": 23.8, "source": "falk-battle-front-casual-variant-2026-10-27.webp", "note": "Head share by direct point measurement (see measurement_method). Carries the pre-existing drift flags (teeth grin, long scarf, pouch side) - supplementary variant, not primary."},
+        {"row": 3, "col": 2, "view": "portrait", "outfit": "casual", "head_share_pct": null, "source": "falk-portrait-2026-10-27.png", "note": "Head crop of the locked model sheet - head share not applicable."},
+        {"row": 3, "col": 3, "view": "dojo_presentation", "outfit": "dojo", "head_share_pct": 24.0, "source": "falk-outfit-dojo-c-calling-pose.webp"}
+      ]
+    },
+    "chibi_atlas": {
+      "file": "falk-atlas-64x64-CHIBI-2026-10-27.png",
+      "form": "chibi only",
+      "cells_filled": "16/16",
+      "cells": [
+        {"row": 0, "col": 0, "view": "world_front", "outfit": "casual", "head_share_pct": 52.7, "source": "falk-chibi-views-2026-10-27.webp", "note": "New chibi generation 2026-10-27. Minor drift flagged: this front figure grins with teeth (the locked likeness smiles closed-mouth) - kept and flagged, not hidden."},
+        {"row": 0, "col": 1, "view": "world_back", "outfit": "casual", "head_share_pct": 51.9, "source": "falk-chibi-views-2026-10-27.webp"},
+        {"row": 0, "col": 2, "view": "world_left", "outfit": "casual", "head_share_pct": 52.2, "source": "falk-chibi-views-2026-10-27.webp"},
+        {"row": 0, "col": 3, "view": "world_right", "outfit": "casual", "head_share_pct": 51.0, "source": "falk-chibi-views-2026-10-27.webp"},
+        {"row": 1, "col": 0, "view": "walk_down_idle", "outfit": "casual", "head_share_pct": 44.5, "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp", "note": "Pixel sprite carried over from the existing walk sheet - the frames the owner identified as the chibi form."},
+        {"row": 1, "col": 1, "view": "walk_up_idle", "outfit": "casual", "head_share_pct": 41.1, "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp"},
+        {"row": 1, "col": 2, "view": "walk_left_idle", "outfit": "casual", "head_share_pct": 41.6, "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp"},
+        {"row": 1, "col": 3, "view": "walk_right_idle", "outfit": "casual", "head_share_pct": 39.0, "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp"},
+        {"row": 2, "col": 0, "view": "walk_down_step", "outfit": "casual", "head_share_pct": 56.4, "source": "falk-walk-down-step-CHIBI-2026-10-27.png", "note": "New chibi generation 2026-10-27 (form split): front mid-stride, identity-checked against the chibi idles - PASS."},
+        {"row": 2, "col": 1, "view": "walk_up_step", "outfit": "casual", "head_share_pct": 52.3, "source": "falk-walk-up-step-CHIBI-2026-10-27.png", "note": "New chibi generation 2026-10-27 (form split): back mid-stride with trailing boot sole showing - PASS."},
+        {"row": 2, "col": 2, "view": "walk_left_step", "outfit": "casual", "head_share_pct": 39.9, "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp", "note": "Pixel sprite carried over - the left row's step frame of the existing sheet."},
+        {"row": 2, "col": 3, "view": "walk_right_step", "outfit": "casual", "head_share_pct": 39.4, "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp", "note": "Pixel sprite carried over - the right row's step frame of the existing sheet."},
+        {"row": 3, "col": 0, "view": "battle_front_dojo", "outfit": "dojo", "head_share_pct": 51.8, "source": "falk-chibi-views-2026-10-27.webp", "note": "Chibi form of the dojo calling pose (long streaming scarf, wide stance)."},
+        {"row": 3, "col": 1, "view": "dojo_presentation", "outfit": "dojo", "head_share_pct": 49.0, "source": "falk-chibi-views-2026-10-27.webp"},
+        {"row": 3, "col": 2, "view": "portrait", "outfit": "casual", "head_share_pct": null, "source": "falk-chibi-views-2026-10-27.webp", "note": "Head crop of the chibi front figure - head share not applicable."},
+        {"row": 3, "col": 3, "view": "walk_right_step_variant", "outfit": "casual", "head_share_pct": 39.2, "source": "falk-walk-sheet-COMPLETE-2026-10-27.webp", "note": "Second right-step frame from the existing sheet's right row."}
+      ]
+    },
+    "assembly_correction": "During assembly the pixel step frames were initially mis-assigned by sheet position (the down row's step variants taken for left/right steps). Caught on visual verification of the assembled atlas and corrected before landing: the left/right steps are the side rows' step frames (39.9% / 39.4%). No mislabelled atlas was landed.",
+    "failed_frames": "None. All four form-split generations (full-size side steps, full-size walk cycle, chibi down/up steps, chibi six-figure sheet) passed the identity + form gate on the first generation each; nothing was regenerated and nothing off-form was placed. Flags recorded, not hidden: the full-size cycle's front/back figures are stride poses (labelled as strides in the atlas), and the chibi front figure has a toothy grin (flagged in its cell note)."
+  }
+}
