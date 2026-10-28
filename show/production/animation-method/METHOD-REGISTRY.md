@@ -12,7 +12,54 @@ a superseded asset under the current-version law.
 
 ## ⬛ CURRENT / USABLE METHOD
 
-### The Industry Method — v1 (2026-10-28)
+### The Industry Method — v1.1 (2026-10-28)
+
+- **The method:** the Industry Method v1 (construction core,
+  below) **plus the timing layer**: `TIMING-STANDARD.md` in this
+  folder — the binding bar for how the show moves, stated in
+  **new drawings per second** (the owner's unit): scene body
+  floor 12 drawings/sec in moving passages, ending-credits floor
+  8 drawings/sec, action accents at 24 drawings/sec, and at or
+  below ~3 drawings/sec is the FAILED class. The timing layer
+  adds: registers, framerate modulation as a written chart
+  choice, composed and capped holds, a timing chart per cycle
+  and per shot, beat-grid sync, and the pacing rules (cut
+  rhythm, change density, the hook rule).
+- **The checker (the timing layer is wired, not just written):**
+  `show/production/tooling/proof-gate/verify_proof.py` measures
+  every clip's headline effective new drawings per second and
+  its class, its hold structure, its below-bar signature flags
+  (interpolation profile; uniform unmodulated rate) and its
+  pacing (longest near-static run, change events per 10 s). Its
+  measured run record sits beside it
+  (`timing-profile-runs.json`). It reports measurements only;
+  grading a clip remains the owner's/scorer's call.
+- **The evidence:** the checker's first run over the existing
+  body of work (2026-10-28): the v6 industry walk proof measures
+  exactly at the credits floor (8.0 drawings/sec, clean grid, no
+  flags); gag v2 measures 7.79 drawings/sec — below the credits
+  floor — with the uniform-rate flag; gag v1 is FAILED class
+  (interpolation signature); the Storyboard Draft 1 excerpt is
+  FAILED class at 1.96 drawings/sec with an 8.0-second
+  near-static run. Full table: `TIMING-STANDARD.md` §11.
+- **Why it is current:** owner order (2026-10-28, THE BAR
+  programme): TV-anime industry standard is the lowest
+  acceptable bar, and the timing layer is what makes that bar
+  checkable instead of aspirational.
+- **Supersedes:** the Industry Method v1 **as a standalone
+  entry** — v1's construction method is folded into v1.1
+  unchanged; do not animate under v1 without its timing layer.
+
+## ⬛ SUPERSEDED — DO NOT USE
+
+### The Industry Method — v1, standalone (2026-10-28)
+
+**Re-marked 2026-10-28, at the v1.1 landing:** v1 is folded into
+v1.1 as its construction core. Used *without* the v1.1 timing
+layer (`TIMING-STANDARD.md` + the timing checker), v1 is **DO
+NOT USE** — a build can pass every v1 drawn gate and still fail
+the bar on timing and pacing, which is exactly what the timing
+layer exists to catch.
 
 - **The method:** part-separated puppet construction (one drawing
   per body part, peg hierarchy, drawn-overlap joints, hair as its
@@ -33,15 +80,12 @@ a superseded asset under the current-version law.
   drawn knee fold in the pixels, silhouettes differing 28–40% per
   step. Gate 8 (the owner's eye) remains a standing production
   gate, and the profile model-sheet flag from that proof remains
-  open — neither changes this method's status as the usable one;
-  they are production gates the method itself requires.
-- **Why it is current:** owner-ordered industry-method programme
+  open — they are production gates the method itself requires.
+- **Why it was current:** owner-ordered industry-method programme
   (2026-10-28), after the single-mesh method failed three owner
   viewings in a row (see `WALK-DIAGNOSIS-LOG.md`).
-- **Supersedes:** the Single-Mesh Deform Method (below) — entirely,
-  for all characters, all productions.
-
-## ⬛ SUPERSEDED — DO NOT USE
+- **Superseded:** the Single-Mesh Deform Method (below) —
+  entirely, for all characters, all productions.
 
 ### The Single-Mesh Deform Method (the v1–v4 ED-gag era)
 
@@ -105,6 +149,19 @@ for yourself and the agents, so we never regress.*
   method" means for group shots, faces, music sync, and the ED
   slot; they land as method obligations in that addendum until the
   next method version folds them into the spec proper).
+- **2026-10-28 — Industry Method v1.1 marked CURRENT / USABLE;
+  v1 superseded as a standalone entry (folded into v1.1).**
+  Change: the timing layer lands — `TIMING-STANDARD.md` (the bar
+  in new drawings per second: registers and floors, modulation as
+  a chart choice, hold caps, charts per cycle and per shot,
+  beat-grid sync, pacing rules) plus the wired checker at
+  `show/production/tooling/proof-gate/verify_proof.py` with its
+  measured run record beside it. First findings under the new
+  layer: gag v2 below the credits floor (7.79 drawings/sec) with
+  the uniform-rate flag; gag v1 and the Storyboard Draft 1
+  excerpt both FAILED class. Beat maps and the remaining scene
+  charts are named in `TIMING-STANDARD.md` §13 as specced, not
+  yet wired.
 
 ---
 
