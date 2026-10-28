@@ -1,0 +1,221 @@
+{
+  "schema": "mochiichao-mouth-data/v1",
+  "scope": "human_only",
+  "character": "Mochiko",
+  "audio": "EP01_mochiko_line01.wav",
+  "dialog": "Five wonders wait in the garden.",
+  "fps": 24,
+  "lead_frames": 1,
+  "duration_s": 3.1,
+  "source": {
+    "tool": "Rhubarb Lip Sync 1.13.0",
+    "format": "json"
+  },
+  "blair_set": "preston_blair_10 (rig scaffold mouth symbol order)",
+  "checks": {
+    "mbp_closures": 1,
+    "warnings": []
+  },
+  "cues": [
+    {
+      "start_s": 0.0,
+      "end_s": 0.18,
+      "start_frame": 1,
+      "end_frame": 3,
+      "hold_frames": 3,
+      "rhubarb": "X",
+      "blair": "rest",
+      "symbol_frame": 1
+    },
+    {
+      "start_s": 0.18,
+      "end_s": 0.3,
+      "start_frame": 4,
+      "end_frame": 6,
+      "hold_frames": 3,
+      "rhubarb": "G",
+      "blair": "F_V",
+      "symbol_frame": 7
+    },
+    {
+      "start_s": 0.3,
+      "end_s": 0.44,
+      "start_frame": 7,
+      "end_frame": 10,
+      "hold_frames": 4,
+      "rhubarb": "D",
+      "blair": "A_I",
+      "symbol_frame": 2
+    },
+    {
+      "start_s": 0.44,
+      "end_s": 0.56,
+      "start_frame": 11,
+      "end_frame": 12,
+      "hold_frames": 2,
+      "rhubarb": "G",
+      "blair": "F_V",
+      "symbol_frame": 7
+    },
+    {
+      "start_s": 0.56,
+      "end_s": 0.74,
+      "start_frame": 13,
+      "end_frame": 17,
+      "hold_frames": 5,
+      "rhubarb": "D",
+      "blair": "A_I",
+      "symbol_frame": 2
+    },
+    {
+      "start_s": 0.74,
+      "end_s": 0.88,
+      "start_frame": 18,
+      "end_frame": 20,
+      "hold_frames": 3,
+      "rhubarb": "B",
+      "blair": "C_D_G_K_S_Z",
+      "symbol_frame": 9
+    },
+    {
+      "start_s": 0.88,
+      "end_s": 1.02,
+      "start_frame": 21,
+      "end_frame": 23,
+      "hold_frames": 3,
+      "rhubarb": "C",
+      "blair": "E",
+      "symbol_frame": 3
+    },
+    {
+      "start_s": 1.02,
+      "end_s": 1.16,
+      "start_frame": 24,
+      "end_frame": 27,
+      "hold_frames": 4,
+      "rhubarb": "F",
+      "blair": "U",
+      "symbol_frame": 5
+    },
+    {
+      "start_s": 1.16,
+      "end_s": 1.32,
+      "start_frame": 28,
+      "end_frame": 31,
+      "hold_frames": 4,
+      "rhubarb": "C",
+      "blair": "E",
+      "symbol_frame": 3
+    },
+    {
+      "start_s": 1.32,
+      "end_s": 1.46,
+      "start_frame": 32,
+      "end_frame": 34,
+      "hold_frames": 3,
+      "rhubarb": "B",
+      "blair": "C_D_G_K_S_Z",
+      "symbol_frame": 9
+    },
+    {
+      "start_s": 1.46,
+      "end_s": 1.6,
+      "start_frame": 35,
+      "end_frame": 37,
+      "hold_frames": 3,
+      "rhubarb": "C",
+      "blair": "E",
+      "symbol_frame": 3
+    },
+    {
+      "start_s": 1.6,
+      "end_s": 1.74,
+      "start_frame": 38,
+      "end_frame": 41,
+      "hold_frames": 4,
+      "rhubarb": "B",
+      "blair": "C_D_G_K_S_Z",
+      "symbol_frame": 9
+    },
+    {
+      "start_s": 1.74,
+      "end_s": 1.86,
+      "start_frame": 42,
+      "end_frame": 44,
+      "hold_frames": 3,
+      "rhubarb": "D",
+      "blair": "A_I",
+      "symbol_frame": 2
+    },
+    {
+      "start_s": 1.86,
+      "end_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 47,
+      "hold_frames": 3,
+      "rhubarb": "B",
+      "blair": "C_D_G_K_S_Z",
+      "symbol_frame": 9
+    },
+    {
+      "start_s": 2.0,
+      "end_s": 2.14,
+      "start_frame": 48,
+      "end_frame": 50,
+      "hold_frames": 3,
+      "rhubarb": "C",
+      "blair": "E",
+      "symbol_frame": 3
+    },
+    {
+      "start_s": 2.14,
+      "end_s": 2.3,
+      "start_frame": 51,
+      "end_frame": 54,
+      "hold_frames": 4,
+      "rhubarb": "H",
+      "blair": "L_T_D_N_Th",
+      "symbol_frame": 8
+    },
+    {
+      "start_s": 2.3,
+      "end_s": 2.46,
+      "start_frame": 55,
+      "end_frame": 58,
+      "hold_frames": 4,
+      "rhubarb": "E",
+      "blair": "O",
+      "symbol_frame": 4
+    },
+    {
+      "start_s": 2.46,
+      "end_s": 2.62,
+      "start_frame": 59,
+      "end_frame": 62,
+      "hold_frames": 4,
+      "rhubarb": "B",
+      "blair": "C_D_G_K_S_Z",
+      "symbol_frame": 9
+    },
+    {
+      "start_s": 2.62,
+      "end_s": 2.8,
+      "start_frame": 63,
+      "end_frame": 66,
+      "hold_frames": 4,
+      "rhubarb": "A",
+      "blair": "M_B_P",
+      "symbol_frame": 6
+    },
+    {
+      "start_s": 2.8,
+      "end_s": 3.1,
+      "start_frame": 67,
+      "end_frame": 73,
+      "hold_frames": 7,
+      "rhubarb": "X",
+      "blair": "rest",
+      "symbol_frame": 1
+    }
+  ]
+}
