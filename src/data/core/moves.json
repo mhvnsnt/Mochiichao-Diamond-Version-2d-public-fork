@@ -486,7 +486,7 @@
     },
     {
       "id": "CRUNCH",
-      "name": "Crunch",
+      "name": "Munch",
       "type": "DARK",
       "category": "Physical",
       "power": 80,
@@ -508,7 +508,7 @@
     },
     {
       "id": "GUST_WAVE",
-      "name": "Gust Wave",
+      "name": "Wind Blast",
       "type": "FLYING",
       "category": "Special",
       "power": 40,
@@ -559,7 +559,7 @@
     },
     {
       "id": "QUICK_ATTACK",
-      "name": "Quick Attack",
+      "name": "Swift Movement",
       "type": "NORMAL",
       "category": "Physical",
       "power": 40,

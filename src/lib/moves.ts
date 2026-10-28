@@ -45,13 +45,13 @@ export const MOVES_DB: Record<string, Move> = {
   SHADOW_PULSE:   { name:"Dark Wave",       type:"GHOST",    cat:"Special",  bp:80,  acc:100, pp:15, pri:0, effect:"FLINCH",      effectChance:20,  anim:"SHADOW_PULSE",   desc:"Shadow ball that may cause flinch." },
   DARK_PULSE_MOVE:{ name:"Dark Pulse",      type:"DARK",     cat:"Special",  bp:80,  acc:100, pp:15, pri:0, effect:"FLINCH",      effectChance:20,  anim:"DARK_PULSE_MOVE",desc:"Pulse of dark energy. May flinch." },
   NIGHT_SLASH_MOVE:{ name:"Night Slash",    type:"DARK",     cat:"Physical", bp:70,  acc:100, pp:15, pri:0, effect:"HIGH_CRIT",   effectChance:0,   anim:"NIGHT_SLASH_MOVE",desc:"Slashes in darkness. High critical-hit ratio." },
-  CRUNCH:         { name:"Crunch",          type:"DARK",     cat:"Physical", bp:80,  acc:100, pp:15, pri:0, effect:"DEF_DOWN1",   effectChance:20,  anim:"SHADOW_CLAW_MOVE",desc:"Crunches with fangs." },
+  CRUNCH:         { name:"Munch",           type:"DARK",     cat:"Physical", bp:80,  acc:100, pp:15, pri:0, effect:"DEF_DOWN1",   effectChance:20,  anim:"SHADOW_CLAW_MOVE",desc:"Crunches with fangs." },
   // ── FLYING ────────────────────────────────────────────────
-  GUST_WAVE:      { name:"Gust Wave",       type:"FLYING",   cat:"Special",  bp:40,  acc:100, pp:35, pri:0, effect:"NONE",        effectChance:0,   anim:"GUST_WAVE",      desc:"Whips up gusts of wind with wings." },
+  GUST_WAVE:      { name:"Wind Blast",      type:"FLYING",   cat:"Special",  bp:40,  acc:100, pp:35, pri:0, effect:"NONE",        effectChance:0,   anim:"GUST_WAVE",      desc:"Whips up gusts of wind with wings." },
   WING_ASSAULT:   { name:"Wing Assault",    type:"FLYING",   cat:"Physical", bp:85,  acc:100, pp:10, pri:0, effect:"NONE",        effectChance:0,   anim:"WING_ASSAULT",   desc:"Strikes foe hard with wings." },
   // ── NORMAL ────────────────────────────────────────────────
   TACKLE:         { name:"Tackle",          type:"NORMAL",   cat:"Physical", bp:40,  acc:100, pp:35, pri:0, effect:"NONE",        effectChance:0,   anim:"BODY_SLAM_MOVE", desc:"A physical charge." },
-  QUICK_ATTACK:   { name:"Quick Attack",    type:"NORMAL",   cat:"Physical", bp:40,  acc:100, pp:30, pri:1, effect:"NONE",        effectChance:0,   anim:"MACH_STRIKE",    desc:"Extremely speedy blow. Always goes first." },
+  QUICK_ATTACK:   { name:"Swift Movement",  type:"NORMAL",   cat:"Physical", bp:40,  acc:100, pp:30, pri:1, effect:"NONE",        effectChance:0,   anim:"MACH_STRIKE",    desc:"Extremely speedy blow. Always goes first." },
   BODY_SLAM_MOVE: { name:"Body Slam",       type:"NORMAL",   cat:"Physical", bp:85,  acc:100, pp:15, pri:0, effect:"PARALYSIS",   effectChance:30,  anim:"BODY_SLAM_MOVE", desc:"Slams foe with full body. May paralyze." },
   // ── PSYCHIC ───────────────────────────────────────────────
   MIND_BLAST:     { name:"Mind Blast",      type:"PSYCHIC",  cat:"Special",  bp:90,  acc:100, pp:10, pri:0, effect:"SPDEF_DOWN1", effectChance:10,  anim:"MIND_BLAST",     desc:"Mental blast. May lower Sp.Def." },
