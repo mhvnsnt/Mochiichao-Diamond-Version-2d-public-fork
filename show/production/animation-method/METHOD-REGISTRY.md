@@ -12,7 +12,73 @@ a superseded asset under the current-version law.
 
 ## ⬛ CURRENT / USABLE METHOD
 
+### The Industry Method — v1.3 (2026-10-28)
+
+- **The method:** the Industry Method v1.2 (construction core +
+  timing layer + above-floor layer + the likeness gate, folded in
+  unchanged, below) **plus the generated-turnaround route** for
+  generated character animation:
+  `GENERATED-TURNAROUND-PIPELINE.md` in this folder. The route:
+  DIAGNOSE (the 20-point structural defect audit run as data
+  against the input art) → TURNAROUND (a corrected multi-angle
+  sheet generated under a design-inventory prompt built from the
+  character's canon record) → ANIMATE (image-to-video from the
+  corrected sheet's side-profile cell, on the landed scene-job
+  format v2 and its wired path) → EXPORT (frame slicing +
+  sprite-sheet packing for game use) → GATES (frame-1 check,
+  timing profile, likeness against the corrected sheet, grading
+  law, and a diagnosis re-run of the finished frames).
+- **Currency, per use (upgrade rule 3 — the standing assignment,
+  written here so it is never a quiet fallback):** for GENERATED
+  character animation, the v1.3 turnaround route is the
+  CURRENT / USABLE method. For DRAWN proofs (part-separated
+  puppets, substitution drawings), v1.2's drawn route remains
+  CURRENT for that use — it is not superseded there; the two
+  routes serve different production kinds and neither substitutes
+  for the other.
+- **What is wired vs spec, stated up front:** the animate step
+  runs on the landed scene-job format v2; the diagnosis checklist
+  ships as data on the parity lane's wired Qwen2.5-VL contract
+  (first dedicated diagnosis run still owed); the export packer
+  is landed working code with a passing self-test. The
+  TURNAROUND generation step itself is SPEC: the landed format
+  has no image-to-image job type and no driver consumes one —
+  the gap is flagged in the pipeline doc and inside the emitted
+  job. The free generation stack's likeness status remains
+  UNPROVEN (the baseline plain-I2V FAIL stands); v1.3 adopts the
+  route as the method of record on the owner's order and does
+  not upgrade that proof claim.
+- **Standing gates unchanged:** the timing standard and the
+  likeness gate apply to generated clips exactly as to drawn
+  ones, including the delivery requirement (likeness judgment
+  stated before any measured axis). Gate 8 (the owner's eye)
+  remains the final gate, and the grading law stands: wrong
+  character = FAIL, full stop.
+- **The evidence for the route:** the owner's reference clip
+  (2026-10-28; generated on Google's hosted endpoint — PAID,
+  recorded as paid; reference evidence only, not canon, not a
+  deliverable): a true profile walk generated from Mochiko's
+  front canon art, passing the 20-point audit's view items,
+  with its design deviations recorded (single ponytail vs canon
+  twin tails; jar contents morphing; line thinner than canon).
+  Full measured record: the pipeline doc's REFERENCE BAR
+  section. The route's own first gated run is still owed.
+- **Supersedes:** the Industry Method v1.2 **as the standalone
+  current entry** — v1.2 is folded into v1.3 unchanged; its
+  drawn route carries the per-use currency stated above.
+
+## ⬛ SUPERSEDED — DO NOT USE
+
 ### The Industry Method — v1.2 (2026-10-28)
+
+**Re-marked 2026-10-28, at the v1.3 landing:** v1.2 is folded
+into v1.3 as its construction + timing + above-floor core.
+Standalone v1.2 is **DO NOT USE for generated character
+animation** — that work runs the v1.3 turnaround route. Per the
+per-use currency stated in the v1.3 block, v1.2's DRAWN route
+remains the CURRENT route for drawn proofs: a written assignment
+under upgrade rule 3, not a quiet fallback.
+
 
 - **The method:** the Industry Method v1.1 (construction core +
   timing layer, below) **plus the above-floor layer**:
@@ -91,8 +157,6 @@ a superseded asset under the current-version law.
   gag rebuild itself has NOT started: it waits on Gate 8 and
   the profile call. v1.2's chart set is its input, not its
   start.
-
-## ⬛ SUPERSEDED — DO NOT USE
 
 ### The Industry Method — v1.1, standalone (2026-10-28)
 
@@ -294,6 +358,29 @@ for yourself and the agents, so we never regress.*
   view confound is stated in the companion correction
   entry). The v7 canon-art rebuild runs separately and is
   not graded here.
+
+- **2026-10-28 — Industry Method v1.3 marked CURRENT / USABLE
+  for generated character animation; v1.2 folded in, its drawn
+  route remaining CURRENT for drawn proofs (per-use currency,
+  stated in both blocks).** Change: the generated-turnaround
+  route lands — `GENERATED-TURNAROUND-PIPELINE.md` (diagnose →
+  turnaround → animate → export → gates, with the
+  reference-bar section), the 20-point diagnosis checklist as
+  data, and the drivers at
+  `show/production/tooling/turnaround-pipeline/`
+  (`build_turnaround_job.py`: animate half in the landed
+  scene-job v2 format, turnaround half stamped SPEC — no
+  landed I2I job type exists; the gap is flagged in the doc and
+  in the emitted job; `slice_pack.py`: working sprite packer,
+  self-test passing). Origin: the owner supplied a reference
+  clip generated on a PAID hosted endpoint (Google's) that
+  turned Mochiko's front canon art into a true profile walk,
+  and ordered the pipeline adopted, wired, and used in place of
+  the cutout-assembly route for generated work. The reference
+  is recorded as the route's bar — never as canon or a
+  deliverable; the local route is the free staged stack
+  (Wan/VACE + Qwen2.5-VL, Apache-2.0) with likeness UNPROVEN
+  stated in the doc.
 
 ---
 

@@ -1,0 +1,159 @@
+{
+ "companion_note": "The proof-gate checklist's item 0 (frame-1-reference-anchored) is this pipeline's Step E frame-1 gate rule; it is a delivery check, not a vision-diagnosis item, so it is not duplicated here.",
+ "derived_from": "show/production/tooling/proof-gate/audit-checklist.json (landed by PR #489 with delivery_gate.py) is the 20-point audit OF RECORD - the delivery gate's data. This file is the same audit re-expressed for the vision-DIAGNOSIS step (per-item check questions + fail signatures a vision model can judge from art and frames), plus the four v5 drawn-gate items (21-24) the diagnosis pass also judges. One audit, two consumers. If the two files ever disagree on the 20 items, the proof-gate file wins and this one is corrected to match.",
+ "items": [
+  {
+   "check": "On a side-moving body, is the face a front portrait (both eyes, front nose and mouth, gaze at the viewer instead of along the direction of travel)?",
+   "fail_signature": "Both eyes visible and symmetric on a profile body; gaze out of the screen.",
+   "id": 1,
+   "key": "front_face_on_profile"
+  },
+  {
+   "check": "Is the torso the front view (both straps, chest details spread across the front, front placket/buttons) while the legs are in profile?",
+   "fail_signature": "Symmetric chest furniture on a body that is supposedly side-on; the figure reads profile only from the waist down.",
+   "id": 2,
+   "key": "front_torso"
+  },
+  {
+   "check": "Is there a visible notch or gap cut where the head meets the collar?",
+   "fail_signature": "A step or bite in the silhouette at the jaw-to-collar junction.",
+   "id": 3,
+   "key": "neck_notch"
+  },
+  {
+   "check": "Does the hair keep its front-view arrangement (a tail hanging over the chest as in the portrait; the second tail lost behind/into the backpack)?",
+   "fail_signature": "Hair mass reads as the front portrait's hair pasted onto a side body.",
+   "id": 4,
+   "key": "hair_front_arrangement"
+  },
+  {
+   "check": "Does the backpack read as a flat dark rectangle slab stuck to the back instead of a rounded side mass with its strap over the shoulder?",
+   "fail_signature": "Hard rectangular edges; no side volume.",
+   "id": 5,
+   "key": "backpack_slab"
+  },
+  {
+   "check": "Is the near arm a stiff diagonal plank across the torso - no visible hand, no authored swing in opposition to the legs?",
+   "fail_signature": "Arm angle identical or arbitrary across poses; reads as a sash/seatbelt, not an arm.",
+   "id": 6,
+   "key": "arm_slab_no_swing"
+  },
+  {
+   "check": "Does the planted (support) shoe face the viewer head-on - the front shoe pointing out of the screen - while the trailing shoe points along the direction of travel?",
+   "fail_signature": "Two feet pointing in two different directions in the same pose; also covers the v5 pixel test: the drawn shoe's toe direction measured in pixels against travel.",
+   "id": 7,
+   "key": "viewer_facing_shoe"
+  },
+  {
+   "check": "Do the high-point poses lift the free leg parade-high instead of passing low, the way a walk passes?",
+   "fail_signature": "Knee and foot clearance at poses 3/7 visibly higher than a walk's passing position.",
+   "id": 8,
+   "key": "march_high_points"
+  },
+  {
+   "check": "Does the far arm exist at all? A walking figure in profile shows near and far arms, offset.",
+   "fail_signature": "Exactly one arm in every pose.",
+   "id": 9,
+   "key": "far_arm_missing"
+  },
+  {
+   "check": "Do hair clips and scrunchies sit ON the hair mass in profile-correct positions, attached - or do they float as front-view ornaments / detached bobbles in space?",
+   "fail_signature": "A scrunchie or clip visibly separated from the hair it belongs to.",
+   "id": 10,
+   "key": "floating_hair_furniture"
+  },
+  {
+   "check": "Do far-side features (second ear, earring, far scrunchie) appear at front-face positions on a profile head?",
+   "fail_signature": "Both-side furniture on a one-side head.",
+   "id": 11,
+   "key": "far_side_face_furniture"
+  },
+  {
+   "check": "Do carried waist items (Mochiko's three capsule jars) recede in profile - near full, far ones overlapping and partial - instead of hanging in a front row at one depth with their contents facing the viewer? Is any jar buried behind the arm in any pose?",
+   "fail_signature": "Three equal, front-facing jars in a row; a jar half-hidden behind the arm slab.",
+   "id": 12,
+   "key": "jars_one_depth"
+  },
+  {
+   "check": "Is the skirt the front skirt (symmetric pleats, straight front hem) sitting over profile legs, identical in every pose, with a hard slash where a leg solve crosses it?",
+   "fail_signature": "Skirt silhouette is a front silhouette; zero sway across the cycle; a diagonal cut across the pleats.",
+   "id": 13,
+   "key": "front_static_skirt"
+  },
+  {
+   "check": "Can near and far legs be told apart at the crossing/passing poses (far-side treatment: slightly darker, marginally smaller/higher)? And is any leg surface broken by a hard seam step across the thigh where a two-bone solve joins?",
+   "fail_signature": "Same flat tone and same shoe size on both legs; crossings read tangled; the far shoe reads in front. A visible horizontal step across a thigh.",
+   "id": 14,
+   "key": "leg_separation_failure"
+  },
+  {
+   "check": "Does the hair (tails included) carry secondary motion - lag and settle behind the stride - or is it pixel-identical in every pose?",
+   "fail_signature": "Hair mass identical across all poses of the cycle.",
+   "id": 15,
+   "key": "frozen_hair"
+  },
+  {
+   "check": "Does the face change at all across the cycle - at minimum a blink placed off the contact frames (cycle longer than ~3 s)?",
+   "fail_signature": "Same expression, open eyes, every frame.",
+   "id": 16,
+   "key": "frozen_expression"
+  },
+  {
+   "check": "Is the head (or any part) anisotropically scaled versus the canon proportions (e.g. compressed to 0.82 of its width)?",
+   "fail_signature": "Head-to-body ratio differs from the canon reference; face narrower than drawn.",
+   "id": 17,
+   "key": "head_squash"
+  },
+  {
+   "check": "Is there light fringe/halo along cut edges, visible against dark grounds?",
+   "fail_signature": "Pale edging pixels around hair, legs, or pack on a dark background - inspect poses on black AND on white.",
+   "id": 18,
+   "key": "edge_fringe"
+  },
+  {
+   "check": "Is the head seated INTO the collar, or perched on top of it with a bare wedge of neck showing between jaw and collar?",
+   "fail_signature": "A tan/skin wedge gap at the neck in any pose, worst at the recoils.",
+   "id": 19,
+   "key": "neck_perch"
+  },
+  {
+   "check": "At the recoil poses: does the support knee fold FORWARD under load, does the body height actually drop to its lowest at recoil, and does the torso participate (small lean into travel, counter-rotation against the hips, head steadier than torso) instead of sliding as a rigid block?",
+   "fail_signature": "Support knee bows backward; raised leg tangles; torso/head height and tilt identical across all poses.",
+   "id": 20,
+   "key": "recoil_and_torso_participation"
+  },
+  {
+   "check": "Does the support foot plant and STICK - at the ground line in every support pose, with zero glide (support-foot velocity ~0 px/slot while planted)?",
+   "fail_signature": "Only a minority of poses touching ground; support glides forward or backward (moonwalk signature in either direction).",
+   "group": "v5 drawn gates",
+   "id": 21,
+   "key": "ground_contact_stick"
+  },
+  {
+   "check": "Does the DRAWN shin fold back behind the knee line during swing (measured in pixels on the rendered pose, not on the skeleton)?",
+   "fail_signature": "Shin leans toward travel at nearly every pose; knee bows off the hip-to-ankle line; the walk reads backwards whichever way it is played.",
+   "group": "v5 drawn gates",
+   "id": 22,
+   "key": "knee_fold_drawn"
+  },
+  {
+   "check": "In a walk, is at least one foot on the ground in every pose (support 8/8)?",
+   "fail_signature": "Any pose with both feet off the ground - that is hop grammar, not a walk.",
+   "group": "v5 drawn gates",
+   "id": 23,
+   "key": "no_flight_phase"
+  },
+  {
+   "check": "Are contact/stick measurements calibrated on the TOE-END (last-contact point) of the support shoe, not the shoe centroid?",
+   "fail_signature": "Centroid calibration re-creates the backward-knee read in miniature even when the drawing is right.",
+   "group": "v5 drawn gates",
+   "id": 24,
+   "key": "toe_end_calibration"
+  }
+ ],
+ "name": "The 20-point structural defect audit (owner-caught, 2026-10-28)",
+ "origin": "Owner viewing of the v7 canon-art walk proof (Mochiko). First pass named 7 defects; the owner caught that the list was incomplete ('I saw like 10 more'); the completed audit covers ALL 8 poses at full size plus clip frames and numbers 20 items. Doro's record, 2026-10-28. Items 21-24 are the original v5 drawn-diagnosis items (workspace ep01-ed-gag/work/v5/DIAGNOSIS.md), carried as drawn-gate items in the same checklist.",
+ "schema": "mochiichao-show/diagnosis-checklist/v1",
+ "use": "Step A (DIAGNOSE) of the generated-turnaround pipeline: the vision model is given the input art (poses or frames) plus this checklist and must return, for every item, PASS / FAIL / NOT VISIBLE with the frame or pose it judged. A partial audit is never reported as complete. Any FAIL routes the piece to Step B (TURNAROUND) instead of cutout assembly.",
+ "verdict_rule": "The diagnosis reports per-item verdicts only. It never grades the character (grading law: wrong character = FAIL, judged by the owner's eye at the gates in Step E). A FAIL on any of items 1-20 means the art may not be assembled into a cutout puppet; it routes to Step B (TURNAROUND) or back to a drawn profile sheet."
+}
