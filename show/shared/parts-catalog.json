@@ -1235,6 +1235,27 @@
      "extends": "#137-family rendering; constellation names/lore = owner's canon calls"
     }
    ]
+  },
+  {
+   "id": "mochiichao-held-material",
+   "type": "held-material-register",
+   "about": "Material the owner ruled to PRESERVE for later use \u2014 registered, not placed. Nothing here is merged into episode or game files.",
+   "items": [
+    {
+     "name": "Ceremony prologue / flashback package (v1 choosing ceremony)",
+     "workspaceHome": "~/workspace/ceremony-prologue/ (SHOW-FLASHBACK.md, GAME-FLASHBACK.md, PLACEMENT-NOTE.md)",
+     "ruling": "Owner, 2026-10-27: preserved as flashback material for BOTH lanes \u2014 game Gen 1 later; show later, form/episode TBD by owner. EP02's harbour rescue remains the canon choosing.",
+     "slotsDecided": [
+      "three-vs-five: CLOSED \u2014 Aeon's line is 'Five lines keep this garden'; the presentation is reconciled to the five starter lines (Kittember + Sproutle presentations added with equal measure, Mochii kept as the final candidate)"
+     ],
+     "slotsOpen": [
+      "show episode + form",
+      "frame confirmation",
+      "intertitle wording",
+      "game trigger pick"
+     ]
+    }
+   ]
   }
  ]
 }

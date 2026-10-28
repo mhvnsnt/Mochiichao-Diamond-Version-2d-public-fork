@@ -132,3 +132,5 @@ Season map EP06–EP10 drafted (2026-10-27): see `show/production/SEASON-MAP-EP0
 - **The Airship Lord's name = MAXXIMUS.**
 - **Dorowani eye canon** (logged in PR #391, production log + clip-index canon_notes): species eyes red + black, no sclera; the show/avatar individual Dorowani keeps his eye-whites as a ruled special-case deviation; individual variation within a species is canon doctrine.
 - **Kittember (of record, restated):** the flame is attached to the TAIL TIP — never a separate floating flame orb.
+
+**Standing season-structure model (owner ruling, 2026-10-27):** the game side is PRIMARY — the world is one connected open world, and region discovery (finding the way, by progression, exploration, side stories, or map connections) is wired into the game data. The show is SECONDARY and derivative: season transitions may USE region discovery (finding the way to the next region as the route into the next season), regions may overlap seasons or be hinted at before arrival, and the show follows game geography and data — it never invents its own.
