@@ -344,3 +344,24 @@ poses, contacts first, on paper, before anything moves.
 and `PULL-IN-LIST.md` (the archive material that lands in the repo
 under this programme). Stage 1 of the owner-ordered programme —
 explanation first. No gag files were touched.*
+
+---
+
+## CORRECTION — dated 2026-10-28 (second-pass audit; the text above is kept as written)
+
+Defect 1's final paragraph and mapping-table row 3 attribute the
+white gaps between Mochiko's hair and her head to the one-skin
+construction — a stretched skin thinning where two regions meet.
+**That mechanism is wrong for this gap.** The fix lane's pixel
+work (~/workspace/ep01-ed-gag/work/mochiko-hair-fix/FIX-NOTE.md)
+proves the gaps were fully-enclosed **un-keyed background
+pockets** — the sheet's pale field colour, fully opaque, trapped
+inside the drawing where the border key could not reach — present
+in the static texture **before any deformation**; the mesh merely
+carried them. Drawn-overlap construction (B1) prevents seams
+*opening under motion*; it would not have prevented this. The
+practice that prevents it is **intake leak-test QC**, recorded as
+Defect 6 in `WHAT-WE-DO-WRONG-ADDENDUM.md`, with the correction
+carried into the method (`CORRECTED-METHOD.md`, addendum §A.1).
+Everything else in this document stands as written; the second
+pass re-tested it against the build records (addendum §C2).

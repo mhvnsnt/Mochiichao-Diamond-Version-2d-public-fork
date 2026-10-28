@@ -274,3 +274,75 @@ In order. (Execution is a later stage; this is the plan of record.)
 
 *End of spec. Stage 1 deliverable — nothing above has been built yet;
 the rebuild is stage 3 of the programme, after the pull-in lands.*
+
+---
+
+## ADDENDUM §A — dated 2026-10-28 (second-pass audit; originals above kept)
+
+**Governing principle — the owner's first-time-right directive
+(Jamar, 2026-10-28, standing):** *"do better work going forward
+and be more accurate and pull in whatever gets it more accurate
+and correct the first time and wire that up permanently into the
+repo."* Accuracy-improving kit gets pulled in and wired
+permanently, not consulted ad hoc. The rules below are that
+directive applied to the six defects the second pass found
+(`WHAT-WE-DO-WRONG-ADDENDUM.md`, defects 6–11). They bind every
+lane that builds or renders show animation, alongside §§1–7.
+
+### A.1 Cutout intake gate (Defect 6)
+No keyed texture enters a rig until it passes, in order:
+1. **Enclosed-region scan** — flood from the image border; any
+   opaque region the flood cannot reach is un-cut background and
+   is removed or the texture is rejected. No exceptions recorded
+   as "known limits."
+2. **Contrasting-field inspection** — the cutout composited on
+   dark, light, and magenta fields, inspected at intake; fringe
+   or residue at the silhouette is cleaned before the rig build,
+   not noted for later.
+3. The intake result (scan counts, inspection frames) is filed
+   with the texture's provenance record.
+
+### A.2 Joint inventory & build warnings (Defect 7)
+- Before animation, a rig's joints are inventoried against the
+  character's anatomy and the production's action list (§A.5):
+  every needed joint **exists, at its anatomical centre** (a knee
+  is at the knee; an ankle is at the ankle). A leg of hip→mid-shin
+  + mid-shin→toe does not pass.
+- Any build-tool warning attached to a part (weight clamps, cells
+  outside the silhouette) is a **blocking defect for that part**
+  until inspected and cleared in writing. "Renders clean anyway"
+  is not a clearance.
+
+### A.3 Frame-exact rendering (Defect 8)
+The renderer samples poses exactly at their authored frame
+points. A rendered still must match its authored pose; cross-pose
+blending at sample points is a pipeline defect, fixed in the
+sampler — never shipped as a rounding error and never absorbed
+into a pose's measurements.
+
+### A.4 Chibi forms are built models (Defect 9)
+Chibi forms are built from the character's model sheet,
+registered as proportion variants with proportions derived then
+**locked per character**, and passed through the anchor +
+silhouette gates — per the show's Chibi Model Spec
+(`show/production/CHIBI-CARD-SYSTEM.md` §4). A compositor scale
+factor (uniform or anisotropic) is not a proportion system, and
+non-uniform scale is never used as an acting tool (no squash
+kneels, no scaleY bows).
+
+### A.5 Action-coverage at rig build (Defect 10)
+Every rig build starts from a written **action list** for the
+production (the actions this character must perform in these
+shots). Each action maps to parts and joints that exist in the
+rig. A missing action has two exits, decided before animation:
+build the part, or redesign the action in the staging on paper.
+Faked locomotion (rock, waddle, drift presented as walking) is
+not an exit.
+
+### A.6 Defect disposition (Defect 11)
+A written defect in any build record is a **blocking ticket**
+with exactly two exits: **fixed**, or **waived by the owner in
+writing**. "Known limit," "shortfall," and "candidate for a later
+pass" are abolished as shipping categories. The proof stage's
+QC_PENDING hold is the enforcement point: work carrying an open
+ticket does not move gates.
