@@ -1,0 +1,55 @@
+{
+  "_about": "RULED-DEVIATION REGISTRY (live canon infrastructure, #80 INDIVIDUAL-VARIATION). A visible deviation not in this registry is an error; a registered deviation missing is an error. Entries are added only by owner ruling — never bulk-generated.",
+  "registry_version": 1,
+  "registered": "2026-10-27",
+  "individuals": [
+    {
+      "individual_id": "doro",
+      "species": "dorowani",
+      "deviations": [
+        {
+          "trait": "eyes.sclera",
+          "species_pattern": "red + black eyes, NO sclera (species canon)",
+          "individual_value": "white sclera present around the eyes",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-27",
+          "consistency": "MUST REPRODUCE in every generation of this individual",
+          "source": "MEMORY.md — Dorowani eye canon + Individual Variation Doctrine; the worked case in 80-INDIVIDUAL-VARIATION.md"
+        }
+      ]
+    },
+    {
+      "individual_id": "kittember-wild-biped",
+      "species": "kittember",
+      "deviations": [
+        {
+          "trait": "body.stance",
+          "species_pattern": "quadrupedal (species default, owner ruling 2026-10-27)",
+          "individual_value": "bipedal — the special-case wild individual: Mochiko's first wild Kittember encounter (stare-down in the woods, vanishes, reappears, battle + capture, joins the team)",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-27",
+          "consistency": "MUST REPRODUCE in every generation of this individual",
+          "source": "Owner ruling 2026-10-27; clip-index canon_notes.kittember_stance + PR #399 bundle notes (canon-pass bipedal, grey, orb tail)"
+        }
+      ]
+    },
+    {
+      "individual_id": "kittember-389-draft",
+      "species": "kittember",
+      "deviations": [
+        {
+          "trait": "tail + design (species-form deviations)",
+          "species_pattern": "canon Kittember design (tail-tip flame, canon-pass form)",
+          "individual_value": "the PR #389 black quadruped render — species-form quadruped with wrong tail/design deviations",
+          "status": "PROPOSED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-27",
+          "consistency": "NOT a story individual — registered so the deviation is on record",
+          "source": "Owner ruling 2026-10-27: kept as unused_draft_special_case (PR #401, restored by PR #410) — a DRAFT, not used, not deleted"
+        }
+      ]
+    }
+  ]
+}
