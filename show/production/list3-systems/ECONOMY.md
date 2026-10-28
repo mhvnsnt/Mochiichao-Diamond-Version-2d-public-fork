@@ -43,3 +43,5 @@ wiring) without ever displaying the model.
 **Coverage.** Architecture: standard and fully documented. All rates,
 the currency name, and shop contents are OPEN — contents wait on
 canon places and the item model; nothing is priced in this package.
+
+**Seats added at List 26 landing (2026-10-27), citing #253.** (1) `lossBase` — the single economy constant behind what a losing player pays out (`min(held, lossBase × highest party level)`): its seat is this file's data; the *value* is authored economy data, owed, and was not invented at landing. (2) `classBase` — the payout base keyed to opponent class (`classBase × level of the final opposing individual`): its seat is the authored-party record (`src/data/core/schemas/trainers.schema.json`), landed there citing #253; values likewise owed. The formulas are complete without the values; the currency name remains OPEN above.

@@ -55,3 +55,5 @@ two-lane doctrine, never as on-screen numbers.
 confidence. Contents: **zero matchups asserted** (owner pass owed);
 damage constants PROPOSED, not locked. This is a data model + pipeline
 spec, not a balance pass — saying so plainly.
+
+**Landing note — List 26 (2026-10-27).** The contents this file left open are now asserted, by citation, under the Pokémon-base rule: the chart's matchups are filled by #249 (85 triples) and live in this file's fragment (`matchups` — the shape above is unchanged; the supersession of the shape-only stance *for contents* is recorded here and in #249's file, not overwritten in silence); the damage constants flagged PROPOSED are locked by #248; the stat-stage table is locked by #250. The authoring anchors named above stand as the chart's canon inputs. The element-vocabulary question (Aero vs Wind, TBD D6) is untouched and still open.

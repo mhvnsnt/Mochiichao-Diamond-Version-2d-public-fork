@@ -1,0 +1,38 @@
+{
+ "format": "mochiichao/weather-effects/v1",
+ "_about": "Battle effects per world weather state (List 26 #252), carried as the contents of #47's WEATHER records. Seeded from #61/#19 world state; move-set weather lasts 5 turns (8 with the extender item class, #31/#183 seats); world-seeded lasts the battle unless overwritten.",
+ "states": {
+  "RAIN": {
+   "movePowerMult": {
+    "Aqua": 1.5,
+    "Flame": 0.5
+   }
+  },
+  "STORM": {
+   "inherits": "RAIN",
+   "plus": "moves whose data carries the storm-true accuracy flag cannot miss"
+  },
+  "FROST": {
+   "endOfTurnChip": {
+    "fractionOfMaxHP": 0.0625,
+    "chipExemptTypes": [],
+    "_note": "exemption list EMPTY by named cause: no Frost type id exists in the canonical fifteen (audit hole H3); filled by the vocabulary ruling, not by guess"
+   }
+  },
+  "CLEAR": {
+   "effects": null,
+   "_note": "no harsh-sun state exists in canon's vocabulary; the documented sun trade is not asserted"
+  },
+  "OVERCAST": {
+   "effects": null
+  },
+  "MIST": {
+   "effects": null,
+   "_note": "mist hides; it does not bend arithmetic (#61 W3)"
+  },
+  "NONE": {
+   "effects": null,
+   "_note": "no WEATHER slot is seated at all (Dark Forest depths) - a consequence of the seeding rule, not an exception"
+  }
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "format": "mochiichao/damage/v1",
+ "_about": "Battle damage + stat arithmetic (List 26 #248). Extends #17's pipeline; the constants #17 flagged PROPOSED are LOCKED here under the Pokemon-base rule. Floors after each chain stage; minimum 1 on a connecting non-immune hit.",
+ "statFormula": {
+  "hp": "floor((2B + V + floor(E/4)) * L/100) + L + 10",
+  "other": "floor((floor((2B + V + floor(E/4)) * L/100) + 5) * T)",
+  "terms": {
+   "B": "species base stat (species data)",
+   "L": "derived level (#178)",
+   "V": "individual variance, #80's seat (documented 0-31 range)",
+   "E": "earned effort, #39's ledger as converted by #179",
+   "T": "temperament modifier from #108's seat: one of 1.1 / 1.0 / 0.9; the temperament->stat mapping table is data (audit hole H4)"
+  }
+ },
+ "baseTerm": "floor( floor( (floor(2L/5) + 2) * P * A / D ) / 50 ) + 2",
+ "chain": [
+  {
+   "step": "stab",
+   "mult": 1.5,
+   "note": "move type matches one of attacker's types; ability data (#107) may raise to 2.0 at #184's seat"
+  },
+  {
+   "step": "chart_product",
+   "source": "#249 type-effectiveness-fragment.json",
+   "note": "product over defender's types; 0 = immunity, chain stops"
+  },
+  {
+   "step": "field",
+   "source": "#47 records via #181 order (weather -> terrain -> room); weather terms in #252"
+  },
+  {
+   "step": "critical",
+   "mult": 1.5,
+   "note": "rate table in #250; crit reads attacker's attack stages as >= 0 and defender's defence stages as <= 0"
+  },
+  {
+   "step": "burn",
+   "mult": 0.5,
+   "note": "attacker carries the burn class (#182 roster) and the move is physical"
+  },
+  {
+   "step": "spread",
+   "mult": 0.75,
+   "note": "per target, multi formats (#157), when one move strikes multiple targets"
+  },
+  {
+   "step": "variance",
+   "range": [
+    0.85,
+    1.0
+   ],
+   "note": "applied last; #94 seeded draw (replay determinism, #187)"
+  }
+ ],
+ "statusMoves": "no power -> never enters this formula; resolves via its own effect in #10 RESOLUTION"
+}

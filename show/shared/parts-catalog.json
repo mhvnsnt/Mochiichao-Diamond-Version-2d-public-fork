@@ -1256,6 +1256,73 @@
      ]
     }
    ]
+  },
+  {
+   "id": "mochiichao-list26-systems",
+   "type": "systems-index",
+   "about": "List 26 teardown systems (items 247-256), landed 2026-10-27 \u2014 the finish-the-base list: battle arithmetic and the type chart asserted under the Pokemon-base rule; open slots are story/canon facts only (element vocabulary H3, currency name, calendar).",
+   "items": [
+    {
+     "n": 247,
+     "name": "Base completeness audit",
+     "home": "show/production/247-BASE-COMPLETENESS-AUDIT.md",
+     "extends": "maps Lists 1-26; hole register H1-H7 assigned to their lanes"
+    },
+    {
+     "n": 248,
+     "name": "Battle damage formula",
+     "home": "show/production/battle/248-BATTLE-DAMAGE-FORMULA.md",
+     "extends": "locks the constants #17 flagged PROPOSED; one arithmetic source for #10/#18"
+    },
+    {
+     "n": 249,
+     "name": "Type effectiveness chart",
+     "home": "show/production/list3-systems/249-TYPE-EFFECTIVENESS-CHART.md",
+     "extends": "85 matchups asserted into #17's chart fragment by citation \u2014 supersession recorded in both files, shape unchanged"
+    },
+    {
+     "n": 250,
+     "name": "Stat stages & accuracy/evasion",
+     "home": "show/production/battle/250-STAT-STAGES-ACCURACY.md",
+     "extends": "locks #17's stage table by citation"
+    },
+    {
+     "n": 251,
+     "name": "Priority & turn order",
+     "home": "show/production/battle/251-PRIORITY-TURN-ORDER.md",
+     "extends": "#10's missing order clause"
+    },
+    {
+     "n": 252,
+     "name": "Weather battle effects",
+     "home": "show/production/battle/252-WEATHER-BATTLE-EFFECTS.md",
+     "extends": "contents written into #47's WEATHER records; FROST chipExemptTypes ships [] exactly as specified (hole H3)"
+    },
+    {
+     "n": 253,
+     "name": "Prize money & rewards",
+     "home": "show/production/list3-systems/253-PRIZE-MONEY-REWARDS.md",
+     "extends": "formulas only: lossBase seat in #20's economy file, classBase seat on the trainer record \u2014 no payout value invented"
+    },
+    {
+     "n": 254,
+     "name": "Escape & fleeing rules",
+     "home": "show/production/battle/254-ESCAPE-FLEEING.md",
+     "extends": "#10's RUN command rule"
+    },
+    {
+     "n": 255,
+     "name": "Encounter rate & area pacing",
+     "home": "show/production/world-systems/255-ENCOUNTER-RATE-PACING.md",
+     "extends": "encounterRate seated in #7's spawn-table schema; #112's repel semantics closed Shape A by citation"
+    },
+    {
+     "n": 256,
+     "name": "Centre services flow",
+     "home": "show/production/world-systems/256-CENTRE-SERVICES-FLOW.md",
+     "extends": "#132's services[] seats verified present at landing; no seat founded in this file"
+    }
+   ]
   }
  ]
 }

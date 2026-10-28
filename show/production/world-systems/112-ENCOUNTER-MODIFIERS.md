@@ -111,3 +111,5 @@ two meanings is worse than no record.
   null, and the repel floor's very *semantics* await an owner
   ruling against #52. The yield is the class, the ops, and the
   tension — written down instead of smoothed over.
+
+**Landing note — List 26 (2026-10-27).** The repel floor's semantics, left OPEN here, are closed by #255 under the Pokémon-base rule: Shape A — the floor is the lead individual's level. #52's law is not broken: it governs the *table* (what an area stocks, at what authored levels); repel governs one roll's *pick* (slots whose whole band falls below the lead's level are removed from that pick only — the table is never edited). The reconciliation is recorded in #255's spec and fragment; this file's fragment (`semanticsStatus`) now reads RESOLVED by that citation. No modifier item is instanced by this note.
