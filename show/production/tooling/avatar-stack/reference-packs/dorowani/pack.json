@@ -52,7 +52,7 @@
   "owner_rulings": [
     {
       "date": "2026-10-28",
-      "ruling": "Eye-white growth is drift: the Google Flow scratch test clip grew white around Dorowani's eyes; acceptable as scratch, but going forward Dorowani generations must NOT add or grow white around the eyes. Negative prompt: no white around the eyes, no sclera — red eyes set directly in the blue face.",
+      "ruling": "Eye-white growth is drift: the Google Flow scratch test clip grew white around Dorowani's eyes; acceptable as scratch, but going forward Dorowani generations must NOT add or grow white around the eyes. Negative prompt: no white around the eyes, no sclera — red eyes set directly in the blue face. The eye-white trait is FIXED per individual: exactly ONE Dorowani (the show/avatar one) carries whites, always and steady; whites must never grow, shrink, or flicker in or out across a scene or a frame — inconsistency is itself the defect.",
       "scope": "This does not change the avatar Dorowani's established look (2026-10-27 ruled deviation, kept for that character's own asset set); this rule governs generated footage going forward."
     }
   ]
