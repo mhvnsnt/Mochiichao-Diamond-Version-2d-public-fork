@@ -908,3 +908,7 @@ show/episodes/EP01/EP01-SHOOTING-SCRIPT-v3.md is in the repo with MANUAL-RULES-D
 ## BIG-WEIGHTS STAGING TABLE LANDED (2026-10-27)
 
 show/production/tooling/BIG-WEIGHTS-STAGING-TABLE.md is in the repo: the byte-exact staging record for 56,978,422,938 B of production weights (Wan 2.2 consistency kit, ACE-Step 1.5, voice sets, stragglers audit incl. the RIFE gap), each with licence bucket, current homes, durable home, and the one remaining action + whose it is. The Wan bundle is prepared for Route A (in-notebook assembly) once the owner places the Kaggle token; ACE-Step's pull runs unattended and self-verifies. Table only - no weight bytes in git. Landed by the lock-everything wave.
+
+## MOCHICHAO DESIGN LANE LANDED (2026-10-27)
+
+MOCHICHAO DESIGN lane stood up (owner-directed) - charter with canon feed, two-lane coding, proactive delivery; full-apparatus data complete for the 60 owner-confirmed concepts (124 stage sheets: Bio/Footprint/Silhouette/Cry/Discovery + base fields), coded as species-data-draft.json mirroring the species.json schema (ids + stat numbers null until lock). Canon roster unchanged at 47. Name-collision check vs full canon 47 re-run and closed: zero collisions. Landed by the lock-everything wave.
