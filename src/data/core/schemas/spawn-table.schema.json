@@ -90,12 +90,13 @@
       "additionalProperties": false,
       "properties": {
         "method": {
-          "description": "Canon method vocabulary from encounters.json. Forest floor rolls on 'grass'.",
+          "description": "Canon method vocabulary from encounters.json. Forest floor rolls on 'grass'. 'dive' added by List 20 #192 (water traversal & dive) at its landing — a method value only; no dive table exists.",
           "enum": [
             "grass",
             "surf",
             "fish",
-            "cave"
+            "cave",
+            "dive"
           ],
           "type": "string"
         },

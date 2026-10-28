@@ -92,3 +92,5 @@ section.
   single event until it closes. The mechanism is the
   yield; it is complete without the calendar, and useless
   with an invented one.
+
+**Citation (List 20 #195, landing 2026-10-27):** seasonal world events register in owners' formats via 195-SEASONAL-WORLD-EVENTS.md — bundle shape and the windows-only fence live there. No season or event is created by that package; the calendar stays open until the owner rules it.

@@ -104,3 +104,5 @@ residence: #58/#65. Eggs: #77. Honours carried in-record:
 - **Contents: mechanics specified; numbers and the partner-
   storage question OPEN.** No capacity, box count, or partner
   rule exists in canon, and none is invented here.
+
+**PROPOSAL from List 20 #193 (registered at its landing, 2026-10-27):** an additive, nullable custody marker on this file's location record for daycare custody. Until accepted here, custody reads as Garden residence plus #193's service record, and no report may call the sub-seat wired.

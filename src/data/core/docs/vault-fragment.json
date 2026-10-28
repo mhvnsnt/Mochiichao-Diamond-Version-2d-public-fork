@@ -1,0 +1,25 @@
+{
+ "_about": "Item vault (List 20 #190) — #106's one-location discipline applied to #31's item layer. Holdings are rows; every inventory view is derived at read time. The fragment instances no holdings and no vault.",
+ "capacity": {
+  "note": "unset is null — not zero, not infinite (#106/#132 null-slot discipline)",
+  "perVault": null,
+  "unit": "kinds | units | uncapped — OPEN with the number"
+ },
+ "format": "mochiichao/item-vault/v1",
+ "holding": {
+  "count": 0,
+  "itemId": "#31 item record id",
+  "location": "bag | vault",
+  "rule": "a unit is in the bag or the vault — never both, never nowhere; transfers move counts, never copy them"
+ },
+ "softLockAudit": "Validation, landed with the package (step 5): at deposit time the vault service refuses any key-category item with an active consumer; schema-adjacent test — for every key-category item: vault-resident implies no active consumer among #11 edges / #59 locks / #12 facts. Capacity stays null; zero holdings exist.",
+ "vaultPlace": {
+  "family": "#132 service-place records (places are data)",
+  "seats": "OPEN — which places offer vault access is world-build content",
+  "verbs": [
+   "deposit",
+   "withdraw"
+  ]
+ },
+ "views": "derived at read time over holding rows (bag list, vault list, totals) — never stored"
+}

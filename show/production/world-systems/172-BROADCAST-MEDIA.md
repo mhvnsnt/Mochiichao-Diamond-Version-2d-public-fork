@@ -116,3 +116,5 @@ coverage has anything to cover beyond Region 1's
 circuit (Regions 2–5 league records are null, #143) ·
 the bulletin voice/register per place (community
 content is authored work, not format).
+
+**Citation (List 20 #194, landing 2026-10-27):** the forecast derivation this file's clarification presupposes is #194's projection over #61 + #142 (194-WEATHER-FORECASTING.md). Broadcast delivery rides this file's `weather` class; device delivery via #149 stays spec-level until #149's home accepts the proposed class there.

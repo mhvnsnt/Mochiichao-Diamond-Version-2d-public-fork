@@ -102,3 +102,5 @@ advance time). Calendar slots: #93 day kinds (OPEN). Places:
   season, date, place, or activity exists in canon. The
   calendar's own shape is an OPEN owner decision this spec
   depends on and explicitly does not pre-empt.
+
+**Citation (List 20 #195, landing 2026-10-27):** seasonal world events register in owners' formats via 195-SEASONAL-WORLD-EVENTS.md — bundle shape and the windows-only fence live there. No season or event is created by that package; the calendar stays open until the owner rules it.

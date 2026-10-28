@@ -102,3 +102,5 @@ read from the same field, no copy). Save impact: none new.
   Forest ruling are all OPEN.** The derivation rule is the
   yield; applying it is a data pass over sheets this
   package does not own.
+
+**Annex (List 20 #192, landing 2026-10-27):** water traversal and dive modes annex into THIS traversal format (192-WATER-TRAVERSAL-AND-DIVE.md) — there is no second traversal format. The `dive` gate kind is proposed to the #11 edge / #59 lock vocabularies in their owners' files, and the `dive` method is proposed into #7's spawn schema at this landing. Zero dive points, dive areas, and water routes are instanced; #66's isle contents are untouched.

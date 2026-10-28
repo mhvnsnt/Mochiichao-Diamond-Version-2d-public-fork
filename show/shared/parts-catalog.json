@@ -833,6 +833,73 @@
      "extends": "ladder slot PROPOSED into #86's table"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list20-systems",
+   "type": "systems-index",
+   "about": "List 20 teardown systems (items 187-196), landed 2026-10-27.",
+   "items": [
+    {
+     "n": 187,
+     "name": "Battle replays",
+     "home": "show/production/battle/187-BATTLE-REPLAYS.md",
+     "extends": "determinism obligation recorded in BATTLE-UI-FLOW (engine obligation, not a claim)"
+    },
+    {
+     "n": 188,
+     "name": "Spectator mode",
+     "home": "show/production/battle/188-SPECTATOR-MODE.md",
+     "extends": "timing slot PROPOSED into #109's ruleset; facility seat reconciled with #186 at #86"
+    },
+    {
+     "n": 189,
+     "name": "Challenge modes",
+     "home": "src/data/core/docs/189-CHALLENGE-MODES.md",
+     "extends": "election fact registered in #96's meta; licence standing PROPOSED to #98"
+    },
+    {
+     "n": 190,
+     "name": "Item vault",
+     "home": "src/data/core/docs/190-ITEM-VAULT.md",
+     "extends": "soft-lock audit landed as validation in the vault fragment; capacity null, zero holdings"
+    },
+    {
+     "n": 191,
+     "name": "Player journal & map annotations",
+     "home": "show/production/world-systems/191-PLAYER-JOURNAL.md",
+     "extends": "journal section PROPOSED into #96; generator PROPOSED to #90; atlas overlay = view only"
+    },
+    {
+     "n": 192,
+     "name": "Water traversal & dive",
+     "home": "show/production/world-systems/192-WATER-TRAVERSAL-AND-DIVE.md",
+     "extends": "annex inside #123's format; 'dive' method added to #7's spawn schema"
+    },
+    {
+     "n": 193,
+     "name": "Daycare services",
+     "home": "show/production/world-systems/193-DAYCARE-SERVICES.md",
+     "extends": "custody seats in #77's Garden housing (cited in #132); marker PROPOSED into #106"
+    },
+    {
+     "n": 194,
+     "name": "Weather forecasting",
+     "home": "show/production/world-systems/194-WEATHER-FORECASTING.md",
+     "extends": "cited from #172; forecast class PROPOSED into #149's fragment; depths NONE rule beside #142"
+    },
+    {
+     "n": 195,
+     "name": "Seasonal world events",
+     "home": "show/production/world-systems/195-SEASONAL-WORLD-EVENTS.md",
+     "extends": "registrations + citing lines in #105/#124/#113; no season or event created"
+    },
+    {
+     "n": 196,
+     "name": "Portrait & photo studio services",
+     "home": "show/production/world-systems/196-PORTRAIT-PHOTO-STUDIO.md",
+     "extends": "portrait rule (read RULED deviations, not templates) registered in its fragment"
+    }
+   ]
   }
  ]
 }
