@@ -112,6 +112,32 @@ tracked in the season grid.
    "trainers"; "keeper" is the Garden role. Neither is canon
    for battle until Jamar names it (§9, item 7).
 
+9. **THE SECRET (Jamar, 2026-10-27 — a production-layer truth,
+   never an in-world fact):** the world is a computer that grew
+   a wilderness. NO inhabitant knows this. Professor Aeon knows
+   secretly: he may slip and say "the Mainframe," then correct
+   himself to "the mainland" — **"the mainland" is the cover
+   word**, and the slip-and-correction is the only shape in
+   which the truth may surface in a script. Luigi has a hint,
+   not knowledge: he may circle it, never state it. Villain
+   hacker-speak is double-layered dramatic irony — villains may
+   speak the Secret's vocabulary openly, because in-world
+   listeners hear only mundane tech talk, and no ordinary
+   character may ever decode the second layer. Production
+   documents (this Bible) may hold the truth; in-world
+   artifacts — place names, signs, dialogue — must not betray
+   it. That is why the region reads IRIDESCENCE on every map
+   and sign, whatever it is called in this room.
+
+10. **TWO-LANE CONSISTENCY LAW (Jamar, 2026-10-27):** every
+   canon change applies in BOTH lanes — the game data and the
+   show data. Names, settings, doctrines: a ruling made in one
+   lane is a ruling in the other, applied everywhere it
+   appears, in the same terms. (Display names change; internal
+   ids/keys stay stable, so wiring cannot break.) Neither lane
+   may quietly keep a name or rule the other lane has
+   superseded.
+
 ## 6. THE EPISODE ENGINE
 Pokémon showcase × 6-beat garden formula (mystery-heart):
 1. Arrival/errand at the Gate 2. The oddity 3. Investigation
