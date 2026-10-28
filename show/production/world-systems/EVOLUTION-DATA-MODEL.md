@@ -107,3 +107,9 @@ franchises' trees.
   Nothing in this package converts prose to numbers or gaps to edges.
 
 **Citation (List 21 #199, landing 2026-10-27):** evolution method classes map as recorded in 199-EVOLUTION-METHODS.md — its "exchange" class is THIS model's `trade` class, with the consumption semantics stated there. This citation is the whole wiring: the methodClass enum is not touched, no edge is edited, and the Twinvow pair-merge representation stays exactly as this model ships it (owner decision).
+
+---
+
+**Landing citation — List 34 (2026-10-27), citing STAGING step 4.**
+
+#329 care-branch evolution (`world-systems/329-CARE-BRANCH-EVOLUTION.md`) builds its fork grammar on this file's (#8's) table architecture — branching was always the table's, not the species record's — and lands its semantics section in #199's file, the evolution package's other home. This file's model does not change.

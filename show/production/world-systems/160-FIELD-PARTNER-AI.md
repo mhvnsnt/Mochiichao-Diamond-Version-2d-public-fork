@@ -104,3 +104,9 @@ carry REACT as they already do.
   content distilled with #152's profiles (a data-lane
   pass, OPEN there too); trigger sensitivity values are
   unset data.
+
+---
+
+**Landing note — List 34 (2026-10-27), citing STAGING step 8.**
+
+#333 companion judgement (`world-systems/333-COMPANION-JUDGEMENT.md`) lands beside this file — the field-partner behaviour seat it reads over. Its affinity read and threshold behaviours derive from WITNESSED List 28 facts only. The partner-departure event class is PROPOSED into #80/#267's homes and lands only there; it is not founded here. Field-partner AI is #160 (not #158, horde battles): the correction registered in List 34's STAGING is carried here.

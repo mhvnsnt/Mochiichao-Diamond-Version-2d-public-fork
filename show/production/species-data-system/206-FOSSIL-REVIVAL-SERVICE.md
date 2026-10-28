@@ -126,3 +126,9 @@ and every extinct species (contents are the
 owner's canon, authored data-first when they come
 — §3 of #44 holds four labelled PROPOSALS, none of
 them canon, and this package cites none as fact).
+
+---
+
+**Landing citation — List 34 (2026-10-27).**
+
+#328 rancher arrival (`world-systems/328-RANCHER-ARRIVAL.md`) lands beside this file's revival package as the arrival family's companion: a medium carries a call, a Mochi arrives as itself and its record opens, at lab-family rite seats beside this file's service and #44/#46's seats, sibling to #135's hatch presentation. #328's refusal text (no lifespan/death clock, no freezing, no media gimmick) travels with its spec and is carried into #327's register.

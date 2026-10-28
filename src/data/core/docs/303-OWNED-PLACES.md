@@ -141,3 +141,6 @@ in full; zero places are instanced.
 - System: complete. Contents: none instanced — the
   world has the *idea* of owning a place, fully
   specified, and no deeds yet.
+
+
+**ANNEX — List 34 #332 (recorded at its landing, 2026-10-27):** #332's service classes land in this file's home as a services annex (332-WORKING-PROPERTIES.md): a working property's services read this file's owned-place record; upkeep reads at #331's rollover; service state lives on the place record. Custody stays #193's, prices stay #123/#304's, spots stay #291's, fence law stays #274's. #332 founds the frame and the upkeep class — and nothing underneath them; which places carry which functions is world content, place by place. (This annex was owed from List 34's staging and could only land once this file existed — List 31, PR #457.)

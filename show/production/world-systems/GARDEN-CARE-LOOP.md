@@ -74,3 +74,6 @@ OPEN until canon names them.
 
 
 **Landing note — List 27 #264 (2026-10-27):** the planting-spot assignment seat is owned here (264-GARDEN-PLANTING-SPOTS.md): spot classes are seated in the Garden-complex authoring with zero spots placed at landing, and #264's fence rides with it — a planting assignment that writes #80's deviation register or #106's storage anywhere fails review.
+
+
+**Landing note — List 34 #334 (2026-10-27):** the home-camp annex (334-HOME-CAMP.md) lands on #28's Garden seat beside this file's loop: camp mood and the residents' home life read this loop's care facts, and change staging and nothing else.

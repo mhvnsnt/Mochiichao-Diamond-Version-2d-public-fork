@@ -128,3 +128,9 @@ them · A9 pair-merge representation (**OWNER
 DECISION** — #103's flag, carried verbatim).
 
 **Citation (List 24 #228, landing 2026-10-27):** evolution-sequence record timing per 228-EVOLUTION-SEQUENCE.md — the record update lands REVEAL-timed, and a cancelled sequence writes nothing.
+
+---
+
+**Landing section — List 34 (2026-10-27), citing STAGING step 4: care-branch semantics, citing #329.**
+
+`world-systems/329-CARE-BRANCH-EVOLUTION.md` lands its semantics here, in the evolution package's home, and nowhere else: where a line's sheet declares `branching: care`, two ordinary edges with the same method are told apart by their care conditions (#39/#28/#179 facts), read once at the moment of evolution, first matching edge wins. **Zero lines are declared by this landing** — declaring a line is a design act on its sheet, not a wiring act. Schema fence (the A9 fence, testable): no care condition may appear on an edge whose representation is `OWNER_DECISION`. Nothing in this section touches that representation.

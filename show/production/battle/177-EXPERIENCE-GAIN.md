@@ -123,3 +123,9 @@ when data supplies them.
   and the rounding rule are OPEN. What is finished is
   the interface #158 demanded: what an event carries,
   who earns, and how the pool divides.
+
+---
+
+**Landing note — List 34 (2026-10-27), citing STAGING step 10.**
+
+Row-6 link check for #336 (`show/production/336-MOD-COMMUNITY-STANDARD.md`), run against this file's landed text at List 34's landing: this file's `party-share` class earns only if a share mechanism covers it, and this file asserts no mechanism (`shareSource: null` — "no mechanism is asserted by this spec"). #336's row 6 therefore converts from conditional to **BUILD** — party-wide share as a switchable #150-class toggle, never forced — per #336's recorded decision. This file's gain shape does not change.
