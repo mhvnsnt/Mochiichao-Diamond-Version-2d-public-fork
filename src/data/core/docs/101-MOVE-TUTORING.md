@@ -102,3 +102,5 @@ STAGING). Show: #37 signature slots + #9 anatomy variance +
   or compatibility row exists in canon. The Rare-teaching
   question and the currency name are OPEN owner decisions,
   carried open.
+
+**Downstream (List 14, 2026-10-27):** the level-up learning flow is `129-LEVEL-UP-LEARNING.md` and the signature-move register is `131-SIGNATURE-MOVES.md` (same folder); #129's relearn pool derives for this package's tutoring.

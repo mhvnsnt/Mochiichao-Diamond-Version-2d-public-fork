@@ -146,3 +146,5 @@ building:
 - The hatch accelerant trait (waits on the abilities gap-fill).
 - Whether the show ever depicts breeding mechanics directly, or
   keeps eggs/cocoons as Garden discovery beats only — owner call.
+
+**Content definition (List 14 #135, 2026-10-27):** this spec's owed `hatchPresentation` field is defined by `135-HATCH-PRESENTATION.md` (`show/production/species-data/`) — the owed-field loop closes there; the field's per-species values stay OPEN data via sheet intake.

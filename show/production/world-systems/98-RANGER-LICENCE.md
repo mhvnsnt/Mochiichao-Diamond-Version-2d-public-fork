@@ -99,3 +99,5 @@ home). Consumed by #100 (gauntlet standing display) and #90
   case design, and tier table OPEN.** No licence-issuing beat,
   rank name, or case design exists in canon, and none is
   invented here.
+
+**Completed by (List 14 #133, 2026-10-27):** licence rank trials are `133-LICENCE-TRIALS.md` (same folder) — this licence's tier slot's system. Its tier table lands EMPTY (owner content only); its region-gating is a tier condition on #127's progression discovery kind only, never a border lock.
