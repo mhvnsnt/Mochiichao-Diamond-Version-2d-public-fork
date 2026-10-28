@@ -78,3 +78,36 @@ manifest JSON. Flagged drift on record: the casual battle variant
 grins with teeth, streams the scarf long, and wears the pouch on the
 right hip — kept as a supplementary variant only; the dojo battle
 front is primary.
+
+## Form split (owner ruling, 2026-10-27)
+
+The owner reviewed the completed walk sheet and ruled that its
+first figures are the **CHIBI form**. The two forms are now
+separated and each completed in its own proportions; the atlas set
+is **three atlases**:
+
+| Atlas | Form | Status |
+|---|---|---|
+| `falk-atlas-64x64-COMPLETE-2026-10-27.png` | Mixed (historical set) | Retained unchanged |
+| `falk-atlas-64x64-FULLSIZE-2026-10-27.png` | Full-size only | NEW — 16/16 cells |
+| `falk-atlas-64x64-CHIBI-2026-10-27.png` | Chibi only | NEW — 16/16 cells |
+
+Plus a full-size walk sheet, `falk-walk-sheet-FULLSIZE-2026-10-27.webp`
+(4 directions × idle + step rows at model-sheet proportions).
+
+**Classification was by eye, backed by measurement** — head share
+(top of figure → neck/scarf line, as % of figure height), recorded
+per cell in the step-8 manifest's `form_split` entry. Measured
+bands: **full-size 18–28%**, **chibi 39–56%** — no overlap. The
+walk sheet's pixel frames measure chibi (idles 39.0–44.5%),
+confirming the owner's ruling; the gap-closure anime down/up steps
+measure full-size-leaning (28.4% / 26.7%) and sit in the full-size
+set. Gaps were filled with new generations (text-only, casual
+outfit, no baked shadows): full-size left/right steps and a
+full-size walk cycle; chibi down/up steps and a chibi six-figure
+sheet (world views, dojo battle front, dojo presentation). All
+passed the identity gate within their form. Two flags ride along,
+recorded in the manifest: the full-size cycle's front/back figures
+are stride poses (labelled as strides, not idles), and the chibi
+front figure grins with teeth. Step 3 and step 8 stand DONE for
+both forms; the canon count stays **8/8**.
