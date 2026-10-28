@@ -1,0 +1,46 @@
+{
+  "pack_format": "mochiichao-reference-pack/v1",
+  "character_id": "kittember",
+  "display_name": "Kittember",
+  "species_role": "Pilot cast; wild population in The Dark Forest (canon)",
+  "signature_move_display": "Fire Stream (already an original name)",
+  "palette_notes": "Charcoal/black body (#404040/#202020 dominant ~76% of opaque pixels) with orange flame accents (#e08000). Measured from the canon cutout, 2026-10-28.",
+  "do_not_change": [
+    "Tail flame present and orange - it is part of the silhouette (canon tail-flame sheet exists)",
+    "Dark body must not be lightened into grey-blue drift",
+    "No baked-in ground shadow in any reference or output"
+  ],
+  "voice_note": "Creatures speak in cries/sounds only - no word dialogue (canon rule).",
+  "views": {
+    "front": {
+      "file": "front.png",
+      "status": "CANON",
+      "source": "~/workspace/mochiichao-show/canon-cutouts/kittember.png (canon cutout of record)",
+      "md5": "ffb60b1cf0cc714cc35eadbf9f839935"
+    },
+    "three_quarter": {
+      "status": "GAP",
+      "note": "No canon 3/4 view exists. Must be produced as an owner-visible sheet step - never silently generated and labelled canon."
+    },
+    "side": {
+      "status": "GAP",
+      "note": "No canon side/profile view exists (same open gate as the Mochiko profile-sheet question). Owner-visible sheet step required."
+    },
+    "back": {
+      "status": "GAP",
+      "note": "No canon back view exists. Owner-visible sheet step required."
+    },
+    "expressions": {
+      "status": "GAP",
+      "note": "No canon expression sheet exists. Owner-visible sheet step required."
+    }
+  },
+  "platform_mapping": {
+    "kling_elements": "front.png uploads as the Element frontal image; 3 supplementary angle slots stay EMPTY until the GAP views are produced (Kling accepts 2-4 images per Element)",
+    "higgsfield_elements": "front.png usable as an @Element reference in Seedance/Cinema Studio today; Soul ID training needs 20+ images - NOT possible from canon today (GAP)",
+    "seedance_references": "front.png counts as 1 of up to 30 image references",
+    "google_flow_ingredients": "front.png usable as 1 of up to 3 Ingredients reference images; also fits Flow Characters",
+    "wan_vace": "front.png is the VACE reference image for the locked workflow (parity/workflow-i2v-locked.json)",
+    "wan_lora": "Training sets exist for wispkin + dorowani only (lora/ in avatar-stack); mochii/gabu/kittember/sproutle = GAP"
+  }
+}
