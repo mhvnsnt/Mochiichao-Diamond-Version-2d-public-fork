@@ -1,0 +1,161 @@
+{
+ "bundle": "garden-complex",
+ "bundleNote": "Worked instance for teardown #7. Every slot below is a canon seed row from src/data/core/encounters.json (via Sideline A's gap-fill extraction), weights and level ranges unchanged; only the container is new. timeOfDay/weather stay null \u2014 canon has not split these tables by time or weather and no split is invented here. habitatClass is filled ONLY where the encounter method itself proves the class (pond surf/fish -> water); meadow habitat classes are owed to the LIVING-WORLD P2 binding build. The third canon seed map, cave-route-01 (punchkid/gearkid/pebblefist/pixilite), is NOT part of the Garden complex and is deliberately not re-homed here.",
+ "areas": [
+  {
+   "areaId": "meadow-route-01",
+   "areaName": "Meadow route \u2014 the Green's wild edge",
+   "showLocation": "the Green",
+   "tables": [
+    {
+     "method": "grass",
+     "slots": [
+      {
+       "habitatClass": null,
+       "maxLevel": 4,
+       "minLevel": 2,
+       "speciesId": "sproutle",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 30
+      },
+      {
+       "habitatClass": null,
+       "maxLevel": 4,
+       "minLevel": 2,
+       "speciesId": "pupbble",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 25
+      },
+      {
+       "habitatClass": null,
+       "maxLevel": 3,
+       "minLevel": 2,
+       "speciesId": "squirmite",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 20
+      },
+      {
+       "habitatClass": null,
+       "maxLevel": 4,
+       "minLevel": 2,
+       "speciesId": "zephling",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 15
+      },
+      {
+       "habitatClass": null,
+       "maxLevel": 5,
+       "minLevel": 3,
+       "speciesId": "kittember",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 10
+      }
+     ]
+    }
+   ],
+   "depthTier": null,
+   "status": "canon seed rows, re-homed verbatim",
+   "notes": null
+  },
+  {
+   "areaId": "pond-route-01",
+   "areaName": "Pond route \u2014 the Pond",
+   "showLocation": "the Pond",
+   "tables": [
+    {
+     "method": "surf",
+     "slots": [
+      {
+       "habitatClass": "water",
+       "maxLevel": 5,
+       "minLevel": 3,
+       "speciesId": "mochii",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 40
+      },
+      {
+       "habitatClass": "water",
+       "maxLevel": 5,
+       "minLevel": 3,
+       "speciesId": "inklet",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 30
+      },
+      {
+       "habitatClass": "water",
+       "maxLevel": 6,
+       "minLevel": 4,
+       "speciesId": "finblade",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 20
+      },
+      {
+       "habitatClass": "water",
+       "maxLevel": 7,
+       "minLevel": 5,
+       "speciesId": "floatcalf",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 10
+      }
+     ]
+    },
+    {
+     "method": "fish",
+     "slots": [
+      {
+       "habitatClass": "water",
+       "maxLevel": 5,
+       "minLevel": 3,
+       "speciesId": "mochii",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 40
+      },
+      {
+       "habitatClass": "water",
+       "maxLevel": 6,
+       "minLevel": 4,
+       "speciesId": "finblade",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 35
+      },
+      {
+       "habitatClass": "water",
+       "maxLevel": 5,
+       "minLevel": 3,
+       "speciesId": "inklet",
+       "status": "canon: encounters.json seed",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": 25
+      }
+     ]
+    }
+   ],
+   "depthTier": null,
+   "status": "canon seed rows, re-homed verbatim",
+   "notes": null
+  }
+ ]
+}
