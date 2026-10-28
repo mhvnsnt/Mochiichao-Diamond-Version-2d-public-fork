@@ -1,5 +1,51 @@
 # WIRE-STATUS — is the show's production stack actually wired?
 
+> **CORRECTION 1 - 2026-10-28 (owner law: "YOU HAVE A
+> BROWSER"; the body below is the 2026-10-28 audit record,
+> kept as written):** the headline's "waiting on the owner's
+> upload session" and gap 1's "The uploads are the owner's
+> browser session - the one step no agent can do for him" are
+> WRONG and are superseded. Owner's words: "anytime something
+> says only the browser can do this you have a browser. You
+> can do it. Forever and always." Muse's browser is signed in
+> to TeraBox and its file picker reads this machine's own
+> disk, so the uploads are Muse's job: checklist items 1-5
+> were dispatched through Muse's browser on 2026-10-28
+> (dialogue kit, FluidR3 and BiRefNet uploaded and verified in
+> `Mochiichao-Staging`; the voice-weights archive is going up
+> part by part, chain in flight; ACE-Step dispatched), and
+> item 6 (Wan masters) goes up the same way once assembled
+> from the Kaggle kit. Full law:
+> `show/production/pipeline/ORCHESTRATOR.md`, "You have a
+> browser law".
+>
+> **CORRECTION 2 - 2026-10-28 (owner grading ruling, after
+> watching the Wan test-1 Wispkin clip):** the section 2 grade
+> line "WIRED AND PROVEN - for motion. Likeness: unproven",
+> together with its note that motion and likeness "are graded
+> separately", is RETIRED. Owner's words: "the character is
+> wrong so it's not a pass." Split grades are over for
+> generated clips: no "motion proven / likeness unproven"
+> partial credit, ever. A clip passes only when the correct
+> character performs the action; motion and frame-difference
+> numbers are diagnostics, never grades. The corrected
+> record: (1) the Wan test-1 Wispkin clip
+> (`show/production/tooling/avatar-stack/rejected-tests/wispkin-wan-test-00001.mp4`)
+> is a **FAIL**. Section 2's "drifted to a realistic 3D skull"
+> is also corrected: frame extraction shows frame 1 is
+> already the wrong image, so the canon reference never
+> anchored that run - there was no drift story, and which
+> image was actually fed is not recoverable from surviving
+> files. (2) The Kaggle Wan backend's honest status is
+> **WIRED, UNPROVEN** until a correct-character clip passes.
+> (3) The Dorowani Water Orb proof job (section 3) is graded
+> under this bar: correct character performing the action, or
+> fail. Standing proof-job requirements from this ruling:
+> every generation run logs its exact input image + hash, and
+> the gate includes a frame-1 check against the fed reference
+> (wrong frame 1 = "reference never anchored" fail, a distinct
+> class from drift).
+
 Audit date: **2026-10-28**. Ordered by Jamar (2026-10-28): the
 episode must run on wired tools only, and he asked for this list
 in the open — what is wired and proven, what is built but never

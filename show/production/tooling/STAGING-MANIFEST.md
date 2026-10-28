@@ -1,5 +1,31 @@
 # STAGING-MANIFEST — every weight the wired stack needs, and where it lives
 
+> **CORRECTION - 2026-10-28 (owner law: "YOU HAVE A BROWSER";
+> the body below is the 2026-10-28 manifest, kept as written):**
+> Every "owner batch" label in the TeraBox columns below
+> (section A "PENDING - owner batch #6" / "PENDING #6",
+> section B "PENDING #6", section C "PENDING - owner batch #4"
+> and "owner batch #5", section D "PENDING - owner batch #2" /
+> "PENDING #2", section E "PENDING - owner batch #3",
+> section G "TeraBox PENDING - owner batch #1"), the Totals
+> row "PREPARED - owner's one upload session", and the closing
+> sentence "waiting on the owner's single upload session" are
+> superseded as to WHO uploads. Owner's words: "anytime
+> something says only the browser can do this you have a
+> browser. You can do it. Forever and always." The batch
+> numbers survive as checklist numbering only; the uploads run
+> through Muse's own signed-in browser, whose file picker
+> reads this machine's own disk. State at correction time:
+> batches #1 (dialogue kit), #3 (BiRefNet) and #5 (FluidR3)
+> are uploaded and verified in the TeraBox folder
+> `Mochiichao-Staging`; #2 (voice weights) is in flight, going
+> up part by part; #4 (ACE-Step) was dispatched 2026-10-28;
+> #6 (Wan masters) has no local files on this VM - it is
+> assembled from the Kaggle kit first and then goes up the
+> same way. Nothing on this list waits on an owner upload
+> session. Full law: `show/production/pipeline/ORCHESTRATOR.md`,
+> "You have a browser law".
+
 Compiled **2026-10-28** for Jamar's order: everything free that
 does what the avatar-scoped tool does gets wired completely and
 staged in the repo AND on TeraBox.

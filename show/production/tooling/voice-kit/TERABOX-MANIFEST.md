@@ -1,5 +1,22 @@
 # TERABOX MANIFEST — voice-kit binary staging
 
+> **CORRECTION - 2026-10-28 (owner law: "YOU HAVE A BROWSER";
+> the body below is the earlier record, kept as written):**
+> The status paragraph's "The binary move joins Jamar's
+> consolidated TeraBox staging session" and the closing
+> "Staging-session instructions (for the consolidated TeraBox
+> session)" framing are superseded. Owner's words: "anytime
+> something says only the browser can do this you have a
+> browser. You can do it. Forever and always." Muse's browser
+> is signed in to TeraBox and its file picker reads this
+> machine's own disk, so the staging session is Muse's to run:
+> the voice-weights upload (this manifest's payload) was
+> dispatched through Muse's browser on 2026-10-28 and is going
+> up part by part, chain in flight. The instructions below are
+> the staging steps for that session - Muse's session, not an
+> owner session. Full law: `show/production/pipeline/ORCHESTRATOR.md`,
+> "You have a browser law".
+
 **Staging rule (owner, standing):** big binaries never sit in repos.
 Weights are staged **once on TeraBox**, hashed, and the repo keeps
 only this manifest + hashes; weights are rationed into working
