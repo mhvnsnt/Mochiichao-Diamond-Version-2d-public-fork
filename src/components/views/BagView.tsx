@@ -3,6 +3,7 @@ import { useGameStore } from '../../store/gameStore';
 import { DATA_CARD_ID } from '../../lib/monster-tamer-systems';
 import { ITEM_ICONS } from '../../lib/uiArt';
 import { MenuHelpLine } from '../game/MenuList';
+import { useMenuLayout } from '../../lib/menuLayoutLive';
 
 /**
  * Bag, v5.2 heal wiring: Mend Patch now actually heals (see Use
@@ -41,6 +42,20 @@ export default function BagView({ onBack }: { onBack: () => void }) {
   const party = useGameStore(s => s.party);
   const updatePartyMember = useGameStore(s => s.updatePartyMember);
   const [selected, setSelected] = useState(0);
+  // Menu-layout live wiring: gen1.bag is a flat list (no pockets in
+  // that gen), later gens group by pocket. Pocket-tab position and
+  // per-pocket cursor come from the editor overrides; per-pocket
+  // cursor defaults on for gen3+ entries (spec) and is a flagged
+  // new cursor model when turned on for gen1/gen2. Items, actions
+  // and counts are unchanged.
+  const bagMenuLayout = useMenuLayout('bag');
+  const bagFlatList = bagMenuLayout.entryId === 'gen1.bag';
+  const bagSideTabs = bagMenuLayout.overrides.tabPosition === 'side';
+  const bagPerPocketCursor = bagMenuLayout.overrides.perPocketCursor ?? (bagMenuLayout.gen >= 3);
+  const [pocketCursors, setPocketCursors] = useState<Record<string, number>>({});
+  const [sidePocket, setSidePocket] = useState<string | null>(null);
+  const selectEntry = (i: number, pocket: string) => { setSelected(i); if (bagPerPocketCursor) setPocketCursors((c) => ({ ...c, [pocket]: i })); };
+  const restorePocketCursor = (pocket: string) => { const i = pocketCursors[pocket]; if (i !== undefined) setSelected(i); };
   const [confirmToss, setConfirmToss] = useState(false);
   const [mendSelect, setMendSelect] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -98,7 +113,7 @@ export default function BagView({ onBack }: { onBack: () => void }) {
   // unchanged; the sparkles below are decorative (aria-hidden,
   // non-interactive) and sit in the screen's padding corners.
   return (
-    <div className="bag-y2k game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]">
+    <div className="bag-y2k game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]" data-menu-layout={bagMenuLayout.entryId}>
       <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 left-3 text-lime-200 text-lg">✦</span>
       <span aria-hidden="true" className="pointer-events-none select-none absolute top-2 right-3 text-yellow-300 text-lg">♥</span>
       <span aria-hidden="true" className="pointer-events-none select-none absolute bottom-2 left-3 text-emerald-200 text-base">★</span>
@@ -113,18 +128,25 @@ export default function BagView({ onBack }: { onBack: () => void }) {
       ) : (
         <div className="flex flex-col flex-1 min-h-0 gap-3">
           <div className="flex-1 overflow-y-auto flex flex-col gap-4 pr-1">
-            {pockets.map(pocket => (
+            {bagSideTabs && !bagFlatList && (
+              <div className="flex flex-wrap gap-2 mb-2">
+                {pockets.map((pocket) => (
+                  <button key={pocket} onClick={() => { setSidePocket(pocket); restorePocketCursor(pocket); }} className={`game-button px-3 py-2 text-sm min-h-[48px] ${(sidePocket ?? pockets[0]) === pocket ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}>{pocket}</button>
+                ))}
+              </div>
+            )}
+            {((bagSideTabs && !bagFlatList ? [sidePocket && pockets.includes(sidePocket) ? sidePocket : pockets[0]] : pockets) as string[]).map(pocket => (
               <div key={pocket}>
-                <h3 className="text-white font-bold mb-2 text-sm">{pocket}</h3>
+                {bagFlatList ? null : (<h3 className="text-white font-bold mb-2 text-sm">{pocket}{bagPerPocketCursor && pocketCursors[pocket] !== undefined ? (<button onClick={() => restorePocketCursor(pocket)} className="ml-2 text-xs text-yellow-300">↩ cursor</button>) : null}</h3>)}
                 <div className="flex flex-col gap-2">
                   {entries.filter(e => e.pocket === pocket).map(entry => {
                     const i = entries.indexOf(entry);
                     return (
                       <button
                         key={entry.id}
-                        onClick={() => setSelected(i)}
-                        onMouseEnter={() => setSelected(i)}
-                        onFocus={() => setSelected(i)}
+                        onClick={() => selectEntry(i, pocket)}
+                        onMouseEnter={() => selectEntry(i, pocket)}
+                        onFocus={() => selectEntry(i, pocket)}
                         className={`game-panel p-3 flex items-center gap-3 text-left min-h-[48px] ${i === selected ? 'ring-2 ring-yellow-300' : 'opacity-80'}`}
                       >
                         <ItemIcon id={entry.id} />

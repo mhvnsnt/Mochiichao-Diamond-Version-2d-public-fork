@@ -14,13 +14,14 @@ export interface MenuListItem {
   action: () => void;
 }
 
-export function MenuList({ items, selected, onSelect }: {
+export function MenuList({ items, selected, onSelect, gapPx }: {
   items: MenuListItem[];
   selected: number;
   onSelect: (index: number) => void;
+  gapPx?: number;
 }) {
   return (
-    <div className="flex flex-col" style={{ gap: '15px' }}>
+    <div className="flex flex-col" style={{ gap: `${gapPx ?? 15}px` }}>
       {items.map((item, i) => (
         <button
           key={item.label}

@@ -8,6 +8,7 @@ import { useMenuSkin, menuSkinVars } from '../../lib/menuSkins';
 import { STORAGE_RULES } from '../../lib/playableWiring';
 import { WALLPAPER_PRESETS, resolveWallpaper, PC_WALLPAPER_UPLOAD_SPEC } from '../../lib/wallpaperCatalogue';
 import { SLOTS_PER_BOX, uncappedBoxCount } from '../../lib/uncappedStorage';
+import { useMenuLayout } from '../../lib/menuLayoutLive';
 
 /**
  * PC storage, v2 structure (pokemon_storage_system_menu.c, structure/
@@ -92,6 +93,14 @@ export default function PcView({ onBack }: { onBack: () => void }) {
   // the root restyle .game-panel frames/text via menuSkins.css; the
   // selected slot wears .skin-selected instead of the yellow ring.
   const skin = useMenuSkin('pc');
+  // Menu-layout live wiring: gen1/gen2 PC is a list, gen3+ is a box
+  // grid (gen3/gen4 fix 5x6 by source; gen5 leaves columns to the
+  // renderer, so the editor's grid-columns override applies there
+  // and in list mode it is ignored). Box-name header and wallpaper
+  // row are editor toggles. Box contents, actions and uncapped
+  // storage are unchanged.
+  const pcMenuLayout = useMenuLayout('pc');
+  const pcListMode = pcMenuLayout.entryId === 'gen1.pc' || pcMenuLayout.entryId === 'gen2.pc';
 
   const boxCount = uncappedBoxCount(pc.length);
   const safeBox = Math.min(box, boxCount - 1);
@@ -125,7 +134,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
   };
 
   return (
-    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]" data-menu-skin={skin?.id} style={menuSkinVars(skin)}>
+    <div className="game-screen flex flex-col p-4 sm:p-6 overflow-hidden bg-[#0b1526]" data-menu-skin={skin?.id} data-menu-layout={pcMenuLayout.entryId} style={menuSkinVars(skin)}>
       <div className="flex justify-between items-center mb-4 shrink-0">
         <h2 className="game-title text-2xl">PC Storage</h2>
         <button onClick={onBack} className="game-button px-4 py-2 min-h-[48px]">Close</button>
@@ -145,7 +154,7 @@ export default function PcView({ onBack }: { onBack: () => void }) {
         ))}
       </div>
       {/* SKELETON wallpaper row: preset select (ids only, no artwork shipped) + phone file upload. */}
-      <div className="game-panel p-3 mb-4 shrink-0 flex flex-wrap items-center gap-2" data-wallpaper={resolveWallpaper(wallpapers[safeBox], safeBox).id}>
+      {pcMenuLayout.overrides.wallpaperRow !== false && (<div className="game-panel p-3 mb-4 shrink-0 flex flex-wrap items-center gap-2" data-wallpaper={resolveWallpaper(wallpapers[safeBox], safeBox).id}>
         <span className="text-sm text-white font-bold">Box {safeBox + 1} wallpaper:</span>
         <select
           aria-label="Box wallpaper preset"
@@ -164,17 +173,17 @@ export default function PcView({ onBack }: { onBack: () => void }) {
         </label>
         {uploadNotice && <span className="text-sm text-amber-300" role="status">{uploadNotice}</span>}
         {resolveWallpaper(wallpapers[safeBox], safeBox).kind === 'upload' && <span className="text-sm text-slate-300">Custom upload for this box.</span>}
-      </div>
+      </div>)}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 overflow-hidden min-h-0">
       {/* Uncapped storage note: boxes are unlimited — a new box appears whenever the current boxes fill. No 24-box / 720-total cap. */}
       <div className="text-sm text-slate-300 shrink-0 col-span-full">Storage is unlimited: {boxCount} {boxCount === 1 ? 'box' : 'boxes'} so far, more appear as needed.</div>
         <div className="overflow-y-auto pr-1">
-          <h3 className="text-white font-bold mb-2">Box {safeBox + 1} ({boxCreatures.length} / {BOX_SIZE})</h3>
+          {pcMenuLayout.overrides.boxHeader !== false && (<h3 className="text-white font-bold mb-2">Box {safeBox + 1} ({boxCreatures.length} / {BOX_SIZE})</h3>)}
           {boxCreatures.length === 0 ? (
             <div className="text-slate-400 text-sm">This box is empty. Extra catches go here automatically.</div>
           ) : (
-            <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+            <div className={pcListMode || pcMenuLayout.overrides.gridColumns ? 'grid gap-2' : 'grid grid-cols-3 sm:grid-cols-5 gap-2'} style={pcListMode ? { gridTemplateColumns: 'minmax(0, 1fr)' } : pcMenuLayout.overrides.gridColumns ? { gridTemplateColumns: `repeat(${pcMenuLayout.overrides.gridColumns}, minmax(0, 1fr))` } : undefined}>
               {boxCreatures.map((m, i) => (
                 <button
                   key={m.id}
