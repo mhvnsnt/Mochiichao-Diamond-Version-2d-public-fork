@@ -1,346 +1,376 @@
 {
- "schema": "mochiichao-show/clip-index/v1",
- "updated": "2026-10-27",
- "note": "Every finished clip and where it is used, both directions (show + game). quality_status is honest by design: clips marked rejected_placeholder were procedural stills composites rejected by Jamar on 2026-10-27 and must NOT ship; they stay indexed so nothing quietly reuses them.",
- "canon_notes": {
-  "dorowani_eyes": "DOROWANI EYE CANON (owner ruling, 2026-10-27): the Dorowani SPECIES' eyes are red + black with NO sclera whites. The avatar/show individual Dorowani (Doro) HAS eye-whites - a kept special-case individual deviation (owner: do not scrap; keep consistent for this individual in every future generation). Other Dorowanis follow the species pattern; same-species individual variation is canon doctrine.",
-  "kittember_stance": "KITTEMBER STANCE DOCTRINE (owner ruling, 2026-10-27, as corrected same day): the Kittember SPECIES default going forward is QUADRUPEDAL. The BIPEDAL Kittember - the grey canon-pass bundles of PR #399 (orb tail) - is a special-case WILD individual: Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. The #389 black quadruped is a special-case DRAFT (species-form quadruped with the wrong tail/design deviations), held unused - it is NOT the wild individual (PR #401's original label was right; an intermediate same-day amendment that swapped the two individuals was itself corrected and reverted)."
- },
- "clips": [
-  {
-   "id": "title-videos-10",
-   "path": "src/assets/title/videos/<species>-title-anim-final.mp4",
-   "species": [
-    "mochii",
-    "dorowani",
-    "gabu",
-    "kittember",
-    "mythar",
-    "razorgater",
-    "sproutle",
-    "tyrage",
-    "wispkin",
-    "yogiferno"
-   ],
-   "spec": "1280x720, 30fps, 6s",
-   "used_by": [
-    "game:title"
-   ],
-   "quality_status": "game_native"
+  "schema": "mochiichao-show/clip-index/v1",
+  "updated": "2026-10-27",
+  "note": "Every finished clip and where it is used, both directions (show + game). quality_status is honest by design: clips marked rejected_placeholder were procedural stills composites rejected by Jamar on 2026-10-27 and must NOT ship; they stay indexed so nothing quietly reuses them.",
+  "canon_notes": {
+    "dorowani_eyes": "DOROWANI EYE CANON (owner ruling, 2026-10-27): the Dorowani SPECIES' eyes are red + black with NO sclera whites. The avatar/show individual Dorowani (Doro) HAS eye-whites - a kept special-case individual deviation (owner: do not scrap; keep consistent for this individual in every future generation). Other Dorowanis follow the species pattern; same-species individual variation is canon doctrine.",
+    "kittember_stance": "KITTEMBER STANCE DOCTRINE (owner ruling, 2026-10-27, as corrected same day): the Kittember SPECIES default going forward is QUADRUPEDAL. The BIPEDAL Kittember - the grey canon-pass bundles of PR #399 (orb tail) - is a special-case WILD individual: Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. The #389 black quadruped is a special-case DRAFT (species-form quadruped with the wrong tail/design deviations), held unused - it is NOT the wild individual (PR #401's original label was right; an intermediate same-day amendment that swapped the two individuals was itself corrected and reverted)."
   },
-  {
-   "id": "show-bundles-pilot-six",
-   "path": "public/assets/show-bundles/<species>/",
-   "species": [
-    "mochii",
-    "dorowani",
-    "gabu",
-    "kittember",
-    "sproutle",
-    "wispkin"
-   ],
-   "spec": "720x720, 8s, 24fps + transparent WebM twins",
-   "used_by": [
-    "show:placeholder_only"
-   ],
-   "quality_status": "rejected_placeholder_do_not_ship"
-  },
-  {
-   "id": "pilot-episode-trailer",
-   "path": "public/assets/show-trailers/mochiichao-pilot-episode-trailer.mp4",
-   "spec": "28s, 720x720",
-   "used_by": [
-    "marketing:placeholder_only"
-   ],
-   "quality_status": "rejected_placeholder_do_not_ship"
-  },
-  {
-   "id": "marketing-trailer-vertical",
-   "path": "public/assets/show-trailers/mochiichao-marketing-trailer-vertical.mp4",
-   "spec": "18s, 720x1280",
-   "used_by": [
-    "marketing:placeholder_only"
-   ],
-   "quality_status": "rejected_placeholder_do_not_ship"
-  },
-  {
-   "id": "dorowani-avatar-stack-set",
-   "character": "dorowani",
-   "source": "Muse avatar full stack (the owner's chosen Doro set - NOT the rejected glossy batch)",
-   "files": "show/assets/animations/dorowani-avatar-stack/ (4 MP4 + 4 transparent WebM twins + poster webp + transparent png + COMPOSITE-PROOF-gate-v4-living.mp4 + COMPOSITE-PROOF-gate-making_something-living.mp4 + COMPOSITE-PROOF-gate-milestone-living-reframed.mp4)",
-   "spec": "720x720, 8s, 24fps; WebM twins VP9 with alpha, derived from the REAL clips by white-field matting (see note)",
-   "quality_status": "production_owner_chosen",
-   "show_use": "Dorowani's animation source for the show (EP04 featured); composite via alpha overlay onto plates - proof: COMPOSITE-PROOF-gate-v4-living.mp4 in the same folder (real idle twin over the CURRENT living Garden Gate background, wind bed carried; frame-verified). COMPOSITE-PROOF-gate-v3.mp4 is SUPERSEDED - it was built on the regressed v1 still plate (owner correction, Current-Version Law)",
-   "note": "CORRECTION 3 (2026-10-27): the MP4s previously on main under these names were the WRONG re-render (idle md5 9deab318...). The 4 MP4s now here are byte-identical to the owner's live avatar clips - idle 7c68c109b0d3f74a718febd19741e1b8, working e81522040074d301028b59ad4bc322c8, making_something 09ace1f3054b9422e3637554928969ec, milestone_level_up edb01f952d417893d4bbf6ccba1df6de - verified by downloading every file back from main and comparing md5. The first correction commit (17dfc9d) was orphaned when the branch head moved mid-flight; the twins/composite deletions (9f3c652) did land. See production log CORRECTION 3. TWINS LANDED 2026-10-27: RVM (Robust Video Matting, ResNet50/MobileNet) was pulled in and MEASURED on these clips and rejected for this material (human-video training; body alpha collapses - belly 0.000, coverage decays over the clip). Twins were produced with white-field matting (show/production/tooling/avatar-stack/white_matte.py: distance-from-white + enclosed-region rescue + white un-premultiply). Verification: belly alpha 0.972, jaw 0.963, background corners 0.0, recomposite-over-white mean abs diff 1.08, bg flicker <= 0.004 mean |dAlpha| per clip. CURRENT-VERSION correction 2026-10-27: v4-living replaces v3 as the composite proof of record. OWNER PAIRING DIRECTION (2026-10-27): idle + making_something pair with the Garden Gate LIVING background (current) - living composites are the pairings of record. working (the 'computer' one) does NOT pair with the Gate - it pairs with an interior/room background; its Gate composite is retired and an interior piece becomes its pairing when marked CURRENT in parts-catalog. milestone pairs REFRAMED on the living background (smaller, lower, star falls through open sky - COMPOSITE-PROOF-gate-milestone-living-reframed.mp4); a night-context living background is its future upgrade. The still-plate variant composites were a regression under the Current-Version Law and were never shipped. CANON (owner, 2026-10-27): the making_something animation is the WATER ORB attack - Dorowani forms a water orb in his hands to hurl/blast it (Rasengan/Kamehameha-class orb charge, Pokemon-style attack animation) for the Mochiichao game + show universe. No orb move exists in src/data/core/moves.json yet (Aqua Shot / Aqua Cannon / Hydro Surge / Aqua Jet are separate moves); the move's game-data entry (stats etc.) is owner-TBD and is NOT invented here - the animation designation is the canon set today.",
-   "canon_names": {
-    "dorowani-making_something.mp4": "WATER ORB - Dorowani's orb-charge attack animation (game + show canon)",
-    "dorowani-making_something.transparent.webm": "WATER ORB - attack animation, alpha twin"
-   }
-  },
-  {
-   "id": "kaggle-wan-test-wispkin-00001",
-   "path": "workspace-local: mochiichao-show/gen-kaggle-tests/wispkin-wan-test-00001.mp4 (NOT shipped to repo)",
-   "species": [
-    "wispkin"
-   ],
-   "spec": "960x2048, 16fps, 49 frames, 3.06s - Wan 2.2 TI2V 5B on Kaggle (2x T4), plain image-to-video, seed 42",
-   "used_by": [],
-   "quality_status": "rejected_likeness_fail",
-   "notes": "PIPELINE PROOF ONLY: Kaggle GPU -> ComfyUI -> Wan 2.2 -> file round-trip works end-to-end. The clip itself FAILS the likeness gate decisively: output is a realistic 3D human skull with faint smoke - no black body, no hands holding the mask, no flame tip, wrong style (photoreal 3D vs flat 2D canon). Triple-lock nodes (IP-Adapter/ControlNet) were installed but NOT engaged in this test workflow. Next test: triple-lock workflow + tighter framing. Generation took ~28.5 min for 49 frames on T4 - production speed constraint on record."
-  },
-  {
-   "id": "garden-gate-living-background-v1",
-   "path": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
-   "spec": "1280x720, 8s, 24fps + wind bed audio",
-   "used_by": [
-    "show:EP01-scene-01-background",
-    "show:composites"
-   ],
-   "quality_status": "current_background_piece",
-   "note": "CURRENT version of the Garden Gate background piece (registered in parts-catalog as garden-gate-background, current_version v2-living). Supersedes the v1 still plate as the standalone background; the still remains the base layer. Ambient layers: CL-1 cloud-shadow drift, leaf drift, pollen; gate swing / grass sway / population crossings are the continuing upgrade path (LIVING-WORLD.md)."
-  },
-  {
-   "id": "gen-retry-2026-10-27-dorowani-idle",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/dorowani-idle/",
-   "character": "dorowani",
-   "variant": "idle",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "PENDING_GATE",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.4162,
-    "silhouette_iou": 0.8846,
-    "rgb_mad_255": 41.355,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
+  "clips": [
+    {
+      "id": "title-videos-10",
+      "path": "src/assets/title/videos/<species>-title-anim-final.mp4",
+      "species": [
+        "mochii",
+        "dorowani",
+        "gabu",
+        "kittember",
+        "mythar",
+        "razorgater",
+        "sproutle",
+        "tyrage",
+        "wispkin",
+        "yogiferno"
+      ],
+      "spec": "1280x720, 30fps, 6s",
+      "used_by": [
+        "game:title"
+      ],
+      "quality_status": "game_native"
+    },
+    {
+      "id": "show-bundles-pilot-six",
+      "path": "public/assets/show-bundles/<species>/",
+      "species": [
+        "mochii",
+        "dorowani",
+        "gabu",
+        "kittember",
+        "sproutle",
+        "wispkin"
+      ],
+      "spec": "720x720, 8s, 24fps + transparent WebM twins",
+      "used_by": [
+        "show:placeholder_only"
+      ],
+      "quality_status": "rejected_placeholder_do_not_ship"
+    },
+    {
+      "id": "pilot-episode-trailer",
+      "path": "public/assets/show-trailers/mochiichao-pilot-episode-trailer.mp4",
+      "spec": "28s, 720x720",
+      "used_by": [
+        "marketing:placeholder_only"
+      ],
+      "quality_status": "rejected_placeholder_do_not_ship"
+    },
+    {
+      "id": "marketing-trailer-vertical",
+      "path": "public/assets/show-trailers/mochiichao-marketing-trailer-vertical.mp4",
+      "spec": "18s, 720x1280",
+      "used_by": [
+        "marketing:placeholder_only"
+      ],
+      "quality_status": "rejected_placeholder_do_not_ship"
+    },
+    {
+      "id": "dorowani-avatar-stack-set",
+      "character": "dorowani",
+      "source": "Muse avatar full stack (the owner's chosen Doro set - NOT the rejected glossy batch)",
+      "files": "show/assets/animations/dorowani-avatar-stack/ (4 MP4 + 4 transparent WebM twins + poster webp + transparent png + COMPOSITE-PROOF-gate-v4-living.mp4 + COMPOSITE-PROOF-gate-making_something-living.mp4 + COMPOSITE-PROOF-gate-milestone-living-reframed.mp4)",
+      "spec": "720x720, 8s, 24fps; WebM twins VP9 with alpha, derived from the REAL clips by white-field matting (see note)",
+      "quality_status": "production_owner_chosen",
+      "show_use": "Dorowani's animation source for the show (EP04 featured); composite via alpha overlay onto plates - proof: COMPOSITE-PROOF-gate-v4-living.mp4 in the same folder (real idle twin over the CURRENT living Garden Gate background, wind bed carried; frame-verified). COMPOSITE-PROOF-gate-v3.mp4 is SUPERSEDED - it was built on the regressed v1 still plate (owner correction, Current-Version Law)",
+      "note": "CORRECTION 3 (2026-10-27): the MP4s previously on main under these names were the WRONG re-render (idle md5 9deab318...). The 4 MP4s now here are byte-identical to the owner's live avatar clips - idle 7c68c109b0d3f74a718febd19741e1b8, working e81522040074d301028b59ad4bc322c8, making_something 09ace1f3054b9422e3637554928969ec, milestone_level_up edb01f952d417893d4bbf6ccba1df6de - verified by downloading every file back from main and comparing md5. The first correction commit (17dfc9d) was orphaned when the branch head moved mid-flight; the twins/composite deletions (9f3c652) did land. See production log CORRECTION 3. TWINS LANDED 2026-10-27: RVM (Robust Video Matting, ResNet50/MobileNet) was pulled in and MEASURED on these clips and rejected for this material (human-video training; body alpha collapses - belly 0.000, coverage decays over the clip). Twins were produced with white-field matting (show/production/tooling/avatar-stack/white_matte.py: distance-from-white + enclosed-region rescue + white un-premultiply). Verification: belly alpha 0.972, jaw 0.963, background corners 0.0, recomposite-over-white mean abs diff 1.08, bg flicker <= 0.004 mean |dAlpha| per clip. CURRENT-VERSION correction 2026-10-27: v4-living replaces v3 as the composite proof of record. OWNER PAIRING DIRECTION (2026-10-27): idle + making_something pair with the Garden Gate LIVING background (current) - living composites are the pairings of record. working (the 'computer' one) does NOT pair with the Gate - it pairs with an interior/room background; its Gate composite is retired and an interior piece becomes its pairing when marked CURRENT in parts-catalog. milestone pairs REFRAMED on the living background (smaller, lower, star falls through open sky - COMPOSITE-PROOF-gate-milestone-living-reframed.mp4); a night-context living background is its future upgrade. The still-plate variant composites were a regression under the Current-Version Law and were never shipped. CANON (owner, 2026-10-27): the making_something animation is the WATER ORB attack - Dorowani forms a water orb in his hands to hurl/blast it (Rasengan/Kamehameha-class orb charge, Pokemon-style attack animation) for the Mochiichao game + show universe. No orb move exists in src/data/core/moves.json yet (Aqua Shot / Aqua Cannon / Hydro Surge / Aqua Jet are separate moves); the move's game-data entry (stats etc.) is owner-TBD and is NOT invented here - the animation designation is the canon set today.",
+      "canon_names": {
+        "dorowani-making_something.mp4": "WATER ORB - Dorowani's orb-charge attack animation (game + show canon)",
+        "dorowani-making_something.transparent.webm": "WATER ORB - attack animation, alpha twin"
+      }
+    },
+    {
+      "id": "kaggle-wan-test-wispkin-00001",
+      "path": "workspace-local: mochiichao-show/gen-kaggle-tests/wispkin-wan-test-00001.mp4 (NOT shipped to repo)",
+      "species": [
+        "wispkin"
+      ],
+      "spec": "960x2048, 16fps, 49 frames, 3.06s - Wan 2.2 TI2V 5B on Kaggle (2x T4), plain image-to-video, seed 42",
+      "used_by": [],
+      "quality_status": "rejected_likeness_fail",
+      "notes": "PIPELINE PROOF ONLY: Kaggle GPU -> ComfyUI -> Wan 2.2 -> file round-trip works end-to-end. The clip itself FAILS the likeness gate decisively: output is a realistic 3D human skull with faint smoke - no black body, no hands holding the mask, no flame tip, wrong style (photoreal 3D vs flat 2D canon). Triple-lock nodes (IP-Adapter/ControlNet) were installed but NOT engaged in this test workflow. Next test: triple-lock workflow + tighter framing. Generation took ~28.5 min for 49 frames on T4 - production speed constraint on record."
+    },
+    {
+      "id": "garden-gate-living-background-v1",
+      "path": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "spec": "1280x720, 8s, 24fps + wind bed audio",
+      "used_by": [
+        "show:EP01-scene-01-background",
+        "show:composites"
+      ],
+      "quality_status": "current_background_piece",
+      "note": "CURRENT version of the Garden Gate background piece (registered in parts-catalog as garden-gate-background, current_version v2-living). Supersedes the v1 still plate as the standalone background; the still remains the base layer. Ambient layers: CL-1 cloud-shadow drift, leaf drift, pollen; gate swing / grass sway / population crossings are the continuing upgrade path (LIVING-WORLD.md)."
+    },
+    {
+      "id": "gen-retry-2026-10-27-dorowani-idle",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/dorowani-idle/",
+      "character": "dorowani",
+      "variant": "idle",
+      "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "PENDING_GATE",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.4162,
+        "silhouette_iou": 0.8846,
+        "rgb_mad_255": 41.355,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "note": "Probe clip of the retry. In the accepted avatar set's own measurement band on the discriminating metrics (IoU 0.885 vs its 0.884 pose-matched; MAD 41.4 vs its 44.9-61.7). Does NOT supersede the production avatar idle in public/assets/show-bundles/dorowani/ \u2014 a second candidate for the same variant slot; registry changes only on a recorded scorer verdict. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+    },
+    {
+      "id": "gen-retry-2026-10-27-dorowani-water_orb",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/dorowani-water_orb/",
+      "character": "dorowani",
+      "variant": "water_orb",
+      "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "PENDING_GATE",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.255,
+        "silhouette_iou": 0.6689,
+        "rgb_mad_255": 76.432,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "note": "WATER ORB, Dorowani's signature attack (canon). Gate frame 96 is the orb-charge FX peak; neutral frame 12: SSIM 0.352 / IoU 0.665 / MAD 70.7. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+    },
+    {
+      "id": "gen-retry-2026-10-27-gabu-tremor",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/gabu-tremor/",
+      "character": "gabu",
+      "variant": "tremor",
+      "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "PENDING_GATE",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.2843,
+        "silhouette_iou": 0.6129,
+        "rgb_mad_255": 87.099,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "note": "TREMOR, Gabu's signature. No back cannons \u2014 not the rejected batch's failure mode. Neutral frame 12: SSIM 0.318 / IoU 0.832 / MAD 70.5. Dust/ground-crack FX at the feet in stomp frames. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+    },
+    {
+      "id": "gen-retry-2026-10-27-kittember-fire_stream",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream/",
+      "character": "kittember",
+      "variant": "fire_stream",
+      "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "unused_draft_special_case",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.3272,
+        "silhouette_iou": 0.5021,
+        "rgb_mad_255": 96.272,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch \u2014 fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-27 (as corrected same day): special-case DRAFT - species-form quadruped with the wrong tail/design deviations; unused draft, NOT the wild individual (the wild individual is the bipedal canon-pass, PR #399)."
+    },
+    {
+      "id": "gen-retry-2026-10-27-sproutle-leaf_blast",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/sproutle-leaf_blast/",
+      "character": "sproutle",
+      "variant": "leaf_blast",
+      "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "PENDING_GATE",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.3754,
+        "silhouette_iou": 0.6743,
+        "rgb_mad_255": 91.426,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "note": "LEAF BLAST, Sproutle's signature. No baked shadow (canon cutout is the cleaned CURRENT sproutle.png). Frame 12: SSIM 0.377 / IoU 0.650 / MAD 84.8. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+    },
+    {
+      "id": "gen-retry-2026-10-27-wispkin-dark_wave",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/wispkin-dark_wave/",
+      "character": "wispkin",
+      "variant": "dark_wave",
+      "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "PENDING_GATE",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.1743,
+        "silhouette_iou": 0.5726,
+        "rgb_mad_255": 105.186,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "note": "DARK WAVE, Wispkin's signature, from the REFERENCE OF RECORD cutout: mask held by both hands, smoke bottom honoured at neutral frames. Gate frame 96 is the pulse peak (character engulfed by its own effect); frame 12: SSIM 0.159 / IoU 0.630 / MAD 96.3. Scorer note: FX includes glowing rune-like glyph graphics at the pulse edge. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+    },
+    {
+      "id": "gen-retry-2026-10-27-kittember-fire_stream-canonpass-tail",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream-canonpass-tail/",
+      "character": "kittember",
+      "variant": "fire_stream",
+      "source": "Muse hosted avatar generator (avatar full stack) - canon-pass regeneration 2026-10-27, owner-directed, from canon cutout; tail = primary form (~75%), mouth = variant (~25%) per owner canon",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "PENDING_GATE",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.3725,
+        "silhouette_iou": 0.5464,
+        "rgb_mad_255": 99.619,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "note": "The bipedal Kittember - special-case wild individual (owner ruling 2026-10-27): Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. Species default is quadrupedal; this bipedal individual is the special case. FIRE STREAM, Kittember's signature - canon-pass TAIL form. Trait check (frames 12/96/180, +60/130/160 for form): coat dark GREY (dark-pixel median RGB 57-58 vs canon 71; #389 black was 38) PASS; upright bipedal throughout PASS; NO white chest patch PASS (a light-grey belly oval is present in every frame - canon coat is solid, scorer flag); ear interiors DARK PASS; eyes BIG, ROUND, forward amber PASS; tail tip ROUND ORANGE ORB PASS at f12/f180 (flame-wreathed at the f96 charge peak); SMOOTH coat PASS. Form: stream fires FROM the tail orb, mouth closed (charge f60, blast f130, dissipating f160) PASS. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.375 / IoU 0.511 / MAD 102.3. Motion evidence: mean frame-diff 4.67 (128px greyscale, all 192 frames). Promotion is a recorded owner/scorer verdict only.",
+      "individual_status": "special_case_wild_individual"
+    },
+    {
+      "id": "gen-retry-2026-10-27-kittember-fire_stream-canonpass-mouth",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream-canonpass-mouth/",
+      "character": "kittember",
+      "variant": "fire_stream",
+      "source": "Muse hosted avatar generator (avatar full stack) - canon-pass regeneration 2026-10-27, owner-directed, from canon cutout; mouth = variant form (~25%), tail = primary form (~75%) per owner canon",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "PENDING_GATE",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.3884,
+        "silhouette_iou": 0.5357,
+        "rgb_mad_255": 97.306,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "note": "The bipedal Kittember - special-case wild individual (owner ruling 2026-10-27): Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. Species default is quadrupedal; this bipedal individual is the special case. FIRE STREAM, Kittember's signature - canon-pass MOUTH form. Trait check (frames 12/96/180): coat dark GREY (dark-pixel median RGB 65 vs canon 71) PASS; upright bipedal throughout PASS; NO white chest patch PASS (same light-grey belly oval flag as the tail variant); ear interiors DARK PASS; eyes amber and forward-facing but NARROWER/SLANTED, not big-round - PARTIAL/FAIL (f12/f96/f180); tail tip is a teardrop FLAME PLUME at f12/f96 and a smoky flame blob at f180, never the round orange orb - FAIL; SMOOTH coat PASS. Form: mouth blast itself is clear at f96, but the variant condition 'orb burning on the tail tip throughout' is NOT met. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.428 / IoU 0.575 / MAD 86.5. Motion evidence: mean frame-diff 1.48 (128px greyscale, all 192 frames; motion concentrated at the blast). Promotion is a recorded owner/scorer verdict only.",
+      "individual_status": "special_case_wild_individual"
+    },
+    {
+      "id": "gen-retry-2026-10-27-wispkin-dark_wave-expanded",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/wispkin-dark_wave-expanded/",
+      "character": "wispkin",
+      "variant": "dark_wave",
+      "source": "Expansion of the PR #415 wideframe generation (no new generation): source canvas widened 608->1000 px and the Dark Wave ring continued into the new side bands by geometry-guided angular texture transfer from the same frame's arcs (deterministic, per-frame). Owner order 2026-10-27: the giant ring stays; expand the canvas so it is not cut off.",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "production_owner_chosen",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.1983,
+        "silhouette_iou": 0.5247,
+        "rgb_mad_255": 97.433,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "framing_verification": {
+        "result": "PASS",
+        "detail": "Same measure as the failed attempts (content = any channel < 235). Expanded raw frames (1000x1280): 0 of 192 frames touch either edge; peak frame e184 margins 59px L / 66px R; ring-phase minimum margins 59/63 px. Normalised 720x720 clip: 0 of 192 touch; peak frame 184 margins 111px L / 117px R; ring-phase minimums 111/115 px. Before: 0px margins, ring clipped in the source. Seam close-ups show the band's core, rims and glyph strokes continuous across both old edge lines; side glyph texture is an angular transfer of the same frame's bottom arc (recorded in the bundle manifest), not recovered pixels."
+      },
+      "note": "DARK WAVE, Wispkin's signature - EXPANSION fix of the wideframe candidate (PR #415 recorded its framing FAIL). The ring performance is the wideframe generation's own, unaltered inside the original frame; only the canvas grew. Promotion is a recorded owner/scorer verdict only. OWNER VERDICT (2026-10-27): APPROVED ('perfect') \u2014 registered CURRENT for the wideframe performance slot, superseding the cropped wideframe candidate. The #389 dark_wave bundle is NOT affected: it stands while its own expansion is produced; its replacement decision comes when the owner sees that candidate.",
+      "current_for_slot": "wideframe performance \u2014 Wispkin Dark Wave (show)",
+      "supersedes": "cropped wideframe candidate (PR #415): closed as superseded and DELETED on owner order (2026-10-27) \u2014 it never landed on main, so the deletion executes as the PR closure; nothing on main is removed",
+      "owner_verdict": "APPROVED \u2014 'perfect' (owner, 2026-10-27)"
+    },
+    {
+      "id": "gen-retry-2026-10-27-wispkin-dark_wave-389-fixed",
+      "path": "public/assets/show-bundles/gen-retry-2026-10-27/wispkin-dark_wave-389-fixed/",
+      "character": "wispkin",
+      "variant": "dark_wave",
+      "source": "Framing fix of the PR #389 generation itself (no new generation): the raw canvas was extended +390 px top and bottom and the vortex continued into the new bands by radial continuation + exponential fade from the same frame; performance inside the original frame pixel-untouched. Owner order 2026-10-27: fix the #389 clip's framing however it takes.",
+      "spec": "720x720, 8s, 24fps + transparent WebM twin",
+      "used_by": [
+        "show:ep01_candidate"
+      ],
+      "quality_status": "PENDING_GATE",
+      "gate": {
+        "verdict": "FAIL",
+        "recommendation_only": true,
+        "frame": "middle (96)",
+        "ssim_union": 0.1758,
+        "silhouette_iou": 0.5898,
+        "rgb_mad_255": 104.363,
+        "thresholds": {
+          "ssim_min": 0.5,
+          "silhouette_iou_min": 0.55,
+          "rgb_mad_255_max": 40.0
+        }
+      },
+      "framing_verification": {
+        "result": "PASS",
+        "detail": "Same measure as the failed attempts (content = any channel < 235), run on the finished normalised 720x720 clip. BEFORE (delivered #389 bundle): the vortex never approaches the sides (content x 184..535, min side margin 184 px) but runs off the TOP and BOTTOM in frames 153-192 (40 frames, peak margins 0/0 on that axis; peak frame 184 top edge row carries 149 px of strong dark material). The ellipse-annulus fit of the PR #423 method degenerates on this performance (a stable ~170 delivered px, b -> infinity): the swirl is a near-vertical spiral column, not a closable ellipse ring, so no closure was fabricated. Fix: raw canvas extended 1280 -> 2060 px vertically; each band pixel samples where its ray from the vortex centre crosses the old edge, exponentially faded to white (radial dissolve); 12 px feather inside each old edge. AFTER: 0 of 192 frames touch any edge; minimum margins T 73 / B 73 / L 253 / R 254 px; peak frame 184 margins 73 T / 73 B. Seam close-ups at both old edge lines (frames 184, 160) show no guillotine line or pattern break; recorded caveat in the bundle manifest: the continuation is a radial dissolve, not recovered arc curvature."
+      },
+      "note": "DARK WAVE, Wispkin's signature - FRAMING FIX of the PR #389 performance (the earlier expansion attempt stopped on the raw portrait's geometry; measured on the delivered framing, the overflow is the top/bottom axis only, frames 153-192, and is fixed here). Supersedes the wispkin-expanded-389 stop record. #389 remains the standing candidate until the owner scores this one. Promotion is a recorded owner/scorer verdict only."
     }
-   },
-   "note": "Probe clip of the retry. In the accepted avatar set's own measurement band on the discriminating metrics (IoU 0.885 vs its 0.884 pose-matched; MAD 41.4 vs its 44.9-61.7). Does NOT supersede the production avatar idle in public/assets/show-bundles/dorowani/ \u2014 a second candidate for the same variant slot; registry changes only on a recorded scorer verdict. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
-  },
-  {
-   "id": "gen-retry-2026-10-27-dorowani-water_orb",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/dorowani-water_orb/",
-   "character": "dorowani",
-   "variant": "water_orb",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "PENDING_GATE",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.255,
-    "silhouette_iou": 0.6689,
-    "rgb_mad_255": 76.432,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
-    }
-   },
-   "note": "WATER ORB, Dorowani's signature attack (canon). Gate frame 96 is the orb-charge FX peak; neutral frame 12: SSIM 0.352 / IoU 0.665 / MAD 70.7. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
-  },
-  {
-   "id": "gen-retry-2026-10-27-gabu-tremor",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/gabu-tremor/",
-   "character": "gabu",
-   "variant": "tremor",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "PENDING_GATE",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.2843,
-    "silhouette_iou": 0.6129,
-    "rgb_mad_255": 87.099,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
-    }
-   },
-   "note": "TREMOR, Gabu's signature. No back cannons \u2014 not the rejected batch's failure mode. Neutral frame 12: SSIM 0.318 / IoU 0.832 / MAD 70.5. Dust/ground-crack FX at the feet in stomp frames. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
-  },
-  {
-   "id": "gen-retry-2026-10-27-kittember-fire_stream",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream/",
-   "character": "kittember",
-   "variant": "fire_stream",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "unused_draft_special_case",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.3272,
-    "silhouette_iou": 0.5021,
-    "rgb_mad_255": 96.272,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
-    }
-   },
-   "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch \u2014 fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-27 (as corrected same day): special-case DRAFT - species-form quadruped with the wrong tail/design deviations; unused draft, NOT the wild individual (the wild individual is the bipedal canon-pass, PR #399)."
-  },
-  {
-   "id": "gen-retry-2026-10-27-sproutle-leaf_blast",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/sproutle-leaf_blast/",
-   "character": "sproutle",
-   "variant": "leaf_blast",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "PENDING_GATE",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.3754,
-    "silhouette_iou": 0.6743,
-    "rgb_mad_255": 91.426,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
-    }
-   },
-   "note": "LEAF BLAST, Sproutle's signature. No baked shadow (canon cutout is the cleaned CURRENT sproutle.png). Frame 12: SSIM 0.377 / IoU 0.650 / MAD 84.8. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
-  },
-  {
-   "id": "gen-retry-2026-10-27-wispkin-dark_wave",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/wispkin-dark_wave/",
-   "character": "wispkin",
-   "variant": "dark_wave",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "PENDING_GATE",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.1743,
-    "silhouette_iou": 0.5726,
-    "rgb_mad_255": 105.186,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
-    }
-   },
-   "note": "DARK WAVE, Wispkin's signature, from the REFERENCE OF RECORD cutout: mask held by both hands, smoke bottom honoured at neutral frames. Gate frame 96 is the pulse peak (character engulfed by its own effect); frame 12: SSIM 0.159 / IoU 0.630 / MAD 96.3. Scorer note: FX includes glowing rune-like glyph graphics at the pulse edge. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
-  },
-  {
-   "id": "gen-retry-2026-10-27-kittember-fire_stream-canonpass-tail",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream-canonpass-tail/",
-   "character": "kittember",
-   "variant": "fire_stream",
-   "source": "Muse hosted avatar generator (avatar full stack) - canon-pass regeneration 2026-10-27, owner-directed, from canon cutout; tail = primary form (~75%), mouth = variant (~25%) per owner canon",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "PENDING_GATE",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.3725,
-    "silhouette_iou": 0.5464,
-    "rgb_mad_255": 99.619,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
-    }
-   },
-   "note": "The bipedal Kittember - special-case wild individual (owner ruling 2026-10-27): Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. Species default is quadrupedal; this bipedal individual is the special case. FIRE STREAM, Kittember's signature - canon-pass TAIL form. Trait check (frames 12/96/180, +60/130/160 for form): coat dark GREY (dark-pixel median RGB 57-58 vs canon 71; #389 black was 38) PASS; upright bipedal throughout PASS; NO white chest patch PASS (a light-grey belly oval is present in every frame - canon coat is solid, scorer flag); ear interiors DARK PASS; eyes BIG, ROUND, forward amber PASS; tail tip ROUND ORANGE ORB PASS at f12/f180 (flame-wreathed at the f96 charge peak); SMOOTH coat PASS. Form: stream fires FROM the tail orb, mouth closed (charge f60, blast f130, dissipating f160) PASS. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.375 / IoU 0.511 / MAD 102.3. Motion evidence: mean frame-diff 4.67 (128px greyscale, all 192 frames). Promotion is a recorded owner/scorer verdict only.",
-   "individual_status": "special_case_wild_individual"
-  },
-  {
-   "id": "gen-retry-2026-10-27-kittember-fire_stream-canonpass-mouth",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream-canonpass-mouth/",
-   "character": "kittember",
-   "variant": "fire_stream",
-   "source": "Muse hosted avatar generator (avatar full stack) - canon-pass regeneration 2026-10-27, owner-directed, from canon cutout; mouth = variant form (~25%), tail = primary form (~75%) per owner canon",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "PENDING_GATE",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.3884,
-    "silhouette_iou": 0.5357,
-    "rgb_mad_255": 97.306,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
-    }
-   },
-   "note": "The bipedal Kittember - special-case wild individual (owner ruling 2026-10-27): Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. Species default is quadrupedal; this bipedal individual is the special case. FIRE STREAM, Kittember's signature - canon-pass MOUTH form. Trait check (frames 12/96/180): coat dark GREY (dark-pixel median RGB 65 vs canon 71) PASS; upright bipedal throughout PASS; NO white chest patch PASS (same light-grey belly oval flag as the tail variant); ear interiors DARK PASS; eyes amber and forward-facing but NARROWER/SLANTED, not big-round - PARTIAL/FAIL (f12/f96/f180); tail tip is a teardrop FLAME PLUME at f12/f96 and a smoky flame blob at f180, never the round orange orb - FAIL; SMOOTH coat PASS. Form: mouth blast itself is clear at f96, but the variant condition 'orb burning on the tail tip throughout' is NOT met. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.428 / IoU 0.575 / MAD 86.5. Motion evidence: mean frame-diff 1.48 (128px greyscale, all 192 frames; motion concentrated at the blast). Promotion is a recorded owner/scorer verdict only.",
-   "individual_status": "special_case_wild_individual"
-  },
-  {
-   "id": "gen-retry-2026-10-27-wispkin-dark_wave-expanded",
-   "path": "public/assets/show-bundles/gen-retry-2026-10-27/wispkin-dark_wave-expanded/",
-   "character": "wispkin",
-   "variant": "dark_wave",
-   "source": "Expansion of the PR #415 wideframe generation (no new generation): source canvas widened 608->1000 px and the Dark Wave ring continued into the new side bands by geometry-guided angular texture transfer from the same frame's arcs (deterministic, per-frame). Owner order 2026-10-27: the giant ring stays; expand the canvas so it is not cut off.",
-   "spec": "720x720, 8s, 24fps + transparent WebM twin",
-   "used_by": [
-    "show:ep01_candidate"
-   ],
-   "quality_status": "production_owner_chosen",
-   "gate": {
-    "verdict": "FAIL",
-    "recommendation_only": true,
-    "frame": "middle (96)",
-    "ssim_union": 0.1983,
-    "silhouette_iou": 0.5247,
-    "rgb_mad_255": 97.433,
-    "thresholds": {
-     "ssim_min": 0.5,
-     "silhouette_iou_min": 0.55,
-     "rgb_mad_255_max": 40.0
-    }
-   },
-   "framing_verification": {
-    "result": "PASS",
-    "detail": "Same measure as the failed attempts (content = any channel < 235). Expanded raw frames (1000x1280): 0 of 192 frames touch either edge; peak frame e184 margins 59px L / 66px R; ring-phase minimum margins 59/63 px. Normalised 720x720 clip: 0 of 192 touch; peak frame 184 margins 111px L / 117px R; ring-phase minimums 111/115 px. Before: 0px margins, ring clipped in the source. Seam close-ups show the band's core, rims and glyph strokes continuous across both old edge lines; side glyph texture is an angular transfer of the same frame's bottom arc (recorded in the bundle manifest), not recovered pixels."
-   },
-   "note": "DARK WAVE, Wispkin's signature - EXPANSION fix of the wideframe candidate (PR #415 recorded its framing FAIL). The ring performance is the wideframe generation's own, unaltered inside the original frame; only the canvas grew. Promotion is a recorded owner/scorer verdict only. OWNER VERDICT (2026-10-27): APPROVED ('perfect') \u2014 registered CURRENT for the wideframe performance slot, superseding the cropped wideframe candidate. The #389 dark_wave bundle is NOT affected: it stands while its own expansion is produced; its replacement decision comes when the owner sees that candidate.",
-   "current_for_slot": "wideframe performance \u2014 Wispkin Dark Wave (show)",
-   "supersedes": "cropped wideframe candidate (PR #415): closed as superseded and DELETED on owner order (2026-10-27) \u2014 it never landed on main, so the deletion executes as the PR closure; nothing on main is removed",
-   "owner_verdict": "APPROVED \u2014 'perfect' (owner, 2026-10-27)"
-  }
- ]
+  ]
 }
