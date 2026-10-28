@@ -119,6 +119,13 @@
             }
           },
           "additionalProperties": true
+        },
+        "ambush": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "description": "#209 ambush eligibility slot (proposed by List 22 #209, landed here citing it, on the #158 horde precedent): null/absent = the table never ambushes. No table gains the slot's contents in this landing."
         }
       },
       "required": [

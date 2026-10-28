@@ -144,3 +144,5 @@ values at each lock (data-lane work) · whether a
 lock can ever be revised (proposed: numbers are
 permanent; a revision would be an owner ruling, not
 a procedure this package contains).
+
+**Presentation rule (owner numbering ruling, cited by List 22 #207 at its landing, 2026-10-27):** locked-but-undiscovered species appear as SILHOUETTES in the Mochiioteca until discovered. Lock state is global; discovery visibility is per-Ranger — two axes, one derivation (#207/#198), wired separately.

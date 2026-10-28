@@ -85,3 +85,5 @@ vertical-safe variants (production call per piece) ·
 keyart composition rules (the brand guide's logo/type
 chapter is OPEN in #74 and stays the authority when it
 lands — this spec does not pre-empt it).
+
+**PROPOSAL from List 22 #208 (registered at its landing, 2026-10-27):** the unnumbered-headline sentence from 208-ROSTER-AUDIT.md is proposed for this file's promo rules. Until accepted here it is not a rule; this file's currency gate is unchanged.

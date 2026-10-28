@@ -116,3 +116,5 @@ proposed), contest rewards via #20/#104; angling join
   no record, and no contest can be instanced until the
   height/weight TBD closes in the data lane. This
   package is the shape waiting for that number.
+
+**PROPOSAL from List 22 #214 (registered at its landing, 2026-10-27):** the wild size derivation in 214-WILD-SIZE-DERIVATION.md is proposed into this file's measurement-dependency slot. Until accepted here, the dependency stays registered OPEN and the derivation is not described as landed. No species record gains a base measurement from it.

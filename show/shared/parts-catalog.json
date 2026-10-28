@@ -967,6 +967,73 @@
      "extends": "revival at AEON'S LAB (correction applied); status value proposed to #44's home (not located \u2014 recorded in the fragment)"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list22-systems",
+   "type": "systems-index",
+   "about": "List 22 teardown systems (items 207-216), landed 2026-10-27. #211's game side is superseded by the owner's release-return ruling (note on the file); its show side stands.",
+   "items": [
+    {
+     "n": 207,
+     "name": "Mochiioteca discovery states & reveal",
+     "home": "show/production/species-data/207-MOCHIIOTECA-DISCOVERY-STATES.md",
+     "extends": "aligns with #197/#198 (verified in the link check): one derivation, silhouettes for locked-but-undiscovered"
+    },
+    {
+     "n": 208,
+     "name": "Roster audit & gap report",
+     "home": "src/data/core/docs/208-ROSTER-AUDIT.md",
+     "extends": "first run attached at show/production/species-data-system/208-ROSTER-AUDIT-RUN-2026-10-27.md"
+    },
+    {
+     "n": 209,
+     "name": "Ambush encounters",
+     "home": "show/production/world-systems/209-AMBUSH-ENCOUNTERS.md",
+     "extends": "ambush slot in #7's spawn schema (contents nowhere)"
+    },
+    {
+     "n": 210,
+     "name": "Field duels",
+     "home": "show/production/battle/210-FIELD-DUELS.md",
+     "extends": "honour occasion PROPOSED to #104; message class PROPOSED to #90"
+    },
+    {
+     "n": 211,
+     "name": "Release & farewell presentation",
+     "home": "show/production/211-RELEASE-FAREWELL.md",
+     "extends": "game side SUPERSEDED by the release-return ruling (note on file; revision rides List 28); show side stands; #106 untouched"
+    },
+    {
+     "n": 212,
+     "name": "Garden visitor system",
+     "home": "show/production/world-systems/212-GARDEN-VISITORS.md",
+     "extends": "no-writes audited: a full visit cycle writes nothing to kept bits, records, or locations"
+    },
+    {
+     "n": 213,
+     "name": "Fragment case presentation",
+     "home": "show/production/world-systems/213-FRAGMENT-CASE-PRESENTATION.md",
+     "extends": "annex beside #98; its physical-design slot carried verbatim, untouched"
+    },
+    {
+     "n": 214,
+     "name": "Wild size derivation",
+     "home": "show/production/world-systems/214-WILD-SIZE-DERIVATION.md",
+     "extends": "derivation PROPOSED into #161's dependency slot"
+    },
+    {
+     "n": 215,
+     "name": "Regional ambient beds",
+     "home": "show/production/world-systems/215-REGIONAL-AMBIENT-BEDS.md",
+     "extends": "records joined to #142's climate records; Regions 2-5 layer maps empty where their climates are open; no stem moved"
+    },
+    {
+     "n": 216,
+     "name": "Completion ceremony",
+     "home": "show/production/world-systems/216-COMPLETION-CEREMONY.md",
+     "extends": "ceremony slot PROPOSED into #126's home"
+    }
+   ]
   }
  ]
 }
