@@ -1031,3 +1031,19 @@ World-systems teardown landed per its STAGING.md: six docs at show/production/wo
 ## CORRECTION - KITTEMBER STANCE DOCTRINE + #401 LABEL SUPERSEDED (owner ruling, 2026-10-27)
 
 Owner ruling superseding the unused-draft ruling recorded by PR #401: the PR #389 Kittember is NOT unused. Final structure: (1) the Kittember SPECIES DEFAULT going forward is QUADRUPEDAL; (2) the canon-pass grey upright (PR #399 tail/mouth bundles) is THE BIPEDAL KITTEMBER - the canon character - and the registry now marks it as such (clip-index notes + canonpass manifest character_form fields + cast.json stance_doctrine); (3) the #389 black quadruped is a special-case WILD individual (male) who is USED: Mochiko's first wild Kittember encounter (mysterious stare-down in the woods, disappears, reappears, battle + capture, joins the team). Its labels are corrected by this follow-up: quality_status unused_draft_special_case -> special_case_wild_individual in its bundle manifest and its clip-index entry, with the arc carried in the status/note text. Stance doctrine also recorded in clip-index canon_notes.kittember_stance. The canon-pass bundles remain PENDING_GATE candidates - identity is now ruled, promotion still awaits the owner's scorer verdict. Landed by the lock-everything wave as the #401 correction follow-up.
+
+## FALK — DESIGN LOCKED + WARDROBE RULING (2026-10-27)
+
+Owner verdict on the Human Character Design Lane's Wave-1 candidates:
+the design is **confirmed as-is** (a considered cream-to-red jacket
+swap was rejected by the owner; colours unchanged). **Wardrobe
+ruling:** the three candidates are the same man in three canon
+outfits — A (flight jacket) = **CASUAL**, B (falconry glove + vest) =
+**FIELD**, C (calling pose, deep teal jacket + long scarf) = **DOJO**
+outfit. None is superseded; all three are kept with those scene
+roles. Completion set built under the 8-step standard: **7/8 steps
+complete, step 3 (walk) partial** — down/up step frames were not
+produced and are recorded missing in the manifest, not fabricated.
+Canon record: `docs/human-characters/FALK-CANON-RECORD-2026-10-27.md`;
+model sheet (casual outfit) lands with it in this PR; the full
+completion set is staged in the design-lane workspace.
