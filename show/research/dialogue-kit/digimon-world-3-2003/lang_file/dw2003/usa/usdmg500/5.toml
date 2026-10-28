@@ -1,0 +1,12 @@
+strings = [
+	"",
+	"[name]Numemon[name]We should be\nfine here.[pause]",
+	"[name][player_name][name]Hey, thanks![pause][clear]But what is with \nthe people of \nByakko City?[pause][clear]Their Leader lied\nand dropped me into\nthe basement.[pause]",
+	"[name]Numemon[name]The Leader and\neveryone else\nare all fakes![pause]",
+	"[name][player_name][name]What!? Then\nwho were \nthose guys?[pause]",
+	"[name]Numemon[name]That doesn't concern\nyou![pause][clear]If you want to meet the \nreal Leader, then go \nto the Mobius Desert.[pause][clear]He's in the Mirage Tower\nbeyond the desert.[pause]",
+	"[name][player_name][name]He-hey \nhold on!\nWhat's going on?[pause]",
+	"[name]Numemon[name]I can't tell you \nanything more![pause][clear]Don't go near \nByakko City \nanymore![pause]",
+	"[name][player_name][name]...oh, all right.\nSee ya![pause]",
+	"[name][player_name][name]All right then. Let's\nfind the real Leader \nand talk to him![pause]",
+]

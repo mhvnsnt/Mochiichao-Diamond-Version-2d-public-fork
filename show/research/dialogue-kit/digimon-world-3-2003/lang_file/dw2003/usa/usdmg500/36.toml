@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name][player_name][name]Yeah, that's \nright. Come on,\nlet's fight![pause]",
+	"[name]Zanbamon[name]You're no match \nfor me![pause]",
+	"[name][player_name][name]...oh, you're afraid\nyou're gonna lose![pause]",
+	"[name]Zanbamon[name]Wha-what?!\nThat's not true![pause][clear]All right! \nIf you want it, \nI'll show you![pause]",
+]

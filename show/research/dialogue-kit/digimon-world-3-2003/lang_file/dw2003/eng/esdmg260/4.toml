@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]Mr. Smith[name]Now's your chance![pause][clear]Finally, our main item![pause][clear]Hazard Shield, coveted \nby all members![pause][clear]The Guilmon exclusive \nshield will start at\n400 BIT![pause]",
+	"[name]Dealer Abel[name]500 BIT![pause]",
+	"[name]Chief Milly[name]600 BIT![pause]",
+	"[name]RPG Fan Masao[name]700 BIT![pause]",
+	"[name][player_name][name]Hmm... 800 BIT\n...hmmm...[pause]",
+]

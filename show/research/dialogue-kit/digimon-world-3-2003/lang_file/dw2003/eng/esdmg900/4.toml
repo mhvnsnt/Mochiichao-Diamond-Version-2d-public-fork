@@ -1,0 +1,9 @@
+strings = [
+	"",
+	"[name][player_name][name]So,\nthis is the Arena.[pause][clear]I wonder which guy's\nmy opponent? I'm\nready![pause]",
+	"[name]Kurt[name]Hey!\n[player_name2]![pause][clear]I knew you'd\ngo all the way![pause]",
+	"[name][player_name][name]Huh?\nKurt?[pause][clear]Don't tell me\nyou're the\nstrongest tamer![pause]",
+	"[name]Kurt[name]That's right!\nI'm glad to be facing\nyou here. I've always[pause][clear]wanted to fight you\nall-out![pause]",
+	"[name][player_name][name]I've felt the same!\nThere's no worthier\nopponent than you![pause]",
+	"[name]Kurt[name]Ha ha! I'm going\nto enjoy this![pause][clear]Let the fun\nbegin! Don't hold\nback![pause]",
+]

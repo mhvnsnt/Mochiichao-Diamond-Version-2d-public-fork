@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name][player_name][name]Sure, I'll \nfight you![pause]",
+	"[name]BK WarGreymon[name]You seem to \nhave guts![pause]",
+	"[name][player_name][name]Come on.\nI'll show you \nmy powers![pause]",
+	"[name]BK WarGreymon[name]Very well.\nLet's begin![pause]",
+]

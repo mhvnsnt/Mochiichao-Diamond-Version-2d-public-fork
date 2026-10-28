@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name][player_name][name]Hey, do you \nknow where \nNumemon is?[pause]",
+	"[name]HiAndromon[name]Numemon?\nWhat do you want \nwith him?[pause]",
+	"[name][player_name][name]There's something I \nreally have to ask. \nCome on, tell me![pause]",
+	"[name]HiAndromon[name]I know where he is, \nbut I can't tell you \nthat easily.[pause][clear]Beyond this point, \nonly the strong may \nenter.[pause][clear]If you still want to \nsee him, then defeat \nme first.[pause]",
+]

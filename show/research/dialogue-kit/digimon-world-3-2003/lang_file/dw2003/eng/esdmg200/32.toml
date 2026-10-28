@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name][player_name][name]I'm going to \nget that\nLucky Mouse![pause]",
+	"[name]Kail[name]Sorry. I just\nremembered I've\ngot to go...[pause]",
+	"[name][player_name][name]...Huh?\nWhat's up with Kail?[pause][clear]Oh, well. I've got\nDigimon that I can\ncount on![pause][clear]OK, guys! We're going\nto West Sector![pause]",
+]

@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name]Dark Master[name]You're pretty good.\nI'm slightly \nbummed...[pause][clear]...but you won \nagainst me. I'll give\nyou this, so take it.[pause]",
+	"[name][player_name][name]Yeah! I got\nan EXP \nAdaptor![pause]",
+	"[name]Dark Master[name]...You can\nbecome a great \ntamer...[pause][clear]...good luck.[pause]",
+]

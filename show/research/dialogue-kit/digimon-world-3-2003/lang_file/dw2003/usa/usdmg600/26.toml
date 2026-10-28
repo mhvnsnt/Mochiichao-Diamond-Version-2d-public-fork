@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]You see that!\nDon't mess with \nme![pause][clear]huh? \nIs this...?[pause]",
+	"[name][player_name][name]Yeah! I got the \nWhite ID Pass![pause][clear]One left to go. \nLet's hurry![pause]",
+]

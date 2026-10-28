@@ -1,0 +1,39 @@
+GAME: Digimon World (PS1, 1999/2000)
+SERIES FOLDER: digimon-world-1/
+USE: REFERENCE ONLY — structure/pacing/coverage template material for an original
+monster-tamer project. Never copy this text into any shipped work.
+
+SOURCE REPO: https://github.com/jype0/dw_decomp
+COMMIT (git clone --depth 1, HEAD at pull time, 2026-10-27): aaf69a4491cbf275ffd24df19fe78010151c10f2
+AUTHORS: jype0 (Pekka Jylhä-Ollila, maintainer) and contributors; symbols/reverse
+engineering credited in-repo to SydMontague (DW1-SydPatches / DW1-Code).
+
+STATED PROVENANCE (from the repo itself):
+- README: "A work in progress decompilation of Digimon World for PS1" — a matching
+  decompilation: the build dumps the original PSX Digimon World (USA) ISO, disassembles
+  the original binaries, and rebuilds byte-identical binaries (make compare).
+- The text/ tree holds the game's string tables in YAML, one entry per game string with
+  per-release language variants (ja / en_us / en_eu). tools/gen_text.py converts each
+  text/<dir>/<name>.yaml into a generated C header (build/<release>/psx/generated/text/)
+  that the decompiled C includes — i.e. these YAMLs ARE the extracted game text, in the
+  form the matching build consumes.
+LICENCE (repo LICENSE file): MIT License, Copyright (c) 2026 jype.
+
+WHAT WAS EXTRACTED / COPIED HERE:
+- The repo's complete text/ directory, structure preserved (text/btl, text/fish,
+  text/kar, text/main, text/shop, text/std, text/trn, text/vs).
+- Content: executable string tables — item names/descriptions (main/item.yaml, the
+  largest file), menus/UI, map names, battle messages and command shouts, script-system
+  common strings (main/script_common.yaml), fishing, curling (kar), shop, training,
+  versus mode.
+- COVERAGE LIMIT (important): DW1's per-map NPC/story dialogue lives in the game's
+  per-map script binaries, NOT in these executable string tables, and is not in this
+  bank. This is a UI/item/system-text bank, not a full dialogue dump.
+- text/example.yaml is the gen_text.py tool's documented EXAMPLE file (synthetic
+  greeting/label examples), not game text; it is kept for structure reference and
+  counted separately below.
+
+MEASUREMENT (stat summing over the copied files, PROVENANCE.txt itself excluded):
+- All copied files: 25 files, 144,301 bytes
+- Game-text YAMLs only (excluding text/example.yaml): 24 files, 142,050 bytes
+- Copy verified byte-identical to the clone (md5 spot-check: text/main/item.yaml).

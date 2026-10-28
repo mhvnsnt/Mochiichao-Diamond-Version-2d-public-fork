@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name]Metal Soldier[name]Intruder Alert!\nIntruder Alert![pause][clear]Removing them from \nthe premises now![pause]",
+	"[name][player_name][name]Yeah, come on!\nI'm gonna kick \nyour butt![pause]",
+]

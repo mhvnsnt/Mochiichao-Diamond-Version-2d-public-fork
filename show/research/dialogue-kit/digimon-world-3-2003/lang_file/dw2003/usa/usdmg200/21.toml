@@ -1,0 +1,12 @@
+strings = [
+	"",
+	"[name]Mystery Player[name]Hey! Wait up,\nkid![pause]",
+	"[name][player_name][name]Are you\ntalking to\nme?[pause]",
+	"[name]Mystery Player[name]Of course!\nI mean you![pause][clear]You're [player_name2],\nwho beat Seiryu\nLeader, aren't you?[pause]",
+	"[name][player_name][name]Yeah...and you\nare...?[pause]",
+	"[name]Keith[name]My name is Keith, and\nyou better remember \nmy name, kid![pause][clear]I'm the one that's \ngoing to win the\ntournament![pause]",
+	"[name][player_name][name]Oh yeah? We'll\njust have to wait\nand see![pause]",
+	"[name]Keith[name]Ha ha ha, I see!\nThen you want to\nbattle with me?[pause]",
+	"[name][player_name][name]Go for it![pause]",
+	"[name]Keith[name]Sorry, but I'm\nnot going to pull\nany punches![pause]",
+]

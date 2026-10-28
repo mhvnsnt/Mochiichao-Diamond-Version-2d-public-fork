@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]Qing Long Chief[name]Comrade! Let me\nwelcome you![pause]",
+	"[name][player_name][name]Qing Long Chief, \nwhere is the Digi-\nEgg of Knowledge?[pause]",
+	"[name]Qing Long Chief[name]I don't know that either,\nbut why are you asking?[pause][clear]You are not one of us![pause]",
+	"[name][player_name][name]And if I'm not,\nwhat are you\ngoing to do?[pause]",
+	"[name]Qing Long Chief[name]I'll capture \nyou like the \nothers![pause]",
+]

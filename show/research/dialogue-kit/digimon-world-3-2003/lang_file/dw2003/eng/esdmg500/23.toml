@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]OK, I found \nyou![pause][clear]I'm not going to\nlet you get \naway this time![pause]",
+	"[name]Numemon[name]You should\njust give up![pause]",
+]

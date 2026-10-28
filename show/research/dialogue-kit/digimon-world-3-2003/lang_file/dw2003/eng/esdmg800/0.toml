@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]Huh? There's  \nanother button.[pause][clear]What should I \ndo? Oh, well, \nlet's push it![pause]",
+	"[name][player_name][name]Hmmm, nothing \nhappened.[pause][clear]Oh, well, I have to \ngo find the A.o.A![pause]",
+]

@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Fire Master[name]It's dangerous beyond\nhere! You really \nshould go back![pause][clear]Or do you want to \ndefeat me and \nproceed?[pause]",
+	"[name][player_name][name]Yeah, that's \nright! That's \nwhy I'm here![pause]",
+	"[name]Fire Master[name]You're a \ntroublesome \ntamer...[pause][clear]If you win, you\ncan go.[pause]",
+	"[name][player_name][name]OK! Let's \nfight![pause]",
+]

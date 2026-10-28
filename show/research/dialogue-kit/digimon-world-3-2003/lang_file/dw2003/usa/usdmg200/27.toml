@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name]Kail[name]So how do\nwe change\ninto Digimon?[pause]",
+	"[name][player_name][name]Hey! Take a \nlook at what I\ngot![pause]",
+	"[name]Kail[name]Perfect, with \nthese it should be \nno problem.[pause][clear]We'll put on the \nAgumon Suits and \nlook for Teddy![pause]",
+]

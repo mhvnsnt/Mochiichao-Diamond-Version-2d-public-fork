@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]BK WarGreymon[name]I guess you're \nnot all talk.[pause]",
+	"[name][player_name][name]Of course! I've gotten \nthrough all kinds of \ntrouble like this![pause]",
+	"[name]BK WarGreymon[name]Ha ha ha, I like \nyou! Take this\nwith you![pause]",
+	"[name][player_name][name]Yeah! I got\nthe Platinum \nID ![pause]",
+	"[name]BK WarGreymon[name]Aim to be the \nstrongest! [pause][clear]That is the \nsecret to becoming\na great tamer![pause]",
+]

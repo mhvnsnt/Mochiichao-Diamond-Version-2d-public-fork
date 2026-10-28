@@ -1,0 +1,13 @@
+strings = [
+	"",
+	"[name]General[name]You're that kid we \ncaught last time![pause][clear]What do you want!\nDid you come here to\nbe captured again?[pause]",
+	"[name][player_name][name]No way![pause][clear]I came here to ask \nhow you got to \nthis server![pause]",
+	"[name]General[name]Heh heh heh...\nIf you want to know\nI'll tell you.[pause][clear]The transportation\nDigimon the A.o.A\ncreated...[pause][clear]We came here from\nAmaterasu to this\nserver by Bulbmon![pause]",
+	"[name][player_name][name]...Bulbmon?![pause]",
+	"[name]General[name]Yes, a great Digimon \nthat can move \nbetween servers![pause][clear]Unfortunately, it \nacted weird when we \narrived here![pause]",
+	"[name][player_name][name]Acting weird?\nWhat does that \nmean?[pause]",
+	"[name]General[name]Lucky Mouse erected a \nProtective Field![pause][clear]So our Bulbmon broke \ndown and threw us out![pause][clear]That's why we \nquickly attacked \nByakko City.[pause]",
+	"[name][player_name][name]Hey, wait a sec.\nThen where's\nBulbmon...?[pause]",
+	"[name]General[name]I have no idea![pause][clear]I'm sure it's digging \nsome more dimensional \nholes![pause]",
+	"[name][player_name][name]Then I guess I \nshould look for \nBulbmon...[pause][clear]Hey wait. I think I've\nseen Bulbmon \nsomewhere before...[pause]",
+]

@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]Hey, MagnaAgnemon.\nI have a favor to ask.[pause][clear]Can I get the Patamon \nDDNA from you DDNA?[pause]",
+	"[name]MagnaAngemon[name]I'm sorry, but that is \nnot something so \neasily given.[pause][clear]If you can defeat \nme, then I will \nconsider it.[pause]",
+]

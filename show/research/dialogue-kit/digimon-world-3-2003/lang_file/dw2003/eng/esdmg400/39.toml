@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]OK, so I place \nthe TNT Chip\nover there.[pause]",
+	"[name][player_name][name]There's a\nhole in the \nwall![pause][clear]Now we can\ngo in![pause]",
+]

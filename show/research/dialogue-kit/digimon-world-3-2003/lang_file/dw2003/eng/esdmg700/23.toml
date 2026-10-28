@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Dark Master[name]...Hmm?!\nWho are you...[pause][clear]...you came\nhere to challenge\nme...?[pause]",
+	"[name][player_name][name]Yeah!\nYou'll fight with \nme, right?![pause]",
+	"[name]Dark Master[name]You don't know what \nyou're asking for...[pause][clear]...all right. \nI haven't seen a \ntamer in a while.[pause]",
+	"[name][player_name][name]Just watch.\nI'll show you\nwho's bad![pause]",
+]

@@ -1,0 +1,9 @@
+strings = [
+	"",
+	"[name]KingEtemon[name]I like you, so \nI'll give you \nSun Trophy![pause]",
+	"[name][player_name][name]Thanks,\nKingEtemon![pause][clear]Yeah! I got \nthe Sun \nTrophy![pause]",
+	"[name]KingEtemon[name]That is the symbol \nfor Amaterasu's \nCard King![pause]",
+	"[name][player_name][name]Great! Now I'm the \nnumber one cardster \nin Amaterasu![pause]",
+	"[name]KingEtemon[name]?!?\nNoooo!\nI'm number one![pause][clear]You just \nhappen to be\nlucky![pause]",
+	"[name][player_name][name]Heh heh heh.\nWell, I'm out of\nhere![pause][clear]Later KingEtemon![pause]",
+]

@@ -1,0 +1,13 @@
+strings = [
+	"",
+	"[name]Byakko Leader[name]...Oh, oh, I \nsee.[pause][clear]I'm sorry for \nmistaking you \nfor the A.o.A.[pause]",
+	"[name][player_name][name]Ah, that's OK...[pause][clear]But wait, does that \nmean the people in \nByakko City are...?[pause]",
+	"[name]Byakko Leader[name]Yes. They're the \nA.o.A![pause][clear]They just came and \ntook over Byakko City![pause][clear]We were held in the \nbasement prison...[pause][clear]But Numemon came and \nrescued us.[pause]",
+	"[name][player_name][name]I see...\nBut the A.o.A and\nLucky Mouse...[pause][clear]And what's happening\nto Digimon Online?[pause]",
+	"[name]Byakko Leader[name]I don't know either.[pause][clear]If you want to know \nmore, then find that\nNumemon.[pause][clear]If you go to the Dum \nDum Factory you'll \nfind him.[pause]",
+	"[name][player_name][name]OK![pause]",
+	"[name]Byakko Leader[name]Wait a second.\nI haven't given \nyou this yet![pause]",
+	"[name][player_name][name]Yeah! I got the\nByakko Badge![pause][clear]Thanks, Byakko \nLeader![pause]",
+	"[name]Byakko Leader[name]After all, you did\nbeat me![pause][clear]And it might come \nin handy later on![pause]",
+	"[name]Byakko Leader[name]There'll be more\nA.o.A. Be careful![pause]",
+]

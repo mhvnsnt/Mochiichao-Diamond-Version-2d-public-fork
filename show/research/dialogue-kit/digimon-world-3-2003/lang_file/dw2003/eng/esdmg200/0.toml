@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name][player_name][name]Wow, so this\nis the world of \nDigimon Online?[pause]",
+	"[name]Account Clerk[name][player_name2], \nwelcome to \nAsuka Server![pause][clear]Please retrieve\nyour Digimon data\nat the lobby.[pause]",
+	"[name][player_name][name]Huh? Digimon?[pause][clear]Oh, I understand.\nI'll go right now![pause]",
+]

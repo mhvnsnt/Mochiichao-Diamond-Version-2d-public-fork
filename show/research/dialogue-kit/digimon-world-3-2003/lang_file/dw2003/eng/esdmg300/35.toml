@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]BK MegaGargomon[name]Wow, you won!\nYou're strong![pause]",
+	"[name][player_name][name]Of course!\nI've been battling \neveryone![pause]",
+	"[name]BK MegaGargomon[name]Wow, that's \namazing! I'll\ngive you this![pause]",
+	"[name][player_name][name]Yeah! I got\nthe Wild \nHelmet![pause]",
+	"[name]BK MegaGargomon[name]Well, good luck.\nI'll be cheering \nfor you![pause]",
+]

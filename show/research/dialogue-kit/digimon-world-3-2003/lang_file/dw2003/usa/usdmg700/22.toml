@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name]Fire Master[name]You're strong!\nI'm impressed![pause][clear]I'll give this to \nyou. Use it![pause]",
+	"[name][player_name][name]Yeah! I got a\nMind Chip![pause]",
+	"[name]Fire Master[name]Our leader is \nbeyond here!\nHe's strong![pause]",
+]

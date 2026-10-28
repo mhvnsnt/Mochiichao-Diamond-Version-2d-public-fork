@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Byakko Leader[name]Ha ha ha!\nYou are strong. \nI like you.[pause]",
+	"[name][player_name][name]OK, then...[pause][clear]So what about\nthis guy called\nLucky Mouse...[pause]",
+	"[name]Byakko Leader[name]Hold on a minute.\nThe Byakko Badge\nis in that room.[pause][clear]I'll listen to you \nafter you get it.[pause]",
+	"[name][player_name][name]OK, I'll be \nright back, so \nwait here![pause]",
+]

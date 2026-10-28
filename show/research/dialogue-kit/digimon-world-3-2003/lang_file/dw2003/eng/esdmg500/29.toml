@@ -1,0 +1,15 @@
+strings = [
+	"",
+	"[name]Suzaku Leader[name]Oh, no, no.\nYou can't go \npast here.[pause][clear]...see, look \nat that![pause]",
+	"[name][player_name][name]Woah, what\nis that?![pause]",
+	"[name]Suzaku Leader[name]...A security hole.\nIt's like a hole \nin the net![pause][clear]That must be \nthe reason behind \nthe earthquake.[pause]",
+	"[name][player_name][name]Tha, that voice is \nfrom the gondola...[pause][clear]...I get it! He's \nBulbmon![pause]",
+	"[name]Suzaku Leader[name]I told you, you can't \ngo![pause][clear]You don't know what's \ngoing to happen. It's \ntoo dangerous![pause][clear]As a leader of the South \nSector, I'm not going \nto let anyone get hurt.[pause]",
+	"[name][player_name][name]Oh, come on, I really \nhave to go to the \nother side![pause][clear]You've heard about \nthe A.o.A right?[pause][clear]Someone has to go\nnow or worse things\nare going to happen![pause]",
+	"[name]Suzaku Leader[name]...If you \nput it that \nway...[pause]",
+	"[name]Suzaku Leader[name]...oh, all right![pause][clear]But if it's too \ndangerous come \nback OK?![pause]",
+	"[name][player_name][name]Four \nleader badges?[pause][clear]I got it!\nThanks \nSuzaku Leader![pause]",
+	"[name][player_name][name]If I go through \nthis hole, maybe I'll\nfind Amaterasu Server?[pause]",
+	"[name][player_name][name]Hey Suzaku Leader,\nI have a question![pause][clear]Do you know where\nthe emergency Chamber \nin the North Sector is?[pause]",
+	"[name]Suzaku Leader[name]Are you talking about \nthe emergency Matrix \nChamber?[pause][clear]It's located in the \nbasement of Kulon\nMine.[pause][clear]But you need the \nfour leader badges \nto use it.[pause]",
+]
