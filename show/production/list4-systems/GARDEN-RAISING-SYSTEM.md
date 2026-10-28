@@ -86,3 +86,5 @@ doctrine applies: same species, different profiles):
 
 
 **PROPOSAL from List 27 #262 (registered at its landing, 2026-10-27):** a sunlight input seat among this system's care inputs — sun exposure accrues from #19's time states × #61's weather × place, and rest reads through #134's existing rest verb (262-SUNLIGHT-REST.md). This home's exact axis fields were not re-derived at the List 27 build, which is precisely why the seat lands as a proposal into this file rather than an asserted field name. Proposal discipline: the input takes effect only as carried here.
+
+**Landing annexes — List 30 (2026-10-27).** Two List 30 specs annex to this Garden raising package: #288 (`show/production/world-systems/288-PURIFICATION.md`) — the purification chamber lands as a Garden facility annex on this package (set membership is a placement fact; tempo is derived over #249's chart + #108 temperaments; the completion rite is one atomic operation); and #293 (`show/production/world-systems/293-RAISING-DEPTH.md`) — Chao-grade raising depth on this package's care profile. #293's line binds both annexes: raising writes care axes only; it never writes a battle stat.

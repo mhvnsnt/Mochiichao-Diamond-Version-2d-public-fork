@@ -159,6 +159,48 @@
         "null"
       ],
       "description": "#239 nickname (List 25): set through exactly TWO doors — the set-at-keep offer in #38's keep flow, and the name service in the #132/#162 service layer (one defined write). No other writer may touch this field; a wild individual is never nicknamed (a write-permission fact, testable in the schema's consumers)."
+    },
+    "heart": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "#287 (List 30) closed-heart record, landed here citing it — ABSENT or null = open heart (#96 absent = default). Stored, not derived (argument in #287 / heart-fragment.json). The three fences land as validation on this record: gain events on a closed individual route to bankedGain (#177 bank), no #199 evolution edge fires while closed, and no consumer may write personality_seed from heart facts. personality_seed itself is never written by this system.",
+      "additionalProperties": false,
+      "properties": {
+        "closed": {
+          "type": "boolean"
+        },
+        "gauge": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Current closure remaining; 0 = ready to open (#288)."
+        },
+        "gaugeMax": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Set at closing from the individual's facts + cause class."
+        },
+        "cause": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "theft",
+            "processing",
+            "abuse",
+            null
+          ],
+          "description": "Closed cause classes, per #287's fragment."
+        },
+        "bankedGain": {
+          "description": "#177 gain events held in reserve while closed — paid out whole at opening (#288); never applied, never lost. Shape as recorded in #287's fragment; no numeric type was asserted there, so none is asserted here."
+        },
+        "closedBeat": {
+          "description": "#12-class beat the closure happened, per #287's fragment."
+        }
+      }
     }
   },
   "required": [

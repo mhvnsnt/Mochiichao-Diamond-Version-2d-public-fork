@@ -122,3 +122,5 @@ band data (authored-band home); rental hosting reads
   already left OPEN. The yield is the format: an
   endless run whose every fight is authored-readable
   and whose loss costs exactly one record line.
+
+**Landing note — List 30 (2026-10-27).** #292 (`show/production/battle/292-LONG-CLIMB.md`) lands beside this ladder, and the one-sentence difference is recorded in both packages' index entries so no future builder merges them: the ladder is a run; the climb is a campaign. Climb records land beside this file's run history under #96's save discipline.
