@@ -1628,3 +1628,35 @@ corrected attribution also stands in the Dorowani reference
 pack (PR #496), in
 show/production/species-data/RULED-DEVIATION-REGISTRY.json, and
 in show/production/species-data/80-INDIVIDUAL-VARIATION.md.
+
+
+## OWNER RULING — registry conflict resolved: both variants (2026-10-28)
+
+The CANON-CONSISTENCY framework's survey flagged a Box 1
+conflict: #318 + the deviation-register fragment name the
+maskless Verdilance a founding RULED entry, but
+RULED-DEVIATION-REGISTRY.json held no Verdilance — and
+instead carried the PR #389 Kittember as PROPOSED, against
+#318's own fence. Owner ruling 2026-10-28: A is both
+variants.
+
+- Verdilance: the maskless Verdilance IS a Verdilance
+  variant — restored to RULED-DEVIATION-REGISTRY.json as a
+  RULED canon variation with its own likeness lock and a
+  percentage (occurrence) rate recorded as OWNER-TBD (the
+  number is the owner's to set; none was invented).
+- Kittember: the PR #389 generated Kittember is CANON as
+  the Region 4 regional Kittember variant. Its seven
+  deviations from the base form (pure black coat, all-fours
+  stance, white chest patch, pink ear interiors, narrow
+  half-lidded eyes, teardrop flame plume on the tail tip,
+  cheek/chest fluff tufts) are that regional form's locked
+  traits; Fire Stream performance follows the owner's
+  blast-source rule (tail primary ~75%, mouth ~25%). This
+  SUPERSEDES the 2026-10-27 unused_draft_special_case
+  ruling. Base (Region 1) Kittember canon is unchanged.
+- Records updated the same day: the registry (Verdilance
+  restored; kittember-389-draft -> kittember-region-4-variant,
+  status RULED), the #389 bundle manifest + clip-index
+  status (canon_region4_variant), CANON-CONSISTENCY.md
+  (Box 1 case marked RESOLVED 2026-10-28).

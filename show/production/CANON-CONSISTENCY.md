@@ -80,6 +80,21 @@ split.
   the ruling. The newest ruling wins; the older records are being
   brought into line. This is the procedure in §2(d) working as designed.
 
+- **The register vs its own rulebook — RESOLVED 2026-10-28.** #318 and
+  the deviation-register fragment named the maskless Verdilance a
+  founding RULED entry, but `RULED-DEVIATION-REGISTRY.json` held no
+  Verdilance at all — and instead carried the PR #389 Kittember as
+  `PROPOSED`, which #318's own fence says must never appear in the
+  register. The owner's ruling (2026-10-28): **both are variants.**
+  The maskless Verdilance is restored to the register as a RULED canon
+  variation, carrying its own likeness lock and a percentage
+  (occurrence) rate recorded as OWNER-TBD (the number is the owner's
+  to set; none was invented). The PR #389 Kittember is canon as the
+  **Region 4 regional Kittember variant** — its seven deviations from
+  the base form are that regional form's locked traits, superseding
+  the 2026-10-27 `unused_draft_special_case` ruling. Base (Region 1)
+  Kittember canon is unchanged.
+
 **What happens:** the newest owner ruling wins. If there is no ruling
 yet, the conflict goes on the owner-decisions list and **waits** — it is
 never settled by whoever found it, and never "fixed" by editing one
@@ -144,7 +159,12 @@ individual").
   (one named wild individual; the species default is quadrupedal) and
   the maskless Verdilance (an absence-class deviation — the lack is
   the trait, and fidelity must render the lack, not restore the part)
-  — #318 / `RULED-DEVIATION-REGISTRY.json`.
+  — #318 / `RULED-DEVIATION-REGISTRY.json`. (The Verdilance entry was
+  restored to the register by the owner's 2026-10-28 ruling — Box 1 —
+  as a RULED canon variation with its own likeness lock and its
+  percentage (occurrence) rate recorded as OWNER-TBD. The same ruling
+  made the PR #389 Kittember canon as the Region 4 regional variant:
+  its seven base-form deviations are that form's locked traits.)
 
 **What happens:** nothing — that is the point. The variation is canon.
 Anyone who "corrects" it has made a Box 2 error.
@@ -167,7 +187,13 @@ PROPOSED entries.
   labelled `unused_draft_special_case`, never used, never deleted
   (production log, 2026-10-27; the bundle's manifest and clip-index
   carry the status). The rejection is recorded so the same deviation is
-  never re-proposed as new.
+  never re-proposed as new. **Superseded 2026-10-28:** the owner later
+  ruled this exact form canon as the Region 4 regional Kittember
+  variant (Box 1). The rejection record stays — it is the history the
+  new ruling supersedes — but the status no longer stands: the seven
+  traits are the regional form's locked traits now. A rejection is a
+  ruling, and a later ruling can supersede it; what it cannot do is
+  vanish.
 - **Absorbed: the eye-whites and the horns** both started in this box
   — generation drift nobody had ruled — and left it through the owner's
   ruling into Box 3. Same box, opposite exit. The box is the waiting
@@ -353,7 +379,10 @@ the same way:
 with its status on the artifact itself (bundle manifest + clip-index
 `unused_draft_special_case`, and a register note that it is a draft,
 not a story individual) — so it stays findable, stays unused, and is
-never re-proposed as new.
+never re-proposed as new. The one worked rejection travelled further:
+the owner superseded it on 2026-10-28, ruling the PR #389 Kittember
+canon as the Region 4 regional variant, and every seat named here was
+updated the same day (Box 1).
 
 **What never happens:** a ruling that lives only in a chat message; a
 register entry created by a generator; a pack edited to match a clip

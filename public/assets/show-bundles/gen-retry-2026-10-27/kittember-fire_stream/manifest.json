@@ -43,8 +43,8 @@
    "source": "source_still"
   }
  },
- "quality_status": "unused_draft_special_case",
- "status_note": "Owner ruling 2026-10-27 (as corrected same day - this restores PR #401's label): special-case DRAFT - the species-form quadruped with the wrong tail/design deviations; held as an unused draft, kept, not used, not deleted. NOT the wild individual - the wild individual is the bipedal canon-pass (PR #399).",
+ "quality_status": "canon_region4_variant",
+ "status_note": "Owner ruling 2026-10-28 SUPERSEDES the 2026-10-27 ruling (unused_draft_special_case - PR #401's label, restored by PR #410): this render is CANON as the Region 4 regional Kittember variant. Its seven deviations from the base form (pure black coat, all-fours stance, white chest patch, pink ear interiors, narrow half-lidded eyes, teardrop flame plume on the tail tip, cheek/chest fluff tufts) are that regional form's locked traits, and its Fire Stream performance follows the owner's blast-source rule (tail primary ~75%, mouth ~25%). NOT the wild individual - the wild individual is the bipedal canon-pass (PR #399). Base (Region 1) Kittember canon is unchanged. Registered in RULED-DEVIATION-REGISTRY.json as individual 'kittember-region-4-variant'.",
  "likeness_gate": {
   "packet": "gate-packet.json",
   "verdict_recommendation": "FAIL"

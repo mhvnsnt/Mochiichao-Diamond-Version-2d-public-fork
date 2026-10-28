@@ -2,6 +2,7 @@
   "_about": "RULED-DEVIATION REGISTRY (live canon infrastructure, #80 INDIVIDUAL-VARIATION). A visible deviation not in this registry is an error; a registered deviation missing is an error. Entries are added only by owner ruling — never bulk-generated.",
   "registry_version": 1,
   "registered": "2026-10-27",
+  "updated": "2026-10-28",
   "individuals": [
     {
       "individual_id": "dorowani-eye-whites-individual",
@@ -36,18 +37,110 @@
       ]
     },
     {
-      "individual_id": "kittember-389-draft",
-      "species": "kittember",
+      "individual_id": "verdilance-maskless-variant",
+      "species": "verdilance",
+      "form": "maskless Verdilance variant",
       "deviations": [
         {
-          "trait": "tail + design (species-form deviations)",
-          "species_pattern": "canon Kittember design (tail-tip flame, canon-pass form)",
-          "individual_value": "the PR #389 black quadruped render — species-form quadruped with wrong tail/design deviations",
-          "status": "PROPOSED",
+          "trait": "face-cover absence",
+          "species_pattern": "grown mouth-shield present (#317)",
+          "individual_value": "no face mask at all",
+          "status": "RULED",
           "ruled_by": "Jamar",
-          "ruled_on": "2026-10-27",
-          "consistency": "NOT a story individual — registered so the deviation is on record",
-          "source": "Owner ruling 2026-10-27: kept as unused_draft_special_case (PR #401, restored by PR #410) — a DRAFT, not used, not deleted"
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of this variant — fidelity (#325) must render the lack, not restore the part",
+          "variant": "RULED canon variation — the maskless Verdilance is a Verdilance VARIANT (owner ruling 2026-10-28 resolving the registry-vs-rulebook conflict: 'A is both variants')",
+          "likeness_lock": "this variant carries its own likeness lock — the maskless form is the locked likeness for this variant",
+          "occurrence_rate_percent": "OWNER-TBD",
+          "source": "#318 founding entry 3 + deviation-register-fragment.json foundingEntries ('the maskless Verdilance', the register's first ABSENCE-class deviation). Restored to this registry by owner ruling 2026-10-28; the entry was named in the spec/fragment from founding (2026-10-27) but missing from this JSON. The percentage (occurrence) rate is NOT set — recorded OWNER-TBD, never invented."
+        }
+      ]
+    },
+    {
+      "individual_id": "kittember-region-4-variant",
+      "species": "kittember",
+      "region": 4,
+      "form": "Region 4 regional variant of Kittember",
+      "deviations": [
+        {
+          "trait": "coat.colour",
+          "species_pattern": "dark grey coat (base form)",
+          "individual_value": "pure black coat",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of the Region 4 regional form",
+          "source": "Owner ruling 2026-10-28: the PR #389 generated Kittember is canon as the Region 4 regional Kittember variant. This SUPERSEDES the 2026-10-27 ruling that held it as unused_draft_special_case (PR #401, restored by PR #410). Former registry id: 'kittember-389-draft' (status was PROPOSED — removed per this ruling; #318's fence keeps PROPOSED entries out of the register). Base (Region 1) Kittember canon is unchanged."
+        },
+        {
+          "trait": "body.stance",
+          "species_pattern": "upright bipedal stance (base form)",
+          "individual_value": "all-fours stance",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of the Region 4 regional form",
+          "source": "Owner ruling 2026-10-28 (Region 4 regional variant — see this entry's first deviation for the full source)."
+        },
+        {
+          "trait": "chest.patch",
+          "species_pattern": "no chest patch (base form)",
+          "individual_value": "white chest patch present",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of the Region 4 regional form",
+          "source": "Owner ruling 2026-10-28 (Region 4 regional variant — see this entry's first deviation for the full source)."
+        },
+        {
+          "trait": "ears.interiors",
+          "species_pattern": "dark ear interiors (base form)",
+          "individual_value": "pink ear interiors",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of the Region 4 regional form",
+          "source": "Owner ruling 2026-10-28 (Region 4 regional variant — see this entry's first deviation for the full source)."
+        },
+        {
+          "trait": "eyes.shape",
+          "species_pattern": "big, round, forward amber eyes (base form)",
+          "individual_value": "narrow half-lidded eyes",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of the Region 4 regional form",
+          "source": "Owner ruling 2026-10-28 (Region 4 regional variant — see this entry's first deviation for the full source)."
+        },
+        {
+          "trait": "tail.tip",
+          "species_pattern": "round orange orb on the tail tip (base form)",
+          "individual_value": "teardrop flame plume on the tail tip",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of the Region 4 regional form",
+          "source": "Owner ruling 2026-10-28 (Region 4 regional variant — see this entry's first deviation for the full source)."
+        },
+        {
+          "trait": "coat.texture",
+          "species_pattern": "smooth coat (base form)",
+          "individual_value": "fluff tufts at the cheeks and chest",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of the Region 4 regional form",
+          "source": "Owner ruling 2026-10-28 (Region 4 regional variant — see this entry's first deviation for the full source)."
+        },
+        {
+          "trait": "performance.fire_stream",
+          "species_pattern": "owner blast-source rule (Kittember, species-wide): blasts come from the tail ~75% of the time and from the mouth ~25%",
+          "individual_value": "the Region 4 form performs Fire Stream under the same blast-source rule — tail primary, mouth secondary",
+          "status": "RULED",
+          "ruled_by": "Jamar",
+          "ruled_on": "2026-10-28",
+          "consistency": "MUST REPRODUCE in every generation of the Region 4 regional form",
+          "source": "Owner ruling 2026-10-28 (Region 4 regional variant — see this entry's first deviation for the full source)."
         }
       ]
     }
