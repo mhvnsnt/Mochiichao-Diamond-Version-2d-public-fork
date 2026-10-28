@@ -69,3 +69,5 @@ keeper rosters beyond Region 1 and any Garden-variant steps are
 OPEN until canon names them.
 
 **List 17 #162 wiring (2026-10-27):** the careLog activity vocabulary gains the `grooming` class (162-GROOMING-SPA.md). The class is INERT — `axis: null` — and #39's accrual reader must respect that inertness (a grooming event accrues nothing); the reader test is registered with #162's spec.
+
+**Operand citation (List 19 #180, landing 2026-10-27; correction C4):** this file's affection-class gauge is a NEED the care loop reads — it is never the operand of a battle mechanic. Bond mechanics read #39's bond family only (180-BOND-EFFECTS.md).

@@ -108,3 +108,5 @@ the whole crossover; the two lanes' state machines stay separate.
   by Persona Central / Siliconera / Famitsu coverage (workspace
   research report, 2026-10-27). Principles only — no Atlus assets,
   fonts, files or code exist publicly or are used here.
+
+**Resolution orders (List 19 landing, 2026-10-27 — registered once, here):** (a) #182's status check order and END_CHECK tick order resolve in this flow's queue, over #27's `persistent | volatile` records (correction C5: #27's words, no second vocabulary). Negative tests: a second persistent application fails legibly; no volatile condition survives its battle on any record; a #132 centre cure touches persistent conditions only. (b) #183 + #184 share ONE trigger order — acting side, then receiving side; within a side, abilities before held items — implemented once and cited by both specs, never as two orderings that can drift.

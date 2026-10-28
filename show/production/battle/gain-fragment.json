@@ -1,0 +1,51 @@
+{
+ "_about": "Gain fragment (List 19 #177) — the yield/split layer under the battle-end learning interface #158 fixed (one event per Ranger-side participant, consumed by #129). No constant is set: species yields, class weights, the yield function's constants, and the rounding rule are all OPEN for the owner balance pass. Versus/facility exclusions and the rental confinement are structural rules, stated in the spec, not data.",
+ "format": "mochiichao/gain/v1",
+ "model": {
+  "accumulation": "gain events append to the individual record as facts {battleRef, amount}; the accumulated total is the derived sum (#14/#96 law), never a stored counter",
+  "captureJoin": "a battle ending in a #38 keep draws its pool only from opponents defeated before the keep; the kept individual contributes no yield",
+  "exclusions": {
+   "facility": "#86 formats incl. #186 ladder produce no gain events (levels normalised; the record is the reward)",
+   "opponentSide": "AI parties are authored data (#52 B2); their levels are facts, not grown totals — they earn nothing",
+   "rental": "#159: events, if any, fire inside the run record only and expire with it; no borrowed individual carries gain out",
+   "versus": "#109 Ranger-vs-Ranger formats produce no gain events"
+  },
+  "faintedParticipants": "participation is the criterion — a participant who fainted earns exactly as one who stood (class switched)",
+  "participantClasses": {
+   "active": "on the field at battle end",
+   "party-share": "never fielded; earns only if a share mechanism (shareSource) covers it",
+   "switched": "fielded, then switched out or fainted"
+  },
+  "pool": "one member per defeated opposing individual: f(species gainYield, opponent level as emitted by #52); fled/escaped opponents contribute nothing",
+  "shareSource": "item-mediated (see landingFill)",
+  "split": "the whole pool divides by class weights: share = pool x weight(class) / sum of weights; equal weights express the classic even split",
+  "yieldFunction": {
+   "constants": "OPEN",
+   "shape": "species yield scaled by opponent level"
+  }
+ },
+ "open_register": [
+  "gainYield values for every species (and the field's acceptance into the species record — proposed here, its home disposes)",
+  "participant class weights (active / switched / party-share)",
+  "the yield function's constants",
+  "the rounding rule for division (game-lane implementation fact, to be stated not assumed)",
+  "whether any share mechanism exists at all (shareSource) — item-mediated via #31/#183 or format rule"
+ ],
+ "speciesFieldProposal": {
+  "field": "gainYield",
+  "home": "species record (src/data/core neighbourhood, per #107's audit)",
+  "status": "PROPOSED — no species carries a yield value today"
+ },
+ "landingFill": {
+  "rule": "Filled at landing under the owner's Pokemon-base rule (2026-10-27): mechanics are filled the way Pokemon does it; Jamar's canon overrides where it speaks. Recorded here, not silent.",
+  "yieldFunction": "pool member per defeated opponent = floor(gainYield x opponentLevel / 7) — the classic Pokemon divisor; gainYield itself stays species data (values are data-lane work, like base stats).",
+  "classWeights": {
+   "active": 1,
+   "switched": 1,
+   "party-share": 0
+  },
+  "shareSource": "item-mediated, Pokemon-style: a party-share individual earns a participant's share only while a share item covers it (the Exp. Share pattern, via #31/#183); otherwise party-share earns nothing.",
+  "rounding": "floor at every division step (Pokemon floors).",
+  "split": "the pool divides across earning participants by the weights above — equal weights = the classic even split."
+ }
+}

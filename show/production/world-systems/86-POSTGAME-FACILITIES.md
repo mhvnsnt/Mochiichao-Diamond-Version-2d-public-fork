@@ -113,3 +113,5 @@ and who heads them are canon content — **OPEN**, not assigned here.
 - The symbol/honour fiction for head-wins.
 - Whether multi (co-op) formats exist — architecture allows the
   slot; no slot is opened here.
+
+**PROPOSAL from List 19 #186 (registered at its landing, 2026-10-27):** a facility `ladder` slot in this file's table (186-FACILITY-LADDER.md; generation reads #94 verbatim). The run-record shape joins the run-history store this file's RECORD derivations read, under #96's absent = default rule. No facility, band row, or head is created by the proposal.

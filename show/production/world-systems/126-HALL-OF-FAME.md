@@ -102,3 +102,5 @@ under #86 or a licence case view — is **OPEN**.
   cross-links are fixed by real joins (#100/#98/#104),
   and zero records exist — there has been no clear to
   record, and this package does not fabricate one.
+
+**Ruling received (List 19 #178, landing 2026-10-27):** hall-of-fame snapshot rows carry `levelAtClear` — the individual's derived level (#178's derivation from #177's gain total) evaluated at the clear and COPIED into the snapshot as a fact, per this file's own snapshot discipline. The level itself is derived and stored nowhere else; the snapshot copy is the one stored form.
