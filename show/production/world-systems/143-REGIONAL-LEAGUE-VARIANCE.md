@@ -80,3 +80,5 @@ region" gets its definition, per region.
   2–5 are empty slots by design — their counts, ordering,
   fictions, and champions are OPEN, owned by each region's
   own build, and this package guesses at none of them.
+
+**Clarification registered at List 31 landing (2026-10-27, from #305).** This file's Region 1 linearity is read by #305 (`src/data/core/docs/305-OPEN-LEAGUE-STRUCTURE.md`) as that region's authored data standing unchanged under an open-order system: the system permits what Region 1's contents don't use; Regions 2–5 (null here) may author open shapes on the same machinery. This is a clarification, not an edit to Region 1's record.

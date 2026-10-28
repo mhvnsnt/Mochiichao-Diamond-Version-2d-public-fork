@@ -90,3 +90,5 @@ stores nothing.
 
 
 **Landing note — List 28 (2026-10-27):** honest-shop prices read #271's ladder position as a derivation over #269's ledger (per-step adjustment, band-capped, in #271's drafted system data); fence prices read #274's gates. No stored standing of any kind is read here — the reads are derivations at read time, per the programme-wide derived law.
+
+**Landing citation — List 31 (2026-10-27).** #304 (`src/data/core/docs/304-BARTER-ECONOMY.md`) wires its trade read over this file's counters, in the spec's order, with the read displayed whole. Fence counters run #304's mirror and never read provenance.

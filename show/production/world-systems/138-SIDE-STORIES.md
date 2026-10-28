@@ -83,3 +83,5 @@ already set (no spoilers by generator).
   missable or time-windowed (rotation joins #124): that
   interaction is named here as an OPEN design question,
   not decided by silence.
+
+**Landing gate — List 31 (2026-10-27).** #300's choice-and-consequence checklist is registered in this file's home (`show/production/world-systems/300-CHOICE-CONSEQUENCE-STANDARD.md`): a side story landing without its four parts named (fork / written fact / closed door / echo) is incomplete and is sent back. Applying the standard retroactively to existing side-story contents is a separate content pass; List 31 re-authors no story.

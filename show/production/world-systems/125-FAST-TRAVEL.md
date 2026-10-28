@@ -84,3 +84,5 @@ Save impact: none — the system's entire state is derived.
   clock ruling, and the fee ruling are OPEN.** The node
   annotation's target schema is flagged UNVERIFIED in
   STAGING.md until landing checks the graph's repo home.
+
+**Proposal landed into this file — List 31 (2026-10-27), the #58 RIDDEN precedent.** #303's tenure clause, cited to `src/data/core/docs/303-OWNED-PLACES.md`: an owned place's node joins this file's derived travel set by tenure. This is List 31's exactly-one proposal into another file; everything else in #303 lands in #303's own home.
