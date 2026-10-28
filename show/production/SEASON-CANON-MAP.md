@@ -120,3 +120,15 @@ game — titles ground in canon places/beats instead).
 ---
 
 Season map EP06–EP10 drafted (2026-10-27): see `show/production/SEASON-MAP-EP06-EP10.md` + `show/production/SEASON-ARC-NOTE-EP01-EP10.md` (titles PROPOSED; direction-stage documents, canon content of this map unchanged).
+
+---
+
+## CANON RULINGS RECORD (owner rulings, 2026-10-27)
+
+- **Falk's team LOCKED:** Zephling / Aerobeak / Stormtalon (doc conflict resolved for the locked reading).
+- **Representation names LOCKED:** Wisteria Vale (short forms Wisteria / Vale); Tessa Bolt; Saffron Potts (short form Saffron).
+- **The vitiligo cartographer IS Admin Voss** — same person, not two characters.
+- **Phantom:** canon Phantom is BASED ON Western Heart's Phantom — basis, not a collision.
+- **The Airship Lord's name = MAXXIMUS.**
+- **Dorowani eye canon** (logged in PR #391, production log + clip-index canon_notes): species eyes red + black, no sclera; the show/avatar individual Dorowani keeps his eye-whites as a ruled special-case deviation; individual variation within a species is canon doctrine.
+- **Kittember (of record, restated):** the flame is attached to the TAIL TIP — never a separate floating flame orb.
