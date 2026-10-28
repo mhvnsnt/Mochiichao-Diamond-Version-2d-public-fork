@@ -126,15 +126,62 @@ instance (§4) uses no smuggle: the episode's own cast only.
   frame pairs held, 66.9% — v2's exact figure). Marked pose
   strips with her left shoe ringed red are in the build record's
   workspace (`work/v3/strips/`).
-- **Status: OWNER-APPROVED — v3 is the CANDIDATE CURRENT
+- **v4 — the foot-orientation fix (owner-flagged 2026-10-27):**
+  `EP01-ED-GAG-v4.mp4` (1280×720, 24 fps, 14.000 s, sha256
+  bb6ca004b0c8e8d503b4194c44c4df85f0f4b594ff969751ac0f7c2cd218c85e)
+  and `EP01-ED-GAG-v4-canvas.transparent.webm` (sha256
+  0612fb6458ba21b2b096a30a10f42301ff3de2dab309d30c99a3950be777c31f).
+  Same instance, cast, lineup, beats, dressing, slot, and on-3s
+  timing as v3; the only change is Mochiko's FOOT rotations. The
+  owner studied v3's strip and split leg from foot: her left
+  leg's foot looked backwards while the leg pointed correctly,
+  and her right leg seemed to point wrong while its foot looked
+  correct. Both observations were settled by measurement (build
+  record: `BUILD-NOTES-v4.md` in the workspace home above). The
+  leg bones sweep and lean correctly at every pose in v3 — his
+  first observation's leg half, and the answer to his second:
+  neither leg points wrong. The feet were the defect on both
+  sides: measured on the skinned mesh, the shoe's toe tilt
+  (degrees from straight down, + toward travel) ran NEGATIVE —
+  toe against travel — in 4 of 8 poses per leg (her left: −19 at
+  stance, −9 at her toe-off; her right: −15 at trailing stance,
+  −4 at her toe-off), and on the renders the contact shoe
+  streaked backward at the wide-stride poses (pose 4: 104 px of
+  backward reach against 28 forward — the shared grid mesh
+  stretches toward the other leg when the stride separates them,
+  which is backward for the screen-right shoe and forward for
+  the screen-left one: one artifact, opposite signs, which is
+  why the two legs read so differently). v3's construction is
+  also answered in the record: no leg was flipped individually —
+  poses 4–7 exchange the limbs' roles keeping rotation signs,
+  and the FOOT bones were part of that exchange. v4 authors the
+  eight cycle poses' foot values explicitly (toe-offs at +22°,
+  all other poses +3…+19°), leaving every other channel —
+  legs included — byte-identical to v3, and tunes the
+  wide-stride poses against the pixel measurement. Verified: a
+  new foot checker (tilt ≥ 0° everywhere, ≥ +15° at toe-off)
+  FAILS v3 on both legs and PASSES v4; v3's leg-phase checker
+  re-run on v4 passes with ankle traces numerically identical
+  to v3's; the backward streak at poses 3–5 is cut by more than
+  half (104→44 px at pose 4), with a small residual recorded in
+  the build notes as the grid-streak floor under foot-only
+  levers; stepped timing unchanged (224/335 frame pairs held).
+  Enlarged per-leg strips with toe-direction arrows are in the
+  build workspace (`work/v4/strips/`).
+- **Status: OWNER-APPROVED — v4 is the CANDIDATE CURRENT
   version.** The owner approved the instance on viewing v1
   (2026-10-27) and named it "Outro Credit Gag Number One"; v1
   stands as the first produced version. v2 (the owner-ordered
   animation upgrade) is SUPERSEDED AS CANDIDATE by v3 — reason:
   a leg-phase defect the owner spotted on viewing v2 (her left
   leg cycling backwards through poses 4–7), fixed and verified
-  in v3 as recorded above. v3 is the candidate current version
-  pending the owner's viewing of it. The shipped EP01
+  in v3 as recorded above. v3 is in turn SUPERSEDED AS
+  CANDIDATE by v4 — reason: a foot-orientation defect the owner
+  spotted studying v3's strip (her left foot reading backwards;
+  her right foot segment slanting wrong at its trailing
+  poses), fixed and verified in v4 as recorded above. v4 is
+  the candidate current version pending the owner's viewing
+  of it. The shipped EP01
   master is unchanged — it still carries the slot's empty
   placeholder frame. This instance swaps in only on the owner's
   order (Current-Version Law).
