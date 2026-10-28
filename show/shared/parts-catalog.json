@@ -1859,6 +1859,73 @@
      "extends": "convenience-floor audit beside #327; BUILD annexes landed in #198 (where read) and #150 (repel toggle); row 6 converted at the link check against #177 to BUILD-as-toggle, recorded in #150/#177 and in the audit document itself"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list35-systems",
+   "type": "systems-index",
+   "about": "List 35 teardown systems (items 337-346), landed 2026-10-27 \u2014 the owner-directed Sonic/Chao pull: raised variation, hero/dark campaigns over the morale ladder, and music as identity. Open slots are story/canon facts and authored content only.",
+   "items": [
+    {
+     "n": 337,
+     "name": "Raised variation",
+     "home": "src/data/core/docs/337-RAISED-VARIATION.md",
+     "extends": "the drift read: a derived read over #338's raising facts, settling via #293's mechanism (extension proposal registered in #293's file at this landing)"
+    },
+    {
+     "n": 338,
+     "name": "Raising inputs",
+     "home": "src/data/core/docs/338-RAISING-INPUTS.md",
+     "extends": "the closed eight-family read set every raising read eats from; a ninth family arrives only as a proposal into this file"
+    },
+    {
+     "n": 339,
+     "name": "Bond-shaped variation",
+     "home": "show/production/world-systems/339-BOND-SHAPED-VARIATION.md",
+     "extends": "#180's bond cues made continuous as visible marks; the end-of-life future read seats beside #243 with its outcome slot empty"
+    },
+    {
+     "n": 340,
+     "name": "Move-shaped variation",
+     "home": "show/production/world-systems/340-MOVE-SHAPED-VARIATION.md",
+     "extends": "practice leanings from the known set + #187 usage, cited by #316 and #346 as casting evidence"
+    },
+    {
+     "n": 341,
+     "name": "Stat-shaped emphasis",
+     "home": "src/data/core/docs/341-STAT-SHAPED-EMPHASIS.md",
+     "extends": "care/work emphasis derived from #28/#293 care records, spoken only in #337's proportion channel"
+    },
+    {
+     "n": 342,
+     "name": "Variation across generations",
+     "home": "src/data/core/docs/342-VARIATION-ACROSS-GENERATIONS.md",
+     "extends": "the lean at #77's hatch read \u2014 derivation input over #204's gates, writing nothing to any record"
+    },
+    {
+     "n": 343,
+     "name": "Hero/Dark campaigns",
+     "home": "src/data/core/docs/343-HERO-DARK-CAMPAIGNS.md",
+     "extends": "two progression tracks annexed over #146's one-world payload; the world is never forked; finale story is an owner canon slot"
+    },
+    {
+     "n": 344,
+     "name": "Music identity",
+     "home": "show/production/344-MUSIC-IDENTITY.md",
+     "extends": "theme records from brief + motif; the place-motif ref is proposed into #215's bed record in #215's home"
+    },
+    {
+     "n": 345,
+     "name": "Soundtrack construction",
+     "home": "show/production/345-SOUNDTRACK-CONSTRUCTION.md",
+     "extends": "songs land as versions inside #344's records; the licence-honesty audit line lands at #75's delivery finish"
+    },
+    {
+     "n": 346,
+     "name": "Raising shown",
+     "home": "show/production/world-systems/346-RAISING-SHOWN.md",
+     "extends": "the raising read quoted into casting packets beside \u2014 never inside \u2014 #318's ruled section, riding #326's packet discipline"
+    }
+   ]
   }
  ]
 }

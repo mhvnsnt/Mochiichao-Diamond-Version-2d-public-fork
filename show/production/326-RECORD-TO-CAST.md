@@ -120,3 +120,6 @@ with those seats empty.
 - Contents: one individual walked to the pipeline's
   edge (record + register verified); his story seat
   is empty because it is not this system's to fill.
+
+
+**Reconciliation — List 35 #346 (recorded at List 35's landing, 2026-10-27):** #346's raising read rides this file's packet discipline (346-RAISING-SHOWN.md): the raising read is quoted beside — never inside — the RULED section; RULED and DERIVED stay in visibly separate sections, and merging them is the continuity defect #318's fence names.

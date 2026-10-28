@@ -92,3 +92,5 @@ one of the derived).
 **Landing note — List 32 (2026-10-27), citing STAGING step 7.**
 
 #315 (`world-systems/315-EXPLORATION-SPECTACLE.md`) reads first arrival as an EDGE of this file's visit-record derivation: first arrival at a place = the edge of that Ranger+place visit record. Introduction staging fires off that derived edge, exactly once. A stored `introduced` flag anywhere is a landing defect under #315 — none is added here or in #315's landing. Introduction compositions themselves are authored data in the places' own records (#7/#137 family), not in this file.
+
+**Registration — List 35 #343 (landing 2026-10-27; STAGING step 7):** the two campaign progression tracks (hero / dark) seat as an annex over this file's one-world payload. Validation rule, stated here so a landing check can grep it: no track record may carry a world-fact copy — places, dex and world state are read from the shared payload, never duplicated per track; the world is never forked. The shared finale gate is a read over both tracks' completion facts; its content seat lands EMPTY (owner canon slot). Spec: `src/data/core/docs/343-HERO-DARK-CAMPAIGNS.md`.

@@ -123,3 +123,6 @@ per sheet; zero tables are fabricated here.
 - Contents: zero species tables instanced; the
   mechanism lands whole so the sheet pass can stock
   it line by line.
+
+
+**Reconciliation — List 35 #337 (recorded at List 35's landing, 2026-10-27):** this file's seed-generated variation composes UNDER #337's drift, in #337's composition order (337-RAISED-VARIATION.md). The register/rates wall stands: nothing here joins #318's register in either direction.

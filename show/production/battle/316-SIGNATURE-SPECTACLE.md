@@ -146,3 +146,6 @@ is open.
   verified table, and their performance canons (Water
   Orb, Tremor, Dark Wave et al.) are cited as #131
   holds them.
+
+
+**Reconciliation — List 35 #340/#346 (recorded at List 35's landing, 2026-10-27):** #340's practice leanings supply this file's casting evidence (the dominant leaning; 340-MOVE-SHAPED-VARIATION.md), and #346 cites the same evidence. Neither depends on any internal of this file.
