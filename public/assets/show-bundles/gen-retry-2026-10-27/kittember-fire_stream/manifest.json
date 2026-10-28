@@ -43,8 +43,8 @@
    "source": "source_still"
   }
  },
- "quality_status": "special_case_wild_individual",
- "status_note": "Owner ruling 2026-10-27 (SUPERSEDES the unused-draft ruling of the same day): special-case WILD individual (male, black quadruped) - USED: Mochiko's first wild Kittember encounter - mysterious stare-down in the woods, disappears, reappears, battle + capture, joins the team. Species default going forward is quadrupedal; the canon character is the bipedal individual (the canon-pass bundles).",
+ "quality_status": "unused_draft_special_case",
+ "status_note": "Owner ruling 2026-10-27 (as corrected same day - this restores PR #401's label): special-case DRAFT - the species-form quadruped with the wrong tail/design deviations; held as an unused draft, kept, not used, not deleted. NOT the wild individual - the wild individual is the bipedal canon-pass (PR #399).",
  "likeness_gate": {
   "packet": "gate-packet.json",
   "verdict_recommendation": "FAIL"
