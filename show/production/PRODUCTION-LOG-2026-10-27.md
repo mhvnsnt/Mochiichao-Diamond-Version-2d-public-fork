@@ -1282,3 +1282,7 @@ Four new documents land in show/production/animation-method/, in plain words:
 - WHAT-WE-DO-WRONG-ADDENDUM-2.md — the next gap hunt, gaps 12-21, each with the check that catches it: the whole line's background-scroll sync, loop seams, the other four walkers' own gaits, a real joint check for the profile puppet, credit-text legibility, ending-credit music beat sync, sound (or a deliberate, recorded silence), a formal gate for when a new view of a character is invented, gag-instance versioning in the format register, and a faithfulness check when a studied reference is carried into a build.
 
 No deletions. No other files changed.
+
+## ANIMATION METHOD — OWNER-MEMORY NOTE APPENDED TO YYH STUDY (2026-10-28)
+
+A dated owner-memory note was appended to `show/production/animation-method/YU-YU-HAKUSHO-ENDING-STUDY.md`: the owner remembers the team-walk most strongly from a Yu Yu Hakusho game (unidentified — recorded as a lead, not a source), names the ending walk's serious-played-straight tone "reverse deadpan," and recognised the chibi-comedy segment as the eyecatch/omake trope that lives outside the endings. No other record changed.
