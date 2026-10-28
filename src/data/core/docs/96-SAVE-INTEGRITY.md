@@ -1,0 +1,73 @@
+# #96 — SAVE-INTEGRITY SYSTEMS → game save integrity spec
+
+**What was studied.** Checksum/anti-corruption architecture in
+the public record: cartridge-era saves (dual-slot + checksum +
+magic header — write the new copy to the *other* slot, verify,
+then flip; a torn write loses one slot, never the save), and the
+modern form (per-section checksums, version fields, migration on
+load, atomic rename on filesystems). The invariant across eras:
+**a save is either the old valid one or the new valid one — a
+half-written state must be unreachable.**
+
+**The payload this protects (already designed, scattered across
+the teardown packages — this spec is where they become one
+file):**
+
+| Section | Contents | Home spec |
+|---|---|---|
+| `dex` | `seen_bits` / `met_bits` bitsets | species-systems MOCHIIOTECA-FORMATS §1.2 |
+| `flags` | story/progress/tech/vars namespaces | world-systems EVENT-FLAG-ARCHITECTURE (#12) |
+| `party` / `roster` | individuals (incl. `variant_id: lustre`, #92) | game data core |
+| `world` | schedule overrides in force, spawn/session state | #93 / SPAWN-TABLES |
+| `meta` | save version, playtime, slot id | this spec |
+
+**Native spec:**
+
+- **Layout:** header `{magic, schema_version, slot, sequence}` +
+  sections, each section independently checksummed (CRC-32 per
+  section; whole-file hash optional and *not* a substitute — a
+  corrupt `meta` must not orphan a good `dex`).
+- **Dual-slot rotation:** two slots, alternating writes,
+  `sequence` increments per successful save. Load picks the
+  *highest-sequence slot that verifies*. A failed verify falls
+  back one generation and **says so in the UI** (silent rollback
+  is how players lose hours without knowing why).
+- **Atomic section writes:** within a save operation, sections
+  write to a scratch copy of the target slot; the slot flips to
+  `valid` only after every section checksum is written. The
+  bitsets are small (32 bytes per 256 species… the footprint
+  math's cousin: 1 bit/species is why the dex section is the
+  cheapest thing in the file) — there is no performance excuse
+  for partial dex writes.
+- **Versioning & migration:** `schema_version` is the *save*
+  version, independent of any content version. Loaders migrate
+  forward one version at a time, on a copy; a failed migration
+  leaves the original untouched and loadable by its own version.
+  New sections (e.g. a future facility streak record, #86/#94)
+  arrive as *absent = default*, never as a version bump that
+  orphans older saves.
+- **What integrity is not:** this is anti-*corruption*, not
+  anti-*tamper*. No encryption, no signing, no play policing —
+  a single-player world's save is the player's file. Stated
+  plainly so no later pass "hardens" it into a DRM shape canon
+  never asked for.
+- **Derived data is never saved:** completion counts
+  (MOCHIIOTECA-COMPLETION — derived from the bitsets by
+  popcount), schedule positions (derived from #93 tables +
+  clock), and lustre *presentation* (derived from the palette
+  map) are recomputed on load. The save stores facts; everything
+  countable is counted fresh. This is the rule that keeps the
+  sections above from desyncing each other.
+
+**Wiring.** This is the capstone of the data packages: it names
+the payload sections owned by species-systems, world-systems,
+and List 10's #92/#93, and gives them one durability story.
+Game-side only — the show has no saves; show "state" is the
+production log and registries, governed by their own rules.
+
+**Coverage.** Architectures: cartridge dual-slot/checksum and
+modern sectioned formats are both fully documented publicly.
+Contents: the section map is complete against the systems built
+to date; `schema_version` starts at 1 when the game first writes
+a save — until then this is a spec with zero files to protect,
+flagged as such.
