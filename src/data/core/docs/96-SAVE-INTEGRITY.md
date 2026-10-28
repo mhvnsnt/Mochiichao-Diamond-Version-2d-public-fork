@@ -75,3 +75,7 @@ flagged as such.
 ## Registered section — `research` (List 11 #97, landing 2026-10-27)
 
 The payload map gains a `research` section: FACTS ONLY (tallies); research levels are derived, never stored. Registered here as the section's one home. No save implementation exists in the repo yet — this registration is spec-level, recorded as such (real-code law), and binds the first save build.
+
+## Registered section — `hallOfFame` (List 13 #126, landing 2026-10-27)
+
+A future FACTS section in this payload map (absent = default). No record is created at landing; the write hook arms when #100's capstone is instanced in real encounter records. One home: this registration. (#122's disposition over these sections is reference-only — NG+ is CLOSED by owner ruling; see src/data/core/docs/122-NEW-GAME-PLUS.md.)

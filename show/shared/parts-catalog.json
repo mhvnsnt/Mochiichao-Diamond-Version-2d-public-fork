@@ -399,6 +399,73 @@
      "extends": "#80 individual record (location) / #96 save; release tombstone permanent"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list13-systems",
+   "type": "systems-index",
+   "about": "List 13 teardown systems (items 117-126), landed 2026-10-27. Index registration per STAGING step 1. Engine integrations in this list are SPEC-LEVEL (no engine/runtime code exists in the audited sources). #122 NG+ is CLOSED by owner ruling (connected-world doctrine) \u2014 reference only.",
+   "items": [
+    {
+     "n": 117,
+     "name": "Field technique system (Rare Moves in the overworld)",
+     "home": "show/production/world-systems/117-FIELD-TECHNIQUES.md",
+     "extends": "#12 tech.* flags / #11 gates / #59 locks; roster = Illuminate only (one canon row)"
+    },
+    {
+     "n": 118,
+     "name": "Shop system architecture",
+     "home": "src/data/core/docs/118-SHOP-SYSTEM.md",
+     "extends": "#31 item layer / #20 economy; zero stock rows instanced"
+    },
+    {
+     "n": 119,
+     "name": "Interior area design system",
+     "home": "show/production/world-systems/119-INTERIOR-AREAS.md",
+     "extends": "#11 host graph / #59 gates"
+    },
+    {
+     "n": 120,
+     "name": "Game cutscene staging",
+     "home": "show/production/120-CUTSCENE-STAGING.md",
+     "extends": "#21 camera / #12 flags; cue executor SPEC-LEVEL (no engine)"
+    },
+    {
+     "n": 121,
+     "name": "Accessibility options architecture",
+     "home": "src/data/core/docs/121-ACCESSIBILITY.md",
+     "extends": "presentation-only; settings store SPEC-LEVEL (does not exist)"
+    },
+    {
+     "n": 122,
+     "name": "New Game Plus structure \u2014 CLOSED by owner ruling",
+     "home": "src/data/core/docs/122-NEW-GAME-PLUS.md",
+     "extends": "reference only; live replacement = #127 region transition (connected world)"
+    },
+    {
+     "n": 123,
+     "name": "Mount & traversal system",
+     "home": "show/production/world-systems/123-MOUNT-TRAVERSAL.md",
+     "extends": "#43 classes; RIDDEN state = proposal to #58, NOT adopted"
+    },
+    {
+     "n": 124,
+     "name": "Daily/weekly event rotation",
+     "home": "show/production/world-systems/124-EVENT-ROTATION.md",
+     "extends": "#19 clock / #93 shapes; calendar itself OPEN"
+    },
+    {
+     "n": 125,
+     "name": "Fast-travel network",
+     "home": "show/production/world-systems/125-FAST-TRAVEL.md",
+     "extends": "#11 route graph (in-repo home confirmed: src/data/core/routes/) / #32 arrival evidence"
+    },
+    {
+     "n": 126,
+     "name": "Hall of Fame record",
+     "home": "show/production/world-systems/126-HALL-OF-FAME.md",
+     "extends": "#100 capstone / #96 hallOfFame section (registered)"
+    }
+   ]
   }
  ]
 }

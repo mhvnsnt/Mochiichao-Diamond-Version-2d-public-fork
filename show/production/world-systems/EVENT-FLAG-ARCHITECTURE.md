@@ -123,3 +123,5 @@ game and show are literally testing the same `story.*` ids.
   event *contents* of Region 1 (every NPC, every trigger) are story
   production, written beat by beat under the owner's direction —
   this package is the architecture they will be written in.
+
+**Referent (List 13 #117, 2026-10-27):** the `tech.*` namespace's field-technique system is `117-FIELD-TECHNIQUES.md` (same folder) — held (this doc's booleans, set at acquisition) vs performed (the live party check in #117) are separate facts; the sole-knower-leaves edge between them is an OPEN owner ruling, recorded in #117.
