@@ -1,0 +1,31 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-day-v1-living.mp4",
+  "duration_s": 7,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+      "x": 520,
+      "y": 300,
+      "scale": 0.6,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "09",
+  "scene": "EP01-SCENE-02",
+  "plate_registry": "PLATE-POND-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec plate, CURRENT for provisional use; Step-0 candidate battle-bg-lake-v3d checked and NOT usable (battle-scale)",
+  "script_beat": "Kittember's tail flame flickers at empty air; ears flat. Wind dies to CALM in one beat - the cold spot's first tell is ambient (bed: Kittember cry at scene 26.0s).",
+  "camera": "STAGE-WIDE",
+  "wind_state": "CALM (dies mid-cut)",
+  "missing_assets": [
+    "ears-flat expression: rig set has head_tilt only - ears-flat pose not built",
+    "cold-spot shimmer SFX-COLDSPOT-01 = GAP (cue sheet), not in bed"
+  ],
+  "flags": [
+    "Kittember likeness gate on idle measured FAIL (SSIM 0.4985/MAD 53.45, pose-phase effect) - promotion is owner/scorer call, recorded in bundle README"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

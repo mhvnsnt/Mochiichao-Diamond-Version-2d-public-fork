@@ -1,0 +1,28 @@
+{
+  "background": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+  "duration_s": 5,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/mochii/mochii-squash_hop.transparent.webm",
+      "x": 560,
+      "y": 40,
+      "scale": 0.55,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "03",
+  "scene": "EP01-SCENE-01",
+  "plate_registry": "garden-gate-v2-living (CURRENT)",
+  "script_beat": "Gate swings open by itself - Mochii bouncing on it, squeak-cry like a metronome (bed event at scene 14.0s).",
+  "camera": "STAGE-WIDE",
+  "wind_state": "BREEZE",
+  "missing_assets": [
+    "gate-door as separate swing level (AMB-GATE-SWING-01 ridden version) - plate carries gate at rest; ridden swing is puppet/layout work, not a composite_shot layer"
+  ],
+  "flags": [],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

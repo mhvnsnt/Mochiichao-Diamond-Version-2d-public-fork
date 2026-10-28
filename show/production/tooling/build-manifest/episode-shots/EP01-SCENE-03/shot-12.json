@@ -1,0 +1,41 @@
+{
+  "background": "show/assets/backgrounds/green/EP01-PLATE-green-day-v1-living.mp4",
+  "duration_s": 8,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+      "x": 300,
+      "y": 340,
+      "scale": 0.6,
+      "start_s": 0,
+      "loop": true
+    },
+    {
+      "clip": "show/production/character-sheets/gabu/gabu-head_tilt.transparent.webm",
+      "x": 760,
+      "y": 260,
+      "scale": 0.7,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "12",
+  "scene": "EP01-SCENE-03",
+  "plate_registry": "PLATE-GREEN-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec plate, CURRENT for provisional use; Step-0 candidate battle-bg-garden-v3d checked and NOT usable (battle-scale)",
+  "script_beat": "The trail points at the pond. Keeper device check-in - eyecatch energy. 'It's giving us directions?'",
+  "camera": "STAGE-WIDE + device-frame eyecatch grammar",
+  "wind_state": "BREEZE",
+  "missing_assets": [
+    "KEEPER DEVICE PROP: design is script OPEN ITEM 3 - this is why cut 12 is a HALT; no device asset may be invented",
+    "MOCHIKO rig/clip (line)"
+  ],
+  "flags": [
+    "HALT: keeper device design is an OPEN ITEM (locked script SS6 / EP01-manifest) - spec written, cut must not be rendered as final until the device exists",
+    "SCENE 3 HAS NO AUDIO BED (deliberate)"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null,
+  "halt": "HALT: keeper device design OPEN ITEM (script SS6.3)"
+}

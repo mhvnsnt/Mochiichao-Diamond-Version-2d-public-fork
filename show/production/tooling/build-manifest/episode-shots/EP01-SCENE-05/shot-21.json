@@ -1,0 +1,53 @@
+{
+  "background": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+  "duration_s": 12,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+      "x": 300,
+      "y": 280,
+      "scale": 0.55,
+      "start_s": 0,
+      "loop": true
+    },
+    {
+      "clip": "show/production/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+      "x": 700,
+      "y": 300,
+      "scale": 0.5,
+      "start_s": 0,
+      "loop": true
+    },
+    {
+      "clip": "show/production/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+      "x": 880,
+      "y": 360,
+      "scale": 0.45,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "21",
+  "scene": "EP01-SCENE-05",
+  "plate_registry": "garden-gate NIGHT (graded variant not yet produced)",
+  "script_beat": "Mochiko reads Rule 12 from the Manual, exact wording. Nobody says anything else; the crickets do it for them (bed: Dorowani cry under the read at scene 22.0s - scene offset includes cut 19).",
+  "camera": "STAGE-WIDE",
+  "wind_state": "CALM",
+  "missing_assets": [
+    "MOCHIKO rig/clip (the reader)",
+    "Manual prop - no asset",
+    "Gate NIGHT graded plate variant - not yet produced"
+  ],
+  "flags": [
+    "VOICE-SCRATCH: Mochiko casting OPEN"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null,
+  "dialogue": {
+    "speaker": "MOCHIKO",
+    "text": "Everything in the garden belongs to somebody... And everybody belongs to the Garden.",
+    "note": "SPOKEN dialogue (Rule 12 read aloud) - NOT a subtitle; the subtitle-law count stays 3"
+  }
+}

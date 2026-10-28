@@ -1,0 +1,64 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+  "duration_s": 14,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+      "x": 180,
+      "y": 430,
+      "scale": 0.45,
+      "start_s": 0,
+      "loop": true
+    },
+    {
+      "clip": "show/production/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+      "x": 330,
+      "y": 400,
+      "scale": 0.5,
+      "start_s": 0,
+      "loop": true
+    },
+    {
+      "clip": "show/production/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+      "x": 520,
+      "y": 410,
+      "scale": 0.5,
+      "start_s": 0,
+      "loop": true
+    },
+    {
+      "clip": "show/production/character-sheets/kittember/kittember-idle.transparent.webm",
+      "x": 700,
+      "y": 420,
+      "scale": 0.45,
+      "start_s": 0,
+      "loop": true
+    },
+    {
+      "clip": "show/production/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+      "x": 880,
+      "y": 440,
+      "scale": 0.45,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "13",
+  "scene": "EP01-SCENE-04",
+  "plate_registry": "PLATE-POND-DUSK (show/shared/PLATES-REGISTRY.md) - provisional spec plate (dusk grade variant, landed PR #393), CURRENT for provisional use",
+  "script_beat": "POND DUSK stakeout: five heads behind a bush. Mist at knee height. Bed begins emptying (insect layer thins across 13-15).",
+  "camera": "STAGE-WIDE (locked; Pond movement = breathing)",
+  "wind_state": "CALM",
+  "missing_assets": [
+    "bush foreground level - no asset",
+    "mist layer AMB-POND-MIST-01 - cycle not built",
+    "MOCHIKO rig/clip (fifth head is the creatures'; Mochiko is in the stakeout by script)"
+  ],
+  "flags": [
+    "BED LENGTH: scene bed WAV measures 46.8s vs 64s of cuts 13-18 - episode_build LOOPs a short bed (its report notes it); cry events at 24/34/38.5/45s would repeat on loop - flag for mix, do not silently accept"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}
