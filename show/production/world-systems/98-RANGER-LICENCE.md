@@ -103,3 +103,6 @@ home). Consumed by #100 (gauntlet standing display) and #90
 **Completed by (List 14 #133, 2026-10-27):** licence rank trials are `133-LICENCE-TRIALS.md` (same folder) — this licence's tier slot's system. Its tier table lands EMPTY (owner content only); its region-gating is a tier condition on #127's progression discovery kind only, never a border lock.
 
 **PROPOSAL from List 20 #189 (registered at its landing, 2026-10-27):** the challenge election renders on the licence as a derived standing. No field is added to the licence record — this file's identity-only rule is untouched.
+
+
+**Landing note — List 28 #269 (2026-10-27):** the deed ledger seats in this file's licence-record family, beside #230's findings: an append-only store of deed entries in 269-MORALE-HONOR.md's fragment shape. The ledger is a record of *events*; morale (#269), reputation tallies (#270), and wanted level (#272) are derivations over it and are stored nowhere — this file's "identity facts and nothing else" rule for the licence record itself is untouched, and no morale or reputation field is added to it.

@@ -129,3 +129,6 @@ because comprehension is not a property of the creature.
   scopes, which episodes advance her) is the show lane's
   to write; this spec gives it a format that cannot
   quietly become creature dialogue.
+
+
+**Landing note — List 28 #276 (2026-10-27):** stolen partners are played in this file's cry/behaviour grammar (276-SHOW-MORALE-REPUTATION.md, reading #273's keeping states): the turned back is a recurring face, and comprehension of a stolen partner's cries follows this file's rules, not a separate theft vocabulary.

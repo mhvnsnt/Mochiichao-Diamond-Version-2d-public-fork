@@ -87,3 +87,6 @@ stores nothing.
   The sell fraction is a PROPOSED default awaiting the
   owner's ruling, and the currency's name is inherited
   OPEN from #20. Zero stock rows are instanced.
+
+
+**Landing note — List 28 (2026-10-27):** honest-shop prices read #271's ladder position as a derivation over #269's ledger (per-step adjustment, band-capped, in #271's drafted system data); fence prices read #274's gates. No stored standing of any kind is read here — the reads are derivations at read time, per the programme-wide derived law.

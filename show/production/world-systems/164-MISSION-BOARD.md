@@ -106,3 +106,6 @@ landing as a negative test.
   board's locations are unplaced.
 
 **PROPOSAL from List 25 #245 (registered at its landing, 2026-10-27):** field rescues instance under this file's `assist` kind as it stands. An optional dedicated `rescue` kind is proposed here, in this file only, for this home to accept or decline.
+
+
+**Landing note — List 28 (2026-10-27):** this board's postings are a deed source for #269's ledger and a fence-adjacent surface for #274 (band-gated posting contents are an unbuilt data pass — the kinds stay closed as verified: deliver / retrieve / escort / survey / assist; no contents are instanced from List 28's prose).

@@ -114,3 +114,6 @@ story, with #30/#100's encounter grammar, not with this format.
   instead of passing silently.
 
 **PROPOSAL from List 17 #159 (registered at its landing, 2026-10-27 — PROPOSED, not accepted):** a second validator source class, `rental`, for borrowed-party snapshots. The registered TENSION: this file's party-source check (`location == party`) cannot pass for a rental snapshot by construction. The resolution path is THIS home accepting the second source class; #159 does not and will not weaken the check from its side. Until acceptance here, rental validation is SPEC-LEVEL and no report may call it validator-wired.
+
+
+**Landing note — List 28 #268 (2026-10-27):** snag attempts are excluded from this lobby's battles by #268's rule (268-SNAG-SYSTEM.md): the snag lives in field, Syndicate, and duel battles, never in versus play.
