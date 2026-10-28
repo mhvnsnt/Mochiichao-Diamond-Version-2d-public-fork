@@ -10,7 +10,8 @@
     "Red eyes",
     "Light belly + dorsal fin",
     "Tan shell carried on the back - it is a shell, never a hat",
-    "No baked-in ground shadow in any reference or output"
+    "No baked-in ground shadow in any reference or output",
+    "No white around the eyes and no sclera - red eyes set directly in the blue face; never add or grow eye-whites (Owner ruling 2026-10-28)"
   ],
   "voice_note": "Creatures speak in cries/sounds only - no word dialogue (canon rule).",
   "views": {
@@ -44,5 +45,15 @@
     "google_flow_ingredients": "front.png usable as 1 of up to 3 Ingredients reference images; also fits Flow Characters",
     "wan_vace": "front.png is the VACE reference image for the locked workflow (parity/workflow-i2v-locked.json)",
     "wan_lora": "Training sets exist for wispkin + dorowani only (lora/ in avatar-stack); mochii/gabu/kittember/sproutle = GAP"
-  }
+  },
+  "prompt_negative_additions": [
+    "no white around the eyes, no sclera — red eyes set directly in the blue face"
+  ],
+  "owner_rulings": [
+    {
+      "date": "2026-10-28",
+      "ruling": "Eye-white growth is drift: the Google Flow scratch test clip grew white around Dorowani's eyes; acceptable as scratch, but going forward Dorowani generations must NOT add or grow white around the eyes. Negative prompt: no white around the eyes, no sclera — red eyes set directly in the blue face.",
+      "scope": "This does not change the avatar Dorowani's established look (2026-10-27 ruled deviation, kept for that character's own asset set); this rule governs generated footage going forward."
+    }
+  ]
 }
