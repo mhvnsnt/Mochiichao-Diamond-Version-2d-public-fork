@@ -139,3 +139,6 @@ discipline, and the lane fence are filled in full.
 - System: complete. Contents: zero conversations
   authored — the kit's existing dialogue data gains
   a grammar here, not new text.
+
+
+**PROPOSAL — List 36 #352 (registered at List 36's landing, 2026-10-27):** #352's opponent reaction classes are proposed into this file as a BATTLE ADDRESS SPACE — the opponent speaks through this file's dialogue machinery in battle, in #352's reaction classes (352-OPPONENT-VOICE.md). The crowd fence stands with it: the room reacts via #242, the opponent speaks via #352, and neither writes the other's lines. All reaction lines themselves are authored content — none are instanced here.

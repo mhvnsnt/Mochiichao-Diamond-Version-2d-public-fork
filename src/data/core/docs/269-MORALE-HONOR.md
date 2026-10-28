@@ -174,3 +174,14 @@ are open in this spec: morale has no names to name.
 - Contents: the ledger is empty (no deeds have been
   done); band-gated posting contents are #164 data
   passes, not gaps in this system.
+
+
+**PROPOSED ROWS — List 36 (registered at List 36's landing, 2026-10-27):** three rows proposed into this file's deed table, values DRAFT (the mercy values and the attempt-weight tuning are open slots in #348/#353 — no number is asserted here):
+
+| Deed (proposed) | Value | Notes |
+|---|---|---|
+| Attempt a betrayal-taking (a taking from one who trusts you, #348) | DRAFT | the attempt class generalised from this table's seed rows; gated by #347's prompt taxonomy |
+| Mercy shown (a surrender accepted / a beaten opponent spared, #353) | DRAFT | written only when mercy was the player's to refuse |
+| Mercy refused (a surrender spurned, #353) | DRAFT | the refusal is the deed; the fight's outcome writes nothing here |
+
+Confirmed, not duplicated: this file's addendum already carries the confirmation-gated attempted-theft row ("Attempt a steal", −3) from List 28's landing — List 36 adds no second copy. **Taxonomy check (rides with these rows):** a new taking-class deed row in this table without a #347 prompt class fails review.

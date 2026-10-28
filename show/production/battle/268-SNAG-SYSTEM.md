@@ -198,3 +198,6 @@ carried from #99). Nothing mechanical is parked.
 - Contents: zero snag items instanced; zero Syndicate
   parties carry one yet — both are data passes at
   landing, not design gaps.
+
+
+**WIRING NOTES — List 36 (recorded at its landing, 2026-10-27):** (1) #349's rescue confirmation reads a heart reader: the `heartReader` field and the refusal-data seats are PROPOSED onto the #31 item record beside this system's snag flag — reader presence is item data. Zero snag-class items are instanced anywhere (this file's own register), so nothing was placed on any item record at this landing. (2) #356's send-out fence rides this file's party of record: after a steal lands, the stolen slot stays empty, and no send-out may present a stolen Mochi as the thief's own — the exclusion reads this system's record of whose party the individual belongs to.
