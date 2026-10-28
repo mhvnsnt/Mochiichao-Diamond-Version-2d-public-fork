@@ -118,3 +118,6 @@ policy.
   when the first ability is ever authored, the engine
   already knows when it fires, what it stacks with,
   and what could silence it.
+
+
+**Landing note — List 27 #257 (2026-10-27):** the state-bloom derivation (257-BLOOM-STATES.md) re-reads forme state in this file's weather-react seat: when weather changes, bloom derivations re-derive with it. #257 founds no bloom family; the derivation is a read over #130's axis.

@@ -91,3 +91,13 @@ canon is silent) — the pilot six are the only species with the
 body plans to fill them today.
 
 **PROPOSAL from List 17 #160 (registered at its landing, 2026-10-27):** assistance trigger classes `sign:` / `find:` / `danger:` for the field-partner annex (160-FIELD-PARTNER-AI.md). Proposal discipline: the classes take effect only if this home adopts them; no species reaction set was edited by the List 17 landing.
+
+
+**States seated by the List 27 landing (2026-10-27) — one pass over this machine, per List 27's STAGING (step 8 and its interface note 3):**
+
+| State | Enter | Behaviour |
+|---|---|---|
+| `RIDDEN` | a mount traversal begins (#123) | The follower is the mount: the partner carries the Ranger, follow distance is zero, and the traversal system (#123) owns movement until dismount returns the follower to FOLLOW. Proposed by List 13 #123 (123-MOUNT-TRAVERSAL.md) as this machine's sixth state; seated here at the List 27 landing, which reconciles List 13's register entry for it. |
+| `ROOTED` | a rooting rest begins (#263) | The follower settles into the ground to rest and feed (263-ROOTING-MODE.md): motion stops; the rest joins #134's camp rest and #262's sunlight rest; waking returns the follower to IDLE. Proposed by List 27 #263 into this home and accepted here — #263's spec stands as the proposal of record. |
+
+The xsheet/board vocabulary (#16) gains `RIDDEN` and `ROOTED` with this seating, so show staging names them the same way the game machine does.

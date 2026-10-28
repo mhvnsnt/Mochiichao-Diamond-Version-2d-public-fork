@@ -80,3 +80,6 @@ registry home — #9's package stages them repo-ready, but
 their landed path is confirmed at landing; the ledger
 reads whatever home landing verifies, and until then this
 spec is the derivation rule, not a report.
+
+
+**Landing note — List 27 #258 (2026-10-27):** grown-weapon growth records (258-GROWN-WEAPON-GROWTH.md) are read by this ledger — which weapon shape a stage performs with. The records' ids never resolve in #31's item layer (the non-join fence, structural in the record shape).

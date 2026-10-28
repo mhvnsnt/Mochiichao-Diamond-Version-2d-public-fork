@@ -83,3 +83,6 @@ doctrine applies: same species, different profiles):
   home and a wiring contract, deliberately — inventing a raising
   balance table would be exactly the silent-fill the house law
   forbids.
+
+
+**PROPOSAL from List 27 #262 (registered at its landing, 2026-10-27):** a sunlight input seat among this system's care inputs — sun exposure accrues from #19's time states × #61's weather × place, and rest reads through #134's existing rest verb (262-SUNLIGHT-REST.md). This home's exact axis fields were not re-derived at the List 27 build, which is precisely why the seat lands as a proposal into this file rather than an asserted field name. Proposal discipline: the input takes effect only as carried here.

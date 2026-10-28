@@ -1323,6 +1323,73 @@
      "extends": "#132's services[] seats verified present at landing; no seat founded in this file"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list27-systems",
+   "type": "systems-index",
+   "about": "List 27 teardown systems (items 257-266), landed 2026-10-27 \u2014 bloom, grown anatomy, and the Garden joins: six proposals seated only in their owners' files, the two bloom kinds kept unmerged, and the open slots are authored content (sheet-pass records, Garden placement), not mechanics.",
+   "items": [
+    {
+     "n": 257,
+     "name": "State bloom derivation",
+     "home": "show/production/world-systems/257-BLOOM-STATES.md",
+     "extends": "a read over #130's forme axis; #184 weather-react re-read; #195 season vote is a designed absence"
+    },
+    {
+     "n": 258,
+     "name": "Grown-weapon growth records",
+     "home": "show/production/species-systems/258-GROWN-WEAPON-GROWTH.md",
+     "extends": "annex on the sheet beside Anatomy notes; the A3 records are its first contents; #31 non-join fence"
+    },
+    {
+     "n": 259,
+     "name": "Grown-armour parts vocabulary",
+     "home": "show/production/species-systems/259-GROWN-ARMOUR-ANATOMY.md",
+     "extends": "the shared part index: sheets cite it, rigs name by it, #9 anchors to it, #258 joins through it"
+    },
+    {
+     "n": 260,
+     "name": "Contact-defence anatomy citations",
+     "home": "show/production/battle/260-CONTACT-DEFENCE-ANATOMY.md",
+     "extends": "anatomyBasis proposed into #107's ability record; resolution wholly #184's; fairness check rides the first ability-data PR"
+    },
+    {
+     "n": 261,
+     "name": "Pollen and scent scene layer",
+     "home": "show/production/world-systems/261-POLLEN-SCENT.md",
+     "extends": "pollen_state proposed into #61's scene record; consumed by #128's plates"
+    },
+    {
+     "n": 262,
+     "name": "Sunlight rest",
+     "home": "show/production/world-systems/262-SUNLIGHT-REST.md",
+     "extends": "sunlight seat proposed into #28's care inputs; rest reads through #134's existing verb"
+    },
+    {
+     "n": 263,
+     "name": "Rooting mode",
+     "home": "show/production/world-systems/263-ROOTING-MODE.md",
+     "extends": "ROOTED proposed into #58's machine and seated there at this landing, in one pass with #123's RIDDEN"
+    },
+    {
+     "n": 264,
+     "name": "Garden planting spots",
+     "home": "show/production/world-systems/264-GARDEN-PLANTING-SPOTS.md",
+     "extends": "feature classes in the Garden-complex authoring; assignment seat is #65's; zero spots placed at landing"
+    },
+    {
+     "n": 265,
+     "name": "Wild-duel etiquette",
+     "home": "show/production/world-systems/265-WILD-DUEL-ETIQUETTE.md",
+     "extends": "challengeStyle proposed into #152's annex; wired into #209's initiation read"
+    },
+    {
+     "n": 266,
+     "name": "Flower symbolism grammar",
+     "home": "show/production/266-FLOWER-SYMBOLISM.md",
+     "extends": "production grammar beside #82 and #50's colour scripts; vocabulary only, wires no data"
+    }
+   ]
   }
  ]
 }

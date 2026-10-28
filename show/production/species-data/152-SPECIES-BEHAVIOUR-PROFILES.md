@@ -84,3 +84,6 @@ anatomies with no field presence (pure swimmers'
 handling is #28's question first).
 
 **PROPOSAL from List 23 #226 (registered at its landing, 2026-10-27):** a transit register for migration spectacles, proposed into this profile system's home (226-MIGRATION-SPECTACLES.md). Spectacle records key by migrationId to #144's pairs with witnessPoints null; the record exposes no encounter table, rate, or rarity field to any consumer (negative test, in the spec).
+
+
+**PROPOSAL from List 27 #265 (registered at its landing, 2026-10-27):** a `challengeStyle` field in this profile's annex — how a wild individual of the species opens an encounter (265-WILD-DUEL-ETIQUETTE.md). #209's initiation read consumes it: a `formal` species' initiation renders the duel's three beats; encounter tables and rates are untouched. The A3 line's `formal` value is entered by the sheet pass from verified prose, not at this landing. Proposal discipline: the field takes effect only as carried here.

@@ -114,3 +114,6 @@ default rule, flagged in STAGING.
   not a special case in code.
 
 **Criterion kind added by List 18 #175 (landing 2026-10-27, cited here — this file is the kind's only home):** `weather` — a forme criterion over #61's weather kinds, filtered by #142's climate layer (175-WEATHER-FORMES.md). NONE-EXCLUSION (schema-level rule): the weather kind NONE is excluded from the criterion input set; a criterion naming NONE is a schema error and fails validation. No family gains the kind at landing; Strikechamp's pairing stays OPEN.
+
+
+**PROPOSAL from List 27 #257 (registered at its landing, 2026-10-27):** widen the `state` criterion kind so a family's criterion may also key off a *bloom state* — the state-bloom derivation in 257-BLOOM-STATES.md reads this file's axis and family record and founds no family of its own. The two bloom kinds stay unmerged: a state bloom is a derivation over this axis, never anatomy (the evolved-bloom crown class belongs to #259's parts vocabulary). Proposal discipline: the widening takes effect only as this home carries it here; no family gains a bloom criterion at landing — no wave-1 sheet declares a bloom family.

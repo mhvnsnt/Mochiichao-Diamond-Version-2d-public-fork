@@ -105,3 +105,6 @@ as landed rows.
   plates, once made, are wired pieces and not loose files.
   The living-background versions' contents belong to the
   background programme, not to this teardown.
+
+
+**Landing note — List 27 #261 (2026-10-27):** plates read the scene's `pollen_state` (proposed by #261 into #61's scene record) when present; #261 instances no pollen record at landing.

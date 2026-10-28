@@ -105,3 +105,6 @@ Announcements: #90/#172 read the same derivation.
 - **Contents: zero seasons and zero events instanced** —
   the calendar itself is the owner's OPEN ruling, and
   every event awaits it.
+
+
+**Landing note — List 27 #257 (2026-10-27):** the state-bloom derivation (257-BLOOM-STATES.md) reads this file's season records as one input vote; seasons remain instanced by nobody until the calendar is ruled, so the vote is silently absent until then — a designed absence, not a gap to fix by inventing a calendar.

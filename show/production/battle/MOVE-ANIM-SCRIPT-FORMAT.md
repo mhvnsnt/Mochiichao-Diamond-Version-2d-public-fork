@@ -122,3 +122,6 @@ with every difference logged in `variance_notes`. Validate with
 - Showdown choreography was used as structural reference only
   (AGPL — no code, no data copied), consistent with the PR #366
   catalogue verdict.
+
+
+**Landing note — List 27 (2026-10-27):** animscript anchors validate against #259's parts vocabulary (259-GROWN-ARMOUR-ANATOMY.md), and #258's growth records cite parts by it.

@@ -121,3 +121,6 @@ existing Garden view (profile-lane work) · whether
 a visit may coincide with #56 festival windows
 (an overlay question for #105/#195 — not ruled
 here).
+
+
+**Landing note — List 27 #264 (2026-10-27):** Garden planting spots (264-GARDEN-PLANTING-SPOTS.md) read visitor behaviour from this file; spot placement itself is Garden authoring content — zero spots placed at landing.
