@@ -55,9 +55,12 @@
  *   strip inside Menu Custom; the title / main-menu symbol-layer
  *   animation in game is still NEED (existing note in
  *   SettingsScreen page 3), not claimed here.
- * - GAP (row present, labelled, no effect yet): painted
- *   menu background (painted TITLE backgrounds exist for 8/8
- *   biomes on main, but are not wired as menu backgrounds yet);
+ * - WIRED (2026-10-27, Mars approval): painted menu
+ *   backgrounds — all 10 v2 title paintings are individually
+ *   selectable through the PAINTED BACKGROUND row in Menu
+ *   Customisation (default OFF = the gradient as before; no
+ *   painting is a default and no painting is mapped to a
+ *   specific menu);
  *   TALL sprite rendering (selection stored, display falls back
  *   to chibi, never blank — see spriteDisplayScale);
  *   day/night tint while pausing/playing (PauseMenu has no
@@ -70,7 +73,7 @@
  */
 
 import type { TitleBiomeId } from './titleBiomes';
-import { TITLE_BIOMES } from './titleBiomes';
+import { TITLE_BIOMES, TITLE_BIOME_LIST } from './titleBiomes';
 
 /* ------------------------------------------------------------------ */
 /* Day / night                                                         */
@@ -211,6 +214,9 @@ export type MenuAnimationStyle = 'SINE' | 'FLOW' | 'RISE_FADE';
 export type MenuAnchor = 'TOP' | 'CENTER' | 'BOTTOM';
 export type MenuOrder = 'DEFAULT' | 'REVERSED';
 export type BackgroundBiome = TitleBiomeId | 'AUTO' | 'NONE';
+/** Painted menu background choice: 'OFF' (default, no painting)
+ *  or one of the 10 v2 title paintings (titleBiomes.ts ids). */
+export type PaintedBackground = 'OFF' | TitleBiomeId;
 export type SpriteProportion = 'CHIBI' | 'TALL';
 export type TextSizeId = 'S' | 'M' | 'L' | 'XL';
 export type DialogueBoxStyle = 'ROUNDED' | 'SQUARE' | 'GLOSS' | 'MINIMAL';
@@ -234,10 +240,17 @@ export interface MenuCustomSettings {
   /** Sine sway amplitude, 0 - 8 (px in the preview strip). */
   sway: number;
   backgroundBiome: BackgroundBiome;
-  /** GAP for menus: painted title backgrounds exist for 8/8 biomes
-   *  (Title Backgrounds lane, complete) but are not wired as menu
-   *  backgrounds yet — row is labelled NEED. */
-  backgroundPainted: false;
+  /** Painted menu background choice. 'OFF' (the default) means no
+   *  painting: the gradient background renders exactly as before.
+   *  Any other value is one of the 10 v2 title paintings, shown
+   *  as this screen's background layer. No painting is a default
+   *  and no painting is mapped to a specific menu — all 10 go
+   *  through the same PAINTED BACKGROUND row as options. */
+  paintedBackground: PaintedBackground;
+  /** Kept for preset JSON compatibility: true exactly when
+   *  paintedBackground is not 'OFF'. Render code reads
+   *  paintedBackground, never this flag alone. */
+  backgroundPainted: boolean;
   symbolLayer: boolean;
   /** Background fade, 0 - 100 (opacity % of the background layer). */
   backgroundFade: number;
@@ -266,6 +279,7 @@ export const DEFAULT_MENU_CUSTOM: MenuCustomSettings = {
   animationSpeed: 1,
   sway: 3,
   backgroundBiome: 'AUTO',
+  paintedBackground: 'OFF',
   backgroundPainted: false,
   symbolLayer: true,
   backgroundFade: 100,
@@ -297,6 +311,35 @@ export const MENU_ORDERS: MenuOrder[] = ['DEFAULT', 'REVERSED'];
 export const BACKGROUND_BIOMES: BackgroundBiome[] = [
   'AUTO', 'NONE', 'snow', 'grass', 'water', 'sand', 'stone', 'forest', 'rain', 'night',
 ];
+/** PAINTED BACKGROUND row options: OFF first (the default), then
+ *  all 10 v2 title paintings in titleBiomes.ts order. Derived
+ *  from TITLE_BIOME_LIST so the row can never drift from the
+ *  paintings that actually exist on main: 10/10 = 100%.
+ *  title-bg-key-art-v2.png is deliberately NOT here — it is an
+ *  unmapped extra, not one of the 10 approved paintings — and
+ *  no v1 file is referenced anywhere in this wiring. */
+export const PAINTED_BACKGROUNDS: PaintedBackground[] = [
+  'OFF',
+  ...TITLE_BIOME_LIST.map((b) => b.id),
+];
+
+/** Sanitise a stored/preset painted choice: anything not in
+ *  PAINTED_BACKGROUNDS falls back to 'OFF' (gradient as before),
+ *  never to a painting and never blank. */
+export function sanitisePaintedBackground(v: unknown): PaintedBackground {
+  return typeof v === 'string' && (PAINTED_BACKGROUNDS as string[]).includes(v)
+    ? (v as PaintedBackground)
+    : 'OFF';
+}
+
+/** Bundled image URL for a painted choice, or null when OFF.
+ *  The URL comes from titleBiomes.ts (the painting's own
+ *  backgroundImage slot), so each option loads exactly the v2
+ *  PNG already shipped on main. */
+export function paintedBackgroundImage(choice: PaintedBackground): string | null {
+  if (choice === 'OFF') return null;
+  return TITLE_BIOMES[choice].backgroundImage;
+}
 export const SPRITE_PROPORTIONS: SpriteProportion[] = ['CHIBI', 'TALL'];
 export const TEXT_SIZES: TextSizeId[] = ['S', 'M', 'L', 'XL'];
 export const TEXT_SIZE_PX: Record<TextSizeId, number> = { S: 12, M: 14, L: 16, XL: 20 };
@@ -356,11 +399,13 @@ export function loadMenuCustom(): MenuCustomSettings {
     const raw = localStorage.getItem(CUSTOM_KEY);
     if (!raw) return { ...DEFAULT_MENU_CUSTOM, layout: { ...DEFAULT_MENU_CUSTOM.layout } };
     const parsed = JSON.parse(raw) as Partial<MenuCustomSettings>;
+    const painted = sanitisePaintedBackground(parsed.paintedBackground);
     return {
       ...DEFAULT_MENU_CUSTOM,
       ...parsed,
       layout: { ...DEFAULT_MENU_CUSTOM.layout, ...(parsed.layout || {}) },
-      backgroundPainted: false,
+      paintedBackground: painted,
+      backgroundPainted: painted !== 'OFF',
     };
   } catch {
     return { ...DEFAULT_MENU_CUSTOM, layout: { ...DEFAULT_MENU_CUSTOM.layout } };
