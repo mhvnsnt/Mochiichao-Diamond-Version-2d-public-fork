@@ -1524,6 +1524,73 @@
      "extends": "handover records beside #277's part records; #126's append-only law at generation scale; game proof is #240/#146 \u2014 zero stored change"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list30-systems",
+   "type": "systems-index",
+   "about": "List 30 teardown systems (items 287-296), landed 2026-10-27 \u2014 Colosseum/XD's closed-heart engine and Chao World's raising depth, rebuilt natively; two argued stored exceptions (heart gauge, climb seats); raising never writes battle stats (#293's line).",
+   "items": [
+    {
+     "n": 287,
+     "name": "Closed hearts",
+     "home": "src/data/core/docs/287-CLOSED-HEARTS.md",
+     "extends": "heart field landed on #80's individual record (individual.schema.json) with its three fences as validation; aura read inside #149's closed screen classes \u2014 no fifth class"
+    },
+    {
+     "n": 288,
+     "name": "Purification",
+     "home": "show/production/world-systems/288-PURIFICATION.md",
+     "extends": "chamber annexed to #28's Garden package; gauge writes ride existing event homes; completion rite is one atomic operation resolving #177/#129 inside it"
+    },
+    {
+     "n": 289,
+     "name": "Frenzy",
+     "home": "show/production/battle/289-FRENZY.md",
+     "extends": "volatile condition in #27's schema family resolving on #182's machinery, gated on a closed heart; call seats in #10's ring beside #165"
+    },
+    {
+     "n": 290,
+     "name": "Shadow moves",
+     "home": "show/production/battle/290-SHADOW-MOVES.md",
+     "extends": "class flag rides the move record's existing flags array (verified \u2014 no schema change needed); slots ride #287's gauge bands; modifier seats in #17's chain beside #248"
+    },
+    {
+     "n": 291,
+     "name": "Lure spots",
+     "home": "show/production/world-systems/291-LURE-SPOTS.md",
+     "extends": "spot record in #66's family, tables in #7's idiom, depletion on #19's tick; alert is a #81 behaviour + #149 alert note; depths spots unrepresentable by validation"
+    },
+    {
+     "n": 292,
+     "name": "Long climb",
+     "home": "show/production/battle/292-LONG-CLIMB.md",
+     "extends": "#186's big form beside its run history under #96: the ladder is a run, the climb is a campaign; coupon fencing as a #20 validation (no conversion path)"
+    },
+    {
+     "n": 293,
+     "name": "Raising depth",
+     "home": "show/production/world-systems/293-RAISING-DEPTH.md",
+     "extends": "annex to #28's care profile; the effect record cannot name a battle stat \u2014 the line is schema-level, machine-checked at landing; checkups in #132's family, grades only"
+    },
+    {
+     "n": 294,
+     "name": "Care sports",
+     "home": "show/production/world-systems/294-CARE-SPORTS.md",
+     "extends": "#236's open arithmetic slot filled as its annex; never-read-battle-stats as a negative rule; #287 entry gate is a shown refusal"
+    },
+    {
+     "n": 295,
+     "name": "Ranks & emblems",
+     "home": "src/data/core/docs/295-RANKS-EMBLEMS.md",
+     "extends": "ranks derived at read over #164/#186/#292/#294 \u2014 a stored rank field anywhere is a defect; emblems in #104's family, display in #98/#238; stories/rescues/ceremonies never ranked"
+    },
+    {
+     "n": 296,
+     "name": "Sonic grammar (show production rules)",
+     "home": "show/production/296-SONIC-GRAMMAR.md",
+     "extends": "production lines proposed into #82's format; theme registry beside #72/#215; the spectacle doctrine (R1, owner ruling) quoted into the production research INDEX for List 32"
+    }
+   ]
   }
  ]
 }

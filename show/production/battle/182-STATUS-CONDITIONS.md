@@ -131,3 +131,5 @@ battle; a centre cure touches persistent only.
   truth: when the first condition is ever named, its
   record already knows how it will apply, tick, and
   cure.
+
+**Landing note — List 30 (2026-10-27).** #289 (`show/production/battle/289-FRENZY.md`) lands its frenzy condition in #27's schema family (volatile class), with the closed-heart application gate as a record-level class rule this file's check order reads; the keeper's call seats in #10's command ring beside #165's bag refusal. Negative tests carried from #289's spec: an open-hearted individual cannot be frenzied, and a frenzy never writes a #269/#270 fact.

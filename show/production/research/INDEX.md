@@ -82,3 +82,5 @@ authored natively instead — see `show/production/rigs/`.
 **Governing rule:** everything in this layer — and across the show
 folder — is classified under the project's working method, the
 **construction-kit rule**: [`show/WORKING-METHOD.md`](../../WORKING-METHOD.md).
+
+**Owner doctrine quoted at List 30 landing (2026-10-27, from #296).** "Spectacle is per-power-family — every power gets its own staging grammar; speed is one family among them." This is an owner ruling carried by #296 (`show/production/296-SONIC-GRAMMAR.md`); List 32's per-family packages cite it from here.

@@ -113,3 +113,5 @@ home.
   invent it.
 
 **Finish order — FILLED at landing under the owner's Pokemon-base rule (2026-10-27; this note is the record of the fill, it was not silent):** a race runs in legs, each leg in one movement class (run / swim / flight / climb, as the course declares). An entrant's pace on a leg is its Speed in that leg's movement class; the finish order ranks entrants by total pace across all legs, highest first; equal totals share the placing. This is the Pokemon way of deciding it — the same stat that orders battle turns orders a race — and Jamar's canon overrides it wherever canon speaks. The package's staging left this open; the owner's rule closes mechanical gaps, so it is closed here.
+
+**Landing annex — List 30 (2026-10-27).** #294 (`show/production/world-systems/294-CARE-SPORTS.md`) fills this file's open arithmetic slot as its annex: care-sport results run on raised care axes (+ anatomy + weather + a seeded draw) and NEVER read battle stats — not as a proxy, not as a tiebreak (#293's line, as a negative rule). #294 also lands #287's entry gate as a shown refusal in the entry flow: a closed-heart individual cannot be entered.
