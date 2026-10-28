@@ -1397,3 +1397,41 @@ sha256 e9c692c3...) is the human-readable evidence and shows
 the drawing-kind drift plainly. The build-side fix - a v7
 rebuild of the walk from canon art, no primitive redraw -
 runs separately; nothing in this entry grades it.
+
+## V7 WALK PROOF (CANON ART) - LIKENESS GATE RUN RECORDED (2026-10-28)
+
+The v7 rebuild of the Mochiko walk proof is built from
+canon art: a part-separated profile puppet whose every
+visible part is a crop of the canon texture of record
+(mochiko-fixed.png, MD5 3e142dff199de4c70cca9aa22c01bc11,
+sha256 e81324d5...) - zero primitive redraw of the
+character, the direct answer to Gap 15. Workspace:
+ep01-ed-gag/work/v7-canon-art/; the delivered clip is
+clips/walk-retimed.mp4 (sha256
+c8d5aa28bfc255587458e6079277541f8cd769f3074980355d419e349d0171c3).
+
+The likeness gate wired by the previous entry has now
+been run on this proof, and its run record is appended to
+show/production/tooling/proof-gate/likeness-runs.json
+(textual append; the prior record's bytes stay an exact
+prefix). Record COMPLETE: 40 frames evaluated against the
+canon reference, comparison sheet recorded
+(likeness-comparison.png, sha256 87281d5c...). Aggregate
+medians: SSIM 0.1917, colour-histogram L1 0.1753,
+Bhattacharyya 0.9696, silhouette IoU 0.4707, mean absolute
+RGB difference 30.41 on the 0-255 scale. Timing from the
+same run: 10.0 new drawings per second. The numbers are
+diagnostics, not a grade - the same front-view/profile
+confound named in the previous entry applies, and the
+comparison sheet is the human-readable evidence.
+
+The delivered judgment, stated in the delivery before any
+measured axis: likeness PARTIAL PASS. The figure is
+recognisably Mochiko - her actual face, hair, jacket,
+skirt and shoes cut from canon crops - but the head is her
+front face riding a side-walking body, the named cheat of
+this construction, because canon holds no profile face and
+none was invented. The open blocker for a true profile
+remains an owner-approved profile model sheet, which does
+not exist yet. The proof was delivered to the owner
+2026-10-28; Gate 8 (the owner's eye) verdict is pending.
