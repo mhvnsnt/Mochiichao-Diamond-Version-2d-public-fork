@@ -657,3 +657,22 @@ no re-render loops; cumulative autonomous GPU hours halt at
 24 h/week of the ~30 h Kaggle quota, the remainder reserved for
 owner-directed work; a job that fails twice autonomously is
 parked for the owner, never retried unattended.
+## Jack/Primal study archive + method mirror (2026-10-28)
+
+- A private study repo was created: **mhvnsnt/samurai-jack-repo** —
+  Samurai Jack + Primal construction-kit archive for EP01's low-verbal
+  craft and the owner's TRIPPED Jack/Primal-inspired show idea. Contents:
+  Jack structure index 62/62 episodes; full dialogue transcripts 61/62
+  (S4E10 "Jack and the Swamp Wizard" missing at the public source, flagged
+  in place, not filled); Primal structure index 30/30; Tartakovsky method
+  file; CRAFT-EP01 mapping. 14 files, 288,119 bytes; text/structure only,
+  no video, no paywalled material.
+- This PR mirrors the two production-facing files into this repo so EP01
+  production works from them in-repo: `show/production/tartakovsky-method.md`
+  (slowness as technique, action composed like music, music after picture,
+  2-3 page outline + boards, Scott Wills color-key pipeline) and
+  `show/production/CRAFT-EP01.md` (Jack pacing protected from recut,
+  hearing as an episode channel, held-silence floor, cameo handling,
+  do-not-import list: Jack's loneliness, Primal's gore).
+- Construction-kit rule applies throughout: structure and technique
+  transfer; no source characters, names, or branding.
