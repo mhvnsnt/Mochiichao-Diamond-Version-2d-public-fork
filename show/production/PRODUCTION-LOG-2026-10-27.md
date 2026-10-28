@@ -760,3 +760,7 @@ the show-lane handling per the anime study (capability as body + job,
 obstacles as puzzles, never a hard gate) with one scene example each.
 Owner lock/amend list at the foot of the sheet (obstacle sets, two soft
 gates, boulder reset behaviour, Wave pairings, acquisition placement).
+
+## DIALOGUE TEMPLATE LIBRARY LANDED (2026-10-27)
+
+The dialogue template library (show/production/dialogue-template-library/) is in the repo: README, TAXONOMY, PILOT-BATCH (30 canon-ready templates across 12 functions, owner-approved lines), GAP-MAP. Taxonomy measured from Gens 1-3 readable banks + Gen 4 present-but-undecoded; Gen 5-9 + Digimon/Monster Rancher slots designed; refusal list included. One follow-up remains: a cross-reference line in its README pointing at the dialogue kit's repo path, to be added when the kit's own landing decides that path (kit owned by the text-bank lane). Landed by the lock-everything wave.
