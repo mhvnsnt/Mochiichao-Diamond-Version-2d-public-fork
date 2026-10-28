@@ -273,6 +273,65 @@
    ],
    "status": "provisional_spec_built \u2014 canon painted plates GAP (see PLATES-REGISTRY.md)",
    "type": "backgrounds_living_plates"
+  },
+  {
+   "id": "mochiichao-score-system",
+   "type": "audio_score_states",
+   "path": "show/production/ADAPTIVE-MUSIC.md",
+   "status": "mirrored from ADAPTIVE-MUSIC (audio-timing teardown wiring point 2) - the doc is the record; this entry mirrors its vocabulary + pairings",
+   "mus_layers": [
+    "MUS-PULSE",
+    "MUS-BASS",
+    "MUS-HARM",
+    "MUS-LEAD",
+    "MUS-TEXT",
+    "MUS-DRONE",
+    "EVENT"
+   ],
+   "score_states": [
+    "SETTLE",
+    "PLAY",
+    "TENSION",
+    "DREAD",
+    "ABSENCE"
+   ],
+   "bed_state_pairings": [
+    {
+     "bed": "BED-GATE-MORNING",
+     "score_state": "PLAY -> SETTLE at cut 05",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-GATE-NIGHT",
+     "score_state": "SETTLE",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-POND-DAY",
+     "score_state": "PLAY",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-POND-DUSK",
+     "score_state": "TENSION (emptying, ADAPTIVE-MUSIC S2.3)",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-GREEN-DAY",
+     "score_state": "PLAY",
+     "status": "CANON bed; score treatment DERIVED"
+    },
+    {
+     "bed": "BED-FOREST-DAY",
+     "score_state": "ABSENCE",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-FOREST-DAY (depths, -6 dB)",
+     "score_state": "ABSENCE (single MUS-DRONE entry permitted if boarded)",
+     "status": "PROPOSED - needs owner/board lock before use"
+    }
+   ]
   }
  ]
 }
