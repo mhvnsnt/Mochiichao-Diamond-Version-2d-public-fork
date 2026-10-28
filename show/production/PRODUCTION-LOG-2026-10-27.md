@@ -992,6 +992,10 @@ Recorded in the production log and in show/production/SEASON-CANON-MAP.md (rulin
 
 Species-systems teardown landed: MOCHIIOTECA-FORMATS.md, CRY-SYNTH.md, SILHOUETTE-DISCOVERY.md, species-sheet-schema-patch-cry.md, cry-schema-fragment.json, README.md at show/production/species-systems/; tools (cry_synth.py, discovery_assets.py, pilot_six_cries.json) at show/production/tooling/species-systems/. The auto-footprint in discovery_assets.py is labelled in-file as a CONTACT-PATCH PROXY and lands labelled exactly so. Test-output cry WAVs are NOT landed (they land at public/audio/cries/ on owner lock only); test-output discovery strips stay workspace-only evidence. The species.json cry-block data entry the package calls for is data-lane work in its own PR rhythm, not part of this landing. Landed by the lock-everything wave.
 
+## TEARDOWN LANDED - VOICE-KIT (2026-10-27)
+
+Voice-kit teardown landed at show/production/tooling/voice-kit/ per its WIRING.md section 3 (kit files preserving structure; VOICE-KIT.md at docs/; WIRING.md + TERABOX-MANIFEST.md at kit root; the Actions workflow at .github/workflows/voice-render-mochiichao.yml, the only place GitHub runs workflows). TERABOX-MANIFEST rides as PREPARED-NOT-STAGED - no weights land in the repo. One line added to TOOLING-INDEX.md and a pointer line in VOICE-DESIGN.md chain step 3. The one remaining manual step is the owner's: casting Mochiko's reference audio (the renderer refuses a CASTING_TBD slot by design). Landed by the lock-everything wave.
+
 ## KITTEMBER #389 BUNDLE - OWNER STATUS RULING: UNUSED DRAFT (SPECIAL CASE) (2026-10-27)
 
 - Owner ruling 2026-10-27: the generated Kittember in PR #389's bundle (`public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream/`) is a special-case individual held as an UNUSED DRAFT - the owner prefers the canon design; it is kept, not used, not deleted.
