@@ -1610,3 +1610,21 @@ histogram L1 median 0.1232.
 Gate 8 (the owner's eye) verdict is PENDING. The profile
 sheet is a derived design subject to the owner's ruling;
 nothing in this landing marks it canon.
+
+## CORRECTION — Dorowani eye-whites attribution (2026-10-28)
+
+The DOROWANI EYE CANON entry above (2026-10-27) attributes the
+eye-whites to "the avatar/show individual Dorowani (Doro)".
+Owner correction 2026-10-28: that attribution is wrong — the
+whites belong to the one specific made/generated Dorowani
+individual from the owner's original ruling, the only Dorowani
+canonically with white around his eyes, and NOT to the avatar;
+the avatar is not the subject of the ruling. The ruling itself
+is unchanged: the species pattern is red + black eyes with no
+sclera, and the one individual's whites are his locked personal
+deviation — fixed per individual, never growing, shrinking,
+or flickering, and never extended to other Dorowanis. The
+corrected attribution also stands in the Dorowani reference
+pack (PR #496), in
+show/production/species-data/RULED-DEVIATION-REGISTRY.json, and
+in show/production/species-data/80-INDIVIDUAL-VARIATION.md.
