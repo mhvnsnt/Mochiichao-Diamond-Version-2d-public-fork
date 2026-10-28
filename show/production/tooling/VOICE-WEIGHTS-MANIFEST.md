@@ -1,5 +1,23 @@
 # VOICE-WEIGHTS-MANIFEST
 
+> **STATUS CORRECTION — 2026-10-28 (wiring package; the body below
+> is the 2026-10-27 record, kept as written):**
+> - **Kaggle private dataset `marsfmmg/mochiichao-voice-weights`
+>   is DONE and verified** — created from this VM and confirmed
+>   server-side 2026-10-28 (`kaggle datasets files`: all 17 files,
+>   byte sizes matching this manifest exactly; dataset status
+>   `ready`). The "Pending — owner's step" rows in the table below
+>   are superseded. (The dataset metadata carries the single
+>   licence name "MIT" because Kaggle accepts one; both licences
+>   are documented in the manifest inside the dataset.)
+> - **TeraBox: still pending** — the one remaining staging step
+>   for these weights; it rides the owner's consolidated TeraBox
+>   session (checklist: `pull-in-programme/TERABOX-MANIFEST.md`
+>   item #2). The local stage folder is transit until that upload
+>   confirms.
+> - Current grades for the whole voice pipe:
+>   `show/production/tooling/WIRE-STATUS.md` §7.
+
 Voice-seat weights for the Mochiichao show (Chatterbox-TTS + Kokoro), staged
 once so no seat ever re-downloads them. Owner standing instruction,
 reaffirmed 2026-10-27. Weights are too large for git — this manifest is the
