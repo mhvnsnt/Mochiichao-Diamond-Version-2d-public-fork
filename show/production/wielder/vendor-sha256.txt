@@ -1,0 +1,16 @@
+7c44db1d45416fec5521492be06ed7be20fe23687f0e316c3feeb1445e8874b9  phase3-build/wielder/vendor/agent-ops/AGENTS.md
+af88c3f796724e96e2785b17d6c4ea7ecb89bc21664684d9c8fe6ac048804882  phase3-build/wielder/vendor/agent-ops/CHECKPOINT_PROTOCOL.md
+48317e7d3a7ba974683b67aa8d7015c405c15663523e71b64c56d981edefc0d2  phase3-build/wielder/vendor/agent-ops/HOW-GROKBOT-WORKS.md
+95cb2c4d18ca733ee64cf0f22166b3b25550536bcb1df4442b734f2f699129ce  phase3-build/wielder/vendor/agent-ops/checkpoint.sh
+ea5338297bba994a57e5cc980e83c3440c78f0bdb2350528e595104fd057f708  phase3-build/wielder/vendor/agent-ops/github-scripts/instruction_gate.py
+92625b0c21e36c718d582f8267d9668e74c58a47cdc87cad28c85f9210ab62f2  phase3-build/wielder/vendor/agent-ops/github-scripts/test_instruction_gate.py
+cda8b19df96bd998211030cc72aa55bfb4cde81a9e6c7ad98e7ad3dcae9d1869  phase3-build/wielder/vendor/agent-ops/guard-paths.sh
+305e883c222e2e7012ea8e6ebcb51f370c7615e362295652663d1e01ddb9574c  phase3-build/wielder/vendor/agent-ops/lane-autostart/lane-autostart.sh
+76d1616764624834b604b6d313a0ce5c2c690bd8456e638882e4cac22bfa8e56  phase3-build/wielder/vendor/agent-ops/lane-autostart/lanes.manifest
+7d81ed682b505c75de571e08837a906e33949f9f70f54905350bdcdaf5e4aca8  phase3-build/wielder/vendor/agent-ops/lane-ckpt.sh
+8c4a01a9ca71ca3ba8fd4fa36c48b318765cb2b34739661e6773da80509a2e25  phase3-build/wielder/vendor/agent-ops/lane-worktree.sh
+655fed382e188f4ad3a4b4b729f4fcc81d9172309bccda62b5d468af7be2f961  phase3-build/wielder/vendor/agent-ops/lanes/resilient-gh-upload.sh
+a03f836407cc25df8a6b75ee9a7dc976e65fa999412df403f434596f1b5ccdc6  phase3-build/wielder/vendor/agent-ops/local-ci/README.md
+39cfccff58cf89759dec83404642fbfa34edebf6d562b7b99ae32f72899248ea  phase3-build/wielder/vendor/agent-ops/local-ci/local_ci.py
+ec586dbbcfb0f19eb1ee064670d3d5685620de996f8acc2a7f351ac2746a3ec6  phase3-build/wielder/vendor/agent-ops/protected-paths.json
+b0cb75850731cfda5cd80dd6e071219fed23f5c006e7261b549995fed6b0c3bf  phase3-build/wielder/vendor/agent-ops/supervisor.sh
