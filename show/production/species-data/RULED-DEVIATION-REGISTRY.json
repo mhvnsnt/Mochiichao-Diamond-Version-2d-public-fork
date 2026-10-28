@@ -4,7 +4,7 @@
   "registered": "2026-10-27",
   "individuals": [
     {
-      "individual_id": "doro",
+      "individual_id": "dorowani-eye-whites-individual",
       "species": "dorowani",
       "deviations": [
         {
@@ -15,7 +15,7 @@
           "ruled_by": "Jamar",
           "ruled_on": "2026-10-27",
           "consistency": "MUST REPRODUCE in every generation of this individual",
-          "source": "MEMORY.md — Dorowani eye canon + Individual Variation Doctrine; the worked case in 80-INDIVIDUAL-VARIATION.md"
+          "source": "MEMORY.md — Dorowani eye canon + Individual Variation Doctrine; the worked case in 80-INDIVIDUAL-VARIATION.md. Attribution corrected by the owner 2026-10-28: this deviation belongs to the one specific made/generated Dorowani individual from the owner's original ruling — the only Dorowani canonically with white around his eyes; not the avatar (first filed under individual_id 'doro')."
         }
       ]
     },
