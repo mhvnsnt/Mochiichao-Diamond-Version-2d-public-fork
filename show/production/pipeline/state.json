@@ -46,7 +46,8 @@
   "next_action": {
     "tier": "TIER_2",
     "action": "Complete the timed A/B rerun, register measured times in TOOLS-MANIFEST, then run the first locked generation via runners/kaggle_tier2_runner.py and prepare its gate packet.",
-    "approved_auto": false,
-    "approved_auto_note": "GPU jobs require owner flip of this latch to true before the orchestrator runs them unattended. Non-GPU steps (docs, manifests, gate packets, merges per standing orders) are auto-approved."
+    "approved_auto": true,
+    "gpu_hours_week": 0,
+    "approved_auto_note": "Owner flipped this latch ON 2026-10-27: unattended GPU renders approved \"as long as it doesn't waste all my hours... as long as it's actually working.\" Binding condition in pipeline/ORCHESTRATOR.md (\"Autonomous GPU condition\"): queued jobs with a defined output artifact only; verify the output landed and passed its gate, or log the failure and stop; autonomous GPU hours tracked in gpu_hours_week with a hard halt at 24h/week of the ~30h Kaggle quota (remainder reserved for owner-directed work); a job that fails twice autonomously is parked for the owner. Non-GPU steps (docs, manifests, gate packets, merges per standing orders) are auto-approved."
   }
 }
