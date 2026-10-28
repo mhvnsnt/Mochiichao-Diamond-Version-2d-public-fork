@@ -119,3 +119,5 @@ reaction table's shape, and the chorus law are fixed.
 - Contents: zero crowds instanced — no dojo interior
   or crowd record exists yet (#119 instances none);
   the shape lands ahead of the venues, like #241's.
+
+**Landing citations — List 36 (2026-10-27; STAGING steps 6 and 7).** The crowd/opponent fence, stated in both homes: the room reacts via this file (#242); the opponent speaks via #352 (`show/production/battle/352-OPPONENT-VOICE.md`); neither writes the other's lines. Review note from #355: a room staged without reaction while #272 counts witnesses is a defect — crowd/staging consistency is checked against the witness count at landing review.

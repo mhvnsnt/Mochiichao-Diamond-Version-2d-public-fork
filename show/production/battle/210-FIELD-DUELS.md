@@ -122,3 +122,5 @@ none asserted) · rematch etiquette timing (a
 customs question for #173's availability derivation
 to read, not a rule here) · the remote challenge's
 expiry window (#90's proposal carries it).
+
+**Landing citation — List 36 #353 (2026-10-27).** Surrender & mercy (`show/production/battle/353-SURRENDER-MERCY.md`) lives under this file's honours-only stakes law: a surrender writes its outcomes through the ordinary defeat-ending path and never transfers a Mochi. The mercy deed rows themselves are proposed into #269's table in #269's home, not here.

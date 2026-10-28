@@ -121,3 +121,5 @@ policy.
 
 
 **Landing note — List 27 #257 (2026-10-27):** the state-bloom derivation (257-BLOOM-STATES.md) re-reads forme state in this file's weather-react seat: when weather changes, bloom derivations re-derive with it. #257 founds no bloom family; the derivation is a read over #130's axis.
+
+**PROPOSAL from List 36 #354 (registered at its landing, 2026-10-27; STAGING step 6):** two guard rows are proposed into this file's resolution vocabulary as command-declared rows, citing `show/production/battle/354-GUARDING.md`: `interpose` (trigger class `standing` — a second bond stands in the doorway; its added bond term is read inside #268's roll) and `screen` (a reaction seat inside the throw's resolution — spend the action, block one attempt outright; the item is still consumed and the attempt deed still writes). The vocabulary is this file's closed set; until this home accepts the rows, they are SPEC-LEVEL and no guard row is instanced in the registry.
