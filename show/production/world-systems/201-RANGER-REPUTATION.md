@@ -96,3 +96,5 @@ any first consumer beyond presentation (a proposal
 into this file, or none — none is a fine answer).
 
 **OWNER RULING — supersession note (2026-10-27, applied at the List 21 landing):** this spec's reputation classes are SUPERSEDED by the owner's new morale/reputation design (List 28, items 267-276): reputation runs on Fallout: New Vegas's model (fame and infamy as separate tracks per group) over a fifty-step ladder, with a personal morale scale on Red Dead Redemption 2's Honor model. The classes in this file stand as a VIEW over that ladder once List 28 lands; they are not the system of record.
+
+**PROPOSAL from List 23 #224 (registered at its landing, 2026-10-27):** the in-world newspaper reads reputation from this system's derivation (a read, never a store — editions live in their own publication store, separate from every record store they report). Proposal until this home accepts the read.

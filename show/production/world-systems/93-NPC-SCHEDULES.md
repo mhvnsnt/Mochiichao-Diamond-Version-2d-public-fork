@@ -66,3 +66,5 @@ boundary are the yield.
 **Early-arrival class declaration (#139, landing 2026-10-27):** schedules are WORLD-OPEN under #139's two-class rule — first-match tables with no memory in the schedule layer; an NPC met early is the same person their table places. Ruling layer: `src/data/core/docs/139-EARLY-DISCOVERY.md`.
 
 **Vocabulary extension registered (#145, landing 2026-10-27):** cross-region travelling-NPC rows (spanning rows + `transit`) are an accepted extension of this doc's format, per `145-TRAVELLING-NPCS.md` (same folder) — proposed by #145, registered in this, its home format. No NPC is instanced by the registration.
+
+**Registration (List 23 #221, landing 2026-10-27):** mentorship records seat beside this file's relationship records (the family #145 reads). Agency limit, demonstrated mechanically: no field of the mentorship record can be consumed as command authority by any battle or training system — there is nothing to wire, and that is the check.

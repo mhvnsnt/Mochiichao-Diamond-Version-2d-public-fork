@@ -1,0 +1,23 @@
+{
+ "format": "mochiichao/starter-programmes/v1",
+ "_about": "List 23 #222 — regional starter programme records. Region 1 lands from canon; Regions 2-5 are null records (owner canon calls, never patterned after Region 1). Capacity (addendum): one programme gift per Ranger, once.",
+ "regions": {
+  "region-1": {
+   "giver": "Aeon",
+   "starterLines": [
+    "mochii",
+    "dorowani",
+    "gabu",
+    "kittember",
+    "sproutle"
+   ],
+   "choosingBeat": "harbour rescue (EP02 canon — the choosing happens through the rescue, not a ceremony)",
+   "handover": "Mochiioteca issued at the programme handover (#98's issuedBeat twin)",
+   "note": "The Garden choosing ceremony is preserved as ruled FLASHBACK material (owner ruling, 2026-10-27) — it is NOT this region's programme and is not entered as one."
+  },
+  "region-2": null,
+  "region-3": null,
+  "region-4": null,
+  "region-5": null
+ }
+}
