@@ -99,3 +99,5 @@ roster layer's own.
   record shape the world build can instance town by town.
 
 **Seat reconciliation (List 20 #193, landing 2026-10-27):** daycare custody seats in #77's Garden housing. Centres under this file store NOBODY — no centre build may seat custody here.
+
+**Seat verification — List 26 (2026-10-27).** #256's centre services flow assumes centre records seat services in a closed `services[]` vocabulary. Verified against this file at landing: the seat exists here exactly as #256 assumes (`services[]`; core service `restore`; contents per centre). #256's flow therefore lands as this file's presentation companion (`world-systems/256-CENTRE-SERVICES-FLOW.md`) and founds no seat of its own.

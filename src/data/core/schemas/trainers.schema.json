@@ -79,6 +79,14 @@
                 "moves"
               ]
             }
+          },
+          "classBase": {
+            "description": "#253 (List 26) payout seat, landed here citing it: the authored party's prize-money base for its class (payout = classBase x level of the final opposing individual, per #253). null = seat only — the value is authored economy data, owed by the economy lane; no value was invented at landing.",
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "required": [

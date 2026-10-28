@@ -131,3 +131,12 @@ across the project), so every modifier value is OPEN by design, not
 by omission. Weather *seed vocabulary* is drawn from canon world
 facts (mist, frost, hum); battle-legality of each is unruled and
 marked PROPOSED.
+
+## Battle contents asserted by #252 (List 26, landing 2026-10-27)
+
+The WEATHER records above carried values OPEN / PROPOSED. #252 (`battle/252-WEATHER-BATTLE-EFFECTS.md`; fragment `battle/weather-effects-fragment.json`) now asserts the battle contents, carried here as this system's record data:
+
+- `wx_rain` (RAIN): Aqua move power ×1.5, Flame move power ×0.5.
+- STORM: inherits RAIN's contents; in addition, moves whose data carries the storm-true accuracy flag cannot miss.
+- `wx_frost` (FROST): end-of-turn chip of 1/16 of max HP, with `chipExemptTypes: []` — the exemption list ships empty exactly as #252 states: no Frost element id exists in the canonical fifteen (audit hole H3); the list is filled by the owner's vocabulary ruling, not at landing.
+- CLEAR, OVERCAST, `wx_mist` (MIST), NONE: battle effects null (mist hides; it does not bend arithmetic). Move-set weather lasts 5 turns (8 with the extender item class); world-seeded weather lasts the battle unless overwritten.

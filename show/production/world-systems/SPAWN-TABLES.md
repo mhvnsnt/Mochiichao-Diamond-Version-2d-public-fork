@@ -132,3 +132,5 @@ LIVING-WORLD.md` §2.2):
 **Slot registered (List 22 #209, landing 2026-10-27):** the `ambush` eligibility slot is in the spawn-table schema beside #158's `horde` slot (209-AMBUSH-ENCOUNTERS.md). No table carries ambush contents; the initiation kind is cited into the encounter-record vocabulary in its own home, not forked here.
 
 **PROPOSAL from List 25 #241 (registered at its landing, 2026-10-27):** the area-level followerRule variant is proposed for this file's area records, on the same terms as the interior proposal in #119's home (default welcome; the Garden law applies).
+
+**Landing note — List 26 (2026-10-27).** #255 seats one new field on these tables: `encounterRate`, added to the spawn-table schema (`src/data/core/schemas/spawn-table.schema.json`, `$defs.table`) citing #255 — the probability a step in a table's terrain starts an encounter. Existing tables carry no value (null): not yet authored, and the engine reads the method class default stated in #255 — grass 0.10, cave 0.10, surf 0.05 per step; fishing has no per-step roll (#111's cast owns it). No table's contents were rewritten by this landing.

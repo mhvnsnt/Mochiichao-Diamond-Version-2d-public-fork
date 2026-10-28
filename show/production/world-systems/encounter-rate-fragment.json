@@ -1,0 +1,36 @@
+{
+ "format": "mochiichao/encounter-rate/v1",
+ "_about": "Encounter strike rate + pacing + repel/lure semantics (List 26 #255). encounterRate is a proposal into #7's spawn-table schema (lands in #7's home, citing this spec).",
+ "field": {
+  "name": "encounterRate",
+  "seat": "per method table on a #7 area",
+  "meaning": "probability a step in that terrain starts an encounter; rolled per step on #94's seeded draw",
+  "nullMeans": "not yet authored - engine reads the method class default"
+ },
+ "methodDefaults": {
+  "grass": 0.1,
+  "cave": 0.1,
+  "surf": 0.05,
+  "fish": null
+ },
+ "pacingClasses": [
+  "quiet",
+  "standard",
+  "busy"
+ ],
+ "pacingLaw": "pacing is authored design data; rates never adapt to the player (no rubber-banding, #70)",
+ "repelSemantics": {
+  "status": "RESOLVED here - closes #112's OPEN semanticsStatus by citation at landing",
+  "shape": "A (party-relative), the documented base-game rule",
+  "floor": "lead individual's derived level (#178)",
+  "mechanism": "#112's transform unchanged: slots whose whole band falls below the floor are removed from this roll's pick only",
+  "reconciliation": "#52's law governs the table (contents and levels never read party state); repel governs one roll's pick. The world is unchanged; one meeting does not happen."
+ },
+ "compositionOrder": [
+  "table select",
+  "#113 swarm overlay",
+  "repel filter",
+  "lure weights",
+  "weighted pick"
+ ]
+}

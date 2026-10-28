@@ -126,6 +126,15 @@
             "object"
           ],
           "description": "#209 ambush eligibility slot (proposed by List 22 #209, landed here citing it, on the #158 horde precedent): null/absent = the table never ambushes. No table gains the slot's contents in this landing."
+        },
+        "encounterRate": {
+          "description": "#255 (List 26) encounter-rate seat, landed here citing it: probability that a step taken in this table's terrain starts an encounter, rolled per step on #94's seeded draw. null = not yet authored — the engine reads the method class default stated in #255 (grass 0.10, cave 0.10, surf 0.05 per step; fish has no per-step roll — #111's cast owns fishing encounters).",
+          "maximum": 1,
+          "minimum": 0,
+          "type": [
+            "number",
+            "null"
+          ]
         }
       },
       "required": [
