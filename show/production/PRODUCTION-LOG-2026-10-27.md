@@ -1336,3 +1336,64 @@ updated). "Keeper" remains the Garden role only.
 Structural ids and data fields (role:"trainer",
 trainer_*) are unchanged — this amendment is display /
 canon text only.
+
+## WALK-PROOF LIKENESS FAILURE - EVIDENCE LOGGED, LIKENESS GATE WIRED (2026-10-28)
+
+The Above-the-Floor walk proof (PR #482:
+walk-above-floor.mp4, sha256 8d5ac450...) was delivered to
+the owner built on the v6-industry puppet, which redraws
+Mochiko from geometric primitives. That defect was already
+in the repo record at delivery time - Gap 15 in
+show/production/animation-method/WHAT-WE-DO-WRONG-ADDENDUM-2.md
+- and the delivery headlined the proof's timing numbers
+(10.0 new drawings/sec, accents, 0 chart deviations)
+anyway. Owner verdict (2026-10-28): the timing is better;
+the character likeness is total drift; REJECTED as a
+character product. Under the grading law (wrong character
+= FAIL, full stop) the proof is reclassified TIMING PROOF
+ONLY - it is timing evidence, not character evidence. The
+delivery is named in the record as a violation of two
+standing laws: the New Deal (a known limitation is stated
+up front as a number against the standard, never
+discovered after the owner catches it) and the
+self-judgment law (judge the artifact against the full
+standard - likeness first - and say it plainly in the
+delivery before he has to).
+
+Countermeasure, wired in this landing: (1) the evidence -
+a dated ACTIVATED correction at Gap 15 in
+WHAT-WE-DO-WRONG-ADDENDUM-2.md, original text kept;
+(2) the likeness gate - verify_proof.py gains a --likeness
+mode (additions only; the checker still reports only and
+never grades): per-frame similarity diagnostics of a
+clip's distinct drawings against a canon reference, the
+reference's path + sha256 logged in every run record, and
+a run record is INCOMPLETE unless it records a
+side-by-side comparison sheet; run records live in the new
+likeness-runs.json beside the checker
+(timing-profile-runs.json is a keyed object, not an
+appendable history, so likeness runs get their own file;
+appends there are textual and every prior run's bytes stay
+an exact prefix); (3) the registry -
+METHOD-REGISTRY.md carries the likeness gate as a standing
+delivery requirement under Industry Method v1.2 (gate
+addition, v1.2 stays CURRENT / USABLE, dated change-log
+line added).
+
+First measured run of the gate, on the failed proof itself
+against the canon texture of record (mochiko-fixed.png,
+MD5 3e142dff199de4c70cca9aa22c01bc11, sha256 e81324d5...):
+40 sampled drawings; median SSIM 0.1718 (1.0 = the same
+image), median silhouette IoU 0.5713, median
+colour-histogram L1 0.3512 with Bhattacharyya 0.9185 (the
+palette family is shared; the drawing is not), median
+mean-absolute RGB difference 33.084 on the 0-255 scale.
+Diagnostics, not a grade. One confound stated with them:
+the canon reference is a front view and the proof is
+profile, so part of the shape distance is the view itself;
+the recorded comparison sheet (workspace:
+above-the-floor/proof/walk-above-floor-likeness-comparison.png,
+sha256 e9c692c3...) is the human-readable evidence and shows
+the drawing-kind drift plainly. The build-side fix - a v7
+rebuild of the walk from canon art, no primitive redraw -
+runs separately; nothing in this entry grades it.

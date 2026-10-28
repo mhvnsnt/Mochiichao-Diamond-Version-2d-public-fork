@@ -89,6 +89,54 @@ compositing — line weight, edge sharpness, shading convention
 compared member to member; mismatch means a clean-up pass, not
 a composite.
 
+**CORRECTION — GAP 15 ACTIVATED (2026-10-28, owner verdict;
+the gate above was not applied):** This gap stopped being a
+warning and became a shipped failure. The Above-the-Floor
+programme (PR #482) re-timed the v6 walk's eight drawings,
+and the resulting proof (`walk-above-floor.mp4`, sha256
+8d5ac450…) was delivered to the owner **on this gap's own
+named defect** — the primitive-redraw puppet — while the gap
+sat in this record, unacted on. Owner verdict, 2026-10-28:
+the timing is better, and the character is not Mochiko —
+likeness total drift, REJECTED as a character product. Under
+the grading law (wrong character = FAIL, full stop) the
+proof is reclassified **TIMING PROOF ONLY**: its 10.0 new
+drawings/sec, its seven accent spans, and its 0 chart
+deviations measure a puppet that is not her, and none of it
+is character evidence. The delivery is also recorded here as
+breaking two standing laws, named so the record carries
+them: the **New Deal** — a known limitation is stated as a
+number against the standard up front, never discovered
+after the owner catches it — and the **self-judgment law** —
+judge the artifact against the full standard, likeness
+first, and say it plainly in the delivery before he has to.
+The delivery headlined a measured axis over a known core
+defect.
+**Countermeasure, wired the same day:** the likeness gate —
+`verify_proof.py --likeness` (in
+`show/production/tooling/proof-gate/`): per-frame similarity
+diagnostics of a clip's distinct drawings against a canon
+reference whose path + sha256 are logged in the run record;
+a run record without a recorded side-by-side comparison
+sheet is INCOMPLETE. Registered as a standing delivery
+requirement in `METHOD-REGISTRY.md`. Its first run, on this
+very proof against the canon texture of record
+(`mochiko-fixed.png`, MD5 3e142dff199de4c70cca9aa22c01bc11;
+run record in `likeness-runs.json` beside the checker),
+measures the drift: median SSIM **0.17** (1.0 = the same
+image), median silhouette IoU **0.57**, median
+colour-histogram L1 **0.35** (Bhattacharyya 0.92 — the
+palette family is shared; the drawing is not, exactly as
+this gap said). Diagnostics, not a grade — and one confound
+is stated with them: the canon reference is a front view
+and the proof is profile, so part of the shape distance is
+the view itself; the comparison sheet is the
+human-readable evidence, and it shows the drawing-kind
+drift plainly. The build-side fix runs separately: a v7
+rebuild of the walk from Mochiko's canon art, no primitive
+redraw. This gap stays open until a canon-art build passes
+the owner's eye.
+
 ## Gap 16 — The gates stop at the waist
 The proof's arm swing is authored (near-arm table, far arm as
 its negative at ×0.7) — and never measured. Its elbow bend spans
