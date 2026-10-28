@@ -22,8 +22,12 @@ the deviation is part of the character.
 > once the owner rules it so.
 
 Canon instance, on record in MEMORY.md: **the Dorowani species'
-eyes are red + black with NO white of the eye (no sclera). Doro —
-the avatar/show Dorowani — HAS whites around his eyes.** Owner
+eyes are red + black with NO white of the eye (no sclera). One
+specific made/generated Dorowani individual — the one from the
+owner's original ruling — HAS whites around his eyes; he is the
+only Dorowani canonically with white around his eyes (owner
+correction 2026-10-28: the whites are that made individual's,
+not the avatar's).** Owner
 ruling: keep him; the whites are *his* personal deviation and must
 be kept consistent for him in every future generation of this
 character. Other Dorowani follow the species pattern; some
@@ -110,7 +114,7 @@ record; this record *references* it and adds only what varies.
 
 ```json
 {
-  "individual_id": "doro",
+  "individual_id": "dorowani-eye-whites-individual",
   "species": "dorowani",
   "deviations": [
     {
@@ -121,7 +125,7 @@ record; this record *references* it and adds only what varies.
       "ruled_by": "Jamar",
       "ruled_on": "2026-10-27",
       "consistency": "MUST REPRODUCE in every generation of this individual",
-      "source": "MEMORY.md — Dorowani eye canon + Individual Variation Doctrine"
+      "source": "MEMORY.md — Dorowani eye canon + Individual Variation Doctrine. Attribution corrected by the owner 2026-10-28: this deviation belongs to the one specific made/generated Dorowani individual from the owner's original ruling — the only Dorowani canonically with white around his eyes; not the avatar (first filed under individual_id 'doro')."
     }
   ]
 }
