@@ -83,3 +83,5 @@ A future FACTS section in this payload map (absent = default). No record is crea
 ## Registered view — `visit-record` (List 15 #146, landing 2026-10-27)
 
 #146's audit conclusion lands as an AUDIT RESULT, not a schema patch: the one-world save needs ZERO net stored change — every region-fork was refused with a derivation, and 'visited' has exactly one derived home: this visit-record VIEW (derived from #12 arrival evidence; consumed by #98 + #137). The view is a definition registered here; it is ABSENT from the payload itself. No runtime save implementation exists in the repo (verified) — this registration is architecture-level and binds the first save build; it is not engine wiring.
+
+**PROPOSED section (List 17 #161, registered at its landing, 2026-10-27):** a `sizeRecords` measurement-fact section in this payload map (shape: src/data/core/docs/size-records-fragment.json). Absent = no facts, per this map's own convention. NO record, contest, or number is created: height/weight are TBD for all 49 Gen-1 species (species-data audit), and the measurement derivation is #161's registered open dependency.

@@ -89,3 +89,5 @@ Mochiichao contents: structure complete; per-species bands,
 gaits, and reaction sets are owed with body/rig data (TBD where
 canon is silent) — the pilot six are the only species with the
 body plans to fill them today.
+
+**PROPOSAL from List 17 #160 (registered at its landing, 2026-10-27):** assistance trigger classes `sign:` / `find:` / `danger:` for the field-partner annex (160-FIELD-PARTNER-AI.md). Proposal discipline: the classes take effect only if this home adopts them; no species reaction set was edited by the List 17 landing.

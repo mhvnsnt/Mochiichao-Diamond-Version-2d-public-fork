@@ -104,6 +104,20 @@
             "$ref": "#/$defs/slot"
           },
           "type": "array"
+        },
+        "horde": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "description": "#158 horde eligibility slot (proposed by List 17 #158, landed here citing it): null (the universal current state — no instance carries the field) means the area never hordes; an object {size} enables roll-time horde composition over the area's own rows. No table gains a non-null value in this landing; no horde can roll anywhere.",
+          "properties": {
+            "size": {
+              "type": "integer",
+              "minimum": 2
+            }
+          },
+          "additionalProperties": true
         }
       },
       "required": [

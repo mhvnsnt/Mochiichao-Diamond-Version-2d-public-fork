@@ -126,3 +126,5 @@ LIVING-WORLD.md` §2.2):
   only; time/weather splits exist as fields and are unpopulated.
   This package extends the *shape* to every area the specs need and
   fills *contents* only from canon — the rest is flagged, not filled.
+
+**Consumer citation (List 17 #163, landing 2026-10-27):** mythical-habitat sealing behaviour is decided in 163-MYTHICAL-HABITAT-SEALING.md (show/production/world-systems/), not in this document.

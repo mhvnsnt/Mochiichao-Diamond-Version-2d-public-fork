@@ -67,3 +67,5 @@ Loop architecture: the genre's standard service ritual, publicly
 documented. Mochiichao frame: canon-anchored (Mochiko, R1-BEAT3);
 keeper rosters beyond Region 1 and any Garden-variant steps are
 OPEN until canon names them.
+
+**List 17 #162 wiring (2026-10-27):** the careLog activity vocabulary gains the `grooming` class (162-GROOMING-SPA.md). The class is INERT — `axis: null` — and #39's accrual reader must respect that inertness (a grooming event accrues nothing); the reader test is registered with #162's spec.

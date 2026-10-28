@@ -109,3 +109,5 @@ evidence, it does not fork it).
   ships the shape with null endpoints. Every concrete
   connection — endpoints, gates, which regions touch — is
   OPEN, owned by each region's own build.
+
+**Consumer citation (List 17 #163, landing 2026-10-27):** mythical-habitat sealing behaviour is decided in 163-MYTHICAL-HABITAT-SEALING.md (show/production/world-systems/), not in this document.
