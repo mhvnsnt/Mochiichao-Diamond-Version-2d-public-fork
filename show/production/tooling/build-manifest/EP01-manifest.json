@@ -131,7 +131,7 @@
       "cut": "06",
       "seconds": 12,
       "content": "POND: tour patter; Mochii stacks berries.",
-      "assets": "BG pond (parts-catalog), berry props",
+      "assets": "show/assets/backgrounds/pond/EP01-PLATE-pond-day-v1-living.mp4, berry props",
       "route": "puppet",
       "flags": [],
       "gates": [
@@ -147,13 +147,26 @@
           "visual": "reeds_sway",
           "sound": "reed_rustle"
         }
-      ]
+      ],
+      "wind_state": "BREEZE",
+      "ambient": [
+        "AMB-POND-RIPPLE-01",
+        "AMB-POND-REED-01",
+        "AMB-POND-LILY-01",
+        "AMB-POND-SHIMMER-01"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [
+        "CL-1 cloud shadow",
+        "CL-2 pollen motes"
+      ],
+      "bed": "BED-POND-DAY"
     },
     {
       "cut": "07",
       "seconds": 8,
       "content": "Berries un-stack one by one, unseen hands.",
-      "assets": "berry cycle",
+      "assets": "show/assets/backgrounds/pond/EP01-PLATE-pond-day-v1-living.mp4, berry cycle",
       "route": "puppet",
       "flags": [],
       "gates": [
@@ -165,13 +178,26 @@
           "visual": "water_ripple",
           "sound": "pond_lap_light"
         }
-      ]
+      ],
+      "wind_state": "BREEZE",
+      "ambient": [
+        "AMB-POND-RIPPLE-01",
+        "AMB-POND-REED-01",
+        "AMB-POND-LILY-01",
+        "AMB-POND-SHIMMER-01"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [
+        "CL-1 cloud shadow",
+        "CL-2 pollen motes"
+      ],
+      "bed": "BED-POND-DAY"
     },
     {
       "cut": "08",
       "seconds": 6,
       "content": "Toy duck rolls UPHILL. Both watch it go.",
-      "assets": "duck prop",
+      "assets": "show/assets/backgrounds/pond/EP01-PLATE-pond-day-v1-living.mp4, duck prop",
       "route": "puppet",
       "flags": [],
       "gates": [
@@ -187,13 +213,26 @@
           "visual": "grass_sway",
           "sound": "grass_rustle_light"
         }
-      ]
+      ],
+      "wind_state": "BREEZE",
+      "ambient": [
+        "AMB-POND-RIPPLE-01",
+        "AMB-POND-REED-01",
+        "AMB-POND-LILY-01",
+        "AMB-POND-SHIMMER-01"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [
+        "CL-1 cloud shadow",
+        "CL-2 pollen motes"
+      ],
+      "bed": "BED-POND-DAY"
     },
     {
       "cut": "09",
       "seconds": 7,
       "content": "Kittember tail flame flickers at empty air; ears flat.",
-      "assets": "Kittember rig, tail-flame FX",
+      "assets": "show/assets/backgrounds/pond/EP01-PLATE-pond-day-v1-living.mp4, Kittember rig, tail-flame FX",
       "route": "puppet",
       "flags": [],
       "gates": [
@@ -209,39 +248,74 @@
           "visual": "leaf_drift",
           "sound": "leaf_rustle_pass"
         }
-      ]
+      ],
+      "wind_state": "BREEZE",
+      "ambient": [
+        "AMB-POND-RIPPLE-01",
+        "AMB-POND-REED-01",
+        "AMB-POND-LILY-01",
+        "AMB-POND-SHIMMER-01"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [
+        "CL-1 cloud shadow",
+        "CL-2 pollen motes"
+      ],
+      "bed": "BED-POND-DAY"
     },
     {
       "cut": "10",
       "seconds": 9,
       "content": "GREEN: Gabu stomps in, net-cape, chest-beat bellow.",
-      "assets": "Gabu rig (ACTION BEAT A build)",
+      "assets": "show/assets/backgrounds/green/EP01-PLATE-green-day-v1-living.mp4, Gabu rig (ACTION BEAT A build)",
       "route": "puppet",
       "flags": [],
       "gates": [
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "wind_state": "BREEZE",
+      "ambient": [
+        "AMB-GREEN-GRASSWAVE-01",
+        "AMB-GREEN-FLOWER-01",
+        "AMB-GREEN-CLOUDSHADOW-01"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [
+        "CL-1 cloud shadow"
+      ],
+      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)"
     },
     {
       "cut": "11",
       "seconds": 10,
       "content": "Sproutle ground-level: frost-patch trail.",
-      "assets": "frost FX decals",
+      "assets": "show/assets/backgrounds/green/EP01-PLATE-green-day-v1-living.mp4, frost FX decals",
       "route": "puppet",
       "flags": [],
       "gates": [
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "wind_state": "BREEZE",
+      "ambient": [
+        "AMB-GREEN-GRASSWAVE-01",
+        "AMB-GREEN-FLOWER-01",
+        "AMB-GREEN-CLOUDSHADOW-01"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [
+        "CL-1 cloud shadow"
+      ],
+      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)"
     },
     {
       "cut": "12",
       "seconds": 8,
       "content": "The trail points at the pond. Keeper device check-in eyecatch energy.",
-      "assets": "device prop (OPEN ITEM)",
+      "assets": "show/assets/backgrounds/green/EP01-PLATE-green-day-v1-living.mp4, device prop (OPEN ITEM)",
       "route": "puppet",
       "flags": [
         "HALT: keeper device design is an OPEN ITEM (script)"
@@ -250,13 +324,24 @@
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "wind_state": "BREEZE",
+      "ambient": [
+        "AMB-GREEN-GRASSWAVE-01",
+        "AMB-GREEN-FLOWER-01",
+        "AMB-GREEN-CLOUDSHADOW-01"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [
+        "CL-1 cloud shadow"
+      ],
+      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)"
     },
     {
       "cut": "13",
       "seconds": 14,
       "content": "POND DUSK: stakeout behind bush, five heads.",
-      "assets": "BG pond dusk variant",
+      "assets": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
       "route": "puppet",
       "flags": [],
       "gates": [
@@ -272,7 +357,17 @@
           "visual": "reeds_still",
           "sound": "dusk_air_hush"
         }
-      ]
+      ],
+      "wind_state": "BREEZE decaying to CALM",
+      "ambient": [
+        "AMB-POND-MIST-01",
+        "AMB-POND-RIPPLE-01",
+        "AMB-POND-LILY-01",
+        "AMB-POND-REED-01 (0.55 amplitude)"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [],
+      "bed": "BED-POND-DUSK"
     },
     {
       "cut": "14",
@@ -317,7 +412,7 @@
       "cut": "17",
       "seconds": 12,
       "content": "Mist parts. Wispkin, small, shaking, holding the duck.",
-      "assets": "Wispkin float rig",
+      "assets": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4, Wispkin float rig",
       "route": "puppet",
       "flags": [],
       "gates": [
@@ -329,7 +424,17 @@
           "visual": "water_ripple_dusk",
           "sound": "pond_lap_dusk"
         }
-      ]
+      ],
+      "wind_state": "BREEZE decaying to CALM",
+      "ambient": [
+        "AMB-POND-MIST-01",
+        "AMB-POND-RIPPLE-01",
+        "AMB-POND-LILY-01",
+        "AMB-POND-REED-01 (0.55 amplitude)"
+      ],
+      "population": "composite-stage layer (P3) - none baked into plate",
+      "composite_life": [],
+      "bed": "BED-POND-DUSK"
     },
     {
       "cut": "18",
@@ -448,11 +553,10 @@
       "cut": "25",
       "seconds": 20,
       "content": "STINGER: DARK FOREST, DAY. Light not reaching in. Stillness.",
-      "assets": "Forest BG (MAKE, daylit-horror)",
+      "assets": "show/assets/backgrounds/dark-forest/EP01-PLATE-dark-forest-day-v1-STILL.mp4",
       "route": "puppet",
       "flags": [
-        "MAKE: background not yet built",
-        "MAKE: Dark Forest BG (stinger) not yet built"
+        "PROVISIONAL spec plate \u2014 canon painted Forest plate still MAKE"
       ],
       "gates": [
         "anim-gate",
@@ -464,15 +568,24 @@
           "visual": "FOREST: pattern still, no cycles",
           "sound": "forest_silence (no birdsong - by design)"
         }
-      ]
+      ],
+      "wind_state": "NONE (by law - Forest Exception C6)",
+      "ambient": [
+        "AMB-FOREST-NONE"
+      ],
+      "population": "NONE (P5 - the zero is a plot point)",
+      "composite_life": [],
+      "bed": "BED-FOREST-DAY (engineered absence)"
     },
     {
       "cut": "26",
       "seconds": 10,
       "content": "Something stops moving between trunks. Never shown.",
-      "assets": "\u2014",
+      "assets": "show/assets/backgrounds/dark-forest/EP01-PLATE-dark-forest-day-v1-STILL.mp4",
       "route": "puppet",
-      "flags": [],
+      "flags": [
+        "PROVISIONAL spec plate \u2014 canon painted Forest plate still MAKE"
+      ],
       "gates": [
         "anim-gate",
         "likeness-gate"
@@ -482,29 +595,47 @@
           "visual": "FOREST: no ambient motion",
           "sound": "forest_silence (by design)"
         }
-      ]
+      ],
+      "wind_state": "NONE (by law - Forest Exception C6)",
+      "ambient": [
+        "AMB-FOREST-NONE"
+      ],
+      "population": "NONE (P5 - the zero is a plot point)",
+      "composite_life": [],
+      "bed": "BED-FOREST-DAY (engineered absence)"
     },
     {
       "cut": "27",
       "seconds": 12,
       "content": "SUBTITLE burns in (Rule 12, exact wording). Holds.",
-      "assets": "subtitle card, forest grade",
+      "assets": "show/assets/backgrounds/dark-forest/EP01-PLATE-dark-forest-day-v1-STILL.mp4, subtitle card, forest grade",
       "route": "puppet",
-      "flags": [],
+      "flags": [
+        "PROVISIONAL spec plate \u2014 canon painted Forest plate still MAKE"
+      ],
       "gates": [
         "anim-gate",
         "likeness-gate",
         "subtitle-law-check (earned moments only)"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "wind_state": "NONE (by law - Forest Exception C6)",
+      "ambient": [
+        "AMB-FOREST-NONE"
+      ],
+      "population": "NONE (P5 - the zero is a plot point)",
+      "composite_life": [],
+      "bed": "BED-FOREST-DAY (engineered absence)"
     },
     {
       "cut": "28",
       "seconds": 4,
       "content": "One leaf falls straight down. SMASH TO BLACK.",
-      "assets": "\u2014",
+      "assets": "show/assets/backgrounds/dark-forest/EP01-PLATE-dark-forest-day-v1-STILL.mp4",
       "route": "puppet",
-      "flags": [],
+      "flags": [
+        "PROVISIONAL spec plate \u2014 canon painted Forest plate still MAKE"
+      ],
       "gates": [
         "anim-gate",
         "likeness-gate"
@@ -514,7 +645,14 @@
           "visual": "single_leaf_fall",
           "sound": "one_leaf_land_soft"
         }
-      ]
+      ],
+      "wind_state": "NONE (by law - Forest Exception C6)",
+      "ambient": [
+        "AMB-FOREST-NONE"
+      ],
+      "population": "NONE (P5 - the zero is a plot point)",
+      "composite_life": [],
+      "bed": "BED-FOREST-DAY (engineered absence)"
     }
   ],
   "audio_gaps": [
