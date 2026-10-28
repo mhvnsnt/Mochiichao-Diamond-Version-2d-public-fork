@@ -4,7 +4,7 @@
  "note": "Every finished clip and where it is used, both directions (show + game). quality_status is honest by design: clips marked rejected_placeholder were procedural stills composites rejected by Jamar on 2026-10-27 and must NOT ship; they stay indexed so nothing quietly reuses them.",
  "canon_notes": {
   "dorowani_eyes": "DOROWANI EYE CANON (owner ruling, 2026-10-27): the Dorowani SPECIES' eyes are red + black with NO sclera whites. The avatar/show individual Dorowani (Doro) HAS eye-whites - a kept special-case individual deviation (owner: do not scrap; keep consistent for this individual in every future generation). Other Dorowanis follow the species pattern; same-species individual variation is canon doctrine.",
-  "kittember_stance": "KITTEMBER STANCE DOCTRINE (owner ruling, 2026-10-27): the Kittember SPECIES default going forward is QUADRUPEDAL. The canon-pass grey upright Kittember (gen-retry canonpass tail/mouth bundles) is THE BIPEDAL KITTEMBER - the canon character, the marked bipedal individual. The #389 black quadruped is a special-case WILD individual (male) who is USED: Mochiko's first wild Kittember encounter (mysterious stare-down in the woods, disappears, reappears, battle + capture, joins the team) - clip-index entry gen-retry-2026-10-27-kittember-fire_stream, quality_status special_case_wild_individual."
+  "kittember_stance": "KITTEMBER STANCE DOCTRINE (owner ruling, 2026-10-27, as corrected same day): the Kittember SPECIES default going forward is QUADRUPEDAL. The BIPEDAL Kittember - the grey canon-pass bundles of PR #399 (orb tail) - is a special-case WILD individual: Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. The #389 black quadruped is a special-case DRAFT (species-form quadruped with the wrong tail/design deviations), held unused - it is NOT the wild individual (PR #401's original label was right; an intermediate same-day amendment that swapped the two individuals was itself corrected and reverted)."
  },
  "clips": [
   {
@@ -187,7 +187,7 @@
    "used_by": [
     "show:ep01_candidate"
    ],
-   "quality_status": "special_case_wild_individual",
+   "quality_status": "unused_draft_special_case",
    "gate": {
     "verdict": "FAIL",
     "recommendation_only": true,
@@ -201,7 +201,7 @@
      "rgb_mad_255_max": 40.0
     }
    },
-   "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch \u2014 fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-27 (superseding the unused-draft ruling): special-case WILD individual (male, black quadruped) - USED: Mochiko's first wild Kittember encounter - mysterious stare-down in the woods, disappears, reappears, battle + capture, joins the team."
+   "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch \u2014 fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-27 (as corrected same day): special-case DRAFT - species-form quadruped with the wrong tail/design deviations; unused draft, NOT the wild individual (the wild individual is the bipedal canon-pass, PR #399)."
   },
   {
    "id": "gen-retry-2026-10-27-sproutle-leaf_blast",
@@ -279,7 +279,8 @@
      "rgb_mad_255_max": 40.0
     }
    },
-   "note": "THE BIPEDAL KITTEMBER - the canon character (owner ruling 2026-10-27; species default is quadrupedal, this upright individual is the marked bipedal exception). FIRE STREAM, Kittember's signature - canon-pass TAIL form. Trait check (frames 12/96/180, +60/130/160 for form): coat dark GREY (dark-pixel median RGB 57-58 vs canon 71; #389 black was 38) PASS; upright bipedal throughout PASS; NO white chest patch PASS (a light-grey belly oval is present in every frame - canon coat is solid, scorer flag); ear interiors DARK PASS; eyes BIG, ROUND, forward amber PASS; tail tip ROUND ORANGE ORB PASS at f12/f180 (flame-wreathed at the f96 charge peak); SMOOTH coat PASS. Form: stream fires FROM the tail orb, mouth closed (charge f60, blast f130, dissipating f160) PASS. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.375 / IoU 0.511 / MAD 102.3. Motion evidence: mean frame-diff 4.67 (128px greyscale, all 192 frames). Promotion is a recorded owner/scorer verdict only."
+   "note": "The bipedal Kittember - special-case wild individual (owner ruling 2026-10-27): Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. Species default is quadrupedal; this bipedal individual is the special case. FIRE STREAM, Kittember's signature - canon-pass TAIL form. Trait check (frames 12/96/180, +60/130/160 for form): coat dark GREY (dark-pixel median RGB 57-58 vs canon 71; #389 black was 38) PASS; upright bipedal throughout PASS; NO white chest patch PASS (a light-grey belly oval is present in every frame - canon coat is solid, scorer flag); ear interiors DARK PASS; eyes BIG, ROUND, forward amber PASS; tail tip ROUND ORANGE ORB PASS at f12/f180 (flame-wreathed at the f96 charge peak); SMOOTH coat PASS. Form: stream fires FROM the tail orb, mouth closed (charge f60, blast f130, dissipating f160) PASS. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.375 / IoU 0.511 / MAD 102.3. Motion evidence: mean frame-diff 4.67 (128px greyscale, all 192 frames). Promotion is a recorded owner/scorer verdict only.",
+   "individual_status": "special_case_wild_individual"
   },
   {
    "id": "gen-retry-2026-10-27-kittember-fire_stream-canonpass-mouth",
@@ -305,7 +306,8 @@
      "rgb_mad_255_max": 40.0
     }
    },
-   "note": "THE BIPEDAL KITTEMBER - the canon character (owner ruling 2026-10-27; species default is quadrupedal, this upright individual is the marked bipedal exception). FIRE STREAM, Kittember's signature - canon-pass MOUTH form. Trait check (frames 12/96/180): coat dark GREY (dark-pixel median RGB 65 vs canon 71) PASS; upright bipedal throughout PASS; NO white chest patch PASS (same light-grey belly oval flag as the tail variant); ear interiors DARK PASS; eyes amber and forward-facing but NARROWER/SLANTED, not big-round - PARTIAL/FAIL (f12/f96/f180); tail tip is a teardrop FLAME PLUME at f12/f96 and a smoky flame blob at f180, never the round orange orb - FAIL; SMOOTH coat PASS. Form: mouth blast itself is clear at f96, but the variant condition 'orb burning on the tail tip throughout' is NOT met. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.428 / IoU 0.575 / MAD 86.5. Motion evidence: mean frame-diff 1.48 (128px greyscale, all 192 frames; motion concentrated at the blast). Promotion is a recorded owner/scorer verdict only."
+   "note": "The bipedal Kittember - special-case wild individual (owner ruling 2026-10-27): Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. Species default is quadrupedal; this bipedal individual is the special case. FIRE STREAM, Kittember's signature - canon-pass MOUTH form. Trait check (frames 12/96/180): coat dark GREY (dark-pixel median RGB 65 vs canon 71) PASS; upright bipedal throughout PASS; NO white chest patch PASS (same light-grey belly oval flag as the tail variant); ear interiors DARK PASS; eyes amber and forward-facing but NARROWER/SLANTED, not big-round - PARTIAL/FAIL (f12/f96/f180); tail tip is a teardrop FLAME PLUME at f12/f96 and a smoky flame blob at f180, never the round orange orb - FAIL; SMOOTH coat PASS. Form: mouth blast itself is clear at f96, but the variant condition 'orb burning on the tail tip throughout' is NOT met. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.428 / IoU 0.575 / MAD 86.5. Motion evidence: mean frame-diff 1.48 (128px greyscale, all 192 frames; motion concentrated at the blast). Promotion is a recorded owner/scorer verdict only.",
+   "individual_status": "special_case_wild_individual"
   }
  ]
 }

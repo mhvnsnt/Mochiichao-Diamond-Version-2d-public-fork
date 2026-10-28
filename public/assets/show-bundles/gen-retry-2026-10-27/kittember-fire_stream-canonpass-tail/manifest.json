@@ -48,5 +48,6 @@
   "packet": "gate-packet.json",
   "verdict_recommendation": "FAIL"
  },
- "character_form": "bipedal - THE canon Kittember character (owner ruling 2026-10-27); species default is quadrupedal, this upright individual is the marked bipedal exception"
+ "character_form": "bipedal - the bipedal Kittember, special-case wild individual (owner ruling 2026-10-27): Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team; species default is quadrupedal",
+ "individual_status": "special_case_wild_individual"
 }
