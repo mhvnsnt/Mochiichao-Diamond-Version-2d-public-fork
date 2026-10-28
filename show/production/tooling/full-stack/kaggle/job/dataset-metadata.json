@@ -1,0 +1,3 @@
+{"title": "mochiichao-vace-flf-job", "id": "marsfmmg/mochiichao-vace-flf-job",
+ "licenses": [{"name": "Apache 2.0"}],
+ "description": "Job inputs for the VACE-1.3B sparse-keyframe FLF proof: patched workflow.json, flf_control.mp4 + flf_mask.mp4 (first/last canon anchors, gray span), dorowani_cutout.png reference (owner's own art)."}

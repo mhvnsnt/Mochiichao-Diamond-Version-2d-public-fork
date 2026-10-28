@@ -1,0 +1,17 @@
+{
+  "id": "marsfmmg/mochiichao-vace-flf",
+  "title": "mochiichao-vace-flf",
+  "code_file": "mochiichao-vace-flf.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "marsfmmg/mochiichao-wan22-consistency-kit",
+    "marsfmmg/mochiichao-vace-flf-job"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

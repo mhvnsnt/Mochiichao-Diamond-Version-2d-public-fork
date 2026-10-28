@@ -1,0 +1,6267 @@
+{
+ "repo": "Automate-Animation/synctoon",
+ "commit": "c7bb8942a2ecfc81b4d39fa495e611d9a7cb0efb",
+ "default_branch": "main",
+ "tree_files": 1543,
+ "staged": [
+  {
+   "path": ".env.example",
+   "size": 924,
+   "sha256": "629af229a5a192433d26c903d26a10f720f7eef4df9b0aaae92e443174e0b433"
+  },
+  {
+   "path": ".gitignore",
+   "size": 3316,
+   "sha256": "6d71b047153f83764cba6d822e99205affc6cb4513e1ff126951e1f039525b4d"
+  },
+  {
+   "path": "DEVELOPER.md",
+   "size": 16336,
+   "sha256": "bcda47bc46c3abebce6ac423d7a8eb98bc0ec8277412ba23cd58a74112903bc4"
+  },
+  {
+   "path": "Docker/docker-compose.yml",
+   "size": 146,
+   "sha256": "7bc838c64bb082c4d88c9a53d351a63d1dfa38aca329489c39578acbfe50e885"
+  },
+  {
+   "path": "LICENSE",
+   "size": 35149,
+   "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+   "path": "README.md",
+   "size": 11266,
+   "sha256": "ae5ff5ccad772eda41581fd2caf4398dae3b6e2b68fb29c93c02437e6cbcf3bc"
+  },
+  {
+   "path": "Tasks/Task_1_create_audio_&_script.txt",
+   "size": 121,
+   "sha256": "9d23282c34d05ef60b35192c8ed65733fcaff4fa225fd4eb5c733bb45d32279e"
+  },
+  {
+   "path": "Tasks/Task_2_align_head_eyes_movement.txt",
+   "size": 95,
+   "sha256": "b0736c4ce11fe29857ab4b14e9716f592d3056fef5e574ef61558b950a21936a"
+  },
+  {
+   "path": "Tasks/Task_3_run_gentle_&_create_timestamp.txt",
+   "size": 212,
+   "sha256": "36df6d1b6104f45512ecd1f12b1736281144c65de7428ecf21e95086c4763559"
+  },
+  {
+   "path": "Tasks/Task_4_assign_character_to_text.txt",
+   "size": 3594,
+   "sha256": "dc49760a36c1703dc86962ccb1c323f8a2b86f9177f194feec49090a9248526d"
+  },
+  {
+   "path": "core/brain_requests/llm.py",
+   "size": 4976,
+   "sha256": "4e20006c5ba89f3b06eb2d66af2ee9ae6635bb16b20b229715131d037ecc91cc"
+  },
+  {
+   "path": "core/brain_requests/prompts.py",
+   "size": 13221,
+   "sha256": "f9ee7f931c7fe7f9cc4864c828c04e1f55cf852983d27e128c4cba24de065bb2"
+  },
+  {
+   "path": "core/brain_requests/speach_aligner.py",
+   "size": 2754,
+   "sha256": "5c525c6696c902cbb036bc8f82f0efcc06f049af3c82f24baa597a9f46d28958"
+  },
+  {
+   "path": "core/brain_requests/text_aligner.py",
+   "size": 9503,
+   "sha256": "dab600fded419fe0aaaa562f767c0fc1a534e120b4286fb55be2ffed722d6376"
+  },
+  {
+   "path": "core/brain_requests/tts.py",
+   "size": 3839,
+   "sha256": "68f657a3fffb2d05f7ceea2b5defab3357be62d2e104ab4d9639c4fb0033445a"
+  },
+  {
+   "path": "core/brain_requests/utils.py",
+   "size": 2268,
+   "sha256": "9d2c4c5981a19dd64e479d393e54a3b729c3118a58eed23113a8706ea1b835db"
+  },
+  {
+   "path": "core/brain_requests/validater.py",
+   "size": 1871,
+   "sha256": "8d3317ee4d9297b1d02ba1d8555560b67bc6562c381b57c954103b3eb6f0b757"
+  },
+  {
+   "path": "core/check_models.py",
+   "size": 413,
+   "sha256": "3cc918d602ef629d58a96573a4593238c73a33fd863b855e6c9436f14f2e09eb"
+  },
+  {
+   "path": "core/core.py",
+   "size": 5108,
+   "sha256": "b7b34ff6c38f957d4d37c3470e6b29805f6ce445d330060c26ec91561a09bedb"
+  },
+  {
+   "path": "core/create_animation.py",
+   "size": 5092,
+   "sha256": "401a095b74416427df98acedbcd9e25d29a0a90c1cf42ec634385cbfb32bf276"
+  },
+  {
+   "path": "core/frame_generator.py",
+   "size": 3660,
+   "sha256": "0093e005693f3d222200bd5038811aac76fa35422217d13f0b325f57ccc7971f"
+  },
+  {
+   "path": "core/frame_to_video.py",
+   "size": 2749,
+   "sha256": "29b69e688c9be25a33658a7486cf2824320fe9dd42942fdf1b6d522fb50d263c"
+  },
+  {
+   "path": "core/image_adding.py",
+   "size": 1490,
+   "sha256": "ed84fbd54f30671dbae53c87482a795f806e07836a5c2ec6d05b56ea2f17b621"
+  },
+  {
+   "path": "core/image_manager/CharacterManager.py",
+   "size": 9173,
+   "sha256": "2ddb623aa6593187392bdd658e437fb4eddd524f548930c688e60d49558694b1"
+  },
+  {
+   "path": "core/images/README.md",
+   "size": 344,
+   "sha256": "d96e42b4b097b0a7197f06a79221f02e4363ab83c50c9538203b95ca717115ad"
+  },
+  {
+   "path": "core/images/metadata/metadata.json",
+   "size": 155068,
+   "sha256": "829e01146cb8eb3f12d8ef94b363b0170fba01ca0ae45b6805642ed62dd79949"
+  },
+  {
+   "path": "core/output_fi.json",
+   "size": 105964,
+   "sha256": "7e3b37ddb08e3b84639cf813b63715ae77970fbb6dbf1b46877c26a825d235de"
+  },
+  {
+   "path": "core/test.py",
+   "size": 1129,
+   "sha256": "c163abbed131e8a8db20d627ae81fa8aaaf9f67e726eb4ed2ed0f02946b4de11"
+  },
+  {
+   "path": "core/tests/test_tts_alignment.py",
+   "size": 2688,
+   "sha256": "db21509e8b22debb825bfccc0ec7b1818cdc48a4355bcd7c992e5982e3034af8"
+  },
+  {
+   "path": "core/tools/build_character_2.py",
+   "size": 25413,
+   "sha256": "126a8b890ccae1dba3070adeb244e8e980cc0872ae364e341f9a2aa8dc64066e"
+  },
+  {
+   "path": "core/tools/build_character_3.py",
+   "size": 12200,
+   "sha256": "c3a3b85059f58a35eae31fe6de36ada27dc8c3606f20c61338542fb8e48b9138"
+  },
+  {
+   "path": "core/tools/build_character_4.py",
+   "size": 15258,
+   "sha256": "f004d005d99b7535665ba18d16fc38126ed16ffb796cb2ef8508148bea9dc6cc"
+  },
+  {
+   "path": "core/tools/char3_generate.py",
+   "size": 9877,
+   "sha256": "aa8f6b73f3aa4f9b4d1ce98ee2f3e89d8ec571ad2f4ffadc8bea9fa38720ee88"
+  },
+  {
+   "path": "core/tools/char3_lib.py",
+   "size": 2091,
+   "sha256": "4b469e1bf6a4c26dfa9f113b2862e4ee07e5b7373c71a0bf02b6f0598b34fe08"
+  },
+  {
+   "path": "core/tools/char4_compare.py",
+   "size": 5733,
+   "sha256": "d53ee28e6c91c529645db1afe7c6a5f5b87911c61c61cc7779de1d85ab12b6a5"
+  },
+  {
+   "path": "core/tools/char4_finalize_eyes.py",
+   "size": 3577,
+   "sha256": "a1e54f1e08c44677bcd86e0802028714e26042e84fa6e1945dd38d76b09f73e5"
+  },
+  {
+   "path": "core/tools/char4_fix_eyes_round1.py",
+   "size": 6017,
+   "sha256": "ff98491acc9941078f6e6365834593595318c859a649d5e88e45254f04e655dd"
+  },
+  {
+   "path": "core/tools/char4_fix_eyes_round2.py",
+   "size": 4153,
+   "sha256": "5a8bc57ad39210f6934ec0e7520b239a3b1dc10c81ba4fa172b1fa6dfaa40e55"
+  },
+  {
+   "path": "core/tools/char4_fix_eyes_round3.py",
+   "size": 3031,
+   "sha256": "22f2f455108916334c68cbb3b5447d4403810775beb7f67b05a35635cfc232b1"
+  },
+  {
+   "path": "core/tools/char4_fix_eyes_round4.py",
+   "size": 3336,
+   "sha256": "f55485fddb01dad742f4bb0cd17d2cdee4a04859a8109dd442265deb8cf1e391"
+  },
+  {
+   "path": "core/tools/char4_generate.py",
+   "size": 22104,
+   "sha256": "a29b199175840f2fc18e2d6390fed64357dfef4e1eb28f157a5169a3cba2ce06"
+  },
+  {
+   "path": "core/tools/char4_key.py",
+   "size": 5178,
+   "sha256": "3de5e65ec272652600e8a4a3c1e76bba52b0342f406675b5046a473ae411565b"
+  },
+  {
+   "path": "core/tools/char4_mouth_grid.py",
+   "size": 3099,
+   "sha256": "a1ec0cef7f8a9ae153f3c2f488c0ba0fdf040578bb264c9d7730ada73533761e"
+  },
+  {
+   "path": "core/tools/char4_neck_seam_qa.py",
+   "size": 4932,
+   "sha256": "d733daceeab14ccd593bcd58e13ad0149b859bf9d9218dacb1b7ee64fefab621"
+  },
+  {
+   "path": "core/tools/char4_patch_mouths.py",
+   "size": 1325,
+   "sha256": "82a5b4e82eb548b3ef7adb117cec7a4878c3c560fc9a72ebe8b4cdcfad534ec1"
+  },
+  {
+   "path": "core/tools/char4_pil_mouth.py",
+   "size": 2942,
+   "sha256": "4a3c2a215ab6605835cc80db88d4fc714a1ecdaaa30754e60f916062f2c85859"
+  },
+  {
+   "path": "core/tools/char4_pose_sheet.py",
+   "size": 3143,
+   "sha256": "8092db1a53867b409fa1acc96137020b92bd6c29b335ae71135def60a3665de2"
+  },
+  {
+   "path": "core/tools/char4_rebuild_bodies_only.py",
+   "size": 1331,
+   "sha256": "f80303085aba782d7e429618e1d7e15ec11867556ee8281a67e9f823820885cf"
+  },
+  {
+   "path": "core/tools/char4_run_all.py",
+   "size": 5727,
+   "sha256": "94756d21863292e8fc88d6043186f10b30e01bec06b0c87eb822b0b8603e2c35"
+  },
+  {
+   "path": "core/tools/char4_shuffle_critic.py",
+   "size": 4437,
+   "sha256": "47aae6a51a68ed3054933a57e52336220c678de9b414f814f6696472f152d3cf"
+  },
+  {
+   "path": "core/tools/char4_shuffle_critic_isolated.py",
+   "size": 4327,
+   "sha256": "226bdc986c2cef7c77a3ca55053f764ac1c5b42b2d03ca3528199fd8ec417d8a"
+  },
+  {
+   "path": "core/tools/char4_standalone_critic.py",
+   "size": 4108,
+   "sha256": "ed3723c73c73355e80079ec7c56a1186a18f5523b8c9084968b144cb120dd60f"
+  },
+  {
+   "path": "core/tools/character_qa.py",
+   "size": 7768,
+   "sha256": "08eb03e53b8cd84be4d008bef8af7a2450bfff3266f8ba152d7d0cd70dd17353"
+  },
+  {
+   "path": "core/tools/emotion_diff_grid.py",
+   "size": 6048,
+   "sha256": "66813f1c821feaa8c970de217f84f7f1428cd9c284e0e2e3f9d131783eb4a266"
+  },
+  {
+   "path": "core/tools/fix_character_4_body_anchors.py",
+   "size": 6985,
+   "sha256": "3b14f615089c3bfbebda0ea0d85df91a201ac9b20ef1b410b4f447cb02d3b23d"
+  },
+  {
+   "path": "core/tools/fix_character_4_eye_aspect.py",
+   "size": 1740,
+   "sha256": "69903aee792270e13b8b6d72f0e7fcabc3fb2f258063eb408e733b204bdce167"
+  },
+  {
+   "path": "core/tools/fix_character_4_finalize.py",
+   "size": 3782,
+   "sha256": "0dbc28667e49fe75975fcd52d1f0de2f85be401932e89e2f85bc05324c6df784"
+  },
+  {
+   "path": "core/tools/fix_character_4_geometry.py",
+   "size": 7591,
+   "sha256": "39f03a1148e95883f6dac5e4c3ac3da620c4bad65d9b5f93ac40b768f9db485f"
+  },
+  {
+   "path": "core/tools/fix_character_4_head_aspect.py",
+   "size": 2357,
+   "sha256": "ec74132795a97c15eca29db0d7d994cf535636d7bcd3c1908a1d2acb6a432ff1"
+  },
+  {
+   "path": "core/tools/fix_character_4_head_crop.py",
+   "size": 2001,
+   "sha256": "455711a5107e5c9803609175c819e427187edc66218f512a9a76dab91d7b84fd"
+  },
+  {
+   "path": "core/tools/fix_character_4_teeth_alpha.py",
+   "size": 2146,
+   "sha256": "be39ab7775c0f5885c38fc0cb70972648f3cf55876e5298e26f886928dee738e"
+  },
+  {
+   "path": "core/tools/gemini_img.py",
+   "size": 3027,
+   "sha256": "0e63e3ace393bddbabbf7780e3bd844dd2432657d977cf2d40a80f3fe753cb5e"
+  },
+  {
+   "path": "core/utils/add_phonemes.py",
+   "size": 2501,
+   "sha256": "42a63a88eef7adf2444b2afa6c7d9003c9d877f2e021e7a86676237d499efb8a"
+  },
+  {
+   "path": "core/utils/constants.py",
+   "size": 4476,
+   "sha256": "5cc98a8d6d4cff5b320059e0c03dc6bb6cb1019fdc231821f070c259a68ba1cb"
+  },
+  {
+   "path": "core/utils/env.py",
+   "size": 680,
+   "sha256": "1d8d841ab51d2da1f17aefd560cf3e7e5c25b908b457563185c875180e98a0ce"
+  },
+  {
+   "path": "core/utils/frame_info_generator.py",
+   "size": 6398,
+   "sha256": "f8667564615bb19dc07f390224f3087490cd3909f154a71af03d9f26868981be"
+  },
+  {
+   "path": "core/utils/mouth_image.json",
+   "size": 4985,
+   "sha256": "bdda6636fa24d70a9158ecdf046a19ea8146ec2b17801d76a72a152524603d34"
+  },
+  {
+   "path": "core/utils/update_character_asset_name.py",
+   "size": 1545,
+   "sha256": "66f203464026b14c5e4a8b1755fc5ce9f10c92a8e7106be8395c80e8035843da"
+  },
+  {
+   "path": "core/video_frames/video_frames.txt",
+   "size": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "core/videos/videos.txt",
+   "size": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "docs/ASSET_FORMAT.md",
+   "size": 20543,
+   "sha256": "aa5358da51d8b308297823764f7fe7f6f107694eba83412eb4ac8bf7ad831898"
+  },
+  {
+   "path": "docs/AUDIT.md",
+   "size": 20867,
+   "sha256": "ac41cf19bbafa4dff3ede3fab7c06cc4176a82ef6c3dcb5f5fce0ab253462209"
+  },
+  {
+   "path": "docs/CHARACTER_1_ANATOMY.md",
+   "size": 5190,
+   "sha256": "e8f7b09356e5cdfd064367b87aa4a77f499c568d77818cb09dbba7130005792f"
+  },
+  {
+   "path": "docs/CHARACTER_2_NOTES.md",
+   "size": 7407,
+   "sha256": "f04cabc6f1866e04e2bf8be65035963f756415f650f14a83240922efaa29aabe"
+  },
+  {
+   "path": "docs/CHARACTER_3_NOTES.md",
+   "size": 7453,
+   "sha256": "4583e2d17bcdcda45bb86d3a5f4dd0d7bca0fb3e9580b9e9da63aacb8a04e0ee"
+  },
+  {
+   "path": "docs/CHARACTER_4_NOTES.md",
+   "size": 43432,
+   "sha256": "10c2aa1a2bcb7c2dab81af0cf71a4843f29a3b200995b352c1aa44eab3cc5c5b"
+  },
+  {
+   "path": "docs/TALEEMABAD_CHARACTER_PIPELINE.md",
+   "size": 14855,
+   "sha256": "de0a6fe51e058ba06e1f8bbf02af607f5ec776b51afb98e82c86bbae3269dd5b"
+  },
+  {
+   "path": "example/story/ahmed-short.txt",
+   "size": 129,
+   "sha256": "89884c9b0cd2e8444d520925bb6c4ec32052b1a74b1970a87186a1890aa4dfa3"
+  },
+  {
+   "path": "example/story/breakup.txt",
+   "size": 2200,
+   "sha256": "db9caa3ff646f852dbf1dfec0dd3b737945fe50e2f957bec94e05100c04d39c3"
+  },
+  {
+   "path": "example/story/story-1.txt",
+   "size": 1513,
+   "sha256": "5413877041885cc36d430a3c373c1ba937ddadffe505d54857c54db79a04ff0f"
+  },
+  {
+   "path": "example/story/story-2.txt",
+   "size": 478,
+   "sha256": "59f9c496086d36bbb2911a1f86be9977f1670b00b616455fd38c8945679b4fb8"
+  },
+  {
+   "path": "example/story/story-short.txt",
+   "size": 217,
+   "sha256": "a4c57ee39c775da8126a24cf5a9e6168ac2a0a0f23c40f6ba3b87bc64dc38901"
+  },
+  {
+   "path": "example/story/teacher-short.txt",
+   "size": 215,
+   "sha256": "c8a8ff2fb56553aeb2a17b892e3a41925efc6ac03ed6301dba56b7dd47371b20"
+  },
+  {
+   "path": "example/story/ustani-short.txt",
+   "size": 202,
+   "sha256": "fcf31f34359253a5b643a65a171f7328ef69723490c8206cda2840de1ad64351"
+  },
+  {
+   "path": "requirements.txt",
+   "size": 1051,
+   "sha256": "8bf2a758864d79286434437e0995724f68228f674d9c3d61dad1ab3bffe9efa6"
+  }
+ ],
+ "skipped": [
+  {
+   "path": "core/images/characters/character_1/background/abandant-street/abandant-street.png",
+   "size": 1351096
+  },
+  {
+   "path": "core/images/characters/character_1/background/bar/bar.png",
+   "size": 1743295
+  },
+  {
+   "path": "core/images/characters/character_1/background/bedroom-1/bedroom-1.png",
+   "size": 1162835
+  },
+  {
+   "path": "core/images/characters/character_1/background/bedroom-2/bedroom-2.png",
+   "size": 1081745
+  },
+  {
+   "path": "core/images/characters/character_1/background/black/black.png",
+   "size": 78346
+  },
+  {
+   "path": "core/images/characters/character_1/background/classroom/classroom.png",
+   "size": 2431139
+  },
+  {
+   "path": "core/images/characters/character_1/background/dining-room/dining-room.png",
+   "size": 2159618
+  },
+  {
+   "path": "core/images/characters/character_1/background/dream-forest/dream-forest.png",
+   "size": 3194855
+  },
+  {
+   "path": "core/images/characters/character_1/background/empty-classroom/empty-classroom.png",
+   "size": 1137205
+  },
+  {
+   "path": "core/images/characters/character_1/background/explanation/explanation.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_1/background/forest/forest.png",
+   "size": 2736025
+  },
+  {
+   "path": "core/images/characters/character_1/background/gardan/gardan.png",
+   "size": 3183200
+  },
+  {
+   "path": "core/images/characters/character_1/background/garden/garden.png",
+   "size": 3183200
+  },
+  {
+   "path": "core/images/characters/character_1/background/green-backyard/green-backyard.png",
+   "size": 2746171
+  },
+  {
+   "path": "core/images/characters/character_1/background/green/green.png",
+   "size": 6240065
+  },
+  {
+   "path": "core/images/characters/character_1/background/indoor-living-room-and-study-area/indoor-living-room-and-study-area.png",
+   "size": 3075554
+  },
+  {
+   "path": "core/images/characters/character_1/background/kitchen-and-dining-room/kitchen-and-dining-room.png",
+   "size": 2134567
+  },
+  {
+   "path": "core/images/characters/character_1/background/kitchen-dining/kitchen-dining.png",
+   "size": 1956039
+  },
+  {
+   "path": "core/images/characters/character_1/background/kitchen/kitchen.png",
+   "size": 1869251
+  },
+  {
+   "path": "core/images/characters/character_1/background/library-and-book-shop/library-and-book-shop.png",
+   "size": 2585707
+  },
+  {
+   "path": "core/images/characters/character_1/background/living-room-1/living-room-1.png",
+   "size": 1414478
+  },
+  {
+   "path": "core/images/characters/character_1/background/living-room-2/living-room-2.png",
+   "size": 2094989
+  },
+  {
+   "path": "core/images/characters/character_1/background/office/office.png",
+   "size": 1504742
+  },
+  {
+   "path": "core/images/characters/character_1/background/orange/orange.png",
+   "size": 41207
+  },
+  {
+   "path": "core/images/characters/character_1/background/outdoor-cafe/outdoor-cafe.png",
+   "size": 2499261
+  },
+  {
+   "path": "core/images/characters/character_1/background/park/park.png",
+   "size": 2756953
+  },
+  {
+   "path": "core/images/characters/character_1/background/plain/plain.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_1/background/sitting-area/sitting-area.png",
+   "size": 1717729
+  },
+  {
+   "path": "core/images/characters/character_1/background/store/store.png",
+   "size": 2772639
+  },
+  {
+   "path": "core/images/characters/character_1/background/street/street.png",
+   "size": 2204616
+  },
+  {
+   "path": "core/images/characters/character_1/background/swamp-and-dense-forrest/swamp-and-dense-forrest.png",
+   "size": 3086379
+  },
+  {
+   "path": "core/images/characters/character_1/background/train-station/train-station.png",
+   "size": 1514005
+  },
+  {
+   "path": "core/images/characters/character_1/background/white/white.jpg",
+   "size": 8261
+  },
+  {
+   "path": "core/images/characters/character_1/background/white/white.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_1/background/yellow/yellow.png",
+   "size": 41834
+  },
+  {
+   "path": "core/images/characters/character_1/body/achieve/body1.png",
+   "size": 59967
+  },
+  {
+   "path": "core/images/characters/character_1/body/answer/body9.png",
+   "size": 55096
+  },
+  {
+   "path": "core/images/characters/character_1/body/body1.png",
+   "size": 59967
+  },
+  {
+   "path": "core/images/characters/character_1/body/body10.png",
+   "size": 50469
+  },
+  {
+   "path": "core/images/characters/character_1/body/body11.png",
+   "size": 52223
+  },
+  {
+   "path": "core/images/characters/character_1/body/body12.png",
+   "size": 55872
+  },
+  {
+   "path": "core/images/characters/character_1/body/body13.png",
+   "size": 57302
+  },
+  {
+   "path": "core/images/characters/character_1/body/body14.png",
+   "size": 64201
+  },
+  {
+   "path": "core/images/characters/character_1/body/body15.png",
+   "size": 28302
+  },
+  {
+   "path": "core/images/characters/character_1/body/body16.png",
+   "size": 25768
+  },
+  {
+   "path": "core/images/characters/character_1/body/body17.png",
+   "size": 29333
+  },
+  {
+   "path": "core/images/characters/character_1/body/body18.png",
+   "size": 29795
+  },
+  {
+   "path": "core/images/characters/character_1/body/body19.png",
+   "size": 61612
+  },
+  {
+   "path": "core/images/characters/character_1/body/body2.png",
+   "size": 51679
+  },
+  {
+   "path": "core/images/characters/character_1/body/body20.png",
+   "size": 73002
+  },
+  {
+   "path": "core/images/characters/character_1/body/body21.png",
+   "size": 61018
+  },
+  {
+   "path": "core/images/characters/character_1/body/body22.png",
+   "size": 57849
+  },
+  {
+   "path": "core/images/characters/character_1/body/body23.png",
+   "size": 62978
+  },
+  {
+   "path": "core/images/characters/character_1/body/body24.png",
+   "size": 44064
+  },
+  {
+   "path": "core/images/characters/character_1/body/body25.png",
+   "size": 58682
+  },
+  {
+   "path": "core/images/characters/character_1/body/body26.png",
+   "size": 33071
+  },
+  {
+   "path": "core/images/characters/character_1/body/body27.png",
+   "size": 48009
+  },
+  {
+   "path": "core/images/characters/character_1/body/body28.png",
+   "size": 53383
+  },
+  {
+   "path": "core/images/characters/character_1/body/body29.png",
+   "size": 62832
+  },
+  {
+   "path": "core/images/characters/character_1/body/body3.png",
+   "size": 50753
+  },
+  {
+   "path": "core/images/characters/character_1/body/body30.png",
+   "size": 69856
+  },
+  {
+   "path": "core/images/characters/character_1/body/body31.png",
+   "size": 57877
+  },
+  {
+   "path": "core/images/characters/character_1/body/body32.png",
+   "size": 62638
+  },
+  {
+   "path": "core/images/characters/character_1/body/body33.png",
+   "size": 48461
+  },
+  {
+   "path": "core/images/characters/character_1/body/body34.png",
+   "size": 63014
+  },
+  {
+   "path": "core/images/characters/character_1/body/body35.png",
+   "size": 66245
+  },
+  {
+   "path": "core/images/characters/character_1/body/body36.png",
+   "size": 87471
+  },
+  {
+   "path": "core/images/characters/character_1/body/body37.png",
+   "size": 66535
+  },
+  {
+   "path": "core/images/characters/character_1/body/body38.png",
+   "size": 77466
+  },
+  {
+   "path": "core/images/characters/character_1/body/body39.png",
+   "size": 68481
+  },
+  {
+   "path": "core/images/characters/character_1/body/body4.png",
+   "size": 56830
+  },
+  {
+   "path": "core/images/characters/character_1/body/body40.png",
+   "size": 56671
+  },
+  {
+   "path": "core/images/characters/character_1/body/body41.png",
+   "size": 57338
+  },
+  {
+   "path": "core/images/characters/character_1/body/body42.png",
+   "size": 56190
+  },
+  {
+   "path": "core/images/characters/character_1/body/body43.png",
+   "size": 38088
+  },
+  {
+   "path": "core/images/characters/character_1/body/body44.png",
+   "size": 45628
+  },
+  {
+   "path": "core/images/characters/character_1/body/body45.png",
+   "size": 69038
+  },
+  {
+   "path": "core/images/characters/character_1/body/body46.png",
+   "size": 62633
+  },
+  {
+   "path": "core/images/characters/character_1/body/body47.png",
+   "size": 66971
+  },
+  {
+   "path": "core/images/characters/character_1/body/body48.png",
+   "size": 64745
+  },
+  {
+   "path": "core/images/characters/character_1/body/body49.png",
+   "size": 66406
+  },
+  {
+   "path": "core/images/characters/character_1/body/body5.png",
+   "size": 63678
+  },
+  {
+   "path": "core/images/characters/character_1/body/body50.png",
+   "size": 61778
+  },
+  {
+   "path": "core/images/characters/character_1/body/body51.png",
+   "size": 66421
+  },
+  {
+   "path": "core/images/characters/character_1/body/body52.png",
+   "size": 77431
+  },
+  {
+   "path": "core/images/characters/character_1/body/body53.png",
+   "size": 43947
+  },
+  {
+   "path": "core/images/characters/character_1/body/body54.png",
+   "size": 81334
+  },
+  {
+   "path": "core/images/characters/character_1/body/body55.png",
+   "size": 56432
+  },
+  {
+   "path": "core/images/characters/character_1/body/body56.png",
+   "size": 65691
+  },
+  {
+   "path": "core/images/characters/character_1/body/body57.png",
+   "size": 73733
+  },
+  {
+   "path": "core/images/characters/character_1/body/body58.png",
+   "size": 66415
+  },
+  {
+   "path": "core/images/characters/character_1/body/body59.png",
+   "size": 50604
+  },
+  {
+   "path": "core/images/characters/character_1/body/body6.png",
+   "size": 49319
+  },
+  {
+   "path": "core/images/characters/character_1/body/body60.png",
+   "size": 52556
+  },
+  {
+   "path": "core/images/characters/character_1/body/body61.png",
+   "size": 69567
+  },
+  {
+   "path": "core/images/characters/character_1/body/body62.png",
+   "size": 54051
+  },
+  {
+   "path": "core/images/characters/character_1/body/body63.png",
+   "size": 66634
+  },
+  {
+   "path": "core/images/characters/character_1/body/body64.png",
+   "size": 70847
+  },
+  {
+   "path": "core/images/characters/character_1/body/body65.png",
+   "size": 65789
+  },
+  {
+   "path": "core/images/characters/character_1/body/body7.png",
+   "size": 55934
+  },
+  {
+   "path": "core/images/characters/character_1/body/body8.png",
+   "size": 50335
+  },
+  {
+   "path": "core/images/characters/character_1/body/body9.png",
+   "size": 55096
+  },
+  {
+   "path": "core/images/characters/character_1/body/chilling/body56.png",
+   "size": 65691
+  },
+  {
+   "path": "core/images/characters/character_1/body/come/body55.png",
+   "size": 56432
+  },
+  {
+   "path": "core/images/characters/character_1/body/confuse/body22.png",
+   "size": 57849
+  },
+  {
+   "path": "core/images/characters/character_1/body/crazy/body25.png",
+   "size": 58682
+  },
+  {
+   "path": "core/images/characters/character_1/body/dancing/body18.png",
+   "size": 29795
+  },
+  {
+   "path": "core/images/characters/character_1/body/explain/body15.png",
+   "size": 28302
+  },
+  {
+   "path": "core/images/characters/character_1/body/feeling_down/body48.png",
+   "size": 64745
+  },
+  {
+   "path": "core/images/characters/character_1/body/hi/body1.png",
+   "size": 59967
+  },
+  {
+   "path": "core/images/characters/character_1/body/i/body11.png",
+   "size": 52223
+  },
+  {
+   "path": "core/images/characters/character_1/body/idea/body28.png",
+   "size": 53383
+  },
+  {
+   "path": "core/images/characters/character_1/body/idk/body34.png",
+   "size": 63014
+  },
+  {
+   "path": "core/images/characters/character_1/body/joy/body30.png",
+   "size": 69856
+  },
+  {
+   "path": "core/images/characters/character_1/body/jumping/body30.png",
+   "size": 69856
+  },
+  {
+   "path": "core/images/characters/character_1/body/kung_fu/body25.png",
+   "size": 58682
+  },
+  {
+   "path": "core/images/characters/character_1/body/love/body58.png",
+   "size": 66415
+  },
+  {
+   "path": "core/images/characters/character_1/body/me/body11.png",
+   "size": 52223
+  },
+  {
+   "path": "core/images/characters/character_1/body/meditation/body46.png",
+   "size": 62633
+  },
+  {
+   "path": "core/images/characters/character_1/body/model/body31.png",
+   "size": 57877
+  },
+  {
+   "path": "core/images/characters/character_1/body/not_me/body1.png",
+   "size": 59967
+  },
+  {
+   "path": "core/images/characters/character_1/body/paper/body21.png",
+   "size": 61018
+  },
+  {
+   "path": "core/images/characters/character_1/body/praying/body64.png",
+   "size": 70847
+  },
+  {
+   "path": "core/images/characters/character_1/body/question/body9.png",
+   "size": 55096
+  },
+  {
+   "path": "core/images/characters/character_1/body/running/body29.png",
+   "size": 62832
+  },
+  {
+   "path": "core/images/characters/character_1/body/sad/body48.png",
+   "size": 64745
+  },
+  {
+   "path": "core/images/characters/character_1/body/search/body65.png",
+   "size": 65789
+  },
+  {
+   "path": "core/images/characters/character_1/body/shy/body22.png",
+   "size": 57849
+  },
+  {
+   "path": "core/images/characters/character_1/body/singing/body13.png",
+   "size": 57302
+  },
+  {
+   "path": "core/images/characters/character_1/body/sneaky/body36.png",
+   "size": 87471
+  },
+  {
+   "path": "core/images/characters/character_1/body/standing/body33.png",
+   "size": 48461
+  },
+  {
+   "path": "core/images/characters/character_1/body/technical/body35.png",
+   "size": 66245
+  },
+  {
+   "path": "core/images/characters/character_1/body/that/body15.png",
+   "size": 28302
+  },
+  {
+   "path": "core/images/characters/character_1/body/thinking/body6.png",
+   "size": 49319
+  },
+  {
+   "path": "core/images/characters/character_1/body/this/body24.png",
+   "size": 44064
+  },
+  {
+   "path": "core/images/characters/character_1/body/what/body3.png",
+   "size": 50753
+  },
+  {
+   "path": "core/images/characters/character_1/body/why/body1.png",
+   "size": 59967
+  },
+  {
+   "path": "core/images/characters/character_1/body/winner/body16.png",
+   "size": 25768
+  },
+  {
+   "path": "core/images/characters/character_1/body/yeah/body52.png",
+   "size": 77431
+  },
+  {
+   "path": "core/images/characters/character_1/body/you/body24.png",
+   "size": 44064
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_L.png",
+   "size": 11870
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_M.png",
+   "size": 11955
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_R.png",
+   "size": 11913
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_blink/02.png",
+   "size": 9129
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_blink/03.png",
+   "size": 9129
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_blink/04.png",
+   "size": 10433
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_blink/angry_L.png",
+   "size": 13989
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_blink/angry_M.png",
+   "size": 27744
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry/angry_blink/angry_R.png",
+   "size": 27483
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_L.png",
+   "size": 14195
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_M.png",
+   "size": 14479
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_R.png",
+   "size": 14416
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_blink/02.png",
+   "size": 24545
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_blink/03.png",
+   "size": 24545
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_blink/04.png",
+   "size": 26221
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_blink/angry_2_L.png",
+   "size": 29638
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_blink/angry_2_M.png",
+   "size": 29976
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/angry_2/angry_2_blink/angry_2_R.png",
+   "size": 30019
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_L.png",
+   "size": 13111
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_M.png",
+   "size": 13141
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_R.png",
+   "size": 13397
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_blink/02.png",
+   "size": 23129
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_blink/03.png",
+   "size": 23129
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_blink/04.png",
+   "size": 28031
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_blink/bore_L.png",
+   "size": 13111
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_blink/bore_M.png",
+   "size": 13141
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore/bore_blink/bore_R.png",
+   "size": 13397
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_L.png",
+   "size": 6668
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_M.png",
+   "size": 6786
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_R.png",
+   "size": 7076
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_blink/02.png",
+   "size": 19831
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_blink/03.png",
+   "size": 19831
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_blink/04.png",
+   "size": 21565
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_blink/bore_2_L.png",
+   "size": 6668
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_blink/bore_2_M.png",
+   "size": 6786
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/bore_2/bore_2_blink/bore_2_R.png",
+   "size": 7076
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_L.png",
+   "size": 12249
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_M.png",
+   "size": 12194
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_R.png",
+   "size": 12557
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_blink/02.png",
+   "size": 21876
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_blink/03.png",
+   "size": 21876
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_blink/04.png",
+   "size": 23313
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_blink/content_L.png",
+   "size": 12249
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_blink/content_M.png",
+   "size": 12194
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content/content_blink/content_R.png",
+   "size": 12557
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_L.png",
+   "size": 12249
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_M.png",
+   "size": 12194
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_R.png",
+   "size": 12557
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_blink/02.png",
+   "size": 21876
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_blink/03.png",
+   "size": 21876
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_blink/04.png",
+   "size": 23313
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_blink/content_2_L.png",
+   "size": 12249
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_blink/content_2_M.png",
+   "size": 12194
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/content_2/content_2_blink/content_2_R.png",
+   "size": 12557
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_L.png",
+   "size": 12450
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_M.png",
+   "size": 12486
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_R.png",
+   "size": 12344
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_blink/02.png",
+   "size": 23276
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_blink/03.png",
+   "size": 23276
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_blink/04.png",
+   "size": 25210
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_blink/crazy_L.png",
+   "size": 27935
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_blink/crazy_M.png",
+   "size": 27869
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy/crazy_blink/crazy_R.png",
+   "size": 27704
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_L.png",
+   "size": 12450
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_M.png",
+   "size": 12486
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_R.png",
+   "size": 12344
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_blink/02.png",
+   "size": 23276
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_blink/03.png",
+   "size": 23276
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_blink/04.png",
+   "size": 25210
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_blink/crazy_2_L.png",
+   "size": 27935
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_blink/crazy_2_M.png",
+   "size": 27869
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/crazy_2/crazy_2_blink/crazy_2_R.png",
+   "size": 27704
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_L.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_M.png",
+   "size": 8945
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_R.png",
+   "size": 9026
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_blink/02.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_blink/03.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_blink/04.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_blink/evil_laugh_L.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_blink/evil_laugh_M.png",
+   "size": 8945
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh/evil_laugh_blink/evil_laugh_R.png",
+   "size": 9026
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_L.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_M.png",
+   "size": 8945
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_R.png",
+   "size": 9026
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_blink/02.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_blink/03.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_blink/04.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_L.png",
+   "size": 8834
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_M.png",
+   "size": 8945
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_R.png",
+   "size": 9026
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_L.png",
+   "size": 14806
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_M.png",
+   "size": 15005
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_R.png",
+   "size": 14632
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_blink/02.png",
+   "size": 25422
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_blink/03.png",
+   "size": 25422
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_blink/04.png",
+   "size": 30263
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_blink/glare_L.png",
+   "size": 14806
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_blink/glare_M.png",
+   "size": 15005
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare/glare_blink/glare_R.png",
+   "size": 14632
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_L.png",
+   "size": 14806
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_M.png",
+   "size": 15005
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_R.png",
+   "size": 14632
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_blink/02.png",
+   "size": 25422
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_blink/03.png",
+   "size": 25422
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_blink/04.png",
+   "size": 30263
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_blink/glare_2_L.png",
+   "size": 14806
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_blink/glare_2_M.png",
+   "size": 15005
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/glare_2/glare_2_blink/glare_2_R.png",
+   "size": 14632
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_L.png",
+   "size": 5220
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_M.png",
+   "size": 5261
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_R.png",
+   "size": 5282
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_blink/02.png",
+   "size": 50788
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_blink/03.png",
+   "size": 50788
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_blink/04.png",
+   "size": 50788
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_blink/happy_L.png",
+   "size": 20695
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_blink/happy_M.png",
+   "size": 5261
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy/happy_blink/happy_R.png",
+   "size": 5282
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_L.png",
+   "size": 5220
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_M.png",
+   "size": 5261
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_R.png",
+   "size": 5282
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_blink/02.png",
+   "size": 50788
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_blink/03.png",
+   "size": 50788
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_blink/04.png",
+   "size": 50788
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_blink/happy_2_L.png",
+   "size": 5220
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_blink/happy_2_M.png",
+   "size": 5261
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/happy_2/happy_2_blink/happy_2_R.png",
+   "size": 5282
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_L.png",
+   "size": 10975
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_M.png",
+   "size": 11375
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_R.png",
+   "size": 11156
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_blink/02.png",
+   "size": 141873
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_blink/03.png",
+   "size": 141873
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_blink/04.png",
+   "size": 141873
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_blink/lust_L.png",
+   "size": 10975
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_blink/lust_M.png",
+   "size": 11375
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust/lust_blink/lust_R.png",
+   "size": 11156
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_L.png",
+   "size": 10975
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_M.png",
+   "size": 11375
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_R.png",
+   "size": 11156
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_blink/02.png",
+   "size": 141873
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_blink/03.png",
+   "size": 141873
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_blink/04.png",
+   "size": 141873
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_blink/lust_2_L.png",
+   "size": 10975
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_blink/lust_2_M.png",
+   "size": 11375
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/lust_2/lust_2_blink/lust_2_R.png",
+   "size": 11156
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_L.png",
+   "size": 13450
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_M.png",
+   "size": 13583
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_R.png",
+   "size": 13417
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_blink/02.png",
+   "size": 166335
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_blink/03.png",
+   "size": 166335
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_blink/04.png",
+   "size": 164280
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_blink/sad_L.png",
+   "size": 13450
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_blink/sad_M.png",
+   "size": 13583
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad/sad_blink/sad_R.png",
+   "size": 13417
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_L.png",
+   "size": 18549
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_M.png",
+   "size": 18367
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_R.png",
+   "size": 17924
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_blink/02.png",
+   "size": 184080
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_blink/03.png",
+   "size": 184080
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_blink/04.png",
+   "size": 184080
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_blink/sad_2_L.png",
+   "size": 18549
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_blink/sad_2_M.png",
+   "size": 18367
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sad_2/sad_2_blink/sad_2_R.png",
+   "size": 17924
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_L.png",
+   "size": 10219
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_M.png",
+   "size": 10760
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_R.png",
+   "size": 10278
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_blink/02.png",
+   "size": 131227
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_blink/03.png",
+   "size": 131227
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_blink/04.png",
+   "size": 131227
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_blink/sarcasm_L.png",
+   "size": 10219
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_blink/sarcasm_M.png",
+   "size": 10760
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm/sarcasm_blink/sarcasm_R.png",
+   "size": 10278
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_L.png",
+   "size": 10219
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_M.png",
+   "size": 10760
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_R.png",
+   "size": 10278
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_blink/02.png",
+   "size": 131227
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_blink/03.png",
+   "size": 131227
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_blink/04.png",
+   "size": 131227
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_L.png",
+   "size": 10219
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_M.png",
+   "size": 10760
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_R.png",
+   "size": 10278
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_L.png",
+   "size": 16863
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_M.png",
+   "size": 16952
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_R.png",
+   "size": 16810
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_blink/02.png",
+   "size": 160197
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_blink/03.png",
+   "size": 160197
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_blink/04.png",
+   "size": 160197
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_blink/shock_L.png",
+   "size": 159741
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_blink/shock_M.png",
+   "size": 159741
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock/shock_blink/shock_R.png",
+   "size": 159741
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_L.png",
+   "size": 16863
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_M.png",
+   "size": 16952
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_R.png",
+   "size": 16810
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_blink/02.png",
+   "size": 160197
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_blink/03.png",
+   "size": 160197
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_blink/04.png",
+   "size": 160197
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_blink/shock_2_L.png",
+   "size": 159741
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_blink/shock_2_M.png",
+   "size": 159741
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/shock_2/shock_2_blink/shock_2_R.png",
+   "size": 159741
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_L.png",
+   "size": 11534
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_M.png",
+   "size": 11582
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_R.png",
+   "size": 11539
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_blink/02.png",
+   "size": 153063
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_blink/03.png",
+   "size": 153063
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_blink/04.png",
+   "size": 153072
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_blink/silly_L.png",
+   "size": 152616
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_blink/silly_M.png",
+   "size": 152616
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly/silly_blink/silly_R.png",
+   "size": 152616
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_L.png",
+   "size": 11534
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_M.png",
+   "size": 11582
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_R.png",
+   "size": 11539
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_blink/02.png",
+   "size": 153063
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_blink/03.png",
+   "size": 153063
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_blink/04.png",
+   "size": 153072
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_blink/silly_2_L.png",
+   "size": 152616
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_blink/silly_2_M.png",
+   "size": 152616
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/silly_2/silly_2_blink/silly_2_R.png",
+   "size": 152616
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_L.png",
+   "size": 7992
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_M.png",
+   "size": 8046
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_R.png",
+   "size": 7788
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_blink/02.png",
+   "size": 185534
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_blink/03.png",
+   "size": 185534
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_blink/04.png",
+   "size": 184157
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_blink/spoked_L.png",
+   "size": 183701
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_blink/spoked_M.png",
+   "size": 183701
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked/spoked_blink/spoked_R.png",
+   "size": 183701
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_L.png",
+   "size": 11219
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_M.png",
+   "size": 11307
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_R.png",
+   "size": 11276
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_blink/02.png",
+   "size": 108541
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_blink/03.png",
+   "size": 108541
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_blink/04.png",
+   "size": 108541
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_blink/spoked_2_L.png",
+   "size": 11219
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_blink/spoked_2_M.png",
+   "size": 11307
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/spoked_2/spoked_2_blink/spoked_2_R.png",
+   "size": 11276
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_L.png",
+   "size": 8101
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_M.png",
+   "size": 8035
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_R.png",
+   "size": 7994
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_blink/02.png",
+   "size": 145579
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_blink/03.png",
+   "size": 145579
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_blink/04.png",
+   "size": 144202
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_blink/worried_L.png",
+   "size": 143746
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_blink/worried_M.png",
+   "size": 143746
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried/worried_blink/worried_R.png",
+   "size": 143746
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_L.png",
+   "size": 12190
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_M.png",
+   "size": 12278
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_R.png",
+   "size": 12299
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_blink/02.png",
+   "size": 123639
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_blink/03.png",
+   "size": 123639
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_blink/04.png",
+   "size": 123639
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_blink/worried_2_L.png",
+   "size": 123183
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_blink/worried_2_M.png",
+   "size": 123183
+  },
+  {
+   "path": "core/images/characters/character_1/eyes/worried_2/worried_2_blink/worried_2_R.png",
+   "size": 123183
+  },
+  {
+   "path": "core/images/characters/character_1/head/L/L.png",
+   "size": 28602
+  },
+  {
+   "path": "core/images/characters/character_1/head/M/M.png",
+   "size": 28608
+  },
+  {
+   "path": "core/images/characters/character_1/head/R/R.png",
+   "size": 28608
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/a_e_h.png",
+   "size": 15741
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/d_j_ch_h.png",
+   "size": 13437
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/f_h.png",
+   "size": 11836
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/l_h.png",
+   "size": 12803
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/m_b_close_h.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/o_big_h.png",
+   "size": 2741
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/o_small_h.png",
+   "size": 2741
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/oh_h.png",
+   "size": 5472
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/th_h.png",
+   "size": 13773
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/happy/trans_h.png",
+   "size": 246166
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/a_e_s.png",
+   "size": 25068
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/d_j_ch_s.png",
+   "size": 24153
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/f_s.png",
+   "size": 22091
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/l_s.png",
+   "size": 26296
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/m_b_close_s.png",
+   "size": 17343
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/o_big_s.png",
+   "size": 16527
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/o_small_s.png",
+   "size": 15897
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/oh_s.png",
+   "size": 15897
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/th_s.png",
+   "size": 25703
+  },
+  {
+   "path": "core/images/characters/character_1/mouth/sad/trans_s.png",
+   "size": 173334
+  },
+  {
+   "path": "core/images/characters/character_2/background/abandant-street/abandant-street.png",
+   "size": 1351096
+  },
+  {
+   "path": "core/images/characters/character_2/background/bar/bar.png",
+   "size": 1743295
+  },
+  {
+   "path": "core/images/characters/character_2/background/bedroom-1/bedroom-1.png",
+   "size": 1162835
+  },
+  {
+   "path": "core/images/characters/character_2/background/bedroom-2/bedroom-2.png",
+   "size": 1081745
+  },
+  {
+   "path": "core/images/characters/character_2/background/black/black.png",
+   "size": 78346
+  },
+  {
+   "path": "core/images/characters/character_2/background/classroom/classroom.png",
+   "size": 2431139
+  },
+  {
+   "path": "core/images/characters/character_2/background/dining-room/dining-room.png",
+   "size": 2159618
+  },
+  {
+   "path": "core/images/characters/character_2/background/dream-forest/dream-forest.png",
+   "size": 3194855
+  },
+  {
+   "path": "core/images/characters/character_2/background/empty-classroom/empty-classroom.png",
+   "size": 1137205
+  },
+  {
+   "path": "core/images/characters/character_2/background/explanation/explanation.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_2/background/forest/forest.png",
+   "size": 2736025
+  },
+  {
+   "path": "core/images/characters/character_2/background/gardan/gardan.png",
+   "size": 3183200
+  },
+  {
+   "path": "core/images/characters/character_2/background/garden/garden.png",
+   "size": 3183200
+  },
+  {
+   "path": "core/images/characters/character_2/background/green-backyard/green-backyard.png",
+   "size": 2746171
+  },
+  {
+   "path": "core/images/characters/character_2/background/green/green.png",
+   "size": 6240065
+  },
+  {
+   "path": "core/images/characters/character_2/background/indoor-living-room-and-study-area/indoor-living-room-and-study-area.png",
+   "size": 3075554
+  },
+  {
+   "path": "core/images/characters/character_2/background/kitchen-and-dining-room/kitchen-and-dining-room.png",
+   "size": 2134567
+  },
+  {
+   "path": "core/images/characters/character_2/background/kitchen-dining/kitchen-dining.png",
+   "size": 1956039
+  },
+  {
+   "path": "core/images/characters/character_2/background/kitchen/kitchen.png",
+   "size": 1869251
+  },
+  {
+   "path": "core/images/characters/character_2/background/library-and-book-shop/library-and-book-shop.png",
+   "size": 2585707
+  },
+  {
+   "path": "core/images/characters/character_2/background/living-room-1/living-room-1.png",
+   "size": 1414478
+  },
+  {
+   "path": "core/images/characters/character_2/background/living-room-2/living-room-2.png",
+   "size": 2094989
+  },
+  {
+   "path": "core/images/characters/character_2/background/office/office.png",
+   "size": 1504742
+  },
+  {
+   "path": "core/images/characters/character_2/background/outdoor-cafe/outdoor-cafe.png",
+   "size": 2499261
+  },
+  {
+   "path": "core/images/characters/character_2/background/park/park.png",
+   "size": 2756953
+  },
+  {
+   "path": "core/images/characters/character_2/background/plain/plain.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_2/background/sitting-area/sitting-area.png",
+   "size": 1717729
+  },
+  {
+   "path": "core/images/characters/character_2/background/store/store.png",
+   "size": 2772639
+  },
+  {
+   "path": "core/images/characters/character_2/background/street/street.png",
+   "size": 2204616
+  },
+  {
+   "path": "core/images/characters/character_2/background/train-station/train-station.png",
+   "size": 1514005
+  },
+  {
+   "path": "core/images/characters/character_2/background/white/white.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_2/background/yellow/yellow.png",
+   "size": 41834
+  },
+  {
+   "path": "core/images/characters/character_2/body/achieve/achieve.png",
+   "size": 87063
+  },
+  {
+   "path": "core/images/characters/character_2/body/answer/answer.png",
+   "size": 88016
+  },
+  {
+   "path": "core/images/characters/character_2/body/chilling/chilling.png",
+   "size": 70369
+  },
+  {
+   "path": "core/images/characters/character_2/body/come/come.png",
+   "size": 86203
+  },
+  {
+   "path": "core/images/characters/character_2/body/confuse/confuse.png",
+   "size": 82457
+  },
+  {
+   "path": "core/images/characters/character_2/body/crazy/crazy.png",
+   "size": 86159
+  },
+  {
+   "path": "core/images/characters/character_2/body/dancing/dancing.png",
+   "size": 92105
+  },
+  {
+   "path": "core/images/characters/character_2/body/explain/explain.png",
+   "size": 88586
+  },
+  {
+   "path": "core/images/characters/character_2/body/feeling_down/feeling_down.png",
+   "size": 87054
+  },
+  {
+   "path": "core/images/characters/character_2/body/hi/hi.png",
+   "size": 86944
+  },
+  {
+   "path": "core/images/characters/character_2/body/i/i.png",
+   "size": 85494
+  },
+  {
+   "path": "core/images/characters/character_2/body/idea/idea.png",
+   "size": 94914
+  },
+  {
+   "path": "core/images/characters/character_2/body/idk/idk.png",
+   "size": 87036
+  },
+  {
+   "path": "core/images/characters/character_2/body/joy/joy.png",
+   "size": 87564
+  },
+  {
+   "path": "core/images/characters/character_2/body/jumping/jumping.png",
+   "size": 83692
+  },
+  {
+   "path": "core/images/characters/character_2/body/kung_fu/kung_fu.png",
+   "size": 86035
+  },
+  {
+   "path": "core/images/characters/character_2/body/love/love.png",
+   "size": 75676
+  },
+  {
+   "path": "core/images/characters/character_2/body/me/me.png",
+   "size": 85494
+  },
+  {
+   "path": "core/images/characters/character_2/body/meditation/meditation.png",
+   "size": 79576
+  },
+  {
+   "path": "core/images/characters/character_2/body/model/model.png",
+   "size": 88164
+  },
+  {
+   "path": "core/images/characters/character_2/body/not_me/not_me.png",
+   "size": 84411
+  },
+  {
+   "path": "core/images/characters/character_2/body/paper/paper.png",
+   "size": 86070
+  },
+  {
+   "path": "core/images/characters/character_2/body/praying/praying.png",
+   "size": 69960
+  },
+  {
+   "path": "core/images/characters/character_2/body/question/question.png",
+   "size": 87036
+  },
+  {
+   "path": "core/images/characters/character_2/body/running/running.png",
+   "size": 84730
+  },
+  {
+   "path": "core/images/characters/character_2/body/search/search.png",
+   "size": 86700
+  },
+  {
+   "path": "core/images/characters/character_2/body/shy/shy.png",
+   "size": 70322
+  },
+  {
+   "path": "core/images/characters/character_2/body/singing/singing.png",
+   "size": 86673
+  },
+  {
+   "path": "core/images/characters/character_2/body/sneaky/sneaky.png",
+   "size": 74686
+  },
+  {
+   "path": "core/images/characters/character_2/body/standing/standing.png",
+   "size": 82094
+  },
+  {
+   "path": "core/images/characters/character_2/body/technical/technical.png",
+   "size": 82453
+  },
+  {
+   "path": "core/images/characters/character_2/body/that/that.png",
+   "size": 89693
+  },
+  {
+   "path": "core/images/characters/character_2/body/thinking/thinking.png",
+   "size": 80342
+  },
+  {
+   "path": "core/images/characters/character_2/body/this/this.png",
+   "size": 89303
+  },
+  {
+   "path": "core/images/characters/character_2/body/what/what.png",
+   "size": 85836
+  },
+  {
+   "path": "core/images/characters/character_2/body/why/why.png",
+   "size": 88607
+  },
+  {
+   "path": "core/images/characters/character_2/body/winner/winner.png",
+   "size": 84534
+  },
+  {
+   "path": "core/images/characters/character_2/body/yeah/yeah.png",
+   "size": 82229
+  },
+  {
+   "path": "core/images/characters/character_2/body/you/you.png",
+   "size": 90155
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_L.png",
+   "size": 10180
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_M.png",
+   "size": 10087
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_R.png",
+   "size": 10087
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_blink/02.png",
+   "size": 8035
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_blink/03.png",
+   "size": 5536
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_blink/04.png",
+   "size": 8035
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_blink/angry_L.png",
+   "size": 10180
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_blink/angry_M.png",
+   "size": 10087
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry/angry_blink/angry_R.png",
+   "size": 10087
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_L.png",
+   "size": 9377
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_M.png",
+   "size": 9254
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_R.png",
+   "size": 9349
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_blink/02.png",
+   "size": 8766
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_blink/03.png",
+   "size": 6289
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_blink/04.png",
+   "size": 8766
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_blink/angry_2_L.png",
+   "size": 9377
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_blink/angry_2_M.png",
+   "size": 9254
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/angry_2/angry_2_blink/angry_2_R.png",
+   "size": 9349
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_L.png",
+   "size": 6458
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_M.png",
+   "size": 6809
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_R.png",
+   "size": 6446
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_blink/02.png",
+   "size": 6681
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_blink/03.png",
+   "size": 4199
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_blink/04.png",
+   "size": 6681
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_blink/bore_L.png",
+   "size": 6458
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_blink/bore_M.png",
+   "size": 6809
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore/bore_blink/bore_R.png",
+   "size": 6446
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_L.png",
+   "size": 5382
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_M.png",
+   "size": 5477
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_R.png",
+   "size": 5364
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_blink/02.png",
+   "size": 6681
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_blink/03.png",
+   "size": 4199
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_blink/04.png",
+   "size": 6681
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_blink/bore_2_L.png",
+   "size": 5382
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_blink/bore_2_M.png",
+   "size": 5477
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/bore_2/bore_2_blink/bore_2_R.png",
+   "size": 5364
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_L.png",
+   "size": 7988
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_M.png",
+   "size": 8340
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_R.png",
+   "size": 8036
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_blink/02.png",
+   "size": 6273
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_blink/03.png",
+   "size": 4578
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_blink/04.png",
+   "size": 6273
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_blink/content_L.png",
+   "size": 7988
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_blink/content_M.png",
+   "size": 8340
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content/content_blink/content_R.png",
+   "size": 8036
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_L.png",
+   "size": 7113
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_M.png",
+   "size": 7367
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_R.png",
+   "size": 7069
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_blink/02.png",
+   "size": 5856
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_blink/03.png",
+   "size": 4689
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_blink/04.png",
+   "size": 5856
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_blink/content_2_L.png",
+   "size": 7113
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_blink/content_2_M.png",
+   "size": 7367
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/content_2/content_2_blink/content_2_R.png",
+   "size": 7069
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_L.png",
+   "size": 11575
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_M.png",
+   "size": 11746
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_R.png",
+   "size": 11570
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_blink/02.png",
+   "size": 8015
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_blink/03.png",
+   "size": 5057
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_blink/04.png",
+   "size": 8015
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_blink/crazy_L.png",
+   "size": 11575
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_blink/crazy_M.png",
+   "size": 11746
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy/crazy_blink/crazy_R.png",
+   "size": 11570
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_L.png",
+   "size": 12453
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_M.png",
+   "size": 12381
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_R.png",
+   "size": 12486
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_blink/02.png",
+   "size": 8996
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_blink/03.png",
+   "size": 5937
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_blink/04.png",
+   "size": 8996
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_blink/crazy_2_L.png",
+   "size": 12453
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_blink/crazy_2_M.png",
+   "size": 12381
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/crazy_2/crazy_2_blink/crazy_2_R.png",
+   "size": 12486
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_L.png",
+   "size": 8258
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_M.png",
+   "size": 8306
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_R.png",
+   "size": 8252
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_blink/02.png",
+   "size": 7636
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_blink/03.png",
+   "size": 5808
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_blink/04.png",
+   "size": 7636
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_blink/evil_laugh_L.png",
+   "size": 8258
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_blink/evil_laugh_M.png",
+   "size": 8306
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh/evil_laugh_blink/evil_laugh_R.png",
+   "size": 8252
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_L.png",
+   "size": 5513
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_M.png",
+   "size": 5513
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_R.png",
+   "size": 5513
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_blink/02.png",
+   "size": 7005
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_blink/03.png",
+   "size": 5565
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_blink/04.png",
+   "size": 7005
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_L.png",
+   "size": 5513
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_M.png",
+   "size": 5513
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_R.png",
+   "size": 5513
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_L.png",
+   "size": 6971
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_M.png",
+   "size": 7090
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_R.png",
+   "size": 6964
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_blink/02.png",
+   "size": 7090
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_blink/03.png",
+   "size": 4749
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_blink/04.png",
+   "size": 7090
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_blink/glare_L.png",
+   "size": 6971
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_blink/glare_M.png",
+   "size": 7090
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare/glare_blink/glare_R.png",
+   "size": 6964
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_L.png",
+   "size": 6163
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_M.png",
+   "size": 6133
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_R.png",
+   "size": 6168
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_blink/02.png",
+   "size": 7329
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_blink/03.png",
+   "size": 5052
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_blink/04.png",
+   "size": 7329
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_blink/glare_2_L.png",
+   "size": 6163
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_blink/glare_2_M.png",
+   "size": 6133
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/glare_2/glare_2_blink/glare_2_R.png",
+   "size": 6168
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_L.png",
+   "size": 9226
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_M.png",
+   "size": 9408
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_R.png",
+   "size": 9195
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_blink/02.png",
+   "size": 6804
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_blink/03.png",
+   "size": 4579
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_blink/04.png",
+   "size": 6804
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_blink/happy_L.png",
+   "size": 9226
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_blink/happy_M.png",
+   "size": 9408
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy/happy_blink/happy_R.png",
+   "size": 9195
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_L.png",
+   "size": 9147
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_M.png",
+   "size": 9274
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_R.png",
+   "size": 9098
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_blink/02.png",
+   "size": 6573
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_blink/03.png",
+   "size": 4712
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_blink/04.png",
+   "size": 6573
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_blink/happy_2_L.png",
+   "size": 9147
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_blink/happy_2_M.png",
+   "size": 9274
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/happy_2/happy_2_blink/happy_2_R.png",
+   "size": 9098
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_L.png",
+   "size": 7449
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_M.png",
+   "size": 8094
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_R.png",
+   "size": 7434
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_blink/02.png",
+   "size": 6995
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_blink/03.png",
+   "size": 4579
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_blink/04.png",
+   "size": 6995
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_blink/lust_L.png",
+   "size": 7449
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_blink/lust_M.png",
+   "size": 8094
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust/lust_blink/lust_R.png",
+   "size": 7434
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_L.png",
+   "size": 5947
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_M.png",
+   "size": 6287
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_R.png",
+   "size": 5939
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_blink/02.png",
+   "size": 6861
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_blink/03.png",
+   "size": 4702
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_blink/04.png",
+   "size": 6861
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_blink/lust_2_L.png",
+   "size": 5947
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_blink/lust_2_M.png",
+   "size": 6287
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/lust_2/lust_2_blink/lust_2_R.png",
+   "size": 5939
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_L.png",
+   "size": 10237
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_M.png",
+   "size": 10591
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_R.png",
+   "size": 10279
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_blink/02.png",
+   "size": 7896
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_blink/03.png",
+   "size": 5274
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_blink/04.png",
+   "size": 7896
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_blink/sad_L.png",
+   "size": 10237
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_blink/sad_M.png",
+   "size": 10591
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad/sad_blink/sad_R.png",
+   "size": 10279
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_L.png",
+   "size": 9246
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_M.png",
+   "size": 9538
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_R.png",
+   "size": 9189
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_blink/02.png",
+   "size": 8129
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_blink/03.png",
+   "size": 5643
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_blink/04.png",
+   "size": 8129
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_blink/sad_2_L.png",
+   "size": 9246
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_blink/sad_2_M.png",
+   "size": 9538
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sad_2/sad_2_blink/sad_2_R.png",
+   "size": 9189
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_L.png",
+   "size": 8756
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_M.png",
+   "size": 9148
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_R.png",
+   "size": 8753
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_blink/02.png",
+   "size": 7025
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_blink/03.png",
+   "size": 4551
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_blink/04.png",
+   "size": 7025
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_blink/sarcasm_L.png",
+   "size": 8756
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_blink/sarcasm_M.png",
+   "size": 9148
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm/sarcasm_blink/sarcasm_R.png",
+   "size": 8753
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_L.png",
+   "size": 8191
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_M.png",
+   "size": 8522
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_R.png",
+   "size": 8201
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_blink/02.png",
+   "size": 7117
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_blink/03.png",
+   "size": 4654
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_blink/04.png",
+   "size": 7117
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_L.png",
+   "size": 8191
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_M.png",
+   "size": 8522
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_R.png",
+   "size": 8201
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_L.png",
+   "size": 8647
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_M.png",
+   "size": 8655
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_R.png",
+   "size": 8645
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_blink/02.png",
+   "size": 6544
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_blink/03.png",
+   "size": 4513
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_blink/04.png",
+   "size": 6544
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_blink/shock_L.png",
+   "size": 8647
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_blink/shock_M.png",
+   "size": 8655
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock/shock_blink/shock_R.png",
+   "size": 8645
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_L.png",
+   "size": 6780
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_M.png",
+   "size": 6775
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_R.png",
+   "size": 6775
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_blink/02.png",
+   "size": 4886
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_blink/03.png",
+   "size": 3210
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_blink/04.png",
+   "size": 4886
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_blink/shock_2_L.png",
+   "size": 6780
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_blink/shock_2_M.png",
+   "size": 6775
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/shock_2/shock_2_blink/shock_2_R.png",
+   "size": 6775
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_L.png",
+   "size": 10893
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_M.png",
+   "size": 11220
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_R.png",
+   "size": 11112
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_blink/02.png",
+   "size": 7288
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_blink/03.png",
+   "size": 4689
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_blink/04.png",
+   "size": 7288
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_blink/silly_L.png",
+   "size": 10893
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_blink/silly_M.png",
+   "size": 11220
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly/silly_blink/silly_R.png",
+   "size": 11112
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_L.png",
+   "size": 10436
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_M.png",
+   "size": 10800
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_R.png",
+   "size": 10906
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_blink/02.png",
+   "size": 7560
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_blink/03.png",
+   "size": 5000
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_blink/04.png",
+   "size": 7560
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_blink/silly_2_L.png",
+   "size": 10436
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_blink/silly_2_M.png",
+   "size": 10800
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/silly_2/silly_2_blink/silly_2_R.png",
+   "size": 10906
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_L.png",
+   "size": 9450
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_M.png",
+   "size": 9451
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_R.png",
+   "size": 9446
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_blink/02.png",
+   "size": 6859
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_blink/03.png",
+   "size": 4756
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_blink/04.png",
+   "size": 6859
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_blink/spoked_L.png",
+   "size": 9450
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_blink/spoked_M.png",
+   "size": 9451
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked/spoked_blink/spoked_R.png",
+   "size": 9446
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_L.png",
+   "size": 7356
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_M.png",
+   "size": 7357
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_R.png",
+   "size": 7356
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_blink/02.png",
+   "size": 5299
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_blink/03.png",
+   "size": 3834
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_blink/04.png",
+   "size": 5299
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_blink/spoked_2_L.png",
+   "size": 7356
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_blink/spoked_2_M.png",
+   "size": 7357
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/spoked_2/spoked_2_blink/spoked_2_R.png",
+   "size": 7356
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_L.png",
+   "size": 9808
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_M.png",
+   "size": 9865
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_R.png",
+   "size": 9805
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_blink/02.png",
+   "size": 7476
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_blink/03.png",
+   "size": 5214
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_blink/04.png",
+   "size": 7476
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_blink/worried_L.png",
+   "size": 9808
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_blink/worried_M.png",
+   "size": 9865
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried/worried_blink/worried_R.png",
+   "size": 9805
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_L.png",
+   "size": 9171
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_M.png",
+   "size": 9190
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_R.png",
+   "size": 9169
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_blink/02.png",
+   "size": 6959
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_blink/03.png",
+   "size": 4809
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_blink/04.png",
+   "size": 6959
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_blink/worried_2_L.png",
+   "size": 9171
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_blink/worried_2_M.png",
+   "size": 9190
+  },
+  {
+   "path": "core/images/characters/character_2/eyes/worried_2/worried_2_blink/worried_2_R.png",
+   "size": 9169
+  },
+  {
+   "path": "core/images/characters/character_2/head/L/head_L.png",
+   "size": 43585
+  },
+  {
+   "path": "core/images/characters/character_2/head/M/head_M.png",
+   "size": 44519
+  },
+  {
+   "path": "core/images/characters/character_2/head/R/head_R.png",
+   "size": 43548
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/a_e_h.png",
+   "size": 2468
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/d_j_ch_h.png",
+   "size": 1507
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/f_h.png",
+   "size": 2916
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/l_h.png",
+   "size": 2858
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/m_b_close_h.png",
+   "size": 3139
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/o_big_h.png",
+   "size": 3861
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/o_small_h.png",
+   "size": 1914
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/oh_h.png",
+   "size": 2982
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/th_h.png",
+   "size": 2100
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/happy/trans_h.png",
+   "size": 1226
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/a_e_s.png",
+   "size": 2454
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/d_j_ch_s.png",
+   "size": 1808
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/f_s.png",
+   "size": 2667
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/l_s.png",
+   "size": 2624
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/m_b_close_s.png",
+   "size": 3292
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/o_big_s.png",
+   "size": 3862
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/o_small_s.png",
+   "size": 1915
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/oh_s.png",
+   "size": 2982
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/th_s.png",
+   "size": 2237
+  },
+  {
+   "path": "core/images/characters/character_2/mouth/sad/trans_s.png",
+   "size": 1257
+  },
+  {
+   "path": "core/images/characters/character_3/background/abandant-street/abandant-street.png",
+   "size": 1351096
+  },
+  {
+   "path": "core/images/characters/character_3/background/bar/bar.png",
+   "size": 1743295
+  },
+  {
+   "path": "core/images/characters/character_3/background/bedroom-1/bedroom-1.png",
+   "size": 1162835
+  },
+  {
+   "path": "core/images/characters/character_3/background/bedroom-2/bedroom-2.png",
+   "size": 1081745
+  },
+  {
+   "path": "core/images/characters/character_3/background/black/black.png",
+   "size": 78346
+  },
+  {
+   "path": "core/images/characters/character_3/background/classroom/classroom.png",
+   "size": 2431139
+  },
+  {
+   "path": "core/images/characters/character_3/background/dining-room/dining-room.png",
+   "size": 2159618
+  },
+  {
+   "path": "core/images/characters/character_3/background/dream-forest/dream-forest.png",
+   "size": 3194855
+  },
+  {
+   "path": "core/images/characters/character_3/background/empty-classroom/empty-classroom.png",
+   "size": 1137205
+  },
+  {
+   "path": "core/images/characters/character_3/background/explanation/explanation.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_3/background/forest/forest.png",
+   "size": 2736025
+  },
+  {
+   "path": "core/images/characters/character_3/background/gardan/gardan.png",
+   "size": 3183200
+  },
+  {
+   "path": "core/images/characters/character_3/background/garden/garden.png",
+   "size": 3183200
+  },
+  {
+   "path": "core/images/characters/character_3/background/green-backyard/green-backyard.png",
+   "size": 2746171
+  },
+  {
+   "path": "core/images/characters/character_3/background/green/green.png",
+   "size": 6240065
+  },
+  {
+   "path": "core/images/characters/character_3/background/indoor-living-room-and-study-area/indoor-living-room-and-study-area.png",
+   "size": 3075554
+  },
+  {
+   "path": "core/images/characters/character_3/background/kitchen-and-dining-room/kitchen-and-dining-room.png",
+   "size": 2134567
+  },
+  {
+   "path": "core/images/characters/character_3/background/kitchen-dining/kitchen-dining.png",
+   "size": 1956039
+  },
+  {
+   "path": "core/images/characters/character_3/background/kitchen/kitchen.png",
+   "size": 1869251
+  },
+  {
+   "path": "core/images/characters/character_3/background/library-and-book-shop/library-and-book-shop.png",
+   "size": 2585707
+  },
+  {
+   "path": "core/images/characters/character_3/background/living-room-1/living-room-1.png",
+   "size": 1414478
+  },
+  {
+   "path": "core/images/characters/character_3/background/living-room-2/living-room-2.png",
+   "size": 2094989
+  },
+  {
+   "path": "core/images/characters/character_3/background/office/office.png",
+   "size": 1504742
+  },
+  {
+   "path": "core/images/characters/character_3/background/outdoor-cafe/outdoor-cafe.png",
+   "size": 2499261
+  },
+  {
+   "path": "core/images/characters/character_3/background/park/park.png",
+   "size": 2756953
+  },
+  {
+   "path": "core/images/characters/character_3/background/plain/plain.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_3/background/sitting-area/sitting-area.png",
+   "size": 1717729
+  },
+  {
+   "path": "core/images/characters/character_3/background/store/store.png",
+   "size": 2772639
+  },
+  {
+   "path": "core/images/characters/character_3/background/street/street.png",
+   "size": 2204616
+  },
+  {
+   "path": "core/images/characters/character_3/background/train-station/train-station.png",
+   "size": 1514005
+  },
+  {
+   "path": "core/images/characters/character_3/background/white/white.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_3/background/yellow/yellow.png",
+   "size": 41834
+  },
+  {
+   "path": "core/images/characters/character_3/body/achieve/achieve.png",
+   "size": 951713
+  },
+  {
+   "path": "core/images/characters/character_3/body/answer/answer.png",
+   "size": 939016
+  },
+  {
+   "path": "core/images/characters/character_3/body/chilling/chilling.png",
+   "size": 879711
+  },
+  {
+   "path": "core/images/characters/character_3/body/come/come.png",
+   "size": 948648
+  },
+  {
+   "path": "core/images/characters/character_3/body/confuse/confuse.png",
+   "size": 941972
+  },
+  {
+   "path": "core/images/characters/character_3/body/crazy/crazy.png",
+   "size": 951713
+  },
+  {
+   "path": "core/images/characters/character_3/body/dancing/dancing.png",
+   "size": 951713
+  },
+  {
+   "path": "core/images/characters/character_3/body/explain/explain.png",
+   "size": 936468
+  },
+  {
+   "path": "core/images/characters/character_3/body/feeling_down/feeling_down.png",
+   "size": 921801
+  },
+  {
+   "path": "core/images/characters/character_3/body/hi/hi.png",
+   "size": 948648
+  },
+  {
+   "path": "core/images/characters/character_3/body/i/i.png",
+   "size": 942329
+  },
+  {
+   "path": "core/images/characters/character_3/body/idea/idea.png",
+   "size": 971543
+  },
+  {
+   "path": "core/images/characters/character_3/body/idk/idk.png",
+   "size": 908135
+  },
+  {
+   "path": "core/images/characters/character_3/body/joy/joy.png",
+   "size": 960943
+  },
+  {
+   "path": "core/images/characters/character_3/body/jumping/jumping.png",
+   "size": 951713
+  },
+  {
+   "path": "core/images/characters/character_3/body/kung_fu/kung_fu.png",
+   "size": 951371
+  },
+  {
+   "path": "core/images/characters/character_3/body/love/love.png",
+   "size": 948648
+  },
+  {
+   "path": "core/images/characters/character_3/body/me/me.png",
+   "size": 942329
+  },
+  {
+   "path": "core/images/characters/character_3/body/meditation/meditation.png",
+   "size": 927563
+  },
+  {
+   "path": "core/images/characters/character_3/body/model/model.png",
+   "size": 971543
+  },
+  {
+   "path": "core/images/characters/character_3/body/not_me/not_me.png",
+   "size": 942329
+  },
+  {
+   "path": "core/images/characters/character_3/body/paper/paper.png",
+   "size": 933788
+  },
+  {
+   "path": "core/images/characters/character_3/body/praying/praying.png",
+   "size": 914893
+  },
+  {
+   "path": "core/images/characters/character_3/body/question/question.png",
+   "size": 941972
+  },
+  {
+   "path": "core/images/characters/character_3/body/running/running.png",
+   "size": 960943
+  },
+  {
+   "path": "core/images/characters/character_3/body/search/search.png",
+   "size": 936468
+  },
+  {
+   "path": "core/images/characters/character_3/body/shy/shy.png",
+   "size": 879711
+  },
+  {
+   "path": "core/images/characters/character_3/body/singing/singing.png",
+   "size": 960943
+  },
+  {
+   "path": "core/images/characters/character_3/body/sneaky/sneaky.png",
+   "size": 965224
+  },
+  {
+   "path": "core/images/characters/character_3/body/standing/standing.png",
+   "size": 879711
+  },
+  {
+   "path": "core/images/characters/character_3/body/technical/technical.png",
+   "size": 921784
+  },
+  {
+   "path": "core/images/characters/character_3/body/that/that.png",
+   "size": 941972
+  },
+  {
+   "path": "core/images/characters/character_3/body/thinking/thinking.png",
+   "size": 908135
+  },
+  {
+   "path": "core/images/characters/character_3/body/this/this.png",
+   "size": 939016
+  },
+  {
+   "path": "core/images/characters/character_3/body/what/what.png",
+   "size": 941972
+  },
+  {
+   "path": "core/images/characters/character_3/body/why/why.png",
+   "size": 936468
+  },
+  {
+   "path": "core/images/characters/character_3/body/winner/winner.png",
+   "size": 951713
+  },
+  {
+   "path": "core/images/characters/character_3/body/yeah/yeah.png",
+   "size": 951713
+  },
+  {
+   "path": "core/images/characters/character_3/body/you/you.png",
+   "size": 939016
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_L.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_M.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_R.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_blink/angry_L.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_blink/angry_M.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry/angry_blink/angry_R.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_L.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_M.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_R.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_blink/angry_2_L.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_blink/angry_2_M.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/angry_2/angry_2_blink/angry_2_R.png",
+   "size": 104649
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_L.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_M.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_R.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_blink/bore_L.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_blink/bore_M.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore/bore_blink/bore_R.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_L.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_M.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_R.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_blink/bore_2_L.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_blink/bore_2_M.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/bore_2/bore_2_blink/bore_2_R.png",
+   "size": 102466
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_L.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_M.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_R.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_blink/content_L.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_blink/content_M.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content/content_blink/content_R.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_L.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_M.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_R.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_blink/content_2_L.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_blink/content_2_M.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/content_2/content_2_blink/content_2_R.png",
+   "size": 100888
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_L.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_M.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_R.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_blink/crazy_L.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_blink/crazy_M.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy/crazy_blink/crazy_R.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_L.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_M.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_R.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_blink/crazy_2_L.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_blink/crazy_2_M.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/crazy_2/crazy_2_blink/crazy_2_R.png",
+   "size": 109392
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_L.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_M.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_R.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_blink/evil_laugh_L.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_blink/evil_laugh_M.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh/evil_laugh_blink/evil_laugh_R.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_L.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_M.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_R.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_L.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_M.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_R.png",
+   "size": 95922
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_L.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_M.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_R.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_blink/glare_L.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_blink/glare_M.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare/glare_blink/glare_R.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_L.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_M.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_R.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_blink/glare_2_L.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_blink/glare_2_M.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/glare_2/glare_2_blink/glare_2_R.png",
+   "size": 107326
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_L.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_M.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_R.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_blink/happy_L.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_blink/happy_M.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy/happy_blink/happy_R.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_L.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_M.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_R.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_blink/happy_2_L.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_blink/happy_2_M.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/happy_2/happy_2_blink/happy_2_R.png",
+   "size": 105505
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_L.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_M.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_R.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_blink/lust_L.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_blink/lust_M.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust/lust_blink/lust_R.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_L.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_M.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_R.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_blink/lust_2_L.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_blink/lust_2_M.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/lust_2/lust_2_blink/lust_2_R.png",
+   "size": 101013
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_L.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_M.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_R.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_blink/sad_L.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_blink/sad_M.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad/sad_blink/sad_R.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_L.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_M.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_R.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_blink/sad_2_L.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_blink/sad_2_M.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sad_2/sad_2_blink/sad_2_R.png",
+   "size": 102062
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_L.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_M.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_R.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_blink/sarcasm_L.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_blink/sarcasm_M.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm/sarcasm_blink/sarcasm_R.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_L.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_M.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_R.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_L.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_M.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_R.png",
+   "size": 103187
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_L.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_M.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_R.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_blink/shock_L.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_blink/shock_M.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock/shock_blink/shock_R.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_L.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_M.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_R.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_blink/shock_2_L.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_blink/shock_2_M.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/shock_2/shock_2_blink/shock_2_R.png",
+   "size": 100860
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_L.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_M.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_R.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_blink/silly_L.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_blink/silly_M.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly/silly_blink/silly_R.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_L.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_M.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_R.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_blink/silly_2_L.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_blink/silly_2_M.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/silly_2/silly_2_blink/silly_2_R.png",
+   "size": 102581
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_L.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_M.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_R.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_blink/spoked_L.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_blink/spoked_M.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked/spoked_blink/spoked_R.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_L.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_M.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_R.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_blink/spoked_2_L.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_blink/spoked_2_M.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/spoked_2/spoked_2_blink/spoked_2_R.png",
+   "size": 95897
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_L.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_M.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_R.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_blink/worried_L.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_blink/worried_M.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried/worried_blink/worried_R.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_L.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_M.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_R.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_blink/02.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_blink/03.png",
+   "size": 90458
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_blink/04.png",
+   "size": 90941
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_blink/worried_2_L.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_blink/worried_2_M.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/eyes/worried_2/worried_2_blink/worried_2_R.png",
+   "size": 107974
+  },
+  {
+   "path": "core/images/characters/character_3/head/L/head_M.png",
+   "size": 1201850
+  },
+  {
+   "path": "core/images/characters/character_3/head/M/head_M.png",
+   "size": 1201850
+  },
+  {
+   "path": "core/images/characters/character_3/head/R/head_M.png",
+   "size": 1201850
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/a_e_h.png",
+   "size": 24045
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/d_j_ch_h.png",
+   "size": 24319
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/f_h.png",
+   "size": 25414
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/l_h.png",
+   "size": 23997
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/m_b_close_h.png",
+   "size": 22803
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/o_big_h.png",
+   "size": 24321
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/o_small_h.png",
+   "size": 23664
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/oh_h.png",
+   "size": 23625
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/th_h.png",
+   "size": 24732
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/happy/trans_h.png",
+   "size": 21687
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/a_e_s.png",
+   "size": 25135
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/d_j_ch_s.png",
+   "size": 26038
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/f_s.png",
+   "size": 25420
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/l_s.png",
+   "size": 23505
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/m_b_close_s.png",
+   "size": 22032
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/o_big_s.png",
+   "size": 23697
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/o_small_s.png",
+   "size": 23740
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/oh_s.png",
+   "size": 23188
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/th_s.png",
+   "size": 23179
+  },
+  {
+   "path": "core/images/characters/character_3/mouth/sad/trans_s.png",
+   "size": 21630
+  },
+  {
+   "path": "core/images/characters/character_4/background/abandant-street/abandant-street.png",
+   "size": 1351096
+  },
+  {
+   "path": "core/images/characters/character_4/background/bar/bar.png",
+   "size": 1743295
+  },
+  {
+   "path": "core/images/characters/character_4/background/bedroom-1/bedroom-1.png",
+   "size": 1162835
+  },
+  {
+   "path": "core/images/characters/character_4/background/bedroom-2/bedroom-2.png",
+   "size": 1081745
+  },
+  {
+   "path": "core/images/characters/character_4/background/black/black.png",
+   "size": 78346
+  },
+  {
+   "path": "core/images/characters/character_4/background/classroom/classroom.png",
+   "size": 2431139
+  },
+  {
+   "path": "core/images/characters/character_4/background/dining-room/dining-room.png",
+   "size": 2159618
+  },
+  {
+   "path": "core/images/characters/character_4/background/dream-forest/dream-forest.png",
+   "size": 3194855
+  },
+  {
+   "path": "core/images/characters/character_4/background/empty-classroom/empty-classroom.png",
+   "size": 1137205
+  },
+  {
+   "path": "core/images/characters/character_4/background/explanation/explanation.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_4/background/forest/forest.png",
+   "size": 2736025
+  },
+  {
+   "path": "core/images/characters/character_4/background/gardan/gardan.png",
+   "size": 3183200
+  },
+  {
+   "path": "core/images/characters/character_4/background/garden/garden.png",
+   "size": 3183200
+  },
+  {
+   "path": "core/images/characters/character_4/background/green-backyard/green-backyard.png",
+   "size": 2746171
+  },
+  {
+   "path": "core/images/characters/character_4/background/green/green.png",
+   "size": 6240065
+  },
+  {
+   "path": "core/images/characters/character_4/background/indoor-living-room-and-study-area/indoor-living-room-and-study-area.png",
+   "size": 3075554
+  },
+  {
+   "path": "core/images/characters/character_4/background/kitchen-and-dining-room/kitchen-and-dining-room.png",
+   "size": 2134567
+  },
+  {
+   "path": "core/images/characters/character_4/background/kitchen-dining/kitchen-dining.png",
+   "size": 1956039
+  },
+  {
+   "path": "core/images/characters/character_4/background/kitchen/kitchen.png",
+   "size": 1869251
+  },
+  {
+   "path": "core/images/characters/character_4/background/library-and-book-shop/library-and-book-shop.png",
+   "size": 2585707
+  },
+  {
+   "path": "core/images/characters/character_4/background/living-room-1/living-room-1.png",
+   "size": 1414478
+  },
+  {
+   "path": "core/images/characters/character_4/background/living-room-2/living-room-2.png",
+   "size": 2094989
+  },
+  {
+   "path": "core/images/characters/character_4/background/office/office.png",
+   "size": 1504742
+  },
+  {
+   "path": "core/images/characters/character_4/background/outdoor-cafe/outdoor-cafe.png",
+   "size": 2499261
+  },
+  {
+   "path": "core/images/characters/character_4/background/park/park.png",
+   "size": 2756953
+  },
+  {
+   "path": "core/images/characters/character_4/background/plain/plain.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_4/background/sitting-area/sitting-area.png",
+   "size": 1717729
+  },
+  {
+   "path": "core/images/characters/character_4/background/store/store.png",
+   "size": 2772639
+  },
+  {
+   "path": "core/images/characters/character_4/background/street/street.png",
+   "size": 2204616
+  },
+  {
+   "path": "core/images/characters/character_4/background/train-station/train-station.png",
+   "size": 1514005
+  },
+  {
+   "path": "core/images/characters/character_4/background/white/white.png",
+   "size": 83240
+  },
+  {
+   "path": "core/images/characters/character_4/background/yellow/yellow.png",
+   "size": 41834
+  },
+  {
+   "path": "core/images/characters/character_4/body/achieve/achieve.png",
+   "size": 454776
+  },
+  {
+   "path": "core/images/characters/character_4/body/answer/answer.png",
+   "size": 331607
+  },
+  {
+   "path": "core/images/characters/character_4/body/chilling/chilling.png",
+   "size": 276230
+  },
+  {
+   "path": "core/images/characters/character_4/body/come/come.png",
+   "size": 267408
+  },
+  {
+   "path": "core/images/characters/character_4/body/confuse/confuse.png",
+   "size": 288608
+  },
+  {
+   "path": "core/images/characters/character_4/body/crazy/crazy.png",
+   "size": 473840
+  },
+  {
+   "path": "core/images/characters/character_4/body/dancing/dancing.png",
+   "size": 420873
+  },
+  {
+   "path": "core/images/characters/character_4/body/explain/explain.png",
+   "size": 333706
+  },
+  {
+   "path": "core/images/characters/character_4/body/feeling_down/feeling_down.png",
+   "size": 242607
+  },
+  {
+   "path": "core/images/characters/character_4/body/hi/hi.png",
+   "size": 368577
+  },
+  {
+   "path": "core/images/characters/character_4/body/i/i.png",
+   "size": 331607
+  },
+  {
+   "path": "core/images/characters/character_4/body/idea/idea.png",
+   "size": 395283
+  },
+  {
+   "path": "core/images/characters/character_4/body/idk/idk.png",
+   "size": 463632
+  },
+  {
+   "path": "core/images/characters/character_4/body/joy/joy.png",
+   "size": 422390
+  },
+  {
+   "path": "core/images/characters/character_4/body/jumping/jumping.png",
+   "size": 253912
+  },
+  {
+   "path": "core/images/characters/character_4/body/kung_fu/kung_fu.png",
+   "size": 398777
+  },
+  {
+   "path": "core/images/characters/character_4/body/love/love.png",
+   "size": 296663
+  },
+  {
+   "path": "core/images/characters/character_4/body/me/me.png",
+   "size": 331607
+  },
+  {
+   "path": "core/images/characters/character_4/body/meditation/meditation.png",
+   "size": 278938
+  },
+  {
+   "path": "core/images/characters/character_4/body/model/model.png",
+   "size": 289184
+  },
+  {
+   "path": "core/images/characters/character_4/body/not_me/not_me.png",
+   "size": 272911
+  },
+  {
+   "path": "core/images/characters/character_4/body/paper/paper.png",
+   "size": 334479
+  },
+  {
+   "path": "core/images/characters/character_4/body/praying/praying.png",
+   "size": 269591
+  },
+  {
+   "path": "core/images/characters/character_4/body/question/question.png",
+   "size": 465910
+  },
+  {
+   "path": "core/images/characters/character_4/body/running/running.png",
+   "size": 333790
+  },
+  {
+   "path": "core/images/characters/character_4/body/search/search.png",
+   "size": 333706
+  },
+  {
+   "path": "core/images/characters/character_4/body/shy/shy.png",
+   "size": 263144
+  },
+  {
+   "path": "core/images/characters/character_4/body/singing/singing.png",
+   "size": 449106
+  },
+  {
+   "path": "core/images/characters/character_4/body/sneaky/sneaky.png",
+   "size": 293369
+  },
+  {
+   "path": "core/images/characters/character_4/body/standing/standing.png",
+   "size": 287368
+  },
+  {
+   "path": "core/images/characters/character_4/body/technical/technical.png",
+   "size": 334644
+  },
+  {
+   "path": "core/images/characters/character_4/body/that/that.png",
+   "size": 331607
+  },
+  {
+   "path": "core/images/characters/character_4/body/thinking/thinking.png",
+   "size": 279217
+  },
+  {
+   "path": "core/images/characters/character_4/body/this/this.png",
+   "size": 331607
+  },
+  {
+   "path": "core/images/characters/character_4/body/what/what.png",
+   "size": 465910
+  },
+  {
+   "path": "core/images/characters/character_4/body/why/why.png",
+   "size": 333706
+  },
+  {
+   "path": "core/images/characters/character_4/body/winner/winner.png",
+   "size": 454776
+  },
+  {
+   "path": "core/images/characters/character_4/body/yeah/yeah.png",
+   "size": 335089
+  },
+  {
+   "path": "core/images/characters/character_4/body/you/you.png",
+   "size": 331607
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_L.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_M.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_R.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_blink/02.png",
+   "size": 4280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_blink/03.png",
+   "size": 3652
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_blink/04.png",
+   "size": 8749
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_blink/angry_L.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_blink/angry_M.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry/angry_blink/angry_R.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_L.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_M.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_R.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_blink/02.png",
+   "size": 4280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_blink/03.png",
+   "size": 3652
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_blink/04.png",
+   "size": 8749
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_blink/angry_2_L.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_blink/angry_2_M.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/angry_2/angry_2_blink/angry_2_R.png",
+   "size": 4346
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_L.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_M.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_R.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_blink/02.png",
+   "size": 4307
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_blink/03.png",
+   "size": 3651
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_blink/04.png",
+   "size": 8674
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_blink/bore_L.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_blink/bore_M.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore/bore_blink/bore_R.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_L.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_M.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_R.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_blink/02.png",
+   "size": 4307
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_blink/03.png",
+   "size": 3651
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_blink/04.png",
+   "size": 8674
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_blink/bore_2_L.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_blink/bore_2_M.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/bore_2/bore_2_blink/bore_2_R.png",
+   "size": 3230
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_L.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_M.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_R.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_blink/02.png",
+   "size": 4387
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_blink/03.png",
+   "size": 3620
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_blink/04.png",
+   "size": 8714
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_blink/content_L.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_blink/content_M.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content/content_blink/content_R.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_L.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_M.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_R.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_blink/02.png",
+   "size": 4387
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_blink/03.png",
+   "size": 3620
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_blink/04.png",
+   "size": 8714
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_blink/content_2_L.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_blink/content_2_M.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/content_2/content_2_blink/content_2_R.png",
+   "size": 4357
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_L.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_M.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_R.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_blink/02.png",
+   "size": 4214
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_blink/03.png",
+   "size": 3662
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_blink/04.png",
+   "size": 8702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_blink/crazy_L.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_blink/crazy_M.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy/crazy_blink/crazy_R.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_L.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_M.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_R.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_blink/02.png",
+   "size": 4214
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_blink/03.png",
+   "size": 3662
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_blink/04.png",
+   "size": 8702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_blink/crazy_2_L.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_blink/crazy_2_M.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/crazy_2/crazy_2_blink/crazy_2_R.png",
+   "size": 4223
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_L.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_M.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_R.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_blink/02.png",
+   "size": 4180
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_blink/03.png",
+   "size": 3602
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_blink/04.png",
+   "size": 8709
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_blink/evil_laugh_L.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_blink/evil_laugh_M.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh/evil_laugh_blink/evil_laugh_R.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_L.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_M.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_R.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_blink/02.png",
+   "size": 4180
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_blink/03.png",
+   "size": 3602
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_blink/04.png",
+   "size": 8709
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_L.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_M.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/evil_laugh_2/evil_laugh_2_blink/evil_laugh_2_R.png",
+   "size": 2094
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_L.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_M.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_R.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_blink/02.png",
+   "size": 4317
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_blink/03.png",
+   "size": 3681
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_blink/04.png",
+   "size": 8742
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_blink/glare_L.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_blink/glare_M.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare/glare_blink/glare_R.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_L.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_M.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_R.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_blink/02.png",
+   "size": 4317
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_blink/03.png",
+   "size": 3681
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_blink/04.png",
+   "size": 8742
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_blink/glare_2_L.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_blink/glare_2_M.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/glare_2/glare_2_blink/glare_2_R.png",
+   "size": 3944
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_L.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_M.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_R.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_blink/02.png",
+   "size": 4292
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_blink/03.png",
+   "size": 3555
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_blink/04.png",
+   "size": 8616
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_blink/happy_L.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_blink/happy_M.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy/happy_blink/happy_R.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_L.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_M.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_R.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_blink/02.png",
+   "size": 4292
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_blink/03.png",
+   "size": 3555
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_blink/04.png",
+   "size": 8616
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_blink/happy_2_L.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_blink/happy_2_M.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/happy_2/happy_2_blink/happy_2_R.png",
+   "size": 3388
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_L.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_M.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_R.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_blink/02.png",
+   "size": 4178
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_blink/03.png",
+   "size": 3626
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_blink/04.png",
+   "size": 8693
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_blink/lust_L.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_blink/lust_M.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust/lust_blink/lust_R.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_L.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_M.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_R.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_blink/02.png",
+   "size": 4178
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_blink/03.png",
+   "size": 3626
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_blink/04.png",
+   "size": 8693
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_blink/lust_2_L.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_blink/lust_2_M.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/lust_2/lust_2_blink/lust_2_R.png",
+   "size": 8280
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_L.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_M.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_R.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_blink/02.png",
+   "size": 4287
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_blink/03.png",
+   "size": 3675
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_blink/04.png",
+   "size": 8681
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_blink/sad_L.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_blink/sad_M.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad/sad_blink/sad_R.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_L.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_M.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_R.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_blink/02.png",
+   "size": 4287
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_blink/03.png",
+   "size": 3675
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_blink/04.png",
+   "size": 8681
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_blink/sad_2_L.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_blink/sad_2_M.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sad_2/sad_2_blink/sad_2_R.png",
+   "size": 4186
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_L.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_M.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_R.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_blink/02.png",
+   "size": 4295
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_blink/03.png",
+   "size": 3726
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_blink/04.png",
+   "size": 8671
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_blink/sarcasm_L.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_blink/sarcasm_M.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm/sarcasm_blink/sarcasm_R.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_L.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_M.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_R.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_blink/02.png",
+   "size": 4295
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_blink/03.png",
+   "size": 3726
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_blink/04.png",
+   "size": 8671
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_L.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_M.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/sarcasm_2/sarcasm_2_blink/sarcasm_2_R.png",
+   "size": 3372
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_L.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_M.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_R.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_blink/02.png",
+   "size": 4353
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_blink/03.png",
+   "size": 3576
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_blink/04.png",
+   "size": 8579
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_blink/shock_L.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_blink/shock_M.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock/shock_blink/shock_R.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_L.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_M.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_R.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_blink/02.png",
+   "size": 4353
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_blink/03.png",
+   "size": 3576
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_blink/04.png",
+   "size": 8579
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_blink/shock_2_L.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_blink/shock_2_M.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/shock_2/shock_2_blink/shock_2_R.png",
+   "size": 2702
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_L.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_M.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_R.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_blink/02.png",
+   "size": 4292
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_blink/03.png",
+   "size": 3676
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_blink/04.png",
+   "size": 8698
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_blink/silly_L.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_blink/silly_M.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly/silly_blink/silly_R.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_L.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_M.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_R.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_blink/02.png",
+   "size": 4292
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_blink/03.png",
+   "size": 3676
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_blink/04.png",
+   "size": 8698
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_blink/silly_2_L.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_blink/silly_2_M.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/silly_2/silly_2_blink/silly_2_R.png",
+   "size": 5548
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_L.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_M.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_R.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_blink/02.png",
+   "size": 4302
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_blink/03.png",
+   "size": 3613
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_blink/04.png",
+   "size": 8527
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_blink/spoked_L.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_blink/spoked_M.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked/spoked_blink/spoked_R.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_L.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_M.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_R.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_blink/02.png",
+   "size": 4302
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_blink/03.png",
+   "size": 3613
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_blink/04.png",
+   "size": 8527
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_blink/spoked_2_L.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_blink/spoked_2_M.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/spoked_2/spoked_2_blink/spoked_2_R.png",
+   "size": 3081
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_L.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_M.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_R.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_blink/02.png",
+   "size": 4318
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_blink/03.png",
+   "size": 3741
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_blink/04.png",
+   "size": 8722
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_blink/worried_L.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_blink/worried_M.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried/worried_blink/worried_R.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_L.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_M.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_R.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_blink/02.png",
+   "size": 4318
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_blink/03.png",
+   "size": 3741
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_blink/04.png",
+   "size": 8722
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_blink/worried_2_L.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_blink/worried_2_M.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/eyes/worried_2/worried_2_blink/worried_2_R.png",
+   "size": 4315
+  },
+  {
+   "path": "core/images/characters/character_4/head/L/head_L.png",
+   "size": 41526
+  },
+  {
+   "path": "core/images/characters/character_4/head/M/head_M.png",
+   "size": 41526
+  },
+  {
+   "path": "core/images/characters/character_4/head/R/head_R.png",
+   "size": 41526
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/a_e_h.png",
+   "size": 308318
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/d_j_ch_h.png",
+   "size": 162495
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/f_h.png",
+   "size": 50593
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/l_h.png",
+   "size": 160991
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/m_b_close_h.png",
+   "size": 36694
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/o_big_h.png",
+   "size": 38905
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/o_small_h.png",
+   "size": 69788
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/oh_h.png",
+   "size": 88500
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/th_h.png",
+   "size": 191000
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/happy/trans_h.png",
+   "size": 91604
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/a_e_s.png",
+   "size": 181941
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/d_j_ch_s.png",
+   "size": 79715
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/f_s.png",
+   "size": 90242
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/l_s.png",
+   "size": 117514
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/m_b_close_s.png",
+   "size": 74272
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/o_big_s.png",
+   "size": 137454
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/o_small_s.png",
+   "size": 40253
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/oh_s.png",
+   "size": 96898
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/th_s.png",
+   "size": 82049
+  },
+  {
+   "path": "core/images/characters/character_4/mouth/sad/trans_s.png",
+   "size": 52257
+  },
+  {
+   "path": "example/story/breakup.mp3",
+   "size": 2167954
+  },
+  {
+   "path": "example/story/story-1-v1.mp3",
+   "size": 562557
+  },
+  {
+   "path": "example/story/story-1.mp3",
+   "size": 551232
+  },
+  {
+   "path": "example/story/story-2-01.m4a",
+   "size": 777905
+  },
+  {
+   "path": "example/story/story-2-02.m4a",
+   "size": 436275
+  }
+ ]
+}
