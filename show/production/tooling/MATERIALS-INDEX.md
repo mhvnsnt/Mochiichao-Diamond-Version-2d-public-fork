@@ -37,6 +37,7 @@ logos/branding — ever.
 | Resource | Where | Disposition |
 |---|---|---|
 | Preston Blair 10-viseme system | ANIMATION-PLAYBOOK (his archive) | **carried** — built into every rig spec + scaffold (../rigs/) |
+| Blair system — machine-readable form (mochiichao-mouth-data/v1) | this repo `show/production/tooling/mouth-data/` (MOUTH-DATA-FORMAT.md + rhubarb_to_mouthdata.py) | **carried** — the format the playbook's charts land in for the human talking seat |
 | Viseme-pack template + per-character pack format | animation-techniques-archive `character-pipeline/04-viseme-pack/template.md` | canonical template — the format our cast packs follow |
 | 3D mouth kit (builder + kit) | cape-jones `3d-assets/face-rig/build_mouthkit.py`, `cj_mouth_kit.blend`, SCOUT-FACE-MOUTH notes | canonical (his own mouth system for 3D shots) |
 | Lip-sync timing tool + Rhubarb cue format | animation-techniques-archive `tools/lipsync-timing.py`; Rhubarb vendored in cape-jones | canonical |
