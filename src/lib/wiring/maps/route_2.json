@@ -1,6 +1,6 @@
 {
   "id": "route_2",
-  "name": "Route 2.0 — Harbour Road",
+  "name": "Route Emerald — Harbour Road",
   "width": 28,
   "height": 40,
   "playerStart": [14, 39],
@@ -50,6 +50,6 @@
   ],
   "exits": [{"x": 14, "y": 0, "to": "stoneport_city", "enterAt": [14, 29], "dir": "up"}, {"x": 14, "y": 39, "to": "neon_city", "enterAt": [18, 1], "dir": "down"}],
   "npcs": [{"id": "route2_walker", "x": 14, "y": 20, "name": "Road Walker", "role": "npc"}],
-  "signs": [{"x": 14, "y": 10, "text": "ROUTE 2.0\\nNorth to Stoneport City. South to Neon City."}],
+  "signs": [{"x": 14, "y": 10, "text": "ROUTE EMERALD\\nNorth to Stoneport City. South to Neon City."}],
   "noWild": true
 }

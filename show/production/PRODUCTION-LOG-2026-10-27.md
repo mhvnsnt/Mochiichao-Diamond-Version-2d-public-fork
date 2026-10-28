@@ -641,3 +641,47 @@ it was rebuilt onto main's current log content and this entry
 appended; the two interim island entries from earlier commits of
 this PR are superseded by this entry, and the mapping doc keeps the
 full per-round history.
+
+## CANON SWEEP — GAME LANE: dialogue + wiring maps (2026-10-27)
+
+Surgical display-name/dialogue sweep of the game lane, per the owner's
+canon rulings: src/lib/wiring/dialogue/region1-truck-start.ink,
+region{1..5}-dialogue.json, and src/lib/wiring/maps/*.json (only where a
+ruled display string lives). 52 ruled string replacements across 9 files,
+verified by word-level diff against main — the diff contains ONLY the
+ruled changes; internal ids/keys/flags/variable names/roles are unchanged
+and there are zero deletions. Applied: regionName "Mainframe" ->
+"Iridescence"; "Mainframe Plateau" -> "Iridescence Plateau" (6 places:
+Region 1 kind + town, Regions 2–4 ascent towns, Region 5 town + kind);
+"Binary Dojo" -> "Champions Dojo" (Silicon Town door label) and "BINARY
+DOJO" -> "CHAMPIONS DOJO" (sign) — the Core Gate title keeps; "Route 1.0"
+-> "Route Topaz" (ink line, Region 1 town field, route_1 map name + sign;
+the "Greenfield Path" epithet keeps) and "Route 2.0" -> "Route Emerald"
+(Region 1 beat kind, route_2 map name + sign; "Harbour Road" keeps);
+"Data Cards" -> "Mochi Cards" (ONE i, MochiiPlex clerk line); "Seven Data
+Isles" -> "Seven Mochii Isles" (TWO i's — the sole double-i exception;
+beat kind + town); Silicon Town sign "The genesis of your digital
+journey." -> "The genesis of your journey."; and the battle-role word
+"trainer(s)" -> "Ranger(s)" throughout dialogue lines and speaker labels
+in all five region files, plus two map signs (MOCHIIPLEX "All your Ranger
+needs in one spot!", "TRAINER TIP:" -> "RANGER TIP:"). Already current on
+main before this sweep, so no edit was needed: "The Dark Forest" (map
+name + Region 1 kind/town), the device name "Mochiioteca" (ink, Regions 3
+and 4), and "Illuminate" (Region 3 cave line). No occurrences exist in the
+in-scope files for: "Binary Woods" display text, "Data Fruit", "Data
+Cocoon", "Light-Pulse", "Codex"/"Mochiidex" display text, or any of the
+11 ruled move names (Aqua Jet, Razor Leaf, Shadow Pulse, Aqua Shot, Earth
+Tremor/Earthquake, Quick Attack, Crunch, Gust Wave, Growl, Tackle, Dragon
+Claw) — those renames live in the move-data lane. Kept verbatim by owner
+law: all Hacker/Syndicate lines (including the Syndicate boss's "across
+the whole Mainframe" and "The data here flows where we say it flows") and
+The Front's "Even from the Mainframe itself". Structural fields flagged,
+NOT edited: NPC role "trainer" (21 map NPCs), trainer_* NPC ids (7),
+the dialogue files' format/team meta notes ("trainer lane owns teams"),
+map ids/mapKeys/flags (binary_woods, binary_fields, mainframe_plateau,
+data_isle_1..7, data_cut, national_codex, r3_codex_upgrade) and the ink
+variable codex_get. Unruled digital/data/mainframe/system hits were left
+untouched and are listed verbatim in the PR body (e.g. "Data-Cut",
+"Data Ferry captain", "Data Astrologer", "data-spring", the world-sense
+"Mainframe" lore lines, "Sector 0" — Sectors are ruled KEEP, and no
+Sector name in scope carries a binary/data word).

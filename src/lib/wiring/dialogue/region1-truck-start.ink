@@ -37,7 +37,7 @@ Prof. Aeon: Quick — take one from my bag and drive it off!
 Prof. Aeon: Phew. Thank you. That bag is yours to keep, and so is the creature inside it.
 Prof. Aeon: This is your Mochiioteca. It records every Mochiichao you meet.
 ~ codex_get = true
-Prof. Aeon: Now go — Route 1.0 is waiting, and Silicon Town is just past it.
+Prof. Aeon: Now go — Route Topaz is waiting, and Silicon Town is just past it.
 -> mom_boots
 
 === mom_boots ===
