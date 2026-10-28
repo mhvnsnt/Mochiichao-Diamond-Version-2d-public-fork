@@ -94,6 +94,20 @@ names in the slots' own speaker/leader fields:
   champion is Bannon, and Region 5 sits under Wizard Gang
   control. region5-dialogue.json, entry R5-15. Grand Champion
   Mythar (entry R5-17) is a separate slot and is unchanged.
+- **Region 2 Dojo 5 leader, Olivine City — MERV** (seventh
+  lock, owner-directed 2026-10-27 — it fills the slot the
+  Kairos entry above records as remaining a NAME GAP, and it
+  is a recurring-character reveal: the lighthouse dojo's
+  leader is the ferry captain). The name is canon's own, not
+  coined for this lock: ink-dialogue-locked-2026-10-26.json
+  carries the character block `ferry_merv`, "Ferry Captain
+  Merv" — with the display rule locked 2026-10-26 that his
+  name appears only in the after-defeat lines ("My name is
+  Merv. Ferry Captain Merv."). The captain who ferries the
+  player into Region 2 at Dawnfield (region2-dialogue.json,
+  entry R2-01, speaker "Data Ferry captain") keeps the
+  Olivine light: patience at sea, patience at the light.
+  region2-dialogue.json, entry R2-08, dojo.leader.
 All other Region 2–5 dojo-leader and Elite Four slots remain
 NAME GAPs in canon — not filled.
 
