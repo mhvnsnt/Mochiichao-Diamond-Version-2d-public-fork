@@ -259,6 +259,13 @@
     "behaviourProfile": {
       "type": "object",
       "description": "#152 behaviour profile annex (shape: show/production/species-data/behaviour-profile-fragment.json). NO profile contents are written at landing — the distillation pass over the wave-1 sheets is a separate data-lane work item, species by species, cited per sheet."
+    },
+    "gainYield": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "#177 gain yield (Pokemon's base experience yield, same role): proposed by List 19 #177 and accepted into this schema at its landing. No species carries a value yet — values are species-data work, filled the way base stats are (canon first, Pokemon style)."
     }
   },
   "required": [

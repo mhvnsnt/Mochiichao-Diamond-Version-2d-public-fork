@@ -97,3 +97,5 @@ review under #52 (horde bands are encounter bands).
 - **One absent system, named:** experience/gain
   arithmetic does not exist in the programme yet; this
   spec's learning interface is written to receive it.
+
+**Interface closure (List 19 landing, 2026-10-27):** the battle-end learning interface this spec fixed is now backed — #177 (177-EXPERIENCE-GAIN.md) consumes it exactly as written here (one event per Ranger-side participant, consumed by #129). The 'absent experience system' note in this package's register is closed by #177-#179.

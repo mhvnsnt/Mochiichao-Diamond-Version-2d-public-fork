@@ -766,6 +766,73 @@
      "extends": "stamp occasions PROPOSED to #104"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list19-systems",
+   "type": "systems-index",
+   "about": "List 19 teardown systems (items 177-186), landed 2026-10-27. Closes List 17's ABSENT-SYSTEM entry (annotated, not deleted). Growth tables + gain constants filled Pokemon-style at landing under the owner's base rule, recorded in the fragments.",
+   "items": [
+    {
+     "n": 177,
+     "name": "Experience & gain system",
+     "home": "show/production/battle/177-EXPERIENCE-GAIN.md",
+     "extends": "gainYield in the species schema (values pending); constants filled Pokemon-style in gain-fragment.json"
+    },
+    {
+     "n": 178,
+     "name": "Growth curves & level thresholds",
+     "home": "src/data/core/docs/178-GROWTH-CURVES.md",
+     "extends": "tables filled with Pokemon's Fast/Medium Fast/Slow curves; levelAtClear accepted into #126"
+    },
+    {
+     "n": 179,
+     "name": "Training values",
+     "home": "show/production/battle/179-TRAINING-VALUES.md",
+     "extends": "#39's application layer (correction C2) \u2014 no parallel ledger; battle-end effort accrual NOT wired (forbidden by its step list)"
+    },
+    {
+     "n": 180,
+     "name": "Bond effects in battle",
+     "home": "show/production/battle/180-BOND-EFFECTS.md",
+     "extends": "bond-effects table at src/data/core/bond-effects-table.json, ZERO rows; operand = #39 only (C4); refusal cited from #70 (C1)"
+    },
+    {
+     "n": 181,
+     "name": "Terrain & field effects",
+     "home": "src/data/core/docs/181-TERRAIN-FIELD-EFFECTS.md",
+     "extends": "annex beside #47's registry, zero rows; no terrain condition added"
+    },
+    {
+     "n": 182,
+     "name": "Status conditions",
+     "home": "show/production/battle/182-STATUS-CONDITIONS.md",
+     "extends": "check order registered in BATTLE-UI-FLOW; #27's roster untouched (persistent/volatile, C5)"
+    },
+    {
+     "n": 183,
+     "name": "Held-item battle effects",
+     "home": "show/production/battle/183-HELD-ITEM-EFFECTS.md",
+     "extends": "shares ONE trigger order with #184, registered in BATTLE-UI-FLOW"
+    },
+    {
+     "n": 184,
+     "name": "Ability trigger resolution",
+     "home": "show/production/battle/184-ABILITY-TRIGGER-RESOLUTION.md",
+     "extends": "one-ability seat waits on abilitySlot's species-data fill (main lane)"
+    },
+    {
+     "n": 185,
+     "name": "Peak transformation",
+     "home": "show/production/battle/185-PEAK-TRANSFORMATION.md",
+     "extends": "peak flag PROPOSED into #130's forme-change fragment"
+    },
+    {
+     "n": 186,
+     "name": "Facility ladder",
+     "home": "show/production/battle/186-FACILITY-LADDER.md",
+     "extends": "ladder slot PROPOSED into #86's table"
+    }
+   ]
   }
  ]
 }

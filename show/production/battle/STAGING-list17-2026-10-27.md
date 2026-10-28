@@ -229,3 +229,5 @@ One clarification this package registers for that check
 use is legal exactly when #165's flag (on the partner's
 class) permits it and the stock is the partner's own; the
 two specs state it from their own sides and agree.
+
+**CLOSED BY LIST 19 (annotation added at the List 19 landing, 2026-10-27):** the ABSENT-SYSTEM entry above (no experience/gain system in Lists 1-16) is closed — the gain system was built as #177-#179 in List 19 (177-EXPERIENCE-GAIN.md, gain-fragment.json with its landing fill). The entry stands as the historical record; it is annotated, not deleted.
