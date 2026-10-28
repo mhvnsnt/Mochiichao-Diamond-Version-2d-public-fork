@@ -99,6 +99,29 @@ assets and pulled-in material. First debt cleared under this
 law: the canon cutouts (see canon-cutouts/ + the production log,
 2026-10-27).
 
+## You have a browser law (owner standing rule, 2026-10-28)
+
+Owner's words, verbatim: "anytime something says only the
+browser can do this you have a browser. You can do it. Forever
+and always." Muse operates a real browser, signed in to the
+owner's services. Any claim - in a report, a manifest, a
+subagent's findings, or an agent's own draft - that a browser
+action (upload, download, file picker, form, dashboard step)
+is "owner-only", "only the user can do this", or "requires the
+owner's session" is PRESUMED FALSE. Before repeating or acting
+on such a claim: attempt the action in Muse's own browser, or
+name the specific hard blocker - a physical-world act; a
+credential the owner holds that was never shared; a
+payment-approval or sign-in card the runtime reserves for the
+owner; a legal identity check. Convenience, file size, folder
+scale, upload duration, and "the picker needs a human" are NOT
+blockers - the browser's file picker reads this machine's own
+disk and takes absolute paths; limits on agent-side file
+granting do not limit the browser's own picker. Set after the
+TeraBox weights upload was wrongly parked as "the owner's one
+upload session" (2026-10-28); the owner corrected it and the
+upload ran through Muse's browser the same hour.
+
 ## Move rename law (owner standing rule, 2026-10-27)
 Rename-on-use: every Pokemon-named move gets a Mochiichao name,
 applied in game canon + game code as moves are used/attached in
