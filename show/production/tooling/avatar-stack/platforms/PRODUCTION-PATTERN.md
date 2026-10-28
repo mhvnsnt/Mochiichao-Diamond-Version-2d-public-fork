@@ -54,6 +54,41 @@ when the owner chooses to pay for a test or a run.
 | Paid test | Higgsfield Seedance 2.5 (Plus+) | paid | Owner-approved test batch only |
 | Zero-cost look | Google Flow free daily credits | free proprietary / rights unclear | Scratch comparison only — outputs NOT cleared for shipping |
 
+## OWNER-LOCKED — the multi-character workflow (locked 2026-10-28)
+
+This section is the GOVERNING statement of the production method. The
+seven steps above implement it; where wording ever differs, this section
+wins.
+
+> Multi-character workflow locked as the production method. Per scene:
+> (1) Generate each character's reaction separately (per character, same
+> scene prompt + likeness lock). (2) Cut the background out of each
+> generated character plate. (3) Overlay the cutouts onto the real moving
+> background/scene plate. (4) Post-production (timing, shadows, color,
+> effects, final polish) on top of the composite. Tier mapping: Tier 2 =
+> per-character generation; Tier 3 = cutout + overlay/rigging/
+> compositing; Tier 4 = post on the final composite.
+
+Standing practice alongside the locked steps (already wired — these are
+not new proposals):
+
+- **Plate gate between steps 1→2:** every generated character plate
+  passes the frame-1 gate + likeness gate (`parity/frame1_gate.py`)
+  BEFORE it is cut out. A failed plate is regenerated, never repaired
+  downstream.
+- **One shared scene timing map per scene,** used by every character's
+  generation for that scene, so separately generated reactions land on
+  the same beats when composited.
+- **Step 4 order is fixed:** shadows land on the composite BEFORE the
+  color grade. (Shadows are never baked into character art — standing
+  rule; they are a composite/post effect.)
+- **Cutout tooling for step 2:** `white_matte.py` is PRIMARY for flat
+  cartoon plates (RVM was measured and rejected on this material in the
+  parity round); BiRefNet is the backup; solid-field prompting at
+  generation time (ask the engine for a plain solid field behind the
+  character) is kept as insurance so the matte has a clean field to key
+  on.
+
 ## What never changes across slots
 
 - Reference packs are the single source of character truth.

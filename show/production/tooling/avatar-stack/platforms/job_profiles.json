@@ -1,1 +1,156 @@
-{"common_fields":{"aspect":"16:9 default (episode format); 1:1 for avatar-format jobs","audio":"true only where the platform VERIFIES native audio; our default is false — audio comes from our own voice/music lanes at composite","clip_length_s_target":"5-15s working target; capped per profile at the VERIFIED max","gates":"frame-1 gate + likeness gate ALWAYS run on outputs, on every profile, no exceptions (parity/frame1_gate.py)","multi_shot_group":"list of shot intents generated as one unit where the platform VERIFIES multi-shot; otherwise shots are separate jobs grouped by the pattern's chaining step","reference_images":"ordered list of pack view files the target accepts; capped per profile at the VERIFIED platform cap","reference_pack_id":"id of a pack in reference-packs/ (e.g. 'wispkin', 'dorowani') — the engine-agnostic character lock input"},"extends":"job_format_v2 (freedom/) — a job v2 gains an optional 'platform_target' block; engines are swappable slots under ONE production pattern (platforms/PRODUCTION-PATTERN.md).","job_profiles_format":"mochiichao-platform-profiles/v1","profiles":[{"bucket":"open source (Apache-2.0) — THE shipping route","clip_length_s":"10.125s proven (243f @24fps); chaining extends arbitrarily; 12-16s target band","cost":"$0 (Kaggle free tier; rate limits are the price — 429s observed)","likeness_status":"UNPROVEN — locked VACE run pending (Kaggle rate limit); two harvested proofs graded FAIL on the unlocked path (SSIM 0.29-0.40)","max_reference_images":"VACE reference images per workflow (1+ per character layer); characters generated as separate layers and composited","multi_shot":"NOT in one generation — multi-shot GROUPING in the job format + freedom/chain_segments.py chaining; equivalent named in FREE-EQUIVALENTS.md","native_audio":false,"platform":"Our own backend — Kaggle free GPUs, ComfyUI + Wan 2.2 (Apache-2.0)","profile_id":"kaggle-wan22-ours","reference_input":"reference-packs/ via VACE reference control (parity/workflow-i2v-locked.json) + per-character LoRA where trained","speed_measured":"native ~3h56m for ~10s/character (measured 2026-10-28); accelerated path 78.5s for a short test clip vs 1,787.6s native (22.8x, measured 2026-10-27), scene-scale UNPROVEN","status":"WIRED — this is the avatar-stack as built (freedom/, parity/)"},{"audio_note":"native synchronized audio exists; our pattern still defaults audio=false for creature cries/music control — owner's call per shot","bucket":"paid (Plus $49/mo and above carries the model + commercial use); free tier free-but-restricted (0 credits, no commercial use)","clip_length_s":"4-30 (verified range); costed at 720p: 5s = 35 credits, 30s = 210 credits","commercial":"paid tiers carry commercial use per Higgsfield's own pricing explainer (Free: NO)","max_reference_images":30,"multi_shot":"VERIFIED — multi-shot narrative in one generation (ByteDance launch post; quality caveat: multi-subject stability flagged by ByteDance itself)","native_audio":true,"platform":"Higgsfield — Seedance 2.5 (ByteDance Seed, released 2026-07-31)","profile_id":"higgsfield-seedance25","reference_input":"Elements (saved @-callable reference assets) fed from reference-packs/; Seedance 2.5 accepts up to 50 references per generation (30 images / 10 video / 10 audio) per ByteDance/Runway docs","retry_economics":"credits are consumed on finished generations even if the result is rejected (Higgsfield explainer) — budget 3 attempts per keeper","soul_id_note":"Soul ID (identity trained from 20+ photos) is marketed for photoreal faces; our packs GAP at 20+ views — do not plan around Soul ID for the flat-2D cast until tested","status":"SPEC — no account, no purchase (owner decision); adapter fields verified against Higgsfield help centre + pricing explainer 2026-10-28"},{"bucket":"paid (all membership tiers include commercial use + watermark removal per Kling membership page); free tier free-but-restricted (720p, watermarked, no commercial rights, variable monthly free credits)","clip_length_s":"3-15 (VIDEO 3.0); 3-30 on Kling 4.0","cost_reference":"~120 credits per 10s 1080p clip with audio (third-party tracking of the official credit table — treat as estimate); 10s episode math in VERIFIED-PLATFORMS.md","generation_time":"the note's '~1-3 min per clip' is NOT published by Kling — UNVERIFIED, not wired as a fact","max_reference_images":"2-4 per Element (official guide); Element Library caps by tier: 30 free / 50 Standard / 150 Pro-Premier / 500 Ultra","multi_shot":"VERIFIED — Multi-Shot and Custom Multi-Shot modes in VIDEO 3.0 (one prompt, per-shot framing/duration/camera)","native_audio":true,"platform":"Kling AI — VIDEO 3.0 / Kling 4.0 (4.0 global launch 2026-10-16)","profile_id":"kling-elements","reference_input":"Element Library: Elements built from a reference video OR 2-4 images (frontal + angles) per the official guide — maps directly onto reference-packs/ view sets; voice can be bound to an Element (30s+ voice sample; human cast only — creatures are cries, not speech)","status":"SPEC — no account, no purchase (owner decision); fields verified against Kling's official VIDEO 3.0 guide + membership pages 2026-10-28"},{"bucket":"paid (API per-second: $0.05/s 480p, $0.10/s 720p, $0.20/s 1080p)","clip_length_s":"up to 30 in a single pass (Alibaba Cloud blog)","multi_shot":"SPEC GAP — not verified at source","native_audio":"SPEC GAP — not verified at source","note":"Do not confuse with our Wan 2.2 open weights: same family name, opposite bucket. If Alibaba open-sources Wan 3.0 weights later, this profile gets re-bucketed.","platform":"Wan 3.0 via Alibaba Cloud Model Studio API (hosted; NO open weights — unlike Wan 2.2)","profile_id":"wan3-api","reference_input":"reference-to-video with consistency claims in Alibaba's launch material (vendor claims — fidelity for flat 2D cartoon UNTESTED)","status":"SPEC — public beta per Alibaba Cloud's own blog (Aug 2026); no account created"},{"bucket":"paid (Google AI Plus $4.99 / Pro $19.99 / Ultra $99.99-199.99); free tier free proprietary with 50 credits/day for every account","clip_length_s":"4-8 base; Omni Flash 4-10","commercial":"UNVERIFIED at source — Google Terms disclaim ownership of outputs but no Flow page states a commercial licence; SynthID watermarking on all outputs. Treat outputs as NOT cleared for shipping until Google states it plainly.","credit_costs":"per 8s 720p clip: Veo 3.1 Lite 10 credits, Fast 20, Quality 100; Omni Flash 12","multi_shot":"NOT one generation — base clips are 4/6/8s; longer scenes via Extend chaining (the same chaining pattern as ours)","native_audio":true,"platform":"Google Flow — Veo 3.1 (Lite/Fast/Quality) + Gemini Omni Flash","profile_id":"google-flow-veo31","reference_input":"ingredients/reference images in Flow (multi-character scenes are a marketed use; flat-2D fidelity UNTESTED)","status":"SPEC + the ONE zero-cost hands-on candidate: the owner's existing Google sign-in reaches Flow's free daily credits with no purchase and no new account (browser step listed in the details pack for the parent agent)"},{"bucket":"paid (Creator $29/mo; scene packs $59.99); free first scene free-but-restricted (watermarked)","clip_length_s":"up to 8 per scene","commercial":"outputs licensed for commercial use per their FAQ (paid); free scene is a watermarked trial","multi_shot":"scene-based: 1 scene = 1 shot of up to 8s = 1 credit; episodes assembled from scenes","platform":"StudioRam — dedicated cartoon-series tool (script -> episode)","profile_id":"studioram","reference_input":"saved characters inside the tool; our reference-packs/ would be re-uploaded there (their system, our art)","render_time":"2-5 min per scene (their site)","resolution":"720p, 24fps","status":"SPEC — verified real at studioram.app 2026-10-28; no account created"},{"bucket":"paid (commercial use from Beginner $16/mo annual billing, 3,000 credits, 720p, watermark-free); free tier free-but-restricted (watermarked, non-commercial)","clip_length_s":"SPEC GAP — not published on the pages checked","platform":"Anijam — dedicated cartoon-series tool (persistent characters across episodes)","profile_id":"anijam","reference_input":"persistent character assets inside the tool, fed from reference-packs/","status":"SPEC — verified real at anijam.ai 2026-10-28; per-scene credit cost NOT published — SPEC GAP; no account created"},{"bucket":"paid (from $19/mo); its blog claims every plan includes commercial use — marketing blog, NOT terms: free-tier commercial scope UNVERIFIED","multi_shot":"episodes up to 20 min assembled in-tool","note":"Atlabs is a wrapper: the underlying engines are the profiles above. Choosing Atlabs = choosing its orchestration, not a new engine.","platform":"Atlabs — series tool that orchestrates other models (Kling/Seedance/Veo/Wan) under one cast/episode system","profile_id":"atlabs","reference_input":"Cast library (persistent characters), fed from reference-packs/","status":"SPEC — verified real at atlabs.ai 2026-10-28; no account created"}]}
+{
+ "common_fields": {
+  "aspect": "16:9 default (episode format); 1:1 for avatar-format jobs",
+  "audio": "true only where the platform VERIFIES native audio; our default is false \u2014 audio comes from our own voice/music lanes at composite",
+  "clip_length_s_target": "5-15s working target; capped per profile at the VERIFIED max",
+  "gates": "frame-1 gate + likeness gate ALWAYS run on outputs, on every profile, no exceptions (parity/frame1_gate.py)",
+  "multi_shot_group": "list of shot intents generated as one unit where the platform VERIFIES multi-shot; otherwise shots are separate jobs grouped by the pattern's chaining step",
+  "reference_images": "ordered list of pack view files the target accepts; capped per profile at the VERIFIED platform cap",
+  "reference_pack_id": "id of a pack in reference-packs/ (e.g. 'wispkin', 'dorowani') \u2014 the engine-agnostic character lock input"
+ },
+ "extends": "job_format_v2 (freedom/) \u2014 a job v2 gains an optional 'platform_target' block; engines are swappable slots under ONE production pattern (platforms/PRODUCTION-PATTERN.md).",
+ "job_profiles_format": "mochiichao-platform-profiles/v1",
+ "profiles": [
+  {
+   "bucket": "open source (Apache-2.0) \u2014 THE shipping route",
+   "clip_length_s": "10.125s proven (243f @24fps); chaining extends arbitrarily; 12-16s target band",
+   "cost": "$0 (Kaggle free tier; rate limits are the price \u2014 429s observed)",
+   "likeness_status": "UNPROVEN \u2014 locked VACE run pending (Kaggle rate limit); two harvested proofs graded FAIL on the unlocked path (SSIM 0.29-0.40)",
+   "max_reference_images": "VACE reference images per workflow (1+ per character layer); characters generated as separate layers and composited",
+   "multi_shot": "NOT in one generation \u2014 multi-shot GROUPING in the job format + freedom/chain_segments.py chaining; equivalent named in FREE-EQUIVALENTS.md",
+   "native_audio": false,
+   "platform": "Our own backend \u2014 Kaggle free GPUs, ComfyUI + Wan 2.2 (Apache-2.0)",
+   "profile_id": "kaggle-wan22-ours",
+   "reference_input": "reference-packs/ via VACE reference control (parity/workflow-i2v-locked.json) + per-character LoRA where trained",
+   "speed_measured": "native ~3h56m for ~10s/character (measured 2026-10-28); accelerated path 78.5s for a short test clip vs 1,787.6s native (22.8x, measured 2026-10-27), scene-scale UNPROVEN",
+   "status": "WIRED \u2014 this is the avatar-stack as built (freedom/, parity/)"
+  },
+  {
+   "audio_note": "native synchronized audio exists; our pattern still defaults audio=false for creature cries/music control \u2014 owner's call per shot",
+   "bucket": "paid (Plus $49/mo and above carries the model + commercial use); free tier free-but-restricted (0 credits, no commercial use)",
+   "clip_length_s": "4-30 (verified range); costed at 720p: 5s = 35 credits, 30s = 210 credits",
+   "commercial": "paid tiers carry commercial use per Higgsfield's own pricing explainer (Free: NO)",
+   "max_reference_images": 30,
+   "multi_shot": "VERIFIED \u2014 multi-shot narrative in one generation (ByteDance launch post; quality caveat: multi-subject stability flagged by ByteDance itself)",
+   "native_audio": true,
+   "platform": "Higgsfield \u2014 Seedance 2.5 (ByteDance Seed, released 2026-07-31)",
+   "profile_id": "higgsfield-seedance25",
+   "reference_input": "Elements (saved @-callable reference assets) fed from reference-packs/; Seedance 2.5 accepts up to 50 references per generation (30 images / 10 video / 10 audio) per ByteDance/Runway docs",
+   "retry_economics": "credits are consumed on finished generations even if the result is rejected (Higgsfield explainer) \u2014 budget 3 attempts per keeper",
+   "soul_id_note": "Soul ID (identity trained from 20+ photos) is marketed for photoreal faces; our packs GAP at 20+ views \u2014 do not plan around Soul ID for the flat-2D cast until tested",
+   "status": "SPEC \u2014 no account, no purchase (owner decision); adapter fields verified against Higgsfield help centre + pricing explainer 2026-10-28"
+  },
+  {
+   "bucket": "paid (all membership tiers include commercial use + watermark removal per Kling membership page); free tier free-but-restricted (720p, watermarked, no commercial rights, variable monthly free credits)",
+   "clip_length_s": "3-15 (VIDEO 3.0); 3-30 on Kling 4.0",
+   "cost_reference": "~120 credits per 10s 1080p clip with audio (third-party tracking of the official credit table \u2014 treat as estimate); 10s episode math in VERIFIED-PLATFORMS.md",
+   "generation_time": "the note's '~1-3 min per clip' is NOT published by Kling \u2014 UNVERIFIED, not wired as a fact",
+   "max_reference_images": "2-4 per Element (official guide); Element Library caps by tier: 30 free / 50 Standard / 150 Pro-Premier / 500 Ultra",
+   "multi_shot": "VERIFIED \u2014 Multi-Shot and Custom Multi-Shot modes in VIDEO 3.0 (one prompt, per-shot framing/duration/camera)",
+   "native_audio": true,
+   "platform": "Kling AI \u2014 VIDEO 3.0 / Kling 4.0 (4.0 global launch 2026-10-16)",
+   "profile_id": "kling-elements",
+   "reference_input": "Element Library: Elements built from a reference video OR 2-4 images (frontal + angles) per the official guide \u2014 maps directly onto reference-packs/ view sets; voice can be bound to an Element (30s+ voice sample; human cast only \u2014 creatures are cries, not speech)",
+   "status": "SPEC \u2014 no account, no purchase (owner decision); fields verified against Kling's official VIDEO 3.0 guide + membership pages 2026-10-28"
+  },
+  {
+   "bucket": "paid (API per-second: $0.05/s 480p, $0.10/s 720p, $0.20/s 1080p)",
+   "clip_length_s": "up to 30 in a single pass (Alibaba Cloud blog)",
+   "multi_shot": "SPEC GAP \u2014 not verified at source",
+   "native_audio": "SPEC GAP \u2014 not verified at source",
+   "note": "Do not confuse with our Wan 2.2 open weights: same family name, opposite bucket. If Alibaba open-sources Wan 3.0 weights later, this profile gets re-bucketed.",
+   "platform": "Wan 3.0 via Alibaba Cloud Model Studio API (hosted; NO open weights \u2014 unlike Wan 2.2)",
+   "profile_id": "wan3-api",
+   "reference_input": "reference-to-video with consistency claims in Alibaba's launch material (vendor claims \u2014 fidelity for flat 2D cartoon UNTESTED)",
+   "status": "SPEC \u2014 public beta per Alibaba Cloud's own blog (Aug 2026); no account created"
+  },
+  {
+   "bucket": "paid (Google AI Plus $4.99 / Pro $19.99 / Ultra $99.99-199.99); free tier free proprietary with 50 credits/day for every account",
+   "clip_length_s": "4-8 base; Omni Flash 4-10",
+   "commercial": "UNVERIFIED at source \u2014 Google Terms disclaim ownership of outputs but no Flow page states a commercial licence; SynthID watermarking on all outputs. Treat outputs as NOT cleared for shipping until Google states it plainly.",
+   "credit_costs": "per 8s 720p clip: Veo 3.1 Lite 10 credits, Fast 20, Quality 100; Omni Flash 12",
+   "multi_shot": "NOT one generation \u2014 base clips are 4/6/8s; longer scenes via Extend chaining (the same chaining pattern as ours)",
+   "native_audio": true,
+   "platform": "Google Flow \u2014 Veo 3.1 (Lite/Fast/Quality) + Gemini Omni Flash",
+   "profile_id": "google-flow-veo31",
+   "reference_input": "ingredients/reference images in Flow (multi-character scenes are a marketed use; flat-2D fidelity UNTESTED)",
+   "status": "SPEC + the ONE zero-cost hands-on candidate: the owner's existing Google sign-in reaches Flow's free daily credits with no purchase and no new account (browser step listed in the details pack for the parent agent)"
+  },
+  {
+   "bucket": "paid (Creator $29/mo; scene packs $59.99); free first scene free-but-restricted (watermarked)",
+   "clip_length_s": "up to 8 per scene",
+   "commercial": "outputs licensed for commercial use per their FAQ (paid); free scene is a watermarked trial",
+   "multi_shot": "scene-based: 1 scene = 1 shot of up to 8s = 1 credit; episodes assembled from scenes",
+   "platform": "StudioRam \u2014 dedicated cartoon-series tool (script -> episode)",
+   "profile_id": "studioram",
+   "reference_input": "saved characters inside the tool; our reference-packs/ would be re-uploaded there (their system, our art)",
+   "render_time": "2-5 min per scene (their site)",
+   "resolution": "720p, 24fps",
+   "status": "SPEC \u2014 verified real at studioram.app 2026-10-28; no account created"
+  },
+  {
+   "bucket": "paid (commercial use from Beginner $16/mo annual billing, 3,000 credits, 720p, watermark-free); free tier free-but-restricted (watermarked, non-commercial)",
+   "clip_length_s": "SPEC GAP \u2014 not published on the pages checked",
+   "platform": "Anijam \u2014 dedicated cartoon-series tool (persistent characters across episodes)",
+   "profile_id": "anijam",
+   "reference_input": "persistent character assets inside the tool, fed from reference-packs/",
+   "status": "SPEC \u2014 verified real at anijam.ai 2026-10-28; per-scene credit cost NOT published \u2014 SPEC GAP; no account created"
+  },
+  {
+   "bucket": "paid (from $19/mo); its blog claims every plan includes commercial use \u2014 marketing blog, NOT terms: free-tier commercial scope UNVERIFIED",
+   "multi_shot": "episodes up to 20 min assembled in-tool",
+   "note": "Atlabs is a wrapper: the underlying engines are the profiles above. Choosing Atlabs = choosing its orchestration, not a new engine.",
+   "platform": "Atlabs \u2014 series tool that orchestrates other models (Kling/Seedance/Veo/Wan) under one cast/episode system",
+   "profile_id": "atlabs",
+   "reference_input": "Cast library (persistent characters), fed from reference-packs/",
+   "status": "SPEC \u2014 verified real at atlabs.ai 2026-10-28; no account created"
+  },
+  {
+   "platform": "LTX distilled (Lightricks) \u2014 fast-iteration eval slot",
+   "profile_id": "ltx-fast-iteration",
+   "bucket": "code open source (Apache-2.0) / weights free-but-restricted (HF licence 'other' \u2014 LTX community licence; LTX-2 licence name ltx-2-community-license-agreement)",
+   "status": "EVAL SLOT \u2014 profile wired 2026-10-28; weights NOT downloaded (staging plan in OPEN-STUDIOS-AND-PROMPT-ENGINES.md sec.6: ltxv-2b-0.9.8-distilled-fp8 4.46 GB first to Kaggle cache + TeraBox master, 13B distilled 28.58 GB as quality step); outputs DO NOT SHIP \u2014 shipping use requires owner acceptance of the LTX community licence after full-text read",
+   "speed_profile": "vendor (H100): 13B distilled ~10s per HD clip, low-res preview ~3s; up to 60s clips (v0.9.8); 2B distilled for light hardware; FP8 variants published. UNVERIFIED on Kaggle hardware",
+   "role_in_pattern": "rapid previs/iteration beside Wan \u2014 draft the shot fast, ship the keeper from the shipping route",
+   "source_verification": "GitHub API Lightricks/LTX-Video spdx Apache-2.0; HF API licence 'other' on Lightricks/LTX-Video, LTX-2, LTX-2.3 (2026-10-28)"
+  },
+  {
+   "platform": "Dreamina (ByteDance) \u2014 Seedance 2.0 free / 2.5 where available",
+   "profile_id": "dreamina-seedance",
+   "bucket": "free tier free-but-restricted (scratch only \u2014 terms reported private/non-commercial, secondary claims conflict) / paid from $18/mo list (official sale page: renewal $15/mo)",
+   "status": "FREE-TEST-ROTATION route #2 (FREE-TEST-ROTATION.md); hands-on PENDING-PARENT; no account created by the wiring passes",
+   "free_budget_verified": "120 credits/day US accounts (Dreamina's own page; UK 105, AU/ID/JP 225); per-generation cost varies by model/duration/resolution, shown in-app \u2014 log actuals",
+   "free_tier_model": "Seedance 2.0 documented as the free-reliable workflow (image-led, sound, 4-15s, image+audio refs); Seedance 2.5 controls 'where available' \u2014 NOT promised to free accounts (Dreamina's own wording)",
+   "promo_recorded_not_taken": "$0.29 first month Basic (sale from 2026-10-21, eligible US, 1,575 shared credits, renews $15/mo, advertised deadline Oct 30; 720p charges: 2.5=37cr/s, 2.0=17cr/s, Fast=8cr/s, Mini=5cr/s) \u2014 OWNER purchase decision, recorded only"
+  },
+  {
+   "platform": "Seedance 2.5 via SamurAIGPT/Seedance-2.5-API wrapper (MuAPI)",
+   "profile_id": "seedance-muapi-wrapper",
+   "bucket": "paid (wrapper itself MIT open source; the MuAPI backend is paid and Seedance 2.5 there is early-access gated to MuAPI Pro/Business plans per the wrapper's README)",
+   "status": "SPEC ONLY \u2014 adapter fields recorded; no account, no API key, nothing purchased",
+   "adapter_fields": "72 routes (t2v/i2v/first-last-frame/omni-reference/edit/extend); clips 4-30s; refs up to 30 img/10 vid/10 audio; endpoint slug passed through from the job's platform_target block"
+  },
+  {
+   "platform": "Seedance 2.5 via ai-models-lab CLI (Volcano Ark / Fal.ai / Replicate)",
+   "profile_id": "seedance-ark-fal-cli",
+   "bucket": "paid (all three backends bill per use); the CLI repo itself carries NO licence file \u2014 its code is not adopted, spec/pattern only",
+   "status": "SPEC ONLY \u2014 no accounts, no keys (VOLC_API_KEY/FAL_KEY/REPLICATE_API_TOKEN are the owner's to create if ever chosen)",
+   "adapter_fields": "batch CSV-driven generation; backend chosen per job (volcengine|fal|replicate)"
+  },
+  {
+   "platform": "Higgsfield via official higgsfield-ai/cli",
+   "profile_id": "higgsfield-cli",
+   "bucket": "paid (CLI is MIT open source; it drives a Higgsfield account \u2014 generation bills against that account's plan/credits)",
+   "status": "SPEC ONLY \u2014 no account; the CLI's MODELS.md is used as a spec SOURCE for the higgsfield-seedance25 profile fields",
+   "adapter_fields": "terminal client for 40+ Higgsfield models (Seedance 2.5, Kling v3.0, Veo 3.1, Soul V2); auth via 'higgsfield auth login'"
+  },
+  {
+   "platform": "ElevenLabs ElevenCreative \u2014 Seedance 2.0 / 2.5",
+   "profile_id": "elevenlabs-seedance",
+   "bucket": "paid for video (Seedance 2.0 reported included with all PAID ElevenLabs plans; Image & Video API Pro-gated per integrator docs); free tier free-but-restricted (10,000 credits/mo, non-commercial) and NOT a viable video route (two short lip-sync clips measured at 11,547 credits by a reviewer)",
+   "status": "SPEC \u2014 claim-checked 2026-10-28 (OPEN-STUDIOS-AND-PROMPT-ENGINES.md sec.7): hosting TRUE, 'usable on the free tier' NOT TRUE as stated; not wired as a test route",
+   "note": "ElevenLabs remains in the stack only via our own free voice equivalents (Chatterbox/Kokoro) \u2014 see helpers/NONFREE-EQUIVALENTS.md"
+  }
+ ],
+ "followup_2026-10-28": "Added ltx-fast-iteration (eval), dreamina-seedance (rotation), seedance-muapi-wrapper / seedance-ark-fal-cli / higgsfield-cli (specs), elevenlabs-seedance (claim-checked). Record: OPEN-STUDIOS-AND-PROMPT-ENGINES.md + FREE-TEST-ROTATION.md."
+}
