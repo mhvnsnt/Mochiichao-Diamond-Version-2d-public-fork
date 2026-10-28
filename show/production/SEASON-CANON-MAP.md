@@ -60,6 +60,43 @@ seasons (several champion slots are NAME GAPs in canon itself —
 never filled silently). Season episode COUNT remains a production
 decision; the spine is canon.
 
+## Later-region locks — OWNER-LOCKED (2026-10-27)
+The champion slots flagged as NAME GAPs above were filled by
+owner lock on 2026-10-27 (five from the name-gap brainstorm,
+show/production/FUTURE-CONSIDERED-IDEAS-NAME-GAPS.md; the sixth
+is the owner's own character). The Dojo 5 leader who knew Aeon
+was locked with them. The game dialogue files carry the same
+names in the slots' own speaker/leader fields:
+- **Region 2 Champion — RIN & REN**: twins holding one title
+  jointly (the Twin region's name made literal).
+  region2-dialogue.json, entry R2-13.
+- **Region 2 First Champion, Frost Peak — SHIMO** (霜, frost):
+  the predecessor at the summit, fought post-game.
+  region2-dialogue.json, entry R2-14.
+- **Dojo 5 leader, who knew Aeon — KAIROS** (Greek *kairos*,
+  the opportune moment; Aeon = eternity — the pair of names is
+  the friendship). Carried in region3-dialogue.json, entry
+  R3-07 (badge R3-5/8, Petalburg City; "I knew Aeon when he was
+  still learning"). The "Region 2" label in the earlier mining
+  does not match where the World Builder file actually carries
+  this slot; the slot is identified by its canon fact. Region
+  2's own Dojo 5 leader (Olivine City, badge R2-5/8) remains a
+  NAME GAP.
+- **Region 3 Champion — NAGISA** (渚, the shoreline: land and
+  sea at once, belonging to neither faction).
+  region3-dialogue.json, entry R3-12.
+- **Region 4 Champion — DELTA** (concept name: Δ, the split —
+  the Rift written as a letter). region4-dialogue.json, entry
+  R4-15.
+- **Region 5 League Champion — BANNON** (the owner's own
+  character). The misdirection is canon: the region expects a
+  robed figure believed to be Ash of Wizard Gang; the true
+  champion is Bannon, and Region 5 sits under Wizard Gang
+  control. region5-dialogue.json, entry R5-15. Grand Champion
+  Mythar (entry R5-17) is a separate slot and is unchanged.
+All other Region 2–5 dojo-leader and Elite Four slots remain
+NAME GAPs in canon — not filled.
+
 ## What canon does NOT answer (stays open, honestly)
 Manual rules beyond Rule 12 (none in game — Rule 12 is the
 owner's show writing), first-lustre placement, Wispkin's habitat
