@@ -253,6 +253,58 @@
     }
    },
    "note": "DARK WAVE, Wispkin's signature, from the REFERENCE OF RECORD cutout: mask held by both hands, smoke bottom honoured at neutral frames. Gate frame 96 is the pulse peak (character engulfed by its own effect); frame 12: SSIM 0.159 / IoU 0.630 / MAD 96.3. Scorer note: FX includes glowing rune-like glyph graphics at the pulse edge. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+  },
+  {
+   "id": "gen-retry-2026-10-27-kittember-fire_stream-canonpass-tail",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream-canonpass-tail/",
+   "character": "kittember",
+   "variant": "fire_stream",
+   "source": "Muse hosted avatar generator (avatar full stack) - canon-pass regeneration 2026-10-27, owner-directed, from canon cutout; tail = primary form (~75%), mouth = variant (~25%) per owner canon",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.3725,
+    "silhouette_iou": 0.5464,
+    "rgb_mad_255": 99.619,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "note": "FIRE STREAM, Kittember's signature - canon-pass TAIL form. Trait check (frames 12/96/180, +60/130/160 for form): coat dark GREY (dark-pixel median RGB 57-58 vs canon 71; #389 black was 38) PASS; upright bipedal throughout PASS; NO white chest patch PASS (a light-grey belly oval is present in every frame - canon coat is solid, scorer flag); ear interiors DARK PASS; eyes BIG, ROUND, forward amber PASS; tail tip ROUND ORANGE ORB PASS at f12/f180 (flame-wreathed at the f96 charge peak); SMOOTH coat PASS. Form: stream fires FROM the tail orb, mouth closed (charge f60, blast f130, dissipating f160) PASS. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.375 / IoU 0.511 / MAD 102.3. Motion evidence: mean frame-diff 4.67 (128px greyscale, all 192 frames). Promotion is a recorded owner/scorer verdict only."
+  },
+  {
+   "id": "gen-retry-2026-10-27-kittember-fire_stream-canonpass-mouth",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream-canonpass-mouth/",
+   "character": "kittember",
+   "variant": "fire_stream",
+   "source": "Muse hosted avatar generator (avatar full stack) - canon-pass regeneration 2026-10-27, owner-directed, from canon cutout; mouth = variant form (~25%), tail = primary form (~75%) per owner canon",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.3884,
+    "silhouette_iou": 0.5357,
+    "rgb_mad_255": 97.306,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "note": "FIRE STREAM, Kittember's signature - canon-pass MOUTH form. Trait check (frames 12/96/180): coat dark GREY (dark-pixel median RGB 65 vs canon 71) PASS; upright bipedal throughout PASS; NO white chest patch PASS (same light-grey belly oval flag as the tail variant); ear interiors DARK PASS; eyes amber and forward-facing but NARROWER/SLANTED, not big-round - PARTIAL/FAIL (f12/f96/f180); tail tip is a teardrop FLAME PLUME at f12/f96 and a smoky flame blob at f180, never the round orange orb - FAIL; SMOOTH coat PASS. Form: mouth blast itself is clear at f96, but the variant condition 'orb burning on the tail tip throughout' is NOT met. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.428 / IoU 0.575 / MAD 86.5. Motion evidence: mean frame-diff 1.48 (128px greyscale, all 192 frames; motion concentrated at the blast). Promotion is a recorded owner/scorer verdict only."
   }
  ]
 }

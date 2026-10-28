@@ -1,0 +1,51 @@
+{
+  "schema": "mochiichao-show/avatar-bundle/v1",
+  "species": "kittember",
+  "variant": "fire_stream",
+  "backend": "muse-hosted-avatar-generator",
+  "backend_callable_from_repo": false,
+  "created_utc": "2026-10-28T01:30:42.594945+00:00",
+  "source_clip": "norm/kittember-fire_stream-mouth.mp4",
+  "spec": {
+    "codec": "h264",
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192,
+    "duration_s": 8.0
+  },
+  "conformance": {
+    "target": {
+      "width": 720,
+      "height": 720,
+      "fps": 24.0,
+      "duration_s": 8.0
+    },
+    "meets_target": true
+  },
+  "files": {
+    "mp4": {
+      "path": "kittember-fire_stream.mp4",
+      "sha256": "7b1405c54d86faa407040f72845dc15b54cf433eaf3c4481a86c712ceafb4e18",
+      "bytes": 387434
+    },
+    "transparent_webm": {
+      "path": "kittember-fire_stream.transparent.webm",
+      "sha256": "8bad0d20e90286023fbdcb145787bd400191ca4ed1296778aecc4a36d6badc84",
+      "bytes": 968312,
+      "status": "PRODUCED_WHITE_FIELD",
+      "method": "white_matte.py (white-distance key + enclosed-region rescue)"
+    },
+    "poster": {
+      "path": "kittember.webp",
+      "sha256": "798840b2bd9e96a957c43c2c6c559946548b61677932a6000080fbf697a2fcb9",
+      "bytes": 18314,
+      "source": "source_still"
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "verdict_recommendation": "FAIL"
+  }
+}
