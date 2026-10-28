@@ -255,6 +255,10 @@
     "formFamily": {
       "type": "object",
       "description": "#130 forme-change: closed formIds list on the species record (shape: show/production/species-data/forme-change-fragment.json). Absence = the species cannot forme-change. One family is seeded (Strikechamp: strikechamp--unsuited, strikechamp--unsuited_full — forms verified to exist; criteria/deltas OPEN, zero battle facts asserted)."
+    },
+    "behaviourProfile": {
+      "type": "object",
+      "description": "#152 behaviour profile annex (shape: show/production/species-data/behaviour-profile-fragment.json). NO profile contents are written at landing — the distillation pass over the wave-1 sheets is a separate data-lane work item, species by species, cited per sheet."
     }
   },
   "required": [
