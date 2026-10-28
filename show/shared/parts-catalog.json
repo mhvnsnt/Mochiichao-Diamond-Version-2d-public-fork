@@ -126,6 +126,153 @@
    ],
    "status": "current",
    "rule": "Current-Version Law (owner): current_version is the explicit default for the Gate scene unless the owner says otherwise. Upgrades land as NEW versions in this list; a previous living version keeps whatever scenes/uses the owner assigns it (recorded here at upgrade time) - it is not erased. v1-still is the base layer only and is NEVER the scene background while a living version exists."
+  },
+  {
+   "filter": "pass (native, original \u2014 no characters, no character names, no logos/branding)",
+   "id": "mochiichao-environment-plates-ep01",
+   "items": [
+    {
+     "ambient": [
+      "AMB-POND-RIPPLE-01",
+      "AMB-POND-REED-01",
+      "AMB-POND-LILY-01",
+      "AMB-POND-SHIMMER-01",
+      "CL-1",
+      "CL-2"
+     ],
+     "base_still": "EP01-PLATE-pond-day-v0-spec-still.png",
+     "base_still_md5": "40365a232823d32a916f1ba422a7a619",
+     "bed": "BED-POND-DAY",
+     "current": "EP01-PLATE-pond-day-v1-living.mp4",
+     "current_md5": "93106645072356d3954994be54772029",
+     "for": [
+      "EP01 cuts 06-09",
+      "BR-POND-01",
+      "BR-POND-02"
+     ],
+     "id": "PLATE-POND-DAY",
+     "supersedes": "storyboard placeholder 'BG pond (parts-catalog)' (timing/composite use only)",
+     "wind_state": [
+      "CALM",
+      "BREEZE",
+      "GUST"
+     ],
+     "world_alive_qa": {
+      "mean_abs_diff": 5.71,
+      "pct_pixels_changed": 22.25
+     }
+    },
+    {
+     "ambient": [
+      "AMB-POND-MIST-01",
+      "AMB-POND-RIPPLE-01",
+      "AMB-POND-LILY-01",
+      "AMB-POND-REED-01 (0.55 amplitude)"
+     ],
+     "base_still": "EP01-PLATE-pond-dusk-v0-spec-still.png",
+     "base_still_md5": "29ec4f9e259e5bc908876d56c86bec1b",
+     "bed": "BED-POND-DUSK",
+     "current": "EP01-PLATE-pond-dusk-v1-living.mp4",
+     "current_md5": "037de6228a64c7078c70467930b74bfc",
+     "derivation": "grade variant of PLATE-POND-DAY (overlay layer, Lighting L7 \u2014 never a repaint)",
+     "for": [
+      "EP01 cuts 13-19",
+      "BR-POND-03"
+     ],
+     "id": "PLATE-POND-DUSK",
+     "supersedes": "manifest placeholder 'BG pond dusk variant'",
+     "wind_state": [
+      "BREEZE decaying to CALM"
+     ],
+     "world_alive_qa": {
+      "mean_abs_diff": 0.78,
+      "note": "deliberately quiet \u2014 stakeout",
+      "pct_pixels_changed": 2.73
+     }
+    },
+    {
+     "ambient": [
+      "AMB-GREEN-GRASSWAVE-01",
+      "AMB-GREEN-FLOWER-01",
+      "AMB-GREEN-CLOUDSHADOW-01",
+      "AMB-GREEN-LEAF-01"
+     ],
+     "base_still": "EP01-PLATE-green-day-v0-spec-still.png",
+     "base_still_md5": "2439b9676a98d84a9cf0c72d8e699c9c",
+     "bed": "BED-GREEN-DAY (GAP \u2014 no gated bed yet)",
+     "current": "EP01-PLATE-green-day-v1-living.mp4",
+     "current_md5": "9bd79f8899e2e2677f0f1187157e153e",
+     "for": [
+      "EP01 cuts 10-12",
+      "BR-GREEN-01",
+      "BR-GREEN-02"
+     ],
+     "id": "PLATE-GREEN-DAY",
+     "supersedes": "unspecified Green background, EP01 cuts 10-12",
+     "wind_state": [
+      "CALM",
+      "BREEZE",
+      "GUST"
+     ],
+     "world_alive_qa": {
+      "mean_abs_diff": 6.2,
+      "pct_pixels_changed": 34.19
+     }
+    },
+    {
+     "ambient": [
+      "AMB-FOREST-NONE"
+     ],
+     "bed": "BED-FOREST-DAY (engineered absence)",
+     "current": "EP01-PLATE-dark-forest-day-v1-STILL.mp4",
+     "current_md5": "62d5b4f2b8c0d399d870d31a78b8fa1f",
+     "for": [
+      "EP01 cuts 25-28 (stinger)"
+     ],
+     "id": "PLATE-DARK-FOREST-DAY",
+     "living_version": "FORBIDDEN \u2014 no living version of this plate may be registered",
+     "still": "EP01-PLATE-dark-forest-day-v1-still.png",
+     "still_md5": "1c27182775f2b269d8c5a782577a5cb7",
+     "stillness_qa": {
+      "decoded_mean_abs_diff": 0.0087,
+      "note": "codec noise only \u2014 a moving Forest cut FAILS",
+      "source_frames_pixel_identical": true
+     },
+     "supersedes": "manifest flag 'MAKE: Dark Forest BG not yet built' (timing/composite use only)",
+     "wind_state": [
+      "NONE \u2014 by law (Forest Exception C6)"
+     ]
+    },
+    {
+     "base_still_md5": "2d4207f638976799e877049f0bcb3dd3",
+     "current": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4 (v2-living, in repo)",
+     "current_md5": "d2f1bf1d709d3a0e9d9d0f58dccc6c31",
+     "for": [
+      "EP01 cuts 01-05",
+      "BR-GATE-01",
+      "BR-GATE-02",
+      "BR-GATE-03"
+     ],
+     "id": "PLATE-GARDEN-GATE",
+     "note": "Reference of record \u2014 not rebuilt by this package.",
+     "wind_state": [
+      "CALM",
+      "BREEZE",
+      "GUST"
+     ]
+    }
+   ],
+   "path": "show/assets/backgrounds/",
+   "registry": "show/shared/PLATES-REGISTRY.md",
+   "scene_use": [
+    "EP01",
+    "garden",
+    "pond",
+    "green",
+    "dark-forest"
+   ],
+   "status": "provisional_spec_built \u2014 canon painted plates GAP (see PLATES-REGISTRY.md)",
+   "type": "backgrounds_living_plates"
   }
  ]
 }
