@@ -217,3 +217,6 @@ binds every deliverable in the show pipeline:
    ignorance and deception - knowing a thing, shipping around
    it, and explaining in vocabulary afterward. It ends here,
    in every repo and every lane this workspace touches.
+
+## Standing references
+- Grants architecture (how lanes route work so it stops generating one-shot approval prompts; owner order 2026-10-28): `GRANTS-ARCHITECTURE.md` in this folder.
