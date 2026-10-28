@@ -1,5 +1,33 @@
 # VOICE-WEIGHTS-MANIFEST
 
+> **CORRECTION - 2026-10-28 (owner law: "YOU HAVE A BROWSER";
+> the records below are kept as written):** three lines in
+> this file frame staging steps as the owner's to perform,
+> and all three are superseded as to WHO does the step: the
+> STATUS CORRECTION block below says the TeraBox step for
+> these weights "rides the owner's consolidated TeraBox
+> session"; the "Where the staged copies live" table's
+> Kaggle row is labelled "Pending \u2014 owner's step"; and
+> the same table's TeraBox row, headed "Pending \u2014 browser
+> upload step", calls the upload "the remaining manual
+> step". Owner's words: "anytime something says only the
+> browser can do this you have a browser. You can do it.
+> Forever and always." The TeraBox upload of this manifest's
+> own payload runs through Muse's own signed-in browser,
+> whose file picker reads this machine's own disk: at
+> correction time the chain is IN FLIGHT, going up part by
+> part into the TeraBox folder `Mochiichao-Staging` (26+
+> parts verified landed since 2026-10-28 00:39 CDT) - this
+> payload is itself the proof the step was never owner-only.
+> The Kaggle row's label is superseded with it: that dataset
+> was created from this VM and verified server-side (see
+> the STATUS CORRECTION below), so no step in this manifest
+> waits on an owner session. Not touched by this
+> correction: "AWAITING OWNER CASTING" - casting is the
+> owner's ear, a judgement call, not a browser step. Full
+> law: `show/production/pipeline/ORCHESTRATOR.md`, "You have
+> a browser law".
+
 > **STATUS CORRECTION — 2026-10-28 (wiring package; the body below
 > is the 2026-10-27 record, kept as written):**
 > - **Kaggle private dataset `marsfmmg/mochiichao-voice-weights`
