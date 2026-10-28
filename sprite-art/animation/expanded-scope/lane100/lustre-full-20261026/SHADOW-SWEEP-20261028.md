@@ -1,0 +1,1031 @@
+# Shadow sweep — Lane100 lustre-full set (2026-10-26)
+
+Sweep date: 2026-10-28 (owner order: remove baked foot shadows from all Lustre versions;
+cleaned versions are the current/used ones; shadowed originals are obsolete).
+Full record: `show/production/LUSTRE-SHADOW-SWEEP-20261028.md` + `show/production/lustre-shadow-sweep-20261028.json`.
+
+## Cleaned — the `-clean-20261028` file is CURRENT/used; the original is OBSOLETE for art use
+- `chromejaww-base.png` -> `chromejaww-base-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-bare.png` -> `chromejaww-lustre-bare-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-clothed.png` -> `chromejaww-lustre-clothed-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-ember.png` -> `chromejaww-lustre-ember-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-iron.png` -> `chromejaww-lustre-iron-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-lunar.png` -> `chromejaww-lustre-lunar-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-night.png` -> `chromejaww-lustre-night-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-parade.png` -> `chromejaww-lustre-parade-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-prism.png` -> `chromejaww-lustre-prism-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-showtime.png` -> `chromejaww-lustre-showtime-clean-20261028.png` (shadow removed, 89 px)
+- `chromejaww-lustre-solar.png` -> `chromejaww-lustre-solar-clean-20261028.png` (shadow removed, 89 px)
+- `dorowani-base.png` -> `dorowani-base-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-bare.png` -> `dorowani-lustre-bare-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-clothed.png` -> `dorowani-lustre-clothed-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-ember.png` -> `dorowani-lustre-ember-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-iron.png` -> `dorowani-lustre-iron-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-lunar.png` -> `dorowani-lustre-lunar-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-night.png` -> `dorowani-lustre-night-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-parade.png` -> `dorowani-lustre-parade-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-prism.png` -> `dorowani-lustre-prism-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-showtime.png` -> `dorowani-lustre-showtime-clean-20261028.png` (shadow removed, 51 px)
+- `dorowani-lustre-solar.png` -> `dorowani-lustre-solar-clean-20261028.png` (shadow removed, 51 px)
+- `gabu-base.png` -> `gabu-base-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-bare.png` -> `gabu-lustre-bare-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-clothed.png` -> `gabu-lustre-clothed-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-ember.png` -> `gabu-lustre-ember-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-iron.png` -> `gabu-lustre-iron-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-lunar.png` -> `gabu-lustre-lunar-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-night.png` -> `gabu-lustre-night-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-parade.png` -> `gabu-lustre-parade-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-prism.png` -> `gabu-lustre-prism-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-showtime.png` -> `gabu-lustre-showtime-clean-20261028.png` (shadow removed, 26 px)
+- `gabu-lustre-solar.png` -> `gabu-lustre-solar-clean-20261028.png` (shadow removed, 26 px)
+- `gearkid-base.png` -> `gearkid-base-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-bare.png` -> `gearkid-lustre-bare-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-clothed.png` -> `gearkid-lustre-clothed-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-ember.png` -> `gearkid-lustre-ember-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-iron.png` -> `gearkid-lustre-iron-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-lunar.png` -> `gearkid-lustre-lunar-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-night.png` -> `gearkid-lustre-night-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-parade.png` -> `gearkid-lustre-parade-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-prism.png` -> `gearkid-lustre-prism-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-showtime.png` -> `gearkid-lustre-showtime-clean-20261028.png` (shadow removed, 35 px)
+- `gearkid-lustre-solar.png` -> `gearkid-lustre-solar-clean-20261028.png` (shadow removed, 35 px)
+- `kittember-base.png` -> `kittember-base-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-bare.png` -> `kittember-lustre-bare-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-clothed.png` -> `kittember-lustre-clothed-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-ember.png` -> `kittember-lustre-ember-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-iron.png` -> `kittember-lustre-iron-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-lunar.png` -> `kittember-lustre-lunar-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-night.png` -> `kittember-lustre-night-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-parade.png` -> `kittember-lustre-parade-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-prism.png` -> `kittember-lustre-prism-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-showtime.png` -> `kittember-lustre-showtime-clean-20261028.png` (shadow removed, 411 px)
+- `kittember-lustre-solar.png` -> `kittember-lustre-solar-clean-20261028.png` (shadow removed, 411 px)
+- `manticlaw-base.png` -> `manticlaw-base-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-bare.png` -> `manticlaw-lustre-bare-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-clothed.png` -> `manticlaw-lustre-clothed-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-ember.png` -> `manticlaw-lustre-ember-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-iron.png` -> `manticlaw-lustre-iron-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-lunar.png` -> `manticlaw-lustre-lunar-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-night.png` -> `manticlaw-lustre-night-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-parade.png` -> `manticlaw-lustre-parade-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-prism.png` -> `manticlaw-lustre-prism-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-showtime.png` -> `manticlaw-lustre-showtime-clean-20261028.png` (shadow removed, 57 px)
+- `manticlaw-lustre-solar.png` -> `manticlaw-lustre-solar-clean-20261028.png` (shadow removed, 57 px)
+- `mythar-base.png` -> `mythar-base-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-bare.png` -> `mythar-lustre-bare-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-clothed.png` -> `mythar-lustre-clothed-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-ember.png` -> `mythar-lustre-ember-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-iron.png` -> `mythar-lustre-iron-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-lunar.png` -> `mythar-lustre-lunar-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-night.png` -> `mythar-lustre-night-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-parade.png` -> `mythar-lustre-parade-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-prism.png` -> `mythar-lustre-prism-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-showtime.png` -> `mythar-lustre-showtime-clean-20261028.png` (shadow removed, 33 px)
+- `mythar-lustre-solar.png` -> `mythar-lustre-solar-clean-20261028.png` (shadow removed, 33 px)
+- `oblivirex-base.png` -> `oblivirex-base-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-bare.png` -> `oblivirex-lustre-bare-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-clothed.png` -> `oblivirex-lustre-clothed-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-ember.png` -> `oblivirex-lustre-ember-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-iron.png` -> `oblivirex-lustre-iron-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-lunar.png` -> `oblivirex-lustre-lunar-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-night.png` -> `oblivirex-lustre-night-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-parade.png` -> `oblivirex-lustre-parade-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-prism.png` -> `oblivirex-lustre-prism-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-showtime.png` -> `oblivirex-lustre-showtime-clean-20261028.png` (shadow removed, 132 px)
+- `oblivirex-lustre-solar.png` -> `oblivirex-lustre-solar-clean-20261028.png` (shadow removed, 132 px)
+- `quakehound-base.png` -> `quakehound-base-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-bare.png` -> `quakehound-lustre-bare-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-clothed.png` -> `quakehound-lustre-clothed-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-ember.png` -> `quakehound-lustre-ember-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-iron.png` -> `quakehound-lustre-iron-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-lunar.png` -> `quakehound-lustre-lunar-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-night.png` -> `quakehound-lustre-night-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-parade.png` -> `quakehound-lustre-parade-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-prism.png` -> `quakehound-lustre-prism-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-showtime.png` -> `quakehound-lustre-showtime-clean-20261028.png` (shadow removed, 52 px)
+- `quakehound-lustre-solar.png` -> `quakehound-lustre-solar-clean-20261028.png` (shadow removed, 52 px)
+- `reaperdile-base.png` -> `reaperdile-base-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-bare.png` -> `reaperdile-lustre-bare-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-clothed.png` -> `reaperdile-lustre-clothed-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-ember.png` -> `reaperdile-lustre-ember-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-iron.png` -> `reaperdile-lustre-iron-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-lunar.png` -> `reaperdile-lustre-lunar-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-night.png` -> `reaperdile-lustre-night-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-parade.png` -> `reaperdile-lustre-parade-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-prism.png` -> `reaperdile-lustre-prism-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-showtime.png` -> `reaperdile-lustre-showtime-clean-20261028.png` (shadow removed, 228 px)
+- `reaperdile-lustre-solar.png` -> `reaperdile-lustre-solar-clean-20261028.png` (shadow removed, 228 px)
+- `sproutle-base.png` -> `sproutle-base-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-bare.png` -> `sproutle-lustre-bare-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-clothed.png` -> `sproutle-lustre-clothed-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-ember.png` -> `sproutle-lustre-ember-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-iron.png` -> `sproutle-lustre-iron-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-lunar.png` -> `sproutle-lustre-lunar-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-night.png` -> `sproutle-lustre-night-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-parade.png` -> `sproutle-lustre-parade-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-prism.png` -> `sproutle-lustre-prism-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-showtime.png` -> `sproutle-lustre-showtime-clean-20261028.png` (shadow removed, 99 px)
+- `sproutle-lustre-solar.png` -> `sproutle-lustre-solar-clean-20261028.png` (shadow removed, 99 px)
+
+## AMBIGUOUS — not cleaned, owner's call
+- `yogiferno/yogiferno-base.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-bare.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-clothed.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-ember.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-iron.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-lunar.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-night.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-parade.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-prism.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-showtime.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+- `yogiferno/yogiferno-lustre-solar.png` — NOT cleaned — owner's call: the pale halo pools under the feet but is continuous with the full-body flame aura the design carries around the whole silhouette; shadow vs aura cannot be separated without guessing.
+
+## Sheets displaying pre-clean art — superseded for art use by the cleaned files (kept as build records)
+- `chromejaww/chromejaww-lustre-show-sheet-20261026.png`
+- `dorowani/dorowani-lustre-show-sheet-20261026.png`
+- `gabu/gabu-lustre-show-sheet-20261026.png`
+- `gearkid/gearkid-lustre-show-sheet-20261026.png`
+- `kittember/kittember-lustre-show-sheet-20261026.png`
+- `lustre-full-combined-batch1-20261026.png`
+- `lustre-full-combined-batch2-20261026.png`
+- `lustre-full-combined-batch3-20261026.png`
+- `lustre-full-combined-batch4-20261026.png`
+- `lustre-full-combined-batch5-20261026.png`
+- `lustre-full-combined-batch6-20261026.png`
+- `manticlaw/manticlaw-lustre-show-sheet-20261026.png`
+- `mythar/mythar-lustre-show-sheet-20261026.png`
+- `oblivirex/oblivirex-lustre-show-sheet-20261026.png`
+- `quakehound/quakehound-lustre-show-sheet-20261026.png`
+- `reaperdile/reaperdile-lustre-show-sheet-20261026.png`
+- `sproutle/sproutle-lustre-show-sheet-20261026.png`
+- `yogiferno/yogiferno-lustre-show-sheet-20261026.png`
+
+## Checked clean — no baked ground shadow (868 files, unchanged)
+- `aquariios/aquariios-base.png`
+- `aquariios/aquariios-lustre-bare-swatch.png`
+- `aquariios/aquariios-lustre-bare.png`
+- `aquariios/aquariios-lustre-clothed-swatch.png`
+- `aquariios/aquariios-lustre-clothed.png`
+- `aquariios/aquariios-lustre-ember-swatch.png`
+- `aquariios/aquariios-lustre-ember.png`
+- `aquariios/aquariios-lustre-iron-swatch.png`
+- `aquariios/aquariios-lustre-iron.png`
+- `aquariios/aquariios-lustre-lunar-swatch.png`
+- `aquariios/aquariios-lustre-lunar.png`
+- `aquariios/aquariios-lustre-night-swatch.png`
+- `aquariios/aquariios-lustre-night.png`
+- `aquariios/aquariios-lustre-parade-swatch.png`
+- `aquariios/aquariios-lustre-parade.png`
+- `aquariios/aquariios-lustre-prism-swatch.png`
+- `aquariios/aquariios-lustre-prism.png`
+- `aquariios/aquariios-lustre-show-sheet-20261026.png`
+- `aquariios/aquariios-lustre-showtime-swatch.png`
+- `aquariios/aquariios-lustre-showtime.png`
+- `aquariios/aquariios-lustre-solar-swatch.png`
+- `aquariios/aquariios-lustre-solar.png`
+- `ashemit/ashemit-base.png`
+- `ashemit/ashemit-lustre-bare-swatch.png`
+- `ashemit/ashemit-lustre-bare.png`
+- `ashemit/ashemit-lustre-clothed-swatch.png`
+- `ashemit/ashemit-lustre-clothed.png`
+- `ashemit/ashemit-lustre-ember-swatch.png`
+- `ashemit/ashemit-lustre-ember.png`
+- `ashemit/ashemit-lustre-iron-swatch.png`
+- `ashemit/ashemit-lustre-iron.png`
+- `ashemit/ashemit-lustre-lunar-swatch.png`
+- `ashemit/ashemit-lustre-lunar.png`
+- `ashemit/ashemit-lustre-night-swatch.png`
+- `ashemit/ashemit-lustre-night.png`
+- `ashemit/ashemit-lustre-parade-swatch.png`
+- `ashemit/ashemit-lustre-parade.png`
+- `ashemit/ashemit-lustre-prism-swatch.png`
+- `ashemit/ashemit-lustre-prism.png`
+- `ashemit/ashemit-lustre-show-sheet-20261026.png`
+- `ashemit/ashemit-lustre-showtime-swatch.png`
+- `ashemit/ashemit-lustre-showtime.png`
+- `ashemit/ashemit-lustre-solar-swatch.png`
+- `ashemit/ashemit-lustre-solar.png`
+- `astroleviathan/astroleviathan-base.png`
+- `astroleviathan/astroleviathan-lustre-bare-swatch.png`
+- `astroleviathan/astroleviathan-lustre-bare.png`
+- `astroleviathan/astroleviathan-lustre-clothed-swatch.png`
+- `astroleviathan/astroleviathan-lustre-clothed.png`
+- `astroleviathan/astroleviathan-lustre-ember-swatch.png`
+- `astroleviathan/astroleviathan-lustre-ember.png`
+- `astroleviathan/astroleviathan-lustre-iron-swatch.png`
+- `astroleviathan/astroleviathan-lustre-iron.png`
+- `astroleviathan/astroleviathan-lustre-lunar-swatch.png`
+- `astroleviathan/astroleviathan-lustre-lunar.png`
+- `astroleviathan/astroleviathan-lustre-night-swatch.png`
+- `astroleviathan/astroleviathan-lustre-night.png`
+- `astroleviathan/astroleviathan-lustre-parade-swatch.png`
+- `astroleviathan/astroleviathan-lustre-parade.png`
+- `astroleviathan/astroleviathan-lustre-prism-swatch.png`
+- `astroleviathan/astroleviathan-lustre-prism.png`
+- `astroleviathan/astroleviathan-lustre-show-sheet-20261026.png`
+- `astroleviathan/astroleviathan-lustre-showtime-swatch.png`
+- `astroleviathan/astroleviathan-lustre-showtime.png`
+- `astroleviathan/astroleviathan-lustre-solar-swatch.png`
+- `astroleviathan/astroleviathan-lustre-solar.png`
+- `chromejaww/chromejaww-lustre-bare-swatch.png`
+- `chromejaww/chromejaww-lustre-clothed-swatch.png`
+- `chromejaww/chromejaww-lustre-ember-swatch.png`
+- `chromejaww/chromejaww-lustre-iron-swatch.png`
+- `chromejaww/chromejaww-lustre-lunar-swatch.png`
+- `chromejaww/chromejaww-lustre-night-swatch.png`
+- `chromejaww/chromejaww-lustre-parade-swatch.png`
+- `chromejaww/chromejaww-lustre-prism-swatch.png`
+- `chromejaww/chromejaww-lustre-showtime-swatch.png`
+- `chromejaww/chromejaww-lustre-solar-swatch.png`
+- `cocoonode/cocoonode-base.png`
+- `cocoonode/cocoonode-lustre-bare-swatch.png`
+- `cocoonode/cocoonode-lustre-bare.png`
+- `cocoonode/cocoonode-lustre-clothed-swatch.png`
+- `cocoonode/cocoonode-lustre-clothed.png`
+- `cocoonode/cocoonode-lustre-ember-swatch.png`
+- `cocoonode/cocoonode-lustre-ember.png`
+- `cocoonode/cocoonode-lustre-iron-swatch.png`
+- `cocoonode/cocoonode-lustre-iron.png`
+- `cocoonode/cocoonode-lustre-lunar-swatch.png`
+- `cocoonode/cocoonode-lustre-lunar.png`
+- `cocoonode/cocoonode-lustre-night-swatch.png`
+- `cocoonode/cocoonode-lustre-night.png`
+- `cocoonode/cocoonode-lustre-parade-swatch.png`
+- `cocoonode/cocoonode-lustre-parade.png`
+- `cocoonode/cocoonode-lustre-prism-swatch.png`
+- `cocoonode/cocoonode-lustre-prism.png`
+- `cocoonode/cocoonode-lustre-show-sheet-20261026.png`
+- `cocoonode/cocoonode-lustre-showtime-swatch.png`
+- `cocoonode/cocoonode-lustre-showtime.png`
+- `cocoonode/cocoonode-lustre-solar-swatch.png`
+- `cocoonode/cocoonode-lustre-solar.png`
+- `cragarm/cragarm-base.png`
+- `cragarm/cragarm-lustre-bare-swatch.png`
+- `cragarm/cragarm-lustre-bare.png`
+- `cragarm/cragarm-lustre-clothed-swatch.png`
+- `cragarm/cragarm-lustre-clothed.png`
+- `cragarm/cragarm-lustre-ember-swatch.png`
+- `cragarm/cragarm-lustre-ember.png`
+- `cragarm/cragarm-lustre-iron-swatch.png`
+- `cragarm/cragarm-lustre-iron.png`
+- `cragarm/cragarm-lustre-lunar-swatch.png`
+- `cragarm/cragarm-lustre-lunar.png`
+- `cragarm/cragarm-lustre-night-swatch.png`
+- `cragarm/cragarm-lustre-night.png`
+- `cragarm/cragarm-lustre-parade-swatch.png`
+- `cragarm/cragarm-lustre-parade.png`
+- `cragarm/cragarm-lustre-prism-swatch.png`
+- `cragarm/cragarm-lustre-prism.png`
+- `cragarm/cragarm-lustre-show-sheet-20261026.png`
+- `cragarm/cragarm-lustre-showtime-swatch.png`
+- `cragarm/cragarm-lustre-showtime.png`
+- `cragarm/cragarm-lustre-solar-swatch.png`
+- `cragarm/cragarm-lustre-solar.png`
+- `dorowani/dorowani-lustre-bare-swatch.png`
+- `dorowani/dorowani-lustre-clothed-swatch.png`
+- `dorowani/dorowani-lustre-ember-swatch.png`
+- `dorowani/dorowani-lustre-iron-swatch.png`
+- `dorowani/dorowani-lustre-lunar-swatch.png`
+- `dorowani/dorowani-lustre-night-swatch.png`
+- `dorowani/dorowani-lustre-parade-swatch.png`
+- `dorowani/dorowani-lustre-prism-swatch.png`
+- `dorowani/dorowani-lustre-showtime-swatch.png`
+- `dorowani/dorowani-lustre-solar-swatch.png`
+- `dreadtoise/dreadtoise-base.png`
+- `dreadtoise/dreadtoise-lustre-bare-swatch.png`
+- `dreadtoise/dreadtoise-lustre-bare.png`
+- `dreadtoise/dreadtoise-lustre-clothed-swatch.png`
+- `dreadtoise/dreadtoise-lustre-clothed.png`
+- `dreadtoise/dreadtoise-lustre-ember-swatch.png`
+- `dreadtoise/dreadtoise-lustre-ember.png`
+- `dreadtoise/dreadtoise-lustre-iron-swatch.png`
+- `dreadtoise/dreadtoise-lustre-iron.png`
+- `dreadtoise/dreadtoise-lustre-lunar-swatch.png`
+- `dreadtoise/dreadtoise-lustre-lunar.png`
+- `dreadtoise/dreadtoise-lustre-night-swatch.png`
+- `dreadtoise/dreadtoise-lustre-night.png`
+- `dreadtoise/dreadtoise-lustre-parade-swatch.png`
+- `dreadtoise/dreadtoise-lustre-parade.png`
+- `dreadtoise/dreadtoise-lustre-prism-swatch.png`
+- `dreadtoise/dreadtoise-lustre-prism.png`
+- `dreadtoise/dreadtoise-lustre-show-sheet-20261026.png`
+- `dreadtoise/dreadtoise-lustre-showtime-swatch.png`
+- `dreadtoise/dreadtoise-lustre-showtime.png`
+- `dreadtoise/dreadtoise-lustre-solar-swatch.png`
+- `dreadtoise/dreadtoise-lustre-solar.png`
+- `duneclaw/duneclaw-base.png`
+- `duneclaw/duneclaw-lustre-bare-swatch.png`
+- `duneclaw/duneclaw-lustre-bare.png`
+- `duneclaw/duneclaw-lustre-clothed-swatch.png`
+- `duneclaw/duneclaw-lustre-clothed.png`
+- `duneclaw/duneclaw-lustre-ember-swatch.png`
+- `duneclaw/duneclaw-lustre-ember.png`
+- `duneclaw/duneclaw-lustre-iron-swatch.png`
+- `duneclaw/duneclaw-lustre-iron.png`
+- `duneclaw/duneclaw-lustre-lunar-swatch.png`
+- `duneclaw/duneclaw-lustre-lunar.png`
+- `duneclaw/duneclaw-lustre-night-swatch.png`
+- `duneclaw/duneclaw-lustre-night.png`
+- `duneclaw/duneclaw-lustre-parade-swatch.png`
+- `duneclaw/duneclaw-lustre-parade.png`
+- `duneclaw/duneclaw-lustre-prism-swatch.png`
+- `duneclaw/duneclaw-lustre-prism.png`
+- `duneclaw/duneclaw-lustre-show-sheet-20261026.png`
+- `duneclaw/duneclaw-lustre-showtime-swatch.png`
+- `duneclaw/duneclaw-lustre-showtime.png`
+- `duneclaw/duneclaw-lustre-solar-swatch.png`
+- `duneclaw/duneclaw-lustre-solar.png`
+- `duskfiend/duskfiend-base.png`
+- `duskfiend/duskfiend-lustre-bare-swatch.png`
+- `duskfiend/duskfiend-lustre-bare.png`
+- `duskfiend/duskfiend-lustre-clothed-swatch.png`
+- `duskfiend/duskfiend-lustre-clothed.png`
+- `duskfiend/duskfiend-lustre-ember-swatch.png`
+- `duskfiend/duskfiend-lustre-ember.png`
+- `duskfiend/duskfiend-lustre-iron-swatch.png`
+- `duskfiend/duskfiend-lustre-iron.png`
+- `duskfiend/duskfiend-lustre-lunar-swatch.png`
+- `duskfiend/duskfiend-lustre-lunar.png`
+- `duskfiend/duskfiend-lustre-night-swatch.png`
+- `duskfiend/duskfiend-lustre-night.png`
+- `duskfiend/duskfiend-lustre-parade-swatch.png`
+- `duskfiend/duskfiend-lustre-parade.png`
+- `duskfiend/duskfiend-lustre-prism-swatch.png`
+- `duskfiend/duskfiend-lustre-prism.png`
+- `duskfiend/duskfiend-lustre-show-sheet-20261026.png`
+- `duskfiend/duskfiend-lustre-showtime-swatch.png`
+- `duskfiend/duskfiend-lustre-showtime.png`
+- `duskfiend/duskfiend-lustre-solar-swatch.png`
+- `duskfiend/duskfiend-lustre-solar.png`
+- `floatcalf/floatcalf-base.png`
+- `floatcalf/floatcalf-lustre-bare-swatch.png`
+- `floatcalf/floatcalf-lustre-bare.png`
+- `floatcalf/floatcalf-lustre-clothed-swatch.png`
+- `floatcalf/floatcalf-lustre-clothed.png`
+- `floatcalf/floatcalf-lustre-ember-swatch.png`
+- `floatcalf/floatcalf-lustre-ember.png`
+- `floatcalf/floatcalf-lustre-iron-swatch.png`
+- `floatcalf/floatcalf-lustre-iron.png`
+- `floatcalf/floatcalf-lustre-lunar-swatch.png`
+- `floatcalf/floatcalf-lustre-lunar.png`
+- `floatcalf/floatcalf-lustre-night-swatch.png`
+- `floatcalf/floatcalf-lustre-night.png`
+- `floatcalf/floatcalf-lustre-parade-swatch.png`
+- `floatcalf/floatcalf-lustre-parade.png`
+- `floatcalf/floatcalf-lustre-prism-swatch.png`
+- `floatcalf/floatcalf-lustre-prism.png`
+- `floatcalf/floatcalf-lustre-show-sheet-20261026.png`
+- `floatcalf/floatcalf-lustre-showtime-swatch.png`
+- `floatcalf/floatcalf-lustre-showtime.png`
+- `floatcalf/floatcalf-lustre-solar-swatch.png`
+- `floatcalf/floatcalf-lustre-solar.png`
+- `gabu/gabu-lustre-bare-swatch.png`
+- `gabu/gabu-lustre-clothed-swatch.png`
+- `gabu/gabu-lustre-ember-swatch.png`
+- `gabu/gabu-lustre-iron-swatch.png`
+- `gabu/gabu-lustre-lunar-swatch.png`
+- `gabu/gabu-lustre-night-swatch.png`
+- `gabu/gabu-lustre-parade-swatch.png`
+- `gabu/gabu-lustre-prism-swatch.png`
+- `gabu/gabu-lustre-showtime-swatch.png`
+- `gabu/gabu-lustre-solar-swatch.png`
+- `gearkid/gearkid-lustre-bare-swatch.png`
+- `gearkid/gearkid-lustre-clothed-swatch.png`
+- `gearkid/gearkid-lustre-ember-swatch.png`
+- `gearkid/gearkid-lustre-iron-swatch.png`
+- `gearkid/gearkid-lustre-lunar-swatch.png`
+- `gearkid/gearkid-lustre-night-swatch.png`
+- `gearkid/gearkid-lustre-parade-swatch.png`
+- `gearkid/gearkid-lustre-prism-swatch.png`
+- `gearkid/gearkid-lustre-showtime-swatch.png`
+- `gearkid/gearkid-lustre-solar-swatch.png`
+- `gorokappa/gorokappa-base.png`
+- `gorokappa/gorokappa-lustre-bare-swatch.png`
+- `gorokappa/gorokappa-lustre-bare.png`
+- `gorokappa/gorokappa-lustre-clothed-swatch.png`
+- `gorokappa/gorokappa-lustre-clothed.png`
+- `gorokappa/gorokappa-lustre-ember-swatch.png`
+- `gorokappa/gorokappa-lustre-ember.png`
+- `gorokappa/gorokappa-lustre-iron-swatch.png`
+- `gorokappa/gorokappa-lustre-iron.png`
+- `gorokappa/gorokappa-lustre-lunar-swatch.png`
+- `gorokappa/gorokappa-lustre-lunar.png`
+- `gorokappa/gorokappa-lustre-night-swatch.png`
+- `gorokappa/gorokappa-lustre-night.png`
+- `gorokappa/gorokappa-lustre-parade-swatch.png`
+- `gorokappa/gorokappa-lustre-parade.png`
+- `gorokappa/gorokappa-lustre-prism-swatch.png`
+- `gorokappa/gorokappa-lustre-prism.png`
+- `gorokappa/gorokappa-lustre-show-sheet-20261026.png`
+- `gorokappa/gorokappa-lustre-showtime-swatch.png`
+- `gorokappa/gorokappa-lustre-showtime.png`
+- `gorokappa/gorokappa-lustre-solar-swatch.png`
+- `gorokappa/gorokappa-lustre-solar.png`
+- `inklet/inklet-base.png`
+- `inklet/inklet-lustre-bare-swatch.png`
+- `inklet/inklet-lustre-bare.png`
+- `inklet/inklet-lustre-clothed-swatch.png`
+- `inklet/inklet-lustre-clothed.png`
+- `inklet/inklet-lustre-ember-swatch.png`
+- `inklet/inklet-lustre-ember.png`
+- `inklet/inklet-lustre-iron-swatch.png`
+- `inklet/inklet-lustre-iron.png`
+- `inklet/inklet-lustre-lunar-swatch.png`
+- `inklet/inklet-lustre-lunar.png`
+- `inklet/inklet-lustre-night-swatch.png`
+- `inklet/inklet-lustre-night.png`
+- `inklet/inklet-lustre-parade-swatch.png`
+- `inklet/inklet-lustre-parade.png`
+- `inklet/inklet-lustre-prism-swatch.png`
+- `inklet/inklet-lustre-prism.png`
+- `inklet/inklet-lustre-show-sheet-20261026.png`
+- `inklet/inklet-lustre-showtime-swatch.png`
+- `inklet/inklet-lustre-showtime.png`
+- `inklet/inklet-lustre-solar-swatch.png`
+- `inklet/inklet-lustre-solar.png`
+- `kickmaster/kickmaster-base.png`
+- `kickmaster/kickmaster-lustre-bare-swatch.png`
+- `kickmaster/kickmaster-lustre-bare.png`
+- `kickmaster/kickmaster-lustre-clothed-swatch.png`
+- `kickmaster/kickmaster-lustre-clothed.png`
+- `kickmaster/kickmaster-lustre-ember-swatch.png`
+- `kickmaster/kickmaster-lustre-ember.png`
+- `kickmaster/kickmaster-lustre-iron-swatch.png`
+- `kickmaster/kickmaster-lustre-iron.png`
+- `kickmaster/kickmaster-lustre-lunar-swatch.png`
+- `kickmaster/kickmaster-lustre-lunar.png`
+- `kickmaster/kickmaster-lustre-night-swatch.png`
+- `kickmaster/kickmaster-lustre-night.png`
+- `kickmaster/kickmaster-lustre-parade-swatch.png`
+- `kickmaster/kickmaster-lustre-parade.png`
+- `kickmaster/kickmaster-lustre-prism-swatch.png`
+- `kickmaster/kickmaster-lustre-prism.png`
+- `kickmaster/kickmaster-lustre-show-sheet-20261026.png`
+- `kickmaster/kickmaster-lustre-showtime-swatch.png`
+- `kickmaster/kickmaster-lustre-showtime.png`
+- `kickmaster/kickmaster-lustre-solar-swatch.png`
+- `kickmaster/kickmaster-lustre-solar.png`
+- `kittember/kittember-lustre-bare-swatch.png`
+- `kittember/kittember-lustre-clothed-swatch.png`
+- `kittember/kittember-lustre-ember-swatch.png`
+- `kittember/kittember-lustre-iron-swatch.png`
+- `kittember/kittember-lustre-lunar-swatch.png`
+- `kittember/kittember-lustre-night-swatch.png`
+- `kittember/kittember-lustre-parade-swatch.png`
+- `kittember/kittember-lustre-prism-swatch.png`
+- `kittember/kittember-lustre-showtime-swatch.png`
+- `kittember/kittember-lustre-solar-swatch.png`
+- `krakenox/krakenox-base.png`
+- `krakenox/krakenox-lustre-bare-swatch.png`
+- `krakenox/krakenox-lustre-bare.png`
+- `krakenox/krakenox-lustre-clothed-swatch.png`
+- `krakenox/krakenox-lustre-clothed.png`
+- `krakenox/krakenox-lustre-ember-swatch.png`
+- `krakenox/krakenox-lustre-ember.png`
+- `krakenox/krakenox-lustre-iron-swatch.png`
+- `krakenox/krakenox-lustre-iron.png`
+- `krakenox/krakenox-lustre-lunar-swatch.png`
+- `krakenox/krakenox-lustre-lunar.png`
+- `krakenox/krakenox-lustre-night-swatch.png`
+- `krakenox/krakenox-lustre-night.png`
+- `krakenox/krakenox-lustre-parade-swatch.png`
+- `krakenox/krakenox-lustre-parade.png`
+- `krakenox/krakenox-lustre-prism-swatch.png`
+- `krakenox/krakenox-lustre-prism.png`
+- `krakenox/krakenox-lustre-show-sheet-20261026.png`
+- `krakenox/krakenox-lustre-showtime-swatch.png`
+- `krakenox/krakenox-lustre-showtime.png`
+- `krakenox/krakenox-lustre-solar-swatch.png`
+- `krakenox/krakenox-lustre-solar.png`
+- `manticlaw/manticlaw-lustre-bare-swatch.png`
+- `manticlaw/manticlaw-lustre-clothed-swatch.png`
+- `manticlaw/manticlaw-lustre-ember-swatch.png`
+- `manticlaw/manticlaw-lustre-iron-swatch.png`
+- `manticlaw/manticlaw-lustre-lunar-swatch.png`
+- `manticlaw/manticlaw-lustre-night-swatch.png`
+- `manticlaw/manticlaw-lustre-parade-swatch.png`
+- `manticlaw/manticlaw-lustre-prism-swatch.png`
+- `manticlaw/manticlaw-lustre-showtime-swatch.png`
+- `manticlaw/manticlaw-lustre-solar-swatch.png`
+- `mechapion/mechapion-base.png`
+- `mechapion/mechapion-lustre-bare-swatch.png`
+- `mechapion/mechapion-lustre-bare.png`
+- `mechapion/mechapion-lustre-clothed-swatch.png`
+- `mechapion/mechapion-lustre-clothed.png`
+- `mechapion/mechapion-lustre-ember-swatch.png`
+- `mechapion/mechapion-lustre-ember.png`
+- `mechapion/mechapion-lustre-iron-swatch.png`
+- `mechapion/mechapion-lustre-iron.png`
+- `mechapion/mechapion-lustre-lunar-swatch.png`
+- `mechapion/mechapion-lustre-lunar.png`
+- `mechapion/mechapion-lustre-night-swatch.png`
+- `mechapion/mechapion-lustre-night.png`
+- `mechapion/mechapion-lustre-parade-swatch.png`
+- `mechapion/mechapion-lustre-parade.png`
+- `mechapion/mechapion-lustre-prism-swatch.png`
+- `mechapion/mechapion-lustre-prism.png`
+- `mechapion/mechapion-lustre-show-sheet-20261026.png`
+- `mechapion/mechapion-lustre-showtime-swatch.png`
+- `mechapion/mechapion-lustre-showtime.png`
+- `mechapion/mechapion-lustre-solar-swatch.png`
+- `mechapion/mechapion-lustre-solar.png`
+- `megalochrome/megalochrome-base.png`
+- `megalochrome/megalochrome-lustre-bare-swatch.png`
+- `megalochrome/megalochrome-lustre-bare.png`
+- `megalochrome/megalochrome-lustre-clothed-swatch.png`
+- `megalochrome/megalochrome-lustre-clothed.png`
+- `megalochrome/megalochrome-lustre-ember-swatch.png`
+- `megalochrome/megalochrome-lustre-ember.png`
+- `megalochrome/megalochrome-lustre-iron-swatch.png`
+- `megalochrome/megalochrome-lustre-iron.png`
+- `megalochrome/megalochrome-lustre-lunar-swatch.png`
+- `megalochrome/megalochrome-lustre-lunar.png`
+- `megalochrome/megalochrome-lustre-night-swatch.png`
+- `megalochrome/megalochrome-lustre-night.png`
+- `megalochrome/megalochrome-lustre-parade-swatch.png`
+- `megalochrome/megalochrome-lustre-parade.png`
+- `megalochrome/megalochrome-lustre-prism-swatch.png`
+- `megalochrome/megalochrome-lustre-prism.png`
+- `megalochrome/megalochrome-lustre-show-sheet-20261026.png`
+- `megalochrome/megalochrome-lustre-showtime-swatch.png`
+- `megalochrome/megalochrome-lustre-showtime.png`
+- `megalochrome/megalochrome-lustre-solar-swatch.png`
+- `megalochrome/megalochrome-lustre-solar.png`
+- `mochii/mochii-base.png`
+- `mochii/mochii-lustre-bare-swatch.png`
+- `mochii/mochii-lustre-bare.png`
+- `mochii/mochii-lustre-clothed-swatch.png`
+- `mochii/mochii-lustre-clothed.png`
+- `mochii/mochii-lustre-ember-swatch.png`
+- `mochii/mochii-lustre-ember.png`
+- `mochii/mochii-lustre-iron-swatch.png`
+- `mochii/mochii-lustre-iron.png`
+- `mochii/mochii-lustre-lunar-swatch.png`
+- `mochii/mochii-lustre-lunar.png`
+- `mochii/mochii-lustre-night-swatch.png`
+- `mochii/mochii-lustre-night.png`
+- `mochii/mochii-lustre-parade-swatch.png`
+- `mochii/mochii-lustre-parade.png`
+- `mochii/mochii-lustre-prism-swatch.png`
+- `mochii/mochii-lustre-prism.png`
+- `mochii/mochii-lustre-show-sheet-20261026.png`
+- `mochii/mochii-lustre-showtime-swatch.png`
+- `mochii/mochii-lustre-showtime.png`
+- `mochii/mochii-lustre-solar-swatch.png`
+- `mochii/mochii-lustre-solar.png`
+- `mothrix/mothrix-base.png`
+- `mothrix/mothrix-lustre-bare-swatch.png`
+- `mothrix/mothrix-lustre-bare.png`
+- `mothrix/mothrix-lustre-clothed-swatch.png`
+- `mothrix/mothrix-lustre-clothed.png`
+- `mothrix/mothrix-lustre-ember-swatch.png`
+- `mothrix/mothrix-lustre-ember.png`
+- `mothrix/mothrix-lustre-iron-swatch.png`
+- `mothrix/mothrix-lustre-iron.png`
+- `mothrix/mothrix-lustre-lunar-swatch.png`
+- `mothrix/mothrix-lustre-lunar.png`
+- `mothrix/mothrix-lustre-night-swatch.png`
+- `mothrix/mothrix-lustre-night.png`
+- `mothrix/mothrix-lustre-parade-swatch.png`
+- `mothrix/mothrix-lustre-parade.png`
+- `mothrix/mothrix-lustre-prism-swatch.png`
+- `mothrix/mothrix-lustre-prism.png`
+- `mothrix/mothrix-lustre-show-sheet-20261026.png`
+- `mothrix/mothrix-lustre-showtime-swatch.png`
+- `mothrix/mothrix-lustre-showtime.png`
+- `mothrix/mothrix-lustre-solar-swatch.png`
+- `mothrix/mothrix-lustre-solar.png`
+- `mythar/mythar-lustre-bare-swatch.png`
+- `mythar/mythar-lustre-clothed-swatch.png`
+- `mythar/mythar-lustre-ember-swatch.png`
+- `mythar/mythar-lustre-iron-swatch.png`
+- `mythar/mythar-lustre-lunar-swatch.png`
+- `mythar/mythar-lustre-night-swatch.png`
+- `mythar/mythar-lustre-parade-swatch.png`
+- `mythar/mythar-lustre-prism-swatch.png`
+- `mythar/mythar-lustre-showtime-swatch.png`
+- `mythar/mythar-lustre-solar-swatch.png`
+- `oblivirex/oblivirex-lustre-bare-swatch.png`
+- `oblivirex/oblivirex-lustre-clothed-swatch.png`
+- `oblivirex/oblivirex-lustre-ember-swatch.png`
+- `oblivirex/oblivirex-lustre-iron-swatch.png`
+- `oblivirex/oblivirex-lustre-lunar-swatch.png`
+- `oblivirex/oblivirex-lustre-night-swatch.png`
+- `oblivirex/oblivirex-lustre-parade-swatch.png`
+- `oblivirex/oblivirex-lustre-prism-swatch.png`
+- `oblivirex/oblivirex-lustre-showtime-swatch.png`
+- `oblivirex/oblivirex-lustre-solar-swatch.png`
+- `pebblefist/pebblefist-base.png`
+- `pebblefist/pebblefist-lustre-bare-swatch.png`
+- `pebblefist/pebblefist-lustre-bare.png`
+- `pebblefist/pebblefist-lustre-clothed-swatch.png`
+- `pebblefist/pebblefist-lustre-clothed.png`
+- `pebblefist/pebblefist-lustre-ember-swatch.png`
+- `pebblefist/pebblefist-lustre-ember.png`
+- `pebblefist/pebblefist-lustre-iron-swatch.png`
+- `pebblefist/pebblefist-lustre-iron.png`
+- `pebblefist/pebblefist-lustre-lunar-swatch.png`
+- `pebblefist/pebblefist-lustre-lunar.png`
+- `pebblefist/pebblefist-lustre-night-swatch.png`
+- `pebblefist/pebblefist-lustre-night.png`
+- `pebblefist/pebblefist-lustre-parade-swatch.png`
+- `pebblefist/pebblefist-lustre-parade.png`
+- `pebblefist/pebblefist-lustre-prism-swatch.png`
+- `pebblefist/pebblefist-lustre-prism.png`
+- `pebblefist/pebblefist-lustre-show-sheet-20261026.png`
+- `pebblefist/pebblefist-lustre-showtime-swatch.png`
+- `pebblefist/pebblefist-lustre-showtime.png`
+- `pebblefist/pebblefist-lustre-solar-swatch.png`
+- `pebblefist/pebblefist-lustre-solar.png`
+- `pixilite/pixilite-base.png`
+- `pixilite/pixilite-lustre-bare-swatch.png`
+- `pixilite/pixilite-lustre-bare.png`
+- `pixilite/pixilite-lustre-clothed-swatch.png`
+- `pixilite/pixilite-lustre-clothed.png`
+- `pixilite/pixilite-lustre-ember-swatch.png`
+- `pixilite/pixilite-lustre-ember.png`
+- `pixilite/pixilite-lustre-iron-swatch.png`
+- `pixilite/pixilite-lustre-iron.png`
+- `pixilite/pixilite-lustre-lunar-swatch.png`
+- `pixilite/pixilite-lustre-lunar.png`
+- `pixilite/pixilite-lustre-night-swatch.png`
+- `pixilite/pixilite-lustre-night.png`
+- `pixilite/pixilite-lustre-parade-swatch.png`
+- `pixilite/pixilite-lustre-parade.png`
+- `pixilite/pixilite-lustre-prism-swatch.png`
+- `pixilite/pixilite-lustre-prism.png`
+- `pixilite/pixilite-lustre-show-sheet-20261026.png`
+- `pixilite/pixilite-lustre-showtime-swatch.png`
+- `pixilite/pixilite-lustre-showtime.png`
+- `pixilite/pixilite-lustre-solar-swatch.png`
+- `pixilite/pixilite-lustre-solar.png`
+- `pupbble/pupbble-base.png`
+- `pupbble/pupbble-lustre-bare-swatch.png`
+- `pupbble/pupbble-lustre-bare.png`
+- `pupbble/pupbble-lustre-clothed-swatch.png`
+- `pupbble/pupbble-lustre-clothed.png`
+- `pupbble/pupbble-lustre-ember-swatch.png`
+- `pupbble/pupbble-lustre-ember.png`
+- `pupbble/pupbble-lustre-iron-swatch.png`
+- `pupbble/pupbble-lustre-iron.png`
+- `pupbble/pupbble-lustre-lunar-swatch.png`
+- `pupbble/pupbble-lustre-lunar.png`
+- `pupbble/pupbble-lustre-night-swatch.png`
+- `pupbble/pupbble-lustre-night.png`
+- `pupbble/pupbble-lustre-parade-swatch.png`
+- `pupbble/pupbble-lustre-parade.png`
+- `pupbble/pupbble-lustre-prism-swatch.png`
+- `pupbble/pupbble-lustre-prism.png`
+- `pupbble/pupbble-lustre-show-sheet-20261026.png`
+- `pupbble/pupbble-lustre-showtime-swatch.png`
+- `pupbble/pupbble-lustre-showtime.png`
+- `pupbble/pupbble-lustre-solar-swatch.png`
+- `pupbble/pupbble-lustre-solar.png`
+- `pyromonk/pyromonk-base.png`
+- `pyromonk/pyromonk-lustre-bare-swatch.png`
+- `pyromonk/pyromonk-lustre-bare.png`
+- `pyromonk/pyromonk-lustre-clothed-swatch.png`
+- `pyromonk/pyromonk-lustre-clothed.png`
+- `pyromonk/pyromonk-lustre-ember-swatch.png`
+- `pyromonk/pyromonk-lustre-ember.png`
+- `pyromonk/pyromonk-lustre-iron-swatch.png`
+- `pyromonk/pyromonk-lustre-iron.png`
+- `pyromonk/pyromonk-lustre-lunar-swatch.png`
+- `pyromonk/pyromonk-lustre-lunar.png`
+- `pyromonk/pyromonk-lustre-night-swatch.png`
+- `pyromonk/pyromonk-lustre-night.png`
+- `pyromonk/pyromonk-lustre-parade-swatch.png`
+- `pyromonk/pyromonk-lustre-parade.png`
+- `pyromonk/pyromonk-lustre-prism-swatch.png`
+- `pyromonk/pyromonk-lustre-prism.png`
+- `pyromonk/pyromonk-lustre-show-sheet-20261026.png`
+- `pyromonk/pyromonk-lustre-showtime-swatch.png`
+- `pyromonk/pyromonk-lustre-showtime.png`
+- `pyromonk/pyromonk-lustre-solar-swatch.png`
+- `pyromonk/pyromonk-lustre-solar.png`
+- `pyropaw/pyropaw-base.png`
+- `pyropaw/pyropaw-lustre-bare-swatch.png`
+- `pyropaw/pyropaw-lustre-bare.png`
+- `pyropaw/pyropaw-lustre-clothed-swatch.png`
+- `pyropaw/pyropaw-lustre-clothed.png`
+- `pyropaw/pyropaw-lustre-ember-swatch.png`
+- `pyropaw/pyropaw-lustre-ember.png`
+- `pyropaw/pyropaw-lustre-iron-swatch.png`
+- `pyropaw/pyropaw-lustre-iron.png`
+- `pyropaw/pyropaw-lustre-lunar-swatch.png`
+- `pyropaw/pyropaw-lustre-lunar.png`
+- `pyropaw/pyropaw-lustre-night-swatch.png`
+- `pyropaw/pyropaw-lustre-night.png`
+- `pyropaw/pyropaw-lustre-parade-swatch.png`
+- `pyropaw/pyropaw-lustre-parade.png`
+- `pyropaw/pyropaw-lustre-prism-swatch.png`
+- `pyropaw/pyropaw-lustre-prism.png`
+- `pyropaw/pyropaw-lustre-show-sheet-20261026.png`
+- `pyropaw/pyropaw-lustre-showtime-swatch.png`
+- `pyropaw/pyropaw-lustre-showtime.png`
+- `pyropaw/pyropaw-lustre-solar-swatch.png`
+- `pyropaw/pyropaw-lustre-solar.png`
+- `quakehound/quakehound-lustre-bare-swatch.png`
+- `quakehound/quakehound-lustre-clothed-swatch.png`
+- `quakehound/quakehound-lustre-ember-swatch.png`
+- `quakehound/quakehound-lustre-iron-swatch.png`
+- `quakehound/quakehound-lustre-lunar-swatch.png`
+- `quakehound/quakehound-lustre-night-swatch.png`
+- `quakehound/quakehound-lustre-parade-swatch.png`
+- `quakehound/quakehound-lustre-prism-swatch.png`
+- `quakehound/quakehound-lustre-showtime-swatch.png`
+- `quakehound/quakehound-lustre-solar-swatch.png`
+- `razorgater/razorgater-base.png`
+- `razorgater/razorgater-lustre-bare-swatch.png`
+- `razorgater/razorgater-lustre-bare.png`
+- `razorgater/razorgater-lustre-clothed-swatch.png`
+- `razorgater/razorgater-lustre-clothed.png`
+- `razorgater/razorgater-lustre-ember-swatch.png`
+- `razorgater/razorgater-lustre-ember.png`
+- `razorgater/razorgater-lustre-iron-swatch.png`
+- `razorgater/razorgater-lustre-iron.png`
+- `razorgater/razorgater-lustre-lunar-swatch.png`
+- `razorgater/razorgater-lustre-lunar.png`
+- `razorgater/razorgater-lustre-night-swatch.png`
+- `razorgater/razorgater-lustre-night.png`
+- `razorgater/razorgater-lustre-parade-swatch.png`
+- `razorgater/razorgater-lustre-parade.png`
+- `razorgater/razorgater-lustre-prism-swatch.png`
+- `razorgater/razorgater-lustre-prism.png`
+- `razorgater/razorgater-lustre-show-sheet-20261026.png`
+- `razorgater/razorgater-lustre-showtime-swatch.png`
+- `razorgater/razorgater-lustre-showtime.png`
+- `razorgater/razorgater-lustre-solar-swatch.png`
+- `razorgater/razorgater-lustre-solar.png`
+- `reaperdile/reaperdile-lustre-bare-swatch.png`
+- `reaperdile/reaperdile-lustre-clothed-swatch.png`
+- `reaperdile/reaperdile-lustre-ember-swatch.png`
+- `reaperdile/reaperdile-lustre-iron-swatch.png`
+- `reaperdile/reaperdile-lustre-lunar-swatch.png`
+- `reaperdile/reaperdile-lustre-night-swatch.png`
+- `reaperdile/reaperdile-lustre-parade-swatch.png`
+- `reaperdile/reaperdile-lustre-prism-swatch.png`
+- `reaperdile/reaperdile-lustre-showtime-swatch.png`
+- `reaperdile/reaperdile-lustre-solar-swatch.png`
+- `shellguard/shellguard-base.png`
+- `shellguard/shellguard-lustre-bare-swatch.png`
+- `shellguard/shellguard-lustre-bare.png`
+- `shellguard/shellguard-lustre-clothed-swatch.png`
+- `shellguard/shellguard-lustre-clothed.png`
+- `shellguard/shellguard-lustre-ember-swatch.png`
+- `shellguard/shellguard-lustre-ember.png`
+- `shellguard/shellguard-lustre-iron-swatch.png`
+- `shellguard/shellguard-lustre-iron.png`
+- `shellguard/shellguard-lustre-lunar-swatch.png`
+- `shellguard/shellguard-lustre-lunar.png`
+- `shellguard/shellguard-lustre-night-swatch.png`
+- `shellguard/shellguard-lustre-night.png`
+- `shellguard/shellguard-lustre-parade-swatch.png`
+- `shellguard/shellguard-lustre-parade.png`
+- `shellguard/shellguard-lustre-prism-swatch.png`
+- `shellguard/shellguard-lustre-prism.png`
+- `shellguard/shellguard-lustre-show-sheet-20261026.png`
+- `shellguard/shellguard-lustre-showtime-swatch.png`
+- `shellguard/shellguard-lustre-showtime.png`
+- `shellguard/shellguard-lustre-solar-swatch.png`
+- `shellguard/shellguard-lustre-solar.png`
+- `sproutle/sproutle-lustre-bare-swatch.png`
+- `sproutle/sproutle-lustre-clothed-swatch.png`
+- `sproutle/sproutle-lustre-ember-swatch.png`
+- `sproutle/sproutle-lustre-iron-swatch.png`
+- `sproutle/sproutle-lustre-lunar-swatch.png`
+- `sproutle/sproutle-lustre-night-swatch.png`
+- `sproutle/sproutle-lustre-parade-swatch.png`
+- `sproutle/sproutle-lustre-prism-swatch.png`
+- `sproutle/sproutle-lustre-showtime-swatch.png`
+- `sproutle/sproutle-lustre-solar-swatch.png`
+- `squirmite/squirmite-base.png`
+- `squirmite/squirmite-lustre-bare-swatch.png`
+- `squirmite/squirmite-lustre-bare.png`
+- `squirmite/squirmite-lustre-clothed-swatch.png`
+- `squirmite/squirmite-lustre-clothed.png`
+- `squirmite/squirmite-lustre-ember-swatch.png`
+- `squirmite/squirmite-lustre-ember.png`
+- `squirmite/squirmite-lustre-iron-swatch.png`
+- `squirmite/squirmite-lustre-iron.png`
+- `squirmite/squirmite-lustre-lunar-swatch.png`
+- `squirmite/squirmite-lustre-lunar.png`
+- `squirmite/squirmite-lustre-night-swatch.png`
+- `squirmite/squirmite-lustre-night.png`
+- `squirmite/squirmite-lustre-parade-swatch.png`
+- `squirmite/squirmite-lustre-parade.png`
+- `squirmite/squirmite-lustre-prism-swatch.png`
+- `squirmite/squirmite-lustre-prism.png`
+- `squirmite/squirmite-lustre-show-sheet-20261026.png`
+- `squirmite/squirmite-lustre-showtime-swatch.png`
+- `squirmite/squirmite-lustre-showtime.png`
+- `squirmite/squirmite-lustre-solar-swatch.png`
+- `squirmite/squirmite-lustre-solar.png`
+- `stormtalon/stormtalon-base.png`
+- `stormtalon/stormtalon-lustre-bare-swatch.png`
+- `stormtalon/stormtalon-lustre-bare.png`
+- `stormtalon/stormtalon-lustre-clothed-swatch.png`
+- `stormtalon/stormtalon-lustre-clothed.png`
+- `stormtalon/stormtalon-lustre-ember-swatch.png`
+- `stormtalon/stormtalon-lustre-ember.png`
+- `stormtalon/stormtalon-lustre-iron-swatch.png`
+- `stormtalon/stormtalon-lustre-iron.png`
+- `stormtalon/stormtalon-lustre-lunar-swatch.png`
+- `stormtalon/stormtalon-lustre-lunar.png`
+- `stormtalon/stormtalon-lustre-night-swatch.png`
+- `stormtalon/stormtalon-lustre-night.png`
+- `stormtalon/stormtalon-lustre-parade-swatch.png`
+- `stormtalon/stormtalon-lustre-parade.png`
+- `stormtalon/stormtalon-lustre-prism-swatch.png`
+- `stormtalon/stormtalon-lustre-prism.png`
+- `stormtalon/stormtalon-lustre-show-sheet-20261026.png`
+- `stormtalon/stormtalon-lustre-showtime-swatch.png`
+- `stormtalon/stormtalon-lustre-showtime.png`
+- `stormtalon/stormtalon-lustre-solar-swatch.png`
+- `stormtalon/stormtalon-lustre-solar.png`
+- `strikechamp/strikechamp-base.png`
+- `strikechamp/strikechamp-lustre-bare-swatch.png`
+- `strikechamp/strikechamp-lustre-bare.png`
+- `strikechamp/strikechamp-lustre-clothed-swatch.png`
+- `strikechamp/strikechamp-lustre-clothed.png`
+- `strikechamp/strikechamp-lustre-ember-swatch.png`
+- `strikechamp/strikechamp-lustre-ember.png`
+- `strikechamp/strikechamp-lustre-iron-swatch.png`
+- `strikechamp/strikechamp-lustre-iron.png`
+- `strikechamp/strikechamp-lustre-lunar-swatch.png`
+- `strikechamp/strikechamp-lustre-lunar.png`
+- `strikechamp/strikechamp-lustre-night-swatch.png`
+- `strikechamp/strikechamp-lustre-night.png`
+- `strikechamp/strikechamp-lustre-parade-swatch.png`
+- `strikechamp/strikechamp-lustre-parade.png`
+- `strikechamp/strikechamp-lustre-prism-swatch.png`
+- `strikechamp/strikechamp-lustre-prism.png`
+- `strikechamp/strikechamp-lustre-show-sheet-20261026.png`
+- `strikechamp/strikechamp-lustre-showtime-swatch.png`
+- `strikechamp/strikechamp-lustre-showtime.png`
+- `strikechamp/strikechamp-lustre-solar-swatch.png`
+- `strikechamp/strikechamp-lustre-solar.png`
+- `strikechamp_unsuited/strikechamp_unsuited-base.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-bare-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-bare.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-clothed-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-clothed.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-ember-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-ember.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-iron-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-iron.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-lunar-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-lunar.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-night-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-night.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-parade-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-parade.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-prism-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-prism.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-show-sheet-20261026.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-showtime-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-showtime.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-solar-swatch.png`
+- `strikechamp_unsuited/strikechamp_unsuited-lustre-solar.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-base.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-bare-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-bare.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-clothed-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-clothed.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-ember-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-ember.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-iron-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-iron.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-lunar-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-lunar.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-night-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-night.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-parade-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-parade.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-prism-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-prism.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-show-sheet-20261026.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-showtime-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-showtime.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-solar-swatch.png`
+- `strikechamp_unsuited_full/strikechamp_unsuited_full-lustre-solar.png`
+- `terrapod/terrapod-base.png`
+- `terrapod/terrapod-lustre-bare-swatch.png`
+- `terrapod/terrapod-lustre-bare.png`
+- `terrapod/terrapod-lustre-clothed-swatch.png`
+- `terrapod/terrapod-lustre-clothed.png`
+- `terrapod/terrapod-lustre-ember-swatch.png`
+- `terrapod/terrapod-lustre-ember.png`
+- `terrapod/terrapod-lustre-iron-swatch.png`
+- `terrapod/terrapod-lustre-iron.png`
+- `terrapod/terrapod-lustre-lunar-swatch.png`
+- `terrapod/terrapod-lustre-lunar.png`
+- `terrapod/terrapod-lustre-night-swatch.png`
+- `terrapod/terrapod-lustre-night.png`
+- `terrapod/terrapod-lustre-parade-swatch.png`
+- `terrapod/terrapod-lustre-parade.png`
+- `terrapod/terrapod-lustre-prism-swatch.png`
+- `terrapod/terrapod-lustre-prism.png`
+- `terrapod/terrapod-lustre-show-sheet-20261026.png`
+- `terrapod/terrapod-lustre-showtime-swatch.png`
+- `terrapod/terrapod-lustre-showtime.png`
+- `terrapod/terrapod-lustre-solar-swatch.png`
+- `terrapod/terrapod-lustre-solar.png`
+- `tiidebiite/tiidebiite-base.png`
+- `tiidebiite/tiidebiite-lustre-bare-swatch.png`
+- `tiidebiite/tiidebiite-lustre-bare.png`
+- `tiidebiite/tiidebiite-lustre-clothed-swatch.png`
+- `tiidebiite/tiidebiite-lustre-clothed.png`
+- `tiidebiite/tiidebiite-lustre-ember-swatch.png`
+- `tiidebiite/tiidebiite-lustre-ember.png`
+- `tiidebiite/tiidebiite-lustre-iron-swatch.png`
+- `tiidebiite/tiidebiite-lustre-iron.png`
+- `tiidebiite/tiidebiite-lustre-lunar-swatch.png`
+- `tiidebiite/tiidebiite-lustre-lunar.png`
+- `tiidebiite/tiidebiite-lustre-night-swatch.png`
+- `tiidebiite/tiidebiite-lustre-night.png`
+- `tiidebiite/tiidebiite-lustre-parade-swatch.png`
+- `tiidebiite/tiidebiite-lustre-parade.png`
+- `tiidebiite/tiidebiite-lustre-prism-swatch.png`
+- `tiidebiite/tiidebiite-lustre-prism.png`
+- `tiidebiite/tiidebiite-lustre-show-sheet-20261026.png`
+- `tiidebiite/tiidebiite-lustre-showtime-swatch.png`
+- `tiidebiite/tiidebiite-lustre-showtime.png`
+- `tiidebiite/tiidebiite-lustre-solar-swatch.png`
+- `tiidebiite/tiidebiite-lustre-solar.png`
+- `toxitacle/toxitacle-base.png`
+- `toxitacle/toxitacle-lustre-bare-swatch.png`
+- `toxitacle/toxitacle-lustre-bare.png`
+- `toxitacle/toxitacle-lustre-clothed-swatch.png`
+- `toxitacle/toxitacle-lustre-clothed.png`
+- `toxitacle/toxitacle-lustre-ember-swatch.png`
+- `toxitacle/toxitacle-lustre-ember.png`
+- `toxitacle/toxitacle-lustre-iron-swatch.png`
+- `toxitacle/toxitacle-lustre-iron.png`
+- `toxitacle/toxitacle-lustre-lunar-swatch.png`
+- `toxitacle/toxitacle-lustre-lunar.png`
+- `toxitacle/toxitacle-lustre-night-swatch.png`
+- `toxitacle/toxitacle-lustre-night.png`
+- `toxitacle/toxitacle-lustre-parade-swatch.png`
+- `toxitacle/toxitacle-lustre-parade.png`
+- `toxitacle/toxitacle-lustre-prism-swatch.png`
+- `toxitacle/toxitacle-lustre-prism.png`
+- `toxitacle/toxitacle-lustre-show-sheet-20261026.png`
+- `toxitacle/toxitacle-lustre-showtime-swatch.png`
+- `toxitacle/toxitacle-lustre-showtime.png`
+- `toxitacle/toxitacle-lustre-solar-swatch.png`
+- `toxitacle/toxitacle-lustre-solar.png`
+- `tyrage/tyrage-base.png`
+- `tyrage/tyrage-lustre-bare-swatch.png`
+- `tyrage/tyrage-lustre-bare.png`
+- `tyrage/tyrage-lustre-clothed-swatch.png`
+- `tyrage/tyrage-lustre-clothed.png`
+- `tyrage/tyrage-lustre-ember-swatch.png`
+- `tyrage/tyrage-lustre-ember.png`
+- `tyrage/tyrage-lustre-iron-swatch.png`
+- `tyrage/tyrage-lustre-iron.png`
+- `tyrage/tyrage-lustre-lunar-swatch.png`
+- `tyrage/tyrage-lustre-lunar.png`
+- `tyrage/tyrage-lustre-night-swatch.png`
+- `tyrage/tyrage-lustre-night.png`
+- `tyrage/tyrage-lustre-parade-swatch.png`
+- `tyrage/tyrage-lustre-parade.png`
+- `tyrage/tyrage-lustre-prism-swatch.png`
+- `tyrage/tyrage-lustre-prism.png`
+- `tyrage/tyrage-lustre-show-sheet-20261026.png`
+- `tyrage/tyrage-lustre-showtime-swatch.png`
+- `tyrage/tyrage-lustre-showtime.png`
+- `tyrage/tyrage-lustre-solar-swatch.png`
+- `tyrage/tyrage-lustre-solar.png`
+- `yogiferno/yogiferno-lustre-bare-swatch.png`
+- `yogiferno/yogiferno-lustre-clothed-swatch.png`
+- `yogiferno/yogiferno-lustre-ember-swatch.png`
+- `yogiferno/yogiferno-lustre-iron-swatch.png`
+- `yogiferno/yogiferno-lustre-lunar-swatch.png`
+- `yogiferno/yogiferno-lustre-night-swatch.png`
+- `yogiferno/yogiferno-lustre-parade-swatch.png`
+- `yogiferno/yogiferno-lustre-prism-swatch.png`
+- `yogiferno/yogiferno-lustre-showtime-swatch.png`
+- `yogiferno/yogiferno-lustre-solar-swatch.png`
+- `zephling/zephling-base.png`
+- `zephling/zephling-lustre-bare-swatch.png`
+- `zephling/zephling-lustre-bare.png`
+- `zephling/zephling-lustre-clothed-swatch.png`
+- `zephling/zephling-lustre-clothed.png`
+- `zephling/zephling-lustre-ember-swatch.png`
+- `zephling/zephling-lustre-ember.png`
+- `zephling/zephling-lustre-iron-swatch.png`
+- `zephling/zephling-lustre-iron.png`
+- `zephling/zephling-lustre-lunar-swatch.png`
+- `zephling/zephling-lustre-lunar.png`
+- `zephling/zephling-lustre-night-swatch.png`
+- `zephling/zephling-lustre-night.png`
+- `zephling/zephling-lustre-parade-swatch.png`
+- `zephling/zephling-lustre-parade.png`
+- `zephling/zephling-lustre-prism-swatch.png`
+- `zephling/zephling-lustre-prism.png`
+- `zephling/zephling-lustre-show-sheet-20261026.png`
+- `zephling/zephling-lustre-showtime-swatch.png`
+- `zephling/zephling-lustre-showtime.png`
+- `zephling/zephling-lustre-solar-swatch.png`
+- `zephling/zephling-lustre-solar.png`

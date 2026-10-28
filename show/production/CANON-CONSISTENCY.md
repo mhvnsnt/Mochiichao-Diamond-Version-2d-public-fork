@@ -58,13 +58,18 @@ yes, it's this box — no generation is at fault; the record itself is
 split.
 
 **Worked cases:**
-- **Sproutle's two likenesses.** Two repo likenesses of Sproutle
-  disagree on colours (the portraits-scripted-v3 Sproutle vs its
-  blue/green lustre front art). No likeness-of-record ruling for the
-  portrait family exists yet — recorded as conflict C4 in
-  `show/production/species-data-system/DESIGN-BRIEF-canon-world.md` §9,
-  waiting on the owner-decisions list (§8 item 2). Until the owner
-  rules, **neither** likeness may be quietly treated as the one.
+- **Sproutle's portrait vs its Lustre front — NOT a conflict
+  (corrected 2026-10-28, owner ruling).** This pair was first
+  recorded here as two disagreeing likenesses (conflict C4 in
+  `show/production/species-data-system/DESIGN-BRIEF-canon-world.md` §9).
+  The framing was wrong: the portraits-scripted-v3 Sproutle IS
+  Sproutle's canon likeness, and the front art is the same
+  species' LUSTRE version — the alternate-palette shiny form.
+  Different colours are the point of the Lustre form, not an
+  inconsistency. A base form and its Lustre form are not two
+  records of the same fact, so the Box 1 test does not fire:
+  when one side of a "conflict" is a Lustre form, check the
+  form system before opening a conflict.
 - **Production layer vs display layer (names).** The same fact wears
   two names on purpose: the battle commander is **Rangers** in canon
   display text while the structural id stays `role:"trainer"` in game
@@ -238,8 +243,9 @@ in §5. Unruled does not mean unrecorded.
 → **Box 1, canon inconsistency.** The newest owner ruling wins. No
 ruling yet → the conflict is written down where it lives (a conflict
 note in the doc/data that carries it, like conflict C4 in the
-DESIGN-BRIEF), put on the owner-decisions list, and left open — never
-silently resolved by an edit.
+DESIGN-BRIEF — opened that way, then closed by the owner's
+2026-10-28 ruling), put on the owner-decisions list, and left open —
+never silently resolved by an edit.
 
 ---
 
