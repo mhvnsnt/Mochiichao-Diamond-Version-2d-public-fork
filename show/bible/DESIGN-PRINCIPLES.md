@@ -556,6 +556,9 @@ variant, location plate, prop or card. Any "no" stops the asset.
 - [ ] Location overlay signature correct — including *none* for the
       Forest (G4)
 
+**Derived outputs (species assets)**
+- [ ] Plush sheet emitted per PLUSH-SPEC (`mochiichao/plush/v1`, show/production/list3-systems/PLUSH-SPEC.md) — the design gate's merch output; passes on the 32px + one-colour plush-read proofs
+
 ---
 
 # PART 4 — WORKED EXAMPLES (pilot cast)

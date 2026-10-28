@@ -86,6 +86,7 @@ is a consequence of that grid:
 | `scene` | `EP##-SCENE-##` ID | episode package |
 | `fps` | 24 (project standard) | this spec |
 | `cuts` | cut IDs + board seconds + frame ranges (§2.3) | STORYBOARD-PLAN, locked at animatic |
+| `boards` | `EP##-SC##-boards-v<N>` (CURRENT at issue) — the board version this sheet was timed against (#53 §3) | BOARD-PIPELINE |
 | `wind_state` | per-cut `WIND ∈ {CALM, BREEZE, GUST}` (+ `REFUSED` for Forest) | board / LIVING-WORLD C3 |
 | `score_state` | per-cut `SCORE-STATE` (ADAPTIVE-MUSIC §2.2) | board / stem manifest |
 | `bed` | `BED-[LOC]-[TIME]` ID + bed file | LIVING-WORLD §2.4 |
@@ -141,6 +142,8 @@ sheet is the check that the scene file matches the board.
   inverted frame-diff gate (stillness ≈ zero) is noted in the
   header. The one scripted leaf (cut 28) is an FX segment of
   exactly one non-looping event.
+
+**Smear brackets (#49 §3, SMEAR-FRAME-GRAMMAR).** A smear is a CHAR-column entry with the device code in the action note and the bracket frames marked: [bracket-open] on the clean anticipation frames, the device peak (e.g. `SM-STRETCH`, with its audio spot) on its frame, [bracket-close] on the settle frames. Composite-stage gate: a frame-diff pass flags any smear device whose bracket frames are missing or tweened.
 
 ### 2.4 Tahoma2D wiring
 

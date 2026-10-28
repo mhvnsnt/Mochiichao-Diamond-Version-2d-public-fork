@@ -34,6 +34,13 @@ Fill `core_record` in the template, in `species.json` shape:
   the voice of the 12 locked entries).
 - `provenance` names the source of every value (intake sheet, owner
   decision, drafting credit).
+- `name_record` (#55 NAME-LOCALIZATION): the name is a record — stable id (never
+  localized, never renamed), display_name (source of truth), etymology (TBD on
+  existing sheets), pun_joint, syllables/stress, register, sound_notes,
+  line_thread, collision screens, per-locale slots (ALL OPEN until a locale is
+  commissioned).
+- `growth_curve` (#52 §2.3): `growth_curve: <id | TBD>`, id in {swift, steady,
+  deep} (native names, OPEN set).
 - Gameplay rows: learnset (verified at intake or flagged provisional like
   the existing 35), evolution row if the species is part of a line.
 
@@ -57,6 +64,8 @@ Fill `core_record` in the template, in `species.json` shape:
   `show/production/list3-systems/PLUSH-SPEC.md` — a design-gate output).
 
 ### Gate 1 — Data review (lane)
+- Mochiioteca entry text drafted from this sheet passes the #48 entry gate
+  (MOCHIIOTECA-ENTRY-STYLE §4) before it ships.
 - Record validates against `species.schema.json` shape; every null/empty
   field is either a deliberate design choice or a TBD-register line.
 - Cross-checks: name not colliding with any existing species/concept;

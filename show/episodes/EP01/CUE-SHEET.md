@@ -9,6 +9,6 @@
 | Kittember cry (tail-flame flare) | beats 2, 4 | public/audio/cries/kittember-cry.wav |
 | Sproutle cry (discovery) | beat 3 | public/audio/cries/sproutle-cry.wav |
 | Wispkin cry (reveal, soft) | beat 5 | public/audio/cries/wispkin-cry.wav |
-| Cold-spot shimmer SFX | beats 2–4 | GAP: source from TRIPPEDD OpenGameArt index at mix |
-| Gate bell (tag) | beat 6 | GAP: same index, or foley at mix |
+| Cold-spot shimmer SFX | beats 2–4 | SFX-COLDSPOT-01 — GAP → route decided (#51 §4): synthesise (reversed bell partials + air); must not resemble any natural source |
+| Gate bell (tag) | beat 6 | SFX-BELL-01 — GAP → route decided (#51 §4): foley/record or CC0 bell; single approved take becomes canon |
 Finish target: -14 LUFS (TRIPPEDD finish spec, PIPELINE.md).

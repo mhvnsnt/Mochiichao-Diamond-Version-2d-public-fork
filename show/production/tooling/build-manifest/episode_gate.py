@@ -29,3 +29,7 @@ absence_violations = [c["cut"] for c in man["cuts"] if c.get("score_state") == "
                       and not (c.get("stems") is None and "FOREST" in str(c.get("bed", "")))]
 absence_cuts = [c["cut"] for c in man["cuts"] if c.get("score_state") == "ABSENCE"]
 print(f"ABSENCE gate (ADAPTIVE-MUSIC S2.5): {len(absence_cuts)} ABSENCE cuts checked, violations: {absence_violations}")
+
+# Colour gate (EP-COLOUR-SCRIPT-FORMAT S5): the manifest must cite the episode
+# colour script. Per-cut colour_beat refs join at animatic lock (with F1).
+print(f"Colour script: {man.get('colour_script')} (per-cut colour_beat refs join at animatic lock)")
