@@ -73,3 +73,5 @@ land as-is — a future canon pass fills values, never reshapes.
 - **Contents: names and order only.** Parties, levels, field
   effects, locations, and the Dojo 8 leader's name are OPEN by
   canon's own account — flagged in every record, filled nowhere.
+
+**Extended by List 11 (2026-10-27):** #98 Ranger licence (`98-RANGER-LICENCE.md`), #99 Syndicate encounters (`tier: syndicate` now in the dojo-encounter schema), #100 Champion gauntlet — all in `show/production/world-systems/`. Reciprocal registration.

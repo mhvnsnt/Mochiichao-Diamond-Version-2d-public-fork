@@ -131,3 +131,6 @@ unchanged boundary:
 - **Animscript validator** — `show/production/tooling/battle/validate_animscript.py`.
 - **Battle UI flow** — `show/production/battle/BATTLE-UI-FLOW.md` (game-lane src/ copy is the game lane's call — not made here).
 - **Avatar-stack palette tool + lustre proposal** — `show/production/tooling/avatar-stack/palette_variant.py` + `BUNDLE-FORMAT-LUSTRE-PROPOSAL.md` (PROPOSAL — adoption is a design-lane contract bump that lands with the first real lustre; not adopted by the teardown).
+
+## Data pipeline notes (List 11 landing, 2026-10-27)
+- **Range-map regeneration (#102):** habitat range maps are a BUILD ARTEFACT — regenerate from the #7 spawn tables + #29 ecology tables whenever either input changes; output is stamped with the input versions. No range data is committed by hand, ever.
