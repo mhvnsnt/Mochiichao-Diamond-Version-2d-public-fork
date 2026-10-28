@@ -975,3 +975,7 @@ Per-cut shot specs landed at show/production/tooling/build-manifest/episode-shot
 ## SEASON MAP EP06-EP10 LANDED (2026-10-27)
 
 Season-level direction docs landed: SEASON-MAP-EP06-EP10.md + SEASON-ARC-NOTE-EP01-EP10.md at show/production/; per-episode BEAT-SHEET.md extractions seeded show/episodes/EP06-EP10/ (extraction from the map, not a re-write; NO shooting scripts created - scripts follow owner approval of direction at the board pitch). Cross-refs: EP06-EP10 rows added to show/episodes/README.md (titles PROPOSED); pointer line appended to SEASON-CANON-MAP.md (canon content untouched). All five titles remain PROPOSED - landing preserves, does not lock. No EP01-EP05 files edited; shared manifests untouched; Bible untouched. Landed by the lock-everything wave.
+
+## PROSODY SYSTEM LANDED (2026-10-27)
+
+PROSODY-SYSTEM.md landed at show/production/ beside VOICE-DESIGN.md (companion: method + line-reading rules + timing integration; parameter sheets stay in VOICE-DESIGN.md, whose numbers were re-verified against live main at landing - Mochiko ex 0.45 / cfg 0.5, Hex ex 0.3 / cfg 0.6, Aeon ex 0.4 / cfg 0.55, chain unchanged - and were NOT changed by this landing; one pointer line added under its title). Synthesis of the three 2026-10-27 research inputs (industry report / repo mine / bible-craft study); the source map is folded in as the doc's appendix so the audit trail travels with it. Casting still PENDING for all three humans; no voice rendered, no casting made, no numbers changed. Landed by the lock-everything wave.

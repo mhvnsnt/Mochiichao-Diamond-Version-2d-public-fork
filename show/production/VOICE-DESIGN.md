@@ -1,5 +1,7 @@
 # VOICE DESIGN — human voices by prosody, not by copying (owner method, 2026-10-27)
 
+Method and line-reading rules: see PROSODY-SYSTEM.md (companion, same folder).
+
 Owner's method, in his words' substance: get the voices from
 INSPIRATIONS — anime and cartoon voice types — for the IDEA of how
 a voice should be: its pacing, its toning, its PROSODY. Nobody's
