@@ -12,7 +12,78 @@ a superseded asset under the current-version law.
 
 ## ⬛ CURRENT / USABLE METHOD
 
-### The Industry Method — v1.1 (2026-10-28)
+### The Industry Method — v1.2 (2026-10-28)
+
+- **The method:** the Industry Method v1.1 (construction core +
+  timing layer, below) **plus the above-floor layer**:
+  `ABOVE-THE-FLOOR-RESEARCH.md` in this folder, and three wired
+  requirements —
+  1. **Beat maps are artefacts, not intentions.** A scored
+     piece's timing chart cites a measured beat map of its actual
+     bed. The first one is landed:
+     `show/episodes/EP01/timing/EP01-ED-BEAT-MAP.json` (the EP01
+     ED bed measured: 144.0 pulses/min, first pulse 0.009 s,
+     10 frames per pulse at the 24 fps master; the distant bell
+     at ED 60.000 s template-verified at exactly 60.00000 s,
+     rank 1 — gap 18's first artefact, closed).
+  2. **Chart-conformance is a gate.** Charts are written in
+     `mochiichao/timing-chart/v1` and a rendered clip is checked
+     against its chart with the checker
+     (`verify_proof.py --chart`): charted accents and contacts
+     answered within ±2 frames, charted line holds empty of
+     changes, deviations reported by frame number. The checker
+     still reports only; it never grades.
+  3. **Design targets sit ABOVE the floors.** The floors in
+     `TIMING-STANDARD.md` remain the minimum. Charted work is
+     designed above them: the EP01 ED gag chart set
+     (`show/episodes/EP01/timing/EP01-ED-GAG-ABOVE-FLOOR-CHART.json`)
+     carries 169 drawing-change frames in 336 = **12.07
+     drawing-changes/sec** of charted structure, personality
+     beats held ≥ 0.5 s, contacts on the beat grid, and its
+     largest accent on the bell (gag frame 96). A chart that
+     merely reaches a floor is sent back at chart stage, before
+     anything is drawn.
+- **The evidence:** the Phase P proof (2026-10-28) — the v6
+  walk's own 8 drawings re-timed under a charted modulation
+  design, no new art: **10.0 new drawings/sec** (was 8.0, exactly
+  at the credits floor, one uniform hold pattern), **7 one-frame
+  accent spans** at the charted burst frames, the
+  uniform-unmodulated-rate flag **clear**, a charted 12-frame
+  settled hold, and chart-conformance of **0 deviations**
+  (accents 2/2, contacts 10/10, holds 2/2, boundary coverage
+  1.0). The same checker run against the current gag v2 and the
+  new gag chart records the baseline the rebuild must beat
+  (1 deviation: no bell freeze; boundary coverage 0.9763 — and
+  v2's own profile remains below floor at 7.786/sec with the
+  uniform-rate flag). Run record:
+  `show/production/tooling/proof-gate/timing-profile-runs.json`.
+- **Why it is current:** owner order (2026-10-28, ABOVE THE
+  FLOOR programme): everything measured at or below the floors
+  gets pulled in and wired to go above and beyond them — the
+  floor is not good enough — with research first
+  (`ABOVE-THE-FLOOR-RESEARCH.md`: how productions exceed the
+  floor at TV budgets, and where the bursts are spent).
+- **Supersedes:** the Industry Method v1.1 **as a standalone
+  entry** — v1.1's construction + timing core is folded into
+  v1.2 unchanged; do not animate under v1.1 without its
+  above-floor layer.
+- **Standing gates unchanged:** Gate 8 (the owner's eye) and
+  the profile model-sheet flag remain production gates. The
+  gag rebuild itself has NOT started: it waits on Gate 8 and
+  the profile call. v1.2's chart set is its input, not its
+  start.
+
+## ⬛ SUPERSEDED — DO NOT USE
+
+### The Industry Method — v1.1, standalone (2026-10-28)
+
+**Re-marked 2026-10-28, at the v1.2 landing:** v1.1 is folded into
+v1.2 as its construction + timing core. Used *without* the v1.2
+above-floor layer (beat maps, chart-conformance, above-floor
+design targets), v1.1 is **DO NOT USE** — a build can sit exactly
+AT a floor under v1.1 and pass, which the owner has ruled is not
+good enough: the floor is the minimum, not the target.
+
 
 - **The method:** the Industry Method v1 (construction core,
   below) **plus the timing layer**: `TIMING-STANDARD.md` in this
@@ -50,7 +121,6 @@ a superseded asset under the current-version law.
   entry** — v1's construction method is folded into v1.1
   unchanged; do not animate under v1 without its timing layer.
 
-## ⬛ SUPERSEDED — DO NOT USE
 
 ### The Industry Method — v1, standalone (2026-10-28)
 
@@ -162,6 +232,23 @@ for yourself and the agents, so we never regress.*
   excerpt both FAILED class. Beat maps and the remaining scene
   charts are named in `TIMING-STANDARD.md` §13 as specced, not
   yet wired.
+
+- **2026-10-28 — Industry Method v1.2 marked CURRENT / USABLE;
+  v1.1 superseded as a standalone entry (folded into v1.2).**
+  Change: the above-floor layer lands — `ABOVE-THE-FLOOR-RESEARCH.md`
+  (how productions exceed the floor, sourced), the first beat map
+  (`show/episodes/EP01/timing/EP01-ED-BEAT-MAP.json` + doc; bell
+  at ED 60.000 s verified against the audio itself), the gag
+  above-floor chart set (same folder; 12.07 charted
+  drawing-changes/sec, beats held ≥ 0.5 s, bell accent at gag
+  frame 96), checker v2 chart-conformance mode
+  (`verify_proof.py --chart`, tested: 0 deviations on the proof,
+  synthetic misplacements caught, gag-v2 baseline recorded), and
+  the Phase P re-time proof (v6 drawings, no new art: 8.0 uniform
+  → 10.0 drawings/sec with accents, uniform-rate flag clear).
+  Tahoma2D/OpenToonz remain registered (BSD-3) as the x-sheet
+  lane; no new install was needed for this layer — the gap was
+  artefacts and gates, not software.
 
 ---
 

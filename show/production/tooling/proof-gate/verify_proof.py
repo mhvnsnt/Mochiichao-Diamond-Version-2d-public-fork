@@ -47,7 +47,24 @@ lane's numbers:
 
 Usage: verify_proof.py <clip.mp4> [--json-out result.json]
        [--register scene|credits]
+       [--chart chart.json] [--chart-tolerance N]
 Exit 0 always (this measures; the gate verdict is the owner's).
+
+CHART CONFORMANCE (Above-the-Floor programme, 2026-10-28):
+--chart <chart.json> adds a chart-conformance section. The chart
+is a mochiichao/timing-chart/v1 document (segments per character,
+accents, line holds, contacts — see the EP01 timing folder). The
+checker compares the clip's measured change frames (span starts
+on the same HOLD_THRESHOLD metric) against the chart: every
+charted ACCENT and CONTACT must be answered by a change frame
+within +-tolerance frames (default 2, --chart-tolerance); a
+charted line HOLD must contain no change frame strictly inside
+its tolerance-trimmed interior; segment-boundary coverage is
+reported (what fraction of the chart's drawing-change frames,
+union over characters, the clip answers within tolerance, and
+how many clip changes the chart does not predict). Deviations
+are reported BY FRAME NUMBER. Conformance is a measurement, not
+a grade: it never changes the verdict line or the exit code.
 
 HEADLINE OUTPUT (owner's unit rule, 2026-10-28): the profile's
 headline is the clip's MEASURED effective NEW DRAWINGS PER
@@ -314,6 +331,109 @@ def timing_profile(diffs, duration_s, register=None):
     }
 
 
+
+def chart_conformance(diffs, chart, tolerance=2):
+    """Compare a clip's measured change frames against a timing chart.
+
+    diffs[i] is the change between frame i and i+1 (0-based), the
+    same series timing_profile() reads. A change frame is the start
+    frame of a held span after the first (the frame a new drawing
+    lands on). Chart frames are 0-based in the clip's own window.
+    Returns measurements + deviations by frame number; no verdict.
+    """
+    spans = []
+    start = 0
+    for i, d in enumerate(diffs):
+        if d >= HOLD_THRESHOLD:
+            spans.append((start, i + 1 - start))
+            start = i + 1
+    spans.append((start, len(diffs) + 1 - start))
+    change_frames = sorted(s for s, _ in spans if s > 0)
+
+    def nearest(frame):
+        if not change_frames:
+            return None
+        return min(change_frames, key=lambda c: abs(c - frame))
+
+    def answered(frame):
+        # An event charted at frame 0 is landed by construction:
+        # the clip opens on that drawing, so no change frame can
+        # or must answer it.
+        if frame == 0:
+            return True, 0
+        n = nearest(frame)
+        return (n is not None and abs(n - frame) <= tolerance), n
+
+    deviations = []
+    accent_rows = []
+    for a in chart.get("accents", []):
+        f = a["frame"]
+        ok, n = answered(f)
+        accent_rows.append({"chart_frame": f, "label": a.get("label", ""),
+                            "nearest_change_frame": n, "answered": ok})
+        if not ok:
+            deviations.append({"type": "accent", "chart_frame": f,
+                               "nearest_change_frame": n,
+                               "detail": "no change frame within +-%d frames of the charted accent" % tolerance})
+    contact_rows = []
+    for c in chart.get("contacts", []):
+        f = c["frame"]
+        ok, n = answered(f)
+        contact_rows.append({"chart_frame": f, "character": c.get("character", ""),
+                             "nearest_change_frame": n, "answered": ok})
+        if not ok:
+            deviations.append({"type": "contact", "chart_frame": f,
+                               "character": c.get("character", ""),
+                               "nearest_change_frame": n,
+                               "detail": "no change frame within +-%d frames of the charted contact" % tolerance})
+    hold_rows = []
+    for h in chart.get("holds", []):
+        st, ln = h["start"], h["frames"]
+        lo, hi = st + tolerance, st + ln - tolerance
+        inside = [c for c in change_frames if lo < c < hi]
+        hold_rows.append({"chart_start": st, "chart_frames": ln,
+                          "label": h.get("label", ""),
+                          "changes_inside": inside, "clear": not inside})
+        for c in inside:
+            deviations.append({"type": "hold", "chart_start": st,
+                               "chart_frames": ln, "change_frame": c,
+                               "detail": "change frame inside a charted line hold"})
+    expected = set()
+    for _name, segs in (chart.get("characters") or {}).items():
+        for sg in segs:
+            if sg["start"] > 0:
+                expected.add(sg["start"])
+    answered = 0
+    for f in expected:
+        n = nearest(f)
+        if n is not None and abs(n - f) <= tolerance:
+            answered += 1
+    uncharted = [c for c in change_frames
+                 if all(abs(c - f) > tolerance for f in expected)]
+    return {
+        "chart_id": chart.get("id"),
+        "chart_format": chart.get("format"),
+        "tolerance_frames": tolerance,
+        "clip_frames": len(diffs) + 1,
+        "chart_duration_frames": chart.get("duration_frames"),
+        "duration_match": chart.get("duration_frames") == len(diffs) + 1,
+        "clip_change_frames": change_frames,
+        "accents": accent_rows,
+        "contacts": contact_rows,
+        "holds": hold_rows,
+        "segment_boundary_coverage": {
+            "chart_change_frames_expected": len(expected),
+            "answered_within_tolerance": answered,
+            "fraction": round(answered / len(expected), 4) if expected else None,
+            "uncharted_clip_changes": uncharted,
+        },
+        "deviations": deviations,
+        "deviation_count": len(deviations),
+        "note": "Conformance measurements only — deviations are reported "
+                "by frame number for a reviewer; this section does not "
+                "grade the clip (TIMING-STANDARD.md).",
+    }
+
 def main():
     clip = Path(sys.argv[1])
     assert clip.exists(), f"no such file: {clip}"
@@ -343,6 +463,26 @@ def main():
         "reads_as_real_motion": mean_diff > 2.0 and identical / max(len(diffs), 1) < 0.5,
         "verdict": "MEASURED — owner viewing decides; this script promotes nothing",
     }
+    if "--chart" in sys.argv:
+        _chart_path = sys.argv[sys.argv.index("--chart") + 1]
+        _tol = (int(sys.argv[sys.argv.index("--chart-tolerance") + 1])
+                if "--chart-tolerance" in sys.argv else 2)
+        with open(_chart_path) as _fh:
+            _chart_doc = json.load(_fh)
+        _conf = chart_conformance(diffs, _chart_doc, tolerance=_tol)
+        result["chart_conformance"] = _conf
+        print("CHART CONFORMANCE: %d deviation(s) against %s "
+              "(accents %d/%d, contacts %d/%d, holds %d/%d clear, "
+              "boundary coverage %s)"
+              % (_conf["deviation_count"], _conf["chart_id"],
+                 sum(1 for a in _conf["accents"] if a["answered"]),
+                 len(_conf["accents"]),
+                 sum(1 for c in _conf["contacts"] if c["answered"]),
+                 len(_conf["contacts"]),
+                 sum(1 for h in _conf["holds"] if h["clear"]),
+                 len(_conf["holds"]),
+                 _conf["segment_boundary_coverage"]["fraction"]),
+              file=sys.stderr)
     _h = result["timing_profile"]["headline"]
     print("HEADLINE: %s new drawings/sec - %s"
           % (_h["effective_new_drawings_per_second"], _h["class"]),

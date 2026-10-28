@@ -1,0 +1,334 @@
+{
+ "format": "mochiichao/timing-chart/v1",
+ "id": "V6-WALK-ABOVE-FLOOR-RETIME",
+ "title": "Phase P proof \u2014 v6 Mochiko walk drawings re-timed under charted modulation (same 8 drawings, no new art)",
+ "fps": 24,
+ "duration_frames": 96,
+ "duration_s": 4.0,
+ "register": "credits",
+ "register_floor_new_drawings_per_second": 8.0,
+ "source_drawings": "show v6 industry-method proof poses pose-0..pose-7 (~/workspace/ep01-ed-gag/work/v6-industry/poses/), composited exactly as make_clips.py walk-inplace (scale 0.653, ground 640, post-stage shadow only)",
+ "design": "Settle-in hold 6f; modulated cycle (holds 2-3f); accent burst of four poses on 1s; modulated cycle; settled contact hold 12f (0.5 s); modulated cycle; second accent burst (three poses on 1s); modulated cycle to a 4f settle. Design targets: >=8 drawings/sec WITH 1-frame accents present and the uniform-rate signature clear.",
+ "characters": {
+  "mochiko": [
+   {
+    "start": 0,
+    "frames": 6,
+    "drawing": "pose-0",
+    "kind": "hold"
+   },
+   {
+    "start": 6,
+    "frames": 2,
+    "drawing": "pose-1",
+    "kind": "cycle"
+   },
+   {
+    "start": 8,
+    "frames": 2,
+    "drawing": "pose-2",
+    "kind": "cycle"
+   },
+   {
+    "start": 10,
+    "frames": 3,
+    "drawing": "pose-3",
+    "kind": "cycle"
+   },
+   {
+    "start": 13,
+    "frames": 2,
+    "drawing": "pose-4",
+    "kind": "cycle"
+   },
+   {
+    "start": 15,
+    "frames": 2,
+    "drawing": "pose-5",
+    "kind": "cycle"
+   },
+   {
+    "start": 17,
+    "frames": 3,
+    "drawing": "pose-6",
+    "kind": "cycle"
+   },
+   {
+    "start": 20,
+    "frames": 2,
+    "drawing": "pose-7",
+    "kind": "cycle"
+   },
+   {
+    "start": 22,
+    "frames": 1,
+    "drawing": "pose-0",
+    "kind": "accent"
+   },
+   {
+    "start": 23,
+    "frames": 1,
+    "drawing": "pose-1",
+    "kind": "accent"
+   },
+   {
+    "start": 24,
+    "frames": 1,
+    "drawing": "pose-2",
+    "kind": "accent"
+   },
+   {
+    "start": 25,
+    "frames": 1,
+    "drawing": "pose-3",
+    "kind": "accent"
+   },
+   {
+    "start": 26,
+    "frames": 3,
+    "drawing": "pose-4",
+    "kind": "cycle"
+   },
+   {
+    "start": 29,
+    "frames": 2,
+    "drawing": "pose-5",
+    "kind": "cycle"
+   },
+   {
+    "start": 31,
+    "frames": 2,
+    "drawing": "pose-6",
+    "kind": "cycle"
+   },
+   {
+    "start": 33,
+    "frames": 3,
+    "drawing": "pose-7",
+    "kind": "cycle"
+   },
+   {
+    "start": 36,
+    "frames": 2,
+    "drawing": "pose-0",
+    "kind": "cycle"
+   },
+   {
+    "start": 38,
+    "frames": 2,
+    "drawing": "pose-1",
+    "kind": "cycle"
+   },
+   {
+    "start": 40,
+    "frames": 3,
+    "drawing": "pose-2",
+    "kind": "cycle"
+   },
+   {
+    "start": 43,
+    "frames": 2,
+    "drawing": "pose-3",
+    "kind": "cycle"
+   },
+   {
+    "start": 45,
+    "frames": 12,
+    "drawing": "pose-4",
+    "kind": "hold"
+   },
+   {
+    "start": 57,
+    "frames": 2,
+    "drawing": "pose-5",
+    "kind": "cycle"
+   },
+   {
+    "start": 59,
+    "frames": 3,
+    "drawing": "pose-6",
+    "kind": "cycle"
+   },
+   {
+    "start": 62,
+    "frames": 2,
+    "drawing": "pose-7",
+    "kind": "cycle"
+   },
+   {
+    "start": 64,
+    "frames": 2,
+    "drawing": "pose-0",
+    "kind": "cycle"
+   },
+   {
+    "start": 66,
+    "frames": 3,
+    "drawing": "pose-1",
+    "kind": "cycle"
+   },
+   {
+    "start": 69,
+    "frames": 2,
+    "drawing": "pose-2",
+    "kind": "cycle"
+   },
+   {
+    "start": 71,
+    "frames": 2,
+    "drawing": "pose-3",
+    "kind": "cycle"
+   },
+   {
+    "start": 73,
+    "frames": 1,
+    "drawing": "pose-4",
+    "kind": "accent"
+   },
+   {
+    "start": 74,
+    "frames": 1,
+    "drawing": "pose-5",
+    "kind": "accent"
+   },
+   {
+    "start": 75,
+    "frames": 1,
+    "drawing": "pose-6",
+    "kind": "accent"
+   },
+   {
+    "start": 76,
+    "frames": 3,
+    "drawing": "pose-7",
+    "kind": "cycle"
+   },
+   {
+    "start": 79,
+    "frames": 2,
+    "drawing": "pose-0",
+    "kind": "cycle"
+   },
+   {
+    "start": 81,
+    "frames": 2,
+    "drawing": "pose-1",
+    "kind": "cycle"
+   },
+   {
+    "start": 83,
+    "frames": 2,
+    "drawing": "pose-2",
+    "kind": "cycle"
+   },
+   {
+    "start": 85,
+    "frames": 2,
+    "drawing": "pose-3",
+    "kind": "cycle"
+   },
+   {
+    "start": 87,
+    "frames": 2,
+    "drawing": "pose-4",
+    "kind": "cycle"
+   },
+   {
+    "start": 89,
+    "frames": 2,
+    "drawing": "pose-5",
+    "kind": "cycle"
+   },
+   {
+    "start": 91,
+    "frames": 2,
+    "drawing": "pose-6",
+    "kind": "cycle"
+   },
+   {
+    "start": 93,
+    "frames": 3,
+    "drawing": "pose-7",
+    "kind": "cycle"
+   }
+  ]
+ },
+ "accents": [
+  {
+   "frame": 22,
+   "label": "accent burst start \u2014 consecutive poses on 1s",
+   "min_characters": 1
+  },
+  {
+   "frame": 73,
+   "label": "accent burst start \u2014 consecutive poses on 1s",
+   "min_characters": 1
+  }
+ ],
+ "holds": [
+  {
+   "start": 0,
+   "frames": 6,
+   "label": "settled hold (composed)",
+   "scope": "line"
+  },
+  {
+   "start": 45,
+   "frames": 12,
+   "label": "settled hold (composed)",
+   "scope": "line"
+  }
+ ],
+ "contacts": [
+  {
+   "frame": 0,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 13,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 22,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 26,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 36,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 45,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 64,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 73,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 79,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  },
+  {
+   "frame": 87,
+   "character": "mochiko",
+   "event": "contact pose (pose-0/pose-4)"
+  }
+ ]
+}
