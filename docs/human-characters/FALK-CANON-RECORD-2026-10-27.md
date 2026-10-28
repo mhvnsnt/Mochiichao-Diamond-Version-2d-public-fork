@@ -51,14 +51,26 @@ verbatim voice seeds: "I'm high as a kite", "free like a bird",
 |---|---|---|---|
 | 1 | Model sheet (this PR) | DONE | Casual |
 | 2 | World front/back/left/right | DONE (lane workspace) | Casual |
-| 3 | Walk frames | **PARTIAL** — 4 direction idles + left/right strides built; down/up step frames were not produced and are recorded missing, not fabricated | Casual |
+| 3 | Walk frames | DONE — 4 direction idles + all four directional strides. The down/up step frames were missing at the lock (recorded missing, not fabricated) and were produced 2026-10-27 on the owner's order; see the gap-closure note below | Casual |
 | 4 | Battle front | DONE (lane workspace). Battle back not owed: NPC front-facing per standard, not playable | **Dojo** (primary); casual variant supplementary, drift-flagged |
 | 5 | Portrait icon | DONE (lane workspace; cropped from the locked model sheet) | Casual |
 | 6 | Special variants | DONE as role variants per the wardrobe ruling — dojo presentation plate + field outfit plate; no bike/surf/etc. variants invented (he has no such canon action) | Dojo / Field |
 | 7 | Data | DONE (lane workspace JSON: role, location, dialogue ref, party) | — |
-| 8 | 64×64 atlas + manifest | DONE (lane workspace; manifest records the outfit of every cell and the two missing walk cells) | Mixed, per cell |
+| 8 | 64×64 atlas + manifest | DONE (lane workspace; complete atlas fills all 16 cells and supersedes the partial one; manifest records the outfit and source of every cell) | Mixed, per cell |
 
-**Count: 7/8 steps complete; step 3 partial.** Full set staged in the
+**Count: 8/8 steps complete.** (At the lock the count stood at 7/8
+with step 3 partial — the walk generation had produced the four
+direction idles and left/right strides, and the down/up step frames
+were recorded missing, not fabricated. The owner ruled the frames
+necessary on 2026-10-27; both were produced the same day in the
+locked likeness and casual outfit, identity-checked against the
+locked model sheet with a PASS, and the walk sheet and atlas were
+rebuilt complete — `falk-walk-sheet-COMPLETE-2026-10-27.webp` and
+`falk-atlas-64x64-COMPLETE-2026-10-27.png` supersede the partial
+versions, which are kept on file. The full closure history,
+including a flagged slight proportion nuance in the new frames,
+is recorded in the step-8 manifest's `gap_closure` entry.) Full
+set staged in the
 Human Character Design Lane workspace
 (`human-design-lane/wave-1/falk/completion/`): model sheet, world
 views, walk sheet, battle fronts, portrait, data JSON, atlas PNG,
