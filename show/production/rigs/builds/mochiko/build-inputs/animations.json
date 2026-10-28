@@ -1,0 +1,395 @@
+{
+  "idle_breathe": {
+    "duration": 4.0,
+    "loop": true,
+    "tracks": [
+      {
+        "bone": "spine",
+        "prop": "y",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.0,
+            "v": -6,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "chest",
+        "prop": "scaleY",
+        "keys": [
+          {
+            "t": 0,
+            "v": 1,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.0,
+            "v": 1.018,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 1
+          }
+        ]
+      },
+      {
+        "bone": "head",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.3,
+            "v": -1.4,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "arm_l",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.3,
+            "v": 1.6,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "arm_r",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.3,
+            "v": -1.6,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "forearm_l",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.6,
+            "v": 1.0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "forearm_r",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.6,
+            "v": -1.0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "twintail_l",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.6,
+            "v": 2.8,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "twintail_r",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.6,
+            "v": -2.8,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 4.0,
+            "v": 0
+          }
+        ]
+      }
+    ]
+  },
+  "talk_nod": {
+    "duration": 2.4,
+    "loop": true,
+    "tracks": [
+      {
+        "bone": "mouth",
+        "prop": "y",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 0.3,
+            "v": 3.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 0.6,
+            "v": 0.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 0.9,
+            "v": 3.0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.2,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.5,
+            "v": 3.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.8,
+            "v": 0.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.1,
+            "v": 2.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.4,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "head",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 0.6,
+            "v": 1.6,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.2,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.8,
+            "v": 1.6,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.4,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "head",
+        "prop": "y",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 0.6,
+            "v": 3,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.2,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.8,
+            "v": 3,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.4,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "chest",
+        "prop": "scaleY",
+        "keys": [
+          {
+            "t": 0,
+            "v": 1,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.2,
+            "v": 1.012,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 2.4,
+            "v": 1
+          }
+        ]
+      }
+    ]
+  },
+  "head_tilt": {
+    "duration": 1.6,
+    "loop": false,
+    "tracks": [
+      {
+        "bone": "head",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 0.55,
+            "v": 4.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.05,
+            "v": 4.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.6,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "twintail_l",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 0.7,
+            "v": 3.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.6,
+            "v": 0
+          }
+        ]
+      },
+      {
+        "bone": "twintail_r",
+        "prop": "rotation",
+        "keys": [
+          {
+            "t": 0,
+            "v": 0,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 0.7,
+            "v": -3.5,
+            "ease": "sineInOut"
+          },
+          {
+            "t": 1.6,
+            "v": 0
+          }
+        ]
+      }
+    ]
+  }
+}

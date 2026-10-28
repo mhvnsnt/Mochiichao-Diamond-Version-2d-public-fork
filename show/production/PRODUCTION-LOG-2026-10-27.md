@@ -938,3 +938,7 @@ Owner confirmed the name-gap brainstorm's five headline picks and added a sixth 
 - Built on post-canon-sweep main (PR #371 merged): all wired lines use
   swept display names (The Dark Forest, Champions Dojo, Aero Dojo,
   Rangers; no "trainer" in wired display text).
+
+## HUMAN RIGS LANDED — Mochiko / Hex / Aeon (2026-10-27)
+
+The show's first human rigs are in the repo at show/production/rigs/builds/<name>/: TextRig whole-image DEFORM sets (DragonBones ske/tex + RIG-NOTES) built from the canon cutouts (no redraw), each with its talking set (Preston Blair mouth swaps wired for Rhubarb viseme cues + TALKING-SET.md + mouth-swap-spec.json), build-inputs for reproducibility, and the shared TALKING-SEAT-SPEC at show/production/rigs/. Registry updates in the same PR: show/shared/cast.json gains the three humans (rig paths + Chatterbox voice entries — Mochiko 0.45/0.5, Hex 0.3/0.6, Aeon 0.4/0.55; reference casting AWAITING OWNER) and CAST-RIG-SPECS.md gains the three human specs (humanoid track). These v1 builds are CURRENT for the three characters (no prior human rig exists). parts-catalog.json carries no rig entries for any cast member (creature precedent), so no entry was added there. Gate before episode use: ROM battery is the v2 pass. Landed by the lock-everything wave.

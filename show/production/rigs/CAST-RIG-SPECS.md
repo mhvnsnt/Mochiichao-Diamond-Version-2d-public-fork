@@ -102,6 +102,27 @@ every rig; the per-character primary is named in each spec.
 - **ROM battery swap:** sit/crouch replaced by hover_high /
   hover_low + trail poses (no legs to crouch with).
 
+## Mochiko — humanoid (keeper)
+- **Build:** `show/production/rigs/builds/mochiko/` (TextRig v1 DEFORM rig, canon cutout, no redraw)
+- **Body plan:** humanoid track — Johnny Bravo silhouette/likeness anchors + KND-style mouth QC (per this file's coverage note); likeness lock = `docs/human-characters/` designs
+- **Talking set:** Preston Blair 10-viseme mouth swaps wired for Rhubarb cues (`builds/mochiko/talking/` + TALKING-SET.md) — humans speak words; the cries-only law is creatures-only
+- **Voice:** Chatterbox exaggeration 0.45 / CFG 0.5; reference casting AWAITING OWNER
+- **Maturity:** v1 = idle / talk / tilt; ROM battery is the v2 pass (creature-rig staged maturity)
+
+## Hex — humanoid (rival)
+- **Build:** `show/production/rigs/builds/hex/`
+- **Body plan:** humanoid track — Johnny Bravo silhouette/likeness anchors + KND-style mouth QC; likeness lock = `docs/human-characters/` designs
+- **Talking set:** Blair mouth swaps + rest mouth (`builds/hex/talking/` + TALKING-SET.md)
+- **Voice:** Chatterbox exaggeration 0.3 / CFG 0.6; reference casting AWAITING OWNER
+- **Maturity:** v1 = idle / talk / tilt; ROM battery is the v2 pass
+
+## Aeon — humanoid (professor)
+- **Build:** `show/production/rigs/builds/aeon/`
+- **Body plan:** humanoid track — Johnny Bravo silhouette/likeness anchors + KND-style mouth QC; likeness lock = `docs/human-characters/` designs
+- **Talking set:** Blair mouth swaps + rest mouth (`builds/aeon/talking/` + TALKING-SET.md)
+- **Voice:** Chatterbox exaggeration 0.4 / CFG 0.55; reference casting AWAITING OWNER
+- **Maturity:** v1 = idle / talk / tilt; ROM battery is the v2 pass
+
 ---
 
 ## Coverage beyond the pilot six

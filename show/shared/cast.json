@@ -115,6 +115,45 @@
         "rig_scaffold": "show/production/rigs/scaffolds/wispkin.rig.json",
         "voice_entry": null
       }
+    },
+    {
+      "id": "mochiko",
+      "body_plan": "humanoid",
+      "game_assets": {
+        "canon_characters": "docs/human-characters/CANON-HUMAN-CHARACTERS.md",
+        "model_sheets": "src/assets/human-characters/named-canon/"
+      },
+      "show_assets": {
+        "rig": "show/production/rigs/builds/mochiko/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "voice_entry": { "engine": "Chatterbox", "exaggeration": 0.45, "cfg": 0.5, "reference_casting": "AWAITING OWNER" }
+      }
+    },
+    {
+      "id": "hex",
+      "body_plan": "humanoid",
+      "game_assets": {
+        "canon_characters": "docs/human-characters/CANON-HUMAN-CHARACTERS.md",
+        "model_sheets": "src/assets/human-characters/named-canon/"
+      },
+      "show_assets": {
+        "rig": "show/production/rigs/builds/hex/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "voice_entry": { "engine": "Chatterbox", "exaggeration": 0.3, "cfg": 0.6, "reference_casting": "AWAITING OWNER" }
+      }
+    },
+    {
+      "id": "aeon",
+      "body_plan": "humanoid",
+      "game_assets": {
+        "canon_characters": "docs/human-characters/CANON-HUMAN-CHARACTERS.md",
+        "model_sheets": "src/assets/human-characters/named-canon/"
+      },
+      "show_assets": {
+        "rig": "show/production/rigs/builds/aeon/",
+        "rig_spec": "show/production/rigs/CAST-RIG-SPECS.md",
+        "voice_entry": { "engine": "Chatterbox", "exaggeration": 0.4, "cfg": 0.55, "reference_casting": "AWAITING OWNER" }
+      }
     }
   ]
 }

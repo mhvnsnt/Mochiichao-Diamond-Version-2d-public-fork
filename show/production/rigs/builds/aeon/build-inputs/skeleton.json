@@ -1,0 +1,107 @@
+[
+  {
+    "name": "root",
+    "parent": null,
+    "x": 564,
+    "y": 1180,
+    "rotation": -90,
+    "length": 60,
+    "skin": false
+  },
+  {
+    "name": "spine",
+    "parent": "root",
+    "x": 564,
+    "y": 1115,
+    "rotation": -90,
+    "length": 195
+  },
+  {
+    "name": "chest",
+    "parent": "spine",
+    "x": 564,
+    "y": 890,
+    "rotation": -90,
+    "length": 230
+  },
+  {
+    "name": "head",
+    "parent": "chest",
+    "x": 564,
+    "y": 505,
+    "rotation": -90,
+    "length": 300
+  },
+  {
+    "name": "mouth",
+    "parent": "head",
+    "x": 570,
+    "y": 393,
+    "rotation": 90,
+    "length": 26
+  },
+  {
+    "name": "arm_l",
+    "parent": "chest",
+    "x": 345,
+    "y": 555,
+    "rotation": 93,
+    "length": 432
+  },
+  {
+    "name": "forearm_l",
+    "parent": "arm_l",
+    "x": 320,
+    "y": 986,
+    "rotation": 88,
+    "length": 248
+  },
+  {
+    "name": "arm_r",
+    "parent": "chest",
+    "x": 775,
+    "y": 555,
+    "rotation": 79,
+    "length": 382
+  },
+  {
+    "name": "forearm_r",
+    "parent": "arm_r",
+    "x": 846,
+    "y": 928,
+    "rotation": -158,
+    "length": 234
+  },
+  {
+    "name": "leg_l",
+    "parent": "root",
+    "x": 515,
+    "y": 1190,
+    "rotation": 93,
+    "length": 519
+  },
+  {
+    "name": "foot_l",
+    "parent": "leg_l",
+    "x": 490,
+    "y": 1708,
+    "rotation": 88,
+    "length": 324
+  },
+  {
+    "name": "leg_r",
+    "parent": "root",
+    "x": 615,
+    "y": 1190,
+    "rotation": 87,
+    "length": 519
+  },
+  {
+    "name": "foot_r",
+    "parent": "leg_r",
+    "x": 640,
+    "y": 1708,
+    "rotation": 92,
+    "length": 324
+  }
+]
