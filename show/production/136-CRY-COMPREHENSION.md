@@ -132,3 +132,5 @@ because comprehension is not a property of the creature.
 
 
 **Landing note — List 28 #276 (2026-10-27):** stolen partners are played in this file's cry/behaviour grammar (276-SHOW-MORALE-REPUTATION.md, reading #273's keeping states): the turned back is a recurring face, and comprehension of a stolen partner's cries follows this file's rules, not a separate theft vocabulary.
+
+**Landing citation — List 29 (2026-10-27).** #279 (`show/production/279-DUAL-SELF-PORTRAYAL.md`) reads the dual-self lead through this file's vocabulary: Mochi read him plainly, in cries and conduct only — no creature-dialogue machinery is added by that citation.

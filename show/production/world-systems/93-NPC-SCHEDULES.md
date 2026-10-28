@@ -71,3 +71,5 @@ boundary are the yield.
 
 
 **Landing note — List 28 (2026-10-27):** this file's world-data layer hosts #270's group records, and its schedules supply #272's witness sets at the moment of a deed (272-WITNESSES-WANTED.md): who was present is a schedule fact before it is an evidence fact. Only witnessed deeds move a group's tally — the seen/unseen split is load-bearing in #269/#270/#272/#276 at once.
+
+**Landing note — List 29 (2026-10-27).** #280's trust read (`show/production/280-FALSE-FRIENDSHIP.md`) derives has-met / known / trusted over this file's interaction facts (with #12/#164/#104 facts). Its class thresholds seat beside this layer as data tuned against real interaction data when any exists; until then the read's shape lands and its thresholds stand as an empty table — no cut-off was invented at landing (List 29 STAGING step 5). #282's viewpoint rotation also stands on this file's simulation floor: the world never pauses off-camera.

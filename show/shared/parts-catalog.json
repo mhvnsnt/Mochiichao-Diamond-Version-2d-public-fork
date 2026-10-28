@@ -1457,6 +1457,73 @@
      "extends": "the show lane for the whole list: #82 arc sheets, #136 grammar, #201's classes as a staging view; the List 29 pointer is a pointer only"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list29-systems",
+   "type": "systems-index",
+   "about": "List 29 teardown systems (items 277-286), landed 2026-10-27 \u2014 the future-structure list: parts, the thief anti-hero route, and part transitions, built on List 28's moral engine (reconciled at landing); its only open slots are story/canon facts, headed by the anti-hero's name, which is the owner's entire.",
+   "items": [
+    {
+     "n": 277,
+     "name": "Generational rotation (the part record)",
+     "home": "show/production/277-GENERATIONAL-ROTATION.md",
+     "extends": "the index over #127/#146 continuity; game mirror is #240's New Ranger \u2014 a part inherits the WORLD, never the previous lead's personal records; zero parts instanced beyond Gen 1"
+    },
+    {
+     "n": 278,
+     "name": "Anti-hero route",
+     "home": "show/production/278-ANTI-HERO-ROUTE.md",
+     "extends": "List 28 whole as engine (reconciled at landing); content parity as law; both endings full content; his name is the owner's slot, headed in the open inventory"
+    },
+    {
+     "n": 279,
+     "name": "Dual-self portrayal",
+     "home": "show/production/279-DUAL-SELF-PORTRAYAL.md",
+     "extends": "mode proposed as a #82 production annotation; creature answers in #136's vocabulary; mode may never change stats, seed, ladder, or history"
+    },
+    {
+     "n": 280,
+     "name": "False friendship",
+     "home": "show/production/280-FALSE-FRIENDSHIP.md",
+     "extends": "trust as a derived read over #93/#12/#164/#104 facts; no deceive verb; betrayal classification proposed into List 28's #270/#272 and seated there at this landing; thresholds land empty"
+    },
+    {
+     "n": 281,
+     "name": "Double life",
+     "home": "show/production/281-DOUBLE-LIFE.md",
+     "extends": "per-group #270 tracks hold two true readings at once; no concealment system; collision event class proposed into #270/#272 and seated there at this landing"
+    },
+    {
+     "n": 282,
+     "name": "Sector ensemble rotation",
+     "home": "show/production/282-SECTOR-ENSEMBLE-ROTATION.md",
+     "extends": "viewpoint proposed as #82 data over the #93/#145 simulation floor; rotation moves the camera, it never spends beats"
+    },
+    {
+     "n": 283,
+     "name": "Returning cast",
+     "home": "show/production/283-RETURNING-CAST.md",
+     "extends": "a return is built from citations \u2014 #126 snapshots, #80 individuals, #104 honours \u2014 aged by #243's read; never a fresh sheet"
+    },
+    {
+     "n": 284,
+     "name": "Thief's partners",
+     "home": "show/production/284-THIEFS-PARTNERS.md",
+     "extends": "discipline over #80 + List 28 #268/#273/#274: the theft is never laundered and caps nothing; the staying is the Mochi's own"
+    },
+    {
+     "n": 285,
+     "name": "Part tone shifts",
+     "home": "show/production/285-PART-TONE-SHIFTS.md",
+     "extends": "five tone dials per part inside #277's records; the render invariant is cited from the style spec, never copied"
+    },
+    {
+     "n": 286,
+     "name": "Part transitions",
+     "home": "show/production/286-PART-TRANSITIONS.md",
+     "extends": "handover records beside #277's part records; #126's append-only law at generation scale; game proof is #240/#146 \u2014 zero stored change"
+    }
+   ]
   }
  ]
 }

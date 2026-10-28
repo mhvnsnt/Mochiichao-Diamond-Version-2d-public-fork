@@ -92,3 +92,5 @@ the flows are two, by ruling.
 - The no-restart-plus rule is #122's OWNER RULING,
   restated at the one screen where a player would
   look for it.
+
+**Landing citations — List 29 (2026-10-27).** #277's game mirror is this file's New Ranger flow on #146's one payload (net stored change from rotation: none). #286's handover record cites the same opening at part scale. Both specs land in `show/production/` (`277-GENERATIONAL-ROTATION.md`, `286-PART-TRANSITIONS.md`).
