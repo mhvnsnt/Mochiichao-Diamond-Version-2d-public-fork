@@ -1,0 +1,31 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-day-v1-living.mp4",
+  "duration_s": 6,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+      "x": 300,
+      "y": 330,
+      "scale": 0.55,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "08",
+  "scene": "EP01-SCENE-02",
+  "plate_registry": "PLATE-POND-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec plate, CURRENT for provisional use; Step-0 candidate battle-bg-lake-v3d checked and NOT usable (battle-scale)",
+  "script_beat": "A toy duck rolls UPHILL. Both watch it go. 'Ducks don't roll uphill.' Water goes still for the gag (ripple cycle paused).",
+  "camera": "STAGE-WIDE",
+  "wind_state": "CALM (held for the gag)",
+  "missing_assets": [
+    "toy duck prop + uphill roll cycle - no asset (the cut's subject)",
+    "MOCHIKO rig/clip (second watcher + line)"
+  ],
+  "flags": [
+    "VOICE-SCRATCH: Mochiko casting OPEN"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

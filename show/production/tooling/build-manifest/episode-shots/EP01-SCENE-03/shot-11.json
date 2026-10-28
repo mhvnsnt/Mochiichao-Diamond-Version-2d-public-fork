@@ -1,0 +1,32 @@
+{
+  "background": "show/assets/backgrounds/green/EP01-PLATE-green-day-v1-living.mp4",
+  "duration_s": 10,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/sproutle/sproutle-head_tilt.transparent.webm",
+      "x": 420,
+      "y": 380,
+      "scale": 0.7,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "11",
+  "scene": "EP01-SCENE-03",
+  "plate_registry": "PLATE-GREEN-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec plate, CURRENT for provisional use; Step-0 candidate battle-bg-garden-v3d checked and NOT usable (battle-scale)",
+  "script_beat": "Sproutle, cheek to the grass, chirps the discovery: frost patches on warm grass - the cold spots make a path pointing at the pond.",
+  "camera": "GROUND-LEVEL (low, at Sproutle's height)",
+  "wind_state": "BREEZE (grass cycle dies locally along the frost trail)",
+  "missing_assets": [
+    "frost-patch FX decals - no asset (the trail itself)",
+    "Sproutle cheek-to-grass pose: head_tilt is the closest rig animation; exact pose not built"
+  ],
+  "flags": [
+    "SCENE 3 HAS NO AUDIO BED (deliberate)",
+    "frost crackle SFX = GAP (script open item 4 / cue sheet)"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

@@ -1,0 +1,22 @@
+{
+  "background": "show/assets/backgrounds/dark-forest/EP01-PLATE-dark-forest-day-v1-still.png",
+  "duration_s": 4,
+  "layers": [],
+  "audio": null,
+  "ep01_cut": "28",
+  "scene": "EP01-STINGER",
+  "plate_registry": "PLATE-DARK-FOREST-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec still, STILL by law (landed PR #393); canon painted Forest plate still MAKE",
+  "script_beat": "One leaf falls, straight down, in no wind. SMASH TO BLACK.",
+  "camera": "STILL-FOREST",
+  "wind_state": "OFF (FOREST LAW - the leaf falls with NO wind curve)",
+  "missing_assets": [
+    "single-leaf fall asset (singular, non-looping) - not built; AMB-GREEN-LEAF-01 is its dread twin but no Forest leaf clip exists",
+    "smash-to-black is an EPISODE-level edit (episode_build concatenates; the black is the episode end) - no per-cut mechanism in composite_shot"
+  ],
+  "flags": [
+    "Bed carries the one event: single leaf lands at stinger 43.5s (gate.json)"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

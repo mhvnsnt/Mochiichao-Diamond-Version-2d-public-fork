@@ -1,0 +1,35 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+  "duration_s": 14,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/wispkin/wispkin-mask_tilt_left.transparent.webm",
+      "x": 590,
+      "y": 290,
+      "scale": 0.55,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "18",
+  "scene": "EP01-SCENE-04",
+  "plate_registry": "PLATE-POND-DUSK (show/shared/PLATES-REGISTRY.md) - provisional spec plate (dusk grade variant, landed PR #393), CURRENT for provisional use",
+  "script_beat": "The softest wail yet, up at the end like a question. All stems out for the wail (bed: Wispkin cry at scene 45.0s). SUBTITLE 1 of exactly 3.",
+  "camera": "HOLD-TENSION",
+  "wind_state": "CALM",
+  "missing_assets": [
+    "subtitle/intertitle card asset (card style per IDENTITY-KIT) - not built as a composite layer"
+  ],
+  "flags": [
+    "SUBTITLE LAW: this is earned moment 1 of exactly 3 (cuts 18/22/27) - no other cut may carry one"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": {
+    "speaker": "WISPKIN",
+    "text": "...I keep the garden at night.",
+    "earned_moment": 1,
+    "note": "silent-film intertitle; composite_shot.py has no subtitle renderer - card is a separate post layer, see missing"
+  }
+}

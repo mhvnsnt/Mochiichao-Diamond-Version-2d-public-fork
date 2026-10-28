@@ -1,0 +1,32 @@
+{
+  "background": "show/assets/backgrounds/green/EP01-PLATE-green-day-v1-living.mp4",
+  "duration_s": 9,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+      "x": 480,
+      "y": 240,
+      "scale": 0.75,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "10",
+  "scene": "EP01-SCENE-03",
+  "plate_registry": "PLATE-GREEN-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec plate, CURRENT for provisional use; Step-0 candidate battle-bg-garden-v3d checked and NOT usable (battle-scale)",
+  "script_beat": "GREEN: Gabu stomps in wearing the net as a cape, beats his chest once - foghorn bellow of total confidence. Grass wave parts around the stomp (hero BG spend).",
+  "camera": "STAGE-WIDE",
+  "wind_state": "BREEZE",
+  "missing_assets": [
+    "Gabu stomp-in + chest-beat animation: rig set is idle_breathe/jaw_chomp/head_tilt only - ACTION build not made",
+    "net-as-cape prop - no asset",
+    "grass-wave parting (AMB-GREEN-GRASSWAVE-01) - cycle not built"
+  ],
+  "flags": [
+    "SCENE 3 HAS NO AUDIO BED (deliberate) - see episode spec: scene declares audio_bed null; episode_build will insert a silence segment and flag SILENT SCENE"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

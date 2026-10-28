@@ -1,0 +1,29 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+  "duration_s": 8,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+      "x": 240,
+      "y": 330,
+      "scale": 0.65,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "15",
+  "scene": "EP01-SCENE-04",
+  "plate_registry": "PLATE-POND-DUSK (show/shared/PLATES-REGISTRY.md) - provisional spec plate (dusk grade variant, landed PR #393), CURRENT for provisional use",
+  "script_beat": "Kittember's tail flame FLARES: a tall spiky shadow on the mist - played straight. The flame is the scene's light source while it flares (TK-1). (bed: Kittember cry at scene 34.0s).",
+  "camera": "HOLD-TENSION",
+  "wind_state": "CALM",
+  "missing_assets": [
+    "giant spiky shadow gag layout (Sproutle's sprout, backlit, on mist) - the cut's subject; shadow is a post/composite layer by the no-baked-shadows law, not built yet",
+    "mist layer AMB-POND-MIST-01 - not built (the shadow's screen)"
+  ],
+  "flags": [],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

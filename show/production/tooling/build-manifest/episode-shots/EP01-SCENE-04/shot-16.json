@@ -1,0 +1,31 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+  "duration_s": 6,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/sproutle/sproutle-sprout_wiggle.transparent.webm",
+      "x": 560,
+      "y": 330,
+      "scale": 0.65,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "16",
+  "scene": "EP01-SCENE-04",
+  "plate_registry": "PLATE-POND-DUSK (show/shared/PLATES-REGISTRY.md) - provisional spec plate (dusk grade variant, landed PR #393), CURRENT for provisional use",
+  "script_beat": "Reveal of the gag: the spiky shadow is Sproutle's sprout, backlit. 'That's Sproutle's shadow. Everybody breathe.' (bed: Sproutle cry at scene 38.5s).",
+  "camera": "STAGE-WIDE",
+  "wind_state": "CALM",
+  "missing_assets": [
+    "backlit/rim grade on Sproutle layer (composite glue pass) - grade not produced",
+    "MOCHIKO rig/clip (line)"
+  ],
+  "flags": [
+    "VOICE-SCRATCH: Mochiko casting OPEN"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

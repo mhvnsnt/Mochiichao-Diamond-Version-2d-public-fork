@@ -1,0 +1,31 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+  "duration_s": 12,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+      "x": 590,
+      "y": 300,
+      "scale": 0.5,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "17",
+  "scene": "EP01-SCENE-04",
+  "plate_registry": "PLATE-POND-DUSK (show/shared/PLATES-REGISTRY.md) - provisional spec plate (dusk grade variant, landed PR #393), CURRENT for provisional use",
+  "script_beat": "Mist parts: Wispkin, small, shaking, holding the duck up like an apology. Cycles return at minimum - one ripple, reeds barely moving.",
+  "camera": "STAGE-WIDE (locked)",
+  "wind_state": "CALM (minimum)",
+  "missing_assets": [
+    "toy duck prop (held up by Wispkin) - no asset",
+    "mist-parting layer move (AMB-POND-MIST-01 level split) - not built"
+  ],
+  "flags": [
+    "Wispkin = owner-confirmed reference of record (canon cutout: cracked skull mask held by both hands, smoke bottom) - float_idle rig clip is built from that cutout"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

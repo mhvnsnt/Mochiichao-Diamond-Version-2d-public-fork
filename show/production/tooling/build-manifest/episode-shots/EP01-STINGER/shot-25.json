@@ -1,0 +1,20 @@
+{
+  "background": "show/assets/backgrounds/dark-forest/EP01-PLATE-dark-forest-day-v1-still.png",
+  "duration_s": 20,
+  "layers": [],
+  "audio": null,
+  "ep01_cut": "25",
+  "scene": "EP01-STINGER",
+  "plate_registry": "PLATE-DARK-FOREST-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec still, STILL by law (landed PR #393); canon painted Forest plate still MAKE",
+  "script_beat": "STINGER: THE DARK FOREST, full daylight. The light does not reach in. The forest floor is in night anyway. Trees too still for the breeze heard on the Garden side.",
+  "camera": "STILL-FOREST (locked; camera does not enter; no close-ups)",
+  "wind_state": "OFF (FOREST LAW: cycles OFF, stillness by law)",
+  "missing_assets": [],
+  "flags": [
+    "FOREST LAW: no ambient cycles, no population, no composite life - the empty layers array is the design, not an omission",
+    "Audio: EP01-STINGER-forest.wav = engineered absence (-51.85 LUFS measured, exempt by design)"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}
