@@ -75,3 +75,6 @@ content) · whether witness records feed any honour
 relationship to the Forest surface dread cycle (a
 canon question, recorded, not settled) · per-region
 phenomenon eligibility beyond #142 exclusions.
+
+
+**Landing note — List 32 (2026-10-27):** rare weather phenomena are spectacle staging material for the #308 (lightning) and #313 (ghost) family grammars; List 32 instances no phenomenon here.

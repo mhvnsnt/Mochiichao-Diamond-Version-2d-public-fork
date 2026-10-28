@@ -107,3 +107,9 @@ budgets and rationing numbers (HR4, §2.1) are **house settings set
 by this spec**, tuned to TV-budget limited animation economics
 (the show's documented model), not recovered constants. Device
 codes are native; no production's notation is copied.
+
+---
+
+**Landing citations — List 32 (2026-10-27).**
+
+This grammar (#49) is the neighbour and staging base for two List 32 families: #310 strength spectacle (`battle/310-STRENGTH-SPECTACLE.md` — mass and impact staged through this file's smear language) and #312 aerial spectacle (`battle/312-AERIAL-SPECTACLE.md` — speed staged as scenery turnover, world-blur never hero-blur). Both cite this file; neither replaces it.

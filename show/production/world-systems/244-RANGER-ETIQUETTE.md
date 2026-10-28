@@ -105,3 +105,9 @@ all fixed here; nothing mechanical waits on anyone.
   link-check, the List 20 ↔ List 19 precedent.
 
 **Link-check reconciliation (List 25 landing, 2026-10-27):** #244 and List 22's #210 (field duels) were built in parallel and agree — etiquette governs how a duel is offered and received; #210 governs the duel itself. One line, both files.
+
+---
+
+**Landing citation — List 32 (2026-10-27).**
+
+#314 yokai spectacle (`world-systems/314-YOKAI-SPECTACLE.md`) lands beside this file's customs package as its world-layer companion: power staged as etiquette, ritual shape kept in proper order. #314 shares #138's mystery fence, and the Dark Forest's contents stay canon-open under it — #314's grammar stages the dread and is forbidden to explain it.

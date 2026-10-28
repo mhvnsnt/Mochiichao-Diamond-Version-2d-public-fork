@@ -1658,6 +1658,73 @@
      "extends": "presence derived from #7 stock x #152 views (encounter math unmoved); the depths clause is a landing test \u2014 no derivation path may reach the Dark Forest depths"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list32-systems",
+   "type": "systems-index",
+   "about": "List 32 teardown systems (items 307-316), landed 2026-10-27 \u2014 the spectacle list: one budget over seven family grammars, the field, and the individual dialect inside every family; open slots are story/canon facts and authored content only.",
+   "items": [
+    {
+     "n": 307,
+     "name": "Spectacle doctrine",
+     "home": "show/production/battle/307-SPECTACLE-DOCTRINE.md",
+     "extends": "spectacle header block declared into #9's animscript format; read by #147 as a derived spectacle view; no stored spectacle state anywhere"
+    },
+    {
+     "n": 308,
+     "name": "Lightning spectacle",
+     "home": "show/production/battle/308-LIGHTNING-SPECTACLE.md",
+     "extends": "#252 RAIN/STORM seats read, arithmetic untouched; no-chase-camera rule binds as a #9 review checklist item, not a validator rule; flash obeys #121's caps"
+    },
+    {
+     "n": 309,
+     "name": "Water spectacle",
+     "home": "show/production/battle/309-WATER-SPECTACLE.md",
+     "extends": "#128 wet-plate aftermath read; seed performance is #131's Water Orb; storm crossover seats declared against #252"
+    },
+    {
+     "n": 310,
+     "name": "Strength spectacle",
+     "home": "show/production/battle/310-STRENGTH-SPECTACLE.md",
+     "extends": "#49's smear grammar is its staging base; #128 plate marks and #215 post-impact hole read"
+    },
+    {
+     "n": 311,
+     "name": "Earth spectacle",
+     "home": "show/production/battle/311-EARTH-SPECTACLE.md",
+     "extends": "fissure direction/destination data PROPOSED as an optional cue field into #9's format; seed performance is #131's Tremor; #128 plates are its stage"
+    },
+    {
+     "n": 312,
+     "name": "Aerial spectacle",
+     "home": "show/production/battle/312-AERIAL-SPECTACLE.md",
+     "extends": "altitude read PROPOSED into #128's plate data; #49 smears and #215 wind beds read; speed staged as scenery turnover"
+    },
+    {
+     "n": 313,
+     "name": "Ghost spectacle",
+     "home": "show/production/battle/313-GHOST-SPECTACLE.md",
+     "extends": "cold spot PROPOSED as a localised bed state into #215; #155 vocal floor and #136 intention fence read; jump-scare named as the family's defect"
+    },
+    {
+     "n": 314,
+     "name": "Yokai spectacle",
+     "home": "show/production/world-systems/314-YOKAI-SPECTACLE.md",
+     "extends": "lands beside #244's customs package in the world layer; #138's mystery fence shared; the Dark Forest's contents stay canon-open"
+    },
+    {
+     "n": 315,
+     "name": "Exploration spectacle",
+     "home": "show/production/world-systems/315-EXPLORATION-SPECTACLE.md",
+     "extends": "first arrival is the derived edge of #146's visit record \u2014 no stored introduced flag; compositions are authored data in #137-family place records"
+    },
+    {
+     "n": 316,
+     "name": "Signature spectacle",
+     "home": "show/production/battle/316-SIGNATURE-SPECTACLE.md",
+     "extends": "four dialect constants annexed into #131's register rows with slots EMPTY (contents written at casting); #131's moveId tension note carried verbatim, unresolved"
+    }
+   ]
   }
  ]
 }

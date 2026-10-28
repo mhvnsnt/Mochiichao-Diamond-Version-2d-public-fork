@@ -125,3 +125,9 @@ with every difference logged in `variance_notes`. Validate with
 
 
 **Landing note — List 27 (2026-10-27):** animscript anchors validate against #259's parts vocabulary (259-GROWN-ARMOUR-ANATOMY.md), and #258's growth records cite parts by it.
+
+---
+
+**Landing notes — List 32 (2026-10-27), citing STAGING steps 2, 4 and 6.**
+
+(1) **Spectacle header block (step 2, citing #307).** A performance's animscript header gains a spectacle declaration — family + class (ordinary / set-piece / signature / climax, per `battle/307-SPECTACLE-DOCTRINE.md`). The declaration lives on performances, in this format's header; no spectacle field is added to any species or move record, and no stored spectacle state is created anywhere. (2) **Fissure direction data (step 4, citing #311).** Background-track fissure cues may carry direction/destination data as an OPTIONAL cue field, proposed here by `battle/311-EARTH-SPECTACLE.md`. Scripts written before this proposal are not defects. (3) **No-chase-camera rule (step 6, citing #308).** This is an authoring-notes REVIEW CHECKLIST item only: scripts for the lightning family do not chase the strike with the camera. This format's validator does not check camera intent today, and this note does not make it a validator rule — until a checker is built, the rule binds as a review check, in those words.

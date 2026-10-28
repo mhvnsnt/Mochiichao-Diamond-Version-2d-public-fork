@@ -98,3 +98,9 @@ they get derived, species by species, never batch-asserted.
   source's own flag; Dorowani's and Gabu's stats/existence
   in the registry are owner-TBD. Nothing beyond the locked
   table is asserted.
+
+---
+
+**Landing annex — List 32 (2026-10-27), citing STAGING step 3: the #316 dialect annex.**
+
+`battle/316-SIGNATURE-SPECTACLE.md` annexes four dialect constants to each register row in this file: tell, tempo, world-answer, sound mark. The annex shape lands here with citation; the existing rows' dialect slots land EMPTY — dialect contents are written at casting (List 32 STAGING step 8), not at this landing. This file's tension note above (Water Orb / Tremor registered with `moveId: null`, the registry conflict written out in full) is carried verbatim and stands unresolved: this annex does not resolve it, restate it away, or build on it as if resolved.

@@ -113,3 +113,9 @@ evidence, it does not fork it).
 **Consumer citation (List 17 #163, landing 2026-10-27):** mythical-habitat sealing behaviour is decided in 163-MYTHICAL-HABITAT-SEALING.md (show/production/world-systems/), not in this document.
 
 **View-layer note (List 20 #191, landing 2026-10-27):** the player journal overlays this atlas as a VIEW — annotations render over the atlas derivation; the derivation itself is not edited by the journal.
+
+---
+
+**Landing citation — List 32 (2026-10-27).**
+
+#315 exploration spectacle (`world-systems/315-EXPLORATION-SPECTACLE.md`) lands beside this file's atlas package: per-place first-arrival introduction compositions are authored data in the places' own records (this file's family), fired off #146's derived visit edge — never a stored `introduced` flag.
