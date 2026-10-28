@@ -1,0 +1,31 @@
+{
+ "card": {
+  "identity": {
+   "displayName": "#23 lookup at render",
+   "issuedBeat": "#98 issuedBeat mark",
+   "originPlace": "route-graph node id (#11), rendered by lookup",
+   "rangerId": "#98 rangerId"
+  },
+  "object": "a rendering of #98's record — the card stores nothing of its own",
+  "rendersAtShowTime": {
+   "dexCounts": "#14 derivations",
+   "fragmentsHeld": "popcount over #12 progress.* flags",
+   "gauntletStanding": "#100 derivation",
+   "regionsVisited": "#146 visitRecord"
+  }
+ },
+ "lostCard": {
+  "cost": "a service trip and a scene — nothing else",
+  "progressLoss": "none, by construction (the licence is the save's facts, not the object)",
+  "reissue": "service event at a #132-family service point; writes one history event, clears nothing"
+ },
+ "neverCarries": [
+  "money (#20)",
+  "items (#31)",
+  "party state",
+  "any fact another system owns"
+ ],
+ "note": "Shape only. The card's physical design (materials/layout/look) is an owner canon call, the same class as the Fragment case design (#98) and the device body (#81) — behaviour and data are specified; the look is not invented here.",
+ "schema": "mochiichao/licence-card/v1",
+ "landingNote": "Screen-class honesty (List 25 step 2): the licence card is a #98-family rendering borrowing #149's pacing grammar. #149's screen classes (identify / map / scan / alert) are CLOSED — no fifth class exists, and no landing text may describe one."
+}

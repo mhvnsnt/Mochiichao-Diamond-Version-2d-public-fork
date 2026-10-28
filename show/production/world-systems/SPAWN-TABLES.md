@@ -130,3 +130,5 @@ LIVING-WORLD.md` §2.2):
 **Consumer citation (List 17 #163, landing 2026-10-27):** mythical-habitat sealing behaviour is decided in 163-MYTHICAL-HABITAT-SEALING.md (show/production/world-systems/), not in this document.
 
 **Slot registered (List 22 #209, landing 2026-10-27):** the `ambush` eligibility slot is in the spawn-table schema beside #158's `horde` slot (209-AMBUSH-ENCOUNTERS.md). No table carries ambush contents; the initiation kind is cited into the encounter-record vocabulary in its own home, not forked here.
+
+**PROPOSAL from List 25 #241 (registered at its landing, 2026-10-27):** the area-level followerRule variant is proposed for this file's area records, on the same terms as the interior proposal in #119's home (default welcome; the Garden law applies).
