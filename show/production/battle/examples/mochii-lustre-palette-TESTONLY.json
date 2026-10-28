@@ -1,0 +1,16 @@
+{
+  "variant_id": "lustre",
+  "species": "mochii",
+  "note": "MECHANICS TEST ONLY on canon art: illustrative palette, NOT a canon lustre map for Mochii (none authored yet).",
+  "protect_hex": [
+    "#000000"
+  ],
+  "protect_tolerance": 30,
+  "entries": [
+    {
+      "from": "#53bef5",
+      "to": "#9a6cf2",
+      "tolerance": 60
+    }
+  ]
+}

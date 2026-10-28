@@ -1,0 +1,14 @@
+{
+  "source": "/tmp/mochii-on-white.png",
+  "output": "examples/mochii.lustre-mechanics-test.png",
+  "variant_id": "lustre",
+  "size": [
+    380,
+    380
+  ],
+  "pixels_remapped_per_entry": [
+    55476
+  ],
+  "pixels_protected": 3714,
+  "pixels_white_field_skipped": 66000
+}

@@ -1,0 +1,26 @@
+{
+  "entries": [
+    {
+      "from": "#8fb2ca",
+      "to": "#e0aa4e",
+      "tolerance": 70
+    },
+    {
+      "from": "#d7eff7",
+      "to": "#fdf0cd",
+      "tolerance": 55
+    },
+    {
+      "from": "#b9d6da",
+      "to": "#f3d9a0",
+      "tolerance": 55
+    }
+  ],
+  "note": "TEST-ONLY \u2014 format/mechanics proof. Source design (batch-001 Flickfin) was REJECTED by the owner on style 2026-10-27 (preschool read, not Mochiichao universe art); this output is NOT production art and NOT a lustre exemplar. Lustre exemplars come from canon repo art. Original note: Lustre proof map for Flickfin: silver-blue family -> gold family. Source colours sampled from the design PNG's dominant non-white clusters (2026-10-27). Outline black is protected, never remapped.",
+  "protect_hex": [
+    "#000000"
+  ],
+  "protect_tolerance": 30,
+  "species": "flickfin",
+  "variant_id": "lustre"
+}
