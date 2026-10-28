@@ -1,0 +1,2163 @@
+{
+ "format": "mochiichao/timing-chart/v1",
+ "id": "EP01-ED-GAG-ABOVE-FLOOR-CHART",
+ "title": "Outro Credit Gag Number One \u2014 above-floor timing chart set (rebuild input; NOT a rebuild)",
+ "fps": 24,
+ "duration_frames": 336,
+ "duration_s": 14.0,
+ "register": "credits",
+ "register_floor_new_drawings_per_second": 8.0,
+ "beat_map": "EP01-ED-BEAT-MAP.json (same folder) \u2014 pulses every 10f from frame 6, strong pulses every 20f from frame 16, barlines at 16/56/96/136/176/216/256/296, bell at frame 96",
+ "frame_convention": "0-based frame indices in the gag window (ED 56.000 s = gag frame 0). 1-based frame = index + 1 (house TIMING-SYSTEM convention).",
+ "line": {
+  "speed_name": "GAG LINE SPEED OF RECORD",
+  "speed_px_per_s": 160,
+  "derivation": "Mochiko drawn stride 134 px/step at gag scale (285 still px footprint spread x 296/628 gag scale) / step duration 0.8333 s (one step per strong pulse) = 161 px/s, set to the cel grid as 20 px per 3-frame cel step = 160 px/s. Residual glide 1 px/step (0.6%), inside the +-3 px/slot stick tolerance when the stick gate is re-measured per step at rebuild.",
+  "cel_travel": {
+   "step_px": 20,
+   "step_frames": 3,
+   "note": "Cel repositioning is on its own 3-frame grid for every character (the v2 crossing device); drawing changes ride the per-character grids below. Checker headline counts frame changes; this chart ALSO reports drawing-change structure separately so the two are never confused."
+  },
+  "cast_order_front_to_back": [
+   "mochiko",
+   "mochii",
+   "kittember",
+   "sproutle",
+   "wispkin"
+  ],
+  "anchors": {
+   "convention": "x0 = character anchor centre at gag frame 0 (from the v2 compositor, composite_v2.py CAST table); x(f) = x0 + 20*floor(f/3); baselines from the same table",
+   "mochiko": {
+    "x0": -77,
+    "baseline_y": 608,
+    "height_px": 296
+   },
+   "mochii": {
+    "x0": -384,
+    "baseline_y": 608,
+    "height_px": 200
+   },
+   "kittember": {
+    "x0": -632,
+    "baseline_y": 608,
+    "height_px": 240
+   },
+   "sproutle": {
+    "x0": -912,
+    "baseline_y": 608,
+    "height_px": 215
+   },
+   "wispkin": {
+    "x0": -1137,
+    "baseline_y": 580,
+    "height_px": 190,
+    "note": "float baseline; his ground reference is the post-stage shadow, offset/faded with float height (gap 21 row at rebuild)"
+   }
+  },
+  "spacing_table_px": [
+   {
+    "pair": "mochiko-mochii",
+    "centre_gap": 307
+   },
+   {
+    "pair": "mochii-kittember",
+    "centre_gap": 248
+   },
+   {
+    "pair": "kittember-sproutle",
+    "centre_gap": 280
+   },
+   {
+    "pair": "sproutle-wispkin",
+    "centre_gap": 225
+   }
+  ],
+  "spacing_note": "Centre gaps are constant (one line speed, no drift \u2014 gap 12). Adjacent sprites overlapped ~100 px at these gaps in v2; the rebuild overlap check (gap 12 gate) is run on composited frames, not assumed here.",
+  "entrance_exit": [
+   {
+    "character": "mochiko",
+    "centre_crosses_left_edge_frame": 12,
+    "centre_crosses_right_edge_frame": 204,
+    "note": "frame 0 opens mid-entrance (centre -77) as in v2 \u2014 a charted choice: her first contact lands on the first strong pulse, frame 16"
+   },
+   {
+    "character": "mochii",
+    "centre_crosses_left_edge_frame": 58,
+    "centre_crosses_right_edge_frame": 250
+   },
+   {
+    "character": "kittember",
+    "centre_crosses_left_edge_frame": 95,
+    "centre_crosses_right_edge_frame": 287
+   },
+   {
+    "character": "sproutle",
+    "centre_crosses_left_edge_frame": 137,
+    "centre_crosses_right_edge_frame": 329
+   },
+   {
+    "character": "wispkin",
+    "centre_crosses_left_edge_frame": 171,
+    "centre_crosses_right_edge_frame": null,
+    "note": "never exits inside the bit \u2014 see ending"
+   }
+  ],
+  "ending": "CHARTED DECISION (gap 20 gate \u2014 described in words in advance): the bit does NOT end on an empty frame or a half-exited rear character by arithmetic. Wispkin, last in line, slows his float changes after the frame-296 barline; his mask-tilt look (W-LOOK-A, 296-307) settles into W-LOOK-HOLD, held frames 308-335 (28 frames, 1.17 s) as the button of the gag, while Sproutle exits (centre crosses at 329). Final frame, in words: Wispkin alone right-of-centre, mask tilted in the look, smoke trailing against the direction of travel, held. First frame, in words: Mochiko mid-entrance at centre -77, first contact due frame 16; the rest of the line strung out off-screen left in cast order."
+ },
+ "characters": {
+  "mochiko": [
+   {
+    "start": 0,
+    "frames": 3,
+    "drawing": "M1-contact",
+    "kind": "entry"
+   },
+   {
+    "start": 3,
+    "frames": 3,
+    "drawing": "M2-recoil",
+    "kind": "entry"
+   },
+   {
+    "start": 6,
+    "frames": 3,
+    "drawing": "M3-passing",
+    "kind": "entry"
+   },
+   {
+    "start": 9,
+    "frames": 3,
+    "drawing": "M4-high",
+    "kind": "entry"
+   },
+   {
+    "start": 12,
+    "frames": 4,
+    "drawing": "M5-contact",
+    "kind": "entry"
+   },
+   {
+    "start": 16,
+    "frames": 5,
+    "drawing": "M5-contact",
+    "kind": "cycle"
+   },
+   {
+    "start": 21,
+    "frames": 5,
+    "drawing": "M6-recoil",
+    "kind": "cycle"
+   },
+   {
+    "start": 26,
+    "frames": 5,
+    "drawing": "M7-passing",
+    "kind": "cycle"
+   },
+   {
+    "start": 31,
+    "frames": 5,
+    "drawing": "M8-high",
+    "kind": "cycle"
+   },
+   {
+    "start": 36,
+    "frames": 4,
+    "drawing": "M1-contact",
+    "kind": "cycle"
+   },
+   {
+    "start": 40,
+    "frames": 5,
+    "drawing": "M2-recoil",
+    "kind": "cycle"
+   },
+   {
+    "start": 45,
+    "frames": 6,
+    "drawing": "M3-passing",
+    "kind": "cycle"
+   },
+   {
+    "start": 51,
+    "frames": 5,
+    "drawing": "M4-high",
+    "kind": "cycle"
+   },
+   {
+    "start": 56,
+    "frames": 6,
+    "drawing": "M2-recoil",
+    "kind": "beat-antic"
+   },
+   {
+    "start": 62,
+    "frames": 14,
+    "drawing": "M-SKIP-AIR",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 76,
+    "frames": 5,
+    "drawing": "M5-contact",
+    "kind": "cycle"
+   },
+   {
+    "start": 81,
+    "frames": 4,
+    "drawing": "M6-recoil",
+    "kind": "cycle"
+   },
+   {
+    "start": 85,
+    "frames": 5,
+    "drawing": "M7-passing",
+    "kind": "cycle"
+   },
+   {
+    "start": 90,
+    "frames": 6,
+    "drawing": "M8-high",
+    "kind": "cycle"
+   },
+   {
+    "start": 96,
+    "frames": 8,
+    "drawing": "M-STARTLE",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 104,
+    "frames": 6,
+    "drawing": "M3-passing",
+    "kind": "cycle"
+   },
+   {
+    "start": 110,
+    "frames": 6,
+    "drawing": "M4-high",
+    "kind": "cycle"
+   },
+   {
+    "start": 116,
+    "frames": 6,
+    "drawing": "M5-contact",
+    "kind": "cycle"
+   },
+   {
+    "start": 122,
+    "frames": 5,
+    "drawing": "M6-recoil",
+    "kind": "cycle"
+   },
+   {
+    "start": 127,
+    "frames": 4,
+    "drawing": "M7-passing",
+    "kind": "cycle"
+   },
+   {
+    "start": 131,
+    "frames": 5,
+    "drawing": "M8-high",
+    "kind": "cycle"
+   },
+   {
+    "start": 136,
+    "frames": 5,
+    "drawing": "M1-contact",
+    "kind": "cycle"
+   },
+   {
+    "start": 141,
+    "frames": 5,
+    "drawing": "M2-recoil",
+    "kind": "cycle"
+   },
+   {
+    "start": 146,
+    "frames": 5,
+    "drawing": "M3-passing",
+    "kind": "cycle"
+   },
+   {
+    "start": 151,
+    "frames": 5,
+    "drawing": "M4-high",
+    "kind": "cycle"
+   },
+   {
+    "start": 156,
+    "frames": 12,
+    "drawing": "M-LOOK",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 168,
+    "frames": 4,
+    "drawing": "M-LOOK-RETURN",
+    "kind": "beat"
+   },
+   {
+    "start": 172,
+    "frames": 4,
+    "drawing": "M4-high",
+    "kind": "cycle"
+   },
+   {
+    "start": 176,
+    "frames": 4,
+    "drawing": "M5-contact",
+    "kind": "cycle"
+   },
+   {
+    "start": 180,
+    "frames": 5,
+    "drawing": "M6-recoil",
+    "kind": "cycle"
+   },
+   {
+    "start": 185,
+    "frames": 6,
+    "drawing": "M7-passing",
+    "kind": "cycle"
+   },
+   {
+    "start": 191,
+    "frames": 5,
+    "drawing": "M8-high",
+    "kind": "cycle"
+   },
+   {
+    "start": 196,
+    "frames": 4,
+    "drawing": "M1-contact",
+    "kind": "cycle"
+   },
+   {
+    "start": 200,
+    "frames": 4,
+    "drawing": "M2-recoil",
+    "kind": "cycle"
+   },
+   {
+    "start": 204,
+    "frames": 132,
+    "drawing": "OFFSCREEN",
+    "kind": "exit"
+   }
+  ],
+  "mochii": [
+   {
+    "start": 0,
+    "frames": 3,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 3,
+    "frames": 2,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 5,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 7,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 10,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 12,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 15,
+    "frames": 2,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 17,
+    "frames": 3,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 20,
+    "frames": 3,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 23,
+    "frames": 2,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 25,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 27,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 30,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 32,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 35,
+    "frames": 2,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 37,
+    "frames": 3,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 40,
+    "frames": 3,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 43,
+    "frames": 2,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 45,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 47,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 50,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 52,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 55,
+    "frames": 2,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 57,
+    "frames": 3,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 60,
+    "frames": 3,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 63,
+    "frames": 2,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 65,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 67,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 70,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 72,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 75,
+    "frames": 2,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 77,
+    "frames": 3,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 80,
+    "frames": 3,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 83,
+    "frames": 2,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 85,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 87,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 90,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 92,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 95,
+    "frames": 1,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 96,
+    "frames": 8,
+    "drawing": "H2-squash",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 104,
+    "frames": 3,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 107,
+    "frames": 2,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 109,
+    "frames": 2,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 111,
+    "frames": 3,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 114,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 116,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 119,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 121,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 124,
+    "frames": 3,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 127,
+    "frames": 2,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 129,
+    "frames": 2,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 131,
+    "frames": 3,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 134,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 136,
+    "frames": 4,
+    "drawing": "B1-antic",
+    "kind": "beat"
+   },
+   {
+    "start": 140,
+    "frames": 4,
+    "drawing": "B2-squash",
+    "kind": "beat"
+   },
+   {
+    "start": 144,
+    "frames": 4,
+    "drawing": "B3-launch",
+    "kind": "beat"
+   },
+   {
+    "start": 148,
+    "frames": 12,
+    "drawing": "B4-AIR",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 160,
+    "frames": 4,
+    "drawing": "B5-top",
+    "kind": "beat"
+   },
+   {
+    "start": 164,
+    "frames": 4,
+    "drawing": "B6-fall",
+    "kind": "beat"
+   },
+   {
+    "start": 168,
+    "frames": 4,
+    "drawing": "B7-touch",
+    "kind": "beat"
+   },
+   {
+    "start": 172,
+    "frames": 4,
+    "drawing": "B8-land",
+    "kind": "beat"
+   },
+   {
+    "start": 176,
+    "frames": 3,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 179,
+    "frames": 2,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 181,
+    "frames": 2,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 183,
+    "frames": 3,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 186,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 188,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 191,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 193,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 196,
+    "frames": 3,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 199,
+    "frames": 2,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 201,
+    "frames": 2,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 203,
+    "frames": 3,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 206,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 208,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 211,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 213,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 216,
+    "frames": 3,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 219,
+    "frames": 2,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 221,
+    "frames": 2,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 223,
+    "frames": 3,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 226,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 228,
+    "frames": 3,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 231,
+    "frames": 2,
+    "drawing": "H7-touch",
+    "kind": "cycle"
+   },
+   {
+    "start": 233,
+    "frames": 3,
+    "drawing": "H8-land",
+    "kind": "cycle"
+   },
+   {
+    "start": 236,
+    "frames": 3,
+    "drawing": "H1-antic",
+    "kind": "cycle"
+   },
+   {
+    "start": 239,
+    "frames": 2,
+    "drawing": "H2-squash",
+    "kind": "cycle"
+   },
+   {
+    "start": 241,
+    "frames": 2,
+    "drawing": "H3-launch",
+    "kind": "cycle"
+   },
+   {
+    "start": 243,
+    "frames": 3,
+    "drawing": "H4-air",
+    "kind": "cycle"
+   },
+   {
+    "start": 246,
+    "frames": 2,
+    "drawing": "H5-top",
+    "kind": "cycle"
+   },
+   {
+    "start": 248,
+    "frames": 2,
+    "drawing": "H6-fall",
+    "kind": "cycle"
+   },
+   {
+    "start": 250,
+    "frames": 86,
+    "drawing": "OFFSCREEN",
+    "kind": "exit"
+   }
+  ],
+  "kittember": [
+   {
+    "start": 0,
+    "frames": 5,
+    "drawing": "K1",
+    "kind": "cycle"
+   },
+   {
+    "start": 5,
+    "frames": 5,
+    "drawing": "K2",
+    "kind": "cycle"
+   },
+   {
+    "start": 10,
+    "frames": 5,
+    "drawing": "K3",
+    "kind": "cycle"
+   },
+   {
+    "start": 15,
+    "frames": 5,
+    "drawing": "K4",
+    "kind": "cycle"
+   },
+   {
+    "start": 20,
+    "frames": 5,
+    "drawing": "K5",
+    "kind": "cycle"
+   },
+   {
+    "start": 25,
+    "frames": 5,
+    "drawing": "K6",
+    "kind": "cycle"
+   },
+   {
+    "start": 30,
+    "frames": 5,
+    "drawing": "K7",
+    "kind": "cycle"
+   },
+   {
+    "start": 35,
+    "frames": 5,
+    "drawing": "K8",
+    "kind": "cycle"
+   },
+   {
+    "start": 40,
+    "frames": 5,
+    "drawing": "K1",
+    "kind": "cycle"
+   },
+   {
+    "start": 45,
+    "frames": 5,
+    "drawing": "K2",
+    "kind": "cycle"
+   },
+   {
+    "start": 50,
+    "frames": 5,
+    "drawing": "K3",
+    "kind": "cycle"
+   },
+   {
+    "start": 55,
+    "frames": 5,
+    "drawing": "K4",
+    "kind": "cycle"
+   },
+   {
+    "start": 60,
+    "frames": 5,
+    "drawing": "K5",
+    "kind": "cycle"
+   },
+   {
+    "start": 65,
+    "frames": 5,
+    "drawing": "K6",
+    "kind": "cycle"
+   },
+   {
+    "start": 70,
+    "frames": 5,
+    "drawing": "K7",
+    "kind": "cycle"
+   },
+   {
+    "start": 75,
+    "frames": 5,
+    "drawing": "K8",
+    "kind": "cycle"
+   },
+   {
+    "start": 80,
+    "frames": 5,
+    "drawing": "K1",
+    "kind": "cycle"
+   },
+   {
+    "start": 85,
+    "frames": 5,
+    "drawing": "K2",
+    "kind": "cycle"
+   },
+   {
+    "start": 90,
+    "frames": 5,
+    "drawing": "K3",
+    "kind": "cycle"
+   },
+   {
+    "start": 95,
+    "frames": 1,
+    "drawing": "K4",
+    "kind": "cycle"
+   },
+   {
+    "start": 96,
+    "frames": 8,
+    "drawing": "K3",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 104,
+    "frames": 5,
+    "drawing": "K4",
+    "kind": "cycle"
+   },
+   {
+    "start": 109,
+    "frames": 5,
+    "drawing": "K5",
+    "kind": "cycle"
+   },
+   {
+    "start": 114,
+    "frames": 5,
+    "drawing": "K6",
+    "kind": "cycle"
+   },
+   {
+    "start": 119,
+    "frames": 5,
+    "drawing": "K7",
+    "kind": "cycle"
+   },
+   {
+    "start": 124,
+    "frames": 5,
+    "drawing": "K8",
+    "kind": "cycle"
+   },
+   {
+    "start": 129,
+    "frames": 5,
+    "drawing": "K1",
+    "kind": "cycle"
+   },
+   {
+    "start": 134,
+    "frames": 5,
+    "drawing": "K2",
+    "kind": "cycle"
+   },
+   {
+    "start": 139,
+    "frames": 5,
+    "drawing": "K3",
+    "kind": "cycle"
+   },
+   {
+    "start": 144,
+    "frames": 5,
+    "drawing": "K4",
+    "kind": "cycle"
+   },
+   {
+    "start": 149,
+    "frames": 5,
+    "drawing": "K5",
+    "kind": "cycle"
+   },
+   {
+    "start": 154,
+    "frames": 5,
+    "drawing": "K6",
+    "kind": "cycle"
+   },
+   {
+    "start": 159,
+    "frames": 5,
+    "drawing": "K7",
+    "kind": "cycle"
+   },
+   {
+    "start": 164,
+    "frames": 5,
+    "drawing": "K8",
+    "kind": "cycle"
+   },
+   {
+    "start": 169,
+    "frames": 5,
+    "drawing": "K1",
+    "kind": "cycle"
+   },
+   {
+    "start": 174,
+    "frames": 5,
+    "drawing": "K2",
+    "kind": "cycle"
+   },
+   {
+    "start": 179,
+    "frames": 5,
+    "drawing": "K3",
+    "kind": "cycle"
+   },
+   {
+    "start": 184,
+    "frames": 5,
+    "drawing": "K4",
+    "kind": "cycle"
+   },
+   {
+    "start": 189,
+    "frames": 5,
+    "drawing": "K5",
+    "kind": "cycle"
+   },
+   {
+    "start": 194,
+    "frames": 5,
+    "drawing": "K6",
+    "kind": "cycle"
+   },
+   {
+    "start": 199,
+    "frames": 5,
+    "drawing": "K7",
+    "kind": "cycle"
+   },
+   {
+    "start": 204,
+    "frames": 5,
+    "drawing": "K8",
+    "kind": "cycle"
+   },
+   {
+    "start": 209,
+    "frames": 5,
+    "drawing": "K1",
+    "kind": "cycle"
+   },
+   {
+    "start": 214,
+    "frames": 2,
+    "drawing": "K2",
+    "kind": "cycle"
+   },
+   {
+    "start": 216,
+    "frames": 14,
+    "drawing": "K-FLARE",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 230,
+    "frames": 6,
+    "drawing": "K-FLARE2",
+    "kind": "beat"
+   },
+   {
+    "start": 236,
+    "frames": 5,
+    "drawing": "K1",
+    "kind": "cycle"
+   },
+   {
+    "start": 241,
+    "frames": 5,
+    "drawing": "K2",
+    "kind": "cycle"
+   },
+   {
+    "start": 246,
+    "frames": 5,
+    "drawing": "K3",
+    "kind": "cycle"
+   },
+   {
+    "start": 251,
+    "frames": 5,
+    "drawing": "K4",
+    "kind": "cycle"
+   },
+   {
+    "start": 256,
+    "frames": 5,
+    "drawing": "K5",
+    "kind": "cycle"
+   },
+   {
+    "start": 261,
+    "frames": 5,
+    "drawing": "K6",
+    "kind": "cycle"
+   },
+   {
+    "start": 266,
+    "frames": 5,
+    "drawing": "K7",
+    "kind": "cycle"
+   },
+   {
+    "start": 271,
+    "frames": 5,
+    "drawing": "K8",
+    "kind": "cycle"
+   },
+   {
+    "start": 276,
+    "frames": 5,
+    "drawing": "K1",
+    "kind": "cycle"
+   },
+   {
+    "start": 281,
+    "frames": 5,
+    "drawing": "K2",
+    "kind": "cycle"
+   },
+   {
+    "start": 286,
+    "frames": 1,
+    "drawing": "K3",
+    "kind": "cycle"
+   },
+   {
+    "start": 287,
+    "frames": 49,
+    "drawing": "OFFSCREEN",
+    "kind": "exit"
+   }
+  ],
+  "sproutle": [
+   {
+    "start": 0,
+    "frames": 6,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 6,
+    "frames": 4,
+    "drawing": "S2",
+    "kind": "cycle"
+   },
+   {
+    "start": 10,
+    "frames": 5,
+    "drawing": "S3",
+    "kind": "cycle"
+   },
+   {
+    "start": 15,
+    "frames": 5,
+    "drawing": "S4",
+    "kind": "cycle"
+   },
+   {
+    "start": 20,
+    "frames": 6,
+    "drawing": "S5",
+    "kind": "cycle"
+   },
+   {
+    "start": 26,
+    "frames": 4,
+    "drawing": "S6",
+    "kind": "cycle"
+   },
+   {
+    "start": 30,
+    "frames": 5,
+    "drawing": "S7",
+    "kind": "cycle"
+   },
+   {
+    "start": 35,
+    "frames": 5,
+    "drawing": "S8",
+    "kind": "cycle"
+   },
+   {
+    "start": 40,
+    "frames": 6,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 46,
+    "frames": 4,
+    "drawing": "S2",
+    "kind": "cycle"
+   },
+   {
+    "start": 50,
+    "frames": 5,
+    "drawing": "S3",
+    "kind": "cycle"
+   },
+   {
+    "start": 55,
+    "frames": 5,
+    "drawing": "S4",
+    "kind": "cycle"
+   },
+   {
+    "start": 60,
+    "frames": 6,
+    "drawing": "S5",
+    "kind": "cycle"
+   },
+   {
+    "start": 66,
+    "frames": 4,
+    "drawing": "S6",
+    "kind": "cycle"
+   },
+   {
+    "start": 70,
+    "frames": 5,
+    "drawing": "S7",
+    "kind": "cycle"
+   },
+   {
+    "start": 75,
+    "frames": 5,
+    "drawing": "S8",
+    "kind": "cycle"
+   },
+   {
+    "start": 80,
+    "frames": 6,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 86,
+    "frames": 4,
+    "drawing": "S2",
+    "kind": "cycle"
+   },
+   {
+    "start": 90,
+    "frames": 5,
+    "drawing": "S3",
+    "kind": "cycle"
+   },
+   {
+    "start": 95,
+    "frames": 1,
+    "drawing": "S4",
+    "kind": "cycle"
+   },
+   {
+    "start": 96,
+    "frames": 8,
+    "drawing": "S4",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 104,
+    "frames": 6,
+    "drawing": "S3",
+    "kind": "cycle"
+   },
+   {
+    "start": 110,
+    "frames": 4,
+    "drawing": "S4",
+    "kind": "cycle"
+   },
+   {
+    "start": 114,
+    "frames": 5,
+    "drawing": "S5",
+    "kind": "cycle"
+   },
+   {
+    "start": 119,
+    "frames": 5,
+    "drawing": "S6",
+    "kind": "cycle"
+   },
+   {
+    "start": 124,
+    "frames": 6,
+    "drawing": "S7",
+    "kind": "cycle"
+   },
+   {
+    "start": 130,
+    "frames": 4,
+    "drawing": "S8",
+    "kind": "cycle"
+   },
+   {
+    "start": 134,
+    "frames": 5,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 139,
+    "frames": 5,
+    "drawing": "S2",
+    "kind": "cycle"
+   },
+   {
+    "start": 144,
+    "frames": 6,
+    "drawing": "S3",
+    "kind": "cycle"
+   },
+   {
+    "start": 150,
+    "frames": 4,
+    "drawing": "S4",
+    "kind": "cycle"
+   },
+   {
+    "start": 154,
+    "frames": 5,
+    "drawing": "S5",
+    "kind": "cycle"
+   },
+   {
+    "start": 159,
+    "frames": 5,
+    "drawing": "S6",
+    "kind": "cycle"
+   },
+   {
+    "start": 164,
+    "frames": 6,
+    "drawing": "S7",
+    "kind": "cycle"
+   },
+   {
+    "start": 170,
+    "frames": 4,
+    "drawing": "S8",
+    "kind": "cycle"
+   },
+   {
+    "start": 174,
+    "frames": 5,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 179,
+    "frames": 5,
+    "drawing": "S2",
+    "kind": "cycle"
+   },
+   {
+    "start": 184,
+    "frames": 6,
+    "drawing": "S3",
+    "kind": "cycle"
+   },
+   {
+    "start": 190,
+    "frames": 4,
+    "drawing": "S4",
+    "kind": "cycle"
+   },
+   {
+    "start": 194,
+    "frames": 5,
+    "drawing": "S5",
+    "kind": "cycle"
+   },
+   {
+    "start": 199,
+    "frames": 5,
+    "drawing": "S6",
+    "kind": "cycle"
+   },
+   {
+    "start": 204,
+    "frames": 6,
+    "drawing": "S7",
+    "kind": "cycle"
+   },
+   {
+    "start": 210,
+    "frames": 4,
+    "drawing": "S8",
+    "kind": "cycle"
+   },
+   {
+    "start": 214,
+    "frames": 5,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 219,
+    "frames": 5,
+    "drawing": "S2",
+    "kind": "cycle"
+   },
+   {
+    "start": 224,
+    "frames": 6,
+    "drawing": "S3",
+    "kind": "cycle"
+   },
+   {
+    "start": 230,
+    "frames": 4,
+    "drawing": "S4",
+    "kind": "cycle"
+   },
+   {
+    "start": 234,
+    "frames": 5,
+    "drawing": "S5",
+    "kind": "cycle"
+   },
+   {
+    "start": 239,
+    "frames": 5,
+    "drawing": "S6",
+    "kind": "cycle"
+   },
+   {
+    "start": 244,
+    "frames": 6,
+    "drawing": "S7",
+    "kind": "cycle"
+   },
+   {
+    "start": 250,
+    "frames": 4,
+    "drawing": "S8",
+    "kind": "cycle"
+   },
+   {
+    "start": 254,
+    "frames": 2,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 256,
+    "frames": 12,
+    "drawing": "S-WOB-L",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 268,
+    "frames": 12,
+    "drawing": "S-WOB-R",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 280,
+    "frames": 6,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 286,
+    "frames": 4,
+    "drawing": "S2",
+    "kind": "cycle"
+   },
+   {
+    "start": 290,
+    "frames": 5,
+    "drawing": "S3",
+    "kind": "cycle"
+   },
+   {
+    "start": 295,
+    "frames": 5,
+    "drawing": "S4",
+    "kind": "cycle"
+   },
+   {
+    "start": 300,
+    "frames": 6,
+    "drawing": "S5",
+    "kind": "cycle"
+   },
+   {
+    "start": 306,
+    "frames": 4,
+    "drawing": "S6",
+    "kind": "cycle"
+   },
+   {
+    "start": 310,
+    "frames": 5,
+    "drawing": "S7",
+    "kind": "cycle"
+   },
+   {
+    "start": 315,
+    "frames": 5,
+    "drawing": "S8",
+    "kind": "cycle"
+   },
+   {
+    "start": 320,
+    "frames": 6,
+    "drawing": "S1",
+    "kind": "cycle"
+   },
+   {
+    "start": 326,
+    "frames": 3,
+    "drawing": "S2",
+    "kind": "cycle"
+   },
+   {
+    "start": 329,
+    "frames": 7,
+    "drawing": "OFFSCREEN",
+    "kind": "exit"
+   }
+  ],
+  "wispkin": [
+   {
+    "start": 0,
+    "frames": 5,
+    "drawing": "W1",
+    "kind": "cycle"
+   },
+   {
+    "start": 5,
+    "frames": 5,
+    "drawing": "W2",
+    "kind": "cycle"
+   },
+   {
+    "start": 10,
+    "frames": 5,
+    "drawing": "W3",
+    "kind": "cycle"
+   },
+   {
+    "start": 15,
+    "frames": 5,
+    "drawing": "W4",
+    "kind": "cycle"
+   },
+   {
+    "start": 20,
+    "frames": 5,
+    "drawing": "W5",
+    "kind": "cycle"
+   },
+   {
+    "start": 25,
+    "frames": 5,
+    "drawing": "W6",
+    "kind": "cycle"
+   },
+   {
+    "start": 30,
+    "frames": 5,
+    "drawing": "W7",
+    "kind": "cycle"
+   },
+   {
+    "start": 35,
+    "frames": 5,
+    "drawing": "W8",
+    "kind": "cycle"
+   },
+   {
+    "start": 40,
+    "frames": 5,
+    "drawing": "W9",
+    "kind": "cycle"
+   },
+   {
+    "start": 45,
+    "frames": 5,
+    "drawing": "W10",
+    "kind": "cycle"
+   },
+   {
+    "start": 50,
+    "frames": 5,
+    "drawing": "W11",
+    "kind": "cycle"
+   },
+   {
+    "start": 55,
+    "frames": 5,
+    "drawing": "W12",
+    "kind": "cycle"
+   },
+   {
+    "start": 60,
+    "frames": 5,
+    "drawing": "W13",
+    "kind": "cycle"
+   },
+   {
+    "start": 65,
+    "frames": 5,
+    "drawing": "W14",
+    "kind": "cycle"
+   },
+   {
+    "start": 70,
+    "frames": 5,
+    "drawing": "W15",
+    "kind": "cycle"
+   },
+   {
+    "start": 75,
+    "frames": 5,
+    "drawing": "W16",
+    "kind": "cycle"
+   },
+   {
+    "start": 80,
+    "frames": 5,
+    "drawing": "W1",
+    "kind": "cycle"
+   },
+   {
+    "start": 85,
+    "frames": 5,
+    "drawing": "W2",
+    "kind": "cycle"
+   },
+   {
+    "start": 90,
+    "frames": 5,
+    "drawing": "W3",
+    "kind": "cycle"
+   },
+   {
+    "start": 95,
+    "frames": 1,
+    "drawing": "W4",
+    "kind": "cycle"
+   },
+   {
+    "start": 96,
+    "frames": 8,
+    "drawing": "W9",
+    "kind": "beat-hold"
+   },
+   {
+    "start": 104,
+    "frames": 5,
+    "drawing": "W9",
+    "kind": "cycle"
+   },
+   {
+    "start": 109,
+    "frames": 5,
+    "drawing": "W10",
+    "kind": "cycle"
+   },
+   {
+    "start": 114,
+    "frames": 5,
+    "drawing": "W11",
+    "kind": "cycle"
+   },
+   {
+    "start": 119,
+    "frames": 5,
+    "drawing": "W12",
+    "kind": "cycle"
+   },
+   {
+    "start": 124,
+    "frames": 5,
+    "drawing": "W13",
+    "kind": "cycle"
+   },
+   {
+    "start": 129,
+    "frames": 5,
+    "drawing": "W14",
+    "kind": "cycle"
+   },
+   {
+    "start": 134,
+    "frames": 5,
+    "drawing": "W15",
+    "kind": "cycle"
+   },
+   {
+    "start": 139,
+    "frames": 5,
+    "drawing": "W16",
+    "kind": "cycle"
+   },
+   {
+    "start": 144,
+    "frames": 5,
+    "drawing": "W1",
+    "kind": "cycle"
+   },
+   {
+    "start": 149,
+    "frames": 5,
+    "drawing": "W2",
+    "kind": "cycle"
+   },
+   {
+    "start": 154,
+    "frames": 5,
+    "drawing": "W3",
+    "kind": "cycle"
+   },
+   {
+    "start": 159,
+    "frames": 5,
+    "drawing": "W4",
+    "kind": "cycle"
+   },
+   {
+    "start": 164,
+    "frames": 5,
+    "drawing": "W5",
+    "kind": "cycle"
+   },
+   {
+    "start": 169,
+    "frames": 5,
+    "drawing": "W6",
+    "kind": "cycle"
+   },
+   {
+    "start": 174,
+    "frames": 5,
+    "drawing": "W7",
+    "kind": "cycle"
+   },
+   {
+    "start": 179,
+    "frames": 5,
+    "drawing": "W8",
+    "kind": "cycle"
+   },
+   {
+    "start": 184,
+    "frames": 5,
+    "drawing": "W9",
+    "kind": "cycle"
+   },
+   {
+    "start": 189,
+    "frames": 5,
+    "drawing": "W10",
+    "kind": "cycle"
+   },
+   {
+    "start": 194,
+    "frames": 5,
+    "drawing": "W11",
+    "kind": "cycle"
+   },
+   {
+    "start": 199,
+    "frames": 5,
+    "drawing": "W12",
+    "kind": "cycle"
+   },
+   {
+    "start": 204,
+    "frames": 5,
+    "drawing": "W13",
+    "kind": "cycle"
+   },
+   {
+    "start": 209,
+    "frames": 5,
+    "drawing": "W14",
+    "kind": "cycle"
+   },
+   {
+    "start": 214,
+    "frames": 5,
+    "drawing": "W15",
+    "kind": "cycle"
+   },
+   {
+    "start": 219,
+    "frames": 5,
+    "drawing": "W16",
+    "kind": "cycle"
+   },
+   {
+    "start": 224,
+    "frames": 5,
+    "drawing": "W1",
+    "kind": "cycle"
+   },
+   {
+    "start": 229,
+    "frames": 5,
+    "drawing": "W2",
+    "kind": "cycle"
+   },
+   {
+    "start": 234,
+    "frames": 5,
+    "drawing": "W3",
+    "kind": "cycle"
+   },
+   {
+    "start": 239,
+    "frames": 5,
+    "drawing": "W4",
+    "kind": "cycle"
+   },
+   {
+    "start": 244,
+    "frames": 5,
+    "drawing": "W5",
+    "kind": "cycle"
+   },
+   {
+    "start": 249,
+    "frames": 5,
+    "drawing": "W6",
+    "kind": "cycle"
+   },
+   {
+    "start": 254,
+    "frames": 5,
+    "drawing": "W7",
+    "kind": "cycle"
+   },
+   {
+    "start": 259,
+    "frames": 5,
+    "drawing": "W8",
+    "kind": "cycle"
+   },
+   {
+    "start": 264,
+    "frames": 5,
+    "drawing": "W9",
+    "kind": "cycle"
+   },
+   {
+    "start": 269,
+    "frames": 5,
+    "drawing": "W10",
+    "kind": "cycle"
+   },
+   {
+    "start": 274,
+    "frames": 5,
+    "drawing": "W11",
+    "kind": "cycle"
+   },
+   {
+    "start": 279,
+    "frames": 5,
+    "drawing": "W12",
+    "kind": "cycle"
+   },
+   {
+    "start": 284,
+    "frames": 5,
+    "drawing": "W13",
+    "kind": "cycle"
+   },
+   {
+    "start": 289,
+    "frames": 5,
+    "drawing": "W14",
+    "kind": "cycle"
+   },
+   {
+    "start": 294,
+    "frames": 2,
+    "drawing": "W15",
+    "kind": "cycle"
+   },
+   {
+    "start": 296,
+    "frames": 12,
+    "drawing": "W-LOOK-A",
+    "kind": "beat"
+   },
+   {
+    "start": 308,
+    "frames": 28,
+    "drawing": "W-LOOK-HOLD",
+    "kind": "beat-hold"
+   }
+  ]
+ },
+ "accents": [
+  {
+   "frame": 96,
+   "label": "BELL (ED 60.000 s, barline) \u2014 line-wide startle; all five change on the frame",
+   "min_characters": 5
+  },
+  {
+   "frame": 104,
+   "label": "bell release \u2014 line-wide burst out of the freeze",
+   "min_characters": 5
+  },
+  {
+   "frame": 136,
+   "label": "barline \u2014 Mochii big hop begins (2 characters change on the exact frame; the line response lands inside the +-2f conformance tolerance)",
+   "min_characters": 2
+  },
+  {
+   "frame": 216,
+   "label": "barline \u2014 Kittember flame flare (held 14f; 2 characters change on the exact frame)",
+   "min_characters": 2
+  },
+  {
+   "frame": 256,
+   "label": "barline \u2014 Sproutle near-tip wobble (two 12f holds; 2 characters change on the exact frame)",
+   "min_characters": 2
+  },
+  {
+   "frame": 296,
+   "label": "barline \u2014 Wispkin look begins (the button; solo accent by design \u2014 the rest of the line has exited or is exiting)",
+   "min_characters": 1
+  }
+ ],
+ "holds": [
+  {
+   "start": 96,
+   "frames": 8,
+   "label": "bell freeze \u2014 composed line-wide hold (all five drawings hold; cel travel continues on its 3f grid)",
+   "scope": "line"
+  }
+ ],
+ "contacts": [
+  {
+   "frame": 16,
+   "character": "mochiko",
+   "event": "contact (strong pulse)"
+  },
+  {
+   "frame": 36,
+   "character": "mochiko",
+   "event": "contact (strong pulse)"
+  },
+  {
+   "frame": 56,
+   "character": "mochiko",
+   "event": "skip anticipation plant"
+  },
+  {
+   "frame": 76,
+   "character": "mochiko",
+   "event": "contact (strong pulse)"
+  },
+  {
+   "frame": 96,
+   "character": "mochiko",
+   "event": "bell startle plant (contact replaced by startle, on the barline)"
+  },
+  {
+   "frame": 116,
+   "character": "mochiko",
+   "event": "contact (strong pulse)"
+  },
+  {
+   "frame": 136,
+   "character": "mochiko",
+   "event": "contact (strong pulse)"
+  },
+  {
+   "frame": 156,
+   "character": "mochiko",
+   "event": "contact (strong pulse)"
+  },
+  {
+   "frame": 176,
+   "character": "mochiko",
+   "event": "contact (strong pulse)"
+  },
+  {
+   "frame": 196,
+   "character": "mochiko",
+   "event": "contact (strong pulse)"
+  }
+ ],
+ "self_measurement": {
+  "drawing_change_frames_union": 169,
+  "drawing_changes_per_second": 12.071,
+  "min_drawing_change_frames_in_any_2s_window": 14,
+  "accent_frames_ge_3_characters": [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30,
+   35,
+   40,
+   45,
+   50,
+   55,
+   60,
+   65,
+   70,
+   75,
+   80,
+   85,
+   90,
+   95,
+   96,
+   104,
+   109,
+   114,
+   119,
+   124,
+   129,
+   134,
+   139,
+   144,
+   154,
+   159,
+   164,
+   174,
+   179,
+   184,
+   194,
+   199,
+   204,
+   214,
+   219,
+   239
+  ],
+  "note": "Drawing-change structure of THIS CHART (counted from the segment tables above), reported separately from any rendered clip measurement. A rendered rebuild is measured by verify_proof.py; conformance to this chart is checked by verify_proof.py --chart."
+ },
+ "status": "CHART SET ONLY. The gag rebuild itself is NOT part of this programme: it waits on the owner Gate-8 verdict on the v6 walk proof and the profile call (gag line profile with locked model sheets, or method applied front-facing). These charts are the rebuild input when that call lands."
+}

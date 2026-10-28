@@ -1,0 +1,1975 @@
+{
+ "format": "mochiichao/ed-beat-map/v1",
+ "piece": "EP01 ED bed (EP01-V3-ED.wav) \u2014 gap 18 first artefact",
+ "source_file": {
+  "path": "show/episodes/EP01 (workspace master: ep01-finish/audio/EP01-V3-ED.wav)",
+  "bytes": 14400078,
+  "sha256": "485525875c47d36f0d80f2500b4eee09ff30200a0638397f20ea6e43ea938925",
+  "duration_s": 75.0,
+  "sample_rate": 48000,
+  "channels": 2,
+  "format": "pcm_s16le"
+ },
+ "detection": {
+  "method": "log-magnitude spectral flux (STFT 2048/512, 48kHz) for onsets; periodic grid fit over BPM x phase on sqrt-flux sampled at candidate beat times; autocorrelation of the onset envelope; builder-code cross-check (ep01-finish/tools/build_beds.py ED section + audio/BEDS.md)",
+  "grid_fit": {
+   "bpm": 144.0,
+   "phase_first_pulse_s": 0.009,
+   "pulse_period_s": 0.416667,
+   "fit_score_final_bed": 4.592,
+   "fit_score_menu_stem_alone": 6.821,
+   "runners_up_final_bed": [
+    {
+     "bpm": 96.0,
+     "score": 4.111
+    },
+    {
+     "bpm": 120.0,
+     "score": 3.658
+    }
+   ],
+   "note": "The MENU stem alone fits 144.0 BPM / phase 0.0087 s with score 6.821 \u2014 the bed pulse is the menu stem grid. The 72 BPM reading is the two-pulse (strong-beat) alias of the same grid, not a competing tempo."
+  },
+  "autocorrelation_peaks_s": [
+   {
+    "lag_s": 0.416,
+    "reading": "one pulse"
+   },
+   {
+    "lag_s": 0.832,
+    "reading": "two pulses (strong beat)"
+   },
+   {
+    "lag_s": 1.664,
+    "reading": "four pulses (bar)"
+   },
+   {
+    "lag_s": 5.003,
+    "reading": "twelve pulses (three bars) \u2014 phrase period"
+   }
+  ]
+ },
+ "tempo": {
+  "bpm": 144.0,
+  "pulse_period_s": 0.416667,
+  "phase_first_pulse_s": 0.009,
+  "strong_pulse_period_s": 0.8333,
+  "bar_pulses": 4,
+  "bar_period_s": 1.6667,
+  "phrase_pulses": 12,
+  "phrase_period_s": 5.0,
+  "master_fps": 24,
+  "frames_per_pulse": 10.0,
+  "frames_per_strong_pulse": 20,
+  "frames_per_bar": 40
+ },
+ "pulses": [
+  {
+   "index": 0,
+   "time_s": 0.009,
+   "frame_1based": 1,
+   "strength": "barline"
+  },
+  {
+   "index": 1,
+   "time_s": 0.426,
+   "frame_1based": 11,
+   "strength": "pulse"
+  },
+  {
+   "index": 2,
+   "time_s": 0.842,
+   "frame_1based": 21,
+   "strength": "strong"
+  },
+  {
+   "index": 3,
+   "time_s": 1.259,
+   "frame_1based": 31,
+   "strength": "pulse"
+  },
+  {
+   "index": 4,
+   "time_s": 1.676,
+   "frame_1based": 41,
+   "strength": "barline"
+  },
+  {
+   "index": 5,
+   "time_s": 2.092,
+   "frame_1based": 51,
+   "strength": "pulse"
+  },
+  {
+   "index": 6,
+   "time_s": 2.509,
+   "frame_1based": 61,
+   "strength": "strong"
+  },
+  {
+   "index": 7,
+   "time_s": 2.926,
+   "frame_1based": 71,
+   "strength": "pulse"
+  },
+  {
+   "index": 8,
+   "time_s": 3.342,
+   "frame_1based": 81,
+   "strength": "barline"
+  },
+  {
+   "index": 9,
+   "time_s": 3.759,
+   "frame_1based": 91,
+   "strength": "pulse"
+  },
+  {
+   "index": 10,
+   "time_s": 4.176,
+   "frame_1based": 101,
+   "strength": "strong"
+  },
+  {
+   "index": 11,
+   "time_s": 4.592,
+   "frame_1based": 111,
+   "strength": "pulse"
+  },
+  {
+   "index": 12,
+   "time_s": 5.009,
+   "frame_1based": 121,
+   "strength": "barline"
+  },
+  {
+   "index": 13,
+   "time_s": 5.426,
+   "frame_1based": 131,
+   "strength": "pulse"
+  },
+  {
+   "index": 14,
+   "time_s": 5.842,
+   "frame_1based": 141,
+   "strength": "strong"
+  },
+  {
+   "index": 15,
+   "time_s": 6.259,
+   "frame_1based": 151,
+   "strength": "pulse"
+  },
+  {
+   "index": 16,
+   "time_s": 6.676,
+   "frame_1based": 161,
+   "strength": "barline"
+  },
+  {
+   "index": 17,
+   "time_s": 7.092,
+   "frame_1based": 171,
+   "strength": "pulse"
+  },
+  {
+   "index": 18,
+   "time_s": 7.509,
+   "frame_1based": 181,
+   "strength": "strong"
+  },
+  {
+   "index": 19,
+   "time_s": 7.926,
+   "frame_1based": 191,
+   "strength": "pulse"
+  },
+  {
+   "index": 20,
+   "time_s": 8.342,
+   "frame_1based": 201,
+   "strength": "barline"
+  },
+  {
+   "index": 21,
+   "time_s": 8.759,
+   "frame_1based": 211,
+   "strength": "pulse"
+  },
+  {
+   "index": 22,
+   "time_s": 9.176,
+   "frame_1based": 221,
+   "strength": "strong"
+  },
+  {
+   "index": 23,
+   "time_s": 9.592,
+   "frame_1based": 231,
+   "strength": "pulse"
+  },
+  {
+   "index": 24,
+   "time_s": 10.009,
+   "frame_1based": 241,
+   "strength": "barline"
+  },
+  {
+   "index": 25,
+   "time_s": 10.426,
+   "frame_1based": 251,
+   "strength": "pulse"
+  },
+  {
+   "index": 26,
+   "time_s": 10.842,
+   "frame_1based": 261,
+   "strength": "strong"
+  },
+  {
+   "index": 27,
+   "time_s": 11.259,
+   "frame_1based": 271,
+   "strength": "pulse"
+  },
+  {
+   "index": 28,
+   "time_s": 11.676,
+   "frame_1based": 281,
+   "strength": "barline"
+  },
+  {
+   "index": 29,
+   "time_s": 12.092,
+   "frame_1based": 291,
+   "strength": "pulse"
+  },
+  {
+   "index": 30,
+   "time_s": 12.509,
+   "frame_1based": 301,
+   "strength": "strong"
+  },
+  {
+   "index": 31,
+   "time_s": 12.926,
+   "frame_1based": 311,
+   "strength": "pulse"
+  },
+  {
+   "index": 32,
+   "time_s": 13.342,
+   "frame_1based": 321,
+   "strength": "barline"
+  },
+  {
+   "index": 33,
+   "time_s": 13.759,
+   "frame_1based": 331,
+   "strength": "pulse"
+  },
+  {
+   "index": 34,
+   "time_s": 14.176,
+   "frame_1based": 341,
+   "strength": "strong"
+  },
+  {
+   "index": 35,
+   "time_s": 14.592,
+   "frame_1based": 351,
+   "strength": "pulse"
+  },
+  {
+   "index": 36,
+   "time_s": 15.009,
+   "frame_1based": 361,
+   "strength": "barline"
+  },
+  {
+   "index": 37,
+   "time_s": 15.426,
+   "frame_1based": 371,
+   "strength": "pulse"
+  },
+  {
+   "index": 38,
+   "time_s": 15.842,
+   "frame_1based": 381,
+   "strength": "strong"
+  },
+  {
+   "index": 39,
+   "time_s": 16.259,
+   "frame_1based": 391,
+   "strength": "pulse"
+  },
+  {
+   "index": 40,
+   "time_s": 16.676,
+   "frame_1based": 401,
+   "strength": "barline"
+  },
+  {
+   "index": 41,
+   "time_s": 17.092,
+   "frame_1based": 411,
+   "strength": "pulse"
+  },
+  {
+   "index": 42,
+   "time_s": 17.509,
+   "frame_1based": 421,
+   "strength": "strong"
+  },
+  {
+   "index": 43,
+   "time_s": 17.926,
+   "frame_1based": 431,
+   "strength": "pulse"
+  },
+  {
+   "index": 44,
+   "time_s": 18.342,
+   "frame_1based": 441,
+   "strength": "barline"
+  },
+  {
+   "index": 45,
+   "time_s": 18.759,
+   "frame_1based": 451,
+   "strength": "pulse"
+  },
+  {
+   "index": 46,
+   "time_s": 19.176,
+   "frame_1based": 461,
+   "strength": "strong"
+  },
+  {
+   "index": 47,
+   "time_s": 19.592,
+   "frame_1based": 471,
+   "strength": "pulse"
+  },
+  {
+   "index": 48,
+   "time_s": 20.009,
+   "frame_1based": 481,
+   "strength": "barline"
+  },
+  {
+   "index": 49,
+   "time_s": 20.426,
+   "frame_1based": 491,
+   "strength": "pulse"
+  },
+  {
+   "index": 50,
+   "time_s": 20.842,
+   "frame_1based": 501,
+   "strength": "strong"
+  },
+  {
+   "index": 51,
+   "time_s": 21.259,
+   "frame_1based": 511,
+   "strength": "pulse"
+  },
+  {
+   "index": 52,
+   "time_s": 21.676,
+   "frame_1based": 521,
+   "strength": "barline"
+  },
+  {
+   "index": 53,
+   "time_s": 22.092,
+   "frame_1based": 531,
+   "strength": "pulse"
+  },
+  {
+   "index": 54,
+   "time_s": 22.509,
+   "frame_1based": 541,
+   "strength": "strong"
+  },
+  {
+   "index": 55,
+   "time_s": 22.926,
+   "frame_1based": 551,
+   "strength": "pulse"
+  },
+  {
+   "index": 56,
+   "time_s": 23.342,
+   "frame_1based": 561,
+   "strength": "barline"
+  },
+  {
+   "index": 57,
+   "time_s": 23.759,
+   "frame_1based": 571,
+   "strength": "pulse"
+  },
+  {
+   "index": 58,
+   "time_s": 24.176,
+   "frame_1based": 581,
+   "strength": "strong"
+  },
+  {
+   "index": 59,
+   "time_s": 24.592,
+   "frame_1based": 591,
+   "strength": "pulse"
+  },
+  {
+   "index": 60,
+   "time_s": 25.009,
+   "frame_1based": 601,
+   "strength": "barline"
+  },
+  {
+   "index": 61,
+   "time_s": 25.426,
+   "frame_1based": 611,
+   "strength": "pulse"
+  },
+  {
+   "index": 62,
+   "time_s": 25.842,
+   "frame_1based": 621,
+   "strength": "strong"
+  },
+  {
+   "index": 63,
+   "time_s": 26.259,
+   "frame_1based": 631,
+   "strength": "pulse"
+  },
+  {
+   "index": 64,
+   "time_s": 26.676,
+   "frame_1based": 641,
+   "strength": "barline"
+  },
+  {
+   "index": 65,
+   "time_s": 27.092,
+   "frame_1based": 651,
+   "strength": "pulse"
+  },
+  {
+   "index": 66,
+   "time_s": 27.509,
+   "frame_1based": 661,
+   "strength": "strong"
+  },
+  {
+   "index": 67,
+   "time_s": 27.926,
+   "frame_1based": 671,
+   "strength": "pulse"
+  },
+  {
+   "index": 68,
+   "time_s": 28.342,
+   "frame_1based": 681,
+   "strength": "barline"
+  },
+  {
+   "index": 69,
+   "time_s": 28.759,
+   "frame_1based": 691,
+   "strength": "pulse"
+  },
+  {
+   "index": 70,
+   "time_s": 29.176,
+   "frame_1based": 701,
+   "strength": "strong"
+  },
+  {
+   "index": 71,
+   "time_s": 29.592,
+   "frame_1based": 711,
+   "strength": "pulse"
+  },
+  {
+   "index": 72,
+   "time_s": 30.009,
+   "frame_1based": 721,
+   "strength": "barline"
+  },
+  {
+   "index": 73,
+   "time_s": 30.426,
+   "frame_1based": 731,
+   "strength": "pulse"
+  },
+  {
+   "index": 74,
+   "time_s": 30.842,
+   "frame_1based": 741,
+   "strength": "strong"
+  },
+  {
+   "index": 75,
+   "time_s": 31.259,
+   "frame_1based": 751,
+   "strength": "pulse"
+  },
+  {
+   "index": 76,
+   "time_s": 31.676,
+   "frame_1based": 761,
+   "strength": "barline"
+  },
+  {
+   "index": 77,
+   "time_s": 32.092,
+   "frame_1based": 771,
+   "strength": "pulse"
+  },
+  {
+   "index": 78,
+   "time_s": 32.509,
+   "frame_1based": 781,
+   "strength": "strong"
+  },
+  {
+   "index": 79,
+   "time_s": 32.926,
+   "frame_1based": 791,
+   "strength": "pulse"
+  },
+  {
+   "index": 80,
+   "time_s": 33.342,
+   "frame_1based": 801,
+   "strength": "barline"
+  },
+  {
+   "index": 81,
+   "time_s": 33.759,
+   "frame_1based": 811,
+   "strength": "pulse"
+  },
+  {
+   "index": 82,
+   "time_s": 34.176,
+   "frame_1based": 821,
+   "strength": "strong"
+  },
+  {
+   "index": 83,
+   "time_s": 34.592,
+   "frame_1based": 831,
+   "strength": "pulse"
+  },
+  {
+   "index": 84,
+   "time_s": 35.009,
+   "frame_1based": 841,
+   "strength": "barline"
+  },
+  {
+   "index": 85,
+   "time_s": 35.426,
+   "frame_1based": 851,
+   "strength": "pulse"
+  },
+  {
+   "index": 86,
+   "time_s": 35.842,
+   "frame_1based": 861,
+   "strength": "strong"
+  },
+  {
+   "index": 87,
+   "time_s": 36.259,
+   "frame_1based": 871,
+   "strength": "pulse"
+  },
+  {
+   "index": 88,
+   "time_s": 36.676,
+   "frame_1based": 881,
+   "strength": "barline"
+  },
+  {
+   "index": 89,
+   "time_s": 37.092,
+   "frame_1based": 891,
+   "strength": "pulse"
+  },
+  {
+   "index": 90,
+   "time_s": 37.509,
+   "frame_1based": 901,
+   "strength": "strong"
+  },
+  {
+   "index": 91,
+   "time_s": 37.926,
+   "frame_1based": 911,
+   "strength": "pulse"
+  },
+  {
+   "index": 92,
+   "time_s": 38.342,
+   "frame_1based": 921,
+   "strength": "barline"
+  },
+  {
+   "index": 93,
+   "time_s": 38.759,
+   "frame_1based": 931,
+   "strength": "pulse"
+  },
+  {
+   "index": 94,
+   "time_s": 39.176,
+   "frame_1based": 941,
+   "strength": "strong"
+  },
+  {
+   "index": 95,
+   "time_s": 39.592,
+   "frame_1based": 951,
+   "strength": "pulse"
+  },
+  {
+   "index": 96,
+   "time_s": 40.009,
+   "frame_1based": 961,
+   "strength": "barline"
+  },
+  {
+   "index": 97,
+   "time_s": 40.426,
+   "frame_1based": 971,
+   "strength": "pulse"
+  },
+  {
+   "index": 98,
+   "time_s": 40.842,
+   "frame_1based": 981,
+   "strength": "strong"
+  },
+  {
+   "index": 99,
+   "time_s": 41.259,
+   "frame_1based": 991,
+   "strength": "pulse"
+  },
+  {
+   "index": 100,
+   "time_s": 41.676,
+   "frame_1based": 1001,
+   "strength": "barline"
+  },
+  {
+   "index": 101,
+   "time_s": 42.092,
+   "frame_1based": 1011,
+   "strength": "pulse"
+  },
+  {
+   "index": 102,
+   "time_s": 42.509,
+   "frame_1based": 1021,
+   "strength": "strong"
+  },
+  {
+   "index": 103,
+   "time_s": 42.926,
+   "frame_1based": 1031,
+   "strength": "pulse"
+  },
+  {
+   "index": 104,
+   "time_s": 43.342,
+   "frame_1based": 1041,
+   "strength": "barline"
+  },
+  {
+   "index": 105,
+   "time_s": 43.759,
+   "frame_1based": 1051,
+   "strength": "pulse"
+  },
+  {
+   "index": 106,
+   "time_s": 44.176,
+   "frame_1based": 1061,
+   "strength": "strong"
+  },
+  {
+   "index": 107,
+   "time_s": 44.592,
+   "frame_1based": 1071,
+   "strength": "pulse"
+  },
+  {
+   "index": 108,
+   "time_s": 45.009,
+   "frame_1based": 1081,
+   "strength": "barline"
+  },
+  {
+   "index": 109,
+   "time_s": 45.426,
+   "frame_1based": 1091,
+   "strength": "pulse"
+  },
+  {
+   "index": 110,
+   "time_s": 45.842,
+   "frame_1based": 1101,
+   "strength": "strong"
+  },
+  {
+   "index": 111,
+   "time_s": 46.259,
+   "frame_1based": 1111,
+   "strength": "pulse"
+  },
+  {
+   "index": 112,
+   "time_s": 46.676,
+   "frame_1based": 1121,
+   "strength": "barline"
+  },
+  {
+   "index": 113,
+   "time_s": 47.092,
+   "frame_1based": 1131,
+   "strength": "pulse"
+  },
+  {
+   "index": 114,
+   "time_s": 47.509,
+   "frame_1based": 1141,
+   "strength": "strong"
+  },
+  {
+   "index": 115,
+   "time_s": 47.926,
+   "frame_1based": 1151,
+   "strength": "pulse"
+  },
+  {
+   "index": 116,
+   "time_s": 48.342,
+   "frame_1based": 1161,
+   "strength": "barline"
+  },
+  {
+   "index": 117,
+   "time_s": 48.759,
+   "frame_1based": 1171,
+   "strength": "pulse"
+  },
+  {
+   "index": 118,
+   "time_s": 49.176,
+   "frame_1based": 1181,
+   "strength": "strong"
+  },
+  {
+   "index": 119,
+   "time_s": 49.592,
+   "frame_1based": 1191,
+   "strength": "pulse"
+  },
+  {
+   "index": 120,
+   "time_s": 50.009,
+   "frame_1based": 1201,
+   "strength": "barline"
+  },
+  {
+   "index": 121,
+   "time_s": 50.426,
+   "frame_1based": 1211,
+   "strength": "pulse"
+  },
+  {
+   "index": 122,
+   "time_s": 50.842,
+   "frame_1based": 1221,
+   "strength": "strong"
+  },
+  {
+   "index": 123,
+   "time_s": 51.259,
+   "frame_1based": 1231,
+   "strength": "pulse"
+  },
+  {
+   "index": 124,
+   "time_s": 51.676,
+   "frame_1based": 1241,
+   "strength": "barline"
+  },
+  {
+   "index": 125,
+   "time_s": 52.092,
+   "frame_1based": 1251,
+   "strength": "pulse"
+  },
+  {
+   "index": 126,
+   "time_s": 52.509,
+   "frame_1based": 1261,
+   "strength": "strong"
+  },
+  {
+   "index": 127,
+   "time_s": 52.926,
+   "frame_1based": 1271,
+   "strength": "pulse"
+  },
+  {
+   "index": 128,
+   "time_s": 53.342,
+   "frame_1based": 1281,
+   "strength": "barline"
+  },
+  {
+   "index": 129,
+   "time_s": 53.759,
+   "frame_1based": 1291,
+   "strength": "pulse"
+  },
+  {
+   "index": 130,
+   "time_s": 54.176,
+   "frame_1based": 1301,
+   "strength": "strong"
+  },
+  {
+   "index": 131,
+   "time_s": 54.592,
+   "frame_1based": 1311,
+   "strength": "pulse"
+  },
+  {
+   "index": 132,
+   "time_s": 55.009,
+   "frame_1based": 1321,
+   "strength": "barline"
+  },
+  {
+   "index": 133,
+   "time_s": 55.426,
+   "frame_1based": 1331,
+   "strength": "pulse"
+  },
+  {
+   "index": 134,
+   "time_s": 55.842,
+   "frame_1based": 1341,
+   "strength": "strong"
+  },
+  {
+   "index": 135,
+   "time_s": 56.259,
+   "frame_1based": 1351,
+   "strength": "pulse"
+  },
+  {
+   "index": 136,
+   "time_s": 56.676,
+   "frame_1based": 1361,
+   "strength": "barline"
+  },
+  {
+   "index": 137,
+   "time_s": 57.092,
+   "frame_1based": 1371,
+   "strength": "pulse"
+  },
+  {
+   "index": 138,
+   "time_s": 57.509,
+   "frame_1based": 1381,
+   "strength": "strong"
+  },
+  {
+   "index": 139,
+   "time_s": 57.926,
+   "frame_1based": 1391,
+   "strength": "pulse"
+  },
+  {
+   "index": 140,
+   "time_s": 58.342,
+   "frame_1based": 1401,
+   "strength": "barline"
+  },
+  {
+   "index": 141,
+   "time_s": 58.759,
+   "frame_1based": 1411,
+   "strength": "pulse"
+  },
+  {
+   "index": 142,
+   "time_s": 59.176,
+   "frame_1based": 1421,
+   "strength": "strong"
+  },
+  {
+   "index": 143,
+   "time_s": 59.592,
+   "frame_1based": 1431,
+   "strength": "pulse"
+  },
+  {
+   "index": 144,
+   "time_s": 60.009,
+   "frame_1based": 1441,
+   "strength": "barline"
+  },
+  {
+   "index": 145,
+   "time_s": 60.426,
+   "frame_1based": 1451,
+   "strength": "pulse"
+  },
+  {
+   "index": 146,
+   "time_s": 60.842,
+   "frame_1based": 1461,
+   "strength": "strong"
+  },
+  {
+   "index": 147,
+   "time_s": 61.259,
+   "frame_1based": 1471,
+   "strength": "pulse"
+  },
+  {
+   "index": 148,
+   "time_s": 61.676,
+   "frame_1based": 1481,
+   "strength": "barline"
+  },
+  {
+   "index": 149,
+   "time_s": 62.092,
+   "frame_1based": 1491,
+   "strength": "pulse"
+  },
+  {
+   "index": 150,
+   "time_s": 62.509,
+   "frame_1based": 1501,
+   "strength": "strong"
+  },
+  {
+   "index": 151,
+   "time_s": 62.926,
+   "frame_1based": 1511,
+   "strength": "pulse"
+  },
+  {
+   "index": 152,
+   "time_s": 63.342,
+   "frame_1based": 1521,
+   "strength": "barline"
+  },
+  {
+   "index": 153,
+   "time_s": 63.759,
+   "frame_1based": 1531,
+   "strength": "pulse"
+  },
+  {
+   "index": 154,
+   "time_s": 64.176,
+   "frame_1based": 1541,
+   "strength": "strong"
+  },
+  {
+   "index": 155,
+   "time_s": 64.592,
+   "frame_1based": 1551,
+   "strength": "pulse"
+  },
+  {
+   "index": 156,
+   "time_s": 65.009,
+   "frame_1based": 1561,
+   "strength": "barline"
+  },
+  {
+   "index": 157,
+   "time_s": 65.426,
+   "frame_1based": 1571,
+   "strength": "pulse"
+  },
+  {
+   "index": 158,
+   "time_s": 65.842,
+   "frame_1based": 1581,
+   "strength": "strong"
+  },
+  {
+   "index": 159,
+   "time_s": 66.259,
+   "frame_1based": 1591,
+   "strength": "pulse"
+  },
+  {
+   "index": 160,
+   "time_s": 66.676,
+   "frame_1based": 1601,
+   "strength": "barline"
+  },
+  {
+   "index": 161,
+   "time_s": 67.092,
+   "frame_1based": 1611,
+   "strength": "pulse"
+  },
+  {
+   "index": 162,
+   "time_s": 67.509,
+   "frame_1based": 1621,
+   "strength": "strong"
+  },
+  {
+   "index": 163,
+   "time_s": 67.926,
+   "frame_1based": 1631,
+   "strength": "pulse"
+  },
+  {
+   "index": 164,
+   "time_s": 68.342,
+   "frame_1based": 1641,
+   "strength": "barline"
+  },
+  {
+   "index": 165,
+   "time_s": 68.759,
+   "frame_1based": 1651,
+   "strength": "pulse"
+  },
+  {
+   "index": 166,
+   "time_s": 69.176,
+   "frame_1based": 1661,
+   "strength": "strong"
+  },
+  {
+   "index": 167,
+   "time_s": 69.592,
+   "frame_1based": 1671,
+   "strength": "pulse"
+  },
+  {
+   "index": 168,
+   "time_s": 70.009,
+   "frame_1based": 1681,
+   "strength": "barline"
+  },
+  {
+   "index": 169,
+   "time_s": 70.426,
+   "frame_1based": 1691,
+   "strength": "pulse"
+  },
+  {
+   "index": 170,
+   "time_s": 70.842,
+   "frame_1based": 1701,
+   "strength": "strong"
+  },
+  {
+   "index": 171,
+   "time_s": 71.259,
+   "frame_1based": 1711,
+   "strength": "pulse"
+  },
+  {
+   "index": 172,
+   "time_s": 71.676,
+   "frame_1based": 1721,
+   "strength": "barline"
+  },
+  {
+   "index": 173,
+   "time_s": 72.092,
+   "frame_1based": 1731,
+   "strength": "pulse"
+  },
+  {
+   "index": 174,
+   "time_s": 72.509,
+   "frame_1based": 1741,
+   "strength": "strong"
+  },
+  {
+   "index": 175,
+   "time_s": 72.926,
+   "frame_1based": 1751,
+   "strength": "pulse"
+  },
+  {
+   "index": 176,
+   "time_s": 73.342,
+   "frame_1based": 1761,
+   "strength": "barline"
+  },
+  {
+   "index": 177,
+   "time_s": 73.759,
+   "frame_1based": 1771,
+   "strength": "pulse"
+  },
+  {
+   "index": 178,
+   "time_s": 74.176,
+   "frame_1based": 1781,
+   "strength": "strong"
+  },
+  {
+   "index": 179,
+   "time_s": 74.592,
+   "frame_1based": 1791,
+   "strength": "pulse"
+  }
+ ],
+ "measured_accent_onsets_flux_z_ge_1.5": [
+  {
+   "time_s": 1.259,
+   "frame_1based": 31,
+   "flux_z": 1.96
+  },
+  {
+   "time_s": 2.091,
+   "frame_1based": 51,
+   "flux_z": 2.26
+  },
+  {
+   "time_s": 2.923,
+   "frame_1based": 71,
+   "flux_z": 2.98
+  },
+  {
+   "time_s": 3.157,
+   "frame_1based": 76,
+   "flux_z": 1.76
+  },
+  {
+   "time_s": 3.339,
+   "frame_1based": 81,
+   "flux_z": 1.62
+  },
+  {
+   "time_s": 3.616,
+   "frame_1based": 87,
+   "flux_z": 1.55
+  },
+  {
+   "time_s": 3.755,
+   "frame_1based": 91,
+   "flux_z": 1.85
+  },
+  {
+   "time_s": 4.587,
+   "frame_1based": 111,
+   "flux_z": 2.46
+  },
+  {
+   "time_s": 5.216,
+   "frame_1based": 126,
+   "flux_z": 2.39
+  },
+  {
+   "time_s": 5.429,
+   "frame_1based": 131,
+   "flux_z": 1.85
+  },
+  {
+   "time_s": 6.261,
+   "frame_1based": 151,
+   "flux_z": 2.46
+  },
+  {
+   "time_s": 7.093,
+   "frame_1based": 171,
+   "flux_z": 1.83
+  },
+  {
+   "time_s": 7.925,
+   "frame_1based": 191,
+   "flux_z": 1.87
+  },
+  {
+   "time_s": 8.341,
+   "frame_1based": 201,
+   "flux_z": 1.7
+  },
+  {
+   "time_s": 8.757,
+   "frame_1based": 211,
+   "flux_z": 1.7
+  },
+  {
+   "time_s": 9.589,
+   "frame_1based": 231,
+   "flux_z": 2.03
+  },
+  {
+   "time_s": 10.421,
+   "frame_1based": 251,
+   "flux_z": 1.66
+  },
+  {
+   "time_s": 10.848,
+   "frame_1based": 261,
+   "flux_z": 1.59
+  },
+  {
+   "time_s": 11.253,
+   "frame_1based": 271,
+   "flux_z": 2.44
+  },
+  {
+   "time_s": 12.096,
+   "frame_1based": 291,
+   "flux_z": 1.76
+  },
+  {
+   "time_s": 12.928,
+   "frame_1based": 311,
+   "flux_z": 2.43
+  },
+  {
+   "time_s": 13.344,
+   "frame_1based": 321,
+   "flux_z": 1.64
+  },
+  {
+   "time_s": 13.76,
+   "frame_1based": 331,
+   "flux_z": 2.1
+  },
+  {
+   "time_s": 14.592,
+   "frame_1based": 351,
+   "flux_z": 2.29
+  },
+  {
+   "time_s": 14.88,
+   "frame_1based": 358,
+   "flux_z": 2.27
+  },
+  {
+   "time_s": 15.008,
+   "frame_1based": 361,
+   "flux_z": 1.85
+  },
+  {
+   "time_s": 15.424,
+   "frame_1based": 371,
+   "flux_z": 1.69
+  },
+  {
+   "time_s": 16.16,
+   "frame_1based": 388,
+   "flux_z": 1.63
+  },
+  {
+   "time_s": 16.256,
+   "frame_1based": 391,
+   "flux_z": 2.17
+  },
+  {
+   "time_s": 17.088,
+   "frame_1based": 411,
+   "flux_z": 1.55
+  },
+  {
+   "time_s": 17.216,
+   "frame_1based": 414,
+   "flux_z": 2.01
+  },
+  {
+   "time_s": 17.92,
+   "frame_1based": 431,
+   "flux_z": 2.19
+  },
+  {
+   "time_s": 18.763,
+   "frame_1based": 451,
+   "flux_z": 1.67
+  },
+  {
+   "time_s": 19.595,
+   "frame_1based": 471,
+   "flux_z": 1.98
+  },
+  {
+   "time_s": 20.427,
+   "frame_1based": 491,
+   "flux_z": 1.95
+  },
+  {
+   "time_s": 21.259,
+   "frame_1based": 511,
+   "flux_z": 2.11
+  },
+  {
+   "time_s": 22.091,
+   "frame_1based": 531,
+   "flux_z": 1.71
+  },
+  {
+   "time_s": 22.923,
+   "frame_1based": 551,
+   "flux_z": 2.6
+  },
+  {
+   "time_s": 23.755,
+   "frame_1based": 571,
+   "flux_z": 1.77
+  },
+  {
+   "time_s": 24.587,
+   "frame_1based": 591,
+   "flux_z": 1.71
+  },
+  {
+   "time_s": 25.003,
+   "frame_1based": 601,
+   "flux_z": 1.67
+  },
+  {
+   "time_s": 25.429,
+   "frame_1based": 611,
+   "flux_z": 1.82
+  },
+  {
+   "time_s": 26.261,
+   "frame_1based": 631,
+   "flux_z": 2.16
+  },
+  {
+   "time_s": 26.677,
+   "frame_1based": 641,
+   "flux_z": 1.73
+  },
+  {
+   "time_s": 27.093,
+   "frame_1based": 651,
+   "flux_z": 2.38
+  },
+  {
+   "time_s": 27.925,
+   "frame_1based": 671,
+   "flux_z": 4.11
+  },
+  {
+   "time_s": 28.757,
+   "frame_1based": 691,
+   "flux_z": 1.77
+  },
+  {
+   "time_s": 28.885,
+   "frame_1based": 694,
+   "flux_z": 1.51
+  },
+  {
+   "time_s": 29.589,
+   "frame_1based": 711,
+   "flux_z": 2.2
+  },
+  {
+   "time_s": 30.421,
+   "frame_1based": 731,
+   "flux_z": 1.89
+  },
+  {
+   "time_s": 30.848,
+   "frame_1based": 741,
+   "flux_z": 1.88
+  },
+  {
+   "time_s": 31.232,
+   "frame_1based": 750,
+   "flux_z": 2.11
+  },
+  {
+   "time_s": 32.096,
+   "frame_1based": 771,
+   "flux_z": 1.73
+  },
+  {
+   "time_s": 32.928,
+   "frame_1based": 791,
+   "flux_z": 2.25
+  },
+  {
+   "time_s": 33.76,
+   "frame_1based": 811,
+   "flux_z": 2.0
+  },
+  {
+   "time_s": 34.592,
+   "frame_1based": 831,
+   "flux_z": 2.2
+  },
+  {
+   "time_s": 35.008,
+   "frame_1based": 841,
+   "flux_z": 1.84
+  },
+  {
+   "time_s": 35.424,
+   "frame_1based": 851,
+   "flux_z": 1.89
+  },
+  {
+   "time_s": 36.256,
+   "frame_1based": 871,
+   "flux_z": 1.88
+  },
+  {
+   "time_s": 37.088,
+   "frame_1based": 891,
+   "flux_z": 1.88
+  },
+  {
+   "time_s": 37.92,
+   "frame_1based": 911,
+   "flux_z": 1.95
+  },
+  {
+   "time_s": 39.595,
+   "frame_1based": 951,
+   "flux_z": 1.99
+  },
+  {
+   "time_s": 40.427,
+   "frame_1based": 971,
+   "flux_z": 1.74
+  },
+  {
+   "time_s": 41.259,
+   "frame_1based": 991,
+   "flux_z": 2.13
+  },
+  {
+   "time_s": 41.675,
+   "frame_1based": 1001,
+   "flux_z": 1.85
+  },
+  {
+   "time_s": 42.091,
+   "frame_1based": 1011,
+   "flux_z": 1.69
+  },
+  {
+   "time_s": 42.613,
+   "frame_1based": 1023,
+   "flux_z": 1.8
+  },
+  {
+   "time_s": 42.923,
+   "frame_1based": 1031,
+   "flux_z": 2.18
+  },
+  {
+   "time_s": 43.755,
+   "frame_1based": 1051,
+   "flux_z": 1.79
+  },
+  {
+   "time_s": 44.587,
+   "frame_1based": 1071,
+   "flux_z": 1.92
+  },
+  {
+   "time_s": 45.429,
+   "frame_1based": 1091,
+   "flux_z": 1.56
+  },
+  {
+   "time_s": 45.845,
+   "frame_1based": 1101,
+   "flux_z": 1.59
+  },
+  {
+   "time_s": 46.261,
+   "frame_1based": 1111,
+   "flux_z": 1.99
+  },
+  {
+   "time_s": 46.368,
+   "frame_1based": 1113,
+   "flux_z": 2.02
+  },
+  {
+   "time_s": 47.093,
+   "frame_1based": 1131,
+   "flux_z": 1.89
+  },
+  {
+   "time_s": 47.925,
+   "frame_1based": 1151,
+   "flux_z": 2.34
+  },
+  {
+   "time_s": 48.757,
+   "frame_1based": 1171,
+   "flux_z": 1.91
+  },
+  {
+   "time_s": 49.387,
+   "frame_1based": 1186,
+   "flux_z": 1.81
+  },
+  {
+   "time_s": 49.589,
+   "frame_1based": 1191,
+   "flux_z": 1.56
+  },
+  {
+   "time_s": 50.432,
+   "frame_1based": 1211,
+   "flux_z": 1.68
+  },
+  {
+   "time_s": 51.253,
+   "frame_1based": 1231,
+   "flux_z": 1.96
+  },
+  {
+   "time_s": 52.256,
+   "frame_1based": 1255,
+   "flux_z": 2.16
+  },
+  {
+   "time_s": 53.088,
+   "frame_1based": 1275,
+   "flux_z": 3.62
+  },
+  {
+   "time_s": 53.931,
+   "frame_1based": 1295,
+   "flux_z": 1.53
+  },
+  {
+   "time_s": 54.763,
+   "frame_1based": 1315,
+   "flux_z": 1.87
+  },
+  {
+   "time_s": 55.595,
+   "frame_1based": 1335,
+   "flux_z": 1.66
+  },
+  {
+   "time_s": 56.032,
+   "frame_1based": 1345,
+   "flux_z": 2.11
+  },
+  {
+   "time_s": 56.427,
+   "frame_1based": 1355,
+   "flux_z": 2.35
+  },
+  {
+   "time_s": 57.259,
+   "frame_1based": 1375,
+   "flux_z": 2.03
+  },
+  {
+   "time_s": 58.091,
+   "frame_1based": 1395,
+   "flux_z": 2.33
+  },
+  {
+   "time_s": 58.357,
+   "frame_1based": 1401,
+   "flux_z": 1.89
+  },
+  {
+   "time_s": 58.923,
+   "frame_1based": 1415,
+   "flux_z": 1.74
+  },
+  {
+   "time_s": 59.349,
+   "frame_1based": 1425,
+   "flux_z": 1.77
+  },
+  {
+   "time_s": 59.733,
+   "frame_1based": 1434,
+   "flux_z": 1.99
+  },
+  {
+   "time_s": 60.597,
+   "frame_1based": 1455,
+   "flux_z": 1.56
+  },
+  {
+   "time_s": 61.429,
+   "frame_1based": 1475,
+   "flux_z": 2.09
+  },
+  {
+   "time_s": 62.261,
+   "frame_1based": 1495,
+   "flux_z": 1.88
+  },
+  {
+   "time_s": 63.093,
+   "frame_1based": 1515,
+   "flux_z": 2.32
+  },
+  {
+   "time_s": 63.925,
+   "frame_1based": 1535,
+   "flux_z": 1.98
+  },
+  {
+   "time_s": 64.757,
+   "frame_1based": 1555,
+   "flux_z": 2.49
+  },
+  {
+   "time_s": 65.589,
+   "frame_1based": 1575,
+   "flux_z": 1.65
+  },
+  {
+   "time_s": 66.112,
+   "frame_1based": 1587,
+   "flux_z": 1.75
+  },
+  {
+   "time_s": 66.837,
+   "frame_1based": 1605,
+   "flux_z": 1.82
+  }
+ ],
+ "named_events": [
+  {
+   "name": "bed start \u2014 LEAD + MENU spans begin (fades in 2s / 3s), NIGHT + CRICKETS under",
+   "time_s": 0.0,
+   "frame_1based": 1,
+   "provenance": "builder code (build_beds.py ED section) \u2014 CODE"
+  },
+  {
+   "name": "MENU stem loop restart",
+   "time_s": 26.667,
+   "frame_1based": 641,
+   "provenance": "builder code loop_to() on the 26.6667s menu stem \u2014 CODE"
+  },
+  {
+   "name": "LEAD stem loop restart",
+   "time_s": 41.143,
+   "frame_1based": 988,
+   "provenance": "builder code loop_to() on the 41.1430s vocal-lead stem \u2014 CODE"
+  },
+  {
+   "name": "MENU stem second loop restart (body segment)",
+   "time_s": 51.833,
+   "frame_1based": 1245,
+   "provenance": "builder code loop_to() body = stem minus 1.5s crossfade tail \u2014 CODE"
+  },
+  {
+   "name": "DISTANT BELL (gate-bell-boot-distant, -21 dB in the mix)",
+   "time_s": 60.0,
+   "frame_1based": 1441,
+   "duration_s": 2.667,
+   "provenance": "builder code b.add(BELL_FAR, 60.0, -21) \u2014 CODE; MEASURED spot-check: normalised template correlation of the finished bed against gate-bell-boot-distant.wav peaks at exactly 60.00000 s (rank 1 of the 55-65 s search window, corr 0.249; raw pre-loudnorm mix: also rank 1 at 60.00000 s, corr 0.249, fitted bell scale 0.065 = -23.7 dB rel. source file). Bell fundamental 392 Hz, low-passed distant variant."
+  },
+  {
+   "name": "final fade-out begins (10 s broadcast fade on LEAD + MENU)",
+   "time_s": 65.0,
+   "frame_1based": 1561,
+   "provenance": "builder code fo=10 on both spans \u2014 CODE"
+  },
+  {
+   "name": "bed end",
+   "time_s": 75.0,
+   "frame_1based": 1800,
+   "provenance": "file duration (ffprobe 75.000 s) \u2014 MEASURED"
+  }
+ ],
+ "gag_window": {
+  "window_ed_s": [
+   56.0,
+   70.0
+  ],
+  "pulses": [
+   {
+    "index": 135,
+    "time_s": 56.259,
+    "gag_frame_0based": 6,
+    "strength": "pulse"
+   },
+   {
+    "index": 136,
+    "time_s": 56.676,
+    "gag_frame_0based": 16,
+    "strength": "barline"
+   },
+   {
+    "index": 137,
+    "time_s": 57.092,
+    "gag_frame_0based": 26,
+    "strength": "pulse"
+   },
+   {
+    "index": 138,
+    "time_s": 57.509,
+    "gag_frame_0based": 36,
+    "strength": "strong"
+   },
+   {
+    "index": 139,
+    "time_s": 57.926,
+    "gag_frame_0based": 46,
+    "strength": "pulse"
+   },
+   {
+    "index": 140,
+    "time_s": 58.342,
+    "gag_frame_0based": 56,
+    "strength": "barline"
+   },
+   {
+    "index": 141,
+    "time_s": 58.759,
+    "gag_frame_0based": 66,
+    "strength": "pulse"
+   },
+   {
+    "index": 142,
+    "time_s": 59.176,
+    "gag_frame_0based": 76,
+    "strength": "strong"
+   },
+   {
+    "index": 143,
+    "time_s": 59.592,
+    "gag_frame_0based": 86,
+    "strength": "pulse"
+   },
+   {
+    "index": 144,
+    "time_s": 60.009,
+    "gag_frame_0based": 96,
+    "strength": "barline"
+   },
+   {
+    "index": 145,
+    "time_s": 60.426,
+    "gag_frame_0based": 106,
+    "strength": "pulse"
+   },
+   {
+    "index": 146,
+    "time_s": 60.842,
+    "gag_frame_0based": 116,
+    "strength": "strong"
+   },
+   {
+    "index": 147,
+    "time_s": 61.259,
+    "gag_frame_0based": 126,
+    "strength": "pulse"
+   },
+   {
+    "index": 148,
+    "time_s": 61.676,
+    "gag_frame_0based": 136,
+    "strength": "barline"
+   },
+   {
+    "index": 149,
+    "time_s": 62.092,
+    "gag_frame_0based": 146,
+    "strength": "pulse"
+   },
+   {
+    "index": 150,
+    "time_s": 62.509,
+    "gag_frame_0based": 156,
+    "strength": "strong"
+   },
+   {
+    "index": 151,
+    "time_s": 62.926,
+    "gag_frame_0based": 166,
+    "strength": "pulse"
+   },
+   {
+    "index": 152,
+    "time_s": 63.342,
+    "gag_frame_0based": 176,
+    "strength": "barline"
+   },
+   {
+    "index": 153,
+    "time_s": 63.759,
+    "gag_frame_0based": 186,
+    "strength": "pulse"
+   },
+   {
+    "index": 154,
+    "time_s": 64.176,
+    "gag_frame_0based": 196,
+    "strength": "strong"
+   },
+   {
+    "index": 155,
+    "time_s": 64.592,
+    "gag_frame_0based": 206,
+    "strength": "pulse"
+   },
+   {
+    "index": 156,
+    "time_s": 65.009,
+    "gag_frame_0based": 216,
+    "strength": "barline"
+   },
+   {
+    "index": 157,
+    "time_s": 65.426,
+    "gag_frame_0based": 226,
+    "strength": "pulse"
+   },
+   {
+    "index": 158,
+    "time_s": 65.842,
+    "gag_frame_0based": 236,
+    "strength": "strong"
+   },
+   {
+    "index": 159,
+    "time_s": 66.259,
+    "gag_frame_0based": 246,
+    "strength": "pulse"
+   },
+   {
+    "index": 160,
+    "time_s": 66.676,
+    "gag_frame_0based": 256,
+    "strength": "barline"
+   },
+   {
+    "index": 161,
+    "time_s": 67.092,
+    "gag_frame_0based": 266,
+    "strength": "pulse"
+   },
+   {
+    "index": 162,
+    "time_s": 67.509,
+    "gag_frame_0based": 276,
+    "strength": "strong"
+   },
+   {
+    "index": 163,
+    "time_s": 67.926,
+    "gag_frame_0based": 286,
+    "strength": "pulse"
+   },
+   {
+    "index": 164,
+    "time_s": 68.342,
+    "gag_frame_0based": 296,
+    "strength": "barline"
+   },
+   {
+    "index": 165,
+    "time_s": 68.759,
+    "gag_frame_0based": 306,
+    "strength": "pulse"
+   },
+   {
+    "index": 166,
+    "time_s": 69.176,
+    "gag_frame_0based": 316,
+    "strength": "strong"
+   },
+   {
+    "index": 167,
+    "time_s": 69.592,
+    "gag_frame_0based": 326,
+    "strength": "pulse"
+   }
+  ],
+  "barlines": [
+   {
+    "index": 136,
+    "time_s": 56.676,
+    "gag_frame_0based": 16,
+    "strength": "barline"
+   },
+   {
+    "index": 140,
+    "time_s": 58.342,
+    "gag_frame_0based": 56,
+    "strength": "barline"
+   },
+   {
+    "index": 144,
+    "time_s": 60.009,
+    "gag_frame_0based": 96,
+    "strength": "barline"
+   },
+   {
+    "index": 148,
+    "time_s": 61.676,
+    "gag_frame_0based": 136,
+    "strength": "barline"
+   },
+   {
+    "index": 152,
+    "time_s": 63.342,
+    "gag_frame_0based": 176,
+    "strength": "barline"
+   },
+   {
+    "index": 156,
+    "time_s": 65.009,
+    "gag_frame_0based": 216,
+    "strength": "barline"
+   },
+   {
+    "index": 160,
+    "time_s": 66.676,
+    "gag_frame_0based": 256,
+    "strength": "barline"
+   },
+   {
+    "index": 164,
+    "time_s": 68.342,
+    "gag_frame_0based": 296,
+    "strength": "barline"
+   }
+  ],
+  "bell": {
+   "time_s": 60.0,
+   "ed_frame_1based": 1441,
+   "gag_frame_0based": 96,
+   "gag_frame_1based": 97,
+   "pulse_index": 144,
+   "strength": "barline"
+  }
+ },
+ "use": "Animation timing for the EP01 ED (incl. Outro Credit Gag Number One, ED 56-70 s) is charted on this grid: pulses every 10 master frames, strong pulses every 20, barlines every 40, phase: first pulse at gag frame 6 (0-based), first barline at gag frame 16, bell at gag frame 96."
+}
