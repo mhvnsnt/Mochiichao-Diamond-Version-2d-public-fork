@@ -1454,3 +1454,67 @@ FOLLOW-UP NOTED: the service unit paths still point at
 the build home and get re-pointed to the landed home
 (show/production/wielder/) as a separate step. That
 re-point is not part of this landing.
+
+## PRE-DELIVERY GATE WIRED (2026-10-28)
+
+Owner's order (2026-10-28): "Now wire up everything you need
+to achieve that every turn every time I ask you to do
+something." The conduct he named as the best thing about the
+reference generation he brought in - right the first time,
+no back-and-forth, no mistakes, no false claiming, no
+arguing - is now machinery, not a promise:
+
+- `show/production/WORKING-RULES.md` (NEW): the working rules
+  of record in plain words, each stated as an enforceable
+  requirement naming its gate mechanism: (1) first-time-
+  right, (2) verify-then-state, (3) measure before delivery,
+  (4) judgment first, (5) full-set audits (a partial audit is
+  never called complete), (6) the owner's eye overrules
+  checkers, (7) no arguing with the owner's reads / no
+  defending wrong work, (8) you have a browser, (9) motion in
+  measured new drawings per second with floors named
+  (credits 8, scene 12, accents 24; ~3/sec or below is a
+  failed class), (10) grading law - wrong character = FAIL.
+  Head rule: NO GATE RECORD, NO DELIVERY.
+- `show/production/tooling/proof-gate/audit-checklist.json`
+  (NEW): the 20-point character audit of record (the v7
+  full-pose audit, 2026-10-28) as structured data - id, name,
+  item, what-to-inspect - plus item 0, the frame-1 /
+  reference-anchoring check for generated work (from the Wan
+  frame-1 finding).
+- `show/production/tooling/proof-gate/delivery_gate.py`
+  (NEW): the real gate. Reads a delivery manifest (artifact +
+  sha256, kind, register, claims file whose first section is
+  the self-judgment, measured axes, audit marks, likeness run
+  reference); verifies the artifact's hash itself; for video
+  reads or runs `verify_proof.py` (its actual CLI - invoked,
+  never duplicated) and fails the gate on the failed class
+  (<=~3 new drawings/sec, an interpolation signature, or
+  below the declared register's floor); for character work
+  fails on any unmarked audit item, any mark without an
+  inspecting note, any FAIL the self-judgment does not name,
+  or a missing/INCOMPLETE likeness run; fails if the
+  self-judgment section is missing or follows the
+  measurements. Writes the gate record beside the
+  deliverable; exit 0 = pass, 1 = fail.
+- `show/production/tooling/proof-gate/delivery_gate_selftest.py`
+  (NEW): the gate's self-test (synthetic deliveries, scratch
+  under the proof-gate dir, cleaned up after).
+- `show/production/pipeline/ORCHESTRATOR.md`: standing-rule
+  entry added (additions only) pointing at WORKING-RULES.md
+  + the gate.
+
+SELF-TEST RESULT (run 2026-10-28 against the real
+verify_proof.py before this landing): PASS case - a synthetic
+character-work video (authored span structure, ~13 new
+drawings/sec), judgment-first claims file, full 21-item audit
+with one honest FAIL (item 14, hair frozen) named in the
+judgment, COMPLETE likeness record: GATE PASS (14 checks, 0
+violations; checker headline 13.0 new drawings/sec, at or
+above the scene floor of 12). FAIL case - the same delivery
+with audit item 8 (far-arm-missing) unmarked: GATE FAIL,
+violation "audit item 8 (far-arm-missing) is UNMARKED". The
+gate passes honesty and fails concealment, as designed.
+
+From this entry on: every deliverable carries its gate
+record, and a claim states only what the gate record shows.
