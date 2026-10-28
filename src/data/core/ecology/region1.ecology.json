@@ -1,0 +1,70 @@
+{
+  "regionId": "region-1",
+  "regionDisplayName": "Iridescence",
+  "zones": [
+    {
+      "zoneId": "garden-meadow",
+      "areaId": "meadow-route-01",
+      "showLocation": "the Green",
+      "habitatClasses": ["small-ground", "sky", "perch"],
+      "residents": [
+        { "speciesId": "sproutle", "residency": "wild", "evidence": "src/data/core/encounters.json seed (meadow-route-01, grass, weight 30)", "status": "canon: encounters.json seed" },
+        { "speciesId": "pupbble", "residency": "wild", "evidence": "src/data/core/encounters.json seed (meadow-route-01, grass, weight 25)", "status": "canon: encounters.json seed" },
+        { "speciesId": "squirmite", "residency": "wild", "evidence": "src/data/core/encounters.json seed (meadow-route-01, grass, weight 20)", "status": "canon: encounters.json seed" },
+        { "speciesId": "zephling", "residency": "wild", "evidence": "src/data/core/encounters.json seed (meadow-route-01, grass, weight 15)", "status": "canon: encounters.json seed" },
+        { "speciesId": "kittember", "residency": "wild", "evidence": "src/data/core/encounters.json seed (meadow-route-01, grass, weight 10) — kept garden-edge population; the wild Forest population is a separate zone row and not a contradiction", "status": "canon: encounters.json seed" }
+      ],
+      "timeBands": null,
+      "status": "canon seed rows, ecology view. habitatClasses: small-ground is method-proven (grass); sky/perch are show-location classes from LIVING-WORLD population mapping for the Green/Gate skies and fences — show-side classes, not encounter claims."
+    },
+    {
+      "zoneId": "garden-pond",
+      "areaId": "pond-route-01",
+      "showLocation": "the Pond",
+      "habitatClasses": ["water"],
+      "residents": [
+        { "speciesId": "mochii", "residency": "wild", "evidence": "src/data/core/encounters.json seed (pond-route-01, surf/fish)", "status": "canon: encounters.json seed" },
+        { "speciesId": "inklet", "residency": "wild", "evidence": "src/data/core/encounters.json seed (pond-route-01, surf/fish)", "status": "canon: encounters.json seed" },
+        { "speciesId": "finblade", "residency": "wild", "evidence": "src/data/core/encounters.json seed (pond-route-01, surf/fish)", "status": "canon: encounters.json seed" },
+        { "speciesId": "floatcalf", "residency": "wild", "evidence": "src/data/core/encounters.json seed (pond-route-01, surf only)", "status": "canon: encounters.json seed" }
+      ],
+      "timeBands": null,
+      "status": "canon seed rows, ecology view. water is method-proven (surf/fish) — the same rule #7 applies."
+    },
+    {
+      "zoneId": "dark-forest-surface",
+      "areaId": "dark-forest",
+      "showLocation": "the Dark Forest (surface)",
+      "habitatClasses": ["canopy", "small-ground"],
+      "residents": [
+        { "speciesId": "kittember", "residency": "wild", "evidence": "SEASON-CANON-MAP: the Forest's canon contents include wild Kittember (prose, unnumbered)", "status": "canon-prose, numbers owed (mirrors dark-forest.spawn-tables.json surface row)" }
+      ],
+      "timeBands": null,
+      "status": "canon prose only. Show population for the Forest stays 0 at every tier (LIVING-WORLD P5) despite this game-side row — lanes share schema, not behaviour."
+    },
+    {
+      "zoneId": "dark-forest-depths",
+      "areaId": "dark-forest",
+      "showLocation": "the Dark Forest (depths)",
+      "habitatClasses": ["depths"],
+      "residents": [],
+      "timeBands": null,
+      "status": "OPEN — canon does not stock the depths and does not answer what stopped moving there. Empty on purpose, mirroring the depths spawn table."
+    },
+    {
+      "zoneId": "cave-of-echoes-side",
+      "areaId": "cave-route-01",
+      "showLocation": null,
+      "habitatClasses": ["small-ground"],
+      "residents": [
+        { "speciesId": "gearkid", "residency": "wild", "evidence": "src/data/core/encounters.json seed (cave-route-01, cave, weight 35)", "status": "canon: encounters.json seed" },
+        { "speciesId": "pebblefist", "residency": "wild", "evidence": "src/data/core/encounters.json seed (cave-route-01, cave, weight 30)", "status": "canon: encounters.json seed" },
+        { "speciesId": "punchkid", "residency": "wild", "evidence": "src/data/core/encounters.json seed (cave-route-01, cave, weight 20)", "status": "canon: encounters.json seed" },
+        { "speciesId": "pixilite", "residency": "wild", "evidence": "src/data/core/encounters.json seed (cave-route-01, cave, weight 15)", "status": "canon: encounters.json seed" }
+      ],
+      "timeBands": null,
+      "status": "canon seed rows, ecology view. showLocation null: no show counterpart established. habitatClass is small-ground as the least-claim class for a cave floor — flagged here as the weakest inference in this file; the cave class question is OPEN for the landing pass."
+    }
+  ],
+  "status": "Region 1 only, canon-proven rows only. Regions 2-5 are NOT instanced here: their contents are the side/design lane's active wave-1 work (Discovery prose per region) and instance at canon lock — format is region-ready, contents OPEN."
+}

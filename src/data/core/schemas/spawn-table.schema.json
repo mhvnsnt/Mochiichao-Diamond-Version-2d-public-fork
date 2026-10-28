@@ -1,163 +1,165 @@
 {
- "$defs": {
-  "slot": {
-   "additionalProperties": false,
-   "properties": {
-    "habitatClass": {
-     "description": "Show wiring (LIVING-WORLD P2 binding). Fill only from a canon source or a method that proves the class (surf/fish -> water); otherwise null = owed.",
-     "enum": [
-      "sky",
-      "small-ground",
-      "water",
-      "perch",
-      "night",
-      null
-     ],
-     "type": [
-      "string",
-      "null"
-     ]
+  "$defs": {
+    "slot": {
+      "additionalProperties": false,
+      "properties": {
+        "habitatClass": {
+          "description": "Show wiring (LIVING-WORLD P2 binding). Fill only from a canon source or a method that proves the class (surf/fish -> water); otherwise null = owed.",
+          "enum": [
+            "sky",
+            "small-ground",
+            "water",
+            "perch",
+            "night",
+            "canopy",
+            "depths",
+            null
+          ],
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "maxLevel": {
+          "minimum": 1,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "minLevel": {
+          "minimum": 1,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "speciesId": {
+          "description": "Core species.json id / slug.",
+          "type": "string"
+        },
+        "status": {
+          "description": "Per-slot provenance: 'canon: encounters.json seed' / 'canon-prose, numbers owed' / 'provisional'.",
+          "type": "string"
+        },
+        "timeOfDay": {
+          "description": "Null = canon has not split this slot by time; applies across bands until a canon source splits it.",
+          "enum": [
+            "morning",
+            "day",
+            "dusk",
+            "night",
+            null
+          ],
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weather": {
+          "description": "Null in all canon seeds to date; vocabulary set by the first canon source that populates it.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weight": {
+          "description": "Relative weight within the table (canon seed scale); normalised at roll time. Null only when canon names the species for the area in prose without numbers.",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "speciesId",
+        "weight",
+        "status"
+      ],
+      "type": "object"
     },
-    "maxLevel": {
-     "minimum": 1,
-     "type": [
-      "integer",
-      "null"
-     ]
+    "table": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "description": "Canon method vocabulary from encounters.json. Forest floor rolls on 'grass'.",
+          "enum": [
+            "grass",
+            "surf",
+            "fish",
+            "cave"
+          ],
+          "type": "string"
+        },
+        "slots": {
+          "items": {
+            "$ref": "#/$defs/slot"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "method",
+        "slots"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "mochiichao/spawn-table.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Native schema extending the canon seed shape of src/data/core/encounters.json ({mapId, method, minLevel, maxLevel, weight}, timeOfDay/weather present-but-null). Field naming follows the core data convention (camelCase). Unknowns are null and flagged in status, never invented (core README convention). A spawn FILE is either one area object (this schema) or a bundle: {bundle: <slug>, bundleNote?: string, areas: [<area objects>]} — the Garden complex and the tiered Dark Forest ship as bundles.",
+  "properties": {
+    "areaId": {
+      "description": "Canon map/area id, e.g. pond-route-01, dark-forest.",
+      "type": "string"
     },
-    "minLevel": {
-     "minimum": 1,
-     "type": [
-      "integer",
-      "null"
-     ]
+    "areaName": {
+      "type": "string"
     },
-    "speciesId": {
-     "description": "Core species.json id / slug.",
-     "type": "string"
+    "depthTier": {
+      "description": "Dark Forest only; null everywhere else. One file per tier for the Forest.",
+      "enum": [
+        "surface",
+        "depths",
+        null
+      ],
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "showLocation": {
+      "description": "Show-side location this area plays as (LIVING-WORLD), e.g. 'the Pond'. Null if the area has no show counterpart yet.",
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "status": {
-     "description": "Per-slot provenance: 'canon: encounters.json seed' / 'canon-prose, numbers owed' / 'provisional'.",
-     "type": "string"
+      "description": "File-level provenance in the core convention, e.g. 'canon seed rows, re-homed verbatim' / 'OPEN — canon does not stock this tier'.",
+      "type": "string"
     },
-    "timeOfDay": {
-     "description": "Null = canon has not split this slot by time; applies across bands until a canon source splits it.",
-     "enum": [
-      "morning",
-      "day",
-      "dusk",
-      "night",
-      null
-     ],
-     "type": [
-      "string",
-      "null"
-     ]
-    },
-    "weather": {
-     "description": "Null in all canon seeds to date; vocabulary set by the first canon source that populates it.",
-     "type": [
-      "string",
-      "null"
-     ]
-    },
-    "weight": {
-     "description": "Relative weight within the table (canon seed scale); normalised at roll time. Null only when canon names the species for the area in prose without numbers.",
-     "minimum": 0,
-     "type": [
-      "integer",
-      "null"
-     ]
+    "tables": {
+      "items": {
+        "$ref": "#/$defs/table"
+      },
+      "type": "array"
     }
-   },
-   "required": [
-    "speciesId",
-    "weight",
+  },
+  "required": [
+    "areaId",
+    "areaName",
+    "tables",
     "status"
-   ],
-   "type": "object"
-  },
-  "table": {
-   "additionalProperties": false,
-   "properties": {
-    "method": {
-     "description": "Canon method vocabulary from encounters.json. Forest floor rolls on 'grass'.",
-     "enum": [
-      "grass",
-      "surf",
-      "fish",
-      "cave"
-     ],
-     "type": "string"
-    },
-    "slots": {
-     "items": {
-      "$ref": "#/$defs/slot"
-     },
-     "type": "array"
-    }
-   },
-   "required": [
-    "method",
-    "slots"
-   ],
-   "type": "object"
-  }
- },
- "$id": "mochiichao/spawn-table.schema.json",
- "$schema": "https://json-schema.org/draft/2020-12/schema",
- "additionalProperties": false,
- "description": "Native schema extending the canon seed shape of src/data/core/encounters.json ({mapId, method, minLevel, maxLevel, weight}, timeOfDay/weather present-but-null). Field naming follows the core data convention (camelCase). Unknowns are null and flagged in status, never invented (core README convention). A spawn FILE is either one area object (this schema) or a bundle: {bundle: <slug>, bundleNote?: string, areas: [<area objects>]} \u2014 the Garden complex and the tiered Dark Forest ship as bundles.",
- "properties": {
-  "areaId": {
-   "description": "Canon map/area id, e.g. pond-route-01, dark-forest.",
-   "type": "string"
-  },
-  "areaName": {
-   "type": "string"
-  },
-  "depthTier": {
-   "description": "Dark Forest only; null everywhere else. One file per tier for the Forest.",
-   "enum": [
-    "surface",
-    "depths",
-    null
-   ],
-   "type": [
-    "string",
-    "null"
-   ]
-  },
-  "notes": {
-   "type": [
-    "string",
-    "null"
-   ]
-  },
-  "showLocation": {
-   "description": "Show-side location this area plays as (LIVING-WORLD), e.g. 'the Pond'. Null if the area has no show counterpart yet.",
-   "type": [
-    "string",
-    "null"
-   ]
-  },
-  "status": {
-   "description": "File-level provenance in the core convention, e.g. 'canon seed rows, re-homed verbatim' / 'OPEN \u2014 canon does not stock this tier'.",
-   "type": "string"
-  },
-  "tables": {
-   "items": {
-    "$ref": "#/$defs/table"
-   },
-   "type": "array"
-  }
- },
- "required": [
-  "areaId",
-  "areaName",
-  "tables",
-  "status"
- ],
- "title": "Mochiichao spawn table file \u2014 one area, its method tables, its slots",
- "type": "object"
+  ],
+  "title": "Mochiichao spawn table file — one area, its method tables, its slots",
+  "type": "object"
 }
