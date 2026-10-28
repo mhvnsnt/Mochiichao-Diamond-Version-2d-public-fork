@@ -174,3 +174,6 @@ the avatar full stack + puppet rigs (Jamar's standing order).
 7. The canon term for the human who commands in battle
    (game data says "trainers"; the Garden role is "keeper").
 
+## THE ESSENCE (owner law, 2026-10-27)
+
+Mochiichao — the game and the show — is at its heart and soul an OPEN-WORLD RPG universe, deeper and more open than a Pokemon game, even though it is built on the Pokemon base. Its heart, soul, and mechanics are kin to Fallout, Skyrim, Persona 5, Grand Theft Auto, Red Dead Redemption, Pokemon, Dragon Ball Z: Buu's Fury, and JoJo's Bizarre Adventure. It is one whole world and universe that gets created and can be explored through the show, or the game, or both. The Pokemon-base rule says how systems work; this law says what kind of thing we are making. When a scope or design choice makes the world smaller, more corridor-like, or shallower than that statement, the choice is wrong by default and the open-world reading wins.

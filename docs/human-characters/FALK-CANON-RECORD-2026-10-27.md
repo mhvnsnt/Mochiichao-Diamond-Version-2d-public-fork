@@ -111,3 +111,5 @@ recorded in the manifest: the full-size cycle's front/back figures
 are stride poses (labelled as strides, not idles), and the chibi
 front figure grins with teeth. Step 3 and step 8 stand DONE for
 both forms; the canon count stays **8/8**.
+
+**Form-split approval (owner, 2026-10-27; PR #430):** the full-size walk sheet, the FULLSIZE atlas, and the CHIBI atlas are APPROVED as presented — including the two flagged items that were in front of the owner: the chibi front figure's teeth grin (against the locked closed-mouth likeness) and the full-size cycle's front/back figures being labelled stride poses, not idles. The flags stay documented in the manifest, now as approved-as-presented.
