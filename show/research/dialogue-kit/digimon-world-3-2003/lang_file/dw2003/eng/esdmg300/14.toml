@@ -1,0 +1,12 @@
+strings = [
+	"",
+	"[name][player_name][name]OK, we're going \ninto Amaterasu \nCity![pause]",
+	"[name]Teddy[name]Hey [player_name2]!\nWait a sec![pause]",
+	"[name][player_name][name]...Teddy!\nYou came \nover here!?[pause]",
+	"[name]Teddy[name]Yeah, I came with \nLisa and the others.[pause][clear]Hey [player_name2], can \nyou wait a moment \nbefore you go in!?[pause][clear]Lisa is bringing \neveryone from the \nResistance![pause]",
+	"[name][player_name][name]Then, what \nabout the\nA.o.A...?[pause]",
+	"[name]Teddy[name]They've been routed \nby the Resistance![pause][clear]Once we get the four \ncities, we only have \nAmaterasu City left![pause]",
+	"[name][player_name][name]I see!\nSo now...[pause]",
+	"[name]Teddy[name]Yeah, it's our \nfinal battle![pause][clear]We're going to \ndefeat the \nA.o.A![pause]",
+	"[name][player_name][name]Yeah, right on![pause][clear]If we fight \ntogether, the \nA.o.A is nothing![pause]",
+]

@@ -1,0 +1,48 @@
+GAME: Digimon World 3 / Digimon World 2003 (PS1, 2002)
+SERIES FOLDER: digimon-world-3-2003/
+USE: REFERENCE ONLY — structure/pacing/coverage template material for an original
+monster-tamer project. Never copy this text into any shipped work.
+
+SOURCE REPO: https://github.com/markisha64/ddw3
+BRANCH / COMMIT (git clone --depth 1 -b dev, HEAD at pull time, 2026-10-27):
+  branch dev, commit 61535731b14ea713ee16b846258402981a62a8dc
+  NOTE: the repo's default master branch is empty (no commits); dev is the active
+  branch. The same author's compiled decompilation also circulates as
+  ReGame-Labs/dw3_decomp and markisha64/dw3_decomp; dorijantomic/dw2003-play-code
+  credits "Marko (markisha64)" and ddw3 as its foundation. This pull is from ddw3
+  itself, the upstream source.
+AUTHOR: markisha64 (Marko).
+
+STATED PROVENANCE (from the repo itself):
+- README: "This is a full decompilation project of the PS1 video game
+  'Digimon World 2003'." Status table: "Localization files (lang files) — Done —
+  All found localization files are in lang_file/. Some escape codes are currently
+  unknown and need to be documented."
+- The lang_file tree is the game's extracted localization data, decoded from the
+  game's lang files into TOML (strings = [ ... ] arrays), organised by language.
+LICENCE: No LICENSE file is present in the repo and no licence is stated in the
+README (checked at the pulled commit). Treat as reference-only, all rights with
+the original rights holders / repo author; do not redistribute as our own.
+
+WHAT WAS EXTRACTED / COPIED HERE:
+- The repo's complete lang_file/ directory, structure preserved:
+  lang_file/dw2003/<lang>/ — 7 language folders: eng, fra, ger, ita, jpn, spn, usa
+  (eng = European English, usa = US English; 432 files per full language, 413 usa).
+- Content per language: full story/event dialogue (esdmg200–esdmg900 series, one
+  TOML per event-script file), NPC talk (estalk00–estalk09), plus Digimon/item/skill
+  names and info, shop, status, system, memory-card, name-entry, card-game
+  (name/description/stats) and training/fight text.
+- Dialogue format in the TOMLs: [name]Speaker[name] ... [pause][clear] control
+  codes preserved exactly as extracted.
+
+MEASUREMENT (stat summing over the copied files, PROVENANCE.txt itself excluded):
+- Total: 3,005 files, 4,809,936 bytes
+  - eng: 432 files, 646,292 bytes
+  - fra: 432 files, 659,025 bytes
+  - ger: 432 files, 643,450 bytes
+  - ita: 432 files, 610,111 bytes
+  - jpn: 432 files, 1,041,086 bytes
+  - spn: 432 files, 641,999 bytes
+  - usa: 413 files, 567,973 bytes
+- Copy verified byte-identical to the clone (md5 spot-check:
+  lang_file/dw2003/eng/estalk00.toml).

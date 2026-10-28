@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name][player_name][name]Huh? That's \nweird. There's \nno one here.[pause]",
+	"[name]Voice[name]...Woooo![pause]",
+	"[name][player_name][name]Wha-what?![pause]",
+	"[name]Voice[name]...Wooo![pause]",
+	"[name][player_name][name]What's that?!\n...it's a ghost![pause]",
+]

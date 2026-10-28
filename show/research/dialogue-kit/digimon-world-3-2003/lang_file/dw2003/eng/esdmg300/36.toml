@@ -1,0 +1,12 @@
+strings = [
+	"",
+	"[name]Veemon[name]Then what should we \nplay?\nHmmmmm...[pause]",
+	"[name][player_name][name]Woah, Veemon! I \nwant the Tree Boots.[pause]",
+	"[name]Veemon[name]Tree Boots?\nOh, the boots for\nkicking trees...[pause][clear]Yeah, sure, but \nonly if you play \nwith me![pause]",
+	"[name][player_name][name]Sure thing!\nWhat're we \ngoing to play?![pause]",
+	"[name]Veemon[name]I'll go hide in the \nKicking Forest, and \nyou have to find me.[pause][clear]If you can find me,\nI'll give you the\nTree Boots![pause][clear]You lose if you\nleave the forest \nwithout finding me![pause][clear]And if you leave the\nKicking Forest, I'm \ngonna go home to eat![pause]",
+	"[name][player_name][name]OK!\nI'm gonna find\nyou![pause]",
+	"[name]Veemon[name]Heh heh heh.\nIt won't be that \neasy![pause][clear]Count to 10 and \ncome to the \nforest![pause]",
+	"[name][player_name][name]OK, counting to 10!\n1, 2, 3, 4, 5, \n6, 7, 8, 9, 10![pause][clear].......\n.........\nWas that too fast?[pause]",
+	"[name][player_name][name]Oh, well!\nOK, let's go \nfind him![pause]",
+]

@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name][player_name][name]Huh? \nThere's no\none here...[pause]",
+	"I am Lord Megadeath, the \ndestroyer of both the Real \nWorld and the Digital World.[pause][clear]And the being who shall be\ngod in the new world after\nall is destroyed...[pause][clear]Now come to me, the\nstrongest tamer...[pause][clear]I await for your arrival at\nthe military satellite,\nGunslinger![pause]",
+	"[name][player_name][name]...what?!\nGunslinger?![pause]",
+	"Yes. I will show you the \nmagnificent glorious figure \nfloating in space...[pause]",
+	"[name][player_name][name]...wha-\nwhat?![pause]",
+]

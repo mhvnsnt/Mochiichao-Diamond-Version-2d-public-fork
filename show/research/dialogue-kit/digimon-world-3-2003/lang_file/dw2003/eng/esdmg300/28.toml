@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]Pharaohmon[name]I lose! You're \nbetter than \nyou look![pause]",
+	"[name][player_name][name]Yeah, of \ncourse![pause]",
+	"[name]Pharaohmon[name]As praise to \nyou, I'll give \nyou this.[pause]",
+	"[name][player_name][name]Yeah! I got\nthe Old Wand![pause]",
+	"[name]Pharaohmon[name]You're strong. Our \ngods will be with \nyou![pause]",
+]

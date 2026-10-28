@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name][player_name][name]An \nearthquake\nagain?![pause]",
+	"[name][player_name][name]I was right!\nIt's Bulbmon![pause]",
+	"[name][player_name][name]That earthquake was \ncaused by it \nmaking holes![pause][clear]Just watch.\nI'm going to defeat\nit this time![pause]",
+]

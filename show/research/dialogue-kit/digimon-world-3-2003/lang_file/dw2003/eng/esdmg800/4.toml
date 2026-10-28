@@ -1,0 +1,10 @@
+strings = [
+	"",
+	"[name][player_name][name]I won!\nMan, I'm\ngood![pause][clear]I've got to \nstop the \nJuggernaut![pause][clear]Huh?\nThere's something \non the ground.[pause]",
+	"[name][player_name][name]What!? The\nelectromagnetic\nfield is gone![pause]",
+	"ALL CLEAR \nFOR LAUNCH![pause][clear]JUGGERNAUT IS \nLAUNCHING![pause]",
+	"[name][player_name][name]...what?![pause][clear]I've got to \nstop it![pause]",
+	"[name][player_name][name]What should I do?\nThe Juggernaut \nis launching![pause]",
+	"[name][player_name][name]...Huh?![pause][clear]It's no use!\nNone of this is \nstopping it![pause]",
+	"[name][player_name][name]Yeah! I got a\nWing Helmet![pause]",
+]

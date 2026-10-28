@@ -1,0 +1,50 @@
+GAME: Digimon Story: Cyber Sleuth / Cyber Sleuth: Hacker's Memory
+(Complete Edition, PC/PS4/Vita/Switch)
+SERIES FOLDER: digimon-story-cyber-sleuth/
+USE: REFERENCE ONLY — structure/coverage template material for an original
+monster-tamer project. Never copy game text into any shipped work.
+
+*** WHAT THIS FOLDER IS — AND IS NOT ***
+This folder contains the TEXT-TABLE SCHEMA for the game, NOT extracted dialogue
+lines. No GitHub-hosted repo was found that ships Cyber Sleuth / Hacker's Memory's
+actual extracted dialogue text with stated provenance (see ../GAP.md for the full
+check list). What the canonical tooling repo DOES ship — and what is copied here —
+is the complete reverse-engineered structure definitions for every .mbe text/data
+table in the game, which map exactly where and how all of the game's text lives.
+That coverage map is the defensible deliverable available for this target.
+
+SOURCE REPO: https://github.com/SydMontague/DSCSTools (now titled MVGLTools)
+COMMIT (git clone --depth 1, HEAD at pull time, 2026-10-27): 089c2497be58acc3a052fe569854ad198d1ecf2a
+AUTHOR: SydMontague.
+
+STATED PROVENANCE (from the repo itself):
+- README: the tool "provides support to pack, unpack, decrypt and encrypt various
+  file formats found in games using the game engine built and used by
+  Media.Vision", explicitly supporting "Digimon Story: Cyber Sleuth (DSCS)";
+  "MBE Files contain a number of data tables and get extracted by the tool into
+  CSV files". The structures/ folder supplies the field definitions the MBE
+  unpacker requires for DSCS — reverse-engineered from the game's own .mbe files.
+- Key schema: structures/dscs/message.json defines the main dialogue table as
+  { ID: int, Speaker: int, Japanese: string, English: string, Chinese: string,
+  EnglishCensored: string, Korean: string, German: string }.
+- Other text-bearing tables defined: quest_para, digiline_para (+ digiline_constant),
+  eden_text_para, farm_talk, bbs_post_para, keyword_para / keyword_message_para /
+  keyword_npc_para, map_msg_entry / map_msg_explanation / map_msg_title,
+  hackers_memory_para, text (custom_sound), plus all item/skill/Digimon/shop tables.
+LICENCE (repo LICENSE file): BSD 3-Clause License, Copyright (c) 2019 SydMontague
+(applies to the tool and its shipped structure files).
+
+WHAT WAS COPIED HERE (structure preserved from the repo):
+- structures/dscs/ — all 103 DSCS structure-definition JSONs, including
+  structures/dscs/structure.json (the filename-pattern -> schema mapping).
+- docs/structures/ — the 6 older plain-text structure notes (battle_command,
+  evolution_condition, item_para, lvup_para, shop_para, support_skill).
+- NOT copied: the tool's C++ source, and the dsts/thl/cr3 structure sets for other
+  games (Digimon Story: Time Stranger / The Hundred Line / Chaos Rings III).
+
+MEASUREMENT (stat summing over the copied files, PROVENANCE.txt itself excluded):
+- Total: 109 files, 477,049 bytes
+  - structures/dscs/: 103 files, 472,852 bytes
+  - docs/structures/: 6 files, 4,197 bytes
+- Copy verified byte-identical to the clone (md5 spot-check:
+  structures/dscs/message.json).

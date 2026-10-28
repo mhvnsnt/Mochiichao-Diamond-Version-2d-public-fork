@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name][player_name][name]Oh, what the?!\nYou're one colorful \nNumemon.[pause]",
+	"[name]BK KingNumemon[name]Don't think I'm like the\nother Numemon![pause][clear]Me, BK KingNumemon,\nis far superior to\nother Numemon.[pause]",
+	"[name][player_name][name]Superior, eh?\nYou don't look like\nit![pause]",
+	"[name]BK KingNumemon[name]Then I'll show \nyou![pause]",
+]

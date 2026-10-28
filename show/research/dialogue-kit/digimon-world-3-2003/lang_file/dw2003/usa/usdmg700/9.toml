@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Ice Master[name]Hey wait!\nYou can't get past\nhere![pause][clear]If you really want \nto, then you have \nto defeat me![pause]",
+	"[name][player_name][name]All right. I just \nhave to fight \nand win, right?[pause]",
+	"[name]Ice Master[name]That's it. \nYou know the \ndrill![pause][clear]OK, let's \nbegin![pause]",
+	"[name][player_name][name]OK, fine.\nBring the\nheat![pause]",
+]

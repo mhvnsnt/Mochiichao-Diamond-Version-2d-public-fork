@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Arena Reception[name][player_name2], you\ndefeated all four\nleaders![pause][clear]Please, proceed to\nthe Arena![pause]",
+	"[name][player_name][name]Uh... who exactly\ndo I fight now?[pause]",
+	"[name]Arena Reception[name]Heh heh heh!\nYou'll just have to\nwait and see![pause][clear]Go on. Your\nopponent is already\nwaiting![pause]",
+	"[name][player_name][name]Alright! The\nstrongest\ntamer![pause]",
+]

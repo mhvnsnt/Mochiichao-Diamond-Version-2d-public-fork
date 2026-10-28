@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]Hmmm, I can't \nfind Veemon...[pause][clear]Hmm...\nwhat to do...\nHmm...[pause]",
+	"[name][player_name][name]Oh, well, let's \njust leave the\nKicking Forest.[pause]",
+]

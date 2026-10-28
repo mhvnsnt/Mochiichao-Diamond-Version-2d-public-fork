@@ -1,0 +1,9 @@
+strings = [
+	"",
+	"[name][player_name][name]Woah, what is \nthis room!?[pause]",
+	"[name][player_name][name]Hey,\nwho's that \nover there?[pause]",
+	"[name][player_name][name]It's the Game \nMaster! I'm\ngonna get her![pause]",
+	"[name]Guard A[name]You're... that \nkid![pause]",
+	"[name]Guard B[name]You're not \ngetting through\nhere![pause]",
+	"[name]Guard C[name]Just give up and \ncome with us![pause]",
+]

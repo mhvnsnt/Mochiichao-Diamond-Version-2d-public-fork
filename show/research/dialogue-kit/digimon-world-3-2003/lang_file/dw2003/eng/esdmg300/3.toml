@@ -1,0 +1,13 @@
+strings = [
+	"",
+	"[name]Kail[name]Hey [player_name2]!\nYou're late![pause]",
+	"[name][player_name][name]Huh? Hey\nKail, are \nyou done?[pause]",
+	"[name]Kail[name]Uh, Um... yeah.\nSo did you find \nTeddy?[pause]",
+	"[name][player_name][name]No, I couldn't \nfind him \nanywhere.[pause]",
+	"[name]Kail[name]...me too.\nI looked everywhere...[pause][clear]He did say he was \ngoing to the Admin\nCenter...[pause]",
+	"[name][player_name][name]...I wonder how far\ninside Teddy is...[pause]",
+	"[name]Kail[name].....[pause]",
+	"[name]Kail[name]...don't you have \na feeling that \nhe's inside here?[pause]",
+	"[name][player_name][name]Hmm....won't \nknow 'til we \nlook.[pause]",
+	"[name]Kail[name]Gee thanks!\nAll right, let's go\nin then![pause]",
+]

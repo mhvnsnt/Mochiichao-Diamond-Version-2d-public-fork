@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]Trooper[name]...is that the Blue \nID Pass?![pause][clear]I-I'm sorry. I \ndidn't know you were \nQing Long Chief![pause]",
+	"[name][player_name][name]...what?!\nUh, ah, yeah![pause][clear]That uniform is too\nobvious. I'm in disguise \nand on patrol![pause][clear]Let's keep this a secret \nbetween the two of us, \nOK?[pause]",
+	"[name]Trooper [name]You're great, \nChief! You're a \nhard worker![pause]",
+	"[name][player_name][name]Phew, that was\nclose...[pause][clear]But now I can\ngo into Zhu Que\nCity.[pause]",
+	"[name]Trooper[name]Oh, please go\nahead![pause]",
+]

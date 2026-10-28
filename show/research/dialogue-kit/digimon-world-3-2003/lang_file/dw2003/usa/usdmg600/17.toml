@@ -1,0 +1,10 @@
+strings = [
+	"",
+	"[name][player_name][name]Byakko Leader,\nI have something \nto ask...[pause]",
+	"[name]Byakko Leader[name]...You found me \nalready![pause][clear]Fine, then I'll just\nhave to fight you![pause]",
+	"[name][player_name][name]What!?\nHey, wait a sec!\nWhat's the...!?[pause]",
+	"[name]Byakko Leader[name]Silence! I'm not \ngoing to lose to \nthe A.o.A![pause]",
+	"[name][player_name][name]Wha-what?\n...A.o.A?![pause]",
+	"[name]Byakko Leader[name]Don't play games\nwith me! Come\nhere, my Digimon![pause]",
+	"[name][player_name][name]I can't believe\nthis! Oh, well... [pause][clear]All right, let's\nget this over \nwith already![pause]",
+]

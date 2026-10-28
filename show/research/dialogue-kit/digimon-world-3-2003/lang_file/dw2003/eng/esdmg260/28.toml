@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]Mr. Smith[name]Now's your chance![pause][clear]Finally, our main item![pause][clear]Ronin Blade, admired \nby all members![pause][clear]This Kotemon exclusive \nweapon will\nstart at 2700 BIT![pause]",
+	"[name]Dealer Abel[name]3100 BIT![pause]",
+	"[name]Chief Milly[name]3500 BIT![pause]",
+	"[name]RPG Fan Masao[name]3900 BIT![pause]",
+	"[name][player_name][name]Hmm 4000 BIT\n...hmmm...[pause]",
+]

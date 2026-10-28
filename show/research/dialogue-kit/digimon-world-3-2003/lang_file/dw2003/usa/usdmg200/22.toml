@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name][player_name][name]I won! \nWho's da man?[pause]",
+	"[name]Keith[name]Ha! I went easy\non you kid.[pause]",
+	"[name][player_name][name]I thought you\nsaid you weren't\npulling punches.[pause]",
+	"[name]Keith[name]I don't know what\nyou're talking about![pause][clear]You better watch\nout. I'll get you\nnext time![pause][clear]Don't forget me.\nSayonara, sucker![pause]",
+	"[name][player_name][name]Whatever!\nHe's the\nsucker![pause]",
+]

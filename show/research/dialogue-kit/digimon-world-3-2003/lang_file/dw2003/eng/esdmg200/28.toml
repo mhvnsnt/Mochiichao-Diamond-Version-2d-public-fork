@@ -1,0 +1,10 @@
+strings = [
+	"",
+	"[name][player_name][name]...How's this?\nNow I look like a\nDigimon![pause]",
+	"[name]Kail[name]Be quiet! Keep your\nmouth shut![pause][clear]We don't want them \nto know that we're \nnot Digimon![pause]",
+	"[name][player_name][name]Oh... ah, \nthat's true.\nI understand...[pause]",
+	"[name]Kail[name]...I've got something I \nwant to look into, so\nI'll go on ahead.[pause][clear][player_name2], you keep\nlooking for Teddy.[pause][clear]As soon as I'm done,\nI'll catch up with you![pause]",
+	"[name][player_name][name]Oh, OK,\nbut be\ncareful.[pause]",
+	"[name]Kail[name]Don't worry, \nI'm not like\nyou![pause]",
+	"[name][player_name][name]What's up with Kail?\nShe's been weird \nsince we got here...[pause][clear]Oh well, I have to\nfind Teddy![pause]",
+]

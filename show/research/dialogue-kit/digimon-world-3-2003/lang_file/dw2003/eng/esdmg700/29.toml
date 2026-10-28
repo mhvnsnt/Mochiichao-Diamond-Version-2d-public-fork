@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Chamber Officer[name]Astral Device is all \nclear. No abnormality\ndetected in the data.[pause]",
+	"[name][player_name][name]...I wonder what's \nhappening in the \nReal World...[pause][clear]I hope it's OK...[pause]",
+	"LIMIT OF REALIZE TRANSFER IS REACHED.\nFORCING DIGITIZATION.[pause]",
+	"[name][player_name][name]What should I do?\nI couldn't stop\nthe Juggernaut.[pause][clear]And I was soooo \nclose![pause]",
+]

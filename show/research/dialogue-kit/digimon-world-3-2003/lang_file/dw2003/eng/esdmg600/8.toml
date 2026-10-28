@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name][player_name][name]Hmm...I can't\nplay long.[pause]",
+	"[name]BK WarGrowlmon[name]I know.\nJust a bit. \nOne battle![pause]",
+	"[name][player_name][name]Oh, then it's OK!\nBut I won't go easy\non you![pause]",
+	"[name]BK WarGrowlmon[name]That's my line![pause][clear]Wow, I haven't\nbattled in a \nwhile![pause]",
+]

@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name][player_name][name]Hmmm...the Matrix \nSystem should be \naround here...[pause][clear]But I don't know how \nto get the system\nto work...[pause][clear]But Game Master sent\nVemmon from here...[pause]",
+	"[name][player_name][name]What?![pause]",
+	"[name][player_name][name]Wh-why is \nVemmon here?![pause][clear]...can it be...\nWell, I gotta \nfollow it![pause]",
+]

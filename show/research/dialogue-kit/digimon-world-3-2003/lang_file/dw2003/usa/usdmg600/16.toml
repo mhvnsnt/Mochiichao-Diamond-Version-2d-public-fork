@@ -1,0 +1,14 @@
+strings = [
+	"",
+	"[name]Attacker[name]No, nooooo...\nmy Digimon...[pause][clear]You're going to\npay for that![pause]",
+	"[name]Lisa[name]Thank you, [player_name2].\nYou've saved me\nagain![pause]",
+	"[name]Kail[name]But Kurt is...!\nI thought I finally \nfound him and...[pause]",
+	"[name]Kurt[name]Oink, oink![pause]",
+	"[name][player_name][name]...OK, I've made my \ndecision! I'm going to \nAsuka City![pause][clear]I'm going to rescue\nTeddy and trash \nthe Game Master![pause]",
+	"[name]Kail[name]Yeah, let's beat up\nthe A.o.A![pause][clear]And change Kurt\nback![pause]",
+	"[name]Lisa[name]I'm asking you to \ndo this as well![pause][clear]But I don't want\npeople to panic...[pause][clear]So can you keep \nquiet about the\nA.o.A?[pause]",
+	"[name][player_name][name]Roger that![pause]",
+	"[name][player_name][name]OK, Kail. \nI'm going![pause]",
+	"[name]Kail[name]Look, if you lose, I'll \nnever forgive you, you \ngot that?![pause]",
+	"[name]Lisa[name]Good luck! I'm \nrooting for you![pause]",
+]

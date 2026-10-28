@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]Digivolution Navi[name]I will show you clues \non how to raise your\nDigimon to digivolve.[pause][clear]I will display the data \non your satellite.[pause]",
+	"\"Kotemon\"\nCan learn Agumon and Veemon types. \nIf you train machine tolerance...[pause][clear]\"Monmon\"\nOnce it learns Ultimate, train its \nstrength, machine and wind tolerance.[pause][clear]\"Kumamon\"\nTrain wisdom and spirit, which are \nhardest to increase.[pause]",
+	"\"Renamon\"\nTrain spirit or strength and defense.[pause][clear]\"Patamon\"\nTrain wisdom or strength.[pause]",
+	"\"Agumon\"\nIf you increase dark tolerance, it \nwill learn dark type digivolution.[pause][clear]\"Guilmon\"\nIts parameters are partial, so the \nkey is to strengthen its weaknesses.[pause]",
+	"[name]Digivolution Navi[name]That's all of the \ninformation.\nWell, good luck![pause]",
+]

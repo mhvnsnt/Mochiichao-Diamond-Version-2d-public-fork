@@ -1,0 +1,10 @@
+strings = [
+	"",
+	"[name]Mischievous Mat[name]I told you the Etemon \nyou're looking for isn't \nhere.[pause]",
+	"[name][player_name][name]Well, of course\nnot, because you\nare the Etemon.[pause]",
+	"[name]Mischievous Mat[name]...What?![pause]",
+	"[name][player_name][name]I know your game.\nYou were wearing the \nEtemon Suit back there![pause]",
+	"[name]Mischievous Mat[name].........[pause][clear]Ah, you found \nout? That\nsucks![pause][clear]Hey, just don't \ntell anyone, OK?[pause][clear]I'll give you\nthis in return![pause]",
+	"[name][player_name][name]Right on! It's the \nAgumon Suits.[pause]",
+	"[name]Mischievous Mat[name]This is a secret,\nbetween you and \nme, all right?![pause]",
+]

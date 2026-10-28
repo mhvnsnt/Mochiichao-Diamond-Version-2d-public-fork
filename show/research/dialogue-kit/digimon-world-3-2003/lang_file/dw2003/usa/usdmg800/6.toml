@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]This panel is alive!\nThis should get rid \nof the block...[pause]",
+	"[name][player_name][name]Hmm, did the \nblock go away \nnow?[pause]",
+]

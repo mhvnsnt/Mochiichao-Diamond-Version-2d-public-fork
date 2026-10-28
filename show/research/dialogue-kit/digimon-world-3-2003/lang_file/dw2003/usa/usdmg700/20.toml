@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name]Ice Master[name]You're good. \nI'm impressed![pause][clear]This is a gift from \nme. \nTake it![pause]",
+	"[name][player_name][name]Yeah! I got a\nMP Chip![pause]",
+	"[name]Ice Master[name]It gets tougher\nfrom here! \nBe prepared![pause]",
+]

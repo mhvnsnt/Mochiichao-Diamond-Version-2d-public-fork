@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Knightmon[name]Virus detected!\nVirus detected![pause][clear]Deleting the virus \nnow![pause]",
+	"[name][player_name][name]He-hey wait!\nI'm not a virus![pause]",
+	"[name]Knightmon[name]Virus confirmed!\nVirus confirmed![pause][clear]Deleting the virus \nnow![pause]",
+	"[name][player_name][name]It's no use. Knightmon \nwas reprogrammed by \nthe A.o.A![pause][clear]Hmm... I guess I \nshould check out the\nother cities for now.[pause]",
+]

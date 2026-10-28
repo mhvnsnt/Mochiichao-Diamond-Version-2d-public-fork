@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"Beep Beep...\nPLEASE WAIT.\nCONFIRMING DATA.[pause]",
+	"[name][player_name][name]It worked!\nNow I can go to\nSouth Sector![pause]",
+	"THANK YOU FOR WAITING.\nYOU ARE [player_name2].[pause][clear]SYSTEM WILL NOW START. \nPLEASE PROCEED TO \nTHE GONDOLA.[pause]",
+]

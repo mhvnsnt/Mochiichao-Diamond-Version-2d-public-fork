@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name]Suzaku Leader[name]So, what, are you \nready to step into\nmy arena?[pause]",
+	"[name][player_name][name]Yeah, \nof course![pause]",
+	"[name]Suzaku Leader[name]My, you sound \nreally confident![pause][clear]But don't \nunderestimate me \nbecause I'm a girl![pause]",
+]

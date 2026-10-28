@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Kail[name]...that's annoying. \nWe can't go in.[pause]",
+	"[name][player_name][name]There has \nto be some \nway...[pause]",
+	"[name]Kail[name]...well, no use \npouting about\nit here.[pause][clear]Let's split up \nand check \nthings out.[pause][clear]Talk to people \nin the city.[pause]",
+	"[name][player_name][name]OK, I will![pause][clear]I'm starting to\nget worried\nabout Teddy.[pause]",
+]

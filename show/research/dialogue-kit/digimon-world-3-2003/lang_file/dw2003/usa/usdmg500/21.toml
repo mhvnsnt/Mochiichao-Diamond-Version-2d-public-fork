@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]BK Seraphimon[name]I know of your \nstrength...\nand your courage.[pause][clear]I was testing your \ncourage...[pause]",
+	"[name][player_name][name]Yeah! I won't lose\nto anyone in that\ncategory![pause]",
+	"[name]BK Seraphimon[name]That's the spirit![pause][clear]You have passed.\nI'll give you this\nas a proof![pause]",
+	"[name][player_name][name]Yeah! I got the\nSniper Suit![pause]",
+	"[name]BK Seraphimon[name]The pass will \nbe revealed by\ncourage.[pause][clear]Do not give up \nto any enemy\nand endure![pause]",
+]

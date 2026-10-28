@@ -1,0 +1,8 @@
+strings = [
+	"",
+	"[name]Zanbamon[name]Wha-what...\nI lost...[pause]",
+	"[name][player_name][name]How was that?!\nI'm pretty strong \nain't I?[pause]",
+	"[name]Zanbamon[name]Oh, all right.\nI'll give you this,\nso forgive me![pause]",
+	"[name][player_name][name]What, a Rusty \nKatana?! Oh, \nwell...[pause]",
+	"[name]Zanbamon[name]I-I'm going to live\nin peace here...[pause][clear]Please leave me \nalone![pause]",
+]
