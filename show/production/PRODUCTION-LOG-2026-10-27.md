@@ -880,3 +880,7 @@ Sector name in scope carries a binary/data word).
 ## DIALOGUE TEMPLATE LIBRARY LANDED (2026-10-27)
 
 The dialogue template library (show/production/dialogue-template-library/) is in the repo: README, TAXONOMY, PILOT-BATCH (30 canon-ready templates across 12 functions, owner-approved lines), GAP-MAP. Taxonomy measured from Gens 1-3 readable banks + Gen 4 present-but-undecoded; Gen 5-9 + Digimon/Monster Rancher slots designed; refusal list included. One follow-up remains: a cross-reference line in its README pointing at the dialogue kit's repo path, to be added when the kit's own landing decides that path (kit owned by the text-bank lane). Landed by the lock-everything wave.
+
+## ADAPTATION LIBRARY LANDED (2026-10-27)
+
+The adaptation-source library (show/production/adaptation-library/, 23 files) is in the repo: source catalogue (owner's repos first, public transcript structure notes second), 48 templates (14 episode shapes, 12 scene templates, 15 gag mechanisms, 7 reference slots), 6 pilot adaptations slotted into EP02-EP05 beats with subtitle accounting, and the DO-NOT-ADAPT list (22 flagged groups). Construction-kit filter applied throughout: donor structure and craft only - no donor characters, names, logos, or iconic lines carried. Landed by the lock-everything wave.
