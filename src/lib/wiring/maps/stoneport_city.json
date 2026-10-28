@@ -39,7 +39,7 @@
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ],
   "exits": [{"x": 14, "y": 29, "to": "route_2", "enterAt": [14, 1], "dir": "down"}],
-  "npcs": [{"id": "dockhand_juno", "x": 14, "y": 20, "name": "Dockhand Juno", "role": "npc"}, {"id": "harbour_guard", "x": 14, "y": 10, "name": "Harbour Guard", "role": "npc"}, {"id": "healer_stoneport", "x": 7, "y": 10, "name": "Nurse Faye", "role": "heal"}],
+  "npcs": [{"id": "dockhand_juno", "x": 14, "y": 20, "name": "Dockhand Juno", "role": "npc", "dialog": ["Crates for the Isles boats. Manifest's in triplicate since the new lot took the far pier.", "Far pier's theirs after six. Their word, their watches, their lamps.", "Nobody minds to their faces. Faces are how you keep a dock job."]}, {"id": "harbour_guard", "x": 14, "y": 10, "name": "Harbour Guard", "role": "npc"}, {"id": "healer_stoneport", "x": 7, "y": 10, "name": "Nurse Faye", "role": "heal"}],
   "signs": [{"x": 14, "y": 14, "text": "STONEPORT CITY\\nHarbour, docks, and the road south to Neon City."}],
   "noWild": true
 }

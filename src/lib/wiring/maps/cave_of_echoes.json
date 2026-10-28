@@ -40,6 +40,6 @@
   ],
   "exits": [{"x": 5, "y": 0, "to": "binary_woods", "enterAt": [27, 38], "dir": "up"}, {"x": 11, "y": 27, "to": "neon_city", "enterAt": [18, 35], "dir": "down"}],
   "npcs": [{"id": "miner_npc", "x": 12, "y": 13, "name": "Miner Cleff", "role": "trainer"}, {"id": "trainer_caverunner_pike", "x": 19, "y": 10, "name": "Cave Runner Pike", "role": "trainer"}],
-  "signs": [],
+  "signs": [{"x": 6, "y": 1, "text": "CAVE OF ECHOES\nSpeak softly. The cave repeats everything once,\nand keeps what it likes."}],
   "wildPool": ["Razorgater"]
 }

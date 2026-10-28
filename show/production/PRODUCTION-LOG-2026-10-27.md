@@ -916,3 +916,25 @@ MOCHICHAO DESIGN lane stood up (owner-directed) - charter with canon feed, two-l
 ## NAME-GAP LOCKS APPLIED (2026-10-27)
 
 Owner confirmed the name-gap brainstorm's five headline picks and added a sixth of his own; all six are canon as of 2026-10-27. Game lane (surgical placeholder replacements in the region dialogue files, speaker/leader fields only): Region 2 Champion "CHAMPION (NAME GAP — not Hex, not Mythar)" -> "CHAMPION — Rin & Ren (twins, joint holders)" (entry R2-13; the twins hold one title jointly) and Region 2 First Champion "FIRST CHAMPION (NAME GAP)" -> "FIRST CHAMPION — Shimo" (entry R2-14, Frost Peak) in region2-dialogue.json; "NAME GAP — leader who knew Aeon, personal name not canon" -> "Kairos" (entry R3-07, badge R3-5/8 — the knew-Aeon Dojo 5 slot is carried in region3-dialogue.json; the mining's "Region 2" label does not match the file, flagged in the season canon map) and Region 3 Champion -> "CHAMPION — Nagisa" (entry R3-12) in region3-dialogue.json; Region 4 Champion -> "CHAMPION — Delta" (entry R4-15) in region4-dialogue.json; Region 5 League Champion -> "CHAMPION — Bannon" (entry R5-15) in region5-dialogue.json. Grand Champion Mythar (entry R5-17) untouched; every other NAME GAP remains open. Show lane: show/production/FUTURE-CONSIDERED-IDEAS-NAME-GAPS.md filed with the six marked OWNER-LOCKED (Bannon is the owner's own character, superseding the C-5 candidates; the misdirection — a robed figure believed to be Ash of Wizard Gang, the true champion Bannon, Region 5 under Wizard Gang control — is recorded in the season canon map), and show/production/SEASON-CANON-MAP.md records all six locks in their slots.
+
+
+## Dialogue wiring — Region 1 fabric landed (PR feature/dialogue-wiring-r1-1)
+
+- 18 fabric line-sets from the dialogue template library pilot batch
+  (P-01–P-30) and the wiring-pass supplement (S-01–S-21) were wired into
+  Region 1 map data under `src/lib/wiring/maps/` (13 files), additively
+  only: map NPC entries gained `dialog` / `dialogAfter` / `battleDialog`
+  fields in the game's existing dialogue shapes, and five maps gained
+  entrance signs/plaques in their existing `signs` shape. No pre-existing
+  line was altered or deleted (machine-checked per file); the story spine
+  (`region1-dialogue.json`, `region1-truck-start.ink`, the locked ink
+  dialogue file) is untouched. Villain/hacker sets (P-24, S-13) keep their
+  authored double-layer wording verbatim.
+- Full trace — every wired set with function, source (P-/S- number), target
+  file/NPC, plus the 33 draft sets left unwired with reasons (no matching
+  map/NPC in the wiring set, already-covered signs, owner-class leader
+  content) and P-27 delivered as spec text — lives in
+  `show/production/DIALOGUE-WIRING-R1-MANIFEST.md`.
+- Built on post-canon-sweep main (PR #371 merged): all wired lines use
+  swept display names (The Dark Forest, Champions Dojo, Aero Dojo,
+  Rangers; no "trainer" in wired display text).

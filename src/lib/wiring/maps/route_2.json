@@ -49,7 +49,7 @@
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ],
   "exits": [{"x": 14, "y": 0, "to": "stoneport_city", "enterAt": [14, 29], "dir": "up"}, {"x": 14, "y": 39, "to": "neon_city", "enterAt": [18, 1], "dir": "down"}],
-  "npcs": [{"id": "route2_walker", "x": 14, "y": 20, "name": "Road Walker", "role": "npc"}],
+  "npcs": [{"id": "route2_walker", "x": 14, "y": 20, "name": "Road Walker", "role": "npc", "battleDialog": {"intro": "Harbour Road rules: you may pass the bridge toll-free, but the view charges one battle. I collect for the view.", "defeat": "View's paid in full. I never win the toll and I never stop collecting it.", "after": "Stoneport by dusk if your legs agree. Eat at the harbor steps — the Sailor there lost to me once and feeds people like an apology he enjoys."}}],
   "signs": [{"x": 14, "y": 10, "text": "ROUTE EMERALD\\nNorth to Stoneport City. South to Neon City."}],
   "noWild": true
 }

@@ -25,7 +25,7 @@
     [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
   ],
   "exits": [{"x": 5, "y": 15, "to": "binary_woods", "enterAt": [7, 37], "dir": "down"}],
-  "npcs": [{"id": "master_falk", "x": 5, "y": 2, "name": "Master Falk", "role": "trainer"}, {"id": "dojo_acolyte_gale", "x": 3, "y": 6, "name": "Acolyte Gale", "role": "trainer"}, {"id": "dojo_acolyte_skye", "x": 7, "y": 6, "name": "Acolyte Skye", "role": "trainer"}],
-  "signs": [],
+  "npcs": [{"id": "master_falk", "x": 5, "y": 2, "name": "Master Falk", "role": "trainer"}, {"id": "dojo_acolyte_gale", "x": 3, "y": 6, "name": "Acolyte Gale", "role": "trainer", "battleDialog": {"intro": "Master Falk says wind doesn't ask. I ask. I ask constantly. It's why I'm the door and not the storm — battle me anyway!", "defeat": "The door holds! The door is just… open now.", "after": "Falk's ceremony isn't held here, did you know? Stoneport, at the docks, where the wind has somewhere to be. Everything in this dojo is a door to somewhere windier."}}, {"id": "dojo_acolyte_skye", "x": 7, "y": 6, "name": "Acolyte Skye", "role": "trainer"}],
+  "signs": [{"x": 4, "y": 14, "text": "AERO DOJO — WIND WING\nKnock if you must. The wind doesn't."}],
   "noWild": true
 }
