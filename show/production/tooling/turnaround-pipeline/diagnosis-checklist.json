@@ -1,4 +1,6 @@
 {
+ "companion_note": "The proof-gate checklist's item 0 (frame-1-reference-anchored) is this pipeline's Step E frame-1 gate rule; it is a delivery check, not a vision-diagnosis item, so it is not duplicated here.",
+ "derived_from": "show/production/tooling/proof-gate/audit-checklist.json (landed by PR #489 with delivery_gate.py) is the 20-point audit OF RECORD - the delivery gate's data. This file is the same audit re-expressed for the vision-DIAGNOSIS step (per-item check questions + fail signatures a vision model can judge from art and frames), plus the four v5 drawn-gate items (21-24) the diagnosis pass also judges. One audit, two consumers. If the two files ever disagree on the 20 items, the proof-gate file wins and this one is corrected to match.",
  "items": [
   {
    "check": "On a side-moving body, is the face a front portrait (both eyes, front nose and mouth, gaze at the viewer instead of along the direction of travel)?",

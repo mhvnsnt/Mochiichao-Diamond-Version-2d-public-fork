@@ -29,9 +29,17 @@ front-facing parts sideways never exist in the first place.
 
 ## STEP A — DIAGNOSE (vision-model structural pass)
 
-- **Checklist, as data:** `show/production/tooling/turnaround-pipeline/diagnosis-checklist.json`
-  — the 20-point defect audit the owner caught into existence on
-  2026-10-28 (front face on a profile body, front torso, neck
+- **Checklist, as data:** the audit of record is the proof
+  gate's `show/production/tooling/proof-gate/audit-checklist.json`
+  (landed with `delivery_gate.py` by PR #489 — the delivery
+  gate's data, its item 0 being the frame-1 anchoring check).
+  This pipeline's diagnosis step carries the same audit
+  re-expressed for a vision model in
+  `show/production/tooling/turnaround-pipeline/diagnosis-checklist.json`
+  — one audit, two consumers; if they ever disagree, the
+  proof-gate file wins. The 20 points are the defect audit the
+  owner caught into existence on 2026-10-28 (front face on a
+  profile body, front torso, neck
   notch, hair in its front arrangement, backpack slab, arm slab,
   viewer-facing shoe, march high-points, missing far arm, floating
   hair furniture, far-side face furniture, jars at one depth /
@@ -159,12 +167,18 @@ front-facing parts sideways never exist in the first place.
    against the corrected sheet is same-view against same-view:
    the front-vs-profile confound that limited the v7 diagnostics
    does not exist on this route.
-4. **Grading law:** the checker reports; it never grades. Wrong
+4. **The delivery wrapper:** deliveries run under the
+   pre-delivery gate — `show/production/WORKING-RULES.md` and
+   `show/production/tooling/proof-gate/delivery_gate.py`
+   (PR #489) — whose checklist is the audit of record named in
+   Step A. This pipeline's gates feed that gate; they do not
+   replace it.
+5. **Grading law:** the checker reports; it never grades. Wrong
    character = FAIL, full stop, judged by the owner's eye
    (Gate 8). The delivery states the likeness judgment in plain
    words before any measured axis (the registry's standing
    delivery requirement).
-5. **Diagnosis re-run:** the finished clip's frames go back
+6. **Diagnosis re-run:** the finished clip's frames go back
    through Step A's checklist. A clip that re-introduces an audit
    item (a jar morphing is item 12's family; a face sliding
    front is item 1) fails the route's own standard even before

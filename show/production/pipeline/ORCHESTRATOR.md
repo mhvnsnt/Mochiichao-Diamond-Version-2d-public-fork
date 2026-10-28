@@ -220,3 +220,21 @@ binds every deliverable in the show pipeline:
 
 ## Standing references
 - Grants architecture (how lanes route work so it stops generating one-shot approval prompts; owner order 2026-10-28): `GRANTS-ARCHITECTURE.md` in this folder.
+
+## Pre-delivery gate (owner standing rule, 2026-10-28)
+
+No deliverable goes to the owner without a gate record
+produced BEFORE the delivery message - the working rules of
+record are `show/production/WORKING-RULES.md` (first-time-
+right, verify-then-state, measure before delivery, judgment
+first, full-set audits, the owner's eye overrules checkers,
+no arguing with his reads, motion in measured new drawings
+per second, grading law), enforced by the machine gate at
+`show/production/tooling/proof-gate/delivery_gate.py` against
+the 20-point audit checklist
+(`audit-checklist.json` beside it; item 0 = the frame-1 /
+reference-anchoring check for generated work). The gate
+builds on `verify_proof.py` (timing + likeness) - it invokes
+it, never duplicates it. A claim may only state what the gate
+record shows; if the gate record doesn't exist, the delivery
+doesn't get sent.

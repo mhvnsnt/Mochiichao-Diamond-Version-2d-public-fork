@@ -9,7 +9,7 @@ v1.3 in `METHOD-REGISTRY.md`).
 
 | File | Step | What it is |
 |---|---|---|
-| `diagnosis-checklist.json` | A | The 20-point structural defect audit (owner-caught, 2026-10-28) as structured data, plus the 4 v5 drawn-gate items (21–24). The vision model's checklist: every item gets PASS / FAIL / NOT VISIBLE with the frame or pose judged. |
+| `diagnosis-checklist.json` | A | The 20-point structural defect audit (owner-caught, 2026-10-28) re-expressed for the vision-diagnosis step, plus the 4 v5 drawn-gate items (21–24). The audit OF RECORD is the proof gate's `proof-gate/audit-checklist.json` (PR #489) — one audit, two consumers; this file declares the derivation inside itself. Every item gets PASS / FAIL / NOT VISIBLE with the frame or pose judged. |
 | `build_turnaround_job.py` | B + C | Builds both jobs from a character-bank record + a design inventory. Emits the turnaround job (SPEC shape, stamped) and the animate job in the landed scene-job format v2. Refuses to run without an inventory — features come from the canon record, never from the script. |
 | `mochiko-design-inventory.example.json` | B | The worked inventory example, derived from Mochiko's canon record. An example of the shape — re-derive from the record for a real run. |
 | `slice_pack.py` | D | Frame directory → trimmed frame PNGs + horizontal sprite sheet + atlas JSON (`mochiichao-show/sprite-atlas/v1`). Pillow only. Self-tested at landing: 8 synthetic frames → 328×105 sheet, exact trim offsets, empty frame errors. |
