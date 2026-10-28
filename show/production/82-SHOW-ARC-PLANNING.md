@@ -107,4 +107,7 @@ filled.
   introduction) — stated as a rule proposal, owner to confirm.
 
 
+**Landing note — List 27 #266 (2026-10-27):** the flower-symbolism grammar (266-FLOWER-SYMBOLISM.md) lands beside this file and #50's colour scripts as production reference only — it wires no data, field, or check, and all symbolism assignments remain episode writing.
+
+
 **Landing note — List 28 #276 (2026-10-27):** the show lane for the stealing/morale/reputation list lands in 276-SHOW-MORALE-REPUTATION.md: principals' personal bands are carried on this file's arc sheets, a group's standing is staged before the character enters, and unseen deeds are staged as conscience. #276 also records the List 29 forward pointer (items 277–286, the anti-hero arc's structure systems) — a pointer only; nothing of List 29 is built here. The anti-hero's name is the owner's open slot and appears nowhere in the landing.
