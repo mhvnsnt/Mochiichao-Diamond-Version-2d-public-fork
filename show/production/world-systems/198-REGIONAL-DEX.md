@@ -120,3 +120,9 @@ the name-reveal beat's exact staging at `seen`
 Regions 2–5 view curation entire (the regions
 exist in canon; their dex views are authored when
 their content is).
+
+---
+
+**Landing annex — List 34 (2026-10-27), citing STAGING step 10.**
+
+#336's hunting-dex BUILD row lands its *where* read here, in this file's home with #137's atlas: the read joins #102's range maps, this file's dex view and #207's discovery states. It founds no new dex and no new store; it is a read over records that already exist.

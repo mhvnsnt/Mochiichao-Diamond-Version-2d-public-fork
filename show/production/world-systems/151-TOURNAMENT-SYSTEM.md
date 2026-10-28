@@ -75,3 +75,9 @@ are featured · any Syndicate interest in a tournament
 (#99's motives are OPEN and stay so here).
 
 **Validation fence (List 24 #236, landing 2026-10-27):** sport records (236-MOCHI-SPORTS.md) cite this file's results grammar, and the fence runs both ways: a sport record carrying battle terms fails validation. Sport is not battle; a tournament is not a race.
+
+---
+
+**Landing note — List 34 (2026-10-27), citing STAGING step 9: the #335 annex and the ring-out proposal.**
+
+#335 tournament form (`world-systems/335-TOURNAMENT-FORM.md`) lands as this file's annex, in this file's home: the Tenkaichi presentation layer (arena as a place, announcer role, arena-scale crowd from #242, honour stakes) dressed over this file's existing bracket/record core — not a second tournament form. The tournament form is #151 (not #160, field-partner AI): the correction registered in List 34's STAGING is carried here. **Ring-out: PROPOSED, not decided.** #335 proposes an arena-edge (ring-out) fixture rule into this file. The decision belongs to this file's own pass and is recorded as OPEN here — neither landed nor refused by this note; if it is later refused, #335's annex stands with the refusal noted and the form otherwise intact. **This file's WHETHER slot is carried unchanged:** "Whether any canonical tournament exists, where, and its name" remains in this file's open slots exactly as written. Nothing in #335's landing may be described, by anyone, as canon gaining a tournament.

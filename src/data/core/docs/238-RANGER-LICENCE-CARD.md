@@ -97,3 +97,9 @@ are fully specified here; nothing mechanical is parked.
 - The device presentation borrows #149's pacing; the
   screen-class question is registered as a proposal,
   not silently resolved (STAGING, interface note 1).
+
+---
+
+**Landing citation — List 34 (2026-10-27), citing STAGING step 5.**
+
+#330 skills by use (`src/data/core/docs/330-SKILLS-BY-USE.md`) renders its Ranger proficiency read beside this file's licence card and #98's licence record. The read is derived at read time from use-facts that already exist; per List 34 STAGING step 5, #98's record gains NO proficiency or rank field (identity only), and nothing in this file gains one either. Proficiency gates nothing, ever — it is not a second licence (#133's trials and #100's gauntlet are separate systems, cited distinctly).

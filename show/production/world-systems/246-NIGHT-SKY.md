@@ -127,3 +127,6 @@ gate, and the chart's shape are fixed.
 - Contents: the fixed stars' arrangement is chart
   data for the content lane to draw once, carefully;
   zero figures are named in this package.
+
+
+**Landing note — List 34 #331 (2026-10-27):** this file is a rollover subscriber to #331's calendar engine by citation (331-PERSONA-BONDS-CALENDAR.md), after #224's daily edition, the engine's first subscriber. #331's season output returns null until the owner rules a year — the seasons do not turn yet, and no year is invented here.

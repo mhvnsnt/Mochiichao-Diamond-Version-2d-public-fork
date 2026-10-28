@@ -104,3 +104,6 @@ advance time). Calendar slots: #93 day kinds (OPEN). Places:
   depends on and explicitly does not pre-empt.
 
 **Citation (List 20 #195, landing 2026-10-27):** seasonal world events register in owners' formats via 195-SEASONAL-WORLD-EVENTS.md — bundle shape and the windows-only fence live there. No season or event is created by that package; the calendar stays open until the owner rules it.
+
+
+**Landing note — List 34 #331 (2026-10-27):** this file is a rollover subscriber to #331's calendar engine by citation (331-PERSONA-BONDS-CALENDAR.md), after #224's daily edition, the engine's first subscriber. #331's season output returns null until the owner rules a year — the seasons do not turn yet, and no year is invented here.

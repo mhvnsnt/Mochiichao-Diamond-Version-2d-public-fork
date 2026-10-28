@@ -95,3 +95,9 @@ by design; the inventory UI reads recipes through this format.
   register in the fragment names the first-fill candidates and
   the owner/balance passes owed (materials roster, stations,
   quantities) — the machine ships; the cookbook is the owner's.
+
+---
+
+**Landing citation — List 34 (2026-10-27).**
+
+This file's fusion refusal ("Fusion — refused, in writing, and the word reassigned") is carried into #327's pull-in register (`show/production/327-PULL-IN-REGISTER.md`) as one of its three founding refusal precedents, with its reason — refusals stay in the register forever. The fusion refusal is #103 (not #101, move tutoring): the correction registered in List 34's STAGING is carried here.

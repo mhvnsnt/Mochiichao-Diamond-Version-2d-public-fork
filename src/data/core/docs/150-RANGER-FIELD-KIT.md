@@ -77,3 +77,9 @@ outfit-set shape are verified workspace specs; the kit
 record lands beside whichever of them the landing audit
 seats it with (STAGING names the choice as a landing
 step, not a fact).
+
+---
+
+**Landing annexes — List 34 (2026-10-27), citing STAGING step 10.**
+
+(1) **Repel toggle (BUILD row of #336).** A reusable-utility toggle in this file's kit home, reading #255's encounter-rate rule — the toggle is this file's to carry; #255's rule itself does not change. (2) **Party-wide share (List 34 STAGING step 10, row 6 conversion).** Checked at this landing against #177's landed text (`battle/177-EXPERIENCE-GAIN.md`): #177 earns non-participants ONLY through a share mechanism, and asserts none (`shareSource: null`). Row 6 therefore converts to **BUILD in this toggle's form** — a switchable share, never forced — not HAVE. The conversion and its date (2026-10-27) are recorded here and in #177's landing note; #336's audit document carries the same conversion in its landing record.

@@ -126,3 +126,9 @@ ruling; none founded) · the #31 collectable proposal
 **Landing citation — List 33 (2026-10-27).**
 
 #319 individual recognition (`world-systems/319-INDIVIDUAL-RECOGNITION.md`) reads fame from this file's printed record together with #93's town data — fame lives in the world's public layer, exactly here, and no fame field is added to any individual record. The chronicle is #224 (not #95, the SFX variation engine): the correction registered in List 33's STAGING is carried here. Which individuals the chronicle has written about stays authored content in this file's seat.
+
+---
+
+**Landing citation — List 34 (2026-10-27), citing STAGING step 6.**
+
+This file's daily edition is the FIRST subscriber to #331's calendar rollover (`world-systems/331-PERSONA-BONDS-CALENDAR.md`) — its cadence was written against that engine. The subscription is this citation in this file's home, not an edit to the engine. #331's season output returns **null** at its landing: no year is invented, and the seasons do not turn yet, in those words.

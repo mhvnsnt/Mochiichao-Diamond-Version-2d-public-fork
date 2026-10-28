@@ -1792,6 +1792,73 @@
      "extends": "four-seat pipeline extending #82's cast machinery; casting never back-writes the species sheet; #318's register is the casting's source of truth"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list34-systems",
+   "type": "systems-index",
+   "about": "List 34 teardown systems (items 327-336), landed 2026-10-27 \u2014 the gap-filling pull-in list: a standing register, and nine donor systems rebuilt natively over seats that already exist; open slots are story/canon facts and authored content only.",
+   "items": [
+    {
+     "n": 327,
+     "name": "Pull-in register",
+     "home": "show/production/327-PULL-IN-REGISTER.md",
+     "extends": "the standing scout book at the production root; opens with nine building entries and three carried refusals (#103 fusion, #70 rubber-banding, #122 restart-plus); every later STAGING feeds it"
+    },
+    {
+     "n": 328,
+     "name": "Rancher arrival",
+     "home": "show/production/world-systems/328-RANCHER-ARRIVAL.md",
+     "extends": "arrival event class PROPOSED into #80's history vocabulary; seats beside #206/#44/#46 with #135 presentation; lifespan/freezing refusals carried into #327's register"
+    },
+    {
+     "n": 329,
+     "name": "Care-branch evolution",
+     "home": "show/production/world-systems/329-CARE-BRANCH-EVOLUTION.md",
+     "extends": "semantics section landed in #199's file over #8's table architecture; zero lines declared; the A9 OWNER_DECISION fence stated as a testable schema check"
+    },
+    {
+     "n": 330,
+     "name": "Skills by use",
+     "home": "src/data/core/docs/330-SKILLS-BY-USE.md",
+     "extends": "Ranger proficiency derived at read time over existing use-facts, rendering beside #238/#98; no field added to #98's record and proficiency gates nothing, ever"
+    },
+    {
+     "n": 331,
+     "name": "Persona bonds & calendar engine",
+     "home": "show/production/world-systems/331-PERSONA-BONDS-CALENDAR.md",
+     "extends": "bond ranks derived over #93 facts (no rank field stored); calendar engine beside them with #224's daily edition as first rollover subscriber; season output returns null \u2014 no year invented"
+    },
+    {
+     "n": 332,
+     "name": "Working properties",
+     "home": "show/production/world-systems/332-WORKING-PROPERTIES.md",
+     "extends": "services annex recorded in #303's file at this landing (List 31 landed since prep); the #106 location place-ref seat PROPOSED in #106's file only; upkeep reads #331's rollover"
+    },
+    {
+     "n": 333,
+     "name": "Companion judgement",
+     "home": "show/production/world-systems/333-COMPANION-JUDGEMENT.md",
+     "extends": "affinity read landed beside #160 over witnessed facts only; partner-departure event PROPOSED into #80 and #267; no consumer may read a judgement band to disable a player action"
+    },
+    {
+     "n": 334,
+     "name": "Home camp",
+     "home": "show/production/world-systems/334-HOME-CAMP.md",
+     "extends": "annex on #28's Garden seat: supplies, residents' home life and derived camp mood change staging and nothing else"
+    },
+    {
+     "n": 335,
+     "name": "Tournament form",
+     "home": "show/production/world-systems/335-TOURNAMENT-FORM.md",
+     "extends": "Tenkaichi presentation annex landed in #151's file in #151's home; ring-out PROPOSED there and left undecided; #151's WHETHER slot carried verbatim \u2014 no canon tournament asserted"
+    },
+    {
+     "n": 336,
+     "name": "Mod-community standard",
+     "home": "show/production/336-MOD-COMMUNITY-STANDARD.md",
+     "extends": "convenience-floor audit beside #327; BUILD annexes landed in #198 (where read) and #150 (repel toggle); row 6 converted at the link check against #177 to BUILD-as-toggle, recorded in #150/#177 and in the audit document itself"
+    }
+   ]
   }
  ]
 }

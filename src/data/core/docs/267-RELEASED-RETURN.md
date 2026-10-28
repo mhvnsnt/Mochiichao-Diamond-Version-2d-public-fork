@@ -166,3 +166,6 @@ re-keep by anyone — are filled in full.
   *transport* is registered UNVERIFIED in STAGING —
   the record shape is fixed, the engine is not
   audited because it does not exist in the sources.
+
+
+**PROPOSAL from List 34 #333 (registered at its landing, 2026-10-27):** the partner-departure event class is proposed into this file's release-adjacent history (333-COMPANION-JUDGEMENT.md): a companion who departs lives on in the world under this file's persistence — findable, themselves, gone. The #80 half of the same proposal is registered in #80's file at the same landing. Proposal discipline: the class takes effect only as carried here.
