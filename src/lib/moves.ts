@@ -14,10 +14,11 @@ const MOVES_BATCH2: Record<string, Move> =
 
 export const MOVES_DB: Record<string, Move> = {
   // ── WATER ─────────────────────────────────────────────────
-  AQUA_SHOT:      { name:"Water Orb",       type:"WATER",    cat:"Special",  bp:40,  acc:100, pp:25, pri:0, effect:"NONE",        effectChance:0,   anim:"AQUA_SHOT",      desc:"A small ball of water hurled at the foe." },
+  AQUA_SHOT:      { name:"Aqua Shot",       type:"WATER",    cat:"Special",  bp:40,  acc:100, pp:25, pri:0, effect:"NONE",        effectChance:0,   anim:"AQUA_SHOT",      desc:"A small ball of water hurled at the foe." },
   AQUA_CANNON:    { name:"Aqua Cannon",     type:"WATER",    cat:"Special",  bp:90,  acc:100, pp:15, pri:0, effect:"NONE",        effectChance:0,   anim:"AQUA_CANNON",    desc:"A powerful pressurized water blast." },
   HYDRO_SURGE:    { name:"Hydro Surge",     type:"WATER",    cat:"Special",  bp:120, acc:80,  pp:5,  pri:0, effect:"NONE",        effectChance:0,   anim:"HYDRO_SURGE",    desc:"An immense rush of water. Powerful but inaccurate." },
   AQUA_JET:       { name:"Hydro Rush",      type:"WATER",    cat:"Physical", bp:40,  acc:100, pp:20, pri:1, effect:"NONE",        effectChance:0,   anim:"AQUA_SHOT",      desc:"Moves first with a coating of water." },
+  WATER_ORB:      { name:"Water Orb",       type:"WATER",    cat:"Special",  bp:80,  acc:100, pp:15, pri:0, effect:"SPDEF_DOWN1", effectChance:20,  anim:"WATER_ORB",      desc:"Forms an orb of water in both hands and hurls it. Never misses. May lower Sp.Def." },
   // ── FIRE ──────────────────────────────────────────────────
   EMBER_TOSS:     { name:"Ember Toss",      type:"FIRE",     cat:"Special",  bp:40,  acc:100, pp:25, pri:0, effect:"BURN",        effectChance:10,  anim:"EMBER_TOSS",     desc:"A weak fire attack. May cause burn." },
   FIRE_STREAM:    { name:"Fire Stream",     type:"FIRE",     cat:"Special",  bp:90,  acc:100, pp:15, pri:0, effect:"BURN",        effectChance:10,  anim:"FIRE_STREAM",    desc:"A sustained jet of fire. May burn." },
