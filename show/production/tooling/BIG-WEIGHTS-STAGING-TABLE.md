@@ -1,5 +1,33 @@
 # BIG-WEIGHTS STAGING TABLE — Mochiichao show pipeline
 
+> **STATUS CORRECTION — 2026-10-28 (wiring package; the table
+> below is the 2026-10-27/28 record, kept as written — rows that
+> say "to create" or "IN PROGRESS" describe the state when it was
+> compiled):**
+> - **All Kaggle datasets now exist and are server-verified**
+>   (2026-10-28): `marsfmmg/mochiichao-wan22-consistency-kit`,
+>   `marsfmmg/mochiichao-wan22-core`, `marsfmmg/mochiichao-wan22-accel`
+>   (the kit split three ways — a Kaggle kernel's /kaggle/working
+>   quota is ~21 GB, so no single version can hold 38.5 GB),
+>   `marsfmmg/mochiichao-ace-step-15-xl-turbo` (**standalone** —
+>   ACE-Step does NOT ride in an `ace-step/` folder inside the
+>   wan22 kit; the v1 placeholder folder is empty), and
+>   `marsfmmg/mochiichao-voice-weights`. Kaggle total staged:
+>   61,934,128,382 B.
+> - The ACE-Step pull is **COMPLETE**: all four shards
+>   sha256-verified against the LFS hashes, folder total exactly
+>   19,953,378,268 B, `PULL-DONE` written.
+> - RIFE is staged as `rife47.pth` + `rife49.pth` (the VFI node's
+>   real checkpoints); the `flownet.pkl` row below names the
+>   upstream training layout and is superseded.
+> - The owner's `~/.kaggle/kaggle.json` is placed (the "owner
+>   places token" action below is done).
+> - **The only staging step left in this table is the TeraBox
+>   masters batch** (owner's browser session; checklist in
+>   `pull-in-programme/TERABOX-MANIFEST.md`). Current grades:
+>   `show/production/tooling/WIRE-STATUS.md`; current homes for
+>   every row: `show/production/tooling/STAGING-MANIFEST.md`.
+
 Compiled 2026-10-27/28 by the big-weights staging pass. Rule
 (workspace AGENTS.md + show staging law): nothing production lives
 only on local/ephemeral storage — GitHub for what fits, **TeraBox**
