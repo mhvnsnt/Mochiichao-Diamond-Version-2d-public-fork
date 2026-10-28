@@ -13,7 +13,7 @@ GAME-CANON-FOR-SEASON.md (workspace). Headline resolutions:
   contents carry under the new name: mist weather, woods_theme
   music, wild Kittember, NPCs (Hacker Grunt, Bug Catcher Mira,
   Woods Walker Tess), doors to Aero Dojo (Wind Wing) + Cave of
-  Echoes; connects to Binary Fields / Silicon Town. Its beat line:
+  Echoes; connects to Silicon Town (the binary_fields map). Its beat line:
   "The woods hum. Listen, and you will hear where the wild ones
   are." The EP01 stinger's dread is this same Forest's depths —
   the surface hums; the deep interior is where things stop moving.
@@ -31,7 +31,7 @@ at Sector 0 / Boot Harbor -> Hex is the next-door neighbour and
 rival -> Aeon cornered by a wild creature: "Quick — take one from
 my bag and drive it off!" -> FIVE starters (Mochii, Razorgater,
 Tyrage, Kittember, Sproutle) -> Aeon gives the partner + the MOCHIIOTECA
--> Route 1.0. Mochiko = ASSISTANT Mochiko (aeon_lab.json); she
+-> Route Topaz. Mochiko = ASSISTANT Mochiko (aeon_lab.json); she
 opens the Mochi Garden at R1-BEAT3 ("The Mochi Garden is open
 now...") — EP01's keeper framing is that beat, anticipated.
 EP02 v1 (three starters, ceremony) is SUPERSEDED by this canon:
@@ -50,11 +50,11 @@ everywhere the device is named, game and show. Physical design
 still undesigned in canon — EP01 cut 12's abstract light+icons
 treatment stands, now under its true name.
 
-## Season spine (Region 1 = Mainframe)
+## Season spine (Region 1 = Iridescence)
 arrival -> 8 dojos (badges = FRAGMENTS; masters Lin/Falk/Tetsu/
 Kenji/Phantom/Shizuku/Homura + a Syndicate boss as Dojo 8's
 leader) -> Victory Route -> Elite Four (Umi/Gin/Hono/Yoru) ->
-CHAMPION HEX (Mainframe Plateau) -> post-game Seven Data Isles.
+CHAMPION HEX (Iridescence Plateau) -> post-game Seven Mochii Isles.
 10 principal beats (0-9). Regions 2-5 exist in canon for later
 seasons (several champion slots are NAME GAPs in canon itself —
 never filled silently). Season episode COUNT remains a production

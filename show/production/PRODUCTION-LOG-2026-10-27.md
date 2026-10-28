@@ -760,3 +760,37 @@ the show-lane handling per the anime study (capability as body + job,
 obstacles as puzzles, never a hard gate) with one scene example each.
 Owner lock/amend list at the foot of the sheet (obstacle sets, two soft
 gates, boulder reset behaviour, Wave pairings, acquisition placement).
+
+## CANON SWEEP - SHOW LANE ALIGNED TO THE CORRECTED CANON SPINE (2026-10-27)
+Show-lane pass of the canon sweep. The show Bible
+(show/bible/SHOW-BIBLE.md) gains two locked laws in
+section 5: Law 9, THE SECRET - the world is a computer
+that grew a wilderness; no inhabitant knows; Professor
+Aeon knows secretly and covers with "the mainland";
+Luigi has a hint, not knowledge; villain hacker-speak
+is double-layered dramatic irony that no ordinary
+character may decode; production documents may hold
+the truth, in-world artifacts must not betray it - and
+Law 10, the TWO-LANE CONSISTENCY LAW: every canon
+change applies in both the game data and the show data
+(names, settings, doctrines; display names change,
+internal ids stay stable). The season canon map
+(show/production/SEASON-CANON-MAP.md) is aligned to the
+ruled display names: the first route is Route Topaz,
+the region and its plateau read Iridescence /
+Iridescence Plateau, and the post-game isles are the
+Seven Mochii Isles (double i - the isles are the sole
+double-i exception among the ruled M-names; Mochi
+Fruit, Mochi Cocoon, and Mochi Cards keep one i).
+Every episode file on main (show/episodes/, EP01-EP05:
+scripts, beat sheets, cue sheets, storyboard plans)
+was scanned against the full rename list and already
+reads in canon - no episode file needed a change.
+Sector names are unchanged, per owner ruling.
+Deliberately untouched: section 5 Law 8 and section 9
+item 7 - the pending Rangers amendment closes Law 8's
+open term; this pass does not pre-empt it. In the
+season map, the former names quoted inside the two
+RENAMED-BY-OWNER-RULING records stay quoted as the
+record of those rulings (with the stable internal
+file ids); every display use aligns.
