@@ -27,5 +27,9 @@
     "reset": "NONE — no crossing resets, scales, confiscates, or transforms anything, ever",
     "roster": "unchanged by any crossing (#80 records, #104 honours, #68 locks, #106 location semantics all intact)"
   },
-  "connections": []
+  "connections": [],
+  "views": {
+    "journey": "#127 region-transition record (departure-side facts)",
+    "atlas": "#137 world-atlas record (arrival-side facts) — the SAME edge, two views; this file is the one edge store, never two"
+  }
 }

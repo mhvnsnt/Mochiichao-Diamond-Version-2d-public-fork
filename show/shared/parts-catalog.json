@@ -493,6 +493,73 @@
      "note": "Battles in the depths are unstocked space (#7's depths spawn table is intentionally empty, 0 slots). Adding a plate here is a CANON EVENT, not a data fill. Slot wired empty at the List 14 landing (2026-10-27)."
     }
    ]
+  },
+  {
+   "id": "mochiichao-list15-systems",
+   "type": "systems-index",
+   "about": "List 15 teardown systems (items 137-146, the connected-world list), landed 2026-10-27. Game data is primary; the show consumes game geography, never a parallel one. Zero cross-region connections instanced package-wide.",
+   "items": [
+    {
+     "n": 137,
+     "name": "World atlas & connection discovery",
+     "home": "show/production/world-systems/137-WORLD-ATLAS.md",
+     "extends": "#127 edge (one store, two views) / #32 derivation"
+    },
+    {
+     "n": 138,
+     "name": "Side-story system",
+     "home": "show/production/world-systems/138-SIDE-STORIES.md",
+     "extends": "#12 flag chains; a discovery route into #137"
+    },
+    {
+     "n": 139,
+     "name": "Early-discovery handling",
+     "home": "src/data/core/docs/139-EARLY-DISCOVERY.md",
+     "extends": "two-class ruling layer over #52/#93/#137 (declared in their docs at landing)"
+    },
+    {
+     "n": 140,
+     "name": "Border zone design system",
+     "home": "show/production/world-systems/140-BORDER-ZONES.md",
+     "extends": "#7/#29 area layer; 'border' membership value = PROPOSAL into their schemas, spec-level"
+    },
+    {
+     "n": 141,
+     "name": "Ferry & sea-route network",
+     "home": "show/production/world-systems/141-FERRY-NETWORK.md",
+     "extends": "#11/#140 landings; first-reach (not #125); no timetable instanced"
+    },
+    {
+     "n": 142,
+     "name": "Regional climate system",
+     "home": "show/production/world-systems/142-REGIONAL-CLIMATE.md",
+     "extends": "#61/#67 machinery by pointer; R2-5 null records; depths NONE exclusion"
+    },
+    {
+     "n": 143,
+     "name": "Regional league variance",
+     "home": "show/production/world-systems/143-REGIONAL-LEAGUE-VARIANCE.md",
+     "extends": "#45/#100/#126 (R1 instanced; threshold 8 = FLAGGED STRUCTURAL INFERENCE)"
+    },
+    {
+     "n": 144,
+     "name": "Cross-region species & migration",
+     "home": "show/production/world-systems/144-CROSS-REGION-SPECIES.md",
+     "extends": "#102 projection; one sentence accepted into #40's file at landing"
+    },
+    {
+     "n": 145,
+     "name": "Travelling NPC continuity",
+     "home": "show/production/world-systems/145-TRAVELLING-NPCS.md",
+     "extends": "#93 format (spanning rows + transit registered in #93's doc); no NPC instanced"
+    },
+    {
+     "n": 146,
+     "name": "One-world save & visit records",
+     "home": "src/data/core/docs/146-ONE-WORLD-SAVE.md",
+     "extends": "#96 audit result: ZERO stored change; visit-record view registered in #96"
+    }
+   ]
   }
  ]
 }

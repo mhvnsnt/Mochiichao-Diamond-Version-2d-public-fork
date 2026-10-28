@@ -122,3 +122,5 @@ documented public practice — high confidence. Everything numeric is
 OPEN because canon has set almost none of it; that is the project's
 real state, recorded rather than papered over. Curve *names* are
 native coinages; the underlying families are the documented ones.
+
+**Early-arrival class declaration (#139, landing 2026-10-27):** encounter bands are WORLD-OPEN under #139's two-class rule — fully live from the moment of arrival, reading presence + world state, never story progress; no scaling, ever (this doc's law B1 is the early-arrival law). The ruling layer is `src/data/core/docs/139-EARLY-DISCOVERY.md`.

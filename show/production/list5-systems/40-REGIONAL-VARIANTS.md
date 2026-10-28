@@ -99,3 +99,5 @@ that case belongs instead.
   (DESIGN-BRIEF §8 item 13), and variants are a step beyond
   lustre. This package ships the format, the composition rule,
   and the identity line. Every instance awaits owner canon.
+
+**Amendment (from List 15 #144, accepted at its landing, 2026-10-27):** a variant record names the region it belongs to, so the cross-region projection can render it as that region's face of the species.
