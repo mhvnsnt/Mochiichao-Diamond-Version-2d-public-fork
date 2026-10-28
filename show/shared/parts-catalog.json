@@ -466,6 +466,33 @@
      "extends": "#100 capstone / #96 hallOfFame section (registered)"
     }
    ]
+  },
+  {
+   "id": "mochiichao-battle-plates",
+   "type": "battle-plate-registry",
+   "about": "Battle plate entries (List 14 #128, mochiichao/battle-plates/v1). A plate is a parts-catalogue entry with a battle role: plateId <areaId>--battle, areaId + surface from the encounter record, versions[] under the current-version law (one CURRENT per plate per use), living flag + variants. Contents: ZERO plates instanced \u2014 artwork and version chains are production work under the art lanes' gates. The one slot registered at landing is the Dark Forest depths slot, which ships EMPTY by law.",
+   "entryShape": {
+    "plateId": "<areaId>--battle",
+    "areaId": "<#7/#11 area id>",
+    "surface": "<encounter surface class>",
+    "versions": [
+     {
+      "version": "<v>",
+      "status": "current | superseded",
+      "supersedes": "<v|null>"
+     }
+    ],
+    "living": "bool + AMB cycle ids",
+    "variants": "<#19 state / #61 weather keys -> version chains>"
+   },
+   "items": [
+    {
+     "plateId": "dark-forest-depths--battle",
+     "areaId": "dark-forest (depths tier)",
+     "status": "EMPTY \u2014 NO PLATE ASSERTED",
+     "note": "Battles in the depths are unstocked space (#7's depths spawn table is intentionally empty, 0 slots). Adding a plate here is a CANON EVENT, not a data fill. Slot wired empty at the List 14 landing (2026-10-27)."
+    }
+   ]
   }
  ]
 }
