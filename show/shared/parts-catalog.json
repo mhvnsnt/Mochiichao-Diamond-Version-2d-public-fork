@@ -1591,6 +1591,73 @@
      "extends": "production lines proposed into #82's format; theme registry beside #72/#215; the spectacle doctrine (R1, owner ruling) quoted into the production research INDEX for List 32"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list31-systems",
+   "type": "systems-index",
+   "about": "List 31 teardown systems (items 297-306), landed 2026-10-27 \u2014 the open-world layer over the Pokemon base (essence statement): the base fills mechanics, the open-world reading wins ties on scope; open slots are story/canon facts only.",
+   "items": [
+    {
+     "n": 297,
+     "name": "Open traversable world",
+     "home": "src/data/core/docs/297-OPEN-TRAVERSABLE-WORLD.md",
+     "extends": "terrain beside #11's graph on #127's connections; the gate contract is a validation rule \u2014 every gate carries an in-world reason, invisible walls are unrepresentable; zero terrain records authored"
+    },
+    {
+     "n": 298,
+     "name": "Ambient world events",
+     "home": "show/production/world-systems/298-AMBIENT-WORLD-EVENTS.md",
+     "extends": "stranger-moments derived over #231 + #93/#145's floor; intervening writes through the real systems, walking away is a complete play"
+    },
+    {
+     "n": 299,
+     "name": "Joinable factions",
+     "home": "src/data/core/docs/299-JOINABLE-FACTIONS.md",
+     "extends": "a faction is a #270 group plus this record; membership beside #98's licence family; exclusivity resolves as one validation over the joining write; #270 reads membership only when known or shown"
+    },
+    {
+     "n": 300,
+     "name": "Choice & consequence standard",
+     "home": "show/production/world-systems/300-CHOICE-CONSEQUENCE-STANDARD.md",
+     "extends": "the checklist registered in #138's home as a landing gate for content (fork / written fact / closed door / echo); retroactive application is a separate content pass"
+    },
+    {
+     "n": 301,
+     "name": "Dialogue & player voice",
+     "home": "src/data/core/docs/301-DIALOGUE-PLAYER-VOICE.md",
+     "extends": "options derived from a closed fact list (absent fact = absent option, never greyed); tone availability read from #271's bands, once; game dialogue store holds human lines only"
+    },
+    {
+     "n": 302,
+     "name": "Law escalation",
+     "home": "src/data/core/docs/302-LAW-ESCALATION.md",
+     "extends": "the ladder lands ON #272 \u2014 reconciled against landed #272 at this landing; ceilings and decay are regional world facts; decay cools, never forgives"
+    },
+    {
+     "n": 303,
+     "name": "Owned places",
+     "home": "src/data/core/docs/303-OWNED-PLACES.md",
+     "extends": "the class over #169's record (cross-reference only in #169's file); exactly one proposal out \u2014 the tenure clause into #125's file, with citation"
+    },
+    {
+     "n": 304,
+     "name": "Barter economy",
+     "home": "src/data/core/docs/304-BARTER-ECONOMY.md",
+     "extends": "the trade read is one function of four steps over #118's counters on #20's anchor; #20's no-dynamic-pricing law clarified in #20's home, never quoted against the standing modifier; currency name untouched"
+    },
+    {
+     "n": 305,
+     "name": "Open league structure",
+     "home": "src/data/core/docs/305-OPEN-LEAGUE-STRUCTURE.md",
+     "extends": "attempt / earn / spine separated on #45/#143's machinery; #143's Region 1 record stands as authored data \u2014 clarification registered in #143's file"
+    },
+    {
+     "n": 306,
+     "name": "Living overworld presence",
+     "home": "show/production/world-systems/306-LIVING-OVERWORLD-PRESENCE.md",
+     "extends": "presence derived from #7 stock x #152 views (encounter math unmoved); the depths clause is a landing test \u2014 no derivation path may reach the Dark Forest depths"
+    }
+   ]
   }
  ]
 }

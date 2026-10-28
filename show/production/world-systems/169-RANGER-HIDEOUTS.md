@@ -97,3 +97,5 @@ not system).
 
 
 **Landing note — List 28 #274 (2026-10-27):** fence seats are stocked and gated in this file's hideouts (274-UNDERWORLD-FENCES.md): a fence is a recurring room, and the laundering law is enforced by shape — no clean-record operation exists anywhere in the fence system.
+
+**Cross-reference — List 31 (2026-10-27).** This file's hideout record is extended by citation into a class by #303 (`src/data/core/docs/303-OWNED-PLACES.md`): four tenures, five services, four states. This file's record itself is not edited by that citation; #169 keeps the personal hideout, #303 owns the class.
