@@ -74,3 +74,12 @@ Kaggle CLI form for the existing dataset `marsfmmg/mochiichao-scene-job`
 and kernel `marsfmmg/mochiichao-wan-scene-test` recorded in
 `scene-kernel/kernel-metadata.json` / `scene-job/dataset-metadata.json`;
 they were NOT run in this attempt (all Kaggle work stopped at the 429).
+
+## Update — corrective pass, 2026-10-28 (~12:52–12:54 UTC)
+
+The resume command was run in a new attempt. The four segment MP4s
+downloaded completely (see TEST-REPORT §9 / CORRECTIVE-RUN §2 for
+hashes). The same listing call then hit 429 again before the JSON
+reports downloaded, and all Kaggle calls stopped per the standing
+rule. Still outstanding from this kernel's outputs: only
+`scene-run-report.json` / `run-report.json` (the RIFE record).

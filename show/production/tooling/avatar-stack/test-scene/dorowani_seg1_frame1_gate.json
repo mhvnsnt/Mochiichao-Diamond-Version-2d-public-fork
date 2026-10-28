@@ -1,0 +1,114 @@
+{
+  "schema": "mochiichao-show/avatar-stack-frame1-gate/v1",
+  "tool": "frame1_gate.py",
+  "created_utc": "2026-10-28T12:54:35.328405+00:00",
+  "thresholds": {
+    "ssim_min": 0.5,
+    "silhouette_iou_min": 0.55,
+    "rgb_mad_255_max": 40.0
+  },
+  "reportable_without_this_packet": false,
+  "clip": "scene-raw/dorowani_seg1_hops_00001_.mp4",
+  "clip_sha256": "2efbed0f852974d2ada896c70f30f16b65f9afdfac4c9cbfe2166473a8d92d0d",
+  "clip_spec": {
+    "width": 960,
+    "height": 1536,
+    "fps": 16.0,
+    "frames": 81
+  },
+  "reference": "scene-job/dorowani_start.png",
+  "reference_sha256": "aa124c9adc8caacd22628d06f4d1373e16e02e41bfb650028c014a58af0c5720",
+  "likeness_gate": "/home/hatch/workspace/mochiichao-show/avatar-stack-wiring/show/production/tooling/avatar-stack/likeness_gate.py",
+  "sampled_frames": [
+    0,
+    40,
+    80
+  ],
+  "fed_reference_results": {
+    "0": {
+      "measurements": {
+        "ssim_union": 0.3958,
+        "silhouette_iou": 0.4502,
+        "rgb_mad_255": 85.869
+      },
+      "checks": {
+        "ssim": false,
+        "silhouette_iou": false,
+        "rgb_mad": false
+      },
+      "verdict": "FAIL"
+    },
+    "40": {
+      "measurements": {
+        "ssim_union": 0.3849,
+        "silhouette_iou": 0.3285,
+        "rgb_mad_255": 95.674
+      },
+      "checks": {
+        "ssim": false,
+        "silhouette_iou": false,
+        "rgb_mad": false
+      },
+      "verdict": "FAIL"
+    },
+    "80": {
+      "measurements": {
+        "ssim_union": 0.4091,
+        "silhouette_iou": 0.3819,
+        "rgb_mad_255": 90.133
+      },
+      "checks": {
+        "ssim": false,
+        "silhouette_iou": false,
+        "rgb_mad": false
+      },
+      "verdict": "FAIL"
+    }
+  },
+  "canon_cutout_results": {
+    "0": {
+      "measurements": {
+        "ssim_union": 0.4005,
+        "silhouette_iou": 0.4491,
+        "rgb_mad_255": 85.956,
+        "rgb_mad_norm": 0.3371
+      },
+      "checks": {
+        "ssim": false,
+        "silhouette_iou": false,
+        "rgb_mad": false
+      },
+      "verdict": "FAIL"
+    },
+    "40": {
+      "measurements": {
+        "ssim_union": 0.39,
+        "silhouette_iou": 0.3287,
+        "rgb_mad_255": 95.903,
+        "rgb_mad_norm": 0.3761
+      },
+      "checks": {
+        "ssim": false,
+        "silhouette_iou": false,
+        "rgb_mad": false
+      },
+      "verdict": "FAIL"
+    },
+    "80": {
+      "measurements": {
+        "ssim_union": 0.4131,
+        "silhouette_iou": 0.3837,
+        "rgb_mad_255": 90.444,
+        "rgb_mad_norm": 0.3547
+      },
+      "checks": {
+        "ssim": false,
+        "silhouette_iou": false,
+        "rgb_mad": false
+      },
+      "verdict": "FAIL"
+    }
+  },
+  "verdict": "FAIL",
+  "fail_class": "reference-never-anchored"
+}

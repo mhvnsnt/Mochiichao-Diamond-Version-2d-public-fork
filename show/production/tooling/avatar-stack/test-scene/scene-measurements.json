@@ -1,0 +1,25 @@
+{
+ "total_duration_s": 10.125,
+ "track_durations": {
+  "wispkin": 10.125,
+  "dorowani": 10.125
+ },
+ "scene_probe": {
+  "programs": [],
+  "stream_groups": [],
+  "streams": [
+   {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "avg_frame_rate": "24/1",
+    "nb_frames": "243"
+   }
+  ],
+  "format": {
+   "duration": "10.125000"
+  }
+ },
+ "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+ "background_md5": "d2f1bf1d709d3a0e9d9d0f58dccc6c31"
+}

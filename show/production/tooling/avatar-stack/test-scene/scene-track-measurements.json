@@ -1,0 +1,190 @@
+{
+ "wispkin": {
+  "segments_used": [
+   "wispkin_seg1_glide_00001_.mp4",
+   "wispkin_seg2_darkwave_00001_.mp4"
+  ],
+  "track_probe": {
+   "programs": [],
+   "stream_groups": [],
+   "streams": [
+    {
+     "codec_name": "h264",
+     "width": 960,
+     "height": 1536,
+     "avg_frame_rate": "16/1",
+     "nb_frames": "162"
+    }
+   ],
+   "format": {
+    "duration": "10.125000"
+   }
+  },
+  "verify_proof": {
+   "clip": "/home/hatch/workspace/avatar-tool-build/test-scene/work/wispkin_track.mp4",
+   "bytes": 601189,
+   "sha256": "cd1390ff55dfe03884d697bee31be61ce41fd5fe017e90e421083eebd7403d91",
+   "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 960,
+      "height": 1536,
+      "avg_frame_rate": "16/1",
+      "nb_frames": "162"
+     }
+    ],
+    "format": {
+     "duration": "10.125000",
+     "size": "601189"
+    }
+   },
+   "frame_pairs": 161,
+   "mean_frame_diff": 1.034,
+   "median_frame_diff": 0.704,
+   "near_identical_pairs": 57,
+   "near_identical_frac": 0.354,
+   "references": {
+    "slideshow_floor": 0.473,
+    "accepted_bundle_band": [
+     4.5,
+     4.5
+    ]
+   },
+   "reads_as_real_motion": false,
+   "verdict": "MEASURED \u2014 owner viewing decides; this script promotes nothing"
+  },
+  "likeness_frame0": {
+   "measurements": {
+    "ssim_union": 0.3714,
+    "silhouette_iou": 0.3643,
+    "rgb_mad_255": 106.956,
+    "rgb_mad_norm": 0.4194
+   },
+   "checks": {
+    "ssim": false,
+    "silhouette_iou": false,
+    "rgb_mad": false
+   },
+   "verdict": "FAIL"
+  },
+  "likeness_mid_seg1": {
+   "measurements": {
+    "ssim_union": 0.3734,
+    "silhouette_iou": 0.3736,
+    "rgb_mad_255": 94.884,
+    "rgb_mad_norm": 0.3721
+   },
+   "checks": {
+    "ssim": false,
+    "silhouette_iou": false,
+    "rgb_mad": false
+   },
+   "verdict": "FAIL"
+  },
+  "seams": [
+   {
+    "from": "wispkin_seg1_glide_00001_.mp4",
+    "to": "wispkin_seg2_darkwave_00001_.mp4",
+    "seam_MAD_gray": 15.654
+   }
+  ],
+  "track_first_last_MAD_gray": 28.911
+ },
+ "dorowani": {
+  "segments_used": [
+   "dorowani_seg1_hops_00001_.mp4",
+   "dorowani_seg2_waterorb_00001_.mp4"
+  ],
+  "track_probe": {
+   "programs": [],
+   "stream_groups": [],
+   "streams": [
+    {
+     "codec_name": "h264",
+     "width": 960,
+     "height": 1536,
+     "avg_frame_rate": "16/1",
+     "nb_frames": "162"
+    }
+   ],
+   "format": {
+    "duration": "10.125000"
+   }
+  },
+  "verify_proof": {
+   "clip": "/home/hatch/workspace/avatar-tool-build/test-scene/work/dorowani_track.mp4",
+   "bytes": 659847,
+   "sha256": "a2b02801c58fd6b5cfc9b37cab05957e7bfe6a13f377bd050c9b412dfc17591d",
+   "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 960,
+      "height": 1536,
+      "avg_frame_rate": "16/1",
+      "nb_frames": "162"
+     }
+    ],
+    "format": {
+     "duration": "10.125000",
+     "size": "659847"
+    }
+   },
+   "frame_pairs": 161,
+   "mean_frame_diff": 1.101,
+   "median_frame_diff": 0.776,
+   "near_identical_pairs": 68,
+   "near_identical_frac": 0.4224,
+   "references": {
+    "slideshow_floor": 0.473,
+    "accepted_bundle_band": [
+     4.5,
+     4.5
+    ]
+   },
+   "reads_as_real_motion": false,
+   "verdict": "MEASURED \u2014 owner viewing decides; this script promotes nothing"
+  },
+  "likeness_frame0": {
+   "measurements": {
+    "ssim_union": 0.4004,
+    "silhouette_iou": 0.4506,
+    "rgb_mad_255": 85.825,
+    "rgb_mad_norm": 0.3366
+   },
+   "checks": {
+    "ssim": false,
+    "silhouette_iou": false,
+    "rgb_mad": false
+   },
+   "verdict": "FAIL"
+  },
+  "likeness_mid_seg1": {
+   "measurements": {
+    "ssim_union": 0.3898,
+    "silhouette_iou": 0.3291,
+    "rgb_mad_255": 95.86,
+    "rgb_mad_norm": 0.3759
+   },
+   "checks": {
+    "ssim": false,
+    "silhouette_iou": false,
+    "rgb_mad": false
+   },
+   "verdict": "FAIL"
+  },
+  "seams": [
+   {
+    "from": "dorowani_seg1_hops_00001_.mp4",
+    "to": "dorowani_seg2_waterorb_00001_.mp4",
+    "seam_MAD_gray": 7.994
+   }
+  ],
+  "track_first_last_MAD_gray": 10.741
+ }
+}
