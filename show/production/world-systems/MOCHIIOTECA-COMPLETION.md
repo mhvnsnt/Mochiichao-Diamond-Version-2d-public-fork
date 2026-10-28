@@ -113,3 +113,5 @@ script's production notes, and the three states stage differently.
   *contents* are entirely open owner decisions, and the two
   canon facts it rests on (upgrades in story flags; Fragments gate
   the spine, not the dex) are cited rather than extended.
+
+**Extended by:** #97 research tasks (`show/production/world-systems/97-RESEARCH-TASKS.md`) — the Mochiioteca research levels layer over this completion spec. (List 11 landing, 2026-10-27.)

@@ -44,3 +44,7 @@ garden poses 49/49 (+1 form).
 
 - `hatchCycles` — owed field on the species core record (shape defined by `src/data/core/schemas/egg-system.schema.json`, beside the existing `eggGroups` gap). No values exist yet; do not backfill.
 - `hatchPresentation` — owed field, same registration and status.
+
+## Owed field — move tutoring (#101, registered 2026-10-27)
+
+- `tutor` — per-species tutor compatibility list, owed on the species record (beside the learnset/eggGroups entries). Field registered; contents OPEN (all tutor NPCs, move lists and prices are owner content). Do not populate.

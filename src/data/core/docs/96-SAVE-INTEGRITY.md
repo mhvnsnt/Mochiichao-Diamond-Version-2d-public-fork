@@ -71,3 +71,7 @@ Contents: the section map is complete against the systems built
 to date; `schema_version` starts at 1 when the game first writes
 a save — until then this is a spec with zero files to protect,
 flagged as such.
+
+## Registered section — `research` (List 11 #97, landing 2026-10-27)
+
+The payload map gains a `research` section: FACTS ONLY (tallies); research levels are derived, never stored. Registered here as the section's one home. No save implementation exists in the repo yet — this registration is spec-level, recorded as such (real-code law), and binds the first save build.

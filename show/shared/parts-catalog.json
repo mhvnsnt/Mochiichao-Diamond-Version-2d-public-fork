@@ -332,6 +332,73 @@
      "status": "PROPOSED - needs owner/board lock before use"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list11-systems",
+   "type": "systems-index",
+   "about": "List 11 teardown systems (items 97-106), landed 2026-10-27. Index registration per STAGING step 1; each entry names the package it extends (reciprocal links live here + in the extended docs amended at landing).",
+   "items": [
+    {
+     "n": 97,
+     "name": "Research tasks (Mochiioteca research levels)",
+     "home": "show/production/world-systems/97-RESEARCH-TASKS.md",
+     "extends": "#14 MOCHIIOTECA-COMPLETION"
+    },
+    {
+     "n": 98,
+     "name": "Ranger licence & Fragment case",
+     "home": "show/production/world-systems/98-RANGER-LICENCE.md",
+     "extends": "#12 flags / #45 circuit"
+    },
+    {
+     "n": 99,
+     "name": "Syndicate encounter system",
+     "home": "show/production/world-systems/99-SYNDICATE-ENCOUNTERS.md",
+     "extends": "#30 dojo encounters (tier: syndicate) / #45"
+    },
+    {
+     "n": 100,
+     "name": "Champion gauntlet",
+     "home": "show/production/world-systems/100-CHAMPION-GAUNTLET.md",
+     "extends": "#45 / #30"
+    },
+    {
+     "n": 101,
+     "name": "Move tutoring services",
+     "home": "src/data/core/docs/101-MOVE-TUTORING.md",
+     "extends": "moves registry (join key, both lanes)"
+    },
+    {
+     "n": 102,
+     "name": "Habitat range maps",
+     "home": "show/production/world-systems/102-HABITAT-RANGE-MAPS.md",
+     "extends": "#7 spawn tables / #29 ecology"
+    },
+    {
+     "n": 103,
+     "name": "Item crafting & fusion",
+     "home": "src/data/core/docs/103-ITEM-CRAFTING.md",
+     "extends": "#31 item data layer; 'fusion' naming collision with #8 pair-merge FLAGGED, not resolved"
+    },
+    {
+     "n": 104,
+     "name": "Individual honours",
+     "home": "show/production/species-data/104-INDIVIDUAL-HONOURS.md",
+     "extends": "#80 individual record (honours[])"
+    },
+    {
+     "n": 105,
+     "name": "Seasonal festival calendar",
+     "home": "show/production/world-systems/105-FESTIVAL-CALENDAR.md",
+     "extends": "#19 world clock / #93 schedules (calendar itself OPEN)"
+    },
+    {
+     "n": 106,
+     "name": "Mochi storage system",
+     "home": "src/data/core/docs/106-MOCHI-STORAGE.md",
+     "extends": "#80 individual record (location) / #96 save; release tombstone permanent"
+    }
+   ]
   }
  ]
 }
