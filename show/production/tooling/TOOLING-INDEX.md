@@ -125,3 +125,9 @@ unchanged boundary:
    external.
 
 - **Voice kit** — `show/production/tooling/voice-kit/` (Chatterbox render queue + GitHub Actions workflow for human voices, wired per its WIRING.md; weights staged per its TERABOX-MANIFEST.md — prepared, not yet staged).
+
+## Battle + avatar-stack tooling (landed 2026-10-27, battle-presentation teardown)
+- **Animscript library** — `show/production/battle/animscripts/` (one file per move; format: `show/production/battle/MOVE-ANIM-SCRIPT-FORMAT.md`). Join keys: `move_id` + `display_name` against `src/data/core/moves.json`; `registry_anim_id` is read from moves.json (first entry wired: AQUA_JET -> AQUA_SHOT). Per-species `variance_notes` across the files are the anatomy-variance registry.
+- **Animscript validator** — `show/production/tooling/battle/validate_animscript.py`.
+- **Battle UI flow** — `show/production/battle/BATTLE-UI-FLOW.md` (game-lane src/ copy is the game lane's call — not made here).
+- **Avatar-stack palette tool + lustre proposal** — `show/production/tooling/avatar-stack/palette_variant.py` + `BUNDLE-FORMAT-LUSTRE-PROPOSAL.md` (PROPOSAL — adoption is a design-lane contract bump that lands with the first real lustre; not adopted by the teardown).
