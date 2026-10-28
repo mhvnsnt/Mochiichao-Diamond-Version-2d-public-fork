@@ -1,0 +1,1534 @@
+{
+  "style_law": "Mochiichao art style of record applied to all NEW painted elements: hard-edged cel shading, canon ink #101010 outlines, brand palette; FIGHT-READ + ANTI-PRESCHOOL tests applied to FX, props, cards, board paintings, berry-store plate (flat cel, no soft/plush/pastel gradient finish). Smoke/mist/aura cel-quantised to flat fill + rim bands. Pond/Green/Forest plates remain PROVISIONAL spec plates. Creatures/humans are canon-pixel rigs (already compliant).",
+  "character_size_law": "Characters FULL-SIZE by default in all story cuts V3-001..107 (canon-pixel rigs at 0.4-0.95 scale of 512px sources, ground-anchored); NO chibi anywhere in story picture. Chibi is confined to card/transition slots by law.",
+  "chibi_card_route": "SUPERSEDED by the EP01 SLOT VERDICT (CHIBI-CARD-SYSTEM.md \u00a77, owner-directed): story V3-001..107 100% full-size, transition/snap caps ZERO; OP + title card no chibi; eyecatch V3-061 stands as scripted (no chibi variant built); stinger never chibi.",
+  "shots": [
+    {
+      "shot": "V3-001",
+      "duration_s": 14,
+      "background": "gate-dawn",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+      "layers": [
+        "001-mist-f4db4d9ed1.webm"
+      ],
+      "staging_notes": "Gate living plate at dawn grade, wide. Mist band low on path; empty frame, bell stir is audio-only.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-010",
+      "duration_s": 8,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "010-circle-fbc5640bd0.webm",
+        "mochiko-talk_nod.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 04: Mochii circles Mochiko at speed (rectangular circuit canvas at ground/post height); Mochiko talk_nod for her line.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-100",
+      "duration_s": 12,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "100-small-f4878806f4.webm",
+        "100-card-776da65fc7.webm"
+      ],
+      "staging_notes": "The small pyramid centred, morning light on it like a lamp - INTERTITLE 5 mid-cut over the still stack.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-101",
+      "duration_s": 12,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "101-smoke-9869aac7f3.webm"
+      ],
+      "staging_notes": "Path's edge rhyme with V3-006: a curl of smoke slides away in full morning light, unhurried - a neighbour going home from work.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-102",
+      "duration_s": 16,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "102-walk-d6f0d1f26d.webm",
+        "102-big-286bca197c.webm",
+        "102-small-511c55f16f.webm"
+      ],
+      "staging_notes": "Backpack silhouette rhymed with locked cut 02: Mochiko arrives, takes in both pyramids, kneels and straightens the small pyramid's top berry by a hair - keeper to keeper.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-103",
+      "duration_s": 20,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "gabu-idle_breathe.transparent.webm",
+        "103-net-770540e69d.webm",
+        "103-leaf-ab568972b5.webm",
+        "mochii-idle_bob.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "103-pyr-7621689985.webm"
+      ],
+      "staging_notes": "Final hold, pulling wide: Garden awake and whole; discovered last, Gabu asleep beneath the net worn as a blanket, leaf still on his head.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-104",
+      "duration_s": 20,
+      "background": "forest",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/forest/EP01-PLATE-dark-forest-day-v1-still.png",
+      "layers": [],
+      "staging_notes": "LOCKED cut 25: the Dark Forest, day; light does not reach in. STILL plate, no layers, no cycles (Forest law).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-105",
+      "duration_s": 10,
+      "background": "forest",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/forest/EP01-PLATE-dark-forest-day-v1-still.png",
+      "layers": [],
+      "staging_notes": "LOCKED cut 26: something stops moving between the trunks; never shown. No layer may be added - the stillness is the shot.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-106",
+      "duration_s": 12,
+      "background": "forest",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/forest/EP01-PLATE-dark-forest-day-v1-still.png",
+      "layers": [
+        "106-card-87a5de40cb.webm"
+      ],
+      "staging_notes": "LOCKED cut 27: INTERTITLE 3 - Rule 12 exact wording, burns in LOW (lower-centre card) and holds over the Forest still.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-107",
+      "duration_s": 4,
+      "background": "forest",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/forest/EP01-PLATE-dark-forest-day-v1-still.png",
+      "layers": [
+        "107-leaf-be354450b6.webm"
+      ],
+      "staging_notes": "LOCKED cut 28: one leaf falls straight down in no wind; smash to black is episode-level (not faked per-cut).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-011",
+      "duration_s": 10,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "dorowani-idle_breathe.transparent.webm",
+        "011-manual-9fb6639ff6.webm",
+        "mochiko-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 05: Dorowani with the Manual, gavel-tap reading; Mochiko listening.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-012",
+      "duration_s": 12,
+      "background": "berry",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-living.mp4",
+      "layers": [
+        "dorowani-idle_breathe.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "mochiko-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Berry store interior (PROVISIONAL SPEC PLATE). Mochiko opens the ledger; crew assembles at stations around her.",
+      "flags": [
+        "PROVISIONAL SPEC PLATE: berry-store interior"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-013",
+      "duration_s": 14,
+      "background": "berry-close",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-close.png",
+      "layers": [
+        "mochii-idle_bob.transparent.webm",
+        "013-pyr-6082246f39.webm"
+      ],
+      "staging_notes": "Ledger pile close-up: Mochii the solemn auditor sits in the counting frame; berry pyramid small beside the tally.",
+      "flags": [
+        "PROVISIONAL SPEC PLATE crop: berry-store-close"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-014",
+      "duration_s": 14,
+      "background": "berry-close",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-close.png",
+      "layers": [
+        "mochii-tip_wiggle.transparent.webm",
+        "014-pyr-e7cba76cf2.webm"
+      ],
+      "staging_notes": "Inventory gag 2nd movement: pile right, count wrong - pyramid-minus-one; Mochii looks at the ceiling (tip_wiggle).",
+      "flags": [
+        "PROVISIONAL SPEC PLATE crop: berry-store-close"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-015",
+      "duration_s": 12,
+      "background": "berry",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-living.mp4",
+      "layers": [
+        "mochii-idle_bob.transparent.webm",
+        "mochiko-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Two-shot keeper + auditor, pile between them; she works it out and laughs (wordless).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-016",
+      "duration_s": 10,
+      "background": "berry",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-living.mp4",
+      "layers": [
+        "mochii-idle_bob.transparent.webm",
+        "016-berry-6ffdf6b35c.webm",
+        "mochiko-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Care loop: she feeds Mochii first - small bowl beat staged with single berry before the auditor.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-017",
+      "duration_s": 14,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "017-sproutle-20e6cc773f.webm"
+      ],
+      "staging_notes": "Sproutle's watering round along the Green edge beds: walking canvas, leaf-wipe pauses built into the path (3 stops).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-018",
+      "duration_s": 12,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "018-gabu-8d742f7672.webm"
+      ],
+      "staging_notes": "Gabu's water run to the Pond: bucket-orbit gag staged as a wide swinging walk (bucket prop not a separate asset; orbit carried by the sway path).",
+      "flags": [
+        "bucket prop not built as separate asset - orbit read from Gabu's sway path"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-019",
+      "duration_s": 12,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "dorowani-idle_breathe.transparent.webm",
+        "mochiko-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Gate post notch-row beat: Mochiko questions, Dorowani's fin draws down the years (idle + proximity staging).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-002",
+      "duration_s": 12,
+      "background": "pond-dawn",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/pond-dawn.mp4",
+      "layers": [
+        "002-ripple-dbf5c03195.webm",
+        "002-hex-574e7a12fe.webm"
+      ],
+      "staging_notes": "SPECIAL: pond-day plate at dawn grade. Something crosses under mist (ripple only); HEX distant still at far fence, frame right edge, ~90px tall, unintroduced.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-020",
+      "duration_s": 16,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "dorowani-idle_breathe.transparent.webm",
+        "mochii-tip_wiggle.transparent.webm",
+        "sproutle-head_tilt.transparent.webm",
+        "gabu-head_tilt.transparent.webm",
+        "020-manual-a56eec919b.webm"
+      ],
+      "staging_notes": "Rule 3 (DRAFT) ritual: Dorowani reads the Manual, heads bow at the familiar part (head_tilt set).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-021",
+      "duration_s": 12,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "021-doro-5dd7aba71d.webm",
+        "021-mochii-9722688352.webm",
+        "021-sproutle-345a44cdc2.webm",
+        "021-kitt-d3e6361058.webm"
+      ],
+      "staging_notes": "Procession in single file toward the Pond, keeper fitted in neither leading nor last: staggered walking canvases.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-022",
+      "duration_s": 12,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "mochii-idle_bob.transparent.webm",
+        "022-pyr-8a7ddeaed4.webm"
+      ],
+      "staging_notes": "LOCKED cut 06: pond tour; Mochii stacks the berry pyramid with pride.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-023",
+      "duration_s": 8,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "023-a-6fed86a9b9.webm",
+        "023-b-c08eb7886b.webm",
+        "023-c-3aad49f14d.webm",
+        "023-d-f6a9fe351a.webm"
+      ],
+      "staging_notes": "LOCKED cut 07: pyramid un-stacks one by one, unseen hands - staged as windowed pyramid stages (full -> minus-one -> small -> single), each canvas windowed, nobody on screen does it.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-024",
+      "duration_s": 6,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "024-duck-ae055cd78d.webm",
+        "mochii-idle_bob.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 08: toy duck rolls UPHILL - rolling canvas (spin, centre keys) climbing the bank; Mochii watches.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-025",
+      "duration_s": 7,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "kittember-tail_flame_wave.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 09: Kittember tail flame flickers at empty air (tail_flame_wave at pond edge).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-026",
+      "duration_s": 14,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "026-pyr-e638a17e31.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "mochiko-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Mochiko re-stacks the pyramid keeper-style (pyramid fades in berry by berry read); crew drifts in to watch. Mochiko staged at the pyramid.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-027",
+      "duration_s": 10,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "027-pyr-7ffec066b7.webm",
+        "mochii-idle_bob.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Finished pyramid, full ring of watchers, held a moment too long.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-028",
+      "duration_s": 12,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "kittember-tail_flame_wave.transparent.webm"
+      ],
+      "staging_notes": "Sensor beat extended: Kittember at pond edge, flame leans toward the Green (tail_flame_wave, held large).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-029",
+      "duration_s": 10,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "kittember-tail_flame_wave.transparent.webm",
+        "mochii-idle_bob.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "sproutle-head_tilt.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "One composed frame: crew, flame, Green beyond - everyone watches a flame point.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-003",
+      "duration_s": 10,
+      "background": "board-blank",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/board-day-blank.png",
+      "layers": [],
+      "staging_notes": "Keeper board close-up (crop of gate plate), blank line held. No layers - the board is the subject.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-030",
+      "duration_s": 12,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "gabu-jaw_chomp.transparent.webm",
+        "030-net-26c60e9472.webm"
+      ],
+      "staging_notes": "Gabu appoints himself pyramid guard, net over shoulder like a sash; chest-beat of self-appointment (jaw_chomp read).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-031",
+      "duration_s": 14,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "gabu-idle_breathe.transparent.webm",
+        "031-leaf-6dd46e95f8.webm"
+      ],
+      "staging_notes": "Guard asleep standing within one cut; a falling leaf lands on his head and stays (leaf-fall windowed to land at Gabu's crown).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-032",
+      "duration_s": 12,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "gabu-idle_breathe.transparent.webm",
+        "032-mochii-c2c73c99bc.webm",
+        "032-berryleaf-ef4ed97f4d.webm"
+      ],
+      "staging_notes": "Close on the leaf: Mochii tiptoes in and stacks one berry on it (berry-on-leaf appears late, windowed).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-033",
+      "duration_s": 18,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "033-doro-ec8a908d02.webm",
+        "033-gabu-8f935efa41.webm",
+        "033-sproutle-b79c989aa8.webm"
+      ],
+      "staging_notes": "Midday bell: crew drifts in one direction toward the Green into the locked frost scene - procession canvases exit frame right.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-034",
+      "duration_s": 9,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "034-gabu-ebb5e6b666.webm",
+        "034-net-804ea66054.webm"
+      ],
+      "staging_notes": "LOCKED cut 10: Gabu stomps in net-cape, chest-beat bellow - entrance canvas + net drape + jaw_chomp arrival.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-035",
+      "duration_s": 10,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "sproutle-head_tilt.transparent.webm",
+        "035-frost-8fd8bcb3f9.webm",
+        "035-fp1-9a53b7d56f.webm"
+      ],
+      "staging_notes": "LOCKED cut 11: Sproutle ground-level finds the frost-patch trail (frost strip + patches, dead still inside the grass).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-036",
+      "duration_s": 8,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "sproutle-idle_breathe.transparent.webm",
+        "gabu-head_tilt.transparent.webm",
+        "036-device-6a0e8b7dc1.webm"
+      ],
+      "staging_notes": "LOCKED cut 12: trail points at the pond; Mochiioteca check-in - abstract device light + icons only (canon TBD treatment), no readable data.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-037",
+      "duration_s": 14,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "037-sproutle-1c534720e1.webm",
+        "037-doro-be350b8c45.webm",
+        "037-gabu-69d2b98aed.webm",
+        "037-frost-6e72424965.webm"
+      ],
+      "staging_notes": "Tracking procession forms at grass level: Sproutle cheek near ground leads, detectives strung behind, frost patches dead still.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-038",
+      "duration_s": 12,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "sproutle-head_tilt.transparent.webm",
+        "038-fp2-388844e45a.webm",
+        "038-fp3-c24d33315d.webm",
+        "dorowani-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Patch by patch at cheek height: shaped frost patches read in order; Sproutle reads, the file holds each stop.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-039",
+      "duration_s": 18,
+      "background": "shift039",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/shift-039.mp4",
+      "layers": [
+        "039-kitt-0a19985de4.webm",
+        "sproutle-head_tilt.transparent.webm"
+      ],
+      "staging_notes": "SPECIAL: frost close-up colour shift - background is the pre-rendered 3-segment MP4 (push-in / JoJo indigo-violet shift held with frost-aura / restore pull-back). Kittember layer graded WARM, far behind - the only warm note in the shifted world.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-004",
+      "duration_s": 12,
+      "background": "gate-dawn",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+      "layers": [
+        "kittember-tail_flame_wave.transparent.webm"
+      ],
+      "staging_notes": "Kittember asleep on gate post: tail_flame_wave (idle avoided - gate FAIL note), small, high on the door post, flame low.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-040",
+      "duration_s": 12,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "gabu-head_tilt.transparent.webm",
+        "040-fp-fef8e8acea.webm"
+      ],
+      "staging_notes": "One patch much larger, footprint-shaped: Gabu measures it against his own foot twice, offence growing.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-041",
+      "duration_s": 10,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "gabu-jaw_chomp.transparent.webm",
+        "041-fp-f7779ba94b.webm"
+      ],
+      "staging_notes": "Gabu chest-beats at the patch; it does nothing back. It wins. (Patch is his own stomp-print, frost-filled - shape rhyme with 040.)",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-042",
+      "duration_s": 14,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "042-device-5125e54f56.webm",
+        "042-frost-731db679bd.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "mochiko-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Mochiko sweeps the Mochiioteca slowly along the trail, patch to patch - device records, hands solve. Device glow is the hand-unit cluster for her hand beats.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-043",
+      "duration_s": 12,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "aeon-device-icons.transparent.webm"
+      ],
+      "staging_notes": "Device icon field close: icons light in sequence along the remembered path; one foreign ping (audio). Icon field fills frame centre.",
+      "flags": [
+        "Aeon device-icons clip (1280x720, icon sequence + ONE ping flash at 7.0-7.45s of the clip) placed near-full-frame; the ping lands inside this cut exactly once"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-044",
+      "duration_s": 8,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "sproutle-idle_breathe.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "044-frost-134f449ceb.webm"
+      ],
+      "staging_notes": "Held beat of method: the detectives resume at the trail's pace - procession re-formed, nobody rushes.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-045",
+      "duration_s": 8,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "gabu-head_tilt.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm",
+        "045-fp-5c0824ad63.webm"
+      ],
+      "staging_notes": "Pond path junction: trail thins toward the water; Gabu already reading the path like a general; the file halts.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-046",
+      "duration_s": 14,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "046-net-6bdcb176be.webm",
+        "046-bait-655989aa96.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "mochii-idle_bob.transparent.webm"
+      ],
+      "staging_notes": "The trap built in earnest: net strung over the path, berry bait placed with a jeweller's care, Gabu directing with huge silent gestures from behind a too-small bush.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-047",
+      "duration_s": 12,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "047-doro-b63d8a0237.webm",
+        "047-net-565b786706.webm"
+      ],
+      "staging_notes": "Dorowani inspects the rigging and quietly ties one corner properly (working twin). The corner holds.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-048",
+      "duration_s": 8,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "048-net-08690c3d4c.webm",
+        "048-leaf-a3280d9a0b.webm",
+        "gabu-head_tilt.transparent.webm"
+      ],
+      "staging_notes": "Trap armed; its first catch is a falling leaf - the net does not even notice it.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-049",
+      "duration_s": 12,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "049-duck-b49b08a06a.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "kittember-head_tilt.transparent.webm",
+        "mochii-idle_bob.transparent.webm"
+      ],
+      "staging_notes": "The duck rolls DOWNHILL perfectly normally through the trap zone; everyone watches with impossible suspicion.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-005",
+      "duration_s": 14,
+      "background": "gate-dawn",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+      "layers": [
+        "005-doro-1afb8f9fec.webm",
+        "005-manual-cf1d7b1bf9.webm"
+      ],
+      "staging_notes": "Dorowani crosses the path with the Manual (720 working twin suits the rounds beat), checks the latch mid-frame; manual prop rides with him.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-050",
+      "duration_s": 14,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "gabu-jaw_chomp.transparent.webm",
+        "050-net-239dc0e656.webm"
+      ],
+      "staging_notes": "Gabu demonstrates the trigger flawlessly and is completely caught: net drape canvas over Gabu, Dorowani's corner holding beautifully.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-051",
+      "duration_s": 10,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "gabu-idle_breathe.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "051-net-1ec7d3311d.webm"
+      ],
+      "staging_notes": "The untangling, unhurried: crew frees the general; the net is folded with the same care it was strung with.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-052",
+      "duration_s": 16,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "kittember-head_tilt.transparent.webm",
+        "052-line-d954631a30.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "A cold line of frost at the Green's edge: Kittember will not cross it; flame goes small (head_tilt - no cry). Comedy stops.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-053",
+      "duration_s": 10,
+      "background": "green-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+      "layers": [
+        "053-kneel-8d4109a708.webm",
+        "kittember-head_tilt.transparent.webm",
+        "053-line-d84683997b.webm"
+      ],
+      "staging_notes": "Mochiko kneels at the line's height, at the cat's height - not to cross. The investigation changes hands.",
+      "flags": [
+        "kneel_bow staged with 10px bottom headroom (rig QA: held frame ends soles-flush with canvas bottom)"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-054",
+      "duration_s": 12,
+      "background": "green-dusk",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/green-dusk.mp4",
+      "layers": [
+        "mochii-idle_bob.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "054-berry-166d2cf392.webm"
+      ],
+      "staging_notes": "Feeding round two at speed (green at dusk grade, light lengthening): each species fed in its own way; Mochii fed first - the N2 lesson applied.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-055",
+      "duration_s": 12,
+      "background": "green-dusk",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/green-dusk.mp4",
+      "layers": [
+        "sproutle-idle_breathe.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "055-pyr-3ed69e0cb9.webm"
+      ],
+      "staging_notes": "Round continues: Sproutle eats around the kept leaf; Gabu fed last and most; the pyramid stands untouched deep in frame (small canvas, deep background placement).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-056",
+      "duration_s": 14,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [],
+      "staging_notes": "Evidence by tidiness: pond tools found put away neatly where she left them in a heap - empty dusk frame, the neatness is the event (no tool-rack asset; beat carried by the held frame).",
+      "flags": [
+        "tool rack / aligned-tools prop not built - beat staged as held empty frame; flagged for prop pass"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-057",
+      "duration_s": 12,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [],
+      "staging_notes": "She re-hangs one tool the neat way, copying a hand she has never seen - held two seconds past comfort. Held frame beat (see 056 flag).",
+      "flags": [
+        "tool prop not built - held frame; Mochiko hand beat awaits prop + her clip pass",
+        "Mochiko present in script beat but frame held empty pending tool prop"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-058",
+      "duration_s": 10,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "058-pyr-211572b11d.webm"
+      ],
+      "staging_notes": "The pyramid in last full light, framed exactly as V3-027 - one berry fewer. Nobody on screen counts.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-059",
+      "duration_s": 12,
+      "background": "green-dusk",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/green-dusk.mp4",
+      "layers": [
+        "dorowani-idle_breathe.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "059-net-49e4035366.webm"
+      ],
+      "staging_notes": "Work sites finishing one by one inside the work as dusk gathers: can set down, gate checked, net folded - crew settling statics.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-006",
+      "duration_s": 16,
+      "background": "gate-dawn",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+      "layers": [
+        "006-smoke-c2337d2cac.webm"
+      ],
+      "staging_notes": "Smoke curl slides home along the path's edge, low - night shift ending unseen.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-060",
+      "duration_s": 12,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "060-mist-ed9064743c.webm",
+        "mochii-idle_bob.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Garden wide between states: day cycles ending, first knee-height mist testing the Pond's edge; silhouettes settle into evening positions.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-061",
+      "duration_s": 8,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "aeon-device-icons.transparent.webm"
+      ],
+      "staging_notes": "EYECATCH: Mochiioteca check-in graphic - abstract light and icons over the night palette, no readable data. Slot furniture.",
+      "flags": [
+        "Aeon device-icons clip at native 1280x720 full frame (its ping flash is inside the clip's own timeline; the episode-level AEON ping remains V3-043's story beat - eyecatch is slot furniture per script"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-062",
+      "duration_s": 12,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "062-mist-ac33c5a93b.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "mochii-idle_bob.transparent.webm",
+        "062-pyr-63a3483f55.webm"
+      ],
+      "staging_notes": "Positions chosen like a heist: each crew member surveys, selects, occupies a post; the pyramid beyond; mist arriving at ground level.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-063",
+      "duration_s": 12,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "gabu-idle_breathe.transparent.webm",
+        "063-leaf-7b67b49949.webm"
+      ],
+      "staging_notes": "Gabu's disguise: one leaf on a string held before his face; behind the leaf, entirely visible: Gabu.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-064",
+      "duration_s": 12,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "dorowani-idle_breathe.transparent.webm",
+        "064-blankets-65feee8059.webm",
+        "064-manual-4faa8c45cb.webm"
+      ],
+      "staging_notes": "Stakeout supplies issued: Dorowani with folded blankets, quartermaster precision; the Manual stays under his arm, never a pillow.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-065",
+      "duration_s": 10,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "sproutle-head_tilt.transparent.webm"
+      ],
+      "staging_notes": "Sproutle takes the ground post and goes stone-still - visor wiped once (head_tilt), then absolute discipline.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-066",
+      "duration_s": 11,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "kittember-tail_flame_wave.transparent.webm",
+        "066-line-d274965f55.webm"
+      ],
+      "staging_notes": "Kittember's tail set as the tripwire at the path's edge, flame low and even - the locked cut-15 mechanism armed in plain view.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-067",
+      "duration_s": 16,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "067-mist-e5f0d531bf.webm",
+        "mochii-idle_bob.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "The stakeout frame composes itself into the locked cut-13 picture: five posts, knee-height mist, last colour going.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-068",
+      "duration_s": 14,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "068-mist-084669ca87.webm",
+        "mochii-idle_bob.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 13: pond dusk stakeout behind the bush line, five heads, mist at knee height.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-069",
+      "duration_s": 10,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "069-gabu-7979e7f560.webm",
+        "069-splash-1dbe2f252f.webm",
+        "069-smoke-19652bff55.webm"
+      ],
+      "staging_notes": "LOCKED cut 14 (Action Beat A): Gabu LUNGES - splash - comes up holding smoke that pours through his fingers.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-007",
+      "duration_s": 8,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [],
+      "staging_notes": "LOCKED cut 01: Gate wide morning, keeper board + sign. Empty wide (plate carries it).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-070",
+      "duration_s": 8,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "070-mist-34fc58a335.webm",
+        "070-shadow-1cb06e0945.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 15: tail-flame FLARES; giant spiky shadow on the mist - sprout-shadow is a POST layer over the mist band, never baked.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-071",
+      "duration_s": 6,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "sproutle-sprout_wiggle.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "gabu-head_tilt.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 16: gag reveal - the giant shadow is Sproutle's sprout, backlit; Sproutle centre, small, in honest scale.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-072",
+      "duration_s": 12,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "072-mist-d1b0a28971.webm",
+        "072-wisp-1f3bc8b7fc.webm",
+        "072-duck-a5f1e17128.webm"
+      ],
+      "staging_notes": "LOCKED cut 17: mist parts - Wispkin, small, shaking, holding the duck up like an apology (float canvas enters through the parting mist).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-073",
+      "duration_s": 14,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "wispkin-mask_tilt_left.transparent.webm",
+        "073-card-cc1fd85fce.webm"
+      ],
+      "staging_notes": "LOCKED cut 18: the shy wail - INTERTITLE 1 over Wispkin mask_tilt. Card occupies the middle portion of the cut, fades in/holds/out.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-074",
+      "duration_s": 10,
+      "background": "pond-dusk",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+      "layers": [
+        "074-kneel-afaee539fb.webm",
+        "wispkin-float_idle.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 19: Mochiko kneels to Wispkin's level - 'Then let's do it properly.'",
+      "flags": [
+        "kneel_bow staged with 10px bottom headroom (rig QA: held frame ends soles-flush with canvas bottom)"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-075",
+      "duration_s": 12,
+      "background": "board-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-painted.png",
+      "layers": [],
+      "staging_notes": "LOCKED cut 20: keeper board at night - fresh painted line 'WISPKIN - NIGHT KEEPER' with wet sheen (board-night-painted plate is the subject).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-076",
+      "duration_s": 12,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "dorowani-idle_breathe.transparent.webm",
+        "wispkin-float_idle.transparent.webm",
+        "mochii-idle_bob.transparent.webm",
+        "076-manual-5a78ade149.webm",
+        "mochiko-talk_nod.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 21: Rule 12 read aloud (exact wording, spoken - not a subtitle); cricket beat. Mochiko reads from the Manual (talk_nod), crew gathered.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-077",
+      "duration_s": 8,
+      "background": "board-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-painted.png",
+      "layers": [
+        "wispkin-float_idle.transparent.webm",
+        "077-card-d0ada06231.webm"
+      ],
+      "staging_notes": "LOCKED cut 22: INTERTITLE 2 over the named board; Wispkin small below its own name. Card mid-cut.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-078",
+      "duration_s": 10,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "078-wisp-31b3618ab3.webm",
+        "078-smoke-fcfb7931fa.webm"
+      ],
+      "staging_notes": "LOCKED cut 23 (Action Beat B): Wispkin floats UP for the first time and rings the gate bell with its smoke tail - float_up one-shot then idle-swap hold at height; smoke curl at the bell.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-079",
+      "duration_s": 6,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "gabu-head_tilt.transparent.webm",
+        "079-net-2438f99ca6.webm"
+      ],
+      "staging_notes": "LOCKED cut 24 TAG: Gabu tips the net worn as a hat, grandly (head_tilt + net panel tipped above him).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-008",
+      "duration_s": 6,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "mochiko-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "LOCKED cut 02: Mochiko arrives under too-big backpack (idle_breathe baseline; backpack prop not a separate asset).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-080",
+      "duration_s": 12,
+      "background": "board-ceremony",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-ceremony.png",
+      "layers": [
+        "mochii-idle_bob.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "wispkin-float_idle.transparent.webm"
+      ],
+      "staging_notes": "Board ceremony first mark: paw print pressed beside the new name (ceremony plate carries prints+marks); crew assembled below the board.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-081",
+      "duration_s": 12,
+      "background": "board-ceremony",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-ceremony.png",
+      "layers": [
+        "dorowani-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm"
+      ],
+      "staging_notes": "Fin print pressed with a scholar's care; one small scorch dot from a tail tip held close - not on - the wood.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-082",
+      "duration_s": 12,
+      "background": "board-ceremony",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-ceremony.png",
+      "layers": [
+        "wispkin-float_idle.transparent.webm",
+        "082-berry-cf809979b9.webm"
+      ],
+      "staging_notes": "The last mark is not a print: one perfect berry placed on the board's ledge by the smallest hands; Wispkin in frame with its own name.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-083",
+      "duration_s": 14,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "083-wisp-75b7f8cf25.webm",
+        "083-doro-44b5cfb7a1.webm",
+        "083-gabu-4f07436f53.webm",
+        "083-frost-f0543a136d.webm"
+      ],
+      "staging_notes": "Wispkin shows its round: floats at walking height along the cold path, crew following behind quiet, learning the route with their feet; frost forming in its wake.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-084",
+      "duration_s": 14,
+      "background": "pond-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/pond-night.mp4",
+      "layers": [
+        "084-wisp-5f0d5ccba1.webm",
+        "084-duck-caf1bf11a2.webm",
+        "084-ripple-c0c352a5e6.webm"
+      ],
+      "staging_notes": "Round station 1: Wispkin sets the duck back on the water with both hands, like a launched ship; ripple arrives exactly on time.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-085",
+      "duration_s": 10,
+      "background": "pond-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/pond-night.mp4",
+      "layers": [
+        "085-wisp-552c1d527c.webm"
+      ],
+      "staging_notes": "Round station 2: the tools, aligned of course - Wispkin passes them like Dorowani passed the latch (005 rhyme); passing canvas, check performed like affection.",
+      "flags": [
+        "tool rack prop not built - passing beat staged on Wispkin's path; flagged for prop pass"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-086",
+      "duration_s": 12,
+      "background": "pond-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/pond-night.mp4",
+      "layers": [
+        "086-pyr-141dcce639.webm",
+        "086-wisp-0a0e2f6ab8.webm"
+      ],
+      "staging_notes": "Round station 3: the pyramid, and one berry adjusted by a hair - Wispkin's small adjusting move at the stack (rhyme: V3-032's berry set down).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-087",
+      "duration_s": 12,
+      "background": "green-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/green-night.mp4",
+      "layers": [
+        "087-wisp-f059f609d5.webm",
+        "087-aura-b792267a83.webm",
+        "dorowani-idle_breathe.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "The path under the round, close: frost blooming in the smoke tail's wake, the aura's black-purple thread inside each patch (frost-aura smaller variant riding the trail).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-088",
+      "duration_s": 14,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "wispkin-float_idle.transparent.webm",
+        "mochii-idle_bob.transparent.webm",
+        "gabu-idle_breathe.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm",
+        "sproutle-idle_breathe.transparent.webm",
+        "dorowani-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "The round closes at the Gate: Wispkin turns and sees its own night full of the people it kept it for. It stays in the frame.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-089",
+      "duration_s": 16,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "wispkin-float_idle.transparent.webm",
+        "089-card-7f428d6d08.webm"
+      ],
+      "staging_notes": "Stillness: Wispkin small against the lit Garden - INTERTITLE 4 mid-cut over the emptied frame.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-009",
+      "duration_s": 5,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "009-mochii-7da02ffd06.webm"
+      ],
+      "staging_notes": "LOCKED cut 03: gate swings - Mochii bouncing on it: squash_hop canvas bouncing at gate centre with post shadow.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-090",
+      "duration_s": 12,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "mochii-idle_bob.transparent.webm"
+      ],
+      "staging_notes": "Mochii asleep mid-bounce on top of the gate, frozen at the apex of a hop (idle_bob small, high on the gate).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-091",
+      "duration_s": 14,
+      "background": "green-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/green-night.mp4",
+      "layers": [
+        "gabu-idle_breathe.transparent.webm",
+        "091-net-24f955de9f.webm",
+        "091-leaf-ce26e963b9.webm"
+      ],
+      "staging_notes": "Pyramid post: Gabu on night guard asleep standing, net over his shoulder, leaf still on his head from V3-031.",
+      "flags": [
+        "moth at the leaf not built as an asset - leaf + guard carry the shot"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-092",
+      "duration_s": 14,
+      "background": "green-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/green-night.mp4",
+      "layers": [
+        "092-kitt-25c0557554.webm",
+        "sproutle-idle_breathe.transparent.webm"
+      ],
+      "staging_notes": "Kittember's flame sweeping slow across the Green, lighthouse register; crosses Sproutle's ground post (two small stars of visor reflection are a mix/light note, not a layer).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-093",
+      "duration_s": 12,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "093-write-5b590f8fe5.webm",
+        "093-log-3437e62e49.webm"
+      ],
+      "staging_notes": "Keeper's bench: Mochiko writes the day into the keeper log (log book prop beside her); page never shown.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-094",
+      "duration_s": 16,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "kittember-tail_flame_wave.transparent.webm"
+      ],
+      "staging_notes": "THE HELD SILENCE: garden wide at night, indigo; nothing framed as an event. Kittember's flame far off, small.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-095",
+      "duration_s": 10,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [],
+      "staging_notes": "Far side of the Garden, gate small in frame: the bell is rung once by nobody visible - empty held frame, the report is audio.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-096",
+      "duration_s": 14,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "096-frost-3d92a87dcb.webm",
+        "wispkin-float_idle.transparent.webm"
+      ],
+      "staging_notes": "Garden wide, indigo complete - board, gate, Pond, Green in one composed night frame; the frost trail glimmers once along the path and goes still.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-097",
+      "duration_s": 12,
+      "background": "gate-dawn",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+      "layers": [
+        "097-smoke-2a03fe41cc.webm"
+      ],
+      "staging_notes": "Path's edge, low: a curl of smoke crossing home, slower than V3-006, nothing left to hide from (dawn grade).",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-098",
+      "duration_s": 12,
+      "background": "gate-dawn-named",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn-named.png",
+      "layers": [],
+      "staging_notes": "SPECIAL: Gate at dawn wide - the board now reads WISPKIN - NIGHT KEEPER, paint dry, marks beside it (gate-dawn-named still plate: board legibility beats living layers for this one rhyme shot). HEX ABSENT: the far fence stands empty; the rhyme with V3-002 is the emptiness.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "V3-099",
+      "duration_s": 14,
+      "background": "pond-day",
+      "background_path": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+      "layers": [
+        "099-big-f7708eaf81.webm",
+        "099-small-b7abf421d2.webm"
+      ],
+      "staging_notes": "Pyramid site morning: the tall pyramid perfect - and beside it a second, smaller pyramid at half scale. Practice, made visible.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "ED",
+      "duration_s": 75,
+      "background": "gate-night",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+      "layers": [
+        "ed-credits-7f27f3d895.webm",
+        "mochii-idle_bob.transparent.webm",
+        "wispkin-float_idle.transparent.webm",
+        "kittember-tail_flame_wave.transparent.webm"
+      ],
+      "staging_notes": "ED (slot furniture): garden-wide night settle, credits card fades in/out, small cast idles at frame bottom. Chibi credits-bit slot present near the end as an EMPTY marked placeholder frame (56-70s) - PENDING OWNER, no gag invented.",
+      "flags": [
+        "PENDING OWNER: chibi credits-bit gag slot (placeholder frame only, no gag built)"
+      ],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "OP",
+      "duration_s": 60,
+      "background": "gate-day",
+      "background_path": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+      "layers": [
+        "op-cast0-16bf3f7b69.webm",
+        "op-cast1-1d12af0147.webm",
+        "op-cast2-6c797d2c60.webm",
+        "op-cast3-9b270f6128.webm",
+        "op-cast4-3fd226f5b2.webm",
+        "op-cast5-b9370b0ecb.webm",
+        "op-mochiko-68d74a029c.webm",
+        "op-title-aedfb3ac11.webm"
+      ],
+      "staging_notes": "OP title sequence (slot furniture): gate living bg, six creature idles introduce in staggered windows, Mochiko window, title card 'MOCHIICHAO / The Garden Has a Ghost' fades in and holds.",
+      "flags": [],
+      "staged_last_mochiko_dependent": false
+    },
+    {
+      "shot": "PREV",
+      "duration_s": 45,
+      "background": "prev-bg",
+      "background_path": "/home/hatch/workspace/ep01-finish/assets/plates/prev-bg.png",
+      "layers": [
+        "prev-card1-63795dce70.webm",
+        "prev-t1-b2c7df897c.webm",
+        "prev-t2-b321547477.webm",
+        "prev-t3-28dacc1971.webm",
+        "prev-card2-d37cbe31b3.webm"
+      ],
+      "staging_notes": "PREV (slot furniture, CHIBI-FRAMED per SLOT VERDICT): brand-blue card field, full-size teaser footage in the framed window (forest+smoke / pond-dusk+wispkin / gate-dawn+mochii), chibi cast row as card furniture, NEXT TIME in/out.",
+      "flags": [
+        "Chibi forms are proportion variants derived from canon-pixel clips (anisotropic squash) - likeness-gate subject to owner/scorer review before ship"
+      ],
+      "staged_last_mochiko_dependent": false
+    }
+  ],
+  "canon_guards": [
+    "DOROWANI'S EYES: the EP01 Dorowani is the specific individual (Hex's partner, the avatar-set Dorowani) whose eyes HAVE whites - an owner-ruled kept individual trait (species norm: red+black, no whites). The whites were NOT corrected away anywhere in this build: no repainting, no eye touch-ups in grades/FX; rig clips and avatar twins used exactly as-is. No whites added to any other creature."
+  ],
+  "chibi_slot_verdict": {
+    "story": "100% FULL-SIZE - no chibi in story picture, transitions, or snaps (caps zero for EP01)",
+    "op_title": "No chibi - full-size/graphic as briefed",
+    "prev": "PREVIEW CARD is EP01's designated chibi home: PREV rebuilt CHIBI-FRAMED per CHIBI-CARD-SYSTEM \u00a76/\u00a77 - flat brand-blue graphic field, footage window with full-size teasers, chibi cast row as furniture (proportion variants derived from canon-pixel clips; every character already appeared full-size in the episode). Furniture text limited to NEXT TIME.",
+    "ed": "One chibi credits bit PERMITTED but gag needs owner approval: ED built with the slot present as a clearly marked EMPTY placeholder frame (window 56-70s, 'CHIBI CREDITS BIT / PENDING OWNER'), NO gag invented. Status: PENDING OWNER.",
+    "eyecatch_061": "Stands AS SCRIPTED (graphic Mochiioteca check-in); no chibi variant built - a chibi replacement furnishing may only be built on owner approval.",
+    "stinger": "Never chibi - satisfied (Forest still, no layers but the scripted leaf)."
+  }
+}

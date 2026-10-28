@@ -1,0 +1,606 @@
+{
+ "episode": "EP01-V3-THE-GARDEN-HAS-A-GHOST",
+ "note": "Full 24:00 slot build: OP 60 + story 1260 (107 cuts) + ED 75 + preview 45. Shot specs carry audio:null; all audio comes from the scene beds.",
+ "scenes": [
+  {
+   "name": "EP01-V3-OP",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-OP.wav"
+   },
+   "cuts": [
+    {
+     "id": "OP",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/OP.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N1",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N1.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-001",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-001.json"
+    },
+    {
+     "id": "V3-002",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-002.json"
+    },
+    {
+     "id": "V3-003",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-003.json"
+    },
+    {
+     "id": "V3-004",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-004.json"
+    },
+    {
+     "id": "V3-005",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-005.json"
+    },
+    {
+     "id": "V3-006",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-006.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-S1",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S1.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-007",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-007.json"
+    },
+    {
+     "id": "V3-008",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-008.json"
+    },
+    {
+     "id": "V3-009",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-009.json"
+    },
+    {
+     "id": "V3-010",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-010.json"
+    },
+    {
+     "id": "V3-011",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-011.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N2",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N2.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-012",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-012.json"
+    },
+    {
+     "id": "V3-013",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-013.json"
+    },
+    {
+     "id": "V3-014",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-014.json"
+    },
+    {
+     "id": "V3-015",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-015.json"
+    },
+    {
+     "id": "V3-016",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-016.json"
+    },
+    {
+     "id": "V3-017",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-017.json"
+    },
+    {
+     "id": "V3-018",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-018.json"
+    },
+    {
+     "id": "V3-019",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-019.json"
+    },
+    {
+     "id": "V3-020",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-020.json"
+    },
+    {
+     "id": "V3-021",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-021.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-S2",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S2.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-022",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-022.json"
+    },
+    {
+     "id": "V3-023",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-023.json"
+    },
+    {
+     "id": "V3-024",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-024.json"
+    },
+    {
+     "id": "V3-025",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-025.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N3",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N3.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-026",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-026.json"
+    },
+    {
+     "id": "V3-027",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-027.json"
+    },
+    {
+     "id": "V3-028",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-028.json"
+    },
+    {
+     "id": "V3-029",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-029.json"
+    },
+    {
+     "id": "V3-030",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-030.json"
+    },
+    {
+     "id": "V3-031",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-031.json"
+    },
+    {
+     "id": "V3-032",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-032.json"
+    },
+    {
+     "id": "V3-033",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-033.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-S3",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S3.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-034",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-034.json"
+    },
+    {
+     "id": "V3-035",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-035.json"
+    },
+    {
+     "id": "V3-036",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-036.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N4",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N4.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-037",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-037.json"
+    },
+    {
+     "id": "V3-038",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-038.json"
+    },
+    {
+     "id": "V3-039",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-039.json"
+    },
+    {
+     "id": "V3-040",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-040.json"
+    },
+    {
+     "id": "V3-041",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-041.json"
+    },
+    {
+     "id": "V3-042",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-042.json"
+    },
+    {
+     "id": "V3-043",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-043.json"
+    },
+    {
+     "id": "V3-044",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-044.json"
+    },
+    {
+     "id": "V3-045",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-045.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N5",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N5.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-046",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-046.json"
+    },
+    {
+     "id": "V3-047",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-047.json"
+    },
+    {
+     "id": "V3-048",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-048.json"
+    },
+    {
+     "id": "V3-049",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-049.json"
+    },
+    {
+     "id": "V3-050",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-050.json"
+    },
+    {
+     "id": "V3-051",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-051.json"
+    },
+    {
+     "id": "V3-052",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-052.json"
+    },
+    {
+     "id": "V3-053",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-053.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N6",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N6.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-054",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-054.json"
+    },
+    {
+     "id": "V3-055",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-055.json"
+    },
+    {
+     "id": "V3-056",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-056.json"
+    },
+    {
+     "id": "V3-057",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-057.json"
+    },
+    {
+     "id": "V3-058",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-058.json"
+    },
+    {
+     "id": "V3-059",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-059.json"
+    },
+    {
+     "id": "V3-060",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-060.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-EYE",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-EYE.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-061",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-061.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N7",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N7.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-062",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-062.json"
+    },
+    {
+     "id": "V3-063",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-063.json"
+    },
+    {
+     "id": "V3-064",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-064.json"
+    },
+    {
+     "id": "V3-065",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-065.json"
+    },
+    {
+     "id": "V3-066",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-066.json"
+    },
+    {
+     "id": "V3-067",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-067.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-S4",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S4.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-068",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-068.json"
+    },
+    {
+     "id": "V3-069",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-069.json"
+    },
+    {
+     "id": "V3-070",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-070.json"
+    },
+    {
+     "id": "V3-071",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-071.json"
+    },
+    {
+     "id": "V3-072",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-072.json"
+    },
+    {
+     "id": "V3-073",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-073.json"
+    },
+    {
+     "id": "V3-074",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-074.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-S5",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S5.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-075",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-075.json"
+    },
+    {
+     "id": "V3-076",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-076.json"
+    },
+    {
+     "id": "V3-077",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-077.json"
+    },
+    {
+     "id": "V3-078",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-078.json"
+    },
+    {
+     "id": "V3-079",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-079.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N8",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N8.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-080",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-080.json"
+    },
+    {
+     "id": "V3-081",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-081.json"
+    },
+    {
+     "id": "V3-082",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-082.json"
+    },
+    {
+     "id": "V3-083",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-083.json"
+    },
+    {
+     "id": "V3-084",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-084.json"
+    },
+    {
+     "id": "V3-085",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-085.json"
+    },
+    {
+     "id": "V3-086",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-086.json"
+    },
+    {
+     "id": "V3-087",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-087.json"
+    },
+    {
+     "id": "V3-088",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-088.json"
+    },
+    {
+     "id": "V3-089",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-089.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N9",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N9.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-090",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-090.json"
+    },
+    {
+     "id": "V3-091",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-091.json"
+    },
+    {
+     "id": "V3-092",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-092.json"
+    },
+    {
+     "id": "V3-093",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-093.json"
+    },
+    {
+     "id": "V3-094",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-094.json"
+    },
+    {
+     "id": "V3-095",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-095.json"
+    },
+    {
+     "id": "V3-096",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-096.json"
+    },
+    {
+     "id": "V3-097",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-097.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-N10",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N10.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-098",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-098.json"
+    },
+    {
+     "id": "V3-099",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-099.json"
+    },
+    {
+     "id": "V3-100",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-100.json"
+    },
+    {
+     "id": "V3-101",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-101.json"
+    },
+    {
+     "id": "V3-102",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-102.json"
+    },
+    {
+     "id": "V3-103",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-103.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-ST",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-ST.wav"
+   },
+   "cuts": [
+    {
+     "id": "V3-104",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-104.json"
+    },
+    {
+     "id": "V3-105",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-105.json"
+    },
+    {
+     "id": "V3-106",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-106.json"
+    },
+    {
+     "id": "V3-107",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/V3-107.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-ED",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-ED.wav"
+   },
+   "cuts": [
+    {
+     "id": "ED",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/ED.json"
+    }
+   ]
+  },
+  {
+   "name": "EP01-V3-PREV",
+   "audio_bed": {
+    "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-PREV.wav"
+   },
+   "cuts": [
+    {
+     "id": "PREV",
+     "shot": "/home/hatch/workspace/ep01-finish/specs/PREV.json"
+    }
+   ]
+  }
+ ]
+}
