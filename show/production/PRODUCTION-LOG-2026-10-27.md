@@ -963,3 +963,7 @@ CHIBI-CARD-SYSTEM.md landed at show/production/ (spec-only: 85-90% full-size ban
 ## CANON RECORD - DOROWANI EYES + INDIVIDUAL VARIATION (owner ruling, 2026-10-27)
 
 DOROWANI EYE CANON: the Dorowani species' eyes are red + black, no sclera whites. The avatar/show individual Dorowani (Doro) HAS eye-whites - owner ruling: KEEP him; the whites are his personal deviation and stay consistent for this individual in every future generation. Other Dorowanis follow the species pattern (some individuals may carry black around the eyes instead, etc.). General doctrine: same-species individuals are mostly alike with real deviations - a deviation on a named individual is character, not an error, once the owner rules it so. Also recorded in show/shared/clip-index.json canon_notes.dorowani_eyes.
+
+## HUMAN CHARACTER DESIGN LANE CHARTERED (2026-10-27)
+
+Human character design lane chartered (owner-directed, low priority; production PARKED behind Season 1 / EP01 by owner order - charter package only, nothing in it is production art). Landed at show/production/human-design-lane/: LANE.md (charter), SOURCES.md (repo audit), CAST-QUEUE.md (season-ordered queue). Headline counts: 18 fresh designs queued + 1 blocked on the owner; 52 transplant builds + 1 flag-deferred; 59 Layer-2 names held. Falk = #1 fresh-design gap, blocked on owner look-basics + team confirmation. Tamsen redesign noted, spelling T-A-M-S-E-N. The queue records canon and proposals at their existing tiers; landing promotes nothing. Landed by the lock-everything wave.
