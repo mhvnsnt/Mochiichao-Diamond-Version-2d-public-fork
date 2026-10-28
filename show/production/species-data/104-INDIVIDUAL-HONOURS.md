@@ -94,3 +94,5 @@ a release tombstone may carry the honour *count*, see #106),
 **PROPOSAL from List 17 #164 (registered at its landing, 2026-10-27):** a service-stamp occasion in this file's stamp vocabulary for mission-board service (164-MISSION-BOARD.md). Proposal until this home accepts it; honours record service only via this vocabulary.
 
 **PROPOSALS from List 18 (registered at its landing, 2026-10-27):** three catalogue occasions are proposed into this catalogue — contest ribbons (#167), rematch honours (#173), and arcade stamps (#176). The catalogue is the owner's slot; until it accepts them here, all three systems' honours references are spec-level and no stamp is instanced.
+
+**PROPOSAL from List 22 #210 (registered at its landing, 2026-10-27):** a duel honour occasion for this catalogue (210-FIELD-DUELS.md). Proposal until this home accepts it.

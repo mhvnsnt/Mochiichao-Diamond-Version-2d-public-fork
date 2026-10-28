@@ -128,3 +128,5 @@ LIVING-WORLD.md` §2.2):
   fills *contents* only from canon — the rest is flagged, not filled.
 
 **Consumer citation (List 17 #163, landing 2026-10-27):** mythical-habitat sealing behaviour is decided in 163-MYTHICAL-HABITAT-SEALING.md (show/production/world-systems/), not in this document.
+
+**Slot registered (List 22 #209, landing 2026-10-27):** the `ambush` eligibility slot is in the spawn-table schema beside #158's `horde` slot (209-AMBUSH-ENCOUNTERS.md). No table carries ambush contents; the initiation kind is cited into the encounter-record vocabulary in its own home, not forked here.

@@ -104,3 +104,5 @@ under #86 or a licence case view — is **OPEN**.
   record, and this package does not fabricate one.
 
 **Ruling received (List 19 #178, landing 2026-10-27):** hall-of-fame snapshot rows carry `levelAtClear` — the individual's derived level (#178's derivation from #177's gain total) evaluated at the clear and COPIED into the snapshot as a fact, per this file's own snapshot discipline. The level itself is derived and stored nowhere else; the snapshot copy is the one stored form.
+
+**PROPOSAL from List 22 #216 (registered at its landing, 2026-10-27):** the completion ceremony (216-COMPLETION-CEREMONY.md) is proposed into this file's 'ceremony presentation' open slot. The #196 portrait join is aligned in both directions as of List 20's landing.
