@@ -1,0 +1,44 @@
+{
+ "bundle": "dark-forest",
+ "areas": [
+  {
+   "areaId": "dark-forest",
+   "areaName": "The Dark Forest \u2014 surface",
+   "depthTier": "surface",
+   "notes": "The surface hums and is inhabited (season canon map). Method 'grass' = forest-floor walking, the canon method vocabulary's walking class. Kittember also holds a meadow-route-01 seed row in game data; both are canon (kept edge vs wild population). Show behaviour differs from game by law: show population in the Forest is 0 at every tier (LIVING-WORLD P5) \u2014 this table serves the game lane and the habitat binding only.",
+   "showLocation": "the Dark Forest (surface)",
+   "status": "canon-prose species presence; numbers owed",
+   "tables": [
+    {
+     "method": "grass",
+     "slots": [
+      {
+       "habitatClass": null,
+       "maxLevel": null,
+       "minLevel": null,
+       "speciesId": "kittember",
+       "status": "canon-prose, numbers owed: season canon map lists wild Kittember among the Forest's canon contents; no canon source numbers its levels or rate",
+       "timeOfDay": null,
+       "weather": null,
+       "weight": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "areaId": "dark-forest",
+   "areaName": "The Dark Forest \u2014 depths",
+   "depthTier": "depths",
+   "notes": "Canon: the deep interior is where things stop moving; what stopped moving is NOT answered by canon and stays open (season canon map). The empty table is the honest data shape \u2014 the first canon ruling that stocks the depths fills slots, not schema.",
+   "showLocation": "the Dark Forest (depths)",
+   "status": "OPEN \u2014 canon does not stock the depths",
+   "tables": [
+    {
+     "method": "grass",
+     "slots": []
+    }
+   ]
+  }
+ ]
+}
