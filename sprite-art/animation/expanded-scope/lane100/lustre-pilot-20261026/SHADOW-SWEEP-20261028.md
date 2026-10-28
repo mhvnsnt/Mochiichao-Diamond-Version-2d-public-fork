@@ -1,0 +1,122 @@
+# Shadow sweep — Lane100 lustre-pilot set (2026-10-26)
+
+Sweep date: 2026-10-28 (owner order: remove baked foot shadows from all Lustre versions;
+cleaned versions are the current/used ones; shadowed originals are obsolete).
+Full record: `show/production/LUSTRE-SHADOW-SWEEP-20261028.md` + `show/production/lustre-shadow-sweep-20261028.json`.
+
+## Cleaned — the `-clean-20261028` file is CURRENT/used; the original is OBSOLETE for art use
+- `aerobeak-base.png` -> `aerobeak-base-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-bare.png` -> `aerobeak-lustre-bare-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-clothed.png` -> `aerobeak-lustre-clothed-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-ember.png` -> `aerobeak-lustre-ember-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-iron.png` -> `aerobeak-lustre-iron-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-lunar.png` -> `aerobeak-lustre-lunar-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-night.png` -> `aerobeak-lustre-night-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-parade.png` -> `aerobeak-lustre-parade-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-prism.png` -> `aerobeak-lustre-prism-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-showtime.png` -> `aerobeak-lustre-showtime-clean-20261028.png` (shadow removed, 176 px)
+- `aerobeak-lustre-solar.png` -> `aerobeak-lustre-solar-clean-20261028.png` (shadow removed, 176 px)
+- `punchkid-base.png` -> `punchkid-base-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-bare.png` -> `punchkid-lustre-bare-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-clothed.png` -> `punchkid-lustre-clothed-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-ember.png` -> `punchkid-lustre-ember-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-iron.png` -> `punchkid-lustre-iron-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-lunar.png` -> `punchkid-lustre-lunar-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-night.png` -> `punchkid-lustre-night-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-parade.png` -> `punchkid-lustre-parade-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-prism.png` -> `punchkid-lustre-prism-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-showtime.png` -> `punchkid-lustre-showtime-clean-20261028.png` (shadow removed, 48 px)
+- `punchkid-lustre-solar.png` -> `punchkid-lustre-solar-clean-20261028.png` (shadow removed, 48 px)
+- `terradog-base.png` -> `terradog-base-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-bare.png` -> `terradog-lustre-bare-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-clothed.png` -> `terradog-lustre-clothed-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-ember.png` -> `terradog-lustre-ember-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-iron.png` -> `terradog-lustre-iron-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-lunar.png` -> `terradog-lustre-lunar-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-night.png` -> `terradog-lustre-night-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-parade.png` -> `terradog-lustre-parade-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-prism.png` -> `terradog-lustre-prism-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-showtime.png` -> `terradog-lustre-showtime-clean-20261028.png` (shadow removed, 124 px)
+- `terradog-lustre-solar.png` -> `terradog-lustre-solar-clean-20261028.png` (shadow removed, 124 px)
+
+## Sheets displaying pre-clean art — superseded for art use by the cleaned files (kept as build records)
+- `aerobeak/aerobeak-lustre-show-sheet-20261026.png`
+- `lustre-pilot-combined-20261026.png`
+- `terradog/terradog-lustre-show-sheet-20261026.png`
+
+## Checked clean — no baked ground shadow (75 files, unchanged)
+- `aerobeak/aerobeak-lustre-bare-swatch.png`
+- `aerobeak/aerobeak-lustre-clothed-swatch.png`
+- `aerobeak/aerobeak-lustre-ember-swatch.png`
+- `aerobeak/aerobeak-lustre-iron-swatch.png`
+- `aerobeak/aerobeak-lustre-lunar-swatch.png`
+- `aerobeak/aerobeak-lustre-night-swatch.png`
+- `aerobeak/aerobeak-lustre-parade-swatch.png`
+- `aerobeak/aerobeak-lustre-prism-swatch.png`
+- `aerobeak/aerobeak-lustre-showtime-swatch.png`
+- `aerobeak/aerobeak-lustre-solar-swatch.png`
+- `finblade/finblade-base.png`
+- `finblade/finblade-lustre-bare-swatch.png`
+- `finblade/finblade-lustre-bare.png`
+- `finblade/finblade-lustre-clothed-swatch.png`
+- `finblade/finblade-lustre-clothed.png`
+- `finblade/finblade-lustre-ember-swatch.png`
+- `finblade/finblade-lustre-ember.png`
+- `finblade/finblade-lustre-iron-swatch.png`
+- `finblade/finblade-lustre-iron.png`
+- `finblade/finblade-lustre-lunar-swatch.png`
+- `finblade/finblade-lustre-lunar.png`
+- `finblade/finblade-lustre-night-swatch.png`
+- `finblade/finblade-lustre-night.png`
+- `finblade/finblade-lustre-parade-swatch.png`
+- `finblade/finblade-lustre-parade.png`
+- `finblade/finblade-lustre-prism-swatch.png`
+- `finblade/finblade-lustre-prism.png`
+- `finblade/finblade-lustre-show-sheet-20261026.png`
+- `finblade/finblade-lustre-showtime-swatch.png`
+- `finblade/finblade-lustre-showtime.png`
+- `finblade/finblade-lustre-solar-swatch.png`
+- `finblade/finblade-lustre-solar.png`
+- `punchkid/punchkid-lustre-bare-swatch.png`
+- `punchkid/punchkid-lustre-clothed-swatch.png`
+- `punchkid/punchkid-lustre-ember-swatch.png`
+- `punchkid/punchkid-lustre-iron-swatch.png`
+- `punchkid/punchkid-lustre-lunar-swatch.png`
+- `punchkid/punchkid-lustre-night-swatch.png`
+- `punchkid/punchkid-lustre-parade-swatch.png`
+- `punchkid/punchkid-lustre-prism-swatch.png`
+- `punchkid/punchkid-lustre-show-sheet-20261026.png`
+- `punchkid/punchkid-lustre-showtime-swatch.png`
+- `punchkid/punchkid-lustre-solar-swatch.png`
+- `terradog/terradog-lustre-bare-swatch.png`
+- `terradog/terradog-lustre-clothed-swatch.png`
+- `terradog/terradog-lustre-ember-swatch.png`
+- `terradog/terradog-lustre-iron-swatch.png`
+- `terradog/terradog-lustre-lunar-swatch.png`
+- `terradog/terradog-lustre-night-swatch.png`
+- `terradog/terradog-lustre-parade-swatch.png`
+- `terradog/terradog-lustre-prism-swatch.png`
+- `terradog/terradog-lustre-showtime-swatch.png`
+- `terradog/terradog-lustre-solar-swatch.png`
+- `wispkin/wispkin-base.png`
+- `wispkin/wispkin-lustre-bare-swatch.png`
+- `wispkin/wispkin-lustre-bare.png`
+- `wispkin/wispkin-lustre-clothed-swatch.png`
+- `wispkin/wispkin-lustre-clothed.png`
+- `wispkin/wispkin-lustre-ember-swatch.png`
+- `wispkin/wispkin-lustre-ember.png`
+- `wispkin/wispkin-lustre-iron-swatch.png`
+- `wispkin/wispkin-lustre-iron.png`
+- `wispkin/wispkin-lustre-lunar-swatch.png`
+- `wispkin/wispkin-lustre-lunar.png`
+- `wispkin/wispkin-lustre-night-swatch.png`
+- `wispkin/wispkin-lustre-night.png`
+- `wispkin/wispkin-lustre-parade-swatch.png`
+- `wispkin/wispkin-lustre-parade.png`
+- `wispkin/wispkin-lustre-prism-swatch.png`
+- `wispkin/wispkin-lustre-prism.png`
+- `wispkin/wispkin-lustre-show-sheet-20261026.png`
+- `wispkin/wispkin-lustre-showtime-swatch.png`
+- `wispkin/wispkin-lustre-showtime.png`
+- `wispkin/wispkin-lustre-solar-swatch.png`
+- `wispkin/wispkin-lustre-solar.png`

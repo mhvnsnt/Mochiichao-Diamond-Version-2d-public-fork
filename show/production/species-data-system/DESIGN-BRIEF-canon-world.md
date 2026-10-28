@@ -474,11 +474,13 @@ re-data'd. Gap-fill means exactly this:
    the roster — is the completed data sheet + this brief
    sufficient, or does each new species need an individual
    owner confirmation before its design batch?
-2. **Sproutle likeness of record.** Repo art disagrees with
-   itself: `portraits-scripted-v3` Sproutle (mint-green, green
-   helmet, blue visor) vs the blue/green lustre front art.
-   Which is the likeness of record the gate scores against?
-   (The canon CUTOUT is settled; the portrait family is not.)
+2. **Sproutle likeness of record. RESOLVED 2026-10-28 (owner
+   ruling).** There is no disagreement to settle: the
+   `portraits-scripted-v3` Sproutle IS the canon likeness, and
+   the blue/green front art is its LUSTRE (shiny variant)
+   form, whose different colours are the point of the form.
+   The gate scores the portrait family against the portrait;
+   Lustre art is scored as the Lustre form. See §9 C4.
 3. **Kittember portrait correction.** The repo portrait shows
    the flame as a separate floating orb; canon is tail-tip
    attached. Does the portrait family get corrected/replaced,
@@ -570,11 +572,18 @@ or follows the newest dated source where noted.
   MEMORY.md (owner canon): flame is *"attached to the tail
   (tail-tip flame), never a separate floating flame orb."*
   Canon wins; the art is the outlier. See §8 item 3.
-- **C4 — Sproutle's colours.** memory/2026-10-27.md: the
-  portraits-scripted-v3 Sproutle is *"noticeably different
-  colours from its blue/green lustre front art."* Two repo
-  likenesses disagree; no likeness-of-record ruling for the
-  portrait family exists yet. See §8 item 2.
+- **C4 — Sproutle's colours. RESOLVED 2026-10-28 (owner
+  ruling).** The conflict framing was wrong. The
+  portraits-scripted-v3 Sproutle
+  (`sprite-art/portraits-scripted-v3/sproutle-portrait-scripted-v3.png`)
+  IS Sproutle's canon likeness. The blue/green front art
+  (`public/assets/variants/lustre/sproutle_lustre_front.png`)
+  is the LUSTRE version — the shiny variant form (Lustre =
+  the alternate-palette shiny system); its different colours
+  are the point of the form, not an inconsistency. The pair
+  is a base form vs its Lustre form, not two competing
+  likenesses, and no likeness-of-record ruling is needed.
+  See §8 item 2 (closed by the same ruling).
 - **C5 — Water Orb in game data (resolved drift, logged so
   nobody re-derives the old state).** MEMORY.md canon entry:
   *"No Water Orb entry exists in the game's moves.json yet."*
