@@ -173,3 +173,6 @@ a similar trait, it needs its own ruling.
 **PROPOSAL from List 17 #162 (registered at its landing, 2026-10-27):** a `presentation.groomedUntil` field on the individual record, written by #162's grooming services. Until this home accepts it, the presentation state is SPEC-LEVEL.
 
 **Citation (List 24 #228, landing 2026-10-27):** evolution-sequence record timing per 228-EVOLUTION-SEQUENCE.md — the record update lands REVEAL-timed, and a cancelled sequence writes nothing.
+
+
+**PROPOSAL from List 28 #273 (registered at its landing, 2026-10-27):** two fields on this file's individual record: `keepingState` (how the individual is currently kept — including the stolen states #273 defines) and `trueKeeper` (the keeper the record itself regards as its own, through a theft). Obedience's reads of them run through #98's tiers and #39's bond values as *reads*, under #180's law — no new store is proposed. Proposal discipline: the fields take effect only as carried here; the ruled-deviation register above is untouched by this proposal (keeping state is circumstance, not a deviation).

@@ -110,3 +110,6 @@ history section beside #106's tombstones (a landing
 seat decision — one home, recorded in the PR).
 
 **OWNER RULING — flag RESOLVED (2026-10-27, applied at the List 18 landing):** the show MAY depict trades — as stories, side stories, and backstory (characters talk about how they got their Mochi in a trade, and how they evolved). #68's "the show lane never trades" is the SYSTEM rule only (the show never runs the trading mechanic); #168's show mirror STANDS as legitimate. A depicted trade turns on the Mochi's own wishes — creature agency stays at the centre. The earlier either/or flag is removed as resolved-by-ruling.
+
+
+**PROPOSAL from List 28 (registered at its landing, 2026-10-27):** three new history kinds for this file's append-only keeper-history family, beside trade/gift: `theft` (an individual taken by a snag, #268), `recovered` (a stolen individual recovered, #273), and `returned` (a released individual re-kept, #267). The family's append-only discipline is the point of the proposal — a theft is an event ON the record exactly as a trade is, and the record carries who it happened with and when. Proposal discipline: the kinds take effect only as carried here; no history entry of the three kinds is instanced at this landing.

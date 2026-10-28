@@ -116,3 +116,6 @@ rendered by #98's licence and consumed by #164
   adjudication threshold table (which grounds earn
   which class) is OPEN content, and no canon
   Ranger carries a finding from this package.
+
+
+**Landing note — List 28 (2026-10-27):** this file's findings gain a new grounds source: #272's landed reports (272-WITNESSES-WANTED.md) — cited here, not duplicated. #275's redemption reads take their closure facts from this file's findings together with #269's ledger and #270's tallies.

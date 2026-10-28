@@ -94,3 +94,6 @@ exists to decorate) · the default visiting posture
 (proposal above) · whether visiting Rangers' partners
 interact with the room beyond presence (show texture,
 not system).
+
+
+**Landing note — List 28 #274 (2026-10-27):** fence seats are stocked and gated in this file's hideouts (274-UNDERWORLD-FENCES.md): a fence is a recurring room, and the laundering law is enforced by shape — no clean-record operation exists anywhere in the fence system.

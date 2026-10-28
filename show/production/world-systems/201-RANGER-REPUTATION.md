@@ -98,3 +98,16 @@ into this file, or none — none is a fine answer).
 **OWNER RULING — supersession note (2026-10-27, applied at the List 21 landing):** this spec's reputation classes are SUPERSEDED by the owner's new morale/reputation design (List 28, items 267-276): reputation runs on Fallout: New Vegas's model (fame and infamy as separate tracks per group) over a fifty-step ladder, with a personal morale scale on Red Dead Redemption 2's Honor model. The classes in this file stand as a VIEW over that ladder once List 28 lands; they are not the system of record.
 
 **PROPOSAL from List 23 #224 (registered at its landing, 2026-10-27):** the in-world newspaper reads reputation from this system's derivation (a read, never a store — editions live in their own publication store, separate from every record store they report). Proposal until this home accepts the read.
+
+
+**SUPERSESSION COMPLETED — List 28 #270/#271 (applied at its landing, 2026-10-27):** the OWNER RULING note above is completed here, as it promised: this file's classes now stand as a *view* over #271's ladder and #270's tallies, with the mapping below. No text above is deleted; the file stands as history with its notes on top.
+
+| #201 (this file) | List 28 reading |
+|---|---|
+| The qualitative standing class (output) | A band range on #271's ladder (steps −25…+25; bands of five per side: 1–5, 6–10, 11–15, 16–20, 21–25; 0 = Unmarked) — a class word names a band, never a stored score |
+| A class for a specific group | #270's coordinate: the group's fame band × infamy band (fame and infamy each 0…25, counted separately, never cancelling; the mixed flag prefixes #270's draft word *Two-Storied*) — this file's classes were never worded (the vocabulary slot above stayed OPEN), so the mapping is structural: any class wording keys to a band range + tally shape |
+| The input list (licence tier, mission service, public landmark facts) | Replaced as the system of record by #270's witnessed-deed tallies over #269's deed ledger. The old inputs remain public facts other systems read directly; they no longer feed a derivation of this file's own |
+| Derived, never stored | **Inherited by #270 verbatim** — morale, reputation tallies, and wanted level are derivations over deeds, reports, and history; no field of the three exists |
+| Never currency (no price, gate, or discount reads standing) | **Inherited by #270 verbatim** — where #271's prices read the ladder, they read a derivation over the ledger at read time; there is no stored score to spend |
+
+The no-consumer law above is likewise re-read under the new model: consumers read #270/#271's derivations through those files' own read rules, and any new consumer still proposes its read into the owning file (#270 for tallies, #271 for the ladder).

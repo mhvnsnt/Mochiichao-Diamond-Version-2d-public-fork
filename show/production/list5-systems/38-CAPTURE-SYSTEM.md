@@ -109,3 +109,6 @@ Two record shapes:
   that the Mochiioteca is the capture instrument. Every one of
   those is an OPEN slot in this spec — filling any of them is an
   owner decision, and this package does not pre-fill a single one.
+
+
+**PROPOSAL from List 28 #268 (registered at its landing, 2026-10-27):** a witness-ceiling refusal as a pre-roll evaluation beside this file's owned-block: where a battle's witness set exceeds the ceiling (#268's drafted data), a snag attempt is refused before any roll — both refusals (owned-block and witness-ceiling) read the battle's facts before any roll is made. Proposal discipline: the refusal takes effect only as carried here; #268's snag math itself lands in 268-SNAG-SYSTEM.md.

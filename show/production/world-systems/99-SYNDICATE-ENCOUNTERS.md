@@ -108,3 +108,6 @@ stock.
 - **Contents: system only.** Zero Syndicate members, parties,
   hideouts, or motives are asserted. The boss's name and every
   content slot are OPEN, carried open into landing.
+
+
+**Landing note — List 28 (2026-10-27):** the Syndicate is the face of #274's fences (274-UNDERWORLD-FENCES.md) and a party source for #268's NPC theft; its groups carry #270 reputation tallies like any other group (in the Syndicate's swapped reading, what the town calls infamy is its fame). The Dojo 8 Syndicate boss's name, carried open from this file, remains the owner's slot — List 28 asserts no name.

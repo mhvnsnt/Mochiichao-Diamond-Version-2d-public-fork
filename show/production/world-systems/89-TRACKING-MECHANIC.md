@@ -63,3 +63,6 @@ hunting/tracking titles at the structural level used here.
 Contents: the format is complete; the only canon trail is
 Wispkin's frost path (show), and no game trail instance is
 authored yet — flagged, not filled.
+
+
+**Landing note — List 28 #273 (2026-10-27):** recovery of a stolen individual (273-STOLEN-MOCHI.md) reads this file's sign → direction → identity grammar. #273 depends on that grammar only; this file's internals are unchanged.

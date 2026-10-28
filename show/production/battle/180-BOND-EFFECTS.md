@@ -115,3 +115,6 @@ resolve identical battles under identical commands
   the guarantee that whatever bond ever does in a
   battle, Jamar can read it in data and see it on
   screen.
+
+
+**Landing note — List 28 #273 (2026-10-27):** the stolen keeping states (273-STOLEN-MOCHI.md) are this file's bond-effects family's dark sibling: obedience reads for a stolen individual run under this file's law, with keeping state proposed into #80's record and bond values read from #39, not re-stored.
