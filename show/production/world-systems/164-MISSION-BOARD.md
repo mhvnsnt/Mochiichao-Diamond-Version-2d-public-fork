@@ -104,3 +104,5 @@ landing as a negative test.
 - **Instances: zero.** Every template, giver, target,
   reward figure, and cooldown is content — OPEN. The
   board's locations are unplaced.
+
+**PROPOSAL from List 25 #245 (registered at its landing, 2026-10-27):** field rescues instance under this file's `assist` kind as it stands. An optional dedicated `rescue` kind is proposed here, in this file only, for this home to accept or decline.

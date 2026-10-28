@@ -103,3 +103,5 @@ and #96's sections, as everywhere.
   canon, and none are invented here. Dojo interiors become
   instancible when #30's records exist to reference; the
   Syndicate hideouts when #99's instances are authored.
+
+**PROPOSAL from List 25 #241 (registered at its landing, 2026-10-27):** a `followerRule` field on this file's interior record, default `welcome` (the record's own default). Garden law as a validation rule beside it: a Garden seat carrying `park`-as-exclusion or `barred` FAILS validation. Zero interiors are assigned a rule by this proposal.

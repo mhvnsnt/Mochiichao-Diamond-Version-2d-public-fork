@@ -1168,6 +1168,73 @@
      "extends": "finish order FILLED Pokemon-style at landing (Speed per movement-class leg), recorded in the file; validation fence in both homes"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list25-systems",
+   "type": "systems-index",
+   "about": "List 25 teardown systems (items 237-246), landed 2026-10-27 \u2014 the first package built under the plain-language + Pokemon-base rules: its only open slots are story/canon facts, by design.",
+   "items": [
+    {
+     "n": 237,
+     "name": "Individual idle quirks",
+     "home": "show/production/world-systems/237-INDIVIDUAL-IDLE-QUIRKS.md",
+     "extends": "quirk read mirrors #108's temperament read (cited there); vocabulary contents = content pass"
+    },
+    {
+     "n": 238,
+     "name": "Ranger licence card presentation",
+     "home": "src/data/core/docs/238-RANGER-LICENCE-CARD.md",
+     "extends": "#98-family rendering; #149's classes stay CLOSED (no fifth class)"
+    },
+    {
+     "n": 239,
+     "name": "Nickname system",
+     "home": "src/data/core/docs/239-NICKNAME-SYSTEM.md",
+     "extends": "nickname field on the individual record \u2014 exactly two write doors"
+    },
+    {
+     "n": 240,
+     "name": "Save-select presentation",
+     "home": "src/data/core/docs/240-SAVE-SELECT.md",
+     "extends": "cites #122's CLOSED ruling (Continue / New Ranger only); summary derived, never stored"
+    },
+    {
+     "n": 241,
+     "name": "Follower rules in towns & interiors",
+     "home": "show/production/world-systems/241-FOLLOWER-TOWN-RULES.md",
+     "extends": "followerRule PROPOSED into #119 + area variant into #7; Garden law = validation rule"
+    },
+    {
+     "n": 242,
+     "name": "Dojo crowd & spectating",
+     "home": "show/production/battle/242-DOJO-CROWD.md",
+     "extends": "chorus law: no outcome path may read a crowd field"
+    },
+    {
+     "n": 243,
+     "name": "Life stages & aging presentation",
+     "home": "show/production/world-systems/243-LIFE-STAGES.md",
+     "extends": "whether the cast ages on screen = owner's canon call, landed open as a story slot"
+    },
+    {
+     "n": 244,
+     "name": "Ranger etiquette & regional customs",
+     "home": "show/production/world-systems/244-RANGER-ETIQUETTE.md",
+     "extends": "reconciled with #210 in the link check; Regions 2-5 customs = owner's canon calls"
+    },
+    {
+     "n": 245,
+     "name": "Field rescue service",
+     "home": "show/production/world-systems/245-FIELD-RESCUE.md",
+     "extends": "instances under #164's assist kind; rescue kind PROPOSED to #164; never-keeps fence in the record shape; reconciled with #231"
+    },
+    {
+     "n": 246,
+     "name": "Night sky & star chart",
+     "home": "show/production/world-systems/246-NIGHT-SKY.md",
+     "extends": "#137-family rendering; constellation names/lore = owner's canon calls"
+    }
+   ]
   }
  ]
 }

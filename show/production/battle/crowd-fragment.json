@@ -1,0 +1,29 @@
+{
+ "chorusLaw": "Negative test (List 25 #242): no crowd field may be read by any battle scorer, honours occasion, or outcome path. The crowd is atmosphere; outcomes never read it.",
+ "crowd": {
+  "composition": "cast from world facts — #93 schedules, #145 travellers present, partners as #58 principals; never generated fog",
+  "record": "presentation annex on the dojo's seat (#30/#45) or its #119 interior",
+  "sizeClass": "data slot per venue"
+ },
+ "note": "Shape only — zero crowds instanced (no dojo interiors exist yet, #119). The crowd's view IS #188's information contract in a room: what the battle's presentation shows, and nothing else.",
+ "reactionKeys": [
+  "onEntry",
+  "onTempoShift (#10 tempo_state: calm/tense = murmur, dread = the room goes quiet)",
+  "onSignature (#131 register)",
+  "onFaint",
+  "onResult"
+ ],
+ "schema": "mochiichao/dojo-crowd/v1",
+ "sees": [
+  "creatures on the field",
+  "moves as performed",
+  "health as displayed",
+  "tempo"
+ ],
+ "seesNever": [
+  "benched party members",
+  "held items before play names them",
+  "a Ranger's pending choice",
+  "anything on a held screen (#149)"
+ ]
+}

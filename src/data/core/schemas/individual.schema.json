@@ -152,6 +152,13 @@
       "items": {
         "type": "object"
       }
+    },
+    "nickname": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "#239 nickname (List 25): set through exactly TWO doors — the set-at-keep offer in #38's keep flow, and the name service in the #132/#162 service layer (one defined write). No other writer may touch this field; a wild individual is never nicknamed (a write-permission fact, testable in the schema's consumers)."
     }
   },
   "required": [

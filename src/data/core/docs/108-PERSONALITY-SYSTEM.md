@@ -105,3 +105,5 @@ temperament {
   names, preference strengths, and the #39 accrual interface are
   OPEN. What is finished: the one-seed discipline, where the
   block lives, and what it may and may not feed.
+
+**Citation (List 25 #237, landing 2026-10-27):** the idle-quirk read (237-INDIVIDUAL-IDLE-QUIRKS.md) mirrors this file's temperament read — same seed, same derivation family, no second roll anywhere. The quirk vocabulary's CONTENTS land only from the sheet-distillation pass; the mechanism is complete, the word list is content.

@@ -1,0 +1,18 @@
+{
+ "flows": [
+  "continue (resume the one connected world; loading resets nothing — #127 doctrine)",
+  "new-ranger (a new save in a free #96 slot; the old save is untouched)"
+ ],
+ "neverOffered": "any restart-plus / carry-over flow — #122's ruling is closed; the screen does not offer what the doctrine refuses",
+ "note": "Shape only — the summary stores nothing; every line is derived at the moment the screen is drawn. Visual layout is production design, not specified here.",
+ "schema": "mochiichao/save-select/v1",
+ "summary": {
+  "partner": "#80 individual (nickname per #239, RULED deviations reproduce per #196's portrait rule)",
+  "place": "current #11 node by lookup; regions visited via #146 visitRecord",
+  "playtime": "#96 meta — the one stored number shown",
+  "progress": "Fragments = popcount over #12 progress.* (#98/#45 derivation); dex counts = #14 seen/met",
+  "who": "#98 identity, name via #23",
+  "worldClock": "#19 phase the save resumes into + weather read #61 through #142"
+ },
+ "ngplusCitation": "#122's disposition is CLOSED (owner ruling): there is no New Game Plus. This screen offers Continue and New Ranger only; no restart-plus wording appears in any string it can show. The summary shown is derived from #146/#12/#14 reads — no stored summary field exists anywhere."
+}
