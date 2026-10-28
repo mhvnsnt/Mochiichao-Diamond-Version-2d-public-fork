@@ -632,6 +632,73 @@
      "extends": "currency gate over parts-catalog/clip-index; retrospective record landed with this package"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list17-systems",
+   "type": "systems-index",
+   "about": "List 17 teardown systems (items 157-166), landed 2026-10-27. Depths law honoured: the Dark Forest depths table verified at 0 slots and left untouched.",
+   "items": [
+    {
+     "n": 157,
+     "name": "Multi-battle formats",
+     "home": "show/production/battle/157-MULTI-BATTLE-FORMATS.md",
+     "extends": "sides block registered into #109's versus-ruleset fragment (one store)"
+    },
+    {
+     "n": 158,
+     "name": "Horde battles",
+     "home": "show/production/battle/158-HORDE-BATTLES.md",
+     "extends": "horde slot in #7's spawn-table schema (null everywhere); learning interface AWAITS the absent experience system"
+    },
+    {
+     "n": 159,
+     "name": "Rental battle system",
+     "home": "show/production/battle/159-RENTAL-BATTLES.md",
+     "extends": "rental source class PROPOSED into #109's file; validation spec-level until accepted there"
+    },
+    {
+     "n": 160,
+     "name": "Field partner AI",
+     "home": "show/production/world-systems/160-FIELD-PARTNER-AI.md",
+     "extends": "trigger classes PROPOSED into #58's vocabulary"
+    },
+    {
+     "n": 161,
+     "name": "Size records & specimen contests",
+     "home": "src/data/core/docs/161-SIZE-RECORDS.md",
+     "extends": "shape only; proposed section in #96's payload map; height/weight TBD (49/49)"
+    },
+    {
+     "n": 162,
+     "name": "Grooming & spa services",
+     "home": "show/production/world-systems/162-GROOMING-SPA.md",
+     "extends": "inert grooming class in #28's careLog vocabulary; groomedUntil PROPOSED into #80"
+    },
+    {
+     "n": 163,
+     "name": "Mythical habitat sealing",
+     "home": "show/production/world-systems/163-MYTHICAL-HABITAT-SEALING.md",
+     "extends": "consumer citations in #7/#102/#137/#84/#90 docs; depths table untouched (LAW)"
+    },
+    {
+     "n": 164,
+     "name": "Mission board system",
+     "home": "show/production/world-systems/164-MISSION-BOARD.md",
+     "extends": "rank fence in the fragment itself; generator PROPOSED to #90, stamp occasion PROPOSED to #104"
+    },
+    {
+     "n": 165,
+     "name": "Battle bag system",
+     "home": "show/production/battle/165-BATTLE-BAG.md",
+     "extends": "bagAccess PROPOSED to #18 \u2014 #18's standalone home NOT FOUND on main (see PR body)"
+    },
+    {
+     "n": 166,
+     "name": "Wild drop tables",
+     "home": "src/data/core/docs/166-WILD-DROP-TABLES.md",
+     "extends": "src/data/core/wild-drop-tables.json registered with ZERO rows + validation trio"
+    }
+   ]
   }
  ]
 }

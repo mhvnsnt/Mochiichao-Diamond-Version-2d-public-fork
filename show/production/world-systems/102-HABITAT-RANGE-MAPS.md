@@ -83,3 +83,5 @@ them.
   their #7/#29 instances exist — the design lane's wave-1 work,
   flagged in #29 already. No range is asserted beyond a table
   row's evidence.
+
+**Consumer citation (List 17 #163, landing 2026-10-27):** mythical-habitat sealing behaviour is decided in 163-MYTHICAL-HABITAT-SEALING.md (show/production/world-systems/), not in this document.

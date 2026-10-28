@@ -1,1 +1,63 @@
-{"_about":"Versus ruleset fragment (List 12 #109) — format shape only; ZERO rulesets instanced. The validator is specified against verified data schemas (species.json/species.schema.json, learnsets.json, moves.json, PR #366 machine registry, #80 individual record, #106 location field). Engine/lobby integration is an UNVERIFIED TARGET — no battle or link code appears in the audited repo sources; see STAGING.md.","clauseVocabulary":{"_about":"Closed vocabulary; a ruleset lists the clauses it enforces.","item-clause":"no two party members holding the same item id (#31 held category)","machine-moves":"allow | general-only | none — legality of machine-taught moves by PR #366 registry class","mythical-class":{"dependency":"UNENFORCEABLE until #41's proposed presentationClass field lands in the sheet standard — rulesets must not use this clause before then","values":"allow | exclude"},"species-clause":"no two party members of one species"},"format":"mochiichao/versus-ruleset/v1","rulesetShape":{"clauses":[],"displayName":"<#23 text-engine lookup key>","levelMode":"natural | set","levelValue":null,"levelValueStatus":"OPEN — Mochiichao's level scale/cap is not stated in any citable source; a 'set' ruleset cannot run while this is null and the validator must refuse, not improvise","partySize":null,"rulesetId":"<stable kebab key>","status":"OPEN — no ruleset instanced"},"validatorChecks":["party-source: entrant individual records (#80) with #106 location == party only","species-exists: resolves in src/data/core/species.json / src/lib/global_roster.json (audit gap: Dorowani/Gabu hold no core record yet, so are not enterable until it closes)","move-legality: learnsets.json row UNION individual machine-taught records (PR #366), filtered by the machine-moves clause; provisional learnset rows surface their flag","item-legality: #31 registry record with useContext.held == true; item-clause duplicate check","level-handling: natural reads individual level; set reads levelValue (refuses while null)","ability-slot: #107 proposed abilitySlot must name a slot the species record offers — species abilities fields are 0/47 today, so versus cannot honestly open yet"]}
+{
+ "_about": "Versus ruleset fragment (List 12 #109) — format shape only; ZERO rulesets instanced. The validator is specified against verified data schemas (species.json/species.schema.json, learnsets.json, moves.json, PR #366 machine registry, #80 individual record, #106 location field). Engine/lobby integration is an UNVERIFIED TARGET — no battle or link code appears in the audited repo sources; see STAGING.md.",
+ "clauseVocabulary": {
+  "_about": "Closed vocabulary; a ruleset lists the clauses it enforces.",
+  "item-clause": "no two party members holding the same item id (#31 held category)",
+  "machine-moves": "allow | general-only | none — legality of machine-taught moves by PR #366 registry class",
+  "mythical-class": {
+   "dependency": "UNENFORCEABLE until #41's proposed presentationClass field lands in the sheet standard — rulesets must not use this clause before then",
+   "values": "allow | exclude"
+  },
+  "species-clause": "no two party members of one species"
+ },
+ "format": "mochiichao/versus-ruleset/v1",
+ "rulesetShape": {
+  "clauses": [],
+  "displayName": "<#23 text-engine lookup key>",
+  "levelMode": "natural | set",
+  "levelValue": null,
+  "levelValueStatus": "OPEN — Mochiichao's level scale/cap is not stated in any citable source; a 'set' ruleset cannot run while this is null and the validator must refuse, not improvise",
+  "partySize": null,
+  "rulesetId": "<stable kebab key>",
+  "status": "OPEN — no ruleset instanced"
+ },
+ "validatorChecks": [
+  "party-source: entrant individual records (#80) with #106 location == party only",
+  "species-exists: resolves in src/data/core/species.json / src/lib/global_roster.json (audit gap: Dorowani/Gabu hold no core record yet, so are not enterable until it closes)",
+  "move-legality: learnsets.json row UNION individual machine-taught records (PR #366), filtered by the machine-moves clause; provisional learnset rows surface their flag",
+  "item-legality: #31 registry record with useContext.held == true; item-clause duplicate check",
+  "level-handling: natural reads individual level; set reads levelValue (refuses while null)",
+  "ability-slot: #107 proposed abilitySlot must name a slot the species record offers — species abilities fields are 0/47 today, so versus cannot honestly open yet"
+ ],
+ "sides": {
+  "_proposedBy": "List 17 #157 (157-MULTI-BATTLE-FORMATS.md) — registered into this fragment's home at the List 17 landing so the ruleset has ONE store; no multi format is instanced.",
+  "fragment": {
+   "_about": "Multi-battle format fragment (List 17 #157) — a #109 ruleset PLUS a sides block. Singles stays #109's home ground and is not redefined. ZERO multi formats instanced; no partner roster exists. The sides block is proposed into #109's fragment home at landing (#109 disposes). Partner AI is #18's scorer stack under the partner's authored class — game lane only; no scorer, clause, or geometry from this format may choreograph a show fight.",
+   "format": "mochiichao/multi-battle/v1",
+   "open_register": [
+    "which multi formats are instanced at all (doubles / multi / other geometries)",
+    "partner roster — which Rangers partner, where",
+    "resolution-order vocabulary for the shared #10 queue",
+    "spread (multi-target) modifier constant — owned by #17's pipeline, no number asserted here",
+    "whether a 'partner' class row is added to #18's class table — proposed into #18's file if wanted, not minted here"
+   ],
+   "partnerConstraints": [
+    "partner scorers read the whole field (both opposing slots + ally state)",
+    "partner never spends the Ranger's bag (item use per #165 class flag, against the partner's own stock)",
+    "partner switching (if its class set includes S-SWITCH) switches its own party only"
+   ],
+   "sidesShape": {
+    "controllers": "per slot: ranger | partner-ai | opponent-ai",
+    "sideA": {
+     "controllers": [],
+     "slots": 0
+    },
+    "sideB": {
+     "controllers": [],
+     "slots": 0
+    }
+   },
+   "validation": "#109 validator runs per entrant; clauses inherited verbatim from #109's closed vocabulary (species-clause, item-clause, machine-moves, mythical-class under its #41 dependency)"
+  }
+ }
+}

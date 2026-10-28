@@ -169,3 +169,5 @@ a similar trait, it needs its own ruling.
 - Any second canon deviation — none exists; none is drafted here.
 
 **Derived view registered (List 12 #108, 2026-10-27):** the personality/temperament system (`src/data/core/docs/108-PERSONALITY-SYSTEM.md`) reads this record's personality_seed / variance / temperament_read as a DERIVED view — no new roll, no schema fork.
+
+**PROPOSAL from List 17 #162 (registered at its landing, 2026-10-27):** a `presentation.groomedUntil` field on the individual record, written by #162's grooming services. Until this home accepts it, the presentation state is SPEC-LEVEL.

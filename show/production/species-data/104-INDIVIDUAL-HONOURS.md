@@ -90,3 +90,5 @@ a release tombstone may carry the honour *count*, see #106),
 - **Contents: shape only.** Zero honours are named or instanced;
   the accrual *sources* are wired to real systems, the honour
   catalogue is the owner's to create.
+
+**PROPOSAL from List 17 #164 (registered at its landing, 2026-10-27):** a service-stamp occasion in this file's stamp vocabulary for mission-board service (164-MISSION-BOARD.md). Proposal until this home accepts it; honours record service only via this vocabulary.
