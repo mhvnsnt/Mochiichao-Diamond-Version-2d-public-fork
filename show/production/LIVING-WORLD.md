@@ -658,3 +658,7 @@ cycle is flagged MAKE, exactly as BGs are today.
 `show/production/LIVING-WORLD.md`, with the cycle/B-roll/bed
 catalogues mirrored into `show/shared/parts-catalog.json` and the
 manifest fields added to the build-manifest compiler.*
+
+---
+
+**Construction manual for §2.4's beds:** `show/production/list3-systems/ENVIRONMENTAL-SOUND.md` (List-3 teardown #22) — this document owns *which* beds exist; that one owns *how a bed is built*. Cross-linked at landing (2026-10-27).

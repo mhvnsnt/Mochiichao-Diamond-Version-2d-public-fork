@@ -192,3 +192,7 @@ The five shows solve five different problems. Mochiichao should take **one solve
 - Chowder background *painting* process has thin published documentation; §5 leans on the pattern-fill interviews (strong) and design-origin summaries (secondary). If this standard is adopted, a follow-up pass should hunt Greenblatt's own blog/Tumblr production posts as primary sources.
 - DBZ camera claims are grounded in Toei's process (photography stage) plus observed series grammar, labelled as such where observed rather than quoted.
 - Pokémon sparkle language is labelled an observed convention, not a sourced claim.
+
+---
+
+**Machine side:** the camera system's executable spec is `show/production/list3-systems/CAMERA-SYSTEM.md` (List-3 teardown #21) — this document remains the design doc; that one is its machine side. Cross-linked at landing (2026-10-27).

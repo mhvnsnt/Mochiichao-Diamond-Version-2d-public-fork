@@ -52,7 +52,9 @@ Fill `core_record` in the template, in `species.json` shape:
 - `discovery_block`: habitats/methods/levels for `encounters.json`;
   first-appearance episode hook for the show.
 - `show_block`: locomotion + signature motion (+ signature move only from
-  game canon mapping, per-species, never a shared template).
+  game canon mapping, per-species, never a shared template) +
+  `plush_sheet` (the plush/merch pattern sheet emitted per PLUSH-SPEC,
+  `show/production/list3-systems/PLUSH-SPEC.md` — a design-gate output).
 
 ### Gate 1 — Data review (lane)
 - Record validates against `species.schema.json` shape; every null/empty
@@ -79,6 +81,7 @@ they are outputs, not design tasks:
   `footprints-real/` + FOOTPRINT-MANIFEST entry (foot_type, toe note,
   source view, confidence — honest about what isn't resolvable).
 - **Cry:** V1 + R1 WAVs → `public/audio/cries/`.
+- **Plush sheet:** pattern derived from the finished design per PLUSH-SPEC (`mochiichao/plush/v1`) — passes on the 32px + one-colour plush-read proofs.
 
 ### Gate 2 — Wiring + registration
 - Core record merged into `species.json`; roster entry into
