@@ -14,7 +14,7 @@
 | Mochiko voice (word-dialogue) | beats 1–4 | GAP: casting open (script §6.1) — scratch until decided |
 | Prof. Aeon voice (word-dialogue) | beats 1, 2, 5 | GAP: casting open (script §6.2) |
 | Hex voice (word-dialogue, button only) | button (cut 27) | GAP: casting open (script §6.3) |
-| Data tablet soft chime | beat 1 | GAP: source from TRIPPEDD OpenGameArt index at mix, or foley at mix |
+| Tablet soft chime | beat 1 | GAP: source from TRIPPEDD OpenGameArt index at mix, or foley at mix |
 | Presentation chime / spacing tone | beat 2 | GAP: same index, or foley at mix; if unsourced, the presentation plays on cries + grass only (silence is a tool) |
 | Light-through-water shimmer (the choosing, takeover beat) | beat 4 (cut 14) | GAP: synthesise at mix (Takeover-class, cf. EP01 cold-spot shimmer method) or source per index; never a stock sparkle |
 | Low-height garden ambience variant (creature-height world) | beats 5–6 | GAP: derive from EP01 beds at mix, or record; the [C] world must not reuse the [H] ambience unchanged |

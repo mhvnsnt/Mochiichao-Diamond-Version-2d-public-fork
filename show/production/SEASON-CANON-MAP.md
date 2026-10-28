@@ -105,7 +105,7 @@ names in the slots' own speaker/leader fields:
   name appears only in the after-defeat lines ("My name is
   Merv. Ferry Captain Merv."). The captain who ferries the
   player into Region 2 at Dawnfield (region2-dialogue.json,
-  entry R2-01, speaker "Data Ferry captain") keeps the
+  entry R2-01, speaker "Ferry captain") keeps the
   Olivine light: patience at sea, patience at the light.
   region2-dialogue.json, entry R2-08, dojo.leader.
 All other Region 2–5 dojo-leader and Elite Four slots remain
@@ -132,3 +132,4 @@ Season map EP06–EP10 drafted (2026-10-27): see `show/production/SEASON-MAP-EP0
 - **The Airship Lord's name = MAXXIMUS.**
 - **Dorowani eye canon** (logged in PR #391, production log + clip-index canon_notes): species eyes red + black, no sclera; the show/avatar individual Dorowani keeps his eye-whites as a ruled special-case deviation; individual variation within a species is canon doctrine.
 - **Kittember (of record, restated):** the flame is attached to the TAIL TIP — never a separate floating flame orb.
+- **CANON SWEEP #2 — the world-sense "Mainframe" (owner ruling confirmed 2026-10-27):** the Mainframe is THE SECRET (Bible Law 9) — only Aeon knows it, Luigi has a hint; ordinary world speech never names it. The neutral lines PR #371's sweep deliberately left flagged are now swept to neutral world-words ("the world"): the satellite-link keeper (R3-09b), the cave-painting keeper and Rift keeper (R4-10, R4-16), and the Grand Champion Mythar + Plateau attendant (R5-17). Merv's Dawnfield speaker label is "Ferry captain"; the R2-04 beat kind is "spring rescue"; EP02's generic prop is a "tablet". KEPT BY DESIGN, untouched: all villain/hacker-speak (incl. the Syndicate boss's taunt, R1-BEAT7, and the Liberation Front rally line, R5-03); Aeon's own endgame lines naming it (R1-BEAT9 "a second Mainframe shard"; R5-17 "The Mainframe remembers you now") — flagged in the sweep PRs as keeper-speech judgment calls for the owner's final word; and the Mansion log, Log 7 (R1-BEAT7) — an authored secret-layer artifact, readable not spoken. PREPARE-ONLY (not applied): "Data-Cut", "Data Astrologer", "Cyber Shaman" — recommendations in the sweep PR bodies. NOTE: src/world/FullWorldMaps.ts mirrors several of these lines and carries additional ordinary-speech instances (incl. the "Mainframe Plateau" sign) — a mirrored-file follow-up sweep is flagged, not folded in.

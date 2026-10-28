@@ -11,7 +11,7 @@ cut 14/15 — no [H] cut exists after cut 14.
 |---|---|---|---|---|
 | 01 | 0:10 | [H] | ESTAB-PAN: Garden Gate, morning brand-blue. Keeper board in frame, names unreadable at this dwell. | BG gate (BANK from EP01), board prop |
 | 02 | 0:06 | [H] | Mochiko arrives dressed for an occasion; capsule backpack squared; practises standing still. | Mochiko rig (v2), capsule backpack prop |
-| 03 | 0:08 | [H] | PROF. AEON waiting at the Gate, tablet under arm. First appearance. "You're early." | Aeon rig (MAKE), data tablet prop |
+| 03 | 0:08 | [H] | PROF. AEON waiting at the Gate, tablet under arm. First appearance. "You're early." | Aeon rig (MAKE), tablet prop |
 | 04 | 0:07 | [H] | Two-shot at human height; the garden beyond them, residents distant. | Gate BG BANK |
 | 05 | 0:06 | [H] | Aeon leads in; Mochiko follows; gate closes soft behind them. | gate cycle BANK |
 | 06 | 0:10 | [H] | GREEN: ESTAB-PAN of the presentation ground, plain and formal; residents at respectful distance. | BG green (BANK), crowd placement |
