@@ -41,3 +41,57 @@ Have it working: **#4, #6**. Downloaded/prepared, staging owed: **#1,
 #5**. Named and licence-verified, not yet pulled: **#2, #3** (and #3 is
 bypassed by design). Plus one newly recorded gap: the **RIFE flownet**.
 Nothing on this list is paid, and nothing is free-but-restricted.
+
+---
+# CORRECTION NOTE — dated 2026-10-28 (avatar-stack parity round)
+
+Appended to `PULL-IN-STATUS.md` by the parity-round PR. The original
+lines stay in place above for the record; where they conflict with
+this note, THIS NOTE is current.
+
+1. **Split grading retired.** Line 16's "motion is proven, likeness
+   is not" used the split grade the owner retired on 2026-10-28.
+   Current wording: the Wan backend is **WIRED UNPROVEN**. A clip
+   passes only when the CORRECT character performs the action;
+   motion/frame-diff numbers are diagnostics, never grades. The
+   Dorowani Water Orb proof (2026-10-28) graded **FAIL — reference
+   never anchored** (frame 1 already the wrong character; frame-0
+   gate SSIM 0.2938 vs min 0.50, RGB MAD 100.29 vs max 40).
+
+2. **RIFE staging sentence was wrong.** The claim that `rife47.pth`
+   "is staged nowhere" is corrected: **rife47.pth (21,344,827 B,
+   sha256 6a8a825a…) and rife49.pth (21,345,274 B, sha256 e55fd00f…)
+   are staged in the private Kaggle dataset
+   `marsfmmg/mochiichao-wan22-consistency-kit` v1** (server-side
+   listing verified 2026-10-28; pull-in programme ledger §C).
+   Licence: MIT (open source). Sessions mount that dataset and use
+   RIFE from there; no in-session flownet fetch is needed.
+
+3. **musubi-tuner licence** is recorded inconsistently across the
+   staging paperwork (Apache-2.0 in the teardown, MIT in one
+   staging-table row). Re-verified at source this round (repo
+   README licence section): **Apache-2.0**. The staging-table MIT
+   line is the wrong one.
+
+4. **Outcomes added by the parity round (2026-10-28, measured):**
+   - Character LoRAs now EXIST: Wispkin + Dorowani trained
+     (musubi-tuner) and staged in private Kaggle dataset
+     `marsfmmg/mochiichao-character-loras` — but as **Wan2.1-1.3B**
+     LoRAs, because musubi-tuner cannot train TI2V-5B (verified at
+     source). They do not load in the 5B scene yet; see
+     `lora/LORA-MANIFEST.md`.
+   - The Turbo-path failure is root-caused: the wrapper's T5 loader
+     rejects the staged scaled-fp8 UMT5 unconditionally, and the
+     wrapper renamed its LoRA input (`lora_args`→`lora`). Fixes:
+     `parity/TURBO-T5-FIX.md` + `parity/workflow-turbo-fixed.json`
+     (not yet run).
+   - Likeness lock: there is no IP-Adapter node for Wan; the lock
+     is VACE reference control, now wired engaged in
+     `parity/workflow-i2v-locked.json` (not yet run).
+   - A14B tier: parity tier is 5B + lock + LoRAs; the only
+     stageable A14B variant (GGUF Q4_K_M) is planned in writing in
+     `parity/A14B-TIER.md`, unproven.
+   - The two-character test scene COMPLETED on Kaggle but its
+     outputs remain unharvested — Kaggle API 429 on three attempts
+     across two rounds (09:52 / 10:07 / 10:23 UTC). Full parity
+     table: `parity/PARITY-REPORT.md`.

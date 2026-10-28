@@ -1,0 +1,32 @@
+# musubi-tuner training config for the Dorowani character LoRA.
+# Used as: accelerate launch ... src/musubi_tuner/wan_train_network.py --config_file train_dorowani.toml
+# (--config_file TOML format verified in docs/advanced_config.md: sections are flattened.)
+#
+# BASE-MODEL NOTE (verified at source, 2026-10-28): musubi-tuner @ main f8a1b03 has NO
+# ti2v-5B task in WAN_CONFIGS (src/musubi_tuner/wan/configs/__init__.py), so Wan2.2-TI2V-5B
+# cannot be trained with musubi-tuner yet. This config trains on Wan2.1 T2V-1.3B, the
+# documented T4-fitting task (docs/wan.md example). The resulting LoRA targets Wan2.1-1.3B,
+# NOT the TI2V-5B test-scene model. See LORA-MANIFEST.md.
+task = "t2v-1.3B"
+dit = "/kaggle/working/models/wan2.1_t2v_1.3B_fp16.safetensors"
+dataset_config = "/kaggle/working/configs/dataset_dorowani.toml"
+sdpa = true
+mixed_precision = "fp16"  # fp16 DiT + fp16 mixed precision: Kaggle T4/P100 have fast fp16, no bf16/fp8 tensor cores
+# fp8_base omitted deliberately: documented in docs/wan.md, but Kaggle free GPUs (T4/P100)
+# have no fp8 tensor cores; the fp16 1.3B weights (~2.8GB) fit T4 VRAM with block swap alone.
+blocks_to_swap = 20
+optimizer_type = "adamw8bit"
+learning_rate = 0.0001
+gradient_checkpointing = true
+max_data_loader_n_workers = 2
+persistent_data_loader_workers = true
+network_module = "networks.lora_wan"
+network_dim = 16
+network_alpha = 16
+timestep_sampling = "shift"
+discrete_flow_shift = 3.0
+max_train_epochs = 10
+save_every_n_epochs = 5
+seed = 42
+output_dir = "/kaggle/working/out/dorowani"
+output_name = "dorowani_mochii_wan21_1.3b"

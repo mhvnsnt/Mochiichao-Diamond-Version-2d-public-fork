@@ -1,0 +1,14 @@
+# musubi-tuner dataset config (format verified in docs/dataset_config.md, kohya-ss/musubi-tuner @ main)
+# Image dataset: single frames are trained as 1-frame videos by wan_cache_latents.py.
+# Paths are the canonical Kaggle working-dir layout created by mochiichao-lora-train.ipynb.
+[general]
+resolution = [512, 512]
+caption_extension = ".txt"
+batch_size = 1
+enable_bucket = true
+bucket_no_upscale = true
+
+[[datasets]]
+image_directory = "/kaggle/working/data/dorowani"
+cache_directory = "/kaggle/working/cache/dorowani"
+num_repeats = 1
