@@ -12,6 +12,12 @@ export interface MenuListItem {
   label: string;
   help: string;
   action: () => void;
+  /** Per-line editor overrides (Menu Editor 2026-10-27 expansion, all optional — unset rows keep the shipped row style). */
+  color?: string;
+  fontFamily?: string;
+  align?: "left" | "center" | "right";
+  /** Extra left inset in px, added to the row's base 16px padding. */
+  indent?: number;
 }
 
 export function MenuList({ items, selected, onSelect }: {
@@ -30,9 +36,10 @@ export function MenuList({ items, selected, onSelect }: {
           className={`game-button px-4 py-2.5 font-bold text-left flex items-center gap-2 ${
             i === selected ? 'ring-2 ring-yellow-300 brightness-125' : 'opacity-90'
           }`}
+          style={item.indent ? { paddingLeft: 16 + item.indent } : undefined}
         >
           <span aria-hidden="true">{i === selected ? '►' : '·'}</span>
-          <span className="flex-1">{item.label}</span>
+          <span className="flex-1" style={{ color: item.color, fontFamily: item.fontFamily, textAlign: item.align ?? 'left' }}>{item.label}</span>
         </button>
       ))}
     </div>

@@ -7,8 +7,8 @@ import DialogueBox from "./game/DialogueBox";
 import SettingsScreen from "./game/SettingsScreen";
 import { frameAccent } from "../lib/gameSettings";
 import { isConfirmKey, shoulderKey } from "../lib/buttonMode";
-import { fontById } from "../lib/fonts";
-import { getActiveMenuConfig, subtitleFontStack } from "../lib/menuEditor";
+import { fontById, PINNED_SUBTITLE_FONT } from "../lib/fonts";
+import { getActiveMenuConfig, subtitleFontStack, haloShadow } from "../lib/menuEditor";
 import { pickRotation, readLastTitleCreature, writeLastTitleCreature, type TitleCreature } from "../lib/titleRotation";
 import YogifernoTitleWalk from "./game/YogifernoTitleWalk";
 import TitleCreatureFigure from "./game/TitleCreatureFigure";
@@ -696,6 +696,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       border: `${menuCfg.panelStyle.borderWidth}px solid #000`,
       borderRadius: menuCfg.panelStyle.borderRadius,
       display: menuCfg.layers.panels.visible ? 'flex' : 'none', flexDirection: 'column',
+      opacity: menuCfg.layers.panels.opacity ?? 1,
       alignItems: 'flex-start', justifyContent: 'center', cursor: 'pointer',
       paddingLeft: panel.labelMargin - LOCKED_V32_MENU.panelStyle.borderWidth, textAlign: 'left' as const,
       fontFamily: menuCfg.panelStyle.panelFont === 'locked' ? LOCKED_V32_MENU.panelLabel.fontFamily : fontById(menuCfg.panelStyle.panelFont).family,
@@ -723,6 +724,33 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
       (LOCKED_V32_MENU.panelLabel.strokeLabels as readonly string[]).includes(key)
         ? { textShadow: halo(LOCKED_V32_MENU.panelLabel.labelStrokePx) }
         : {};
+    // Per-panel label styles from the editor (expansion 2026-10-27).
+    // Defaults reproduce the locked render exactly: black letters;
+    // CONTINUE + SETTINGS white halo radius 2; sublabel black + white
+    // halo radius 1. A saved preset's white-letters/black-outline or
+    // black-letters/white-outline combos are data here, never the
+    // locked default. Alignment is deliberately NOT wired here: the
+    // preview defaults LEFT, the real menu stays centered on this
+    // branch until the #260 merge reconciles with #206 (merged on
+    // main 2026-10-27) — stated, not hidden.
+    // letterSpacing applies only when non-zero so the locked render
+    // keeps its tracking-widest class spacing.
+    const panelLabelStyle = (key: string, panel: ReturnType<typeof panelByKey>): React.CSSProperties => {
+      const width = panel.outlineWidth ?? ((LOCKED_V32_MENU.panelLabel.strokeLabels as readonly string[]).includes(key) ? LOCKED_V32_MENU.panelLabel.labelStrokePx : 0);
+      return {
+        color: panel.labelColor ?? '#000',
+        fontFamily: panel.labelFont && panel.labelFont !== 'locked' ? fontById(panel.labelFont).family : LOCKED_V32_MENU.panelLabel.fontFamily,
+        ...(panel.letterSpacing ? { letterSpacing: panel.letterSpacing } : {}),
+        ...(width > 0 ? { textShadow: haloShadow(panel.outlineColor ?? '#fff', width) } : {}),
+      };
+    };
+    const sublabelStyle = (panel: ReturnType<typeof panelByKey>): React.CSSProperties => {
+      const width = panel.sublabelOutlineWidth ?? LOCKED_V32_MENU.panelLabel.sublabelStrokePx;
+      return {
+        color: panel.sublabelColor ?? '#000',
+        ...(width > 0 ? { textShadow: haloShadow(panel.sublabelOutlineColor ?? '#fff', width) } : {}),
+      };
+    };
     return (
       <div className="game-screen bg-[#050810] relative overflow-hidden" role="menu" aria-label="Main menu">
         <LockedStage
@@ -767,7 +795,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             src={mochiichaoMenuLogo}
             alt="MOCHIICHAO"
             className="absolute object-contain"
-            style={{ left: menuCfg.logo.x, top: menuCfg.logo.y, width: menuCfg.logo.w, zIndex: menuCfg.layers.logo.order, display: menuCfg.layers.logo.visible ? undefined : 'none' }}
+            style={{ left: menuCfg.logo.x, top: menuCfg.logo.y, width: menuCfg.logo.w, zIndex: menuCfg.layers.logo.order, opacity: menuCfg.layers.logo.opacity ?? 1, display: menuCfg.layers.logo.visible ? undefined : 'none' }}
           />
           {/* Fixed orbit side sparkles (section O, 2026-10-26): black
               4-point stars present at the SAME positions in all three
@@ -811,7 +839,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               rendered again. File untouched. */}
           <svg
             className={menuCfg.cloud.bobOn ? "absolute menu-bob-cloud" : "absolute"}
-            style={{ left: menuCfg.cloud.frameX, top: menuCfg.cloud.frameY, width: menuCfg.cloud.frameW, height: menuCfg.cloud.frameH, pointerEvents: 'none', overflow: 'visible', zIndex: menuCfg.layers.cloud.order, display: menuCfg.layers.cloud.visible ? undefined : 'none' }}
+            style={{ left: menuCfg.cloud.frameX, top: menuCfg.cloud.frameY, width: menuCfg.cloud.frameW, height: menuCfg.cloud.frameH, pointerEvents: 'none', overflow: 'visible', zIndex: menuCfg.layers.cloud.order, opacity: menuCfg.layers.cloud.opacity ?? 1, display: menuCfg.layers.cloud.visible ? undefined : 'none' }}
             viewBox={`0 0 ${menuCfg.cloud.frameW} ${menuCfg.cloud.frameH}`}
             aria-hidden="true"
           >
@@ -822,7 +850,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             src={mochiiCutout}
             alt="Mochii"
             className={menuCfg.mochii.bobOn ? "absolute object-contain menu-bob-mochii" : "absolute object-contain"}
-            style={{ left: menuCfg.mochii.x, top: menuCfg.mochii.y, width: menuCfg.mochii.w, height: menuCfg.mochii.h, pointerEvents: 'none', zIndex: menuCfg.layers.mochii.order, display: menuCfg.layers.mochii.visible ? undefined : 'none' }}
+            style={{ left: menuCfg.mochii.x, top: menuCfg.mochii.y, width: menuCfg.mochii.w, height: menuCfg.mochii.h, pointerEvents: 'none', zIndex: menuCfg.layers.mochii.order, opacity: menuCfg.layers.mochii.opacity ?? 1, display: menuCfg.layers.mochii.visible ? undefined : 'none' }}
           />
           {/* Logo emblems from the active menu config (editor EMBLEMS
               panel): hearts + stars + circle at v32 picture
@@ -831,9 +859,9 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
               editor owns their positions/visibility now, and the
               hearts job's exact-layer call lands as a config value,
               not a second rendering path. */}
-          <div className="absolute inset-0" style={{ zIndex: menuCfg.layers.emblems.order, display: menuCfg.layers.emblems.visible ? undefined : 'none', pointerEvents: 'none' }}>
+          <div className="absolute inset-0" style={{ zIndex: menuCfg.layers.emblems.order, opacity: menuCfg.layers.emblems.opacity ?? 1, display: menuCfg.layers.emblems.visible ? undefined : 'none', pointerEvents: 'none' }}>
             <svg width={1200} height={1500}>
-              {menuCfg.emblems.filter((e) => e.visible).map((e) => (
+              {menuCfg.emblems.filter((e) => e.visible).sort((a, b) => (a.z ?? 0) - (b.z ?? 0)).map((e) => (
                 <g key={e.id} transform={`translate(${e.x - e.w / 2},${e.y - e.h / 2})`}>
                   {e.kind === 'circle'
                     ? <circle cx={e.w / 2} cy={e.h / 2} r={Math.min(e.w, e.h) / 2} fill={e.color} />
@@ -855,16 +883,16 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                   onFocus={() => setMainSelected(i)}
                   style={v32PanelStyle(panelByKey('CONTINUE'), isSelected)}
                 >
-                  <div className="text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('CONTINUE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke('CONTINUE') }}>
+                  <div className="text-black" style={{ fontSize: panelByKey('CONTINUE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('CONTINUE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke('CONTINUE'), ...panelLabelStyle('CONTINUE', panelByKey('CONTINUE')) }}>
                     <span style={{ color: settings.cursorColor, marginRight: isSelected ? 7 : 0 }}>{isSelected ? cursorGlyph : ''}</span>{panelByKey('CONTINUE').label}
                   </div>
                   {latestData ? (
                     <>
-                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
-                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
+                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx), ...sublabelStyle(panelByKey('CONTINUE')) }}>Player: {latestData.playerName || 'Netrunner'} · Caught: {caughtCount} · Team: {teamCount} · CR: {crBalance ?? '—'}</div>
+                      <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx), ...sublabelStyle(panelByKey('CONTINUE')) }}>Map: {latestData.currentMap || '—'} · Saved: {latestSave ? new Date(latestSave.timestamp).toLocaleString() : '—'}</div>
                     </>
                   ) : (
-                    <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx) }}>{menuCfg.continueSublabel}</div>
+                    <div className="text-black" style={{ fontSize: LOCKED_V32_MENU.panelLabel.sublabelSize, lineHeight: LOCKED_V32_MENU.panelLabel.sublabelLineHeight, textAlign: 'left', width: '100%', marginLeft: LOCKED_V32_MENU.panelLabel.sublabelMargin - panelByKey('CONTINUE').labelMargin, textShadow: halo(LOCKED_V32_MENU.panelLabel.sublabelStrokePx), ...sublabelStyle(panelByKey('CONTINUE')) }}>{menuCfg.continueSublabel}</div>
                   )}
                 </button>
               );
@@ -878,7 +906,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
                 onFocus={() => setMainSelected(i)}
                 style={v32PanelStyle(panel, isSelected)}
               >
-                <div className="text-black" style={{ fontSize: panel.labelSize, lineHeight: 1.15, letterSpacing: `${panel.labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke(item.key) }}>
+                <div className="text-black" style={{ fontSize: panel.labelSize, lineHeight: 1.15, letterSpacing: `${panel.labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...labelStroke(item.key), ...panelLabelStyle(item.key, panel) }}>
                   <span style={{ color: settings.cursorColor, marginRight: isSelected ? 7 : 0 }}>{isSelected ? cursorGlyph : ''}</span>{panel.label}
                 </div>
               </button>
@@ -888,7 +916,7 @@ export default function IntroSequence({ onComplete, onEnterWorld }: IntroSequenc
             onClick={() => { playUiBack(); setPhase("TITLE"); }}
             style={v32PanelStyle(panelByKey('BACK TO TITLE'), false)}
           >
-            <div className="text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('BACK TO TITLE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%' }}>{panelByKey('BACK TO TITLE').label}</div>
+            <div className="text-black" style={{ fontSize: panelByKey('BACK TO TITLE').labelSize, lineHeight: 1.15, letterSpacing: `${panelByKey('BACK TO TITLE').labelLetterSpacing}em`, fontWeight: LOCKED_V32_MENU.panelLabel.fontWeight, textAlign: 'left', width: '100%', ...panelLabelStyle('BACK TO TITLE', panelByKey('BACK TO TITLE')) }}>{panelByKey('BACK TO TITLE').label}</div>
           </button>
         </LockedStage>
 

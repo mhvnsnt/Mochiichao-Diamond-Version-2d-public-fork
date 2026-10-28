@@ -7,6 +7,7 @@ import { UI_ART } from '../../lib/uiArt';
 import { MenuList, MenuHelpLine } from './MenuList';
 import { getActiveMenuConfig } from '../../lib/menuEditor';
 import { getDayNightMenuVariant, dayNightMenuVarStyle } from '../../lib/dayNightMenuVariants';
+import { fontById } from '../../lib/fonts';
 
 /** In-game pause menu (X / Esc / Menu button). Real game buttons, no brackets. */
 export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle, onNavigate }: {
@@ -84,6 +85,13 @@ export function PauseMenu({ onClose, onRoster, onShop, onSaveLoad, onQuitToTitle
       label: k === 'save' && saved ? 'Saved!' : (pauseCfg.labels[k] ?? base[k].label),
       help: pauseCfg.help[k] ?? base[k].help,
       action: base[k].action,
+      // Per-line editor overrides (2026-10-27 expansion): unset rows
+      // keep the shipped row style exactly — color/font/align/margin
+      // are data, never hardcoded per row.
+      color: pauseCfg.labelColors[k],
+      fontFamily: pauseCfg.labelFonts[k] ? fontById(pauseCfg.labelFonts[k]).family : undefined,
+      align: pauseCfg.itemAlign[k],
+      indent: pauseCfg.labelMargin || undefined,
     }));
   const safeSelected = Math.min(selected, items.length - 1);
 
