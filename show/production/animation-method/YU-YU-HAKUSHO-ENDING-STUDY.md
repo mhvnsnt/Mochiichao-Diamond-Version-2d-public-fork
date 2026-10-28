@@ -174,3 +174,32 @@ DVD extras (confirmed to exist) and logging them cut by cut —
 a viewing task for a human with legal access, not a web task.
 Until then, §§1–3 stand at the grades marked and must not be
 quoted at a higher grade.
+
+---
+
+## 7. Owner-memory note (2026-10-28, appended after landing)
+
+Recorded from the owner, who commissioned this study, on seeing
+its findings — labelled as his memory, not as a citation:
+
+- He remembers the team-walk **most strongly from a Yu Yu
+  Hakusho game** (he also remembers it from the show, and
+  believes the walk appeared in the game). Which game is **not
+  identified and not researched** — this is a lead for a future
+  check, never a source.
+- The walk's lead figure, Yusuke Urameshi, is one of his
+  favourite characters in the franchise — part of why a gag
+  shaped around the lead walking with his group is the shape he
+  reached for.
+- His name for the ending walk's tone: **"reverse deadpan"** —
+  a completely serious scene (flames, stakes, nobody joking)
+  whose cute register makes it play as visual comedy; the comedy
+  comes out backwards, from the seriousness played straight.
+  That serious-vs-cute contrast is recorded as an ingredient of
+  the Mochiichao gag's tone.
+- He also recognised the chibi-comedy segment as the anime
+  eyecatch / omake trope — short comedy cards and bonus segments
+  outside the endings proper — matching §1's placement of the
+  chibi material outside the EDs.
+- His episode count for the ED3 walk was ~23 episodes; the
+  documented range is eps 60–83 = 24 of 112.
