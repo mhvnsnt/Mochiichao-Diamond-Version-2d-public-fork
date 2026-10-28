@@ -23,6 +23,7 @@ exact voice gets taken. We design the pattern; the pattern is ours.
    reference + per-character tuned exaggeration / CFG in a
    render-queue). Model weights staged per the STAGING RULE
    (TeraBox bulk, rationed into repos in batches — AGENTS.md).
+   Voice-kit implementation: `show/production/tooling/voice-kit/` (render queue + workflow; see its WIRING.md).
 4. GATE: lines are reviewed against the sheet (does the pacing /
    melody / energy match?) before they enter a mix. Scratch renders
    are labelled VOICE-SCRATCH until the owner passes a casting.

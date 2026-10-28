@@ -1,0 +1,126 @@
+name: Voice Render (Mochiichao)
+
+# Adapted from wizard-gang-voice-pipe .github/workflows/voice-render.yml.
+# LANDING NOTE: GitHub only runs workflows from the repo-root
+# .github/workflows/ — on merge, this file moves there (see WIRING.md S4).
+# Until a character's casting is CAST (refs/<slot>-ref.wav present),
+# the render step fails by design: no silent fallback voice.
+
+on:
+  workflow_dispatch:
+    inputs:
+      character:
+        description: "Character slot to render"
+        required: true
+        type: choice
+        options:
+          - mochiko
+          - hex
+          - aeon
+      text:
+        description: "Line to speak"
+        required: true
+        type: string
+      prosody_type:
+        description: "Story job of this line's delivery"
+        required: true
+        type: choice
+        options:
+          - emotional-connection
+          - narrative-beat
+          - audience-retention
+          - character-bonding
+          - baseline
+        default: "baseline"
+      contour:
+        description: "Prosody-sheet contour (wonder / reverence / dead-level / lecturer / baseline)"
+        required: false
+        type: string
+        default: "baseline"
+      exaggeration:
+        description: "Exaggeration factor (blank = character default)"
+        required: false
+        type: string
+        default: ""
+      cfg_weight:
+        description: "CFG weight (blank = character default)"
+        required: false
+        type: string
+        default: ""
+      label:
+        description: "Take label, <scene>-<line-slug> (used in output filename)"
+        required: false
+        type: string
+        default: "take1"
+  push:
+    paths:
+      - "show/production/tooling/voice-kit/render-queue.json"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('show/production/tooling/voice-kit/requirements.txt') }}
+
+      - name: Cache HuggingFace model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: chatterbox-model-v1
+
+      - name: Install dependencies
+        working-directory: show/production/tooling/voice-kit
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Render voice line(s)
+        working-directory: show/production/tooling/voice-kit
+        run: |
+          # Queue push renders the batch queue; manual dispatch renders
+          # one line. scripts/render_voice.py resolves defaults +
+          # prosody fields and refuses CASTING_TBD slots.
+          if [ "${{ github.event_name }}" = "push" ]; then
+            python scripts/render_voice.py --queue render-queue.json --run
+          else
+            EXTRA=""
+            if [ -n "${{ inputs.exaggeration }}" ]; then EXTRA="$EXTRA --exaggeration ${{ inputs.exaggeration }}"; fi
+            if [ -n "${{ inputs.cfg_weight }}" ]; then EXTRA="$EXTRA --cfg-weight ${{ inputs.cfg_weight }}"; fi
+            python scripts/render_voice.py \
+              --character "${{ inputs.character }}" \
+              --text "${{ inputs.text }}" \
+              --label "${{ inputs.label }}" \
+              --prosody-type "${{ inputs.prosody_type }}" \
+              --contour "${{ inputs.contour }}" \
+              $EXTRA --run
+          fi
+
+      - name: Convert to MP3
+        working-directory: show/production/tooling/voice-kit
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          for f in output/*.wav; do
+            ffmpeg -y -v error -i "$f" -codec:a libmp3lame -b:a 192k "${f%.wav}.mp3"
+          done
+          ls -lh output/
+
+      - name: Upload voice artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: voice-render-${{ github.run_number }}
+          path: show/production/tooling/voice-kit/output/
+          retention-days: 30

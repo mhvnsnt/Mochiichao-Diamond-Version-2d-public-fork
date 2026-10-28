@@ -122,3 +122,5 @@ unchanged boundary:
    third-party service, authored in Jamar's repos for his pipeline:
    Class A (his tooling configuration), the service itself is
    external.
+
+- **Voice kit** — `show/production/tooling/voice-kit/` (Chatterbox render queue + GitHub Actions workflow for human voices, wired per its WIRING.md; weights staged per its TERABOX-MANIFEST.md — prepared, not yet staged).

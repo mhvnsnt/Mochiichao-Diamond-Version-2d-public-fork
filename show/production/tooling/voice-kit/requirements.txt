@@ -1,0 +1,14 @@
+# Mochiichao voice-kit — pinned to match the source pipe (wizard-gang-voice-pipe, 2026-10-09)
+# chatterbox-tts 0.1.7 from PyPI; torch CPU-only for GitHub Actions runners (no GPU on free tier)
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.6.0+cpu
+torchaudio==2.6.0+cpu
+
+chatterbox-tts==0.1.7
+librosa==0.11.0
+soundfile==0.14.0
+numpy==1.26.4
+
+# Scratch engine (preset voices, no cloning) — audition path only
+kokoro>=0.9
