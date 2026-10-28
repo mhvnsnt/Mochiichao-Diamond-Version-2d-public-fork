@@ -1,0 +1,58 @@
+{
+  "$id": "mochiichao/ecology-table.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Per-region ecology file (#29) — the species x habitat x area x time join",
+  "description": "Ecology is the join from which game encounters (#7) and show ambient population (LIVING-WORLD P2) both derive. This format carries NO numbers: weights live in spawn tables, rates nowhere until canon sets them. A resident row requires a canon source in evidence. Display names follow the display sweep (Region 1 displays as Iridescence); production names stay in production docs (two-lane law).",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "regionId": { "type": "string" },
+    "regionDisplayName": { "type": "string" },
+    "zones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "zoneId": { "type": "string" },
+          "areaId": { "type": ["string", "null"], "description": "Join to spawn-table files (#7). Null if the zone has no encounter file." },
+          "showLocation": { "type": ["string", "null"], "description": "Show-side location (LIVING-WORLD). Null if no show counterpart is established." },
+          "habitatClasses": {
+            "type": "array",
+            "items": { "enum": ["sky", "small-ground", "water", "perch", "night", "canopy", "depths"] },
+            "description": "The spawn schema's enum (sky/small-ground/water/perch/night) plus two additive extensions the Forest forces: canopy (surface, inhabited) and depths. Landing note: the spawn schema enum gains the same two values — additive, flagged in STAGING.md."
+          },
+          "residents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "speciesId": { "type": "string" },
+                "residency": { "enum": ["wild", "kept", "ambient-only"] },
+                "evidence": { "type": "string", "description": "The canon source that places this species here. No source, no row." },
+                "status": { "type": "string" }
+              },
+              "required": ["speciesId", "residency", "evidence", "status"]
+            }
+          },
+          "timeBands": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "properties": {
+              "morning": { "type": ["array", "null"], "items": { "type": "string" } },
+              "day": { "type": ["array", "null"], "items": { "type": "string" } },
+              "dusk": { "type": ["array", "null"], "items": { "type": "string" } },
+              "night": { "type": ["array", "null"], "items": { "type": "string" } }
+            },
+            "description": "Presence marks (speciesIds) ONLY where a canon source speaks in time terms (show P6 time truth). Null = canon silent."
+          },
+          "status": { "type": "string", "description": "Zone provenance; the Dark Forest depths zone is 'OPEN — canon does not stock the depths' with residents []." }
+        },
+        "required": ["zoneId", "areaId", "showLocation", "habitatClasses", "residents", "timeBands", "status"]
+      }
+    },
+    "status": { "type": "string" }
+  },
+  "required": ["regionId", "regionDisplayName", "zones", "status"]
+}

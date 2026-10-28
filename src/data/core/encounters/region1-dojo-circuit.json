@@ -1,0 +1,384 @@
+{
+ "circuit": "region-1",
+ "displayRegion": "Iridescence",
+ "note": "Names/order/tier from SEASON-CANON-MAP only. fragmentId values for dojos are schema-shaped placeholders assigned by this instance for flag wiring; the fragment ITEM records are #31-layer work. Elite/champion flagSet is null: their progress flags are the route/flag pass's assignment, not asserted here.",
+ "encounters": [
+  {
+   "encounterId": "dojo-1",
+   "tier": "dojo",
+   "dojoIndex": 1,
+   "leader": {
+    "name": "Lin",
+    "nameStatus": "canon: SEASON-CANON-MAP master list, list order"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": "fragment-dojo-1",
+    "itemIds": [],
+    "flagSet": "progress.dojo-1-cleared"
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "dojo-2",
+   "tier": "dojo",
+   "dojoIndex": 2,
+   "leader": {
+    "name": "Falk",
+    "nameStatus": "canon: SEASON-CANON-MAP master list, list order"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": "fragment-dojo-2",
+    "itemIds": [],
+    "flagSet": "progress.dojo-2-cleared"
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "dojo-3",
+   "tier": "dojo",
+   "dojoIndex": 3,
+   "leader": {
+    "name": "Tetsu",
+    "nameStatus": "canon: SEASON-CANON-MAP master list, list order"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": "fragment-dojo-3",
+    "itemIds": [],
+    "flagSet": "progress.dojo-3-cleared"
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "dojo-4",
+   "tier": "dojo",
+   "dojoIndex": 4,
+   "leader": {
+    "name": "Kenji",
+    "nameStatus": "canon: SEASON-CANON-MAP master list, list order"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": "fragment-dojo-4",
+    "itemIds": [],
+    "flagSet": "progress.dojo-4-cleared"
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "dojo-5",
+   "tier": "dojo",
+   "dojoIndex": 5,
+   "leader": {
+    "name": "Phantom",
+    "nameStatus": "canon: SEASON-CANON-MAP master list, list order"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": "fragment-dojo-5",
+    "itemIds": [],
+    "flagSet": "progress.dojo-5-cleared"
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "dojo-6",
+   "tier": "dojo",
+   "dojoIndex": 6,
+   "leader": {
+    "name": "Shizuku",
+    "nameStatus": "canon: SEASON-CANON-MAP master list, list order"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": "fragment-dojo-6",
+    "itemIds": [],
+    "flagSet": "progress.dojo-6-cleared"
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "dojo-7",
+   "tier": "dojo",
+   "dojoIndex": 7,
+   "leader": {
+    "name": "Homura",
+    "nameStatus": "canon: SEASON-CANON-MAP master list, list order"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": "fragment-dojo-7",
+    "itemIds": [],
+    "flagSet": "progress.dojo-7-cleared"
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "dojo-8",
+   "tier": "dojo",
+   "dojoIndex": 8,
+   "leader": {
+    "name": null,
+    "nameStatus": "OPEN \u2014 a Syndicate boss leads Dojo 8; canon leaves the name a gap, never filled here"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": "fragment-dojo-8",
+    "itemIds": [],
+    "flagSet": "progress.dojo-8-cleared"
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "elite-umi",
+   "tier": "elite",
+   "dojoIndex": null,
+   "leader": {
+    "name": "Umi",
+    "nameStatus": "canon: SEASON-CANON-MAP Elite Four"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": null,
+    "itemIds": [],
+    "flagSet": null
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "elite-gin",
+   "tier": "elite",
+   "dojoIndex": null,
+   "leader": {
+    "name": "Gin",
+    "nameStatus": "canon: SEASON-CANON-MAP Elite Four"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": null,
+    "itemIds": [],
+    "flagSet": null
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "elite-hono",
+   "tier": "elite",
+   "dojoIndex": null,
+   "leader": {
+    "name": "Hono",
+    "nameStatus": "canon: SEASON-CANON-MAP Elite Four"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": null,
+    "itemIds": [],
+    "flagSet": null
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "elite-yoru",
+   "tier": "elite",
+   "dojoIndex": null,
+   "leader": {
+    "name": "Yoru",
+    "nameStatus": "canon: SEASON-CANON-MAP Elite Four"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": null,
+    "itemIds": [],
+    "flagSet": null
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  },
+  {
+   "encounterId": "champion-hex",
+   "tier": "champion",
+   "dojoIndex": null,
+   "leader": {
+    "name": "Hex",
+    "nameStatus": "canon: SEASON-CANON-MAP \u2014 Champion Hex (Iridescence Plateau, display name)"
+   },
+   "locationId": null,
+   "introScript": null,
+   "winScript": null,
+   "loseScript": null,
+   "party": [],
+   "signatureSlot": null,
+   "field": {
+    "fieldEffectId": null,
+    "weather": null
+   },
+   "reward": {
+    "fragmentId": null,
+    "itemIds": [],
+    "flagSet": null
+   },
+   "rematch": {
+    "available": null,
+    "partyRef": null
+   },
+   "status": "canon: leader name/order (SEASON-CANON-MAP); ALL contents OPEN \u2014 party, levels, location, scripts unassigned in canon"
+  }
+ ]
+}

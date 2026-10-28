@@ -1,0 +1,20 @@
+{
+  "$id": "mochiichao/mochi-card.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mochi Cards — card record (#36)",
+  "description": "Display name is canon: 'Mochi Cards' (display-sweep ruling). The card record stores NO stats, NO type text, NO art of its own — name/type/stats join from species.json by speciesId and art from the species bundle manifest (#15) at print time, so a card can never disagree with the game. No set, rarity ladder, or rules exist in canon: those fields ship null/OPEN. Lustre printings draw art from the #15 palette-variant system with identity locks unchanged.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "cardId": { "type": "string" },
+    "speciesId": { "type": "string", "description": "The join. Everything species-shaped comes through here." },
+    "printing": { "enum": ["standard", "lustre"] },
+    "textRefs": { "type": "array", "items": { "type": "string" }, "description": "Pointers to body-zone text records. Cards own layout; text systems own wording." },
+    "rarity": { "type": ["string", "null"], "description": "OPEN — no rarity ladder exists in canon." },
+    "setId": { "type": ["string", "null"], "description": "OPEN — no set exists in canon." },
+    "number": { "type": ["string", "null"], "description": "Collector number MC-<set>-<nnn>, assigned when a set is real." },
+    "illustrator": { "type": ["string", "null"], "description": "Credit is data, printed from the record." },
+    "status": { "type": "string" }
+  },
+  "required": ["cardId", "speciesId", "printing", "textRefs", "rarity", "setId", "number", "illustrator", "status"]
+}
