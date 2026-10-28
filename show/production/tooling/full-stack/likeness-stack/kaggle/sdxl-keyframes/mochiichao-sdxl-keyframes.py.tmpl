@@ -1,0 +1,141 @@
+# Mochiichao - SDXL locked-keyframe generation (likeness-stack Lane A, step 2)
+# Illustrious XL v2.0 (CreativeML Open RAIL-M) + per-character SDXL LoRA
+# (from marsfmmg/mochiichao-sdxl-lora-train) + IP-Adapter PLUS (CLIP ViT-H,
+# NOT FaceID) anchored on the canon cutout + ControlNet lineart from the
+# drawn control source. Output: candidate keyframes for the owner's
+# likeness gate - nothing here auto-passes; frames go to the gate packet.
+# Pre-flight: workflow validated against LIVE /object_info before queueing.
+import subprocess, sys, os, json, glob, shutil, hashlib, traceback
+import urllib.request, urllib.error
+
+WORK = '/kaggle/working'
+LOG = []
+def log(*a):
+    s = ' '.join(str(x) for x in a); print(s, flush=True); LOG.append(s)
+def sh(cmd):
+    r = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    log('$', cmd, '\n', (r.stdout or '')[-1200:], (r.stderr or '')[-500:])
+    return r
+def sha(p):
+    return hashlib.sha256(open(p, 'rb').read()).hexdigest()
+
+__VALIDATOR_FNS__
+
+COMMITS = {'ComfyUI_IPAdapter_plus': ('cubiq', 'a0f451a511c6'),
+           'comfyui_controlnet_aux': ('Fannovel16', 'a587a4c159c6'),
+           'ComfyUI-VideoHelperSuite': ('Kosinkadink', '4d907bee61c3')}
+SHA = {
+ 'Illustrious-XL-v2.0.safetensors': 'c2a1a3eaa13d4c107dc7e00c3fe830cab427aa026362740ea094745b3422a331',
+ 'controlnet-canny-sdxl.safetensors': 'bf47cd757ceaf2572c53321329ef819ea38c09a6e3783588387913cd94dff47c',
+ 'controlnet-openpose-sdxl.safetensors': 'b8524e557a7df60d081f5d4a0eb109967d107df217943bf88c2d99b9ebcc06c5',
+ 'ip-adapter-plus_sdxl_vit-h.safetensors': '3f5062b8400c94b7159665b21ba5c62acdcd7682262743d7f2aefedef00e6581',
+ 'CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors': '6ca9667da1ca9e0b0f75e46bb030f7e011f44f86cbfb8d5a36590fcd7507b030',
+}
+# one job per run in this proof package: Dorowani, standing pose locked
+# from his own canon line art, trigger prompt per the dataset captions.
+JOB = {'char': 'dorowani', 'trigger': 'dorowani_mochii',
+       'lora': 'dorowani_illustrious_lora.safetensors',
+       'prompt': 'dorowani_mochii, full body, standing, arms slightly raised, flat 2d cartoon illustration, clean black outlines, cel shading, plain solid white background',
+       'seed': 42}
+
+try:
+    log(subprocess.run(['nvidia-smi'], capture_output=True, text=True).stdout[:500])
+    if not os.path.exists(f'{WORK}/ComfyUI'):
+        sh(f'cd {WORK} && git clone -q --depth 1 https://github.com/comfyanonymous/ComfyUI.git')
+        for repo, (org, commit) in COMMITS.items():
+            sh(f'cd {WORK} && git clone -q https://github.com/{org}/{repo}.git ComfyUI/custom_nodes/{repo}')
+            sh(f'cd {WORK}/ComfyUI/custom_nodes/{repo} && git checkout -q {commit}')
+    sh(f'{sys.executable} -m pip install -q -r {WORK}/ComfyUI/requirements.txt')
+    log('SETUP_DONE')
+
+    from huggingface_hub import hf_hub_download
+    M = f'{WORK}/ComfyUI/models'
+    def stage(repo, fn, sub, name):
+        p = hf_hub_download(repo_id=repo, filename=fn)
+        dst = f'{M}/{sub}/{name}'; os.makedirs(os.path.dirname(dst), exist_ok=True)
+        shutil.copy(p, dst)
+        assert sha(dst) == SHA[name], f'{name} sha mismatch: {sha(dst)}'
+        log('staged+verified', name, os.path.getsize(dst))
+    stage('OnomaAIResearch/Illustrious-XL-v2.0', 'Illustrious-XL-v2.0.safetensors',
+          'checkpoints', 'Illustrious-XL-v2.0.safetensors')
+    stage('xinsir/controlnet-canny-sdxl-1.0', 'diffusion_pytorch_model.safetensors',
+          'controlnet', 'controlnet-canny-sdxl.safetensors')
+    stage('xinsir/controlnet-openpose-sdxl-1.0', 'diffusion_pytorch_model.safetensors',
+          'controlnet', 'controlnet-openpose-sdxl.safetensors')
+    stage('h94/IP-Adapter', 'sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors',
+          'ipadapter', 'ip-adapter-plus_sdxl_vit-h.safetensors')
+    stage('h94/IP-Adapter', 'models/image_encoder/model.safetensors',
+          'clip_vision', 'CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors')
+    # character LoRA from the training dataset (dependency: sdxl-lora-train first)
+    loras = glob.glob('/kaggle/input/**/dorowani_illustrious_lora.safetensors', recursive=True)
+    assert loras, 'SDXL character LoRA not mounted - run mochiichao-sdxl-lora-train first and stage its output as a dataset'
+    os.makedirs(f'{M}/loras', exist_ok=True)
+    shutil.copy(loras[0], f"{M}/loras/{JOB['lora']}")
+    log('lora staged', sha(f"{M}/loras/{JOB['lora']}"))
+
+    # job inputs from the repo (canon cutout = anchor + lineart source)
+    RAW = 'https://raw.githubusercontent.com/mhvnsnt/Mochiichao-Diamond-Version-2d-fresh-start/main/'
+    cin = f'{WORK}/ComfyUI/input'; os.makedirs(cin, exist_ok=True)
+    for name, url in [('anchor_canon.png', RAW + 'show/production/canon-cutouts/dorowani.png'),
+                      ('control_source.png', RAW + 'show/production/canon-cutouts/dorowani.png')]:
+        urllib.request.urlretrieve(url, f'{cin}/{name}')
+        log('input', name, 'sha256', sha(f'{cin}/{name}'))
+
+    WF = json.loads(r'''__WORKFLOW_JSON__''')
+    # Parse-time normalisation (2026-10-28 fix): split the workflow's
+    # non-node metadata ("_comment") out of WF before validation and
+    # before the graph is POSTed to /prompt — both treat every entry
+    # as a node (the ToonCrafter run died in validate() on that string).
+    WF, WF_META = normalize_workflow(WF)
+    WF['2']['inputs']['lora_name'] = JOB['lora']
+    WF['9']['inputs']['text'] = JOB['prompt']
+    WF['13']['inputs']['seed'] = JOB['seed']
+    pathlib_workflow = f'{WORK}/workflow.json'
+    open(pathlib_workflow, 'w').write(json.dumps(WF))
+    log('workflow sha256', sha(pathlib_workflow))
+
+    srv = subprocess.Popen([sys.executable, 'main.py', '--listen', '127.0.0.1', '--port', '8188',
+                            '--disable-auto-launch'], cwd=f'{WORK}/ComfyUI',
+                           stdout=open(f'{WORK}/comfy.log', 'w'), stderr=subprocess.STDOUT)
+    def get(path):
+        with urllib.request.urlopen(f'http://127.0.0.1:8188{path}', timeout=60) as r:
+            return json.loads(r.read())
+    import time
+    for _ in range(120):
+        try: get('/system_stats'); log('SERVER_UP'); break
+        except Exception: time.sleep(5)
+    oi = get('/object_info')
+    errs = validate(WF, oi)
+    if errs:
+        for e in errs: log('VALIDATION', e)
+        raise RuntimeError('PREFLIGHT_VALIDATION_FAILED: ' + ' | '.join(errs))
+    log('PREFLIGHT_VALIDATION_PASS', len(WF), 'nodes vs live object_info')
+    body = json.dumps({'prompt': WF, 'client_id': 'sdxl-keyframes-proof'}).encode()
+    req = urllib.request.Request('http://127.0.0.1:8188/prompt', data=body,
+                                 headers={'Content-Type': 'application/json'})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r: resp = json.loads(r.read())
+    except urllib.error.HTTPError as he:
+        detail = he.read().decode('utf-8', 'replace')[:3000]
+        log('PROMPT_HTTP_ERROR', he.code, detail)
+        raise RuntimeError(f'/prompt HTTP {he.code}: {detail}')
+    log('QUEUED', resp)
+    if resp.get('node_errors'): raise RuntimeError(f"node_errors: {resp['node_errors']}")
+    pid = resp['prompt_id']; deadline = time.time() + 1800; hist = None
+    while time.time() < deadline:
+        time.sleep(15)
+        h = get(f'/history/{pid}')
+        if pid in h: hist = h[pid]; break
+    assert hist, 'TIMEOUT_NO_HISTORY'
+    log('STATUS', json.dumps(hist['status'])[:500])
+    outdir = f'{WORK}/out'; os.makedirs(outdir, exist_ok=True)
+    for f in glob.glob(f'{WORK}/ComfyUI/output/**/*.png', recursive=True):
+        shutil.copy(f, f'{outdir}/{os.path.basename(f)}'); log('OUTPUT', f, 'sha256', sha(f))
+    shutil.copy(f'{cin}/anchor_canon.png', f'{outdir}/anchor_canon.png')
+    log('GATE_PACKET_WRITTEN (candidate keyframes + canon anchor for the likeness gate)')
+except Exception:
+    log('KERNEL_EXCEPTION\n', traceback.format_exc())
+finally:
+    os.makedirs(f'{WORK}/out', exist_ok=True)
+    open(f'{WORK}/out/RUN-LOG.txt', 'w').write('\n'.join(LOG))
+    print('SCRIPT_DONE')
