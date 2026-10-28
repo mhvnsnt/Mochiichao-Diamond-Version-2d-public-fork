@@ -641,3 +641,19 @@ it was rebuilt onto main's current log content and this entry
 appended; the two interim island entries from earlier commits of
 this PR are superseded by this entry, and the mapping doc keeps the
 full per-round history.
+
+## APPROVED_AUTO LATCH — OWNER FLIPPED ON, WITH CONDITION (2026-10-27)
+
+Owner decision (2026-10-27): unattended GPU renders are approved —
+"as long as it doesn't waste all my hours … as long as it's
+actually working." `state.json` `next_action.approved_auto`:
+false → true, with a `gpu_hours_week` counter added for quota
+tracking. The condition is written into
+`show/production/pipeline/ORCHESTRATOR.md` ("Autonomous GPU
+condition"): autonomous runs only for queued jobs with a defined
+output artifact; every run verifies its output landed and passed
+its gate, or logs the failure and stops — no speculative renders,
+no re-render loops; cumulative autonomous GPU hours halt at
+24 h/week of the ~30 h Kaggle quota, the remainder reserved for
+owner-directed work; a job that fails twice autonomously is
+parked for the owner, never retried unattended.

@@ -72,7 +72,7 @@ Contradiction with canon = reject before GPU time is spent.
 1. Read state.json + this file. Find `next_action`.
 2. If it is a non-GPU step: do it, commit, update state, report.
 3. If it is a GPU step: run it ONLY when `approved_auto` is true
-   in state.json (owner latch — set false at scaffold time).
+   in state.json (owner latch — flipped ON by the owner 2026-10-27, under the Autonomous GPU condition at the end of this file).
    One generation job per run; check Kaggle quota first; on any
    gate failure, log the failure honestly and stop.
 4. If next_action is empty or waiting on a human gate: exit
@@ -121,3 +121,30 @@ FIRE_STREAM (Kittember's signature) was already an original
 name - unchanged. Any Pokemon-named move encountered later gets
 renamed the same way when it is first used/attached. Never
 rename an id.
+
+## Autonomous GPU condition (owner decision, 2026-10-27)
+
+The owner flipped `approved_auto` to **true** on 2026-10-27:
+unattended GPU renders are approved — in the owner's words,
+"as long as it doesn't waste all my hours … as long as it's
+actually working." That condition is operationalised as follows,
+and it binds every autonomous run:
+
+- **Queued jobs only, with a defined output artifact.** An
+  autonomous GPU run may start only for a job already queued in
+  `state.json` whose output is a named artifact (a specific clip /
+  file the run must produce). No speculative renders, no
+  exploratory batches, no re-render loops.
+- **Verify the output landed, or log and stop.** Every autonomous
+  run must verify its artifact exists and passes its gate (frame /
+  likeness packet as applicable) before the job is marked done. If
+  verification fails, the failure is logged honestly in the
+  production log and the run STOPS — no blind retries.
+- **Weekly quota is a hard budget.** The Kaggle week is ~30 GPU
+  hours. The orchestrator tracks cumulative autonomous GPU hours
+  in `state.json` (`gpu_hours_week`) and HALTS autonomous GPU work
+  at **24 h/week**; the remaining ~6 h are reserved for
+  owner-directed work.
+- **Two failures = parked.** Any job that fails twice autonomously
+  is parked for the owner (flagged in `state.json` and the
+  production log) and is never retried unattended.
