@@ -1,10 +1,10 @@
 {
   "schema": "mochiichao-show/clip-index/v1",
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "note": "Every finished clip and where it is used, both directions (show + game). quality_status is honest by design: clips marked rejected_placeholder were procedural stills composites rejected by Jamar on 2026-10-27 and must NOT ship; they stay indexed so nothing quietly reuses them.",
   "canon_notes": {
     "dorowani_eyes": "DOROWANI EYE CANON (owner ruling, 2026-10-27): the Dorowani SPECIES' eyes are red + black with NO sclera whites. The avatar/show individual Dorowani (Doro) HAS eye-whites - a kept special-case individual deviation (owner: do not scrap; keep consistent for this individual in every future generation). Other Dorowanis follow the species pattern; same-species individual variation is canon doctrine.",
-    "kittember_stance": "KITTEMBER STANCE DOCTRINE (owner ruling, 2026-10-27, as corrected same day): the Kittember SPECIES default going forward is QUADRUPEDAL. The BIPEDAL Kittember - the grey canon-pass bundles of PR #399 (orb tail) - is a special-case WILD individual: Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. The #389 black quadruped is a special-case DRAFT (species-form quadruped with the wrong tail/design deviations), held unused - it is NOT the wild individual (PR #401's original label was right; an intermediate same-day amendment that swapped the two individuals was itself corrected and reverted)."
+    "kittember_stance": "KITTEMBER STANCE DOCTRINE (owner ruling, 2026-10-27, as corrected same day): the Kittember SPECIES default going forward is QUADRUPEDAL. The BIPEDAL Kittember - the grey canon-pass bundles of PR #399 (orb tail) - is a special-case WILD individual: Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. The #389 black quadruped was held as a special-case DRAFT under the 2026-10-27 ruling (PR #401's original label; an intermediate same-day amendment that swapped the two individuals was itself corrected and reverted) - SUPERSEDED 2026-10-28: the owner ruled the #389 form CANON as the Region 4 regional Kittember variant, its seven deviations from the base form being that regional form's locked traits. It is still NOT the wild individual. The species default and the wild individual in this note are unchanged."
   },
   "clips": [
     {
@@ -187,7 +187,7 @@
       "used_by": [
         "show:ep01_candidate"
       ],
-      "quality_status": "unused_draft_special_case",
+      "quality_status": "canon_region4_variant",
       "gate": {
         "verdict": "FAIL",
         "recommendation_only": true,
@@ -201,7 +201,7 @@
           "rgb_mad_255_max": 40.0
         }
       },
-      "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch \u2014 fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-27 (as corrected same day): special-case DRAFT - species-form quadruped with the wrong tail/design deviations; unused draft, NOT the wild individual (the wild individual is the bipedal canon-pass, PR #399)."
+      "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch \u2014 fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-28 SUPERSEDES the 2026-10-27 draft ruling: this render is CANON as the Region 4 regional Kittember variant - its seven deviations from the base form are that regional form's locked traits (registry: kittember-region-4-variant). NOT the wild individual (the wild individual is the bipedal canon-pass, PR #399). Base (Region 1) Kittember canon is unchanged."
     },
     {
       "id": "gen-retry-2026-10-27-sproutle-leaf_blast",
