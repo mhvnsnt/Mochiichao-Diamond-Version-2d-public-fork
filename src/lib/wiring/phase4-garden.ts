@@ -45,6 +45,9 @@ export const BERRY_STAGE_MINUTES: Record<Exclude<BerryStage, "empty" | "withered
   sprout: 120,
   growing: 180,
   bloom: 120,
+  // Fruit is terminal: reached at 480 min, never waited in (berryStageForAge
+  // only indexes the four pre-fruit stages), so its stage duration is 0.
+  fruit: 0,
 };
 
 /** Mochiichao tuning: stage thresholds above; total planted→fruit = 480 min. */

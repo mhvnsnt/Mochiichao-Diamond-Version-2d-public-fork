@@ -10,7 +10,11 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "test": "vitest run src/lib",
-    "validate:reference": "tsx src/lib/validate-reference.ts"
+    "validate:reference": "tsx src/lib/validate-reference.ts",
+    "test:tests": "vitest run tests/ci-budgets.test.ts tests/type-chart.test.ts tests/opponent-direction.test.ts tests/tiled-map-gates.test.ts tests/dialogue-structure.test.ts",
+    "test:all": "npm run test && npm run test:tests",
+    "check:budgets": "node tests/check-bundle-budget.mjs dist",
+    "test:e2e:gates": "playwright test tests/e2e/gates.spec.ts"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

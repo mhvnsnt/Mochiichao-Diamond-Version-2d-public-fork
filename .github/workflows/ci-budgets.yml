@@ -1,0 +1,38 @@
+name: ci-budgets
+# Bundle + unit-test budget gate for Mochiichao PRs.
+# Runs on every PR: typecheck, existing src/lib tests, the new tests/*.test.ts
+# scaffolding, a production build, and the JS bundle budget check
+# (tests/check-bundle-budget.mjs, budgets in tests/bundle-budgets.json).
+# Deliberately does NOT run Playwright or Lighthouse here: those gates need
+# a live browser / live Pages run, which goes to the parent playtest session
+# (see docs/ci-budgets-2026-10-27.md). This workflow must stay green
+# without a browser.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  budgets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install (lockfile)
+        run: npm ci
+      - name: Typecheck
+        run: npx tsc --noEmit
+      - name: Existing unit tests (src/lib)
+        run: npm run test
+      # Explicit file list: a quoted glob does NOT match under Vitest (its
+      # CLI filters are substrings), and `vitest run tests` would also pick
+      # up the Playwright e2e spec, which must never run under Vitest.
+      - name: New unit-test scaffolding (tests/*.test.ts only, not e2e specs)
+        run: npx vitest run tests/ci-budgets.test.ts tests/type-chart.test.ts tests/opponent-direction.test.ts tests/tiled-map-gates.test.ts tests/dialogue-structure.test.ts
+      - name: Production build
+        run: npx vite build --base=./
+      - name: Bundle budget check (fails when budgets are exceeded)
+        run: node tests/check-bundle-budget.mjs dist
