@@ -30,7 +30,9 @@
           "visual": "gate_swing_breeze",
           "sound": "gate_creak_soft"
         }
-      ]
+      ],
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "02",
@@ -52,7 +54,9 @@
           "visual": "grass_sway",
           "sound": "grass_rustle_light"
         }
-      ]
+      ],
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "03",
@@ -74,7 +78,9 @@
           "visual": "leaf_drift",
           "sound": "leaf_rustle_pass"
         }
-      ]
+      ],
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "04",
@@ -103,7 +109,9 @@
           "visual": "distant_creature_crossing_sky",
           "sound": "distant_cry_faint_GAP"
         }
-      ]
+      ],
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "05",
@@ -125,7 +133,9 @@
           "visual": "grass_sway",
           "sound": "grass_rustle_light"
         }
-      ]
+      ],
+      "score_state": "SETTLE",
+      "stems": null
     },
     {
       "cut": "06",
@@ -160,7 +170,9 @@
         "CL-1 cloud shadow",
         "CL-2 pollen motes"
       ],
-      "bed": "BED-POND-DAY"
+      "bed": "BED-POND-DAY",
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "07",
@@ -191,7 +203,9 @@
         "CL-1 cloud shadow",
         "CL-2 pollen motes"
       ],
-      "bed": "BED-POND-DAY"
+      "bed": "BED-POND-DAY",
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "08",
@@ -226,7 +240,9 @@
         "CL-1 cloud shadow",
         "CL-2 pollen motes"
       ],
-      "bed": "BED-POND-DAY"
+      "bed": "BED-POND-DAY",
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "09",
@@ -261,7 +277,9 @@
         "CL-1 cloud shadow",
         "CL-2 pollen motes"
       ],
-      "bed": "BED-POND-DAY"
+      "bed": "BED-POND-DAY",
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "10",
@@ -285,7 +303,9 @@
       "composite_life": [
         "CL-1 cloud shadow"
       ],
-      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)"
+      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)",
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "11",
@@ -309,7 +329,9 @@
       "composite_life": [
         "CL-1 cloud shadow"
       ],
-      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)"
+      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)",
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "12",
@@ -335,7 +357,9 @@
       "composite_life": [
         "CL-1 cloud shadow"
       ],
-      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)"
+      "bed": "BED-GREEN-DAY (GAP-green-bed - no gated bed yet)",
+      "score_state": "PLAY",
+      "stems": null
     },
     {
       "cut": "13",
@@ -367,7 +391,9 @@
       ],
       "population": "composite-stage layer (P3) - none baked into plate",
       "composite_life": [],
-      "bed": "BED-POND-DUSK"
+      "bed": "BED-POND-DUSK",
+      "score_state": "TENSION",
+      "stems": "show/episodes/EP01/audio/EP01-SCENE-04.stems.json"
     },
     {
       "cut": "14",
@@ -380,7 +406,9 @@
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "score_state": "TENSION",
+      "stems": "show/episodes/EP01/audio/EP01-SCENE-04.stems.json"
     },
     {
       "cut": "15",
@@ -393,7 +421,9 @@
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "score_state": "TENSION",
+      "stems": "show/episodes/EP01/audio/EP01-SCENE-04.stems.json"
     },
     {
       "cut": "16",
@@ -406,7 +436,9 @@
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "score_state": "TENSION",
+      "stems": "show/episodes/EP01/audio/EP01-SCENE-04.stems.json"
     },
     {
       "cut": "17",
@@ -434,7 +466,9 @@
       ],
       "population": "composite-stage layer (P3) - none baked into plate",
       "composite_life": [],
-      "bed": "BED-POND-DUSK"
+      "bed": "BED-POND-DUSK",
+      "score_state": "TENSION",
+      "stems": "show/episodes/EP01/audio/EP01-SCENE-04.stems.json"
     },
     {
       "cut": "18",
@@ -448,7 +482,9 @@
         "likeness-gate",
         "subtitle-law-check (earned moments only)"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "score_state": "TENSION",
+      "stems": "show/episodes/EP01/audio/EP01-SCENE-04.stems.json"
     },
     {
       "cut": "19",
@@ -463,7 +499,9 @@
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "score_state": "SETTLE",
+      "stems": null
     },
     {
       "cut": "20",
@@ -485,7 +523,9 @@
           "visual": "board_creak",
           "sound": "wood_creak_soft"
         }
-      ]
+      ],
+      "score_state": "SETTLE",
+      "stems": null
     },
     {
       "cut": "21",
@@ -500,7 +540,9 @@
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "score_state": "SETTLE",
+      "stems": null
     },
     {
       "cut": "22",
@@ -514,7 +556,9 @@
         "likeness-gate",
         "subtitle-law-check (earned moments only)"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "score_state": "SETTLE",
+      "stems": null
     },
     {
       "cut": "23",
@@ -532,7 +576,9 @@
           "visual": "smoke_drift",
           "sound": "night_air"
         }
-      ]
+      ],
+      "score_state": "SETTLE",
+      "stems": null
     },
     {
       "cut": "24",
@@ -547,7 +593,9 @@
         "anim-gate",
         "likeness-gate"
       ],
-      "ambient_layers": []
+      "ambient_layers": [],
+      "score_state": "SETTLE",
+      "stems": null
     },
     {
       "cut": "25",
@@ -575,7 +623,9 @@
       ],
       "population": "NONE (P5 - the zero is a plot point)",
       "composite_life": [],
-      "bed": "BED-FOREST-DAY (engineered absence)"
+      "bed": "BED-FOREST-DAY (engineered absence)",
+      "score_state": "ABSENCE",
+      "stems": null
     },
     {
       "cut": "26",
@@ -602,7 +652,9 @@
       ],
       "population": "NONE (P5 - the zero is a plot point)",
       "composite_life": [],
-      "bed": "BED-FOREST-DAY (engineered absence)"
+      "bed": "BED-FOREST-DAY (engineered absence)",
+      "score_state": "ABSENCE",
+      "stems": null
     },
     {
       "cut": "27",
@@ -625,7 +677,9 @@
       ],
       "population": "NONE (P5 - the zero is a plot point)",
       "composite_life": [],
-      "bed": "BED-FOREST-DAY (engineered absence)"
+      "bed": "BED-FOREST-DAY (engineered absence)",
+      "score_state": "ABSENCE",
+      "stems": null
     },
     {
       "cut": "28",
@@ -652,7 +706,9 @@
       ],
       "population": "NONE (P5 - the zero is a plot point)",
       "composite_life": [],
-      "bed": "BED-FOREST-DAY (engineered absence)"
+      "bed": "BED-FOREST-DAY (engineered absence)",
+      "score_state": "ABSENCE",
+      "stems": null
     }
   ],
   "audio_gaps": [
@@ -664,5 +720,6 @@
     "Mochiko voice casting (all Mochiko dialogue = scratch until decided)",
     "Keeper device design (cut 12 HALT)",
     "What stopped moving in the Dark Forest (never filled in silently)"
-  ]
+  ],
+  "stems_wiring_note": "score_state/stems wired per ADAPTIVE-MUSIC S2.5 (audio-timing teardown, wiring follow-up 2026-10-27). stems = the scene's stem manifest path; only EP01-SCENE-04 has one built so far, so other non-Forest scenes are null until their stem manifests exist. Forest cuts (25-28): stems MUST be null under the ABSENCE gate (score_state ABSENCE => stems null + Forest-family bed) - checked by episode_gate.py."
 }

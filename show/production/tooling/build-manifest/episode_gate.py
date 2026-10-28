@@ -22,3 +22,10 @@ for g in sorted(glob.glob(os.path.join(BASE, "episodes", "EP01", "audio", "*.gat
 anim = glob.glob(os.path.join(BASE, "episodes", "EP01", "animatic", "*.mp4"))
 print(f"Animatics/proofs: {[os.path.basename(a) for a in anim]}")
 print("Picture status: puppets/generative pending (video service + GPU endpoint) — beds and timings are ready for picture to drop in.")
+
+# ABSENCE gate (ADAPTIVE-MUSIC S2.5): a cut scored ABSENCE must have stems null
+# and a Forest-family bed - the score twin of the Forest frame-diff inversion.
+absence_violations = [c["cut"] for c in man["cuts"] if c.get("score_state") == "ABSENCE"
+                      and not (c.get("stems") is None and "FOREST" in str(c.get("bed", "")))]
+absence_cuts = [c["cut"] for c in man["cuts"] if c.get("score_state") == "ABSENCE"]
+print(f"ABSENCE gate (ADAPTIVE-MUSIC S2.5): {len(absence_cuts)} ABSENCE cuts checked, violations: {absence_violations}")
