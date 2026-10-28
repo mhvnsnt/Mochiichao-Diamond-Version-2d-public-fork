@@ -594,16 +594,18 @@ never the arithmetic.
 
 ### 9.2 Show lane
 The same doctrine from the show's side (SHOW-BIBLE §5,
-Law 8): Mochi fight with their own agency. Trainers
+Law 8): Mochi fight with their own agency. Rangers
 sometimes command and direct, but the fight runs between
 and without commands. The show has no command-resolution
 layer at all — agency is the default state; a command is
 an event inside the fight, not the fight's metronome.
 
-### 9.3 Open item — the human role's name
-The canon term for the human who commands in battle is
-OPEN. Game data uses "trainers"; "keeper" is the Garden
-role. No term is coined here — Jamar names it.
+### 9.3 The human role's name — CLOSED
+CLOSED (owner lock, 2026-10-27): the canon term for the
+human who commands in battle is RANGERS. Game data used
+"trainers"; "keeper" is the Garden role only. Structural
+ids (role:"trainer", trainer_*) are unchanged — this lock
+is display/canon text.
 
 ## Sources
 - Nintendo World Report, Pokémon Colosseum review:
