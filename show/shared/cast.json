@@ -65,6 +65,7 @@
     {
       "id": "kittember",
       "body_plan": "small_feline",
+      "stance_doctrine": "species default quadrupedal; the canon character is the marked BIPEDAL individual (owner ruling 2026-10-27); a special-case wild quadruped male is Mochiko's first wild Kittember encounter",
       "game_assets": {
         "portrait": "sprite-art/portraits-scripted-v3/kittember-portrait-scripted-v3.png",
         "lustre_front": "public/assets/variants/lustre/kittember_lustre_front.png",
