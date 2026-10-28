@@ -65,3 +65,7 @@ nothing yet — the fragment is the interface a future build implements.
 pattern level. Contents: format complete; every policy value
 (untradeable species, gift channels, whether trades ever exist in
 the shipped game) is OPEN — an owner product decision, not a spec gap.
+
+**Cross-reference (List 18 #168, landing 2026-10-27):** the keeper-history array lives on the individual record — `keeperHistory` in src/data/core/schemas/individual.schema.json (seat chosen once, at that landing). This protocol governs the transfers; the history itself is stored there.
+
+**OWNER RULING — flag RESOLVED (2026-10-27, applied at the List 18 landing):** the show MAY depict trades — as stories, side stories, and backstory (characters talk about how they got their Mochi in a trade, and how they evolved). #68's "the show lane never trades" is the SYSTEM rule only (the show never runs the trading mechanic); #168's show mirror STANDS as legitimate. A depicted trade turns on the Mochi's own wishes — creature agency stays at the centre. The earlier either/or flag is removed as resolved-by-ruling.

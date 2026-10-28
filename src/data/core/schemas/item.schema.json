@@ -6,48 +6,135 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "itemId": { "type": "string", "description": "Stable kebab key." },
-    "displayName": { "type": "string", "description": "Rename-law string. Canon already holds e.g. 'Mochi Fruit', 'Mochi Cocoon' as names (display sweep) — their records instance only when a citable canon source fixes category/effect." },
-    "category": { "enum": ["consumable", "held", "key", "care", "capture", "material"], "description": "Closed vocabulary. A new category is a schema revision, never a free string." },
+    "itemId": {
+      "type": "string",
+      "description": "Stable kebab key."
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Rename-law string. Canon already holds e.g. 'Mochi Fruit', 'Mochi Cocoon' as names (display sweep) — their records instance only when a citable canon source fixes category/effect."
+    },
+    "category": {
+      "enum": [
+        "consumable",
+        "held",
+        "key",
+        "care",
+        "capture",
+        "material"
+      ],
+      "description": "Closed vocabulary. A new category is a schema revision, never a free string."
+    },
     "effect": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "system": { "enum": ["status", "heal", "care", "field", "event", "none"], "description": "The wired consumer: status -> #27 condition records, care -> #28 activities/axes, event -> #12 flags, field -> battle field hooks." },
-        "op": { "type": ["string", "null"] },
-        "params": { "type": "object", "description": "Values null until a balance/canon source sets them." }
+        "system": {
+          "enum": [
+            "status",
+            "heal",
+            "care",
+            "field",
+            "event",
+            "none"
+          ],
+          "description": "The wired consumer: status -> #27 condition records, care -> #28 activities/axes, event -> #12 flags, field -> battle field hooks."
+        },
+        "op": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "params": {
+          "type": "object",
+          "description": "Values null until a balance/canon source sets them."
+        }
       },
-      "required": ["system", "op", "params"]
+      "required": [
+        "system",
+        "op",
+        "params"
+      ]
     },
     "useContext": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "field": { "type": "boolean" },
-        "battle": { "type": "boolean" },
-        "held": { "type": "boolean" }
+        "field": {
+          "type": "boolean"
+        },
+        "battle": {
+          "type": "boolean"
+        },
+        "held": {
+          "type": "boolean"
+        },
+        "safari": {
+          "type": "boolean",
+          "description": "#170 (List 18): safari-zone usability flag, proposed into this schema at the List 18 landing citing #170. No item is flagged by the landing; bait legality stays vacuous until item content exists."
+        }
       },
-      "required": ["field", "battle", "held"]
+      "required": [
+        "field",
+        "battle",
+        "held"
+      ]
     },
     "price": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "buy": { "type": ["integer", "null"], "description": "Economy numbers are the List 3 #20 pass; slots live here so the registry never reshapes." },
-        "sell": { "type": ["integer", "null"] }
+        "buy": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Economy numbers are the List 3 #20 pass; slots live here so the registry never reshapes."
+        },
+        "sell": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
       },
-      "required": ["buy", "sell"]
+      "required": [
+        "buy",
+        "sell"
+      ]
     },
     "stack": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "stackable": { "type": "boolean" },
-        "max": { "type": ["integer", "null"] }
+        "stackable": {
+          "type": "boolean"
+        },
+        "max": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
       },
-      "required": ["stackable", "max"]
+      "required": [
+        "stackable",
+        "max"
+      ]
     },
-    "status": { "type": "string" }
+    "status": {
+      "type": "string"
+    }
   },
-  "required": ["itemId", "displayName", "category", "effect", "useContext", "price", "stack", "status"]
+  "required": [
+    "itemId",
+    "displayName",
+    "category",
+    "effect",
+    "useContext",
+    "price",
+    "stack",
+    "status"
+  ]
 }

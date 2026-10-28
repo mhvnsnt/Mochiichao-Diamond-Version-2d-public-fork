@@ -177,9 +177,10 @@
     "encounterMode": {
       "enum": [
         "standard",
-        "sanctuary"
+        "sanctuary",
+        "safari"
       ],
-      "description": "#110 sanctuary zones: absent = standard. A sanctuary area's tables carry the sanctuary encounter law (110-SANCTUARY-ZONE.md)."
+      "description": "Encounter mode (#110 + #170 combined patch, completed at the List 18 landing citing both packages): absent = standard. sanctuary = #110's sanctuary law (110-SANCTUARY-ZONE.md); safari = #170's safari-zone law (170-SAFARI-ZONES.md). Forest-exclusion validation: the Dark Forest depths may never carry a non-standard mode (its tables stay empty by law). No area gains the field in this landing."
     }
   },
   "required": [
