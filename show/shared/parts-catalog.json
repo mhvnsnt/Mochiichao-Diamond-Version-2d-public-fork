@@ -490,9 +490,14 @@
      "plateId": "dark-forest-depths--battle",
      "areaId": "dark-forest (depths tier)",
      "status": "EMPTY \u2014 NO PLATE ASSERTED",
-     "note": "Battles in the depths are unstocked space (#7's depths spawn table is intentionally empty, 0 slots). Adding a plate here is a CANON EVENT, not a data fill. Slot wired empty at the List 14 landing (2026-10-27)."
+     "note": "Battles in the depths are unstocked space (#7's depths spawn table is intentionally empty, 0 slots). Adding a plate here is a CANON EVENT, not a data fill. Slot wired empty at the List 14 landing (2026-10-27).",
+     "transition": {
+      "kind": "still",
+      "note": "#148 seed record: the depths transition is a still \u2014 the absence, recorded."
+     }
     }
-   ]
+   ],
+   "transitionRecords": "#148 battle-intro transition records attach to plate entries HERE (one home \u2014 no parallel transition registry). Record shape: 148-BATTLE-INTRO-TRANSITIONS.md (show/production/battle/)."
   },
   {
    "id": "mochiichao-list15-systems",
@@ -558,6 +563,73 @@
      "name": "One-world save & visit records",
      "home": "src/data/core/docs/146-ONE-WORLD-SAVE.md",
      "extends": "#96 audit result: ZERO stored change; visit-record view registered in #96"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list16-systems",
+   "type": "systems-index",
+   "about": "List 16 teardown systems (items 147-156), landed 2026-10-27. Catalogue-class specs (#151 tournaments, #153 phenomena, #154 ruins) ship EMPTY by design.",
+   "items": [
+    {
+     "n": 147,
+     "name": "Move-animation coverage system",
+     "home": "show/production/battle/147-MOVE-ANIM-COVERAGE.md",
+     "extends": "registry + #9 animscripts; #131 read as priority VIEW only"
+    },
+    {
+     "n": 148,
+     "name": "Battle intro transitions",
+     "home": "show/production/battle/148-BATTLE-INTRO-TRANSITIONS.md",
+     "extends": "#128 plate registry (records ride plate entries; no parallel registry)"
+    },
+    {
+     "n": 149,
+     "name": "Mochiioteca on-screen presentation (show)",
+     "home": "show/production/149-MOCHIIOTECA-ON-SCREEN.md",
+     "extends": "#81 device behaviour (verbalisation default never-verbal stands)"
+    },
+    {
+     "n": 150,
+     "name": "Ranger field kit",
+     "home": "src/data/core/docs/150-RANGER-FIELD-KIT.md",
+     "extends": "#31 item layer (seat chosen at landing: game-data docs; #116 cross-refs it)"
+    },
+    {
+     "n": 151,
+     "name": "Tournament system",
+     "home": "show/production/world-systems/151-TOURNAMENT-SYSTEM.md",
+     "extends": "EMPTY catalogue \u2014 whether any canonical tournament exists is an OWNER SLOT"
+    },
+    {
+     "n": 152,
+     "name": "Species behaviour profiles",
+     "home": "show/production/species-data/152-SPECIES-BEHAVIOUR-PROFILES.md",
+     "extends": "sheet-schema annex (shape only; zero profile contents)"
+    },
+    {
+     "n": 153,
+     "name": "Rare weather phenomena",
+     "home": "show/production/world-systems/153-RARE-WEATHER-PHENOMENA.md",
+     "extends": "EMPTY catalogue by design"
+    },
+    {
+     "n": 154,
+     "name": "Ruins & ancient sites",
+     "home": "show/production/world-systems/154-RUINS-AND-ANCIENT-SITES.md",
+     "extends": "EMPTY catalogue by design; #115 PROPOSAL discipline inherited"
+    },
+    {
+     "n": 155,
+     "name": "Battle vocal layering",
+     "home": "show/production/155-BATTLE-VOCAL-LAYERING.md",
+     "extends": "#2 cry params / #51 classes / #95 jitter bound"
+    },
+    {
+     "n": 156,
+     "name": "Trailer & promo asset system",
+     "home": "show/production/156-TRAILER-AND-PROMO-SYSTEM.md",
+     "extends": "currency gate over parts-catalog/clip-index; retrospective record landed with this package"
     }
    ]
   }

@@ -124,3 +124,5 @@ wardrobeIndex (per human) { humanId, outfits: [<outfitIds>],
   **OPEN**: their outfits exist as sheet art; organising them
   into indexed sets is production work this package specifies
   but does not perform.
+
+**Cross-reference (List 16 #150, landing 2026-10-27):** the Ranger field kit's record lives in the game-data docs — `src/data/core/docs/150-RANGER-FIELD-KIT.md` (seat chosen at landing: the kit is item-layer data; this wardrobe package cross-references it, per STAGING step 4's one-home rule).
