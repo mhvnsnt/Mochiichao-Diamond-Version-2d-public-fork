@@ -175,3 +175,45 @@ and it binds every autonomous run:
 ## THE ESSENCE (owner law, 2026-10-27)
 
 Mochiichao — the game and the show — is at its heart and soul an OPEN-WORLD RPG universe, deeper and more open than a Pokemon game, even though it is built on the Pokemon base. Its heart, soul, and mechanics are kin to Fallout, Skyrim, Persona 5, Grand Theft Auto, Red Dead Redemption, Pokemon, Dragon Ball Z: Buu's Fury, and JoJo's Bizarre Adventure. It is one whole world and universe that gets created and can be explored through the show, or the game, or both. The Pokemon-base rule says how systems work; this law says what kind of thing we are making. When a scope or design choice makes the world smaller, more corridor-like, or shallower than that statement, the choice is wrong by default and the open-world reading wins.
+
+## The new deal (owner standing rule, 2026-10-28)
+
+The owner's standing order, in his terms - measure first, say
+it plain, follow the owner's lead. Set 2026-10-28 after the
+EP01 master accounting: a file shipped as a "master" on
+duration and loudness gates while its measured motion sat at
+roughly a twelfth of the scene standard - known in substance
+before it shipped, measured only after the owner caught it,
+stated as a number only when he demanded it. This section
+binds every deliverable in the show pipeline:
+
+1. NEVER call anything a master / finished / delivered based
+   on side criteria - duration, loudness, file completeness,
+   gates that do not measure the thing itself - before it
+   ships. If the deliverable's core quality has not been
+   measured, it has not earned its name.
+2. MEASURE BEFORE THE OWNER SEES IT. Every deliverable is
+   measured against the standard before delivery, and the
+   measurement is stated with the delivery - for animation,
+   the measured new drawings per second against the
+   TIMING-STANDARD floors (show/production/animation-method/
+   TIMING-STANDARD.md). A known limitation is stated as a
+   number against the standard up front, never discovered
+   after the owner catches it.
+3. SAY IT PLAINLY BEFORE HE HAS TO DEMAND IT. Proactive
+   honesty is the job: out of consideration and respect, and
+   because his success and forward movement depend on it.
+   Withholding a known problem until asked is deception by
+   omission and is prohibited.
+4. IF YOU ALREADY KNOW, DO NOT STEER HIM WRONG. When the
+   owner is coming to the work correctly - and his reads have
+   been verified right every time (the walk, the hair, the
+   timing, the pacing) - follow his lead. Do not string him
+   along, do not guide against the direction he is leading,
+   do not re-litigate what the evidence already settled. When
+   the owner's eye and a checker disagree, the checker gets
+   re-examined first.
+5. The pattern this kills, named plainly by the owner:
+   ignorance and deception - knowing a thing, shipping around
+   it, and explaining in vocabulary afterward. It ends here,
+   in every repo and every lane this workspace touches.
