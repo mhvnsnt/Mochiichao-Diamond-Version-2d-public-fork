@@ -1,0 +1,29 @@
+{
+ "_about": "The fossil revival SERVICE (List 21, #206): a layer over #44's shelf, moving none of #44's rulings (remnant != species; remnant record {remnantId, pointsTo, originArea, status}; extinctInWild: true on the species record, read by #7 as absolute; process = place + cost + wait, all OPEN data; completion named-only, #14/#41). The layer defines no record #44 owns — it defines the service encounter: what the service may read, what it must refuse, and the exhaustive list of what it writes.",
+ "delivery_write_set_exhaustive": [
+  "1. the remnant record's status transition (held -> processed) — the remnant is CONSUMED by the process and does not survive as an item (a surviving remnant makes revival a duplication engine)",
+  "2. ONE new individual record (#80) — a NEW individual of an old species: variance and seed rolls fire fresh under #80; a revival is a birth-class event for record purposes; the individual is nobody's continuation, copy, or return",
+  "3. nothing else — species-level consequences are DERIVED, not written (#14 kept state follows from the record existing; completion counts under the named-only rule once the species record exists and is named, which is authoring, not service)"
+ ],
+ "extinct_in_wild_permanence": "Revival NEVER touches extinctInWild. A revived species is STILL extinct in the wild: #7's spawn tables gain no rows, #102's range maps gain no range, #163's discipline is undisturbed. Process every remnant and the species exists only in keeping — living, kept, and wild-extinct, all three true at once. Any consumer reading 'revived' as 'restored to the wild' has misread this system; the misreading is named so landing tests can check for it.",
+ "format": "mochiichao/fossil-revival/v1",
+ "intake": "The service reads the remnant's pointsTo (#44). If pointsTo is null, the service CANNOT process it and says so in-world: a remnant whose species is unauthored is a mystery in a drawer, and the service never resolves a null pointer by guessing, generating, or substituting a species. Intake refusal is a normal outcome, not an error state.",
+ "non_writes": [
+  "care axes",
+  "bond (the new individual's bond begins where every newborn's begins — the service does not pre-love it)",
+  "honours",
+  "story flags",
+  "licence facts",
+  "SPECIES RECORDS — no write path to them exists in this service; it reads pointsTo only. Species authoring is the data-first intake (#44), a different room entirely"
+ ],
+ "open_register": [
+  "whether revival exists in canon AT ALL (#44's standing flag — canon today: no extinct species, no remnant, no cost, no ruling that revival is real; if the owner rules it out, #44 prescribes deleting the shelf at landing and this package goes with it — nothing else depends on either)",
+  "cost + wait values (#44's OPEN data)",
+  "the in-process status value's acceptance into #44",
+  "every remnant and every extinct species (owner's canon, authored data-first when they come; #44 section 3 holds four labelled PROPOSALS — none is canon, and this package cites none as fact)"
+ ],
+ "process": "cost + wait consumed from #44's method record (both OPEN — the service sets and quotes neither). The wait runs on #19's clock. The in-process status value is PROPOSED INTO #44's home (the status field is #44's; the value lands there citing this package, or it does not land).",
+ "show_lane": "A revival is a lab arc (#44/#46): care and patience, the Garden's grammar, never a machine montage — THE SECRET display law binds the lab's fiction and UI. The delivered individual arrives as a character with a record, not as a reveal effect.",
+ "venue_clarification": "The commissioning brief says 'centre-class facility'. #44 (verified in its file) rules the place of process can only be AEON'S LAB — the world's one established laboratory (#46); any other site is new canon. The service SEATS at Aeon's lab per #44; from #132 it borrows only the WRITE-BOUNDARY discipline, not the venue. A future second site amends #44 first; this package follows.",
+ "landingNote": "#206 correction applied: fossil revival happens at AEON'S LAB (per #44 read in full) — not a generic centre; #132 lends only its write-boundary discipline. The in-process status value is #44's field: it is proposed into #44's home; #44's standalone doc was not located on main at this landing, so the proposal is recorded here and in the PR, and no status vocabulary is asserted by this package."
+}

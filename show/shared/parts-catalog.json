@@ -900,6 +900,73 @@
      "extends": "portrait rule (read RULED deviations, not templates) registered in its fragment"
     }
    ]
+  },
+  {
+   "id": "mochiichao-list21-systems",
+   "type": "systems-index",
+   "about": "List 21 teardown systems (items 197-206), landed 2026-10-27. Step-2 verification found a discrepancy: the repo's design draft still carries id: null for the six locked species \u2014 the owner's 048-053 ruling stands as the fact (recorded in #197's register); the design lane's write had not reached the repo at verification time. Reported, not harmonised.",
+   "items": [
+    {
+     "n": 197,
+     "name": "Roster lock & numbering system",
+     "home": "show/production/species-data-system/197-ROSTER-LOCK.md",
+     "extends": "next number at lock (owner ruling); 048-053 recorded as owner-assigned fact"
+    },
+    {
+     "n": 198,
+     "name": "Regional dex presentation",
+     "home": "show/production/world-systems/198-REGIONAL-DEX.md",
+     "extends": "one discovery derivation (lock x discovery), cited into #149's fragment"
+    },
+    {
+     "n": 199,
+     "name": "Evolution methods",
+     "home": "show/production/world-systems/199-EVOLUTION-METHODS.md",
+     "extends": "citation only in #8's model; zero schema edits; A9 untouched"
+    },
+    {
+     "n": 200,
+     "name": "Lustre presentation (show)",
+     "home": "show/production/200-LUSTRE-PRESENTATION.md",
+     "extends": "show-lane presentation; no casting exists"
+    },
+    {
+     "n": 201,
+     "name": "Ranger reputation",
+     "home": "show/production/world-systems/201-RANGER-REPUTATION.md",
+     "extends": "SUPERSEDED as system of record by List 28's ladder (owner ruling) \u2014 classes stand as a view over it; stores nothing (negative test passed)"
+    },
+    {
+     "n": 202,
+     "name": "Mood system",
+     "home": "show/production/world-systems/202-MOOD-SYSTEM.md",
+     "extends": "a derivation; no mood field added to any schema (negative test passed)"
+    },
+    {
+     "n": 203,
+     "name": "Nests & dens",
+     "home": "show/production/world-systems/203-NESTS-AND-DENS.md",
+     "extends": "depths sentence verified verbatim; no den instanced"
+    },
+    {
+     "n": 204,
+     "name": "Egg-move inheritance",
+     "home": "show/production/species-data-system/204-EGG-MOVE-INHERITANCE.md",
+     "extends": "signature bar landed as a mechanical test in its fragment (reads #131's register, no hard-coded list)"
+    },
+    {
+     "n": 205,
+     "name": "Regional evolution splits",
+     "home": "show/production/world-systems/205-REGIONAL-EVOLUTION-SPLITS.md",
+     "extends": "no split declared"
+    },
+    {
+     "n": 206,
+     "name": "Fossil revival",
+     "home": "show/production/species-data-system/206-FOSSIL-REVIVAL-SERVICE.md",
+     "extends": "revival at AEON'S LAB (correction applied); status value proposed to #44's home (not located \u2014 recorded in the fragment)"
+    }
+   ]
   }
  ]
 }

@@ -105,3 +105,5 @@ franchises' trees.
   inverse: 29 structured edges, the rest of the 47 unlinked in data
   (roster `evolution_reqs` is the lane's other half of that picture).
   Nothing in this package converts prose to numbers or gaps to edges.
+
+**Citation (List 21 #199, landing 2026-10-27):** evolution method classes map as recorded in 199-EVOLUTION-METHODS.md — its "exchange" class is THIS model's `trade` class, with the consumption semantics stated there. This citation is the whole wiring: the methodClass enum is not touched, no edge is edited, and the Twinvow pair-merge representation stays exactly as this model ships it (owner decision).
