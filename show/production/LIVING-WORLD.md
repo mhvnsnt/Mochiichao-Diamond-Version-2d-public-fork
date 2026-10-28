@@ -662,3 +662,5 @@ manifest fields added to the build-manifest compiler.*
 ---
 
 **Construction manual for §2.4's beds:** `show/production/list3-systems/ENVIRONMENTAL-SOUND.md` (List-3 teardown #22) — this document owns *which* beds exist; that one owns *how a bed is built*. Cross-linked at landing (2026-10-27).
+
+**Weather system:** `show/production/world-systems/WEATHER-SYSTEM.md` (List-7 teardown #62) — this document's cycle library is its W5 layer. Cross-linked at landing (2026-10-27).
