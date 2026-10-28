@@ -27,7 +27,95 @@
       "growthRate": "Medium Slow",
       "dexText": "A small, water-based creature that bounces to move.",
       "provenance": "roster+species.ts",
-      "notes": []
+      "notes": [],
+      "cry": {
+        "identity_note": "Bouncing squeak-cry — a squeaky metronome: three bright hops, pitch bouncing up-down-up, joyful and round.",
+        "status": "draft",
+        "synth": {
+          "amp_env": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.04,
+              1.0
+            ],
+            [
+              0.2,
+              0.55
+            ],
+            [
+              0.3,
+              1.0
+            ],
+            [
+              0.46,
+              0.55
+            ],
+            [
+              0.56,
+              1.0
+            ],
+            [
+              0.8,
+              0.7
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "base_hz": 740.0,
+          "length_s": 0.55,
+          "morph": 0.35,
+          "noise_mix": 0.03,
+          "noise_tone": 0.8,
+          "pitch_env": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.12,
+              5.0
+            ],
+            [
+              0.25,
+              1.0
+            ],
+            [
+              0.38,
+              6.0
+            ],
+            [
+              0.52,
+              2.0
+            ],
+            [
+              0.66,
+              7.0
+            ],
+            [
+              0.85,
+              3.0
+            ],
+            [
+              1.0,
+              2.0
+            ]
+          ],
+          "seed": 1101,
+          "vibrato": {
+            "delay_s": 0.3,
+            "depth_st": 0.25,
+            "rate_hz": 22.0
+          },
+          "wave_a": "pulse25",
+          "wave_b": "triangle"
+        },
+        "rendered_wav": null
+      }
     },
     {
       "id": "002",
@@ -265,7 +353,68 @@
       "growthRate": "Fast",
       "dexText": "A fiery little feline.",
       "provenance": "roster+species.ts",
-      "notes": []
+      "notes": [],
+      "cry": {
+        "identity_note": "Thin mewl with a warm crackle underneath — a small cat voice, rising then falling away, with faint fire-pops from the tail flame woven through it.",
+        "status": "draft",
+        "synth": {
+          "amp_env": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.1,
+              0.85
+            ],
+            [
+              0.55,
+              1.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "base_hz": 980.0,
+          "crackle": 0.5,
+          "length_s": 0.7,
+          "morph": 0.4,
+          "noise_mix": 0.05,
+          "noise_tone": 0.65,
+          "pitch_env": [
+            [
+              0.0,
+              -2.0
+            ],
+            [
+              0.25,
+              3.0
+            ],
+            [
+              0.5,
+              1.0
+            ],
+            [
+              0.8,
+              -4.0
+            ],
+            [
+              1.0,
+              -6.0
+            ]
+          ],
+          "seed": 1404,
+          "vibrato": {
+            "delay_s": 0.25,
+            "depth_st": 0.5,
+            "rate_hz": 9.0
+          },
+          "wave_a": "triangle",
+          "wave_b": "sine"
+        },
+        "rendered_wav": null
+      }
     },
     {
       "id": "011",
@@ -993,7 +1142,99 @@
       "growthRate": "Medium Fast",
       "dexText": "A little plant turtle.",
       "provenance": "roster+species.ts",
-      "notes": []
+      "notes": [],
+      "cry": {
+        "identity_note": "Soft chirps — three gentle, rounded chirps with quiet gaps between them; a noticer's small voice, never startling.",
+        "status": "draft",
+        "synth": {
+          "amp_env": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.03,
+              0.9
+            ],
+            [
+              0.16,
+              0.0
+            ],
+            [
+              0.3,
+              0.0
+            ],
+            [
+              0.34,
+              1.0
+            ],
+            [
+              0.52,
+              0.0
+            ],
+            [
+              0.64,
+              0.0
+            ],
+            [
+              0.68,
+              0.85
+            ],
+            [
+              0.88,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "base_hz": 1560.0,
+          "length_s": 0.65,
+          "morph": 0.2,
+          "noise_mix": 0.02,
+          "noise_tone": 0.85,
+          "pitch_env": [
+            [
+              0.0,
+              2.0
+            ],
+            [
+              0.14,
+              -1.0
+            ],
+            [
+              0.36,
+              3.0
+            ],
+            [
+              0.5,
+              0.0
+            ],
+            [
+              0.7,
+              2.0
+            ],
+            [
+              0.86,
+              -2.0
+            ],
+            [
+              1.0,
+              -2.0
+            ]
+          ],
+          "seed": 1505,
+          "vibrato": {
+            "delay_s": 0.1,
+            "depth_st": 0.2,
+            "rate_hz": 12.0
+          },
+          "wave_a": "sine",
+          "wave_b": "triangle"
+        },
+        "rendered_wav": null
+      }
     },
     {
       "id": "039",
@@ -1097,7 +1338,72 @@
       "growthRate": null,
       "dexText": null,
       "provenance": "roster-only (catchRate/expYield/growthRate/dexText owed)",
-      "notes": []
+      "notes": [],
+      "cry": {
+        "identity_note": "Whisper-wail — soft and breathy, a slow minor fall carried on noise-breath; the night keeper heard more than seen.",
+        "status": "draft",
+        "synth": {
+          "amp_env": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.25,
+              0.8
+            ],
+            [
+              0.6,
+              1.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "base_hz": 523.0,
+          "echo": {
+            "decay": 0.35,
+            "delay_s": 0.28,
+            "repeats": 1
+          },
+          "length_s": 1.4,
+          "morph": 0.3,
+          "noise_mix": 0.45,
+          "noise_tone": 0.55,
+          "pitch_env": [
+            [
+              0.0,
+              3.0
+            ],
+            [
+              0.3,
+              0.0
+            ],
+            [
+              0.55,
+              -3.0
+            ],
+            [
+              0.8,
+              -5.0
+            ],
+            [
+              1.0,
+              -7.0
+            ]
+          ],
+          "seed": 1606,
+          "vibrato": {
+            "delay_s": 0.3,
+            "depth_st": 0.6,
+            "rate_hz": 5.5
+          },
+          "wave_a": "sine",
+          "wave_b": "triangle"
+        },
+        "rendered_wav": null
+      }
     },
     {
       "id": "043",
