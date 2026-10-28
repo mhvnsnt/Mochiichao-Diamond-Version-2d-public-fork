@@ -642,6 +642,44 @@ appended; the two interim island entries from earlier commits of
 this PR are superseded by this entry, and the mapping doc keeps the
 full per-round history.
 
+## APPROVED_AUTO LATCH — OWNER FLIPPED ON, WITH CONDITION (2026-10-27)
+
+Owner decision (2026-10-27): unattended GPU renders are approved —
+"as long as it doesn't waste all my hours … as long as it's
+actually working." `state.json` `next_action.approved_auto`:
+false → true, with a `gpu_hours_week` counter added for quota
+tracking. The condition is written into
+`show/production/pipeline/ORCHESTRATOR.md` ("Autonomous GPU
+condition"): autonomous runs only for queued jobs with a defined
+output artifact; every run verifies its output landed and passed
+its gate, or logs the failure and stops — no speculative renders,
+no re-render loops; cumulative autonomous GPU hours halt at
+24 h/week of the ~30 h Kaggle quota, the remainder reserved for
+owner-directed work; a job that fails twice autonomously is
+parked for the owner, never retried unattended.
+
+## MOVE RENAME BATCH 2 (2026-10-27)
+
+Rename-on-use, batch 2 — the three live-table name collisions
+the owner resolved as RENAME EVERYWHERE: live table, island,
+and show all carry the same names; move data and stats never
+change, only display names.
+- QUICK_ATTACK: "Quick Attack" -> "Swift Movement"
+- CRUNCH: "Crunch" -> "Munch"
+- GUST_WAVE: "Gust Wave" -> "Wind Blast"
+Applied to src/data/core/moves.json + src/lib/moves.ts —
+name values only; ids, stats, effects, anims, descriptions
+untouched (CRUNCH's desc "Crunches with fangs." is prose, not
+the display name, and stays). Display-reference sweep updated
+the creature-mode pass-3 cooldown table, the UI style
+guide's moves.ts template list, and the canon signature
+doc's FX family list. Left standing as records / source data
+(dated learnset analyses, playtest records, decomp source
+citations, generated tables, prototype island datasets) —
+full accounting in the batch 2 PR. Tackle's synonym stays
+open under the owner's rename delegation; Growl -> Rumble
+stands as the delegated pick.
+
 ## CANON SWEEP — GAME LANE: dialogue + wiring maps (2026-10-27)
 
 Surgical display-name/dialogue sweep of the game lane, per the owner's
