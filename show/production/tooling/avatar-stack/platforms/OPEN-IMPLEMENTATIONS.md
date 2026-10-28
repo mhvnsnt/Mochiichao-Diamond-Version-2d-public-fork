@@ -28,6 +28,19 @@ see the refused list in FREE-EQUIVALENTS.md.
 | StoryMem / HoloCine / VGoT (multi-shot research) | Real research projects (Wan-based), but licence + weight availability not verified at source in this pass; MultiShotMaster covers the slot with a verified Apache-2.0 licence. Re-check if the slot needs a second option |
 | IP-Adapter (image prompting, Apache-2.0) | SD-era still-image technique; superseded in our stack by VACE reference control on the video model itself. Not needed |
 
+## Follow-up pass (2026-10-28) — studios, prompt engines, LTX, wrappers
+
+Full record: OPEN-STUDIOS-AND-PROMPT-ENGINES.md (same folder).
+
+| Candidate | Licence evidence (source) | Disposition |
+|---|---|---|
+| allenGKC/Seedance-2.5 (prompt-compiler skill) | MIT — LICENSE file in tree + GitHub API spdx | ADOPTED as patterns: role map, timestamp beats, failure-repair loop, extension/storyboard recipes → PROMPT-PATTERNS.md (attributed, adapted) |
+| ZeroLu/awesome-seedance-2.5 (curated prompts) | MIT — LICENSE file in tree + GitHub API spdx | MINED as patterns: multi-reference test construction, anime-category prompt shapes → PROMPT-PATTERNS.md (attributed) |
+| wide-trace/open-higgsfield (studio UI) | **No LICENSE file** (GitHub API license: null; tree checked) | PRIMARY PATTERN SOURCE only: per-model declarative settings + media-inputs-by-role design confirmed for our job profiles. Code NOT adopted |
+| Autom8AI/Open-Higgsfield-AI (studio UI) | **No LICENSE file** (same check) | Survey-named (lip-sync studio breadth; MuAPI-powered — routes to paid APIs, does not host local models despite the pasted claim). Code NOT adopted |
+| LTX-Video (Lightricks) | Code Apache-2.0 (GitHub API); **weights "other"** on all HF repos (LTX-2 licence name: `ltx-2-community-license-agreement`) | EVAL SLOT (fast iteration/previs): profile wired, staging plan written (2B distilled FP8 4.46 GB first), outputs do not ship; shipping = owner licence decision |
+| SamurAIGPT/Seedance-2.5-API / ai-models-lab/seedance-2.5 / higgsfield-ai/cli | MIT / no licence / MIT (official) respectively | ADAPTER SPECS ONLY in job_profiles — every backend behind them is paid (MuAPI Pro-gated, Volcano Ark/Fal/Replicate, Higgsfield account). No accounts, no keys |
+
 ## Staging note
 
 None of these weights were downloaded to local disk (staging law +

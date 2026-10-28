@@ -19,6 +19,14 @@ are labelled free-but-restricted wherever they appear.
 | Native audio inside generation (Seedance/Kling/Veo) | **Voice & Music Lanes** — Chatterbox (MIT) / Kokoro (Apache-2.0) for voices, ACE-Step for music, laid in at composite; creatures = cries, humans = speech. HuMo (Apache-2.0) noted as an eval slot for audio-driven HUMAN dialogue shots only (human-centric model; 97-frame clips) | audio lanes staged in the stack (prior rounds); composite step of PRODUCTION-PATTERN.md | open source (MIT / Apache-2.0) |
 | Platform character-sheet generators | **Sheet Assembly** — canon art first; missing views GAP-flagged in the pack manifest; when the owner approves generation, the engine is Qwen-Image-Edit (Apache-2.0, verified on its HF card) driven from the canon front view | `reference-packs/PACK-MANIFEST.md` gap table | open source (Apache-2.0) |
 
+## Follow-up rows (2026-10-28 — see OPEN-STUDIOS-AND-PROMPT-ENGINES.md)
+
+| Commercial feature (their name) | Our equivalent (our name) | Wired where | Bucket |
+|---|---|---|---|
+| Higgsfield studio UI (hosted studio: prompt bar, model catalog, camera controls, galleries) | **Job Desk pattern** — our ComfyUI workflows + `job_profiles.json`, extended with the two verified open-studio design patterns: per-model declarative settings (each profile declares its own allow-list) and media-inputs-by-role (start/end frame, references, video, audio with per-role caps), after wide-trace/open-higgsfield | `platforms/job_profiles.json` + `.md` design rules; pattern record in OPEN-STUDIOS-AND-PROMPT-ENGINES.md §§1–2 | pattern only — BOTH open-studio repos carry NO licence file, so no code was adopted from either |
+| Hosted fast iteration (LTX-class speed: seconds per clip) | **Fast Iteration (eval)** — LTX distilled models as the rapid-previs slot beside Wan: vendor profile ~10s per HD clip (H100, 13B distilled), 2B distilled FP8 (4.46 GB) as the staged first eval | profile `ltx-fast-iteration` in job_profiles; staging plan in OPEN-STUDIOS-AND-PROMPT-ENGINES.md §6 | code open source (Apache-2.0) / **weights free-but-restricted** (custom LTX community licence, HF "other") — EVAL ONLY, outputs do not ship; shipping use needs the owner's full-text licence acceptance |
+| Seedance prompt engineering (the "prompt math" around a closed model) | **Prompt Compiler patterns** — reference role map, timestamp beats, failure-diagnosis rewrite loop, extension + storyboard recipes, adapted into our library from allenGKC/Seedance-2.5 (MIT) and ZeroLu/awesome-seedance-2.5 (MIT), with attribution | `platforms/PROMPT-PATTERNS.md` follow-up section | open source (MIT) — patterns adapted, not the closed model |
+
 ## Measured numbers for the equivalents (honest)
 
 - Fast Lane, measured: 78.5s for a short test clip vs 1,787.6s native
@@ -57,3 +65,13 @@ are labelled free-but-restricted wherever they appear.
   internals** — none was sought, found, or used. The equivalents above
   are clean-room: public docs, public outputs, published research, and
   legitimately open artifacts only.
+- **The "bypass IP/copyright filters" tutorial class** (added
+  2026-10-28, from the follow-up research: isolating vocal tracks,
+  stripping audio fingerprints, feeding depth-mask videos to force
+  generations onto famous movie scenes / copyrighted IP or to evade
+  platform safety filters) — REFUSED: not taken, not wired, recorded
+  only as this refusal (OPEN-STUDIOS-AND-PROMPT-ENGINES.md).
+- **ElevenLabs as a "free Seedance route"** — the claim does not
+  survive verification (hosting real, free-tier usability not): it is
+  not wired as a test route; the working free Seedance route is
+  Dreamina (FREE-TEST-ROTATION.md).
