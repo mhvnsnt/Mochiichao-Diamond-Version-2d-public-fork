@@ -111,7 +111,7 @@ Draft for owner review (2026-10-27). NO repo commits. Nothing in this file inven
 - **WATER:** Aqua Shot 40 (ball) → Aqua Jet 40 (+1 priority dash) → Aqua Cannon 90 (pressurized blast; learned by nobody) → Hydro Surge 120 (only AquariiOS 003, L45).
 - **FIRE:** Ember Toss 40 → Fire Punch 75 (nobody) → Fire Stream 90 → Inferno Wave 110 (nobody).
 - **GRASS:** Vine Lash 45 → Razor Leaf 55 → Petal Barrage 80 (nobody) → Solar Blast 120 (Sproutle's line, top stage).
-- **GHOST/DARK (Umbral):** Night Slash 70 (nobody) → Shadow Pulse 80 → Dark Pulse 80 (nobody) → Crunch 80 (dark, fangs; Chromejaww 005).
+- **GHOST/DARK (Umbral):** Night Slash 70 (nobody) → Shadow Pulse 80 → Dark Pulse 80 (nobody) → Munch 80 (dark, fangs; Chromejaww 005).
 - **STEEL (Chrome):** Iron Barrage 35×2–5 → Metal Strike 50 → Flash Cannon 80 — none learned by Sproutle at stage 038.
 
 ## Open items for the owner

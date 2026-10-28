@@ -641,3 +641,25 @@ it was rebuilt onto main's current log content and this entry
 appended; the two interim island entries from earlier commits of
 this PR are superseded by this entry, and the mapping doc keeps the
 full per-round history.
+
+## MOVE RENAME BATCH 2 (2026-10-27)
+
+Rename-on-use, batch 2 — the three live-table name collisions
+the owner resolved as RENAME EVERYWHERE: live table, island,
+and show all carry the same names; move data and stats never
+change, only display names.
+- QUICK_ATTACK: "Quick Attack" -> "Swift Movement"
+- CRUNCH: "Crunch" -> "Munch"
+- GUST_WAVE: "Gust Wave" -> "Wind Blast"
+Applied to src/data/core/moves.json + src/lib/moves.ts —
+name values only; ids, stats, effects, anims, descriptions
+untouched (CRUNCH's desc "Crunches with fangs." is prose, not
+the display name, and stays). Display-reference sweep updated
+the creature-mode pass-3 cooldown table, the UI style
+guide's moves.ts template list, and the canon signature
+doc's FX family list. Left standing as records / source data
+(dated learnset analyses, playtest records, decomp source
+citations, generated tables, prototype island datasets) —
+full accounting in the batch 2 PR. Tackle's synonym stays
+open under the owner's rename delegation; Growl -> Rumble
+stands as the delegated pick.

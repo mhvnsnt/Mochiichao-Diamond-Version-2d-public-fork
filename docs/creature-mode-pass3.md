@@ -73,8 +73,8 @@ Cooldown table (ms), provisional, from `src/lib/creatureCooldowns.ts`:
 | Metal Strike | 1000 | Iron Barrage | 1120 | Flash Cannon | 760 |
 | Tremor | 600 | Mud Blast | 960 | Earth Power | 680 |
 | Bulldoze | 920 | Dark Wave | 760 | Dark Pulse | 760 |
-| Night Slash | 840 | Crunch | 760 | Gust Wave | 1080 |
-| Wing Assault | 720 | Tackle | 1080 | Quick Attack | 880 |
+| Night Slash | 840 | Munch | 760 | Wind Blast | 1080 |
+| Wing Assault | 720 | Tackle | 1080 | Swift Movement | 880 |
 | Body Slam | 720 | Mind Blast | 680 | Dragon Claw | 760 |
 | Power Strike | 720 | Swarm Strike | 1200 | Poison Jab | 760 |
 
