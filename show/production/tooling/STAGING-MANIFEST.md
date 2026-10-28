@@ -174,3 +174,13 @@ the render seat loads from the repo path.
 TeraBox masters — 57.3 GB across six checklist items, all
 sitting ready on this VM, waiting on the owner's single upload
 session.
+
+---
+
+## CORRECTION (2026-10-28) — Voice-weights TeraBox staging: COMPLETE at listing level
+
+Dated follow-up to this document's earlier position, which made no TeraBox completion claim for the voice weights because the upload chain was still mid-flight at landing time.
+
+- The voice-weights split set is now COMPLETE in the TeraBox folder `Mochiichao-Staging`: all 38 parts (aa–bl) verified present by a full-set listing check — complete sequence, none missing, none duplicated. The final part was verified 2026-10-28, 07:04 CDT. Account usage at completion: 38.3 GB / 1024 GB.
+- Scope of that verification, stated plainly: it is LISTING-level only (file names + displayed sizes in the folder listing). It is NOT byte-level verification. Byte-completeness of the set is established only on download, reassembly, and sha256 comparison against MANIFEST.txt.
+- Flag carried forward: part-be (part 31 of 38) showed a "System Error" label on its upload panel during its upload, despite completing and appearing in the listing. Part-be is specifically flagged for checksum verification on download, before the set is relied on.
