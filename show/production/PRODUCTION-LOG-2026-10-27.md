@@ -679,3 +679,56 @@ citations, generated tables, prototype island datasets) —
 full accounting in the batch 2 PR. Tackle's synonym stays
 open under the owner's rename delegation; Growl -> Rumble
 stands as the delegated pick.
+
+## FULL RENAME PASS - machine registry completed (2026-10-27)
+The owner delegated the full rename pass (2026-10-27): after naming
+~35 moves himself, he delegated renaming ALL remaining moves, in his
+demonstrated style - near-synonym, meaning preserved; element/flavour
+word kept or swapped to his house words (Chrome for steel/metal, Frost
+for ice); punchy one-to-two words; energy words Blast/Burst/Wave/Jet;
+occasional playful literal; NEVER an existing Pokemon move name.
+Landed: machine-registry.json now carries a Mochiichao name on all
+352 rows (rename.mochiichao_name + rename.status). 16 rows are
+owner-locked (his own picks and confirmed calls, incl. Earthquake ->
+Tremor, Crunch -> Munch, Cut -> Slice, Surf -> Wave, Fly -> Ascend,
+Strength -> Mighty Push, Rock Slide -> Rockfall, Flash -> Illuminate
+under the canon naming law); 336 are delegated names assigned under
+the delegation. NO other registry field was altered - verified by
+deep-diff: every non-rename field is identical to the phase-1 data.
+Readable form: MOCHIICHAO-NAME-MAP.md in the registry folder (all 352,
+grouped by class, style statement at top). RENAME-WORKSHEET-BATCH-1.md
+is marked SUPERSEDED in its header, pointing at the map.
+Checks (all machine-run, counts of record): coverage 352/352 rows
+named; blocklist of 928 Pokemon move names built from the in-repo
+gen5plus table + Black 2 / Crystal / Diamond decomp tables + the
+registry's own source names - ZERO proposed names collide (six first
+drafts that collided were caught and replaced: Grudge, Head Charge,
+Hyper Fang, Psyblade, Psywave respaced, Wave Crash); ZERO duplicates
+among all 352 names; ZERO collisions with names belonging to different
+moves in the live table or the GameData island doc. The 11 Rare Moves
+all carry plain, strong, field-capable names in the owner's register.
+NOT done by this pass (follow-up batch, listed in the name map):
+applying the 12 remaining live-table renames to the game files
+(Thunderbolt -> Storm Bolt, Wild Charge -> Reckless Charge, Flash
+Cannon -> Chrome Cannon, Earth Power -> Terra Burst, Bulldoze ->
+Dozer Crush, Dark Pulse -> Umbral Pulse, Night Slash -> Dusk Rend,
+Poison Jab -> Venom Jab, Fire Punch -> Flame Fist, Dragon Claw ->
+Draconian Talon, Body Slam -> Bulk Slam, Tackle -> Blitz), together with
+the owner's already-confirmed rename-everywhere calls (Crunch ->
+Munch in the files, Quick Attack -> Swift Movement, Gust Wave ->
+Wind Blast, Growl -> Rumble). Flagged in the map as thinnest ice:
+Assurance -> Sure Blow, Bide -> Wait Strike, Poltergeist -> Object
+Haunt, Protect -> Aegis. Tackle postscript, same day: the owner
+closed the one name he had left open and picked Tackle -> BLITZ
+himself (football terminology), superseding the pass's delegated
+proposal (Barge); Blitz is owner-locked and recorded in the name
+map's follow-up section (Tackle has no registry row - never a
+machine move). Dragon Claw postscript, same day: the owner locked
+Dragon Claw -> DRACONIAN TALON himself, superseding the pass's
+delegated proposal (Draco Talon); the registry row's rename.status
+is now locked (17 locked / 335 delegated across the 352) and the
+follow-up list above carries the locked name. (Draco Tail, the
+Dragon Tail island name, is a different move and is unchanged.)
+machine move). Divergence recorded, not hidden: the island doc's
+Rock Slide -> Avalanche stands as its own record; the registry
+follows his later Rockfall call.
