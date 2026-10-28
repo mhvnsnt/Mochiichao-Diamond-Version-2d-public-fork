@@ -48,6 +48,8 @@ lane's numbers:
 Usage: verify_proof.py <clip.mp4> [--json-out result.json]
        [--register scene|credits]
        [--chart chart.json] [--chart-tolerance N]
+       [--likeness canon-reference.png]
+       [--comparison-sheet sheet.png] [--likeness-runs runs.json]
 Exit 0 always (this measures; the gate verdict is the owner's).
 
 CHART CONFORMANCE (Above-the-Floor programme, 2026-10-28):
@@ -75,8 +77,61 @@ authored drawings); below the declared register's floor
 (scene 12/sec, credits 8/sec) is BELOW BAR. The headline is
 also printed to stderr for humans; the JSON carries it as
 timing_profile.headline.
+
+LIKENESS MODE (added 2026-10-28 — the Gap 15 countermeasure;
+see the dated correction at Gap 15 in
+show/production/animation-method/WHAT-WE-DO-WRONG-ADDENDUM-2.md
+and the standing delivery requirement in METHOD-REGISTRY.md):
+--likeness <canon-reference.png> measures per-frame similarity
+DIAGNOSTICS between the clip's distinct drawings (the span-start
+frames of the same HOLD_THRESHOLD span structure the timing
+profile computes) and a canon reference image. It exists
+because a clip can pass every timing measure while not being
+the character at all: the above-floor walk proof measured
+10.0 new drawings/sec on a puppet redrawn from geometric
+primitives (Gap 15), and the owner rejected it as a character
+product. Likeness itself is graded by the owner's eye (grading
+law: wrong character = FAIL, full stop); this mode only
+quantifies drift so a delivery can state it in numbers up
+front. It reports; it never grades; exit stays 0.
+Metrics (numpy/PIL only — no metric library is assumed):
+  * ssim — sliding-window SSIM (11x11 box filter, standard
+    constants) between the reference and each sampled frame,
+    both foreground-aligned: each image's foreground bounding
+    box is cropped, resized to 96x96, and composited over
+    neutral gray, so the measure compares the figure, not
+    the stage.
+  * color_histogram_l1 / color_histogram_bhattacharyya —
+    4x4x4 RGB histograms over foreground pixels only (L1 form:
+    0 = identical palette use, 1 = disjoint; Bhattacharyya
+    coefficient: 1 = identical, 0 = disjoint).
+  * silhouette_iou — intersection-over-union of the aligned
+    foreground masks.
+  * mean_abs_rgb_diff — 0-255 mean absolute difference of the
+    aligned composites (same scale family as the frame-diff
+    metric, but reference-vs-frame, not frame-vs-frame).
+Foreground heuristic, stated so a reviewer knows exactly what
+was measured: the reference by its alpha channel when it has
+one, else by distance from its corner colour; a clip frame by
+distance from its own corner colour (the proofs sit on a flat
+field); any mask row spanning >= 90% of the frame width (a
+1-2 px stage line is furniture, not subject) is dropped, and
+the largest connected component — the subject — is kept, so
+stage lines and stray shadow smears do not enter the frame's
+foreground.
+Each likeness run appends a RUN RECORD to likeness-runs.json
+beside this script (override with --likeness-runs). The record
+logs the reference path + sha256 and REQUIRES a side-by-side
+comparison sheet: pass --comparison-sheet <sheet.png>; if it
+is absent (or the file is not found) the record is still
+written but marked INCOMPLETE — a completeness state of the
+record, never a grade of the clip. likeness-runs.json is its
+own file because timing-profile-runs.json is a keyed object,
+not an appendable history; likeness appends are textual, so
+every prior run's bytes stay an exact prefix of the file.
 """
 import hashlib, json, subprocess, sys
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -434,6 +489,262 @@ def chart_conformance(diffs, chart, tolerance=2):
                 "grade the clip (TIMING-STANDARD.md).",
     }
 
+def _span_starts(diffs):
+    """Start frame of each held span — the clip's distinct
+    drawings — under the same HOLD_THRESHOLD rule the timing
+    profile uses. These are the frames likeness mode samples."""
+    starts, start = [], 0
+    for i, d in enumerate(diffs):
+        if d >= HOLD_THRESHOLD:
+            starts.append(start)
+            start = i + 1
+    starts.append(start)
+    return starts
+
+
+def _foreground_mask(rgb, alpha=None):
+    """Boolean foreground mask. With alpha: alpha > 8. Without:
+    pixels differing from the corner colour by more than 24 in
+    any channel (the flat-field heuristic stated in the module
+    docstring)."""
+    if alpha is not None:
+        return alpha > 8
+    corners = np.stack([rgb[0, 0], rgb[0, -1], rgb[-1, 0], rgb[-1, -1]])
+    corner = np.median(corners.astype(np.float32), axis=0)
+    return np.abs(rgb.astype(np.float32) - corner).max(axis=2) > 24
+
+
+def _drop_stage_lines(mask, frac=0.90):
+    """Drop mask rows spanning >= frac of the frame width —
+    a thin full-width stage line is furniture, not subject."""
+    wide = mask.mean(axis=1) >= frac
+    if not wide.any():
+        return mask
+    out = mask.copy()
+    out[wide, :] = False
+    return out
+
+
+def _largest_component(mask):
+    """Largest 4-connected component of a boolean mask
+    (run-length two-pass labelling, numpy only)."""
+    parent = [0]
+
+    def find(a):
+        while parent[a] != a:
+            parent[a] = parent[parent[a]]
+            a = parent[a]
+        return a
+
+    runs = []
+    prev = []
+    next_lab = 0
+    for y in range(mask.shape[0]):
+        d = np.diff(np.concatenate(([0], mask[y].view(np.int8), [0])))
+        starts = np.nonzero(d == 1)[0]
+        ends = np.nonzero(d == -1)[0] - 1
+        cur = []
+        for x0, x1 in zip(starts.tolist(), ends.tolist()):
+            next_lab += 1
+            parent.append(next_lab)
+            for (_, px0, px1, plab) in prev:
+                if px0 <= x1 and x0 <= px1:
+                    ra, rb = find(next_lab), find(plab)
+                    if ra != rb:
+                        parent[max(ra, rb)] = min(ra, rb)
+            cur.append((y, x0, x1, next_lab))
+            runs.append((y, x0, x1, next_lab))
+        prev = cur
+    if not runs:
+        return mask
+    lab = np.zeros(mask.shape, dtype=np.int32)
+    for (y, x0, x1, l) in runs:
+        lab[y, x0:x1 + 1] = find(l)
+    counts = np.bincount(lab.ravel())
+    counts[0] = 0
+    return lab == int(np.argmax(counts))
+
+
+def _bbox(mask):
+    ys, xs = np.nonzero(mask)
+    if len(xs) == 0:
+        return None
+    return int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1
+
+
+def _aligned_composite(rgb, mask, size=96):
+    """Crop to the foreground bounding box, resize to size x
+    size, composite over neutral gray. Returns (composite float
+    array, aligned boolean mask) or (None, None)."""
+    from PIL import Image
+    bb = _bbox(mask)
+    if bb is None:
+        return None, None
+    x0, y0, x1, y1 = bb
+    img = (Image.fromarray(rgb).crop((x0, y0, x1, y1))
+           .resize((size, size), Image.BILINEAR))
+    msk = (Image.fromarray((mask * 255).astype(np.uint8))
+           .crop((x0, y0, x1, y1)).resize((size, size), Image.NEAREST))
+    m = (np.asarray(msk) > 127).astype(np.float32)
+    comp = (np.asarray(img).astype(np.float32) * m[:, :, None]
+            + 128.0 * (1.0 - m[:, :, None]))
+    return comp, m > 0.5
+
+
+def _box_mean(a, win):
+    """Uniform (box) filter via cumulative sums, edge-padded."""
+    r = win // 2
+    p = np.pad(a, r, mode="edge")
+    c = np.pad(np.cumsum(np.cumsum(p, axis=0), axis=1), ((1, 0), (1, 0)))
+    H, W = a.shape
+    return (c[win:win + H, win:win + W] - c[0:H, win:win + W]
+            - c[win:win + H, 0:W] + c[0:H, 0:W]) / float(win * win)
+
+
+def _ssim(a, b, win=11):
+    """Sliding-window SSIM between two same-size grayscale
+    float arrays (0-255 scale), standard constants; the mean is
+    taken over the valid interior of the SSIM map."""
+    C1, C2 = (0.01 * 255.0) ** 2, (0.03 * 255.0) ** 2
+    mu_a, mu_b = _box_mean(a, win), _box_mean(b, win)
+    va = _box_mean(a * a, win) - mu_a ** 2
+    vb = _box_mean(b * b, win) - mu_b ** 2
+    cov = _box_mean(a * b, win) - mu_a * mu_b
+    m = ((2 * mu_a * mu_b + C1) * (2 * cov + C2)
+         / ((mu_a ** 2 + mu_b ** 2 + C1) * (va + vb + C2)))
+    r = win // 2
+    if m.shape[0] > win and m.shape[1] > win:
+        return float(m[r:-r, r:-r].mean())
+    return float(m.mean())
+
+
+def _color_hist(rgb, mask, bins=4):
+    """Normalised bins^3 RGB histogram over foreground pixels."""
+    px = rgb[mask]
+    if len(px) == 0:
+        return np.zeros(bins ** 3)
+    idx = (px.astype(np.int32) * bins // 256).clip(0, bins - 1)
+    code = (idx[:, 0] * bins + idx[:, 1]) * bins + idx[:, 2]
+    h = np.bincount(code, minlength=bins ** 3).astype(np.float64)
+    return h / h.sum()
+
+
+def likeness_profile(clip, diffs, ref_path, comparison_sheet=None):
+    """Per-frame similarity diagnostics of a clip's distinct
+    drawings against a canon reference image. Diagnostics only
+    — see the module docstring's LIKENESS MODE section."""
+    from PIL import Image
+    ref_path = Path(ref_path)
+    ref_bytes = ref_path.read_bytes()
+    ref_img = Image.open(ref_path)
+    has_alpha = (ref_img.mode in ("RGBA", "LA")
+                 or (ref_img.mode == "P" and "transparency" in ref_img.info))
+    ref_rgba = np.asarray(ref_img.convert("RGBA"))
+    ref_rgb = ref_rgba[:, :, :3]
+    ref_mask = _foreground_mask(ref_rgb, ref_rgba[:, :, 3] if has_alpha else None)
+    ref_comp, ref_amask = _aligned_composite(ref_rgb, ref_mask)
+    ref_hist = _color_hist(ref_rgb, ref_mask)
+    ref_gray = ref_comp.mean(axis=2)
+
+    starts = _span_starts(diffs)
+    probe = ffprobe(clip)
+    v = next(s for s in probe["streams"] if "width" in s)
+    w, h = v["width"], v["height"]
+    want = set(starts)
+    proc = subprocess.Popen(
+        ["ffmpeg", "-v", "error", "-i", str(clip), "-vf", "format=rgb24",
+         "-f", "rawvideo", "-"],
+        stdout=subprocess.PIPE)
+    frame_bytes = w * h * 3
+    rows, idx = [], 0
+    while True:
+        buf = proc.stdout.read(frame_bytes)
+        if len(buf) < frame_bytes:
+            break
+        if idx in want:
+            rgb = np.frombuffer(buf, dtype=np.uint8).reshape(h, w, 3)
+            mask = _largest_component(
+                _drop_stage_lines(_foreground_mask(rgb)))
+            comp, amask = _aligned_composite(rgb, mask)
+            if comp is not None:
+                fh = _color_hist(rgb, mask)
+                union = int(np.logical_or(ref_amask, amask).sum())
+                rows.append({
+                    "frame": idx,
+                    "ssim": round(_ssim(ref_gray, comp.mean(axis=2)), 4),
+                    "color_histogram_l1": round(
+                        0.5 * float(np.abs(ref_hist - fh).sum()), 4),
+                    "color_histogram_bhattacharyya": round(
+                        float(np.sqrt(ref_hist * fh).sum()), 4),
+                    "silhouette_iou": round(
+                        float(np.logical_and(ref_amask, amask).sum())
+                        / max(union, 1), 4),
+                    "mean_abs_rgb_diff": round(
+                        float(np.abs(ref_comp - comp).mean()), 3),
+                })
+        idx += 1
+    proc.wait()
+
+    def summ(key):
+        vals = [r[key] for r in rows]
+        if not vals:
+            return None
+        return {"min": round(min(vals), 4),
+                "median": round(float(np.median(vals)), 4),
+                "max": round(max(vals), 4)}
+
+    sheet = None
+    if comparison_sheet:
+        sp = Path(comparison_sheet)
+        sheet = {"path": str(sp), "present": bool(sp.exists())}
+        if sp.exists():
+            sb = sp.read_bytes()
+            sheet.update({"bytes": len(sb),
+                          "sha256": hashlib.sha256(sb).hexdigest()})
+    complete = bool(sheet and sheet["present"])
+    return {
+        "reference": {"path": str(ref_path), "bytes": len(ref_bytes),
+                      "sha256": hashlib.sha256(ref_bytes).hexdigest()},
+        "sampled_frames": starts,
+        "frames_evaluated": len(rows),
+        "per_frame": rows,
+        "summary": {k: summ(k) for k in (
+            "ssim", "color_histogram_l1", "color_histogram_bhattacharyya",
+            "silhouette_iou", "mean_abs_rgb_diff")},
+        "comparison_sheet": sheet,
+        "record_status": (
+            "COMPLETE" if complete else
+            "INCOMPLETE - no comparison sheet recorded (pass "
+            "--comparison-sheet <sheet.png>); the sheet must sit "
+            "beside this record for the delivery requirement in "
+            "METHOD-REGISTRY.md to be met. A completeness state "
+            "of the record, not a grade of the clip."),
+        "note": "Similarity DIAGNOSTICS only: they quantify drift "
+                "against the canon reference; they never grade the "
+                "clip. The grade is the correct character performing "
+                "the action, judged by the owner/scorer (grading "
+                "law). Alignment is by foreground bounding box, so "
+                "read the numbers as a drift measure, not a "
+                "likeness verdict.",
+    }
+
+
+def append_likeness_run(record, runs_path):
+    """Append one run record to a likeness-runs.json (a JSON
+    array). The append is textual — the new record is inserted
+    before the closing bracket — so every prior run's bytes
+    stay an exact prefix of the file."""
+    text = json.dumps(record, indent=2)
+    indented = "\n".join("  " + ln for ln in text.splitlines())
+    p = Path(runs_path)
+    if p.exists():
+        core = p.read_bytes().decode().rstrip()
+        assert core.endswith("]"), "likeness runs file is not a JSON array"
+        p.write_text(core[:-1].rstrip() + ",\n" + indented + "\n]\n")
+    else:
+        p.write_text("[\n" + indented + "\n]\n")
+
+
 def main():
     clip = Path(sys.argv[1])
     assert clip.exists(), f"no such file: {clip}"
@@ -482,6 +793,35 @@ def main():
                  sum(1 for h in _conf["holds"] if h["clear"]),
                  len(_conf["holds"]),
                  _conf["segment_boundary_coverage"]["fraction"]),
+              file=sys.stderr)
+    if "--likeness" in sys.argv:
+        _ref = sys.argv[sys.argv.index("--likeness") + 1]
+        _sheet = (sys.argv[sys.argv.index("--comparison-sheet") + 1]
+                  if "--comparison-sheet" in sys.argv else None)
+        _lik = likeness_profile(clip, diffs, _ref, _sheet)
+        result["likeness"] = _lik
+        _runs = (sys.argv[sys.argv.index("--likeness-runs") + 1]
+                 if "--likeness-runs" in sys.argv
+                 else str(Path(__file__).with_name("likeness-runs.json")))
+        append_likeness_run({
+            "recorded_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+            "clip": str(clip), "clip_bytes": len(data),
+            "clip_sha256": result["sha256"],
+            "reference": _lik["reference"],
+            "comparison_sheet": _lik["comparison_sheet"],
+            "frames_evaluated": _lik["frames_evaluated"],
+            "sampled_frames": _lik["sampled_frames"],
+            "summary": _lik["summary"],
+            "record_status": _lik["record_status"],
+            "note": _lik["note"],
+        }, _runs)
+        _s = _lik["summary"]
+        print("LIKENESS (diagnostics, not a grade): median SSIM %s, "
+              "median colour-histogram L1 %s, median silhouette IoU %s "
+              "over %d sampled drawings vs %s; run record %s -> %s"
+              % (_s["ssim"]["median"], _s["color_histogram_l1"]["median"],
+                 _s["silhouette_iou"]["median"], _lik["frames_evaluated"],
+                 Path(_ref).name, _lik["record_status"], _runs),
               file=sys.stderr)
     _h = result["timing_profile"]["headline"]
     print("HEADLINE: %s new drawings/sec - %s"

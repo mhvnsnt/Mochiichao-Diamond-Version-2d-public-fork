@@ -43,6 +43,25 @@ a superseded asset under the current-version law.
      largest accent on the bell (gag frame 96). A chart that
      merely reaches a floor is sent back at chart stage, before
      anything is drawn.
+- **Standing delivery requirement — the likeness gate
+  (added 2026-10-28; a gate addition under v1.2, not a new
+  method version — see the change log).** No character clip
+  is delivered to the owner without: (i) the canon
+  reference's path + sha256 logged in the run record;
+  (ii) a side-by-side comparison sheet produced, its path
+  recorded in the same record; (iii) the delivery stating
+  the likeness judgment in plain words **before** any
+  measured axis (drawings/sec, conformance, anything else)
+  is mentioned. The checker supports it:
+  `verify_proof.py --likeness <canon-reference>` (in
+  `show/production/tooling/proof-gate/`) reports per-frame
+  similarity diagnostics against the reference and marks a
+  run record without a recorded comparison sheet INCOMPLETE
+  — a completeness state, never a grade: grading remains
+  the owner's eye, and the grading law stands (wrong
+  character = FAIL). Run record: `likeness-runs.json` beside
+  the checker. Origin: Gap 15, activated — see the dated
+  correction at Gap 15 in `WHAT-WE-DO-WRONG-ADDENDUM-2.md`.
 - **The evidence:** the Phase P proof (2026-10-28) — the v6
   walk's own 8 drawings re-timed under a charted modulation
   design, no new art: **10.0 new drawings/sec** (was 8.0, exactly
@@ -249,6 +268,32 @@ for yourself and the agents, so we never regress.*
   Tahoma2D/OpenToonz remain registered (BSD-3) as the x-sheet
   lane; no new install was needed for this layer — the gap was
   artefacts and gates, not software.
+- **2026-10-28 — Likeness gate added as a standing delivery
+  requirement under Industry Method v1.2 (gate addition;
+  v1.2 remains CURRENT / USABLE — no version bump: the gate
+  changes what a delivery must carry, not how animation is
+  made; dated-line treatment per upgrade rule 6).** Origin:
+  the above-floor walk proof (PR #482) was delivered to the
+  owner on the v6 primitive-redraw puppet — Gap 15's named
+  defect, already in the record at delivery time — and the
+  delivery headlined its timing numbers. Owner verdict:
+  timing accepted; likeness total drift; FAIL as character
+  work; the proof is reclassified TIMING PROOF ONLY, and the
+  delivery is recorded as a New Deal + self-judgment law
+  violation at Gap 15 in `WHAT-WE-DO-WRONG-ADDENDUM-2.md`.
+  Wired: `verify_proof.py --likeness` (canon reference path
+  + sha256 logged per run; per-frame similarity diagnostics;
+  a run record without a recorded side-by-side comparison
+  sheet is INCOMPLETE, never graded by the script), run
+  record at
+  `show/production/tooling/proof-gate/likeness-runs.json`.
+  First measured run — the failed proof against the canon
+  texture of record: median SSIM 0.17, median silhouette
+  IoU 0.57, median colour-histogram L1 0.35 (diagnostics,
+  not a grade; front-view reference vs profile frames — the
+  view confound is stated in the companion correction
+  entry). The v7 canon-art rebuild runs separately and is
+  not graded here.
 
 ---
 
