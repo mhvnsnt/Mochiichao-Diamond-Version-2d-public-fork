@@ -101,16 +101,18 @@ tracked in the season grid.
 8. **BATTLE DOCTRINE — AUTONOMOUS-ACTION MODEL (Jamar,
    2026-10-27):** in the SHOW, Mochi fight with their own
    agency. A battle is a continuous living fight — creatures
-   do not stand idle waiting to be told each move. Trainers
+   do not stand idle waiting to be told each move. Rangers
    sometimes command and direct, but the fight runs between
    commands and without them: a battle is alive between its
    decisive beats. (The GAME lane runs the mirror doctrine —
    command-driven battles where between-command action is
    non-scoring presentation: docs/arena-battle-presentation-
-   spec.md §9.) **Open term:** the canon name for the human
-   who commands in battle is NOT decided — game data uses
-   "trainers"; "keeper" is the Garden role. Neither is canon
-   for battle until Jamar names it (§9, item 7).
+   spec.md §9.) **Term — CLOSED (owner lock, 2026-10-27):**
+   the canon name for the human who commands in battle is
+   RANGERS. Game data's display wording was "trainers";
+   "keeper" is the Garden role only. Structural ids
+   (role:"trainer", trainer_*) are unchanged — this lock
+   is display/canon text (§9, item 7, closed).
 
 9. **THE SECRET (Jamar, 2026-10-27 — a production-layer truth,
    never an in-world fact):** the world is a computer that grew
@@ -171,8 +173,9 @@ the avatar full stack + puppet rigs (Jamar's standing order).
 4. The Forest's name in-world (if it has one).
 5. Keeper device design (digicore unit) — bible art pass.
 6. Whether the Manual's other Rules get written before EP02.
-7. The canon term for the human who commands in battle
-   (game data says "trainers"; the Garden role is "keeper").
+7. CLOSED (owner lock, 2026-10-27): the canon term for the
+   human who commands in battle is RANGERS (game data said
+   "trainers"; the Garden role is "keeper").
 
 ## THE ESSENCE (owner law, 2026-10-27)
 

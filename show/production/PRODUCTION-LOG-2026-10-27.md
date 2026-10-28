@@ -1322,3 +1322,17 @@ Proof (Phase P): the v6 walk's own 8 drawings re-timed under a charted modulatio
 Registry: METHOD-REGISTRY.md marks Industry Method v1.2 CURRENT / USABLE (v1.1 folded in, re-marked superseded as a standalone entry, text preserved; change-log line added).
 
 Honest remainder, stated up front: the gag rebuild itself has NOT started — it waits on the owner's Gate-8 verdict on the v6 walk proof and the profile call, both still open; this landing is its input and its gate. Scene production remains unproven (Storyboard Draft 1 excerpt 1.961/sec, FAILED class; the EP01 generative backend remains wired, unproven). One beat map exists (the ED bed); the other scored pieces get theirs when they are charted.
+## RANGERS TERM AMENDMENT — OPEN TERM CLOSED (2026-10-28)
+
+The human battle role's canon term is locked as RANGERS
+(owner lock, 2026-10-27), closing the open term left by
+PR #367's Law 8. Landed: SHOW-BIBLE.md Law 8 (body wording
+"Trainers sometimes command" -> "Rangers sometimes
+command"; the Open term note marked CLOSED with the lock
+date) and Bible section 9 item 7 (marked CLOSED in place);
+docs/arena-battle-presentation-spec.md section 9.2 (same
+body wording) and section 9.3 (open item closed, heading
+updated). "Keeper" remains the Garden role only.
+Structural ids and data fields (role:"trainer",
+trainer_*) are unchanged — this amendment is display /
+canon text only.
