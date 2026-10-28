@@ -892,3 +892,7 @@ show/production/tooling/VOICE-WEIGHTS-MANIFEST.md is in the repo: the byte-exact
 ## REGION 4 KIT — source map + mecha register (owner-directed 2026-10-27)
 
 Holdings verdict (Bakugan repo placeholder; five franchises not held), Bakugan deep-use map from public structure, R4 flavor law, region-building source map R2-R5 + AIRSHIP-AND-MILITARY design doc (owner's airship sentence discharged: the Lord, the Order, the flagship; names TBD, six forks listed for the owner). Landed by the lock-everything wave.
+
+## REGIONAL SPECIES BRAINSTORM LANDED (2026-10-27)
+
+REGIONAL SPECIES BRAINSTORM landed as FUTURE CONSIDERED IDEAS - flavor law R1-R5 (R5 owner-set: his own universe + MALAKOR, gap noted), 60 concepts + 6 light R5 sketches, collision-checked against the verified canon subset and the full Pokemon roster; canon roster unchanged at 47. Landing gate completed in the lock-everything wave: full-47 re-check against species.json found ZERO exact name collisions; two newly-visible canon base sharings (Mothrix/moth, Squirmite/worm) flagged in-file as owner's-call sharings with distinct seeds. Owner confirmed all 60 names in chat 2026-10-27; concepts remain ideas until he locks them individually.
