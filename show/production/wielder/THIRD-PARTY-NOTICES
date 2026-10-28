@@ -1,0 +1,56 @@
+THIRD-PARTY NOTICES — WIELDER
+
+Wielder's own surface — package, CLI, graph and node names, config,
+docs, dashboard, chat — is Wielder's. The pillars below keep their own
+names inside their licence notices and in PROVENANCE.md, as their
+licences require. That attribution is what makes using them free and
+permanent; it is preserved deliberately.
+
+----------------------------------------------------------------------
+LangGraph, LangChain core, LangGraph checkpointing (pillar #1)
+MIT License — Copyright (c) 2024 LangChain, Inc.
+Licence verified at source: langchain-ai/langgraph LICENSE (MIT),
+langchain-ai/langchain LICENSE (MIT). Installed from PyPI as the
+official packages, unmodified.
+
+Model Context Protocol python-sdk (tool comm layer)
+MIT License — Copyright (c) 2024 Anthropic, PBC
+Licence verified at source: modelcontextprotocol/python-sdk LICENSE.
+
+Pydantic / Pydantic AI (validation layer)
+MIT License — Copyright (c) 2017–present Pydantic Services Inc.
+Licences verified at source: pydantic/pydantic, pydantic/pydantic-ai.
+
+LanceDB (embedded vector memory)
+Apache License 2.0 — Copyright the LanceDB authors.
+Licence verified at source: lancedb/lancedb LICENSE.
+
+sqlite-vec (fallback vector store)
+Apache License 2.0 / MIT (dual) — Copyright Alex Garcia.
+Licence verified at source: asg017/sqlite-vec LICENSE.
+
+FastAPI (status surface)
+MIT License — Copyright (c) 2018 Sebastián Ramírez.
+Licence verified at source: fastapi/fastapi LICENSE.
+
+Chainlit (chat pillar)
+Apache License 2.0 — Copyright 2023– The Chainlit team.
+Licence verified at source: Chainlit/chainlit LICENSE.
+
+Kanboard (finish queue)
+The MIT License (MIT) — Copyright (c) Frédéric Guillot.
+Licence read in the installed source: finish-gate/board/kanboard/
+LICENSE; version 1.2.56 per app/constants.php.
+
+sentence-transformers + BAAI bge-small-en-v1.5 (embeddings, when the
+install lands — see PROVENANCE.md §D for live status)
+sentence-transformers: Apache License 2.0 (to be confirmed from the
+installed package metadata at install time, per STACK.md §3).
+bge-small-en-v1.5 weights: MIT License — Copyright (c) 2023 Beijing
+Academy of Artificial Intelligence (FlagEmbedding LICENSE).
+
+SQLite — public domain (SQLite.org dedication).
+
+The owner's own systems (finish-gate verifier, method registry,
+Kanboard board configuration, the vendored agent-ops donor code) are
+the owner's work and carry no third-party notice.

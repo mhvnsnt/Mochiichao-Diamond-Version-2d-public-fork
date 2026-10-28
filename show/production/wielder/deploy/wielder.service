@@ -1,0 +1,22 @@
+[Unit]
+Description=WIELDER — production Agentic AI system for the Mochiichao show (heartbeat)
+After=network.target
+
+[Service]
+Type=simple
+# Paths are written for the landed home (show/production/wielder/ in the
+# game repo) with Wielder's own virtualenv beside the package. Adjust the
+# two paths at install time; nothing else in the unit is site-specific.
+WorkingDirectory=/home/hatch/workspace/ep01-rebuild/agent-system/phase3-build
+ExecStart=/home/hatch/workspace/ep01-rebuild/agent-system/scratch/venv/bin/python -m wielder.cli heartbeat --interval 21600
+Environment=PYTHONPATH=/home/hatch/workspace/ep01-rebuild/agent-system/phase3-build
+Restart=on-failure
+RestartSec=60
+# Unattended-operation contract (Addendum 12B): the heartbeat drains the
+# finish queue between owner visits; every run checkpoints (LangGraph
+# SQLite) and resumes or is recorded stopped; a park blocks only its own
+# branch. Home-directory state persists across VM replacement; this unit
+# is re-enabled at install, and enablement is verified, not assumed.
+
+[Install]
+WantedBy=default.target

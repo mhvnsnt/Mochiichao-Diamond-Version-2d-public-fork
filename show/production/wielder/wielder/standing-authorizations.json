@@ -1,0 +1,19 @@
+{
+ "grants": [
+  {
+   "id": 1,
+   "action_class": "local-builds-renders",
+   "scope": "*",
+   "granted_by": "owner",
+   "granted_at": "2026-10-28T14:02:04+0000",
+   "revoked_at": "2026-10-28T14:02:04+0000",
+   "note": ""
+  }
+ ],
+ "never_grantable": {
+  "payment-approval": "payment approvals on external cards are the owner's act (provider design)",
+  "identity-check": "provider identity checks are the owner's act (provider design)",
+  "unshared-credential": "a credential the owner has never shared cannot be granted into existence"
+ },
+ "note": "Mirror of the SQLite Standing Authorization Ledger. Revoke in chat (`revoke <id>`) or via `wielder grants`."
+}

@@ -1,0 +1,46 @@
+{
+  "paths": [
+    {
+      "added_at": "2026-10-20T04:09:00Z",
+      "kind": "sacred-manifest",
+      "note": "checkpoint JSONs are the resume source of truth; CloudDog must never touch",
+      "owner": "agent-ops",
+      "path": "~/workspace/agent-ops/checkpoints"
+    },
+    {
+      "added_at": "2026-10-20T04:09:00Z",
+      "kind": "sacred-manifest",
+      "note": "CloudDog store-verify registry; sacred per CloudDog team effort",
+      "owner": "clouddog",
+      "path": "~/workspace/agent-ops/cloud-dog-registry.json"
+    },
+    {
+      "added_at": "2026-10-20T04:09:00Z",
+      "kind": "sacred-manifest",
+      "note": "CloudDog sqlite registry; sacred same as .json",
+      "owner": "clouddog",
+      "path": "~/workspace/agent-ops/cloud-dog-registry.db"
+    },
+    {
+      "added_at": "2026-10-20T04:09:00Z",
+      "kind": "sacred-manifest",
+      "note": "lane registry; only lane-worktree.sh edits it",
+      "owner": "lane-guard",
+      "path": "~/workspace/agent-ops/lanes.json"
+    },
+    {
+      "added_at": "2026-10-20T04:09:00Z",
+      "kind": "sacred-manifest",
+      "note": "this file; only guard-paths.sh edits it",
+      "owner": "lane-guard",
+      "path": "~/workspace/agent-ops/protected-paths.json"
+    },
+    {
+      "added_at": "2026-10-20T04:09:00Z",
+      "kind": "active-worktree",
+      "note": "holds every lane's worktree; delete only via lane-worktree.sh release",
+      "owner": "lane-guard",
+      "path": "~/workspace/agent-ops-worktrees"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# lanes.manifest — lane registry for lane-autostart.sh
+#
+# FORMAT (pipe-separated, one lane per line):
+#   name|workdir|command|watchdog_command|max_restarts_per_hour|enabled
+#
+#   name                  unique lane id; also the lock/log/state filename stem
+#   workdir               absolute path the lane starts in (must exist)
+#   command               shell command for the lane; use ABSOLUTE paths for
+#                         binaries/scripts. It is run under `env -i` with an
+#                         explicit PATH, so anything not on PATH must be absolute.
+#   watchdog_command      optional shell command for the lane's watchdog.
+#                         Empty = no watchdog for this lane. Watchdogs MUST
+#                         write epoch seconds to ../heartbeats/<name>.watchdog.ts
+#                         at least every few minutes while alive.
+#   max_restarts_per_hour crash-loop guard. When a lane dies more than this
+#                         many times in the last 3600s, auto-restart stops and
+#                         state/<name>.ESCALATE is written for the main agent.
+#   enabled               yes | no. Everything ships as `no` until the owner
+#                         approves registering a lane.
+#
+# All lanes ship DISABLED. Registering a lane (flipping to yes) is a durable
+# state change that needs OWNER APPROVAL — same as the scheduler entry itself.
+#
+# EXAMPLE (disabled):
+# render-watch|/home/hatch/workspace/lanes/render-watch|/usr/bin/env bash /home/hatch/workspace/lanes/render-watch/watch.sh|/usr/bin/env bash /home/hatch/workspace/lanes/render-watch/watchdog.sh|3|no

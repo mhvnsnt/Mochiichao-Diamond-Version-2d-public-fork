@@ -1435,3 +1435,22 @@ none was invented. The open blocker for a true profile
 remains an owner-approved profile model sheet, which does
 not exist yet. The proof was delivered to the owner
 2026-10-28; Gate 8 (the owner's eye) verdict is pending.
+
+## WIELDER PRODUCTION SYSTEM LANDED (2026-10-28)
+
+The Wielder production system - the production Agentic
+AI system (LangGraph backbone) - is landed at
+show/production/wielder/: 69 files, byte-exact from the
+verified package of record, every file hash-checked
+(sha256) against the package after landing (69/69).
+
+The system is already running on the VM from its build
+home (~/workspace/ep01-rebuild/agent-system/phase3-build/;
+heartbeat service active; chat UI on 127.0.0.1:8897).
+This landing stages the system into the repo; it does
+not move the running service.
+
+FOLLOW-UP NOTED: the service unit paths still point at
+the build home and get re-pointed to the landed home
+(show/production/wielder/) as a separate step. That
+re-point is not part of this landing.
