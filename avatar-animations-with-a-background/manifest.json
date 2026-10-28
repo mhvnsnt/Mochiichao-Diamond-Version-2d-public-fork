@@ -1,0 +1,50 @@
+{
+  "folder_name_as_spoken": "avatar animations with a background",
+  "character": "Dorowani (Doro, Muse avatar)",
+  "set": "Live avatar animations WITH background (MP4, no alpha) - the originals",
+  "spec": "720x720, 8.0s, 24fps (poster is a WebP still)",
+  "saved_from": "~/workspace/avatars/ - the live avatar files, hash-verified before upload on 2026-10-28",
+  "restore_note": "These are the exact files that were live as Doro's avatar on 2026-10-27/28. If the avatar is changed later, these files can be set back as the avatar set (idle / working / making_something / milestone_level_up + dorowani.webp poster) to restore this avatar exactly.",
+  "files": [
+    {
+      "file": "dorowani-idle.mp4",
+      "variant": "idle (also: connecting)",
+      "original_avatar_filename": "avatar-1793115909210772522-0-attempt-0110cf7eaa9f.mp4",
+      "bytes": 507281,
+      "md5": "7c68c109b0d3f74a718febd19741e1b8",
+      "sha256": "27784a77b7045ddae1ea054b873990af0a4eb2e9608c569f163c74a760879ebd"
+    },
+    {
+      "file": "dorowani-working.mp4",
+      "variant": "working (also: waiting_for_subagents)",
+      "original_avatar_filename": "avatar-1793115909210772522-0-working-attempt-cba0cfb452d4.mp4",
+      "bytes": 623861,
+      "md5": "e81522040074d301028b59ad4bc322c8",
+      "sha256": "3017ec0c732526486a5d8621f1f01cdc6e9a88cd9e5f10298e00e43477361266"
+    },
+    {
+      "file": "dorowani-making_something.mp4",
+      "variant": "making_something (Dorowani Water Orb)",
+      "original_avatar_filename": "avatar-1793115909210772522-0-making_something-attempt-b8b9a48eb0b1.mp4",
+      "bytes": 1074480,
+      "md5": "09ace1f3054b9422e3637554928969ec",
+      "sha256": "0b793689f042d41efc379452fa292b0088815871a131aa04559e03605f0682a7"
+    },
+    {
+      "file": "dorowani-milestone_level_up.mp4",
+      "variant": "milestone_level_up",
+      "original_avatar_filename": "avatar-1793115909210772522-0-milestone_level_up-attempt-490bc0956edf.mp4",
+      "bytes": 660873,
+      "md5": "edb01f952d417893d4bbf6ccba1df6de",
+      "sha256": "f4918c0bff5a9628cdc44fddfd8168a4e8cebc799a32507af56585022eaf3797"
+    },
+    {
+      "file": "dorowani.webp",
+      "variant": "poster / still avatar image",
+      "original_avatar_filename": "avatar-1793115909210772522-0.webp",
+      "bytes": 183528,
+      "md5": "f18be73e618e8b8309ee691e36aa326c",
+      "sha256": "0d6565c5f948555be49eb9644ef8d8a8c04c8682cb1035cd62746e4a29a09d26"
+    }
+  ]
+}
