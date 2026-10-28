@@ -1,0 +1,16 @@
+{
+ "event": {
+  "beat": null,
+  "class": "footrace | swim | flight | course",
+  "course": "#7/#119 place ref or #137 route ref (required)",
+  "eventId": null,
+  "field": [
+   "#80 individualIds"
+  ],
+  "finishOrder": []
+ },
+ "note": "Shape only — zero events instanced. Eligibility is DERIVED from sheet anatomy (locomotion class); this format holds no species list. The record contains no battle terms by construction — a result showing damage/faint terms fails validation. Game-lane finish-order arithmetic is an OPEN mechanical slot (see 236 spec).",
+ "schema": "mochiichao/sport-event/v1",
+ "finishOrder": "Filled at landing under the Pokemon-base rule (recorded, not silent): per-leg pace = the entrant's Speed in the leg's movement class; finish order ranks total pace across legs, highest first; ties share the placing.",
+ "validationFence": "Landed with the package (step 11): a sport record carrying battle terms (damage, type advantage, move ids) fails validation — sport is not battle."
+}

@@ -73,3 +73,5 @@ fiction · the honours catalogue entries for placement
 (#104's owner slot) · show arc length and which fixtures
 are featured · any Syndicate interest in a tournament
 (#99's motives are OPEN and stay so here).
+
+**Validation fence (List 24 #236, landing 2026-10-27):** sport records (236-MOCHI-SPORTS.md) cite this file's results grammar, and the fence runs both ways: a sport record carrying battle terms fails validation. Sport is not battle; a tournament is not a race.

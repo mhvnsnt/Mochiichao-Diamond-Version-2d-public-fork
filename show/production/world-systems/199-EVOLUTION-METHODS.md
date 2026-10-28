@@ -126,3 +126,5 @@ trigger values (lock-time, #197) · generic
 `colony`/`form-shift` semantics if canon ever needs
 them · A9 pair-merge representation (**OWNER
 DECISION** — #103's flag, carried verbatim).
+
+**Citation (List 24 #228, landing 2026-10-27):** evolution-sequence record timing per 228-EVOLUTION-SEQUENCE.md — the record update lands REVEAL-timed, and a cancelled sequence writes nothing.

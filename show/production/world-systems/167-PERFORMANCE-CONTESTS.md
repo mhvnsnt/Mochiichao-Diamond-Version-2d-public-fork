@@ -101,3 +101,5 @@ OPEN from #78) · per-move `appeal` values (inherited —
 contest standing feeds anything beyond itself (a
 licence input like #151's is NOT asserted here —
 tournaments earned that join; contests have not).
+
+**PROPOSAL from List 24 #234 (registered at its landing, 2026-10-27):** the perform/compete fence sentence from 234-PERFORMANCE-TROUPES.md is proposed for this file: a troupe PERFORMS; a contest COMPETES; the two institutions never merge their records. Proposal until this home accepts it.
