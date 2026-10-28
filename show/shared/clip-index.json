@@ -186,7 +186,7 @@
    "used_by": [
     "show:ep01_candidate"
    ],
-   "quality_status": "PENDING_GATE",
+   "quality_status": "unused_draft_special_case",
    "gate": {
     "verdict": "FAIL",
     "recommendation_only": true,
@@ -200,7 +200,7 @@
      "rgb_mad_255_max": 40.0
     }
    },
-   "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch — fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+   "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch — fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-27: unused draft (special case) — kept, not used, not deleted."
   },
   {
    "id": "gen-retry-2026-10-27-sproutle-leaf_blast",

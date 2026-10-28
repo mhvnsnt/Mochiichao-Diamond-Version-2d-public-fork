@@ -43,7 +43,8 @@
       "source": "source_still"
     }
   },
-  "quality_status": "PENDING_GATE",
+  "quality_status": "unused_draft_special_case",
+  "status_note": "Owner ruling 2026-10-27: special-case individual held as an UNUSED DRAFT — owner prefers the canon design; kept, not used, not deleted.",
   "likeness_gate": {
     "packet": "gate-packet.json",
     "verdict_recommendation": "FAIL"
