@@ -1,0 +1,427 @@
+{
+ "repo": "Wan-Video/Wan2.2",
+ "commit": "1ea34ff48f87168174e12956e200b1d908b1c5ff",
+ "default_branch": "main",
+ "tree_files": 87,
+ "staged": [
+  {
+   "path": ".gitignore",
+   "size": 80,
+   "sha256": "a6c9c1d1ec2fb4915b9212e4d9e09081d9fb6d9fc4ec6de15445c37fe82f365c"
+  },
+  {
+   "path": "INSTALL.md",
+   "size": 1158,
+   "sha256": "ce8491bc42ea307c394b6e609bd52ffe76b5dc3b445d1605c4fbe7229347184b"
+  },
+  {
+   "path": "LICENSE.txt",
+   "size": 11357,
+   "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+   "path": "Makefile",
+   "size": 80,
+   "sha256": "f4e297c91cd4febb3b695f3a2533a1fab70f74fab6fd8666be171c856d973827"
+  },
+  {
+   "path": "README.md",
+   "size": 35804,
+   "sha256": "40222cb3a66cc89aa1cd84589d1fa696806c93c09cf1c4383b3994139202dfa1"
+  },
+  {
+   "path": "generate.py",
+   "size": 20540,
+   "sha256": "cae024b99a3d105fe273a8dfe724ea656f9c1a876ccc8534a8c2fbfb716950e7"
+  },
+  {
+   "path": "pyproject.toml",
+   "size": 1318,
+   "sha256": "b63e6bccd0678038a57c471c14ae052d7e8e2a133d69c842c4d43c15e13ee0b1"
+  },
+  {
+   "path": "requirements.txt",
+   "size": 240,
+   "sha256": "8338a62490c93cfbf908bb289bbaa3fb104e5606415bb48cca6cae5175313c44"
+  },
+  {
+   "path": "requirements_animate.txt",
+   "size": 167,
+   "sha256": "9836759230ed2db7a2a999a372738cc5c5923ab0fa8c056e4af5bf42b6107ea8"
+  },
+  {
+   "path": "requirements_s2v.txt",
+   "size": 173,
+   "sha256": "ed04b1156536f171c02021fb05c9920fd2eeab27011ce5f2100549f14f3f1220"
+  },
+  {
+   "path": "tests/README.md",
+   "size": 197,
+   "sha256": "ebd72d89ab5d913ab4017c08650773ff83ce7b4ab29d2d45eb0119e263554dc1"
+  },
+  {
+   "path": "tests/test.sh",
+   "size": 5774,
+   "sha256": "58defbf01579d704ae935c0d33539d86534f63f1789a040e52c8cc5ea07e0772"
+  },
+  {
+   "path": "wan/__init__.py",
+   "size": 281,
+   "sha256": "ab6b0151f3b0eca9fec83b38ed5ac0052023d41ad2f238a7f0d6f165b1f48885"
+  },
+  {
+   "path": "wan/animate.py",
+   "size": 27456,
+   "sha256": "ddc708584ee3494bc8cc247f403b0459a1205cff3a0b87299ad97430845fc253"
+  },
+  {
+   "path": "wan/configs/__init__.py",
+   "size": 1327,
+   "sha256": "2e18e747b42fabed0c14e5775c824aca828692a9eaaa11e6131c08f3d65e314d"
+  },
+  {
+   "path": "wan/configs/shared_config.py",
+   "size": 945,
+   "sha256": "3ae102e029d4d0e3436ebbaa9f8fd32c10e8468ae8be07facdca2e20ec1858fe"
+  },
+  {
+   "path": "wan/configs/wan_animate_14B.py",
+   "size": 1288,
+   "sha256": "a701480f0fc9b361f36e2b1954e7daa0ad948c38896fd78df2c634950ba72f0d"
+  },
+  {
+   "path": "wan/configs/wan_i2v_A14B.py",
+   "size": 1030,
+   "sha256": "1cddca2dd2976df3d08c602e437a8d1aec94b33b3cb4dea3187003dbe5195cd2"
+  },
+  {
+   "path": "wan/configs/wan_s2v_14B.py",
+   "size": 2179,
+   "sha256": "c650ab8d6fd2abdd68546e2fcb7c6bc84ef38a65f002d6872e887c272c80782d"
+  },
+  {
+   "path": "wan/configs/wan_t2v_A14B.py",
+   "size": 1023,
+   "sha256": "a1f3a70472aece6d7a3cfe83ed39be829e957484db23069c13c7a3c35ac07a48"
+  },
+  {
+   "path": "wan/configs/wan_ti2v_5B.py",
+   "size": 891,
+   "sha256": "26d9e7b9c555eb0900b13751267a596556f869e7aee2d1572afc2a0a4a76f4c7"
+  },
+  {
+   "path": "wan/distributed/__init__.py",
+   "size": 73,
+   "sha256": "013ec40a0739296f1ba474036e5d46e06998f795daa0b7c3214773d885a3ab1a"
+  },
+  {
+   "path": "wan/distributed/fsdp.py",
+   "size": 1379,
+   "sha256": "f4a6e3c69e7bb0e6c81bd9b9f94e14e210f052055587d032c05b9b7caebceb72"
+  },
+  {
+   "path": "wan/distributed/sequence_parallel.py",
+   "size": 5189,
+   "sha256": "4f50898eff51efbfebf8709e2d2993fc87b2442c548753cd36e4e607cdd55e0a"
+  },
+  {
+   "path": "wan/distributed/ulysses.py",
+   "size": 1322,
+   "sha256": "0c9969ec8e99358fb79a224700853f89b52724c8dc2055f91972ace47f04a483"
+  },
+  {
+   "path": "wan/distributed/util.py",
+   "size": 1379,
+   "sha256": "b8925fdbdc0cf4409ba5760d92c66f1e329de40b1dad7f2011a7d37caad97b56"
+  },
+  {
+   "path": "wan/image2video.py",
+   "size": 16479,
+   "sha256": "53f4f302f7e9bc7bca2465abd3f7ff5f0e8fa909c7dc36bd0c49abb7918d5f68"
+  },
+  {
+   "path": "wan/modules/__init__.py",
+   "size": 498,
+   "sha256": "7bb54dcccf99bbdab4d5781519c8324629be898986427054a48285cc7faa316c"
+  },
+  {
+   "path": "wan/modules/animate/__init__.py",
+   "size": 186,
+   "sha256": "25539340535bb775870df1d12232da8662274033d5636a3b0c7f120a639ef006"
+  },
+  {
+   "path": "wan/modules/animate/animate_utils.py",
+   "size": 4534,
+   "sha256": "a3e43e655c1c8a3dcee88e3d596c90b2b6fec7560dd5d1fb32501a2f93dea720"
+  },
+  {
+   "path": "wan/modules/animate/clip.py",
+   "size": 16849,
+   "sha256": "99288e68ede350eb7893f1382c3e55744f30f691d793e1cece74f3bdc5e6efdf"
+  },
+  {
+   "path": "wan/modules/animate/face_blocks.py",
+   "size": 12202,
+   "sha256": "cd91cdffc024d416d920115ffad17cf8e20a40242e4ab4aa163b0809fc44ecbb"
+  },
+  {
+   "path": "wan/modules/animate/model_animate.py",
+   "size": 15898,
+   "sha256": "291292e07ea6ebd50fe3201769c1207a5a0692e5526e6e4857282c65e728b9de"
+  },
+  {
+   "path": "wan/modules/animate/motion_encoder.py",
+   "size": 8096,
+   "sha256": "fc01f0a8462c959043d5277518790be6054785c379753c98b4daac742f4b8697"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/UserGuider.md",
+   "size": 4854,
+   "sha256": "689f4adf919c587a5e131ce8ef06f98fe8e7992da58fb2736db81981dbd9a8c3"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/__init__.py",
+   "size": 167,
+   "sha256": "97cdc0a0257a0fe032f8fa3dae5d73caf7579012ae13cf01f9418a46ba4d6508"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/human_visualization.py",
+   "size": 44228,
+   "sha256": "962813c71b2f2e09f7cd745b35b31a0d278b122b5f2f429018d0576c795eda33"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/pose2d.py",
+   "size": 17641,
+   "sha256": "b71792fa2222c4c8eacf43dba21b4c8e4b510fbdcbd9505353a108a095e47f19"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/pose2d_utils.py",
+   "size": 41804,
+   "sha256": "a5fc3867420b5ee985ba0cc4e304cb57de177d221941df99116db1c83ddc2047"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/preprocess_data.py",
+   "size": 4623,
+   "sha256": "7516300f099b3ade28c51abf0e9a3357ec60a1d085dec7935ce3d245a3f6e939"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/process_pipepline.py",
+   "size": 17839,
+   "sha256": "daeb8b68d8cfc4058bc281deab03d4b34d33b587a6f0dd5096689d526f8868c4"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/retarget_pose.py",
+   "size": 36891,
+   "sha256": "017b1d3ebd0ac4f41bb3e0755b3cfeb97015cb0498144d74d628904004c744af"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/sam_utils.py",
+   "size": 5916,
+   "sha256": "97d389115290a10ed30ed53fbacec8c33ea0719a1bc9f7e354b65c680294311c"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/utils.py",
+   "size": 7263,
+   "sha256": "59cf48da9d816156218dc37f8daec3385f4260714fc40bedfe2f8d8ff6898c0f"
+  },
+  {
+   "path": "wan/modules/animate/preprocess/video_predictor.py",
+   "size": 8314,
+   "sha256": "c8f8857d1dbf0025a8b4260c164ed3fd8ddae5a58369e625c7fa9ee351973659"
+  },
+  {
+   "path": "wan/modules/animate/xlm_roberta.py",
+   "size": 4864,
+   "sha256": "d521f5f12fcdb61169e58d2881268752f28ec5320b5df869d01f9e91439da8d0"
+  },
+  {
+   "path": "wan/modules/attention.py",
+   "size": 5435,
+   "sha256": "23fe7c6f6e4065242d95e5e188cb2d1a16bd283f05dca7e7e878977158fcfdbc"
+  },
+  {
+   "path": "wan/modules/model.py",
+   "size": 18097,
+   "sha256": "8b39115298ca7322806c19b3165b3f435a94fe4a58f0624aec24f8e7f4997432"
+  },
+  {
+   "path": "wan/modules/s2v/__init__.py",
+   "size": 193,
+   "sha256": "38fac41c9e5f3e4501364b4b7a64728ed0e9aab3957987e137e9f47549887143"
+  },
+  {
+   "path": "wan/modules/s2v/audio_encoder.py",
+   "size": 7299,
+   "sha256": "7f07510f52dd829547c52f9866b18aa9a81af644d1031c079ce846947c5bb3e9"
+  },
+  {
+   "path": "wan/modules/s2v/audio_utils.py",
+   "size": 3544,
+   "sha256": "76931d7291f69a6b6ed3a7a1a9a106ad8b5f5d494a451db67718b4fbcc4dbcfd"
+  },
+  {
+   "path": "wan/modules/s2v/auxi_blocks.py",
+   "size": 7923,
+   "sha256": "6ff7b5560036e5f0eaaa34460a328afcdbd7bd62baf93b699d5f6d2d556f95d6"
+  },
+  {
+   "path": "wan/modules/s2v/model_s2v.py",
+   "size": 34511,
+   "sha256": "91fb14df44edab2d01b5634420b463c5f1563aecdf6dac905da6b3acac3145cc"
+  },
+  {
+   "path": "wan/modules/s2v/motioner.py",
+   "size": 28462,
+   "sha256": "db348a3ca0dfb22122a78aebdcf162ba76d4d4e79b7b763c684d819279ac957a"
+  },
+  {
+   "path": "wan/modules/s2v/s2v_utils.py",
+   "size": 3139,
+   "sha256": "e45ae6c274b17e4fdddcb0439b598897a37679b8934ebd71f87255f92d5f0b2f"
+  },
+  {
+   "path": "wan/modules/t5.py",
+   "size": 16910,
+   "sha256": "8b0cebf3192c542f92a344255a06c203df3ba24160715899a055cc8de0cd930f"
+  },
+  {
+   "path": "wan/modules/tokenizers.py",
+   "size": 2431,
+   "sha256": "cf5b189c1ae017326efadab2fc6380ba223fa7a59d0be6464bd264db53c76934"
+  },
+  {
+   "path": "wan/modules/vae2_1.py",
+   "size": 23171,
+   "sha256": "d0dfe9eccd0cdbcb37ffde9887579be58f4c1bb6fc2dbb1b72e8916e170df180"
+  },
+  {
+   "path": "wan/modules/vae2_2.py",
+   "size": 31846,
+   "sha256": "eab5ce4aa1ce03af2978f2a8e8364c419f5fbb8535d265ac86b0b02ddcf0c1f6"
+  },
+  {
+   "path": "wan/speech2video.py",
+   "size": 29066,
+   "sha256": "841cb2296299b60637d79abc80967a7d59b4b22711debe8f501ba36e7daaf72f"
+  },
+  {
+   "path": "wan/text2video.py",
+   "size": 14679,
+   "sha256": "2f212e1f6d7ba4408a25998091b70ee35dde8bcaaeaedd3ba03d6cdab84dc683"
+  },
+  {
+   "path": "wan/textimage2video.py",
+   "size": 24031,
+   "sha256": "228f2fabf23014ed41ec6b8cd713d5be7371bb558501c71a62a0258b491a877b"
+  },
+  {
+   "path": "wan/utils/__init__.py",
+   "size": 402,
+   "sha256": "47b3d1e3f72006ac769d13b34f0575450eec7c1de1ef4f9837436a2057b51033"
+  },
+  {
+   "path": "wan/utils/fm_solvers.py",
+   "size": 40142,
+   "sha256": "b870bdc7253593b75097896b2351e74f747f76d756f58f1b4b0008d6821ae811"
+  },
+  {
+   "path": "wan/utils/fm_solvers_unipc.py",
+   "size": 32558,
+   "sha256": "0dec8c7ed17f6f2049275c6848113314da6ccec1c8db5bdc89df43c05c6038d9"
+  },
+  {
+   "path": "wan/utils/prompt_extend.py",
+   "size": 19971,
+   "sha256": "d90503d4e526e1c899184b809221bd9ea487047de684e31589f2bb2720ca69b4"
+  },
+  {
+   "path": "wan/utils/qwen_vl_utils.py",
+   "size": 13060,
+   "sha256": "14275f4ca0c4664c37145da6bd8ffe4be7b7854377f6101e80171414397bdc98"
+  },
+  {
+   "path": "wan/utils/system_prompt.py",
+   "size": 20134,
+   "sha256": "6a42ee64ca850692e91a517b9d86ba649adc973370444746e5af5f3bde087612"
+  },
+  {
+   "path": "wan/utils/utils.py",
+   "size": 7274,
+   "sha256": "905850d9814ac99222b4dbb28016abcd6306e5ca161493b498b1c4afb5a99e89"
+  }
+ ],
+ "skipped": [
+  {
+   "path": "assets/comp_effic.png",
+   "size": 202156
+  },
+  {
+   "path": "assets/logo.png",
+   "size": 56322
+  },
+  {
+   "path": "assets/moe_2.png",
+   "size": 527914
+  },
+  {
+   "path": "assets/moe_arch.png",
+   "size": 74900
+  },
+  {
+   "path": "assets/performance.png",
+   "size": 306535
+  },
+  {
+   "path": "assets/vae.png",
+   "size": 165486
+  },
+  {
+   "path": "examples/Five Hundred Miles.MP3",
+   "size": 121043
+  },
+  {
+   "path": "examples/Five Hundred Miles.png",
+   "size": 878185
+  },
+  {
+   "path": "examples/i2v_input.JPG",
+   "size": 250628
+  },
+  {
+   "path": "examples/pose.mp4",
+   "size": 2192979
+  },
+  {
+   "path": "examples/pose.png",
+   "size": 822774
+  },
+  {
+   "path": "examples/sing.MP3",
+   "size": 300144
+  },
+  {
+   "path": "examples/talk.wav",
+   "size": 884814
+  },
+  {
+   "path": "examples/wan_animate/animate/image.jpeg",
+   "size": 123149
+  },
+  {
+   "path": "examples/wan_animate/animate/video.mp4",
+   "size": 903201
+  },
+  {
+   "path": "examples/wan_animate/replace/image.jpeg",
+   "size": 143318
+  },
+  {
+   "path": "examples/wan_animate/replace/video.mp4",
+   "size": 754294
+  },
+  {
+   "path": "examples/zero_shot_prompt.wav",
+   "size": 111496
+  }
+ ]
+}

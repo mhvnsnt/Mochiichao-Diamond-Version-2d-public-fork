@@ -1,0 +1,25 @@
+{
+  "$id": "mochiichao/map-reveal.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mochiioteca map module — per-area reveal record (#32)",
+  "description": "Data + behaviour only: the Mochiioteca's physical design is undesigned in canon and stays OPEN — nothing here presumes a screen shape. Reveal STATE is never stored; it derives from the named event/flag at runtime (unreached / reached / known — the place analogue of the species three-state model). Geography is owned by the route graph (#11) and ecology (#29); this record only joins them.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "areaId": { "type": "string" },
+    "displayName": { "type": "string", "description": "Display-sweep name (Region 1 displays as Iridescence; production names never render in-world)." },
+    "graphNode": { "type": ["string", "null"], "description": "Join to region route graph node id (#11)." },
+    "ecologyZone": { "type": ["string", "null"], "description": "Join to ecology zoneId (#29). The 'known' state's resident hint list reads residents from this zone." },
+    "revealFlag": { "type": ["string", "null"], "description": "The progress.* flag whose presence derives 'reached'. Null = OPEN (flag assignment is the route/flag pass, not this spec)." },
+    "fastTravel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "unlockFlag": { "type": ["string", "null"], "description": "Slot only. Whether fast travel exists at all is an OPEN design decision (canon silent) — the slot existing is not the feature existing." }
+      },
+      "required": ["unlockFlag"]
+    },
+    "status": { "type": "string" }
+  },
+  "required": ["areaId", "displayName", "graphNode", "ecologyZone", "revealFlag", "fastTravel", "status"]
+}

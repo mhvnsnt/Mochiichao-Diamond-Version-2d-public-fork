@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name][player_name][name]I won \nagainst \nTaomon![pause]",
+	"[name]Taomon[name]...I see,\nyou're better \nthan I thought.[pause][clear]Here, take \nthis with you.[pause]",
+	"[name][player_name][name]Yeah! I got \nthe Renamon \nDDNA![pause][clear]Thanks Taomon![pause]",
+]

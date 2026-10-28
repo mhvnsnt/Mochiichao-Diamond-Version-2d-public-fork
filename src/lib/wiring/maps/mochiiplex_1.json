@@ -23,7 +23,7 @@
   ],
   "exits": [],
   "doors": [{"x": 7, "y": 11, "to": "binary_fields", "enterAt": [24, 7], "label": "Exit"}, {"x": 8, "y": 11, "to": "binary_fields", "enterAt": [24, 7], "label": "Exit"}],
-  "npcs": [{"id": "healer_1", "x": 7, "y": 3, "name": "Center Nurse", "role": "heal"}, {"id": "shop_1", "x": 3, "y": 3, "name": "Clerk", "role": "shop"}],
+  "npcs": [{"id": "healer_1", "x": 7, "y": 3, "name": "Center Nurse", "role": "heal"}, {"id": "shop_1", "x": 3, "y": 3, "name": "Clerk", "role": "shop", "dialog": ["MochiiPlex. Cubes, patches, cards — the shelf behind me is the whole shop, and the whole shop is open.", "Cards are by the register, red backs, never the blue. Blue backs are the Academy's and they will know.", "Bag's heavier than your worries now. Good trade."]}],
   "signs": [],
   "noWild": true
 }

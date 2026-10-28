@@ -1,0 +1,153 @@
+{
+ "_about": "NEW SPECIES intake record \u2014 one file per new species, filled DATA-FIRST before any design work starts (see NEW-SPECIES-SHEET-TEMPLATE.md for the workflow and gates). Shapes copy the lane's existing formats exactly: the core record follows src/data/core/species.json + schemas/species.schema.json; the dex block follows src/lib/generated/dexEntryMedia-20261026.json entries; the footprint block follows FOOTPRINT-MANIFEST-51-20261026.json entries. Replace every <...> placeholder. A field with no canon source yet stays null/empty and is added to TBD-REGISTER.md \u2014 never invented.",
+ "body_block": {
+  "body_plan": "<e.g. compact_round / bipedal_amphibian / bulky_bruiser / small_feline / small_plant_biped / ghost_float \u2014 cast.json vocabulary, extended as needed>",
+  "distinguishing_anatomy": "<the 2-4 features a silhouette must survive: read at 16px>",
+  "height": "<TBD D5 \u2014 owner/lane set at sheet time>",
+  "palette_refs": [
+   "<garden/palette asset paths once made>"
+  ],
+  "weight": "<TBD D5>"
+ },
+ "core_record": {
+  "abilities": [],
+  "baseStats": {
+   "atk": null,
+   "def": null,
+   "hp": null,
+   "spa": null,
+   "spd": null,
+   "spe": null
+  },
+  "catchRate": null,
+  "dexText": "<bio_short: one-line dex entry in the house voice (style reference: the 12 locked entries in species.json)>",
+  "eggGroups": [],
+  "expYield": null,
+  "growthRate": null,
+  "hiddenAbility": null,
+  "hpStatus": "ok | pending-decision: <reason> (null stats are never guessed \u2014 Pebblefist precedent)",
+  "id": "<from gate0>",
+  "name": "<owner-locked name>",
+  "notes": [],
+  "provenance": "<sources for every value, e.g. 'owner intake sheet 2026-..; stats owner-locked; dexText drafted <by>, owner-approved <date>'>",
+  "types": [
+   "<1-2 Mochiichao elements: Aqua/Flame/Flora/Chrome/Core/Umbral/Mythic/Beast/Strike/Bug/Silk/Aero/Wind/Neon/Earth \u2014 element vocabulary per TBD D6>"
+  ]
+ },
+ "dex_entry": {
+  "_rules": "footprint_rule: footprint shows for CAUGHT entries only. cry_rule: play-cry for seen/caught, default V1. (dexEntryMedia-20261026.json)",
+  "cry_default": "v1",
+  "cry_r1": {
+   "path": "public/audio/cries/<slug>-cry-r1.wav",
+   "status": "PENDING"
+  },
+  "cry_v1": {
+   "path": "public/audio/cries/<slug>-cry.wav",
+   "status": "PENDING"
+  },
+  "folder": "<slug = name lowercased>",
+  "footprint": "sprite-art/animation/expanded-scope/footprints-real/<slug>_footprint.png",
+  "footprint_status": "PENDING until the footprint is derived and owner/lane confirmed",
+  "silhouette": "sprite-art/animation/expanded-scope/lane100/silhouettes/<slug>_silhouette.png"
+ },
+ "discovery_block": {
+  "first_appearance_episode": "<show hook: episode id or TBD>",
+  "habitats": [
+   {
+    "mapId": "<map id>",
+    "maxLevel": null,
+    "method": "<grass/surf/...>",
+    "minLevel": null,
+    "timeOfDay": null,
+    "weather": null,
+    "weight": null
+   }
+  ]
+ },
+ "footprint_manifest_entry": {
+  "confidence": "<high/medium/low with reason>",
+  "foot_type": "<anatomy-derived: paw / talon / fin contact / ... \u2014 from the finished design's feet/contact surface, never invented ahead of the design>",
+  "source_view": "<walk/battle cell the print was traced from>",
+  "status": "FOOTPRINT once derived",
+  "toe_count": null,
+  "toe_note": "<what is and isn't resolvable, in the manifest's own honest style>"
+ },
+ "gameplay_rows": {
+  "evolution": {
+   "conditions": [],
+   "fromId": null,
+   "method": null,
+   "param": null,
+   "toId": null
+  },
+  "learnset": {
+   "egg": [],
+   "levelUp": [],
+   "source": "<intake: verified at intake, or 'provisional baseline' flagged like the 35>",
+   "tm": [],
+   "tutor": []
+  }
+ },
+ "gate0_numbering": {
+  "core_id": "<3-digit string, next free in the CANONICAL scheme \u2014 blocked on TBD D1: core sequence (001-047 used) vs dex sequence (001-046, 147, 148, 331 used). Owner rules the scheme, then this id is issued. Do not self-assign.>",
+  "dex_id": "<same id in a unified scheme; if the schemes stay split, the dex-registry id issued by the dex lane>"
+ },
+ "natural_history_block": {
+  "_status": "PROPOSED extension \u2014 no lane location exists yet (TBD W2/W3). Fill it here at intake so the data exists the day the lane picks a home for it.",
+  "bio_long": "<long-form dex bio, owner-approved>",
+  "category": "<genus-style label, e.g. 'the Bounce Mochi'>",
+  "diet": "<diet>",
+  "social_pattern": "<solitary / pair / herd / colony ...>",
+  "temperament": "<behaviour notes>"
+ },
+ "show_block": {
+  "locomotion": "<how it moves \u2014 feeds POSING-SYSTEM / rig spec>",
+  "signature_motion": "<its one unmistakable motion>",
+  "signature_move": "<canon move mapping if any \u2014 per-species, from game canon, never a shared template>"
+ },
+ "voice_block": {
+  "cry_assets": [
+   "public/audio/cries/<slug>-cry.wav",
+   "public/audio/cries/<slug>-cry-r1.wav"
+  ],
+  "cry_description": "<written description of the cry: pure cries/sounds only \u2014 no words, no name-saying (canon law)>"
+ },
+ "cry_block": {
+  "_about": "CRY SYNTH block internals per the species-systems schema patch (show/production/species-systems/species-sheet-schema-patch-cry.md + cry-schema-fragment.json). A sheet is not complete until its cry block exists, even as draft. Pure cries only.",
+  "identity_note": "<sound identity, SHOW-BIBLE S4 style, written FIRST>",
+  "status": "draft",
+  "synth": {
+   "wave_a": "<sine|triangle|saw_soft|pulse12|pulse25|pulse50|pulse_pwm>",
+   "wave_b": "<same enum>",
+   "morph": "<0..1>",
+   "base_hz": "<number>",
+   "pitch_env": "[[t, semitones], ...]",
+   "amp_env": "[[t, level], ...]",
+   "length_s": "<0.4-1.8 typical>",
+   "vibrato": {
+    "rate_hz": "<n>",
+    "depth_st": "<n>",
+    "delay_s": "<n>"
+   },
+   "pwm": {
+    "rate_hz": "<n>",
+    "duty_lo": "<0..1>",
+    "duty_hi": "<0..1>"
+   },
+   "tremolo": {
+    "rate_hz": "<n>",
+    "depth": "<0..1>"
+   },
+   "noise_mix": "<0..1>",
+   "noise_tone": "<0..1>",
+   "crackle": "<0..1, fire-adjacent only>",
+   "echo": {
+    "delay_s": "<n>",
+    "decay": "<0..1>",
+    "repeats": "<int>"
+   },
+   "seed": "<int, mandatory>"
+  },
+  "rendered_wav": null
+ }
+}

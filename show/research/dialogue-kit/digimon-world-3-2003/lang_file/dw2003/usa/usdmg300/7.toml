@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name]Soldier[name]You're not \ngoing to \npass here![pause][clear]You can't \ndefeat me![pause]",
+	"[name][player_name][name]Oh yeah? Come on![pause][clear]You guys always\nthink you're gonna \nwin![pause]",
+]

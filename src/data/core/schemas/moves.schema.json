@@ -33,9 +33,13 @@
             "minimum": 0
           },
           "accuracy": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "minimum": 0,
-            "maximum": 100
+            "maximum": 100,
+            "description": "null = never misses (the move also carries the 'never_miss' flag). Encoding added 2026-10-27 for WATER_ORB, the first never-miss move."
           },
           "pp": {
             "type": "integer",

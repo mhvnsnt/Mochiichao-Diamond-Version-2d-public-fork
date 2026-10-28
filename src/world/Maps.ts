@@ -93,9 +93,9 @@ for(let y=38; y>=1; y--) {
 }
 // Exits
 r1Tiles[39][11] = 3; r1Tiles[39][12] = 3; r1Tiles[39][13] = 3; // To Sector 0
-r1Tiles[0][11] = 3; r1Tiles[0][12] = 3; r1Tiles[0][13] = 3; // To Binary Woods
+r1Tiles[0][11] = 3; r1Tiles[0][12] = 3; r1Tiles[0][13] = 3; // To The Dark Forest
 
-// Generate Binary Woods
+// Generate The Dark Forest
 const bwTiles = generateTiles(30, 30, 1);
 for(let y=5; y<25; y++) {
   for(let x=5; x<25; x++) {
@@ -197,13 +197,13 @@ export const MAPS: Record<string, MapData> = {
     events: []
   },
   "binarywoods": {
-    name: "Binary Woods",
+    name: "The Dark Forest",
     music: "woods",
     width: 30, height: 30,
     tiles: bwTiles,
     playerStart: { x: 15, y: 28 },
     npcs: [
-      { id: "masterlin", x: 15, y: 13, sprite: "🥋", name: "Master Lin", dialog: ["I am Master Lin, keeper of the Binary Woods Dojo.", "The silk weavers and data-spinners are my domain.", "Defeat me and earn Root.Chop — then these brambles shall part before you!"], battle: { name: "Master Lin", isDojo: true, badge: "Silk Badge", team: [{ id: 17, name: "Cocoonode", type: "Bug", hp: 55, atk: 40, def: 85, spd: 30, color: "#c5e1a5", sprite: "🪲", moves: ["String Shot", "Iron Defense", "Bug Bite", "Tackle"] }, { id: 4, name: "Squirmite", type: "Bug", hp: 35, atk: 35, def: 35, spd: 50, color: "#c5e1a5", sprite: "🐛", moves: ["String Shot", "Tackle"] }], reward: 1200 } },
+      { id: "masterlin", x: 15, y: 13, sprite: "🥋", name: "Master Lin", dialog: ["I am Master Lin, keeper of the Dark Forest Dojo.", "The silk weavers and data-spinners are my domain.", "Defeat me and earn Root.Chop — then these brambles shall part before you!"], battle: { name: "Master Lin", isDojo: true, badge: "Silk Badge", team: [{ id: 17, name: "Cocoonode", type: "Bug", hp: 55, atk: 40, def: 85, spd: 30, color: "#c5e1a5", sprite: "🪲", moves: ["String Shot", "Iron Defense", "Bug Bite", "Tackle"] }, { id: 4, name: "Squirmite", type: "Bug", hp: 35, atk: 35, def: 35, spd: 50, color: "#c5e1a5", sprite: "🐛", moves: ["String Shot", "Tackle"] }], reward: 1200 } },
       { id: "woodsnpc", x: 20, y: 20, sprite: "🌲", name: "Forest Guide", dialog: ["These woods are alive with digital life.", "But lately... the Hackers patrol the eastern paths.", "Stay on the lit trails."] },
     ],
     exits: [

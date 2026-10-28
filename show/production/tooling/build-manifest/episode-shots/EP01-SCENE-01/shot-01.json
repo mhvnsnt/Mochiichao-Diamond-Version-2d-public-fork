@@ -1,0 +1,14 @@
+{
+  "background": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+  "duration_s": 8,
+  "layers": [
+    {
+      "clip": "show/assets/animations/dorowani-avatar-stack/dorowani-idle.transparent.webm",
+      "x": 422,
+      "y": 266,
+      "scale": 0.6,
+      "start_s": 0
+    }
+  ],
+  "audio": null
+}

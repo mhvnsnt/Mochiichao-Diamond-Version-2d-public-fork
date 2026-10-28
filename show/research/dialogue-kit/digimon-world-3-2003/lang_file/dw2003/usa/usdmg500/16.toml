@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]Hey Taomon,\nI've got a favor to\nask.[pause][clear]Can I get the \nRenamon DDNA within \nyour DDNA?[pause]",
+	"[name]Taomon[name]...Yes, but not \nfor free.[pause][clear]Let's see if you're \nqualified.[pause]",
+]

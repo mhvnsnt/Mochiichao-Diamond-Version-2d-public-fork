@@ -1,0 +1,31 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+  "duration_s": 10,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+      "x": 640,
+      "y": 330,
+      "scale": 0.5,
+      "start_s": 0,
+      "loop": true
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "19",
+  "scene": "EP01-SCENE-05",
+  "plate_registry": "PLATE-POND-DUSK (show/shared/PLATES-REGISTRY.md) - provisional spec plate (dusk grade variant, landed PR #393), CURRENT for provisional use",
+  "script_beat": "Mochiko kneels to Wispkin's level. '...Hi. You kept the garden all night, didn't you. Every night.' / 'Then let's do it properly.'",
+  "camera": "STAGE-WIDE",
+  "wind_state": "CALM",
+  "missing_assets": [
+    "MOCHIKO rig/clip - the kneel is the cut's action and cannot be composited yet"
+  ],
+  "flags": [
+    "VOICE-SCRATCH: Mochiko casting OPEN",
+    "AUDIO GROUPING NOTE: script places cut 19 in Scene 4 (Pond dusk), but the gated Scene 5 bed's own gate.json lists cuts 19-24 (58s of cuts) - the episode spec follows the BED grouping, so cut 19 is carried by EP01-SCENE-05-gate-night.wav; discrepancy recorded, not hidden"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

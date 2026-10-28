@@ -1,0 +1,10 @@
+{
+ "format": "mochiichao/wild-drop-tables/v1",
+ "_about": "List 17 #166 — wild drop-row shape registered in the data layer with ZERO rows (every row is open data-lane work). Shape: src/data/core/docs/drop-tables-fragment.json.",
+ "validationRules": [
+  "every itemId resolves in the #31 item registry",
+  "kept-channel items pass useContext.held",
+  "no key-category item may appear"
+ ],
+ "rows": []
+}

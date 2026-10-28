@@ -1,0 +1,37 @@
+{
+  "_about": "Native world-state model (List 3 #19). Phase ids are the show's shooting phases. Dread-cycle STATE NAMES are PROPOSED by this spec; transition rules in the depths and the frost-night schedule are OPEN (canon has not answered what stopped moving).",
+  "dread_cycle": {
+    "scope": "dark-forest only; replaces weather there",
+    "states": [
+      "SURFACE-CALM",
+      "STIRRING",
+      "DEEPENING",
+      "STILLED"
+    ],
+    "transitions": "OPEN — depth tier + script hooks exist, rules not asserted",
+    "wind_state_override": "suspended at all dread states (LIVING-WORLD: the scripted leaf falls straight down)"
+  },
+  "format": "mochiichao/world-state/v1",
+  "frost_trace": {
+    "_canon": "owner-ruled: Wispkin's nightly trace; a readable path-map; black-purple spirit-aura smoke; FROST CLOSE-UP COLOUR SHIFT device (palette shifts on zoom-in, restores on zoom-out)",
+    "area_scope": [
+      "garden",
+      "gate-treeline"
+    ],
+    "render_flag": "frost_closeup_colour_shift",
+    "requires": "phase=night",
+    "schedule": "OPEN"
+  },
+  "phase": [
+    "dawn",
+    "day",
+    "dusk",
+    "night"
+  ],
+  "weather_priority": [
+    "script",
+    "area",
+    "global"
+  ],
+  "_reconciliation": "Phase vocabulary reconciled at the List 12 landing (2026-10-27), in this one place: the DATA vocabulary is canonical — morning | day | dusk | night, as in src/data/core/schemas/spawn-table.schema.json's timeOfDay enum and every landed spawn instance. This fragment's 'dawn' names the same phase as the data layer's 'morning' (dawn <-> morning, 1:1); #19's prose keeps 'dawn' as its display synonym. Reason: the schema + landed instances + validator already run on 'morning' — changing data to fit prose would invalidate landed instances; the synonym mapping loses nothing."
+}

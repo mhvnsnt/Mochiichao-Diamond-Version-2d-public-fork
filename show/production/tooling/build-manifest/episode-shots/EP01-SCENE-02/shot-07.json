@@ -1,0 +1,21 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-day-v1-living.mp4",
+  "duration_s": 8,
+  "layers": [],
+  "audio": null,
+  "ep01_cut": "07",
+  "scene": "EP01-SCENE-02",
+  "plate_registry": "PLATE-POND-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec plate, CURRENT for provisional use; Step-0 candidate battle-bg-lake-v3d checked and NOT usable (battle-scale)",
+  "script_beat": "Behind the patter the pyramid un-stacks itself, one berry at a time, unseen hands. Population: zero visible, by design (mystery engine).",
+  "camera": "STAGE-WIDE (held - the joke is in the frame)",
+  "wind_state": "BREEZE",
+  "missing_assets": [
+    "berry un-stack cycle - no asset (this cut's entire action is the missing cycle)"
+  ],
+  "flags": [
+    "No character layers is CORRECT here: the un-stacker is never seen (locked script)"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

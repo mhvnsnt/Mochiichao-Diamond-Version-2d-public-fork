@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name]Dark Knight[name]You got some\nmoves I've never\nseen before.[pause]",
+	"[name]Dark Knight[name]Now go!\nYou'll make a \ngreat tamer![pause]",
+	"[name][player_name][name]Yeah, \nthanks![pause]",
+]

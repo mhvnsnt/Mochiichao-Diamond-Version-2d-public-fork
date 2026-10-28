@@ -1,0 +1,215 @@
+{
+  "$id": "mochiichao/individual/v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "deviations": {
+      "items": {
+        "properties": {
+          "consistency": {
+            "const": "MUST REPRODUCE in every generation of this individual"
+          },
+          "individual_value": {
+            "type": "string"
+          },
+          "ruled_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ruled_on": {
+            "format": "date",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "species_pattern": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "RULED",
+              "PROPOSED",
+              "SPECIES-TYPICAL"
+            ]
+          },
+          "trait": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "trait",
+          "species_pattern",
+          "individual_value",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "individual_id": {
+      "type": "string"
+    },
+    "personality_seed": {
+      "maximum": 4294967295,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "species": {
+      "type": "string"
+    },
+    "variance": {
+      "properties": {
+        "size_class": {
+          "enum": [
+            "small",
+            "standard",
+            "large"
+          ]
+        },
+        "stats": {
+          "properties": {
+            "atk": {
+              "maximum": 15,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "def": {
+              "maximum": 15,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "hp": {
+              "maximum": 15,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "spa": {
+              "maximum": 15,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "spd": {
+              "maximum": 15,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "spe": {
+              "maximum": 15,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "hp",
+            "atk",
+            "def",
+            "spa",
+            "spd",
+            "spe"
+          ],
+          "type": "object"
+        },
+        "temperament_read": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "stats",
+        "size_class"
+      ],
+      "type": "object"
+    },
+    "honours": {
+      "type": "array",
+      "description": "#104 individual honours: STORED stamps on the individual record (shape: show/production/species-data/honours-fragment.json). A stamp without a resolvable earning fact is a data error. The honour catalogue itself is OPEN owner content.",
+      "items": {
+        "type": "object"
+      }
+    },
+    "location": {
+      "enum": [
+        "party",
+        "garden",
+        "storage",
+        null
+      ],
+      "description": "#106 storage: ONE field on the roster record — storage is a view over the roster, not a second database; the three kinds make double-placement impossible. Release is a tombstone fact in save history and never reverts #14's kept state."
+    },
+    "keeperHistory": {
+      "type": "array",
+      "description": "#168 keeper history (seat chosen at the List 18 landing: the individual record, where #80's model lives — ONE home; #68's protocol doc cross-references this field). Each entry records a transfer of care under 168-RANGER-TRADING.md; escrow state is part of the transfer record, and while a record is escrowed no release and no location move may be written for it (escrow-lock).",
+      "items": {
+        "type": "object"
+      }
+    },
+    "nickname": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "#239 nickname (List 25): set through exactly TWO doors — the set-at-keep offer in #38's keep flow, and the name service in the #132/#162 service layer (one defined write). No other writer may touch this field; a wild individual is never nicknamed (a write-permission fact, testable in the schema's consumers)."
+    },
+    "heart": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "#287 (List 30) closed-heart record, landed here citing it — ABSENT or null = open heart (#96 absent = default). Stored, not derived (argument in #287 / heart-fragment.json). The three fences land as validation on this record: gain events on a closed individual route to bankedGain (#177 bank), no #199 evolution edge fires while closed, and no consumer may write personality_seed from heart facts. personality_seed itself is never written by this system.",
+      "additionalProperties": false,
+      "properties": {
+        "closed": {
+          "type": "boolean"
+        },
+        "gauge": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Current closure remaining; 0 = ready to open (#288)."
+        },
+        "gaugeMax": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Set at closing from the individual's facts + cause class."
+        },
+        "cause": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "theft",
+            "processing",
+            "abuse",
+            null
+          ],
+          "description": "Closed cause classes, per #287's fragment."
+        },
+        "bankedGain": {
+          "description": "#177 gain events held in reserve while closed — paid out whole at opening (#288); never applied, never lost. Shape as recorded in #287's fragment; no numeric type was asserted there, so none is asserted here."
+        },
+        "closedBeat": {
+          "description": "#12-class beat the closure happened, per #287's fragment."
+        }
+      }
+    }
+  },
+  "required": [
+    "individual_id",
+    "species",
+    "personality_seed",
+    "variance",
+    "deviations"
+  ],
+  "title": "Mochi individual record — variance + ruled deviations (List 9, #80). Deviation entries with status RULED require ruled_by/ruled_on/source; generators may only read RULED deviations. Deviations are feature-level only — palette variation per individual is prohibited by the Lustre Law and has no field here.",
+  "type": "object"
+}

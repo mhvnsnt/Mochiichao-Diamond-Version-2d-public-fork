@@ -1,0 +1,755 @@
+{
+ "repo": "OpenX-Inc/flow",
+ "commit": "19a73be7a86bbdf7c1b0d2f271e8d14fcc608136",
+ "default_branch": "main",
+ "tree_files": 157,
+ "staged": [
+  {
+   "path": "LICENSE",
+   "size": 1066,
+   "sha256": "2bbfed7497476e9abd1d7fea559aa59e42e744ea2678b35df69f9b6014755066"
+  },
+  {
+   "path": "README.md",
+   "size": 13400,
+   "sha256": "d77eaae0a1e41b81c1e86671c93defb6712cfaf2beac8337cf5e6fdb5892f903"
+  },
+  {
+   "path": "benchmarks/prompts/openx-intro-15s.json",
+   "size": 1382,
+   "sha256": "afb078a198fa7994eb8546473847093612198722f82a4710422395809aa02f65"
+  },
+  {
+   "path": "benchmarks/prompts/water-chaining-demo.json",
+   "size": 1520,
+   "sha256": "60c56f4568228d798007a09167172814f6643cca647b8796d9417f0670deeac0"
+  },
+  {
+   "path": "benchmarks/results/benchmark-results.json",
+   "size": 612,
+   "sha256": "857ae9cbfc01539d34d43f224aa96e07eaab34e589f19aa0d875b797fdc20963"
+  },
+  {
+   "path": "benchmarks/results/full-benchmark-results.json",
+   "size": 1327,
+   "sha256": "a308f9215def9f16d7d77c0ec9bbe3817866a5eb1550c8180e65ed9d076ff3be"
+  },
+  {
+   "path": "benchmarks/results/narrated-benchmark-results.json",
+   "size": 413,
+   "sha256": "46cc93ebc8cf56f4bfe818e2d548c5bb8ba86d790de821167f2909c5d826d730"
+  },
+  {
+   "path": "benchmarks/run_batch_20.py",
+   "size": 7088,
+   "sha256": "4eb20497386eb06c086b2423246eb667f993e582edabe65c1e576fce68acf426"
+  },
+  {
+   "path": "benchmarks/run_benchmark.py",
+   "size": 5341,
+   "sha256": "34ec2e3a704a1fcdd6dcd504d6032511acd7a5c5c2a871091fa8183084d92a4d"
+  },
+  {
+   "path": "benchmarks/run_chaining_demo.py",
+   "size": 4577,
+   "sha256": "844f2dcb548504ed517a375df71574b783a875da3a58598c3d205878c9bd101c"
+  },
+  {
+   "path": "benchmarks/run_full_benchmark.py",
+   "size": 10892,
+   "sha256": "e4e999136209673a10de9c46e6f49e2c31400119ba47fd15315922fee0fb2edf"
+  },
+  {
+   "path": "benchmarks/run_narrated_benchmark.py",
+   "size": 8870,
+   "sha256": "3cbfd5958a9bbd8678179447db3ddfd930aecb8a819e0a9ca2f5d64a4f020c09"
+  },
+  {
+   "path": "benchmarks/run_short_film.py",
+   "size": 16924,
+   "sha256": "9076278aba7c7df5a1c5fc4057726145b4895bb8553ee2dda42c60807de8eb80"
+  },
+  {
+   "path": "config/config.example.toml",
+   "size": 4167,
+   "sha256": "03ea7e39d9335c9c35fd4a978c566b9e4f8cb24db0724ddb94abf0924103c4da"
+  },
+  {
+   "path": "docs/architecture/system-design.md",
+   "size": 9183,
+   "sha256": "711f02e2f3d35ac0bf538eb602a2f8e7f3229b0573da73657752d7719f920eae"
+  },
+  {
+   "path": "docs/architecture/tech-stack.md",
+   "size": 4196,
+   "sha256": "291173561507f2d0fc16dc22f73fc614ae0c8b929a891939b44e9e059469eb5f"
+  },
+  {
+   "path": "docs/costs/projections.md",
+   "size": 3851,
+   "sha256": "272160a08f22a1f0b853cc3e20ddddfad6c5face1d0d69690189fa5576b29e93"
+  },
+  {
+   "path": "docs/research/agent-tool-loop-nanocode.md",
+   "size": 5167,
+   "sha256": "6b2cc3098b3d943245ade3cb78f5f9555cb1f4ec5d4ae92b6492e829d6903d1f"
+  },
+  {
+   "path": "docs/research/agentic-video-editing-analysis.md",
+   "size": 7148,
+   "sha256": "424748f23f18e30ee61ec44d96741e8dd205c8b7a1b5e2bc3662aabbb24eb2e2"
+  },
+  {
+   "path": "docs/research/google-flow-analysis.md",
+   "size": 3915,
+   "sha256": "2b1e68028134dc99001dd4ca95f24b659353bbdd2fa290964a658429395c18d2"
+  },
+  {
+   "path": "docs/research/gpu-infrastructure.md",
+   "size": 3130,
+   "sha256": "7b0f52e2aa5b044600610d0a8068b800ad14dbf740b7dfc6404a69b70149e4a5"
+  },
+  {
+   "path": "docs/research/mi300x-benchmarking.md",
+   "size": 4326,
+   "sha256": "7faf92a90fcdd9df5d2946ae468eb1ad006aaac27dcf34ef073f7ed08c34fa73"
+  },
+  {
+   "path": "docs/research/palmier-video-tools-catalog.md",
+   "size": 7479,
+   "sha256": "9c6d6fcc5b24efc175597affd4283eb8a7b5d112237a3dfc58d149237df2c6ea"
+  },
+  {
+   "path": "docs/research/publishing.md",
+   "size": 2469,
+   "sha256": "9b0367312f5844c5c5ba21ebb1e7ed4de25c69e017f2ecae34e79bd6c1a01d58"
+  },
+  {
+   "path": "docs/research/tools/01-context-read.md",
+   "size": 46842,
+   "sha256": "94be6de2ebf0a0bce6c5e411aa5a693324fa1a452022dfb0f39d0112549df6c0"
+  },
+  {
+   "path": "docs/research/tools/02-timeline-edit.md",
+   "size": 49860,
+   "sha256": "0d3544ed0794e429c071203bdd34fa5982c88489ef46e1b10e5408755bed5191"
+  },
+  {
+   "path": "docs/research/tools/03-text-generate.md",
+   "size": 54074,
+   "sha256": "f2ff8f3853bf371784fbe8ab6b0e3cad8f647c0071636f347f5c4064026f2efe"
+  },
+  {
+   "path": "docs/research/tools/04-color-media.md",
+   "size": 48818,
+   "sha256": "03b8b6b582388fb2c6bca1640924a23dc9e7fa75e3d6b33862da0cd400739fd7"
+  },
+  {
+   "path": "docs/research/tools/05-flow-native.md",
+   "size": 44021,
+   "sha256": "b0886e5a2a4704ed6f91d18c577045e2e8b3f0c3a5e39c29b31fb3e0bbe995bc"
+  },
+  {
+   "path": "docs/research/tools/06-runtime-mcp-agent.md",
+   "size": 33808,
+   "sha256": "b7fec2c65c536f57eff0ab48cecd5133bb5f86b0ce6252a0b717db50c421b402"
+  },
+  {
+   "path": "docs/research/video-models.md",
+   "size": 4639,
+   "sha256": "b755e89068609b2b2fe25ea1aa85c9f05b9c7202ef4a9a7d9c05e2235f99b944"
+  },
+  {
+   "path": "pyproject.toml",
+   "size": 1125,
+   "sha256": "d2970e821ece718ce5d10bc990fdb3eb4450de81a74c17fea18405318d1d4e00"
+  },
+  {
+   "path": "scripts/deploy_modal.sh",
+   "size": 466,
+   "sha256": "555d9d7f12bf2903662fa2caa452b19cfc0ea23fbf9af9b7f4f0765299286422"
+  },
+  {
+   "path": "src/flow/__init__.py",
+   "size": 88,
+   "sha256": "f18b7f586717219ac711f3c8c930e9290700966efffd631aa0d469a527dbc0dd"
+  },
+  {
+   "path": "src/flow/__main__.py",
+   "size": 81,
+   "sha256": "501773a9be22c93c84892cb78913f2312fbb235ff04685ddec785839fdabb7ca"
+  },
+  {
+   "path": "src/flow/agent/__init__.py",
+   "size": 309,
+   "sha256": "b05caec56bd23b2a82429ef15fce2e7c7061a53087d173be6d9dd9ab705f32f5"
+  },
+  {
+   "path": "src/flow/agent/generation.py",
+   "size": 3650,
+   "sha256": "bf81e25239405888dbca098a2b2a93c545d28421eac1b730a9def964dcbe8fa2"
+  },
+  {
+   "path": "src/flow/agent/jobs.py",
+   "size": 2870,
+   "sha256": "f26bbe3aa2d3d1dd6e3876b972e94736d303c6c80b0cd60fa43ae57ba3184faa"
+  },
+  {
+   "path": "src/flow/agent/loop.py",
+   "size": 4638,
+   "sha256": "7b96e755487564dfc676d7277caed179ae6a6203b0cecf425cee92ba5b932ed7"
+  },
+  {
+   "path": "src/flow/agent/nvidia.py",
+   "size": 5415,
+   "sha256": "89600d22eceee39ec24ae876140685002d5056cfebb1d369b05b4ab93528817e"
+  },
+  {
+   "path": "src/flow/api/__init__.py",
+   "size": 380,
+   "sha256": "61fdab5c0647e049b910d422dec9ca7ac1cc4456b221a822b812aca6214d1d47"
+  },
+  {
+   "path": "src/flow/api/app.py",
+   "size": 3696,
+   "sha256": "3de51dc276b1ed036bdeb0f233c686cf521bb526b4a547ec06f7346e98395f96"
+  },
+  {
+   "path": "src/flow/characters.py",
+   "size": 3123,
+   "sha256": "27ee06cf789aa9cec4375dd3b13df7efddd0e9f7dffe9ac85f2b00c4b7372211"
+  },
+  {
+   "path": "src/flow/cli.py",
+   "size": 6435,
+   "sha256": "96ea583d5edfe6ae6a0a2a8851495bc4ba297f776340be39d95e1039ab4df5a4"
+  },
+  {
+   "path": "src/flow/config.py",
+   "size": 4279,
+   "sha256": "6fea572e4bf236f06b4d644e901e51e93c755f54d0d17731395cbb72c91362de"
+  },
+  {
+   "path": "src/flow/deploy/__init__.py",
+   "size": 433,
+   "sha256": "81e35612830c523d4833bacc3bd960951116fbaa2ad3db1ce1609b6a94354013"
+  },
+  {
+   "path": "src/flow/deploy/base.py",
+   "size": 2408,
+   "sha256": "8d66e52f5366ac78e4924c621bced0df7fa902ddb2923b71f698217f5b024333"
+  },
+  {
+   "path": "src/flow/deploy/cloud.py",
+   "size": 1687,
+   "sha256": "d1d1ea4db8c8008345631d24e348de556f82198b90c1a09c5ba877c3d7e05135"
+  },
+  {
+   "path": "src/flow/deploy/modal_deploy.py",
+   "size": 3195,
+   "sha256": "84de98085622c7c2e4daf2f73420912a5d286963cde964ab07e5c6ecbe7206c8"
+  },
+  {
+   "path": "src/flow/generator.py",
+   "size": 7996,
+   "sha256": "0d8faba46b61bec63c2a7a07be6889623d501b5b216a4905530fa9579244c8b7"
+  },
+  {
+   "path": "src/flow/keyframes.py",
+   "size": 3732,
+   "sha256": "2a137a6bbb58653aae46a432cc0f1166247d014598e3938b8f739055c408524c"
+  },
+  {
+   "path": "src/flow/mcp_server/__init__.py",
+   "size": 388,
+   "sha256": "d16b7fcfdc624ed6de9e85fc3447f9b656ebba7b4ea63f8b4233d0ea3c5cd203"
+  },
+  {
+   "path": "src/flow/mcp_server/server.py",
+   "size": 5145,
+   "sha256": "9a9b51e2a8ff2b02d57e754491a4ff4004a192c3147294d8cccd7c40c87a7cda"
+  },
+  {
+   "path": "src/flow/parallel_generator.py",
+   "size": 4614,
+   "sha256": "3bbd27b1ba012c64c282774108af653abc41ca39741d667b7734add0f26cf5dc"
+  },
+  {
+   "path": "src/flow/pipeline.py",
+   "size": 5620,
+   "sha256": "88c95388d9677e48891d9a2048b04bbc8f148fbad611b1b4b4d12760f07d085c"
+  },
+  {
+   "path": "src/flow/postproduction.py",
+   "size": 4397,
+   "sha256": "9a71ac91134e01c8fcdc053979fced634cb4ced999fe75894c6b09098fefe795"
+  },
+  {
+   "path": "src/flow/publisher.py",
+   "size": 8437,
+   "sha256": "d8464a9dc8585b4e8be2cde06f6186496cc171fcd59544f1a0acc2a9f8bd249a"
+  },
+  {
+   "path": "src/flow/publishers/__init__.py",
+   "size": 29,
+   "sha256": "289498e24368568cd9830312436a15d77c7cf9669484b25205b61e5de6d2c7ec"
+  },
+  {
+   "path": "src/flow/publishers/youtube.py",
+   "size": 3077,
+   "sha256": "5f3011f654398383981e2ea937d8ffe76c0d9e33dba7b48419a08713f9c77a57"
+  },
+  {
+   "path": "src/flow/scheduler.py",
+   "size": 3141,
+   "sha256": "603d8c522655ec22e61ecfc999758ae996974a1018ce68923c12160f2ff06389"
+  },
+  {
+   "path": "src/flow/schemas.py",
+   "size": 628,
+   "sha256": "6803042ccfa553831a31b7d0a10ff591efc93ecd43c0d335e1807fc6e121a995"
+  },
+  {
+   "path": "src/flow/store/__init__.py",
+   "size": 360,
+   "sha256": "cb3d666478cce9ddaba0698d09d45715651c4399f7dd490561ec4eef5d18243f"
+  },
+  {
+   "path": "src/flow/store/db.py",
+   "size": 2208,
+   "sha256": "b25b65ac929e2262da8e3a2707634f16ba7e6a9cf9aed2356cac958b81cb36a8"
+  },
+  {
+   "path": "src/flow/store/frames.py",
+   "size": 2258,
+   "sha256": "ac893b819fe65d2f0c90f8ba26a3f3a9a17af28c40ce231cb60c29be89517430"
+  },
+  {
+   "path": "src/flow/store/media.py",
+   "size": 1783,
+   "sha256": "2c20bcc8a47763a52e33d65d57d1774b9fe873eca04819ddaa2ad239c369374d"
+  },
+  {
+   "path": "src/flow/store/models.py",
+   "size": 3837,
+   "sha256": "74efc95df899ce889703b296a298d2b2d43550a9bd510082f016bca9709b3536"
+  },
+  {
+   "path": "src/flow/store/project.py",
+   "size": 2317,
+   "sha256": "25bc4e7def71a4e371e983f56fa58899ee0e70e1eb7cc525f86666ba89be6572"
+  },
+  {
+   "path": "src/flow/store/shotlist.py",
+   "size": 1236,
+   "sha256": "f8558be6b234ce6c5d944d05b3eb91354b3e1de8ee40ac0c88f1598a9161f874"
+  },
+  {
+   "path": "src/flow/store/store.py",
+   "size": 2052,
+   "sha256": "98d58b4c0257337e359270f22e47e693bc897bfa0bb2737f5bcf46fd2737fc88"
+  },
+  {
+   "path": "src/flow/store/tracks.py",
+   "size": 2122,
+   "sha256": "b55d21214cea979f3c209ec248b150dea099df123835bb923112b489f9092829"
+  },
+  {
+   "path": "src/flow/store/undo.py",
+   "size": 934,
+   "sha256": "3487742d3f4ec2450cb03abca2033d180ec741e3983dd3bfa35c83bde2a63293"
+  },
+  {
+   "path": "src/flow/tools/__init__.py",
+   "size": 345,
+   "sha256": "e3b041e7e53762d06bb0265e60832b3ac03c570d8f08ac30e9b13bd904d739ba"
+  },
+  {
+   "path": "src/flow/tools/all.py",
+   "size": 606,
+   "sha256": "2dd8b2ffd326fe9fd28bfe28a82cb60bd531b49f4163e9c8ace5dba5d0a38ca2"
+  },
+  {
+   "path": "src/flow/tools/analysis_read.py",
+   "size": 3375,
+   "sha256": "34c03267c786ca7cc059e965b8ffcf1165fd5fbe68538e18d135dd3625e5961e"
+  },
+  {
+   "path": "src/flow/tools/color_tools.py",
+   "size": 3445,
+   "sha256": "236486aa6c62917b65cd93a2c1830d26e2cc76b85211f547e0d99a752898a6f1"
+  },
+  {
+   "path": "src/flow/tools/context.py",
+   "size": 2944,
+   "sha256": "fcc271ef28354971649c4c9bbccb5c22a583ad6af578525698c6aede8baf40e2"
+  },
+  {
+   "path": "src/flow/tools/context_read.py",
+   "size": 4119,
+   "sha256": "40412ef385352a70bccfa13e8dadad392a62b097e85080ef64ae637e37299d7f"
+  },
+  {
+   "path": "src/flow/tools/flow_native.py",
+   "size": 7448,
+   "sha256": "5f4d5d67c44eec0090f9b2b4e487a22c2d53fbbe149f3ae4faf52021e27a21f7"
+  },
+  {
+   "path": "src/flow/tools/generate.py",
+   "size": 8280,
+   "sha256": "a8595204caaaaabf4240a9ae987fb979de99d3c7dd9a42e10ec1fdc4160f63ed"
+  },
+  {
+   "path": "src/flow/tools/media_mgmt.py",
+   "size": 5627,
+   "sha256": "c78ef188abcffe195467575e1c58e1de5b7728331a6b53bd4d50e0ae64b6e049"
+  },
+  {
+   "path": "src/flow/tools/registry.py",
+   "size": 4391,
+   "sha256": "02b74b9a6bad2f0fcec7801132f648c2be10ec6495f19de5b68bf6ff244e8166"
+  },
+  {
+   "path": "src/flow/tools/result.py",
+   "size": 1313,
+   "sha256": "6722e5b542e5c4ee2e0592311f46b2c469067e332993401259665cc589772de5"
+  },
+  {
+   "path": "src/flow/tools/text_tools.py",
+   "size": 3219,
+   "sha256": "d1ef7257122f091b8def5823283594a4db70a00a8f2706cd1abf0c55c694301b"
+  },
+  {
+   "path": "src/flow/tools/timeline_advanced.py",
+   "size": 6230,
+   "sha256": "73efbb7644f9bcf6869172cdb82b1f2dc5d9d31eae5760d01bcc67e55dd5efb2"
+  },
+  {
+   "path": "src/flow/tools/timeline_edit.py",
+   "size": 7527,
+   "sha256": "0be951c5ddaf6f25954a3f1e72155dd36e72d136eafac9930bcef476a14ccd54"
+  },
+  {
+   "path": "src/flow/tools/undo_tool.py",
+   "size": 1438,
+   "sha256": "621528b8fe7992952165cd8ed1035a139a7ab5133d83089855bbf5da2c9ab650"
+  },
+  {
+   "path": "src/flow/tts/__init__.py",
+   "size": 1809,
+   "sha256": "bf91c63a35ce3c0e70d13962c29dd2cf4d4d772185a1400b2114bdeac3263635"
+  },
+  {
+   "path": "src/flow/tts/base.py",
+   "size": 2160,
+   "sha256": "0fc0a984627d696584c52be8aae42d89afb4faadfd52cebe7eee03e32bf7eab0"
+  },
+  {
+   "path": "src/flow/tts/edge.py",
+   "size": 1273,
+   "sha256": "9067e29c5956431ac2ded91d3fa77f0c27bf75df78ab8df5f92af3feda712345"
+  },
+  {
+   "path": "src/flow/tts/miso.py",
+   "size": 3428,
+   "sha256": "8664c05ab2d25a95644b657f45653110d2748b781de5b893e9b0cbb5b4db8749"
+  },
+  {
+   "path": "src/flow/tts_miso.py",
+   "size": 690,
+   "sha256": "00057792e9e946ae59187958a9038a5655537280b7c571baf3c68f3510da2618"
+  },
+  {
+   "path": "src/flow/validation.py",
+   "size": 2295,
+   "sha256": "7aef27f857a514c4a134dad7823cc46887970cc7c298c7bdbfd9f2ae9c668bd7"
+  },
+  {
+   "path": "src/flow/writer.py",
+   "size": 3716,
+   "sha256": "54f903476a041b16e4104c0bd9d9cf59d6beb1ff49cb72e2d61da854b123408e"
+  },
+  {
+   "path": "src/gpu_backend/__init__.py",
+   "size": 73,
+   "sha256": "45f30f1a68819db55d3b0e9e3db5e39a12b3cedc198e37f7d736efbd02b4a673"
+  },
+  {
+   "path": "src/gpu_backend/client.py",
+   "size": 3895,
+   "sha256": "ab707faafb65a19e410f376c427ce816c577d535af259079ed57b0cd0c862696"
+  },
+  {
+   "path": "src/gpu_backend/modal_server.py",
+   "size": 7130,
+   "sha256": "266d7262d495ab1aa5b000553dac622b2349dbace1d89c4c178f5e8b827eaadc"
+  },
+  {
+   "path": "src/gpu_backend/server.py",
+   "size": 5949,
+   "sha256": "ef76b3614336106129747a0a452e640dad21a9d35a3ba6a8462334f438564918"
+  },
+  {
+   "path": "src/gpu_backend/xdit_parallel.py",
+   "size": 3716,
+   "sha256": "8873fbffd60aa2b8c1e3a30f3648d540698d52286ba42acb4c040fa81dbead88"
+  },
+  {
+   "path": "tests/test_agent.py",
+   "size": 4607,
+   "sha256": "e1a350699cfab900859a21e4984cb5cc9f55091cccfd67c8fdf4204c5ae7a039"
+  },
+  {
+   "path": "tests/test_characters.py",
+   "size": 1469,
+   "sha256": "4e104a23fa78885b9c606122dd00fd3ea1ee8cf99c3a883efdc660dd1c85ddb7"
+  },
+  {
+   "path": "tests/test_config.py",
+   "size": 1076,
+   "sha256": "038cd29cdf2a1ec2abdc6b92e6067cb0f3196bd8ad7d798a4f7087029f390d21"
+  },
+  {
+   "path": "tests/test_db.py",
+   "size": 1266,
+   "sha256": "e82cd644c38173a32e632f92662f7edcddbaa5ccbdf6fb68e1f6ee35f2b8107c"
+  },
+  {
+   "path": "tests/test_deploy.py",
+   "size": 2625,
+   "sha256": "82701e209435bc4a54699a23b6b110548036dca8f40904408c489b870687cde9"
+  },
+  {
+   "path": "tests/test_engine.py",
+   "size": 3793,
+   "sha256": "04a3e8755c5bff511d1410886b9293d30a1ec653166582386db0967099ea4276"
+  },
+  {
+   "path": "tests/test_publisher.py",
+   "size": 3166,
+   "sha256": "4f7f313464023e32071eb92eaf0b67a3c5402daf79503184d3ea0b9269061845"
+  },
+  {
+   "path": "tests/test_schemas.py",
+   "size": 729,
+   "sha256": "1819b4a82b3ce604c151942b0f0452624d9a0fc93d2f8d80cd1354b7d95a2cc7"
+  },
+  {
+   "path": "tests/test_tts.py",
+   "size": 4189,
+   "sha256": "35d30c901977e08ee3c893a761bb79d49f380eeedd491aa7f57bad5a16a1eb49"
+  },
+  {
+   "path": "tests/test_writer.py",
+   "size": 987,
+   "sha256": "cc2d3bb1b30f1242c495aa2ea79294b3f3271ed7713061c25153616839fe77a6"
+  },
+  {
+   "path": "uv.lock",
+   "size": 474510,
+   "sha256": "ae5ad5347b315e4231ee9bfe919d0ac421e1c9158f725f16ce15cbdd8732bab8"
+  }
+ ],
+ "skipped": [
+  {
+   "path": ".github/workflows/ci.yml",
+   "size": 444,
+   "error": "write-verify failed"
+  },
+  {
+   "path": ".github/workflows/release.yml",
+   "size": 869,
+   "error": "write-verify failed"
+  },
+  {
+   "path": ".gitignore",
+   "size": 423,
+   "error": "write-verify failed"
+  },
+  {
+   "path": ".release-please-config.json",
+   "size": 236,
+   "error": "write-verify failed"
+  },
+  {
+   "path": ".release-please-manifest.json",
+   "size": 19,
+   "error": "write-verify failed"
+  },
+  {
+   "path": "CHANGELOG.md",
+   "size": 27685,
+   "error": "write-verify failed"
+  },
+  {
+   "path": "CONTRIBUTING.md",
+   "size": 2959,
+   "error": "write-verify failed"
+  },
+  {
+   "path": "Dockerfile",
+   "size": 424,
+   "error": "write-verify failed"
+  },
+  {
+   "path": "Dockerfile.gpu",
+   "size": 979
+  },
+  {
+   "path": "benchmarks/assets/openx-favicon.png",
+   "size": 494909
+  },
+  {
+   "path": "benchmarks/assets/openx-textmark.png",
+   "size": 413095
+  },
+  {
+   "path": "benchmarks/results/samples/clip_01.mp4",
+   "size": 488080
+  },
+  {
+   "path": "benchmarks/results/samples/clip_02.mp4",
+   "size": 646935
+  },
+  {
+   "path": "benchmarks/results/samples/clip_03.mp4",
+   "size": 1077235
+  },
+  {
+   "path": "benchmarks/results/samples/clip_04.mp4",
+   "size": 1473116
+  },
+  {
+   "path": "benchmarks/results/samples/clip_05.mp4",
+   "size": 225072
+  },
+  {
+   "path": "benchmarks/results/samples/clip_06.mp4",
+   "size": 421312
+  },
+  {
+   "path": "benchmarks/results/samples/clip_07.mp4",
+   "size": 296456
+  },
+  {
+   "path": "benchmarks/results/samples/clip_08.mp4",
+   "size": 2090858
+  },
+  {
+   "path": "benchmarks/results/samples/clip_09.mp4",
+   "size": 292366
+  },
+  {
+   "path": "benchmarks/results/samples/clip_10.mp4",
+   "size": 673317
+  },
+  {
+   "path": "benchmarks/results/samples/clip_11.mp4",
+   "size": 148070
+  },
+  {
+   "path": "benchmarks/results/samples/clip_12.mp4",
+   "size": 469259
+  },
+  {
+   "path": "benchmarks/results/samples/clip_13.mp4",
+   "size": 184124
+  },
+  {
+   "path": "benchmarks/results/samples/clip_14.mp4",
+   "size": 319151
+  },
+  {
+   "path": "benchmarks/results/samples/clip_15.mp4",
+   "size": 517005
+  },
+  {
+   "path": "benchmarks/results/samples/clip_16.mp4",
+   "size": 290443
+  },
+  {
+   "path": "benchmarks/results/samples/clip_17.mp4",
+   "size": 1136777
+  },
+  {
+   "path": "benchmarks/results/samples/clip_18.mp4",
+   "size": 419604
+  },
+  {
+   "path": "benchmarks/results/samples/clip_19.mp4",
+   "size": 877287
+  },
+  {
+   "path": "benchmarks/results/samples/clip_20.mp4",
+   "size": 303947
+  },
+  {
+   "path": "benchmarks/results/samples/film/the_last_library.mp4",
+   "size": 14033371
+  },
+  {
+   "path": "benchmarks/results/samples/mars_full_25s.mp4",
+   "size": 1695617
+  },
+  {
+   "path": "benchmarks/results/samples/mars_scene_1_50steps.mp4",
+   "size": 304862
+  },
+  {
+   "path": "benchmarks/results/samples/mars_scene_2_50steps.mp4",
+   "size": 313935
+  },
+  {
+   "path": "benchmarks/results/samples/mars_scene_3_50steps.mp4",
+   "size": 513240
+  },
+  {
+   "path": "benchmarks/results/samples/mars_scene_4_50steps.mp4",
+   "size": 399371
+  },
+  {
+   "path": "benchmarks/results/samples/mars_scene_5_50steps.mp4",
+   "size": 167308
+  },
+  {
+   "path": "benchmarks/results/samples/ocean_narrated_full.mp4",
+   "size": 934132
+  },
+  {
+   "path": "benchmarks/results/samples/ocean_scene_1.mp4",
+   "size": 251785
+  },
+  {
+   "path": "benchmarks/results/samples/ocean_scene_2.mp4",
+   "size": 347692
+  },
+  {
+   "path": "benchmarks/results/samples/ocean_scene_3.mp4",
+   "size": 191896
+  },
+  {
+   "path": "benchmarks/results/samples/scene_1_i2v.mp4",
+   "size": 247551
+  },
+  {
+   "path": "benchmarks/results/samples/water_full_15s.mp4",
+   "size": 673706
+  },
+  {
+   "path": "benchmarks/results/samples/water_scene_1_30steps.mp4",
+   "size": 135611
+  },
+  {
+   "path": "benchmarks/results/samples/water_scene_1_50steps.mp4",
+   "size": 51761
+  },
+  {
+   "path": "benchmarks/results/samples/water_scene_2_50steps.mp4",
+   "size": 476969
+  },
+  {
+   "path": "benchmarks/results/samples/water_scene_3_50steps.mp4",
+   "size": 146529
+  }
+ ]
+}

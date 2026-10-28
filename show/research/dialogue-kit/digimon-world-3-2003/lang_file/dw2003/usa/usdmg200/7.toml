@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name]Tamer Service[name]I understand.[pause][clear]If you would like to \nget your Digimon out, \nplease come see me.[pause]",
+	"[name][player_name][name]OK, let's take a \nlook around the\nlobby![pause]",
+]

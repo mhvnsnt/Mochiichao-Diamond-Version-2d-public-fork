@@ -42,7 +42,7 @@ alongside Trainer Mode — it does not replace turn-based battles.
   default Creature Mode capture.
 
 ## 4. World and sprites
-- Same tile maps as Trainer Mode (Sector 0, Binary Woods, etc.) — no separate
+- Same tile maps as Trainer Mode (Sector 0, The Dark Forest, etc.) — no separate
   world, no separate engine. Creature Mode reuses the world renderer.
 - Sprites: top-down / 2.5D creature sprites from the asset manifests
   (batches 001–040 + starters-and-final), with a walk cycle and a facing

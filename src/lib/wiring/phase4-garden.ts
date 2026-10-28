@@ -45,6 +45,11 @@ export const BERRY_STAGE_MINUTES: Record<Exclude<BerryStage, "empty" | "withered
   sprout: 120,
   growing: 180,
   bloom: 120,
+  // Harvest window, NOT part of the 480-min planted->fruit total above:
+  // berryTick already withers fruit after 240 min (age >= 480 + 240).
+  // No code reads this record (berryStageForAge uses its own order array),
+  // so this key changes no behaviour.
+  fruit: 240,
 };
 
 /** Mochiichao tuning: stage thresholds above; total planted→fruit = 480 min. */

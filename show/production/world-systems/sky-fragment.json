@@ -1,0 +1,21 @@
+{
+ "chart": {
+  "figures": "slots shaped (stars / name / lore) — ALL names and lore text are content-lane writing; zero figures named in this package",
+  "home": "reference artefact, region-keyed; drawn on the Mochiioteca under #149 grammar and in print via #90",
+  "turnsWith": "#19 clock (night hand now; season hand waits on the calendar ruling, inherited #195/#124)"
+ },
+ "note": "Shape only. The sky state stores nothing: same facts, same moment, same sky, in the game, on the device, and in the show's plates — one library (#75 discipline).",
+ "phenomenaJoin": "#153 records stage here (aurora/fall classes); the cloud gate applies to them — a phenomenon behind cloud is a rumour and a glow (#194 possibly-grammar); a phenomenon never edits the chart",
+ "schema": "mochiichao/night-sky/v1",
+ "skyState": {
+  "cloudGate": "effective weather's cloud cover gates the stars — clear = the chart whole, overcast = none of it, stated plainly",
+  "derivedFrom": [
+   "#19 phase (dawn/day/dusk/night)",
+   "#61 weather read through #142 climate",
+   "region"
+  ],
+  "forestRead": "under the trees the read is 'covered' — the mist is a weather fact, not a special case",
+  "storedNowhere": true
+ },
+ "landingNote": "Screen-class honesty (List 25 step 2): the sky chart is a #137-family rendering borrowing #149's pacing grammar. #149's classes are closed — no fifth class exists. Constellation names and lore are the owner's canon calls, landed open."
+}

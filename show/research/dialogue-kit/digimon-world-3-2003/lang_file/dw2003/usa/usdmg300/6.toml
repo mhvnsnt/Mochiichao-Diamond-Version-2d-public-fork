@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name]Datamon[name]Oh, you do have a\nStaff Pass. I\napologize...[pause][clear]OK, I'm opening the \ngate, please enter.[pause]",
+	"[name][player_name][name]Ah, \nthanks![pause]",
+]

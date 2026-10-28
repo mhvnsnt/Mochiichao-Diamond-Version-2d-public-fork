@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]...What is this \ncontrol panel?[pause][clear]Here's a button.\nI guess I'll push \nit![pause]",
+	"[name][player_name][name]I wonder what \nit was for?\nOh, well...[pause]",
+]

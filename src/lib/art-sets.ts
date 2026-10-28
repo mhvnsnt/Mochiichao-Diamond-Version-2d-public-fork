@@ -37,7 +37,7 @@ export const ART_SETS: ArtSet[] = [
   { id: "egg-cocoon-sprites", category: "sprites", name: "Egg / Cocoon sprite set", status: "SPEC", gpu: false },
   { id: "sector0-world", category: "world", name: "Sector 0 world set", status: "SPEC", gpu: false },
   { id: "route-world", category: "world", name: "Route world set", status: "SPEC", gpu: false },
-  { id: "binary-woods", category: "world", name: "Binary Woods set", status: "SPEC", gpu: false },
+  { id: "binary-woods", category: "world", name: "The Dark Forest set", status: "SPEC", gpu: false },
   { id: "silicon-town", category: "world", name: "Silicon Town set", status: "SPEC", gpu: false },
   { id: "castagnoli-island", category: "world", name: "Castagnoli Island set", status: "SPEC", gpu: false },
   { id: "garden-world", category: "world", name: "Mochi Garden world set", status: "SPEC", gpu: false },

@@ -1,0 +1,79 @@
+{
+  "display_provenance": {
+    "others": "Blair-chart mouth patches drawn in the character's own line/colour style, colours sampled from the canon face; mouth shapes only, no likeness change",
+    "rest": "the character's own mouth as drawn in the canon art \u2014 never redrawn"
+  },
+  "displays_blair_order": [
+    "rest",
+    "A_I",
+    "E",
+    "O",
+    "U",
+    "M_B_P",
+    "F_V",
+    "L_T_D_N_Th",
+    "C_D_G_K_S_Z",
+    "W_Q"
+  ],
+  "driver": "Rhubarb 1.13.0 (~/opt/bin/rhubarb) TSV/JSON mouth cues -> stepped display timeline on the mouth slot; body held per Hanna-Barbera dialogue method",
+  "note": "Shared by Mochiko / Hex / Aeon. Per-character copies live in each character folder; character copies carry the measured mouth anchor (image px) once the canon art is inspected. See TALKING-SEAT-SPEC.md for the full spec.",
+  "overrides": [
+    "W/Q phoneme onset on an F segment keys W_Q for the first ~80 ms, then U",
+    "segments shorter than 40 ms are dropped; previous shape held",
+    "shape changes land on even frames at 24 fps (on 2s) unless a plosive (Rhubarb A) forces an odd frame",
+    "silence keys rest"
+  ],
+  "parent_bone": "head",
+  "rhubarb_to_blair": {
+    "A": "M_B_P",
+    "B": "C_D_G_K_S_Z",
+    "C": "E",
+    "D": "A_I",
+    "E": "O",
+    "F": "U",
+    "G": "F_V",
+    "H": "L_T_D_N_Th",
+    "X": "rest"
+  },
+  "schema": "mochiichao-show/mouth-swap/v1",
+  "slot": "mouth",
+  "symbol_type": "Graphic (frame-accurate stepped display swap, no blending)",
+  "mouth_anchor_px": {
+    "x": 570,
+    "y": 393,
+    "window_w": 150,
+    "window_h": 80,
+    "window_origin_px": {
+      "x": 495,
+      "y": 353
+    },
+    "space": "source image px, 1120x2240"
+  },
+  "sampled_palette": {
+    "line_rgb": [
+      0,
+      0,
+      0
+    ],
+    "skin_rgb": [
+      147,
+      103,
+      89
+    ],
+    "interior_rgb": [
+      110,
+      44,
+      40
+    ],
+    "teeth_rgb": [
+      246,
+      244,
+      238
+    ],
+    "tongue_rgb": [
+      196,
+      96,
+      90
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "2.1",
+  "active_episode": "EP01",
+  "current_tier": "TIER_2_KAGGLE_GENERATION",
+  "pipeline_status": "RUNNER_SCAFFOLDED_AWAITING_TAKEOVER",
+  "seed": 42,
+  "seed_note": "42 is the measured A/B seed (baseline + optimized reruns). No separate production seed has been set by the owner.",
+  "jobs": {
+    "tier_1_script": {
+      "status": "COMPLETED",
+      "canon_verified": true,
+      "canon_basis": "Game canon mining (show/production/SEASON-CANON-MAP.md): truck arrival, five starters, Hex neighbour/rival + Region 1 Champion, the Mochiioteca, the Dark Forest (renamed from Binary Woods, merged to main via PR #339), Illuminate.",
+      "output_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md",
+      "output_beat_list": "show/production/tooling/build-manifest/EP01-manifest.json"
+    },
+    "tier_2_generation": {
+      "status": "IN_PROGRESS",
+      "engine": "Wan 2.2 TI2V 5B + Wan22 Turbo LoRA (4-step, CFG 1.0) on Kaggle T4 x2",
+      "baseline_measured": "test 1: 20 steps, 28m28s, likeness REJECTED (plain I2V drift to a realistic 3D skull)",
+      "ab_rerun": "IN_FLIGHT (v2 notebook: baseline cell vs optimized cell, seed 42)",
+      "target_clip": "workspace: mochiichao-show/gen-kaggle-tests/ (media stays in workspace storage per FULLSTACK media discipline; passing clips register in show/shared/clip-index.json)",
+      "likeness_gate": "PENDING_VERIFICATION",
+      "locks": {
+        "start_image_conditioning": true,
+        "turbo_lora": true,
+        "torch_compile": true,
+        "ip_adapter_active": false,
+        "controlnet_active": false,
+        "locks_note": "IP-Adapter/ControlNet nodes are installed on the Kaggle notebook but have NOT yet been engaged in an executed Wan workflow (test 1's failure cause). For Wan TI2V the pinning route is start-image conditioning + a character LoRA trained on the owner's own art (future). No state file may claim a lock active that the executed graph did not contain."
+      }
+    },
+    "tier_3_rigging": {
+      "status": "QUEUED",
+      "rig_source": "show/production/rigs/builds/wispkin/ (TextRig DragonBones build v1: float_idle, float_up = EP01 cut 23, mask_tilt_left)"
+    },
+    "tier_4_editorial": {
+      "status": "PENDING",
+      "credit_mapping": "show/production/tooling/CREDITS-TO-TOOLS.md"
+    }
+  },
+  "gates": {
+    "likeness": "No clip is promoted on a runner's own say-so. Runners write PENDING_VERIFICATION plus a frame packet; promotion requires the gate step (automated scorer when wired, else owner review) recorded in clip-index.json.",
+    "canon": "Scripts and prompts validate against SEASON-CANON-MAP + the game repo on main. Contradiction = reject before GPU time is spent.",
+    "licence": "Free umbrella. CC-BY-NC weights (MusicGen, F5-TTS) are SCRATCH_ONLY_NON_SHIP."
+  },
+  "next_action": {
+    "tier": "TIER_2",
+    "action": "Complete the timed A/B rerun, register measured times in TOOLS-MANIFEST, then run the first locked generation via runners/kaggle_tier2_runner.py and prepare its gate packet.",
+    "approved_auto": true,
+    "gpu_hours_week": 0,
+    "approved_auto_note": "Owner flipped this latch ON 2026-10-27: unattended GPU renders approved \"as long as it doesn't waste all my hours... as long as it's actually working.\" Binding condition in pipeline/ORCHESTRATOR.md (\"Autonomous GPU condition\"): queued jobs with a defined output artifact only; verify the output landed and passed its gate, or log the failure and stop; autonomous GPU hours tracked in gpu_hours_week with a hard halt at 24h/week of the ~30h Kaggle quota (remainder reserved for owner-directed work); a job that fails twice autonomously is parked for the owner. Non-GPU steps (docs, manifests, gate packets, merges per standing orders) are auto-approved."
+  }
+}

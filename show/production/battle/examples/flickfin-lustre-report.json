@@ -1,0 +1,16 @@
+{
+  "source": "/home/hatch/workspace/mochiichao-show/species-art/new-gens/gen-r2/flickfin.png",
+  "output": "examples/flickfin.lustre-preview.png",
+  "variant_id": "lustre",
+  "size": [
+    1920,
+    1280
+  ],
+  "pixels_remapped_per_entry": [
+    136924,
+    76668,
+    128580
+  ],
+  "pixels_protected": 91751,
+  "pixels_white_field_skipped": 1979131
+}

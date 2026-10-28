@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]Uh... uuh...\nWhere am I?[pause]",
+	"[name][player_name][name]Oh yeah, I fell\ninto the basement.[pause][clear]OK, I need to find\na way out of here![pause]",
+]

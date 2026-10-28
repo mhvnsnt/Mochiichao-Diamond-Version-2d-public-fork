@@ -1,0 +1,5 @@
+strings = [
+	"",
+	"[name][player_name][name]Tremors![pause]",
+	"[name][player_name][name]Wha, what's \ngoing on...?![pause]",
+]

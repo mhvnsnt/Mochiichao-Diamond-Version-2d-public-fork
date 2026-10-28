@@ -1,0 +1,112 @@
+{
+ "package": "species-data-system (Sideline A, gap-fill for Gen 1)",
+ "audited": "2026-10-27",
+ "repo": "mhvnsnt/Mochiichao-Diamond-Version-2d-fresh-start",
+ "ref": "main (default branch at audit time)",
+ "access": "GitHub PAT connector (custom.github-pat), read-only; nothing pushed",
+ "prs_relied_on": {
+  "#98": "data core",
+  "#114": "garden poses",
+  "#175": "discovery silhouettes",
+  "#193": "cries",
+  "#228": "DexView",
+  "#237": "footprints confirmed 51",
+  "#243": "Mochiodex dexEntryMedia",
+  "#360": "character-sheet bundles",
+  "#379": "species brainstorm + regional flavor law"
+ },
+ "files": [
+  {
+   "repo_path": "src/data/core/species.json",
+   "blob_sha": "dfad7f26c0ef0bf3712b27d09c6afc9f7d349490",
+   "bytes": 27140
+  },
+  {
+   "repo_path": "src/lib/global_roster.json",
+   "blob_sha": "50d5b9f0c66dce57ffea6260775e786f31c95ca2",
+   "bytes": 14081
+  },
+  {
+   "repo_path": "src/data/core/encounters.json",
+   "blob_sha": "102613573ae7700eaf6a3eed17a531d1a6ec679e",
+   "bytes": 2892
+  },
+  {
+   "repo_path": "src/data/core/evolutions.json",
+   "blob_sha": "ea84f8090bcea1837e01f58202ff2fea8a07a589",
+   "bytes": 4115
+  },
+  {
+   "repo_path": "src/data/core/learnsets.json",
+   "blob_sha": "257445bb93f14c495c09272e0f200fc0b75c9def",
+   "bytes": 19033
+  },
+  {
+   "repo_path": "src/data/core/moves.json",
+   "blob_sha": "2fce1fc5877a37ce2d208f6290d1be082254d81d",
+   "bytes": 15814
+  },
+  {
+   "repo_path": "src/data/core/README.md",
+   "blob_sha": "e63082025de8a2d327ede060480709e526672275",
+   "bytes": 5578
+  },
+  {
+   "repo_path": "src/data/core/schemas/species.schema.json",
+   "blob_sha": "(fetched same session; sha in lane PR #98 history)",
+   "bytes": 3484
+  },
+  {
+   "repo_path": "src/lib/generated/dexEntryMedia-20261026.json",
+   "blob_sha": "8111b83fd9f38d63c50bf2869eb7556c8f4c389f",
+   "bytes": 26102
+  },
+  {
+   "repo_path": "sprite-art/animation/expanded-scope/footprints-real/FOOTPRINT-MANIFEST-51-20261026.json",
+   "blob_sha": "8776b8ea38a989e5c7e60f340fa63bddc6168566",
+   "bytes": 26012
+  },
+  {
+   "repo_path": "sprite-art/animation/expanded-scope/lane100/silhouettes/SILHOUETTE-MANIFEST.json",
+   "blob_sha": "ddf966c205a01a0ddc3dfc1e65cb542f0ccd7938",
+   "bytes": 9241
+  },
+  {
+   "repo_path": "sprite-art/animation/expanded-scope/lane100/silhouettes/DISCOVERY-SILHOUETTES-NOTE.md",
+   "blob_sha": "e93ebe922b5c5c63d61db0f9b2faf1daeee13957",
+   "bytes": 1401
+  },
+  {
+   "repo_path": "show/production/NEW-SPECIES-IDEAS.md",
+   "blob_sha": null,
+   "bytes": 42334
+  },
+  {
+   "repo_path": "show/production/REGIONAL-FLAVOR-LAW.md",
+   "blob_sha": null,
+   "bytes": 20397
+  },
+  {
+   "repo_path": "docs/human-characters/CANON-HUMAN-CHARACTERS.md",
+   "blob_sha": "326d292c1a4bdbc8d017a29aaa9cd4fb1a6cd068",
+   "bytes": 3891
+  }
+ ],
+ "directory_listings_used": [
+  "src/data",
+  "src/data/core",
+  "public/audio",
+  "public/audio/cries (100 files)",
+  "sprite-art/animation (+ idle: 51 folders)",
+  "sprite-art/garden-poses (50 folders)",
+  "sprite-art/animation/expanded-scope",
+  "src/assets/title/videos (10)",
+  "src/lib",
+  "docs"
+ ],
+ "workspace_staging_used": [
+  "~/workspace/mochiichao-show/repo-add/show/shared/cast.json (also verified present on repo main by the validator)",
+  "~/workspace/mochiichao-show/SHOW-PLAN.md",
+  "~/workspace/mochiichao-show/character-sheets/README.md"
+ ]
+}

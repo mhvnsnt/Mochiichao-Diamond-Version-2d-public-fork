@@ -1,0 +1,80 @@
+{
+  "$id": "mochiichao/care-profile.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mochi Garden care profile — one KEPT individual (#28)",
+  "description": "Raising state is per-INDIVIDUAL, never per-species (individual-variation doctrine). The careLog is the save truth; the profile is derived from it. Axis display names are PROPOSED, not canon — slots are keyed axis1..axis5 so a naming pass renames display strings without touching data. All numeric rules are null until an owner/balance pass.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "individualId": { "type": "string" },
+    "speciesId": { "type": "string", "description": "Join to species.json. Species data declares garden eligibility + garden asset ids only; raising state never lives there." },
+    "axes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "axis1": { "type": ["number", "null"] },
+        "axis2": { "type": ["number", "null"] },
+        "axis3": { "type": ["number", "null"] },
+        "axis4": { "type": ["number", "null"] },
+        "axis5": { "type": ["number", "null"] }
+      },
+      "required": ["axis1", "axis2", "axis3", "axis4", "axis5"],
+      "description": "Five-axis care shape (documented Chao architecture). Axis display names: PROPOSED, pending owner lock."
+    },
+    "alignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": ["number", "null"], "description": "-1..+1 steering value; pole names and in-world framing are OPEN (THE SECRET discipline: production holds the axis, in-world text does not lecture it)." },
+        "status": { "type": "string" }
+      },
+      "required": ["value", "status"]
+    },
+    "drives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "driveId": { "type": "string" },
+          "value": { "type": ["number", "null"] },
+          "decayPerHour": { "type": ["number", "null"] },
+          "refillBy": { "type": "array", "items": { "type": "string" }, "description": "Activity ids; the Garden activity list itself is OPEN (canon names garden interactions only in prose)." }
+        },
+        "required": ["driveId", "value", "decayPerHour", "refillBy"]
+      }
+    },
+    "growthReads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "stage": { "type": "string" },
+          "rules": { "type": ["object", "null"], "description": "Which axis profile selects which form. Null = OPEN." },
+          "poseSetId": { "type": ["string", "null"], "description": "Join to repo sprite-art/garden-poses/ sets." },
+          "paletteFormId": { "type": ["string", "null"], "description": "Join to repo src/assets/garden-form-palettes/." }
+        },
+        "required": ["stage", "rules", "poseSetId", "paletteFormId"]
+      },
+      "description": "Profile is READ at growth stages (never consumed) to select presentation from the repo's existing per-species garden assets."
+    },
+    "careLog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "at": { "type": "string" },
+          "activityId": { "type": "string" },
+          "axis": { "type": ["string", "null"] },
+          "delta": { "type": ["number", "null"] }
+        },
+        "required": ["at", "activityId", "axis", "delta"]
+      },
+      "description": "Append-only. The profile derives from this log, never the reverse (derived-never-stored discipline, cf. event/flag architecture)."
+    },
+    "status": { "type": "string" }
+  },
+  "required": ["individualId", "speciesId", "axes", "alignment", "drives", "growthReads", "careLog", "status"]
+}

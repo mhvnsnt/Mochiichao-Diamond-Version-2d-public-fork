@@ -1,0 +1,49 @@
+{
+  "format": "mochiichao/signature-moves/v1",
+  "note": "The locked seed register (owner rulings, 2026-10-27). moveId is the machine-registry / moves.json id. The Dorowani/Gabu tension flagged at build time is RESOLVED: the owner re-separated Water Orb from Aqua Shot (three different moves, all kept) and the corrective split landed as PR #431 — Water Orb -> WATER_ORB (own entry), Aqua Shot -> AQUA_SHOT standing alone, Tremor -> EARTH_TREMOR. CANON-SIGNATURE-ATTACKS.md's original position was vindicated; no correction is owed to it.",
+  "register": [
+    {
+      "basis": "exclusivity (learned by Mochii alone, 1/47; STAB)",
+      "displayName": "Hydro Rush",
+      "moveId": "AQUA_JET",
+      "species": "Mochii",
+      "status": "locked"
+    },
+    {
+      "basis": "exclusivity (Kittember alone, 1/47; highest-power STAB; name already original)",
+      "displayName": "Fire Stream",
+      "moveId": "FIRE_STREAM",
+      "species": "Kittember",
+      "status": "locked"
+    },
+    {
+      "basis": "exclusivity (Sproutle alone learns it)",
+      "displayName": "Leaf Blast",
+      "moveId": "RAZOR_LEAF",
+      "species": "Sproutle",
+      "status": "locked"
+    },
+    {
+      "basis": "family move; learnset entry flagged provisional in the research mapping",
+      "displayName": "Dark Wave",
+      "moveId": "SHADOW_PULSE",
+      "species": "Wispkin",
+      "status": "provisional"
+    },
+    {
+      "basis": "owner canon (making_something avatar animation is the attack; PR #345). RESOLVED at landing: WATER_ORB is its own moves.json entry (PR #431 corrective split) on the owner's confirmed final spec — Water/Special, 80, never misses, 15 PP, 20% Sp.Def drop. Dorowani-exclusive.",
+      "displayName": "Water Orb",
+      "moveId": "WATER_ORB",
+      "species": "Dorowani",
+      "status": "locked"
+    },
+    {
+      "basis": "owner canon (owner ruling supersedes the research draft's OWNER CALL). RESOLVED at landing: EARTH_TREMOR is the registry id (display name Tremor, 100/100/10, owner re-confirmed 2026-10-27).",
+      "displayName": "Tremor",
+      "moveId": "EARTH_TREMOR",
+      "species": "Gabu",
+      "status": "locked"
+    }
+  ],
+  "widerRoster": "OPEN — remaining species' signatures derive species-by-species by the exclusivity method over the learnsets; never batch-asserted"
+}

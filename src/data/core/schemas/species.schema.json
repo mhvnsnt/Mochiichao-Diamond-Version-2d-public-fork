@@ -143,6 +143,105 @@
             "items": {
               "type": "string"
             }
+          },
+          "cry": {
+            "type": "object",
+            "description": "CRY SYNTH block (species-systems schema patch, show/production/species-systems/species-sheet-schema-patch-cry.md; machine-readable source: cry-schema-fragment.json). Pure cries only - no field for lyrics/phonemes/text, on purpose.",
+            "properties": {
+              "identity_note": {
+                "type": "string",
+                "description": "Sound identity in SHOW-BIBLE S4 style, written before parameters."
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "draft",
+                  "locked"
+                ],
+                "description": "draft = lane-proposed; locked = owner-locked sound identity."
+              },
+              "synth": {
+                "type": "object",
+                "properties": {
+                  "wave_a": {
+                    "type": "string",
+                    "enum": [
+                      "sine",
+                      "triangle",
+                      "saw_soft",
+                      "pulse12",
+                      "pulse25",
+                      "pulse50",
+                      "pulse_pwm"
+                    ]
+                  },
+                  "wave_b": {
+                    "type": "string",
+                    "enum": [
+                      "sine",
+                      "triangle",
+                      "saw_soft",
+                      "pulse12",
+                      "pulse25",
+                      "pulse50",
+                      "pulse_pwm"
+                    ]
+                  },
+                  "morph": {
+                    "type": "number"
+                  },
+                  "base_hz": {
+                    "type": "number"
+                  },
+                  "pitch_env": {
+                    "type": "array"
+                  },
+                  "amp_env": {
+                    "type": "array"
+                  },
+                  "length_s": {
+                    "type": "number"
+                  },
+                  "vibrato": {
+                    "type": "object"
+                  },
+                  "pwm": {
+                    "type": "object"
+                  },
+                  "tremolo": {
+                    "type": "object"
+                  },
+                  "noise_mix": {
+                    "type": "number"
+                  },
+                  "noise_tone": {
+                    "type": "number"
+                  },
+                  "crackle": {
+                    "type": "number"
+                  },
+                  "echo": {
+                    "type": "object"
+                  },
+                  "seed": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "rendered_wav": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Repo path of the rendered cry once landed (public/audio/cries/<slug>-cry.wav); null until then."
+              }
+            },
+            "required": [
+              "identity_note",
+              "status",
+              "synth",
+              "rendered_wav"
+            ]
           }
         },
         "required": [
@@ -152,6 +251,21 @@
           "baseStats"
         ]
       }
+    },
+    "formFamily": {
+      "type": "object",
+      "description": "#130 forme-change: closed formIds list on the species record (shape: show/production/species-data/forme-change-fragment.json). Absence = the species cannot forme-change. One family is seeded (Strikechamp: strikechamp--unsuited, strikechamp--unsuited_full — forms verified to exist; criteria/deltas OPEN, zero battle facts asserted)."
+    },
+    "behaviourProfile": {
+      "type": "object",
+      "description": "#152 behaviour profile annex (shape: show/production/species-data/behaviour-profile-fragment.json). NO profile contents are written at landing — the distillation pass over the wave-1 sheets is a separate data-lane work item, species by species, cited per sheet."
+    },
+    "gainYield": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "#177 gain yield (Pokemon's base experience yield, same role): proposed by List 19 #177 and accepted into this schema at its landing. No species carries a value yet — values are species-data work, filled the way base stats are (canon first, Pokemon style)."
     }
   },
   "required": [

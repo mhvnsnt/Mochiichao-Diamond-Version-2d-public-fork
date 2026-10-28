@@ -1,0 +1,4 @@
+strings = [
+	"",
+	"[name][player_name][name]...it's too much...\n...and I've got \nother stuff I want.[pause][clear]I'll come back when \nI have more money.[pause]",
+]

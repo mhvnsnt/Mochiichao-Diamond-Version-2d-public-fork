@@ -1,0 +1,1998 @@
+{
+ "schema": "mochiichao-show/parts-catalog/v1",
+ "updated": "2026-10-27",
+ "rule": "Construction-kit filter (show/WORKING-METHOD.md): no characters, no character names, no logos/branding. Entries are collection-level seeds; item-level extraction proceeds donor by donor (loaded donors first) per show/production/tooling/MATERIALS-INDEX.md.",
+ "collections": [
+  {
+   "id": "mochiichao-battle-backgrounds",
+   "type": "backgrounds",
+   "path": "sprite-art/battle-backgrounds-v3/",
+   "items": [
+    "battle-bg-cave-v3d.png",
+    "battle-bg-dojo-v3d.png",
+    "battle-bg-garden-v3d.png",
+    "battle-bg-lake-v3d.png",
+    "battle-bg-mauveville-arena-v3d.png",
+    "battle-bg-tournament-v3d.png"
+   ],
+   "scene_use": [
+    "battle",
+    "tournament",
+    "garden"
+   ],
+   "filter": "pass (native)",
+   "status": "catalogued"
+  },
+  {
+   "id": "mochiichao-garden-poses",
+   "type": "pose_library",
+   "path": "sprite-art/garden-poses/",
+   "items": "50 species pose sets (*.garden.json + pose PNGs)",
+   "scene_use": [
+    "garden",
+    "idle",
+    "care"
+   ],
+   "filter": "pass (native)",
+   "status": "catalogued"
+  },
+  {
+   "id": "mochiichao-form-palettes",
+   "type": "palettes",
+   "path": "src/assets/garden-form-palettes/",
+   "scene_use": [
+    "all"
+   ],
+   "filter": "pass (native)",
+   "status": "catalogued"
+  },
+  {
+   "id": "mochiichao-title-backgrounds",
+   "type": "backgrounds",
+   "path": "docs/title-lane-archive/staging/backgrounds/",
+   "scene_use": [
+    "title",
+    "menus"
+   ],
+   "filter": "pass (native)",
+   "status": "collection_seed"
+  },
+  {
+   "id": "cape-jones-living-room-set",
+   "type": "environment_props_3d",
+   "repo": "mhvnsnt/cape-jones",
+   "path": "3d-assets/living-room/",
+   "scene_use": [
+    "interior",
+    "talk_segments"
+   ],
+   "filter": "pass (his own, non-character set pieces)",
+   "status": "canonical_pointer"
+  },
+  {
+   "id": "trippedd-cc0-material-sources",
+   "type": "textures_models_audio_sources",
+   "repo": "mhvnsnt/TRIPPEDD-Animation-Studio",
+   "path": "manifests/sources/",
+   "scene_use": [
+    "all"
+   ],
+   "filter": "license-gated (CC0/CC-BY per manifest)",
+   "status": "canonical_pointer"
+  },
+  {
+   "id": "donor-backgrounds-props-loaded",
+   "type": "backgrounds_props",
+   "repo": "cn donor repos (loaded: grim-adventures, my-gym-partner, scooby-doo-mystery-inc, space-ghost, duck-dodgers, robot-chicken, ed-edd-n-eddy, powerpuff-girls, looney-tunes, dexters-lab, camp-lazlo, gumball, cow-and-chicken, johnny-bravo, pink-panther, regular-show, ok-ko)",
+   "scene_use": [
+    "garden",
+    "lab",
+    "town",
+    "school",
+    "space",
+    "underworld"
+   ],
+   "filter": "per-item check required (character-branded/logo pieces fail)",
+   "status": "to_catalog_item_level"
+  },
+  {
+   "id": "garden-gate-background",
+   "type": "backgrounds",
+   "scene_use": [
+    "garden",
+    "gate"
+   ],
+   "filter": "pass (native, generated for the show; owner-accepted)",
+   "current_version": "v2-living",
+   "versions": [
+    {
+     "version": "v1-still",
+     "file": "show production source: accepted Garden Gate still plate (2048x1152 webp, scene-01 generation)",
+     "status": "SUPERSEDED as a standalone background - it is the base layer the living version is built on. Do not composite onto the still directly (Current-Version Law).",
+     "assigned_uses": [
+      "base layer under v2-living only"
+     ]
+    },
+    {
+     "version": "v2-living",
+     "file": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+     "status": "CURRENT - the background piece that gets used. Living World layers over the v1 plate: CL-1 cloud-shadow drift, foreground leaf-drift particles, pollen motes, synthesised wind bed (BREEZE).",
+     "upgrade_path": "continues per show/production/LIVING-WORLD.md: gate swing (needs the gate as a separated layer), grass-sway masks, background population crossings (SKY class bird-type Mochi), perch/water life. When a v3 lands it is marked CURRENT here and this version becomes SUPERSEDED.",
+     "assigned_uses": [
+      "EP01 Scene 1 (Gate, morning) - current default",
+      "Dorowani Gate composites (idle, Water Orb) - current default"
+     ]
+    }
+   ],
+   "status": "current",
+   "rule": "Current-Version Law (owner): current_version is the explicit default for the Gate scene unless the owner says otherwise. Upgrades land as NEW versions in this list; a previous living version keeps whatever scenes/uses the owner assigns it (recorded here at upgrade time) - it is not erased. v1-still is the base layer only and is NEVER the scene background while a living version exists."
+  },
+  {
+   "filter": "pass (native, original \u2014 no characters, no character names, no logos/branding)",
+   "id": "mochiichao-environment-plates-ep01",
+   "items": [
+    {
+     "ambient": [
+      "AMB-POND-RIPPLE-01",
+      "AMB-POND-REED-01",
+      "AMB-POND-LILY-01",
+      "AMB-POND-SHIMMER-01",
+      "CL-1",
+      "CL-2"
+     ],
+     "base_still": "EP01-PLATE-pond-day-v0-spec-still.png",
+     "base_still_md5": "40365a232823d32a916f1ba422a7a619",
+     "bed": "BED-POND-DAY",
+     "current": "EP01-PLATE-pond-day-v1-living.mp4",
+     "current_md5": "93106645072356d3954994be54772029",
+     "for": [
+      "EP01 cuts 06-09",
+      "BR-POND-01",
+      "BR-POND-02"
+     ],
+     "id": "PLATE-POND-DAY",
+     "supersedes": "storyboard placeholder 'BG pond (parts-catalog)' (timing/composite use only)",
+     "wind_state": [
+      "CALM",
+      "BREEZE",
+      "GUST"
+     ],
+     "world_alive_qa": {
+      "mean_abs_diff": 5.71,
+      "pct_pixels_changed": 22.25
+     }
+    },
+    {
+     "ambient": [
+      "AMB-POND-MIST-01",
+      "AMB-POND-RIPPLE-01",
+      "AMB-POND-LILY-01",
+      "AMB-POND-REED-01 (0.55 amplitude)"
+     ],
+     "base_still": "EP01-PLATE-pond-dusk-v0-spec-still.png",
+     "base_still_md5": "29ec4f9e259e5bc908876d56c86bec1b",
+     "bed": "BED-POND-DUSK",
+     "current": "EP01-PLATE-pond-dusk-v1-living.mp4",
+     "current_md5": "037de6228a64c7078c70467930b74bfc",
+     "derivation": "grade variant of PLATE-POND-DAY (overlay layer, Lighting L7 \u2014 never a repaint)",
+     "for": [
+      "EP01 cuts 13-19",
+      "BR-POND-03"
+     ],
+     "id": "PLATE-POND-DUSK",
+     "supersedes": "manifest placeholder 'BG pond dusk variant'",
+     "wind_state": [
+      "BREEZE decaying to CALM"
+     ],
+     "world_alive_qa": {
+      "mean_abs_diff": 0.78,
+      "note": "deliberately quiet \u2014 stakeout",
+      "pct_pixels_changed": 2.73
+     }
+    },
+    {
+     "ambient": [
+      "AMB-GREEN-GRASSWAVE-01",
+      "AMB-GREEN-FLOWER-01",
+      "AMB-GREEN-CLOUDSHADOW-01",
+      "AMB-GREEN-LEAF-01"
+     ],
+     "base_still": "EP01-PLATE-green-day-v0-spec-still.png",
+     "base_still_md5": "2439b9676a98d84a9cf0c72d8e699c9c",
+     "bed": "BED-GREEN-DAY (GAP \u2014 no gated bed yet)",
+     "current": "EP01-PLATE-green-day-v1-living.mp4",
+     "current_md5": "9bd79f8899e2e2677f0f1187157e153e",
+     "for": [
+      "EP01 cuts 10-12",
+      "BR-GREEN-01",
+      "BR-GREEN-02"
+     ],
+     "id": "PLATE-GREEN-DAY",
+     "supersedes": "unspecified Green background, EP01 cuts 10-12",
+     "wind_state": [
+      "CALM",
+      "BREEZE",
+      "GUST"
+     ],
+     "world_alive_qa": {
+      "mean_abs_diff": 6.2,
+      "pct_pixels_changed": 34.19
+     }
+    },
+    {
+     "ambient": [
+      "AMB-FOREST-NONE"
+     ],
+     "bed": "BED-FOREST-DAY (engineered absence)",
+     "current": "EP01-PLATE-dark-forest-day-v1-STILL.mp4",
+     "current_md5": "62d5b4f2b8c0d399d870d31a78b8fa1f",
+     "for": [
+      "EP01 cuts 25-28 (stinger)"
+     ],
+     "id": "PLATE-DARK-FOREST-DAY",
+     "living_version": "FORBIDDEN \u2014 no living version of this plate may be registered",
+     "still": "EP01-PLATE-dark-forest-day-v1-still.png",
+     "still_md5": "1c27182775f2b269d8c5a782577a5cb7",
+     "stillness_qa": {
+      "decoded_mean_abs_diff": 0.0087,
+      "note": "codec noise only \u2014 a moving Forest cut FAILS",
+      "source_frames_pixel_identical": true
+     },
+     "supersedes": "manifest flag 'MAKE: Dark Forest BG not yet built' (timing/composite use only)",
+     "wind_state": [
+      "NONE \u2014 by law (Forest Exception C6)"
+     ]
+    },
+    {
+     "base_still_md5": "2d4207f638976799e877049f0bcb3dd3",
+     "current": "show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4 (v2-living, in repo)",
+     "current_md5": "d2f1bf1d709d3a0e9d9d0f58dccc6c31",
+     "for": [
+      "EP01 cuts 01-05",
+      "BR-GATE-01",
+      "BR-GATE-02",
+      "BR-GATE-03"
+     ],
+     "id": "PLATE-GARDEN-GATE",
+     "note": "Reference of record \u2014 not rebuilt by this package.",
+     "wind_state": [
+      "CALM",
+      "BREEZE",
+      "GUST"
+     ]
+    }
+   ],
+   "path": "show/assets/backgrounds/",
+   "registry": "show/shared/PLATES-REGISTRY.md",
+   "scene_use": [
+    "EP01",
+    "garden",
+    "pond",
+    "green",
+    "dark-forest"
+   ],
+   "status": "provisional_spec_built \u2014 canon painted plates GAP (see PLATES-REGISTRY.md)",
+   "type": "backgrounds_living_plates"
+  },
+  {
+   "id": "mochiichao-score-system",
+   "type": "audio_score_states",
+   "path": "show/production/ADAPTIVE-MUSIC.md",
+   "status": "mirrored from ADAPTIVE-MUSIC (audio-timing teardown wiring point 2) - the doc is the record; this entry mirrors its vocabulary + pairings",
+   "mus_layers": [
+    "MUS-PULSE",
+    "MUS-BASS",
+    "MUS-HARM",
+    "MUS-LEAD",
+    "MUS-TEXT",
+    "MUS-DRONE",
+    "EVENT"
+   ],
+   "score_states": [
+    "SETTLE",
+    "PLAY",
+    "TENSION",
+    "DREAD",
+    "ABSENCE"
+   ],
+   "bed_state_pairings": [
+    {
+     "bed": "BED-GATE-MORNING",
+     "score_state": "PLAY -> SETTLE at cut 05",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-GATE-NIGHT",
+     "score_state": "SETTLE",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-POND-DAY",
+     "score_state": "PLAY",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-POND-DUSK",
+     "score_state": "TENSION (emptying, ADAPTIVE-MUSIC S2.3)",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-GREEN-DAY",
+     "score_state": "PLAY",
+     "status": "CANON bed; score treatment DERIVED"
+    },
+    {
+     "bed": "BED-FOREST-DAY",
+     "score_state": "ABSENCE",
+     "status": "CANON"
+    },
+    {
+     "bed": "BED-FOREST-DAY (depths, -6 dB)",
+     "score_state": "ABSENCE (single MUS-DRONE entry permitted if boarded)",
+     "status": "PROPOSED - needs owner/board lock before use"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list11-systems",
+   "type": "systems-index",
+   "about": "List 11 teardown systems (items 97-106), landed 2026-10-27. Index registration per STAGING step 1; each entry names the package it extends (reciprocal links live here + in the extended docs amended at landing).",
+   "items": [
+    {
+     "n": 97,
+     "name": "Research tasks (Mochiioteca research levels)",
+     "home": "show/production/world-systems/97-RESEARCH-TASKS.md",
+     "extends": "#14 MOCHIIOTECA-COMPLETION"
+    },
+    {
+     "n": 98,
+     "name": "Ranger licence & Fragment case",
+     "home": "show/production/world-systems/98-RANGER-LICENCE.md",
+     "extends": "#12 flags / #45 circuit"
+    },
+    {
+     "n": 99,
+     "name": "Syndicate encounter system",
+     "home": "show/production/world-systems/99-SYNDICATE-ENCOUNTERS.md",
+     "extends": "#30 dojo encounters (tier: syndicate) / #45"
+    },
+    {
+     "n": 100,
+     "name": "Champion gauntlet",
+     "home": "show/production/world-systems/100-CHAMPION-GAUNTLET.md",
+     "extends": "#45 / #30"
+    },
+    {
+     "n": 101,
+     "name": "Move tutoring services",
+     "home": "src/data/core/docs/101-MOVE-TUTORING.md",
+     "extends": "moves registry (join key, both lanes)"
+    },
+    {
+     "n": 102,
+     "name": "Habitat range maps",
+     "home": "show/production/world-systems/102-HABITAT-RANGE-MAPS.md",
+     "extends": "#7 spawn tables / #29 ecology"
+    },
+    {
+     "n": 103,
+     "name": "Item crafting & fusion",
+     "home": "src/data/core/docs/103-ITEM-CRAFTING.md",
+     "extends": "#31 item data layer; 'fusion' naming collision with #8 pair-merge FLAGGED, not resolved"
+    },
+    {
+     "n": 104,
+     "name": "Individual honours",
+     "home": "show/production/species-data/104-INDIVIDUAL-HONOURS.md",
+     "extends": "#80 individual record (honours[])"
+    },
+    {
+     "n": 105,
+     "name": "Seasonal festival calendar",
+     "home": "show/production/world-systems/105-FESTIVAL-CALENDAR.md",
+     "extends": "#19 world clock / #93 schedules (calendar itself OPEN)"
+    },
+    {
+     "n": 106,
+     "name": "Mochi storage system",
+     "home": "src/data/core/docs/106-MOCHI-STORAGE.md",
+     "extends": "#80 individual record (location) / #96 save; release tombstone permanent"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list13-systems",
+   "type": "systems-index",
+   "about": "List 13 teardown systems (items 117-126), landed 2026-10-27. Index registration per STAGING step 1. Engine integrations in this list are SPEC-LEVEL (no engine/runtime code exists in the audited sources). #122 NG+ is CLOSED by owner ruling (connected-world doctrine) \u2014 reference only.",
+   "items": [
+    {
+     "n": 117,
+     "name": "Field technique system (Rare Moves in the overworld)",
+     "home": "show/production/world-systems/117-FIELD-TECHNIQUES.md",
+     "extends": "#12 tech.* flags / #11 gates / #59 locks; roster = Illuminate only (one canon row)"
+    },
+    {
+     "n": 118,
+     "name": "Shop system architecture",
+     "home": "src/data/core/docs/118-SHOP-SYSTEM.md",
+     "extends": "#31 item layer / #20 economy; zero stock rows instanced"
+    },
+    {
+     "n": 119,
+     "name": "Interior area design system",
+     "home": "show/production/world-systems/119-INTERIOR-AREAS.md",
+     "extends": "#11 host graph / #59 gates"
+    },
+    {
+     "n": 120,
+     "name": "Game cutscene staging",
+     "home": "show/production/120-CUTSCENE-STAGING.md",
+     "extends": "#21 camera / #12 flags; cue executor SPEC-LEVEL (no engine)"
+    },
+    {
+     "n": 121,
+     "name": "Accessibility options architecture",
+     "home": "src/data/core/docs/121-ACCESSIBILITY.md",
+     "extends": "presentation-only; settings store SPEC-LEVEL (does not exist)"
+    },
+    {
+     "n": 122,
+     "name": "New Game Plus structure \u2014 CLOSED by owner ruling",
+     "home": "src/data/core/docs/122-NEW-GAME-PLUS.md",
+     "extends": "reference only; live replacement = #127 region transition (connected world)"
+    },
+    {
+     "n": 123,
+     "name": "Mount & traversal system",
+     "home": "show/production/world-systems/123-MOUNT-TRAVERSAL.md",
+     "extends": "#43 classes; RIDDEN state = proposal to #58, NOT adopted"
+    },
+    {
+     "n": 124,
+     "name": "Daily/weekly event rotation",
+     "home": "show/production/world-systems/124-EVENT-ROTATION.md",
+     "extends": "#19 clock / #93 shapes; calendar itself OPEN"
+    },
+    {
+     "n": 125,
+     "name": "Fast-travel network",
+     "home": "show/production/world-systems/125-FAST-TRAVEL.md",
+     "extends": "#11 route graph (in-repo home confirmed: src/data/core/routes/) / #32 arrival evidence"
+    },
+    {
+     "n": 126,
+     "name": "Hall of Fame record",
+     "home": "show/production/world-systems/126-HALL-OF-FAME.md",
+     "extends": "#100 capstone / #96 hallOfFame section (registered)"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-battle-plates",
+   "type": "battle-plate-registry",
+   "about": "Battle plate entries (List 14 #128, mochiichao/battle-plates/v1). A plate is a parts-catalogue entry with a battle role: plateId <areaId>--battle, areaId + surface from the encounter record, versions[] under the current-version law (one CURRENT per plate per use), living flag + variants. Contents: ZERO plates instanced \u2014 artwork and version chains are production work under the art lanes' gates. The one slot registered at landing is the Dark Forest depths slot, which ships EMPTY by law.",
+   "entryShape": {
+    "plateId": "<areaId>--battle",
+    "areaId": "<#7/#11 area id>",
+    "surface": "<encounter surface class>",
+    "versions": [
+     {
+      "version": "<v>",
+      "status": "current | superseded",
+      "supersedes": "<v|null>"
+     }
+    ],
+    "living": "bool + AMB cycle ids",
+    "variants": "<#19 state / #61 weather keys -> version chains>"
+   },
+   "items": [
+    {
+     "plateId": "dark-forest-depths--battle",
+     "areaId": "dark-forest (depths tier)",
+     "status": "EMPTY \u2014 NO PLATE ASSERTED",
+     "note": "Battles in the depths are unstocked space (#7's depths spawn table is intentionally empty, 0 slots). Adding a plate here is a CANON EVENT, not a data fill. Slot wired empty at the List 14 landing (2026-10-27).",
+     "transition": {
+      "kind": "still",
+      "note": "#148 seed record: the depths transition is a still \u2014 the absence, recorded."
+     }
+    }
+   ],
+   "transitionRecords": "#148 battle-intro transition records attach to plate entries HERE (one home \u2014 no parallel transition registry). Record shape: 148-BATTLE-INTRO-TRANSITIONS.md (show/production/battle/)."
+  },
+  {
+   "id": "mochiichao-list15-systems",
+   "type": "systems-index",
+   "about": "List 15 teardown systems (items 137-146, the connected-world list), landed 2026-10-27. Game data is primary; the show consumes game geography, never a parallel one. Zero cross-region connections instanced package-wide.",
+   "items": [
+    {
+     "n": 137,
+     "name": "World atlas & connection discovery",
+     "home": "show/production/world-systems/137-WORLD-ATLAS.md",
+     "extends": "#127 edge (one store, two views) / #32 derivation"
+    },
+    {
+     "n": 138,
+     "name": "Side-story system",
+     "home": "show/production/world-systems/138-SIDE-STORIES.md",
+     "extends": "#12 flag chains; a discovery route into #137"
+    },
+    {
+     "n": 139,
+     "name": "Early-discovery handling",
+     "home": "src/data/core/docs/139-EARLY-DISCOVERY.md",
+     "extends": "two-class ruling layer over #52/#93/#137 (declared in their docs at landing)"
+    },
+    {
+     "n": 140,
+     "name": "Border zone design system",
+     "home": "show/production/world-systems/140-BORDER-ZONES.md",
+     "extends": "#7/#29 area layer; 'border' membership value = PROPOSAL into their schemas, spec-level"
+    },
+    {
+     "n": 141,
+     "name": "Ferry & sea-route network",
+     "home": "show/production/world-systems/141-FERRY-NETWORK.md",
+     "extends": "#11/#140 landings; first-reach (not #125); no timetable instanced"
+    },
+    {
+     "n": 142,
+     "name": "Regional climate system",
+     "home": "show/production/world-systems/142-REGIONAL-CLIMATE.md",
+     "extends": "#61/#67 machinery by pointer; R2-5 null records; depths NONE exclusion"
+    },
+    {
+     "n": 143,
+     "name": "Regional league variance",
+     "home": "show/production/world-systems/143-REGIONAL-LEAGUE-VARIANCE.md",
+     "extends": "#45/#100/#126 (R1 instanced; threshold 8 = FLAGGED STRUCTURAL INFERENCE)"
+    },
+    {
+     "n": 144,
+     "name": "Cross-region species & migration",
+     "home": "show/production/world-systems/144-CROSS-REGION-SPECIES.md",
+     "extends": "#102 projection; one sentence accepted into #40's file at landing"
+    },
+    {
+     "n": 145,
+     "name": "Travelling NPC continuity",
+     "home": "show/production/world-systems/145-TRAVELLING-NPCS.md",
+     "extends": "#93 format (spanning rows + transit registered in #93's doc); no NPC instanced"
+    },
+    {
+     "n": 146,
+     "name": "One-world save & visit records",
+     "home": "src/data/core/docs/146-ONE-WORLD-SAVE.md",
+     "extends": "#96 audit result: ZERO stored change; visit-record view registered in #96"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list16-systems",
+   "type": "systems-index",
+   "about": "List 16 teardown systems (items 147-156), landed 2026-10-27. Catalogue-class specs (#151 tournaments, #153 phenomena, #154 ruins) ship EMPTY by design.",
+   "items": [
+    {
+     "n": 147,
+     "name": "Move-animation coverage system",
+     "home": "show/production/battle/147-MOVE-ANIM-COVERAGE.md",
+     "extends": "registry + #9 animscripts; #131 read as priority VIEW only"
+    },
+    {
+     "n": 148,
+     "name": "Battle intro transitions",
+     "home": "show/production/battle/148-BATTLE-INTRO-TRANSITIONS.md",
+     "extends": "#128 plate registry (records ride plate entries; no parallel registry)"
+    },
+    {
+     "n": 149,
+     "name": "Mochiioteca on-screen presentation (show)",
+     "home": "show/production/149-MOCHIIOTECA-ON-SCREEN.md",
+     "extends": "#81 device behaviour (verbalisation default never-verbal stands)"
+    },
+    {
+     "n": 150,
+     "name": "Ranger field kit",
+     "home": "src/data/core/docs/150-RANGER-FIELD-KIT.md",
+     "extends": "#31 item layer (seat chosen at landing: game-data docs; #116 cross-refs it)"
+    },
+    {
+     "n": 151,
+     "name": "Tournament system",
+     "home": "show/production/world-systems/151-TOURNAMENT-SYSTEM.md",
+     "extends": "EMPTY catalogue \u2014 whether any canonical tournament exists is an OWNER SLOT"
+    },
+    {
+     "n": 152,
+     "name": "Species behaviour profiles",
+     "home": "show/production/species-data/152-SPECIES-BEHAVIOUR-PROFILES.md",
+     "extends": "sheet-schema annex (shape only; zero profile contents)"
+    },
+    {
+     "n": 153,
+     "name": "Rare weather phenomena",
+     "home": "show/production/world-systems/153-RARE-WEATHER-PHENOMENA.md",
+     "extends": "EMPTY catalogue by design"
+    },
+    {
+     "n": 154,
+     "name": "Ruins & ancient sites",
+     "home": "show/production/world-systems/154-RUINS-AND-ANCIENT-SITES.md",
+     "extends": "EMPTY catalogue by design; #115 PROPOSAL discipline inherited"
+    },
+    {
+     "n": 155,
+     "name": "Battle vocal layering",
+     "home": "show/production/155-BATTLE-VOCAL-LAYERING.md",
+     "extends": "#2 cry params / #51 classes / #95 jitter bound"
+    },
+    {
+     "n": 156,
+     "name": "Trailer & promo asset system",
+     "home": "show/production/156-TRAILER-AND-PROMO-SYSTEM.md",
+     "extends": "currency gate over parts-catalog/clip-index; retrospective record landed with this package"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list17-systems",
+   "type": "systems-index",
+   "about": "List 17 teardown systems (items 157-166), landed 2026-10-27. Depths law honoured: the Dark Forest depths table verified at 0 slots and left untouched.",
+   "items": [
+    {
+     "n": 157,
+     "name": "Multi-battle formats",
+     "home": "show/production/battle/157-MULTI-BATTLE-FORMATS.md",
+     "extends": "sides block registered into #109's versus-ruleset fragment (one store)"
+    },
+    {
+     "n": 158,
+     "name": "Horde battles",
+     "home": "show/production/battle/158-HORDE-BATTLES.md",
+     "extends": "horde slot in #7's spawn-table schema (null everywhere); learning interface AWAITS the absent experience system"
+    },
+    {
+     "n": 159,
+     "name": "Rental battle system",
+     "home": "show/production/battle/159-RENTAL-BATTLES.md",
+     "extends": "rental source class PROPOSED into #109's file; validation spec-level until accepted there"
+    },
+    {
+     "n": 160,
+     "name": "Field partner AI",
+     "home": "show/production/world-systems/160-FIELD-PARTNER-AI.md",
+     "extends": "trigger classes PROPOSED into #58's vocabulary"
+    },
+    {
+     "n": 161,
+     "name": "Size records & specimen contests",
+     "home": "src/data/core/docs/161-SIZE-RECORDS.md",
+     "extends": "shape only; proposed section in #96's payload map; height/weight TBD (49/49)"
+    },
+    {
+     "n": 162,
+     "name": "Grooming & spa services",
+     "home": "show/production/world-systems/162-GROOMING-SPA.md",
+     "extends": "inert grooming class in #28's careLog vocabulary; groomedUntil PROPOSED into #80"
+    },
+    {
+     "n": 163,
+     "name": "Mythical habitat sealing",
+     "home": "show/production/world-systems/163-MYTHICAL-HABITAT-SEALING.md",
+     "extends": "consumer citations in #7/#102/#137/#84/#90 docs; depths table untouched (LAW)"
+    },
+    {
+     "n": 164,
+     "name": "Mission board system",
+     "home": "show/production/world-systems/164-MISSION-BOARD.md",
+     "extends": "rank fence in the fragment itself; generator PROPOSED to #90, stamp occasion PROPOSED to #104"
+    },
+    {
+     "n": 165,
+     "name": "Battle bag system",
+     "home": "show/production/battle/165-BATTLE-BAG.md",
+     "extends": "bagAccess PROPOSED to #18 \u2014 #18's standalone home NOT FOUND on main (see PR body)"
+    },
+    {
+     "n": 166,
+     "name": "Wild drop tables",
+     "home": "src/data/core/docs/166-WILD-DROP-TABLES.md",
+     "extends": "src/data/core/wild-drop-tables.json registered with ZERO rows + validation trio"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list18-systems",
+   "type": "systems-index",
+   "about": "List 18 teardown systems (items 167-176), landed 2026-10-27. The #68/#168 trading flag is RESOLVED by owner ruling (depiction allowed as story; the system rule stands).",
+   "items": [
+    {
+     "n": 167,
+     "name": "Performance contests",
+     "home": "show/production/world-systems/167-PERFORMANCE-CONTESTS.md",
+     "extends": "#78 format; honours occasions PROPOSED to #104"
+    },
+    {
+     "n": 168,
+     "name": "Ranger-to-Ranger trading",
+     "home": "src/data/core/docs/168-RANGER-TRADING.md",
+     "extends": "keeperHistory seated on the individual record; #68 cross-refs it; show depiction ruled legitimate"
+    },
+    {
+     "n": 169,
+     "name": "Ranger hideouts",
+     "home": "show/production/world-systems/169-RANGER-HIDEOUTS.md",
+     "extends": "#106 location vocabulary verified unchanged (no hideout kind)"
+    },
+    {
+     "n": 170,
+     "name": "Safari capture zones",
+     "home": "show/production/world-systems/170-SAFARI-ZONES.md",
+     "extends": "encounterMode 'safari' completes the #110+#170 patch; useContext.safari in the item schema"
+    },
+    {
+     "n": 171,
+     "name": "Breeding compatibility system",
+     "home": "show/production/species-data/171-BREEDING-COMPATIBILITY.md",
+     "extends": "cited as validator from #77; eggGroups 0/47 \u2014 format only"
+    },
+    {
+     "n": 172,
+     "name": "In-world broadcast media",
+     "home": "show/production/world-systems/172-BROADCAST-MEDIA.md",
+     "extends": "forecasts only as labelled projections (#142 law) \u2014 clarification recorded"
+    },
+    {
+     "n": 173,
+     "name": "Rematch system",
+     "home": "show/production/battle/173-REMATCH-SYSTEM.md",
+     "extends": "#87 owns the record shape; honours PROPOSED to #104"
+    },
+    {
+     "n": 174,
+     "name": "Agriculture & cultivation",
+     "home": "src/data/core/docs/174-AGRICULTURE-CULTIVATION.md",
+     "extends": "#79 owns plot mechanics \u2014 this layer instances none"
+    },
+    {
+     "n": 175,
+     "name": "Weather-triggered formes",
+     "home": "show/production/battle/175-WEATHER-FORMES.md",
+     "extends": "weather criterion kind + NONE-exclusion landed in #130's file only"
+    },
+    {
+     "n": 176,
+     "name": "Town arcade & minigames",
+     "home": "show/production/world-systems/176-TOWN-ARCADE.md",
+     "extends": "stamp occasions PROPOSED to #104"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list19-systems",
+   "type": "systems-index",
+   "about": "List 19 teardown systems (items 177-186), landed 2026-10-27. Closes List 17's ABSENT-SYSTEM entry (annotated, not deleted). Growth tables + gain constants filled Pokemon-style at landing under the owner's base rule, recorded in the fragments.",
+   "items": [
+    {
+     "n": 177,
+     "name": "Experience & gain system",
+     "home": "show/production/battle/177-EXPERIENCE-GAIN.md",
+     "extends": "gainYield in the species schema (values pending); constants filled Pokemon-style in gain-fragment.json"
+    },
+    {
+     "n": 178,
+     "name": "Growth curves & level thresholds",
+     "home": "src/data/core/docs/178-GROWTH-CURVES.md",
+     "extends": "tables filled with Pokemon's Fast/Medium Fast/Slow curves; levelAtClear accepted into #126"
+    },
+    {
+     "n": 179,
+     "name": "Training values",
+     "home": "show/production/battle/179-TRAINING-VALUES.md",
+     "extends": "#39's application layer (correction C2) \u2014 no parallel ledger; battle-end effort accrual NOT wired (forbidden by its step list)"
+    },
+    {
+     "n": 180,
+     "name": "Bond effects in battle",
+     "home": "show/production/battle/180-BOND-EFFECTS.md",
+     "extends": "bond-effects table at src/data/core/bond-effects-table.json, ZERO rows; operand = #39 only (C4); refusal cited from #70 (C1)"
+    },
+    {
+     "n": 181,
+     "name": "Terrain & field effects",
+     "home": "src/data/core/docs/181-TERRAIN-FIELD-EFFECTS.md",
+     "extends": "annex beside #47's registry, zero rows; no terrain condition added"
+    },
+    {
+     "n": 182,
+     "name": "Status conditions",
+     "home": "show/production/battle/182-STATUS-CONDITIONS.md",
+     "extends": "check order registered in BATTLE-UI-FLOW; #27's roster untouched (persistent/volatile, C5)"
+    },
+    {
+     "n": 183,
+     "name": "Held-item battle effects",
+     "home": "show/production/battle/183-HELD-ITEM-EFFECTS.md",
+     "extends": "shares ONE trigger order with #184, registered in BATTLE-UI-FLOW"
+    },
+    {
+     "n": 184,
+     "name": "Ability trigger resolution",
+     "home": "show/production/battle/184-ABILITY-TRIGGER-RESOLUTION.md",
+     "extends": "one-ability seat waits on abilitySlot's species-data fill (main lane)"
+    },
+    {
+     "n": 185,
+     "name": "Peak transformation",
+     "home": "show/production/battle/185-PEAK-TRANSFORMATION.md",
+     "extends": "peak flag PROPOSED into #130's forme-change fragment"
+    },
+    {
+     "n": 186,
+     "name": "Facility ladder",
+     "home": "show/production/battle/186-FACILITY-LADDER.md",
+     "extends": "ladder slot PROPOSED into #86's table"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list20-systems",
+   "type": "systems-index",
+   "about": "List 20 teardown systems (items 187-196), landed 2026-10-27.",
+   "items": [
+    {
+     "n": 187,
+     "name": "Battle replays",
+     "home": "show/production/battle/187-BATTLE-REPLAYS.md",
+     "extends": "determinism obligation recorded in BATTLE-UI-FLOW (engine obligation, not a claim)"
+    },
+    {
+     "n": 188,
+     "name": "Spectator mode",
+     "home": "show/production/battle/188-SPECTATOR-MODE.md",
+     "extends": "timing slot PROPOSED into #109's ruleset; facility seat reconciled with #186 at #86"
+    },
+    {
+     "n": 189,
+     "name": "Challenge modes",
+     "home": "src/data/core/docs/189-CHALLENGE-MODES.md",
+     "extends": "election fact registered in #96's meta; licence standing PROPOSED to #98"
+    },
+    {
+     "n": 190,
+     "name": "Item vault",
+     "home": "src/data/core/docs/190-ITEM-VAULT.md",
+     "extends": "soft-lock audit landed as validation in the vault fragment; capacity null, zero holdings"
+    },
+    {
+     "n": 191,
+     "name": "Player journal & map annotations",
+     "home": "show/production/world-systems/191-PLAYER-JOURNAL.md",
+     "extends": "journal section PROPOSED into #96; generator PROPOSED to #90; atlas overlay = view only"
+    },
+    {
+     "n": 192,
+     "name": "Water traversal & dive",
+     "home": "show/production/world-systems/192-WATER-TRAVERSAL-AND-DIVE.md",
+     "extends": "annex inside #123's format; 'dive' method added to #7's spawn schema"
+    },
+    {
+     "n": 193,
+     "name": "Daycare services",
+     "home": "show/production/world-systems/193-DAYCARE-SERVICES.md",
+     "extends": "custody seats in #77's Garden housing (cited in #132); marker PROPOSED into #106"
+    },
+    {
+     "n": 194,
+     "name": "Weather forecasting",
+     "home": "show/production/world-systems/194-WEATHER-FORECASTING.md",
+     "extends": "cited from #172; forecast class PROPOSED into #149's fragment; depths NONE rule beside #142"
+    },
+    {
+     "n": 195,
+     "name": "Seasonal world events",
+     "home": "show/production/world-systems/195-SEASONAL-WORLD-EVENTS.md",
+     "extends": "registrations + citing lines in #105/#124/#113; no season or event created"
+    },
+    {
+     "n": 196,
+     "name": "Portrait & photo studio services",
+     "home": "show/production/world-systems/196-PORTRAIT-PHOTO-STUDIO.md",
+     "extends": "portrait rule (read RULED deviations, not templates) registered in its fragment"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list21-systems",
+   "type": "systems-index",
+   "about": "List 21 teardown systems (items 197-206), landed 2026-10-27. Step-2 verification found a discrepancy: the repo's design draft still carries id: null for the six locked species \u2014 the owner's 048-053 ruling stands as the fact (recorded in #197's register); the design lane's write had not reached the repo at verification time. Reported, not harmonised.",
+   "items": [
+    {
+     "n": 197,
+     "name": "Roster lock & numbering system",
+     "home": "show/production/species-data-system/197-ROSTER-LOCK.md",
+     "extends": "next number at lock (owner ruling); 048-053 recorded as owner-assigned fact"
+    },
+    {
+     "n": 198,
+     "name": "Regional dex presentation",
+     "home": "show/production/world-systems/198-REGIONAL-DEX.md",
+     "extends": "one discovery derivation (lock x discovery), cited into #149's fragment"
+    },
+    {
+     "n": 199,
+     "name": "Evolution methods",
+     "home": "show/production/world-systems/199-EVOLUTION-METHODS.md",
+     "extends": "citation only in #8's model; zero schema edits; A9 untouched"
+    },
+    {
+     "n": 200,
+     "name": "Lustre presentation (show)",
+     "home": "show/production/200-LUSTRE-PRESENTATION.md",
+     "extends": "show-lane presentation; no casting exists"
+    },
+    {
+     "n": 201,
+     "name": "Ranger reputation",
+     "home": "show/production/world-systems/201-RANGER-REPUTATION.md",
+     "extends": "SUPERSEDED as system of record by List 28's ladder (owner ruling) \u2014 classes stand as a view over it; stores nothing (negative test passed)"
+    },
+    {
+     "n": 202,
+     "name": "Mood system",
+     "home": "show/production/world-systems/202-MOOD-SYSTEM.md",
+     "extends": "a derivation; no mood field added to any schema (negative test passed)"
+    },
+    {
+     "n": 203,
+     "name": "Nests & dens",
+     "home": "show/production/world-systems/203-NESTS-AND-DENS.md",
+     "extends": "depths sentence verified verbatim; no den instanced"
+    },
+    {
+     "n": 204,
+     "name": "Egg-move inheritance",
+     "home": "show/production/species-data-system/204-EGG-MOVE-INHERITANCE.md",
+     "extends": "signature bar landed as a mechanical test in its fragment (reads #131's register, no hard-coded list)"
+    },
+    {
+     "n": 205,
+     "name": "Regional evolution splits",
+     "home": "show/production/world-systems/205-REGIONAL-EVOLUTION-SPLITS.md",
+     "extends": "no split declared"
+    },
+    {
+     "n": 206,
+     "name": "Fossil revival",
+     "home": "show/production/species-data-system/206-FOSSIL-REVIVAL-SERVICE.md",
+     "extends": "revival at AEON'S LAB (correction applied); status value proposed to #44's home (not located \u2014 recorded in the fragment)"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list22-systems",
+   "type": "systems-index",
+   "about": "List 22 teardown systems (items 207-216), landed 2026-10-27. #211's game side is superseded by the owner's release-return ruling (note on the file); its show side stands.",
+   "items": [
+    {
+     "n": 207,
+     "name": "Mochiioteca discovery states & reveal",
+     "home": "show/production/species-data/207-MOCHIIOTECA-DISCOVERY-STATES.md",
+     "extends": "aligns with #197/#198 (verified in the link check): one derivation, silhouettes for locked-but-undiscovered"
+    },
+    {
+     "n": 208,
+     "name": "Roster audit & gap report",
+     "home": "src/data/core/docs/208-ROSTER-AUDIT.md",
+     "extends": "first run attached at show/production/species-data-system/208-ROSTER-AUDIT-RUN-2026-10-27.md"
+    },
+    {
+     "n": 209,
+     "name": "Ambush encounters",
+     "home": "show/production/world-systems/209-AMBUSH-ENCOUNTERS.md",
+     "extends": "ambush slot in #7's spawn schema (contents nowhere)"
+    },
+    {
+     "n": 210,
+     "name": "Field duels",
+     "home": "show/production/battle/210-FIELD-DUELS.md",
+     "extends": "honour occasion PROPOSED to #104; message class PROPOSED to #90"
+    },
+    {
+     "n": 211,
+     "name": "Release & farewell presentation",
+     "home": "show/production/211-RELEASE-FAREWELL.md",
+     "extends": "game side SUPERSEDED by the release-return ruling (note on file; revision rides List 28); show side stands; #106 untouched"
+    },
+    {
+     "n": 212,
+     "name": "Garden visitor system",
+     "home": "show/production/world-systems/212-GARDEN-VISITORS.md",
+     "extends": "no-writes audited: a full visit cycle writes nothing to kept bits, records, or locations"
+    },
+    {
+     "n": 213,
+     "name": "Fragment case presentation",
+     "home": "show/production/world-systems/213-FRAGMENT-CASE-PRESENTATION.md",
+     "extends": "annex beside #98; its physical-design slot carried verbatim, untouched"
+    },
+    {
+     "n": 214,
+     "name": "Wild size derivation",
+     "home": "show/production/world-systems/214-WILD-SIZE-DERIVATION.md",
+     "extends": "derivation PROPOSED into #161's dependency slot"
+    },
+    {
+     "n": 215,
+     "name": "Regional ambient beds",
+     "home": "show/production/world-systems/215-REGIONAL-AMBIENT-BEDS.md",
+     "extends": "records joined to #142's climate records; Regions 2-5 layer maps empty where their climates are open; no stem moved"
+    },
+    {
+     "n": 216,
+     "name": "Completion ceremony",
+     "home": "show/production/world-systems/216-COMPLETION-CEREMONY.md",
+     "extends": "ceremony slot PROPOSED into #126's home"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list23-systems",
+   "type": "systems-index",
+   "about": "List 23 teardown systems (items 217-226) + GAP-FILL-ADDENDUM, landed 2026-10-27. Mechanical slots filled Pokemon-style by the addendum; story/canon slots stay the owner's.",
+   "items": [
+    {
+     "n": 217,
+     "name": "Gift & adoption transfers",
+     "home": "src/data/core/docs/217-GIFT-AND-ADOPTION-TRANSFERS.md",
+     "extends": "stamps PROPOSED into #68; channels filled by the addendum (in-person, overflow to storage, no expiry)"
+    },
+    {
+     "n": 218,
+     "name": "Show trade story grammar",
+     "home": "show/production/218-SHOW-TRADE-STORY-GRAMMAR.md",
+     "extends": "states the grammar for the resolved #68/#168 ruling"
+    },
+    {
+     "n": 219,
+     "name": "Surprise exchange system",
+     "home": "src/data/core/docs/219-SURPRISE-EXCHANGE.md",
+     "extends": "one pool validator; matching filled by the addendum; whether it ships stays the owner's call"
+    },
+    {
+     "n": 220,
+     "name": "Shelter & stray system",
+     "home": "show/production/world-systems/220-SHELTER-AND-STRAY.md",
+     "extends": "custody seat PROPOSED into #106; seeking filled by the addendum (seven in-game days, then adoption opens)"
+    },
+    {
+     "n": 221,
+     "name": "Ranger mentorship",
+     "home": "show/production/world-systems/221-RANGER-MENTORSHIP.md",
+     "extends": "record seats beside #93's family; agency limit demonstrated (nothing consumable as command authority)"
+    },
+    {
+     "n": 222,
+     "name": "Regional starter programmes",
+     "home": "src/data/core/docs/222-REGIONAL-STARTER-PROGRAMMES.md",
+     "extends": "Region 1's record landed in src/data/core/starter-programmes.json; Regions 2-5 null; ceremony kept as flashback, not the programme"
+    },
+    {
+     "n": 223,
+     "name": "World visiting",
+     "home": "show/production/world-systems/223-WORLD-VISITING.md",
+     "extends": "session registered beside #146; net stored change to a host save: zero"
+    },
+    {
+     "n": 224,
+     "name": "In-world newspaper & chronicle",
+     "home": "show/production/world-systems/224-INWORLD-NEWSPAPER-CHRONICLE.md",
+     "extends": "editions in their own store, separate from record stores; daily cadence (addendum); reputation read PROPOSED to #201"
+    },
+    {
+     "n": 225,
+     "name": "Memorial sites",
+     "home": "show/production/world-systems/225-MEMORIAL-SITES.md",
+     "extends": "class lands EMPTY \u2014 who is memorialised is the owner's canon call, entire"
+    },
+    {
+     "n": 226,
+     "name": "Migration spectacles",
+     "home": "show/production/world-systems/226-MIGRATION-SPECTACLES.md",
+     "extends": "records keyed to #144 pairs, witnessPoints null; transit register PROPOSED to #152"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list24-systems",
+   "type": "systems-index",
+   "about": "List 24 teardown systems (items 227-236), landed 2026-10-27. #236's finish order was filled Pokemon-style at landing (owner direction), recorded in both its files.",
+   "items": [
+    {
+     "n": 227,
+     "name": "Provenance storytelling (show)",
+     "home": "show/production/227-PROVENANCE-STORYTELLING.md",
+     "extends": "tale classes must map to stamps on the individual's record (the record-check is the wiring); no tale content created"
+    },
+    {
+     "n": 228,
+     "name": "Evolution sequence presentation",
+     "home": "show/production/battle/228-EVOLUTION-SEQUENCE.md",
+     "extends": "REVEAL-timed writes + cancelled-writes-nothing cited into #80 and #199"
+    },
+    {
+     "n": 229,
+     "name": "Regional cry dialects",
+     "home": "show/production/species-data/229-REGIONAL-CRY-DIALECTS.md",
+     "extends": "colour-transform seat in the cry pipeline; ZERO dialect records (species-data work)"
+    },
+    {
+     "n": 230,
+     "name": "Licence discipline",
+     "home": "show/production/world-systems/230-LICENCE-DISCIPLINE.md",
+     "extends": "finding shape beside #98; threshold table EMPTY; no Ranger gains a finding"
+    },
+    {
+     "n": 231,
+     "name": "Wild territory events",
+     "home": "show/production/species-data/231-WILD-TERRITORY-EVENTS.md",
+     "extends": "the no-join is wired: no tally join, no spawn write, no depths derivation"
+    },
+    {
+     "n": 232,
+     "name": "Working Mochi professions",
+     "home": "show/production/world-systems/232-WORKING-PROFESSIONS.md",
+     "extends": "honour occasion PROPOSED to #104; zero profession records"
+    },
+    {
+     "n": 233,
+     "name": "Interregional Ranger exchange",
+     "home": "show/production/world-systems/233-INTERREGIONAL-EXCHANGE.md",
+     "extends": "cited into #145; three non-readers registered (#143/#98/#207)"
+    },
+    {
+     "n": 234,
+     "name": "Performance troupes (show)",
+     "home": "show/production/234-PERFORMANCE-TROUPES.md",
+     "extends": "casting slots EMPTY (owner casting); fence sentence PROPOSED to #167"
+    },
+    {
+     "n": 235,
+     "name": "Inscription & lore fragments",
+     "home": "show/production/world-systems/235-INSCRIPTIONS.md",
+     "extends": "shape registered in #154 + #225 as references only; ZERO inscription text \u2014 lore words are content-lane writing"
+    },
+    {
+     "n": 236,
+     "name": "Mochi sports & racing",
+     "home": "show/production/world-systems/236-MOCHI-SPORTS.md",
+     "extends": "finish order FILLED Pokemon-style at landing (Speed per movement-class leg), recorded in the file; validation fence in both homes"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list25-systems",
+   "type": "systems-index",
+   "about": "List 25 teardown systems (items 237-246), landed 2026-10-27 \u2014 the first package built under the plain-language + Pokemon-base rules: its only open slots are story/canon facts, by design.",
+   "items": [
+    {
+     "n": 237,
+     "name": "Individual idle quirks",
+     "home": "show/production/world-systems/237-INDIVIDUAL-IDLE-QUIRKS.md",
+     "extends": "quirk read mirrors #108's temperament read (cited there); vocabulary contents = content pass"
+    },
+    {
+     "n": 238,
+     "name": "Ranger licence card presentation",
+     "home": "src/data/core/docs/238-RANGER-LICENCE-CARD.md",
+     "extends": "#98-family rendering; #149's classes stay CLOSED (no fifth class)"
+    },
+    {
+     "n": 239,
+     "name": "Nickname system",
+     "home": "src/data/core/docs/239-NICKNAME-SYSTEM.md",
+     "extends": "nickname field on the individual record \u2014 exactly two write doors"
+    },
+    {
+     "n": 240,
+     "name": "Save-select presentation",
+     "home": "src/data/core/docs/240-SAVE-SELECT.md",
+     "extends": "cites #122's CLOSED ruling (Continue / New Ranger only); summary derived, never stored"
+    },
+    {
+     "n": 241,
+     "name": "Follower rules in towns & interiors",
+     "home": "show/production/world-systems/241-FOLLOWER-TOWN-RULES.md",
+     "extends": "followerRule PROPOSED into #119 + area variant into #7; Garden law = validation rule"
+    },
+    {
+     "n": 242,
+     "name": "Dojo crowd & spectating",
+     "home": "show/production/battle/242-DOJO-CROWD.md",
+     "extends": "chorus law: no outcome path may read a crowd field"
+    },
+    {
+     "n": 243,
+     "name": "Life stages & aging presentation",
+     "home": "show/production/world-systems/243-LIFE-STAGES.md",
+     "extends": "whether the cast ages on screen = owner's canon call, landed open as a story slot"
+    },
+    {
+     "n": 244,
+     "name": "Ranger etiquette & regional customs",
+     "home": "show/production/world-systems/244-RANGER-ETIQUETTE.md",
+     "extends": "reconciled with #210 in the link check; Regions 2-5 customs = owner's canon calls"
+    },
+    {
+     "n": 245,
+     "name": "Field rescue service",
+     "home": "show/production/world-systems/245-FIELD-RESCUE.md",
+     "extends": "instances under #164's assist kind; rescue kind PROPOSED to #164; never-keeps fence in the record shape; reconciled with #231"
+    },
+    {
+     "n": 246,
+     "name": "Night sky & star chart",
+     "home": "show/production/world-systems/246-NIGHT-SKY.md",
+     "extends": "#137-family rendering; constellation names/lore = owner's canon calls"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-held-material",
+   "type": "held-material-register",
+   "about": "Material the owner ruled to PRESERVE for later use \u2014 registered, not placed. Nothing here is merged into episode or game files.",
+   "items": [
+    {
+     "name": "Ceremony prologue / flashback package (v1 choosing ceremony)",
+     "workspaceHome": "~/workspace/ceremony-prologue/ (SHOW-FLASHBACK.md, GAME-FLASHBACK.md, PLACEMENT-NOTE.md)",
+     "ruling": "Owner, 2026-10-27: preserved as flashback material for BOTH lanes \u2014 game Gen 1 later; show later, form/episode TBD by owner. EP02's harbour rescue remains the canon choosing.",
+     "slotsDecided": [
+      "three-vs-five: CLOSED \u2014 Aeon's line is 'Five lines keep this garden'; the presentation is reconciled to the five starter lines (Kittember + Sproutle presentations added with equal measure, Mochii kept as the final candidate)"
+     ],
+     "slotsOpen": [
+      "show episode + form",
+      "frame confirmation",
+      "intertitle wording",
+      "game trigger pick"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list26-systems",
+   "type": "systems-index",
+   "about": "List 26 teardown systems (items 247-256), landed 2026-10-27 \u2014 the finish-the-base list: battle arithmetic and the type chart asserted under the Pokemon-base rule; open slots are story/canon facts only (element vocabulary H3, currency name, calendar).",
+   "items": [
+    {
+     "n": 247,
+     "name": "Base completeness audit",
+     "home": "show/production/247-BASE-COMPLETENESS-AUDIT.md",
+     "extends": "maps Lists 1-26; hole register H1-H7 assigned to their lanes"
+    },
+    {
+     "n": 248,
+     "name": "Battle damage formula",
+     "home": "show/production/battle/248-BATTLE-DAMAGE-FORMULA.md",
+     "extends": "locks the constants #17 flagged PROPOSED; one arithmetic source for #10/#18"
+    },
+    {
+     "n": 249,
+     "name": "Type effectiveness chart",
+     "home": "show/production/list3-systems/249-TYPE-EFFECTIVENESS-CHART.md",
+     "extends": "85 matchups asserted into #17's chart fragment by citation \u2014 supersession recorded in both files, shape unchanged"
+    },
+    {
+     "n": 250,
+     "name": "Stat stages & accuracy/evasion",
+     "home": "show/production/battle/250-STAT-STAGES-ACCURACY.md",
+     "extends": "locks #17's stage table by citation"
+    },
+    {
+     "n": 251,
+     "name": "Priority & turn order",
+     "home": "show/production/battle/251-PRIORITY-TURN-ORDER.md",
+     "extends": "#10's missing order clause"
+    },
+    {
+     "n": 252,
+     "name": "Weather battle effects",
+     "home": "show/production/battle/252-WEATHER-BATTLE-EFFECTS.md",
+     "extends": "contents written into #47's WEATHER records; FROST chipExemptTypes ships [] exactly as specified (hole H3)"
+    },
+    {
+     "n": 253,
+     "name": "Prize money & rewards",
+     "home": "show/production/list3-systems/253-PRIZE-MONEY-REWARDS.md",
+     "extends": "formulas only: lossBase seat in #20's economy file, classBase seat on the trainer record \u2014 no payout value invented"
+    },
+    {
+     "n": 254,
+     "name": "Escape & fleeing rules",
+     "home": "show/production/battle/254-ESCAPE-FLEEING.md",
+     "extends": "#10's RUN command rule"
+    },
+    {
+     "n": 255,
+     "name": "Encounter rate & area pacing",
+     "home": "show/production/world-systems/255-ENCOUNTER-RATE-PACING.md",
+     "extends": "encounterRate seated in #7's spawn-table schema; #112's repel semantics closed Shape A by citation"
+    },
+    {
+     "n": 256,
+     "name": "Centre services flow",
+     "home": "show/production/world-systems/256-CENTRE-SERVICES-FLOW.md",
+     "extends": "#132's services[] seats verified present at landing; no seat founded in this file"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list27-systems",
+   "type": "systems-index",
+   "about": "List 27 teardown systems (items 257-266), landed 2026-10-27 \u2014 bloom, grown anatomy, and the Garden joins: six proposals seated only in their owners' files, the two bloom kinds kept unmerged, and the open slots are authored content (sheet-pass records, Garden placement), not mechanics.",
+   "items": [
+    {
+     "n": 257,
+     "name": "State bloom derivation",
+     "home": "show/production/world-systems/257-BLOOM-STATES.md",
+     "extends": "a read over #130's forme axis; #184 weather-react re-read; #195 season vote is a designed absence"
+    },
+    {
+     "n": 258,
+     "name": "Grown-weapon growth records",
+     "home": "show/production/species-systems/258-GROWN-WEAPON-GROWTH.md",
+     "extends": "annex on the sheet beside Anatomy notes; the A3 records are its first contents; #31 non-join fence"
+    },
+    {
+     "n": 259,
+     "name": "Grown-armour parts vocabulary",
+     "home": "show/production/species-systems/259-GROWN-ARMOUR-ANATOMY.md",
+     "extends": "the shared part index: sheets cite it, rigs name by it, #9 anchors to it, #258 joins through it"
+    },
+    {
+     "n": 260,
+     "name": "Contact-defence anatomy citations",
+     "home": "show/production/battle/260-CONTACT-DEFENCE-ANATOMY.md",
+     "extends": "anatomyBasis proposed into #107's ability record; resolution wholly #184's; fairness check rides the first ability-data PR"
+    },
+    {
+     "n": 261,
+     "name": "Pollen and scent scene layer",
+     "home": "show/production/world-systems/261-POLLEN-SCENT.md",
+     "extends": "pollen_state proposed into #61's scene record; consumed by #128's plates"
+    },
+    {
+     "n": 262,
+     "name": "Sunlight rest",
+     "home": "show/production/world-systems/262-SUNLIGHT-REST.md",
+     "extends": "sunlight seat proposed into #28's care inputs; rest reads through #134's existing verb"
+    },
+    {
+     "n": 263,
+     "name": "Rooting mode",
+     "home": "show/production/world-systems/263-ROOTING-MODE.md",
+     "extends": "ROOTED proposed into #58's machine and seated there at this landing, in one pass with #123's RIDDEN"
+    },
+    {
+     "n": 264,
+     "name": "Garden planting spots",
+     "home": "show/production/world-systems/264-GARDEN-PLANTING-SPOTS.md",
+     "extends": "feature classes in the Garden-complex authoring; assignment seat is #65's; zero spots placed at landing"
+    },
+    {
+     "n": 265,
+     "name": "Wild-duel etiquette",
+     "home": "show/production/world-systems/265-WILD-DUEL-ETIQUETTE.md",
+     "extends": "challengeStyle proposed into #152's annex; wired into #209's initiation read"
+    },
+    {
+     "n": 266,
+     "name": "Flower symbolism grammar",
+     "home": "show/production/266-FLOWER-SYMBOLISM.md",
+     "extends": "production grammar beside #82 and #50's colour scripts; vocabulary only, wires no data"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list28-systems",
+   "type": "systems-index",
+   "about": "List 28 teardown systems (items 267-276), landed 2026-10-27 \u2014 the owner's stealing, morale, and reputation design, wired into both lanes: release returns the same individual to the wild, theft is a real system behind a confirmation prompt, and standing is derived from witnessed deeds over a fifty-step ladder. Band names, wanted names, and deed values are drafted data, renamable; the anti-hero's name remains the owner's open slot.",
+   "items": [
+    {
+     "n": 267,
+     "name": "Released Mochi return to the wild",
+     "home": "src/data/core/docs/267-RELEASED-RETURN.md",
+     "extends": "revises #106's release model and #211's game-side refusal in their own files; the pool lives in #146's world state"
+    },
+    {
+     "n": 268,
+     "name": "The snag system \u2014 stealing as a mechanic",
+     "home": "show/production/battle/268-SNAG-SYSTEM.md",
+     "extends": "capture's dark twin beside #38; carries the owner's steal-confirmation prompt (free decline; the rescue-shaped prompt); deeds feed #269"
+    },
+    {
+     "n": 269,
+     "name": "Morale \u2014 the deed ledger",
+     "home": "src/data/core/docs/269-MORALE-HONOR.md",
+     "extends": "the append-only ledger seats in #98's family beside #230's findings; morale is a derivation, never a stored field"
+    },
+    {
+     "n": 270,
+     "name": "Reputation \u2014 fame and infamy per group",
+     "home": "src/data/core/docs/270-REPUTATION.md",
+     "extends": "supersedes #201 in its own file (classes stand as a view, mapping table appended); tallies count witnessed deeds only"
+    },
+    {
+     "n": 271,
+     "name": "The fifty-step spectrum",
+     "home": "src/data/core/docs/271-FIFTY-STEP-SPECTRUM.md",
+     "extends": "one ladder read by #269/#270/#276; band names are drafted data, renamable wholesale"
+    },
+    {
+     "n": 272,
+     "name": "Witnesses and wanted",
+     "home": "show/production/world-systems/272-WITNESSES-WANTED.md",
+     "extends": "witness sets from #93/#145 schedules; landed reports feed #230's findings as a grounds source"
+    },
+    {
+     "n": 273,
+     "name": "Stolen Mochi \u2014 keeping states",
+     "home": "show/production/battle/273-STOLEN-MOCHI.md",
+     "extends": "keepingState/trueKeeper proposed into #80's record; obedience reads under #180's law; recovery via #268/#272/#210"
+    },
+    {
+     "n": 274,
+     "name": "Underworld fences",
+     "home": "show/production/world-systems/274-UNDERWORLD-FENCES.md",
+     "extends": "fence seats in #169's hideouts, face is #99's Syndicate; laundering refused by shape \u2014 no clean-record operation exists"
+    },
+    {
+     "n": 275,
+     "name": "Redemption \u2014 the long climb",
+     "home": "src/data/core/docs/275-REDEMPTION.md",
+     "extends": "a reading discipline over #269's table, #270's tallies, and #230/#272 closures; no redeemed state anywhere in data"
+    },
+    {
+     "n": 276,
+     "name": "Show mirror \u2014 morale and reputation on screen",
+     "home": "show/production/276-SHOW-MORALE-REPUTATION.md",
+     "extends": "the show lane for the whole list: #82 arc sheets, #136 grammar, #201's classes as a staging view; the List 29 pointer is a pointer only"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list29-systems",
+   "type": "systems-index",
+   "about": "List 29 teardown systems (items 277-286), landed 2026-10-27 \u2014 the future-structure list: parts, the thief anti-hero route, and part transitions, built on List 28's moral engine (reconciled at landing); its only open slots are story/canon facts, headed by the anti-hero's name, which is the owner's entire.",
+   "items": [
+    {
+     "n": 277,
+     "name": "Generational rotation (the part record)",
+     "home": "show/production/277-GENERATIONAL-ROTATION.md",
+     "extends": "the index over #127/#146 continuity; game mirror is #240's New Ranger \u2014 a part inherits the WORLD, never the previous lead's personal records; zero parts instanced beyond Gen 1"
+    },
+    {
+     "n": 278,
+     "name": "Anti-hero route",
+     "home": "show/production/278-ANTI-HERO-ROUTE.md",
+     "extends": "List 28 whole as engine (reconciled at landing); content parity as law; both endings full content; his name is the owner's slot, headed in the open inventory"
+    },
+    {
+     "n": 279,
+     "name": "Dual-self portrayal",
+     "home": "show/production/279-DUAL-SELF-PORTRAYAL.md",
+     "extends": "mode proposed as a #82 production annotation; creature answers in #136's vocabulary; mode may never change stats, seed, ladder, or history"
+    },
+    {
+     "n": 280,
+     "name": "False friendship",
+     "home": "show/production/280-FALSE-FRIENDSHIP.md",
+     "extends": "trust as a derived read over #93/#12/#164/#104 facts; no deceive verb; betrayal classification proposed into List 28's #270/#272 and seated there at this landing; thresholds land empty"
+    },
+    {
+     "n": 281,
+     "name": "Double life",
+     "home": "show/production/281-DOUBLE-LIFE.md",
+     "extends": "per-group #270 tracks hold two true readings at once; no concealment system; collision event class proposed into #270/#272 and seated there at this landing"
+    },
+    {
+     "n": 282,
+     "name": "Sector ensemble rotation",
+     "home": "show/production/282-SECTOR-ENSEMBLE-ROTATION.md",
+     "extends": "viewpoint proposed as #82 data over the #93/#145 simulation floor; rotation moves the camera, it never spends beats"
+    },
+    {
+     "n": 283,
+     "name": "Returning cast",
+     "home": "show/production/283-RETURNING-CAST.md",
+     "extends": "a return is built from citations \u2014 #126 snapshots, #80 individuals, #104 honours \u2014 aged by #243's read; never a fresh sheet"
+    },
+    {
+     "n": 284,
+     "name": "Thief's partners",
+     "home": "show/production/284-THIEFS-PARTNERS.md",
+     "extends": "discipline over #80 + List 28 #268/#273/#274: the theft is never laundered and caps nothing; the staying is the Mochi's own"
+    },
+    {
+     "n": 285,
+     "name": "Part tone shifts",
+     "home": "show/production/285-PART-TONE-SHIFTS.md",
+     "extends": "five tone dials per part inside #277's records; the render invariant is cited from the style spec, never copied"
+    },
+    {
+     "n": 286,
+     "name": "Part transitions",
+     "home": "show/production/286-PART-TRANSITIONS.md",
+     "extends": "handover records beside #277's part records; #126's append-only law at generation scale; game proof is #240/#146 \u2014 zero stored change"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list30-systems",
+   "type": "systems-index",
+   "about": "List 30 teardown systems (items 287-296), landed 2026-10-27 \u2014 Colosseum/XD's closed-heart engine and Chao World's raising depth, rebuilt natively; two argued stored exceptions (heart gauge, climb seats); raising never writes battle stats (#293's line).",
+   "items": [
+    {
+     "n": 287,
+     "name": "Closed hearts",
+     "home": "src/data/core/docs/287-CLOSED-HEARTS.md",
+     "extends": "heart field landed on #80's individual record (individual.schema.json) with its three fences as validation; aura read inside #149's closed screen classes \u2014 no fifth class"
+    },
+    {
+     "n": 288,
+     "name": "Purification",
+     "home": "show/production/world-systems/288-PURIFICATION.md",
+     "extends": "chamber annexed to #28's Garden package; gauge writes ride existing event homes; completion rite is one atomic operation resolving #177/#129 inside it"
+    },
+    {
+     "n": 289,
+     "name": "Frenzy",
+     "home": "show/production/battle/289-FRENZY.md",
+     "extends": "volatile condition in #27's schema family resolving on #182's machinery, gated on a closed heart; call seats in #10's ring beside #165"
+    },
+    {
+     "n": 290,
+     "name": "Shadow moves",
+     "home": "show/production/battle/290-SHADOW-MOVES.md",
+     "extends": "class flag rides the move record's existing flags array (verified \u2014 no schema change needed); slots ride #287's gauge bands; modifier seats in #17's chain beside #248"
+    },
+    {
+     "n": 291,
+     "name": "Lure spots",
+     "home": "show/production/world-systems/291-LURE-SPOTS.md",
+     "extends": "spot record in #66's family, tables in #7's idiom, depletion on #19's tick; alert is a #81 behaviour + #149 alert note; depths spots unrepresentable by validation"
+    },
+    {
+     "n": 292,
+     "name": "Long climb",
+     "home": "show/production/battle/292-LONG-CLIMB.md",
+     "extends": "#186's big form beside its run history under #96: the ladder is a run, the climb is a campaign; coupon fencing as a #20 validation (no conversion path)"
+    },
+    {
+     "n": 293,
+     "name": "Raising depth",
+     "home": "show/production/world-systems/293-RAISING-DEPTH.md",
+     "extends": "annex to #28's care profile; the effect record cannot name a battle stat \u2014 the line is schema-level, machine-checked at landing; checkups in #132's family, grades only"
+    },
+    {
+     "n": 294,
+     "name": "Care sports",
+     "home": "show/production/world-systems/294-CARE-SPORTS.md",
+     "extends": "#236's open arithmetic slot filled as its annex; never-read-battle-stats as a negative rule; #287 entry gate is a shown refusal"
+    },
+    {
+     "n": 295,
+     "name": "Ranks & emblems",
+     "home": "src/data/core/docs/295-RANKS-EMBLEMS.md",
+     "extends": "ranks derived at read over #164/#186/#292/#294 \u2014 a stored rank field anywhere is a defect; emblems in #104's family, display in #98/#238; stories/rescues/ceremonies never ranked"
+    },
+    {
+     "n": 296,
+     "name": "Sonic grammar (show production rules)",
+     "home": "show/production/296-SONIC-GRAMMAR.md",
+     "extends": "production lines proposed into #82's format; theme registry beside #72/#215; the spectacle doctrine (R1, owner ruling) quoted into the production research INDEX for List 32"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list31-systems",
+   "type": "systems-index",
+   "about": "List 31 teardown systems (items 297-306), landed 2026-10-27 \u2014 the open-world layer over the Pokemon base (essence statement): the base fills mechanics, the open-world reading wins ties on scope; open slots are story/canon facts only.",
+   "items": [
+    {
+     "n": 297,
+     "name": "Open traversable world",
+     "home": "src/data/core/docs/297-OPEN-TRAVERSABLE-WORLD.md",
+     "extends": "terrain beside #11's graph on #127's connections; the gate contract is a validation rule \u2014 every gate carries an in-world reason, invisible walls are unrepresentable; zero terrain records authored"
+    },
+    {
+     "n": 298,
+     "name": "Ambient world events",
+     "home": "show/production/world-systems/298-AMBIENT-WORLD-EVENTS.md",
+     "extends": "stranger-moments derived over #231 + #93/#145's floor; intervening writes through the real systems, walking away is a complete play"
+    },
+    {
+     "n": 299,
+     "name": "Joinable factions",
+     "home": "src/data/core/docs/299-JOINABLE-FACTIONS.md",
+     "extends": "a faction is a #270 group plus this record; membership beside #98's licence family; exclusivity resolves as one validation over the joining write; #270 reads membership only when known or shown"
+    },
+    {
+     "n": 300,
+     "name": "Choice & consequence standard",
+     "home": "show/production/world-systems/300-CHOICE-CONSEQUENCE-STANDARD.md",
+     "extends": "the checklist registered in #138's home as a landing gate for content (fork / written fact / closed door / echo); retroactive application is a separate content pass"
+    },
+    {
+     "n": 301,
+     "name": "Dialogue & player voice",
+     "home": "src/data/core/docs/301-DIALOGUE-PLAYER-VOICE.md",
+     "extends": "options derived from a closed fact list (absent fact = absent option, never greyed); tone availability read from #271's bands, once; game dialogue store holds human lines only"
+    },
+    {
+     "n": 302,
+     "name": "Law escalation",
+     "home": "src/data/core/docs/302-LAW-ESCALATION.md",
+     "extends": "the ladder lands ON #272 \u2014 reconciled against landed #272 at this landing; ceilings and decay are regional world facts; decay cools, never forgives"
+    },
+    {
+     "n": 303,
+     "name": "Owned places",
+     "home": "src/data/core/docs/303-OWNED-PLACES.md",
+     "extends": "the class over #169's record (cross-reference only in #169's file); exactly one proposal out \u2014 the tenure clause into #125's file, with citation"
+    },
+    {
+     "n": 304,
+     "name": "Barter economy",
+     "home": "src/data/core/docs/304-BARTER-ECONOMY.md",
+     "extends": "the trade read is one function of four steps over #118's counters on #20's anchor; #20's no-dynamic-pricing law clarified in #20's home, never quoted against the standing modifier; currency name untouched"
+    },
+    {
+     "n": 305,
+     "name": "Open league structure",
+     "home": "src/data/core/docs/305-OPEN-LEAGUE-STRUCTURE.md",
+     "extends": "attempt / earn / spine separated on #45/#143's machinery; #143's Region 1 record stands as authored data \u2014 clarification registered in #143's file"
+    },
+    {
+     "n": 306,
+     "name": "Living overworld presence",
+     "home": "show/production/world-systems/306-LIVING-OVERWORLD-PRESENCE.md",
+     "extends": "presence derived from #7 stock x #152 views (encounter math unmoved); the depths clause is a landing test \u2014 no derivation path may reach the Dark Forest depths"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list32-systems",
+   "type": "systems-index",
+   "about": "List 32 teardown systems (items 307-316), landed 2026-10-27 \u2014 the spectacle list: one budget over seven family grammars, the field, and the individual dialect inside every family; open slots are story/canon facts and authored content only.",
+   "items": [
+    {
+     "n": 307,
+     "name": "Spectacle doctrine",
+     "home": "show/production/battle/307-SPECTACLE-DOCTRINE.md",
+     "extends": "spectacle header block declared into #9's animscript format; read by #147 as a derived spectacle view; no stored spectacle state anywhere"
+    },
+    {
+     "n": 308,
+     "name": "Lightning spectacle",
+     "home": "show/production/battle/308-LIGHTNING-SPECTACLE.md",
+     "extends": "#252 RAIN/STORM seats read, arithmetic untouched; no-chase-camera rule binds as a #9 review checklist item, not a validator rule; flash obeys #121's caps"
+    },
+    {
+     "n": 309,
+     "name": "Water spectacle",
+     "home": "show/production/battle/309-WATER-SPECTACLE.md",
+     "extends": "#128 wet-plate aftermath read; seed performance is #131's Water Orb; storm crossover seats declared against #252"
+    },
+    {
+     "n": 310,
+     "name": "Strength spectacle",
+     "home": "show/production/battle/310-STRENGTH-SPECTACLE.md",
+     "extends": "#49's smear grammar is its staging base; #128 plate marks and #215 post-impact hole read"
+    },
+    {
+     "n": 311,
+     "name": "Earth spectacle",
+     "home": "show/production/battle/311-EARTH-SPECTACLE.md",
+     "extends": "fissure direction/destination data PROPOSED as an optional cue field into #9's format; seed performance is #131's Tremor; #128 plates are its stage"
+    },
+    {
+     "n": 312,
+     "name": "Aerial spectacle",
+     "home": "show/production/battle/312-AERIAL-SPECTACLE.md",
+     "extends": "altitude read PROPOSED into #128's plate data; #49 smears and #215 wind beds read; speed staged as scenery turnover"
+    },
+    {
+     "n": 313,
+     "name": "Ghost spectacle",
+     "home": "show/production/battle/313-GHOST-SPECTACLE.md",
+     "extends": "cold spot PROPOSED as a localised bed state into #215; #155 vocal floor and #136 intention fence read; jump-scare named as the family's defect"
+    },
+    {
+     "n": 314,
+     "name": "Yokai spectacle",
+     "home": "show/production/world-systems/314-YOKAI-SPECTACLE.md",
+     "extends": "lands beside #244's customs package in the world layer; #138's mystery fence shared; the Dark Forest's contents stay canon-open"
+    },
+    {
+     "n": 315,
+     "name": "Exploration spectacle",
+     "home": "show/production/world-systems/315-EXPLORATION-SPECTACLE.md",
+     "extends": "first arrival is the derived edge of #146's visit record \u2014 no stored introduced flag; compositions are authored data in #137-family place records"
+    },
+    {
+     "n": 316,
+     "name": "Signature spectacle",
+     "home": "show/production/battle/316-SIGNATURE-SPECTACLE.md",
+     "extends": "four dialect constants annexed into #131's register rows with slots EMPTY (contents written at casting); #131's moveId tension note carried verbatim, unresolved"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list33-systems",
+   "type": "systems-index",
+   "about": "List 33 teardown systems (items 317-326), landed 2026-10-27 \u2014 the masks & standouts list: the grown face-cover class, the register of ruled exceptions, and the road from a record to the cast; open slots are story/canon facts and authored content only.",
+   "items": [
+    {
+     "n": 317,
+     "name": "Face shields & mask anatomy",
+     "home": "show/production/world-systems/317-FACE-SHIELDS.md",
+     "extends": "founds the face-cover part class in #259's idiom \u2014 the amendment INTO #259's file is applied at this landing (closed list now eight classes); the class never comes off and there is no unmasked state"
+    },
+    {
+     "n": 318,
+     "name": "Ruled deviation register",
+     "home": "show/production/species-data/318-RULED-DEVIATION-REGISTER.md",
+     "extends": "a compiled view over #80's RULED records, storing nothing; two founding entries verified in #80's live registry, the maskless Verdilance's record owed by the cast-records lane"
+    },
+    {
+     "n": 319,
+     "name": "Individual recognition",
+     "home": "show/production/world-systems/319-INDIVIDUAL-RECOGNITION.md",
+     "extends": "recognition derived over #80 + #114 history reads; fame read from #224's printed record + #93 town data \u2014 no fame field on any individual record"
+    },
+    {
+     "n": 320,
+     "name": "Face expression staging",
+     "home": "show/production/320-FACE-EXPRESSION.md",
+     "extends": "board-review criteria landed beside #53's pipeline: expression rides anatomy carriers per #317 form; the plate never flexes; a review gate, not engine behaviour"
+    },
+    {
+     "n": 321,
+     "name": "Covered-face story law",
+     "home": "show/production/321-COVERED-FACE-STORY.md",
+     "extends": "forbidden-structure list landed as an arc-review checklist item in #82's home; the shield is the face \u2014 what it means stays episode writing"
+    },
+    {
+     "n": 322,
+     "name": "Generated individual variation",
+     "home": "show/production/species-data/322-GENERATED-VARIATION.md",
+     "extends": "derivation seated beside #108 over #80's seed; snapshot PROPOSED into #80's record shape; four fences incl. no palette anywhere in the table shape (Lustre Law)"
+    },
+    {
+     "n": 323,
+     "name": "Standout encounters",
+     "home": "show/production/world-systems/323-STANDOUT-ENCOUNTERS.md",
+     "extends": "encounter-presentation read over #114's persistence records; no standout instanced in any table and no rate founded; the maskless Verdilance stays show-only in game data"
+    },
+    {
+     "n": 324,
+     "name": "Deviation inheritance",
+     "home": "show/production/species-data/324-DEVIATION-INHERITANCE.md",
+     "extends": "#80's inheritance rule restated and extended: ruled deviations never inherit (hatch negative test landed in #80); generated variation echoes bounded through #322's derivation"
+    },
+    {
+     "n": 325,
+     "name": "Record portrait fidelity",
+     "home": "show/production/species-data/325-RECORD-PORTRAIT-FIDELITY.md",
+     "extends": "#196's MUST REPRODUCE generalised by citation in #196's home (rule text unchanged); silhouette fence landed beside #207 \u2014 silhouettes resolve from species records only"
+    },
+    {
+     "n": 326,
+     "name": "Record to cast pipeline",
+     "home": "show/production/326-RECORD-TO-CAST.md",
+     "extends": "four-seat pipeline extending #82's cast machinery; casting never back-writes the species sheet; #318's register is the casting's source of truth"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list34-systems",
+   "type": "systems-index",
+   "about": "List 34 teardown systems (items 327-336), landed 2026-10-27 \u2014 the gap-filling pull-in list: a standing register, and nine donor systems rebuilt natively over seats that already exist; open slots are story/canon facts and authored content only.",
+   "items": [
+    {
+     "n": 327,
+     "name": "Pull-in register",
+     "home": "show/production/327-PULL-IN-REGISTER.md",
+     "extends": "the standing scout book at the production root; opens with nine building entries and three carried refusals (#103 fusion, #70 rubber-banding, #122 restart-plus); every later STAGING feeds it"
+    },
+    {
+     "n": 328,
+     "name": "Rancher arrival",
+     "home": "show/production/world-systems/328-RANCHER-ARRIVAL.md",
+     "extends": "arrival event class PROPOSED into #80's history vocabulary; seats beside #206/#44/#46 with #135 presentation; lifespan/freezing refusals carried into #327's register"
+    },
+    {
+     "n": 329,
+     "name": "Care-branch evolution",
+     "home": "show/production/world-systems/329-CARE-BRANCH-EVOLUTION.md",
+     "extends": "semantics section landed in #199's file over #8's table architecture; zero lines declared; the A9 OWNER_DECISION fence stated as a testable schema check"
+    },
+    {
+     "n": 330,
+     "name": "Skills by use",
+     "home": "src/data/core/docs/330-SKILLS-BY-USE.md",
+     "extends": "Ranger proficiency derived at read time over existing use-facts, rendering beside #238/#98; no field added to #98's record and proficiency gates nothing, ever"
+    },
+    {
+     "n": 331,
+     "name": "Persona bonds & calendar engine",
+     "home": "show/production/world-systems/331-PERSONA-BONDS-CALENDAR.md",
+     "extends": "bond ranks derived over #93 facts (no rank field stored); calendar engine beside them with #224's daily edition as first rollover subscriber; season output returns null \u2014 no year invented"
+    },
+    {
+     "n": 332,
+     "name": "Working properties",
+     "home": "show/production/world-systems/332-WORKING-PROPERTIES.md",
+     "extends": "services annex recorded in #303's file at this landing (List 31 landed since prep); the #106 location place-ref seat PROPOSED in #106's file only; upkeep reads #331's rollover"
+    },
+    {
+     "n": 333,
+     "name": "Companion judgement",
+     "home": "show/production/world-systems/333-COMPANION-JUDGEMENT.md",
+     "extends": "affinity read landed beside #160 over witnessed facts only; partner-departure event PROPOSED into #80 and #267; no consumer may read a judgement band to disable a player action"
+    },
+    {
+     "n": 334,
+     "name": "Home camp",
+     "home": "show/production/world-systems/334-HOME-CAMP.md",
+     "extends": "annex on #28's Garden seat: supplies, residents' home life and derived camp mood change staging and nothing else"
+    },
+    {
+     "n": 335,
+     "name": "Tournament form",
+     "home": "show/production/world-systems/335-TOURNAMENT-FORM.md",
+     "extends": "Tenkaichi presentation annex landed in #151's file in #151's home; ring-out PROPOSED there and left undecided; #151's WHETHER slot carried verbatim \u2014 no canon tournament asserted"
+    },
+    {
+     "n": 336,
+     "name": "Mod-community standard",
+     "home": "show/production/336-MOD-COMMUNITY-STANDARD.md",
+     "extends": "convenience-floor audit beside #327; BUILD annexes landed in #198 (where read) and #150 (repel toggle); row 6 converted at the link check against #177 to BUILD-as-toggle, recorded in #150/#177 and in the audit document itself"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list35-systems",
+   "type": "systems-index",
+   "about": "List 35 teardown systems (items 337-346), landed 2026-10-27 \u2014 the owner-directed Sonic/Chao pull: raised variation, hero/dark campaigns over the morale ladder, and music as identity. Open slots are story/canon facts and authored content only.",
+   "items": [
+    {
+     "n": 337,
+     "name": "Raised variation",
+     "home": "src/data/core/docs/337-RAISED-VARIATION.md",
+     "extends": "the drift read: a derived read over #338's raising facts, settling via #293's mechanism (extension proposal registered in #293's file at this landing)"
+    },
+    {
+     "n": 338,
+     "name": "Raising inputs",
+     "home": "src/data/core/docs/338-RAISING-INPUTS.md",
+     "extends": "the closed eight-family read set every raising read eats from; a ninth family arrives only as a proposal into this file"
+    },
+    {
+     "n": 339,
+     "name": "Bond-shaped variation",
+     "home": "show/production/world-systems/339-BOND-SHAPED-VARIATION.md",
+     "extends": "#180's bond cues made continuous as visible marks; the end-of-life future read seats beside #243 with its outcome slot empty"
+    },
+    {
+     "n": 340,
+     "name": "Move-shaped variation",
+     "home": "show/production/world-systems/340-MOVE-SHAPED-VARIATION.md",
+     "extends": "practice leanings from the known set + #187 usage, cited by #316 and #346 as casting evidence"
+    },
+    {
+     "n": 341,
+     "name": "Stat-shaped emphasis",
+     "home": "src/data/core/docs/341-STAT-SHAPED-EMPHASIS.md",
+     "extends": "care/work emphasis derived from #28/#293 care records, spoken only in #337's proportion channel"
+    },
+    {
+     "n": 342,
+     "name": "Variation across generations",
+     "home": "src/data/core/docs/342-VARIATION-ACROSS-GENERATIONS.md",
+     "extends": "the lean at #77's hatch read \u2014 derivation input over #204's gates, writing nothing to any record"
+    },
+    {
+     "n": 343,
+     "name": "Hero/Dark campaigns",
+     "home": "src/data/core/docs/343-HERO-DARK-CAMPAIGNS.md",
+     "extends": "two progression tracks annexed over #146's one-world payload; the world is never forked; finale story is an owner canon slot"
+    },
+    {
+     "n": 344,
+     "name": "Music identity",
+     "home": "show/production/344-MUSIC-IDENTITY.md",
+     "extends": "theme records from brief + motif; the place-motif ref is proposed into #215's bed record in #215's home"
+    },
+    {
+     "n": 345,
+     "name": "Soundtrack construction",
+     "home": "show/production/345-SOUNDTRACK-CONSTRUCTION.md",
+     "extends": "songs land as versions inside #344's records; the licence-honesty audit line lands at #75's delivery finish"
+    },
+    {
+     "n": 346,
+     "name": "Raising shown",
+     "home": "show/production/world-systems/346-RAISING-SHOWN.md",
+     "extends": "the raising read quoted into casting packets beside \u2014 never inside \u2014 #318's ruled section, riding #326's packet discipline"
+    }
+   ]
+  },
+  {
+   "id": "mochiichao-list36-systems",
+   "type": "systems-index",
+   "about": "List 36 teardown systems (items 347-356), landed 2026-10-27 \u2014 the conscience & counterplay list built around List 28's steal-confirmation ruling. It cites List 28's #268/#269 addendum; it does not duplicate it. Open slots are wording and authored content only.",
+   "items": [
+    {
+     "n": 347,
+     "name": "Conscience prompts",
+     "home": "show/production/battle/347-CONSCIENCE-PROMPTS.md",
+     "extends": "the prompt taxonomy keyed to #269's deed vocabulary, founded on #268's confirmation gate; the owner's steal line lands verbatim and closed"
+    },
+    {
+     "n": 348,
+     "name": "Attempt deeds",
+     "home": "show/production/battle/348-ATTEMPT-DEEDS.md",
+     "extends": "the attempt class generalised from #269's seed row \u2014 rows proposed into #269's table in #269's home at this landing, reputation fence as a validation note in #270's"
+    },
+    {
+     "n": 349,
+     "name": "Rescue confirmation",
+     "home": "show/production/battle/349-RESCUE-CONFIRMATION.md",
+     "extends": "the same throw as rescue, shaped by #287's heart read via #268's throw; reader presence is #31 item data"
+    },
+    {
+     "n": 350,
+     "name": "Input honesty",
+     "home": "show/production/battle/350-INPUT-HONESTY.md",
+     "extends": "the five-stage pipeline seated on #10's command flow (BATTLE-UI-FLOW.md) with #351's refusal order and the #347/#349 gate as one artefact"
+    },
+    {
+     "n": 351,
+     "name": "Device refusals",
+     "home": "show/production/battle/351-DEVICE-REFUSALS.md",
+     "extends": "five refusal classes as data on #31 (item), #68 (target) and #109/#186 (ruleset); a refused throw writes nothing anywhere"
+    },
+    {
+     "n": 352,
+     "name": "Opponent voice",
+     "home": "show/production/battle/352-OPPONENT-VOICE.md",
+     "extends": "reaction classes proposed as a battle address space into #301's dialogue file at this landing; the crowd fence is stated in both #242's and #352's records"
+    },
+    {
+     "n": 353,
+     "name": "Surrender & mercy",
+     "home": "show/production/battle/353-SURRENDER-MERCY.md",
+     "extends": "the surrender offer in #10's ring under #210's honours-only stakes; mercy rows proposed into #269's table at this landing"
+    },
+    {
+     "n": 354,
+     "name": "Guarding",
+     "home": "show/production/battle/354-GUARDING.md",
+     "extends": "interpose and screen proposed as command-declared rows into #184's resolution vocabulary; AI decisions seat on #18, not #158"
+    },
+    {
+     "n": 355,
+     "name": "Theft throw, staged",
+     "home": "show/production/battle/355-THEFT-THROW-STAGED.md",
+     "extends": "one #9 skeleton in two registers per #307's grammar; the battle-segment bed seat was checked in #215, found absent, and proposed into #215's file"
+    },
+    {
+     "n": 356,
+     "name": "After a steal lands",
+     "home": "show/production/battle/356-AFTER-A-STEAL-LANDS.md",
+     "extends": "the stolen slot stays empty; rage/sorrow classes named for #180's declaration law, instanced nowhere yet; send-out fence rides #268's party of record"
+    }
+   ]
+  }
+ ]
+}

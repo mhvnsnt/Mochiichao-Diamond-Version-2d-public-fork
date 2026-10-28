@@ -43,7 +43,7 @@ corners + edges + fill, DrawFrameAndWindow).
    this beat). Mom / Aeon state the goal: visit the dojos, beat the
    Champion Mythar, stop the Hackers/Syndicate — Mochiichao story,
    in that order, told in dialogue, not in a menu header.
-8. FIRST ROUTE — Route 1.0 / Binary Woods: tall-grass encounters
+8. FIRST ROUTE — Route 1.0 / The Dark Forest: tall-grass encounters
    only AFTER the starter + cubes are in hand. First town =
    Silicon Town, first shop, first dojo later. Gate: no starter =
    cannot leave Sector 0 lab area (NPC / Aeon blocks the exit with
@@ -82,7 +82,7 @@ corners + edges + fill, DrawFrameAndWindow).
 
 ## Mochiichao story on top (canon, NOT Pokemon)
 Prof Aeon, assistant Mochiko, rival Hex, Mom, Mainframe Region,
-Sector 0 Boot Harbor, Binary Woods, Silicon Town, MochiiPlex,
+Sector 0 Boot Harbor, The Dark Forest, Silicon Town, MochiiPlex,
 Castagnoli Island, dojos (not gyms), Hackers / Syndicate /
 Liberation Front, Junk Warlord Krix, Champion Mythar, Luigi Cubes,
 Mend Patch, Credits (CR). All dialogue written fresh in that

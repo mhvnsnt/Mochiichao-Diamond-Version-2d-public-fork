@@ -1,0 +1,13 @@
+strings = [
+	"",
+	"[name]Junior[name]They're late.\nWhat are Teddy\nand Ivy doing?[pause][clear]We won't have\ntime to play\nDigimon Online...[pause]",
+	"[name]Junior[name]I didn't want Ivy to\ncome, but Teddy and \nhis big mouth told her.[pause][clear]They should have\ngotten a Login Pass\nahead of time...[pause]",
+	"...This just in.[pause][clear]International Police, S.A.P have\nlocated the European HQ of the \ncrime group A.o.A.[pause][clear]Together with the army, they\nraided their headquarters\nat midnight last night...[pause][clear]And have arrested the leaders\nof the A.o.A inside the \ncompound.[pause][clear]Officials believe these arrests\nwill connect recent internet\nterrorism to the A.o.A.[pause]",
+	"[name]Junior[name]A.o.A...that's the\ngroup that did bad\nthings with Digimon.[pause][clear]I can't believe anyone\nwould make Digimon\ndo bad things![pause]",
+	"[name]Ivy[name]Junior, why are you\ntalking to yourself?\nIt's creepy.[pause]",
+	"[name]Teddy[name]Thanks for waiting,\nJunior. Sorry we're\nlate![pause]",
+	"[name][player_name][name]About time \nTeddy![pause]",
+	"[name]Junior[name]And why is Ivy\nhere in the first \nplace?[pause][clear]You always say that\nDigimon are for kids![pause]",
+	"[name]Ivy[name]Hey, I'm interested in\nDigimon Online, OK?![pause][clear]...and I never said \nthat I hated Digimon![pause]",
+	"[name]Teddy[name]Junior, Ivy - come on,\nlet's go to the Online\nCenter![pause]",
+]

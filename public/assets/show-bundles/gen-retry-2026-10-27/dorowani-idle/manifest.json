@@ -1,0 +1,51 @@
+{
+  "schema": "mochiichao-show/avatar-bundle/v1",
+  "species": "dorowani",
+  "variant": "idle",
+  "backend": "muse-hosted-avatar-generator",
+  "backend_callable_from_repo": false,
+  "created_utc": "2026-10-28T01:00:26.019605+00:00",
+  "source_clip": "norm/dorowani-idle.mp4",
+  "spec": {
+    "codec": "h264",
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192,
+    "duration_s": 8.0
+  },
+  "conformance": {
+    "target": {
+      "width": 720,
+      "height": 720,
+      "fps": 24.0,
+      "duration_s": 8.0
+    },
+    "meets_target": true
+  },
+  "files": {
+    "mp4": {
+      "path": "dorowani-idle.mp4",
+      "sha256": "0cb5bbbee03954624941b95e431022457d10980ba57181b3e7afd8467e9b4138",
+      "bytes": 602374
+    },
+    "transparent_webm": {
+      "path": "dorowani-idle.transparent.webm",
+      "sha256": "58a9f5e286526898923cf7a0f5622d16e8230a627a5cb82439497f6a43b7b083",
+      "bytes": 1999308,
+      "status": "PRODUCED_WHITE_FIELD",
+      "method": "white_matte.py (white-distance key + enclosed-region rescue)"
+    },
+    "poster": {
+      "path": "dorowani.webp",
+      "sha256": "d2e54f339ca274c1384fa54b005302ffc5007910bd55acea75788483543a744f",
+      "bytes": 28686,
+      "source": "source_still"
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "verdict_recommendation": "FAIL"
+  }
+}

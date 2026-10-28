@@ -1,0 +1,10 @@
+strings = [
+	"",
+	"[name][player_name][name]Yeah, I won \nagainst Genbu \nLeader too![pause]",
+	"[name]Genbu Leader[name][player_name2], I apologize \nfor making you fight.[pause][clear]I wanted to see for\nmyself that...[pause][clear]You can really fight\nagainst the A.o.A![pause]",
+	"[name][player_name][name]Oh, I see...[pause]",
+	"[name]Genbu Leader[name]Now take this\nand stop the \nA.o.A's plans![pause]",
+	"[name][player_name][name]Yeah! I got \nthe Genbu \nBadge![pause]",
+	"[name]Genbu Leader[name]I think you're\nstrong enough \nto fight on.[pause][clear]But they too are\nstrong, so keep \nyour guard up![pause]",
+	"[name][player_name][name]Thanks,\nGenbu Leader![pause]",
+]

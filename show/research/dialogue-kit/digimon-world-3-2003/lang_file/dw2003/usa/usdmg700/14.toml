@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Dark Knight[name]Oh yeah!\nLooks like you've got \nsome spunk![pause][clear]This is the Dark \nDungeon, Asuka \nServer's strongest![pause][clear]And I'm the strongest\nboss, Dark Knight![pause]",
+	"[name][player_name][name]I'm the best tamer\n[player_name2]! Excuse \nme, you're in my way.[pause]",
+	"[name]Dark Knight[name]...Huh?! Hey kid!\nI don't have a program \nlike that![pause][clear]I can't just let the\nother guy go![pause][clear]If you wanna get \nthrough you gotta\ndefeat me![pause][clear]Not that you could...[pause]",
+	"[name][player_name][name]?![pause]",
+]

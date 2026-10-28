@@ -1,0 +1,11 @@
+strings = [
+	"",
+	"[name]Junior[name]Wow! So this is\nthe Chamber Room?[pause][clear]I can start playing\nthe game...\nThis is exciting![pause]",
+	"[name]Operator[name]What is your\nregistered \naccount name?[pause]",
+	"[name]Junior[name]It's [player_name2]![pause]",
+	"[name]Operator[name]...Confirmed. \nThank you.[pause][clear]Please enter the\nChamber Capsule\nover there.[pause]",
+	"[name]Junior[name]OK![pause]",
+	"a",
+	"[name]Ivy[name]Hey! Are you \nleaving without\nus?[pause]",
+	"[name]Teddy[name]Junior, wait \nup![pause]",
+]

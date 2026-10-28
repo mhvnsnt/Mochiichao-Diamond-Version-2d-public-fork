@@ -1,0 +1,26 @@
+{
+  "background": "show/assets/backgrounds/dark-forest/EP01-PLATE-dark-forest-day-v1-still.png",
+  "duration_s": 12,
+  "layers": [],
+  "audio": null,
+  "ep01_cut": "27",
+  "scene": "EP01-STINGER",
+  "plate_registry": "PLATE-DARK-FOREST-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec still, STILL by law (landed PR #393); canon painted Forest plate still MAKE",
+  "script_beat": "SUBTITLE 3 of exactly 3: Rule 12 burns in low over the Forest and holds. No dialogue, no music.",
+  "camera": "STILL-FOREST",
+  "wind_state": "OFF (FOREST LAW)",
+  "missing_assets": [
+    "subtitle/intertitle card asset, forest grade - not built as a composite layer"
+  ],
+  "flags": [
+    "SUBTITLE LAW: earned moment 3 of exactly 3"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": {
+    "speaker": "INTERTITLE (Rule 12)",
+    "text": "Everything in the garden belongs to somebody... And everybody belongs to the Garden.",
+    "earned_moment": 3,
+    "note": "burn-in intertitle, forest grade; card is a separate post layer, see missing"
+  }
+}

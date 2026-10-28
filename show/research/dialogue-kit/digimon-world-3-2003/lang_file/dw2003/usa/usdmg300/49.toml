@@ -1,0 +1,9 @@
+strings = [
+	"",
+	"[name]KingDivermon[name]Then I'll give \nyou this Asuka \nTrophy![pause]",
+	"[name][player_name][name]Really?! Thanks,\nKingDivermon![pause][clear]Yeah! I got the \nAsuka Trophy![pause]",
+	"[name]KingDivermon[name]I'm the only one\nwho can produce \nit...[pause][clear]It's a symbol for \nAsuka's Card \nKing![pause]",
+	"[name][player_name][name]Wow! Cool!\nIt's a symbol for \nCard King![pause]",
+	"[name]KingDivermon[name]Fofofo, but \ndon't let your\nguard down![pause]",
+	"[name][player_name][name]Yeah! I'm gonna \nget a lot \nstronger![pause][clear]OK, let's go look \nfor a stronger \ncard player![pause]",
+]

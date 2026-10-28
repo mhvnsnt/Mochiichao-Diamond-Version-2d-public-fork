@@ -1,0 +1,213 @@
+{
+  "$id": "mochiichao/dojo-encounter.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Leader encounter record — dojo / elite / champion (#30)",
+  "description": "A scripted wrapper around the shared battle system: intro/win/lose script POINTERS (dialogue lives in the dialogue kit / Ink, never embedded here), fixed party slots, a signature slot, fragment reward wiring to the event/flag architecture, and a rematch pointer. Canon supplies leader names and order for Region 1 only; ALL party contents, levels, locations, and the Dojo 8 leader name are OPEN and ship null.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "encounterId": {
+      "type": "string"
+    },
+    "tier": {
+      "enum": [
+        "dojo",
+        "elite",
+        "champion",
+        "syndicate"
+      ]
+    },
+    "dojoIndex": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 8,
+      "description": "1-8 for tier=dojo; null otherwise."
+    },
+    "leader": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nameStatus": {
+          "type": "string",
+          "description": "'canon: SEASON-CANON-MAP master list' or 'OPEN — canon leaves the Dojo 8 leader unnamed'."
+        }
+      },
+      "required": [
+        "name",
+        "nameStatus"
+      ]
+    },
+    "locationId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Join to the Region 1 route graph (#11). Null = OPEN (dojo locations are unassigned in canon)."
+    },
+    "introScript": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Pointer only: dialogue-kit path/entry or Ink knot."
+    },
+    "winScript": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "loseScript": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "party": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "speciesId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "level": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "role": {
+            "enum": [
+              "opener",
+              "core",
+              "signature"
+            ]
+          }
+        },
+        "required": [
+          "speciesId",
+          "level",
+          "role"
+        ]
+      },
+      "description": "Slots exist so a canon/balance pass fills a fixed shape. Empty array = party entirely OPEN (canon's current state for every leader)."
+    },
+    "signatureSlot": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Index into party naming the slot the fight is remembered by. Null until a party exists."
+    },
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fieldEffectId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weather": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "fieldEffectId",
+        "weather"
+      ]
+    },
+    "reward": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fragmentId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Dojo tier only; badges are Fragments (canon). The fragment id itself is assigned at landing."
+        },
+        "itemIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Joins item layer (#31)."
+        },
+        "flagSet": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The progress.* flag claiming this win sets (#12 namespace). Fragment COUNT stays derived, never stored."
+        }
+      },
+      "required": [
+        "fragmentId",
+        "itemIds",
+        "flagSet"
+      ]
+    },
+    "rematch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "available": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "partyRef": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Rematches are SEPARATE encounter records, never edits to the first-fight record (currency law)."
+        }
+      },
+      "required": [
+        "available",
+        "partyRef"
+      ]
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "encounterId",
+    "tier",
+    "dojoIndex",
+    "leader",
+    "locationId",
+    "introScript",
+    "winScript",
+    "loseScript",
+    "party",
+    "signatureSlot",
+    "field",
+    "reward",
+    "rematch",
+    "status"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+ "_about": "Regional starter programme fragment (List 23 #222) — the institution pairing a new licence (#98) with a first partner. Region 1's record is canon-seeded from the season canon map; Regions 2–5 are null by discipline — a programme is regional culture and none is extrapolated. The founding transfer stamps as #217's programme gift.",
+ "format": "mochiichao/starter-programme/v1",
+ "join": "the programme's first-partner beat and #98's issuedBeat are the same beat read by both systems; the first partner stamps {met_via: gift, from: programme, to: new Ranger, beat} (#217)",
+ "open_register": [
+  "Regions 2–5 programmes, entire (officiants, offered lines, beat classes, ceremonies)",
+  "programme capacity/waiting (content)",
+  "the licence's physical form, if any (inherited #98 design slot)"
+ ],
+ "record": "{regionId, officiant, offeredLines, firstPartnerBeat, licenceJoin: with_licence | exception} — null fields mean no founded programme in this package, a fact about the package, not the region",
+ "region_1_canon": {
+  "firstPartnerBeat": "rescue — the partner is chosen in the harbour rescue's own moment, not from a presented tray",
+  "licenceJoin": "with_licence — Aeon gives the partner AND the Mochiioteca together; the handover is the licence's material twin",
+  "note": "the older Garden choosing ceremony is preserved as flashback/prologue material by owner ruling (2026-10-27); it is NOT Region 1's practised programme and the record does not cite it as one",
+  "offeredLines": [
+   "Mochii",
+   "Razorgater",
+   "Tyrage",
+   "Kittember",
+   "Sproutle"
+  ],
+  "officiant": "Aeon",
+  "socialFrame": "Hex — next-door neighbour, rival, and Region 1 Champion"
+ }
+}

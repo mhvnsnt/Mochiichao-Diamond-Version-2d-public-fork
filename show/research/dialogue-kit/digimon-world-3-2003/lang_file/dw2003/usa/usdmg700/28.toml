@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"OVER 180 SECONDS!\nOVER 180 SECONDS![pause][clear]REALIZE TRANSFER HAS \nREACHED LIMIT.\nFORCING DIGITIZATION![pause]",
+	"[name]Chamber Office[name]...Astral Device \nis all green. No \nabnormality in data.[pause][clear]Finishing Digitzation![pause]",
+	"[name][player_name][name]...oh, I ran \nout of time!\nAnd I'm back![pause]",
+	"[name][player_name][name]What should I do?!\nThe Juggernaut is \ngoing to launch![pause]",
+]

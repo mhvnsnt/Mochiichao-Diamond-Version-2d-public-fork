@@ -1,0 +1,115 @@
+# FALK — CANON RECORD (design lock, 2026-10-27)
+
+**Character:** Falk — Dojo 2 leader (Master Falk), Aero type, Wind
+Fragment, Aero Dojo — Wind Wing, Stoneport area.
+
+## The lock
+
+The design generated in the Human Character Design Lane (Wave 1) from
+`falk-brief-and-gaps-2026-10-27.md` was shown to the owner on
+2026-10-27. **Owner verdict: the design is confirmed.** The cream
+panels of the flight jacket were considered for a swap to red and the
+owner rejected the swap — **the design stands exactly as designed;
+colours are not altered.**
+
+## Wardrobe ruling (owner, 2026-10-27)
+
+The three verdict candidates are **the same man in three canon
+outfits** — the show runs outfit/fashion variation. None of the three
+is superseded; all three are kept, with scene roles:
+
+| Outfit | Source plate | Worn for |
+|---|---|---|
+| **CASUAL** | Candidate A — cream-and-teal flight jacket, feather shoulder trim, short knotted scarf, goggles on forehead | Everyday presentation: model sheet, world views, walk, portrait |
+| **FIELD** | Candidate B — sleeveless padded flight vest, thick falconry glove on left forearm | Out in the wild, battling away from the dojo |
+| **DOJO** | Candidate C — deep teal flight jacket, long streaming scarf, calling pose | Dojo-leader presentation: battle front, dojo scenes |
+
+## Locked look (one likeness across all outfits)
+
+Face: youthful adult man, lean keen face, confident easy grin, small
+nose, small mouth · Skin: warm medium-tan (as designed, confirmed
+as-is) · Hair: tall swept-up-and-back spiky hair, golden blonde, bold
+separated spikes (owner direction 2026-10-27: hairstyle like Lars
+from Tekken — described, never named in prompts) · Eyes: large anime
+eyes, sky-blue · Male (owner ruling 2026-10-27) · Dressed like an
+avian trainer (owner direction 2026-10-27) · Signature items: aviator
+goggles on forehead, teal scarf, belt pouch · No baked shadows.
+
+## Team (owner ruling 2026-10-27 — locked reading wins)
+
+019 Zephling Lv18 / 020 Aerobeak Lv19 / 021 Stormtalon Lv20
+(Stormtalon below its Lv34 evolution threshold is a standing
+exception in the locked reading; the Sproutle code placeholder is
+superseded.) Dialogue APPROVED 2026-10-26
+(`MASTER-FALK-DIALOGUE-DRAFT-2026-10-26.md`), built on the owner's
+verbatim voice seeds: "I'm high as a kite", "free like a bird",
+"I'm about to fly him out".
+
+## Completion set (8-step standard) — status at lock
+
+| # | Step | Status | Outfit |
+|---|---|---|---|
+| 1 | Model sheet (this PR) | DONE | Casual |
+| 2 | World front/back/left/right | DONE (lane workspace) | Casual |
+| 3 | Walk frames | DONE — 4 direction idles + all four directional strides. The down/up step frames were missing at the lock (recorded missing, not fabricated) and were produced 2026-10-27 on the owner's order; see the gap-closure note below | Casual |
+| 4 | Battle front | DONE (lane workspace). Battle back not owed: NPC front-facing per standard, not playable | **Dojo** (primary); casual variant supplementary, drift-flagged |
+| 5 | Portrait icon | DONE (lane workspace; cropped from the locked model sheet) | Casual |
+| 6 | Special variants | DONE as role variants per the wardrobe ruling — dojo presentation plate + field outfit plate; no bike/surf/etc. variants invented (he has no such canon action) | Dojo / Field |
+| 7 | Data | DONE (lane workspace JSON: role, location, dialogue ref, party) | — |
+| 8 | 64×64 atlas + manifest | DONE (lane workspace; complete atlas fills all 16 cells and supersedes the partial one; manifest records the outfit and source of every cell) | Mixed, per cell |
+
+**Count: 8/8 steps complete.** (At the lock the count stood at 7/8
+with step 3 partial — the walk generation had produced the four
+direction idles and left/right strides, and the down/up step frames
+were recorded missing, not fabricated. The owner ruled the frames
+necessary on 2026-10-27; both were produced the same day in the
+locked likeness and casual outfit, identity-checked against the
+locked model sheet with a PASS, and the walk sheet and atlas were
+rebuilt complete — `falk-walk-sheet-COMPLETE-2026-10-27.webp` and
+`falk-atlas-64x64-COMPLETE-2026-10-27.png` supersede the partial
+versions, which are kept on file. The full closure history,
+including a flagged slight proportion nuance in the new frames,
+is recorded in the step-8 manifest's `gap_closure` entry.) Full
+set staged in the
+Human Character Design Lane workspace
+(`human-design-lane/wave-1/falk/completion/`): model sheet, world
+views, walk sheet, battle fronts, portrait, data JSON, atlas PNG,
+manifest JSON. Flagged drift on record: the casual battle variant
+grins with teeth, streams the scarf long, and wears the pouch on the
+right hip — kept as a supplementary variant only; the dojo battle
+front is primary.
+
+## Form split (owner ruling, 2026-10-27)
+
+The owner reviewed the completed walk sheet and ruled that its
+first figures are the **CHIBI form**. The two forms are now
+separated and each completed in its own proportions; the atlas set
+is **three atlases**:
+
+| Atlas | Form | Status |
+|---|---|---|
+| `falk-atlas-64x64-COMPLETE-2026-10-27.png` | Mixed (historical set) | Retained unchanged |
+| `falk-atlas-64x64-FULLSIZE-2026-10-27.png` | Full-size only | NEW — 16/16 cells |
+| `falk-atlas-64x64-CHIBI-2026-10-27.png` | Chibi only | NEW — 16/16 cells |
+
+Plus a full-size walk sheet, `falk-walk-sheet-FULLSIZE-2026-10-27.webp`
+(4 directions × idle + step rows at model-sheet proportions).
+
+**Classification was by eye, backed by measurement** — head share
+(top of figure → neck/scarf line, as % of figure height), recorded
+per cell in the step-8 manifest's `form_split` entry. Measured
+bands: **full-size 18–28%**, **chibi 39–56%** — no overlap. The
+walk sheet's pixel frames measure chibi (idles 39.0–44.5%),
+confirming the owner's ruling; the gap-closure anime down/up steps
+measure full-size-leaning (28.4% / 26.7%) and sit in the full-size
+set. Gaps were filled with new generations (text-only, casual
+outfit, no baked shadows): full-size left/right steps and a
+full-size walk cycle; chibi down/up steps and a chibi six-figure
+sheet (world views, dojo battle front, dojo presentation). All
+passed the identity gate within their form. Two flags ride along,
+recorded in the manifest: the full-size cycle's front/back figures
+are stride poses (labelled as strides, not idles), and the chibi
+front figure grins with teeth. Step 3 and step 8 stand DONE for
+both forms; the canon count stays **8/8**.
+
+**Form-split approval (owner, 2026-10-27; PR #430):** the full-size walk sheet, the FULLSIZE atlas, and the CHIBI atlas are APPROVED as presented — including the two flagged items that were in front of the owner: the chibi front figure's teeth grin (against the locked closed-mouth likeness) and the full-size cycle's front/back figures being labelled stride poses, not idles. The flags stay documented in the manifest, now as approved-as-presented.

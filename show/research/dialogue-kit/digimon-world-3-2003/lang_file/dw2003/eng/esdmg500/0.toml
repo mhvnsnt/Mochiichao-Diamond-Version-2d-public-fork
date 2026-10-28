@@ -1,0 +1,14 @@
+strings = [
+	"",
+	"[name]Woman[name]Hey you... \nyou over \nthere![pause]",
+	"[name][player_name][name]Uummmm,\nwho...me?[pause]",
+	"[name]Woman[name]Hi, I'm Lisa.\nNice to meet \nyou![pause][clear]What's your\nname?[pause]",
+	"[name][player_name][name]Oh, um, it's\n[player_name2]...[pause]",
+	"[name]Lisa[name][player_name2], OK, I'll \nremember that.[pause][clear]By the way [player_name3], \nhave you seen a \ncute green Digimon?[pause]",
+	"[name][player_name][name]Um, ah, is that\nMonmon, or \nTerriermon?[pause]",
+	"[name]Lisa[name]Well...umm, \nI don't know.[pause][clear]What do you \nthink it is\n[player_name2]?[pause]",
+	"[name][player_name][name]...well...um, \n???[pause]",
+	"[name]Lisa[name]...I know, it's \nOgremon!\nIt has to be![pause][clear]So I just have to go \nlook for Ogremon \nright now![pause]",
+	"[name][player_name][name]Huh, what's up with\nher...?[pause]",
+	"[name]Lisa[name]Nice talking \nto you,\n[player_name2].[pause]",
+]

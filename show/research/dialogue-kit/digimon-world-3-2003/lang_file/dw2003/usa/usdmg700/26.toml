@@ -1,0 +1,4 @@
+strings = [
+	"",
+	"[name][player_name][name]Yes, it's really the \nReal World![pause][clear]...Wow! My body is \nreally here![pause][clear]...oh, wait, no time\nfor that![pause][clear]We only have 180 \nseconds! \nWe have to hurry![pause]",
+]

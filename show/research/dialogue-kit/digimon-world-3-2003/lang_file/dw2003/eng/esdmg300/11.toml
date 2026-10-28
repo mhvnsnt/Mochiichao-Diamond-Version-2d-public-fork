@@ -1,0 +1,13 @@
+strings = [
+	"",
+	"Ha ha ha ha! Success! \nThe fusion experiment \nis a success![pause]",
+	"[name]Game Master[name]Congratulations!\nNow it's...?[pause]",
+	"Yes! Even though our \nplans were a bit altered \ndue to Lucky Mouse...[pause][clear]We will now commence\nOperation Sigma![pause]",
+	"[name]Game Master[name]Yes sir![pause]",
+	"Now Vemmon, come \nto me![pause]",
+	"[name][player_name][name]Hey, Game Master!\nWho're you talking\nto? A.o.A's boss?[pause]",
+	"[name]Game Master[name]Oh, you're\nthat boy \nfrom...[pause][clear]What are you \ndoing here?[pause]",
+	"[name][player_name][name]I'm here to\nkick your butt![pause][clear]And you better talk \nfast about what the \nA.o.A is planning![pause]",
+	"[name]Game Master[name]You think you can \ndefeat me? Silly boy![pause][clear]Come out my precious \nDigimon![pause]",
+	"[name][player_name][name]All right, I've\ndefeated the \nguards![pause][clear]Now it's Game \nMaster's turn![pause]",
+]

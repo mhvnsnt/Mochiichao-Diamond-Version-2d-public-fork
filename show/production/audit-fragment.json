@@ -1,0 +1,62 @@
+{
+ "format": "mochiichao/base-audit/v1",
+ "_about": "Machine form of #247's sweep (List 26). present = spec read in its own file; filledHere = machinery completed by List 26 items 248-256; dataDebt = machinery done, authored values owed; hole = machinery absent.",
+ "filledHere": [
+  248,
+  249,
+  250,
+  251,
+  252,
+  253,
+  254,
+  255,
+  256
+ ],
+ "holes": [
+  {
+   "id": "H1",
+   "name": "side conditions (entry hazards, screens, tailwind class)",
+   "seat": "extension of #47's field vector"
+  },
+  {
+   "id": "H2",
+   "name": "switching as a whole system",
+   "seat": "over #10/#157/#184 seats"
+  },
+  {
+   "id": "H3",
+   "name": "element vocabulary reconciliation (canon ruling)",
+   "detail": "Frost and Venom unseated; Terra/Gale/Volt mappings unruled; Aero vs Wind (TBD D6) open; blocks chart rows for those species and #252's FROST exemption list"
+  },
+  {
+   "id": "H4",
+   "name": "temperament -> stat mapping table",
+   "seat": "data pass over #108's vocabulary, consumed by #248"
+  },
+  {
+   "id": "H5",
+   "name": "move registry landed home + core moves.json merge path",
+   "status": "carried UNVERIFIED TARGET (List 13 / #147 registers)"
+  },
+  {
+   "id": "H6",
+   "name": "the calendar (day kinds, seasons) - unruled canon",
+   "detail": "gates #195 seasons and date-based content"
+  },
+  {
+   "id": "H7",
+   "name": "terrain contents - zero canon terrains authored",
+   "seat": "#47 TERRAIN machinery complete; contents pass owed"
+  }
+ ],
+ "dataDebts": [
+  "gainYield values (#177)",
+  "growth curve thresholds (#178)",
+  "split weights (#177)",
+  "classBase payout values + lossBase constant (#253/#20)",
+  "per-area encounterRate overrides (#255)",
+  "condition roster (#182/#27)",
+  "ability assignments (#107)",
+  "eggGroups assignments 0/47 (#171)"
+ ]
+}

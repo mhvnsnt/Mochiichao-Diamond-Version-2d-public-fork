@@ -1,0 +1,35 @@
+{
+  "format": "mochiichao/region-connections/v1",
+  "_about": "Cross-region connection records (List 14 #127) — the connected-world discovery model as GAME DATA, in the route-graph layer beside region1-route-graph.json. A connection is a record with the closed discovery-kind vocabulary (progression | exploration | side-story | map-connection); discovery is derived per Ranger (open iff at least one kind's condition holds; once found, never un-found). ZERO connections are instanced: no region pair has verified node sets on both sides yet (Regions 2-5 have no verified node-level data) — nothing here is inferred. Kinds are per-connection content, authored by the region build, never pre-assigned.",
+  "connectionShape": {
+    "arrivalStaging": {
+      "firstArrivalFact": "a story.* beat in the destination region's namespace, written on this Ranger's first crossing by ANY connection; fires exactly once, however early/late, by whichever door"
+    },
+    "connectionId": null,
+    "discovery": "derived per Ranger per connection: open iff at least one discoveryKind's condition holds; once true, never un-found",
+    "discoveryKinds": [
+      "progression",
+      "exploration",
+      "side-story",
+      "map-connection"
+    ],
+    "fromNode": null,
+    "fromRegion": null,
+    "oneWay": false,
+    "toNode": null,
+    "toRegion": null
+  },
+  "continuity": {
+    "bands": "destination region's own authored bands (#52: never read party state, never scaled to the visitor); early arrival meets the authored gradient as-is",
+    "dex": "one global bitset store (#96); a regional dex is a derived view (#14 popcounts over the region's subset), never a second store; early discovery simply starts filling it early",
+    "licence": "one licence (#98 view); each entered region's circuit renders as its own Fragment case view",
+    "research": "#97 facts persist; levels re-derive per view",
+    "reset": "NONE — no crossing resets, scales, confiscates, or transforms anything, ever",
+    "roster": "unchanged by any crossing (#80 records, #104 honours, #68 locks, #106 location semantics all intact)"
+  },
+  "connections": [],
+  "views": {
+    "journey": "#127 region-transition record (departure-side facts)",
+    "atlas": "#137 world-atlas record (arrival-side facts) — the SAME edge, two views; this file is the one edge store, never two"
+  }
+}

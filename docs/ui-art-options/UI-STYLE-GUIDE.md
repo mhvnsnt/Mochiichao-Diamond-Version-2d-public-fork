@@ -77,7 +77,7 @@ Real game files used as templates: src/lib/species.ts (Mochii 001,
 Tiidebiite 002, Aquari-OS 003, Razorgater 004, Chromedile 005, Reaperdile
 006, Tyrage 007, Duneclaw 008, Oblivirex 009, Kittember 010, Sproutle 038,
 Dreadtoise 039 — note: roster naming for 005 differs, do NOT rename
-silently), src/lib/moves.ts (Tackle, Quick Attack, Aqua Shot, Aqua Jet,
+silently), src/lib/moves.ts (Tackle, Swift Movement, Water Orb, Hydro Rush,
 etc.), src/lib/uiArt.ts (36 slots, see wiring below), FullWorldMaps
 landmarks, mochiichao-systems.ts, and the decomp JSONs on main as
 placement/structure templates (not copied art/code).

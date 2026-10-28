@@ -1,0 +1,19 @@
+{
+ "neverKeeps": "the outcome vocabulary has no word for a party slot — a rescue that ends in a keep is a data error by construction; a bond travels #217 adoption or a later ordinary #38 encounter, each with its own first page",
+ "note": "Shape only — zero rescues instanced; the service's name, posts, and people are story/canon content, slotted. Instances under #164's closed vocabulary as `assist` + this sub-record; a `rescue` kind, if wanted, is proposed into #164's file.",
+ "record": {
+  "condition": "field classes (hurt / trapped / stranded) — never #182 battle status",
+  "custody": "chain of seats (field -> service hands -> #220 shelter custody)",
+  "foundArea": "#7 area ref — may never name the Dark Forest depths",
+  "outcome": [
+   "released",
+   "sheltered -> adopted (#217)",
+   "sheltered (ongoing)"
+  ],
+  "rescueId": null,
+  "species": "as identified; may hold a #207 discovery-state read instead of a name"
+ },
+ "schema": "mochiichao/field-rescue/v1",
+ "treatment": "#132 discipline — makes the wild individual well; writes no care axes, no bond, no dex state (being saved is not being met)",
+ "outcomeFence": "Schema note (List 25 #245): no outcome value in this record may name a keep — a rescue never keeps. The fence is in the record's shape, not a comment."
+}

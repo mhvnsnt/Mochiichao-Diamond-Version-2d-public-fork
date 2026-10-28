@@ -1,0 +1,6 @@
+strings = [
+	"",
+	"[name][player_name][name]Yeah, I won \nagainst Zhu Que\nChief![pause]",
+	"[name][player_name][name]Huh?! There's\nsomething on the \nground again...[pause]",
+	"[name][player_name][name]Yeah! I got the Red \nID Pass![pause][clear]...But where is the \nDigi-Egg of \nKnowledge?[pause][clear]I've got to find it\nfast to stop the\nJuggernaut![pause]",
+]

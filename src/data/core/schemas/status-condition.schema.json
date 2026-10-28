@@ -1,0 +1,57 @@
+{
+  "$id": "mochiichao/status-condition.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mochiichao status condition record (#27)",
+  "description": "One record per status condition. Architecture follows the publicly documented two-class split (persistent/volatile). ALL condition names and numeric values are OPEN in canon — the schema fixes the shape only. Unknowns are null and flagged in status, never invented (core data convention).",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "conditionId": { "type": "string", "description": "Stable internal key (kebab). Never renamed; display names change, ids do not." },
+    "displayName": { "type": ["string", "null"], "description": "OPEN for the entire roster — canon names no Mochiichao conditions yet." },
+    "class": { "enum": ["persistent", "volatile"], "description": "Persistent: max one per creature, survives battle (exclusivity enforced by the battle layer). Volatile: stackable, battle-scoped." },
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tick": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "timing": { "enum": ["end-of-turn", "on-attempt", "continuous"] },
+            "kind": { "enum": ["damage-fraction", "stat-stage", "action-gate", "accuracy"] },
+            "value": { "type": ["number", "null"], "description": "Null until a canon/balance source sets it." }
+          },
+          "required": ["timing", "kind", "value"]
+        },
+        "statStages": { "type": "array", "items": { "type": "string" }, "description": "Stat ids affected; magnitude lives in the battle system's stage table, not here." },
+        "blocksActions": { "type": ["number", "null"], "description": "Chance 0..1 or null." }
+      },
+      "required": ["tick", "statStages", "blocksActions"]
+    },
+    "cureBy": { "type": "array", "items": { "type": "string" }, "description": "Item ids (joins item layer #31). Every id must resolve to an item with effect.system=status." },
+    "fullHealClears": { "type": "boolean" },
+    "icon": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "glyphId": { "type": ["string", "null"], "description": "Native glyph art id; art lands with the HUD build." },
+        "colourSlot": { "type": ["string", "null"], "description": "One hue per condition. Never ink #101010, never alert red #a03436 (canon-reserved)." },
+        "tag": { "type": ["string", "null"], "description": "3-letter text fallback shown at medium+ sizes; localisable data, not art." }
+      },
+      "required": ["glyphId", "colourSlot", "tag"]
+    },
+    "animscriptHooks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "onApply": { "type": ["string", "null"] },
+        "onTick": { "type": ["string", "null"] },
+        "onCure": { "type": ["string", "null"] }
+      },
+      "required": ["onApply", "onTick", "onCure"],
+      "description": "Cue names consumed by the move-animscript format (#9) target_fx/screen tracks."
+    },
+    "status": { "type": "string", "description": "Provenance per core convention; 'OPEN — roster not locked in canon' until an owner/balance pass." }
+  },
+  "required": ["conditionId", "displayName", "class", "effect", "cureBy", "fullHealClears", "icon", "animscriptHooks", "status"]
+}

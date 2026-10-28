@@ -1,0 +1,1244 @@
+{
+ "note": "Gap fills for the two weakest elements. body_plan: canon where cast.json records it (pilot 6), otherwise DERIVED from the lane's own footprint-manifest anatomy + roster design tags and marked derived \u2014 a working value for the design lane, not canon. height/weight: TBD for all 49 (recorded nowhere; owner/lane to set per species). discovery_habitat: canon where encounters.json seeds it, else TBD. footprint_spec is the lane's FOOTPRINT-MANIFEST entry, carried here so a species record can be read in one place.",
+ "species": {
+  "mochii": {
+   "body_plan": "compact_round",
+   "body_plan_status": "canon: show/shared/cast.json",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/mochii_footprint.png",
+    "foot_type": "blob base",
+    "toe_count": null,
+    "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     46,
+     7
+    ],
+    "confidence": "medium-low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "pond-route-01",
+     "method": "surf",
+     "minLevel": 3,
+     "maxLevel": 5,
+     "weight": 40
+    },
+    {
+     "mapId": "pond-route-01",
+     "method": "fish",
+     "minLevel": 3,
+     "maxLevel": 5,
+     "weight": 40
+    }
+   ],
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "tiidebiite": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='foot' + roster tags=['water warrior', 'blue martial artist', 'swirling water fists'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/tiidebiite_footprint.png",
+    "foot_type": "foot",
+    "toe_count": null,
+    "toe_note": "single foot clearly visible; other foot obscured",
+    "source_view": "battle_front",
+    "native_size": [
+     9,
+     6
+    ],
+    "confidence": "medium-low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "aquariios": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='fin contact' + roster tags=['fluid intelligence', 'floating aqua brain', 'mythical water guardian'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/aquariios_footprint.png",
+    "foot_type": "fin contact",
+    "toe_count": null,
+    "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     9,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "razorgater": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='clawed reptile foot' + roster tags=['small metallic crocodile', 'chrome jaws', 'silver lizard'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/razorgater_footprint.png",
+    "foot_type": "clawed reptile foot",
+    "toe_count": null,
+    "toe_note": "claws visible; exact toe count not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     21,
+     5
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "chromejaww": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='small foot' + roster tags=['bipedal chrome crocodile', 'sharp steel teeth', 'fierce metal reptile'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/chromejaww_footprint.png",
+    "foot_type": "small foot",
+    "toe_count": null,
+    "toe_note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression.",
+    "source_view": "battle_front",
+    "native_size": [
+     32,
+     13
+    ],
+    "confidence": "medium-low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "reaperdile": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='clawed foot' + roster tags=['huge walking tank crocodile', 'steel armor blades', 'metal monster destruction'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/reaperdile_footprint.png",
+    "foot_type": "clawed foot",
+    "toe_count": null,
+    "toe_note": "claws visible; exact toe count not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression.",
+    "source_view": "battle_front",
+    "native_size": [
+     45,
+     13
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "tyrage": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='clawed foot' + roster tags=['tiny earth dinosaur', 'rocky ground dino', 'mud lizard'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/tyrage_footprint.png",
+    "foot_type": "clawed foot",
+    "toe_count": null,
+    "toe_note": "claws visible; exact toe count not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     16,
+     4
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "duneclaw": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='clawed foot' + roster tags=['desert dinosaur', 'bone mask dinosaur', 'dark earth beast'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/duneclaw_footprint.png",
+    "foot_type": "clawed foot",
+    "toe_count": null,
+    "toe_note": "claws visible; exact toe count not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     20,
+     4
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "oblivirex": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='clawed paw' + roster tags=['fossilized dark code tyrannosaurus rex', 'black bone trex', 'shadow earth monster'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/oblivirex_footprint.png",
+    "foot_type": "clawed paw",
+    "toe_count": null,
+    "toe_note": "claws visible; exact toe count not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     14,
+     3
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "kittember": {
+   "body_plan": "small_feline",
+   "body_plan_status": "canon: show/shared/cast.json",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/kittember_footprint.png",
+    "foot_type": "round base impression",
+    "toe_count": null,
+    "toe_note": "Feet not distinctly separated from the round body at 64px; print is the body's ground-contact dome, not an invented paw.",
+    "source_view": "battle_front (ground-contact dome)",
+    "native_size": [
+     44,
+     17
+    ],
+    "confidence": "low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "meadow-route-01",
+     "method": "grass",
+     "minLevel": 3,
+     "maxLevel": 5,
+     "weight": 10
+    }
+   ],
+   "rarity_basis": {
+    "catchRate": 200,
+    "status": "canon: species.json"
+   }
+  },
+  "pyropaw": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='paw' + roster tags=['fiery tiger cub', 'flame stripes', 'fire beast cat'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/pyropaw_footprint.png",
+    "foot_type": "paw",
+    "toe_count": null,
+    "toe_note": "paws visible; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     7,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "manticlaw": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='large clawed paw' + roster tags=['huge fire manticore', 'blazing mane beast', 'flaming wings cat'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/manticlaw_footprint.png",
+    "foot_type": "large clawed paw",
+    "toe_count": null,
+    "toe_note": "large paw with claws, side view; front view ground mass merged",
+    "source_view": "walk_left_0",
+    "native_size": [
+     14,
+     8
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "pupbble": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='foot' + roster tags=['small rock puppy', 'stone dog', 'pebble puppy'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/pupbble_footprint.png",
+    "foot_type": "foot",
+    "toe_count": null,
+    "toe_note": "feet visible; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     11,
+     6
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "meadow-route-01",
+     "method": "grass",
+     "minLevel": 2,
+     "maxLevel": 4,
+     "weight": 25
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "terradog": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='paw' + roster tags=['earth hound', 'rock armor dog', 'ground terrier'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/terradog_footprint.png",
+    "foot_type": "paw",
+    "toe_count": null,
+    "toe_note": "paws visible; toe detail not resolvable",
+    "source_view": "walk_left_0",
+    "native_size": [
+     20,
+     9
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "quakehound": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='paw' + roster tags=['massive earthquake mastiff', 'stone spikes dog', 'heavy rock beast'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/quakehound_footprint.png",
+    "foot_type": "paw",
+    "toe_count": null,
+    "toe_note": "paw, side view; front view ground mass merged",
+    "source_view": "walk_left_0",
+    "native_size": [
+     15,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "squirmite": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='grub base' + roster tags=['small white silkworm', 'cute squirming bug', 'caterpillar'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/squirmite_footprint.png",
+    "foot_type": "grub base",
+    "toe_count": null,
+    "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     23,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "meadow-route-01",
+     "method": "grass",
+     "minLevel": 2,
+     "maxLevel": 3,
+     "weight": 20
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "cocoonode": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='cocoon base' + roster tags=['green silk cocoon', 'digital node cocoon', 'chrysalis'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/cocoonode_footprint.png",
+    "foot_type": "cocoon base",
+    "toe_count": null,
+    "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     15,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "mothrix": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='insect legs' + roster tags=['beautiful matrix moth', 'glowing neon wings bug', 'digital silk moth'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/mothrix_footprint.png",
+    "foot_type": "insect legs",
+    "toe_count": null,
+    "toe_note": "thin insect legs only; print is a small leg-cluster mark",
+    "source_view": "battle_front",
+    "native_size": [
+     8,
+     3
+    ],
+    "confidence": "low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "zephling": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='cloud base' + roster tags=['tiny wind bird', 'breezy sparrow', 'flying chick'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/zephling_footprint.png",
+    "foot_type": "cloud base",
+    "toe_count": null,
+    "toe_note": "Lowest-contact impression, not a foot; see flag.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     26,
+     5
+    ],
+    "confidence": "low-medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "meadow-route-01",
+     "method": "grass",
+     "minLevel": 2,
+     "maxLevel": 4,
+     "weight": 15
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "aerobeak": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='talon' + roster tags=['sleek wind falcon', 'aerodynamic bird', 'flying raptor'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/aerobeak_footprint.png",
+    "foot_type": "talon",
+    "toe_count": null,
+    "toe_note": "clawed talon shape visible; exact toe count not resolvable at 64px",
+    "source_view": "walk_down_0",
+    "native_size": [
+     21,
+     12
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "stormtalon": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='talon' + roster tags=['massive storm eagle', 'lightning talons', 'hurricane bird'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/stormtalon_footprint.png",
+    "foot_type": "talon",
+    "toe_count": null,
+    "toe_note": "talons visible in walk view; front view unclear",
+    "source_view": "walk_down_0",
+    "native_size": [
+     10,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "finblade": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='fin contact' + roster tags=['sharp swordfish', 'chrome fin shark', 'metal fish'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/finblade_footprint.png",
+    "foot_type": "fin contact",
+    "toe_count": null,
+    "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     20,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "pond-route-01",
+     "method": "surf",
+     "minLevel": 4,
+     "maxLevel": 6,
+     "weight": 20
+    },
+    {
+     "mapId": "pond-route-01",
+     "method": "fish",
+     "minLevel": 4,
+     "maxLevel": 6,
+     "weight": 35
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "megalochrome": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='orbit-ring arc' + roster tags=['giant chrome megalodon', 'steel shark monster', 'metallic torpedo fish'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/megalochrome_footprint.png",
+    "foot_type": "orbit-ring arc",
+    "toe_count": null,
+    "toe_note": "Lowest-contact impression, not a foot; see flag.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     60,
+     15
+    ],
+    "confidence": "low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "floatcalf": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='dome base' + roster tags=['cute floating calf whale', 'glowing neon spots whale', 'bubble aqua mammal'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/floatcalf_footprint.png",
+    "foot_type": "dome base",
+    "toe_count": null,
+    "toe_note": "Lowest-contact impression, not a foot; see flag.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     32,
+     7
+    ],
+    "confidence": "low-medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "pond-route-01",
+     "method": "surf",
+     "minLevel": 5,
+     "maxLevel": 7,
+     "weight": 10
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "astroleviathan": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='tail-fluke print' + roster tags=['massive cosmic whale', 'glowing neon galactic leviathan', 'space ocean whale'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/astroleviathan_footprint.png",
+    "foot_type": "tail-fluke print",
+    "toe_count": null,
+    "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     28,
+     15
+    ],
+    "confidence": "medium-low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "inklet": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='tentacle-tip spread' + roster tags=['small dark squid', 'shadow ink octopus', 'black water blob'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/inklet_footprint.png",
+    "foot_type": "tentacle-tip spread",
+    "toe_count": null,
+    "toe_note": "Lowest-contact impression, not a foot; see flag.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     41,
+     7
+    ],
+    "confidence": "low-medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "pond-route-01",
+     "method": "surf",
+     "minLevel": 3,
+     "maxLevel": 5,
+     "weight": 30
+    },
+    {
+     "mapId": "pond-route-01",
+     "method": "fish",
+     "minLevel": 3,
+     "maxLevel": 5,
+     "weight": 25
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "toxitacle": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='tentacle-tip print' + roster tags=['poisonous dark octopus', 'venomous tentacles', 'purple toxic squid'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/toxitacle_footprint.png",
+    "foot_type": "tentacle-tip print",
+    "toe_count": null,
+    "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     4,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "krakenox": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='tentacle mass base' + roster tags=['giant shadow kraken', 'abyssal nightmare octopus', 'dark sea monster'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/krakenox_footprint.png",
+    "foot_type": "tentacle mass base",
+    "toe_count": null,
+    "toe_note": "Lowest body-contact impression traced from locked battle_front; no feet anatomy invented.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     31,
+     7
+    ],
+    "confidence": "medium-low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "punchkid": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='humanoid foot' + roster tags=['tiny fighting kid', 'boxing gloves fighter', 'martial arts child'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/punchkid_footprint.png",
+    "foot_type": "humanoid foot",
+    "toe_count": null,
+    "toe_note": "humanoid foot; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     13,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "cave-route-01",
+     "method": "cave",
+     "minLevel": 5,
+     "maxLevel": 7,
+     "weight": 20
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "strikechamp": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='humanoid foot' + roster tags=['champion boxer', 'muscular martial artist', 'fighting master'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/strikechamp_footprint.png",
+    "foot_type": "humanoid foot",
+    "toe_count": null,
+    "toe_note": "humanoid foot; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     11,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "kickmaster": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='humanoid foot' + roster tags=['champion kickboxer', 'deadly kicking martial arts', 'karate master'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/kickmaster_footprint.png",
+    "foot_type": "humanoid foot",
+    "toe_count": null,
+    "toe_note": "humanoid foot; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     10,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "gearkid": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='mechanical foot' + roster tags=['small gear robot', 'steel cog child', 'clockwork kid'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/gearkid_footprint.png",
+    "foot_type": "mechanical foot",
+    "toe_count": null,
+    "toe_note": "mechanical foot shape; no toes",
+    "source_view": "battle_front",
+    "native_size": [
+     9,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "cave-route-01",
+     "method": "cave",
+     "minLevel": 5,
+     "maxLevel": 8,
+     "weight": 35
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "mechapion": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='mechanical foot' + roster tags=['heavy mechanic robot', 'steel armored machine', 'piston arms automaton'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/mechapion_footprint.png",
+    "foot_type": "mechanical foot",
+    "toe_count": null,
+    "toe_note": "robot foot shape; no toes",
+    "source_view": "battle_front",
+    "native_size": [
+     14,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "gorokappa": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='mechanical foot' + roster tags=['massive mecha gorilla', 'steel steam ape', 'giant mechanical kaiju'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/gorokappa_footprint.png",
+    "foot_type": "mechanical foot",
+    "toe_count": null,
+    "toe_note": "mechanical foot shape; no toes",
+    "source_view": "battle_front",
+    "native_size": [
+     10,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "pebblefist": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='short rock foot' + roster tags=['rock fists', 'stone hands golem', 'gravel puncher'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/pebblefist_footprint.png",
+    "foot_type": "short rock foot",
+    "toe_count": null,
+    "toe_note": "short feet visible in walk side view; front view unclear",
+    "source_view": "walk_left_0",
+    "native_size": [
+     15,
+     8
+    ],
+    "confidence": "low-medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "cave-route-01",
+     "method": "cave",
+     "minLevel": 6,
+     "maxLevel": 9,
+     "weight": 30
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "cragarm": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='rock foot' + roster tags=['boulder arms golem', 'craggy stone giant', 'rock monster'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/cragarm_footprint.png",
+    "foot_type": "rock foot",
+    "toe_count": null,
+    "toe_note": "rocky foot with toe bumps; exact count not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     14,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "terrapod": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='stumpy foot' + roster tags=['colossal mountain golem', 'earthquake fists giant', 'impenetrable stone titan'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/terrapod_footprint.png",
+    "foot_type": "stumpy foot",
+    "toe_count": null,
+    "toe_note": "stumpy foot, side view; front view ground mass merged",
+    "source_view": "walk_left_0",
+    "native_size": [
+     19,
+     8
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "sproutle": {
+   "body_plan": "small_plant_biped",
+   "body_plan_status": "canon: show/shared/cast.json",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/sproutle_footprint.png",
+    "foot_type": "small foot",
+    "toe_count": null,
+    "toe_note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression.",
+    "source_view": "battle_front",
+    "native_size": [
+     33,
+     13
+    ],
+    "confidence": "medium-low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "meadow-route-01",
+     "method": "grass",
+     "minLevel": 2,
+     "maxLevel": 4,
+     "weight": 30
+    }
+   ],
+   "rarity_basis": {
+    "catchRate": 200,
+    "status": "canon: species.json"
+   }
+  },
+  "shellguard": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='foot' + roster tags=['armored bush turtle', 'steel shell tortoise', 'grove defense turtle'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/shellguard_footprint.png",
+    "foot_type": "foot",
+    "toe_count": null,
+    "toe_note": "feet visible; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     13,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "dreadtoise": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='foot' + roster tags=['massive dreadnought tortoise', 'steel forest titan shell', 'chrome tree turtle'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/dreadtoise_footprint.png",
+    "foot_type": "foot",
+    "toe_count": null,
+    "toe_note": "animal feet on legs; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     17,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": {
+    "catchRate": 45,
+    "status": "canon: species.json"
+   }
+  },
+  "pixilite": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='small foot' + roster tags=['tiny digital flower sprite', 'floating pixel fairy', 'glowing neon leaf'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/pixilite_footprint.png",
+    "foot_type": "small foot",
+    "toe_count": null,
+    "toe_note": "small feet visible; toe detail not resolvable Wide paw shape: both feet merge at 64px, print is the merged paw impression.",
+    "source_view": "battle_front",
+    "native_size": [
+     29,
+     13
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": [
+    {
+     "mapId": "cave-route-01",
+     "method": "cave",
+     "minLevel": 6,
+     "maxLevel": 8,
+     "weight": 15
+    }
+   ],
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "wispkin": {
+   "body_plan": "ghost_float",
+   "body_plan_status": "canon: show/shared/cast.json",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/wispkin_footprint.png",
+    "foot_type": "smoke-wisp print",
+    "toe_count": null,
+    "toe_note": "Lowest-contact impression, not a foot; see flag.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     15,
+     11
+    ],
+    "confidence": "low",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "duskfiend": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='wisp hem' + roster tags=['terrifying dusk phantom', 'tall shadow fiend', 'creepy grim ghost'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/duskfiend_footprint.png",
+    "foot_type": "wisp hem",
+    "toe_count": null,
+    "toe_note": "Lowest-contact impression, not a foot; see flag.",
+    "source_view": "battle_front (lowest-contact band)",
+    "native_size": [
+     44,
+     7
+    ],
+    "confidence": "low-medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "ashemit": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='paw' + roster tags=['little ash demon', 'spark hermit', 'smoldering mythical child'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/ashemit_footprint.png",
+    "foot_type": "paw",
+    "toe_count": null,
+    "toe_note": "Bottom-centre crossed paw isolated by colour (grey paws vs orange body); toe detail not resolvable.",
+    "source_view": "battle_front (grey-paw isolation)",
+    "native_size": [
+     13,
+     9
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "pyromonk": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='humanoid foot' + roster tags=['fire martial monk', 'burning staff ascetic', 'flame meditating fighter'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/pyromonk_footprint.png",
+    "foot_type": "humanoid foot",
+    "toe_count": null,
+    "toe_note": "humanoid foot; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     13,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "yogiferno": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='foot' + roster tags=['enlightened inferno deity', 'floating lava god', 'flaming aura mythical master'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/yogiferno_footprint.png",
+    "foot_type": "foot",
+    "toe_count": null,
+    "toe_note": "feet visible; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     16,
+     5
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "mythar": {
+   "body_plan": null,
+   "body_plan_status": "derived: footprint foot_type='foot' + roster tags=['divine celestial creator', 'glowing ethereal legendary', 'almighty mythical origin god'] \u2014 design lane to confirm body_plan at sheet time",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/mythar_footprint.png",
+    "foot_type": "foot",
+    "toe_count": null,
+    "toe_note": "feet visible; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     7,
+     7
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "dorowani": {
+   "body_plan": "bipedal_amphibian",
+   "body_plan_status": "canon: show/shared/cast.json",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/dorowani_footprint.png",
+    "foot_type": "foot",
+    "toe_count": null,
+    "toe_note": "feet visible on legs; toe detail not resolvable",
+    "source_view": "walk_left_0",
+    "native_size": [
+     16,
+     12
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  },
+  "gabu": {
+   "body_plan": "bulky_bruiser",
+   "body_plan_status": "canon: show/shared/cast.json",
+   "height": "TBD",
+   "weight": "TBD",
+   "category": "TBD",
+   "footprint_spec": {
+    "asset": "sprite-art/animation/expanded-scope/footprints-real/gabu_footprint.png",
+    "foot_type": "small foot",
+    "toe_count": null,
+    "toe_note": "small feet visible; toe detail not resolvable",
+    "source_view": "battle_front",
+    "native_size": [
+     9,
+     5
+    ],
+    "confidence": "medium",
+    "status": "canon: FOOTPRINT-MANIFEST-51-20261026.json (PR #237)"
+   },
+   "discovery_habitat": "TBD \u2014 not in the encounters.json seed tables; full region encounter tables owed (data core README)",
+   "rarity_basis": "TBD \u2014 catchRate null in species.json (owed)"
+  }
+ }
+}

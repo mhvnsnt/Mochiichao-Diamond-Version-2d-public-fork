@@ -1,0 +1,10 @@
+strings = [
+	"",
+	"[name]Numemon[name]...are you going\nto Byakko City?[pause]",
+	"[name][player_name][name]Yeah, that's\nthe plan.[pause]",
+	"[name]Numemon[name]You better not.[pause]",
+	"[name][player_name][name]...what?\nWhy not?![pause]",
+	"[name]Numemon[name]Just go back\nfrom here!\nOK?[pause]",
+	"[name][player_name][name]Hey wait![pause]",
+	"[name][player_name][name]He's gone...[pause][clear]...but what's up \nwith the Byakko\nCity thing?[pause]",
+]

@@ -1,6 +1,6 @@
 {
   "id": "binary_woods",
-  "name": "Binary Woods",
+  "name": "The Dark Forest",
   "width": 32,
   "height": 45,
   "playerStart": [28, 22],
@@ -55,7 +55,7 @@
   ],
   "exits": [{"x": 31, "y": 15, "to": "binary_fields", "enterAt": [1, 15], "dir": "right"}, {"x": 31, "y": 16, "to": "binary_fields", "enterAt": [1, 16], "dir": "right"}, {"x": 31, "y": 17, "to": "binary_fields", "enterAt": [1, 17], "dir": "right"}, {"x": 31, "y": 18, "to": "binary_fields", "enterAt": [1, 18], "dir": "right"}, {"x": 31, "y": 19, "to": "binary_fields", "enterAt": [1, 19], "dir": "right"}, {"x": 31, "y": 20, "to": "binary_fields", "enterAt": [1, 20], "dir": "right"}, {"x": 31, "y": 21, "to": "binary_fields", "enterAt": [1, 21], "dir": "right"}, {"x": 31, "y": 22, "to": "binary_fields", "enterAt": [1, 22], "dir": "right"}, {"x": 31, "y": 23, "to": "binary_fields", "enterAt": [1, 23], "dir": "right"}, {"x": 31, "y": 24, "to": "binary_fields", "enterAt": [1, 24], "dir": "right"}, {"x": 31, "y": 25, "to": "binary_fields", "enterAt": [1, 25], "dir": "right"}],
   "doors": [{"x": 7, "y": 38, "to": "dojo_2", "enterAt": [5, 14], "label": "Aero Dojo — Wind Wing"}, {"x": 27, "y": 38, "to": "cave_of_echoes", "enterAt": [5, 0], "label": "Cave of Echoes"}],
-  "npcs": [{"id": "hacker_grunt2", "x": 13, "y": 10, "name": "Hacker Grunt", "role": "trainer"}, {"id": "trainer_bugcatcher_mira", "x": 9, "y": 20, "name": "Bug Catcher Mira", "role": "trainer"}, {"id": "trainer_woodswalker_tess", "x": 21, "y": 15, "name": "Woods Walker Tess", "role": "trainer"}],
-  "signs": [],
+  "npcs": [{"id": "hacker_grunt2", "x": 13, "y": 10, "name": "Hacker Grunt", "role": "trainer", "dialog": ["You're off the path. The path is a courtesy. The Forest underneath it is the real map, and it isn't yours.", "We log what the hum carries. Every step, every call, every little creature secret. Data's just memory that hasn't been read yet.", "Walk loud if you like. Reading you is not the hard part."], "battleDialog": {"intro": "A walker with a full bag. The Forest logs everything that passes — I just do the reading for it.", "defeat": "…Reading's done. The docks rotation changes at six — tell nobody I needed the reminder.", "after": "Go on, then. Loud as you like. Volume was never the variable."}}, {"id": "trainer_bugcatcher_mira", "x": 9, "y": 20, "name": "Bug Catcher Mira", "role": "trainer", "battleDialog": {"intro": "Shh — you're scaring the small ones. Battle me quick and quiet, and I'll show you which log the Kittember naps under.", "defeat": "Loud AND strong. The small ones are taking notes. So am I, and mine are in pencil.", "after": "The hum goes thin past the Echoes door — even the bugs walk softer there. If your light's ready, the cave is the kind dark. If it isn't, the Forest will lend you its edge. Walk it slow."}}, {"id": "trainer_woodswalker_tess", "x": 21, "y": 15, "name": "Woods Walker Tess", "role": "trainer", "battleDialog": {"intro": "You walk loud. The whole path heard you at the gate. My Kittember and I will be your volume lesson.", "defeat": "Ha. Even losing, we lost quiet.", "after": "Her flame burns at the tail's tip and nowhere else. The hum likes her. When the hum likes somebody, the Forest walks them home — remember that on your way out, loud one."}}],
+  "signs": [{"x": 30, "y": 17, "text": "THE DARK FOREST\nThe woods hum. Walk slow.\nIf the humming stops, you stop."}],
   "wildPool": ["Kittember"]
 }

@@ -23,7 +23,7 @@
   ],
   "exits": [{"x": 6, "y": 1, "to": "sector0_house_2f", "enterAt": [6, 10], "dir": "up"}],
   "doors": [{"x": 6, "y": 11, "to": "sector0", "enterAt": [6, 9], "label": "Boot Harbor"}],
-  "npcs": [{"id": "mom_house", "x": 5, "y": 8, "name": "Your Mom", "role": "heal"}],
+  "npcs": [{"id": "mom_house", "x": 5, "y": 8, "name": "Your Mom", "role": "heal", "dialog": ["Sit. Boots off if they're wet, on if they're not — the rug has opinions but I overrule it.", "Rest a moment. All of you. Even the one pretending it isn't tired.", "[…]", "There. Full strength, and the little one's splint of pride is intact too.", "Silicon Town by the Topaz road. Walk the chalk arrows home if the light goes. And eat — the road is longer hungry."]}],
   "signs": [{"x": 10, "y": 2, "text": "KITCHEN\\nMom's cooking smells like a new start."}],
   "noWild": true
 }

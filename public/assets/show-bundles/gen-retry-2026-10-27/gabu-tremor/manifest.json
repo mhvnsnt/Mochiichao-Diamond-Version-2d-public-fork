@@ -1,0 +1,51 @@
+{
+  "schema": "mochiichao-show/avatar-bundle/v1",
+  "species": "gabu",
+  "variant": "tremor",
+  "backend": "muse-hosted-avatar-generator",
+  "backend_callable_from_repo": false,
+  "created_utc": "2026-10-28T00:56:36.592226+00:00",
+  "source_clip": "norm/gabu-tremor.mp4",
+  "spec": {
+    "codec": "h264",
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192,
+    "duration_s": 8.0
+  },
+  "conformance": {
+    "target": {
+      "width": 720,
+      "height": 720,
+      "fps": 24.0,
+      "duration_s": 8.0
+    },
+    "meets_target": true
+  },
+  "files": {
+    "mp4": {
+      "path": "gabu-tremor.mp4",
+      "sha256": "ef6c0c43bab5691f5b22a50456937488a3a8ee56551b5acad82dd32318140461",
+      "bytes": 857012
+    },
+    "transparent_webm": {
+      "path": "gabu-tremor.transparent.webm",
+      "sha256": "1c5881e4d3c738bb66d58ced1ec8f65331a155cdc96062d69b2e03ab69f9d66e",
+      "bytes": 1865263,
+      "status": "PRODUCED_WHITE_FIELD",
+      "method": "white_matte.py (white-distance key + enclosed-region rescue)"
+    },
+    "poster": {
+      "path": "gabu.webp",
+      "sha256": "330b1f90e6af8587a9cd9ec8726ad64baf00e23055f7e0b5054397516174ebf8",
+      "bytes": 22406,
+      "source": "source_still"
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "verdict_recommendation": "FAIL"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "background": "show/assets/backgrounds/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+  "duration_s": 10,
+  "layers": [
+    {
+      "clip": "show/production/character-sheets/gabu/gabu-jaw_chomp.transparent.webm",
+      "x": 520,
+      "y": 240,
+      "scale": 0.8,
+      "start_s": 1.0,
+      "loop": false
+    }
+  ],
+  "audio": null,
+  "ep01_cut": "14",
+  "scene": "EP01-SCENE-04",
+  "plate_registry": "PLATE-POND-DUSK (show/shared/PLATES-REGISTRY.md) - provisional spec plate (dusk grade variant, landed PR #393), CURRENT for provisional use",
+  "script_beat": "Gabu LUNGES (ACTION BEAT A) - splash - comes up holding smoke that pours through his fingers. 'Caught it. Not caught it.' (bed: Gabu cry sting at scene 24.0s).",
+  "camera": "CAMERA-THERE (hero beat 1 of max 2)",
+  "wind_state": "CALM",
+  "missing_assets": [
+    "Gabu lunge animation: jaw_chomp is the closest rig animation (RIG-NOTES: reads subtle, fused muzzle) - true lunge/stomp ACTION build not made",
+    "water splash FX SFX-SPLASH-01 / splash layer - GAP at mix (cue sheet)",
+    "smoke-through-fingers FX layer - no asset"
+  ],
+  "flags": [],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

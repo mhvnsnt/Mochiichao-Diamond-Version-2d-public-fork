@@ -1,0 +1,5887 @@
+{
+  "tool": "episode_build.py",
+  "episode": "EP01-V3-THE-GARDEN-HAS-A-GHOST",
+  "spec": "/home/hatch/workspace/ep01-finish/EP01-V3-episode.json",
+  "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4",
+  "workdir": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work",
+  "status": "COMPLETE",
+  "cuts": [
+    {
+      "scene": "EP01-V3-OP",
+      "cut": "OP",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/OP.json",
+      "duration_s": 60.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene01-cutOP.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene01-cutOP.mp4",
+        "duration_s": 60.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/op-cast0-16bf3f7b69.webm",
+            "x": 42,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/op-cast1-1d12af0147.webm",
+            "x": 212,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/op-cast2-6c797d2c60.webm",
+            "x": 382,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/op-cast3-9b270f6128.webm",
+            "x": 552,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/op-cast4-3fd226f5b2.webm",
+            "x": 732,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/op-cast5-b9370b0ecb.webm",
+            "x": 902,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/op-mochiko-68d74a029c.webm",
+            "x": 418,
+            "y": 204,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/op-title-aedfb3ac11.webm",
+            "x": 86,
+            "y": 66,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 60.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N1",
+      "cut": "V3-001",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-001.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-001.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-001.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/001-mist-f4db4d9ed1.webm",
+            "x": 0,
+            "y": 446,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N1",
+      "cut": "V3-002",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-002.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-002.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-002.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/pond-dawn.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/002-ripple-dbf5c03195.webm",
+            "x": 334,
+            "y": 388,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/002-hex-574e7a12fe.webm",
+            "x": 1164,
+            "y": 288,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N1",
+      "cut": "V3-003",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-003.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-003.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-003.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/board-day-blank.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N1",
+      "cut": "V3-004",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-004.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-004.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-004.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 397,
+            "y": 85,
+            "scale": 0.42,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N1",
+      "cut": "V3-005",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-005.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-005.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-005.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/005-doro-1afb8f9fec.webm",
+            "x": 0,
+            "y": 138,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/005-manual-cf1d7b1bf9.webm",
+            "x": 32,
+            "y": 462,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N1",
+      "cut": "V3-006",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-006.json",
+      "duration_s": 16.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-006.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene02-cutV3-006.mp4",
+        "duration_s": 16.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/006-smoke-c2337d2cac.webm",
+            "x": 44,
+            "y": 374,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 16.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S1",
+      "cut": "V3-007",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-007.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-007.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-007.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S1",
+      "cut": "V3-008",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-008.json",
+      "duration_s": 6.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-008.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-008.mp4",
+        "duration_s": 6.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-idle_breathe.transparent.webm",
+            "x": 397,
+            "y": 134,
+            "scale": 0.95,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 6.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S1",
+      "cut": "V3-009",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-009.json",
+      "duration_s": 5.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-009.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-009.mp4",
+        "duration_s": 5.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/009-mochii-7da02ffd06.webm",
+            "x": 462,
+            "y": 108,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 5.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S1",
+      "cut": "V3-010",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-010.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-010.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-010.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/010-circle-fbc5640bd0.webm",
+            "x": 136,
+            "y": 108,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-talk_nod.transparent.webm",
+            "x": 404,
+            "y": 159,
+            "scale": 0.92,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S1",
+      "cut": "V3-011",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-011.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-011.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene03-cutV3-011.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 265,
+            "y": 210,
+            "scale": 0.8,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/011-manual-9fb6639ff6.webm",
+            "x": 334,
+            "y": 490,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-idle_breathe.transparent.webm",
+            "x": 530,
+            "y": 164,
+            "scale": 0.9,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-012",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-012.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-012.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-012.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 131,
+            "y": 302,
+            "scale": 0.66,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 831,
+            "y": 292,
+            "scale": 0.7,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 676,
+            "y": 348,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 32,
+            "y": 333,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-idle_breathe.transparent.webm",
+            "x": 324,
+            "y": 174,
+            "scale": 0.92,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-013",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-013.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-013.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-013.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-close.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 516,
+            "y": 191,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/013-pyr-6082246f39.webm",
+            "x": 358,
+            "y": 458,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-014",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-014.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-014.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-014.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-close.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-tip_wiggle.transparent.webm",
+            "x": 516,
+            "y": 191,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/014-pyr-e7cba76cf2.webm",
+            "x": 342,
+            "y": 440,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-015",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-015.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-015.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-015.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 571,
+            "y": 211,
+            "scale": 0.74,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-idle_breathe.transparent.webm",
+            "x": 194,
+            "y": 159,
+            "scale": 0.92,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-016",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-016.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-016.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-016.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/berry-store-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 445,
+            "y": 196,
+            "scale": 0.76,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/016-berry-6ffdf6b35c.webm",
+            "x": 488,
+            "y": 500,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-idle_breathe.transparent.webm",
+            "x": 200,
+            "y": 169,
+            "scale": 0.9,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-017",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-017.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-017.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-017.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/017-sproutle-20e6cc773f.webm",
+            "x": 26,
+            "y": 278,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-018",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-018.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-018.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-018.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/018-gabu-8d742f7672.webm",
+            "x": 26,
+            "y": 166,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-019",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-019.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-019.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-019.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 410,
+            "y": 205,
+            "scale": 0.82,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-idle_breathe.transparent.webm",
+            "x": 200,
+            "y": 169,
+            "scale": 0.9,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-020",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-020.json",
+      "duration_s": 16.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-020.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-020.mp4",
+        "duration_s": 16.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 345,
+            "y": 200,
+            "scale": 0.84,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-tip_wiggle.transparent.webm",
+            "x": 186,
+            "y": 317,
+            "scale": 0.64,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-head_tilt.transparent.webm",
+            "x": 596,
+            "y": 317,
+            "scale": 0.64,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-head_tilt.transparent.webm",
+            "x": 745,
+            "y": 230,
+            "scale": 0.8,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/020-manual-a56eec919b.webm",
+            "x": 426,
+            "y": 492,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 16.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N2",
+      "cut": "V3-021",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-021.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-021.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene04-cutV3-021.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/021-doro-5dd7aba71d.webm",
+            "x": 0,
+            "y": 216,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/021-mochii-9722688352.webm",
+            "x": 0,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/021-sproutle-345a44cdc2.webm",
+            "x": 142,
+            "y": 332,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/021-kitt-d3e6361058.webm",
+            "x": 276,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S2",
+      "cut": "V3-022",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-022.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene05-cutV3-022.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene05-cutV3-022.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 341,
+            "y": 242,
+            "scale": 0.7,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/022-pyr-8a7ddeaed4.webm",
+            "x": 640,
+            "y": 412,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S2",
+      "cut": "V3-023",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-023.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene05-cutV3-023.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene05-cutV3-023.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/023-a-6fed86a9b9.webm",
+            "x": 580,
+            "y": 412,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/023-b-c08eb7886b.webm",
+            "x": 580,
+            "y": 412,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/023-c-3aad49f14d.webm",
+            "x": 620,
+            "y": 476,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/023-d-f6a9fe351a.webm",
+            "x": 668,
+            "y": 544,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S2",
+      "cut": "V3-024",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-024.json",
+      "duration_s": 6.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene05-cutV3-024.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene05-cutV3-024.mp4",
+        "duration_s": 6.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/024-duck-ae055cd78d.webm",
+            "x": 528,
+            "y": 374,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 206,
+            "y": 272,
+            "scale": 0.68,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 6.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S2",
+      "cut": "V3-025",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-025.json",
+      "duration_s": 7.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene05-cutV3-025.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene05-cutV3-025.mp4",
+        "duration_s": 7.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 416,
+            "y": 241,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 7.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N3",
+      "cut": "V3-026",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-026.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-026.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-026.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/026-pyr-e638a17e31.webm",
+            "x": 556,
+            "y": 404,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 780,
+            "y": 231,
+            "scale": 0.78,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 146,
+            "y": 333,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-idle_breathe.transparent.webm",
+            "x": 250,
+            "y": 169,
+            "scale": 0.9,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N3",
+      "cut": "V3-027",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-027.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-027.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-027.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/027-pyr-7ffec066b7.webm",
+            "x": 516,
+            "y": 404,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 141,
+            "y": 318,
+            "scale": 0.62,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 760,
+            "y": 231,
+            "scale": 0.78,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 302,
+            "y": 343,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 676,
+            "y": 338,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 891,
+            "y": 246,
+            "scale": 0.74,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N3",
+      "cut": "V3-028",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-028.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-028.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-028.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 302,
+            "y": 180,
+            "scale": 0.85,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N3",
+      "cut": "V3-029",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-029.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-029.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-029.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 315,
+            "y": 205,
+            "scale": 0.8,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 146,
+            "y": 333,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 605,
+            "y": 241,
+            "scale": 0.76,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-head_tilt.transparent.webm",
+            "x": 796,
+            "y": 338,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 896,
+            "y": 256,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N3",
+      "cut": "V3-030",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-030.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-030.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-030.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-jaw_chomp.transparent.webm",
+            "x": 400,
+            "y": 190,
+            "scale": 0.86,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/030-net-26c60e9472.webm",
+            "x": 642,
+            "y": 290,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N3",
+      "cut": "V3-031",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-031.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-031.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-031.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 400,
+            "y": 190,
+            "scale": 0.86,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/031-leaf-6dd46e95f8.webm",
+            "x": 596,
+            "y": 0,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N3",
+      "cut": "V3-032",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-032.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-032.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-032.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 330,
+            "y": 159,
+            "scale": 0.9,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/032-mochii-c2c73c99bc.webm",
+            "x": 0,
+            "y": 322,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/032-berryleaf-ef4ed97f4d.webm",
+            "x": 542,
+            "y": 214,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N3",
+      "cut": "V3-033",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-033.json",
+      "duration_s": 18.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-033.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene06-cutV3-033.mp4",
+        "duration_s": 18.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/033-doro-ec8a908d02.webm",
+            "x": 106,
+            "y": 232,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/033-gabu-8f935efa41.webm",
+            "x": 0,
+            "y": 216,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/033-sproutle-b79c989aa8.webm",
+            "x": 322,
+            "y": 332,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 18.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S3",
+      "cut": "V3-034",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-034.json",
+      "duration_s": 9.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene07-cutV3-034.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene07-cutV3-034.mp4",
+        "duration_s": 9.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/034-gabu-ebb5e6b666.webm",
+            "x": 0,
+            "y": 184,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/034-net-804ea66054.webm",
+            "x": 604,
+            "y": 268,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 9.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S3",
+      "cut": "V3-035",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-035.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene07-cutV3-035.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene07-cutV3-035.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-head_tilt.transparent.webm",
+            "x": 261,
+            "y": 312,
+            "scale": 0.66,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/035-frost-8fd8bcb3f9.webm",
+            "x": 156,
+            "y": 436,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/035-fp1-9a53b7d56f.webm",
+            "x": 158,
+            "y": 480,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S3",
+      "cut": "V3-036",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-036.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene07-cutV3-036.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene07-cutV3-036.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 256,
+            "y": 317,
+            "scale": 0.64,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-head_tilt.transparent.webm",
+            "x": 695,
+            "y": 225,
+            "scale": 0.8,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/036-device-6a0e8b7dc1.webm",
+            "x": 506,
+            "y": 296,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-037",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-037.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-037.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-037.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/037-sproutle-1c534720e1.webm",
+            "x": 52,
+            "y": 318,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/037-doro-be350b8c45.webm",
+            "x": 0,
+            "y": 256,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/037-gabu-69d2b98aed.webm",
+            "x": 176,
+            "y": 220,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/037-frost-6e72424965.webm",
+            "x": 56,
+            "y": 450,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-038",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-038.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-038.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-038.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-head_tilt.transparent.webm",
+            "x": 161,
+            "y": 297,
+            "scale": 0.7,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/038-fp2-388844e45a.webm",
+            "x": 394,
+            "y": 382,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/038-fp3-c24d33315d.webm",
+            "x": 756,
+            "y": 436,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 901,
+            "y": 272,
+            "scale": 0.7,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-039",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-039.json",
+      "duration_s": 18.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-039.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-039.mp4",
+        "duration_s": 18.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/shift-039.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/039-kitt-0a19985de4.webm",
+            "x": 918,
+            "y": 300,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-head_tilt.transparent.webm",
+            "x": 146,
+            "y": 343,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 18.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-040",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-040.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-040.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-040.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-head_tilt.transparent.webm",
+            "x": 480,
+            "y": 190,
+            "scale": 0.86,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/040-fp-fef8e8acea.webm",
+            "x": 110,
+            "y": 310,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-041",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-041.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-041.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-041.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-jaw_chomp.transparent.webm",
+            "x": 480,
+            "y": 190,
+            "scale": 0.86,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/041-fp-f7779ba94b.webm",
+            "x": 110,
+            "y": 310,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-042",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-042.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-042.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-042.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/042-device-5125e54f56.webm",
+            "x": 156,
+            "y": 338,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/042-frost-731db679bd.webm",
+            "x": 16,
+            "y": 450,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 66,
+            "y": 343,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-idle_breathe.transparent.webm",
+            "x": 205,
+            "y": 184,
+            "scale": 0.88,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-043",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-043.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-043.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-043.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/aeon-device-icons.transparent.webm",
+            "x": 70,
+            "y": 40,
+            "scale": 0.89,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-044",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-044.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-044.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-044.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 141,
+            "y": 333,
+            "scale": 0.62,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 336,
+            "y": 266,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 560,
+            "y": 231,
+            "scale": 0.78,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 842,
+            "y": 343,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/044-frost-134f449ceb.webm",
+            "x": 36,
+            "y": 456,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N4",
+      "cut": "V3-045",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-045.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-045.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene08-cutV3-045.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-head_tilt.transparent.webm",
+            "x": 425,
+            "y": 200,
+            "scale": 0.84,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 226,
+            "y": 343,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 696,
+            "y": 266,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/045-fp-5c0824ad63.webm",
+            "x": 848,
+            "y": 474,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N5",
+      "cut": "V3-046",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-046.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-046.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-046.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/046-net-6bdcb176be.webm",
+            "x": 370,
+            "y": 120,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/046-bait-655989aa96.webm",
+            "x": 588,
+            "y": 540,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 800,
+            "y": 215,
+            "scale": 0.82,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 146,
+            "y": 338,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N5",
+      "cut": "V3-047",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-047.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-047.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-047.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/047-doro-b63d8a0237.webm",
+            "x": 238,
+            "y": 140,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/047-net-565b786706.webm",
+            "x": 608,
+            "y": 206,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N5",
+      "cut": "V3-048",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-048.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-048.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-048.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/048-net-08690c3d4c.webm",
+            "x": 370,
+            "y": 120,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/048-leaf-a3280d9a0b.webm",
+            "x": 580,
+            "y": 0,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-head_tilt.transparent.webm",
+            "x": 815,
+            "y": 225,
+            "scale": 0.8,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N5",
+      "cut": "V3-049",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-049.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-049.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-049.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/049-duck-b49b08a06a.webm",
+            "x": 238,
+            "y": 354,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 875,
+            "y": 220,
+            "scale": 0.8,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-head_tilt.transparent.webm",
+            "x": 361,
+            "y": 323,
+            "scale": 0.62,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 546,
+            "y": 341,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N5",
+      "cut": "V3-050",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-050.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-050.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-050.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-jaw_chomp.transparent.webm",
+            "x": 395,
+            "y": 174,
+            "scale": 0.88,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/050-net-239dc0e656.webm",
+            "x": 394,
+            "y": 180,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N5",
+      "cut": "V3-051",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-051.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-051.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-051.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 345,
+            "y": 200,
+            "scale": 0.84,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 646,
+            "y": 266,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 176,
+            "y": 343,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/051-net-1ec7d3311d.webm",
+            "x": 534,
+            "y": 346,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N5",
+      "cut": "V3-052",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-052.json",
+      "duration_s": 16.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-052.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-052.mp4",
+        "duration_s": 16.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-head_tilt.transparent.webm",
+            "x": 300,
+            "y": 231,
+            "scale": 0.78,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/052-line-d954631a30.webm",
+            "x": 176,
+            "y": 556,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 865,
+            "y": 246,
+            "scale": 0.76,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 102,
+            "y": 353,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 16.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N5",
+      "cut": "V3-053",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-053.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-053.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene09-cutV3-053.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/green/EP01-PLATE-green-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/053-kneel-8d4109a708.webm",
+            "x": 190,
+            "y": 174,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-head_tilt.transparent.webm",
+            "x": 456,
+            "y": 271,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/053-line-d84683997b.webm",
+            "x": 236,
+            "y": 560,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N6",
+      "cut": "V3-054",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-054.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-054.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-054.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/green-dusk.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 161,
+            "y": 302,
+            "scale": 0.66,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 401,
+            "y": 328,
+            "scale": 0.62,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 626,
+            "y": 331,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 825,
+            "y": 222,
+            "scale": 0.8,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/054-berry-166d2cf392.webm",
+            "x": 268,
+            "y": 540,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N6",
+      "cut": "V3-055",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-055.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-055.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-055.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/green-dusk.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 256,
+            "y": 317,
+            "scale": 0.64,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 665,
+            "y": 202,
+            "scale": 0.84,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/055-pyr-3ed69e0cb9.webm",
+            "x": 1022,
+            "y": 422,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N6",
+      "cut": "V3-056",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-056.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-056.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-056.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N6",
+      "cut": "V3-057",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-057.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-057.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-057.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N6",
+      "cut": "V3-058",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-058.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-058.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-058.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/058-pyr-211572b11d.webm",
+            "x": 516,
+            "y": 404,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N6",
+      "cut": "V3-059",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-059.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-059.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-059.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/green-dusk.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 136,
+            "y": 261,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 700,
+            "y": 231,
+            "scale": 0.78,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 477,
+            "y": 353,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/059-net-49e4035366.webm",
+            "x": 914,
+            "y": 496,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N6",
+      "cut": "V3-060",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-060.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-060.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene10-cutV3-060.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/060-mist-ed9064743c.webm",
+            "x": 0,
+            "y": 456,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 157,
+            "y": 353,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 766,
+            "y": 263,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 499,
+            "y": 366,
+            "scale": 0.55,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-EYE",
+      "cut": "V3-061",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-061.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene11-cutV3-061.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene11-cutV3-061.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/aeon-device-icons.transparent.webm",
+            "x": 0,
+            "y": 0,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N7",
+      "cut": "V3-062",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-062.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-062.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-062.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/062-mist-ac33c5a93b.webm",
+            "x": 0,
+            "y": 460,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 40,
+            "y": 233,
+            "scale": 0.78,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 301,
+            "y": 280,
+            "scale": 0.7,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 572,
+            "y": 353,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 807,
+            "y": 355,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 972,
+            "y": 348,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/062-pyr-63a3483f55.webm",
+            "x": 1004,
+            "y": 446,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N7",
+      "cut": "V3-063",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-063.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-063.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-063.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 390,
+            "y": 167,
+            "scale": 0.9,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/063-leaf-7b67b49949.webm",
+            "x": 586,
+            "y": 222,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N7",
+      "cut": "V3-064",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-064.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-064.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-064.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 350,
+            "y": 210,
+            "scale": 0.82,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/064-blankets-65feee8059.webm",
+            "x": 650,
+            "y": 494,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/064-manual-4faa8c45cb.webm",
+            "x": 394,
+            "y": 488,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N7",
+      "cut": "V3-065",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-065.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-065.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-065.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-head_tilt.transparent.webm",
+            "x": 431,
+            "y": 317,
+            "scale": 0.66,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N7",
+      "cut": "V3-066",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-066.json",
+      "duration_s": 11.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-066.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-066.mp4",
+        "duration_s": 11.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 541,
+            "y": 328,
+            "scale": 0.62,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/066-line-d274965f55.webm",
+            "x": 248,
+            "y": 598,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 11.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N7",
+      "cut": "V3-067",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-067.json",
+      "duration_s": 16.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-067.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene12-cutV3-067.mp4",
+        "duration_s": 16.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/067-mist-e5f0d531bf.webm",
+            "x": 0,
+            "y": 456,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 62,
+            "y": 343,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 230,
+            "y": 231,
+            "scale": 0.78,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 476,
+            "y": 266,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 737,
+            "y": 355,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 937,
+            "y": 363,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 16.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S4",
+      "cut": "V3-068",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-068.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-068.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-068.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/068-mist-084669ca87.webm",
+            "x": 0,
+            "y": 456,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 62,
+            "y": 343,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 230,
+            "y": 231,
+            "scale": 0.78,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 476,
+            "y": 266,
+            "scale": 0.72,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 737,
+            "y": 355,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 937,
+            "y": 363,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S4",
+      "cut": "V3-069",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-069.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-069.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-069.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/069-gabu-7979e7f560.webm",
+            "x": 200,
+            "y": 180,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/069-splash-1dbe2f252f.webm",
+            "x": 666,
+            "y": 336,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/069-smoke-19652bff55.webm",
+            "x": 734,
+            "y": 374,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S4",
+      "cut": "V3-070",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-070.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-070.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-070.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/070-mist-34fc58a335.webm",
+            "x": 0,
+            "y": 426,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/070-shadow-1cb06e0945.webm",
+            "x": 258,
+            "y": 0,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 71,
+            "y": 302,
+            "scale": 0.66,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 572,
+            "y": 399,
+            "scale": 0.5,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S4",
+      "cut": "V3-071",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-071.json",
+      "duration_s": 6.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-071.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-071.mp4",
+        "duration_s": 6.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-sprout_wiggle.transparent.webm",
+            "x": 481,
+            "y": 333,
+            "scale": 0.62,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 146,
+            "y": 333,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-head_tilt.transparent.webm",
+            "x": 755,
+            "y": 243,
+            "scale": 0.76,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 6.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S4",
+      "cut": "V3-072",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-072.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-072.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-072.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/072-mist-d1b0a28971.webm",
+            "x": 0,
+            "y": 336,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/072-wisp-1f3bc8b7fc.webm",
+            "x": 494,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/072-duck-a5f1e17128.webm",
+            "x": 696,
+            "y": 444,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S4",
+      "cut": "V3-073",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-073.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-073.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-073.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-mask_tilt_left.transparent.webm",
+            "x": 492,
+            "y": 328,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/073-card-cc1fd85fce.webm",
+            "x": 146,
+            "y": 110,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S4",
+      "cut": "V3-074",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-074.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-074.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene13-cutV3-074.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-dusk-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/074-kneel-afaee539fb.webm",
+            "x": 190,
+            "y": 178,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 617,
+            "y": 343,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S5",
+      "cut": "V3-075",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-075.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-075.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-075.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-painted.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S5",
+      "cut": "V3-076",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-076.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-076.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-076.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 155,
+            "y": 241,
+            "scale": 0.76,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 757,
+            "y": 338,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 466,
+            "y": 338,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/076-manual-5a78ade149.webm",
+            "x": 458,
+            "y": 490,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/clips/mochiko-talk_nod.transparent.webm",
+            "x": 290,
+            "y": 171,
+            "scale": 0.9,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S5",
+      "cut": "V3-077",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-077.json",
+      "duration_s": 8.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-077.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-077.mp4",
+        "duration_s": 8.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-painted.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 852,
+            "y": 404,
+            "scale": 0.5,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/077-card-d0ada06231.webm",
+            "x": 146,
+            "y": 100,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 8.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S5",
+      "cut": "V3-078",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-078.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-078.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-078.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/078-wisp-31b3618ab3.webm",
+            "x": 472,
+            "y": 128,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/078-smoke-fcfb7931fa.webm",
+            "x": 628,
+            "y": 168,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-S5",
+      "cut": "V3-079",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-079.json",
+      "duration_s": 6.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-079.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene14-cutV3-079.mp4",
+        "duration_s": 6.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-head_tilt.transparent.webm",
+            "x": 400,
+            "y": 190,
+            "scale": 0.86,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/079-net-2438f99ca6.webm",
+            "x": 538,
+            "y": 154,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 6.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-080",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-080.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-080.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-080.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-ceremony.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 132,
+            "y": 429,
+            "scale": 0.5,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 896,
+            "y": 373,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 517,
+            "y": 429,
+            "scale": 0.48,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-081",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-081.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-081.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-081.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-ceremony.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 152,
+            "y": 381,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 882,
+            "y": 426,
+            "scale": 0.5,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-082",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-082.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-082.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-082.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/board-night-ceremony.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 767,
+            "y": 406,
+            "scale": 0.52,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/082-berry-cf809979b9.webm",
+            "x": 630,
+            "y": 504,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-083",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-083.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-083.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-083.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/083-wisp-75b7f8cf25.webm",
+            "x": 94,
+            "y": 334,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/083-doro-44b5cfb7a1.webm",
+            "x": 0,
+            "y": 272,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/083-gabu-4f07436f53.webm",
+            "x": 130,
+            "y": 238,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/083-frost-f0543a136d.webm",
+            "x": 0,
+            "y": 500,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-084",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-084.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-084.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-084.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/pond-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/084-wisp-5f0d5ccba1.webm",
+            "x": 284,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/084-duck-caf1bf11a2.webm",
+            "x": 456,
+            "y": 460,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/084-ripple-c0c352a5e6.webm",
+            "x": 526,
+            "y": 490,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-085",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-085.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-085.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-085.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/pond-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/085-wisp-552c1d527c.webm",
+            "x": 154,
+            "y": 332,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-086",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-086.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-086.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-086.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/pond-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/086-pyr-141dcce639.webm",
+            "x": 640,
+            "y": 412,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/086-wisp-0a0e2f6ab8.webm",
+            "x": 334,
+            "y": 328,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-087",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-087.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-087.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-087.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/green-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/087-wisp-f059f609d5.webm",
+            "x": 154,
+            "y": 324,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/087-aura-b792267a83.webm",
+            "x": 82,
+            "y": 442,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 911,
+            "y": 297,
+            "scale": 0.66,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": -1,
+            "y": 368,
+            "scale": 0.55,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-088",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-088.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-088.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-088.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 492,
+            "y": 323,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 152,
+            "y": 348,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 761,
+            "y": 253,
+            "scale": 0.74,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 332,
+            "y": 366,
+            "scale": 0.54,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 669,
+            "y": 366,
+            "scale": 0.55,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/dorowani/dorowani-idle_breathe.transparent.webm",
+            "x": 911,
+            "y": 272,
+            "scale": 0.7,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N8",
+      "cut": "V3-089",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-089.json",
+      "duration_s": 16.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-089.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene15-cutV3-089.mp4",
+        "duration_s": 16.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 497,
+            "y": 331,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/089-card-7f428d6d08.webm",
+            "x": 146,
+            "y": 110,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 16.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N9",
+      "cut": "V3-090",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-090.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-090.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-090.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 462,
+            "y": 44,
+            "scale": 0.5,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N9",
+      "cut": "V3-091",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-091.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-091.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-091.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/green-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 395,
+            "y": 177,
+            "scale": 0.88,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/091-net-24f955de9f.webm",
+            "x": 658,
+            "y": 310,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/091-leaf-ce26e963b9.webm",
+            "x": 600,
+            "y": 174,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N9",
+      "cut": "V3-092",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-092.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-092.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-092.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/green-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/092-kitt-25c0557554.webm",
+            "x": 66,
+            "y": 282,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 546,
+            "y": 345,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N9",
+      "cut": "V3-093",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-093.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-093.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-093.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/093-write-5b590f8fe5.webm",
+            "x": 320,
+            "y": 164,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/093-log-3437e62e49.webm",
+            "x": 634,
+            "y": 452,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N9",
+      "cut": "V3-094",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-094.json",
+      "duration_s": 16.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-094.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-094.mp4",
+        "duration_s": 16.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 988,
+            "y": 415,
+            "scale": 0.4,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 16.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N9",
+      "cut": "V3-095",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-095.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-095.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-095.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N9",
+      "cut": "V3-096",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-096.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-096.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-096.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/096-frost-3d92a87dcb.webm",
+            "x": 60,
+            "y": 480,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 185,
+            "y": 400,
+            "scale": 0.45,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N9",
+      "cut": "V3-097",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-097.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-097.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene16-cutV3-097.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/097-smoke-2a03fe41cc.webm",
+            "x": 86,
+            "y": 392,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N10",
+      "cut": "V3-098",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-098.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-098.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-098.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-dawn-named.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N10",
+      "cut": "V3-099",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-099.json",
+      "duration_s": 14.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-099.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-099.mp4",
+        "duration_s": 14.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/099-big-f7708eaf81.webm",
+            "x": 396,
+            "y": 404,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/099-small-b7abf421d2.webm",
+            "x": 754,
+            "y": 492,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 14.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N10",
+      "cut": "V3-100",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-100.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-100.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-100.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/pond/EP01-PLATE-pond-day-v1-living.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/100-small-f4878806f4.webm",
+            "x": 556,
+            "y": 474,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/100-card-776da65fc7.webm",
+            "x": 146,
+            "y": 100,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N10",
+      "cut": "V3-101",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-101.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-101.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-101.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/101-smoke-9869aac7f3.webm",
+            "x": 76,
+            "y": 386,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N10",
+      "cut": "V3-102",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-102.json",
+      "duration_s": 16.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-102.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-102.mp4",
+        "duration_s": 16.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/102-walk-d6f0d1f26d.webm",
+            "x": 0,
+            "y": 158,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/102-big-286bca197c.webm",
+            "x": 768,
+            "y": 422,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/102-small-511c55f16f.webm",
+            "x": 1018,
+            "y": 500,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 16.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-N10",
+      "cut": "V3-103",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-103.json",
+      "duration_s": 20.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-103.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene17-cutV3-103.mp4",
+        "duration_s": 20.0,
+        "background": "/home/hatch/workspace/mochiichao-show/repo-add/show/episodes/EP01/animatic/EP01-CUT01-composite-life-proof-v1.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/gabu/gabu-idle_breathe.transparent.webm",
+            "x": 665,
+            "y": 210,
+            "scale": 0.84,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/103-net-770540e69d.webm",
+            "x": 700,
+            "y": 330,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/103-leaf-ab568972b5.webm",
+            "x": 860,
+            "y": 236,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 146,
+            "y": 338,
+            "scale": 0.6,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/sproutle/sproutle-idle_breathe.transparent.webm",
+            "x": 332,
+            "y": 353,
+            "scale": 0.58,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 937,
+            "y": 353,
+            "scale": 0.56,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/103-pyr-7621689985.webm",
+            "x": 118,
+            "y": 456,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 20.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-ST",
+      "cut": "V3-104",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-104.json",
+      "duration_s": 20.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene18-cutV3-104.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene18-cutV3-104.mp4",
+        "duration_s": 20.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/forest/EP01-PLATE-dark-forest-day-v1-still.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 20.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-ST",
+      "cut": "V3-105",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-105.json",
+      "duration_s": 10.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene18-cutV3-105.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene18-cutV3-105.mp4",
+        "duration_s": 10.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/forest/EP01-PLATE-dark-forest-day-v1-still.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 10.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-ST",
+      "cut": "V3-106",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-106.json",
+      "duration_s": 12.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene18-cutV3-106.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene18-cutV3-106.mp4",
+        "duration_s": 12.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/forest/EP01-PLATE-dark-forest-day-v1-still.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/106-card-87a5de40cb.webm",
+            "x": 126,
+            "y": 146,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 12.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-ST",
+      "cut": "V3-107",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/V3-107.json",
+      "duration_s": 4.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene18-cutV3-107.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene18-cutV3-107.mp4",
+        "duration_s": 4.0,
+        "background": "/home/hatch/workspace/still-to-build/living-plates/forest/EP01-PLATE-dark-forest-day-v1-still.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/107-leaf-be354450b6.webm",
+            "x": 560,
+            "y": 0,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 4.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-ED",
+      "cut": "ED",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/ED.json",
+      "duration_s": 75.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene19-cutED.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene19-cutED.mp4",
+        "duration_s": 75.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/gate-night.mp4",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/ed-credits-7f27f3d895.webm",
+            "x": 76,
+            "y": 46,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/mochii/mochii-idle_bob.transparent.webm",
+            "x": 125,
+            "y": 435,
+            "scale": 0.45,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/wispkin/wispkin-float_idle.transparent.webm",
+            "x": 932,
+            "y": 445,
+            "scale": 0.42,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/mochiichao-show/character-sheets/kittember/kittember-tail_flame_wave.transparent.webm",
+            "x": 527,
+            "y": 443,
+            "scale": 0.44,
+            "start_s": 0.0,
+            "loop": true,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/ed-chibi-pending-61a1d08c00.webm",
+            "x": 356,
+            "y": 206,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 75.0,
+      "status": "ok"
+    },
+    {
+      "scene": "EP01-V3-PREV",
+      "cut": "PREV",
+      "shot_spec": "/home/hatch/workspace/ep01-finish/specs/PREV.json",
+      "duration_s": 45.0,
+      "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene20-cutPREV.mp4",
+      "composite_report": {
+        "tool": "composite_shot.py",
+        "output": "/home/hatch/workspace/ep01-finish/masters/EP01-V3-MASTER.mp4.work/scene20-cutPREV.mp4",
+        "duration_s": 45.0,
+        "background": "/home/hatch/workspace/ep01-finish/assets/plates/prev-card-bg.png",
+        "background_size": [
+          1280,
+          720
+        ],
+        "layers": [
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prevwin-t1-71bf9663ef.webm",
+            "x": 240,
+            "y": 86,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prevwin-t2-098443a09d.webm",
+            "x": 240,
+            "y": 86,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prevwin-t3-3e5adca959.webm",
+            "x": 240,
+            "y": 86,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prev-chibi-mochiko-0e248f2b64.webm",
+            "x": 24,
+            "y": 518,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prev-chibi-mochii-8f566048e2.webm",
+            "x": 244,
+            "y": 518,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prev-chibi-dorowani-964dccd6ae.webm",
+            "x": 444,
+            "y": 518,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prev-chibi-gabu-84946cff56.webm",
+            "x": 644,
+            "y": 518,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prev-chibi-wispkin-6b4ffd43b5.webm",
+            "x": 934,
+            "y": 518,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prev-card-in-4df56ed19a.webm",
+            "x": 146,
+            "y": 110,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          },
+          {
+            "clip": "/home/hatch/workspace/ep01-finish/assets/canvas/prev-card-out-5f026dd78f.webm",
+            "x": 146,
+            "y": 110,
+            "scale": 1.0,
+            "start_s": 0.0,
+            "loop": false,
+            "pix_fmt": "yuv420p",
+            "alpha_mode": "1"
+          }
+        ],
+        "audio": {
+          "source": "none"
+        }
+      },
+      "has_audio": false,
+      "measured_duration_s": 45.0,
+      "status": "ok"
+    }
+  ],
+  "scenes": [
+    {
+      "name": "EP01-V3-OP",
+      "offset_s": 0.0,
+      "duration_s": 60.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-OP.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N1",
+      "offset_s": 60.0,
+      "duration_s": 78.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N1.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-S1",
+      "offset_s": 138.0,
+      "duration_s": 37.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S1.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N2",
+      "offset_s": 175.0,
+      "duration_s": 128.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N2.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-S2",
+      "offset_s": 303.0,
+      "duration_s": 33.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S2.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N3",
+      "offset_s": 336.0,
+      "duration_s": 102.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N3.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-S3",
+      "offset_s": 438.0,
+      "duration_s": 27.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S3.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N4",
+      "offset_s": 465.0,
+      "duration_s": 108.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N4.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N5",
+      "offset_s": 573.0,
+      "duration_s": 96.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N5.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N6",
+      "offset_s": 669.0,
+      "duration_s": 84.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N6.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-EYE",
+      "offset_s": 753.0,
+      "duration_s": 8.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-EYE.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N7",
+      "offset_s": 761.0,
+      "duration_s": 73.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N7.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-S4",
+      "offset_s": 834.0,
+      "duration_s": 74.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S4.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-S5",
+      "offset_s": 908.0,
+      "duration_s": 48.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-S5.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N8",
+      "offset_s": 956.0,
+      "duration_s": 128.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N8.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N9",
+      "offset_s": 1084.0,
+      "duration_s": 104.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N9.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-N10",
+      "offset_s": 1188.0,
+      "duration_s": 86.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-N10.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-ST",
+      "offset_s": 1274.0,
+      "duration_s": 46.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-ST.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-ED",
+      "offset_s": 1320.0,
+      "duration_s": 75.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-ED.wav"
+      }
+    },
+    {
+      "name": "EP01-V3-PREV",
+      "offset_s": 1395.0,
+      "duration_s": 45.0,
+      "audio_bed": {
+        "source": "file",
+        "file": "/home/hatch/workspace/ep01-finish/audio/EP01-V3-PREV.wav"
+      }
+    }
+  ],
+  "flags": [],
+  "finish": {
+    "target": {
+      "integrated_lufs": -14.0,
+      "true_peak_dbtp": -1.0,
+      "lra": 11
+    },
+    "normalization": "dynamic (two-pass, measured at target)",
+    "source_measured_lufs": "-14.04",
+    "source_measured_true_peak_dbtp": "-0.55",
+    "peak_pull_down_db_attempted": 4.44,
+    "measured": {
+      "integrated_lufs": "-18.49",
+      "true_peak_dbtp": "-1.04",
+      "lra": "8.40"
+    },
+    "duration_s": 1440.0,
+    "expected_duration_s": 1440.0
+  },
+  "gate": {
+    "finish_gates": {
+      "duration_matches_spec": true,
+      "loudness_within_1LU": false,
+      "true_peak_ok": true
+    },
+    "episode_gate": {
+      "tool": "episode_gate.py",
+      "invoked": true,
+      "exit_code": 0,
+      "stdout": "EP01 manifest: 28 cuts, 265s, finish -14 LUFS\nHALT cuts (open items, by design): ['12']\nAmbient sound GAP flags: 1\n  audio EP01-SCENE-01-gate-morning   PASS\n  audio EP01-SCENE-02-pond-tour      PASS\n  audio EP01-SCENE-04-pond-dusk      PASS\n  audio EP01-SCENE-05-gate-night     PASS\n  audio EP01-STINGER-forest          PASS\nAnimatics/proofs: []\nPicture status: puppets/generative pending (video service + GPU endpoint) \u2014 beds and timings are ready for picture to drop in."
+    },
+    "verdict": "CHECK {'duration_matches_spec': True, 'loudness_within_1LU': False, 'true_peak_ok': True}"
+  },
+  "error": null
+}

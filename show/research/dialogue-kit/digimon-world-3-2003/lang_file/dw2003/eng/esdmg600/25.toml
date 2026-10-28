@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name][player_name][name]Are you the\nBai Hu Chief!?[pause]",
+	"[name]Bai Hu Chief[name]That's right...\nWhat do you want?[pause]",
+	"[name][player_name][name]Give me the \nWhite ID Pass\nthat you have![pause]",
+	"[name]Bai Hu Chief[name]I see.\nHeh heh heh![pause][clear]No matter what you \ndo, victory will be\nours![pause][clear]Now it's time to\nlearn your lesson![pause]",
+]

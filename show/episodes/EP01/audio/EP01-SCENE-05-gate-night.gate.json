@@ -1,0 +1,43 @@
+{
+  "scene": "EP01-SCENE-05-gate-night",
+  "cuts": [
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24"
+  ],
+  "bed_file": "EP01-SCENE-05-gate-night.wav",
+  "target": {
+    "integrated_lufs": -14.0,
+    "true_peak_dbtp": -1.0
+  },
+  "measured": {
+    "input_i": "-13.94",
+    "input_tp": "-0.95"
+  },
+  "gates": {
+    "loudness_within_1LU": true,
+    "true_peak_ok": true
+  },
+  "underscore": "organ (-10dB) + bass (-16dB) stems: night register (rebalanced after first pass measured -18.2 LUFS - gate iteration recorded)",
+  "events": [
+    {
+      "at_s": 22.0,
+      "role": "Dorowani cry under Rule 12 read-aloud (cut 21)"
+    },
+    {
+      "at_s": 34.0,
+      "role": "Wispkin cry + SUBTITLE 2 '...not alone anymore.' (cut 22)"
+    },
+    {
+      "at_s": 52.0,
+      "role": "Gabu cry, soft - tag (cut 24)"
+    }
+  ],
+  "flags": [
+    "Gate bell (cut 23, ACTION BEAT B) = GAP source - foley at mix per cue sheet; bed marks the beat by its absence, not a substitute sound",
+    "Mochiko lines (cuts 19/21/24) VOICE-SCRATCH - casting OPEN"
+  ]
+}

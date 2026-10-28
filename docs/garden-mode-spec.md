@@ -13,7 +13,7 @@ Garden growth is a SECOND layer on top of species evolution, never a replacement
 
 ## 2. Where it lives
 - Hub: Mainframe Gardens, entered from the world map like any other location
-  (same tile system as Sector 0 / Binary Woods / Neon City — no separate engine).
+  (same tile system as Sector 0 / The Dark Forest / Neon City — no separate engine).
 - Sub-areas, all as world maps or menu screens, not 3D spaces:
   Garden (raising), Mochiko Academy (tutorials + stat training),
   Silicon Town Market (buy Data Shards / Data-Fruit seeds with CR),

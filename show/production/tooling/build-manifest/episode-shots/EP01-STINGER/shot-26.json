@@ -1,0 +1,19 @@
+{
+  "background": "show/assets/backgrounds/dark-forest/EP01-PLATE-dark-forest-day-v1-still.png",
+  "duration_s": 10,
+  "layers": [],
+  "audio": null,
+  "ep01_cut": "26",
+  "scene": "EP01-STINGER",
+  "plate_registry": "PLATE-DARK-FOREST-DAY (show/shared/PLATES-REGISTRY.md) - provisional spec still, STILL by law (landed PR #393); canon painted Forest plate still MAKE",
+  "script_beat": "Something far in the dark stops moving. We never see what it is (script open item 1 - never filled in silently).",
+  "camera": "STILL-FOREST",
+  "wind_state": "OFF (FOREST LAW)",
+  "missing_assets": [],
+  "flags": [
+    "NO layer may be added for 'what stopped': the script forbids showing it (bible SS9)"
+  ],
+  "source_script": "show/episodes/EP01/EP01-SHOOTING-SCRIPT-v2.md (LOCKED)",
+  "durations_source": "show/production/tooling/build-manifest/EP01-manifest.json",
+  "subtitle_intertitle": null
+}

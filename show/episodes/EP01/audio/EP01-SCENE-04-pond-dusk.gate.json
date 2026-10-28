@@ -1,0 +1,48 @@
+{
+  "scene": "EP01-SCENE-04-pond-dusk",
+  "cuts": [
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18"
+  ],
+  "bed_file": "EP01-SCENE-04-pond-dusk.wav",
+  "target": {
+    "integrated_lufs": -14.0,
+    "true_peak_dbtp": -1.0
+  },
+  "measured": {
+    "input_i": "-14.44",
+    "input_tp": "-1.00"
+  },
+  "gates": {
+    "loudness_within_1LU": true,
+    "true_peak_ok": true
+  },
+  "underscore": "title stems bass (-8dB) + organ (-11dB): dusk stakeout register (cue sheet); stems raised at mix after gate showed the sparse bed could not reach finish loudness (method note in report)",
+  "events": [
+    {
+      "at_s": 24.0,
+      "role": "Gabu cry - LUNGE sting (cut 14, ACTION BEAT A)"
+    },
+    {
+      "at_s": 34.0,
+      "role": "Kittember cry - tail flame FLARES (cut 15)"
+    },
+    {
+      "at_s": 38.5,
+      "role": "Sproutle cry - silhouette gag reveal (cut 16)"
+    },
+    {
+      "at_s": 45.0,
+      "role": "Wispkin cry (soft) - reveal + shy wail into SUBTITLE 1 (cuts 17-18)"
+    }
+  ],
+  "flags": [
+    "Water splash FX + cold-spot shimmer = GAP sources (cue sheet) - cry/underscore skeleton only, FX at mix",
+    "Lighting plot beat: this scene carries the episode's ONE hard colour shift (Wispkin reveal) - bed timing marks it at 45s"
+  ],
+  "method_note": "Gate iterations recorded honestly: sparse mix (raw -19.7 LUFS, cry peaks at TP -0.6) cannot reach -14 by gain or loudnorm alone; stems rebalanced + per-cry limiting, then measured two-pass loudnorm (dynamic) closed to target."
+}

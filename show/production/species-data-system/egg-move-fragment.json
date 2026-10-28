@@ -1,0 +1,23 @@
+{
+ "_about": "Egg-move inheritance (List 21, #204): the rules the hatch consumes when #171's compatibility, #80's individual rolls, and #77's egg record meet. Inheritance is a bloodline path gated on BOTH sides — the offspring species' eligibility and a parent's knowledge — distinct from learning and from teaching. No move lists, eligibilities, or values are asserted; every content slot ships empty.",
+ "cap_proposed": {
+  "open_values": "the inherited-move cap and the selection order when eligibility exceeds it — data slots, no numbers asserted",
+  "rule": "PROPOSED: one knowing parent suffices (gate (b) as written) — owner's to confirm or revise, by a ruling recorded in #204's file, never smuggled into an implementation"
+ },
+ "classes": {
+  "inherited": "a move is inherited IFF all three hold: (a) it stands in the offspring species' inheritance-eligible set (per-species annex; species data, contents OPEN — an EMPTY annex is a legal authored state: the species inherits nothing); (b) at least one parent KNOWS the move (on that parent individual's move record, by whatever legitimate path); (c) the pairing passed #171's derivation",
+  "level-native": "moves the offspring species' own learnset grants at hatch level — NOT inheritance; fenced out of the inheritance record so neither record corrupts the other (the learnset's business, #129's family)",
+  "not-inherited": "everything else — no third path, no pity rule, no story override inside this system"
+ },
+ "compatibility_gate": "#171's three-valued law binds exactly: unknown is not incompatible — but unknown is also not a pairing. No egg, no inheritance, no exceptions argued at the hatch.",
+ "format": "mochiichao/egg-move-inheritance/v1",
+ "open_register": [
+  "every species' inheritance-eligible annex (species data — all empty today)",
+  "the cap + selection rule",
+  "the one-parent-suffices proposal (confirm or revise)",
+  "every actual inheritance event (none can occur until #171 has assignments — 0/47 today, by #171's own coverage read)"
+ ],
+ "record": "Inherited moves are written onto the offspring individual's record AT HATCH (birth facts are stored facts — #80's precedent: the seed is stored; what a hatchling knows at birth is the same class). They surface in #135's sequence at FIRST BOND — the registration beat where the world first reads what the hatchling knows. Eligibility: #204. Pairing gate: #171. Write: #80. Presentation: #135. Four homes, one event, no overlaps.",
+ "signature_bar": "ABSOLUTE and MECHANICAL. A signature move (#131 — a signature belongs to its species alone; checkable against #131's register) can NEVER be inherited: not cross-species (a Dorowani parent does not pass Water Orb to another species' child), and not within the species by this system (a signature reaches its own species by its own canon handling, #131 — never as an inheritance outcome). VALIDATION RULE: any inheritance result containing a signature id is a DATA ERROR, full stop — parent-knows never outranks this bar.",
+ "signatureBarTest": "Mechanical test (List 21 #204, step 5): any inheritance result containing a signature move id from #131's register (src/data/core/docs/signature-register-fragment.json) FAILS as a data error. The test reads the register as its source; it hard-codes no move list."
+}

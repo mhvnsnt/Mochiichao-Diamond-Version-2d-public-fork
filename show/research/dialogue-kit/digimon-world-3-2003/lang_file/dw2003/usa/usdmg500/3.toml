@@ -1,0 +1,7 @@
+strings = [
+	"",
+	"[name]Kail[name]Hey [player_name2]!\nGood timing.[pause][clear]We've been here\na while. Why don't\nwe go back?[pause]",
+	"[name][player_name][name]Yeah, I've beaten Seiryu\nand Suzaku Leader, so\nthat's good for now.[pause][clear]But what about Teddy?\nWe have to find Teddy![pause]",
+	"[name]Kail[name]Teddy is fine. He's in \nAsuka City's \nAdministration Center.[pause][clear]When I saw him last, \nthat's where he said\nhe was going.[pause]",
+	"[name][player_name][name]Oh, OK. Then let's\nhurry back to Asuka\nCity![pause]",
+]

@@ -1,0 +1,57 @@
+GAME: Pokémon Omega Ruby / Pokémon Alpha Sapphire (Generation VI, 3DS, 2014)
+SERIES FOLDER: incoming-gen6789/gen6-omega-ruby-alpha-sapphire/
+USE: REFERENCE ONLY — structure/pacing/coverage template material for an original
+monster-tamer project. Never copy this text into any shipped work.
+
+SOURCE REPO: https://github.com/abcboy101/poke-corpus
+COMMIT (git clone --depth 1, HEAD at pull time, 2026-10-27 local / 2026-10-28 UTC):
+c6bd4497a54ead271db1644ffa4fb51247746a65
+AUTHOR: abcboy101 (repo owner; the same author maintains the public query site at
+https://abcboy101.github.io/poke-corpus/ ).
+METHOD NOTE: the clone was taken over git protocol only (no GitHub REST API).
+Because the full repo is large, the pull used git's blobless sparse checkout
+(--depth 1 --filter=blob:none --sparse) limited to the six Gen 6-9 corpus folders;
+the commit hash above is the full HEAD commit of the repo, and the files below
+were verified byte-identical to that checkout (diff -r, 0 differences).
+
+STATED PROVENANCE (from the repo itself):
+- README.md: "Poke Corpus — A tool to query the Pokemon corpus." It defines the
+  two bank types searched by default as "the common text (interface text, names,
+  descriptions) and the script text (story-related text, dialogue, etc.)" — i.e.
+  in each game folder, <lang>_common.txt is the general game-text bank and
+  <lang>_script.txt is the story/NPC dialogue bank.
+- NOTES.md, section "Sources and changes made": "Most text dumps in this repo
+  use the common format shared by xytext (https://github.com/kwsch/xytext),
+  pk3DS (https://github.com/kwsch/pk3DS), and pkNX (https://github.com/kwsch/pkNX)."
+  Those are Kurt's (kwsch / Kaphotics, Project Pokemon) named game-text
+  extraction/editing tools — xytext/pk3DS for the 3DS games (Gen 6-7) and pkNX
+  for the Switch games (Gen 8-9). The dumps in this repo follow that
+  extraction format.
+- NOTES.md also documents, in its "Format" section, exactly what representation
+  changes were made to the original game data in these files: variables/functions
+  are written in square brackets (e.g. [VAR 0100(0000)]), furigana as {kanji|kana},
+  and the control codes are written as the escape sequences \n, \r, \c, \\, \[, \{.
+  Text is otherwise presented as extracted, organised in the files as a sequence
+  of numbered "Text File : <id>" blocks matching the games' internal text files.
+- HONEST LIMIT: the repo gives this provenance at corpus level (sources/format
+  section in NOTES.md); it does not publish a separate per-game extraction log
+  or ROM hashes. That is the provenance the repo itself states, quoted above,
+  and it is why this source was accepted over anonymous dumps with none.
+
+LICENCE (repo LICENSE file): GNU General Public License v3.0 (GPL-3.0) — that
+licence covers the repo's own tooling/text corpus as published by its author.
+The underlying game text is extracted game data; in this project it is held
+strictly as reference-only material regardless (see USE above).
+
+WHAT WAS EXTRACTED / COPIED HERE:
+- The repo's complete corpus/OmegaRubyAlphaSapphire/ directory, structure preserved, copied to
+  gen6-omega-ruby-alpha-sapphire/corpus/OmegaRubyAlphaSapphire/ — nothing else from the repo (no site code, no tools,
+  no other games).
+- Content per language: one _common bank (interface text, names, descriptions,
+  system/battle text) and one _script bank (story-related text and dialogue).
+- Languages present: de, en, es, fr, it, ja, ja-Hrkt (kana), ko, qid — 9 languages x 2 banks (common + script). Same language set as XY in the source.
+
+MEASUREMENT (stat summing over the copied files, PROVENANCE.txt itself excluded):
+- 18 files, 22,169,568 bytes
+- Copy verified byte-identical to the clone (diff -r against the sparse
+  checkout: 0 differences).

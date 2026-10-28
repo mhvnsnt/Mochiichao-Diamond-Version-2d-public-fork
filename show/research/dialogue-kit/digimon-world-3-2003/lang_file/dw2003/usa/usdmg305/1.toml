@@ -1,0 +1,14 @@
+strings = [
+	"",
+	"[name]Game Master[name]...what are you two\ndoing in here?[pause]",
+	"[name][player_name][name]Uh... uh...we're \nlooking for our\nfriend Teddy.[pause]",
+	"[name]Game Master[name]...Oh, I see. I'm sorry\nfor surprising you.[pause][clear]I am worried about your\nfriend too. Lucky Mouse \nmust have him hostage.[pause]",
+	"[name][player_name][name]Lucky\nMouse?![pause]",
+	"[name]Game Master[name]He is an awful man.\nHe is trying to destroy\nDigimon Online![pause][clear]He's the reason why \nwe are having problems\nwith the system![pause]",
+	"[name][player_name][name]But everyone is having \nso much fun in Digimon\nOnline...[pause]",
+	"[name][player_name][name]I can't believe\nLucky Mouse![pause]",
+	"[name]Kail[name].........[pause]",
+	"[name]Game Master[name]Everyone in our staff \nis looking for Lucky \nMouse right now.[pause][clear]...oh, I know! \nCan you help us?[pause]",
+	"[name][player_name][name]Of course!\nLeave it to us![pause]",
+	"[name]Game Master[name]Thank you.\nI'm counting \non you.[pause][clear]We heard he \nwent towards \nWest Sector![pause]",
+]
