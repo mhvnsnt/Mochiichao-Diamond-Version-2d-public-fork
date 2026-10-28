@@ -1,0 +1,63 @@
+{
+  "schema": "mochiichao-show/avatar-bundle/v1",
+  "species": "wispkin",
+  "variant": "dark_wave",
+  "backend": "muse-hosted-avatar-generator",
+  "backend_callable_from_repo": false,
+  "created_utc": "2026-10-28T01:58:55.096851+00:00",
+  "source_clip": "norm/wispkin-dark_wave.mp4",
+  "spec": {
+    "codec": "h264",
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192,
+    "duration_s": 8.0
+  },
+  "conformance": {
+    "target": {
+      "width": 720,
+      "height": 720,
+      "fps": 24.0,
+      "duration_s": 8.0
+    },
+    "meets_target": true
+  },
+  "files": {
+    "mp4": {
+      "path": "wispkin-dark_wave.mp4",
+      "sha256": "27aa4f164c92d545b4bc0aa8b82a053c1821f42c29bc4f235b367db312574830",
+      "bytes": 933284
+    },
+    "transparent_webm": {
+      "path": "wispkin-dark_wave.transparent.webm",
+      "sha256": "7b1cf12c55265b572841b7d62f9fe677bf5260e17501622c64d8d3d688591c9d",
+      "bytes": 2012087,
+      "status": "PRODUCED_WHITE_FIELD",
+      "method": "white_matte.py (white-distance key + enclosed-region rescue)"
+    },
+    "poster": {
+      "path": "wispkin.webp",
+      "sha256": "2611c07224af0799a65d0e6ad55c51a9e7010d135216b7bfd8a50aacf218f424",
+      "bytes": 20650,
+      "source": "source_still"
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "verdict_recommendation": "FAIL"
+  },
+  "variant_label": "dark_wave-wideframe",
+  "framing_verification": {
+    "result": "FAIL",
+    "method": "per-frame content extent (any channel < 235) measured on the RAW generation (608x1280, 240 frames) and on the normalised clip",
+    "raw_peak": {
+      "frames_touching_both_edges": "58 of 240 (raw frames 153-210, t~6.4-8.75s)",
+      "widest_content_px": "0..607 of 608 (full width)",
+      "left_margin_px": 0,
+      "right_margin_px": 0
+    },
+    "note": "Despite explicit wide-framing direction, the generator expanded the rune ring past the frame at its peak again - the ring is clipped in the SOURCE, as with PR #389. The normalised 720x720 clip shows ~189px white padding margins, but the ring itself is cut at the source's side edges; padding margins are not a fix and are not claimed as one. This candidate does NOT fix the side-cropping. Scorer decision required; a further attempt would need a new owner order."
+  }
+}

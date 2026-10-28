@@ -104,7 +104,7 @@
    "path": "public/assets/show-bundles/gen-retry-2026-10-27/dorowani-idle/",
    "character": "dorowani",
    "variant": "idle",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
    "spec": "720x720, 8s, 24fps + transparent WebM twin",
    "used_by": [
     "show:ep01_candidate"
@@ -123,14 +123,14 @@
      "rgb_mad_255_max": 40.0
     }
    },
-   "note": "Probe clip of the retry. In the accepted avatar set's own measurement band on the discriminating metrics (IoU 0.885 vs its 0.884 pose-matched; MAD 41.4 vs its 44.9-61.7). Does NOT supersede the production avatar idle in public/assets/show-bundles/dorowani/ \u2014 a second candidate for the same variant slot; registry changes only on a recorded scorer verdict. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+   "note": "Probe clip of the retry. In the accepted avatar set's own measurement band on the discriminating metrics (IoU 0.885 vs its 0.884 pose-matched; MAD 41.4 vs its 44.9-61.7). Does NOT supersede the production avatar idle in public/assets/show-bundles/dorowani/ — a second candidate for the same variant slot; registry changes only on a recorded scorer verdict. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
   },
   {
    "id": "gen-retry-2026-10-27-dorowani-water_orb",
    "path": "public/assets/show-bundles/gen-retry-2026-10-27/dorowani-water_orb/",
    "character": "dorowani",
    "variant": "water_orb",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
    "spec": "720x720, 8s, 24fps + transparent WebM twin",
    "used_by": [
     "show:ep01_candidate"
@@ -156,7 +156,7 @@
    "path": "public/assets/show-bundles/gen-retry-2026-10-27/gabu-tremor/",
    "character": "gabu",
    "variant": "tremor",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
    "spec": "720x720, 8s, 24fps + transparent WebM twin",
    "used_by": [
     "show:ep01_candidate"
@@ -175,14 +175,14 @@
      "rgb_mad_255_max": 40.0
     }
    },
-   "note": "TREMOR, Gabu's signature. No back cannons \u2014 not the rejected batch's failure mode. Neutral frame 12: SSIM 0.318 / IoU 0.832 / MAD 70.5. Dust/ground-crack FX at the feet in stomp frames. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
+   "note": "TREMOR, Gabu's signature. No back cannons — not the rejected batch's failure mode. Neutral frame 12: SSIM 0.318 / IoU 0.832 / MAD 70.5. Dust/ground-crack FX at the feet in stomp frames. Promotion is a recorded owner/scorer verdict only (orchestrator law)."
   },
   {
    "id": "gen-retry-2026-10-27-kittember-fire_stream",
    "path": "public/assets/show-bundles/gen-retry-2026-10-27/kittember-fire_stream/",
    "character": "kittember",
    "variant": "fire_stream",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
    "spec": "720x720, 8s, 24fps + transparent WebM twin",
    "used_by": [
     "show:ep01_candidate"
@@ -201,14 +201,14 @@
      "rgb_mad_255_max": 40.0
     }
    },
-   "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch \u2014 fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-27 (as corrected same day): special-case DRAFT - species-form quadruped with the wrong tail/design deviations; unused draft, NOT the wild individual (the wild individual is the bipedal canon-pass, PR #399)."
+   "note": "FIRE STREAM, Kittember's signature. Flame on the tail tip in every frame (canon). Weakest packet of the batch — fire plume + crouch reshape the silhouette at both sampled frames (frame 12: SSIM 0.343 / IoU 0.497 / MAD 115.3). Promotion is a recorded owner/scorer verdict only (orchestrator law). Owner ruling 2026-10-27 (as corrected same day): special-case DRAFT - species-form quadruped with the wrong tail/design deviations; unused draft, NOT the wild individual (the wild individual is the bipedal canon-pass, PR #399)."
   },
   {
    "id": "gen-retry-2026-10-27-sproutle-leaf_blast",
    "path": "public/assets/show-bundles/gen-retry-2026-10-27/sproutle-leaf_blast/",
    "character": "sproutle",
    "variant": "leaf_blast",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
    "spec": "720x720, 8s, 24fps + transparent WebM twin",
    "used_by": [
     "show:ep01_candidate"
@@ -234,7 +234,7 @@
    "path": "public/assets/show-bundles/gen-retry-2026-10-27/wispkin-dark_wave/",
    "character": "wispkin",
    "variant": "dark_wave",
-   "source": "Muse hosted avatar generator (avatar full stack) \u2014 generative retry batch 2026-10-27, from canon cutout",
+   "source": "Muse hosted avatar generator (avatar full stack) — generative retry batch 2026-10-27, from canon cutout",
    "spec": "720x720, 8s, 24fps + transparent WebM twin",
    "used_by": [
     "show:ep01_candidate"
@@ -308,6 +308,36 @@
    },
    "note": "The bipedal Kittember - special-case wild individual (owner ruling 2026-10-27): Mochiko's first wild Kittember encounter - stare-down in the woods, vanishes, reappears, battle + capture, joins the team. Species default is quadrupedal; this bipedal individual is the special case. FIRE STREAM, Kittember's signature - canon-pass MOUTH form. Trait check (frames 12/96/180): coat dark GREY (dark-pixel median RGB 65 vs canon 71) PASS; upright bipedal throughout PASS; NO white chest patch PASS (same light-grey belly oval flag as the tail variant); ear interiors DARK PASS; eyes amber and forward-facing but NARROWER/SLANTED, not big-round - PARTIAL/FAIL (f12/f96/f180); tail tip is a teardrop FLAME PLUME at f12/f96 and a smoky flame blob at f180, never the round orange orb - FAIL; SMOOTH coat PASS. Form: mouth blast itself is clear at f96, but the variant condition 'orb burning on the tail tip throughout' is NOT met. Extra deviation: tail stem is dark, canon tail stem is orange-gradient. Neutral frame 12 gate: SSIM 0.428 / IoU 0.575 / MAD 86.5. Motion evidence: mean frame-diff 1.48 (128px greyscale, all 192 frames; motion concentrated at the blast). Promotion is a recorded owner/scorer verdict only.",
    "individual_status": "special_case_wild_individual"
+  },
+  {
+   "id": "gen-retry-2026-10-27-wispkin-dark_wave-wideframe",
+   "path": "public/assets/show-bundles/gen-retry-2026-10-27/wispkin-dark_wave-wideframe/",
+   "character": "wispkin",
+   "variant": "dark_wave",
+   "source": "Muse hosted avatar generator (avatar full stack) - wideframe fix attempt 2026-10-27, owner-directed, from canon cutout of record; regeneration ordered because PR #389's clip is clipped in the source",
+   "spec": "720x720, 8s, 24fps + transparent WebM twin",
+   "used_by": [
+    "show:ep01_candidate"
+   ],
+   "quality_status": "PENDING_GATE",
+   "gate": {
+    "verdict": "FAIL",
+    "recommendation_only": true,
+    "frame": "middle (96)",
+    "ssim_union": 0.1987,
+    "silhouette_iou": 0.5297,
+    "rgb_mad_255": 96.892,
+    "thresholds": {
+     "ssim_min": 0.5,
+     "silhouette_iou_min": 0.55,
+     "rgb_mad_255_max": 40.0
+    }
+   },
+   "framing_verification": {
+    "result": "FAIL",
+    "detail": "Raw generation (608x1280, 240f): 58 frames touch both side edges (frames 153-210); widest content 0..607 of 608; peak left/right margins 0px. The ring is clipped in the source at its peak phase, as with #389. Normalised padding margins (~189px) are not a fix. This candidate does not fix the side-cropping."
+   },
+   "note": "DARK WAVE, Wispkin's signature - wideframe fix attempt. FAILED framing verification (see framing_verification + production log). Neutral frames on-model (mask, hands, smoke, flame tip); mid-performance mask reads as a face with glowing purple eyes; peak phase character recedes inside the ring. Promotion is a recorded owner/scorer verdict only."
   }
  ]
 }
