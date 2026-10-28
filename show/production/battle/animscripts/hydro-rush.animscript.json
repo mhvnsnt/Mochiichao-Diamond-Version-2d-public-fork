@@ -1,338 +1,338 @@
 {
-  "base_tracks": {
-    "audio": [
-      {
-        "anchor": "whole_body",
-        "cue": "sfx",
-        "dur": 1,
-        "params": {
-          "sfx_id": "water_gather"
-        },
-        "t": 4
-      },
-      {
-        "anchor": "mouth",
-        "cue": "cry",
-        "dur": 1,
-        "params": {
-          "cry_variant": "attack"
-        },
-        "t": 18
-      },
-      {
-        "anchor": "centre",
-        "cue": "sfx",
-        "dur": 1,
-        "params": {
-          "sfx_id": "water_burst"
-        },
-        "t": 36
-      }
-    ],
-    "background": [],
-    "camera": [
-      {
-        "anchor": "centre",
-        "cue": "cam_push",
-        "dur": 20,
-        "params": {
-          "follow": "performer",
-          "to_scale": 1.12
-        },
-        "t": 16
-      }
-    ],
-    "performer_fx": [
-      {
-        "anchor": "whole_body",
-        "cue": "spawn_layer",
-        "dur": 14,
-        "params": {
-          "behind": true,
-          "layer": "water_cloak"
-        },
-        "t": 4
-      },
-      {
-        "anchor": "whole_body",
-        "cue": "scale",
-        "dur": 8,
-        "params": {
-          "layer": "water_cloak",
-          "to": 1.15
-        },
-        "t": 10
-      },
-      {
-        "anchor": "centre",
-        "cue": "spawn_layer",
-        "dur": 18,
-        "params": {
-          "behind": true,
-          "layer": "speed_streaks"
-        },
-        "t": 18
-      },
-      {
-        "anchor": "whole_body",
-        "cue": "fade",
-        "dur": 4,
-        "params": {
-          "layer": "water_cloak",
-          "to": 0.3
-        },
-        "t": 36
-      }
-    ],
-    "projectile": [],
-    "screen": [
-      {
-        "anchor": "centre",
-        "cue": "flash",
-        "dur": 3,
-        "params": {
-          "colour": "aqua_white",
-          "strength": 0.35
-        },
-        "t": 36
-      },
-      {
-        "anchor": "centre",
-        "cue": "shake",
-        "dur": 8,
-        "params": {
-          "amplitude_px": 4
-        },
-        "t": 36
-      }
-    ],
-    "subtitle": [],
-    "target_fx": [
-      {
-        "anchor": "centre",
-        "cue": "spawn_layer",
-        "dur": 10,
-        "params": {
-          "behind": false,
-          "layer": "burst_ring"
-        },
-        "t": 36
-      },
-      {
-        "anchor": "whole_body",
-        "cue": "spawn_layer",
-        "dur": 12,
-        "params": {
-          "behind": false,
-          "layer": "splash_drips"
-        },
-        "t": 38
-      }
-    ]
+ "base_tracks": {
+  "audio": [
+   {
+    "anchor": "whole_body",
+    "cue": "sfx",
+    "dur": 1,
+    "params": {
+     "sfx_id": "water_gather"
+    },
+    "t": 4
+   },
+   {
+    "anchor": "mouth",
+    "cue": "cry",
+    "dur": 1,
+    "params": {
+     "cry_variant": "attack"
+    },
+    "t": 18
+   },
+   {
+    "anchor": "centre",
+    "cue": "sfx",
+    "dur": 1,
+    "params": {
+     "sfx_id": "water_burst"
+    },
+    "t": 36
+   }
+  ],
+  "background": [],
+  "camera": [
+   {
+    "anchor": "centre",
+    "cue": "cam_push",
+    "dur": 20,
+    "params": {
+     "follow": "performer",
+     "to_scale": 1.12
+    },
+    "t": 16
+   }
+  ],
+  "performer_fx": [
+   {
+    "anchor": "whole_body",
+    "cue": "spawn_layer",
+    "dur": 14,
+    "params": {
+     "behind": true,
+     "layer": "water_cloak"
+    },
+    "t": 4
+   },
+   {
+    "anchor": "whole_body",
+    "cue": "scale",
+    "dur": 8,
+    "params": {
+     "layer": "water_cloak",
+     "to": 1.15
+    },
+    "t": 10
+   },
+   {
+    "anchor": "centre",
+    "cue": "spawn_layer",
+    "dur": 18,
+    "params": {
+     "behind": true,
+     "layer": "speed_streaks"
+    },
+    "t": 18
+   },
+   {
+    "anchor": "whole_body",
+    "cue": "fade",
+    "dur": 4,
+    "params": {
+     "layer": "water_cloak",
+     "to": 0.3
+    },
+    "t": 36
+   }
+  ],
+  "projectile": [],
+  "screen": [
+   {
+    "anchor": "centre",
+    "cue": "flash",
+    "dur": 3,
+    "params": {
+     "colour": "aqua_white",
+     "strength": 0.35
+    },
+    "t": 36
+   },
+   {
+    "anchor": "centre",
+    "cue": "shake",
+    "dur": 8,
+    "params": {
+     "amplitude_px": 4
+    },
+    "t": 36
+   }
+  ],
+  "subtitle": [],
+  "target_fx": [
+   {
+    "anchor": "centre",
+    "cue": "spawn_layer",
+    "dur": 10,
+    "params": {
+     "behind": false,
+     "layer": "burst_ring"
+    },
+    "t": 36
+   },
+   {
+    "anchor": "whole_body",
+    "cue": "spawn_layer",
+    "dur": 12,
+    "params": {
+     "behind": false,
+     "layer": "splash_drips"
+    },
+    "t": 38
+   }
+  ]
+ },
+ "beats": [
+  {
+   "beat": "anticipation",
+   "from": 0,
+   "to": 18
   },
-  "beats": [
+  {
+   "beat": "dash",
+   "from": 18,
+   "to": 36
+  },
+  {
+   "beat": "impact",
+   "from": 36,
+   "to": 50
+  },
+  {
+   "beat": "reaction",
+   "from": 50,
+   "to": 60
+  },
+  {
+   "beat": "settle",
+   "from": 60,
+   "to": 72
+  }
+ ],
+ "display_name": "Hydro Rush",
+ "duration_frames": 72,
+ "fps": 24,
+ "move_id": "AQUA_JET",
+ "performances": [
+  {
+   "anatomy_profile": {
+    "anchors_available": [
+     "centre",
+     "mouth",
+     "hand_l",
+     "hand_r",
+     "tail_tip",
+     "crown",
+     "whole_body",
+     "ground_contact"
+    ],
+    "body_plan": "biped_small",
+    "class_flags": [],
+    "effector": "whole_body",
+    "size_class": "small"
+   },
+   "body_track": [
     {
-      "beat": "anticipation",
-      "from": 0,
-      "to": 18
+     "anchor": "ground_contact",
+     "cue": "translate",
+     "dur": 10,
+     "params": {
+      "depth": 0.08,
+      "motion": "crouch"
+     },
+     "t": 0
     },
     {
-      "beat": "dash",
-      "from": 18,
-      "to": 36
+     "anchor": "centre",
+     "cue": "rotate",
+     "dur": 8,
+     "params": {
+      "lift": 0.12,
+      "motion": "spin_hop",
+      "turns": 1
+     },
+     "t": 10
     },
     {
-      "beat": "impact",
-      "from": 36,
-      "to": 50
+     "anchor": "centre",
+     "cue": "translate",
+     "dur": 18,
+     "params": {
+      "motion": "corkscrew_dash",
+      "path": "arc_to_target",
+      "spin_per_sec": 2
+     },
+     "t": 18
     },
     {
-      "beat": "reaction",
-      "from": 50,
-      "to": 60
+     "anchor": "ground_contact",
+     "cue": "translate",
+     "dur": 10,
+     "params": {
+      "motion": "skid_stop"
+     },
+     "t": 50
     },
     {
-      "beat": "settle",
-      "from": 60,
-      "to": 72
+     "anchor": "centre",
+     "cue": "translate",
+     "dur": 12,
+     "params": {
+      "motion": "return_to_stance"
+     },
+     "t": 60
     }
-  ],
-  "display_name": "Hydro Rush",
-  "duration_frames": 72,
-  "fps": 24,
-  "move_id": "AQUA_JET",
-  "performances": [
+   ],
+   "no_variance_reason": "Reference performance: this body track defines the base choreography the other performances vary from, so there is nothing to override.",
+   "overrides": [],
+   "species": "mochii",
+   "variance_notes": "Reference performance. Mochii is a small biped: anticipation is a crouch into a spin-hop that gathers the cloak; the dash is a whole-body corkscrew, so the water cloak and the body read as one projectile. Impact anchors at whole_body because there is no single striking limb."
+  },
+  {
+   "anatomy_profile": {
+    "anchors_available": [
+     "centre",
+     "mouth",
+     "tail_tip",
+     "dorsal",
+     "whole_body"
+    ],
+    "body_plan": "limbless_swimmer",
+    "class_flags": [],
+    "effector": "mouth",
+    "size_class": "tiny"
+   },
+   "body_track": [
     {
-      "anatomy_profile": {
-        "anchors_available": [
-          "centre",
-          "mouth",
-          "hand_l",
-          "hand_r",
-          "tail_tip",
-          "crown",
-          "whole_body",
-          "ground_contact"
-        ],
-        "body_plan": "biped_small",
-        "class_flags": [],
-        "effector": "whole_body",
-        "size_class": "small"
-      },
-      "body_track": [
-        {
-          "anchor": "ground_contact",
-          "cue": "translate",
-          "dur": 10,
-          "params": {
-            "depth": 0.08,
-            "motion": "crouch"
-          },
-          "t": 0
-        },
-        {
-          "anchor": "centre",
-          "cue": "rotate",
-          "dur": 8,
-          "params": {
-            "lift": 0.12,
-            "motion": "spin_hop",
-            "turns": 1
-          },
-          "t": 10
-        },
-        {
-          "anchor": "centre",
-          "cue": "translate",
-          "dur": 18,
-          "params": {
-            "motion": "corkscrew_dash",
-            "path": "arc_to_target",
-            "spin_per_sec": 2
-          },
-          "t": 18
-        },
-        {
-          "anchor": "ground_contact",
-          "cue": "translate",
-          "dur": 10,
-          "params": {
-            "motion": "skid_stop"
-          },
-          "t": 50
-        },
-        {
-          "anchor": "centre",
-          "cue": "translate",
-          "dur": 12,
-          "params": {
-            "motion": "return_to_stance"
-          },
-          "t": 60
-        }
-      ],
-      "no_variance_reason": "Reference performance: this body track defines the base choreography the other performances vary from, so there is nothing to override.",
-      "overrides": [],
-      "species": "mochii",
-      "variance_notes": "Reference performance. Mochii is a small biped: anticipation is a crouch into a spin-hop that gathers the cloak; the dash is a whole-body corkscrew, so the water cloak and the body read as one projectile. Impact anchors at whole_body because there is no single striking limb."
+     "anchor": "centre",
+     "cue": "translate",
+     "dur": 12,
+     "params": {
+      "motion": "flicker_feint",
+      "pattern": "school_dart_x3"
+     },
+     "t": 0
     },
     {
-      "anatomy_profile": {
-        "anchors_available": [
-          "centre",
-          "mouth",
-          "tail_tip",
-          "dorsal",
-          "whole_body"
-        ],
-        "body_plan": "limbless_swimmer",
-        "class_flags": [],
-        "effector": "mouth",
-        "size_class": "tiny"
-      },
-      "body_track": [
-        {
-          "anchor": "centre",
-          "cue": "translate",
-          "dur": 12,
-          "params": {
-            "motion": "flicker_feint",
-            "pattern": "school_dart_x3"
-          },
-          "t": 0
-        },
-        {
-          "anchor": "mouth",
-          "cue": "rotate",
-          "dur": 6,
-          "params": {
-            "motion": "needle_aim",
-            "settle_wobble": 0.02
-          },
-          "t": 12
-        },
-        {
-          "anchor": "centre",
-          "cue": "translate",
-          "dur": 18,
-          "params": {
-            "led_by": "mouth",
-            "motion": "lance_run",
-            "path": "straight_to_target"
-          },
-          "t": 18
-        },
-        {
-          "anchor": "centre",
-          "cue": "rotate",
-          "dur": 10,
-          "params": {
-            "motion": "needle_tap_recoil",
-            "recoil": 0.06
-          },
-          "t": 50
-        },
-        {
-          "anchor": "centre",
-          "cue": "translate",
-          "dur": 12,
-          "params": {
-            "motion": "banking_turn_into_swim_loop"
-          },
-          "t": 60
-        }
-      ],
-      "overrides": [
-        {
-          "change": "speed_streaks layer replaced by spiral_wake anchored at tail_tip",
-          "cue": "spawn_layer",
-          "reason": "A limbless swimmer trails its speed effect from the tail, not the body centre; there is no hop for the cloak to gather on, so the cloak forms along the run instead.",
-          "t": 18,
-          "track": "performer_fx"
-        },
-        {
-          "change": "push scale reduced to 1.05 and reframed side-on",
-          "cue": "cam_push",
-          "reason": "Flickfin is tiny and side-profile by anatomy; the biped framing would crop the needle, which is the move's read.",
-          "t": 16,
-          "track": "camera"
-        },
-        {
-          "change": "cry_variant attack resolves to Flickfin's click-rattle per its sheet cry spec",
-          "cue": "cry",
-          "reason": "Flickfin's cry is a needle-click, not a voiced cry; the cue is unchanged, the species cry spec supplies the sound.",
-          "t": 18,
-          "track": "audio"
-        }
-      ],
-      "species": "flickfin",
-      "staging_flags": [
-        "on_land_performance_requires_splash_puddle_treatment"
-      ],
-      "variance_notes": "Limbless swimmer: no crouch, no hop, no limbs \u2014 anticipation is a flicker-feint and a needle aim (the needle is part of the face and is the effector, so the dash is led by the mouth anchor). The dash is a straight lance run instead of a corkscrew. The settle beat cannot return to a stance; it banks into a continuous swim loop so the creature never freezes mid-water. Impact burst still anchors on the target's centre: the shared effect choreography is unchanged, only the body and its anchors moved."
+     "anchor": "mouth",
+     "cue": "rotate",
+     "dur": 6,
+     "params": {
+      "motion": "needle_aim",
+      "settle_wobble": 0.02
+     },
+     "t": 12
+    },
+    {
+     "anchor": "centre",
+     "cue": "translate",
+     "dur": 18,
+     "params": {
+      "led_by": "mouth",
+      "motion": "lance_run",
+      "path": "straight_to_target"
+     },
+     "t": 18
+    },
+    {
+     "anchor": "centre",
+     "cue": "rotate",
+     "dur": 10,
+     "params": {
+      "motion": "needle_tap_recoil",
+      "recoil": 0.06
+     },
+     "t": 50
+    },
+    {
+     "anchor": "centre",
+     "cue": "translate",
+     "dur": 12,
+     "params": {
+      "motion": "banking_turn_into_swim_loop"
+     },
+     "t": 60
     }
-  ],
-  "registry_anim_id": null,
-  "registry_anim_id_note": "Read from moves.json at build time; not asserted in this draft.",
-  "schema": "mochiichao/move-animscript/v1"
+   ],
+   "overrides": [
+    {
+     "change": "speed_streaks layer replaced by spiral_wake anchored at tail_tip",
+     "cue": "spawn_layer",
+     "reason": "A limbless swimmer trails its speed effect from the tail, not the body centre; there is no hop for the cloak to gather on, so the cloak forms along the run instead.",
+     "t": 18,
+     "track": "performer_fx"
+    },
+    {
+     "change": "push scale reduced to 1.05 and reframed side-on",
+     "cue": "cam_push",
+     "reason": "Flickfin is tiny and side-profile by anatomy; the biped framing would crop the needle, which is the move's read.",
+     "t": 16,
+     "track": "camera"
+    },
+    {
+     "change": "cry_variant attack resolves to Flickfin's click-rattle per its sheet cry spec",
+     "cue": "cry",
+     "reason": "Flickfin's cry is a needle-click, not a voiced cry; the cue is unchanged, the species cry spec supplies the sound.",
+     "t": 18,
+     "track": "audio"
+    }
+   ],
+   "species": "flickfin",
+   "staging_flags": [
+    "on_land_performance_requires_splash_puddle_treatment"
+   ],
+   "variance_notes": "Limbless swimmer: no crouch, no hop, no limbs \u2014 anticipation is a flicker-feint and a needle aim (the needle is part of the face and is the effector, so the dash is led by the mouth anchor). The dash is a straight lance run instead of a corkscrew. The settle beat cannot return to a stance; it banks into a continuous swim loop so the creature never freezes mid-water. Impact burst still anchors on the target's centre: the shared effect choreography is unchanged, only the body and its anchors moved."
+  }
+ ],
+ "registry_anim_id": "AQUA_SHOT",
+ "registry_anim_id_note": "Wired at landing (2026-10-27): read from src/data/core/moves.json (AQUA_JET.anim = AQUA_SHOT; AQUA_JET.name = 'Hydro Rush' - join verified against the live registry).",
+ "schema": "mochiichao/move-animscript/v1"
 }
