@@ -105,3 +105,9 @@ order here are **house settings**, chosen to interlock with this
 project's existing laws (currency, likeness, THE SECRET sweep)
 rather than recovered from any single studio's manual. No studio's
 proprietary board templates or files are used or reproduced.
+
+---
+
+**Landing note — List 33 (2026-10-27), citing STAGING step 9.**
+
+#320 face expression (`show/production/320-FACE-EXPRESSION.md`) lands as a board-review criterion in this file's pipeline: for covered faces, continuity review checks the anatomy carriers the expression actually rides (eyes/brow/ears/body for a muzzle-plate; upper face and crown angle for a mouth-shield; hole read, crack light-line, smoke and stillness for a full mask) — and the plate itself never flexes. This is a review gate, not engine behaviour, and no PR may describe it as such.

@@ -114,4 +114,8 @@ filled.
 
 **Landing proposals — List 29 (2026-10-27), cited to that package, proposals until a plan uses them.** Four arc-plan record additions are proposed into this file's format: (a) `mode` on beats featuring the dual-self lead (#279, `279-DUAL-SELF-PORTRAYAL.md`); (b) `audience-knows` on the thief's beats (#280, `280-FALSE-FRIENDSHIP.md`); (c) `viewpoint` (character + sector) on arcs/episode blocks (#282, `282-SECTOR-ENSEMBLE-ROTATION.md`); (d) a tone line on this file's conservation checklist (#285, `285-PART-TONE-SHIFTS.md`). Until a plan carries them, no plan is required to carry them (List 29 STAGING step 4).
 
-**Landing proposals — List 30 (2026-10-27).** #296 (`show/production/296-SONIC-GRAMMAR.md`) proposes two production lines into this file's format, cited to that package: a `zone idea` line and a per-principal `attitude` note. They are proposals in this file's home until a production uses them; #296's theme registry lands beside #72/#215 as production data (see List 30 STAGING step 11).
+---
+
+**Landing notes — List 33 (2026-10-27), citing STAGING steps 1 and 9.**
+
+(1) #321 covered-face story (`show/production/321-COVERED-FACE-STORY.md`) lands beside this file's arc-planning package, and its forbidden-structure list (the unmasking, the tease, the reveal substitute, the ceremonial removal) joins arc review here as a checklist item. It is narrative review law, not engine behaviour. (2) #326 record-to-cast (`show/production/326-RECORD-TO-CAST.md`) extends this file's cast machinery: the four-seat pipeline (record → story individual → cast seat → continuing cast), with casting never back-writing the species sheet and #318's register as the casting's source of truth.

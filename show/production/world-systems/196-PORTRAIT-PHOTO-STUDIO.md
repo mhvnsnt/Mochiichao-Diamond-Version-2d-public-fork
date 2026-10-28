@@ -109,3 +109,9 @@ pattern. Prints: #31 (`material`), holdings #190.
 - **Contents: zero studios instanced;** locations,
   keepers, sitting variants, print sizes, and prices are
   OPEN.
+
+---
+
+**Landing citations — List 33 (2026-10-27), citing STAGING steps 1 and 8.**
+
+This file's portrait rule (its anchors quote #80's MUST REPRODUCE) is generalised by #325 (`species-data/325-RECORD-PORTRAIT-FIDELITY.md`) to every surface that renders an individual. This note records the generalisation by citation only — the rule's text in this file does not change; #325 names the surfaces. Portraits are #196 (not #195, seasonal events): the citation correction registered in List 33's STAGING is carried here so the wrong number is never propagated.
