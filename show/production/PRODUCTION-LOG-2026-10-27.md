@@ -1454,3 +1454,66 @@ FOLLOW-UP NOTED: the service unit paths still point at
 the build home and get re-pointed to the landed home
 (show/production/wielder/) as a separate step. That
 re-point is not part of this landing.
+
+## GENERATED-TURNAROUND PIPELINE WIRED (2026-10-28)
+
+Owner order (2026-10-28): adopt the generated-turnaround
+pipeline. The owner supplied a reference clip generated on a
+hosted (PAID) Gemini endpoint that turned Mochiko's front
+canon art into a true profile walk, and ordered the route
+pulled in, combined with the free / open-source /
+industry-standard pieces, wired into the repo, and used for
+generated character work in place of the cutout-assembly
+route.
+
+Landed: show/production/animation-method/GENERATED-TURNAROUND-PIPELINE.md
+(the pipeline of record - diagnose, turnaround, animate,
+export, gates - with the REFERENCE BAR section: clip sha256
+ab91aa523190ddedcecad80b9568192f2cb125d4bf21811bd5787c9be0a0fe27,
+1280x720, 24 fps, 240 frames, 10.0 s; measured continuous
+generated motion, 0.0% near-identical frame pairs, mean
+frame diff 2.602; the profile view items pass the 20-point
+audit; design deviations recorded - single ponytail vs canon
+twin tails, jar contents morph between frames, line thinner
+than canon; status: reference evidence, NOT canon, NOT a
+deliverable) and show/production/tooling/turnaround-pipeline/
+(diagnosis-checklist.json - the 20-point owner-caught audit
+as data plus the 4 v5 drawn-gate items; build_turnaround_job.py;
+slice_pack.py; mochiko-design-inventory.example.json;
+README.md).
+
+Wired to real landed interfaces: the animate step emits the
+LANDED scene-job format v2 (avatar-stack/freedom/job_format_v2.md),
+whose segments run the existing wired path (run_backend.py,
+chain_segments.py, white_matte.py, scene_composite.py); the
+design inventory is read against the character-bank schema
+(avatar-stack/helpers/05_character_bank_schema.json) and the
+builder refuses to run without one; the diagnosis step uses
+the parity lane's wired Qwen2.5-VL contract
+(avatar-stack/parity/QWEN-WIRING.md, qwen_prompt_extension.py)
+with the checklist as its data (first dedicated diagnosis run
+still owed); the gates are verify_proof.py (timing +
+--likeness against the corrected sheet, frame-1 check) under
+the grading law. slice_pack.py is working code (Pillow only)
+- self-test passed at landing: 8 synthetic frames produced a
+328x105 sprite sheet plus atlas JSON with exact trim
+offsets, and an empty frame correctly errors.
+build_turnaround_job.py self-tested: emits both jobs and
+refuses a missing inventory and an unknown character.
+
+SPEC, flagged and not wired: the TURNAROUND generation step
+itself. Scene-job v2 has no image-to-image job type and no
+landed driver consumes one (LightX2V's Qwen-Image I2I
+configs exist in the landed full-stack tree as components).
+The builder emits that half stamped SPEC_NOT_RUNNABLE with
+the gap written inside the job file. Likeness on the free
+stack remains UNPROVEN (the baseline plain-I2V FAIL stands);
+the hosted endpoints the reference used are PAID and are
+recorded as paid, not used.
+
+Registry: METHOD-REGISTRY.md - Industry Method v1.3 = v1.2
+plus the generated-turnaround route, CURRENT / USABLE for
+generated character animation; v1.2's drawn route remains
+CURRENT for drawn proofs (per-use currency stated in both
+blocks); the likeness gate and timing standard apply
+unchanged to both routes.
