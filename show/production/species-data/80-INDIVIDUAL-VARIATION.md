@@ -167,3 +167,5 @@ a similar trait, it needs its own ruling.
   free-text per sheet — lane call.
 - The cry-pitch-offset proposal — unruled.
 - Any second canon deviation — none exists; none is drafted here.
+
+**Derived view registered (List 12 #108, 2026-10-27):** the personality/temperament system (`src/data/core/docs/108-PERSONALITY-SYSTEM.md`) reads this record's personality_seed / variance / temperament_read as a DERIVED view — no new roll, no schema fork.

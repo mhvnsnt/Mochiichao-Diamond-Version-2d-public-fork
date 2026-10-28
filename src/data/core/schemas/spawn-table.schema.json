@@ -70,6 +70,13 @@
             "integer",
             "null"
           ]
+        },
+        "rodTier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "#111 angling: null = answers any rod (all pre-#111 rows). A tier key restricts the slot to that rod tier or better."
         }
       },
       "required": [
@@ -152,6 +159,13 @@
         "$ref": "#/$defs/table"
       },
       "type": "array"
+    },
+    "encounterMode": {
+      "enum": [
+        "standard",
+        "sanctuary"
+      ],
+      "description": "#110 sanctuary zones: absent = standard. A sanctuary area's tables carry the sanctuary encounter law (110-SANCTUARY-ZONE.md)."
     }
   },
   "required": [

@@ -55,3 +55,5 @@ teardown format).
 (surface Forest, frost nights) grounded in locked canon; the dread
 cycle's *names* are this spec's proposal (flagged PROPOSED in the
 fragment), its transition rules and the frost schedule are OPEN.
+
+**Phase vocabulary — reconciled (List 12 landing, 2026-10-27):** the canonical data vocabulary is `morning | day | dusk | night` (spawn-table schema + landed instances); this doc's `dawn` is the same phase as the data layer's `morning` (1:1 synonym, recorded in world-state-fragment.json's _reconciliation — the one reconciliation home).

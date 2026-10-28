@@ -48,3 +48,7 @@ garden poses 49/49 (+1 form).
 ## Owed field — move tutoring (#101, registered 2026-10-27)
 
 - `tutor` — per-species tutor compatibility list, owed on the species record (beside the learnset/eggGroups entries). Field registered; contents OPEN (all tutor NPCs, move lists and prices are owner content). Do not populate.
+
+## Owed field — ability slot (#107, registered 2026-10-27)
+
+- `abilitySlot` — proposed addition to the #80 individual record (which ability of the species' set this individual carries). Registered as owed with the individual-record owner; the ability registry itself lands EMPTY at src/data/core/ability-registry.json (0 records, matching species.json's 0/47 populated abilities). Contents OPEN.
