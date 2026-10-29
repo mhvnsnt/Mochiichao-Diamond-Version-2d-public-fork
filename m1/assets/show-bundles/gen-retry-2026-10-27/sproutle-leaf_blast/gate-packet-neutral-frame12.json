@@ -1,0 +1,44 @@
+{
+  "schema": "mochiichao-show/likeness-gate-packet/v1",
+  "tool": "likeness_gate.py",
+  "created_utc": "2026-10-28T00:56:14.106905+00:00",
+  "species": "sproutle",
+  "thresholds": {
+    "ssim_min": 0.5,
+    "silhouette_iou_min": 0.55,
+    "rgb_mad_255_max": 40.0
+  },
+  "promotion_status": "PENDING_OWNER_OR_SCORER_RECORD",
+  "note": "Verdict is a packet RECOMMENDATION measured from the actual pixels. Promotion is a separate step: recording in show/shared/clip-index.json (orchestrator law).",
+  "clip": "bundles/sproutle/sproutle/sproutle-leaf_blast.mp4",
+  "clip_sha256": "4f75c535ac1e19845b64ee63cf553d5c2674a195a5947709fda3dfef9ca1f55b",
+  "clip_spec": {
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192
+  },
+  "frame_index": 12,
+  "cutout": "/home/hatch/workspace/mochiichao-show/canon-cutouts/sproutle.png",
+  "cutout_sha256": "4ad926025b5325a5c6a28c208b134969ce9902396944681e94140410e339cf54",
+  "alignment": {
+    "canvas": 512,
+    "fit_box": 448,
+    "frame_scale": 0.8358,
+    "cutout_scale": 1.37,
+    "method": "foreground-bbox fit, centred; scale+translation only"
+  },
+  "union_pixels": 109980,
+  "measurements": {
+    "ssim_union": 0.3768,
+    "silhouette_iou": 0.65,
+    "rgb_mad_255": 84.823,
+    "rgb_mad_norm": 0.3326
+  },
+  "checks": {
+    "ssim": false,
+    "silhouette_iou": true,
+    "rgb_mad": false
+  },
+  "verdict": "FAIL"
+}

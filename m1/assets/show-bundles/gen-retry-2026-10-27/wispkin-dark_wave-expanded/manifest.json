@@ -1,0 +1,102 @@
+{
+ "backend": "classical expansion of the muse-hosted wideframe generation (no new generation)",
+ "backend_callable_from_repo": false,
+ "conformance": {
+  "aspect_note": "Deliverable aspect UNCHANGED (720x720 bundle standard). Only the SOURCE canvas was widened (608 -> 1000 px, +196 px per side) before the standard normalisation, so the subject sits slightly smaller in frame than the #389/#415 normalisations - the ring now fits instead of being clipped.",
+  "meets_target": true,
+  "target": {
+   "duration_s": 8.0,
+   "fps": 24.0,
+   "height": 720,
+   "width": 720
+  }
+ },
+ "created_utc": "2026-10-28T02:20:00Z",
+ "expansion": {
+  "expansion_px_per_side_raw": 196,
+  "method": "Geometry-guided angular texture transfer (deterministic, per-frame). The Dark Wave ring was fitted as an ellipse annulus from its surviving top/bottom arcs (peak fit: centre ~(303, 595), outer semi-axes a~414 / b~434, annulus inner ratio k~0.56, temporally median-smoothed). Each pixel of the new side bands is parametrised by ellipse angle and radial scale; its colour is sampled from the SAME frame at the same radial scale and an angle rotated -/+90 degrees onto the fully visible bottom arc, continuing the band's dark core, twin purple rims, glyph texture and halo across the old edge line. The annulus hole stays white. Background beyond the ring: edge-smear with exponential fade to white (the source field is white). A 10 px feather strip inside each old edge blends original into synthesis so the pattern does not break on the seam. No randomness and no cross-frame borrowing: frame N's extension is a pure function of frame N, so the bands cannot boil or flicker.",
+  "ring_phase_frames_raw": "153-210 (fits); bundle cut carries frames 1-192",
+  "tools": [
+   "Python 3.12 + NumPy (BSD-3-Clause) + SciPy (BSD-3-Clause) + Pillow (HPND)",
+   "FFmpeg 8.1.2 (LGPL/GPL, system install) for encode",
+   "white_matte.py (repo tooling, PR #354 lineage) for the transparent WebM twin",
+   "likeness_gate.py (repo tooling) for the gate packet"
+  ]
+ },
+ "files": {
+  "mp4": {
+   "bytes": 1769253,
+   "path": "wispkin-dark_wave.mp4",
+   "sha256": "6e962f523cfe878c84b211fd88c717c47b148e601be244b8af70de1385df6dee"
+  },
+  "poster": {
+   "bytes": 20650,
+   "path": "wispkin.webp",
+   "sha256": "2611c07224af0799a65d0e6ad55c51a9e7010d135216b7bfd8a50aacf218f424",
+   "source": "source_still"
+  },
+  "transparent_webm": {
+   "bytes": 2222855,
+   "method": "white_matte.py (white-distance key + enclosed-region rescue); bg flicker mean|dAlpha| top band 0.0000",
+   "path": "wispkin-dark_wave.transparent.webm",
+   "sha256": "1bee96232857046cd5e530123a0b9faaca30d3fe89c39dabeb8b0a381574b6b3",
+   "status": "PRODUCED_WHITE_FIELD"
+  }
+ },
+ "framing_verification": {
+  "after_expanded_raw": {
+   "frames_touching_either_edge": "0 of 192",
+   "peak_frame": "e184",
+   "peak_margins_px": [
+    59,
+    66
+   ],
+   "ring_phase_min_margins_px": [
+    59,
+    63
+   ]
+  },
+  "after_normalised": {
+   "frames_touching_either_edge": "0 of 192",
+   "peak_frame": 184,
+   "peak_margins_px": [
+    111,
+    117
+   ],
+   "ring_phase_min_margins_px": [
+    111,
+    115
+   ]
+  },
+  "before": {
+   "frames_touching_both_edges": "58 of 240 (raw 608x1280)",
+   "raw_peak_margins_px": [
+    0,
+    0
+   ]
+  },
+  "method": "Per-frame content extent (any channel < 235), the same measure that failed both prior candidates, run on the expanded raw frames (1000x1280) and on the normalised 720x720 clip.",
+  "result": "PASS",
+  "seam_verdict": "PASS - owner-eye sheets (peak old-vs-expanded + four seam close-ups at the old edge lines) show the band's dark core, twin rims and glyph strokes continuous across both old edge lines at peak. Caveat, stated not hidden: the side-arc glyph texture is an angularly transferred copy of the same frame's bottom-arc texture (glyph shapes warp near the extreme tips); it is a continuation of the ring, not a recovery of pixels the generator never drew."
+ },
+ "likeness_gate": {
+  "note": "Frame 96 (vortex peak): SSIM 0.1983 / IoU 0.5247 / MAD 97.433 vs shipped thresholds 0.50 / 0.55 / 40.0 - same honest class as the owner-accepted avatar set and both prior Wispkin candidates. The gate recommends; promotion is the human scorer's.",
+  "packet": "gate-packet.json",
+  "verdict_recommendation": "FAIL"
+ },
+ "quality_status": "production_owner_chosen",
+ "schema": "mochiichao-show/avatar-bundle/v1",
+ "source_clip": "PR #415 wideframe candidate raw generation (608x1280, 240f) - frames 1-192, canvas-expanded to 1000x1280 before normalisation",
+ "spec": {
+  "codec": "h264",
+  "duration_s": 8.0,
+  "fps": 24.0,
+  "frames": 192,
+  "height": 720,
+  "width": 720
+ },
+ "species": "wispkin",
+ "variant": "dark_wave",
+ "variant_label": "dark_wave-expanded",
+ "owner_verdict": "APPROVED \u2014 'perfect' (owner, 2026-10-27); CURRENT for the wideframe performance slot"
+}

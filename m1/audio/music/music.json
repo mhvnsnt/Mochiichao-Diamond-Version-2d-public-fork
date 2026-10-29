@@ -1,0 +1,1161 @@
+{
+  "schemaVersion": 1,
+  "notes": "bpm/key are COMPOSITION TARGETS (brief) until a track is composed, then they become measured values from the rendered audio. loopStart is the play-once intro length in seconds; the loop section is loopStart..loopEnd and must be a whole number of bars at the track bpm. Files do not exist yet: every entry is placeholder:true and wired:false, so the engine must never auto-play a registry entry whose audio file is absent. title/intro are DRAFT slots only in this registry (their existing v1/v2/v3 WAVs are listed under draftFiles for reference and are NOT wired as final playback here; Title Music lane owns final approval). OGG only for loops: MP3 encoder padding creates an audible loop gap even with Web Audio loop points. Cries are NOT registry entries: they are per-creature SFX on the sfx bus (see src/lib/music.ts playCry). FMOD/Wwise are design reference only, no web runtime.",
+  "buses": {
+    "bgm": {
+      "description": "Music. Ducked by battle_start and by jingles.",
+      "priority": 0
+    },
+    "sfx": {
+      "description": "UI, battle hits, and creature cries. Never ducked by music ducking.",
+      "priority": 1
+    },
+    "ambience": {
+      "description": "Weather/wind/water loops, per-map. Independent of bgm.",
+      "priority": 0
+    },
+    "voice": {
+      "description": "Reserved. No voice assets exist.",
+      "priority": 1
+    }
+  },
+  "tracks": [
+    {
+      "id": "title",
+      "type": "loop",
+      "where": "Title screen",
+      "file": "audio/music/title/title.ogg",
+      "intro": 3.429,
+      "loopStart": 3.429,
+      "loopEnd": 44.572,
+      "bpm": 140,
+      "key": "D major",
+      "stems": [
+        "audio/music/title/title_bass.ogg",
+        "audio/music/title/title_drums.ogg",
+        "audio/music/title/title_melody.ogg",
+        "audio/music/title/title_harmony.ogg",
+        "audio/music/title/title_guitar.ogg",
+        "audio/music/title/title_synth.ogg",
+        "audio/music/title/title_organ.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "draft",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Memorable motif; recurs in ending and champion_battle. DRAFT slot only.",
+      "draftFiles": [
+        "audio/mochiichao-title-v3.wav",
+        "audio/mochiichao-title-v2.wav",
+        "audio/mochiichao-title.wav"
+      ],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "intro",
+      "type": "one-shot",
+      "where": "Intro cinematic / new-game sequence",
+      "file": "audio/music/intro/intro.ogg",
+      "intro": null,
+      "loopStart": null,
+      "loopEnd": null,
+      "bpm": 120,
+      "key": "D major",
+      "stems": [
+        "audio/music/intro/intro_bass.ogg",
+        "audio/music/intro/intro_drums.ogg",
+        "audio/music/intro/intro_guitar.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "draft",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Short, rising; hands off to home_town. DRAFT slot only.",
+      "draftFiles": [
+        "audio/mochiichao-intro-v3.wav",
+        "audio/mochiichao-intro-v2.wav",
+        "audio/mochiichao-intro.wav"
+      ],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "menu",
+      "type": "loop",
+      "where": "Main menu, party, storage, options",
+      "file": "audio/music/menu/menu.ogg",
+      "intro": 5.0,
+      "loopStart": 5.0,
+      "loopEnd": 45.0,
+      "bpm": 96,
+      "key": "C major",
+      "stems": [
+        "audio/music/menu/menu_bass.ogg",
+        "audio/music/menu/menu_harmony.ogg",
+        "audio/music/menu/menu_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Quiet, neutral key, low intensity.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "home_town",
+      "type": "loop",
+      "where": "Starting town; reuse for 1-2 small towns",
+      "file": "audio/music/home_town/home_town.ogg",
+      "intro": 4.615,
+      "loopStart": 4.615,
+      "loopEnd": 41.538,
+      "bpm": 104,
+      "key": "G major",
+      "stems": [
+        "audio/music/home_town/home_town_bass.ogg",
+        "audio/music/home_town/home_town_harmony.ogg",
+        "audio/music/home_town/home_town_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Warm, simple.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "town_a",
+      "type": "loop",
+      "where": "Major town: market",
+      "file": "audio/music/town_a/town_a.ogg",
+      "intro": 4.286,
+      "loopStart": 4.286,
+      "loopEnd": 38.572,
+      "bpm": 112,
+      "key": "C major",
+      "stems": [
+        "audio/music/town_a/town_a_bass.ogg",
+        "audio/music/town_a/town_a_drums.ogg",
+        "audio/music/town_a/town_a_melody.ogg",
+        "audio/music/town_a/town_a_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Distinct instrumentation: strings.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "town_b",
+      "type": "loop",
+      "where": "Major town: port",
+      "file": "audio/music/town_b/town_b.ogg",
+      "intro": 4.138,
+      "loopStart": 4.138,
+      "loopEnd": 37.241,
+      "bpm": 116,
+      "key": "A major",
+      "stems": [
+        "audio/music/town_b/town_b_bass.ogg",
+        "audio/music/town_b/town_b_drums.ogg",
+        "audio/music/town_b/town_b_melody.ogg",
+        "audio/music/town_b/town_b_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Distinct instrumentation: folk.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "town_c",
+      "type": "loop",
+      "where": "Major town: capital",
+      "file": "audio/music/town_c/town_c.ogg",
+      "intro": 4.444,
+      "loopStart": 4.444,
+      "loopEnd": 40.0,
+      "bpm": 108,
+      "key": "F major",
+      "stems": [
+        "audio/music/town_c/town_c_bass.ogg",
+        "audio/music/town_c/town_c_drums.ogg",
+        "audio/music/town_c/town_c_melody.ogg",
+        "audio/music/town_c/town_c_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Distinct instrumentation: brass.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "city",
+      "type": "loop",
+      "where": "Largest city",
+      "file": "audio/music/city/city.ogg",
+      "intro": 3.871,
+      "loopStart": 3.871,
+      "loopEnd": 34.839,
+      "bpm": 124,
+      "key": "E major",
+      "stems": [
+        "audio/music/city/city_bass.ogg",
+        "audio/music/city/city_drums.ogg",
+        "audio/music/city/city_melody.ogg",
+        "audio/music/city/city_harmony.ogg",
+        "audio/music/city/city_brass.ogg"
+      ],
+      "variants": {
+        "night": "audio/music/night/night.ogg"
+      },
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Busiest arrangement; night variant softer, fewer stems.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "route_day",
+      "type": "loop",
+      "where": "Grass routes, fields",
+      "file": "audio/music/route_day/route_day.ogg",
+      "intro": 3.636,
+      "loopStart": 3.636,
+      "loopEnd": 32.727,
+      "bpm": 132,
+      "key": "C major",
+      "stems": [
+        "audio/music/route_day/route_day_bass.ogg",
+        "audio/music/route_day/route_day_drums.ogg",
+        "audio/music/route_day/route_day_melody.ogg",
+        "audio/music/route_day/route_day_harmony.ogg"
+      ],
+      "variants": {
+        "night": "audio/music/night/night.ogg"
+      },
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Movement stem (drums/tambourine) fades in while walking.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "forest",
+      "type": "loop",
+      "where": "Forest, garden",
+      "file": "audio/music/forest/forest.ogg",
+      "intro": 4.8,
+      "loopStart": 4.8,
+      "loopEnd": 43.2,
+      "bpm": 100,
+      "key": "E minor",
+      "stems": [
+        "audio/music/forest/forest_bass.ogg",
+        "audio/music/forest/forest_harmony.ogg",
+        "audio/music/forest/forest_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Pad + birds/wind ambience layer (ambience bus, separate from music stems).",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "beach",
+      "type": "loop",
+      "where": "Beach, coast, surf routes",
+      "file": "audio/music/beach/beach.ogg",
+      "intro": 4.068,
+      "loopStart": 4.068,
+      "loopEnd": 36.61,
+      "bpm": 118,
+      "key": "A major",
+      "stems": [
+        "audio/music/beach/beach_bass.ogg",
+        "audio/music/beach/beach_drums.ogg",
+        "audio/music/beach/beach_melody.ogg",
+        "audio/music/beach/beach_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Steel-drum / light percussion flavour.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "mountain",
+      "type": "loop",
+      "where": "Mountain, snow",
+      "file": "audio/music/mountain/mountain.ogg",
+      "intro": 5.217,
+      "loopStart": 5.217,
+      "loopEnd": 46.956,
+      "bpm": 92,
+      "key": "D minor",
+      "stems": [
+        "audio/music/mountain/mountain_bass.ogg",
+        "audio/music/mountain/mountain_harmony.ogg",
+        "audio/music/mountain/mountain_melody.ogg"
+      ],
+      "variants": {
+        "winter": "audio/music/winter/winter.ogg"
+      },
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Sparse, cold; winter/season variant (chimes).",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "cave",
+      "type": "loop",
+      "where": "Caves, mines",
+      "file": "audio/music/cave/cave.ogg",
+      "intro": 5.455,
+      "loopStart": 5.455,
+      "loopEnd": 49.091,
+      "bpm": 88,
+      "key": "E minor",
+      "stems": [
+        "audio/music/cave/cave_bass.ogg",
+        "audio/music/cave/cave_harmony.ogg",
+        "audio/music/cave/cave_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Low, echoing; procedural drip/wind ambience under it (ambience bus).",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "dungeon",
+      "type": "loop",
+      "where": "Ruins, tower, evil-team hideout",
+      "file": "audio/music/dungeon/dungeon.ogg",
+      "intro": 4.364,
+      "loopStart": 4.364,
+      "loopEnd": 39.273,
+      "bpm": 110,
+      "key": "C minor",
+      "stems": [
+        "audio/music/dungeon/dungeon_bass.ogg",
+        "audio/music/dungeon/dungeon_drums.ogg",
+        "audio/music/dungeon/dungeon_melody.ogg",
+        "audio/music/dungeon/dungeon_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Tense, minor key.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "water",
+      "type": "loop",
+      "where": "Underwater / deep sea (if in scope)",
+      "file": "audio/music/water/water.ogg",
+      "intro": 5.714,
+      "loopStart": 5.714,
+      "loopEnd": 51.428,
+      "bpm": 84,
+      "key": "G minor",
+      "stems": [
+        "audio/music/water/water_bass.ogg",
+        "audio/music/water/water_harmony.ogg",
+        "audio/music/water/water_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Filtered, slow.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "lab",
+      "type": "loop",
+      "where": "Lab, houses, shops (shared interior)",
+      "file": "audio/music/lab/lab.ogg",
+      "intro": 4.898,
+      "loopStart": 4.898,
+      "loopEnd": 44.082,
+      "bpm": 98,
+      "key": "C major",
+      "stems": [
+        "audio/music/lab/lab_bass.ogg",
+        "audio/music/lab/lab_harmony.ogg",
+        "audio/music/lab/lab_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "One calm interior loop reused everywhere; do not compose 10 interiors.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "heal_center",
+      "type": "loop",
+      "where": "Healing centre / inn; also 'rest'",
+      "file": "audio/music/heal_center/heal_center.ogg",
+      "intro": 5.333,
+      "loopStart": 5.333,
+      "loopEnd": 37.333,
+      "bpm": 90,
+      "key": "F major",
+      "stems": [
+        "audio/music/heal_center/heal_center_bass.ogg",
+        "audio/music/heal_center/heal_center_harmony.ogg",
+        "audio/music/heal_center/heal_center_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Gentle, short loop.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "shop",
+      "type": "loop",
+      "where": "Shops, market",
+      "file": "audio/music/shop/shop.ogg",
+      "intro": 3.934,
+      "loopStart": 3.934,
+      "loopEnd": 27.541,
+      "bpm": 122,
+      "key": "G major",
+      "stems": [
+        "audio/music/shop/shop_bass.ogg",
+        "audio/music/shop/shop_drums.ogg",
+        "audio/music/shop/shop_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Upbeat, short; may share town_b stems at low intensity.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "gym",
+      "type": "loop",
+      "where": "Gym/dojo lobby",
+      "file": "audio/music/gym/gym.ogg",
+      "intro": 3.81,
+      "loopStart": 3.81,
+      "loopEnd": 34.286,
+      "bpm": 126,
+      "key": "D minor",
+      "stems": [
+        "audio/music/gym/gym_bass.ogg",
+        "audio/music/gym/gym_drums.ogg",
+        "audio/music/gym/gym_melody.ogg",
+        "audio/music/gym/gym_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Driving, anticipatory.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "wild_battle",
+      "type": "loop",
+      "where": "Wild encounters",
+      "file": "audio/music/wild_battle/wild_battle.ogg",
+      "intro": 1.6,
+      "loopStart": 1.6,
+      "loopEnd": 27.2,
+      "bpm": 150,
+      "key": "E minor",
+      "stems": [
+        "audio/music/wild_battle/wild_battle_bass.ogg",
+        "audio/music/wild_battle/wild_battle_drums.ogg",
+        "audio/music/wild_battle/wild_battle_melody.ogg",
+        "audio/music/wild_battle/wild_battle_harmony.ogg",
+        "audio/music/wild_battle/wild_battle_pinch.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Fast, loopable; pinch stem fades in at low HP.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "trainer_battle",
+      "type": "loop",
+      "where": "Trainer battles",
+      "file": "audio/music/trainer_battle/trainer_battle.ogg",
+      "intro": 1.622,
+      "loopStart": 1.622,
+      "loopEnd": 27.568,
+      "bpm": 148,
+      "key": "D minor",
+      "stems": [
+        "audio/music/trainer_battle/trainer_battle_bass.ogg",
+        "audio/music/trainer_battle/trainer_battle_drums.ogg",
+        "audio/music/trainer_battle/trainer_battle_melody.ogg",
+        "audio/music/trainer_battle/trainer_battle_harmony.ogg",
+        "audio/music/trainer_battle/trainer_battle_brass.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Distinct from wild (more brass/drums).",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "gym_battle",
+      "type": "loop",
+      "where": "Gym/dojo leader battles",
+      "file": "audio/music/gym_battle/gym_battle.ogg",
+      "intro": 1.579,
+      "loopStart": 1.579,
+      "loopEnd": 26.842,
+      "bpm": 152,
+      "key": "E minor",
+      "stems": [
+        "audio/music/gym_battle/gym_battle_bass.ogg",
+        "audio/music/gym_battle/gym_battle_drums.ogg",
+        "audio/music/gym_battle/gym_battle_melody.ogg",
+        "audio/music/gym_battle/gym_battle_harmony.ogg",
+        "audio/music/gym_battle/gym_battle_brass.ogg",
+        "audio/music/gym_battle/gym_battle_crowd.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Heroic; crowd/chant stem in final phase.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "rival_battle",
+      "type": "loop",
+      "where": "Rival battles",
+      "file": "audio/music/rival_battle/rival_battle.ogg",
+      "intro": 1.538,
+      "loopStart": 1.538,
+      "loopEnd": 26.153,
+      "bpm": 156,
+      "key": "F minor",
+      "stems": [
+        "audio/music/rival_battle/rival_battle_bass.ogg",
+        "audio/music/rival_battle/rival_battle_drums.ogg",
+        "audio/music/rival_battle/rival_battle_melody.ogg",
+        "audio/music/rival_battle/rival_battle_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Personal motif, faster than trainer.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "team_battle",
+      "type": "loop",
+      "where": "Evil-team grunts + admins",
+      "file": "audio/music/team_battle/team_battle.ogg",
+      "intro": 1.667,
+      "loopStart": 1.667,
+      "loopEnd": 28.334,
+      "bpm": 144,
+      "key": "C minor",
+      "stems": [
+        "audio/music/team_battle/team_battle_bass.ogg",
+        "audio/music/team_battle/team_battle_drums.ogg",
+        "audio/music/team_battle/team_battle_melody.ogg",
+        "audio/music/team_battle/team_battle_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Dark, rhythmic.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "team_boss_battle",
+      "type": "loop",
+      "where": "Evil-team boss",
+      "file": "audio/music/team_boss_battle/team_boss_battle.ogg",
+      "intro": 1.644,
+      "loopStart": 1.644,
+      "loopEnd": 27.945,
+      "bpm": 146,
+      "key": "C minor",
+      "stems": [
+        "audio/music/team_boss_battle/team_boss_battle_bass.ogg",
+        "audio/music/team_boss_battle/team_boss_battle_drums.ogg",
+        "audio/music/team_boss_battle/team_boss_battle_melody.ogg",
+        "audio/music/team_boss_battle/team_boss_battle_harmony.ogg",
+        "audio/music/team_boss_battle/team_boss_battle_brass.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Heaviest non-final battle track.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "elite_battle",
+      "type": "loop",
+      "where": "Elite Four / council",
+      "file": "audio/music/elite_battle/elite_battle.ogg",
+      "intro": 1.558,
+      "loopStart": 1.558,
+      "loopEnd": 26.493,
+      "bpm": 154,
+      "key": "G minor",
+      "stems": [
+        "audio/music/elite_battle/elite_battle_bass.ogg",
+        "audio/music/elite_battle/elite_battle_drums.ogg",
+        "audio/music/elite_battle/elite_battle_melody.ogg",
+        "audio/music/elite_battle/elite_battle_harmony.ogg",
+        "audio/music/elite_battle/elite_battle_brass.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Orchestral/hybrid, high intensity.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "champion_battle",
+      "type": "loop",
+      "where": "Champion",
+      "file": "audio/music/champion_battle/champion_battle.ogg",
+      "intro": 1.519,
+      "loopStart": 1.519,
+      "loopEnd": 25.823,
+      "bpm": 158,
+      "key": "D major",
+      "stems": [
+        "audio/music/champion_battle/champion_battle_bass.ogg",
+        "audio/music/champion_battle/champion_battle_drums.ogg",
+        "audio/music/champion_battle/champion_battle_melody.ogg",
+        "audio/music/champion_battle/champion_battle_harmony.ogg",
+        "audio/music/champion_battle/champion_battle_brass.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Title motif + full arrangement; final-phase stem.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "legendary_battle",
+      "type": "loop",
+      "where": "Legendary / mythical encounter",
+      "file": "audio/music/legendary_battle/legendary_battle.ogg",
+      "intro": 1.714,
+      "loopStart": 1.714,
+      "loopEnd": 29.143,
+      "bpm": 140,
+      "key": "A minor",
+      "stems": [
+        "audio/music/legendary_battle/legendary_battle_bass.ogg",
+        "audio/music/legendary_battle/legendary_battle_drums.ogg",
+        "audio/music/legendary_battle/legendary_battle_melody.ogg",
+        "audio/music/legendary_battle/legendary_battle_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Ethereal + powerful; unique instrumentation.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "victory",
+      "type": "jingle",
+      "where": "Battle win",
+      "file": "audio/music/victory/victory.ogg",
+      "intro": null,
+      "loopStart": null,
+      "loopEnd": null,
+      "bpm": 132,
+      "key": "C major",
+      "stems": [],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 2,
+      "duckOn": [],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "5-10 s fanfare; hands back to map music.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "capture",
+      "type": "jingle",
+      "where": "Successful capture",
+      "file": "audio/music/capture/capture.ogg",
+      "intro": null,
+      "loopStart": null,
+      "loopEnd": null,
+      "bpm": 120,
+      "key": "G major",
+      "stems": [],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 2,
+      "duckOn": [],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Short, celebratory; distinct from victory.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "evolution",
+      "type": "jingle",
+      "where": "Evolution sequence",
+      "file": "audio/music/evolution/evolution.ogg",
+      "intro": null,
+      "loopStart": null,
+      "loopEnd": null,
+      "bpm": 110,
+      "key": "D major",
+      "stems": [],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 2,
+      "duckOn": [],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Rising, 15-30 s, one-shot.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "defeat",
+      "type": "jingle",
+      "where": "Battle loss / game over",
+      "file": "audio/music/defeat/defeat.ogg",
+      "intro": null,
+      "loopStart": null,
+      "loopEnd": null,
+      "bpm": 76,
+      "key": "A minor",
+      "stems": [],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 2,
+      "duckOn": [],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": true,
+      "compositionNote": "Somber, short; hands to title/menu.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "event_mystery",
+      "type": "loop",
+      "where": "Mystery, legend, haunted areas",
+      "file": "audio/music/event_mystery/event_mystery.ogg",
+      "intro": 6.0,
+      "loopStart": 6.0,
+      "loopEnd": 54.0,
+      "bpm": 80,
+      "key": "E minor",
+      "stems": [
+        "audio/music/event_mystery/event_mystery_bass.ogg",
+        "audio/music/event_mystery/event_mystery_harmony.ogg",
+        "audio/music/event_mystery/event_mystery_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Sparse, unsettling.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "event_sad",
+      "type": "loop",
+      "where": "Story beats, farewells",
+      "file": "audio/music/event_sad/event_sad.ogg",
+      "intro": 6.667,
+      "loopStart": 6.667,
+      "loopEnd": 60.0,
+      "bpm": 72,
+      "key": "F minor",
+      "stems": [
+        "audio/music/event_sad/event_sad_bass.ogg",
+        "audio/music/event_sad/event_sad_harmony.ogg",
+        "audio/music/event_sad/event_sad_melody.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Slow, piano/strings.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "event_celebration",
+      "type": "loop",
+      "where": "Festivals, parades",
+      "file": "audio/music/event_celebration/event_celebration.ogg",
+      "intro": 3.75,
+      "loopStart": 3.75,
+      "loopEnd": 33.75,
+      "bpm": 128,
+      "key": "C major",
+      "stems": [
+        "audio/music/event_celebration/event_celebration_bass.ogg",
+        "audio/music/event_celebration/event_celebration_drums.ogg",
+        "audio/music/event_celebration/event_celebration_melody.ogg",
+        "audio/music/event_celebration/event_celebration_harmony.ogg"
+      ],
+      "variants": {
+        "seasonal": "audio/music/seasonal/seasonal.ogg"
+      },
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Folk, bright; seasonal variant.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "ending",
+      "type": "one-shot",
+      "where": "Ending sequence",
+      "file": "audio/music/ending/ending.ogg",
+      "intro": null,
+      "loopStart": null,
+      "loopEnd": null,
+      "bpm": 120,
+      "key": "D major",
+      "stems": [
+        "audio/music/ending/ending_bass.ogg",
+        "audio/music/ending/ending_drums.ogg",
+        "audio/music/ending/ending_melody.ogg",
+        "audio/music/ending/ending_harmony.ogg",
+        "audio/music/ending/ending_guitar.ogg",
+        "audio/music/ending/ending_synth.ogg",
+        "audio/music/ending/ending_organ.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Title motif reprised, full arrangement.",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    },
+    {
+      "id": "credits",
+      "type": "loop",
+      "where": "Credits roll",
+      "file": "audio/music/credits/credits.ogg",
+      "intro": 4.286,
+      "loopStart": 4.286,
+      "loopEnd": 38.572,
+      "bpm": 112,
+      "key": "D major",
+      "stems": [
+        "audio/music/credits/credits_bass.ogg",
+        "audio/music/credits/credits_drums.ogg",
+        "audio/music/credits/credits_melody.ogg",
+        "audio/music/credits/credits_harmony.ogg"
+      ],
+      "variants": {},
+      "bus": "bgm",
+      "priority": 0,
+      "duckOn": [
+        "battle_start"
+      ],
+      "status": "planned",
+      "placeholder": true,
+      "wired": false,
+      "mvp": false,
+      "compositionNote": "Medley of town + battle motifs (re-use stems, do not compose from scratch).",
+      "draftFiles": [],
+      "licence": "original composition owed; no Pokemon melody/cry/music; no raw AI-music output shipped as licence-clean",
+      "credits": null
+    }
+  ]
+}
