@@ -1,1 +1,0 @@
-const a=""+new URL("mythar_atk_physical_star_pounce_base_old_v2-CDg2IaUz.png",import.meta.url).href;export{a as default};

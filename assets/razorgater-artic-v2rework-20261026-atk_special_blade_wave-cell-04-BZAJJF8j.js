@@ -1,1 +1,0 @@
-const e=""+new URL("razorgater-artic-v2rework-20261026-atk_special_blade_wave-cell-04-2FZogO3v.png",import.meta.url).href;export{e as default};
