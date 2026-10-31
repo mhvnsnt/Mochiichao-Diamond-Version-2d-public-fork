@@ -38,11 +38,3 @@ Step 4 — dirt and cave stone, both viewed individually before mapping:
   http://opengameart.org/content/platformer-basic-tileset-grass-and-rock
   (linked from the cave page). Grid (5,0), pixels (86,1)-(102,17)
   of GameOfCaves.png, dark-brown speckled cave stone. Used for CAVE.
-
-Milestone 1 (2026-10-29) — full Kenney Tiny Town packed sheet
-`kenney-tiny-town/tilemap_packed.png` (12x11 grid of 16x16 tiles) with its
-`License.txt` (Creative Commons Zero, CC0). Downloaded from the OpenGameArt
-mirror of the Kenney pack (opengameart.org/content/tiny-town); the licence
-file in the zip says CC0, checked on download day. Used by
-`src/world/townTiles.ts` for town and field tiles in the Pixi world canvas.
-Credit: Kenney (kenney.nl).

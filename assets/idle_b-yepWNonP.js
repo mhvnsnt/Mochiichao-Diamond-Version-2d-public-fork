@@ -1,0 +1,1 @@
+const i="/Mochiichao-Diamond-Version-2d-public-fork/assets/idle_b-COXYpkzu.png";export{i as default};
