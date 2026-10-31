@@ -1,0 +1,41 @@
+{
+  "character": "gabu",
+  "status": "ok",
+  "pipeline": "tools/avatar-pipeline (Mochiichao recreation of the Muse avatar pipeline spec \u2014 see SPEC.json)",
+  "image_available": true,
+  "image_path": "gabu.webp",
+  "transparent_image_path": "gabu.transparent.png",
+  "video_available": true,
+  "variants": [
+    "idle"
+  ],
+  "video_variants": {
+    "idle": "gabu-idle.mp4"
+  },
+  "transparent_video_variants": {
+    "idle": "gabu-idle.transparent.webm"
+  },
+  "spec": {
+    "video": {
+      "width": 720,
+      "height": 720,
+      "fps": 24,
+      "seconds": 8,
+      "codec": "h264",
+      "background": "white"
+    },
+    "transparent_video": {
+      "codec": "vp9",
+      "alpha": true,
+      "container": "webm",
+      "note": "MP4/H.264 cannot store alpha; the WebM twin carries the transparent background."
+    },
+    "poster": {
+      "width": 1600,
+      "height": 1600,
+      "format": "webp"
+    }
+  },
+  "source_image": "gabu_front.png",
+  "deletions": "NONE \u2014 new files only"
+}

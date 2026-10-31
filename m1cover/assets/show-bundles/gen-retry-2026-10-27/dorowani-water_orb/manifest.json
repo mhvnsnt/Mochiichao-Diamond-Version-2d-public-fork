@@ -1,0 +1,51 @@
+{
+  "schema": "mochiichao-show/avatar-bundle/v1",
+  "species": "dorowani",
+  "variant": "water_orb",
+  "backend": "muse-hosted-avatar-generator",
+  "backend_callable_from_repo": false,
+  "created_utc": "2026-10-28T00:51:46.573167+00:00",
+  "source_clip": "norm/dorowani-water_orb.mp4",
+  "spec": {
+    "codec": "h264",
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192,
+    "duration_s": 8.0
+  },
+  "conformance": {
+    "target": {
+      "width": 720,
+      "height": 720,
+      "fps": 24.0,
+      "duration_s": 8.0
+    },
+    "meets_target": true
+  },
+  "files": {
+    "mp4": {
+      "path": "dorowani-water_orb.mp4",
+      "sha256": "2b0a7ff0eb0d2680fead369bc997e58734b425a79169168b1aee97c107127759",
+      "bytes": 1595428
+    },
+    "transparent_webm": {
+      "path": "dorowani-water_orb.transparent.webm",
+      "sha256": "c9d737fbbace77a4a5f54153c353f8c669a180a1a12d08b83242e45ab511638a",
+      "bytes": 2501253,
+      "status": "PRODUCED_WHITE_FIELD",
+      "method": "white_matte.py (white-distance key + enclosed-region rescue)"
+    },
+    "poster": {
+      "path": "dorowani.webp",
+      "sha256": "d2e54f339ca274c1384fa54b005302ffc5007910bd55acea75788483543a744f",
+      "bytes": 28686,
+      "source": "source_still"
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "verdict_recommendation": "FAIL"
+  }
+}

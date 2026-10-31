@@ -1,0 +1,51 @@
+{
+  "schema": "mochiichao-show/avatar-bundle/v1",
+  "species": "wispkin",
+  "variant": "dark_wave",
+  "backend": "muse-hosted-avatar-generator",
+  "backend_callable_from_repo": false,
+  "created_utc": "2026-10-28T00:50:08.808323+00:00",
+  "source_clip": "norm/wispkin-dark_wave.mp4",
+  "spec": {
+    "codec": "h264",
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192,
+    "duration_s": 8.0
+  },
+  "conformance": {
+    "target": {
+      "width": 720,
+      "height": 720,
+      "fps": 24.0,
+      "duration_s": 8.0
+    },
+    "meets_target": true
+  },
+  "files": {
+    "mp4": {
+      "path": "wispkin-dark_wave.mp4",
+      "sha256": "2e27b615e2301e55335c3e2fbfe55ecf17a1c6f2c347d4babcbb5f55fd4c58a3",
+      "bytes": 871597
+    },
+    "transparent_webm": {
+      "path": "wispkin-dark_wave.transparent.webm",
+      "sha256": "e1b6314b0cd5321cd4a103a7ca45b107588da4c2d75df575728a733cb156d2bf",
+      "bytes": 1745757,
+      "status": "PRODUCED_WHITE_FIELD",
+      "method": "white_matte.py (white-distance key + enclosed-region rescue)"
+    },
+    "poster": {
+      "path": "wispkin.webp",
+      "sha256": "2611c07224af0799a65d0e6ad55c51a9e7010d135216b7bfd8a50aacf218f424",
+      "bytes": 20650,
+      "source": "source_still"
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "verdict_recommendation": "FAIL"
+  }
+}

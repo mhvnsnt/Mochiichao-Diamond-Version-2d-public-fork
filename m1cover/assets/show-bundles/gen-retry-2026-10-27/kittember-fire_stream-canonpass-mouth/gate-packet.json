@@ -1,0 +1,44 @@
+{
+  "schema": "mochiichao-show/likeness-gate-packet/v1",
+  "tool": "likeness_gate.py",
+  "created_utc": "2026-10-28T01:30:45.482360+00:00",
+  "species": "kittember",
+  "thresholds": {
+    "ssim_min": 0.5,
+    "silhouette_iou_min": 0.55,
+    "rgb_mad_255_max": 40.0
+  },
+  "promotion_status": "PENDING_OWNER_OR_SCORER_RECORD",
+  "note": "Verdict is a packet RECOMMENDATION measured from the actual pixels. Promotion is a separate step: recording in show/shared/clip-index.json (orchestrator law).",
+  "clip": "bundles/kittember-canonpass-mouth/kittember/kittember-fire_stream.mp4",
+  "clip_sha256": "7b1405c54d86faa407040f72845dc15b54cf433eaf3c4481a86c712ceafb4e18",
+  "clip_spec": {
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192
+  },
+  "frame_index": 96,
+  "cutout": "/home/hatch/workspace/mochiichao-show/canon-cutouts/kittember.png",
+  "cutout_sha256": "f5b3e39f8752534bafcf7de4d9cb5babab9b3899a10cf92c45f8e5aff6f39430",
+  "alignment": {
+    "canvas": 512,
+    "fit_box": 448,
+    "frame_scale": 0.6222,
+    "cutout_scale": 1.5084,
+    "method": "foreground-bbox fit, centred; scale+translation only"
+  },
+  "union_pixels": 123761,
+  "measurements": {
+    "ssim_union": 0.3884,
+    "silhouette_iou": 0.5357,
+    "rgb_mad_255": 97.306,
+    "rgb_mad_norm": 0.3816
+  },
+  "checks": {
+    "ssim": false,
+    "silhouette_iou": false,
+    "rgb_mad": false
+  },
+  "verdict": "FAIL"
+}

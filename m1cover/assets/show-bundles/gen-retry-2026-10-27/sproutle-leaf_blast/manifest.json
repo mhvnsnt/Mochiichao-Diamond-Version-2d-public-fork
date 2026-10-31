@@ -1,0 +1,51 @@
+{
+  "schema": "mochiichao-show/avatar-bundle/v1",
+  "species": "sproutle",
+  "variant": "leaf_blast",
+  "backend": "muse-hosted-avatar-generator",
+  "backend_callable_from_repo": false,
+  "created_utc": "2026-10-28T00:54:13.825824+00:00",
+  "source_clip": "norm/sproutle-leaf_blast.mp4",
+  "spec": {
+    "codec": "h264",
+    "width": 720,
+    "height": 720,
+    "fps": 24.0,
+    "frames": 192,
+    "duration_s": 8.0
+  },
+  "conformance": {
+    "target": {
+      "width": 720,
+      "height": 720,
+      "fps": 24.0,
+      "duration_s": 8.0
+    },
+    "meets_target": true
+  },
+  "files": {
+    "mp4": {
+      "path": "sproutle-leaf_blast.mp4",
+      "sha256": "4f75c535ac1e19845b64ee63cf553d5c2674a195a5947709fda3dfef9ca1f55b",
+      "bytes": 1045017
+    },
+    "transparent_webm": {
+      "path": "sproutle-leaf_blast.transparent.webm",
+      "sha256": "65448e8093cd73666317b23b8c5e78e069f63d1580617c2c174b6a4550344d37",
+      "bytes": 2604375,
+      "status": "PRODUCED_WHITE_FIELD",
+      "method": "white_matte.py (white-distance key + enclosed-region rescue)"
+    },
+    "poster": {
+      "path": "sproutle.webp",
+      "sha256": "d04d44ead0e5f60190894c9db1e5429435214e748dacc7c193a3ca07c635cc29",
+      "bytes": 21816,
+      "source": "source_still"
+    }
+  },
+  "quality_status": "PENDING_GATE",
+  "likeness_gate": {
+    "packet": "gate-packet.json",
+    "verdict_recommendation": "FAIL"
+  }
+}
