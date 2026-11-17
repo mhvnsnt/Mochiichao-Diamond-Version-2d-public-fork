@@ -172,7 +172,7 @@ export default function MainMenuBackground({ config }: { config?: MenuEditorConf
   }, [animKey]);
 
   const arcsGroup = arcsVisible ? (
-    <g>
+    <g opacity={cfg.layers.arcs.opacity ?? 1}>
       {arcs.radii.map((rx, i) => (
         <ellipse key={i} cx={arcs.cx} cy={arcs.cy} rx={rx} ry={rx} fill="none" stroke={arcs.colors[i % arcs.colors.length]} strokeWidth={arcs.stroke} opacity={0.9} />
       ))}
@@ -182,7 +182,7 @@ export default function MainMenuBackground({ config }: { config?: MenuEditorConf
     </g>
   ) : null;
   const symbolsGroup = symbolsVisible ? (
-    <g>
+    <g opacity={cfg.layers.symbols.opacity ?? 1}>
       {syms.map((sym, i) => (
         <g
           key={i}

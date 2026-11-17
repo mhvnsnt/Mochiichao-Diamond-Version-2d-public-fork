@@ -224,14 +224,41 @@ export function drawMenuStage(
         ctx.roundRect(p.x, p.y, p.w, p.h, cfg.panelStyle.borderRadius);
         ctx.fill();
         ctx.stroke();
-        ctx.fillStyle = "#000000";
-        ctx.font = `800 ${p.labelSize}px "Trebuchet MS", Arial, sans-serif`;
-        ctx.textAlign = "center";
+        // Per-panel label styles (2026-10-27 expansion): color, halo
+        // outline, alignment, and margins from the preset, with locked
+        // fallbacks for presets saved before these fields existed.
+        // Alignment here follows the preset (LEFT default); the real
+        // menu centers until its #206 reconciliation lands with #260.
+        const labelColor = p.labelColor ?? "#000000";
+        const outlineColor = p.outlineColor ?? "#ffffff";
+        const outlineWidth = p.outlineWidth ?? 0;
+        const align = p.align ?? "left";
+        const labelMargin = p.labelMargin ?? 0;
+        const labelX = align === "left" ? p.x + labelMargin : align === "right" ? p.x + p.w - labelMargin : p.x + p.w / 2;
+        ctx.textAlign = align;
         ctx.textBaseline = "middle";
-        ctx.fillText(p.label, p.x + p.w / 2, p.y + p.h / 2);
+        ctx.font = `800 ${p.labelSize}px "Trebuchet MS", Arial, sans-serif`;
+        if (outlineWidth > 0) {
+          ctx.strokeStyle = outlineColor;
+          ctx.lineWidth = outlineWidth * 2;
+          ctx.strokeText(p.label, labelX, p.y + p.h / 2);
+        }
+        ctx.fillStyle = labelColor;
+        ctx.fillText(p.label, labelX, p.y + p.h / 2);
         if (key === "CONTINUE") {
+          const subColor = p.sublabelColor ?? "#000000";
+          const subOutline = p.sublabelOutlineColor ?? "#ffffff";
+          const subWidth = p.sublabelOutlineWidth ?? 1;
+          const subMargin = p.sublabelMargin ?? 0;
+          const subX = align === "left" ? p.x + subMargin : align === "right" ? p.x + p.w - subMargin : p.x + p.w / 2;
           ctx.font = `19px "Trebuchet MS", Arial, sans-serif`;
-          ctx.fillText(cfg.continueSublabel, p.x + p.w / 2, p.y + p.h / 2 + 32);
+          if (subWidth > 0) {
+            ctx.strokeStyle = subOutline;
+            ctx.lineWidth = subWidth * 2;
+            ctx.strokeText(cfg.continueSublabel, subX, p.y + p.h / 2 + 32);
+          }
+          ctx.fillStyle = subColor;
+          ctx.fillText(cfg.continueSublabel, subX, p.y + p.h / 2 + 32);
         }
       }
     }

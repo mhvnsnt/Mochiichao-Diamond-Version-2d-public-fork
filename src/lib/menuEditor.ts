@@ -40,6 +40,7 @@ import { PINNED_SUBTITLE_FONT } from "./fonts";
 export type PanelKey = "CONTINUE" | "NEW GAME" | "SETTINGS" | "BACK TO TITLE";
 export type LayerId = "arcs" | "symbols" | "emblems" | "logo" | "cloud" | "mochii" | "panels";
 export type AnimSpeedId = "perfect" | "slow-rise";
+export type PanelAlign = "left" | "center" | "right";
 
 export interface PanelCfg {
   label: string;
@@ -49,6 +50,24 @@ export interface PanelCfg {
   h: number;
   fill: string;
   labelSize: number;
+  /** Per-panel label style (Mars 2026-10-27: label styles are data,
+   *  not hardcoded). Locked defaults reproduce the locked render
+   *  exactly: black letters; CONTINUE + SETTINGS white halo radius
+   *  2 (locked panelLabel.strokeLabels + labelStrokePx); sublabel
+   *  black + white halo radius 1. Mars's white/black combos live as
+   *  LABEL_STYLE_PRESETS below — saved option sets, never defaults. */
+  labelColor: string;
+  outlineColor: string;
+  outlineWidth: number;
+  /** 'locked' = the picture label stack; else a font id from fonts.ts. */
+  labelFont: string;
+  align: PanelAlign;
+  labelMargin: number;
+  sublabelMargin: number;
+  letterSpacing: number;
+  sublabelColor: string;
+  sublabelOutlineColor: string;
+  sublabelOutlineWidth: number;
 }
 
 export interface EmblemCfg {
@@ -60,12 +79,73 @@ export interface EmblemCfg {
   h: number;
   color: string;
   visible: boolean;
+  /** Order inside the emblem layer (hearts/stars/circle stack). The
+   *  layer itself vs logo/cloud/panels moves on the LAYERS panel. */
+  z: number;
+}
+
+/** Editor-tool geometry, saved per preset (Mars 2026-10-27: panels
+ *  stay draggable AND become resizable/scalable; positions and
+ *  sizes save with the preset, never with the locked default). */
+export interface EditorPanelGeom {
+  x: number;
+  y: number;
+  w: number;
+  scale: number;
+  opacity: number;
+  minimized: boolean;
+  ghost: boolean;
+}
+
+export interface EditorLayout {
+  /** User zoom on the live preview stage (1 = fit). Pinch, ctrl+wheel, slider, or buttons. */
+  previewScale: number;
+  /** Ghost mode: editor panels go semi-transparent so the live preview behind stays visible. */
+  ghost: boolean;
+  /** Snap dragged panels to a 10px grid (industry-standard editor practice). */
+  snap: boolean;
+  /** Gen 2 frame type 1-8 (Crystal NUM_FRAMES) for the editor panels' own frame style. */
+  gen2Frame: number;
+  panels: Record<string, EditorPanelGeom>;
+}
+
+/** Accessibility options (Mars 2026-10-27; WCAG 2.x practice). */
+export interface AccessConfig {
+  reducedMotion: boolean;
+  highContrast: boolean;
+  touchSize: "S" | "M" | "L";
+  fontScale: number;
+  focusRing: boolean;
+}
+
+/** Retro Pokemon options that are real rows, not covered by the six GAME_OPTIONS rows. */
+export interface RetroConfig {
+  /** Gen 1 battle animation ON/OFF (pokered main_menu.asm). OFF freezes preview symbols. */
+  gen1BattleAnim: boolean;
+  /** Yellow 4-way sound (pokeyellow options.asm): MONO / EARPHONE1-3. Stored setting; in-game routing stays Mono/Stereo. */
+  yellowSound: string;
+  /** GB Printer brightness 5-stop (pokeyellow options.asm + pokecrystal options_menu.asm). */
+  printBrightness: string;
+  /** Gen 2 menu account box ON/OFF (pokecrystal options_menu.asm + start_menu.asm .IsMenuAccountOn). */
+  menuAccount: boolean;
+  /** Black 2 save-before-IR (pokebw2 config_panel.c OPTION_SAVE_BEFORE_IR; L/R order reversed vs other toggles). */
+  saveBeforeIr: boolean;
+  /** HeartGold button mode 2-way (pokeheartgold options_app.c: NORMAL / L=A, no LR). */
+  hgButtonMode: string;
+  /** Platinum button mode 3-way (pokeplatinum game_options.h: NORMAL / START=X / L=A). */
+  platButtonMode: string;
+  /** Frame set preset (Crystal 8 / FireRed 10 / Emerald 20 / HG 20 / Platinum 20). */
+  frameSet: string;
+  /** Options-screen layout preset (Red / Yellow / Crystal / Emerald / FireRed / HeartGold / Platinum / Black 2). */
+  optionsLayout: string;
+  /** Options-screen theme preset (Mochii / Emerald / FireRed / HeartGold / Platinum / Black 2). */
+  optionsTheme: string;
 }
 
 export interface MenuEditorConfig {
   name: string;
   savedAt: number;
-  layers: Record<LayerId, { visible: boolean; order: number }>;
+  layers: Record<LayerId, { visible: boolean; order: number; opacity: number }>;
   logo: { x: number; y: number; w: number };
   cloud: {
     frameX: number;
@@ -89,6 +169,8 @@ export interface MenuEditorConfig {
     fieldLeft: number;
     fieldRight: number;
     count: number;
+    /** Symbol rotation speed, degrees per second (PR #163 slow-rise rotates 4°). 0 = upright. */
+    rotateDeg: number;
   };
   arcs: {
     cx: number;
@@ -118,6 +200,7 @@ export interface MenuEditorConfig {
     pressY: number;
     pressText: string;
     pressBlink: boolean;
+    pressAlign: PanelAlign;
     hsX: number;
     hsY: number;
     hsW: number;
@@ -132,6 +215,11 @@ export interface MenuEditorConfig {
     labels: Record<string, string>;
     help: Record<string, string>;
     visible: Record<string, boolean>;
+    /** Per-line (per pause item) text color, font, alignment. Empty = inherit the shipped row style. */
+    labelColors: Record<string, string>;
+    labelFonts: Record<string, string>;
+    itemAlign: Record<string, PanelAlign>;
+    labelMargin: number;
   };
   mochioteka: {
     /** Look id from DEX_LOOKS below; 'current' = the shipped
@@ -144,6 +232,9 @@ export interface MenuEditorConfig {
     helpOn: boolean;
     accent: string;
   };
+  editor: EditorLayout;
+  access: AccessConfig;
+  retro: RetroConfig;
 }
 
 /** Pause menu item keys, in the order GameShell.tsx renders them. */
@@ -267,23 +358,46 @@ export function lockedMenuEditorConfig(): MenuEditorConfig {
   };
   const span = symbolFieldSpan();
   const panels = {} as Record<PanelKey, PanelCfg>;
+  // Locked label-style defaults reproduce the locked render exactly:
+  // black letters everywhere; CONTINUE + SETTINGS white halo radius 2
+  // (locked panelLabel.strokeLabels + labelStrokePx); sublabel black +
+  // white halo radius 1 (sublabelStrokePx). Alignment defaults to LEFT
+  // with the PR #206 measured margins (CONTINUE label 70, NEW GAME 33,
+  // SETTINGS 29, BACK 33, sublabel 30) — the editor preview default
+  // Mars ordered 2026-10-27; the real menu keeps its centered layout
+  // until #206 lands, and that gap is stated in the editor, not hidden.
+  const LABEL_MARGIN: Record<PanelKey, number> = {
+    "CONTINUE": 70, "NEW GAME": 33, "SETTINGS": 29, "BACK TO TITLE": 33,
+  };
+  const HALOED: PanelKey[] = ["CONTINUE", "SETTINGS"];
   for (const p of L.panels) {
     panels[p.key] = {
       label: p.key === "BACK TO TITLE" ? "BACK TO TITLE (B)" : p.key,
       x: p.x, y: p.y, w: p.w, h: p.h, fill: p.fill, labelSize: p.labelSize,
+      labelColor: "#000000",
+      outlineColor: "#ffffff",
+      outlineWidth: HALOED.includes(p.key) ? 2 : 0,
+      labelFont: "locked",
+      align: "left",
+      labelMargin: LABEL_MARGIN[p.key],
+      sublabelMargin: 30,
+      letterSpacing: 0,
+      sublabelColor: "#000000",
+      sublabelOutlineColor: "#ffffff",
+      sublabelOutlineWidth: 1,
     };
   }
   return {
     name: "Locked Default (v32)",
     savedAt: 0,
     layers: {
-      arcs: { visible: true, order: 1 },
-      symbols: { visible: true, order: 2 },
-      emblems: { visible: true, order: 3 },
-      logo: { visible: true, order: 4 },
-      cloud: { visible: true, order: 5 },
-      mochii: { visible: true, order: 6 },
-      panels: { visible: true, order: 7 },
+      arcs: { visible: true, order: 1, opacity: 1 },
+      symbols: { visible: true, order: 2, opacity: 1 },
+      emblems: { visible: true, order: 3, opacity: 1 },
+      logo: { visible: true, order: 4, opacity: 1 },
+      cloud: { visible: true, order: 5, opacity: 1 },
+      mochii: { visible: true, order: 6, opacity: 1 },
+      panels: { visible: true, order: 7, opacity: 1 },
     },
     logo: { x: L.logo.x, y: L.logo.y, w: L.logo.w },
     cloud: {
@@ -306,6 +420,7 @@ export function lockedMenuEditorConfig(): MenuEditorConfig {
       swayPx: 6, swayCycles: 2, bobPx: 4, bobCycles: 2,
       fieldLeft: span.left, fieldRight: span.right,
       count: (MAIN_MENU_SYMBOLS as unknown[]).length,
+      rotateDeg: 0,
     },
     arcs: {
       cx: L.background.arcs.centre.x, cy: L.background.arcs.centre.y,
@@ -326,18 +441,18 @@ export function lockedMenuEditorConfig(): MenuEditorConfig {
     // picture-vs-proof call on it is still open, and OFF is one
     // toggle in the editor.
     emblems: [
-      { id: "heart-blue", kind: "heart", x: 169, y: 421.5, w: 63, h: 50, color: "#8cd2ff", visible: true },
-      { id: "heart-pink", kind: "heart", x: 230, y: 640.5, w: 53, h: 40, color: "#ff96c8", visible: true },
-      { id: "star-top", kind: "star", x: 600, y: 194, w: 41, h: 41, color: "#000000", visible: true },
-      { id: "star-left", kind: "star", x: 139, y: 533, w: 45, h: 45, color: "#000000", visible: true },
-      { id: "star-right", kind: "star", x: 1059, y: 533, w: 53, h: 53, color: "#000000", visible: true },
-      { id: "circle-pink", kind: "circle", x: 1054, y: 412, w: 46, h: 46, color: "#ff96c8", visible: true },
+      { id: "heart-blue", kind: "heart", x: 169, y: 421.5, w: 63, h: 50, color: "#8cd2ff", visible: true, z: 0 },
+      { id: "heart-pink", kind: "heart", x: 230, y: 640.5, w: 53, h: 40, color: "#ff96c8", visible: true, z: 1 },
+      { id: "star-top", kind: "star", x: 600, y: 194, w: 41, h: 41, color: "#000000", visible: true, z: 2 },
+      { id: "star-left", kind: "star", x: 139, y: 533, w: 45, h: 45, color: "#000000", visible: true, z: 3 },
+      { id: "star-right", kind: "star", x: 1059, y: 533, w: 53, h: 53, color: "#000000", visible: true, z: 4 },
+      { id: "circle-pink", kind: "circle", x: 1054, y: 412, w: 46, h: 46, color: "#ff96c8", visible: true, z: 5 },
     ],
     title: {
       logoX: 150, logoY: 185, logoW: 900,
       subX: 322, subY: 698, subW: 556, subH: 74,
       subText: "✦ DIAMOND VERSION ✦", subFont: "pinned",
-      pressY: 905, pressText: "PRESS ANY KEY", pressBlink: true,
+      pressY: 905, pressText: "PRESS ANY KEY", pressBlink: true, pressAlign: "center",
       hsX: 322, hsY: 944, hsW: 556, hsVisible: true,
     },
     pause: {
@@ -346,10 +461,26 @@ export function lockedMenuEditorConfig(): MenuEditorConfig {
       labels: { ...PAUSE_DEFAULT_LABELS },
       help: { ...PAUSE_DEFAULT_HELP },
       visible: Object.fromEntries(PAUSE_ITEM_KEYS.map((k) => [k, true])),
+      labelColors: {},
+      labelFonts: {},
+      itemAlign: {},
+      labelMargin: 0,
     },
     mochioteka: {
       look: "current", listPct: 38, portrait: 48, detailPortrait: 128,
       helpOn: true, accent: "#facc15",
+    },
+    editor: {
+      previewScale: 1, ghost: false, snap: false, gen2Frame: 1, panels: {},
+    },
+    access: {
+      reducedMotion: false, highContrast: false, touchSize: "M", fontScale: 1, focusRing: true,
+    },
+    retro: {
+      gen1BattleAnim: true, yellowSound: "MONO", printBrightness: "NORMAL",
+      menuAccount: true, saveBeforeIr: true, hgButtonMode: "NORMAL",
+      platButtonMode: "NORMAL", frameSet: "EMERALD 20", optionsLayout: "FIRERED",
+      optionsTheme: "MOCHII",
     },
   };
 }
@@ -378,7 +509,46 @@ export function loadWorkingConfig(): MenuEditorConfig | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as Partial<MenuEditorConfig>;
     const base = lockedMenuEditorConfig();
-    return { ...base, ...parsed, name: parsed.name || "Working Preset" };
+    // Deep-merge per-key/per-record so presets saved BEFORE a field
+    // existed (label styles, layer opacity, pause line styles,
+    // editor layout, access, retro) still load with locked defaults
+    // for the missing fields instead of rendering undefined. A
+    // shallow {...base, ...parsed} would replace whole panels with
+    // old shapes missing the new fields.
+    const merged: MenuEditorConfig = { ...base, ...parsed, name: parsed.name || "Working Preset" };
+    const pPanels = parsed.panels as Partial<Record<PanelKey, Partial<PanelCfg>>> | undefined;
+    if (pPanels) {
+      for (const k of Object.keys(base.panels) as PanelKey[]) {
+        merged.panels[k] = { ...base.panels[k], ...(pPanels[k] ?? {}) };
+      }
+    }
+    const pLayers = parsed.layers as Partial<Record<LayerId, Partial<{ visible: boolean; order: number; opacity: number }>>> | undefined;
+    if (pLayers) {
+      for (const k of Object.keys(base.layers) as LayerId[]) {
+        merged.layers[k] = { ...base.layers[k], ...(pLayers[k] ?? {}) };
+      }
+    }
+    if (parsed.emblems) {
+      merged.emblems = (parsed.emblems as EmblemCfg[]).map((e, i) => ({
+        ...(base.emblems[i] ?? base.emblems[0]), ...e, z: e.z ?? i,
+      }));
+    }
+    if (parsed.pause) {
+      const pp = parsed.pause as Partial<MenuEditorConfig["pause"]>;
+      merged.pause = {
+        ...base.pause, ...pp,
+        labels: { ...base.pause.labels, ...(pp.labels ?? {}) },
+        help: { ...base.pause.help, ...(pp.help ?? {}) },
+        visible: { ...base.pause.visible, ...(pp.visible ?? {}) },
+        labelColors: { ...(pp.labelColors ?? {}) },
+        labelFonts: { ...(pp.labelFonts ?? {}) },
+        itemAlign: { ...(pp.itemAlign ?? {}) },
+      };
+    }
+    merged.editor = { ...base.editor, ...(parsed.editor ?? {}), panels: { ...(parsed.editor?.panels ?? {}) } };
+    merged.access = { ...base.access, ...(parsed.access ?? {}) };
+    merged.retro = { ...base.retro, ...(parsed.retro ?? {}) };
+    return merged;
   } catch {
     return null;
   }
@@ -398,7 +568,7 @@ export function getActiveMenuConfig(): MenuEditorConfig {
   return loadWorkingConfig() || lockedMenuEditorConfig();
 }
 
-export type LibraryKind = "template" | "theme" | "layer" | "background";
+export type LibraryKind = "template" | "theme" | "layer" | "background" | "piece";
 
 export interface LibraryItem {
   id: string;
@@ -406,6 +576,8 @@ export interface LibraryItem {
   name: string;
   savedAt: number;
   data: unknown;
+  /** Section tag for library search/filter (TITLE / MAIN / PAUSE / MOCHIOTEKA / TEXT / FONTS / ALL). "" = untagged legacy item. */
+  section: string;
 }
 
 export function loadLibrary(): LibraryItem[] {
@@ -413,7 +585,8 @@ export function loadLibrary(): LibraryItem[] {
     const raw = localStorage.getItem(LIBRARY_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw) as LibraryItem[];
-    return Array.isArray(parsed) ? parsed : [];
+    if (!Array.isArray(parsed)) return [];
+    return parsed.map((i) => ({ ...i, section: typeof i.section === "string" ? i.section : "" }));
   } catch {
     return [];
   }
@@ -427,19 +600,149 @@ export function saveLibrary(items: LibraryItem[]): void {
   }
 }
 
-export function addLibraryItem(kind: LibraryKind, name: string, data: unknown): LibraryItem {
+export function addLibraryItem(kind: LibraryKind, name: string, data: unknown, section = ""): LibraryItem {
   const item: LibraryItem = {
     id: `${kind}-${Date.now()}`,
     kind, name: name || `${kind} ${new Date().toLocaleString()}`,
-    savedAt: Date.now(), data,
+    savedAt: Date.now(), data, section,
   };
   const items = [...loadLibrary(), item];
   saveLibrary(items);
   return item;
 }
 
+/** Rename a user-created library entry in place (id + kind + data unchanged). Locked Default (v32) is never a library entry. */
+export function renameLibraryItem(id: string, name: string): void {
+  const trimmed = name.trim();
+  if (!trimmed) return;
+  saveLibrary(loadLibrary().map((i) => (i.id === id ? { ...i, name: trimmed } : i)));
+}
+
+/** Duplicate a user-created entry: same kind/data/section, new id + " copy" name. */
+export function duplicateLibraryItem(id: string): LibraryItem | null {
+  const src = loadLibrary().find((i) => i.id === id);
+  if (!src) return null;
+  const item: LibraryItem = {
+    ...src, id: `${src.kind}-${Date.now()}`, name: `${src.name} copy`, savedAt: Date.now(),
+  };
+  saveLibrary([...loadLibrary(), item]);
+  return item;
+}
+
+/** Edit a user-created entry in place: overwrite its data with the
+ *  current draft's slice for its kind (template/theme/layer/piece/
+ *  background). Id, name, kind, section unchanged. */
+export function updateLibraryItemData(id: string, data: unknown): void {
+  saveLibrary(loadLibrary().map((i) => (i.id === id ? { ...i, data, savedAt: Date.now() } : i)));
+}
+
 export function deleteLibraryItem(id: string): void {
   saveLibrary(loadLibrary().filter((i) => i.id !== id));
+}
+
+/** Library search: name substring (case-insensitive) + kind filter. "" kind = all kinds. */
+export function searchLibrary(items: LibraryItem[], query: string, kind: "" | LibraryKind): LibraryItem[] {
+  const q = query.trim().toLowerCase();
+  return items.filter((i) =>
+    (kind === "" || i.kind === kind) &&
+    (q === "" || i.name.toLowerCase().includes(q) || i.section.toLowerCase().includes(q)));
+}
+
+/** One reusable piece of a menu: a single emblem, a single panel, the
+ *  subtitle block, or the pause order. Saving a piece never saves the
+ *  whole menu, and loading one patches only that piece. */
+export function pieceSlice(cfg: MenuEditorConfig, piece: string): unknown {
+  if (piece.startsWith("emblem-")) {
+    const e = cfg.emblems.find((x) => x.id === piece.slice("emblem-".length));
+    return e ? { piece, slice: clone(e) } : null;
+  }
+  if (piece.startsWith("panel-")) {
+    const key = piece.slice("panel-".length) as PanelKey;
+    return cfg.panels[key] ? { piece, slice: clone(cfg.panels[key]) } : null;
+  }
+  if (piece === "subtitle") {
+    return { piece, slice: clone({ subText: cfg.title.subText, subFont: cfg.title.subFont, subX: cfg.title.subX, subY: cfg.title.subY, subW: cfg.title.subW, subH: cfg.title.subH }) };
+  }
+  if (piece === "pause-order") return { piece, slice: clone(cfg.pause.order) };
+  return null;
+}
+
+export function applyPieceSlice(draft: MenuEditorConfig, piece: string, slice: unknown): MenuEditorConfig {
+  const next = clone(draft);
+  if (piece.startsWith("emblem-")) {
+    const id = piece.slice("emblem-".length);
+    next.emblems = next.emblems.map((e) => (e.id === id ? { ...e, ...(slice as EmblemCfg) } : e));
+  } else if (piece.startsWith("panel-")) {
+    const key = piece.slice("panel-".length) as PanelKey;
+    if (next.panels[key]) next.panels[key] = { ...next.panels[key], ...(slice as PanelCfg) };
+  } else if (piece === "subtitle" && slice && typeof slice === "object") {
+    const s = slice as Partial<MenuEditorConfig["title"]>;
+    next.title = { ...next.title, ...s };
+  } else if (piece === "pause-order" && Array.isArray(slice)) {
+    next.pause = { ...next.pause, order: [...slice] };
+  }
+  return next;
+}
+
+/** Named label-style presets (Mars 2026-10-27: the white/black combos
+ *  are saved option sets, not hardcoded render branches). Applying one
+ *  writes the three values into a panel's fields; the locked default
+ *  keeps its own values and is never touched by a preset. */
+export interface LabelStylePreset {
+  id: string;
+  name: string;
+  labelColor: string;
+  outlineColor: string;
+  outlineWidth: number;
+}
+
+export const LABEL_STYLE_PRESETS: LabelStylePreset[] = [
+  { id: "locked-plain", name: "Locked plain (black, no outline)", labelColor: "#000000", outlineColor: "#ffffff", outlineWidth: 0 },
+  { id: "locked-halo", name: "Locked halo (black + white outline)", labelColor: "#000000", outlineColor: "#ffffff", outlineWidth: 2 },
+  { id: "white-black", name: "White letters + black outline", labelColor: "#ffffff", outlineColor: "#000000", outlineWidth: 2 },
+  { id: "black-white", name: "Black letters + white outline", labelColor: "#000000", outlineColor: "#ffffff", outlineWidth: 2 },
+  { id: "white-plain", name: "White letters, no outline", labelColor: "#ffffff", outlineColor: "#000000", outlineWidth: 0 },
+];
+
+export function applyLabelStylePreset(panel: PanelCfg, preset: LabelStylePreset): PanelCfg {
+  return { ...panel, labelColor: preset.labelColor, outlineColor: preset.outlineColor, outlineWidth: preset.outlineWidth };
+}
+
+/** 8-way text-shadow halo (the locked menu's halo method: shadow is
+ *  painted BEHIND the fill, so the letter core stays solid at every
+ *  scale — WebkitTextStroke paints over the fill and washed labels
+ *  out at phone scale). Width 0 = no halo. */
+export function haloShadow(color: string, width: number): string {
+  if (!width) return "none";
+  const r = width;
+  return [`${r}px 0 0 ${color}`, `-${r}px 0 0 ${color}`, `0 ${r}px 0 ${color}`, `0 -${r}px 0 ${color}`,
+    `${r}px ${r}px 0 ${color}`, `-${r}px -${r}px 0 ${color}`, `${r}px -${r}px 0 ${color}`, `-${r}px ${r}px 0 ${color}`].join(", ");
+}
+
+/** WCAG 2.x contrast ratio between two #rrggbb colors (industry-standard accessibility tool). */
+export function contrastRatio(hexA: string, hexB: string): number {
+  const lum = (hex: string): number => {
+    const m = /^#?([0-9a-f]{6})$/i.exec(hex);
+    if (!m) return 0;
+    const ch = [0, 2, 4].map((i) => {
+      const v = parseInt(m[1].slice(i, i + 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2];
+  };
+  const l1 = lum(hexA);
+  const l2 = lum(hexB);
+  const hi = Math.max(l1, l2);
+  const lo = Math.min(l1, l2);
+  return (hi + 0.05) / (lo + 0.05);
+}
+
+/** Mirror an emblem x across the stage centre (1200 wide). The sibling
+ *  worker's mirrored right-side pink heart is exactly this value as
+ *  data (1200 − 230 = 970); the editor stores whatever x is set and
+ *  never resets emblems to hardcoded positions on open. */
+export function mirroredX(x: number): number {
+  return 1200 - x;
 }
 
 /** Theme = colours + fonts snapshot (no geometry). */
@@ -554,8 +857,8 @@ export function transformSymbols<T extends { x: number }>(
 export function parseLibraryJson(text: string): LibraryItem {
   const parsed = JSON.parse(text) as Partial<LibraryItem>;
   if (!parsed || typeof parsed !== "object") throw new Error("Not a JSON object.");
-  if (parsed.kind !== "template" && parsed.kind !== "theme" && parsed.kind !== "layer" && parsed.kind !== "background") {
-    throw new Error("Kind must be template, theme, layer, or background.");
+  if (parsed.kind !== "template" && parsed.kind !== "theme" && parsed.kind !== "layer" && parsed.kind !== "background" && parsed.kind !== "piece") {
+    throw new Error("Kind must be template, theme, layer, background, or piece.");
   }
   if (typeof parsed.name !== "string" || !parsed.name) throw new Error("Missing name.");
   if (parsed.data === undefined || parsed.data === null || typeof parsed.data !== "object") {
@@ -566,6 +869,7 @@ export function parseLibraryJson(text: string): LibraryItem {
     kind: parsed.kind, name: parsed.name,
     savedAt: typeof parsed.savedAt === "number" ? parsed.savedAt : Date.now(),
     data: parsed.data,
+    section: typeof parsed.section === "string" ? parsed.section : "",
   };
 }
 
